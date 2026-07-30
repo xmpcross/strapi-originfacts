@@ -14,8 +14,6 @@ export const metadata = {
   title: 'Airport Directory',
   description: HUB.description,
   alternates: { canonical: PATH },
-  // Temporarily noindexed for AdSense review — see AIRPORTS_INDEXABLE.
-  robots: { index: false, follow: true },
 };
 
 export default async function AirportsPage() {

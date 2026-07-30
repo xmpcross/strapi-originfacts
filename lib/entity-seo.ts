@@ -185,11 +185,13 @@ export function countryHasData(c: Pick<StrapiCountry, 'code' | 'about'>): boolea
 
 /** Next.js metadata `robots` block for a gated page. */
 /**
- * Airport pages are temporarily noindexed for the AdSense review — the 3.5k
- * templated pages read as "low value content" to reviewers. Flip back to true
- * after approval to restore indexing (sitemap entries in app/sitemap.ts too).
+ * Airport indexing switch. Was temporarily false during the AdSense review
+ * (2026-07-30); true restores the same substantive-content gate airlines use —
+ * pages with real content index, thin stubs stay noindex via robotsFor().
+ * Airport URLs are still excluded from the sitemap (app/sitemap.ts) — restoring
+ * them there is a separate, deliberate step.
  */
-export const AIRPORTS_INDEXABLE = false;
+export const AIRPORTS_INDEXABLE = true;
 
 export const robotsFor = (indexable: boolean) =>
   indexable

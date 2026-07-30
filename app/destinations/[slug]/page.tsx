@@ -21,10 +21,11 @@ import CountryDetailSections from '@/components/CountryDetailSections';
 import CountryFactsPanel from '@/components/CountryFactsPanel';
 import FlightSearchCTA from '@/components/FlightSearchCTA';
 import { getCountryFacts } from '@/lib/country-facts';
-import { faqJsonLd, normalizeFaqs } from '@/lib/entity-seo';
+import { faqJsonLd, normalizeFaqs, DEFAULT_OG_IMAGE } from '@/lib/entity-seo';
 import { JsonLd, FaqSection } from '@/components/SeoBlocks';
 import KeyFacts from '@/components/KeyFacts';
-import { clampDescription } from '@/lib/seo';
+import { buildMetaDescription } from '@/lib/seo';
+import { absoluteUrl } from '@/lib/jsonld';
 import type { Metadata } from 'next';
 
 export const revalidate = 60;
@@ -37,10 +38,30 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const d = await getDestination(slug);
   if (!d) return { title: 'Not found' };
+  const description = buildMetaDescription([d.description]);
+  const hero = d.heroImage && d.heroImage.url ? d.heroImage : null;
   return {
     title: d.name,
-    description: clampDescription(d.description),
+    description,
     alternates: { canonical: `/destinations/${slug}` },
+    openGraph: {
+      title: d.name,
+      description,
+      type: 'article',
+      url: `/destinations/${slug}`,
+      images: hero
+        ? [{
+            url: absoluteUrl(mediaUrl(hero)!),
+            width: hero.width ?? 1024,
+            height: hero.height ?? 576,
+            alt: `${d.name} travel guide`,
+          }]
+        : [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630, alt: 'Originfacts' }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: [hero ? absoluteUrl(mediaUrl(hero)!) : DEFAULT_OG_IMAGE],
+    },
   };
 }
 

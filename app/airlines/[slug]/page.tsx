@@ -5,6 +5,7 @@ import RouteNetwork from '@/components/RouteNetwork';
 import { getRouteFacts } from '@/lib/route-facts';
 import {
   SITE_URL,
+  DEFAULT_OG_IMAGE,
   airlineIsSubstantive,
   airlineIntro,
   airlineAbout,
@@ -17,7 +18,8 @@ import {
 } from '@/lib/entity-seo';
 import { JsonLd, FaqSection } from '@/components/SeoBlocks';
 import { getFlySfoAirlineProfile } from '@/lib/flysfo-airline';
-import { breadcrumbJsonLd } from '@/lib/jsonld';
+import { breadcrumbJsonLd, absoluteUrl } from '@/lib/jsonld';
+import { buildMetaDescription } from '@/lib/seo';
 import AirlineReviews from '@/components/AirlineReviews';
 import AirlineFlightSearch from '@/components/AirlineFlightSearch';
 import AboutParagraphs from '@/components/AboutParagraphs';
@@ -32,11 +34,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const a = await getAirline(slug);
   if (!a) return { title: 'Not found' };
   const routes = await listRoutesByCarrier(slug, 1).catch(() => []);
-  const desc = a.about?.slice(0, 150) || airlineIntro(a).slice(0, 155);
+  const description = buildMetaDescription([a.shortDescription, a.about, airlineIntro(a)]);
+  const url = `${SITE_URL}/airlines/${a.slug}`;
+  const logo = a.logo && a.logo.url ? a.logo : null;
   return {
     title: a.name,
-    description: desc,
-    alternates: { canonical: `${SITE_URL}/airlines/${a.slug}` },
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title: a.name,
+      description,
+      type: 'article',
+      url,
+      images: logo
+        ? [{
+            url: absoluteUrl(mediaUrl(logo)!),
+            width: logo.width ?? 512,
+            height: logo.height ?? 512,
+            alt: `${a.name} logo`,
+          }]
+        : [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630, alt: 'Originfacts' }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: [logo ? absoluteUrl(mediaUrl(logo)!) : DEFAULT_OG_IMAGE],
+    },
     robots: robotsFor(airlineIsSubstantive(a, routes.length > 0)),
   };
 }

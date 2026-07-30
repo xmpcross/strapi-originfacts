@@ -21,6 +21,7 @@ import {
 } from '@/lib/entity-seo';
 import { getAirportWeather, weatherLabel } from '@/lib/open-meteo';
 import { JsonLd, FaqSection } from '@/components/SeoBlocks';
+import { buildMetaDescription } from '@/lib/seo';
 import type { Metadata } from 'next';
 
 export const revalidate = 60;
@@ -46,9 +47,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!a) return { title: 'Airport not found', robots: { index: false, follow: false } };
   const routes = await listRoutesFromAirport(a.iata, 1).catch(() => []);
   const hero = airportHeroImage(a.iata, mediaUrl(a.heroImage ?? null));
-  const description =
-    a.about?.slice(0, 150) ||
-    `${a.name} (${a.iata})${a.city ? ` in ${a.city}` : ''}${a.country ? `, ${a.country}` : ''}: codes, location, airlines, top destinations and ground-transfer basics.`;
+  const description = buildMetaDescription([
+    a.about,
+    `${a.name} (${a.iata})${a.city ? ` in ${a.city}` : ''}${a.country ? `, ${a.country}` : ''}: codes, location, airlines, top destinations and ground-transfer basics.`,
+  ]);
   return {
     title: `${a.name} (${a.iata}) — airport guide`,
     description,

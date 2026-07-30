@@ -10,8 +10,10 @@ import {
   mediaUrl,
   type StrapiAirport,
 } from '@/lib/strapi';
-import { SITE_URL, countryFaqs, countryJsonLd, faqJsonLd } from '@/lib/entity-seo';
+import { SITE_URL, DEFAULT_OG_IMAGE, countryFaqs, countryJsonLd, faqJsonLd } from '@/lib/entity-seo';
 import { JsonLd, FaqSection } from '@/components/SeoBlocks';
+import { absoluteUrl } from '@/lib/jsonld';
+import { buildMetaDescription } from '@/lib/seo';
 import type { Metadata } from 'next';
 
 export const revalidate = 60;
@@ -30,6 +32,7 @@ async function resolveCountry(code: string): Promise<{
   region?: string;
   currency?: string;
   about?: string;
+  heroImage?: import('@/lib/strapi').StrapiImage;
 } | null> {
   const cc = code.toUpperCase();
   const fromCollection = await getCountry(cc).catch(() => null);
@@ -40,6 +43,7 @@ async function resolveCountry(code: string): Promise<{
       region: fromCollection.region,
       currency: fromCollection.currency,
       about: fromCollection.about,
+      heroImage: fromCollection.heroImage,
     };
   }
   const airports = await listAirportsByCountryCode(cc, 1).catch(() => []);
@@ -52,10 +56,35 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { code } = await params;
   const country = await resolveCountry(code);
   if (!country) return { title: 'Country not found' };
+  const title = `${country.name} — airports, airlines & top routes`;
+  const description = buildMetaDescription([
+    country.about,
+    `Travel directory for ${country.name} (${country.code}): commercial airports, airlines based in the country, and the busiest inbound routes.`,
+  ]);
+  const url = `${SITE_URL}/countries/${country.code.toLowerCase()}`;
+  const hero = country.heroImage && country.heroImage.url ? country.heroImage : null;
   return {
-    title: `${country.name} — airports, airlines & top routes`,
-    description: `Travel directory for ${country.name} (${country.code}): commercial airports, airlines based in the country, and the busiest inbound routes.`,
-    alternates: { canonical: `${SITE_URL}/countries/${country.code.toLowerCase()}` },
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+      url,
+      images: hero
+        ? [{
+            url: absoluteUrl(mediaUrl(hero)!),
+            width: hero.width ?? 1024,
+            height: hero.height ?? 576,
+            alt: `${country.name} travel guide`,
+          }]
+        : [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630, alt: 'Originfacts' }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: [hero ? absoluteUrl(mediaUrl(hero)!) : DEFAULT_OG_IMAGE],
+    },
   };
 }
 

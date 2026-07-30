@@ -19,7 +19,7 @@ import { SECTIONS } from '@/lib/sections';
 import { DEFAULT_OG_IMAGE, faqJsonLd, howToJsonLd, normalizeFaqs, normalizeSteps } from '@/lib/entity-seo';
 import { JsonLd, FaqSection, HowToSteps } from '@/components/SeoBlocks';
 import KeyFacts from '@/components/KeyFacts';
-import { clampDescription, warnIfLong } from '@/lib/seo';
+import { buildMetaDescription, warnIfLong } from '@/lib/seo';
 import type { Metadata } from 'next';
 
 export const revalidate = 60;
@@ -32,13 +32,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!a) return { title: 'Not found' };
   const ogImg = mediaUrl(a.ogImage ?? a.coverImage ?? null);
   warnIfLong(`/articles/${a.slug}`, { title: a.seoTitle || a.title, description: a.seoDescription || a.excerpt });
+  const description = buildMetaDescription([a.seoDescription, a.excerpt]);
   return {
     title: a.seoTitle || a.title,
-    description: clampDescription(a.seoDescription || a.excerpt),
+    description,
     alternates: { canonical: `/articles/${a.slug}` },
     openGraph: {
       title: a.seoTitle || a.title,
-      description: a.seoDescription || a.excerpt,
+      description,
       type: 'article',
       publishedTime: a.publishedAt,
       modifiedTime: a.updatedAt,

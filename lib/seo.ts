@@ -30,6 +30,52 @@ export function clampDescription(input?: string | null, max = DESCRIPTION_MAX): 
 }
 
 /**
+ * Strips markdown syntax to plain prose: fenced/inline code, images, links
+ * (keeping the link text), blockquotes, list markers, horizontal rules,
+ * emphasis/strong/strikethrough, and raw HTML tags. Heading LINES are dropped
+ * whole — "## Overview" is structure, not prose, and a description reading
+ * "Overview Sydney Airport sits…" is exactly the artefact we're avoiding.
+ * Whitespace is collapsed. Input that is entirely markup returns ''.
+ */
+export function stripMarkdown(input?: string | null): string {
+  let s = String(input ?? '');
+  s = s.replace(/```[\s\S]*?```/g, ' ');
+  s = s.replace(/`([^`]*)`/g, '$1');
+  s = s.replace(/!\[([^\]]*)\]\([^)]*\)/g, '$1');
+  s = s.replace(/\[([^\]]*)\]\([^)]*\)/g, '$1');
+  s = s.replace(/^\s{0,3}#{1,6}\s+.*$/gm, ' ');
+  s = s.replace(/^\s{0,3}>\s?/gm, '');
+  s = s.replace(/^\s{0,3}(?:[-*+]|\d+[.)])\s+/gm, '');
+  s = s.replace(/^\s{0,3}(?:[-*_]\s?){3,}\s*$/gm, ' ');
+  s = s.replace(/(\*\*|__)([\s\S]*?)\1/g, '$2');
+  s = s.replace(/(^|[^\w*])\*([^*\n]+)\*(?=[^\w*]|$)/g, '$1$2');
+  s = s.replace(/(^|[^\w_])_([^_\n]+)_(?=[^\w_]|$)/g, '$1$2');
+  s = s.replace(/~~([\s\S]*?)~~/g, '$1');
+  s = s.replace(/<[^>]+>/g, ' ');
+  return s.replace(/\s+/g, ' ').trim();
+}
+
+/**
+ * The one description builder every template's generateMetadata should use.
+ * Takes candidate sources in priority order — purpose-written summary fields
+ * first (seoDescription, excerpt, shortDescription), derived body text
+ * (about/description) after — and returns the first that still has content
+ * once markdown is stripped, clamped to a word boundary at `max` chars with
+ * an ellipsis only when text was actually removed. Stripping happens BEFORE
+ * clamping, so markup never eats into the length budget or leaks into SERPs.
+ */
+export function buildMetaDescription(
+  sources: Array<string | null | undefined>,
+  max = DESCRIPTION_MAX,
+): string {
+  for (const source of sources) {
+    const clean = stripMarkdown(source);
+    if (clean) return clampDescription(clean, max);
+  }
+  return '';
+}
+
+/**
  * Logs a console warning when source copy exceeds SERP-safe lengths — shows up
  * in `yarn build` output (static pages) and server logs (dynamic ones).
  * Returns the inputs untouched: feedback for editors, never a hard truncation

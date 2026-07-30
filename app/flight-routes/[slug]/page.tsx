@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getRoute, mediaUrl, type StrapiAirline } from '@/lib/strapi';
 import { flightSearchUrl } from '@/lib/affiliate';
+import { SITE_URL, DEFAULT_OG_IMAGE } from '@/lib/entity-seo';
+import { absoluteUrl } from '@/lib/jsonld';
 import PriceCalendar from '@/components/PriceCalendar';
 import ScheduleWidget from '@/components/ScheduleWidget';
 import ExpandableDescription from '@/components/ExpandableDescription';
@@ -9,17 +11,76 @@ import type { Metadata } from 'next';
 
 export const revalidate = 60;
 
+// Route pages are statically generated on demand (ISR, revalidate above).
+// Static generation renders generateMetadata into the <head> of the HTML
+// response; dynamic rendering would stream the tags into the body for
+// JS-capable user agents (Next 15 streaming metadata), leaving curl and
+// HTML-only crawlers without a populated head.
+export function generateStaticParams() {
+  return [];
+}
+
 type Props = { params: Promise<{ slug: string }> };
+
+// "1h 35m" from block minutes; whole hours drop the minute part.
+function formatBlockTime(minutes: number): string {
+  const h = Math.floor(minutes / 60);
+  const m = Math.round(minutes % 60);
+  if (h === 0) return `${m}m`;
+  return m === 0 ? `${h}h` : `${h}h ${m}m`;
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const r = await getRoute(slug);
-  if (!r || !r.origin || !r.destination) return { title: 'Route not found' };
-  const title = `Flights from ${r.origin.city || r.origin.name} to ${r.destination.city || r.destination.name} (${r.origin.iata} → ${r.destination.iata})`;
-  const desc =
-    r.about?.slice(0, 150) ||
-    `Cheap flights from ${r.origin.iata} to ${r.destination.iata}. Carriers, flight time, distance, and where to book.`;
-  return { title, description: desc };
+  if (!r || !r.origin || !r.destination) {
+    return { title: 'Route not found', robots: { index: false, follow: false } };
+  }
+  const from = r.origin.city || r.origin.name;
+  const to = r.destination.city || r.destination.name;
+  const title = `Flights from ${from} to ${to} (${r.origin.iata} → ${r.destination.iata})`;
+  const url = `${SITE_URL}/flight-routes/${r.slug}`;
+
+  // Description built only from fields present on the record — distance, block
+  // time, tracked-carrier count. Absent fields simply drop their clause; a
+  // route with none of them falls back to the editorial about excerpt or a
+  // claim-free generic line.
+  const facts: string[] = [];
+  if (typeof r.distanceKm === 'number' && r.distanceKm > 0) {
+    facts.push(`${Math.round(r.distanceKm).toLocaleString('en-US')} km`);
+  }
+  if (typeof r.durationMinutes === 'number' && r.durationMinutes > 0) {
+    facts.push(`around ${formatBlockTime(r.durationMinutes)} block time`);
+  }
+  const carrierCount = (r.carriers ?? []).length;
+  if (carrierCount > 0) {
+    facts.push(`${carrierCount} tracked airline${carrierCount === 1 ? '' : 's'}`);
+  }
+  const description = facts.length
+    ? `Flights from ${from} (${r.origin.iata}) to ${to} (${r.destination.iata}): ${facts.join(', ')}. Compare live fares and see where to book.`
+    : r.about?.slice(0, 155) ||
+      `Flights from ${from} (${r.origin.iata}) to ${to} (${r.destination.iata}): carriers, schedules and where to book.`;
+
+  const hero = mediaUrl(r.destination.heroImage ?? null);
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+      url,
+      siteName: 'Originfacts',
+      images: hero
+        ? [{ url: absoluteUrl(hero), width: 1024, height: 576, alt: `Flights from ${from} to ${to}` }]
+        : [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630, alt: 'Originfacts' }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: [hero ? absoluteUrl(hero) : DEFAULT_OG_IMAGE],
+    },
+  };
 }
 
 export default async function RoutePage({ params }: Props) {

@@ -26,7 +26,6 @@ import FeaturedCountries from '@/components/FeaturedCountries';
 import SectionDescription from '@/components/SectionDescription';
 import BlogSidebar from '@/components/BlogSidebar';
 import SubscribeBlock from '@/components/SubscribeBlock';
-import TagsBar from '@/components/TagsBar';
 
 export const revalidate = 60;
 
@@ -98,8 +97,6 @@ export default async function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
       />
-
-      <TagsBar />
 
       <Hero hero={hero} side={side} />
 

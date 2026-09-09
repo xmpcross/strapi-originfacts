@@ -9,7 +9,6 @@ import { airportPath } from '@/lib/airport-slugs';
 import { SITE_URL, articleBlogPostingJsonLd, faqJsonLd, type Faq } from '@/lib/entity-seo';
 import { JsonLd, FaqSection } from '@/components/SeoBlocks';
 import OutboundCitations from '@/components/OutboundCitations';
-import ComparisonTable from '@/components/ComparisonTable';
 import TableOfContents from '@/components/TableOfContents';
 import type { TocItem } from '@/lib/toc';
 import { breadcrumbJsonLd } from '@/lib/jsonld';
@@ -205,16 +204,16 @@ export default async function RoutePage({ params }: Props) {
             ))}
           </div>
 
-          <div id="direct-vs-connecting" className="mt-8 scroll-mt-28">
-            <ComparisonTable
-              caption={`Direct vs Connecting Flight Comparison: ${origin.iata} to ${destination.iata}`}
-              head={['Flight Option', 'Est. Flight Duration', 'Cabin Bag Allowance', 'Transit Stopover', 'Best For']}
-              rows={[
-                ['Non-Stop Direct Flight', route.durationMinutes ? formatDuration(route.durationMinutes) : 'Direct', '1 Carry-on (7kg) + Personal Item', 'Direct (0 stops)', 'Fastest travel time'],
-                ['1-Stop Connecting Flight', route.durationMinutes ? formatDuration(route.durationMinutes + 150) : 'Connecting', '1 Carry-on (7kg) + Personal Item', '1-2 hrs at hub airport', 'Budget & flexible schedules'],
-              ]}
-            />
-          </div>
+          {/*
+            The direct-vs-connecting table was removed here. Two of its five
+            columns were fabricated: "Cabin Bag Allowance" was hardcoded to
+            "1 Carry-on (7kg) + Personal Item" for every carrier on every route,
+            and the connecting duration was invented as durationMinutes + 150.
+            Both were presented as route-specific figures.
+
+            Restore it only from per-carrier allowances and real connection
+            timings, not from literals.
+          */}
         </section>
       )}
 

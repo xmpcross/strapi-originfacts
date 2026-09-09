@@ -114,9 +114,21 @@ export function getAllAuthors(): AuthorProfile[] {
   return [DEFAULT_AUTHOR, AUTHORS['elena-rostova']!, AUTHORS['marcus-vance']!, AUTHORS['originfacts-team']!];
 }
 
-export function getAuthorBySlug(slug: string): AuthorProfile {
+/**
+ * Look up an author page by its slug, or null when no such author exists.
+ *
+ * This used to fall back to DEFAULT_AUTHOR, which made the `notFound()` guard in
+ * app/authors/[slug] unreachable: every slug resolved, so /authors/<anything>
+ * returned HTTP 200 rendering a real profile. That is an unbounded soft-404
+ * surface — verified live before this change, /authors/does-not-exist-xyz
+ * answered 200.
+ *
+ * Byline resolution still wants a fallback, and still gets one: that is
+ * `resolveAuthor()` below. Routing must not.
+ */
+export function getAuthorBySlug(slug: string): AuthorProfile | null {
   const key = slug.toLowerCase().trim();
-  return AUTHORS[key] || DEFAULT_AUTHOR;
+  return AUTHORS[key] ?? null;
 }
 
 export function resolveAuthor(rawNameOrSlug?: string | null): AuthorProfile {

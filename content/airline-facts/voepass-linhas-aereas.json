@@ -13,7 +13,7 @@
       "fields": {
         "carryon_bag_dimensions": {
           "value": "55 x 40 x 20 cm",
-          "status": "official",
+          "status": "pending",
           "source_url": "https://www.voepass.com.br/baggage",
           "notes": "VOEPASS Linhas Aéreas cabin baggage size limit: 55 x 40 x 20 cm.",
           "verified_at": "2026-09-04",
@@ -21,7 +21,7 @@
         },
         "weight_economy": {
           "value": "7 kg (15 lbs)",
-          "status": "official",
+          "status": "pending",
           "source_url": "https://www.voepass.com.br/baggage",
           "notes": "VOEPASS Linhas Aéreas Economy Class carry-on weight limit.",
           "verified_at": "2026-09-04",
@@ -29,7 +29,7 @@
         },
         "weight_business_first": {
           "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "official",
+          "status": "pending",
           "source_url": "https://www.voepass.com.br/baggage",
           "notes": "VOEPASS Linhas Aéreas Premium / Business Class carry-on weight limit.",
           "verified_at": "2026-09-04",
@@ -48,7 +48,7 @@
       "fields": {
         "piece_weight_economy": {
           "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "official",
+          "status": "pending",
           "source_url": "https://www.voepass.com.br/baggage",
           "notes": "VOEPASS Linhas Aéreas Economy Class checked baggage allowance.",
           "verified_at": "2026-09-04",
@@ -56,7 +56,7 @@
         },
         "piece_weight_business": {
           "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "official",
+          "status": "pending",
           "source_url": "https://www.voepass.com.br/baggage",
           "notes": "VOEPASS Linhas Aéreas Business Class checked baggage allowance.",
           "verified_at": "2026-09-04",
@@ -64,7 +64,7 @@
         },
         "piece_weight_first": {
           "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "official",
+          "status": "pending",
           "source_url": "https://www.voepass.com.br/baggage",
           "notes": "VOEPASS Linhas Aéreas First Class checked baggage allowance.",
           "verified_at": "2026-09-04",
@@ -81,7 +81,7 @@
       "fields": {
         "phone_home_market": {
           "value": "+1 800 555 0199",
-          "status": "official",
+          "status": "pending",
           "source_url": "https://www.voepass.com.br/baggage",
           "notes": "VOEPASS Linhas Aéreas official customer support line.",
           "verified_at": "2026-09-04",

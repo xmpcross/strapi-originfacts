@@ -25,7 +25,6 @@ import CountryFactsPanel from '@/components/CountryFactsPanel';
 import FlightSearchCTA from '@/components/FlightSearchCTA';
 import OutboundCitations from '@/components/OutboundCitations';
 import PopularHotelsByCity from '@/components/PopularHotelsByCity';
-import ComparisonTable from '@/components/ComparisonTable';
 import TableOfContents from '@/components/TableOfContents';
 import { getCountryFacts } from '@/lib/country-facts';
 import { SITE_URL, articleBlogPostingJsonLd, faqJsonLd, normalizeFaqs } from '@/lib/entity-seo';
@@ -822,17 +821,17 @@ function CityPlanningSections({
         </div>
       </div>
 
-      <div className="my-8">
-        <ComparisonTable
-          caption={`Peak vs Shoulder vs Low Season: Travel Windows for ${destination.name}`}
-          head={['Travel Window', 'Weather & Conditions', 'Airfare & Hotel Prices', 'Crowd Levels', 'Recommended For']}
-          rows={[
-            ['Peak Season (Nov - Feb)', 'Warm & dry (25°C - 32°C)', 'Highest demand & fares', 'High / Busy', 'First-time visitors & festival travel'],
-            ['Shoulder Season (Mar - May / Sep - Oct)', 'Mild & pleasant (20°C - 28°C)', 'Moderate deals & fare drops', 'Moderate', 'Value travel & relaxed sightseeing'],
-            ['Low Season (Jun - Aug)', 'Tropical rainfall / Humid', 'Cheapest fares & hotel deals', 'Low / Quiet', 'Budget travellers & luxury resort deals'],
-          ]}
-        />
-      </div>
+      {/*
+        The seasonal comparison table was removed here. It was captioned per
+        destination — "Travel Windows for {name}" — but its rows were hardcoded
+        and identical on all 258 destination pages: peak Nov–Feb at 25–32°C,
+        low season Jun–Aug with "tropical rainfall". That is wrong for most of
+        the set (Tuscany, Provence, Patagonia among them) and it was presented
+        as destination-specific research.
+
+        Restore it only from real per-destination climate data on the
+        destination record, not from literals in the template.
+      */}
 
       <div className="grid gap-6 py-12 lg:grid-cols-3" data-testid="city-useful-context">
         <CityContextNote

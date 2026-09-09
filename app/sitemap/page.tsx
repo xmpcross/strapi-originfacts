@@ -18,6 +18,18 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: 'Site Map',
   description: 'A complete index of every page on Originfacts — articles, destinations, airlines, airports, countries, categories, and policies.',
+  /**
+   * `noindex, follow`. This page is a navigation aid for people, not a
+   * destination: at 17,066 words it was the largest page on the site and
+   * consisted entirely of links.
+   *
+   * It also enumerates every airline, airport and country straight from Strapi
+   * with no tier gate, so while it was indexed it re-exposed the whole
+   * directory that AIRLINES_INDEXABLE and the Tier 3 `noindex` were holding
+   * back. `follow` is kept deliberately — crawling through to the real pages is
+   * the point of it.
+   */
+  robots: { index: false, follow: true },
 };
 
 export default async function SitemapPage() {

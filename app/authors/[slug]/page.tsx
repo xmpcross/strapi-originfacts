@@ -50,7 +50,11 @@ export default async function AuthorProfilePage({ params }: Props) {
   const authoredArticles = articles.filter(
     (a) => a.author?.slug === author.slug || a.author?.name?.toLowerCase().includes(author.name.split(' ')[0]!.toLowerCase()),
   );
-  const displayedArticles = authoredArticles.length > 0 ? authoredArticles : articles.slice(0, 6);
+  // No fallback to `articles.slice(0, 6)`. That filled an author with no
+  // articles using the site's six most recent ones, under a heading that then
+  // read "Which articles has <name> published?" — attributing other people's
+  // work to them. An author with nothing published shows nothing.
+  const displayedArticles = authoredArticles;
 
   return (
     <article className="mx-auto max-w-7xl px-6 py-16" data-testid="author-profile-page">
@@ -142,11 +146,17 @@ export default async function AuthorProfilePage({ params }: Props) {
           Fact-checked travel guides, flight analysis, and destination research authored or reviewed by {author.name}.
         </p>
 
-        <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {displayedArticles.map((art) => (
-            <ArticleCard key={art.id} article={art} />
-          ))}
-        </div>
+        {displayedArticles.length > 0 ? (
+          <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {displayedArticles.map((art) => (
+              <ArticleCard key={art.id} article={art} />
+            ))}
+          </div>
+        ) : (
+          <p className="mt-8 text-sm text-forest-900/70">
+            No articles are currently attributed to {author.name}.
+          </p>
+        )}
       </section>
     </article>
   );

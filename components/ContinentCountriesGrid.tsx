@@ -21,9 +21,13 @@ function firstLetter(name: string): string {
 export default function ContinentCountriesGrid({
   countries,
   regionName,
+  hrefByCode = {},
 }: {
   countries: StrapiCountry[];
   regionName: string;
+  /** ISO code → canonical destination URL. Countries missing from the map
+   *  fall back to /countries/<code>, which redirects to the same place. */
+  hrefByCode?: Record<string, string>;
 }) {
   const [activeLetter, setActiveLetter] = useState<string | null>(null);
   const [expanded, setExpanded] = useState(false);
@@ -98,7 +102,7 @@ export default function ContinentCountriesGrid({
           <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {displayed.map((c) => (
               <li key={c.id}>
-                <CountryChip country={c} />
+                <CountryChip country={c} href={hrefByCode[c.code.toUpperCase()]} />
               </li>
             ))}
           </ul>
@@ -153,10 +157,10 @@ function LetterChip({
   );
 }
 
-function CountryChip({ country }: { country: StrapiCountry }) {
+function CountryChip({ country, href }: { country: StrapiCountry; href?: string }) {
   return (
     <Link
-      href={`/countries/${country.code}`}
+      href={href ?? `/countries/${country.code.toLowerCase()}`}
       className="group flex items-center gap-3 rounded-lg border border-forest-900/10 bg-paper px-4 py-3 transition hover:-translate-y-0.5 hover:border-forest-900/30 hover:shadow-sm"
       data-testid={`continent-country-${country.code}`}
     >

@@ -22,6 +22,7 @@
 import type { StrapiAirline } from '@/lib/strapi';
 import { getRouteFacts } from '@/lib/route-facts';
 import { hasAirlineReviews } from '@/lib/airline-reviews';
+import { airlineHasCeased } from '@/lib/airline-status';
 
 /** 1 = full treatment, 2 = data modules only, 3 = directory row only. */
 export type AirlineTier = 1 | 2 | 3;
@@ -101,7 +102,12 @@ export function airlineTier(a: AirlineTierInput, hasTrackedRoutes: boolean): Air
  * operations — several of those look like airlines that stopped flying after
  * the reviews were written. They stay out of the index until an operating
  * status is recorded against them rather than inferred here.
+ *
+ * A carrier with a sourced cessation date (lib/airline-status.ts) is never
+ * indexable, whatever its tier: route data outlives an airline too, and a
+ * "book Jet Airways" page in the index is exactly what the audit flagged.
  */
 export function airlineIsIndexable(a: AirlineTierInput, hasTrackedRoutes: boolean): boolean {
+  if (airlineHasCeased(a.slug)) return false;
   return airlineTier(a, hasTrackedRoutes) < 3;
 }

@@ -4,11 +4,13 @@ import {
   listArticles,
   listAirlines,
   listAirports,
-  listCountries,
   listDestinations,
+  fetchRouteCoverage,
 } from '@/lib/strapi';
 import { SECTIONS } from '@/lib/sections';
 import { LEGAL_DOCS } from '@/lib/legal';
+import { AIRLINES_INDEXABLE, AIRPORTS_INDEXABLE, airportIsPublished, airportIsSubstantive } from '@/lib/entity-seo';
+import { airlineGuideIsPublished, airlineIsIndexable } from '@/lib/airline-tier';
 import { airportPath } from '@/lib/airport-slugs';
 import { breadcrumbJsonLd } from '@/lib/jsonld';
 import { JsonLd } from '@/components/SeoBlocks';
@@ -17,37 +19,47 @@ export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: 'Site Map',
-  description: 'A complete index of every page on Originfacts — articles, destinations, airlines, airports, countries, categories, and policies.',
+  description: 'An index of every indexed page on Originfacts — articles, destination guides, verified airline guides, airport guides, categories and policies.',
   /**
    * `noindex, follow`. This page is a navigation aid for people, not a
-   * destination: at 17,066 words it was the largest page on the site and
-   * consisted entirely of links.
+   * destination, and `follow` is kept because crawling through to the real
+   * pages is the point of it.
    *
-   * It also enumerates every airline, airport and country straight from Strapi
-   * with no tier gate, so while it was indexed it re-exposed the whole
-   * directory that AIRLINES_INDEXABLE and the Tier 3 `noindex` were holding
-   * back. `follow` is kept deliberately — crawling through to the real pages is
-   * the point of it.
+   * It used to enumerate every airline, airport and country straight from
+   * Strapi with no tier gate — 5,190 directory rows against 90 articles — so
+   * anyone sampling the site from here landed on a noindexed stub 98 times in
+   * 100. It now lists exactly what the XML sitemap lists: the same gates,
+   * the same sets, and no URLs that only redirect.
    */
   robots: { index: false, follow: true },
 };
 
 export default async function SitemapPage() {
-  const [articlesRes, destinations, airlines, airports, countries] = await Promise.all([
+  const [articlesRes, destinations, allAirlines, allAirports, coverage] = await Promise.all([
     listArticles({ pageSize: 200 }).catch(() => ({ data: [], meta: null as never })),
     listDestinations().catch(() => []),
     listAirlines().catch(() => []),
     listAirports().catch(() => []),
-    listCountries().catch(() => []),
+    fetchRouteCoverage().catch(() => ({ originIatas: new Set<string>(), carrierSlugs: new Set<string>() })),
   ]);
 
   const articles = articlesRes.data;
   const sortedDestinations = [...destinations].sort((a, b) => a.name.localeCompare(b.name));
-  const sortedAirlines = [...airlines].sort((a, b) => a.name.localeCompare(b.name));
-  const sortedAirports = [...airports]
-    .filter((a) => a.iata)
+
+  // Same gate as app/sitemap.ts — reviewed guides, plus the tier gate once the
+  // directory-wide hold is lifted.
+  const airlines = allAirlines
+    .filter(
+      (a) =>
+        a.slug &&
+        (airlineGuideIsPublished(a.slug) ||
+          (AIRLINES_INDEXABLE && airlineIsIndexable(a, coverage.carrierSlugs.has(a.slug)))),
+    )
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  const airports = allAirports
+    .filter((a) => a.iata && (AIRPORTS_INDEXABLE || airportIsPublished(a.iata)) && airportIsSubstantive(a, coverage.originIatas.has(a.iata)))
     .sort((a, b) => a.iata.localeCompare(b.iata));
-  const sortedCountries = [...countries].sort((a, b) => a.name.localeCompare(b.name));
 
   const linkClass = 'text-primary-emphasis hover:text-primary-highlight hover:underline';
   const sectionTitle = 'editorial-h text-2xl font-bold text-forest-900';
@@ -63,7 +75,8 @@ export default async function SitemapPage() {
           Site Map
         </h1>
         <p className="mt-3 text-lg text-forest-900/75">
-          Every page on Originfacts, in one place. Looking for something a search engine can read?{' '}
+          Every indexed page on Originfacts, in one place. The full airline and airport directories are
+          searchable from their own hubs. Looking for something a search engine can read?{' '}
           <a href="/sitemap.xml" className={linkClass}>View the XML sitemap</a>.
         </p>
       </header>
@@ -76,6 +89,7 @@ export default async function SitemapPage() {
             <li><Link href="/about" className={linkClass}>About</Link></li>
             <li><Link href="/authors" className={linkClass}>Authors &amp; Editorial Experts</Link></li>
             <li><Link href="/methodology" className={linkClass}>Methodology</Link></li>
+            <li><Link href="/faq" className={linkClass}>FAQ</Link></li>
             <li><Link href="/contact" className={linkClass}>Contact</Link></li>
             <li><Link href="/all-articles" className={linkClass}>All articles</Link></li>
           </ul>
@@ -98,11 +112,11 @@ export default async function SitemapPage() {
             <li><Link href="/flight-search" className={linkClass}>Flight Search</Link></li>
             <li><Link href="/flight-routes" className={linkClass}>Flight Routes</Link></li>
             <li><Link href="/hotels" className={linkClass}>Hotels</Link></li>
+            <li><Link href="/destinations" className={linkClass}>Destinations</Link></li>
             <li><Link href="/countries" className={linkClass}>Countries</Link></li>
             <li><Link href="/airlines" className={linkClass}>Airlines</Link></li>
             <li><Link href="/airports" className={linkClass}>Airports</Link></li>
             <li><Link href="/airports/hubs" className={linkClass}>International hubs</Link></li>
-            <li><Link href="/destinations" className={linkClass}>Destinations</Link></li>
           </ul>
         </section>
 
@@ -138,6 +152,10 @@ export default async function SitemapPage() {
           <h2 className={sectionTitle}>
             Destinations <span className="text-base font-normal text-forest-900/60">({sortedDestinations.length})</span>
           </h2>
+          <p className="mt-2 max-w-3xl text-sm text-forest-900/65">
+            Continents, countries and cities. Country guides are the canonical page for each country — the
+            older <Link href="/countries" className={linkClass}>/countries</Link> URLs redirect here.
+          </p>
           <ul className="mt-4 grid gap-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
             {sortedDestinations.map((d) => (
               <li key={d.id}>
@@ -148,28 +166,17 @@ export default async function SitemapPage() {
         </section>
       )}
 
-      {sortedCountries.length > 0 && (
+      {airlines.length > 0 && (
         <section className="mt-16">
           <h2 className={sectionTitle}>
-            Countries <span className="text-base font-normal text-forest-900/60">({sortedCountries.length})</span>
+            Airline guides <span className="text-base font-normal text-forest-900/60">({airlines.length})</span>
           </h2>
+          <p className="mt-2 max-w-3xl text-sm text-forest-900/65">
+            Verified guides whose figures cite official carrier sources. Every other carrier is listed on the{' '}
+            <Link href="/airlines" className={linkClass}>airlines directory</Link>.
+          </p>
           <ul className="mt-4 grid gap-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
-            {sortedCountries.map((c) => (
-              <li key={c.id}>
-                <Link href={`/countries/${c.code.toLowerCase()}`} className={linkClass}>{c.name}</Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-
-      {sortedAirlines.length > 0 && (
-        <section className="mt-16">
-          <h2 className={sectionTitle}>
-            Airlines <span className="text-base font-normal text-forest-900/60">({sortedAirlines.length})</span>
-          </h2>
-          <ul className="mt-4 grid gap-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
-            {sortedAirlines.map((a) => (
+            {airlines.map((a) => (
               <li key={a.id}>
                 <Link href={`/airlines/${a.slug}`} className={linkClass}>{a.name}</Link>
               </li>
@@ -178,15 +185,19 @@ export default async function SitemapPage() {
         </section>
       )}
 
-      {sortedAirports.length > 0 && (
+      {airports.length > 0 && (
         <section className="mt-16">
           <h2 className={sectionTitle}>
-            Airports <span className="text-base font-normal text-forest-900/60">({sortedAirports.length})</span>
+            Airport guides <span className="text-base font-normal text-forest-900/60">({airports.length})</span>
           </h2>
+          <p className="mt-2 max-w-3xl text-sm text-forest-900/65">
+            Major hubs with a full guide. The complete airport directory is searchable from the{' '}
+            <Link href="/airports" className={linkClass}>airports hub</Link>.
+          </p>
           <ul className="mt-4 grid gap-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
-            {sortedAirports.map((a) => (
+            {airports.map((a) => (
               <li key={a.id}>
-                <Link href={airportPath(a, sortedAirports)} className={linkClass}>
+                <Link href={airportPath(a, allAirports)} className={linkClass}>
                   {a.iata.toUpperCase()} — {a.name}
                 </Link>
               </li>

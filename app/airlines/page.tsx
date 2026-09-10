@@ -3,6 +3,7 @@ import { listAirlines, mediaUrl } from '@/lib/strapi';
 import { PUBLISHED_AIRLINE_GUIDES, airlineGuideIsPublished, airlineTier } from '@/lib/airline-tier';
 import { getRouteFacts } from '@/lib/route-facts';
 import { getAirlineFacts } from '@/lib/airline-facts';
+import { airlineHasCeased } from '@/lib/airline-status';
 import AirlineDirectory from '@/components/AirlineDirectory';
 import Tier1AirlineCarousel, { type Tier1GuideSlide } from '@/components/Tier1AirlineCarousel';
 import ComparisonTable from '@/components/ComparisonTable';
@@ -68,6 +69,9 @@ export default async function AirlinesPage() {
   });
 
   const bySlug = new Map(allAirlines.map((a) => [a.slug, a]));
+  // Carriers with a sourced cessation date get a label in the directory so
+  // nobody reads them as bookable (lib/airline-status.ts).
+  const ceasedSlugs = airlines.filter((a) => airlineHasCeased(a.slug)).map((a) => a.slug);
 
   // Build slides and sort top priority global carriers first
   const carouselSlides: Tier1GuideSlide[] = Array.from(PUBLISHED_AIRLINE_GUIDES)
@@ -235,7 +239,7 @@ export default async function AirlinesPage() {
 
       {/* Main Directory & Search Grid */}
       <Suspense>
-        <AirlineDirectory airlines={airlines} publishedSlugs={Array.from(PUBLISHED_AIRLINE_GUIDES)} />
+        <AirlineDirectory airlines={airlines} publishedSlugs={Array.from(PUBLISHED_AIRLINE_GUIDES)} ceasedSlugs={ceasedSlugs} />
       </Suspense>
     </div>
   );

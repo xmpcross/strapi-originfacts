@@ -1,0 +1,756 @@
+{
+  "source": "Wikidata — dissolved, abolished or demolished date (P576) on entities holding an IATA (P229) or ICAO (P230) airline designator",
+  "sourceUrl": "https://query.wikidata.org/",
+  "retrieved": "2026-09-10",
+  "strapiAirlines": 1096,
+  "wikidataEntities": 3894,
+  "ceased": {
+    "adria-airways": {
+      "name": "Adria Airways",
+      "iata": "JP",
+      "icao": "ADR",
+      "ceasedOn": "2019-09-30",
+      "wikidata": "http://www.wikidata.org/entity/Q223191",
+      "wikidataLabel": "Adria Airways",
+      "match": "designator+name"
+    },
+    "aero-tropics-air-services": {
+      "name": "Aero-Tropics Air Services",
+      "iata": "HC",
+      "icao": "ATI",
+      "ceasedOn": "2008-10-01",
+      "wikidata": "http://www.wikidata.org/entity/Q4033467",
+      "wikidataLabel": "Aero-Tropics Air Services",
+      "match": "designator+name"
+    },
+    "aeromar": {
+      "name": "Aeromar",
+      "iata": "VW",
+      "icao": "TAO",
+      "ceasedOn": "2023-02-15",
+      "wikidata": "http://www.wikidata.org/entity/Q53082",
+      "wikidataLabel": "Aeromar",
+      "match": "designator+name"
+    },
+    "aeropelican-air-services": {
+      "name": "Aeropelican Air Services",
+      "iata": "OT",
+      "icao": "PEL",
+      "ceasedOn": "2013-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q381606",
+      "wikidataLabel": "Aeropelican Air Services",
+      "match": "designator+name"
+    },
+    "afrinat-international-airlines": {
+      "name": "Afrinat International Airlines",
+      "iata": "2F",
+      "icao": "IRP",
+      "ceasedOn": "2004-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q387848",
+      "wikidataLabel": "Afrinat International Airlines",
+      "match": "name"
+    },
+    "aigle-azur": {
+      "name": "Aigle Azur",
+      "iata": "ZI",
+      "icao": "AAF",
+      "ceasedOn": "2019-09-07",
+      "wikidata": "http://www.wikidata.org/entity/Q212703",
+      "wikidataLabel": "Aigle Azur (1970)",
+      "match": "designator+name"
+    },
+    "air-berlin": {
+      "name": "Air Berlin",
+      "iata": "HE",
+      "icao": "LGW",
+      "ceasedOn": "2017-10-27",
+      "wikidata": "http://www.wikidata.org/entity/Q156829",
+      "wikidataLabel": "Air Berlin",
+      "match": "name"
+    },
+    "air-cargo-germany": {
+      "name": "Air Cargo Germany",
+      "iata": "6U",
+      "icao": "ACX",
+      "ceasedOn": "2013-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q325722",
+      "wikidataLabel": "Air Cargo Germany",
+      "match": "designator+name"
+    },
+    "air-lituanica": {
+      "name": "Air Lituanica",
+      "iata": "LT",
+      "icao": "LTU",
+      "ceasedOn": "2015-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q13218993",
+      "wikidataLabel": "Air Lituanica",
+      "match": "designator+name"
+    },
+    "air-manas": {
+      "name": "Air Manas",
+      "iata": "ZM",
+      "icao": "CNB",
+      "ceasedOn": "2022-05-25",
+      "wikidata": "http://www.wikidata.org/entity/Q4698079",
+      "wikidataLabel": "Air Manas",
+      "match": "designator+name"
+    },
+    "air-mekong": {
+      "name": "Air Mekong",
+      "iata": "P8",
+      "icao": "MKG",
+      "ceasedOn": "2013-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q407572",
+      "wikidataLabel": "Air Mekong",
+      "match": "designator+name"
+    },
+    "air-moldova": {
+      "name": "Air Moldova",
+      "iata": "9U",
+      "icao": "MLD",
+      "ceasedOn": "2023-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q407606",
+      "wikidataLabel": "Air Moldova",
+      "match": "designator+name"
+    },
+    "air-namibia": {
+      "name": "Air Namibia",
+      "iata": "SW",
+      "icao": "NMB",
+      "ceasedOn": "2021-02-11",
+      "wikidata": "http://www.wikidata.org/entity/Q407624",
+      "wikidataLabel": "Air Namibia",
+      "match": "designator+name"
+    },
+    "ak-bars-aero": {
+      "name": "Ak Bars Aero",
+      "iata": "2B",
+      "icao": "ARD",
+      "ceasedOn": "2015-01-12",
+      "wikidata": "http://www.wikidata.org/entity/Q2107803",
+      "wikidataLabel": "Ak Bars Aero",
+      "match": "designator+name"
+    },
+    "australian-airlines": {
+      "name": "Australian Airlines",
+      "iata": "AO",
+      "icao": "VNV",
+      "ceasedOn": "2006-06-30",
+      "wikidata": "http://www.wikidata.org/entity/Q1369534",
+      "wikidataLabel": "Australian Airlines",
+      "match": "designator+name"
+    },
+    "blue-air": {
+      "name": "Blue Air",
+      "iata": "0B",
+      "icao": "BLA",
+      "ceasedOn": "2023-03-21",
+      "wikidata": "http://www.wikidata.org/entity/Q804561",
+      "wikidataLabel": "Blue Air",
+      "match": "designator+name"
+    },
+    "blue1": {
+      "name": "Blue1",
+      "iata": "KF",
+      "icao": "BLF",
+      "ceasedOn": "2016-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q214675",
+      "wikidataLabel": "Blue1",
+      "match": "designator+name"
+    },
+    "brit-air": {
+      "name": "Brit Air",
+      "iata": "DB",
+      "icao": "BZH",
+      "ceasedOn": "2017-03-01",
+      "wikidata": "http://www.wikidata.org/entity/Q918006",
+      "wikidataLabel": "Brit Air",
+      "match": "designator+name"
+    },
+    "buta-airways": {
+      "name": "Buta Airways",
+      "iata": "55",
+      "icao": null,
+      "ceasedOn": "2023-10-01",
+      "wikidata": "http://www.wikidata.org/entity/Q30344196",
+      "wikidataLabel": "Buta Airways",
+      "match": "name"
+    },
+    "bvi-airways": {
+      "name": "BVI Airways",
+      "iata": "XV",
+      "icao": "BVI",
+      "ceasedOn": "2017-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q4836825",
+      "wikidataLabel": "BVI Airways",
+      "match": "designator+name"
+    },
+    "chautauqua-airlines": {
+      "name": "Chautauqua Airlines",
+      "iata": "RP",
+      "icao": "CHQ",
+      "ceasedOn": "2014-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q183547",
+      "wikidataLabel": "Chautauqua Airlines",
+      "match": "designator+name"
+    },
+    "cimber": {
+      "name": "Cimber",
+      "iata": "QA",
+      "icao": "CIM",
+      "ceasedOn": "2017-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q94559",
+      "wikidataLabel": "Cimber Air",
+      "match": "designator+name"
+    },
+    "cobalt-air": {
+      "name": "Cobalt Air",
+      "iata": "CO",
+      "icao": "COA",
+      "ceasedOn": "2018-10-17",
+      "wikidata": "http://www.wikidata.org/entity/Q24255019",
+      "wikidataLabel": "Cobalt Air",
+      "match": "designator+name"
+    },
+    "compass-airlines": {
+      "name": "Compass Airlines",
+      "iata": "CP",
+      "icao": "CDN",
+      "ceasedOn": "2020-04-01",
+      "wikidata": "http://www.wikidata.org/entity/Q2042174",
+      "wikidataLabel": "Compass Airlines",
+      "match": "designator+name"
+    },
+    "dniproavia": {
+      "name": "Dniproavia",
+      "iata": "Z6",
+      "icao": "UDN",
+      "ceasedOn": "2018-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q637291",
+      "wikidataLabel": "Dniproavia",
+      "match": "designator+name"
+    },
+    "dobrolet": {
+      "name": "Dobrolet",
+      "iata": "QD",
+      "icao": "TBA",
+      "ceasedOn": "2014-08-03",
+      "wikidata": "http://www.wikidata.org/entity/Q16644952",
+      "wikidataLabel": "Dobrolet Airlines",
+      "match": "designator+name"
+    },
+    "donavia": {
+      "name": "Donavia",
+      "iata": "D9",
+      "icao": "DNV",
+      "ceasedOn": "2016-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q135214",
+      "wikidataLabel": "Donavia",
+      "match": "designator+name"
+    },
+    "eagle-atlantic-airlines": {
+      "name": "Eagle Atlantic Airlines",
+      "iata": "E2",
+      "icao": null,
+      "ceasedOn": "2014-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q17074105",
+      "wikidataLabel": "Eagle Atlantic Airlines",
+      "match": "designator+name"
+    },
+    "eastern-air-lines": {
+      "name": "Eastern Air Lines",
+      "iata": "EA",
+      "icao": "ANU",
+      "ceasedOn": "1991-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q611742",
+      "wikidataLabel": "Eastern Air Lines",
+      "match": "designator+name"
+    },
+    "ernest-airlines": {
+      "name": "Ernest Airlines",
+      "iata": "EG",
+      "icao": "JAA",
+      "ceasedOn": "2020-01-10",
+      "wikidata": "http://www.wikidata.org/entity/Q28225012",
+      "wikidataLabel": "Ernest Airlines",
+      "match": "designator+name"
+    },
+    "eurolot": {
+      "name": "Eurolot",
+      "iata": "K2",
+      "icao": "ELO",
+      "ceasedOn": "2015-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q311233",
+      "wikidataLabel": "EuroLOT",
+      "match": "designator+name"
+    },
+    "fat-far-eastern-air-transport": {
+      "name": "FAT Far Eastern Air Transport",
+      "iata": "FE",
+      "icao": "FEA",
+      "ceasedOn": "2019-12-13",
+      "wikidata": "http://www.wikidata.org/entity/Q704694",
+      "wikidataLabel": "Far Eastern Air Transport",
+      "match": "designator+name"
+    },
+    "first-air": {
+      "name": "First Air",
+      "iata": "7F",
+      "icao": "FAB",
+      "ceasedOn": "2021-05-01",
+      "wikidata": "http://www.wikidata.org/entity/Q1419271",
+      "wikidataLabel": "First Air",
+      "match": "designator+name"
+    },
+    "fly-arna": {
+      "name": "Fly Arna",
+      "iata": "G6",
+      "icao": "AKW",
+      "ceasedOn": "2024-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q110612856",
+      "wikidataLabel": "Fly Arna",
+      "match": "designator+name"
+    },
+    "flybe": {
+      "name": "Flybe",
+      "iata": "BE",
+      "icao": "BEE",
+      "ceasedOn": "2020-03-05",
+      "wikidata": "http://www.wikidata.org/entity/Q283790",
+      "wikidataLabel": "Flybe",
+      "match": "designator+name"
+    },
+    "flyegypt": {
+      "name": "FlyEgypt",
+      "iata": "FT",
+      "icao": "SRH",
+      "ceasedOn": "2024-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q22079859",
+      "wikidataLabel": "FlyEgypt",
+      "match": "designator+name"
+    },
+    "gambia-bird-airlines": {
+      "name": "Gambia Bird Airlines",
+      "iata": "3G",
+      "icao": null,
+      "ceasedOn": "2014-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q3094934",
+      "wikidataLabel": "Gambia Bird",
+      "match": "designator+name"
+    },
+    "halcyonair": {
+      "name": "Halcyonair",
+      "iata": "7Z",
+      "icao": "HCV",
+      "ceasedOn": "2013-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q967282",
+      "wikidataLabel": "Halcyonair",
+      "match": "designator+name"
+    },
+    "hawkair": {
+      "name": "Hawkair",
+      "iata": "BH",
+      "icao": "BHA",
+      "ceasedOn": "2016-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q1369827",
+      "wikidataLabel": "Hawkair",
+      "match": "designator+name"
+    },
+    "itek-air": {
+      "name": "Itek Air",
+      "iata": "GI",
+      "icao": "GIB",
+      "ceasedOn": "2010-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q1675251",
+      "wikidataLabel": "Itek Air",
+      "match": "designator+name"
+    },
+    "jet-airways": {
+      "name": "Jet Airways",
+      "iata": "9W",
+      "icao": "JAI",
+      "ceasedOn": "2019-04-17",
+      "wikidata": "http://www.wikidata.org/entity/Q727066",
+      "wikidataLabel": "Jet Airways",
+      "match": "designator+name"
+    },
+    "jetair-caribbean": {
+      "name": "JetAir Caribbean",
+      "iata": "4J",
+      "icao": "NWZ",
+      "ceasedOn": "2024-06-16",
+      "wikidata": "http://www.wikidata.org/entity/Q85310906",
+      "wikidataLabel": "Jetair Caribbean",
+      "match": "designator+name"
+    },
+    "jetlite": {
+      "name": "JetLite",
+      "iata": "S2",
+      "icao": "OLT",
+      "ceasedOn": "2012-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q1048418",
+      "wikidataLabel": "JetLite",
+      "match": "designator+name"
+    },
+    "kalstar-aviation": {
+      "name": "Kalstar Aviation",
+      "iata": "KD",
+      "icao": "KNI",
+      "ceasedOn": "2017-11-30",
+      "wikidata": "http://www.wikidata.org/entity/Q4209483",
+      "wikidataLabel": "Kalstar Aviation",
+      "match": "designator+name"
+    },
+    "kartika-airlines": {
+      "name": "Kartika Airlines",
+      "iata": "3Y",
+      "icao": "KAE",
+      "ceasedOn": "2010-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q2405297",
+      "wikidataLabel": "Kartika Airlines",
+      "match": "designator+name"
+    },
+    "kulula": {
+      "name": "Kulula",
+      "iata": null,
+      "icao": null,
+      "ceasedOn": "2022-06-09",
+      "wikidata": "http://www.wikidata.org/entity/Q930120",
+      "wikidataLabel": "kulula.com",
+      "match": "name"
+    },
+    "lumiwings": {
+      "name": "Lumiwings",
+      "iata": "L9",
+      "icao": "BAL",
+      "ceasedOn": "2025-09-01",
+      "wikidata": "http://www.wikidata.org/entity/Q56295142",
+      "wikidataLabel": "Lumiwings",
+      "match": "name"
+    },
+    "maluti-sky": {
+      "name": "Maluti Sky",
+      "iata": "7D",
+      "icao": "UDC",
+      "ceasedOn": "2017-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q23779117",
+      "wikidataLabel": "Maluti Sky",
+      "match": "designator+name"
+    },
+    "metrojet": {
+      "name": "MetroJet",
+      "iata": "7K",
+      "icao": "FSH",
+      "ceasedOn": "2015-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q1660297",
+      "wikidataLabel": "Metrojet",
+      "match": "designator+name"
+    },
+    "moldavian-airlines": {
+      "name": "Moldavian Airlines",
+      "iata": null,
+      "icao": null,
+      "ceasedOn": "2014-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q1752216",
+      "wikidataLabel": "Moldavian Airlines",
+      "match": "name"
+    },
+    "montenegro-airlines": {
+      "name": "Montenegro Airlines",
+      "iata": "YM",
+      "icao": "MGX",
+      "ceasedOn": "2020-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q638897",
+      "wikidataLabel": "Montenegro Airlines",
+      "match": "designator+name"
+    },
+    "myairline": {
+      "name": "MYAirline",
+      "iata": "Z9",
+      "icao": "DCP",
+      "ceasedOn": "2023-10-12",
+      "wikidata": "http://www.wikidata.org/entity/Q112629032",
+      "wikidataLabel": "MYAirline",
+      "match": "designator+name"
+    },
+    "niki": {
+      "name": "Niki",
+      "iata": "HG",
+      "icao": "NLY",
+      "ceasedOn": "2017-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q865858",
+      "wikidataLabel": "Niki",
+      "match": "designator+name"
+    },
+    "nokscoot": {
+      "name": "NokScoot",
+      "iata": "XW",
+      "icao": "CXH",
+      "ceasedOn": "2020-06-26",
+      "wikidata": "http://www.wikidata.org/entity/Q15818414",
+      "wikidataLabel": "NokScoot",
+      "match": "designator+name"
+    },
+    "northwest-airlines": {
+      "name": "Northwest Airlines",
+      "iata": "NW",
+      "icao": "NWA",
+      "ceasedOn": "2010-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q309174",
+      "wikidataLabel": "Northwest Airlines",
+      "match": "designator+name"
+    },
+    "norwegian-long-haul": {
+      "name": "Norwegian Long Haul",
+      "iata": "DU",
+      "icao": "HMS",
+      "ceasedOn": "2021-01-14",
+      "wikidata": "http://www.wikidata.org/entity/Q15139453",
+      "wikidataLabel": "Norwegian Long Haul",
+      "match": "designator+name"
+    },
+    "onur-air": {
+      "name": "Onur Air",
+      "iata": "8Q",
+      "icao": "OHY",
+      "ceasedOn": "2021-06-01",
+      "wikidata": "http://www.wikidata.org/entity/Q1479225",
+      "wikidataLabel": "Onur Air",
+      "match": "designator+name"
+    },
+    "play": {
+      "name": "PLAY",
+      "iata": "OG",
+      "icao": "OTG",
+      "ceasedOn": "2025-09-29",
+      "wikidata": "http://www.wikidata.org/entity/Q74705406",
+      "wikidataLabel": "PLAY",
+      "match": "designator+name"
+    },
+    "primera-air": {
+      "name": "Primera Air",
+      "iata": "PF",
+      "icao": "PRI",
+      "ceasedOn": "2018-10-01",
+      "wikidata": "http://www.wikidata.org/entity/Q153686",
+      "wikidataLabel": "Primera Air",
+      "match": "designator+name"
+    },
+    "royal-flight": {
+      "name": "Royal Flight",
+      "iata": "RL",
+      "icao": "PPW",
+      "ceasedOn": "2022-05-01",
+      "wikidata": "http://www.wikidata.org/entity/Q17492738",
+      "wikidataLabel": "Royal Flight",
+      "match": "designator+name"
+    },
+    "safi-airways": {
+      "name": "Safi Airways",
+      "iata": "4Q",
+      "icao": "SFW",
+      "ceasedOn": "2017-08-01",
+      "wikidata": "http://www.wikidata.org/entity/Q1468348",
+      "wikidataLabel": "Safi Airways",
+      "match": "designator+name"
+    },
+    "seaport-airlines": {
+      "name": "SeaPort Airlines",
+      "iata": "X4",
+      "icao": null,
+      "ceasedOn": "2016-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q891637",
+      "wikidataLabel": "SeaPort Airlines",
+      "match": "name"
+    },
+    "silkair": {
+      "name": "SilkAir",
+      "iata": "MI",
+      "icao": "SLK",
+      "ceasedOn": "2021-01-28",
+      "wikidata": "http://www.wikidata.org/entity/Q284748",
+      "wikidataLabel": "SilkAir",
+      "match": "designator+name"
+    },
+    "skol": {
+      "name": "SKOL",
+      "iata": null,
+      "icao": null,
+      "ceasedOn": "2022-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q14628848",
+      "wikidataLabel": "Skol Airlines",
+      "match": "name"
+    },
+    "sky-airlines": {
+      "name": "Sky Airlines",
+      "iata": "ZY",
+      "icao": "SHY",
+      "ceasedOn": "2013-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q1547155",
+      "wikidataLabel": "Sky Airlines",
+      "match": "designator+name"
+    },
+    "sky-wings-airlines": {
+      "name": "Sky Wings Airlines",
+      "iata": "ND",
+      "icao": null,
+      "ceasedOn": "2012-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q763478",
+      "wikidataLabel": "Sky Wings Airlines",
+      "match": "designator+name"
+    },
+    "spirit-airlines": {
+      "name": "Spirit Airlines",
+      "iata": "NK",
+      "icao": "NKS",
+      "ceasedOn": "2026-05-02",
+      "wikidata": "http://www.wikidata.org/entity/Q1190598",
+      "wikidataLabel": "Spirit Airlines",
+      "match": "designator+name"
+    },
+    "sunexpress-deutschland": {
+      "name": "SunExpress Deutschland",
+      "iata": "XG",
+      "icao": "SXD",
+      "ceasedOn": "2020-06-26",
+      "wikidata": "http://www.wikidata.org/entity/Q1726112",
+      "wikidataLabel": "SunExpress Deutschland",
+      "match": "designator+name"
+    },
+    "sunwing-airlines": {
+      "name": "Sunwing Airlines",
+      "iata": "WG",
+      "icao": "SWG",
+      "ceasedOn": "2024-10-26",
+      "wikidata": "http://www.wikidata.org/entity/Q1198402",
+      "wikidataLabel": "Sunwing Airlines",
+      "match": "designator+name"
+    },
+    "swoop": {
+      "name": "Swoop",
+      "iata": "WO",
+      "icao": "WSW",
+      "ceasedOn": "2023-10-28",
+      "wikidata": "http://www.wikidata.org/entity/Q47508526",
+      "wikidataLabel": "Swoop",
+      "match": "designator+name"
+    },
+    "tame": {
+      "name": "TAME",
+      "iata": "EQ",
+      "icao": "TAE",
+      "ceasedOn": "2020-05-19",
+      "wikidata": "http://www.wikidata.org/entity/Q1530726",
+      "wikidataLabel": "TAME",
+      "match": "designator+name"
+    },
+    "tatarstan-airlines": {
+      "name": "Tatarstan Airlines",
+      "iata": "U9",
+      "icao": "TAK",
+      "ceasedOn": "2014-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q1785216",
+      "wikidataLabel": "Tatarstan Airlines",
+      "match": "designator+name"
+    },
+    "thomas-cook-airlines": {
+      "name": "Thomas Cook Airlines",
+      "iata": "MT",
+      "icao": "TCX",
+      "ceasedOn": "2019-09-23",
+      "wikidata": "http://www.wikidata.org/entity/Q852650",
+      "wikidataLabel": "Thomas Cook Airlines",
+      "match": "designator+name"
+    },
+    "trip-linhas-aereas": {
+      "name": "TRIP Linhas Aéreas",
+      "iata": "T4",
+      "icao": "TIB",
+      "ceasedOn": "2014-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q1371222",
+      "wikidataLabel": "TRIP Linhas Aéreas",
+      "match": "designator+name"
+    },
+    "uni-top-airlines": {
+      "name": "Uni-Top Airlines",
+      "iata": "UW",
+      "icao": "UTP",
+      "ceasedOn": "2019-11-20",
+      "wikidata": "http://www.wikidata.org/entity/Q7884618",
+      "wikidataLabel": "Uni-Top Airlines",
+      "match": "designator+name"
+    },
+    "vim-airlines": {
+      "name": "VIM Airlines",
+      "iata": "NN",
+      "icao": "MOV",
+      "ceasedOn": "2017-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q1326062",
+      "wikidataLabel": "VIM Airlines",
+      "match": "designator+name"
+    },
+    "virgin-america": {
+      "name": "Virgin America",
+      "iata": "VX",
+      "icao": "VRD",
+      "ceasedOn": "2018-04-24",
+      "wikidata": "http://www.wikidata.org/entity/Q645084",
+      "wikidataLabel": "Virgin America",
+      "match": "designator+name"
+    },
+    "vladivostok-air": {
+      "name": "Vladivostok Air",
+      "iata": "XF",
+      "icao": "VLK",
+      "ceasedOn": "2014-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q1068446",
+      "wikidataLabel": "Vladivostok Air",
+      "match": "designator+name"
+    },
+    "vlm-airlines": {
+      "name": "VLM Airlines",
+      "iata": "VG",
+      "icao": "VLM",
+      "ceasedOn": "2016-06-22",
+      "wikidata": "http://www.wikidata.org/entity/Q606190",
+      "wikidataLabel": "VLM Airlines",
+      "match": "designator+name"
+    },
+    "voepass-linhas-aereas": {
+      "name": "VOEPASS Linhas Aéreas",
+      "iata": "2Z",
+      "icao": "PTB",
+      "ceasedOn": "2025-06-24",
+      "wikidata": "http://www.wikidata.org/entity/Q1814331",
+      "wikidataLabel": "Voepass Linhas Aéreas",
+      "match": "designator+name"
+    },
+    "webjet-linhas-aereas": {
+      "name": "Webjet Linhas Aereas",
+      "iata": "WH",
+      "icao": null,
+      "ceasedOn": "2012-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q428096",
+      "wikidataLabel": "WebJet Linhas Aéreas",
+      "match": "designator+name"
+    },
+    "wow-air": {
+      "name": "WOW Air",
+      "iata": "WW",
+      "icao": "WOW",
+      "ceasedOn": "2019-03-28",
+      "wikidata": "http://www.wikidata.org/entity/Q1156931",
+      "wikidataLabel": "WOW air",
+      "match": "designator+name"
+    },
+    "zambezi-airlines": {
+      "name": "Zambezi Airlines",
+      "iata": "ZJ",
+      "icao": "ZMA",
+      "ceasedOn": "2011-01-01",
+      "wikidata": "http://www.wikidata.org/entity/Q145477",
+      "wikidataLabel": "Zambezi Airlines",
+      "match": "designator+name"
+    }
+  }
+}

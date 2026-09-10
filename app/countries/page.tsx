@@ -1,4 +1,4 @@
-import { listAirports, listCountries } from '@/lib/strapi';
+import { listAirports, listCountries, listDestinations } from '@/lib/strapi';
 import CountriesDirectory, { type CountryRow } from '@/components/CountriesDirectory';
 import ExpandableDescription from '@/components/ExpandableDescription';
 import { JsonLd } from '@/components/SeoBlocks';
@@ -17,10 +17,20 @@ export const metadata = {
 };
 
 export default async function CountriesPage() {
-  const [strapiCountries, airports] = await Promise.all([
+  const [strapiCountries, airports, destinations] = await Promise.all([
     listCountries().catch(() => []),
     listAirports().catch(() => []),
+    listDestinations().catch(() => []),
   ]);
+
+  // /countries/<code> only 301s to the country's destination guide, so link
+  // straight to the canonical URL instead of routing every click (and every
+  // crawler) through a redirect.
+  const hrefByCode = new Map<string, string>();
+  for (const d of destinations) {
+    if (d.type === 'country' && d.countryCode && d.slug) hrefByCode.set(d.countryCode.toUpperCase(), `/destinations/${d.slug}`);
+  }
+  const hrefFor = (code: string) => hrefByCode.get(code.toUpperCase()) ?? `/countries/${code.toLowerCase()}`;
 
   // Build aggregates (airport + city counts) from airports keyed by ISO code.
   const agg = new Map<string, { airports: number; cities: Set<string>; region: CountryRow['region'] }>();
@@ -46,6 +56,7 @@ export default async function CountriesPage() {
         return {
           code: c.code.toUpperCase(),
           name: c.name,
+          href: hrefFor(c.code),
           region: c.region ?? a?.region ?? null,
           airportCount: a?.airports ?? 0,
           cityCount: a?.cities.size ?? 0,
@@ -60,6 +71,7 @@ export default async function CountriesPage() {
         return {
           code,
           name: airport?.country || code,
+          href: hrefFor(code),
           region: a.region,
           airportCount: a.airports,
           cityCount: a.cities.size,
@@ -75,7 +87,7 @@ export default async function CountriesPage() {
     itemListName: 'Countries',
     items: countries.map((c) => ({
       name: c.name,
-      url: `/countries/${c.code.toLowerCase()}`,
+      url: c.href ?? `/countries/${c.code.toLowerCase()}`,
     })),
   });
 

@@ -72,3 +72,19 @@ We welcome reader input, corrections, and editorial inquiries. If you notice an 
 - **Online Form:** [Contact Page](https://www.originfacts.com/contact)  
 
 We review editorial feedback promptly and publish corrections whenever inaccuracies are identified.
+
+---
+
+## 6. How Do We Rank, Review and Label What We Publish?
+
+### What a "best", "top" or "picks" list means on Originfacts
+Ranked and "best of" articles are editorial selections. They are compiled from published fare and route data, official airline and hotel policies, and the sources listed in section 2, then reviewed by a named editor. They are not the result of hands-on product testing, mystery-shopping or paid stays, and we do not use those words in a title unless the article body describes exactly what was tested, by whom and when.
+
+### How airline reference pages are verified
+Airline guides that carry a **Verified Guide** label print baggage, fare, check-in and contact figures that each cite the official carrier page they were taken from, together with the date they were checked. A figure that could not be traced to an official source is left blank rather than estimated. Where two official sources disagree, both values are shown and neither is presented as settled.
+
+### How we label airlines that no longer fly
+The airline directory includes carriers that have ceased operations. Each of those pages carries a notice with the cessation date recorded in Wikidata and a link to the record it came from, and the flight-booking tools are removed from that page. Carriers whose status we cannot source are shown without a label rather than guessed at.
+
+### What our directory does not include
+Organisations that hold an IATA designator but do not operate flights — railways, ferry operators, reservation-system vendors, trade bodies and military units — are excluded from the airline directory.

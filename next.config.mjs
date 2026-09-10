@@ -19,6 +19,7 @@ const nextConfig = {
       './content/legal/**',
       './content/pages/**',
       './data/airline-refs/**',
+      './data/airline-status/**',
       './data/route-facts/**',
     ],
   },
@@ -41,6 +42,15 @@ const nextConfig = {
       { source: '/category/travel-resources', destination: '/category/travel-tips', permanent: true },
       // Car Rental → Car Rentals (category renamed in Strapi, 2026-05-20).
       { source: '/category/car-rental', destination: '/category/car-rentals', permanent: true },
+      // Two articles covered airport-vs-city car rentals (2026-09 AdSense
+      // audit). The longer one with worked scenarios is canonical; the other
+      // is hidden from every listing (HIDDEN_ARTICLE_SLUGS in lib/strapi.ts)
+      // and its URL redirects here.
+      {
+        source: '/articles/airport-vs-city-car-rentals-which-saves-money',
+        destination: '/articles/airport-vs-city-car-rentals-cheaper',
+        permanent: true,
+      },
       // Staging → production: bounce every /flights visit on the
       // originfacts.fxnstudio.com host over to www.originfacts.com so
       // bookings go through the production TravelPayouts affiliate config.

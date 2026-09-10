@@ -3,6 +3,7 @@ import { Fragment } from 'react';
 import Link from 'next/link';
 import {
   getDestination,
+  getDestinationByCountryCode,
   listAirlinesByCountry,
   listAirports,
   listAirportsByCountryCode,
@@ -170,7 +171,13 @@ export default async function DestinationPage({ params }: Props) {
   } else if (isCity && destination.countryCode) {
     const cName = countryNameFromCode(destination.countryCode);
     if (cName) {
-      breadcrumbItems.push({ name: cName, url: `/countries/${destination.countryCode.toLowerCase()}` });
+      // Link the country crumb to its destination guide; /countries/<code>
+      // would only redirect there.
+      const countryGuide = await getDestinationByCountryCode(destination.countryCode).catch(() => null);
+      breadcrumbItems.push({
+        name: cName,
+        url: countryGuide ? `/destinations/${countryGuide.slug}` : `/countries/${destination.countryCode.toLowerCase()}`,
+      });
     }
   }
   breadcrumbItems.push({ name: destination.name, url: `/destinations/${destination.slug}` });
@@ -1497,6 +1504,10 @@ function ContinentDestinationPage({
   const aboutSections = destination.description ? parseAboutSections(destination.description) : [];
   const leadParagraphs = aboutSections.find((s) => !s.heading)?.paragraphs ?? [];
   const namedSections = aboutSections.filter((s) => s.heading);
+  const countryHrefByCode: Record<string, string> = {};
+  for (const d of childDestinations) {
+    if (d.type === 'country' && d.countryCode && d.slug) countryHrefByCode[d.countryCode.toUpperCase()] = `/destinations/${d.slug}`;
+  }
   // About block right column = Overview (full) + History (Read More
   // truncates after 30 words). Travel Notes renders full-width below
   // Countries. Interesting Facts + Top Travel Highlights render in a 2-col
@@ -1580,8 +1591,9 @@ function ContinentDestinationPage({
         articlesCount={articles.length}
       />
 
-      {/* 3. Countries — full width, with A-Z letter filter */}
-      <ContinentCountriesGrid countries={countries} regionName={destination.name} />
+      {/* 3. Countries — full width, with A-Z letter filter. Each chip links
+          to the country's destination guide (the canonical URL). */}
+      <ContinentCountriesGrid countries={countries} regionName={destination.name} hrefByCode={countryHrefByCode} />
 
       {/* 3a. Travel Notes — full width, below Countries */}
       {travelNotesSection && (

@@ -1,6 +1,24 @@
 import qs from 'qs';
 
+import { isNonAirline } from '@/lib/airline-exclusions';
+
 const BASE = (process.env.NEXT_PUBLIC_STRAPI_URL || 'https://cms.fxnstudio.com').replace(/\/$/, '');
+
+/**
+ * Published articles that must not appear anywhere on the site. Each URL has
+ * a permanent redirect in next.config.mjs, so the filter only has to keep the
+ * slug out of listings, feeds, sitemaps and prev/next navigation.
+ *
+ * - airport-vs-city-car-rentals-which-saves-money: duplicate of
+ *   airport-vs-city-car-rentals-cheaper (2026-09 AdSense audit).
+ */
+export const HIDDEN_ARTICLE_SLUGS: readonly string[] = ['airport-vs-city-car-rentals-which-saves-money'];
+
+/** Strapi filter clause that drops HIDDEN_ARTICLE_SLUGS; spread into `filters`. */
+const visibleArticles = (): Record<string, unknown> =>
+  HIDDEN_ARTICLE_SLUGS.length ? { slug: { $notIn: [...HIDDEN_ARTICLE_SLUGS] } } : {};
+
+const dropNonAirlines = <T extends { slug: string }>(rows: T[]): T[] => rows.filter((a) => !isNonAirline(a.slug));
 const TOKEN = process.env.STRAPI_API_TOKEN;
 
 export type StrapiImage = { url: string; alternativeText?: string; width?: number; height?: number } | null;
@@ -220,7 +238,7 @@ export function mediaUrl(img: StrapiImage): string | null {
 }
 
 export async function listArticles(opts: { page?: number; pageSize?: number; category?: string; destination?: string; destinations?: string[]; q?: string } = {}) {
-  const filters: Record<string, unknown> = {};
+  const filters: Record<string, unknown> = { ...visibleArticles() };
   if (opts.category) filters.category = { slug: { $eqi: opts.category } };
   const destinationSlugs = opts.destinations?.filter(Boolean);
   if (destinationSlugs?.length) filters.destinations = { slug: { $in: destinationSlugs } };
@@ -256,7 +274,7 @@ export async function listSidebarCategoryTiles(slugs: string[]) {
     slugs.map(async (slug) => {
       try {
         const res = await strapiFetch<ListResponse<StrapiArticle>>('articles', {
-          filters: { category: { slug: { $eqi: slug } } },
+          filters: { ...visibleArticles(), category: { slug: { $eqi: slug } } },
           sort: ['publishedAt:desc'],
           populate: ['coverImage', 'category'],
           pagination: { pageSize: 1 },
@@ -285,6 +303,7 @@ export async function listHotArticles(opts: { page?: number; pageSize?: number }
     sort: ['readingTimeMinutes:desc', 'publishedAt:desc'],
     populate: ['coverImage', 'category', 'tags', 'author', 'destinations'],
     pagination: { page: opts.page ?? 1, pageSize: opts.pageSize ?? 12 },
+    filters: visibleArticles(),
   });
   return res;
 }
@@ -297,13 +316,13 @@ export async function listHotArticles(opts: { page?: number; pageSize?: number }
 export async function getAdjacentArticles(publishedAt: string, currentId: number) {
   const [prevRes, nextRes] = await Promise.all([
     strapiFetch<ListResponse<StrapiArticle>>('articles', {
-      filters: { publishedAt: { $lt: publishedAt } },
+      filters: { ...visibleArticles(), publishedAt: { $lt: publishedAt } },
       sort: ['publishedAt:desc'],
       populate: ['coverImage', 'category'],
       pagination: { pageSize: 1 },
     }).catch(() => ({ data: [] as StrapiArticle[] })),
     strapiFetch<ListResponse<StrapiArticle>>('articles', {
-      filters: { publishedAt: { $gt: publishedAt } },
+      filters: { ...visibleArticles(), publishedAt: { $gt: publishedAt } },
       sort: ['publishedAt:asc'],
       populate: ['coverImage', 'category'],
       pagination: { pageSize: 1 },
@@ -325,11 +344,13 @@ export async function listSidebarArticles(limit = 5) {
       sort: ['publishedAt:desc'],
       populate: ['coverImage', 'category'],
       pagination: { pageSize: limit },
+      filters: visibleArticles(),
     }),
     strapiFetch<ListResponse<StrapiArticle>>('articles', {
       sort: ['readingTimeMinutes:desc', 'publishedAt:desc'],
       populate: ['coverImage', 'category'],
       pagination: { pageSize: limit },
+      filters: visibleArticles(),
     }),
   ]);
   return { recent: recentRes.data, popular: popularRes.data };
@@ -341,6 +362,7 @@ export async function listDestinationArticles(opts: { page?: number; pageSize?: 
     populate: ['coverImage', 'category', 'tags', 'author', 'destinations'],
     pagination: { page: opts.page ?? 1, pageSize: opts.pageSize ?? 12 },
     filters: {
+      ...visibleArticles(),
       destinations: {
         id: { $notNull: true },
         type: { $in: ['city', 'country', 'region'] },
@@ -540,11 +562,14 @@ export async function listAirlines() {
     fetchAllPages<StrapiAirline>('airlines', {
       sort: ['name:asc'],
       populate: ['logo'],
-    }),
+    }).then(dropNonAirlines),
   );
 }
 
 export async function getAirline(slug: string) {
+  // Railways, GDS vendors and the like hold IATA codes but are not airlines;
+  // their pages 404 rather than render as carriers (lib/airline-status.ts).
+  if (isNonAirline(slug)) return null;
   const res = await strapiFetch<ListResponse<StrapiAirline>>('airlines', {
     filters: { slug: { $eq: slug } },
     populate: ['logo'],
@@ -626,7 +651,7 @@ export async function listAirlinesByCountry(countryName: string, limit = 200) {
     populate: ['logo'],
     pagination: { pageSize: limit },
   });
-  return res.data;
+  return dropNonAirlines(res.data);
 }
 
 export async function listRoutesByCountryCode(code: string, limit = 20) {

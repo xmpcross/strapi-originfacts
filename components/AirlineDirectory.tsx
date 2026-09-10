@@ -47,9 +47,12 @@ function firstLetterBucket(name: string): string {
 export default function AirlineDirectory({
   airlines,
   publishedSlugs = [],
+  ceasedSlugs = [],
 }: {
   airlines: StrapiAirline[];
   publishedSlugs?: string[];
+  /** Carriers that have stopped flying — shown with a "Ceased operations" label. */
+  ceasedSlugs?: string[];
 }) {
   const searchParams = useSearchParams();
   const initialCountry = searchParams.get('country')?.trim() ?? '';
@@ -61,6 +64,7 @@ export default function AirlineDirectory({
   const [expandedRegions, setExpandedRegions] = useState<Set<AirlineRegion>>(new Set());
 
   const publishedSet = useMemo(() => new Set(publishedSlugs), [publishedSlugs]);
+  const ceasedSet = useMemo(() => new Set(ceasedSlugs), [ceasedSlugs]);
 
   const toggleRegion = (r: AirlineRegion) =>
     setExpandedRegions((prev) => {
@@ -294,7 +298,7 @@ export default function AirlineDirectory({
                   )}
                   <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     {displayed.map((a) => (
-                      <AirlineCard key={a.id} airline={a} isVerified={publishedSet.has(a.slug)} />
+                      <AirlineCard key={a.id} airline={a} isVerified={publishedSet.has(a.slug)} hasCeased={ceasedSet.has(a.slug)} />
                     ))}
                   </div>
                   {overflow > 0 && (
@@ -432,7 +436,15 @@ function LetterChip({
   );
 }
 
-function AirlineCard({ airline, isVerified = false }: { airline: StrapiAirline; isVerified?: boolean }) {
+function AirlineCard({
+  airline,
+  isVerified = false,
+  hasCeased = false,
+}: {
+  airline: StrapiAirline;
+  isVerified?: boolean;
+  hasCeased?: boolean;
+}) {
   const logo = mediaUrl(airline.logo ?? null);
 
   return (
@@ -470,6 +482,14 @@ function AirlineCard({ airline, isVerified = false }: { airline: StrapiAirline; 
           <div className="mt-2 inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-bold text-emerald-800">
             <svg className="h-3 w-3 fill-current" viewBox="0 0 16 16"><path d="m3.5 8.2 2.8 2.7 6.2-6" /></svg>
             Verified Guide
+          </div>
+        )}
+        {hasCeased && (
+          <div
+            className="mt-2 inline-flex items-center rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-bold text-amber-900"
+            data-testid={`airline-ceased-${airline.slug}`}
+          >
+            Ceased operations
           </div>
         )}
       </div>

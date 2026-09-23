@@ -60,3 +60,4 @@ data/captures/*
 # re-extract.
 data/captures/manual/**/candidates.json
 ops/fetch/node_modules
+run/

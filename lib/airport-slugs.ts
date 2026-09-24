@@ -1,5 +1,7 @@
 import type { StrapiAirport } from '@/lib/strapi';
 
+import multiAirportSlugs from '@/data/multi-airport-slugs.json';
+
 const PREFERRED_AIRPORT_SLUGS: Record<string, string> = {
   EZE: 'buenos-aires',
   GIG: 'rio-de-janeiro',
@@ -8,6 +10,8 @@ const PREFERRED_AIRPORT_SLUGS: Record<string, string> = {
   SCL: 'santiago',
   SYD: 'sydney',
 };
+
+const MULTI_AIRPORT_SLUGS_MAP: Record<string, string> = multiAirportSlugs as Record<string, string>;
 
 export function preferredAirportSlug(iata: string): string | null {
   return PREFERRED_AIRPORT_SLUGS[iata.toUpperCase()] ?? null;
@@ -24,14 +28,19 @@ export function slugifyAirportPart(value: string): string {
 }
 
 export function airportSlug(airport: Pick<StrapiAirport, 'iata' | 'city' | 'name'>, allAirports: Pick<StrapiAirport, 'iata' | 'city' | 'name'>[] = []): string {
-  const preferred = preferredAirportSlug(airport.iata);
+  const iataUpper = (airport.iata || '').toUpperCase();
+  const preferred = preferredAirportSlug(iataUpper);
   if (preferred) return preferred;
+
+  if (MULTI_AIRPORT_SLUGS_MAP[iataUpper]) {
+    return MULTI_AIRPORT_SLUGS_MAP[iataUpper];
+  }
 
   const base = slugifyAirportPart(airport.city || airport.name || airport.iata);
   if (!base) return airport.iata.toLowerCase();
 
   const duplicateCity = allAirports.some((candidate) => {
-    if (candidate.iata.toUpperCase() === airport.iata.toUpperCase()) return false;
+    if (candidate.iata.toUpperCase() === iataUpper) return false;
     return slugifyAirportPart(candidate.city || candidate.name || candidate.iata) === base;
   });
 

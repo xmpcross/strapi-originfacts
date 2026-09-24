@@ -101,6 +101,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en" className={`${inter.variable} ${urbanist.variable} ${jakarta.variable} ${figtree.variable}`}>
       <head>
+        {/* Impact.com site verification (second tag). Written verbatim with `value`,
+            as Impact provides it; the metadata API would rewrite `value` to `content`. */}
+        <meta {...({ name: 'impact-site-verification', value: '-2066044789' } as Record<string, string>)} />
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{

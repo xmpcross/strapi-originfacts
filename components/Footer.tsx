@@ -130,7 +130,7 @@ export default function Footer() {
           <h4 className="editorial-h text-lg font-bold capitalize tracking-normal text-white">Discover</h4>
           <ul className="mt-3 space-y-2 text-sm text-slate-300" data-testid="footer-travel-index">
             <li><Link href="/flight-search" className="transition-colors hover:text-sky-300">Flight Search</Link></li>
-            <li><Link href="/hotels" className="transition-colors hover:text-sky-300">Hotels</Link></li>
+            <li><Link href="/category/hotels" className="transition-colors hover:text-sky-300">Hotels</Link></li>
             <li><Link href="/countries" className="transition-colors hover:text-sky-300">Countries</Link></li>
             <li><Link href="/airlines" className="transition-colors hover:text-sky-300">Airlines</Link></li>
             <li><Link href="/airports" className="transition-colors hover:text-sky-300">Airports</Link></li>

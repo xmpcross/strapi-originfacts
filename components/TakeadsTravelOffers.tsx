@@ -51,7 +51,7 @@ export default async function TakeadsTravelOffers({
               {offer.imageUrl && (
                 // The logo URL is supplied by Takeads and can vary by advertiser.
                 // eslint-disable-next-line @next/next/no-img-element
-                <img src={offer.imageUrl} alt="" className="max-h-8 max-w-24 object-contain" loading="lazy" />
+                <img src={offer.imageUrl} alt={`${offer.name} logo`} className="max-h-8 max-w-24 object-contain" loading="lazy" />
               )}
             </div>
             <span className="mt-3 font-urbanist text-base font-bold text-forest-950 group-hover:text-primary-emphasis">

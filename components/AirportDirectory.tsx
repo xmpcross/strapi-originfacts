@@ -142,7 +142,7 @@ export default function AirportDirectory({ airports }: { airports: StrapiAirport
           <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {hubsPreview.map((a) => (
               <li key={a.id}>
-                <HubChip airport={a} />
+                <HubChip airport={a} allAirports={airports} />
               </li>
             ))}
           </ul>
@@ -267,7 +267,7 @@ export default function AirportDirectory({ airports }: { airports: StrapiAirport
                     </p>
                   )}
                   <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                    {displayed.map((a) => <AirportCard key={a.id} airport={a} />)}
+                    {displayed.map((a) => <AirportCard key={a.id} airport={a} allAirports={airports} />)}
                   </div>
                   {overflow > 0 && (
                     <div className="mt-6">
@@ -407,12 +407,12 @@ function LetterChip({
   );
 }
 
-function AirportCard({ airport }: { airport: StrapiAirport }) {
+function AirportCard({ airport, allAirports }: { airport: StrapiAirport; allAirports?: StrapiAirport[] }) {
   const img = mediaUrl(airport.heroImage ?? null);
   const isHub = airport.iata ? HUB_AIRPORT_SET.has(airport.iata.toUpperCase()) : false;
   return (
     <Link
-      href={airportPath(airport)}
+      href={airportPath(airport, allAirports)}
       className="group relative flex min-h-[142px] overflow-hidden rounded-[0.3rem] border border-forest-900/10 bg-[#f7f8fa] transition hover:-translate-y-0.5 hover:border-forest-900/30 hover:shadow-sm"
       data-testid={`airport-card-${airport.iata}`}
     >
@@ -458,11 +458,11 @@ function AirportCard({ airport }: { airport: StrapiAirport }) {
   );
 }
 
-function HubChip({ airport }: { airport: StrapiAirport }) {
+function HubChip({ airport, allAirports }: { airport: StrapiAirport; allAirports?: StrapiAirport[] }) {
   const img = mediaUrl(airport.heroImage ?? null);
   return (
     <Link
-      href={airportPath(airport)}
+      href={airportPath(airport, allAirports)}
       className="group flex h-full overflow-hidden rounded-lg border border-forest-900/10 bg-[#f7f8fa] transition hover:-translate-y-0.5 hover:border-forest-900/30 hover:shadow-sm"
       data-testid={`hub-chip-${airport.iata}`}
     >

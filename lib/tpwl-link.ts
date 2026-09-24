@@ -8,7 +8,7 @@
 export const TPWL_HOST = '/flight-search';
 
 const pad = (n: number) => String(n).padStart(2, '0');
-const ymd = (d: Date) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+const toDDMM = (d: Date) => `${pad(d.getDate())}${pad(d.getMonth() + 1)}`;
 
 export function tpwlSearchUrl(origin: string, destination: string): string {
   const depart = new Date();
@@ -16,15 +16,7 @@ export function tpwlSearchUrl(origin: string, destination: string): string {
   depart.setDate(depart.getDate() + 30);
   const ret = new Date(depart);
   ret.setDate(depart.getDate() + 7);
-  // Same query-param shape the /flights page already understands (origin /
-  // destination / depart / return / pax) so its server-side redirect can
-  // build the TravelPayouts deep link with our affiliate marker.
-  const params = new URLSearchParams({
-    origin,
-    destination,
-    depart: ymd(depart),
-    return: ymd(ret),
-    pax: '1',
-  });
-  return `/flight-search?${params.toString()}`;
+
+  const segment = `${origin.toUpperCase()}${toDDMM(depart)}${destination.toUpperCase()}${toDDMM(ret)}1`;
+  return `/flight-search?flightSearch=${segment}`;
 }

@@ -216,7 +216,8 @@ async function strapiFetch<T>(path: string, params?: Record<string, unknown>, re
 
 export function mediaUrl(img: StrapiImage): string | null {
   if (!img?.url) return null;
-  return img.url.startsWith('http') ? img.url : `${BASE}${img.url}`;
+  const raw = img.url.startsWith('http') ? img.url : `${BASE}${img.url}`;
+  return raw.replace('https://strapi.fxnstudio.com', 'https://cms.fxnstudio.com');
 }
 
 export async function listArticles(opts: { page?: number; pageSize?: number; category?: string; destination?: string; destinations?: string[]; q?: string } = {}) {

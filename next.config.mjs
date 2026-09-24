@@ -25,6 +25,8 @@ const nextConfig = {
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: strapiHost },
+      { protocol: 'https', hostname: 'cms.fxnstudio.com' },
+      { protocol: 'https', hostname: 'strapi.fxnstudio.com' },
       { protocol: 'https', hostname: 'images.unsplash.com' },
     ],
   },
@@ -37,6 +39,8 @@ const nextConfig = {
         destination: 'https://www.originfacts.com/:path*',
         permanent: true,
       },
+      // Hotels top-level route -> Category listing permanent 301
+      { source: '/hotels', destination: '/category/hotels', permanent: true },
       // Travel Resources merged into Travel Tips on 2026-05-02.
       { source: '/category/travel-resources', destination: '/category/travel-tips', permanent: true },
       // Car Rental → Car Rentals (category renamed in Strapi, 2026-05-20).

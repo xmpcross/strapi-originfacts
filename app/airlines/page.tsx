@@ -102,12 +102,24 @@ export default async function AirlinesPage() {
       return b.verifiedFields - a.verifiedFields;
     });
 
+  const compactAirlines = airlines.map((a) => ({
+    id: a.id,
+    name: a.name,
+    slug: a.slug,
+    iataCode: a.iataCode,
+    country: a.country,
+    city: a.city,
+    region: a.region,
+    type: a.type,
+    logo: a.logo ? { url: a.logo.url } : null,
+  }));
+
   const collectionJsonLd = collectionPageJsonLd({
     name: HUB.name,
     description: HUB.description,
     url: PATH,
     itemListName: 'Airlines',
-    items: airlines.map((a) => ({
+    items: airlines.slice(0, 50).map((a) => ({
       name: a.iataCode ? `${a.name} (${a.iataCode})` : a.name,
       url: `/airlines/${a.slug}`,
       image: mediaUrl(a.logo ?? null),
@@ -235,7 +247,7 @@ export default async function AirlinesPage() {
 
       {/* Main Directory & Search Grid */}
       <Suspense>
-        <AirlineDirectory airlines={airlines} publishedSlugs={Array.from(PUBLISHED_AIRLINE_GUIDES)} />
+        <AirlineDirectory airlines={compactAirlines} publishedSlugs={Array.from(PUBLISHED_AIRLINE_GUIDES)} />
       </Suspense>
     </div>
   );

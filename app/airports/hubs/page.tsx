@@ -21,7 +21,19 @@ export const metadata: Metadata = {
 
 export default async function HubsPage() {
   const all = await listAirports().catch(() => []);
-  const hubs = all.filter((a) => a.iata && HUB_AIRPORT_SET.has(a.iata.toUpperCase()));
+  const hubs = all
+    .filter((a) => a.iata && HUB_AIRPORT_SET.has(a.iata.toUpperCase()))
+    .map((a) => ({
+      id: a.id,
+      iata: a.iata,
+      icao: a.icao,
+      name: a.name,
+      city: a.city,
+      country: a.country,
+      countryCode: a.countryCode,
+      region: a.region,
+      heroImage: a.heroImage ? { url: a.heroImage.url } : null,
+    }));
 
   return (
     <main className="mx-auto max-w-7xl px-6 py-16" data-testid="airport-hubs-page">
@@ -81,7 +93,7 @@ export default async function HubsPage() {
         </nav>
       </header>
 
-      <HubAirportsDirectory airports={hubs} allAirports={all} />
+      <HubAirportsDirectory airports={hubs} />
     </main>
   );
 }

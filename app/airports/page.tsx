@@ -25,12 +25,24 @@ export const metadata = {
 export default async function AirportsPage() {
   const airports = await listAirports().catch(() => []);
 
+  const compactAirports = airports.map((a) => ({
+    id: a.id,
+    iata: a.iata,
+    icao: a.icao,
+    name: a.name,
+    city: a.city,
+    country: a.country,
+    countryCode: a.countryCode,
+    region: a.region,
+    heroImage: a.heroImage ? { url: a.heroImage.url } : null,
+  }));
+
   const collectionJsonLd = collectionPageJsonLd({
     name: HUB.name,
     description: HUB.description,
     url: PATH,
     itemListName: 'Airports',
-    items: airports.map((a) => ({
+    items: airports.slice(0, 50).map((a) => ({
       name: a.city ? `${a.name} (${a.iata}) — ${a.city}` : `${a.name} (${a.iata})`,
       url: airportPath(a, airports),
       image: mediaUrl(a.heroImage ?? null),
@@ -90,7 +102,7 @@ export default async function AirportsPage() {
       </header>
 
       <Suspense>
-        <AirportDirectory airports={airports} />
+        <AirportDirectory airports={compactAirports} />
       </Suspense>
     </div>
   );

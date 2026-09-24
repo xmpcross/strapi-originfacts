@@ -27,12 +27,22 @@ export default async function DestinationsPage() {
   const countries = destinations.filter((d) => d.type === 'country').length;
   const regions = destinations.filter((d) => d.type === 'region').length;
 
+  const compactDestinations = destinations.map((d) => ({
+    id: d.id,
+    name: d.name,
+    slug: d.slug,
+    type: d.type,
+    countryCode: d.countryCode,
+    description: d.description,
+    heroImage: d.heroImage ? { url: d.heroImage.url } : null,
+  }));
+
   const collectionJsonLd = collectionPageJsonLd({
     name: HUB.name,
     description: HUB.description,
     url: PATH,
     itemListName: 'Destinations',
-    items: destinations.map((d) => ({
+    items: destinations.slice(0, 50).map((d) => ({
       name: d.name,
       url: `/destinations/${d.slug}`,
       image: mediaUrl(d.heroImage ?? null),
@@ -154,7 +164,7 @@ export default async function DestinationsPage() {
       </section>
 
       <Suspense>
-        <DestinationsDirectory destinations={destinations} />
+        <DestinationsDirectory destinations={compactDestinations} />
       </Suspense>
     </div>
   );

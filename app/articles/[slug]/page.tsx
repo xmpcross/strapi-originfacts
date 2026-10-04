@@ -134,7 +134,13 @@ export default async function ArticlePage({ params }: Props) {
 
   const articleUrl = `https://www.originfacts.com/articles/${article.slug}`;
   const articleImage = mediaUrl(article.ogImage ?? article.coverImage ?? null);
-  const faqs = normalizeFaqs(article.faqs);
+  // Structured FAQ component entries (faq.item, sorted by `order`) take
+  // precedence over the legacy `faqs` json field. Both shapes flow through
+  // normalizeFaqs, so FaqSection and faqJsonLd stay a single source.
+  const componentFaqs = (article.faqItems ?? [])
+    .slice()
+    .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+  const faqs = componentFaqs.length ? normalizeFaqs(componentFaqs) : normalizeFaqs(article.faqs);
   const steps = normalizeSteps(article.steps);
 
   const articleJsonLd = {

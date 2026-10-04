@@ -23,10 +23,24 @@ export type StrapiArticle = {
   gallery?: NonNullable<StrapiImage>[];
   category?: { id: number; name: string; slug: string; color?: string } | null;
   tags?: { id: number; name: string; slug: string }[];
-  author?: { id: number; name: string; slug: string; avatar?: StrapiImage } | null;
+  author?: {
+    id: number;
+    name: string;
+    slug: string;
+    avatar?: StrapiImage;
+    role?: string;
+    bio?: string;
+    credentials?: string;
+    twitter?: string;
+    linkedin?: string;
+    website?: string;
+  } | null;
   destinations?: { id: number; name: string; slug: string; type?: 'country' | 'region' | 'city' }[];
-  /** Optional editor-managed Q&As (json field) — see normalizeFaqs(). */
+  /** Optional editor-managed Q&As (legacy json field) — see normalizeFaqs(). */
   faqs?: unknown;
+  /** Structured FAQ entries (Strapi repeatable `faq.item` component). Takes
+   *  precedence over the legacy `faqs` json when present; sorted by `order`. */
+  faqItems?: { id: number; question: string; answer: string; order?: number | null }[];
   /** Optional how-to steps (json field) — flags the post as a HowTo, see normalizeSteps(). */
   steps?: unknown;
   /** Optional 40-60 word direct-answer summary shown in the KeyFacts callout. */
@@ -329,7 +343,7 @@ export async function listDestinationArticles(opts: { page?: number; pageSize?: 
 export async function getArticle(slug: string) {
   const res = await strapiFetch<ListResponse<StrapiArticle>>('articles', {
     filters: { slug: { $eq: slug } },
-    populate: ['coverImage', 'ogImage', 'category', 'tags', 'author', 'author.avatar', 'destinations', 'gallery'],
+    populate: ['coverImage', 'ogImage', 'category', 'tags', 'author', 'author.avatar', 'destinations', 'gallery', 'faqItems'],
     pagination: { pageSize: 1 },
   });
   return res.data?.[0] ?? null;

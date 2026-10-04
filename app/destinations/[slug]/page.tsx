@@ -39,7 +39,17 @@ import { buildMetaDescription, clampDescription, compactTitle } from '@/lib/seo'
 import { airportPath } from '@/lib/airport-slugs';
 import { absoluteUrl } from '@/lib/jsonld';
 import type { Metadata } from 'next';
-import { getYourGuideLink } from '@/lib/partner-links';
+import {
+  buildActivityWidgetQuery,
+  countryNameFromCode,
+  formatList,
+  GetYourGuideActivityWidget,
+  parseAboutSections,
+  RouteCard,
+  unique,
+} from './destination-shared';
+import CityGuidePage from './city-guide-page';
+import { getDestinationGuide, withGuide } from '@/lib/destination-guides';
 
 export const revalidate = 60;
 
@@ -51,9 +61,6 @@ export async function generateStaticParams() {
 }
 
 const CONTINENTS = ['Africa', 'Asia', 'Europe', 'North America', 'Oceania', 'South America'] as const;
-const GYG_EXCLUDED_TOUR_IDS_BY_DESTINATION: Record<string, string> = {
-  bangkok: '1457595',
-};
 const CITY_HERO_DESCRIPTION_OVERRIDES: Record<string, string> = {
   perth:
     'Visiting Perth requires selecting optimal long-haul flight connections, matching airport transfers at Perth Airport (PER) to beachside or central hotel districts, and timing travel around Mediterranean climate patterns. Our comprehensive destination guide synthesizes operating airline networks, local transit options, regional excursion routes, and verified editorial research for Western Australia travel.',
@@ -65,8 +72,9 @@ type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const d = await getDestination(slug);
-  if (!d) return { title: 'Not found' };
+  const cms = await getDestination(slug);
+  if (!cms) return { title: 'Not found' };
+  const d = withGuide(cms, getDestinationGuide(slug));
   // Title and description come from main's destination helpers; the PR adds
   // the hero og:image on top.
   const description = destinationMetaDescription(d);
@@ -128,8 +136,10 @@ function destinationMetaDescription(destination: StrapiDestination) {
 
 export default async function DestinationPage({ params }: Props) {
   const { slug } = await params;
-  const destination = await getDestination(slug);
-  if (!destination) notFound();
+  const cms = await getDestination(slug);
+  if (!cms) notFound();
+  const guide = cms.type === 'city' ? getDestinationGuide(slug) : null;
+  const destination = withGuide(cms, guide);
 
   const isCountry = destination.type === 'country' && !!destination.countryCode;
   const isCity = destination.type === 'city';
@@ -206,6 +216,7 @@ export default async function DestinationPage({ params }: Props) {
   });
 
   const breadcrumbItems: { name: string; url: string }[] = [{ name: 'Destinations', url: '/destinations' }];
+  let countryHref: string | undefined;
   if (isCountry) {
     breadcrumbItems.push({ name: 'Countries', url: '/countries' });
   } else if (isCity && destination.countryCode) {
@@ -214,10 +225,8 @@ export default async function DestinationPage({ params }: Props) {
       // Link the country crumb to its destination guide; /countries/<code>
       // would only redirect there.
       const countryGuide = await getDestinationByCountryCode(destination.countryCode).catch(() => null);
-      breadcrumbItems.push({
-        name: cName,
-        url: countryGuide ? `/destinations/${countryGuide.slug}` : `/countries/${destination.countryCode.toLowerCase()}`,
-      });
+      countryHref = countryGuide ? `/destinations/${countryGuide.slug}` : `/countries/${destination.countryCode.toLowerCase()}`;
+      breadcrumbItems.push({ name: cName, url: countryHref });
     }
   }
   breadcrumbItems.push({ name: destination.name, url: `/destinations/${destination.slug}` });
@@ -273,6 +282,28 @@ export default async function DestinationPage({ params }: Props) {
         />
         {faqBlock}
         {citationsBlock}
+      </>
+    );
+  }
+
+  if (isCity && guide) {
+    const lead = parseAboutSections(destination.description ?? '').find((s) => !s.heading)?.paragraphs.join(' ');
+    return (
+      <>
+        <JsonLd data={articleSchema} />
+        <JsonLd data={breadcrumbSchema} />
+        <CityGuidePage
+          destination={destination}
+          hero={hero}
+          heroDescription={lead ?? ''}
+          countryHref={countryHref}
+          routes={routes}
+          airports={cityAirports}
+          articles={articles}
+          activityQuery={activityQuery}
+          faqBlock={faqBlock}
+          hasFaqs={faqs.length >= 2}
+        />
       </>
     );
   }
@@ -600,15 +631,6 @@ function CityPopularHotelsSection({
   );
 }
 
-function countryNameFromCode(code?: string) {
-  if (!code || code.length !== 2) return '';
-  try {
-    return new Intl.DisplayNames(['en'], { type: 'region' }).of(code.toUpperCase()) || '';
-  } catch {
-    return '';
-  }
-}
-
 function CityHeroMetric({ label, value }: { label: string; value: number }) {
   return (
     <div className="border border-white/25 bg-white/10 px-4 py-3 backdrop-blur">
@@ -932,89 +954,6 @@ function CityContextNote({ title, body }: { title: string; body: string }) {
       <p className="mt-3 text-sm font-light leading-7 text-forest-900/72">{body}</p>
     </article>
   );
-}
-
-function GetYourGuideActivityWidget({
-  destination,
-  query,
-}: {
-  destination: StrapiDestination;
-  query: string;
-}) {
-  const campaign = `originfacts-destination-${destination.slug}`.slice(0, 80);
-  const excludedTourIds = GYG_EXCLUDED_TOUR_IDS_BY_DESTINATION[destination.slug];
-
-  return (
-    <section
-      className="my-12 overflow-hidden rounded-2xl border border-forest-900/10 bg-gradient-to-br from-white via-sand-50 to-sky-50 p-6 shadow-sm sm:p-8"
-      data-nosnippet
-      data-testid="destination-activity-widget"
-    >
-      <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
-        <div>
-          <div className="text-xs font-semibold uppercase tracking-[0.22em] text-forest-700/70">
-            Sponsored activities
-          </div>
-          <h2 className="editorial-h mt-3 text-3xl font-bold text-forest-900">
-            What are the top things to do in {destination.name}?
-          </h2>
-          <p className="mt-4 text-base leading-7 text-forest-900/70">
-            Compare tours, tickets, day trips and local experiences related to {destination.name}.
-            The activity feed is supplied by GetYourGuide and updates based on live availability.
-          </p>
-          <p className="mt-3 text-sm leading-6 text-forest-900/55">
-            Origin Facts may earn a commission when you book through this widget, at no extra cost to you.
-          </p>
-        </div>
-
-        <div className="min-h-[360px] rounded-xl border border-white/70 bg-white/80 p-4 shadow-inner">
-          <div
-            data-gyg-href="https://widget.getyourguide.com/default/activities.frame"
-            data-gyg-locale-code="en-US"
-            data-gyg-locale-currency="USD"
-            data-gyg-widget="activities"
-            data-gyg-number-of-items="3"
-            data-gyg-partner-id="H8Y3KHZ"
-            data-gyg-campaign={campaign}
-            data-gyg-cmp={campaign}
-            data-gyg-q={query}
-            data-gyg-excluded-tour-ids={excludedTourIds}
-          >
-            <span className="text-sm text-forest-900/55">
-              Powered by{' '}
-              <a
-                target="_blank"
-                rel="sponsored nofollow noopener noreferrer"
-                href={getYourGuideLink(query)}
-                className="font-medium text-forest-800 underline underline-offset-4"
-              >
-                GetYourGuide
-              </a>
-            </span>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function unique(items: string[]) {
-  return [...new Set(items.map((item) => item.trim()).filter(Boolean))];
-}
-
-function formatList(items: string[]) {
-  if (items.length <= 1) return items[0] ?? '';
-  if (items.length === 2) return `${items[0]} and ${items[1]}`;
-  return `${items.slice(0, -1).join(', ')} and ${items[items.length - 1]}`;
-}
-
-function buildActivityWidgetQuery(
-  destination: Pick<StrapiDestination, 'name' | 'countryCode'>,
-  routes: Awaited<ReturnType<typeof listRoutesToDestination>>,
-) {
-  const country = routes.find((route) => route.destination?.country)?.destination?.country;
-  const countryHint = country || countryNameFromCode(destination.countryCode) || destination.countryCode;
-  return [destination.name, countryHint].filter(Boolean).join(', ');
 }
 
 function buildCityHeroDescription(
@@ -1475,64 +1414,6 @@ function HeroStat({ label, value, display }: { label: string; value: number; dis
       <div className="mt-2 text-xs uppercase tracking-widest text-forest-900/60">{label}</div>
     </div>
   );
-}
-
-function RouteCard({ r }: { r: Awaited<ReturnType<typeof listRoutesToDestination>>[number] }) {
-  return (
-    <Link
-      href={`/flight-routes/${r.slug}`}
-      className="group flex items-center justify-between rounded-lg border border-forest-900/10 bg-paper p-5 transition hover:-translate-y-0.5 hover:border-forest-900/30 hover:shadow-sm"
-      data-testid={`destination-route-${r.slug}`}
-    >
-      <div>
-        <div className="text-xs font-bold tracking-wider text-forest-900/70">
-          {r.origin?.iata} → {r.destination?.iata}
-        </div>
-        <div className="mt-2 text-base font-bold text-forest-900 group-hover:text-forest-700">
-          From {r.origin?.city || r.origin?.name}
-        </div>
-        <div className="mt-1 text-xs text-forest-900/60">{r.origin?.country}</div>
-      </div>
-      {r.distanceKm && (
-        <div className="text-right text-xs text-forest-900/50">
-          <div className="font-bold text-forest-900/70">
-            {r.distanceKm.toLocaleString()} km
-          </div>
-          {r.durationMinutes && (
-            <div className="mt-1">{formatDuration(r.durationMinutes)}</div>
-          )}
-        </div>
-      )}
-    </Link>
-  );
-}
-
-function formatDuration(minutes: number): string {
-  const h = Math.floor(minutes / 60);
-  const m = minutes % 60;
-  return m === 0 ? `${h}h` : `${h}h ${m}m`;
-}
-
-type AboutSection = { heading: string | null; paragraphs: string[] };
-
-function parseAboutSections(md: string): AboutSection[] {
-  const sections: AboutSection[] = [];
-  let current: AboutSection = { heading: null, paragraphs: [] };
-  for (const block of md.split(/\n{2,}/)) {
-    const trimmed = block.trim();
-    if (!trimmed) continue;
-    const headingMatch = trimmed.match(/^##\s+(.+)$/m);
-    if (headingMatch && trimmed.startsWith('##')) {
-      if (current.heading || current.paragraphs.length) sections.push(current);
-      current = { heading: headingMatch[1].trim(), paragraphs: [] };
-      const remainder = trimmed.replace(/^##\s+.+\n?/, '').trim();
-      if (remainder) current.paragraphs.push(remainder);
-    } else {
-      current.paragraphs.push(trimmed);
-    }
-  }
-  if (current.heading || current.paragraphs.length) sections.push(current);
-  return sections;
 }
 
 /* -------------------------------------------------------------------------- */

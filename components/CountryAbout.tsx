@@ -61,8 +61,11 @@ function renderBulletContent(text: string): ReactNode {
 export default function CountryAbout({
   sections,
   singleColumnBullets = false,
+  headingAs = 'h3',
 }: {
   sections: Section[];
+  /** h2 when the sections are the page's own top-level guide sections. */
+  headingAs?: 'h2' | 'h3';
   /** Disable the automatic 2-col layout for long bullet lists. Useful when the
    *  parent already places the section in a narrow column. */
   singleColumnBullets?: boolean;
@@ -81,6 +84,7 @@ export default function CountryAbout({
           section={s}
           first={i === 0}
           singleColumnBullets={singleColumnBullets}
+          headingAs={headingAs}
         />
       ))}
     </div>
@@ -91,19 +95,21 @@ function SectionBlock({
   section,
   first,
   singleColumnBullets,
+  headingAs: Heading,
 }: {
   section: Section;
   first: boolean;
   singleColumnBullets: boolean;
+  headingAs: 'h2' | 'h3';
 }) {
   return (
     <div className={first ? '' : 'mt-8'}>
       {section.heading && (
-        <h3
-          className={`${first ? '!mt-0 ' : ''}text-xl font-bold text-forest-900`}
+        <Heading
+          className={`${first ? '!mt-0 ' : ''}${Heading === 'h2' ? 'editorial-h text-2xl' : 'text-xl'} font-bold text-forest-900`}
         >
           {section.heading}
-        </h3>
+        </Heading>
       )}
       {section.paragraphs.map((p, i) => {
         const lines = p.split('\n').map((l) => l.trim()).filter(Boolean);

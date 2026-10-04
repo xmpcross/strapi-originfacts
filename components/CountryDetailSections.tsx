@@ -86,8 +86,7 @@ export default function CountryDetailSections({
               Which major airports serve {countryName}?
             </h2>
             <p className="mt-3 max-w-4xl text-sm font-light leading-7 text-forest-900/70">
-              Compare the airport records linked to {countryName}. Use the list to jump from a city or IATA code to the
-              airport page with routes, nearby airports and planning details.
+              Airports in {countryName}, by city and IATA code.
             </p>
           </div>
           <div className="border-l-2 border-primary-emphasis pl-5">
@@ -156,8 +155,7 @@ export default function CountryDetailSections({
               Which airlines are headquartered in {countryName}?
             </h2>
             <p className="mt-3 max-w-4xl text-sm font-light leading-7 text-forest-900/70">
-              Browse the airline brands connected to {countryName}. Each logo opens the carrier guide with route,
-              baggage and policy context where available.
+              Airlines based in {countryName}.
             </p>
           </div>
           <div className="border-l-2 border-forest-900/20 pl-5">

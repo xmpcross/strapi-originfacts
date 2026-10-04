@@ -38,9 +38,12 @@ function ipFromRequest(req: Request): string {
   return 'unknown';
 }
 
+/* Form mail goes through the Google Workspace SMTP relay, which accepts this
+   host's IPs without a login and only sends From a Workspace domain. The local
+   Stalwart server this used to default to was removed on 4 Oct 2026. */
 function createSmtpTransporter() {
-  const host = process.env.SMTP_HOST || '127.0.0.1';
-  const port = parseInt(process.env.SMTP_PORT || '25', 10);
+  const host = process.env.SMTP_HOST || 'smtp-relay.gmail.com';
+  const port = parseInt(process.env.SMTP_PORT || '587', 10);
   const user = process.env.SMTP_USER;
   const pass = process.env.SMTP_PASS;
   const secure = process.env.SMTP_SECURE === 'true' || port === 465;
@@ -49,12 +52,9 @@ function createSmtpTransporter() {
     host,
     port,
     secure,
+    requireTLS: !secure, // never send form contents in clear text on 587
     name: 'www.originfacts.com',
     ...(user && pass ? { auth: { user, pass } } : {}),
-    tls: {
-      rejectUnauthorized: false,
-      servername: process.env.SMTP_SERVERNAME || 'mail.fxnstudio.com',
-    },
   });
 }
 

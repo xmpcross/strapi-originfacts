@@ -10,7 +10,25 @@ export const TPWL_HOST = '/flight-search';
 const pad = (n: number) => String(n).padStart(2, '0');
 const toDDMM = (d: Date) => `${pad(d.getDate())}${pad(d.getMonth() + 1)}`;
 
-export function tpwlSearchUrl(origin: string, destination: string): string {
+/** DDMM from an ISO date ("2026-11-12" → "1211"), without going through a Date (no time-zone shift). */
+const isoToDDMM = (iso: string) => `${iso.slice(8, 10)}${iso.slice(5, 7)}`;
+
+/**
+ * Link to the flight search for a route. Without `dates` it uses sample dates
+ * (30 days out, a week long). Pass the dates a fare was found for to open the
+ * search that matches that fare.
+ */
+export function tpwlSearchUrl(
+  origin: string,
+  destination: string,
+  dates?: { departISO?: string; returnISO?: string },
+): string {
+  const iso = /^\d{4}-\d{2}-\d{2}/;
+  if (dates?.departISO && iso.test(dates.departISO)) {
+    const back = dates.returnISO && iso.test(dates.returnISO) ? isoToDDMM(dates.returnISO) : '';
+    return `/flight-search?flightSearch=${origin.toUpperCase()}${isoToDDMM(dates.departISO)}${destination.toUpperCase()}${back}1`;
+  }
+
   const depart = new Date();
   depart.setHours(0, 0, 0, 0);
   depart.setDate(depart.getDate() + 30);

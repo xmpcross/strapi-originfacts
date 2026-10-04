@@ -1,0 +1,97 @@
+{
+ "slug": "severstal-air-company",
+ "sources": [
+  "tripadvisor"
+ ],
+ "stats": {
+  "source": "all",
+  "reviewCount": 4,
+  "avgRating10": 7.5,
+  "recommendPct": null,
+  "subratings": null,
+  "firstReviewDate": "2017-01-25",
+  "lastReviewDate": "2018-04-21"
+ },
+ "statsBySource": {
+  "tripadvisor": {
+   "source": "tripadvisor",
+   "reviewCount": 4,
+   "avgRating10": 7.5,
+   "recommendPct": null,
+   "subratings": null,
+   "firstReviewDate": "2017-01-25",
+   "lastReviewDate": "2018-04-21",
+   "sourceUrl": "https://www.tripadvisor.com/Airline_Review-d11831109-Reviews-Severstal-Air-Company"
+  }
+ },
+ "reviews": [
+  {
+   "source": "tripadvisor",
+   "id": "ta-574682537",
+   "date": "2018-04-21",
+   "rating10": 8,
+   "title": "Severstal Air Company",
+   "text": "Severstal Air Company is excellent when you need to go Cherepovets By air comfortabel and quick (1hrs) otherwise you need to travel (10hrs) by car or train (8hrs)",
+   "author": "DvH",
+   "authorCountry": null,
+   "authorLocation": "Doetinchem",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Moscow - Cherepovets",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-567175004",
+   "date": "2018-03-18",
+   "rating10": 8,
+   "title": "Good for short distance flights",
+   "text": "They run short flights from Cherepovets where their steel plant is located. Even the airport at cherepovets is managed by the company. They use the ~30 seater planes and are generally comfortable with only Economy class of travel. Don't expect any in-flight entertainment. They served us a complementary glass of juice on a 1 hour flight.",
+   "author": "soummo1472",
+   "authorCountry": null,
+   "authorLocation": "Jamshedpur",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Moscow - Cherepovets",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-544974598",
+   "date": "2017-12-04",
+   "rating10": 8,
+   "title": "Nice flight on a very small plane",
+   "text": "Small company, small airport, small plane. Yet, very friendly and nicely organized. The flight was too short for a meal, but water and juice were provided onboard. Overall, a positive experience.",
+   "author": "Alexander C",
+   "authorCountry": null,
+   "authorLocation": null,
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Moscow - Cherepovets",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-454727109",
+   "date": "2017-01-25",
+   "rating10": 6,
+   "title": "Small Plane",
+   "text": "It was a small plane for 50 passengers and it was a short flight. The stewardess was friendly. They only served water and juice. The pilots must be very experienced in landing on ice. We have left the plane with stairs and walked to the airport building through the apron covered with snow and ice. I am not sure if it is allowed for passengers to walk on the apron. Average flight experience.",
+   "author": "DanDan-TR",
+   "authorCountry": null,
+   "authorLocation": "Istanbul",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Moscow - Cherepovets",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  }
+ ]
+}

@@ -1,0 +1,97 @@
+{
+ "slug": "syrianair",
+ "sources": [
+  "tripadvisor"
+ ],
+ "stats": {
+  "source": "all",
+  "reviewCount": 4,
+  "avgRating10": 6.0,
+  "recommendPct": null,
+  "subratings": null,
+  "firstReviewDate": "2016-08-03",
+  "lastReviewDate": "2019-11-05"
+ },
+ "statsBySource": {
+  "tripadvisor": {
+   "source": "tripadvisor",
+   "reviewCount": 4,
+   "avgRating10": 6.0,
+   "recommendPct": null,
+   "subratings": null,
+   "firstReviewDate": "2016-08-03",
+   "lastReviewDate": "2019-11-05",
+   "sourceUrl": "https://www.tripadvisor.com/Airline_Review-d8729218-Reviews-SyrianAir"
+  }
+ },
+ "reviews": [
+  {
+   "source": "tripadvisor",
+   "id": "ta-724140239",
+   "date": "2019-11-05",
+   "rating10": 8,
+   "title": "A Good Start",
+   "text": "On the way to revival, everyone in Syria is trying their best to provide the best services after years of war. It starts with your air flights which would be good enough and ends up in the wonderful restaurants that invite you to their delicious food everywhere. Safety in Damascus in no more a real concern as you can enjoy your time in the old city or the newly opened malls and caffees so safely. Yesterday I visited The Mountain Story , a restaurant at the top of Qasioun Mount that took me back to the memories of the old days. The view was beautiful and the food was delicious.The coffee, tea and sweets were served so kindly and politely with welcoming smiles from the staff and the rest owner who was saluting the visitors warmly. This is Syria back on the way to recovery.",
+   "author": "Dr.Hala El Miniawi",
+   "authorCountry": null,
+   "authorLocation": "Dubai",
+   "cabin": "Business Class",
+   "typeTraveller": null,
+   "route": "Dubai - Damascus",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-639679447",
+   "date": "2018-12-14",
+   "rating10": 6,
+   "title": "Syrian Air is improving!",
+   "text": "Syrian Arab Airline has made some dynamic changers over the past few years. These changes, in my humble opinion, were very positive. There on time schedule in the past was notorious for being not minutes late but hours late. The service in both cabins was a joke; the aircraft they were flying were obsolete and very all dirty! Still today, Syrian Arab Airlines needs to also improve their web site as one cannot select a seat or a Special Meal and one cannot purchase a ticket online! This was a real problem at check-in as I had asked for a window seat and we were given two seats in the middle and not a window seat as we asked for! Plus the meal service had only Chicken and Beef and this was a challenge as I have not had a piece of red meat or chicken in 45 years! My wife and I decided to give Syrian Arab Airlines a new chance and to see if they had improved and boy did they improve! From our arrival to Damascus International Airport to our flights landing in Dubai this airline has improved! Our Business Class check-in was fast and the only problem turned out to be our seat selection. We then enjoyed our time in the small yet nice Business Class Lounge in the departure area near our gate. Our flight departed Damascus only six minutes late and arrived in Dubai twenty minutes ahead of schedule. The aircraft was a fairly new Airbus 340 – 300 and had a two class configuration Economy and Business. The airplane was reasonably clean and comfortable. There was no inflight entertainment system and the food service took a really long time to be served. Once the food arrived it was served buffet style and at least I was able to ask for a large amount of vegetables! The service ‘Call Button’ appeared not to be working or it was willfully ignored! In conclusion, this flight, compared to my last Syrian Arab Airline flight many years ago, has improved and I would rebook a new flight if the schedule permitted! This Damascus flight really saves the traveler a lot of time traveling opposed to one traveling overland to Beirut!",
+   "author": "THOMASFROMDAMASCUS",
+   "authorCountry": null,
+   "authorLocation": "Damascus",
+   "cabin": "Business Class",
+   "typeTraveller": null,
+   "route": "Damascus - Dubai",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-550782450",
+   "date": "2018-01-01",
+   "rating10": 6,
+   "title": "The only way to travel from Damascus",
+   "text": "Dew to the sanctions against Syria we don't have other option to fly to dubai unless we go go through Beirut air port and this will take 12 hours and two borders while it's only three hours flight from damascus airport.",
+   "author": "Hala J",
+   "authorCountry": null,
+   "authorLocation": "Damascus",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Damascus - Dubai",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-400941980",
+   "date": "2016-08-03",
+   "rating10": 4,
+   "title": "It stunk",
+   "text": "Actually I traveled with this airline before the war in Syria. But what I remember is that the airplane stunk! There were hair near my seat and when the food came, I could hardly eat. Other passengeres, mostly Syrian Arabs, they took off their shoes in the plane and started rubbing their feet in front of other passengers. I think i was the only woman on the plane. I do not recommend at all.",
+   "author": "Merlin",
+   "authorCountry": null,
+   "authorLocation": "Limassol City",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Madrid - Larnaca",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  }
+ ]
+}

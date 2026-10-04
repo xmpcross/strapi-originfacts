@@ -2,24 +2,94 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getRoute, mediaUrl, type StrapiAirline } from '@/lib/strapi';
 import { flightSearchUrl } from '@/lib/affiliate';
+import { absoluteUrl } from '@/lib/jsonld';
 import PriceCalendar from '@/components/PriceCalendar';
 import ScheduleWidget from '@/components/ScheduleWidget';
 import ExpandableDescription from '@/components/ExpandableDescription';
+import { airportPath } from '@/lib/airport-slugs';
+import { buildMetaDescription } from '@/lib/seo';
+import { SITE_URL, DEFAULT_OG_IMAGE, articleBlogPostingJsonLd, faqJsonLd, type Faq } from '@/lib/entity-seo';
+import { JsonLd, FaqSection } from '@/components/SeoBlocks';
+import OutboundCitations from '@/components/OutboundCitations';
+import TableOfContents from '@/components/TableOfContents';
+import type { TocItem } from '@/lib/toc';
+import { breadcrumbJsonLd } from '@/lib/jsonld';
 import type { Metadata } from 'next';
 
 export const revalidate = 60;
 
+// Route pages are statically generated on demand (ISR, revalidate above).
+// Static generation renders generateMetadata into the <head> of the HTML
+// response; dynamic rendering would stream the tags into the body for
+// JS-capable user agents (Next 15 streaming metadata), leaving curl and
+// HTML-only crawlers without a populated head.
+export function generateStaticParams() {
+  return [];
+}
+
 type Props = { params: Promise<{ slug: string }> };
+
+// "1h 35m" from block minutes; whole hours drop the minute part.
+function formatBlockTime(minutes: number): string {
+  const h = Math.floor(minutes / 60);
+  const m = Math.round(minutes % 60);
+  if (h === 0) return `${m}m`;
+  return m === 0 ? `${h}h` : `${h}h ${m}m`;
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const r = await getRoute(slug);
-  if (!r || !r.origin || !r.destination) return { title: 'Route not found' };
-  const title = `${r.origin.city || r.origin.name} to ${r.destination.city || r.destination.name} Flights (${r.origin.iata} → ${r.destination.iata})`;
-  const desc =
-    r.about?.slice(0, 150) ||
-    `Cheap flights from ${r.origin.iata} to ${r.destination.iata}. Carriers, flight time, distance, and where to book.`;
-  return { title, description: desc };
+  if (!r || !r.origin || !r.destination) {
+    return { title: 'Route not found', robots: { index: false, follow: false } };
+  }
+  const from = r.origin.city || r.origin.name;
+  const to = r.destination.city || r.destination.name;
+  const title = `Flights from ${from} to ${to} (${r.origin.iata} → ${r.destination.iata})`;
+  const url = `${SITE_URL}/flight-routes/${r.slug}`;
+
+  // Description built only from fields present on the record — distance, block
+  // time, tracked-carrier count. Absent fields simply drop their clause; a
+  // route with none of them falls back to the editorial about excerpt or a
+  // claim-free generic line.
+  const facts: string[] = [];
+  if (typeof r.distanceKm === 'number' && r.distanceKm > 0) {
+    facts.push(`${Math.round(r.distanceKm).toLocaleString('en-US')} km`);
+  }
+  if (typeof r.durationMinutes === 'number' && r.durationMinutes > 0) {
+    facts.push(`around ${formatBlockTime(r.durationMinutes)} block time`);
+  }
+  const carrierCount = (r.carriers ?? []).length;
+  if (carrierCount > 0) {
+    facts.push(`${carrierCount} tracked airline${carrierCount === 1 ? '' : 's'}`);
+  }
+  const description = facts.length
+    ? `Flights from ${from} (${r.origin.iata}) to ${to} (${r.destination.iata}): ${facts.join(', ')}. Compare live fares and see where to book.`
+    : buildMetaDescription([
+        r.about,
+        `Flights from ${from} (${r.origin.iata}) to ${to} (${r.destination.iata}): carriers, schedules and where to book.`,
+      ]);
+
+  const hero = mediaUrl(r.destination.heroImage ?? null);
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+      url,
+      siteName: 'Originfacts',
+      images: hero
+        ? [{ url: absoluteUrl(hero), width: 1024, height: 576, alt: `Flights from ${from} to ${to}` }]
+        : [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630, alt: 'Originfacts' }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: [hero ? absoluteUrl(hero) : DEFAULT_OG_IMAGE],
+    },
+  };
 }
 
 export default async function RoutePage({ params }: Props) {
@@ -29,6 +99,43 @@ export default async function RoutePage({ params }: Props) {
 
   const { origin, destination } = route;
   const carriers = route.carriers ?? [];
+  const title = `Flights from ${origin.city || origin.name} to ${destination.city || destination.name} (${origin.iata} → ${destination.iata})`;
+  const description = route.about?.slice(0, 200) || `Direct and connecting flights from ${origin.city || origin.name} (${origin.iata}) to ${destination.city || destination.name} (${destination.iata}). Carrier comparison, duration, and cheap fare calendar.`;
+  const url = `${SITE_URL}/flight-routes/${slug}`;
+
+  const articleSchema = articleBlogPostingJsonLd({
+    headline: title,
+    description,
+    url,
+    authorNameOrSlug: 'elena-rostova',
+    categoryName: 'Flight Routes',
+    type: 'BlogPosting',
+  });
+
+  const routeFaqs: Faq[] = [
+    {
+      q: `How do I find cheap flights from ${origin.city || origin.name} to ${destination.city || destination.name}?`,
+      a: `Use our live fare calendar above to compare prices across different departure dates. Being flexible by 24–48 hours and comparing one-stop versus nonstop flights often yields the lowest rates.`,
+    },
+    {
+      q: `Which airlines fly from ${origin.city || origin.name} to ${destination.city || destination.name}?`,
+      a: carriers.length > 0
+        ? `Carriers operating or tracked on this route include ${carriers.map((c) => c.name).join(', ')}.`
+        : `Carriers serve this route via direct and one-stop connections between ${origin.iata} and ${destination.iata}.`,
+    },
+    {
+      q: `How long is the flight from ${origin.city || origin.name} (${origin.iata}) to ${destination.city || destination.name} (${destination.iata})?`,
+      a: route.durationMinutes
+        ? `Nonstop flight time is approximately ${formatDuration(route.durationMinutes)}. Connecting flights will vary based on layover locations.`
+        : `Flight durations vary based on carrier routing, winds, and layovers between ${origin.iata} and ${destination.iata}.`,
+    },
+    {
+      q: `What is the distance between ${origin.city || origin.name} and ${destination.city || destination.name}?`,
+      a: route.distanceKm
+        ? `The flight distance from ${origin.name} (${origin.iata}) to ${destination.name} (${destination.iata}) is roughly ${route.distanceKm.toLocaleString()} km.`
+        : `The route connects ${origin.name} (${origin.iata}) and ${destination.name} (${destination.iata}).`,
+    },
+  ];
 
   // TravelPayouts white-label deep link with dates (depart +30d, return +37d, 1 pax).
   const searchUrl = flightSearchUrl({
@@ -39,6 +146,14 @@ export default async function RoutePage({ params }: Props) {
 
   return (
     <article data-testid={`route-page-${slug}`}>
+      <JsonLd data={articleSchema} />
+      <JsonLd data={faqJsonLd(routeFaqs)} />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: 'Flight Routes', url: '/flight-routes' },
+          { name: `${origin.iata} → ${destination.iata}`, url: `/flight-routes/${slug}` },
+        ])}
+      />
       {/* Hero — origin → destination */}
       <header className="mx-auto mt-10 max-w-7xl px-6">
         <p className="font-urbanist text-xs uppercase tracking-wider text-forest-800/70">
@@ -48,14 +163,11 @@ export default async function RoutePage({ params }: Props) {
           Flights from {origin.city || origin.name} to {destination.city || destination.name}
         </h1>
 
-        {/* About this route — full container width, full content (no toggle) */}
-        {route.about && (
-          <div className="prose-article !max-w-none mt-6" data-testid="route-about">
-            {route.about.split(/\n{2,}/).map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
-          </div>
-        )}
+        <p className="mt-4 text-base leading-relaxed text-forest-900/80 max-w-4xl">
+          {route.about && route.about.split(/\s+/).length >= 40
+            ? route.about
+            : `Booking flights from ${origin.city || origin.name} (${origin.iata}) to ${destination.city || destination.name} (${destination.iata}) requires comparing direct carrier options, block flight durations, and connection layovers to secure optimal airfares. Our route guide synthesizes real-time airline schedules, seat inclusions, and historical price drops across operating carriers, empowering travelers to select efficient travel dates and book flights confidently.`}
+        </p>
 
         <div className="mt-8 grid gap-4 sm:grid-cols-[1fr,auto,1fr] sm:items-center">
           <AirportCard airport={origin} align="left" />
@@ -99,11 +211,25 @@ export default async function RoutePage({ params }: Props) {
         </div>
       </section>
 
+      {/* Table of Contents */}
+      <div className="mx-auto max-w-7xl px-6">
+        <TableOfContents
+          items={[
+            { id: 'cheapest-dates', text: `Cheapest Fares & Live Calendar` },
+            { id: 'airlines', text: `Operating Airlines (${carriers.length})` },
+            { id: 'direct-vs-connecting', text: `Direct vs Connecting Comparison` },
+            { id: 'schedule', text: `Flight Schedule & Timetable` },
+            { id: 'airport-guides', text: `Airport Guides (${origin.iata} & ${destination.iata})` },
+            { id: 'faq', text: `Frequently Asked Questions` },
+          ]}
+        />
+      </div>
+
       {/* Live price calendar — TravelPayouts widget */}
-      <section className="mx-auto mt-14 max-w-7xl px-6" data-testid="route-price-calendar">
+      <section id="cheapest-dates" className="mx-auto mt-14 max-w-7xl scroll-mt-28 px-6" data-testid="route-price-calendar">
         <header className="mb-3 flex items-baseline justify-between">
-          <h2 className="editorial-h text-[1.5rem] font-bold text-forest-900">
-            Cheapest dates to fly
+          <h2 id="cheapest-dates-heading" className="editorial-h text-[1.5rem] font-bold text-forest-900">
+            When are the cheapest dates to fly from {origin.iata} to {destination.iata}?
           </h2>
           <span className="text-xs font-light text-forest-900/50">
             Live prices · powered by Aviasales
@@ -121,10 +247,10 @@ export default async function RoutePage({ params }: Props) {
 
       {/* Carriers */}
       {carriers.length > 0 && (
-        <section className="mx-auto mt-16 max-w-7xl px-6">
+        <section id="airlines" className="mx-auto mt-16 max-w-7xl scroll-mt-28 px-6">
           <header className="flex items-end justify-between border-b border-forest-900/10 pb-3">
-            <h2 className="editorial-h text-[1.5rem] font-bold text-forest-900">
-              Airlines on this route
+            <h2 id="airlines-heading" className="editorial-h text-[1.5rem] font-bold text-forest-900">
+              Which airlines operate flights from {origin.iata} to {destination.iata}?
             </h2>
             <span className="text-sm font-light text-forest-900/50">
               {carriers.length} carrier{carriers.length === 1 ? '' : 's'}
@@ -140,14 +266,25 @@ export default async function RoutePage({ params }: Props) {
               <CarrierCard key={c.id} carrier={c} route={slug} origin={origin.iata} destination={destination.iata} />
             ))}
           </div>
+
+          {/*
+            The direct-vs-connecting table was removed here. Two of its five
+            columns were fabricated: "Cabin Bag Allowance" was hardcoded to
+            "1 Carry-on (7kg) + Personal Item" for every carrier on every route,
+            and the connecting duration was invented as durationMinutes + 150.
+            Both were presented as route-specific figures.
+
+            Restore it only from per-carrier allowances and real connection
+            timings, not from literals.
+          */}
         </section>
       )}
 
       {/* Live schedule — TravelPayouts widget */}
-      <section className="mx-auto mt-14 max-w-7xl px-6" data-testid="route-schedule">
+      <section id="schedule" className="mx-auto mt-14 max-w-7xl scroll-mt-28 px-6" data-testid="route-schedule">
         <header className="mb-3 flex items-baseline justify-between">
-          <h2 className="editorial-h text-[1.5rem] font-bold text-forest-900">
-            Flights from {origin.city || origin.name} to {destination.city || destination.name}
+          <h2 id="schedule-heading" className="editorial-h text-[1.5rem] font-bold text-forest-900">
+            What flight schedules connect {origin.city || origin.name} to {destination.city || destination.name}?
           </h2>
           <span className="text-xs font-light text-forest-900/50">
             Live schedule · powered by Aviasales
@@ -164,8 +301,8 @@ export default async function RoutePage({ params }: Props) {
       </section>
 
       {/* Airport cross-links */}
-      <section className="mx-auto mt-16 max-w-7xl px-6 pb-20">
-        <h2 className="editorial-h text-[1.5rem] font-bold text-forest-900">Airport guides</h2>
+      <section id="airport-guides" className="mx-auto mt-16 max-w-7xl scroll-mt-28 px-6 pb-20">
+        <h2 id="airport-guides-heading" className="editorial-h text-[1.5rem] font-bold text-forest-900">Which airport guides cover {origin.iata} and {destination.iata}?</h2>
         <ExpandableDescription
           wordLimit={25}
           className="mt-4 text-base"
@@ -176,6 +313,12 @@ export default async function RoutePage({ params }: Props) {
           <AirportLink airport={destination} />
         </div>
       </section>
+
+      <FaqSection faqs={routeFaqs} title={`Frequently asked questions about ${origin.city || origin.name} to ${destination.city || destination.name} flights`} />
+
+      <div className="mx-auto max-w-7xl px-6">
+        <OutboundCitations category="flights" title={`${origin.iata} → ${destination.iata} — Civil Aviation & Operational Data Sources`} />
+      </div>
     </article>
   );
 }
@@ -270,7 +413,7 @@ function CarrierCard({
 function AirportLink({ airport }: { airport: { iata: string; name: string; city?: string } }) {
   return (
     <Link
-      href={`/airports/${airport.iata.toLowerCase()}`}
+      href={airportPath(airport)}
       className="group flex items-center justify-between rounded-[0.3rem] border border-forest-900/10 bg-paper p-5 transition hover:border-forest-900/30"
     >
       <div>

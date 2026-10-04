@@ -9,7 +9,7 @@ import {
   mediaUrl,
   type StrapiArticle,
 } from '@/lib/strapi';
-import { ORG_ID, organizationJsonLd } from '@/lib/jsonld';
+import { ORG_ID, organizationJsonLd, breadcrumbJsonLd } from '@/lib/jsonld';
 
 const FEATURED_COUNTRY_SLUGS = [
   'japan',
@@ -25,9 +25,7 @@ import { SECTIONS } from '@/lib/sections';
 import FeaturedCountries from '@/components/FeaturedCountries';
 import SectionDescription from '@/components/SectionDescription';
 import BlogSidebar from '@/components/BlogSidebar';
-import AdBanner from '@/components/AdBanner';
 import SubscribeBlock from '@/components/SubscribeBlock';
-import TagsBar from '@/components/TagsBar';
 
 export const revalidate = 60;
 
@@ -78,10 +76,12 @@ export default async function HomePage() {
     publisher: { '@id': ORG_ID },
     potentialAction: {
       '@type': 'SearchAction',
-      target: 'https://www.originfacts.com/articles?q={search_term_string}',
+      target: 'https://www.originfacts.com/all-articles?q={search_term_string}',
       'query-input': 'required name=search_term_string',
     },
   };
+
+  const breadcrumbs = breadcrumbJsonLd([]);
 
   return (
     <div data-testid="home-page">
@@ -93,8 +93,10 @@ export default async function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
       />
-
-      <TagsBar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
 
       <Hero hero={hero} side={side} />
 
@@ -117,7 +119,33 @@ export default async function HomePage() {
               />
             );
         return s.slug === 'flights'
-          ? [sectionEl, <AdBanner key="ad-after-flights" testId="home-ad-banner" />]
+          ? [
+              sectionEl,
+              // CJ affiliate banner (728×90) — sits between Flights and Hotels.
+              <section key="ad-after-flights" className="py-10" data-testid="home-ad-banner">
+                <div className="mx-auto max-w-7xl px-6">
+                  <p className="text-center text-[10px] font-bold uppercase tracking-[0.3em] text-forest-900/50">
+                    Advertisement
+                  </p>
+                  <div className="mt-3 flex justify-center overflow-x-auto">
+                    <a
+                      href="https://www.jdoqocy.com/click-101771882-15455232"
+                      target="_blank"
+                      rel="sponsored noopener"
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src="https://c.fareportal.com/gcms/Portals/2/affiliatebanners/CA-promo1-Banners/728x90.jpg"
+                        width={1120}
+                        height={120}
+                        alt="CheapOair — Join ClubMiles and save up to 20% on select hotels"
+                        className="border-0 max-w-full h-auto"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </section>,
+            ]
           : [sectionEl];
       })}
     </div>
@@ -147,15 +175,23 @@ function Hero({ hero, side }: { hero?: StrapiArticle; side: StrapiArticle[] }) {
             <p className="pt-1 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-forest-900/45">
               Advertisement
             </p>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/placeholder-ad-300x540.svg"
-              alt="Advertisement placeholder"
-              width={300}
-              height={540}
-              className="mx-auto mt-2"
+            {/* CJ affiliate banner (300×500) */}
+            <a
+              href="https://www.dpbolvw.net/click-101771882-13709196"
+              target="_blank"
+              rel="sponsored noopener"
+              className="mx-auto mt-2 block w-fit"
               data-testid="home-hero-left-ad-banner"
-            />
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://c.fareportal.com/gcms/Portals/2/affiliatebanners/affirm_banners/240X400.gif"
+                width={300}
+                height={500}
+                alt="CheapOair and Affirm — Take a cheap flight, fly now pay later"
+                className="border-0"
+              />
+            </a>
           </div>
         </div>
 

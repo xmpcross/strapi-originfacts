@@ -1,0 +1,1148 @@
+/*
+ * Tier 1 airline page — ported from the supplied design.
+ *
+ * Scoped to .root rather than :root so the design's palette and type scale stay
+ * inside this template and cannot leak into the rest of the site, which runs on
+ * Tailwind and its own tokens.
+ */
+.root {
+  /* Official site color tokens (tailwind.config.ts / app/globals.css) */
+  --ink: #0f172a;          /* site colors.ink (slate-900) */
+  --ink-soft: #334155;     /* slate-700 body text */
+  --slate: #64748b;        /* slate-500 secondary text */
+  --slate-light: #94a3b8;  /* slate-400 labels */
+  --paper: #f8fafc;        /* slate-50 site ground */
+  --card: #ffffff;         /* pure white card background */
+  --rule: #e2e8f0;         /* slate-200 card borders */
+  --rule-soft: #f1f5f9;    /* slate-100 interior hairlines */
+  --rule-strong: #b8c2d0;  /* slate-300 dividers */
+  
+  --verified: #059669;     /* site success.emphasis emerald green */
+  --verified-bg: #ecfdf5;  /* site success soft background */
+  --check: #d97706;        /* site attention.emphasis amber */
+  --check-bg: #fffbeb;     /* site sand.100 soft background */
+
+  --hero-bg: linear-gradient(135deg, #f5f9fe 0%, #ebf4fc 50%, #f7faff 100%);
+  --hero-rule: #c7ddfd;    /* forest.200 */
+  --hero-text: #0f172a;    /* slate-900 */
+  --hero-dim: #025ccc;     /* primary.emphasis blue */
+
+  --sector-from: #025ccc;  /* primary.emphasis blue */
+  --sector-to: #d95a14;    /* terracotta.500 */
+  --foot-bg: #ffffff;
+  --foot-text: #334155;
+
+  --t1-body: var(--font-inter), 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --t1-head: var(--font-inter), 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --t1-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--t1-body);
+  font-size: 16.5px;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+/* Preview-only refinements. The production Tier 1 renderer shares this
+   stylesheet, so the preview class is the isolation boundary. */
+.preview {
+  --rule: #d9dee7;
+  --rule-strong: #b8c2d0;
+}
+.root.preview h1 { font-size: 2.8rem; }
+.root.preview h2 { font-size: 2rem; }
+.preview .module,
+.preview .codes,
+.preview .sector,
+.preview .ruleBox,
+.preview .conflict { border-radius: 8px; }
+.preview .codes,
+.preview .sector { overflow: hidden; }
+.preview .rail a,
+.preview .rail a:hover { border-bottom: 0; }
+
+
+.root h1,
+.root h2,
+.root h3,
+.root h4 {
+  font-family: var(--t1-head);
+  margin: 0;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+.mono { font-family: var(--t1-mono); }
+
+/* Site default container: maxWidth 6xl/7xl (1420px) with px-6 gutters. */
+.wrap { max-width: 1420px; margin: 0 auto; padding: 0 24px; }
+
+/* ---------- hero: the data plate ---------- */
+.hero {
+  background: linear-gradient(135deg, #f5f9fe 0%, #ebf4fc 50%, #f7faff 100%);
+  color: var(--ink);
+  padding: 40px 0 0;
+}
+.plate {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 32px;
+  align-items: start;
+  padding-bottom: 36px;
+}
+.identity {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+.titleHeaderRow {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.logo {
+  width: 112px;
+  height: 112px;
+  flex: 0 0 112px;
+  border: 1px solid var(--hero-rule);
+  border-radius: 8px;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: scale(1.06);
+}
+.eyebrow {
+  font-family: var(--t1-mono);
+  font-size: 11px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--hero-dim);
+  margin-bottom: 6px;
+}
+.root h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  margin: 0;
+  line-height: 1.1;
+}
+.code {
+  font-family: var(--t1-mono);
+  font-size: .48em;
+  font-weight: 500;
+  letter-spacing: .04em;
+  vertical-align: .15em;
+  color: var(--hero-dim);
+  margin-left: 12px;
+}
+.standfirst { font-size: 18px; line-height: 1.55; color: var(--hero-text); max-width: 62ch; font-weight: 400; margin: 0; }
+
+.codes {
+  border: 1px solid var(--hero-rule);
+  font-family: var(--t1-mono);
+  font-size: 12px;
+  min-width: 236px;
+  margin: 0;
+}
+.codes > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--hero-rule);
+}
+.codes > div:last-child { border-bottom: 0; }
+.codes dt { color: var(--hero-dim); letter-spacing: .1em; text-transform: uppercase; font-size: 10px; }
+.codes dd { margin: 0; color: var(--ink); text-align: right; }
+
+.modnav {
+  border-top: 1px solid var(--hero-rule);
+  display: flex;
+  overflow-x: auto;
+  font-family: var(--t1-mono);
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  scrollbar-width: none;
+}
+.modnav::-webkit-scrollbar { display: none; }
+.modnav a {
+  color: var(--hero-text);
+  text-decoration: none;
+  padding: 15px 20px 15px 0;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+}
+.modnav a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+
+/* ---------- verification ledger ---------- */
+.ledger { background: var(--card); border-bottom: 1px solid var(--rule); position: sticky; top: 0; z-index: 20; }
+.ledgerInner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  font-family: var(--t1-mono);
+  font-size: 11.5px;
+}
+.ledgerLabel { letter-spacing: .14em; text-transform: uppercase; color: var(--slate-light); }
+.pip { display: inline-flex; align-items: center; gap: 7px; color: var(--ink-soft); }
+.pip::before { content: ""; width: 8px; height: 8px; border-radius: 50%; }
+.pipOk::before { background: var(--verified); }
+.pipWarn::before { background: var(--check); }
+.pipPending::before { background: var(--rule-strong); }
+.ledgerRight { margin-left: auto; }
+
+/* ---------- layout ---------- */
+.main { padding: 48px 0 88px; }
+.cols { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 64px; align-items: start; }
+
+.intro {
+  padding: 4px 2px 36px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--rule);
+}
+.intro .kicker {
+  margin: 0 0 8px;
+  color: var(--sector-from);
+  font-family: var(--t1-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.intro h2 { font-size: clamp(27px, 4vw, 40px); max-width: 22ch; margin-bottom: 14px; }
+.intro > p:not(.kicker) { max-width: 72ch; color: var(--ink-soft); font-size: 17px; }
+.introLinks { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.introLinks a {
+  border: 1px solid var(--rule-strong);
+  border-radius: 8px;
+  color: var(--ink);
+  font-family: var(--t1-head);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 13px;
+  text-decoration: none;
+}
+.introLinks a:hover { background: var(--hero-bg); border-color: var(--sector-from); }
+
+.module {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  padding: 34px 36px 36px;
+  margin-bottom: 26px;
+}
+.moduleHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 20px;
+  border-bottom: 2px solid #b8c2d0;
+  padding-bottom: 13px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.moduleHead h2,
+.moduleHead h3 { font-size: 1.5rem !important; font-weight: 700; }
+.stamp {
+  font-family: var(--t1-mono);
+  font-size: 10.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 4px 9px;
+  white-space: nowrap;
+}
+.stampOk { background: var(--verified-bg); color: var(--verified); }
+.stampWarn { background: var(--check-bg); color: var(--check); }
+.stampPending { background: var(--paper); color: var(--slate); }
+
+.module p { margin: 0 0 16px; }
+.module p:last-child { margin-bottom: 0; }
+.lede { font-size: 18.5px; color: var(--ink-soft); }
+.subhead { font-size: 17px; margin: 28px 0 10px; }
+
+/* tables */
+.module table { width: 100%; border-collapse: collapse; margin: 6px 0 20px; font-size: 15.5px; }
+.module caption {
+  text-align: left;
+  font-family: var(--t1-mono);
+  font-size: 11px;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--slate);
+  padding-bottom: 10px;
+}
+.module th,
+.module td { text-align: left; padding: 11px 14px 11px 0; border-bottom: 1px solid var(--rule-soft); vertical-align: top; }
+.module thead th {
+  font-family: var(--t1-head);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--slate);
+  border-bottom: 1px solid var(--rule-strong);
+}
+.module tbody th { font-family: var(--t1-head); font-size: 15px; font-weight: 600; }
+.num { font-family: var(--t1-mono); font-size: 14.5px; white-space: nowrap; }
+.tableScroll { overflow-x: auto; }
+
+/* Preview contact panel: high-signal details become scannable cards instead
+   of another dense two-column table. */
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 24px 0 20px;
+}
+.contactCard {
+  min-height: 112px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid var(--rule-soft);
+  border-radius: 8px;
+  background: linear-gradient(145deg, #fff 55%, var(--hero-bg));
+}
+.contactIcon {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--hero-bg);
+  color: var(--sector-from);
+}
+.contactIcon svg { display: block; }
+.contactLabel {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--slate);
+  font-family: var(--t1-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.contactValue { display: block; color: var(--ink); font-size: 14.5px; line-height: 1.5; }
+.contactValue a { color: var(--sector-from); font-weight: 600; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+/* ---------- longest sector figure ---------- */
+.sector {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: stretch;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 24px 0 20px;
+}
+.sectorText { padding: 26px 28px; display: flex; flex-direction: column; gap: 6px; }
+.sectorEyebrow {
+  font-family: var(--t1-mono);
+  font-size: 10.5px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--sector-from);
+  margin: 0;
+}
+.sectorRoute {
+  font-family: var(--t1-head);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1.15;
+  color: var(--ink);
+  margin: 4px 0 0;
+  text-wrap: balance;
+}
+.sectorMeta {
+  font-family: var(--t1-mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0;
+}
+.sectorCaption { font-size: 14.5px; line-height: 1.55; color: var(--slate); margin: 10px 0 0; }
+
+.sectorPlot {
+  background: var(--hero-bg);
+  border-left: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 10px;
+}
+/* The arc is schematic and fixed, so it scales rather than reflows. */
+.sectorSvg { width: 100%; height: auto; max-width: 420px; display: block; }
+.sectorDistance {
+  font-family: var(--t1-mono);
+  font-size: 13px;
+  fill: var(--slate);
+}
+.sectorCode {
+  font-family: var(--t1-head);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  fill: var(--ink);
+}
+
+/* Field list — modules that carry values without a table. */
+.fieldList { margin: 6px 0 20px; display: grid; gap: 0; }
+.fieldList > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 16px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.fieldList > div:last-child { border-bottom: 0; }
+.fieldList dt {
+  font-family: var(--t1-head);
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--ink);
+  text-transform: capitalize;
+}
+.fieldList dd { margin: 0; font-size: 15.5px; color: var(--ink); }
+.fieldNote { display: block; margin-top: 6px; font-size: 14px; line-height: 1.5; color: var(--slate); }
+
+@media (max-width: 620px) {
+  .fieldList > div { grid-template-columns: 1fr; gap: 4px; }
+}
+
+/* conflict flag */
+.conflict {
+  border-left: 3px solid var(--check);
+  background: var(--check-bg);
+  padding: 16px 20px;
+  margin: 22px 0;
+  font-size: 15.5px;
+}
+.conflict h4 {
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--check);
+  margin-bottom: 8px;
+  font-family: var(--t1-mono);
+  font-weight: 600;
+}
+
+/* hard rule callout */
+.ruleBox { border: 1px solid var(--ink); padding: 18px 22px; margin: 22px 0; display: flex; gap: 18px; align-items: flex-start; }
+.ruleKey { font-family: var(--t1-mono); font-size: 26px; font-weight: 600; line-height: 1; white-space: nowrap; padding-top: 2px; }
+.ruleBox p { font-size: 15.5px; }
+
+/* Sources disagree — solid and amber-ruled, so it never reads as "not done". */
+.isDisputed {
+  border-color: var(--check);
+  border-left-width: 3px;
+  background: var(--card);
+}
+.isDisputed .moduleHead { border-bottom-color: var(--check); }
+
+/* unpublished module */
+.isPending { border-style: dashed; background: transparent; }
+.isPending .moduleHead { border-bottom-color: var(--rule-strong); }
+.isPending h2 { color: var(--slate); }
+.pendingNote { color: var(--slate); font-size: 15.5px; }
+.pendingNote code {
+  font-family: var(--t1-mono);
+  font-size: 13px;
+  background: var(--card);
+  padding: 2px 6px;
+  border: 1px solid var(--rule);
+}
+
+.fareFallback {
+  background:
+    linear-gradient(135deg, rgba(245, 249, 254, 0.96), rgba(255, 255, 255, 0.98) 58%, rgba(255, 251, 235, 0.72));
+  border-color: #cbd8ea;
+}
+.fareChecklist {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 22px 0;
+}
+.fareCheckItem {
+  min-height: 116px;
+  border: 1px solid var(--rule);
+  background: rgba(255, 255, 255, 0.82);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.fareCheckItem strong {
+  color: var(--ink);
+  font-size: 15px;
+}
+.fareCheckItem span {
+  color: var(--ink-soft);
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+
+/* sources */
+.src {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--t1-mono);
+  font-size: 11.5px;
+  line-height: 1.75;
+  color: var(--slate);
+}
+.src a { color: var(--ink-soft); }
+.src strong {
+  color: var(--ink);
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-size: 10.5px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* faq */
+.module details { border-bottom: 1px solid var(--rule-soft); padding: 15px 0; }
+.module details:last-of-type { border-bottom: 0; }
+.module summary {
+  font-family: var(--t1-head);
+  font-weight: 600;
+  font-size: 16.5px;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.module summary::-webkit-details-marker { display: none; }
+.module summary::after { content: "+"; font-family: var(--t1-mono); color: var(--slate); }
+.module details[open] summary::after { content: "–"; }
+.module details p { margin-top: 12px; font-size: 16px; color: var(--ink-soft); }
+
+/* rail */
+.rail { position: sticky; top: 56px; font-size: 14.5px; }
+.railBlock { border-top: 2px solid #b8c2d0; padding-top: 14px; margin-bottom: 34px; }
+.railBlock h3 {
+  font-family: var(--t1-head);
+  font-size: 1.2rem !important;
+  font-weight: 700;
+  letter-spacing: normal;
+  text-transform: none !important;
+  margin-bottom: 14px;
+}
+.rail ul { list-style: none; margin: 0; padding: 0; }
+.rail li { padding: 8px 0; border-bottom: 1px solid var(--rule-soft); display: flex; justify-content: space-between; gap: 12px; }
+.rail li:last-child { border-bottom: 0; }
+.rail a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule-strong); }
+.rail a:hover { border-bottom-color: var(--ink); }
+.when { font-family: var(--t1-mono); font-size: 11.5px; color: var(--slate-light); white-space: nowrap; }
+
+.byline { font-family: var(--t1-mono); font-size: 11.5px; color: var(--slate); line-height: 1.8; margin: 0; }
+.byline strong { color: var(--ink); font-weight: 600; }
+
+.pagefoot {
+  background: var(--foot-bg);
+  color: var(--foot-text);
+  border-top: 1px solid var(--rule);
+  padding: 30px 0;
+  font-family: var(--t1-mono);
+  font-size: 11.5px;
+}
+.pagefoot a { color: var(--ink); }
+
+.root a:focus-visible,
+.root summary:focus-visible { outline: 2px solid var(--check); outline-offset: 3px; }
+
+/* preview banner — never ships with a real page */
+.sampleBanner {
+  background: var(--check-bg);
+  border-bottom: 1px solid var(--check);
+  color: var(--check);
+  font-family: var(--t1-mono);
+  font-size: 12px;
+  line-height: 1.6;
+  padding: 12px 0;
+}
+
+@media (max-width: 940px) {
+  .cols { grid-template-columns: 1fr; gap: 40px; }
+  .rail { position: static; }
+  .plate { grid-template-columns: 1fr; align-items: start; }
+  .module { padding: 26px 20px 28px; }
+  .fareChecklist { grid-template-columns: 1fr; }
+  .sector { grid-template-columns: 1fr; }
+  .sectorPlot { border-left: 0; border-top: 1px solid var(--rule); }
+  .sectorText { padding: 22px 20px; }
+  .module table { font-size: 14.5px; }
+  .module th, .module td { padding: 10px 10px 10px 0; }
+}
+
+@media (max-width: 620px) {
+  .identity { align-items: flex-start; gap: 14px; }
+  .logo { width: 58px; height: 58px; flex-basis: 58px; border-radius: 12px; padding: 9px; }
+  .root h1 { font-size: 38px; }
+  .root.preview h1 { font-size: 3.5rem; }
+  .contactGrid { grid-template-columns: 1fr; }
+}
+
+
+/* ---------- Cabins & Seating Module Redesign ---------- */
+.cabinGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin: 24px 0 28px;
+}
+.cabinCard {
+  background: #ffffff;
+  border: 1px solid var(--rule-soft);
+  border-radius: 8px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cabinCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+.cabinCard_blue { border-top: 4px solid #0072de; }
+.cabinCard_purple { border-top: 4px solid #7c3aed; }
+.cabinCard_emerald { border-top: 4px solid #059669; }
+.cabinCard_amber { border-top: 4px solid #d97706; }
+
+.cabinHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+.cabinTag {
+  font-family: var(--t1-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--slate);
+  display: block;
+  margin-bottom: 4px;
+}
+.cabinCard h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+}
+.cabinSpecs {
+  background: var(--hero-bg);
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.specItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+.specLabel {
+  color: var(--slate);
+}
+.specValue {
+  font-family: var(--t1-mono);
+  font-weight: 600;
+  color: var(--ink);
+}
+.cabinHighlights {
+  margin-top: auto;
+}
+.highlightTitle {
+  font-family: var(--t1-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate-light);
+  display: block;
+  margin-bottom: 8px;
+}
+.cabinHighlights ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+}
+.bullet {
+  color: var(--verified);
+  font-weight: bold;
+  margin-right: 6px;
+}
+
+.fleetSection {
+  margin-top: 32px;
+  border-top: 1px solid var(--rule-soft);
+  padding-top: 24px;
+}
+.fleetSection h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.fleetNote {
+  font-size: 14px;
+  color: var(--slate);
+  margin-bottom: 16px;
+}
+.aircraftName {
+  font-weight: 600 !important;
+  color: var(--ink);
+}
+.typeBadge {
+  font-family: var(--t1-mono);
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+.typeWide { background: #e0f2fe; color: #0369a1; }
+.typeNarrow { background: #f1f5f9; color: #475569; }
+
+.amenitiesBox {
+  margin-top: 28px;
+  background: var(--hero-bg);
+  border: 1px solid var(--hero-rule);
+  border-radius: 8px;
+  padding: 20px;
+}
+.amenitiesBox h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+.amenityPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.amenityPill {
+  background: #ffffff;
+  border: 1px solid var(--rule-soft);
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink-soft);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+/* ---------- Carry-on & Checked Baggage Redesign ---------- */
+.baggageHeroCard {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+  border: 1px solid var(--hero-rule);
+  border-radius: 8px;
+  padding: 24px;
+  margin: 20px 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+.baggageDimVal {
+  font-family: var(--t1-head);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+.baggageDimSub {
+  font-size: 13.5px;
+  color: var(--slate);
+  margin-top: 4px;
+}
+.baggageTagBadge {
+  background: #0072de;
+  color: #ffffff;
+  font-family: var(--t1-mono);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 8px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.baggageGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+.bagCard {
+  background: #ffffff;
+  border: 1px solid var(--rule-soft);
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+.bagCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.bagIcon {
+  font-size: 24px;
+  background: var(--hero-bg);
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+}
+.bagCardTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+}
+.bagCardSub {
+  font-size: 12px;
+  color: var(--slate);
+}
+.bagWeightVal {
+  font-family: var(--t1-head);
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.3px !important;
+  color: #001e73 !important;
+  margin-bottom: 10px;
+}
+.bagNotesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.baggageRulesBox {
+  background: #f8fafc;
+  border: 1px solid var(--rule-soft);
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin-top: 20px;
+}
+.baggageRulesBox h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.rulesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+/* ---------- Contact & Small Print Redesign ---------- */
+.contactGridRedesign {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  margin: 20px 0 26px;
+}
+.contactCardRedesign {
+  background: #ffffff;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.contactCardRedesign:hover {
+  border-color: #025ccc;
+  box-shadow: 0 4px 12px rgba(2, 92, 204, 0.08);
+}
+.contactCardHead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.contactIconBadge {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background: #f0f6fe;
+  color: #025ccc;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.contactTitle {
+  font-family: var(--t1-head);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+}
+.contactBodyVal {
+  font-size: 15px;
+  color: var(--ink-soft);
+  word-break: break-word;
+}
+.contactBodyVal a {
+  color: #025ccc;
+  font-weight: 600;
+  text-decoration: none;
+}
+.contactBodyVal a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Network / Where They Fly Redesign ---------- */
+.netStatsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 14px;
+  margin: 20px 0 24px;
+}
+.netStatCard {
+  background: #ffffff;
+  border: 1px solid var(--rule-soft);
+  border-radius: 8px;
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+}
+.netStatVal {
+  font-family: var(--t1-head);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #001e73;
+}
+.netStatLbl {
+  font-size: 12px;
+  color: var(--slate);
+  margin-top: 4px;
+  font-weight: 500;
+}
+.netSubTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 24px 0 12px;
+}
+.netHubsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+.netHubCard {
+  background: #ffffff;
+  border: 1px solid var(--rule-soft);
+  border-radius: 8px;
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.netHubCard:hover {
+  border-color: #025ccc;
+  box-shadow: 0 4px 12px rgba(2, 92, 204, 0.08);
+}
+.netHubMain {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.netHubLink {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #025ccc;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 14px;
+}
+.netHubLink:hover {
+  text-decoration: underline;
+  color: #001e73;
+}
+.netHubCity {
+  color: var(--ink);
+  font-weight: 600;
+}
+.netHubLink:hover .netHubCity {
+  color: #025ccc;
+}
+.netHubIata {
+  background: #f0f6fe;
+  color: #025ccc;
+  font-family: var(--t1-mono);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.netHubBadge {
+  font-size: 12px;
+  color: var(--slate);
+  font-family: var(--t1-mono);
+}
+.netPillsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.netDestPill {
+  background: #ffffff;
+  border: 1px solid var(--rule-soft);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #025ccc;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+.netDestPill:hover {
+  background: #f0f6fe;
+  border-color: #025ccc;
+  color: #001e73;
+}
+.netDestPillStatic {
+  color: var(--ink-soft);
+}
+.netDot {
+  font-size: 10px;
+  color: #025ccc;
+}
+.netPillIata {
+  font-family: var(--t1-mono);
+  font-size: 11px;
+  opacity: 0.8;
+}
+.netSectorCard {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-top: 24px;
+}
+.netSectorContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 12px;
+}
+.netSectorPoint {
+  display: flex;
+  flex-direction: column;
+}
+.netSectorLabel {
+  font-size: 11px;
+  font-family: var(--t1-mono);
+  text-transform: uppercase;
+  color: var(--slate);
+  letter-spacing: 0.08em;
+}
+.netSectorCityLink {
+  font-size: 16px;
+  font-weight: 700;
+  color: #025ccc;
+  text-decoration: none;
+  margin-top: 2px;
+}
+.netSectorCityLink:hover {
+  text-decoration: underline;
+  color: #001e73;
+}
+.netSectorCity {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-top: 2px;
+}
+.netSectorArc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  max-width: 260px;
+}
+.netSectorKm {
+  font-family: var(--t1-head);
+  font-size: 14px;
+  font-weight: 800;
+  color: #001e73;
+}
+.netArcLine {
+  width: 100%;
+  height: 2px;
+  background: var(--rule-strong);
+  position: relative;
+  margin: 8px 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.netPlaneIcon {
+  position: absolute;
+  background: #ffffff;
+  padding: 0 4px;
+  font-size: 12px;
+  color: #025ccc;
+}
+.netSectorSub {
+  font-size: 11px;
+  color: var(--slate);
+}
+

@@ -1,0 +1,18 @@
+{
+  "slug": "fixture-disputed-ok",
+  "official_website": "https://www.qantas.com",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "fields": {
+        "cabin_weight": {
+          "value": null,
+          "status": "disputed",
+          "conflicting_values": ["7 kg", "10 kg"],
+          "notes": "The carrier's carry-on page gives 10 kg; other reference sites give 7 kg and describe it as enforced at the gate."
+        }
+      }
+    }
+  ]
+}

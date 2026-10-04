@@ -10,7 +10,7 @@ export default function FeaturedCountries({ countries }: { countries: StrapiDest
         <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
             <h2 className="font-urbanist text-2xl font-bold leading-tight text-forest-900 sm:text-3xl">
-              Explore by country
+              Which destination countries can you explore?
             </h2>
             <p className="mt-3 text-sm leading-6 text-ink/75 sm:text-base">
               Country guides, airports, airlines, and flights — browse every country we cover.

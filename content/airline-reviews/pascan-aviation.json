@@ -1,0 +1,97 @@
+{
+ "slug": "pascan-aviation",
+ "sources": [
+  "tripadvisor"
+ ],
+ "stats": {
+  "source": "all",
+  "reviewCount": 4,
+  "avgRating10": 4.0,
+  "recommendPct": null,
+  "subratings": null,
+  "firstReviewDate": "2019-03-13",
+  "lastReviewDate": "2022-10-28"
+ },
+ "statsBySource": {
+  "tripadvisor": {
+   "source": "tripadvisor",
+   "reviewCount": 4,
+   "avgRating10": 4.0,
+   "recommendPct": null,
+   "subratings": null,
+   "firstReviewDate": "2019-03-13",
+   "lastReviewDate": "2022-10-28",
+   "sourceUrl": "https://www.tripadvisor.com/Airline_Review-d12977000-Reviews-Pascan"
+  }
+ },
+ "reviews": [
+  {
+   "source": "tripadvisor",
+   "id": "ta-866307636",
+   "date": "2022-10-28",
+   "rating10": 2,
+   "title": "Horrible!",
+   "text": "Booked return flights with Pascan, both to connect with Air Canada flights. Shortly after, they cancelled the return flight leaving us with a 13 hour wait in the airport. That’s not all! The night before our 6:00 a.m. departing flight with them to our connection in Montreal, they cancelled our flight with 13 hours notice before departure. I’m done with them!",
+   "author": "KimThibodeau",
+   "authorCountry": null,
+   "authorLocation": "Kingston",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Kingston - Montreal",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-822113799",
+   "date": "2021-12-15",
+   "rating10": 2,
+   "title": "Terrible",
+   "text": "4 hours delay , they ALWAYS have delay , I board 4 plane every month and they are the worst company . They had no light it the bathroom , they said it was broken …. Unbelievable",
+   "author": "Michaël J",
+   "authorCountry": null,
+   "authorLocation": null,
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Newfoundland and Labrador - Montreal",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-819114648",
+   "date": "2021-11-17",
+   "rating10": 2,
+   "title": "Nope",
+   "text": "Now I don’t know if this is their usual way to work but I’m still in disbelieve of my experiences. So here it is: took it twice for work, got delayed twice, and got a small plane ride turned into a fiasco. First time they got a mechanical problem and made us wait, then instead of going back to Montreal they put us in a taxi from Quebec City. From the morning wait to evening Seconde Time, got delayed from 6am to 10am, to 1 pm to cancelled, put on another flight leaving at 3, delayed to almost 4, and then stopped at Quebec City for mechanical reasons for another delay at least an hour (ongoing) to change plane (have to wait for the other one to arrive). 14h day waiting Not a huge fan of their planning Staff is sweet though one even drove me to get food at some point, nothing bad to say about them, Just the horrible planning and very bad planes that apparently have a lot of mechanical problems Told my collègues to avoid if possible",
+   "author": "genevieve c",
+   "authorCountry": null,
+   "authorLocation": null,
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Montreal - Gaspe",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-658295460",
+   "date": "2019-03-13",
+   "rating10": 10,
+   "title": "The best way to fly to Iles de la Madelaine",
+   "text": "I had a nightmare experience with Air Canada while trying to get myself to Iles de la Madelaine during the winter. They were overbooked due to mechanical and weather issues and wanted us to wait in Quebec city for an extra 2 days. We ended up booking a flight with Pascan and they flew directly to Iles de la Madelaine with no stop over in Gaspe, a way more direct route. Checking in was a breeze, they allow 40lbs per person in checked luggage and one small carry on. The flight was quick and smooth. The plane is very tiny so don't expect a ton of leg room.",
+   "author": "traveldel",
+   "authorCountry": null,
+   "authorLocation": "San Francisco",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Quebec City - Iles de la Madeleine",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  }
+ ]
+}

@@ -7,45 +7,47 @@ import { breadcrumbJsonLd } from '@/lib/jsonld';
 import { faqJsonLd } from '@/lib/entity-seo';
 import TpwlLoader from '@/components/TpwlLoader';
 import AirlineResultsFilter from '@/components/AirlineResultsFilter';
+import ComparisonTable from '@/components/ComparisonTable';
 
 export const metadata = {
-  title: 'Flight Search',
-  description: 'Search hundreds of airlines in one place. Powered by our travel partners.',
+  title: 'Cheap flight search',
+  description:
+    'Compare cheap flights from hundreds of airlines and travel sites, check flexible dates, browse popular routes, and plan hotels near your trip.',
   alternates: { canonical: '/flight-search' },
 };
 
 const BOOKING_FAQ: { q: string; a: string }[] = [
   {
     q: 'How do I find the cheapest flights with Originfacts?',
-    a: 'Enter your origin, destination, and dates in the search box above. Originfacts compares fares from hundreds of airlines and online travel agencies through our partner Travelpayouts and surfaces the lowest price for each route — usually within a few seconds. For the absolute cheapest fares, leave the dates flexible and use the calendar view to spot which day of the week is least expensive.',
+    a: 'Start with your departure airport, destination, travel dates and passenger count. Originfacts sends the search to our flight-search partner so you can compare live airline and online travel agency fares in one place. For the lowest total price, check nearby dates, compare one-stop options against non-stop flights, and review baggage fees before you click through to book.',
   },
   {
     q: 'Do you earn a commission when I book through Originfacts?',
-    a: 'Yes. Originfacts is an affiliate of Travelpayouts and earns a small commission when you complete a booking via one of our search links — at no extra cost to you. It’s how we keep the blog independently funded and the search free to use. See our Affiliate Disclosure for the full details.',
+    a: 'Yes. Some flight, hotel and travel links on Originfacts are affiliate links. If you complete a booking after clicking one of those links, we may earn a commission at no extra cost to you. Sponsored links are marked where they appear, and the final booking, payment, ticket rules and customer support remain with the airline or travel seller.',
   },
   {
     q: 'Are the prices I see the same as on the airline’s own website?',
-    a: 'In the vast majority of cases, yes — our partner pulls live fares straight from the airlines and OTAs, so the headline price you see is the price you pay before optional extras like seat selection or checked bags. Always confirm the final total on the booking page before paying.',
+    a: 'The search results are intended to show live fares from airlines and travel agencies, but prices can change while seats are being checked. Always confirm the final fare, taxes, baggage allowance, seat fees and refund rules on the booking page before paying. The cheapest headline fare is not always the cheapest finished trip.',
   },
   {
     q: 'When is the cheapest time to book a flight?',
-    a: 'For short-haul, booking 1–3 months ahead usually gets the best fare. For long-haul, 2–6 months ahead is the sweet spot. Tuesday and Wednesday departures tend to be cheaper than Friday and Sunday, and flying outside school holidays makes a much bigger difference than booking time.',
+    a: 'For many domestic and short-haul routes, fares are often strongest when you compare 1 to 3 months ahead. Long-haul trips usually reward a wider window, often 2 to 6 months before departure. Route demand, school holidays, major events and airline sales matter more than any single magic booking day.',
   },
   {
     q: 'Are last-minute flights cheaper?',
-    a: 'Rarely. The old "wait until the day before" trick mostly stopped working a decade ago — airlines now use dynamic pricing that raises fares as seats fill up. Last-minute bargains do exist on routes with surplus capacity, but they’re the exception, not the rule.',
+    a: 'Usually no. Last-minute seats can be expensive because airlines know business and urgent travellers have less flexibility. Bargains still appear on routes with spare capacity, late schedule changes or seasonal dips, but it is safer to compare early and watch a few date combinations than to rely on a final-week discount.',
   },
   {
     q: 'How can being flexible with my dates save money?',
-    a: 'Shifting a return by one or two days can cut the total by 20–40% on popular routes. Use the “whole month” or “cheapest month” view in the search widget above to see prices laid out day-by-day — the cheapest fare is often hiding mid-week, just outside the dates you originally picked.',
+    a: 'Airfares can change sharply from one day to the next. Moving the outbound or return date by 24 to 48 hours can avoid peak departures, weekend demand or sold-out fare buckets. If your plans allow it, compare midweek departures, early morning flights, late-night arrivals and one-stop routes before choosing.',
   },
   {
     q: 'Why does the price change while I’m searching?',
-    a: 'Fares are pulled live every time you load a result, and airlines adjust them constantly based on demand, seat availability, and competitor pricing. If you see a good fare, lock it in — it can move within minutes.',
+    a: 'Flight prices are dynamic. Airlines and agencies update availability, fare classes, taxes and seat inventory throughout the day, and a fare can disappear while another traveller is booking it. Refresh the search before paying, and treat the checkout page as the final source for the current price.',
   },
   {
     q: 'Does Originfacts actually book my flight?',
-    a: 'No. Originfacts is a travel blog with a metasearch widget — once you find a fare you like, you complete the booking directly on the airline or OTA website. That means your ticket, payment, and any changes or refunds are handled by them, not us, and you keep any loyalty miles or status credits.',
+    a: 'No. Originfacts helps you compare routes, fares and travel context, then sends you to the airline or travel seller to complete the booking. Your ticket, payment confirmation, schedule changes, refunds, seat assignments, baggage purchases and loyalty credit are handled by the company that sells the fare.',
   },
 ];
 
@@ -54,26 +56,26 @@ type ProTip = { n: number; title: string; tagline: string; image?: string };
 const PRO_TIPS: ProTip[] = [
   {
     n: 1,
-    title: 'Flexible of Dates',
-    tagline: 'Shift a day or two, you could save 20–40%.',
+    title: 'Use flexible dates',
+    tagline: 'Compare nearby days before you choose the final fare.',
     image: '/illustrations/flexible-dates.svg',
   },
   {
     n: 2,
-    title: 'Search the Whole Month',
-    tagline: 'One click reveals the cheapest day to fly.',
+    title: 'Scan the whole month',
+    tagline: 'Look for fare drops outside Friday and Sunday peaks.',
     image: '/illustrations/search-month.svg',
   },
   {
     n: 3,
-    title: 'One Stop',
-    tagline: 'Layovers often beat non-stop by 30–50%.',
+    title: 'Compare one-stop routes',
+    tagline: 'A connection can beat non-stop pricing on busy routes.',
     image: '/illustrations/consider-one-stop.svg',
   },
   {
     n: 4,
-    title: 'Book Direct',
-    tagline: 'Skip the OTA, deal straight with the airline.',
+    title: 'Check the final seller',
+    tagline: 'Know who handles changes, baggage and refunds.',
     image: '/illustrations/book-direct.svg',
   },
 ];
@@ -125,9 +127,7 @@ export default async function FlightsPage({
       <JsonLd data={faqJsonLd(BOOKING_FAQ)} />
       <TpwlLoader />
 
-      {/* TPWL loader now lives in app/layout.tsx so the SDK is available
-          site-wide. The two `<div id="tpwl-search">` / `<div id="tpwl-tickets">`
-          containers below are what tells main.js where to render. */}
+      {/* TPWL renders the search form and result list in their containers below. */}
 
       <Script id="flight-search-state" strategy="afterInteractive">
         {`(function () {
@@ -141,18 +141,25 @@ export default async function FlightsPage({
 })();`}
       </Script>
 
-      <div data-testid="fly-page" className="font-inter-scope">
-        <div className="bg-[#f0f3f5]">
-          <div className="fs-search-band mx-auto max-w-7xl px-6 pb-14 pt-16">
-            <header className="max-w-3xl" data-testid="flight-search-hero">
-              <h1 className="editorial-h text-[2.5rem] font-bold tracking-[-1px] text-forest-900">
-                Compare every airline. In one search.
-              </h1>
-              <p className="mt-[5px] text-lg font-normal text-ink/75">
-                Live fares from hundreds of carriers and online travel agencies, ranked by total
-                price. We don&apos;t sell the ticket — we just help you find the cheapest one.
-              </p>
-            </header>
+      <div data-testid="fly-page">
+        <div data-testid="fs-search-section" className="bg-gradient-to-b from-white via-white to-[#edf4ff]">
+          <div className="fs-search-band mx-auto max-w-7xl px-6 pb-16 pt-14 lg:pt-16">
+            <div data-testid="flight-search-hero" className="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_340px]">
+              <header className="max-w-4xl">
+                <h1 className="editorial-h max-w-4xl text-[clamp(2rem,3vw,3rem)] font-bold leading-[1.08] text-forest-900">
+                  Compare cheap flights before you book
+                </h1>
+                <p className="mt-4 text-base text-forest-900/80 max-w-3xl leading-relaxed">
+                  Finding cheap flights requires scanning real-time fare data across major carriers and independent booking channels before selecting your itinerary. Originfacts aggregates live airfares from over 500 airlines, allowing you to instantly compare route options, evaluate flexible date drops, review baggage inclusions, and access verified direct provider links for maximum savings without hidden fees.
+                </p>
+              </header>
+              <aside className="relative hidden h-[168px] overflow-hidden rounded-[18px] bg-forest-900 shadow-lg lg:block" aria-label="Travel inspiration">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/generated/airports/airport-enu-hero.jpg" alt="Traveler overlooking a destination" className="h-full w-full object-cover opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-r from-forest-950/80 via-forest-950/20 to-transparent" />
+                <p className="absolute bottom-5 left-5 max-w-[220px] text-xl font-bold leading-tight text-white">Find the fare that matches the trip, not just the headline price.</p>
+              </aside>
+            </div>
 
             <div className="tpwl-search-wrap mt-10">
               <div id="tpwl-search" />
@@ -171,7 +178,7 @@ export default async function FlightsPage({
         {/* ---------- How to find a cheap flight ---------- */}
         <section className="mt-20" data-testid="travel-pros">
           <h2 className="editorial-h text-[1.5rem] font-bold text-forest-900">
-            How to find a cheap flight
+            How to compare cheap flights well
           </h2>
           <ol className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {PRO_TIPS.map((tip) => (
@@ -206,14 +213,26 @@ export default async function FlightsPage({
 
         <SearchByDestinationBlock />
 
+        <div className="mt-16">
+          <ComparisonTable
+            caption="Flight Ticket Fares vs Inclusion Comparison Matrix"
+            head={['Fare Category', 'Seat Selection', 'Cabin Baggage', 'Checked Luggage', 'Changes & Cancellations']}
+            rows={[
+              ['Basic Economy', 'Random assignment at check-in', '1 Personal Item (Under-seat)', 'Fee required', 'Non-refundable / Fee applies'],
+              ['Standard Economy', 'Standard seat choice', '1 Personal Item + 1 Overhead Bag (7kg)', '1 Bag included (23kg)', 'Changes allowed with fee'],
+              ['Flexi Economy', 'Free seat selection', '1 Personal Item + 1 Overhead Bag (7kg)', '1-2 Bags included (23kg)', 'Free changes / Refundable credit'],
+              ['Business Class', 'Priority seat selection / Lay-flat', '2 Overhead Bags + Personal Item', '2-3 Bags included (32kg)', 'Fully refundable / Free changes'],
+            ]}
+          />
+        </div>
+
         {/* ---------- Booking flights with Originfacts (FAQ) ---------- */}
         <section className="mt-20" data-testid="booking-faq">
           <h2 className="editorial-h text-[1.5rem] font-bold text-forest-900">
-            Booking flights with Originfacts
+            How does booking flights with Originfacts work?
           </h2>
           <p className="mt-2 max-w-4xl text-[1rem] text-ink/75">
-            Quick answers to the questions readers ask us most about searching, booking,
-            and saving on flights.
+            Use these notes before you leave the search page. They explain how live fares work, why prices change, and what Originfacts does after you choose a flight.
           </p>
           <div className="mt-6 grid gap-x-12 sm:grid-cols-1 lg:grid-cols-2">
             {BOOKING_FAQ.map((item) => (

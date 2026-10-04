@@ -6,21 +6,28 @@ import { getRouteFacts } from '@/lib/route-facts';
 import {
   SITE_URL,
   DEFAULT_OG_IMAGE,
-  airlineIsSubstantive,
+  AIRLINES_INDEXABLE,
   airlineIntro,
   airlineAbout,
   airlineExpectations,
   airlineFaqs,
   airlineJsonLd,
+  articleBlogPostingJsonLd,
   faqJsonLd,
   robotsFor,
   summariseRoutes,
 } from '@/lib/entity-seo';
 import { JsonLd, FaqSection } from '@/components/SeoBlocks';
+import { airlineGuideIsPublished, airlineIsIndexable, airlineTier } from '@/lib/airline-tier';
 import { getFlySfoAirlineProfile } from '@/lib/flysfo-airline';
+import { getAirlineFacts } from '@/lib/airline-facts';
+import { getAirlineReviews } from '@/lib/airline-reviews';
+import { getAirlineRef } from '@/lib/airline-refs';
+import AirlineTier1, { derivedFaqs } from '@/components/airline-tier1/AirlineTier1';
 import { breadcrumbJsonLd, absoluteUrl } from '@/lib/jsonld';
 import { buildMetaDescription, programmaticTitle } from '@/lib/seo';
 import AirlineReviews from '@/components/AirlineReviews';
+import AirlineShowcase from '@/components/AirlineShowcase';
 import AirlineFlightSearch from '@/components/AirlineFlightSearch';
 import AboutParagraphs from '@/components/AboutParagraphs';
 import type { Metadata } from 'next';
@@ -34,7 +41,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const a = await getAirline(slug);
   if (!a) return { title: 'Not found' };
   const routes = await listRoutesByCarrier(slug, 1).catch(() => []);
-  const description = buildMetaDescription([a.shortDescription, a.about, airlineIntro(a)]);
+  const description = buildMetaDescription([
+    a.shortDescription,
+    a.about,
+    airlineIntro(a).length >= 80 ? airlineIntro(a) : null,
+    `${a.name} airline profile with country, hub, IATA and ICAO codes, routes, baggage context, passenger notes and booking checks for travellers comparing flights.`,
+  ]);
   const url = `${SITE_URL}/airlines/${a.slug}`;
   const logo = a.logo && a.logo.url ? a.logo : null;
   const title = programmaticTitle(
@@ -63,7 +75,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: 'summary_large_image',
       images: [logo ? absoluteUrl(mediaUrl(logo)!) : DEFAULT_OG_IMAGE],
     },
-    robots: robotsFor(airlineIsSubstantive(a, routes.length > 0)),
+    robots: robotsFor(
+      airlineGuideIsPublished(a.slug) || (AIRLINES_INDEXABLE && airlineIsIndexable(a, routes.length > 0)),
+    ),
   };
 }
 
@@ -163,8 +177,82 @@ export default async function AirlinePage({ params }: Props) {
     { label: 'Popular routes', value: routes.length ? String(routes.length) : undefined },
   ].filter((fact) => fact.value);
 
+  const articleSchema = articleBlogPostingJsonLd({
+    headline: `${airline.name} Airline Guide & Carrier Profile`,
+    description: airline.about || intro,
+    url: `${SITE_URL}/airlines/${airline.slug}`,
+    image: logo,
+    authorNameOrSlug: 'elena-rostova',
+    categoryName: 'Airlines',
+    type: 'BlogPosting',
+  });
+
+  // Published Tier 1 guides & Tier 2 carriers. Render modern policy layout
+  // for all substantive carriers (Tier 1 & Tier 2).
+  if (airlineGuideIsPublished(slug) || airlineTier(airline, routes.length > 0) <= 2) {
+    const tier1Faqs = derivedFaqs(airline, routeFacts, alliance);
+    const tier1AirlineLd: Record<string, unknown> = { ...airlineJsonLd(airline, url), '@id': `${url}#airline` };
+    if (airline.founded) tier1AirlineLd.foundingDate = String(airline.founded);
+    if (alliance) tier1AirlineLd.memberOf = { '@type': 'Organization', name: alliance };
+
+    return (
+      <>
+        <JsonLd data={articleSchema} />
+        <JsonLd data={tier1AirlineLd} />
+        {tier1Faqs.length > 0 && <JsonLd data={faqJsonLd(tier1Faqs)} />}
+        <JsonLd
+          data={breadcrumbJsonLd([
+            { name: 'Airlines', url: '/airlines' },
+            { name: airline.name, url: `/airlines/${airline.slug}` },
+          ])}
+        />
+        <AirlineTier1
+          airline={airline}
+          routeFacts={routeFacts}
+          facts={getAirlineFacts(airline.slug)}
+          alliance={alliance}
+          reviews={getAirlineReviews(airline.slug)}
+          airlineRef={getAirlineRef(airline.iataCode)}
+          previewRedesign
+        />
+      </>
+    );
+  }
+
+  // Redesigned "showcase" layout — currently piloted on Aircalin only. All
+  // other airlines keep the original layout below. Content/JSON-LD identical.
+  if (slug === 'aircalin') {
+    return (
+      <AirlineShowcase
+        airline={airline}
+        url={url}
+        logo={logo}
+        intro={intro}
+        aboutParas={aboutParas}
+        expectations={expectations}
+        goodToKnowCards={goodToKnowCards}
+        faqs={faqs}
+        routes={routes}
+        routeFacts={routeFacts}
+        relatedAirlines={relatedAirlines}
+        summary={summary}
+        longestRoute={longestRoute}
+        avgKm={avgKm}
+        customerPhone={customerPhone}
+        baggagePhone={baggagePhone}
+        alliance={alliance}
+        websiteHref={websiteHref}
+        keyDestinations={keyDestinations}
+        hubCity={hubCity}
+        hubLabel={hubLabel}
+        frequentFlyerProgram={frequentFlyerProgram}
+      />
+    );
+  }
+
   return (
-    <article data-testid={`airline-page-${slug}`}>
+    <article className="bg-[#fbfcff]" data-testid={`airline-page-${slug}`}>
+      <JsonLd data={articleSchema} />
       <JsonLd data={airlineJsonLd(airline, url)} />
       <JsonLd data={faqJsonLd(faqs)} />
       <JsonLd
@@ -173,24 +261,21 @@ export default async function AirlinePage({ params }: Props) {
           { name: airline.name, url: `/airlines/${airline.slug}` },
         ])}
       />
-      {/* Breadcrumb */}
-      <div className="mx-auto max-w-6xl px-6 pt-10">
-        <nav className="text-xs uppercase tracking-widest text-forest-900/60">
+      <div className="mx-auto max-w-7xl px-6 pt-8">
+        <nav className="border-y border-forest-900/10 py-3 font-urbanist text-xs font-bold uppercase tracking-widest text-forest-900/60">
           <Link href="/airlines" className="hover:text-forest-900">Airlines</Link>
           <span className="mx-2 text-forest-900/30">/</span>
           <span className="text-forest-900/80">{airline.name}</span>
         </nav>
       </div>
 
-      {/* Hero */}
-      <header className="mx-auto mt-6 max-w-6xl px-6">
-        <div className="overflow-hidden rounded-[0.3rem] border-0 bg-gradient-to-br from-white via-forest-50/45 to-sand-50">
-          <div className="grid gap-8 px-6 py-8 lg:grid-cols-[minmax(0,1.4fr)_minmax(280px,0.8fr)] lg:px-8 lg:py-10">
-            <div className="flex flex-col gap-5">
-              {/* Status pill + region · country (top row, matching the reference) */}
+      <header className="mx-auto mt-8 max-w-7xl px-6">
+        <div className="overflow-hidden rounded-[0.3rem] border border-forest-900/10 bg-white">
+          <div className="grid gap-0 lg:grid-cols-[minmax(0,1fr)_360px]">
+            <div className="bg-gradient-to-br from-[#f8fbff] via-white to-[#fff8e6] p-6 sm:p-8 lg:p-10">
               <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
                 {airline.type && (
-                  <span className="inline-flex items-center rounded-full bg-[#e8effb] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#3d6bc9]">
+                  <span className="inline-flex items-center rounded-[0.3rem] bg-primary-emphasis px-3 py-1.5 font-urbanist text-[11px] font-bold uppercase tracking-[0.14em] text-white">
                     {airline.type}
                   </span>
                 )}
@@ -201,12 +286,11 @@ export default async function AirlinePage({ params }: Props) {
                 )}
               </div>
 
-              {/* Logo + title on one line */}
-              <div className="flex items-center gap-4">
-                <div className="flex h-12 w-auto max-w-[150px] flex-none items-center sm:h-14">
+              <div className="mt-8 flex flex-col gap-6 sm:flex-row sm:items-center">
+                <div className="flex h-28 w-44 flex-none items-center justify-center rounded-[0.3rem] border border-forest-900/10 bg-white p-5">
                   {logo ? (
                     // eslint-disable-next-line @next/next/no-img-element
-                    <img src={logo} alt={airline.name} className="h-full w-auto object-contain" />
+                    <img src={logo} alt={airline.name} className="max-h-full max-w-full object-contain" />
                   ) : (
                     <span className="font-urbanist text-2xl font-bold text-forest-900/60">
                       {(airline.iataCode || airline.name).slice(0, 3).toUpperCase()}
@@ -218,14 +302,15 @@ export default async function AirlinePage({ params }: Props) {
                 </h1>
               </div>
 
-              {/* Description */}
-              <p className="max-w-3xl text-sm font-light leading-7 text-forest-900/82 sm:text-base">
-                {airline.shortDescription?.trim() || intro}
+              <p className="mt-6 max-w-4xl text-base font-normal leading-8 text-forest-900/80">
+                {airline.shortDescription?.trim() && airline.shortDescription.trim().split(/\s+/).length >= 40 && airline.shortDescription.trim().split(/\s+/).length <= 60
+                  ? airline.shortDescription.trim()
+                  : intro}
               </p>
 
-              <div className="flex flex-wrap items-center gap-3 font-mono text-xs">
+              <div className="mt-7 flex flex-wrap items-center gap-3 font-mono text-xs">
                 {airline.iataCode && (
-                  <span className="rounded-[0.3rem] bg-forest-900 px-3 py-1.5 font-bold tracking-wider text-sand-100">
+                  <span className="rounded-[0.3rem] bg-forest-900 px-3 py-1.5 font-bold tracking-wider text-white">
                     IATA · {airline.iataCode}
                   </span>
                 )}
@@ -247,16 +332,26 @@ export default async function AirlinePage({ params }: Props) {
               </div>
             </div>
 
-            <aside className="rounded-[0.3rem] border border-forest-900/10 bg-white/85 p-5 shadow-[0_1px_2px_rgba(0,0,0,0.03)] lg:p-6">
-              <h2 className="text-[11px] uppercase tracking-[0.2em] text-forest-900/55">Airline snapshot</h2>
-              <dl className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+            <aside className="border-t border-forest-900/10 bg-forest-950 p-6 text-white lg:border-l lg:border-t-0 lg:p-8">
+              <h2 className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-white/55">Airline snapshot</h2>
+              <dl className="mt-6 grid gap-px overflow-hidden rounded-[0.3rem] bg-white/15">
                 {heroFacts.map((fact) => (
-                  <div key={fact.label}>
-                    <dt className="text-[11px] uppercase tracking-[0.2em] text-forest-900/45">{fact.label}</dt>
-                    <dd className="mt-1 text-sm font-semibold text-forest-900">{fact.value}</dd>
+                  <div key={fact.label} className="bg-forest-950 px-4 py-4">
+                    <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/45">{fact.label}</dt>
+                    <dd className="mt-1 text-sm font-semibold text-white">{fact.value}</dd>
                   </div>
                 ))}
               </dl>
+              {websiteHref && (
+                <a
+                  href={websiteHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 inline-flex items-center rounded-[0.3rem] bg-white px-5 py-3 font-urbanist text-sm font-bold uppercase tracking-wider text-forest-950 transition hover:bg-[#fff8e6]"
+                >
+                  Official website
+                </a>
+              )}
             </aside>
           </div>
         </div>
@@ -268,11 +363,11 @@ export default async function AirlinePage({ params }: Props) {
       </div>
 
       {/* About + Details — two columns: details (30%) on the left, about (60%) offset to the right */}
-      <section className="mx-auto mt-14 max-w-6xl px-6 pb-20" data-testid="airline-about">
-        <div className="grid gap-10 lg:grid-cols-[3fr_6fr]">
-          <aside className="rounded-[0.3rem] border border-forest-900/10 bg-forest-900/[0.02] p-6 lg:self-start">
-            <h3 className="editorial-h text-xs font-bold uppercase tracking-wider text-forest-900/60">
-              Details
+      <section className="mx-auto mt-14 max-w-7xl px-6 pb-20" data-testid="airline-about">
+        <div className="grid gap-8 lg:grid-cols-[360px_minmax(0,1fr)]">
+          <aside className="self-start rounded-[0.3rem] border border-forest-900/10 bg-white p-6">
+            <h3 className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-primary-emphasis">
+              Operating details
             </h3>
             <dl className="mt-5 space-y-4">
               <InfoRow label="IATA Code" value={airline.iataCode} mono />
@@ -321,12 +416,15 @@ export default async function AirlinePage({ params }: Props) {
             </dl>
           </aside>
 
-          <div className="lg:pl-6">
-            <p className="eyebrow-tag">
-              <span className="inline-block h-px w-8 bg-forest-800/60" />
+          <div className="bg-white p-6 ring-1 ring-forest-900/10 sm:p-8">
+            <p className="section-eyebrow">
+              <span className="inline-block h-px w-8 bg-primary-emphasis" />
               About {airline.name}
             </p>
-            <div className="mt-4">
+            <h2 className="mt-3 font-urbanist text-3xl font-bold leading-tight text-forest-950">
+              What to know before booking {airline.name}
+            </h2>
+            <div className="mt-5">
               <AboutParagraphs paragraphs={aboutParas} />
             </div>
           </div>
@@ -337,27 +435,28 @@ export default async function AirlinePage({ params }: Props) {
           (AI-written, ≥4) with title+body; fall back to the derived
           expectations paragraphs. */}
       {(goodToKnowCards.length > 0 || expectations.length > 0) && (
-        <section className="mx-auto max-w-6xl px-6 pb-20" data-testid="airline-expectations">
-          <p className="eyebrow-tag">
-            <span className="inline-block h-px w-8 bg-forest-800/60" />
+        <section className="mx-auto max-w-7xl px-6 pb-20" data-testid="airline-expectations">
+          <div className="bg-gradient-to-br from-white via-[#f8fbff] to-[#fff8e6] p-6 ring-1 ring-forest-900/10 sm:p-8">
+          <p className="section-eyebrow">
+            <span className="inline-block h-px w-8 bg-primary-emphasis" />
             Good to know
           </p>
-          <h2 className="editorial-h mt-3 text-2xl font-bold text-forest-900 lg:text-3xl">
+          <h2 className="mt-3 font-urbanist text-3xl font-bold leading-tight text-forest-950">
             Flying with {airline.name} — what to expect
           </h2>
           {goodToKnowCards.length > 0 ? (
-            <div className="mt-8 grid gap-x-10 gap-y-8 sm:grid-cols-2">
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {goodToKnowCards.map((card, i) => (
-                <div key={i} className="flex gap-4" data-testid={`gtk-card-${i}`}>
+                <div key={i} className="flex gap-4 bg-white p-5 ring-1 ring-forest-900/10" data-testid={`gtk-card-${i}`}>
                   <span
-                    className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-forest-900 font-urbanist text-sm font-bold text-sand-100"
+                    className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-forest-900 font-urbanist text-sm font-bold text-white"
                     aria-hidden
                   >
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   <div className="min-w-0">
-                    <h3 className="font-urbanist text-base font-bold text-forest-900">{card.title}</h3>
-                    <p className="mt-1.5 text-sm font-light leading-7 text-forest-900/78">{card.body}</p>
+                    <h3 className="font-urbanist text-base font-bold text-forest-950">{card.title}</h3>
+                    <p className="mt-1.5 text-sm font-normal leading-7 text-forest-900/78">{card.body}</p>
                   </div>
                 </div>
               ))}
@@ -371,13 +470,14 @@ export default async function AirlinePage({ params }: Props) {
             {expectations.map((para, i) => (
               <div
                 key={i}
-                className="rounded-[0.3rem] border border-forest-900/10 bg-white/85 p-6 shadow-[0_1px_2px_rgba(0,0,0,0.03)]"
+                className="border border-forest-900/10 bg-white p-6"
               >
-                <p className="text-sm font-light leading-7 text-forest-900/82">{para}</p>
+                <p className="text-sm font-normal leading-7 text-forest-900/82">{para}</p>
               </div>
             ))}
           </div>
           )}
+          </div>
         </section>
       )}
 
@@ -388,14 +488,14 @@ export default async function AirlinePage({ params }: Props) {
 
       {/* Popular routes operated by this airline */}
       {routes.length > 0 && (
-        <section className="mx-auto max-w-6xl px-6 pb-20" data-testid="airline-routes">
+        <section className="mx-auto max-w-7xl px-6 pb-20" data-testid="airline-routes">
           <header className="flex flex-col gap-3 border-b border-forest-900/10 pb-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="eyebrow-tag">
                 <span className="inline-block h-px w-8 bg-forest-800/60" />
                 Route network
               </p>
-              <h2 className="editorial-h mt-3 text-2xl font-bold text-forest-900 lg:text-3xl">
+              <h2 className="mt-3 font-urbanist text-3xl font-bold leading-tight text-forest-950">
                 Popular routes operated by {airline.name}
               </h2>
             </div>
@@ -450,13 +550,13 @@ export default async function AirlinePage({ params }: Props) {
       {/* Popular routes — fallback from generated key destinations when there
           are no tracked routes (hub → each destination). */}
       {routes.length === 0 && keyDestinations.length > 0 && (
-        <section className="mx-auto max-w-6xl px-6 pb-20" data-testid="airline-routes">
+        <section className="mx-auto max-w-7xl px-6 pb-20" data-testid="airline-routes">
           <header className="border-b border-forest-900/10 pb-4">
             <p className="eyebrow-tag">
               <span className="inline-block h-px w-8 bg-forest-800/60" />
               Route network
             </p>
-            <h2 className="editorial-h mt-3 text-2xl font-bold text-forest-900 lg:text-3xl">
+            <h2 className="mt-3 font-urbanist text-3xl font-bold leading-tight text-forest-950">
               Popular routes operated by {airline.name}
             </h2>
             <p className="mt-3 text-sm font-light text-forest-900/60">
@@ -490,12 +590,12 @@ export default async function AirlinePage({ params }: Props) {
 
       {/* Related airlines from the same country — internal discovery links */}
       {relatedAirlines.length > 0 && (
-        <section className="mx-auto max-w-6xl px-6 pb-20" data-testid="airline-related">
+        <section className="mx-auto max-w-7xl px-6 pb-20" data-testid="airline-related">
           <p className="eyebrow-tag">
             <span className="inline-block h-px w-8 bg-forest-800/60" />
             More from {airline.country}
           </p>
-          <h2 className="editorial-h mt-3 text-2xl font-bold text-forest-900 lg:text-3xl">
+          <h2 className="mt-3 font-urbanist text-3xl font-bold leading-tight text-forest-950">
             Other airlines based in {airline.country}
           </h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

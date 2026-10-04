@@ -1,0 +1,456 @@
+carrier_key,name,iata,country,type,locale,band,region,official_website,help_root,baggage_checked_url,baggage_carryon_url,baggage_fees_url,fare_conditions_url,checkin_url,conditions_of_carriage_url,article_selector,notes,has_fact_file,has_review_file
+abx-air-inc,"ABX Air, Inc.",GB,United States,Scheduled,,,,,,,,,,,,,,yes,no
+adria-airways,Adria Airways,JP,Slovenia,Scheduled,,,,,,,,,,,,,,yes,no
+aegean-airlines,Aegean Airlines,A3,Greece,Scheduled,,,,https://en.aegeanair.com,,,,,,,https://en.aegeanair.com/conditions-notices/conditions-notices/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+aero-charter-ukraine,Aero-Charter Ukraine,DW,Ukraine,Scheduled,,,,,,,,,,,,,,yes,no
+aero-mongolia,Aero Mongolia,M0,Mongolia,Scheduled,,,,,,,,,,,,,,yes,no
+aero-tropics-air-services,Aero-Tropics Air Services,HC,Australia,Scheduled,,,,https://flyairsenegal.com,,,,,,,https://flyairsenegal.com/en/legal-notice/conditions-of-carriage/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+aeroflot,Aeroflot,SU,Russia,Scheduled,,,,https://www.aeroflot.ru,,,,,,,https://www.aeroflot.ru/gb-en/information/legal/contract,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+aeromar,Aeromar,VW,Mexico,Scheduled,,,,,,,,,,,,,,yes,no
+aeromexico,Aeroméxico,AM,Mexico,Scheduled,,,,https://aeromexico.com,,,,,,,https://aeromexico.com/en-us/legal-information,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+african-express-airways,African Express Airways,XU,Kenya,Scheduled,,,,,,,,,,,,,,yes,no
+ahk-air-hong-kong-limited,AHK Air Hong Kong Limited,LD,Hong Kong,Scheduled,,,,,,,,,,,,,,yes,no
+aigle-azur,Aigle Azur,ZI,France,Scheduled,,,,,,,,,,,,,,yes,no
+air-albania,Air Albania,ZB,Reunion,Scheduled,,,,,,,,,,,,,,yes,no
+air-alsie,Air Alsie,6I,Denmark,Scheduled,,,,,,,,,,,,,,yes,no
+air-arabia,Air Arabia,G9,United Arab Emirates,Low-cost,,,,,,,,,,,,,,yes,no
+air-arabia-egypt,Air Arabia Egypt,E5,Egypt,Low-cost,,,,,,,,,,,,,,yes,no
+air-arabia-maroc,Air Arabia Maroc,3O,Morocco,Low-cost,,,,,,,,,,,,,,yes,no
+air-astana,Air Astana,KC,Kazakhstan,Scheduled,,,,,,,,,,,,,,yes,no
+air-austral,Air Austral,UU,France,Scheduled,,,,https://www.air-austral.com,,,,,,,https://www.air-austral.com/en/general-conditions-of-carriage.html,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+air-botswana,Air Botswana,BP,Botswana,Scheduled,,,,https://www.airbotswana.co.bw,,,,,,,https://www.airbotswana.co.bw/general-conditions-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+air-burkina,Air Burkina,2J,Burkina Faso,Scheduled,,,,https://air-burkina.com,,,,,,,"https://air-burkina.com/en/general-conditions-of-carriage#:~:text=The%20passenger%20is%20required%20to,departure%20formalities%20to%20be%20completed.",,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+air-busan,Air Busan,BX,South Korea,Low-cost,,,,,,,,,,,,,,yes,no
+air-cambodia,Air Cambodia,K6,Cambodia,Scheduled,,,,https://www.cambodiaangkorair.com,,,,,,,https://www.cambodiaangkorair.com/post-category/34/terms-and-conditions,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+air-cargo-carriers-llc,"Air Cargo Carriers, LLC.",2Q,United States,Scheduled,,,,,,,,,,,,,,yes,no
+air-changan,Air Changan,9H,China,Scheduled,,,,,,,,,,,,,,yes,no
+air-corsica,Air Corsica,XK,France,Scheduled,,,,https://www.aircorsica.com,,,,,,,https://www.aircorsica.com/flights/conditions-carriage-passengers.html,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+air-cote-divoire,Air Cote D'Ivoire,HF,Côte d'Ivoire (Ivory Coast),Scheduled,,,,,,,,,,,,,,yes,no
+air-dilijans,Air Dilijans,RM,Armenia,Scheduled,,,,https://armeniafly.com,,,,,,,https://armeniafly.com/conditions-of-carriage-en,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+air-djibouti,Air Djibouti,DJ,Djibouti,Scheduled,,,,,,,,,,,,,,yes,no
+air-europa,Air Europa,UX,Spain,Scheduled,,,,https://www.aireuropa.com,,,,,,,https://www.aireuropa.com/uk/en/aea/travel-information/terms-and-conditions/conditions-of-carriage.html,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+air-greenland,Air Greenland,GL,Greenland,Scheduled,,,,https://as-agl-web-prod.azurewebsites.net,,,,,,,https://as-agl-web-prod.azurewebsites.net/media/5hkdqc4p/provisions-of-carriage-air-greenland.pdf,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+air-iceland-connect,Air Iceland Connect,NY,Iceland,Scheduled,,,,,,,,,,,,,,yes,no
+air-india-express,Air India Express,IX,India,Low-cost,,,,,,,,,,,,,,yes,no
+air-japan,Air Japan,NQ,Japan,Scheduled,,,,https://www.air-japan.co.jp,,,,,,,https://www.air-japan.co.jp/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+air-kiribati,Air Kiribati,IK,Kiribati,Scheduled,,,,,,,,,,,,,,yes,no
+air-koryo,Air Koryo,JS,North Korea,Scheduled,,,,,,,,,,,,,,yes,no
+air-libya,Air Libya,7I,Libya,Scheduled,,,,,,,,,,,,,,yes,no
+air-macau,Air Macau,NX,Macao,Scheduled,,,,http://www.airmacau.com.mo,,,,,,,http://www.airmacau.com.mo/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+air-madagascar,Air Madagascar,MD,Madagascar,Scheduled,,,,https://madagascarairlines.com,,,,,,,https://madagascarairlines.com/en/informations/general-conditions-of-sale-and-carriage.html,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+air-mauritius,Air Mauritius,MK,Mauritius,Scheduled,,,,https://www.airmauritius.com,,,,,,,https://www.airmauritius.com/conditions-of-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+air-mekong,Air Mekong,P8,Vietnam,Scheduled,,,,,,,,,,,,,,yes,no
+air-moana,Air Moana,NM,French Polynesia,Scheduled,,,,,,,,,,,,,,yes,no
+air-moldova,Air Moldova,9U,Moldova,Scheduled,,,,https://www.airmoldova.md,,,,,,,https://www.airmoldova.md/terms-of-carriage-en/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+air-namibia,Air Namibia,SW,Namibia,Scheduled,,,,,,,,,,,,,,yes,no
+air-niamey,Air Niamey,A7,Niger,Low-cost,,,,,,,,,,,,,,yes,no
+air-niugini,Air Niugini,PX,Papua New Guinea,Scheduled,,,,https://www.airniugini.com.pg,,,,,,,https://www.airniugini.com.pg/conditions-of-carriage/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+air-north,Air North,4N,Canada,Scheduled,,,,https://www.flyairnorth.com,,,,,,,https://www.flyairnorth.com/support,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+air-nostrum,Air Nostrum,YW,Spain,Scheduled,,,,,,,,,,,,,,yes,no
+air-rarotonga,Air Rarotonga,GZ,Cook Islands,Scheduled,,,,,,,,,,,,,,yes,no
+air-saint-pierre,Air Saint Pierre,PJ,France,Scheduled,,,,,,,,,,,,,,yes,no
+air-serbia,Air Serbia,JU,Serbia,Scheduled,,,,https://www.airserbia.com,,,,,,,https://www.airserbia.com/en/footer_copy_menu/legal/general-conditions-of-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+air-seychelles,Air Seychelles,HM,Seychelles,Scheduled,,,,https://www.airseychelles.com,,,,,,,https://www.airseychelles.com/en/conditions-of-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+air-tahiti,Air Tahiti,VT,French Polynesia,Scheduled,,,,https://www.airtahitinui.com,,,,,,,https://www.airtahitinui.com/uk-en/conditions-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+air-tahiti-nui,Air Tahiti Nui,TN,France,Scheduled,,,,https://www.airtahitinui.com,,,,,,,https://www.airtahitinui.com/uk-en/conditions-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+air-tanzania,Air Tanzania,TC,Tanzania,Scheduled,,,,https://www.airtanzania.co.tz,,,,,,,https://www.airtanzania.co.tz/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+air-thanlwin,Air Thanlwin,ST,Myanmar,Scheduled,,,,,,,,,,,,,,yes,no
+air-tindi,Air Tindi,8T,Canada,Scheduled,,,,,,,,,,,,,,yes,no
+air-transat,Air Transat,TS,Canada,Scheduled,,,,https://www.airtransat.com,,,,,,,https://www.airtransat.com/en-GB/legal-notice-uk/general-terms-and-conditions,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+air-transport-international-llc,Air Transport International L.L.C.,8C,United States,Scheduled,,,,,,,,,,,,,,yes,no
+air-vanuatu,Air Vanuatu,NF,Vanuatu,Scheduled,,,,https://www.airvanuatu.com,,,,,,,https://www.airvanuatu.com/travel-info/conditions-of-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+air-zimbabwe,Air Zimbabwe,UM,Zimbabwe,Scheduled,,,,,,,,,,,,,,yes,no
+airbaltic,airBaltic,BT,Latvia,Low-cost,,,,https://www.airbaltic.com,,,,,,,https://www.airbaltic.com/en-GB/general-conditions-of-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+airblue,airblue,PA,Pakistan,Low-cost,,,,https://www.airblue.com,,,,,,,https://www.airblue.com/corp/terms,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+airbridgecargo,AirBridgeCargo,RU,Russia,Scheduled,,,,,,,,,,,,,,yes,no
+aircalin,Aircalin,SB,New Caledonia,Scheduled,,,,,,,,,,,,,,yes,no
+airkenya,AirKenya,P2,Kenya,Scheduled,,,,,,,,,,,,,,yes,no
+airline-urga,Airline Urga,3N,Ukraine,Scheduled,,,,,,,,,,,,,,yes,no
+airlink,Airlink,4Z,Austria,Scheduled,,,,https://www.flyairlink.com,,,,,,,https://www.flyairlink.com/en/za/conditions-of-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+airnorth,Airnorth,TL,Australia,Scheduled,,,,https://www.airnorth.com.au,,,,,,,https://www.airnorth.com.au/plan/fare-information/conditions-of-carriage/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+ajet,Ajet,VF,Cyprus,Low-cost,,,,,,,,,,,,,,yes,no
+aklak-air,Aklak Air,6L,Canada,Scheduled,,,,,,,,,,,,,,yes,no
+all-nippon-airways,All Nippon Airways,NH,Japan,Scheduled,,,,https://www.ana.co.jp,,,,,,,https://www.ana.co.jp/en/gb/siteinfo/international/conditions-of-carriage/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+allegiant-air,Allegiant Air,G4,United States,Low-cost,,,,https://www.allegiantair.com,,,,,,,https://www.allegiantair.com/contract-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+almasria-universal-airlines,AlMasria Universal Airlines,UJ,Egypt,Scheduled,,,,,,,,,,,,,,yes,no
+amakusa-airlines,Amakusa Airlines,MZ,Japan,Scheduled,,,,,,,,,,,,,,yes,no
+amerijet-international-inc,Amerijet International Inc.,M6,United States,Scheduled,,,,,,,,,,,,,,yes,no
+ana-wings,ANA Wings,EH,Japan,Scheduled,,,,https://www.ana.co.jp,,,,,,,https://www.ana.co.jp/en/gb/siteinfo/international/conditions-of-carriage/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+ariana-afghan-airlines,Ariana Afghan Airlines,FG,Afghanistan,Scheduled,,,,https://www.flyariana.com,,,,,,,https://www.flyariana.com/FooterLinks/Legal,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+arik-air,Arik Air,W3,Nigeria,Scheduled,,,,,,,,,,,,,,yes,no
+arkia,Arkia,IZ,Israel,Scheduled,,,,https://www.arkia.co.il,,,,,,,https://www.arkia.co.il/content/movil-domestic,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+aserca-airlines,Aserca Airlines,R7,Venezuela,Scheduled,,,,,,,,,,,,,,yes,no
+asiana-airlines,Asiana Airlines,OZ,South Korea,Scheduled,,,,https://flyasiana.com,,,,,,,https://flyasiana.com/C/GB/EN/contents/terms-of-transportation-and-notification,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+asl-airlines-france,ASL Airlines France,5O,France,Scheduled,,,,https://www.aslairlines.fr,,,,,,,https://www.aslairlines.fr/wp-content/uploads/2013/04/190219-GAL-CONDITIONS-OF-CARRIAGE-2019-1.pdf,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+atlantic-airways,Atlantic Airways,RC,Faroe Islands,Low-cost,,,,https://www.atlanticairways.com,,,,,,,https://www.atlanticairways.com/media/1523/iata_conditions-of-contract_en.pdf,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+atlas-air,Atlas Air,5Y,United States,Scheduled,,,,,,,,,,,,,,yes,no
+atran,Atran,V8,Russia,Scheduled,,,,,,,,,,,,,,yes,no
+austrian-airlines,Austrian Airlines,OS,Austria,Scheduled,,,,https://www.austrian.com,,,,,,,https://www.austrian.com/es/en/legal/conditions-of-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+avianca,Avianca,AV,Colombia,Scheduled,,,,https://www.avianca.com,,,,,,,https://www.avianca.com/uk/en/sobre-nosotros/informacion-legal/contrato-transporte/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+avianca-costa-rica,Avianca Costa Rica,LR,Costa Rica,Scheduled,,,,https://www.avianca.com,,,,,,,https://www.avianca.com/uk/en/sobre-nosotros/informacion-legal/contrato-transporte/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+avianca-ecuador,Avianca Ecuador,2K,Ecuador,Scheduled,,,,,,,,,,,avianca.com/otr/en/about-us/legal-documentation/contract-of-carriage/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+aviastar-tu,Aviastar-TU,4B,Russia,Scheduled,,,,https://www.boutiqueair.com,,,,,,,https://www.boutiqueair.com/pages/terms,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+avion-express-lithuania,Avion Express Lithuania,X9,Lithuania,Scheduled,,,,,,,,,,,,,,yes,no
+avion-express-malta,Avion Express Malta,4X,Malta,Scheduled,,,,,,,,,,,,,,yes,no
+azerbaijan-airlines,Azerbaijan Airlines,J2,Azerbaijan,Scheduled,,,,https://www.azal.az,,,,,,,https://www.azal.az/en/information/rules-and-conditions,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+batik-air,Batik Air,ID,Indonesia,Scheduled,,,,,,,,,,,,,,yes,no
+bearskin-airlines,Bearskin Airlines,JV,Canada,Scheduled,,,,,,,,,,,,,,yes,no
+beijing-capital-airlines,Beijing Capital Airlines,JD,China,Scheduled,,,,https://intl.jdair.net,,,,,,,https://intl.jdair.net/news/index?id=73&valueMenuaid=75,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+bemidji-airlines,Bemidji Airlines,CH,United States,Scheduled,,,,,,,,,,,,,,yes,no
+bering-air,Bering Air,8E,United States,Scheduled,,,,,,,,,,,,,,yes,no
+berjaya-air,Berjaya Air,J8,Malaysia,Scheduled,,,,,,,,,,,,,,yes,no
+bhutan-airlines,Bhutan Airlines,B3,Bhutan,Scheduled,,,,,,,,,,,,,,yes,no
+binter-canarias,Binter Canarias,NT,Spain,Scheduled,,,,https://www.bintercanarias.com,,,,,,,https://www.bintercanarias.com/eng/information/contract-of-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+blue-air,Blue Air,0B,Romania,Low-cost,,,,,,,,,,,,,,yes,no
+blue-islands,Blue Islands,SI,United Kingdom,Scheduled,,,,,,,,,,,,,,yes,no
+blue1,Blue1,KF,Finland,Scheduled,,,,https://www.airbelgium.com,,,,,,,https://www.airbelgium.com/en/legal/general-terms-and-conditions-of-carriage/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+boliviana-de-aviacion,Boliviana de Aviación,OB,Bolivia,Scheduled,,,,https://www.boa.bo,,,,,,,https://www.boa.bo/content/docs/contrato_transporte_en.pdf,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+breeze-airways,Breeze Airways,MX,United States,Low-cost,,,,,,,,,,,,,,yes,no
+brit-air,Brit Air,DB,France,Scheduled,,,,,,,,,,,,,,yes,no
+brussels-airlines,Brussels Airlines,SN,Belgium,Scheduled,,,,https://www.brusselsairlines.com,,,,,,,https://www.brusselsairlines.com/de/en/legal-notices/terms-and-conditions-conditions-of-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+buddha-air,Buddha Air,U4,Nepal,Scheduled,,,,,,,,,,,,,,yes,yes
+bulgaria-air,Bulgaria Air,FB,Bulgaria,Scheduled,,,,https://www.air.bg,,,,,,,https://www.air.bg/en/customer-support/general-conditions-of-carriage/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,no,yes
+buta-airways,Buta Airways,55,Azerbaijan,Low-cost,,,,,,,,,,,,,,no,yes
+bvi-airways,BVI Airways,XV,British Virgin Islands,Scheduled,,,,,,,,,,,,,,yes,no
+cabo-verde-airlines,Cabo Verde Airlines,VR,Cape Verde,Scheduled,,,,https://caboverdeairlines.com,,,,,,,https://caboverdeairlines.com/general-terms-and-conditions/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+calm-air,Calm Air,MO,Canada,Scheduled,,,,https://www.calmair.com,,,,,,,https://www.calmair.com/before-you-fly/passenger-rights,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+canadian-north,Canadian North,5T,Canada,Scheduled,,,,,,,,,,,,,,yes,no
+carpatair,Carpatair,V3,Romania,Scheduled,,,,,,,,,,,,,,yes,no
+cayman-airways,Cayman Airways,KX,Cayman Islands,Scheduled,,,,https://www.caymanairways.com,,,,,,,https://www.caymanairways.com/contract-of-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+ceiba-intercontinental,CEIBA Intercontinental,C2,Equatorial Guinea,Scheduled,,,,,,,,,,,,,,yes,no
+cemair,CemAir,5Z,South Africa,Scheduled,,,,https://www.flycemair.co.za,,,,,,,https://www.flycemair.co.za/general_r/extras_and_info.php,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,no,yes
+central-mountain-air,Central Mountain Air,9M,Canada,Scheduled,,,,,,,,,,,,,,yes,yes
+chair-airlines,Chair Airlines,GM,Switzerland,Scheduled,,,,,,,,,,,,,,no,yes
+chautauqua-airlines,Chautauqua Airlines,RP,United States,Scheduled,,,,,,,,,,,,,,yes,no
+chengdu-airlines,Chengdu Airlines,EU,China,Scheduled,,,,,,,,,,,,,,yes,yes
+china-cargo-airlines,China Cargo Airlines,CK,China,Scheduled,,,,,,,,,,,,,,yes,no
+china-express-airlines,China Express Airlines,G5,China,Scheduled,,,,,,,,,,,,,,yes,yes
+china-southern-airlines,China Southern Airlines,CZ,China,Scheduled,,,,https://www.csair.com,,,,,,,https://www.csair.com/cn/tourguide/booking/orders/order/gjysztj/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+china-united-airlines,China United Airlines,KN,China,Low-cost,,,,,,,,,,,,,,yes,yes
+chongqing-airlines,Chongqing Airlines,OQ,China,Scheduled,,,,,,,,,,,,,,yes,yes
+cimber,Cimber,QA,Denmark,Scheduled,,,,,,,,,,,,,,yes,no
+citilink,Citilink,QG,Indonesia,Low-cost,,,,,,,,,,,,,,yes,yes
+cm-airlines,CM Airlines,H5,Honduras,Scheduled,,,,,,,,,,,,,,no,yes
+conviasa,Conviasa,V0,Venezuela,Scheduled,,,,,,,,,,,,,,yes,no
+copa-airlines,Copa Airlines,CM,Panama,Scheduled,,,,https://www.copaair.com,,,,,,,https://www.copaair.com/en/web/us/contract-of-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+corendon-airlines,Corendon Airlines,XC,Turkey,Scheduled,,,,,,,,,,,,,,yes,yes
+corendon-airlines-europe,Corendon Airlines Europe,XR,Malta,Scheduled,,,,,,,,,,,,,,yes,no
+corsair-international,Corsair International,SS,France,Scheduled,,,,https://www.flycorsair.com,,,,,,,https://www.flycorsair.com/en/legal/general-sale-and-transport-conditions,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+croatia-airlines,Croatia Airlines,OU,Croatia,Scheduled,,,,https://www.croatiaairlines.com,,,,,,,https://www.croatiaairlines.com/Legal-information/General-conditions-of-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+cronos-airlines,Cronos Airlines,C8,Equatorial Guinea,Scheduled,,,,,,,,,,,,,,yes,no
+csa-czech-airlines,CSA Czech Airlines,OK,Czech Republic,Scheduled,,,,https://www.csa.cz,,,,,,,https://www.csa.cz/gb-en/travel-information/before-the-flight/conditions-of-carriage/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+cyprus-airways,Cyprus Airways,CY,Cyprus,Scheduled,,,,,,,,,,,,,,yes,no
+daallo-airlines,Daallo Airlines,D3,Djibouti,Scheduled,,,,,,,,,,,,,,yes,yes
+dana-air,Dana Air,9J,Nigeria,Scheduled,,,,,,,,,,,,,,yes,no
+danish-air-transport,Danish Air Transport,DX,Denmark,Scheduled,,,,,,,,,,,,,,no,yes
+delta-air-lines,Delta Air Lines,DL,United States,Scheduled,,,,https://www.delta.com,,,,,,,https://www.delta.com/gb/en/legal/contract-of-carriage-igr,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+dhl-air-limited,DHL Air Limited,D0,United Kingdom,Scheduled,,,,,,,,,,,,,,yes,no
+dniproavia,Dniproavia,Z6,Ukraine,Scheduled,,,,,,,,,,,,,,yes,yes
+donavia,Donavia,D9,Russia,Scheduled,,,,,,,,,,,,,,yes,no
+donghai-airlines,Donghai Airlines,DZ,China,Scheduled,,,,,,,,,,,,,,yes,yes
+dot-lt,DOT LT,R6,Lithuania,Scheduled,,,,,,,,,,,,,,yes,no
+eastar-jet,Eastar Jet,ZE,South Korea,Low-cost,,,,,,,,,,,,,,yes,no
+eastern-airways,Eastern Airways,T3,United Kingdom,Low-cost,,,,,,,,,,,,,,yes,no
+edelweiss-air,Edelweiss Air,WK,Switzerland,Scheduled,,,,,,,,,,,,,,yes,no
+egyptair,Egyptair,MS,Egypt,Scheduled,,,,https://www.egyptair.com,,,,,,,https://www.egyptair.com/en/Pages/Conditions-of-Carriage.aspx,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+ellinair,Ellinair,EL,Greece,Scheduled,,,,,,,,,,,,,,no,yes
+enter-air,Enter Air,E4,Poland,Scheduled,,,,,,,,,,,,,,no,yes
+envoy-air,Envoy Air,MQ,United States,Scheduled,,,,,,,,,,,,,,yes,no
+eritrean-airlines,Eritrean Airlines,B8,Eritrea,Scheduled,,,,,,,,,,,,,,yes,no
+ernest-airlines,Ernest Airlines,EG,Italy,Low-cost,,,,,,,,,,,,,,no,yes
+ethiopian-airlines,Ethiopian Airlines,ET,Ethiopia,Scheduled,,,,https://www.ethiopianairlines.com,,,,,,,https://www.ethiopianairlines.com/aa/information/essential-information/conditions-of-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+etihad-airways,Etihad Airways,EY,United Arab Emirates,Scheduled,,,,https://www.etihad.com,,,,,,,https://www.etihad.com/en-gb/legal/conditions-of-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+euroatlantic-airways,EuroAtlantic Airways,YU,Portugal,Scheduled,,,,,,,,,,,,,,yes,yes
+european-air-charter,European Air Charter,H6,United Kingdom,Scheduled,,,,,,,,,,,,,,yes,no
+everts-air-cargo,Everts Air Cargo,5V,United States,Scheduled,,,,,,,,,,,,,,yes,no
+expressjet,ExpressJet,EV,United States,Scheduled,,,,,,,,,,,,,,yes,no
+fat-far-eastern-air-transport,FAT Far Eastern Air Transport,FE,Taiwan (Republic of China),Scheduled,,,,,,,,,,,,,,yes,no
+fedex,FedEx,FX,United States,Scheduled,,,,,,,,,,,,,,yes,no
+firefly,Firefly,FY,Malaysia,Scheduled,,,,,,,,,,,,,,yes,yes
+first-air,First Air,7F,Canada,Scheduled,,,,,,,,,,,,,,yes,yes
+flair-airlines,Flair Airlines,F8,Canada,Low-cost,,,,,,,,,,,,,,no,yes
+fly-all-ways,Fly All Ways,8W,Suriname,Scheduled,,,,,,,,,,,,,,no,yes
+fly-baghdad,Fly Baghdad,IF,Iraq,Scheduled,,,,,,,,,,,,,,no,yes
+fly-one,Fly One,5F,Moldova,Low-cost,,,,https://flyone.eu,,,,,,,https://flyone.eu/en/About-FLYONE/General-Rules,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,no,yes
+flyarystan,FlyArystan,FS,Kazakhstan,Low-cost,,,,,,,,,,,,,,no,yes
+flybe,Flybe,BE,United Kingdom,Low-cost,,,,,,,,,,,,,,yes,no
+flybosnia,FlyBosnia,6W,Bosnia and Herzegovina,Scheduled,,,,,,,,,,,,,,no,yes
+flyegypt,FlyEgypt,FT,Egypt,Scheduled,,,,,,,,,,,,,,no,yes
+frontier-airlines,Frontier Airlines,F9,United States,Low-cost,,,,https://www.flyfrontier.com,,,,,,,https://www.flyfrontier.com/legal/contract-of-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+fuji-dream-airlines,Fuji Dream Airlines,JH,Japan,Scheduled,,,,,,,,,,,,,,no,yes
+fuzhou-airlines,Fuzhou Airlines,FU,China,Scheduled,,,,,,,,,,,,,,no,yes
+georgian-airways,Georgian Airways,A9,Georgia,Scheduled,,,,https://www.georgian-airways.com,,,,,,,https://www.georgian-airways.com/en/information/conditions,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+globus-airlines,Globus Airlines,GH,Russia,Scheduled,,,,,,,,,,,,,,yes,no
+gojet-airlines,GoJet Airlines,G7,United States,Scheduled,,,,,,,,,,,,,,yes,no
+gol-transportes-aereos,Gol Transportes Aéreos,G3,Brazil,Low-cost,,,,https://www.voegol.com.br,,,,,,,https://www.voegol.com.br/en-us/legal-information/passenger-air-transportation-agreement,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+grand-canyon-scenic-airlines,Grand Canyon Scenic Airlines,YR,United States,Scheduled,,,,,,,,,,,,,,yes,no
+grand-china-air,Grand China Air,CN,China,Scheduled,,,,,,,,,,,,,,yes,yes
+great-lakes-airlines,Great Lakes Airlines,ZK,United States,Scheduled,,,,,,,,,,,,,,yes,no
+gulf-air,Gulf Air,GF,Bahrain,Scheduled,,,,https://www.gulfair.com,,,,,,,https://www.gulfair.com/transparency/conditions-of-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+gx-airlines,GX Airlines,GX,China,Scheduled,,,,,,,,,,,,,,no,yes
+hainan-airlines,Hainan Airlines,HU,China,Scheduled,,,,https://www.hainanairlines.com,,,,,,,https://www.hainanairlines.com/HUPortal/dyn/portal/DisplayPage?LANGUAGE=GB&COUNTRY_SITE=GB&SITE=CBHZCBHZ&PAGE=TECO,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+halcyonair,Halcyonair,7Z,Cape Verde,Scheduled,,,,,,,,,,,,,,yes,no
+hawaiian-airlines,Hawaiian Airlines,HA,United States,Scheduled,,,,https://www.hawaiianairlines.com,,,,,,,https://www.hawaiianairlines.com/legal/international-contract-of-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+hawkair,Hawkair,BH,Canada,Scheduled,,,,,,,,,,,,,,yes,no
+hebei-airlines,Hebei Airlines,NS,China,Scheduled,,,,,,,,,,,,,,no,yes
+heli-air-monaco,Heli Air Monaco,YO,Monaco,Scheduled,,,,,,,,,,,,,,yes,no
+helijet,Helijet,JB,Canada,Scheduled,,,,,,,,,,,,,,yes,no
+helvetic-airways,Helvetic Airways,2L,Switzerland,Scheduled,,,,https://www.helvetic.com,,,,,,,https://www.helvetic.com/en/travelinfo,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+himalaya-airlines,Himalaya Airlines,H9,Nepal,Scheduled,,,,https://www.himalaya-airlines.com,,,,,,,https://www.himalaya-airlines.com/travel-ha/general-conditions-of-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,no,yes
+hong-kong-airlines,Hong Kong Airlines,HX,Hong Kong SAR of China,Scheduled,,,,https://www.hongkongairlines.com,,,,,,,https://www.hongkongairlines.com/en_HK/footer/legal-privacy/home,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+hop,HOP!,A5,France,Low-cost,,,,,,,,,,,,,,no,yes
+horizon-air,Horizon Air,QX,United States,Scheduled,,,,,,,,,,,,,,yes,no
+hunnu-air,Hunnu Air,MR,Germany,Scheduled,,,,,,,,,,,,,,yes,yes
+iberia-express,Iberia Express,I2,Spain,Low-cost,,,,https://www.iberiaexpress.com,,,,,,,https://www.iberiaexpress.com/en/general-info/contact/general-terms-and-conditions/general-conditions-of-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+ibex-airlines,Ibex Airlines,FW,Japan,Scheduled,,,,,,,,,,,,,,yes,no
+icelandair,Icelandair,FI,Iceland,Scheduled,,,,https://www.icelandair.com,,,,,,,https://www.icelandair.com/support/terms-and-conditions/conditions-of-carriage/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+intercaribbean-airways,InterCaribbean Airways,JY,Turks and Caicos Islands,Scheduled,,,,,,,,,,,,,,yes,no
+iraero,IrAero,IO,Russia,Scheduled,,,,,,,,,,,,,,yes,yes
+iraqi-airways,Iraqi Airways,IA,Iraq,Scheduled,,,,,,,,,,,,,,yes,yes
+island-air,Island Air,WP,Mexico,Scheduled,,,,,,,,,,,,,,no,yes
+israir-airlines,Israir Airlines,6H,Israel,Scheduled,,,,https://www.israirairlines.com,,,,,,,https://www.israirairlines.com/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+izhavia,Izhavia,I8,Russia,Scheduled,,,,,,,,,,,,,,yes,yes
+jambojet,Jambojet,JM,Kenya,Low-cost,,,,,,,,,,,,,,no,yes
+japan-air-commuter,Japan Air Commuter,JC,Japan,Scheduled,,,,,,,,,,,,,,yes,no
+japan-transocean-air,Japan Transocean Air,NU,Japan,Scheduled,,,,,,,,,,,,,,yes,no
+jazeera-airways,Jazeera Airways,J9,Kuwait,Low-cost,,,,https://www.jazeeraairways.com,,,,,,,https://www.jazeeraairways.com/en-kw/terms-and-conditions,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+jeju-air,Jeju Air,7C,Republic of Korea,Low-cost,,,,https://www.jejuair.net,,,,,,,https://www.jejuair.net/en/terms/page/carriageTemrs.do,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+jet-airways,Jet Airways,9W,India,Scheduled,,,,,,,,,,,,,,yes,yes
+jet-asia-airways,Jet Asia Airways,JF,Thailand,Scheduled,,,,,,,,,,,,,,yes,no
+jet-aviation-business,Jet Aviation Business,PP,Switzerland,Scheduled,,,,,,,,,,,,,,yes,no
+jet2com,Jet2.com,LS,United Kingdom,Low-cost,,,,,,,,,,,,,,yes,yes
+jetsmart,JetSmart,JA,Chile,Low-cost,,,,,,,,,,,,,,no,yes
+jetstar-asia,Jetstar Asia,3K,Singapore,Low-cost,,,,https://www.jetstar.com,,,,,,,https://www.jetstar.com/jp/en/conditions-of-carriage-3k,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+jetstar-japan,Jetstar Japan,GK,Japan,Low-cost,,,,https://www.jetstar.com,,,,,,,https://www.jetstar.com/jp/en/conditions-of-carriage-gk,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+jiangxi-air,Jiangxi Air,RY,China,Low-cost,,,,,,,,,,,,,,no,yes
+jin-air,Jin Air,LJ,South Korea,Low-cost,,,,,,,,,,,,,,no,yes
+jordan-aviation,Jordan Aviation,R5,Jordan,Scheduled,,,,,,,,,,,,,,yes,yes
+juneyao-airlines,Juneyao Airlines,HO,China,Scheduled,,,,https://global.juneyaoair.com,,,,,,,https://global.juneyaoair.com/servicehelp/new/General%20Conditions%20of%20Carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,no,yes
+kalitta-air,Kalitta Air,K4,United States,Scheduled,,,,,,,,,,,,,,yes,no
+kalstar-aviation,Kalstar Aviation,KD,Indonesia,Scheduled,,,,,,,,,,,,,,no,yes
+kam-air,Kam Air,RQ,Afghanistan,Scheduled,,,,https://www.kamair.com,,,,,,,https://www.kamair.com/terms-and-conditions#agreement-and-terms,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+kan-air,Kan Air,K8,Thailand,Scheduled,,,,,,,,,,,,,,yes,no
+kartika-airlines,Kartika Airlines,3Y,Indonesia,Scheduled,,,,,,,,,,,,,,yes,no
+kenmore-air,Kenmore Air,M5,United States,Scheduled,,,,,,,,,,,,,,yes,no
+kenn-borek-air,Kenn Borek Air,4K,Canada,Scheduled,,,,https://askariaviation.com,,,,,,,https://askariaviation.com/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+kenya-airways,Kenya Airways,KQ,Kenya,Scheduled,,,,https://www.kenya-airways.com,,,,,,,https://www.kenya-airways.com/condition-of-carriage/en/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+klm-cityhopper,KLM Cityhopper,WA,Netherlands,Scheduled,,,,,,,,,,,,,,yes,no
+klm-royal-dutch-airlines,KLM Royal Dutch Airlines,KL,Netherlands,Scheduled,,,,https://www.klm.com,,,,,,,https://www.klm.com/information/legal/conditions-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+kulula,Kulula,МН,South Africa,Low-cost,,,,,,,,,,,,,,no,yes
+kunming-airlines,Kunming Airlines,KY,China,Scheduled,,,,,,,,,,,,,,yes,yes
+kuwait-airways,Kuwait Airways,KU,Kuwait,Scheduled,,,,https://www.kuwaitairways.com,,,,,,,https://www.kuwaitairways.com/en/terms/conditions-of-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+la-compagnie,La Compagnie,B0,France,Scheduled,,,,,,,,,,,,,,yes,no
+la-costena,La Costeña,LC,Nicaragua,Scheduled,,,,,,,,,,,,,,no,yes
+lam-mozambique-airlines,LAM Mozambique Airlines,TM,Mozambique,Scheduled,,,,,,,,,,,,,,yes,no
+lan-chile-cargo,LAN Chile Cargo,UC,Chile,Scheduled,,,,,,,,,,,,,,yes,no
+lanmei-airlines,Lanmei Airlines,LQ,Cambodia,Low-cost,,,,https://lanmeiairlines.com,,,,,,,https://lanmeiairlines.com/lanmeiairlines2.0/default/menus/EN/experience/LMTransport.html,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,no,yes
+lao-airlines,Lao Airlines,QV,Laos,Scheduled,,,,https://laoairlines.com,,,,,,,https://laoairlines.com/en/term-and-condition/#,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+lao-skyway,Lao Skyway,LK,Laos,Scheduled,,,,,,,,,,,,,,no,yes
+laser-airlines,LASER Airlines,QL,Venezuela,Scheduled,,,,,,,,,,,,,,yes,yes
+latam-airlines,LATAM Airlines,LA,Chile,Scheduled,,,,https://www.latamairlines.com,,,,,,,https://www.latamairlines.com/gb/en/legal/transportation-contract-conditions,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+latam-airlines-colombia,LATAM Airlines Colombia,4C,Colombia,Scheduled,,,,,,,,,,,,,,yes,no
+latam-airlines-ecuador,LATAM Airlines Ecuador,XL,Ecuador,Scheduled,,,,https://www.latamairlines.com,,,,,,,https://www.latamairlines.com/gb/en/legal/transportation-contract-conditions,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+latam-airlines-paraguay,LATAM Airlines Paraguay,PZ,Paraguay,Scheduled,,,,,,,,,,,,,,yes,no
+latam-airlines-peru,LATAM Airlines Peru,LP,Peru,Scheduled,,,,,,,,,,,,,,yes,no
+libyan-airlines,Libyan Airlines,LN,Libya,Scheduled,,,,,,,,,,,,,,yes,yes
+link-airways,Link Airways,FC,Australia,Scheduled,,,,,,,,,,,,,,no,yes
+loganair,Loganair,LM,United Kingdom,Scheduled,,,,https://www.loganair.co.uk,,,,,,,https://www.loganair.co.uk/travel-help/carriage-conditions/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+loong-air,Loong Air,GJ,China,Scheduled,,,,,,,,,,,,,,no,yes
+lot-polish,LOT Polish,LO,Poland,Scheduled,,,,https://www.lot.com,,,,,,,https://www.lot.com/pl/en/regulations/conditions-of-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+lucky-air,Lucky Air,8L,China,Low-cost,,,,https://www.luckyair.net,,,,,,,https://www.luckyair.net/help.html?id=5d7714de91c6dd531559d9b7,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+lufthansa-cityline,Lufthansa CityLine,CL,Germany,Scheduled,,,,,,,,,,,,,,yes,no
+luxair,Luxair,LG,Luxembourg,Scheduled,,,,https://www.luxair.lu,,,,,,,https://www.luxair.lu/en/information/general-conditions-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+lynden-air-cargo-llc,"Lynden Air Cargo, LLC",L2,United States,Scheduled,,,,,,,,,,,,,,yes,no
+magnicharters,Magnicharters,0Z,Mexico,Scheduled,,,,,,,,,,,,,,no,yes
+mahan-air,Mahan Air,W5,Iran,Scheduled,,,,,,,,,,,,,,yes,yes
+maldivian,Maldivian,Q2,Maldives,Scheduled,,,,,,,,,,,,,,yes,yes
+mandarin-airlines,Mandarin Airlines,AE,Taiwan,Scheduled,,,,https://global.csair.com,,,,,,,https://global.csair.com/MO/GB/booking-policy/international-carriage-conditions,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,no,yes
+mango,Mango,JE,South Africa,Low-cost,,,,,,,,,,,,,,yes,yes
+martinair,Martinair,MP,Netherlands,Scheduled,,,,,,,,,,,,,,yes,no
+maya-island-air,Maya Island Air,2M,Belize,Scheduled,,,,https://www.mayaislandair.com,,,,,,,https://www.mayaislandair.com/Information/Terms-and-Conditions,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+mayair,MAYAir,7M,Mexico,Scheduled,,,,,,,,,,,,,,no,yes
+miat-mongolian-airlines,MIAT Mongolian Airlines,OM,Mongolia,Scheduled,,,,https://www.miat.com,,,,,,,https://www.miat.com/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+middle-east-airlines,Middle East Airlines,ME,Lebanon,Low-cost,,,,https://www.mea.com.lb,,,,,,,https://www.mea.com.lb/english/plan-and-book/legal-notices/conditions-of-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+mng-airlines,MNG Airlines,MB,Turkey,Scheduled,,,,,,,,,,,,,,yes,no
+monacair,Monacair,QM,Monaco,Scheduled,,,,,,,,,,,,,,no,yes
+montenegro-airlines,Montenegro Airlines,YM,Montenegro,Scheduled,,,,,,,,,,,,,,yes,no
+motor-sich-airlines,Motor Sich Airlines,M9,Ukraine,Scheduled,,,,https://flymotorsich.com,,,,,,,https://flymotorsich.com/en/pages/conditions,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+myanmar-airways-international,Myanmar Airways International,8M,Myanmar,Scheduled,,,,https://maiair.com,,,,,,,https://maiair.com/plan-your-journey/general-conditions-of-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+myanmar-national-airlines,Myanmar National Airlines,UB,Myanmar,Scheduled,,,,,,,,,,,,,,no,yes
+myway-airlines,Myway Airlines,MJ,Georgia,Scheduled,,,,https://mywayairlines.com,,,,,,,https://mywayairlines.com/en/381/General-Condition-of-Carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,no,yes
+nam-air,NAM Air,IN,Indonesia,Scheduled,,,,,,,,,,,,,,no,yes
+national-airlines,National Airlines,N8,United States,Scheduled,,,,,,,,,,,,,,yes,no
+nauru-airlines,Nauru Airlines,ON,Nauru,Scheduled,,,,,,,,,,,,,,yes,yes
+neos,Neos,NO,Italy,Scheduled,,,,,,,,,,,,,,yes,yes
+nepal-airlines,Nepal Airlines,RA,Nepal,Scheduled,,,,https://nepalairlines.com.np,,,,,,,https://nepalairlines.com.np/instructions,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,no,yes
+niki,Niki,HG,Austria,Low-cost,,,,,,,,,,,,,,no,yes
+nile-air,Nile Air,NP,Egypt,Scheduled,,,,https://www.nileair.com,,,,,,,https://www.nileair.com/#/en/home,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+nippon-cargo-airlines,Nippon Cargo Airlines,KZ,Japan,Scheduled,,,,,,,,,,,,,,yes,no
+nok-air,Nok Air,DD,Thailand,Low-cost,,,,,,,,,,,,,,yes,yes
+nokscoot,NokScoot,XW,Thailand,Low-cost,,,,,,,,,,,,,,no,yes
+nordstar,NordStar,Y7,Russia,Scheduled,,,,,,,,,,,,,,no,yes
+nordwind-airlines,Nordwind Airlines,N4,Russia,Scheduled,,,,,,,,,,,,,,yes,yes
+norse-atlantic-uk,Norse Atlantic UK,Z0,United Kingdom,Low-cost,,,,,,,,,,,,,,yes,no
+northern-air-cargo,Northern Air Cargo,NC,United States,Scheduled,,,,,,,,,,,,,,yes,no
+northwest-airlines,Northwest Airlines,NW,United States,Scheduled,,,,,,,,,,,,,,yes,no
+northwestern-air,Northwestern Air,J3,Canada,Scheduled,,,,,,,,,,,,,,yes,no
+norwegian-air-sweden,Norwegian Air Sweden,D8,Sweden,Scheduled,,,,https://www.norwegian.com,,,,,,,https://www.norwegian.com/en/booking/helpful-booking-info/legal/general-conditions-of-carriage/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+nouvelair,Nouvelair,BJ,Tunisia,Scheduled,,,,,,,,,,,,,,yes,no
+nova-airlines,NOVA Airlines,O9,Sudan,Scheduled,,,,,,,,,,,,,,yes,no
+novoair,Novoair,VQ,Bangladesh,Scheduled,,,,,,,,,,,,,,no,yes
+okay-airways,Okay Airways,BK,China,Scheduled,,,,,,,,,,,,,,yes,yes
+olympic-air,Olympic Air,OA,Greece,Scheduled,,,,https://www.olympicair.com,,,,,,,https://www.olympicair.com/en/conditions-and-notices/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+oman-air,Oman Air,WY,Oman,Scheduled,,,,https://www.omanair.com,,,,,,,https://www.omanair.com/au/en/conditions-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+onur-air,Onur Air,8Q,Turkey,Low-cost,,,,https://www.onurair.com,,,,,,,https://www.onurair.com/en/faq/detail/General-Terms/859/1332/0,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+orient-thai-airlines,Orient Thai Airlines,OX,Thailand,Low-cost,,,,,,,,,,,,,,yes,no
+pacific-airlines,Pacific Airlines,BL,Vietnam,Scheduled,,,,,,,,,,,,,,yes,no
+pacific-coastal-airlines,Pacific Coastal Airlines,8P,Canada,Scheduled,,,,https://www.pacificcoastal.com,,,,,,,https://www.pacificcoastal.com/fare-terms-conditions/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+pal-express,PAL Express,2P,Philippines,Low-cost,,,,,,,,,,,,,,yes,no
+pascan-aviation,Pascan Aviation,P6,Canada,Scheduled,,,,,,,,,,,,,,yes,yes
+pawa-dominicana,PAWA Dominicana,7N,Dominican Republic,Scheduled,,,,,,,,,,,,,,no,yes
+pegasus-airlines,Pegasus Airlines,PC,Turkey,Low-cost,,,,https://www.flypgs.com,,,,,,,https://www.flypgs.com/en/useful-info/info-about-flights/general-rules,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+png-air,PNG Air,CG,Papua New Guinea,Scheduled,,,,http://cargo.pngair.com.pg,,,,,,,http://cargo.pngair.com.pg/staticpages/office_other_details.aspx?details_type=T&carrier_code=CG&airport_code=UNG,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+polar-air-cargo-worldwide-inc,"Polar Air Cargo Worldwide, Inc.",PO,United States,Scheduled,,,,,,,,,,,,,,yes,no
+porter-airlines,Porter Airlines,P3,Canada,Scheduled,,,,https://www.flyporter.com,,,,,,,https://www.flyporter.com/en/travel-terms-and-conditions,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,no,yes
+precision-air,Precision Air,PW,Tanzania,Scheduled,,,,https://www.precisionairtz.com,,,,,,,https://www.precisionairtz.com/en/about-us/10-travel-planner/14-conditions-of-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,no,yes
+primera-air,Primera Air,PF,Iceland,Scheduled,,,,,,,,,,,,,,yes,yes
+proflight-zambia,Proflight Zambia,P0,Zambia,Scheduled,,,,https://proflight-zambia.com,,,,,,,https://proflight-zambia.com/img/cms/documents/Terms&Conditions%20v30apr21.pdf,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+qingdao-airlines,Qingdao Airlines,QW,China,Scheduled,,,,,,,,,,,,,,no,yes
+red-wings,Red Wings,WZ,Russia,Scheduled,,,,,,,,,,,,,,no,yes
+regional-air,Regional Air,8N,Mauritania,Scheduled,,,,,,,,,,,,,,yes,yes
+rex-regional-express,Rex - Regional Express,ZL,Australia,Scheduled,,,,https://www.rex.com.au,,,,,,,https://www.rex.com.au/flightinfo/COC.aspx,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+rossiya-airlines,Rossiya Airlines,FV,Russia,Scheduled,,,,,,,,,,,,,,yes,no
+royal-air-maroc,Royal Air Maroc,AT,Morocco,Scheduled,,,,https://www.royalairmaroc.com,,,,,,,https://www.royalairmaroc.com/uk-en/general-terms-and-conditions,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+royal-air-philippines,Royal Air Philippines,RW,Philippines,Low-cost,,,,,,,,,,,,,,no,yes
+royal-brunei-airlines,Royal Brunei Airlines,BI,Brunei,Scheduled,,,,https://www.flyroyalbrunei.com,,,,,,,https://www.flyroyalbrunei.com/rba/carriage-conditions.php,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+royal-jordanian,Royal Jordanian,RJ,Jordan,Scheduled,,,,https://www.rj.com,,,,,,,https://www.rj.com/en/info-and-tips/conditions-of-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+ruili-airlines,Ruili Airlines,DR,China,Low-cost,,,,,,,,,,,,,,no,yes
+rusline,RusLine,7R,Russia,Scheduled,,,,,,,,,,,,,,yes,yes
+rwandair,RwandAir,WB,Rwanda,Scheduled,,,,https://www.rwandair.com,,,,,,,https://www.rwandair.com/our-policies/terms-conditions-of-carriage/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+s7-airlines,S7 Airlines,S7,Russia,Scheduled,,,,,,,,,,,,,,no,yes
+safarilink-aviation,Safarilink Aviation,F2,Kenya,Scheduled,,,,,,,,,,,,,,no,yes
+safi-airways,Safi Airways,4Q,Afghanistan,Scheduled,,,,,,,,,,,,,,yes,yes
+samoa-airways,Samoa Airways,OL,Samoa,Scheduled,,,,https://www.samoaairways.com,,,,,,,https://www.samoaairways.com/flying-with-us/terms-and-conditions-of-carriage/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,no,yes
+sansa,SANSA,RZ,Costa Rica,Scheduled,,,,,,,,,,,,,,yes,yes
+sas-scandinavian,SAS Scandinavian,SK,Sweden,Scheduled,,,,https://www.flysas.com,,,,,,,https://www.flysas.com/gb-en/legal-info/conditions-of-carriage/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+sata-air-acores,SATA Air Acores,SP,Portugal,Scheduled,,,,,,,,,,,,,,yes,no
+scat,SCAT,DV,Kazakhstan,Low-cost,,,,,,,,,,,,,,yes,no
+sepehran-airlines,Sepehran Airlines,IS,Iran,Low-cost,,,,,,,,,,,,,,yes,no
+serene-air,Serene Air,ER,Pakistan,Scheduled,,,,,,,,,,,,,,no,yes
+severstal-air-company,Severstal Air Company,D2,Russia,Scheduled,,,,,,,,,,,,,,yes,yes
+shaheen-air,Shaheen Air,NL,Pakistan,Scheduled,,,,,,,,,,,,,,yes,no
+shandong-airlines,Shandong Airlines,SC,China,Scheduled,,,,https://www.sda.cn,,,,,,,https://www.sda.cn/en/about/news/show/3195.html,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+shanghai-airlines,Shanghai Airlines,FM,China,Scheduled,,,,https://www.ceair.com,,,,,,,https://www.ceair.com/global/en_static/Announcement/TravelTips/dsGeneralCondition/shanghaiAirlinesLuggageRules/shdomesticRules/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+shenzhen-airlines,Shenzhen Airlines,ZH,China,Scheduled,,,,https://www.shenzhenair.com,,,,,,,https://www.shenzhenair.com/szair_B2C/getStaticHtml.action?htmlName=termService,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+sichuan-airlines,Sichuan Airlines,3U,China,Scheduled,,,,,,,,,,,www.scal.com.cn,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+silkair,SilkAir,MI,Singapore,Scheduled,,,,,,,,,,,,,,yes,no
+silver-airways,Silver Airways,3M,United States,Scheduled,,,,https://www.silverairways.com,,,,,,,https://www.silverairways.com/docs/default-source/legal-documents/silver-airways-contract-of-carriage-05oct2021.pdf?sfvrsn=b273701b_1,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+sky-airline,Sky Airline,H2,Chile,Low-cost,,,,https://www.skyairline.com,,,,,,,https://www.skyairline.com/upload/Documents/Air_transport_contract.pdf,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+sky-airlines,Sky Airlines,ZY,Turkey,Scheduled,,,,,,,,,,,,,,yes,no
+sky-angkor-airlines,Sky Angkor Airlines,ZA,Cambodia,Scheduled,,,,,,,,,,,,,,yes,yes
+skybahamas,SkyBahamas,Q7,Bahamas,Scheduled,,,,,,,,,,,,,,yes,no
+skyjet-airlines,SkyJet Airlines,M8,Uganda,Scheduled,,,,,,,,,,,,,,no,yes
+skymark-airlines,Skymark Airlines,BC,Japan,Low-cost,,,,,,,,,,,,,,yes,yes
+skyup-airlines,SkyUp Airlines,PQ,Puerto Rico,Low-cost,,,,,,,,,,,,,,no,yes
+skyward-airlines,Skyward Airlines,OW,Canada,Scheduled,,,,,,,,,,,,,,yes,no
+skywest-airlines,SkyWest Airlines,OO,Australia,Scheduled,,,,https://www.skywest.com,,,,,,,https://www.skywest.com/fly-skywest-airlines/customer-information#!contract-of-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+skywork-airlines,SkyWork Airlines,SX,Switzerland,Scheduled,,,,,,,,,,,,,,no,yes
+smartavia,SmartAvia,5N,Russia,Scheduled,,,,,,,,,,,,,,no,yes
+solaseed-air,Solaseed Air,6J,Japan,Low-cost,,,,,,,,,,,,,,yes,no
+solomon-airlines,Solomon Airlines,IE,Solomon Islands,Scheduled,,,,https://www.flysolomons.com,,,,,,,https://www.flysolomons.com/bookings/conditions-of-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+somon-air,Somon Air,SZ,Tajikistan,Scheduled,,,,,,,,,,,,,,yes,yes
+sounds-air,Sounds Air,S8,South Africa,Scheduled,,,,,,,,,,,,,,no,yes
+south-african-airways,South African Airways,SA,South Africa,Scheduled,,,,https://www.flysaa.com,,,,,,,https://www.flysaa.com/documents/51855150/126723733/Conditions+of+Carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+southern-air,Southern Air,9R,United States,Scheduled,,,,,,,,,,,,,,yes,no
+southern-airways-express,Southern Airways Express,9X,United States,Scheduled,,,,https://iflysouthern.com,,,,,,,https://iflysouthern.com/contract-of-carriage/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+southwest-airlines,Southwest Airlines,WN,United States,Low-cost,,,,https://www.southwest.com,,,,,,,https://www.southwest.com/html/about-southwest/index.html?clk=GFOOTER-CONTRACT-OF-CARRIAGE#_tab_5,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+spicejet,SpiceJet,SG,India,Low-cost,,,,,,,,,,,,,,yes,no
+spirit-airlines,Spirit Airlines,NK,United States,Low-cost,,,,https://content.spirit.com,,,,,,,https://content.spirit.com/Shared/en-us/Documents/Contract_of_Carriage.pdf,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+spring-japan,Spring Japan,IJ,Japan,Low-cost,,,,,,,,,,,,,,yes,yes
+srilankan-airlines,SriLankan Airlines,UL,Sri Lanka,Scheduled,,,,https://www.srilankan.com,,,,,,,https://www.srilankan.com/Zh_cn/Corporate/conditions-of-carriage-for-passengers-and-baggage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+sriwijaya-air,Sriwijaya Air,SJ,Indonesia,Scheduled,,,,,,,,,,,,,,yes,no
+st-barth-commuter,St Barth Commuter,PV,France,Scheduled,,,,,,,,,,,,,,no,yes
+starbow,Starbow,S9,Ghana,Scheduled,,,,,,,,,,,,,,no,yes
+starlux-airlines,STARLUX Airlines,JX,Singapore,Scheduled,,,,https://www.starlux-airlines.com,,,,,,,https://www.starlux-airlines.com/en-TW/terms-conditions/conditions-of-carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+sudan-airways,Sudan Airways,SD,Sudan,Scheduled,,,,,,,,,,,,,,yes,yes
+sun-air,SUN-AIR,ZU,Denmark,Scheduled,,,,,,,,,,,,,,yes,no
+sun-country-airlines,Sun Country Airlines,SY,United States,Low-cost,,,,https://assets.ctfassets.net,,,,,,,https://assets.ctfassets.net/2aov1ouggrmn/1oeBYihGf7m9y7W0WFcdfo/89f1754fcef67eb7da26286f019604d0/Contract_of_Carriage_Update_-_06182021.pdf,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,no,yes
+sunclass-airlines,Sunclass Airlines,DK,Denmark,Scheduled,,,,,,,,,,,,,,yes,yes
+sundair,SundAir,SR,Germany,Scheduled,,,,,,,,,,,,,,yes,yes
+sunexpress,SunExpress,XQ,Turkey,Low-cost,,,,https://www.sunexpress.com,,,,,,,https://www.sunexpress.com/en/terms-conditions-sunexpress/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+sunexpress-deutschland,SunExpress Deutschland,XG,Germany,Low-cost,,,,,,,,,,,,,,yes,no
+sunrise-airways,Sunrise Airways,S6,Haiti,Scheduled,,,,,,,,,,,,,,yes,yes
+sunwing-airlines,Sunwing Airlines,WG,Canada,Low-cost,,,,https://www.sunwing.ca,,,,,,,https://www.sunwing.ca/en/sunwing-airlines/conditions-of-contract,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+suparna-airlines,Suparna Airlines,Y8,People's Republic of China,Scheduled,,,,,,,,,,,,,,yes,yes
+surinam-airways,Surinam Airways,PY,Suriname,Scheduled,,,,,,,,,,,,,,yes,yes
+swoop,Swoop,WO,Canada,Low-cost,,,,,,,,,,,,,,yes,yes
+sylt-air-gmbh,Sylt Air GmbH,7E,Germany,Scheduled,,,,,,,,,,,,,,yes,no
+syrianair,SyrianAir,RB,Syria,Scheduled,,,,,,,,,,,,,,no,yes
+taag-angola,TAAG Angola,DT,Angola,Scheduled,,,,http://www.taag.com,,,,,,,http://www.taag.com/en/Taag/Conditions-of-Carriage,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+tag-airlines,TAG Airlines,5U,Switzerland,Scheduled,,,,,,,,,,,,,,no,yes
+tailwind-airlines,Tailwind Airlines,TI,Turkey,Scheduled,,,,,,,,,,,,,,yes,yes
+tajik-air,Tajik Air,7J,Tajikistan,Scheduled,,,,,,,,,,,,,,yes,yes
+tame,TAME,EQ,Ecuador,Scheduled,,,,,,,,,,,,,,yes,no
+tandem-aero,Tandem Aero,TQ,Moldova,Scheduled,,,,,,,,,,,,,,yes,no
+tap-air-portugal,TAP Air Portugal,TP,Portugal,Scheduled,,,,https://www.flytap.com,,,,,,,https://www.flytap.com/en-gb/transport-conditions?accordionid=1,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+taquan-air,Taquan Air,K3,United States,Scheduled,,,,,,,,,,,,,,yes,no
+tar-aerolineas,TAR Aerolíneas,YQ,Mexico,Scheduled,,,,,,,,,,,,,,no,yes
+tarco-aviation,Tarco Aviation,3T,Sudan,Scheduled,,,,,,,,,,,,,,yes,no
+tarom,Tarom,RO,Romania,Scheduled,,,,https://www.tarom.ro,,,,,,,https://www.tarom.ro/en/travelling-terms-and-conditions,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,no,yes
+tatarstan-airlines,Tatarstan Airlines,U9,Russia,Scheduled,,,,,,,,,,,,,,yes,no
+thai-airasia-x,Thai AirAsia X,XJ,Thailand,Low-cost,,,,,,,,,,,,,,yes,yes
+thai-lion-air,Thai Lion Air,SL,Thailand,Low-cost,,,,,,,,,,,,,,yes,yes
+thai-smile,THAI Smile,WE,Thailand,Low-cost,,,,https://www.thaismileair.com,,,,,,,https://www.thaismileair.com/en/Terms-and-Conditions,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+thai-vietjet-air,Thai Vietjet Air,VZ,Thailand,Low-cost,,,,,,,,,,,,,,yes,no
+thomas-cook-airlines,Thomas Cook Airlines,MT,Belgium,Scheduled,,,,https://maltamedair.com,,,,,,,https://maltamedair.com/general-conditions-of-carriage/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+thomas-cook-airlines-belgium,Thomas Cook Airlines Belgium,HQ,Belgium,Scheduled,,,,,,,,,,,,,,yes,no
+tianjin-airlines,Tianjin Airlines,GS,China,Scheduled,,,,,,,,,,,,,,yes,no
+tigerair-mandala,Tigerair Mandala,RI,Indonesia,Scheduled,,,,,,,,,,,,,,yes,no
+titan-airways-limited,Titan Airways Limited,ZT,United Kingdom,Scheduled,,,,,,,,,,,,,,yes,no
+trade-air,Trade Air,C3,Croatia,Scheduled,,,,,,,,,,,,,,yes,no
+tradewind-aviation,Tradewind Aviation,TJ,United States,Scheduled,,,,https://s3.amazonaws.com,,,,,,,https://s3.amazonaws.com/uploads.flytradewind.com/app/uploads/2021/08/08145706/Tradewind-Aviation-Contract-of-Carriage.pdf,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,no,yes
+transavia-france,Transavia France,TO,France,Low-cost,,,,https://www.transavia.com,,,,,,,https://www.transavia.com/en-UK/conditions/conditions-of-carriage/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+transnusa,Transnusa,8B,Indonesia,Scheduled,,,,,,,,,,,,,,no,yes
+trigana-air-service,Trigana Air Service,IL,Indonesia,Scheduled,,,,,,,,,,,,,,yes,no
+trip-linhas-aereas,TRIP Linhas Aéreas,T4,Brazil,Scheduled,,,,,,,,,,,,,,yes,no
+tui-fly-deutschland,TUI fly Deutschland,X3,Germany,Scheduled,,,,,,,,,,,,,,yes,no
+tunisair,Tunisair,TU,Tunisia,Scheduled,,,,http://www.tunisair.com,,,,,,,http://www.tunisair.com/site/publish/module/cgt/cgt.asp,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+tunisair-express,Tunisair Express,UG,Tunisia,Scheduled,,,,,,,,,,,,,,yes,no
+turkmenistan-airlines,Turkmenistan Airlines,T5,Turkmenistan,Scheduled,,,,,,,,,,,,,,yes,no
+tway-air,T'way Air,TW,South Korea,Low-cost,,,,,,,,,,,,,,yes,no
+uls-airlines-cargo,ULS Airlines Cargo,GO,Turkey,Scheduled,,,,,,,,,,,,,,yes,no
+uni-air,Uni Air,B7,Taiwan,Scheduled,,,,https://www.uniair.com.tw,,,,,,,https://www.uniair.com.tw/rwd/download/UNI%20%20Conditions%20of%20Carriage_en-US.pdf,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+uni-top-airlines,Uni-Top Airlines,UW,,Scheduled,,,,,,,,,,,,,,yes,no
+united-airlines,United Airlines,UA,United States,Scheduled,,,,https://www.united.com,,,,,,,https://www.united.com/ual/en/GB/fly/contract.html,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+ural-airlines,Ural Airlines,U6,Russia,Scheduled,,,,https://www.uralairlines.ru,,,,,,,https://www.uralairlines.ru/en/rules/dogovor-perevozki/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+urumqi-air,Urumqi Air,UQ,Uganda,Scheduled,,,,http://www.urumqi-air.com,,,,,,,"http://www.urumqi-air.com/air-pc/doc/Urumqi%20Airlines%20Co.,%20Ltd.%20General%20Conditions%20of%20International%20Carriage%20for%20Passengers%20and%20Baggage.pdf",,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+us-bangla-airlines,US-Bangla Airlines,BS,Bangladesh,Scheduled,,,,,,,,,,,,,,yes,no
+uzbekistan-airways,Uzbekistan Airways,HY,Uzbekistan,Scheduled,,,,http://uzbekistan-airlines.de,,,,,,,http://uzbekistan-airlines.de/en/?page_id=89,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+valuejet,ValueJet,VK,Nigeria,Low-cost,,,,,,,,,,,,,,yes,no
+vieques-air-link,Vieques Air Link,V4,United States,Scheduled,,,,,,,,,,,,,,yes,no
+vim-airlines,VIM Airlines,NN,Russia,Scheduled,,,,,,,,,,,,,,yes,yes
+virgin-america,Virgin America,VX,United States,Low-cost,,,,,,,,,,,,,,yes,yes
+vistara,Vistara,UK,India,Scheduled,,,,https://www.airvistara.com,,,,,,,https://www.airvistara.com/gb/en/terms-and-conditions,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+viva-aerobus,Viva Aerobus,VB,Mexico,Low-cost,,,,,,,,,,,,,,yes,yes
+viva-air-colombia,Viva Air Colombia,VH,Colombia,Low-cost,,,,https://www.vivaair.com,,,,,,,https://www.vivaair.com/co/en/legal-information_terms-and-conditions,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,no,yes
+vladivostok-air,Vladivostok Air,XF,Russia,Scheduled,,,,,,,,,,,,,,yes,no
+vlm-airlines,VLM Airlines,VG,Belgium,Scheduled,,,,,,,,,,,,,,yes,no
+voepass-linhas-aereas,VOEPASS Linhas Aéreas,2Z,Brazil,Scheduled,,,,,,,,,,,,,,yes,no
+volaris,Volaris,Y4,Mexico,Low-cost,,,,https://cms.volaris.com,,,,,,,https://cms.volaris.com/globalassets/pdfs/eng/contract-carriage-domestic-int-q6.pdf,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+volga-dnepr-airlines,Volga-Dnepr Airlines,VI,Russia,Scheduled,,,,,,,,,,,,,,yes,no
+volotea,Volotea,V7,Spain,Low-cost,,,,https://www.volotea.com,,,,,,,https://www.volotea.com/en/legal-conditions/conditions-of-carriage/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,no,yes
+wamos-air,Wamos Air,EB,Spain,Scheduled,,,,,,,,,,,,,,yes,no
+warbelows-air,Warbelows Air,4W,Nigeria,Scheduled,,,,,,,,,,,,,,yes,no
+west-air,West Air,PN,China,Low-cost,,,,,,,,,,,,,,yes,yes
+westjet-encore,WestJet Encore,WR,Canada,Low-cost,,,,,,,,,,,,,,yes,no
+white-airways,White Airways,WI,Portugal,Scheduled,,,,,,,,,,,,,,yes,no
+wideroe,Widerøe,WF,Norway,Scheduled,,,,,,,,,,,,,,yes,yes
+winair,Winair,WM,United States,Scheduled,,,,,,,,,,,,,,yes,yes
+windrose-airlines,Windrose Airlines,7W,Ukraine,Scheduled,,,,https://windrose.aero,,,,,,,https://windrose.aero/en/prepare_for_flight/prepare/rules/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,no
+wow-air,WOW Air,WW,Iceland,Low-cost,,,,,,,,,,,,,,yes,no
+xiamen-airlines,Xiamen Airlines,MF,China,Scheduled,,,,https://www.xiamenair.com,,,,,,,https://www.xiamenair.com/brandnew_EN/travel-transport-condition.html,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+yakutia-airlines,Yakutia Airlines,R3,Russia,Scheduled,,,,,,,,,,,,,,yes,no
+yamal-airlines,Yamal Airlines,YC,Russia,Scheduled,,,,https://yamal.aero,,,,,,,https://yamal.aero/passengers/,,conditions_of_carriage_url prefilled from Duffel refs; please verify.,yes,yes
+yemenia,Yemenia,IY,Yemen,Scheduled,,,,,,,,,,,,,,yes,yes
+yeti-airlines,Yeti Airlines,YT,Nepal,Scheduled,,,,,,,,,,,,,,yes,yes
+zimex-aviation,Zimex Aviation,XM,Switzerland,Scheduled,,,,,,,,,,,,,,yes,no

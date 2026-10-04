@@ -1,0 +1,17 @@
+{
+  "slug": "fixture-no-date",
+  "official_website": "https://www.qantas.com",
+  "modules": [
+    {
+      "id": "contact",
+      "title": "Contact",
+      "fields": {
+        "phone_uk": {
+          "value": "0800 964 432",
+          "status": "official",
+          "source_url": "https://www.qantas.com/en-au/help/contact-us"
+        }
+      }
+    }
+  ]
+}

@@ -12,13 +12,13 @@ export async function POST(req: Request) {
 
   // Blunt but safe: revalidate the paths most likely affected by any publish
   revalidatePath('/');
-  revalidatePath('/articles');
+  revalidatePath('/all-articles');
   revalidatePath('/destinations');
   if (slug) {
     revalidatePath(`/articles/${slug}`);
   }
   revalidateTag('strapi');
-  return NextResponse.json({ ok: true, revalidated: ['/', '/articles', '/destinations', slug && `/articles/${slug}`].filter(Boolean) });
+  return NextResponse.json({ ok: true, revalidated: ['/', '/all-articles', '/destinations', slug && `/articles/${slug}`].filter(Boolean) });
 }
 
 export async function GET() {

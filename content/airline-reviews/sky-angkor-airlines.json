@@ -1,0 +1,80 @@
+{
+ "slug": "sky-angkor-airlines",
+ "sources": [
+  "tripadvisor"
+ ],
+ "stats": {
+  "source": "all",
+  "reviewCount": 3,
+  "avgRating10": 6.0,
+  "recommendPct": null,
+  "subratings": null,
+  "firstReviewDate": "2018-05-21",
+  "lastReviewDate": "2021-12-18"
+ },
+ "statsBySource": {
+  "tripadvisor": {
+   "source": "tripadvisor",
+   "reviewCount": 3,
+   "avgRating10": 6.0,
+   "recommendPct": null,
+   "subratings": null,
+   "firstReviewDate": "2018-05-21",
+   "lastReviewDate": "2021-12-18",
+   "sourceUrl": "https://www.tripadvisor.com/Airline_Review-d13804011-Reviews-Sky-Angkor-Airlines"
+  }
+ },
+ "reviews": [
+  {
+   "source": "tripadvisor",
+   "id": "ta-822372810",
+   "date": "2021-12-18",
+   "rating10": 8,
+   "title": "Sky Jet: Manila to Busuanga",
+   "text": "Lest then an hour flight. The plane had many open seats which allowed me two seat together by myself and consequently the flight was nice. What complimented plenty of room was a friendly flight crew, a clean and seemingly new plane AND mostly the flight was on time! I would add a note though about agents at Sky Jet check in and what I would consider to be a obvious luggage scam at Manila Airport: traveler be warned. Of my two checked baggage agents were fast to snatch my smaller under weight suitcase and get it on the belt and away it went to wherever it goes from there. My large suitcase they weigh and tell I owe 8000+ pesos ($157 +). I ask for my small suitcase back so I could transfer some weight and they informed it is too late- it’s already gone. So I ask what options I have because I am not going to pay more for luggage then the flight. The share That I could take my luggage to Sky Jet office - go outside and down the walk area - and ship in cargo. I ask if I did that would luggage go on same plane. Yes they say. So I pay a bellmen to help me and he did. At Sky Jet Cargo office I’m informed I would have to pay like around $80 and only in cash AND it would be 2 to 3 days Before I received my luggage. I obviously needed my luggage with me and told them to forget it I will check. They advise",
+   "author": "William",
+   "authorCountry": null,
+   "authorLocation": "Saint Peters",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Manila - Atlantico Department",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-665636670",
+   "date": "2019-04-11",
+   "rating10": 2,
+   "title": "DON'T EVER FLY THIS AIRLINE, AND IF YOU MUST DON'T BOOK ONLINE",
+   "text": "I don't even know where to start I'm so mad. I tried to book a flight for my girlfriend online. The booking was one day in advance. I went to pay. It kicked me out, and canceled my flight. So I did it again. Same thing. However, they DID charge me twice, but didn't give me a ticket. I call. They say I have to go to their Siem Reap office, which isn't remotely convenient and is a $10 round trip ride. But I go, arriving at 11:40 am. I get to the office and show them my bank account that shows transactions \"processing\". But their system claims that nothing happened, saying I was never charged. Then the girl gives a lecture on how their offices and online have different policies, and that if I pay them cash now they will give me a ticket, and then they will reimburse me online for the two tickets.... that they claim they don't see. I say no... reimburse one and give me a ticket. No. So they call some manager... who is on a two hour lunch break. They put me on the phone. I tell him to reimburse one and give me ticket. He can't without checking. I said fine. Check, and then deliver the ticket to my house because I don't want to pay $10 round trip again. He starts stuttering some jibberish nonsense, and told me I have to come back when he finishes stuffing his face for 2 hours. He says he's not coming back for 90 minutes regardless of what my problem is because he is stuffing his face. I say that at the moment they have stolen from me. That set him off, started yelling at me.... and hung up. At this time EVERYONE in the office decides to leave. There's no one there at all. So I wait. And a girl walks in the office and hands me a phone. A woman on the line who is apparently in Phnom Penh says \"since we don't have money in our account we can not help you\". Well duh... that's because it's still processing! I show the woman in the office my account (pictured here) that says 2 transactions are \"PROCESSING\". I tell her... this is an easy fix. Reimburse one, and give me a damn ticket! \"We cannot. We don't have the money yet\". Well duh... the transaction is very recent. I bought the flight within 24 hours of departure. In the meantime, the boss is still filling his face somewhere nearby. I wait another 30 minutes. Nothing. So I have my girlfriend ask what's up. Blank Cow Stares. Finally, they say \"the woman is too busy to speak to you. Your only option is to pay cash now\". So I hand my girlfriend the exact cash and I walk out, steaming. Five minutes later my girlfriend comes walking out and says... (drum roll please)..... \"I need more money. The flight is more expensive today... \" (way more) WHAT!!!???? I go back in. \"You aren't giving me yesterday's rate either?!?!\" \"No sir. Our system won't let us do that\". DO NOT DEAL WITH THIS AIRLINE. YOU DO NOT WANT TO HAVE TO DEAL WITH CUSTOMER SERVICE. EVER.",
+   "author": "Passport Always On Hand",
+   "authorCountry": null,
+   "authorLocation": "Da Nang",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Siem Reap - Sihanoukville",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-581800856",
+   "date": "2018-05-21",
+   "rating10": 8,
+   "title": "Twin Prop Jet",
+   "text": "Unexpected by myself, we found ourselves faced with a twin prop Jet, similar to regional airlines here in Australia.. I find these aircraft a little claustrophobic, and a bit squeezy... it’s only a 50 minute flight, so bearable. Staff were pleasant. No complaints at all really from me.",
+   "author": "ChezmossAustralia",
+   "authorCountry": null,
+   "authorLocation": "Gisborne",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Phnom Penh - Ho Chi Minh City",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  }
+ ]
+}

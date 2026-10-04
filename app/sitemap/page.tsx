@@ -9,12 +9,27 @@ import {
 } from '@/lib/strapi';
 import { SECTIONS } from '@/lib/sections';
 import { LEGAL_DOCS } from '@/lib/legal';
+import { airportPath } from '@/lib/airport-slugs';
+import { breadcrumbJsonLd } from '@/lib/jsonld';
+import { JsonLd } from '@/components/SeoBlocks';
 
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: 'Site Map',
   description: 'A complete index of every page on Originfacts — articles, destinations, airlines, airports, countries, categories, and policies.',
+  /**
+   * `noindex, follow`. This page is a navigation aid for people, not a
+   * destination: at 17,066 words it was the largest page on the site and
+   * consisted entirely of links.
+   *
+   * It also enumerates every airline, airport and country straight from Strapi
+   * with no tier gate, so while it was indexed it re-exposed the whole
+   * directory that AIRLINES_INDEXABLE and the Tier 3 `noindex` were holding
+   * back. `follow` is kept deliberately — crawling through to the real pages is
+   * the point of it.
+   */
+  robots: { index: false, follow: true },
 };
 
 export default async function SitemapPage() {
@@ -37,8 +52,11 @@ export default async function SitemapPage() {
   const linkClass = 'text-primary-emphasis hover:text-primary-highlight hover:underline';
   const sectionTitle = 'editorial-h text-2xl font-bold text-forest-900';
 
+  const breadcrumbs = breadcrumbJsonLd([{ name: 'Site Map', url: '/sitemap' }]);
+
   return (
     <article className="mx-auto max-w-7xl px-6 py-16" data-testid="sitemap-page">
+      <JsonLd data={breadcrumbs} />
       <header className="max-w-3xl">
         <p className="chip">Site Map</p>
         <h1 className="editorial-h mt-5 text-3xl font-bold leading-tight text-forest-900 sm:text-4xl">
@@ -52,17 +70,19 @@ export default async function SitemapPage() {
 
       <div className="mt-12 grid gap-12 lg:grid-cols-2">
         <section>
-          <h2 className={sectionTitle}>Originfacts</h2>
+          <h2 className={sectionTitle}>What are the core site sections on Originfacts?</h2>
           <ul className="mt-4 space-y-2 text-sm">
             <li><Link href="/" className={linkClass}>Home</Link></li>
             <li><Link href="/about" className={linkClass}>About</Link></li>
+            <li><Link href="/authors" className={linkClass}>Authors &amp; Editorial Experts</Link></li>
+            <li><Link href="/methodology" className={linkClass}>Methodology</Link></li>
             <li><Link href="/contact" className={linkClass}>Contact</Link></li>
-            <li><Link href="/articles" className={linkClass}>All articles</Link></li>
+            <li><Link href="/all-articles" className={linkClass}>All articles</Link></li>
           </ul>
         </section>
 
         <section>
-          <h2 className={sectionTitle}>Topics</h2>
+          <h2 className={sectionTitle}>Which travel topics can you explore?</h2>
           <ul className="mt-4 space-y-2 text-sm">
             {SECTIONS.map((s) => (
               <li key={s.slug}>
@@ -73,11 +93,11 @@ export default async function SitemapPage() {
         </section>
 
         <section>
-          <h2 className={sectionTitle}>Discover</h2>
+          <h2 className={sectionTitle}>Which flight directories and travel tools can you discover?</h2>
           <ul className="mt-4 space-y-2 text-sm">
             <li><Link href="/flight-search" className={linkClass}>Flight Search</Link></li>
             <li><Link href="/flight-routes" className={linkClass}>Flight Routes</Link></li>
-            <li><Link href="/hotels" className={linkClass}>Hotels</Link></li>
+            <li><Link href="/category/hotels" className={linkClass}>Hotels</Link></li>
             <li><Link href="/countries" className={linkClass}>Countries</Link></li>
             <li><Link href="/airlines" className={linkClass}>Airlines</Link></li>
             <li><Link href="/airports" className={linkClass}>Airports</Link></li>
@@ -87,7 +107,7 @@ export default async function SitemapPage() {
         </section>
 
         <section>
-          <h2 className={sectionTitle}>Legal &amp; policies</h2>
+          <h2 className={sectionTitle}>Which legal policies govern Originfacts?</h2>
           <ul className="mt-4 space-y-2 text-sm">
             {LEGAL_DOCS.map((d) => (
               <li key={d.slug}>
@@ -166,7 +186,7 @@ export default async function SitemapPage() {
           <ul className="mt-4 grid gap-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
             {sortedAirports.map((a) => (
               <li key={a.id}>
-                <Link href={`/airports/${a.iata.toLowerCase()}`} className={linkClass}>
+                <Link href={airportPath(a, sortedAirports)} className={linkClass}>
                   {a.iata.toUpperCase()} — {a.name}
                 </Link>
               </li>

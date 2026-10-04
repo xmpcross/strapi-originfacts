@@ -8,12 +8,27 @@
     "build": "next build",
     "start": "next start -p 3000",
     "lint": "next lint",
-    "test": "tsx --test tests/*.test.ts"
+    "test": "tsx --test tests/*.test.ts",
+    "validate:facts": "node ops/validate-airline-facts.mjs",
+    "validate:facts:fixtures": "node ops/validate-airline-facts.mjs --fixtures",
+    "audit:top-airports": "node ops/audit-top-airport-uniqueness.mjs",
+    "discover:top-airport-sources": "node ops/discover-top-airport-sources.mjs",
+    "enrich:top-airports": "node ops/enrich-top-airport-content-sonnet.mjs",
+    "sync:facts": "node ops/sync-airline-facts.mjs",
+    "prebuild": "node ops/validate-airline-facts.mjs",
+    "fetch": "yarn --cwd ops/fetch fetch",
+    "reach": "yarn --cwd ops/fetch reach",
+    "ingest-manual": "yarn --cwd ops/fetch ingest-manual",
+    "extract": "yarn --cwd ops/fetch extract",
+    "preflight": "yarn --cwd ops/fetch preflight",
+    "draft": "yarn --cwd ops/fetch draft",
+    "promote": "yarn --cwd ops/fetch promote"
   },
   "dependencies": {
     "date-fns": "^4.1.0",
     "marked": "^15.0.3",
     "next": "^15.5.21",
+    "nodemailer": "^10.0.0",
     "qs": "^6.15.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -27,12 +42,14 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.15",
     "@types/node": "^22.10.1",
+    "@types/nodemailer": "^8.0.1",
     "@types/qs": "^6.9.17",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.1",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.5.18",
     "tailwindcss": "^3.4.17",
+    "tldts": "^7.4.10",
     "tsx": "^4.23.1",
     "typescript": "^5.7.2"
   }

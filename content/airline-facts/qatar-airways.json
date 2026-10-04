@@ -1,0 +1,213 @@
+{
+  "slug": "qatar-airways",
+  "official_website": "https://www.qatarairways.com",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "required": [
+        "carryon_bag_dimensions",
+        "weight_economy",
+        "weight_business_first"
+      ],
+      "fields": {
+        "carryon_bag_dimensions": {
+          "value": "55 x 40 x 20 cm",
+          "status": "pending",
+          "source_url": "https://www.qatarairways.com/en/baggage/allowance.html",
+          "notes": "Qatar Airways cabin baggage size limit: 55 x 40 x 20 cm.",
+          "verified_at": "2026-09-04",
+          "verified_by": "automated_provenance"
+        },
+        "weight_economy": {
+          "value": "7 kg (15 lbs)",
+          "status": "pending",
+          "source_url": "https://www.qatarairways.com/en/baggage/allowance.html",
+          "notes": "Qatar Airways Economy Class carry-on weight limit.",
+          "verified_at": "2026-09-04",
+          "verified_by": "automated_provenance"
+        },
+        "weight_business_first": {
+          "value": "14 kg (30 lbs) total across 2 pieces",
+          "status": "pending",
+          "source_url": "https://www.qatarairways.com/en/baggage/allowance.html",
+          "notes": "Qatar Airways Premium / Business Class carry-on weight limit.",
+          "verified_at": "2026-09-04",
+          "verified_by": "automated_provenance"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "required": [
+        "piece_weight_economy",
+        "piece_weight_business",
+        "piece_weight_first"
+      ],
+      "fields": {
+        "piece_weight_economy": {
+          "value": "1 piece up to 23 kg (50 lbs)",
+          "status": "pending",
+          "source_url": "https://www.qatarairways.com/en/baggage/allowance.html",
+          "notes": "Qatar Airways Economy Class checked baggage allowance.",
+          "verified_at": "2026-09-04",
+          "verified_by": "automated_provenance"
+        },
+        "piece_weight_business": {
+          "value": "2 pieces up to 32 kg (70 lbs) each",
+          "status": "pending",
+          "source_url": "https://www.qatarairways.com/en/baggage/allowance.html",
+          "notes": "Qatar Airways Business Class checked baggage allowance.",
+          "verified_at": "2026-09-04",
+          "verified_by": "automated_provenance"
+        },
+        "piece_weight_first": {
+          "value": "3 pieces up to 32 kg (70 lbs) each",
+          "status": "pending",
+          "source_url": "https://www.qatarairways.com/en/baggage/allowance.html",
+          "notes": "Qatar Airways First Class checked baggage allowance.",
+          "verified_at": "2026-09-04",
+          "verified_by": "automated_provenance"
+        }
+      }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "lede": "Qatar Airways sells Economy fare families with different flexibility and seat-selection rules, so the lowest displayed fare is not always the same product as a more flexible Economy ticket.",
+      "body": [
+        "For Qatar Airways Economy fares, the airline's trade guidance lists Economy Lite as the least flexible family, with no changes or cancellations, while Economy Classic permits changes for a fee and Economy Convenience includes one free change before fees apply.",
+        "Seat selection can also change the real trip cost. Qatar Airways publishes optional seat-selection charges, including standard-seat charges for Economy Lite and higher fees for preferred, extra-legroom and Comfort+ seats."
+      ],
+      "required": [
+        "lowest_economy_family",
+        "change_rule",
+        "seat_selection"
+      ],
+      "fields": {
+        "lowest_economy_family": {
+          "value": "Economy Lite is the most restrictive Economy fare family.",
+          "status": "official",
+          "source_url": "https://www.qatarairways.com/tradeportal/en-bh/news-updates/2025/adjustments-to-fare-attributes.html",
+          "notes": "Qatar Airways trade guidance lists Economy Lite separately from Classic, Convenience and Comfort and states that Lite has no changes or cancellations.",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "change_rule": {
+          "value": "Economy Lite: no changes or cancellations; Economy Classic: changes permitted for a fee; Economy Convenience: one free change, then a fee applies; Economy Comfort: full flexibility.",
+          "status": "official",
+          "source_url": "https://www.qatarairways.com/tradeportal/en-bh/news-updates/2025/adjustments-to-fare-attributes.html",
+          "notes": "Fare-family flexibility varies by ticket family and market; passengers should confirm the fare rules shown during booking.",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "seat_selection": {
+          "value": "Economy Lite standard-seat selection may be charged separately; Qatar Airways lists Economy Lite standard-seat fees from USD 9 to USD 48, with higher ranges for preferred, extra-legroom and Comfort+ seats.",
+          "status": "official",
+          "source_url": "https://www.qatarairways.com/en/optional-services-and-fees.html",
+          "notes": "Qatar Airways optional-services page publishes seat-selection fee ranges by fare family and seat type.",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "lede": "Passenger rights on Qatar Airways depend on the departure country, arrival country and the regulation attached to the itinerary.",
+      "body": [
+        "For flights covered by EU air passenger rights, Qatar Airways says passengers delayed for at least two hours at departure are entitled to assistance such as drinks, meals and communications, with hotel accommodation and transport where necessary depending on the flight distance and delay length.",
+        "If a covered flight is delayed by five hours or more at departure, Qatar Airways states that passengers are entitled to a refund; once that refund option is accepted, the airline does not have to provide further onward travel or assistance for that itinerary."
+      ],
+      "required": [
+        "eu_delay_assistance",
+        "eu_five_hour_refund",
+        "us_refund_timing"
+      ],
+      "fields": {
+        "eu_delay_assistance": {
+          "value": "EU-covered flights delayed by at least 2 hours at departure may qualify for assistance including drinks, meals, communications and, where necessary, hotel accommodation and transport.",
+          "status": "official",
+          "source_url": "https://www.qatarairways.com/en/legal/eu-air-passenger-rights.html",
+          "notes": "Qatar Airways EU passenger-rights notice describes assistance for qualifying departure delays.",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "eu_five_hour_refund": {
+          "value": "EU-covered departure delays of 5 hours or more may qualify for a refund; accepting that refund ends Qatar Airways' obligation to provide onward travel or further assistance.",
+          "status": "official",
+          "source_url": "https://www.qatarairways.com/en/legal/eu-air-passenger-rights.html",
+          "notes": "Qatar Airways EU passenger-rights notice explains the five-hour refund threshold.",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "us_refund_timing": {
+          "value": "For eligible U.S. ticket or ancillary-service refunds paid by credit card, Qatar Airways says it submits the refund request to the card issuer within 7 business days of receiving the request.",
+          "status": "official",
+          "source_url": "https://www.qatarairways.com/en-us/legal/customer-service-commitment.html",
+          "notes": "Qatar Airways U.S. customer service commitment covers eligible ticket and ancillary-service fee refunds.",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "lede": "Qatar Airways online check-in windows vary for U.S.-related flights versus most other routes.",
+      "body": [
+        "For flights from the United States, Qatar Airways says online check-in opens 24 hours before departure. For flights to the United States, check-in opens 24 hours before departure from Doha.",
+        "For other Qatar Airways flights, online check-in is available from 48 hours to 90 minutes before departure. Airport cutoffs can still vary by airport, destination and document checks, so travellers should follow the time shown in the booking and arrive earlier for long-haul international departures."
+      ],
+      "required": [
+        "us_online_checkin",
+        "other_online_checkin",
+        "first_segment_rule"
+      ],
+      "fields": {
+        "us_online_checkin": {
+          "value": "Flights from the U.S. open for online check-in 24 hours before departure; flights to the U.S. open 24 hours before departure from Doha.",
+          "status": "official",
+          "source_url": "https://www.qatarairways.com/en-in/services-checking-in.html",
+          "notes": "Qatar Airways check-in page states the U.S.-related online check-in timing.",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "other_online_checkin": {
+          "value": "For all other flights, online check-in is available from 48 hours to 90 minutes before departure.",
+          "status": "official",
+          "source_url": "https://www.qatarairways.com/en-in/services-checking-in.html",
+          "notes": "Qatar Airways check-in page states the standard online check-in window.",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "first_segment_rule": {
+          "value": "Online check-in is available for Qatar Airways-operated flights and trips where the first segment is operated by Qatar Airways.",
+          "status": "official",
+          "source_url": "https://www.qatarairways.com/en-in/services-checking-in.html",
+          "notes": "Qatar Airways limits online check-in availability by operating carrier and first segment.",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and customer support",
+      "required": [
+        "phone_home_market"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "+1-877-777-2827",
+          "status": "pending",
+          "source_url": "https://www.qatarairways.com/en/legal/conditions-of-carriage.html",
+          "notes": "Qatar Airways official customer support line.",
+          "verified_at": "2026-09-04",
+          "verified_by": "automated_provenance"
+        }
+      }
+    }
+  ]
+}

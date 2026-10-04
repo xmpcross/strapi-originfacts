@@ -1,0 +1,30 @@
+{
+  "slug": "fixture-duplicate-module",
+  "official_website": "https://www.example-carrier.test",
+  "modules": [
+    {
+      "id": "contact",
+      "title": "Contact",
+      "fields": {
+        "official_website": {
+          "value": "https://www.example-carrier.test",
+          "status": "official",
+          "source_url": "https://www.example-carrier.test/about",
+          "verified_at": "2026-08-24"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact",
+      "fields": {
+        "official_website": {
+          "value": "https://www.example-carrier.test",
+          "status": "official",
+          "source_url": "https://www.example-carrier.test/about",
+          "verified_at": "2026-08-24"
+        }
+      }
+    }
+  ]
+}

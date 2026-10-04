@@ -1,0 +1,22 @@
+{
+  "carrier_key": "qantas",
+  "page_key": "fare_conditions",
+  "url": "https://www.qantas.com/en-au/book/flights/fare-types",
+  "locale": "en-au",
+  "fetched_at": "2026-08-24T02:54:54Z",
+  "http_status": null,
+  "final_url": "https://www.qantas.com/en-au/book/flights/fare-types",
+  "content_hash": "sha256:93ebb30b2923b84e11ae01cefcdb5187b6d673a2b136e030189331d009af286c",
+  "text_length": 9002,
+  "capture_status": "manual",
+  "capture_method": "manual",
+  "captured_by": "kritin",
+  "captured_at": "2026-08-24",
+  "consent_action": "none_found",
+  "html_lang": "en-AU",
+  "detected_currencies": [
+    "SAR"
+  ],
+  "redirected": false,
+  "attempts": 0
+}

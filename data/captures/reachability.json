@@ -1,0 +1,1287 @@
+{
+  "probed_from": "origin box — OVH AS16276, Sydney AU",
+  "probed_at": "2026-08-23T20:39:08Z",
+  "domain_source": "duffel_coc",
+  "results": [
+    {
+      "carrier_key": "aeroflot",
+      "name": "Aeroflot",
+      "domain": "aeroflot.ru",
+      "content_url": "https://www.aeroflot.ru/gb-en/information/legal/contract",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "http_error",
+        "status": 503
+      },
+      "browser_robots": {
+        "probe_method": "browser_robots",
+        "layer": "http_error",
+        "status": 503
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "http_error",
+        "status": 503
+      },
+      "robots_verdict": "unreachable",
+      "content_verdict": "unreachable"
+    },
+    {
+      "carrier_key": "aeromexico",
+      "name": "Aeroméxico",
+      "domain": "aeromexico.com",
+      "content_url": "https://aeromexico.com/en-us/legal-information",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "ok",
+        "status": 200,
+        "detail": "551 bytes"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "ok",
+        "status": 200,
+        "detail": "61 chars"
+      },
+      "robots_verdict": "reachable",
+      "content_verdict": "reachable"
+    },
+    {
+      "carrier_key": "air-canada",
+      "name": "Air Canada",
+      "domain": "aircanada.com",
+      "content_url": "https://www.aircanada.com/us/en/aco/home/legal/conditions-carriage-tariffs.html#/",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "http_error",
+        "status": 404
+      },
+      "browser_robots": {
+        "probe_method": "browser_robots",
+        "layer": "http_error",
+        "status": 404
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "ok",
+        "status": 200,
+        "detail": "265575 chars"
+      },
+      "robots_verdict": "unreachable",
+      "content_verdict": "reachable"
+    },
+    {
+      "carrier_key": "air-china",
+      "name": "Air China",
+      "domain": "airchina.co.uk",
+      "content_url": "https://www.airchina.co.uk/GB/GB/General-Conditions-of-Carriage-for-Passengers-and-Baggage",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "timeout",
+        "status": null,
+        "detail": "Connect Timeout Error (attempted address: airchina.co.uk:443, timeout: 10000ms)"
+      },
+      "browser_robots": {
+        "probe_method": "browser_robots",
+        "layer": "timeout",
+        "status": null,
+        "detail": "page.goto: Timeout 20000ms exceeded."
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "ok",
+        "status": 200,
+        "detail": "0 chars"
+      },
+      "robots_verdict": "unreachable",
+      "content_verdict": "reachable"
+    },
+    {
+      "carrier_key": "air-france",
+      "name": "Air France",
+      "domain": "wwws.airfrance.co.uk",
+      "content_url": "https://wwws.airfrance.co.uk/information/legal/edito-cg-airfrance",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "http2_reset",
+        "status": null,
+        "detail": "Stream closed with error code NGHTTP2_INTERNAL_ERROR"
+      },
+      "browser_robots": {
+        "probe_method": "browser_robots",
+        "layer": "http2_reset",
+        "status": null,
+        "detail": "page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://wwws.airfrance.co.uk/robots.txt"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "http2_reset",
+        "status": null,
+        "detail": "page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://wwws.airfrance.co.uk/information/legal"
+      },
+      "robots_verdict": "unreachable",
+      "content_verdict": "unreachable"
+    },
+    {
+      "carrier_key": "air-india",
+      "name": "Air India",
+      "domain": "airindia.in",
+      "content_url": "https://www.airindia.in/terms-conditions.htm",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "http2_reset",
+        "status": null,
+        "detail": "Stream closed with error code NGHTTP2_INTERNAL_ERROR"
+      },
+      "browser_robots": {
+        "probe_method": "browser_robots",
+        "layer": "http2_reset",
+        "status": null,
+        "detail": "page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://airindia.in/robots.txt"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "http2_reset",
+        "status": null,
+        "detail": "page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.airindia.in/terms-conditions.htm"
+      },
+      "robots_verdict": "unreachable",
+      "content_verdict": "unreachable"
+    },
+    {
+      "carrier_key": "airbaltic",
+      "name": "airBaltic",
+      "domain": "airbaltic.com",
+      "content_url": "https://www.airbaltic.com/en-GB/general-conditions-of-carriage",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "ok",
+        "status": 200,
+        "detail": "7900 bytes"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "http_error",
+        "status": 404
+      },
+      "robots_verdict": "reachable",
+      "content_verdict": "unreachable"
+    },
+    {
+      "carrier_key": "alaska-airlines",
+      "name": "Alaska Airlines",
+      "domain": "alaskaair.com",
+      "content_url": "https://www.alaskaair.com/content/legal/contract-of-carriage/rule-1",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "ok",
+        "status": 200,
+        "detail": "1965 bytes"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "unknown",
+        "status": null,
+        "detail": "page.goto: Download is starting"
+      },
+      "robots_verdict": "reachable",
+      "content_verdict": "unreachable"
+    },
+    {
+      "carrier_key": "all-nippon-airways",
+      "name": "All Nippon Airways",
+      "domain": "ana.co.jp",
+      "content_url": "https://www.ana.co.jp/en/gb/siteinfo/international/conditions-of-carriage/",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "timeout",
+        "status": null,
+        "detail": "The operation was aborted due to timeout"
+      },
+      "browser_robots": {
+        "probe_method": "browser_robots",
+        "layer": "ok",
+        "status": 200,
+        "detail": "111 chars"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "ok",
+        "status": 200,
+        "detail": "77381 chars"
+      },
+      "robots_verdict": "browser_only",
+      "content_verdict": "reachable"
+    },
+    {
+      "carrier_key": "american-airlines",
+      "name": "American Airlines",
+      "domain": "aa.com",
+      "content_url": "https://www.aa.com/i18n/customer-service/support/conditions-of-carriage.jsp",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "ok",
+        "status": 200,
+        "detail": "587 bytes"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "ok",
+        "status": 200,
+        "detail": "4041 chars"
+      },
+      "robots_verdict": "reachable",
+      "content_verdict": "reachable"
+    },
+    {
+      "carrier_key": "asiana-airlines",
+      "name": "Asiana Airlines",
+      "domain": "flyasiana.com",
+      "content_url": "https://flyasiana.com/C/GB/EN/contents/terms-of-transportation-and-notification",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "http_403",
+        "status": 403
+      },
+      "browser_robots": {
+        "probe_method": "browser_robots",
+        "layer": "http_403",
+        "status": 403
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "http_403",
+        "status": 403
+      },
+      "robots_verdict": "blocked",
+      "content_verdict": "blocked"
+    },
+    {
+      "carrier_key": "austrian-airlines",
+      "name": "Austrian Airlines",
+      "domain": "austrian.com",
+      "content_url": "https://www.austrian.com/es/en/legal/conditions-of-carriage",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "ok",
+        "status": 200,
+        "detail": "241 bytes"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "ok",
+        "status": 200,
+        "detail": "3194 chars"
+      },
+      "robots_verdict": "reachable",
+      "content_verdict": "reachable"
+    },
+    {
+      "carrier_key": "british-airways",
+      "name": "British Airways",
+      "domain": "britishairways.com",
+      "content_url": "https://www.britishairways.com/en-gb/information/legal/british-airways/general-conditions-of-carriage",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "timeout",
+        "status": null,
+        "detail": "The operation was aborted due to timeout"
+      },
+      "browser_robots": {
+        "probe_method": "browser_robots",
+        "layer": "ok",
+        "status": 200,
+        "detail": "158 chars"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "ok",
+        "status": 200,
+        "detail": "158 chars"
+      },
+      "robots_verdict": "browser_only",
+      "content_verdict": "reachable"
+    },
+    {
+      "carrier_key": "brussels-airlines",
+      "name": "Brussels Airlines",
+      "domain": "brusselsairlines.com",
+      "content_url": "https://www.brusselsairlines.com/de/en/legal-notices/terms-and-conditions-conditions-of-carriage",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "ok",
+        "status": 200,
+        "detail": "265 bytes"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "http_403",
+        "status": 403
+      },
+      "robots_verdict": "reachable",
+      "content_verdict": "blocked"
+    },
+    {
+      "carrier_key": "china-eastern",
+      "name": "China Eastern",
+      "domain": "uk.ceair.com",
+      "content_url": "https://uk.ceair.com/newCMS/uk/en/content/en_Footer/AboutUS/201904/t20190404_5758.html",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "ok",
+        "status": 200,
+        "detail": "7943 bytes"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "http_error",
+        "status": 404
+      },
+      "robots_verdict": "reachable",
+      "content_verdict": "unreachable"
+    },
+    {
+      "carrier_key": "china-southern-airlines",
+      "name": "China Southern Airlines",
+      "domain": "csair.com",
+      "content_url": "https://www.csair.com/cn/tourguide/booking/orders/order/gjysztj/",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "ok",
+        "status": 200,
+        "detail": "90 bytes"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "unknown",
+        "status": null,
+        "detail": "page.evaluate: Execution context was destroyed, most likely because of a navigation"
+      },
+      "robots_verdict": "reachable",
+      "content_verdict": "unreachable"
+    },
+    {
+      "carrier_key": "copa-airlines",
+      "name": "Copa Airlines",
+      "domain": "copaair.com",
+      "content_url": "https://www.copaair.com/en/web/us/contract-of-carriage",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "connection_refused",
+        "status": null,
+        "detail": "connect ECONNREFUSED 204.74.99.103:443"
+      },
+      "browser_robots": {
+        "probe_method": "browser_robots",
+        "layer": "connection_refused",
+        "status": null,
+        "detail": "page.goto: net::ERR_CONNECTION_REFUSED at https://copaair.com/robots.txt"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "http_error",
+        "status": 401
+      },
+      "robots_verdict": "unreachable",
+      "content_verdict": "unreachable"
+    },
+    {
+      "carrier_key": "csa-czech-airlines",
+      "name": "CSA Czech Airlines",
+      "domain": "csa.cz",
+      "content_url": "https://www.csa.cz/gb-en/travel-information/before-the-flight/conditions-of-carriage/",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "challenge",
+        "status": 403
+      },
+      "browser_robots": {
+        "probe_method": "browser_robots",
+        "layer": "http_403",
+        "status": 403
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "http_403",
+        "status": 403
+      },
+      "robots_verdict": "blocked",
+      "content_verdict": "blocked"
+    },
+    {
+      "carrier_key": "delta-air-lines",
+      "name": "Delta Air Lines",
+      "domain": "delta.com",
+      "content_url": "https://www.delta.com/gb/en/legal/contract-of-carriage-igr",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "connection_refused",
+        "status": null,
+        "detail": "connect ECONNREFUSED 204.74.99.103:443"
+      },
+      "browser_robots": {
+        "probe_method": "browser_robots",
+        "layer": "connection_refused",
+        "status": null,
+        "detail": "page.goto: net::ERR_CONNECTION_REFUSED at https://delta.com/robots.txt"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "challenge",
+        "status": 444
+      },
+      "robots_verdict": "unreachable",
+      "content_verdict": "blocked"
+    },
+    {
+      "carrier_key": "egyptair",
+      "name": "Egyptair",
+      "domain": "egyptair.com",
+      "content_url": "https://www.egyptair.com/en/Pages/Conditions-of-Carriage.aspx",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "challenge",
+        "status": 403
+      },
+      "browser_robots": {
+        "probe_method": "browser_robots",
+        "layer": "http_403",
+        "status": 403
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "http_403",
+        "status": 403
+      },
+      "robots_verdict": "blocked",
+      "content_verdict": "blocked"
+    },
+    {
+      "carrier_key": "emirates",
+      "name": "Emirates",
+      "domain": "emirates.com",
+      "content_url": "https://www.emirates.com/uk/english/before-you-fly/travel/rules-and-notices/",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "http2_reset",
+        "status": null,
+        "detail": "Stream closed with error code NGHTTP2_INTERNAL_ERROR"
+      },
+      "browser_robots": {
+        "probe_method": "browser_robots",
+        "layer": "ok",
+        "status": 200,
+        "detail": "1024 chars"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "ok",
+        "status": 200,
+        "detail": "23991 chars"
+      },
+      "robots_verdict": "browser_only",
+      "content_verdict": "reachable"
+    },
+    {
+      "carrier_key": "ethiopian-airlines",
+      "name": "Ethiopian Airlines",
+      "domain": "ethiopianairlines.com",
+      "content_url": "https://www.ethiopianairlines.com/aa/information/essential-information/conditions-of-carriage",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "tls",
+        "status": null,
+        "detail": "C0B544A400710000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:.."
+      },
+      "browser_robots": {
+        "probe_method": "browser_robots",
+        "layer": "tls",
+        "status": null,
+        "detail": "page.goto: net::ERR_SSL_PROTOCOL_ERROR at https://ethiopianairlines.com/robots.txt"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "ok",
+        "status": 200,
+        "detail": "3457 chars"
+      },
+      "robots_verdict": "unreachable",
+      "content_verdict": "reachable"
+    },
+    {
+      "carrier_key": "etihad-airways",
+      "name": "Etihad Airways",
+      "domain": "etihad.com",
+      "content_url": "https://www.etihad.com/en-gb/legal/conditions-of-carriage",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "http2_reset",
+        "status": null,
+        "detail": "Stream closed with error code NGHTTP2_INTERNAL_ERROR"
+      },
+      "browser_robots": {
+        "probe_method": "browser_robots",
+        "layer": "http2_reset",
+        "status": null,
+        "detail": "page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://etihad.com/robots.txt"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "http2_reset",
+        "status": null,
+        "detail": "page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.etihad.com/en-gb/legal/conditions-"
+      },
+      "robots_verdict": "unreachable",
+      "content_verdict": "unreachable"
+    },
+    {
+      "carrier_key": "finnair",
+      "name": "Finnair",
+      "domain": "finnair.com",
+      "content_url": "https://www.finnair.com/gb-en/info/conditions-of-carriage-and-notices/general-conditions-of-carriage-for-passengers-and-baggage",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "ok",
+        "status": 200,
+        "detail": "5081 bytes"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "ok",
+        "status": 200,
+        "detail": "51931 chars"
+      },
+      "robots_verdict": "reachable",
+      "content_verdict": "reachable"
+    },
+    {
+      "carrier_key": "frontier-airlines",
+      "name": "Frontier Airlines",
+      "domain": "flyfrontier.com",
+      "content_url": "https://www.flyfrontier.com/legal/contract-of-carriage",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "ok",
+        "status": 200,
+        "detail": "242 bytes"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "ok",
+        "status": 200,
+        "detail": "1832 chars"
+      },
+      "robots_verdict": "reachable",
+      "content_verdict": "reachable"
+    },
+    {
+      "carrier_key": "hainan-airlines",
+      "name": "Hainan Airlines",
+      "domain": "hainanairlines.com",
+      "content_url": "https://www.hainanairlines.com/HUPortal/dyn/portal/DisplayPage?LANGUAGE=GB&COUNTRY_SITE=GB&SITE=CBHZCBHZ&PAGE=TECO",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "ok",
+        "status": 200,
+        "detail": "149 bytes"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "ok",
+        "status": 200,
+        "detail": "7379 chars"
+      },
+      "robots_verdict": "reachable",
+      "content_verdict": "reachable"
+    },
+    {
+      "carrier_key": "iberia",
+      "name": "Iberia",
+      "domain": "iberia.com",
+      "content_url": "https://www.iberia.com/gb/bills/conditions/",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "http_403",
+        "status": 403
+      },
+      "browser_robots": {
+        "probe_method": "browser_robots",
+        "layer": "http_403",
+        "status": 403
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "http_403",
+        "status": 403
+      },
+      "robots_verdict": "blocked",
+      "content_verdict": "blocked"
+    },
+    {
+      "carrier_key": "ita-airways",
+      "name": "ITA Airways",
+      "domain": "ita-airways.com",
+      "content_url": "https://www.ita-airways.com/en_il/booking/general-conditions-of-carriage.html",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "challenge",
+        "status": 403
+      },
+      "browser_robots": {
+        "probe_method": "browser_robots",
+        "layer": "ok",
+        "status": 200,
+        "detail": "4176 chars"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "http_403",
+        "status": 403
+      },
+      "robots_verdict": "browser_only",
+      "content_verdict": "blocked"
+    },
+    {
+      "carrier_key": "japan-airlines",
+      "name": "Japan Airlines",
+      "domain": "jal.co.jp",
+      "content_url": "https://www.jal.co.jp/jp/en/inter/carriage/220920/",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "challenge",
+        "status": 403
+      },
+      "browser_robots": {
+        "probe_method": "browser_robots",
+        "layer": "challenge",
+        "status": 403
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "challenge",
+        "status": 403
+      },
+      "robots_verdict": "blocked",
+      "content_verdict": "blocked"
+    },
+    {
+      "carrier_key": "jetblue",
+      "name": "jetBlue",
+      "domain": "jetblue.com",
+      "content_url": "https://www.jetblue.com/magnoliapublic/dam/ui-assets/p/contract_of_carriage.pdf",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "ok",
+        "status": 200,
+        "detail": "503 bytes"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "unknown",
+        "status": null,
+        "detail": "page.goto: Download is starting"
+      },
+      "robots_verdict": "reachable",
+      "content_verdict": "unreachable"
+    },
+    {
+      "carrier_key": "juneyao-airlines",
+      "name": "Juneyao Airlines",
+      "domain": "global.juneyaoair.com",
+      "content_url": "https://global.juneyaoair.com/servicehelp/new/General%20Conditions%20of%20Carriage",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "http_error",
+        "status": 404
+      },
+      "browser_robots": {
+        "probe_method": "browser_robots",
+        "layer": "http_error",
+        "status": 404
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "http_error",
+        "status": 404
+      },
+      "robots_verdict": "unreachable",
+      "content_verdict": "unreachable"
+    },
+    {
+      "carrier_key": "klm-royal-dutch-airlines",
+      "name": "KLM Royal Dutch Airlines",
+      "domain": "klm.com",
+      "content_url": "https://www.klm.com/information/legal/conditions-carriage",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "timeout",
+        "status": null,
+        "detail": "The operation was aborted due to timeout"
+      },
+      "browser_robots": {
+        "probe_method": "browser_robots",
+        "layer": "timeout",
+        "status": null,
+        "detail": "page.goto: Timeout 20000ms exceeded."
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "http2_reset",
+        "status": null,
+        "detail": "page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.klm.com/information/legal/conditio"
+      },
+      "robots_verdict": "unreachable",
+      "content_verdict": "unreachable"
+    },
+    {
+      "carrier_key": "korean-air",
+      "name": "Korean Air",
+      "domain": "koreanair.com",
+      "content_url": "https://www.koreanair.com/us/en/footer/terms-and-policies/terms-of-carriage",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "http2_reset",
+        "status": null,
+        "detail": "Stream closed with error code NGHTTP2_INTERNAL_ERROR"
+      },
+      "browser_robots": {
+        "probe_method": "browser_robots",
+        "layer": "http2_reset",
+        "status": null,
+        "detail": "page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://koreanair.com/robots.txt"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "http2_reset",
+        "status": null,
+        "detail": "page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.koreanair.com/us/en/footer/terms-a"
+      },
+      "robots_verdict": "unreachable",
+      "content_verdict": "unreachable"
+    },
+    {
+      "carrier_key": "latam-airlines",
+      "name": "LATAM Airlines",
+      "domain": "latamairlines.com",
+      "content_url": "https://www.latamairlines.com/gb/en/legal/transportation-contract-conditions",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "challenge",
+        "status": 403
+      },
+      "browser_robots": {
+        "probe_method": "browser_robots",
+        "layer": "http_403",
+        "status": 403
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "http_403",
+        "status": 403
+      },
+      "robots_verdict": "blocked",
+      "content_verdict": "blocked"
+    },
+    {
+      "carrier_key": "lucky-air",
+      "name": "Lucky Air",
+      "domain": "luckyair.net",
+      "content_url": "https://www.luckyair.net/help.html?id=5d7714de91c6dd531559d9b7",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "http_error",
+        "status": 404
+      },
+      "browser_robots": {
+        "probe_method": "browser_robots",
+        "layer": "http_error",
+        "status": 404
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "http_error",
+        "status": 404
+      },
+      "robots_verdict": "unreachable",
+      "content_verdict": "unreachable"
+    },
+    {
+      "carrier_key": "lufthansa",
+      "name": "Lufthansa",
+      "domain": "lufthansa.com",
+      "content_url": "https://www.lufthansa.com/gb/en/business-terms-and-conditions-1",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "ok",
+        "status": 200,
+        "detail": "242 bytes"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "http_403",
+        "status": 403
+      },
+      "robots_verdict": "reachable",
+      "content_verdict": "blocked"
+    },
+    {
+      "carrier_key": "luxair",
+      "name": "Luxair",
+      "domain": "luxair.lu",
+      "content_url": "https://www.luxair.lu/en/information/general-conditions-carriage",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "ok",
+        "status": 200,
+        "detail": "2961 bytes"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "ok",
+        "status": 200,
+        "detail": "71343 chars"
+      },
+      "robots_verdict": "reachable",
+      "content_verdict": "reachable"
+    },
+    {
+      "carrier_key": "malaysia-airlines",
+      "name": "Malaysia Airlines",
+      "domain": "malaysiaairlines.com",
+      "content_url": "https://www.malaysiaairlines.com/content/dam/mas/pdf/2021-08-31-General-Conditions-of-Carriage-Malaysia-Airlines.pdf",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "ok",
+        "status": 200,
+        "detail": "525 bytes"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "unknown",
+        "status": null,
+        "detail": "page.goto: Download is starting"
+      },
+      "robots_verdict": "reachable",
+      "content_verdict": "unreachable"
+    },
+    {
+      "carrier_key": "oman-air",
+      "name": "Oman Air",
+      "domain": "omanair.com",
+      "content_url": "https://www.omanair.com/au/en/conditions-carriage",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "ok",
+        "status": 200,
+        "detail": "23 bytes"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "http_403",
+        "status": 403
+      },
+      "robots_verdict": "reachable",
+      "content_verdict": "blocked"
+    },
+    {
+      "carrier_key": "qantas",
+      "name": "Qantas",
+      "domain": "qantas.com",
+      "content_url": "https://www.qantas.com/gb/en/book-a-trip/flights/conditions-of-carriage.html",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "timeout",
+        "status": null,
+        "detail": "The operation was aborted due to timeout"
+      },
+      "browser_robots": {
+        "probe_method": "browser_robots",
+        "layer": "timeout",
+        "status": null,
+        "detail": "page.goto: Timeout 20000ms exceeded."
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "http2_reset",
+        "status": null,
+        "detail": "page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.qantas.com/gb/en/book-a-trip/fligh"
+      },
+      "robots_verdict": "unreachable",
+      "content_verdict": "unreachable"
+    },
+    {
+      "carrier_key": "qatar-airways",
+      "name": "Qatar Airways",
+      "domain": "qatarairways.com",
+      "content_url": "https://www.qatarairways.com/en-gb/legal/conditions-of-carriage.html",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "challenge",
+        "status": 403
+      },
+      "browser_robots": {
+        "probe_method": "browser_robots",
+        "layer": "challenge",
+        "status": 403
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "challenge",
+        "status": 403
+      },
+      "robots_verdict": "blocked",
+      "content_verdict": "blocked"
+    },
+    {
+      "carrier_key": "royal-air-maroc",
+      "name": "Royal Air Maroc",
+      "domain": "royalairmaroc.com",
+      "content_url": "https://www.royalairmaroc.com/uk-en/general-terms-and-conditions",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "ok",
+        "status": 200,
+        "detail": "47 bytes"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "ok",
+        "status": 200,
+        "detail": "2423 chars"
+      },
+      "robots_verdict": "reachable",
+      "content_verdict": "reachable"
+    },
+    {
+      "carrier_key": "royal-jordanian",
+      "name": "Royal Jordanian",
+      "domain": "rj.com",
+      "content_url": "https://www.rj.com/en/info-and-tips/conditions-of-carriage",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "ok",
+        "status": 200,
+        "detail": "599560 bytes"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "ok",
+        "status": 200,
+        "detail": "2738 chars"
+      },
+      "robots_verdict": "reachable",
+      "content_verdict": "reachable"
+    },
+    {
+      "carrier_key": "sas-scandinavian",
+      "name": "SAS Scandinavian",
+      "domain": "flysas.com",
+      "content_url": "https://www.flysas.com/gb-en/legal-info/conditions-of-carriage/",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "ok",
+        "status": 200,
+        "detail": "1836 bytes"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "http_403",
+        "status": 403
+      },
+      "robots_verdict": "reachable",
+      "content_verdict": "blocked"
+    },
+    {
+      "carrier_key": "singapore-airlines",
+      "name": "Singapore Airlines",
+      "domain": "singaporeair.com",
+      "content_url": "https://www.singaporeair.com/en_UK/global_footer/conditions-carriage/",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "http_error",
+        "status": 404
+      },
+      "browser_robots": {
+        "probe_method": "browser_robots",
+        "layer": "http_error",
+        "status": 404
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "http_error",
+        "status": 404
+      },
+      "robots_verdict": "unreachable",
+      "content_verdict": "unreachable"
+    },
+    {
+      "carrier_key": "swiss",
+      "name": "SWISS",
+      "domain": "swiss.com",
+      "content_url": "https://www.swiss.com/de/en/terms-conditions/conditions-of-carriage",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "ok",
+        "status": 200,
+        "detail": "231 bytes"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "http_403",
+        "status": 403
+      },
+      "robots_verdict": "reachable",
+      "content_verdict": "blocked"
+    },
+    {
+      "carrier_key": "tap-air-portugal",
+      "name": "TAP Air Portugal",
+      "domain": "flytap.com",
+      "content_url": "https://www.flytap.com/en-gb/transport-conditions?accordionid=1",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "ok",
+        "status": 200,
+        "detail": "648 bytes"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "ok",
+        "status": 200,
+        "detail": "28952 chars"
+      },
+      "robots_verdict": "reachable",
+      "content_verdict": "reachable"
+    },
+    {
+      "carrier_key": "thai-airways",
+      "name": "THAI Airways",
+      "domain": "thaiairways.com",
+      "content_url": "https://www.thaiairways.com/en_GB/Terms_condition/contract_of_carriage.page?",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "ok",
+        "status": 200,
+        "detail": "3089 bytes"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "ok",
+        "status": 200,
+        "detail": "563 chars"
+      },
+      "robots_verdict": "reachable",
+      "content_verdict": "reachable"
+    },
+    {
+      "carrier_key": "transavia",
+      "name": "Transavia",
+      "domain": "transavia.com",
+      "content_url": "https://www.transavia.com/en-UK/conditions/conditions-of-carriage/",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "ok",
+        "status": 200,
+        "detail": "2413 bytes"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "ok",
+        "status": 200,
+        "detail": "112822 chars"
+      },
+      "robots_verdict": "reachable",
+      "content_verdict": "reachable"
+    },
+    {
+      "carrier_key": "turkish-airlines",
+      "name": "Turkish Airlines",
+      "domain": "turkishairlines.com",
+      "content_url": "https://www.turkishairlines.com/en-gb/legal-notice/general-conditions-of-carriage/",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "timeout",
+        "status": null,
+        "detail": "The operation was aborted due to timeout"
+      },
+      "browser_robots": {
+        "probe_method": "browser_robots",
+        "layer": "timeout",
+        "status": null,
+        "detail": "page.goto: Timeout 20000ms exceeded."
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "http2_reset",
+        "status": null,
+        "detail": "page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.turkishairlines.com/en-gb/legal-no"
+      },
+      "robots_verdict": "unreachable",
+      "content_verdict": "unreachable"
+    },
+    {
+      "carrier_key": "united-airlines",
+      "name": "United Airlines",
+      "domain": "united.com",
+      "content_url": "https://www.united.com/ual/en/GB/fly/contract.html",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "http2_reset",
+        "status": null,
+        "detail": "Stream closed with error code NGHTTP2_INTERNAL_ERROR"
+      },
+      "browser_robots": {
+        "probe_method": "browser_robots",
+        "layer": "http2_reset",
+        "status": null,
+        "detail": "page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://united.com/robots.txt"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "http2_reset",
+        "status": null,
+        "detail": "page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.united.com/ual/en/GB/fly/contract."
+      },
+      "robots_verdict": "unreachable",
+      "content_verdict": "unreachable"
+    },
+    {
+      "carrier_key": "ural-airlines",
+      "name": "Ural Airlines",
+      "domain": "uralairlines.ru",
+      "content_url": "https://www.uralairlines.ru/en/rules/dogovor-perevozki/",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "ok",
+        "status": 200,
+        "detail": "12860 bytes"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "ok",
+        "status": 200,
+        "detail": "9583 chars"
+      },
+      "robots_verdict": "reachable",
+      "content_verdict": "reachable"
+    },
+    {
+      "carrier_key": "uzbekistan-airways",
+      "name": "Uzbekistan Airways",
+      "domain": "uzbekistan-airlines.de",
+      "content_url": "http://uzbekistan-airlines.de/en/?page_id=89",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "tls",
+        "status": null,
+        "detail": "Hostname/IP does not match certificate's altnames: Host: uzbekistan-airlines.de. is not in"
+      },
+      "browser_robots": {
+        "probe_method": "browser_robots",
+        "layer": "tls",
+        "status": null,
+        "detail": "page.goto: net::ERR_CERT_COMMON_NAME_INVALID at https://uzbekistan-airlines.de/robots.txt"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "ok",
+        "status": 200,
+        "detail": "95 chars"
+      },
+      "robots_verdict": "unreachable",
+      "content_verdict": "reachable"
+    },
+    {
+      "carrier_key": "vietnam-airlines",
+      "name": "Vietnam Airlines",
+      "domain": "vietnamairlines.com",
+      "content_url": "https://www.vietnamairlines.com/gb/en/legal/conditions-of-carriage",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "ok",
+        "status": 200,
+        "detail": "81 bytes"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "ok",
+        "status": 200,
+        "detail": "2092 chars"
+      },
+      "robots_verdict": "reachable",
+      "content_verdict": "reachable"
+    },
+    {
+      "carrier_key": "vueling",
+      "name": "Vueling",
+      "domain": "vueling.com",
+      "content_url": "https://www.vueling.com/en/customer-services/conditions-of-carriage",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "http2_reset",
+        "status": null,
+        "detail": "Stream closed with error code NGHTTP2_INTERNAL_ERROR"
+      },
+      "browser_robots": {
+        "probe_method": "browser_robots",
+        "layer": "http2_reset",
+        "status": null,
+        "detail": "page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://vueling.com/robots.txt"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "http2_reset",
+        "status": null,
+        "detail": "page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.vueling.com/en/customer-services/c"
+      },
+      "robots_verdict": "unreachable",
+      "content_verdict": "unreachable"
+    },
+    {
+      "carrier_key": "westjet",
+      "name": "WestJet",
+      "domain": "westjet.com",
+      "content_url": "https://www.westjet.com/en-ca/legal/travel-terms-conditions/westjet-flights",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "ok",
+        "status": 200,
+        "detail": "4144 bytes"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "ok",
+        "status": 200,
+        "detail": "53061 chars"
+      },
+      "robots_verdict": "reachable",
+      "content_verdict": "reachable"
+    },
+    {
+      "carrier_key": "xiamen-airlines",
+      "name": "Xiamen Airlines",
+      "domain": "xiamenair.com",
+      "content_url": "https://www.xiamenair.com/brandnew_EN/travel-transport-condition.html",
+      "http_robots": {
+        "probe_method": "http_robots",
+        "layer": "dns",
+        "status": null,
+        "detail": "getaddrinfo ENOTFOUND xiamenair.com"
+      },
+      "browser_robots": {
+        "probe_method": "browser_robots",
+        "layer": "dns",
+        "status": null,
+        "detail": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://xiamenair.com/robots.txt"
+      },
+      "browser_content": {
+        "probe_method": "browser_content",
+        "layer": "ok",
+        "status": 200,
+        "detail": "4116 chars"
+      },
+      "robots_verdict": "unreachable",
+      "content_verdict": "reachable"
+    }
+  ]
+}

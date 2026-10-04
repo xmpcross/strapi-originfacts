@@ -6,10 +6,12 @@ export default function ArticleCard({
   article,
   size = 'md',
   hideMeta = false,
+  imageClassName = '',
 }: {
   article: StrapiArticle;
   size?: 'compact' | 'sm' | 'md' | 'lg';
   hideMeta?: boolean;
+  imageClassName?: string;
 }) {
   const img = mediaUrl(article.coverImage ?? null);
   const date = article.publishedAt ? format(new Date(article.publishedAt), 'd MMM yyyy') : '';
@@ -29,11 +31,11 @@ export default function ArticleCard({
           <img
             src={img}
             alt={article.coverImage?.alternativeText || article.title}
-            className={`${sizeClasses.img} w-full object-cover transition-transform duration-500 group-hover:scale-105`}
+            className={`${imageClassName || sizeClasses.img} w-full object-cover transition-transform duration-500 group-hover:scale-105`}
             loading="lazy"
           />
         ) : (
-          <div className={`${sizeClasses.img} w-full bg-gradient-to-br from-forest-800 to-forest-950`} />
+          <div className={`${imageClassName || sizeClasses.img} w-full bg-gradient-to-br from-forest-800 to-forest-950`} />
         )}
       </Link>
       <div className="mt-4 flex flex-col gap-2">

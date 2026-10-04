@@ -1,0 +1,14 @@
+{
+  "slug": "fixture-pending",
+  "official_website": "https://www.qantas.com",
+  "modules": [
+    {
+      "id": "contact",
+      "title": "Contact",
+      "required": ["phone_us"],
+      "fields": {
+        "phone_us": { "value": null, "status": "pending" }
+      }
+    }
+  ]
+}

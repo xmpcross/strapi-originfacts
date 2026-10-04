@@ -15,7 +15,7 @@ type Props = {
  */
 export default function ExpandableDescription({
   text,
-  wordLimit = 30,
+  wordLimit = 70,
   className = 'mt-4 text-lg font-normal text-forest-900/70',
 }: Props) {
   const [expanded, setExpanded] = useState(false);

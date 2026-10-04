@@ -63,6 +63,15 @@ async function resolveOrigin(): Promise<Origin> {
   const cached = readOriginCache();
   if (cached) return cached;
   try {
+    const apiRes = await fetch('/api/nearest-city', { cache: 'no-store' });
+    if (apiRes.ok) {
+      const j = (await apiRes.json()) as { code?: string; name?: string };
+      if (j?.code && j?.name) {
+        const origin: Origin = { iata: j.code, city: j.name };
+        writeOriginCache(origin);
+        return origin;
+      }
+    }
     const geoRes = await fetch('https://ipapi.co/json/', { cache: 'no-store' });
     if (!geoRes.ok) {
       console.warn('[FlightDealsWidget] ipapi.co failed, using fallback origin');

@@ -11,7 +11,9 @@
  * feedback without titles being hard-truncated.
  */
 
-export const DESCRIPTION_MAX = 155;
+export const DESCRIPTION_MAX = 150;
+/** Budget for compactTitle(); programmaticTitle() uses TITLE_MAX below. */
+export const COMPACT_TITLE_MAX = 45;
 const TITLE_WARN = 60;
 const DESCRIPTION_WARN = 160;
 
@@ -21,13 +23,37 @@ const DESCRIPTION_WARN = 160;
  * cuts mid-word. Empty/undefined input returns ''.
  */
 export function clampDescription(input?: string | null, max = DESCRIPTION_MAX): string {
-  const clean = (input ?? '').replace(/\s+/g, ' ').trim();
+  const clean = (input ?? '')
+    .replace(/!\[[^\]]*]\([^)]*\)/g, ' ')
+    .replace(/\[([^\]]+)]\([^)]*\)/g, '$1')
+    // Markdown list markers only at line start: a bare `-` inside text is a
+    // hyphen, minus sign or range ("-30°C", "20-30%") and must survive.
+    .replace(/^\s*[-+]\s+/gm, ' ')
+    .replace(/[`*_>#]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
   if (clean.length <= max) return clean;
   // Reserve one char for the ellipsis, then back off to a word boundary.
   const slice = clean.slice(0, max - 1);
   const cut = slice.lastIndexOf(' ');
   return `${(cut > 0 ? slice.slice(0, cut) : slice).replace(/[,;:.\s]+$/, '')}…`;
 }
+
+export function compactTitle(input?: string | null, max = COMPACT_TITLE_MAX): string {
+  const clean = (input ?? '').replace(/\s+/g, ' ').trim();
+  if (clean.length <= max) return clean;
+
+  const separators = [' | ', ': ', ' — ', ' - '];
+  for (const separator of separators) {
+    const [first] = clean.split(separator);
+    if (first && first.length >= 24 && first.length <= max) return first;
+  }
+
+  const slice = clean.slice(0, max - 1);
+  const cut = slice.lastIndexOf(' ');
+  return `${(cut > 0 ? slice.slice(0, cut) : slice).replace(/[,;:.\s]+$/, '')}…`;
+}
+
 
 /**
  * Strips markdown syntax to plain prose: fenced/inline code, images, links

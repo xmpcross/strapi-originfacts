@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
-import { Resend } from 'resend';
+import nodemailer from 'nodemailer';
 
 export const runtime = 'nodejs';
 
-const FROM = process.env.CONTACT_FROM_EMAIL ?? 'Originfacts Contact <onboarding@resend.dev>';
+const FROM = process.env.CONTACT_FROM_EMAIL ?? 'Originfacts Contact <contact@originfacts.com>';
 const TO = process.env.CONTACT_TO_EMAIL ?? 'contact@originfacts.com';
 
 // Naive in-memory per-IP rate limit: max 5 submissions per 15 minutes.
@@ -38,12 +38,27 @@ function ipFromRequest(req: Request): string {
   return 'unknown';
 }
 
-export async function POST(req: Request) {
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    return NextResponse.json({ ok: false, error: 'Email service not configured.' }, { status: 500 });
-  }
+function createSmtpTransporter() {
+  const host = process.env.SMTP_HOST || '127.0.0.1';
+  const port = parseInt(process.env.SMTP_PORT || '25', 10);
+  const user = process.env.SMTP_USER;
+  const pass = process.env.SMTP_PASS;
+  const secure = process.env.SMTP_SECURE === 'true' || port === 465;
 
+  return nodemailer.createTransport({
+    host,
+    port,
+    secure,
+    name: 'www.originfacts.com',
+    ...(user && pass ? { auth: { user, pass } } : {}),
+    tls: {
+      rejectUnauthorized: false,
+      servername: process.env.SMTP_SERVERNAME || 'mail.fxnstudio.com',
+    },
+  });
+}
+
+export async function POST(req: Request) {
   const ip = ipFromRequest(req);
   if (rateLimited(ip)) {
     return NextResponse.json(
@@ -83,7 +98,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, error: 'One or more fields exceed the allowed length.' }, { status: 400 });
   }
 
-  const resend = new Resend(apiKey);
+  const transporter = createSmtpTransporter();
 
   const html = `
     <div style="font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#07142b;line-height:1.5">
@@ -112,21 +127,17 @@ export async function POST(req: Request) {
     .join('\n');
 
   try {
-    const { data, error } = await resend.emails.send({
+    const info = await transporter.sendMail({
       from: FROM,
-      to: [TO],
+      to: TO,
       replyTo: `${name} <${email}>`,
       subject: `[Originfacts contact] ${subject}`,
       html,
       text,
     });
-    if (error) {
-      console.error('[contact] resend error', error);
-      return NextResponse.json({ ok: false, error: 'Could not send the message. Please try again later.' }, { status: 502 });
-    }
-    return NextResponse.json({ ok: true, id: data?.id ?? null });
+    return NextResponse.json({ ok: true, id: info.messageId });
   } catch (err) {
-    console.error('[contact] send failure', err);
+    console.error('[contact] SMTP send failure', err);
     return NextResponse.json({ ok: false, error: 'Could not send the message. Please try again later.' }, { status: 502 });
   }
 }

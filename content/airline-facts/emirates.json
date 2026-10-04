@@ -1,0 +1,249 @@
+{
+  "slug": "emirates",
+  "official_website": "https://www.emirates.com",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "required": [
+        "carryon_bag_dimensions",
+        "weight_economy",
+        "weight_business_first"
+      ],
+      "fields": {
+        "carryon_bag_dimensions": {
+          "value": "55 x 40 x 20 cm",
+          "status": "pending",
+          "source_url": "https://www.emirates.com/ae/english/before-you-fly/baggage/cabin-baggage-rules/",
+          "notes": "Emirates cabin baggage size limit: 55 x 40 x 20 cm.",
+          "verified_at": "2026-09-04",
+          "verified_by": "automated_provenance"
+        },
+        "weight_economy": {
+          "value": "7 kg (15 lbs)",
+          "status": "pending",
+          "source_url": "https://www.emirates.com/ae/english/before-you-fly/baggage/cabin-baggage-rules/",
+          "notes": "Emirates Economy Class carry-on weight limit.",
+          "verified_at": "2026-09-04",
+          "verified_by": "automated_provenance"
+        },
+        "weight_business_first": {
+          "value": "14 kg (30 lbs) total across 2 pieces",
+          "status": "pending",
+          "source_url": "https://www.emirates.com/ae/english/before-you-fly/baggage/cabin-baggage-rules/",
+          "notes": "Emirates Premium / Business Class carry-on weight limit.",
+          "verified_at": "2026-09-04",
+          "verified_by": "automated_provenance"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "required": [
+        "piece_weight_economy",
+        "piece_weight_business",
+        "piece_weight_first"
+      ],
+      "fields": {
+        "piece_weight_economy": {
+          "value": "1 piece up to 23 kg (50 lbs)",
+          "status": "pending",
+          "source_url": "https://www.emirates.com/ae/english/before-you-fly/baggage/checked-baggage/",
+          "notes": "Emirates Economy Class checked baggage allowance.",
+          "verified_at": "2026-09-04",
+          "verified_by": "automated_provenance"
+        },
+        "piece_weight_business": {
+          "value": "2 pieces up to 32 kg (70 lbs) each",
+          "status": "pending",
+          "source_url": "https://www.emirates.com/ae/english/before-you-fly/baggage/checked-baggage/",
+          "notes": "Emirates Business Class checked baggage allowance.",
+          "verified_at": "2026-09-04",
+          "verified_by": "automated_provenance"
+        },
+        "piece_weight_first": {
+          "value": "3 pieces up to 32 kg (70 lbs) each",
+          "status": "pending",
+          "source_url": "https://www.emirates.com/ae/english/before-you-fly/baggage/checked-baggage/",
+          "notes": "Emirates First Class checked baggage allowance.",
+          "verified_at": "2026-09-04",
+          "verified_by": "automated_provenance"
+        }
+      }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "lede": "Emirates Economy fares are sold in fare families, so the cheapest fare can trade lower flexibility and paid extras for a lower upfront price.",
+      "body": [
+        "Emirates describes Special as its lowest fare, Saver as slightly more flexible, Flex as allowing changes and cancellations for a fee, and Flex Plus as fully flexible and unrestricted.",
+        "On routes using the piece concept, Emirates lists Economy Special with one checked bag up to 23 kg, while Saver, Flex and Flex Plus include two checked bags up to 23 kg each. Seat selection can also change the real trip cost: Emirates says Economy Special and Saver fares pay for advance seat selection, while free seat selection is available after online check-in opens except for Extra Legroom seats."
+      ],
+      "required": [
+        "lowest_fare_family",
+        "fare_flexibility",
+        "checked_bag_included",
+        "seat_selection"
+      ],
+      "fields": {
+        "lowest_fare_family": {
+          "value": "Special is Emirates' lowest fare, with restrictions attached.",
+          "status": "official",
+          "source_url": "https://www.emirates.com/english/help/faq-topics/emirates-business-rewards/",
+          "notes": "Emirates explains the Special, Saver, Flex and Flex Plus fare families in its fare-type FAQ.",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "fare_flexibility": {
+          "value": "Saver is slightly more flexible than Special; Flex allows changes and cancellations for a fee; Flex Plus is fully flexible and unrestricted.",
+          "status": "official",
+          "source_url": "https://www.emirates.com/english/help/faq-topics/emirates-business-rewards/",
+          "notes": "Emirates' FAQ describes how flexibility increases across Saver, Flex and Flex Plus.",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "checked_bag_included": {
+          "value": "On piece-concept routes, Economy Special includes one checked bag up to 23 kg; Saver, Flex and Flex Plus include two checked bags up to 23 kg each.",
+          "status": "official",
+          "source_url": "https://www.emirates.com/english/before-you-fly/baggage/checked-baggage/",
+          "notes": "Emirates' checked-baggage page lists Economy baggage allowances by fare family for piece-concept routes.",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "seat_selection": {
+          "value": "Economy Special and Saver fares pay for advance seat selection; seat selection is free after online check-in opens except for Extra Legroom seats.",
+          "status": "official",
+          "source_url": "https://www.emirates.com/english/book/about-booking-online/emirates-seat-selection/",
+          "notes": "Emirates' seat-selection page explains optional seat selection, paid advance selection and free seat assignment after online check-in opens.",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "lede": "Emirates disruption rights depend on the regulation attached to the trip, the airports involved and the reason for the delay or cancellation.",
+      "body": [
+        "Emirates publishes separate notices for delayed and cancelled flights. Its delay notice says passengers may be entitled to compensation when arrival is delayed by more than three hours and the cause is within Emirates' control rather than extraordinary circumstances.",
+        "For cancellations, Emirates says compensation may apply unless an exclusion applies, such as extraordinary circumstances or sufficient advance notice. Emirates also says it will notify customers by email and SMS when a flight is delayed or cancelled, using the contact details in the booking."
+      ],
+      "required": [
+        "delay_compensation_notice",
+        "cancellation_compensation_notice",
+        "disruption_notifications",
+        "refund_request_form"
+      ],
+      "fields": {
+        "delay_compensation_notice": {
+          "value": "Passengers may be entitled to compensation when arrival is delayed by more than three hours and the delay is within Emirates' control.",
+          "status": "official",
+          "source_url": "https://www.emirates.com/english/before-you-fly/travel/rules-and-notices/delay-notice/",
+          "notes": "Emirates' delay notice explains compensation eligibility for qualifying controllable delays.",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "cancellation_compensation_notice": {
+          "value": "Passengers may be entitled to compensation for cancellation, but Emirates lists exclusions such as extraordinary circumstances or sufficient advance notice.",
+          "status": "official",
+          "source_url": "https://www.emirates.com/english/before-you-fly/travel/rules-and-notices/cancellation-notice/",
+          "notes": "Emirates' cancellation notice explains compensation eligibility and exclusions.",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "disruption_notifications": {
+          "value": "If a flight is delayed or cancelled, Emirates says it sends email and SMS updates to the contact details provided in the booking.",
+          "status": "official",
+          "source_url": "https://www.emirates.com/english/help/faq-topics/disrupted-travel/",
+          "notes": "Emirates' disrupted travel FAQ explains how customers are notified.",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "refund_request_form": {
+          "value": "Refund requests can be submitted through Emirates' online refund request form when the booking or additional service is eligible.",
+          "status": "official",
+          "source_url": "https://www.emirates.com/english/help/forms/refund-request/",
+          "notes": "Emirates' refund request page explains when the online refund form can be used.",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "lede": "Emirates publishes online check-in timing, airport arrival guidance and Dubai gate timing rules that passengers should check before departure.",
+      "body": [
+        "Emirates online check-in opens 48 hours before scheduled departure and closes 90 minutes before scheduled departure for passengers with an e-ticket.",
+        "At most airports, Emirates says check-in opens three hours before departure, though some airports can require up to four hours. For Dubai departures, passengers should clear passport control and security 90 minutes before the flight, reach the gate 60 minutes before departure in Premium Economy or Economy, and reach the gate 45 minutes before departure in First or Business."
+      ],
+      "required": [
+        "online_checkin_window",
+        "airport_checkin_guidance",
+        "dubai_security_cutoff",
+        "economy_gate_timing",
+        "premium_gate_timing"
+      ],
+      "fields": {
+        "online_checkin_window": {
+          "value": "Online check-in opens 48 hours before scheduled departure and closes 90 minutes before scheduled departure for passengers with an e-ticket.",
+          "status": "official",
+          "source_url": "https://www.emirates.com/english/help/faq-topics/preparing-to-travel/",
+          "notes": "Emirates' preparing to travel FAQ states the online check-in opening and closing window.",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "airport_checkin_guidance": {
+          "value": "At most airports, check-in opens three hours before departure, but some airports can require up to four hours, so Emirates tells passengers to check their ticket.",
+          "status": "official",
+          "source_url": "https://www.emirates.com/english/manage-booking/check-in-options/",
+          "notes": "Emirates' check-in options page gives airport check-in opening guidance.",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "dubai_security_cutoff": {
+          "value": "For Dubai departures, Emirates says passengers should go through passport control and security 90 minutes before the flight.",
+          "status": "official",
+          "source_url": "https://www.emirates.com/us/english/manage-booking/online-check-in/",
+          "notes": "Emirates' online check-in page states Dubai passport control and security timing.",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "economy_gate_timing": {
+          "value": "For Dubai departures in Premium Economy or Economy, Emirates says passengers should reach the gate no later than 60 minutes before departure.",
+          "status": "official",
+          "source_url": "https://www.emirates.com/english/manage-booking/check-in-options/",
+          "notes": "Emirates' check-in options page states Dubai gate timing for Premium Economy and Economy.",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "premium_gate_timing": {
+          "value": "For Dubai departures in First or Business Class, Emirates says passengers should be at the boarding gate 45 minutes before departure.",
+          "status": "official",
+          "source_url": "https://www.emirates.com/english/manage-booking/check-in-options/",
+          "notes": "Emirates' check-in options page states Dubai gate timing for First and Business Class.",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and customer support",
+      "required": [
+        "phone_home_market"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "+971 600 555 555",
+          "status": "pending",
+          "source_url": "https://www.emirates.com/ae/english/before-you-fly/rules-and-notices/conditions-of-carriage/",
+          "notes": "Emirates official customer support line.",
+          "verified_at": "2026-09-04",
+          "verified_by": "automated_provenance"
+        }
+      }
+    }
+  ]
+}

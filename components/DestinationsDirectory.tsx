@@ -88,33 +88,25 @@ export default function DestinationsDirectory({
 
   return (
     <div className="mt-10">
-      {/* Stat strip */}
-      <div className="grid gap-6 rounded-[0.3rem] border border-forest-900/10 bg-forest-900/[0.02] p-6 sm:grid-cols-4">
-        <Stat label="Total" value={destinations.length.toLocaleString()} />
-        <Stat label="Continents" value={byType.region.length.toLocaleString()} />
-        <Stat label="Countries" value={byType.country.length.toLocaleString()} />
-        <Stat label="Cities" value={byType.city.length.toLocaleString()} />
-      </div>
-
-      {/* Search */}
-      <div className="mt-8">
+      <div className="border border-forest-900/10 bg-white p-4 sm:p-5">
         <input
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search destinations — name, country code, or keyword…"
-          className="w-full rounded-[0.3rem] border border-forest-900/15 bg-paper px-4 py-3 font-sans text-base text-ink placeholder:text-forest-900/40 focus:border-terracotta-800 focus:outline-none focus:ring-2 focus:ring-forest-800/20"
+          placeholder="Search destinations by city, country, region, or code..."
+          className="w-full rounded-[0.3rem] border border-forest-900/15 bg-[#f8fafc] px-4 py-3 font-sans text-base text-ink placeholder:text-forest-900/40 focus:border-primary-emphasis focus:outline-none focus:ring-2 focus:ring-primary-emphasis/15"
           data-testid="destination-search"
         />
-      </div>
 
-      {/* Filter chips */}
-      <div className="mt-4 flex flex-wrap items-center gap-2">
-        <span className="text-xs uppercase tracking-widest text-forest-900/50">Show:</span>
-        <FilterChip label="All" active={filter === 'all'} onClick={() => setFilter('all')} />
-        <FilterChip label="Continents" active={filter === 'region'} onClick={() => setFilter('region')} />
-        <FilterChip label="Countries" active={filter === 'country'} onClick={() => setFilter('country')} />
-        <FilterChip label="Cities" active={filter === 'city'} onClick={() => setFilter('city')} />
+        <div className="mt-4 flex flex-wrap items-center gap-2">
+          <span className="mr-1 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-forest-900/50">
+            Show
+          </span>
+          <FilterChip label="All" active={filter === 'all'} onClick={() => setFilter('all')} />
+          <FilterChip label="Continents" active={filter === 'region'} onClick={() => setFilter('region')} />
+          <FilterChip label="Countries" active={filter === 'country'} onClick={() => setFilter('country')} />
+          <FilterChip label="Cities" active={filter === 'city'} onClick={() => setFilter('city')} />
+        </div>
       </div>
 
       {/* Results */}
@@ -270,19 +262,24 @@ function SectionHeader({
   onViewAll?: () => void;
 }) {
   return (
-    <header className="mt-16 flex items-end justify-between border-b border-forest-900/10 pb-3">
-      <h2 className="editorial-h text-2xl font-bold text-forest-900 lg:text-3xl">{title}</h2>
+    <header className="mt-16 flex flex-wrap items-end justify-between gap-4 border-b border-forest-900/10 pb-4">
+      <div>
+        <p className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-primary-emphasis">
+          Browse by type
+        </p>
+        <h2 className="editorial-h mt-2 text-2xl font-bold text-forest-950 lg:text-3xl">{title}</h2>
+      </div>
       <div className="flex items-center gap-4 text-sm">
-        <span className="font-light text-forest-900/50">
+        <span className="font-light text-forest-900/55">
           {count} {title.toLowerCase()}
         </span>
         {onViewAll && (
           <button
             type="button"
             onClick={onViewAll}
-            className="font-medium text-forest-700 hover:underline"
+            className="font-urbanist text-sm font-bold uppercase tracking-wider text-primary-emphasis hover:underline"
           >
-            View all →
+            View all
           </button>
         )}
       </div>
@@ -311,7 +308,7 @@ function DestinationTile({
   return (
     <Link
       href={`/destinations/${d.slug}`}
-      className={`group relative block overflow-hidden rounded-lg bg-forest-800 ${aspect}`}
+      className={`group relative block overflow-hidden rounded-[0.3rem] bg-forest-900 ring-1 ring-forest-900/10 ${aspect}`}
       data-testid={`destination-${d.slug}`}
     >
       {img && (
@@ -319,13 +316,13 @@ function DestinationTile({
         <img
           src={img}
           alt={d.name}
-          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
       )}
-      <div className="absolute inset-0 bg-gradient-to-t from-forest-950/90 via-forest-950/30 to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 p-4 text-sand-100 sm:p-5">
+      <div className="absolute inset-0 bg-gradient-to-t from-forest-950/90 via-forest-950/25 to-forest-950/20" />
+      <div className="absolute inset-x-0 bottom-0 p-4 text-white sm:p-5">
         {d.type && (
-          <div className="text-[10px] uppercase tracking-widest opacity-70">
+          <div className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-white/70">
             {d.type}
             {d.countryCode && <span className="ml-2 opacity-80">· {d.countryCode}</span>}
           </div>
@@ -333,15 +330,6 @@ function DestinationTile({
         <div className={`editorial-h mt-1 font-bold ${titleClass}`}>{d.name}</div>
       </div>
     </Link>
-  );
-}
-
-function Stat({ label, value }: { label: string; value: string }) {
-  return (
-    <div>
-      <div className="font-urbanist text-3xl font-bold text-forest-900">{value}</div>
-      <div className="mt-1 text-xs uppercase tracking-widest text-forest-900/60">{label}</div>
-    </div>
   );
 }
 
@@ -359,10 +347,10 @@ function FilterChip({
       type="button"
       onClick={onClick}
       className={
-        'rounded-full border px-3 py-1 text-xs font-medium uppercase tracking-wider transition ' +
+        'rounded-[0.3rem] border px-3 py-2 font-urbanist text-xs font-bold uppercase tracking-wider transition ' +
         (active
-          ? 'border-forest-900 bg-forest-900 text-sand-100'
-          : 'border-forest-900/20 text-forest-900/80 hover:border-forest-900/40 hover:bg-forest-900/5')
+          ? 'border-primary-emphasis bg-primary-emphasis text-white'
+          : 'border-forest-900/15 bg-white text-forest-900/80 hover:border-primary-emphasis/40 hover:bg-primary-emphasis/5')
       }
     >
       {label}

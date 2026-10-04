@@ -1,0 +1,458 @@
+[
+ {
+  "carrier_key": "aeroflot",
+  "name": "Aeroflot",
+  "iata": "SU",
+  "domain": "aeroflot.ru",
+  "content_url": "https://www.aeroflot.ru/gb-en/information/legal/contract",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "aeromexico",
+  "name": "Aeroméxico",
+  "iata": "AM",
+  "domain": "aeromexico.com",
+  "content_url": "https://aeromexico.com/en-us/legal-information",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "air-canada",
+  "name": "Air Canada",
+  "iata": "AC",
+  "domain": "aircanada.com",
+  "content_url": "https://www.aircanada.com/us/en/aco/home/legal/conditions-carriage-tariffs.html#/",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "air-china",
+  "name": "Air China",
+  "iata": "CA",
+  "domain": "airchina.co.uk",
+  "content_url": "https://www.airchina.co.uk/GB/GB/General-Conditions-of-Carriage-for-Passengers-and-Baggage",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "air-france",
+  "name": "Air France",
+  "iata": "AF",
+  "domain": "wwws.airfrance.co.uk",
+  "content_url": "https://wwws.airfrance.co.uk/information/legal/edito-cg-airfrance",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "air-india",
+  "name": "Air India",
+  "iata": "AI",
+  "domain": "airindia.in",
+  "content_url": "https://www.airindia.in/terms-conditions.htm",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "airbaltic",
+  "name": "airBaltic",
+  "iata": "BT",
+  "domain": "airbaltic.com",
+  "content_url": "https://www.airbaltic.com/en-GB/general-conditions-of-carriage",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "alaska-airlines",
+  "name": "Alaska Airlines",
+  "iata": "AS",
+  "domain": "alaskaair.com",
+  "content_url": "https://www.alaskaair.com/content/legal/contract-of-carriage/rule-1",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "all-nippon-airways",
+  "name": "All Nippon Airways",
+  "iata": "NH",
+  "domain": "ana.co.jp",
+  "content_url": "https://www.ana.co.jp/en/gb/siteinfo/international/conditions-of-carriage/",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "american-airlines",
+  "name": "American Airlines",
+  "iata": "AA",
+  "domain": "aa.com",
+  "content_url": "https://www.aa.com/i18n/customer-service/support/conditions-of-carriage.jsp",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "asiana-airlines",
+  "name": "Asiana Airlines",
+  "iata": "OZ",
+  "domain": "flyasiana.com",
+  "content_url": "https://flyasiana.com/C/GB/EN/contents/terms-of-transportation-and-notification",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "austrian-airlines",
+  "name": "Austrian Airlines",
+  "iata": "OS",
+  "domain": "austrian.com",
+  "content_url": "https://www.austrian.com/es/en/legal/conditions-of-carriage",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "british-airways",
+  "name": "British Airways",
+  "iata": "BA",
+  "domain": "britishairways.com",
+  "content_url": "https://www.britishairways.com/en-gb/information/legal/british-airways/general-conditions-of-carriage",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "brussels-airlines",
+  "name": "Brussels Airlines",
+  "iata": "SN",
+  "domain": "brusselsairlines.com",
+  "content_url": "https://www.brusselsairlines.com/de/en/legal-notices/terms-and-conditions-conditions-of-carriage",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "china-eastern",
+  "name": "China Eastern",
+  "iata": "MU",
+  "domain": "uk.ceair.com",
+  "content_url": "https://uk.ceair.com/newCMS/uk/en/content/en_Footer/AboutUS/201904/t20190404_5758.html",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "china-southern-airlines",
+  "name": "China Southern Airlines",
+  "iata": "CZ",
+  "domain": "csair.com",
+  "content_url": "https://www.csair.com/cn/tourguide/booking/orders/order/gjysztj/",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "copa-airlines",
+  "name": "Copa Airlines",
+  "iata": "CM",
+  "domain": "copaair.com",
+  "content_url": "https://www.copaair.com/en/web/us/contract-of-carriage",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "csa-czech-airlines",
+  "name": "CSA Czech Airlines",
+  "iata": "OK",
+  "domain": "csa.cz",
+  "content_url": "https://www.csa.cz/gb-en/travel-information/before-the-flight/conditions-of-carriage/",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "delta-air-lines",
+  "name": "Delta Air Lines",
+  "iata": "DL",
+  "domain": "delta.com",
+  "content_url": "https://www.delta.com/gb/en/legal/contract-of-carriage-igr",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "egyptair",
+  "name": "Egyptair",
+  "iata": "MS",
+  "domain": "egyptair.com",
+  "content_url": "https://www.egyptair.com/en/Pages/Conditions-of-Carriage.aspx",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "emirates",
+  "name": "Emirates",
+  "iata": "EK",
+  "domain": "emirates.com",
+  "content_url": "https://www.emirates.com/uk/english/before-you-fly/travel/rules-and-notices/",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "ethiopian-airlines",
+  "name": "Ethiopian Airlines",
+  "iata": "ET",
+  "domain": "ethiopianairlines.com",
+  "content_url": "https://www.ethiopianairlines.com/aa/information/essential-information/conditions-of-carriage",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "etihad-airways",
+  "name": "Etihad Airways",
+  "iata": "EY",
+  "domain": "etihad.com",
+  "content_url": "https://www.etihad.com/en-gb/legal/conditions-of-carriage",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "finnair",
+  "name": "Finnair",
+  "iata": "AY",
+  "domain": "finnair.com",
+  "content_url": "https://www.finnair.com/gb-en/info/conditions-of-carriage-and-notices/general-conditions-of-carriage-for-passengers-and-baggage",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "frontier-airlines",
+  "name": "Frontier Airlines",
+  "iata": "F9",
+  "domain": "flyfrontier.com",
+  "content_url": "https://www.flyfrontier.com/legal/contract-of-carriage",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "hainan-airlines",
+  "name": "Hainan Airlines",
+  "iata": "HU",
+  "domain": "hainanairlines.com",
+  "content_url": "https://www.hainanairlines.com/HUPortal/dyn/portal/DisplayPage?LANGUAGE=GB&COUNTRY_SITE=GB&SITE=CBHZCBHZ&PAGE=TECO",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "iberia",
+  "name": "Iberia",
+  "iata": "IB",
+  "domain": "iberia.com",
+  "content_url": "https://www.iberia.com/gb/bills/conditions/",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "ita-airways",
+  "name": "ITA Airways",
+  "iata": "AZ",
+  "domain": "ita-airways.com",
+  "content_url": "https://www.ita-airways.com/en_il/booking/general-conditions-of-carriage.html",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "japan-airlines",
+  "name": "Japan Airlines",
+  "iata": "JL",
+  "domain": "jal.co.jp",
+  "content_url": "https://www.jal.co.jp/jp/en/inter/carriage/220920/",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "jetblue",
+  "name": "jetBlue",
+  "iata": "B6",
+  "domain": "jetblue.com",
+  "content_url": "https://www.jetblue.com/magnoliapublic/dam/ui-assets/p/contract_of_carriage.pdf",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "juneyao-airlines",
+  "name": "Juneyao Airlines",
+  "iata": "HO",
+  "domain": "global.juneyaoair.com",
+  "content_url": "https://global.juneyaoair.com/servicehelp/new/General%20Conditions%20of%20Carriage",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "klm-royal-dutch-airlines",
+  "name": "KLM Royal Dutch Airlines",
+  "iata": "KL",
+  "domain": "klm.com",
+  "content_url": "https://www.klm.com/information/legal/conditions-carriage",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "korean-air",
+  "name": "Korean Air",
+  "iata": "KE",
+  "domain": "koreanair.com",
+  "content_url": "https://www.koreanair.com/us/en/footer/terms-and-policies/terms-of-carriage",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "latam-airlines",
+  "name": "LATAM Airlines",
+  "iata": "LA",
+  "domain": "latamairlines.com",
+  "content_url": "https://www.latamairlines.com/gb/en/legal/transportation-contract-conditions",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "lucky-air",
+  "name": "Lucky Air",
+  "iata": "8L",
+  "domain": "luckyair.net",
+  "content_url": "https://www.luckyair.net/help.html?id=5d7714de91c6dd531559d9b7",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "lufthansa",
+  "name": "Lufthansa",
+  "iata": "LH",
+  "domain": "lufthansa.com",
+  "content_url": "https://www.lufthansa.com/gb/en/business-terms-and-conditions-1",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "luxair",
+  "name": "Luxair",
+  "iata": "LG",
+  "domain": "luxair.lu",
+  "content_url": "https://www.luxair.lu/en/information/general-conditions-carriage",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "malaysia-airlines",
+  "name": "Malaysia Airlines",
+  "iata": "MH",
+  "domain": "malaysiaairlines.com",
+  "content_url": "https://www.malaysiaairlines.com/content/dam/mas/pdf/2021-08-31-General-Conditions-of-Carriage-Malaysia-Airlines.pdf",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "oman-air",
+  "name": "Oman Air",
+  "iata": "WY",
+  "domain": "omanair.com",
+  "content_url": "https://www.omanair.com/au/en/conditions-carriage",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "qantas",
+  "name": "Qantas",
+  "iata": "QF",
+  "domain": "qantas.com",
+  "content_url": "https://www.qantas.com/gb/en/book-a-trip/flights/conditions-of-carriage.html",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "qatar-airways",
+  "name": "Qatar Airways",
+  "iata": "QR",
+  "domain": "qatarairways.com",
+  "content_url": "https://www.qatarairways.com/en-gb/legal/conditions-of-carriage.html",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "royal-air-maroc",
+  "name": "Royal Air Maroc",
+  "iata": "AT",
+  "domain": "royalairmaroc.com",
+  "content_url": "https://www.royalairmaroc.com/uk-en/general-terms-and-conditions",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "royal-jordanian",
+  "name": "Royal Jordanian",
+  "iata": "RJ",
+  "domain": "rj.com",
+  "content_url": "https://www.rj.com/en/info-and-tips/conditions-of-carriage",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "sas-scandinavian",
+  "name": "SAS Scandinavian",
+  "iata": "SK",
+  "domain": "flysas.com",
+  "content_url": "https://www.flysas.com/gb-en/legal-info/conditions-of-carriage/",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "singapore-airlines",
+  "name": "Singapore Airlines",
+  "iata": "SQ",
+  "domain": "singaporeair.com",
+  "content_url": "https://www.singaporeair.com/en_UK/global_footer/conditions-carriage/",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "swiss",
+  "name": "SWISS",
+  "iata": "LX",
+  "domain": "swiss.com",
+  "content_url": "https://www.swiss.com/de/en/terms-conditions/conditions-of-carriage",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "tap-air-portugal",
+  "name": "TAP Air Portugal",
+  "iata": "TP",
+  "domain": "flytap.com",
+  "content_url": "https://www.flytap.com/en-gb/transport-conditions?accordionid=1",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "thai-airways",
+  "name": "THAI Airways",
+  "iata": "TG",
+  "domain": "thaiairways.com",
+  "content_url": "https://www.thaiairways.com/en_GB/Terms_condition/contract_of_carriage.page?",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "transavia",
+  "name": "Transavia",
+  "iata": "HV",
+  "domain": "transavia.com",
+  "content_url": "https://www.transavia.com/en-UK/conditions/conditions-of-carriage/",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "turkish-airlines",
+  "name": "Turkish Airlines",
+  "iata": "TK",
+  "domain": "turkishairlines.com",
+  "content_url": "https://www.turkishairlines.com/en-gb/legal-notice/general-conditions-of-carriage/",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "united-airlines",
+  "name": "United Airlines",
+  "iata": "UA",
+  "domain": "united.com",
+  "content_url": "https://www.united.com/ual/en/GB/fly/contract.html",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "ural-airlines",
+  "name": "Ural Airlines",
+  "iata": "U6",
+  "domain": "uralairlines.ru",
+  "content_url": "https://www.uralairlines.ru/en/rules/dogovor-perevozki/",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "uzbekistan-airways",
+  "name": "Uzbekistan Airways",
+  "iata": "HY",
+  "domain": "uzbekistan-airlines.de",
+  "content_url": "http://uzbekistan-airlines.de/en/?page_id=89",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "vietnam-airlines",
+  "name": "Vietnam Airlines",
+  "iata": "VN",
+  "domain": "vietnamairlines.com",
+  "content_url": "https://www.vietnamairlines.com/gb/en/legal/conditions-of-carriage",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "vueling",
+  "name": "Vueling",
+  "iata": "VY",
+  "domain": "vueling.com",
+  "content_url": "https://www.vueling.com/en/customer-services/conditions-of-carriage",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "westjet",
+  "name": "WestJet",
+  "iata": "WS",
+  "domain": "westjet.com",
+  "content_url": "https://www.westjet.com/en-ca/legal/travel-terms-conditions/westjet-flights",
+  "domain_source": "duffel_coc"
+ },
+ {
+  "carrier_key": "xiamen-airlines",
+  "name": "Xiamen Airlines",
+  "iata": "MF",
+  "domain": "xiamenair.com",
+  "content_url": "https://www.xiamenair.com/brandnew_EN/travel-transport-condition.html",
+  "domain_source": "duffel_coc"
+ }
+]

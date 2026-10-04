@@ -1,0 +1,2362 @@
+{
+ "source": "Duffel Airlines API (api.duffel.com/air/airlines, Duffel-Version v2)",
+ "retrieved": "2026-08-24",
+ "airlines": {
+  "Q5": {
+   "name": "40-Mile Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/Q5.svg"
+  },
+  "A3": {
+   "name": "Aegean Airlines",
+   "conditionsOfCarriageUrl": "https://en.aegeanair.com/conditions-notices/conditions-notices/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/A3.svg"
+  },
+  "EI": {
+   "name": "Aer Lingus",
+   "conditionsOfCarriageUrl": "https://www.aerlingus.com/support/legal/conditions-of-carriage/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/EI.svg"
+  },
+  "EG": {
+   "name": "Aer Lingus UK",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/EG.svg"
+  },
+  "SU": {
+   "name": "Aeroflot",
+   "conditionsOfCarriageUrl": "https://www.aeroflot.ru/gb-en/information/legal/contract",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/SU.svg"
+  },
+  "AR": {
+   "name": "Aerolineas Argentinas",
+   "conditionsOfCarriageUrl": "https://www.aerolineas.com.ar/legales?tab=condicionestransporte",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AR.svg"
+  },
+  "3S": {
+   "name": "Aerologic",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/3S.svg"
+  },
+  "AM": {
+   "name": "Aeromexico",
+   "conditionsOfCarriageUrl": "https://aeromexico.com/en-us/legal-information",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AM.svg"
+  },
+  "5D": {
+   "name": "Aeromexico Connect",
+   "conditionsOfCarriageUrl": "https://aeromexico.com/en-us/legal-information"
+  },
+  "OT": {
+   "name": "Aeropelican Air Services",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/OT.svg"
+  },
+  "VH": {
+   "name": "Aeropostal Airlines",
+   "conditionsOfCarriageUrl": "https://www.vivaair.com/co/en/legal-information_terms-and-conditions",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/VH.svg"
+  },
+  "6R": {
+   "name": "Aerounion",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/6R.svg"
+  },
+  "AW": {
+   "name": "Africa World Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AW.svg"
+  },
+  "J7": {
+   "name": "Afrijet",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/J7.svg"
+  },
+  "8U": {
+   "name": "Afriqiyah Airways",
+   "conditionsOfCarriageUrl": "https://afriqiyah.aero/en/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/8U.svg"
+  },
+  "ZB": {
+   "name": "Air Albania",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/ZB.svg"
+  },
+  "AH": {
+   "name": "Air Algerie",
+   "conditionsOfCarriageUrl": "https://airalgerie.dz/en/legal-notice/general-conditions-of-carriage-2/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AH.svg"
+  },
+  "G9": {
+   "name": "Air Arabia",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/G9.svg"
+  },
+  "AK": {
+   "name": "AirAsia",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AK.svg"
+  },
+  "D7": {
+   "name": "AirAsia X",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/D7.svg"
+  },
+  "KC": {
+   "name": "Air Astana",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/KC.svg"
+  },
+  "UU": {
+   "name": "Air Austral",
+   "conditionsOfCarriageUrl": "https://www.air-austral.com/en/general-conditions-of-carriage.html",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/UU.svg"
+  },
+  "BT": {
+   "name": "Air Baltic Corporation A/S",
+   "conditionsOfCarriageUrl": "https://www.airbaltic.com/en-GB/general-conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/BT.svg"
+  },
+  "KF": {
+   "name": "Air Belgium",
+   "conditionsOfCarriageUrl": "https://www.airbelgium.com/en/legal/general-terms-and-conditions-of-carriage/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/KF.svg"
+  },
+  "PA": {
+   "name": "Airblue",
+   "conditionsOfCarriageUrl": "https://www.airblue.com/corp/terms",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/PA.svg"
+  },
+  "BP": {
+   "name": "Air Botswana",
+   "conditionsOfCarriageUrl": "https://www.airbotswana.co.bw/general-conditions-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/BP.svg"
+  },
+  "2J": {
+   "name": "Air Burkina",
+   "conditionsOfCarriageUrl": "https://air-burkina.com/en/general-conditions-of-carriage#:~:text=The%20passenger%20is%20required%20to,departure%20formalities%20to%20be%20completed.",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/2J.svg"
+  },
+  "BX": {
+   "name": "Air Busan",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/BX.svg"
+  },
+  "SM": {
+   "name": "Air Cairo",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/SM.svg"
+  },
+  "SB": {
+   "name": "Aircalin",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/SB.svg"
+  },
+  "AC": {
+   "name": "Air Canada",
+   "conditionsOfCarriageUrl": "https://www.aircanada.com/us/en/aco/home/legal/conditions-carriage-tariffs.html#/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AC.svg"
+  },
+  "TX": {
+   "name": "Air Caraïbes",
+   "conditionsOfCarriageUrl": "https://en.aircaraibes.com/en/general-conditions-sale-and-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/TX.svg"
+  },
+  "3C": {
+   "name": "Air Chathams",
+   "conditionsOfCarriageUrl": "https://www.airchathams.co.nz/terms-and-conditions",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/3C.svg"
+  },
+  "CA": {
+   "name": "Air China",
+   "conditionsOfCarriageUrl": "https://www.airchina.co.uk/GB/GB/General-Conditions-of-Carriage-for-Passengers-and-Baggage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/CA.svg"
+  },
+  "LV": {
+   "name": "Aircompany Airzena",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LV.svg"
+  },
+  "RM": {
+   "name": "Aircompany Armenia",
+   "conditionsOfCarriageUrl": "https://armeniafly.com/conditions-of-carriage-en",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/RM.svg"
+  },
+  "XK": {
+   "name": "Air Corsica",
+   "conditionsOfCarriageUrl": "https://www.aircorsica.com/flights/conditions-carriage-passengers.html",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/XK.svg"
+  },
+  "HF": {
+   "name": "Air Côte d'Ivoire",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/HF.svg"
+  },
+  "YN": {
+   "name": "Air Creebec",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/YN.svg"
+  },
+  "HD": {
+   "name": "Air Do",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/HD.svg"
+  },
+  "EN": {
+   "name": "Air Dolomiti",
+   "conditionsOfCarriageUrl": "https://www.airdolomiti.eu/legal-info/air-carrier-liability",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/EN.svg"
+  },
+  "UX": {
+   "name": "Air Europa",
+   "conditionsOfCarriageUrl": "https://www.aireuropa.com/uk/en/aea/travel-information/terms-and-conditions/conditions-of-carriage.html",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/UX.svg"
+  },
+  "X5": {
+   "name": "Air Europa Express",
+   "conditionsOfCarriageUrl": "https://www.aireuropa.com/uk/en/aea/travel-information/terms-and-conditions/conditions-of-carriage.html"
+  },
+  "AF": {
+   "name": "Air France",
+   "conditionsOfCarriageUrl": "https://wwws.airfrance.co.uk/information/legal/edito-cg-airfrance",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AF.svg"
+  },
+  "GL": {
+   "name": "Air Greenland",
+   "conditionsOfCarriageUrl": "https://as-agl-web-prod.azurewebsites.net/media/5hkdqc4p/provisions-of-carriage-air-greenland.pdf",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/GL.svg"
+  },
+  "GT": {
+   "name": "Air Guilin",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/GT.svg"
+  },
+  "NY": {
+   "name": "Air Iceland Connect",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/NY.svg"
+  },
+  "AI": {
+   "name": "Air India",
+   "conditionsOfCarriageUrl": "https://www.airindia.in/terms-conditions.htm",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AI.svg"
+  },
+  "IX": {
+   "name": "Air India Express",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/IX.svg"
+  },
+  "3H": {
+   "name": "Air Inuit",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/3H.svg"
+  },
+  "NQ": {
+   "name": "Air Japan",
+   "conditionsOfCarriageUrl": "https://www.air-japan.co.jp/"
+  },
+  "IK": {
+   "name": "Air Kiribati",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/IK.svg"
+  },
+  "JS": {
+   "name": "Air Koryo",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/JS.svg"
+  },
+  "4Z": {
+   "name": "Airlink",
+   "conditionsOfCarriageUrl": "https://www.flyairlink.com/en/za/conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/4Z.svg"
+  },
+  "NX": {
+   "name": "Air Macau",
+   "conditionsOfCarriageUrl": "http://www.airmacau.com.mo/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/NX.svg"
+  },
+  "MD": {
+   "name": "Air Madagascar",
+   "conditionsOfCarriageUrl": "https://madagascarairlines.com/en/informations/general-conditions-of-sale-and-carriage.html",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/MD.svg"
+  },
+  "KM": {
+   "name": "Air Malta",
+   "conditionsOfCarriageUrl": "https://airmalta.com/en-gb/legal-and-policies/general-conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/KM.svg"
+  },
+  "MK": {
+   "name": "Air Mauritius",
+   "conditionsOfCarriageUrl": "https://www.airmauritius.com/conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/MK.svg"
+  },
+  "9U": {
+   "name": "Air Moldova",
+   "conditionsOfCarriageUrl": "https://www.airmoldova.md/terms-of-carriage-en/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/9U.svg"
+  },
+  "NZ": {
+   "name": "Air New Zealand",
+   "conditionsOfCarriageUrl": "https://www.airnewzealand.co.uk/conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/NZ.svg"
+  },
+  "EL": {
+   "name": "Air Nippon",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/EL.svg"
+  },
+  "PX": {
+   "name": "Air Niugini",
+   "conditionsOfCarriageUrl": "https://www.airniugini.com.pg/conditions-of-carriage/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/PX.svg"
+  },
+  "TL": {
+   "name": "Airnorth",
+   "conditionsOfCarriageUrl": "https://www.airnorth.com.au/plan/fare-information/conditions-of-carriage/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/TL.svg"
+  },
+  "4N": {
+   "name": "Air North",
+   "conditionsOfCarriageUrl": "https://www.flyairnorth.com/support",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/4N.svg"
+  },
+  "7P": {
+   "name": "Air Panama",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/7P.svg"
+  },
+  "P4": {
+   "name": "Air Peace",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/P4.svg"
+  },
+  "A7": {
+   "name": "Air Plus Comet",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/A7.svg"
+  },
+  "YP": {
+   "name": "Air Premia",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/YP.svg"
+  },
+  "GZ": {
+   "name": "Air Rarotonga",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/GZ.svg"
+  },
+  "HC": {
+   "name": "Air Senegal",
+   "conditionsOfCarriageUrl": "https://flyairsenegal.com/en/legal-notice/conditions-of-carriage/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/HC.svg"
+  },
+  "JU": {
+   "name": "Air Serbia",
+   "conditionsOfCarriageUrl": "https://www.airserbia.com/en/footer_copy_menu/legal/general-conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/JU.svg"
+  },
+  "HM": {
+   "name": "Air Seychelles",
+   "conditionsOfCarriageUrl": "https://www.airseychelles.com/en/conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/HM.svg"
+  },
+  "VT": {
+   "name": "Air Tahiti",
+   "conditionsOfCarriageUrl": "https://www.airtahitinui.com/uk-en/conditions-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/VT.svg"
+  },
+  "TN": {
+   "name": "Air Tahiti Nui",
+   "conditionsOfCarriageUrl": "https://www.airtahitinui.com/uk-en/conditions-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/TN.svg"
+  },
+  "TC": {
+   "name": "Air Tanzania",
+   "conditionsOfCarriageUrl": "https://www.airtanzania.co.tz/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/TC.svg"
+  },
+  "FL": {
+   "name": "AirTran Airways",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/FL.svg"
+  },
+  "TS": {
+   "name": "Air Transat",
+   "conditionsOfCarriageUrl": "https://www.airtransat.com/en-GB/legal-notice-uk/general-terms-and-conditions",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/TS.svg"
+  },
+  "NF": {
+   "name": "Air Vanuatu",
+   "conditionsOfCarriageUrl": "https://www.airvanuatu.com/travel-info/conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/NF.svg"
+  },
+  "UM": {
+   "name": "Air Zimbabwe",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/UM.svg"
+  },
+  "AS": {
+   "name": "Alaska Airlines",
+   "conditionsOfCarriageUrl": "https://www.alaskaair.com/content/legal/contract-of-carriage/rule-1",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AS.svg"
+  },
+  "KO": {
+   "name": "Alaska Central Express",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/KO.svg"
+  },
+  "2B": {
+   "name": "Albawings",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/2B.svg"
+  },
+  "G4": {
+   "name": "Allegiant Air",
+   "conditionsOfCarriageUrl": "https://www.allegiantair.com/contract-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/G4.svg"
+  },
+  "QQ": {
+   "name": "Alliance Airlines",
+   "conditionsOfCarriageUrl": "https://www.allianceairlines.com.au/terms-conditions",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/QQ.svg"
+  },
+  "UJ": {
+   "name": "Almasria",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/UJ.svg"
+  },
+  "MZ": {
+   "name": "Amakusa Airlines Co.,Ltd",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/MZ.svg"
+  },
+  "HP": {
+   "name": "Amapola Flyg AB dba PopulAir",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/HP.svg"
+  },
+  "AA": {
+   "name": "American Airlines",
+   "conditionsOfCarriageUrl": "https://www.aa.com/i18n/customer-service/support/conditions-of-carriage.jsp",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AA.svg"
+  },
+  "NH": {
+   "name": "ANA",
+   "conditionsOfCarriageUrl": "https://www.ana.co.jp/en/gb/siteinfo/international/conditions-of-carriage/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/NH.svg"
+  },
+  "EH": {
+   "name": "ANA Wings",
+   "conditionsOfCarriageUrl": "https://www.ana.co.jp/en/gb/siteinfo/international/conditions-of-carriage/"
+  },
+  "GP": {
+   "name": "APG Airlines",
+   "conditionsOfCarriageUrl": "https://back-apgairlines.orchestra-platform.com/admin/TS/fckUserFiles/Content_File/carriage_conditions_APGAirlines_EN.pdf",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/GP.svg"
+  },
+  "A1": {
+   "name": "A.P.G. Distribution System",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/A1.svg"
+  },
+  "DM": {
+   "name": "Arajet",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/DM.svg"
+  },
+  "FG": {
+   "name": "Ariana Afghan Airlines",
+   "conditionsOfCarriageUrl": "https://www.flyariana.com/FooterLinks/Legal",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/FG.svg"
+  },
+  "IZ": {
+   "name": "Arkia Israeli Airlines",
+   "conditionsOfCarriageUrl": "https://www.arkia.co.il/content/movil-domestic",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/IZ.svg"
+  },
+  "OZ": {
+   "name": "Asiana Airlines",
+   "conditionsOfCarriageUrl": "https://flyasiana.com/C/GB/EN/contents/terms-of-transportation-and-notification",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/OZ.svg"
+  },
+  "4K": {
+   "name": "Askari Aviation",
+   "conditionsOfCarriageUrl": "https://askariaviation.com/"
+  },
+  "KP": {
+   "name": "ASKY",
+   "conditionsOfCarriageUrl": "https://www.flyasky.com/aa/en/plan",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/KP.svg"
+  },
+  "5O": {
+   "name": "ASL Airlines France",
+   "conditionsOfCarriageUrl": "https://www.aslairlines.fr/wp-content/uploads/2013/04/190219-GAL-CONDITIONS-OF-CARRIAGE-2019-1.pdf",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/5O.svg"
+  },
+  "8V": {
+   "name": "Astral Aviation",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/8V.svg"
+  },
+  "RC": {
+   "name": "Atlantic Airways",
+   "conditionsOfCarriageUrl": "https://www.atlanticairways.com/media/1523/iata_conditions-of-contract_en.pdf",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/RC.svg"
+  },
+  "5Y": {
+   "name": "Atlas Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/5Y.svg"
+  },
+  "V8": {
+   "name": "ATRAN",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/V8.svg"
+  },
+  "UI": {
+   "name": "Auric Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/UI.svg"
+  },
+  "GR": {
+   "name": "Aurigny Air Services",
+   "conditionsOfCarriageUrl": "https://www.aurigny.com/legal/conditions-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/GR.svg"
+  },
+  "HZ": {
+   "name": "Aurora Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/HZ.svg"
+  },
+  "OS": {
+   "name": "Austrian",
+   "conditionsOfCarriageUrl": "https://www.austrian.com/es/en/legal/conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/OS.svg"
+  },
+  "DP": {
+   "name": "Aviakompaniya Pobeda",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/DP.svg"
+  },
+  "AV": {
+   "name": "Avianca",
+   "conditionsOfCarriageUrl": "https://www.avianca.com/uk/en/sobre-nosotros/informacion-legal/contrato-transporte/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AV.svg"
+  },
+  "LR": {
+   "name": "Avianca Costa Rica",
+   "conditionsOfCarriageUrl": "https://www.avianca.com/uk/en/sobre-nosotros/informacion-legal/contrato-transporte/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LR.svg"
+  },
+  "2K": {
+   "name": "Avianca Ecuador",
+   "conditionsOfCarriageUrl": "avianca.com/otr/en/about-us/legal-documentation/contract-of-carriage/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/2K.svg"
+  },
+  "TA": {
+   "name": "Avianca El Salvador",
+   "conditionsOfCarriageUrl": "https://www.avianca.com/uk/en/sobre-nosotros/informacion-legal/contrato-transporte/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/TA.svg"
+  },
+  "EX": {
+   "name": "Avianca Express",
+   "conditionsOfCarriageUrl": "https://www.avianca.com/uk/en/sobre-nosotros/informacion-legal/contrato-transporte/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/EX.svg"
+  },
+  "GU": {
+   "name": "Avianca Guatemala",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/GU.svg"
+  },
+  "YK": {
+   "name": "Avia Traffic Company",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/YK.svg"
+  },
+  "Z3": {
+   "name": "Avient Aviation",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/Z3.svg"
+  },
+  "9V": {
+   "name": "Avior Airlines",
+   "conditionsOfCarriageUrl": "https://aviorair.com/en/legal",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/9V.svg"
+  },
+  "J2": {
+   "name": "Azerbaijan Airlines",
+   "conditionsOfCarriageUrl": "https://www.azal.az/en/information/rules-and-conditions",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/J2.svg"
+  },
+  "A4": {
+   "name": "Azimuth",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/A4.svg"
+  },
+  "S4": {
+   "name": "Azores Airlines",
+   "conditionsOfCarriageUrl": "https://www.azoresairlines.pt/en/information/customer-commitment/general-conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/S4.svg"
+  },
+  "AJ": {
+   "name": "Aztec Worldwide Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AJ.svg"
+  },
+  "AD": {
+   "name": "Azul Airlines",
+   "conditionsOfCarriageUrl": "https://www.voeazul.com.br/en/for-your-trip/international-flights/contract-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AD.svg"
+  },
+  "QU": {
+   "name": "Azur Air Ukraine",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/QU.svg"
+  },
+  "CJ": {
+   "name": "BA CityFlyer",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/CJ.svg"
+  },
+  "A0": {
+   "name": "BA Euroflyer",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/A0.svg"
+  },
+  "UP": {
+   "name": "Bahamasair",
+   "conditionsOfCarriageUrl": "https://www.bahamasair.com/other-policies-forms/conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/UP.svg"
+  },
+  "QH": {
+   "name": "Bamboo Airways",
+   "conditionsOfCarriageUrl": "https://www.bambooairways.com/global-en/terms-and-conditions/conditions-of-carriage/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/QH.svg"
+  },
+  "PG": {
+   "name": "Bangkok Airways",
+   "conditionsOfCarriageUrl": "https://www.bangkokair.com/conditions/conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/PG.svg"
+  },
+  "ID": {
+   "name": "Interlink Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/ID.svg"
+  },
+  "JD": {
+   "name": "Beijing Capital Airlines",
+   "conditionsOfCarriageUrl": "https://intl.jdair.net/news/index?id=73&valueMenuaid=75",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/JD.svg"
+  },
+  "B2": {
+   "name": "Belavia",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/B2.svg"
+  },
+  "8E": {
+   "name": "Bering Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/8E.svg"
+  },
+  "8H": {
+   "name": "BH Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/8H.svg"
+  },
+  "B3": {
+   "name": "Bhutan Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/B3.svg"
+  },
+  "BG": {
+   "name": "Biman Bangladesh Airlines",
+   "conditionsOfCarriageUrl": "https://www.biman-airlines.com/termsConditions#Carriage-for-Passengers-and-Baggage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/BG.svg"
+  },
+  "NT": {
+   "name": "Binter Canarias",
+   "conditionsOfCarriageUrl": "https://www.bintercanarias.com/eng/information/contract-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/NT.svg"
+  },
+  "0B": {
+   "name": "Blue Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/0B.svg"
+  },
+  "BZ": {
+   "name": "Blue Bird Airways",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/BZ.svg"
+  },
+  "SI": {
+   "name": "Blue Islands",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/SI.svg"
+  },
+  "OB": {
+   "name": "Boliviana de Aviación",
+   "conditionsOfCarriageUrl": "https://www.boa.bo/content/docs/contrato_transporte_en.pdf",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/OB.svg"
+  },
+  "4B": {
+   "name": "Boutique Air",
+   "conditionsOfCarriageUrl": "https://www.boutiqueair.com/pages/terms",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/4B.svg"
+  },
+  "TF": {
+   "name": "BRA",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/TF.svg"
+  },
+  "BA": {
+   "name": "British Airways",
+   "conditionsOfCarriageUrl": "https://www.britishairways.com/en-gb/information/legal/british-airways/general-conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/BA.svg"
+  },
+  "SN": {
+   "name": "Brussels Airlines",
+   "conditionsOfCarriageUrl": "https://www.brusselsairlines.com/de/en/legal-notices/terms-and-conditions-conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/SN.svg"
+  },
+  "U4": {
+   "name": "Buddha Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/U4.svg"
+  },
+  "FB": {
+   "name": "Bulgaria Air",
+   "conditionsOfCarriageUrl": "https://www.air.bg/en/customer-support/general-conditions-of-carriage/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/FB.svg"
+  },
+  "UZ": {
+   "name": "Buraq Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/UZ.svg"
+  },
+  "RR": {
+   "name": "Buzz",
+   "conditionsOfCarriageUrl": "https://www.buzzair.com/en/terms-conditions-of-carriage/"
+  },
+  "VR": {
+   "name": "Cabo Verde Airlines",
+   "conditionsOfCarriageUrl": "https://caboverdeairlines.com/general-terms-and-conditions/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/VR.svg"
+  },
+  "9Q": {
+   "name": "Caicos Express Airways",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/9Q.svg"
+  },
+  "MO": {
+   "name": "Calm Air",
+   "conditionsOfCarriageUrl": "https://www.calmair.com/before-you-fly/passenger-rights",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/MO.svg"
+  },
+  "QC": {
+   "name": "Camair-Co",
+   "conditionsOfCarriageUrl": "https://www.camair-co.cm/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/QC.svg"
+  },
+  "KR": {
+   "name": "Cambodia Airways",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/KR.svg"
+  },
+  "K6": {
+   "name": "Cambodia Angkor Air",
+   "conditionsOfCarriageUrl": "https://www.cambodiaangkorair.com/post-category/34/terms-and-conditions",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/K6.svg"
+  },
+  "5T": {
+   "name": "Canadian North",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/5T.svg"
+  },
+  "9K": {
+   "name": "Cape Air ",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/9K.svg"
+  },
+  "BW": {
+   "name": "Caribbean Airlines",
+   "conditionsOfCarriageUrl": "https://www.caribbean-airlines.com/#/legal-and-privacy/general-conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/BW.svg"
+  },
+  "CX": {
+   "name": "Cathay Pacific",
+   "conditionsOfCarriageUrl": "https://www.cathaypacific.com/content/dam/cx/legal-and-privacy/general-conditions-of-carriage-for-passengers-baggage-en.pdf",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/CX.svg"
+  },
+  "KX": {
+   "name": "Cayman Airways",
+   "conditionsOfCarriageUrl": "https://www.caymanairways.com/contract-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/KX.svg"
+  },
+  "5J": {
+   "name": "Cebu Pacific",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/5J.svg"
+  },
+  "5Z": {
+   "name": "CemAir",
+   "conditionsOfCarriageUrl": "https://www.flycemair.co.za/general_r/extras_and_info.php",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/5Z.svg"
+  },
+  "9M": {
+   "name": "Central Mountain Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/9M.svg"
+  },
+  "GM": {
+   "name": "Chair Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/GM.svg"
+  },
+  "CE": {
+   "name": "Chalair Aviation",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/CE.svg"
+  },
+  "6Q": {
+   "name": "Cham Wings Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/6Q.svg"
+  },
+  "CY": {
+   "name": "Charlie Airways",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/CY.svg"
+  },
+  "EU": {
+   "name": "Chengdu Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/EU.svg"
+  },
+  "CI": {
+   "name": "China Airlines",
+   "conditionsOfCarriageUrl": "https://www.china-airlines.com/us/en/terms-and-conditions/transportation-clauses",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/CI.svg"
+  },
+  "MU": {
+   "name": "China Eastern Airlines",
+   "conditionsOfCarriageUrl": "https://uk.ceair.com/newCMS/uk/en/content/en_Footer/AboutUS/201904/t20190404_5758.html",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/MU.svg"
+  },
+  "CZ": {
+   "name": "China Southern Airlines",
+   "conditionsOfCarriageUrl": "https://www.csair.com/cn/tourguide/booking/orders/order/gjysztj/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/CZ.svg"
+  },
+  "QG": {
+   "name": "Citilink",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/QG.svg"
+  },
+  "VL": {
+   "name": "City Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/VL.svg"
+  },
+  "WX": {
+   "name": "CityJet",
+   "conditionsOfCarriageUrl": "https://www.cityjet.com/terms-and-conditions/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/WX.svg"
+  },
+  "VE": {
+   "name": "Clic Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/VE.svg"
+  },
+  "IO": {
+   "name": "Closed Joint Stock Company IrAero",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/IO.svg"
+  },
+  "CC": {
+   "name": "CM Airlines",
+   "conditionsOfCarriageUrl": "https://www.cmairlines.com/wp-content/uploads/2019/12/C-2-2019-11-Package-policies-EN.pdf",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/CC.svg"
+  },
+  "CQ": {
+   "name": "Coastal Travels Ltd.",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/CQ.svg"
+  },
+  "GY": {
+   "name": "Colorful GuiZhou Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/GY.svg"
+  },
+  "BU": {
+   "name": "Compagnie Africaine d'Aviation",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/BU.svg"
+  },
+  "DE": {
+   "name": "Condor Flugdienst",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/DE.svg"
+  },
+  "8Z": {
+   "name": "Congo Airways SA (CGA)",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/8Z.svg"
+  },
+  "V0": {
+   "name": "Conviasa",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/V0.svg"
+  },
+  "CM": {
+   "name": "Copa Airlines",
+   "conditionsOfCarriageUrl": "https://www.copaair.com/en/web/us/contract-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/CM.svg"
+  },
+  "P5": {
+   "name": "Copa Airlines Colombia",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/P5.svg"
+  },
+  "LF": {
+   "name": "Corporate Flight Management, Inc.",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LF.svg"
+  },
+  "SS": {
+   "name": "Corsair",
+   "conditionsOfCarriageUrl": "https://www.flycorsair.com/en/legal/general-sale-and-transport-conditions",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/SS.svg"
+  },
+  "OU": {
+   "name": "Croatia Airlines",
+   "conditionsOfCarriageUrl": "https://www.croatiaairlines.com/Legal-information/General-conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/OU.svg"
+  },
+  "CU": {
+   "name": "Cubana de Aviación",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/CU.svg"
+  },
+  "OK": {
+   "name": "Czech Airlines",
+   "conditionsOfCarriageUrl": "https://www.csa.cz/gb-en/travel-information/before-the-flight/conditions-of-carriage/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/OK.svg"
+  },
+  "D3": {
+   "name": "Daallo Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/D3.svg"
+  },
+  "9J": {
+   "name": "Dana Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/9J.svg"
+  },
+  "DX": {
+   "name": "DAT",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/DX.svg"
+  },
+  "DL": {
+   "name": "Delta Air Lines",
+   "conditionsOfCarriageUrl": "https://www.delta.com/gb/en/legal/contract-of-carriage-igr",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/DL.svg"
+  },
+  "4Y": {
+   "name": "Discover Airlines",
+   "conditionsOfCarriageUrl": "https://www.discover-airlines.com/en/general-conditions-of-carriage/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/4Y.svg"
+  },
+  "3R": {
+   "name": "Divi Divi Air N.V.",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/3R.svg"
+  },
+  "DZ": {
+   "name": "Donghai Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/DZ.svg"
+  },
+  "B0": {
+   "name": "DreamJet SAS",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/B0.svg"
+  },
+  "ZZ": {
+   "name": "Duffel Airways",
+   "conditionsOfCarriageUrl": "https://duffelairways.com/dummy-url/conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/ZZ.svg"
+  },
+  "ZE": {
+   "name": "Eastar Jet",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/ZE.svg"
+  },
+  "2D": {
+   "name": "Eastern Airlines",
+   "conditionsOfCarriageUrl": "https://iflyea.com/contract-of-carriage/?v=2069589015",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/2D.svg"
+  },
+  "T3": {
+   "name": "Eastern Airways",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/T3.svg"
+  },
+  "U2": {
+   "name": "easyJet",
+   "conditionsOfCarriageUrl": "https://www.easyjet.com/en/terms-and-conditions",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/U2.svg"
+  },
+  "WK": {
+   "name": "Edelweiss Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/WK.svg"
+  },
+  "MS": {
+   "name": "EgyptAir",
+   "conditionsOfCarriageUrl": "https://www.egyptair.com/en/Pages/Conditions-of-Carriage.aspx",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/MS.svg"
+  },
+  "LY": {
+   "name": "EL AL",
+   "conditionsOfCarriageUrl": "https://www.elal.com/en/About-ELAL/Legal/Pages/Conditions-of-Carriage.aspx",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LY.svg"
+  },
+  "EK": {
+   "name": "Emirates",
+   "conditionsOfCarriageUrl": "https://www.emirates.com/uk/english/before-you-fly/travel/rules-and-notices/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/EK.svg"
+  },
+  "B8": {
+   "name": "Eritrean Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/B8.svg"
+  },
+  "ES": {
+   "name": "Estelar Latinoamerica C.A.",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/ES.svg"
+  },
+  "ET": {
+   "name": "Ethiopian Airlines",
+   "conditionsOfCarriageUrl": "https://www.ethiopianairlines.com/aa/information/essential-information/conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/ET.svg"
+  },
+  "EY": {
+   "name": "Etihad Airways",
+   "conditionsOfCarriageUrl": "https://www.etihad.com/en-gb/legal/conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/EY.svg"
+  },
+  "YU": {
+   "name": "EuroAtlantic Airways",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/YU.svg"
+  },
+  "EW": {
+   "name": "Eurowings",
+   "conditionsOfCarriageUrl": "https://www.eurowings.com/en/legal-information/general-conditions-of-carriage.html",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/EW.svg"
+  },
+  "E2": {
+   "name": "Eurowings Europe",
+   "conditionsOfCarriageUrl": "https://www.eurowings.com/en/legal-information/general-conditions-of-carriage.html"
+  },
+  "BR": {
+   "name": "EVA Air",
+   "conditionsOfCarriageUrl": "https://www.evaair.com/en-us/website-disclaimer/conditions-of-carriage/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/BR.svg"
+  },
+  "ZD": {
+   "name": "Ewa Air",
+   "conditionsOfCarriageUrl": "https://ewa-air.com/en/conditions-of-carriage.html",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/ZD.svg"
+  },
+  "FN": {
+   "name": "Fastjet Zimbabwe",
+   "conditionsOfCarriageUrl": "https://www.fastjet.com/upload/Documents/Terms%20and%20Conditions/fastjet%20Terms%20and%20Conditions%20-%20Feb%202019%20(1).pdf",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/FN.svg"
+  },
+  "FO": {
+   "name": "F.B. Lineas Aereas SA",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/FO.svg"
+  },
+  "FJ": {
+   "name": "Fiji Airways ",
+   "conditionsOfCarriageUrl": "https://www.fijiairways.com/en-gb/conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/FJ.svg"
+  },
+  "AY": {
+   "name": "Finnair",
+   "conditionsOfCarriageUrl": "https://www.finnair.com/gb-en/info/conditions-of-carriage-and-notices/general-conditions-of-carriage-for-passengers-and-baggage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AY.svg"
+  },
+  "FY": {
+   "name": "Firefly",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/FY.svg"
+  },
+  "W2": {
+   "name": "FlexFlight",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/W2.svg"
+  },
+  "B5": {
+   "name": "Flightline",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/B5.svg"
+  },
+  "5H": {
+   "name": "Fly540",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/5H.svg"
+  },
+  "F3": {
+   "name": "flyadeal",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/F3.svg"
+  },
+  "FZ": {
+   "name": "flydubai",
+   "conditionsOfCarriageUrl": "https://www.flydubai.com/en/information/policies/conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/FZ.svg"
+  },
+  "FT": {
+   "name": "FlyEgypt",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/FT.svg"
+  },
+  "B4": {
+   "name": "Flyglobespan",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/B4.svg"
+  },
+  "XY": {
+   "name": "Flynas",
+   "conditionsOfCarriageUrl": "https://static.flynas.com/images/terms_and_conditions/EN-TERMS-AND-CONDITIONS-OF-CARRIAGE-21Jun2022-V26.pdf",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/XY.svg"
+  },
+  "5F": {
+   "name": "Fly One",
+   "conditionsOfCarriageUrl": "https://flyone.eu/en/About-FLYONE/General-Rules",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/5F.svg"
+  },
+  "FP": {
+   "name": "Fly Pro",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/FP.svg"
+  },
+  "FS": {
+   "name": "Flyr",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/FS.svg"
+  },
+  "FA": {
+   "name": "FREEDOM II BERMUDA LIMITED",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/FA.svg"
+  },
+  "BF": {
+   "name": "French bee",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/BF.svg"
+  },
+  "F9": {
+   "name": "Frontier Airlines",
+   "conditionsOfCarriageUrl": "https://www.flyfrontier.com/legal/contract-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/F9.svg"
+  },
+  "GA": {
+   "name": "Garuda Indonesia",
+   "conditionsOfCarriageUrl": "https://www.garuda-indonesia.com/uk/en/contact/condition-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/GA.svg"
+  },
+  "4G": {
+   "name": "Gazpromavia",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/4G.svg"
+  },
+  "A9": {
+   "name": "Georgian Airways",
+   "conditionsOfCarriageUrl": "https://www.georgian-airways.com/en/information/conditions",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/A9.svg"
+  },
+  "ZQ": {
+   "name": "German Airways GmbH & Co.KG",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/ZQ.svg"
+  },
+  "6G": {
+   "name": "Go2Sky, spol s r.o.",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/6G.svg"
+  },
+  "G8": {
+   "name": "Go First",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/G8.svg"
+  },
+  "G3": {
+   "name": "GOL",
+   "conditionsOfCarriageUrl": "https://www.voegol.com.br/en-us/legal-information/passenger-air-transportation-agreement",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/G3.svg"
+  },
+  "GV": {
+   "name": "Grant Aviation",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/GV.svg"
+  },
+  "GF": {
+   "name": "Gulf Air Bahrain",
+   "conditionsOfCarriageUrl": "https://www.gulfair.com/transparency/conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/GF.svg"
+  },
+  "IF": {
+   "name": "Gulf & Caribbean Cargo, Inc",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/IF.svg"
+  },
+  "HR": {
+   "name": "Hahn Air",
+   "conditionsOfCarriageUrl": "https://www.hahnair.com/en/terms-and-conditions-ticketing",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/HR.svg"
+  },
+  "H1": {
+   "name": "Hahn Air Systems",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/H1.svg"
+  },
+  "HU": {
+   "name": "Hainan Airlines",
+   "conditionsOfCarriageUrl": "https://www.hainanairlines.com/HUPortal/dyn/portal/DisplayPage?LANGUAGE=GB&COUNTRY_SITE=GB&SITE=CBHZCBHZ&PAGE=TECO",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/HU.svg"
+  },
+  "HA": {
+   "name": "Hawaiian Airlines",
+   "conditionsOfCarriageUrl": "https://www.hawaiianairlines.com/legal/international-contract-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/HA.svg"
+  },
+  "2L": {
+   "name": "Helvetic Airways",
+   "conditionsOfCarriageUrl": "https://www.helvetic.com/en/travelinfo",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/2L.svg"
+  },
+  "H9": {
+   "name": "Himalaya Airlines",
+   "conditionsOfCarriageUrl": "https://www.himalaya-airlines.com/travel-ha/general-conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/H9.svg"
+  },
+  "HX": {
+   "name": "Hong Kong Airlines",
+   "conditionsOfCarriageUrl": "https://www.hongkongairlines.com/en_HK/footer/legal-privacy/home",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/HX.svg"
+  },
+  "UO": {
+   "name": "Hong Kong Express Airways",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/UO.svg"
+  },
+  "MR": {
+   "name": "Hunnu Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/MR.svg"
+  },
+  "IB": {
+   "name": "Iberia",
+   "conditionsOfCarriageUrl": "https://www.iberia.com/gb/bills/conditions/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/IB.svg"
+  },
+  "I2": {
+   "name": "Iberia Express",
+   "conditionsOfCarriageUrl": "https://www.iberiaexpress.com/en/general-info/contact/general-terms-and-conditions/general-conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/I2.svg"
+  },
+  "E9": {
+   "name": "Iberojet Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/E9.svg"
+  },
+  "FW": {
+   "name": "IBEX Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/FW.svg"
+  },
+  "FI": {
+   "name": "Icelandair",
+   "conditionsOfCarriageUrl": "https://www.icelandair.com/support/terms-and-conditions/conditions-of-carriage/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/FI.svg"
+  },
+  "F7": {
+   "name": "I-Fly",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/F7.svg"
+  },
+  "6E": {
+   "name": "IndiGo",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/6E.svg"
+  },
+  "IR": {
+   "name": "Iran Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/IR.svg"
+  },
+  "B9": {
+   "name": "Iran Airtour",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/B9.svg"
+  },
+  "IA": {
+   "name": "Iraqi Airways",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/IA.svg"
+  },
+  "6H": {
+   "name": "Israir",
+   "conditionsOfCarriageUrl": "https://www.israirairlines.com/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/6H.svg"
+  },
+  "AZ": {
+   "name": "ITA",
+   "conditionsOfCarriageUrl": "https://www.ita-airways.com/en_il/booking/general-conditions-of-carriage.html",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AZ.svg"
+  },
+  "JL": {
+   "name": "JAL",
+   "conditionsOfCarriageUrl": "https://www.jal.co.jp/jp/en/inter/carriage/220920/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/JL.svg"
+  },
+  "JM": {
+   "name": "Jambojet",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/JM.svg"
+  },
+  "J9": {
+   "name": "Jazeera Airways",
+   "conditionsOfCarriageUrl": "https://www.jazeeraairways.com/en-kw/terms-and-conditions",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/J9.svg"
+  },
+  "QD": {
+   "name": "JC International Airlines",
+   "conditionsOfCarriageUrl": "https://jcairlines.com/travel-info/transportation-rule.html",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/QD.svg"
+  },
+  "7C": {
+   "name": "Jeju Air",
+   "conditionsOfCarriageUrl": "https://www.jejuair.net/en/terms/page/carriageTemrs.do",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/7C.svg"
+  },
+  "LS": {
+   "name": "Jet2.com",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LS.svg"
+  },
+  "8J": {
+   "name": "Jet4You",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/8J.svg"
+  },
+  "B6": {
+   "name": "JetBlue Airways",
+   "conditionsOfCarriageUrl": "https://www.jetblue.com/magnoliapublic/dam/ui-assets/p/contract_of_carriage.pdf",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/B6.svg"
+  },
+  "JA": {
+   "name": "JetSmart",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/JA.svg"
+  },
+  "WJ": {
+   "name": "Jetsmart Argentina",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/WJ.svg"
+  },
+  "JQ": {
+   "name": "Jetstar Airways",
+   "conditionsOfCarriageUrl": "https://www.jetstar.com/au/en/conditions-of-carriage-jq",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/JQ.svg"
+  },
+  "3K": {
+   "name": "Jetstar Asia",
+   "conditionsOfCarriageUrl": "https://www.jetstar.com/jp/en/conditions-of-carriage-3k",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/3K.svg"
+  },
+  "GK": {
+   "name": "Jetstar Japan",
+   "conditionsOfCarriageUrl": "https://www.jetstar.com/jp/en/conditions-of-carriage-gk",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/GK.svg"
+  },
+  "XE": {
+   "name": "JetSuiteX",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/XE.svg"
+  },
+  "JE": {
+   "name": "Jettainer GmbH",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/JE.svg"
+  },
+  "LJ": {
+   "name": "Jin Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LJ.svg"
+  },
+  "R3": {
+   "name": "Joint Stock Company Aircompany",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/R3.svg"
+  },
+  "R5": {
+   "name": "Jordan Aviation",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/R5.svg"
+  },
+  "JR": {
+   "name": "Joy Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/JR.svg"
+  },
+  "HO": {
+   "name": "Juneyao Airlines",
+   "conditionsOfCarriageUrl": "https://global.juneyaoair.com/servicehelp/new/General%20Conditions%20of%20Carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/HO.svg"
+  },
+  "RQ": {
+   "name": "Kam Air",
+   "conditionsOfCarriageUrl": "https://www.kamair.com/terms-and-conditions#agreement-and-terms",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/RQ.svg"
+  },
+  "M5": {
+   "name": "Kenmore Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/M5.svg"
+  },
+  "KQ": {
+   "name": "Kenya Airways",
+   "conditionsOfCarriageUrl": "https://www.kenya-airways.com/condition-of-carriage/en/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/KQ.svg"
+  },
+  "KG": {
+   "name": "Key Lime Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/KG.svg"
+  },
+  "Y9": {
+   "name": "Kish Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/Y9.svg"
+  },
+  "KL": {
+   "name": "KLM",
+   "conditionsOfCarriageUrl": "https://www.klm.com/information/legal/conditions-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/KL.svg"
+  },
+  "KE": {
+   "name": "Korean Air",
+   "conditionsOfCarriageUrl": "https://www.koreanair.com/us/en/footer/terms-and-policies/terms-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/KE.svg"
+  },
+  "MN": {
+   "name": "kulula.com",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/MN.svg"
+  },
+  "KU": {
+   "name": "Kuwait Airways",
+   "conditionsOfCarriageUrl": "https://www.kuwaitairways.com/en/terms/conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/KU.svg"
+  },
+  "LQ": {
+   "name": "Lanmei Airlines",
+   "conditionsOfCarriageUrl": "https://lanmeiairlines.com/lanmeiairlines2.0/default/menus/EN/experience/LMTransport.html",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LQ.svg"
+  },
+  "QV": {
+   "name": "Lao Airlines",
+   "conditionsOfCarriageUrl": "https://laoairlines.com/en/term-and-condition/#",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/QV.svg"
+  },
+  "LK": {
+   "name": "Lao Skyway dba Commercial Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LK.svg"
+  },
+  "LA": {
+   "name": "LATAM Airlines",
+   "conditionsOfCarriageUrl": "https://www.latamairlines.com/gb/en/legal/transportation-contract-conditions",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LA.svg"
+  },
+  "XL": {
+   "name": "LATAM Airlines Ecuador",
+   "conditionsOfCarriageUrl": "https://www.latamairlines.com/gb/en/legal/transportation-contract-conditions",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/XL.svg"
+  },
+  "LN": {
+   "name": "Libyan Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LN.svg"
+  },
+  "YL": {
+   "name": "Libyan Wings",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/YL.svg"
+  },
+  "Z8": {
+   "name": "Línea Aérea Amaszonas",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/Z8.svg"
+  },
+  "QL": {
+   "name": "Linea Aerea De Servicio Ejecutivo",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/QL.svg"
+  },
+  "JT": {
+   "name": "Lion Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/JT.svg"
+  },
+  "EO": {
+   "name": "LLC Aircompany Ikar",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/EO.svg"
+  },
+  "LM": {
+   "name": "Loganair",
+   "conditionsOfCarriageUrl": "https://www.loganair.co.uk/travel-help/carriage-conditions/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LM.svg"
+  },
+  "LT": {
+   "name": "LongJiang Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LT.svg"
+  },
+  "LO": {
+   "name": "LOT Polish Airlines",
+   "conditionsOfCarriageUrl": "https://www.lot.com/pl/en/regulations/conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LO.svg"
+  },
+  "8L": {
+   "name": "Lucky Air",
+   "conditionsOfCarriageUrl": "https://www.luckyair.net/help.html?id=5d7714de91c6dd531559d9b7",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/8L.svg"
+  },
+  "LH": {
+   "name": "Lufthansa",
+   "conditionsOfCarriageUrl": "https://www.lufthansa.com/gb/en/business-terms-and-conditions-1",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LH.svg"
+  },
+  "BV": {
+   "name": "Luke Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/BV.svg"
+  },
+  "LG": {
+   "name": "Luxair",
+   "conditionsOfCarriageUrl": "https://www.luxair.lu/en/information/general-conditions-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LG.svg"
+  },
+  "W5": {
+   "name": "Mahan Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/W5.svg"
+  },
+  "MH": {
+   "name": "Malaysia Airlines",
+   "conditionsOfCarriageUrl": "https://www.malaysiaairlines.com/content/dam/mas/pdf/2021-08-31-General-Conditions-of-Carriage-Malaysia-Airlines.pdf",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/MH.svg"
+  },
+  "DB": {
+   "name": "MALETH-AERO",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/DB.svg"
+  },
+  "OD": {
+   "name": "Malindo Air",
+   "conditionsOfCarriageUrl": "https://www.malindoair.com/terms-and-conditions",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/OD.svg"
+  },
+  "MT": {
+   "name": "Malta MedAir",
+   "conditionsOfCarriageUrl": "https://maltamedair.com/general-conditions-of-carriage/"
+  },
+  "AE": {
+   "name": "Mandarin Airlines",
+   "conditionsOfCarriageUrl": "https://global.csair.com/MO/GB/booking-policy/international-carriage-conditions",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AE.svg"
+  },
+  "7Y": {
+   "name": "Mann Yadanarpon Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/7Y.svg"
+  },
+  "7M": {
+   "name": "MAP Linhas Aereas",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/7M.svg"
+  },
+  "L6": {
+   "name": "Mauritania Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/L6.svg"
+  },
+  "2M": {
+   "name": "Maya Island Air",
+   "conditionsOfCarriageUrl": "https://www.mayaislandair.com/Information/Terms-and-Conditions",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/2M.svg"
+  },
+  "OM": {
+   "name": "MIAT Mongolian Airlines",
+   "conditionsOfCarriageUrl": "https://www.miat.com/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/OM.svg"
+  },
+  "ME": {
+   "name": "Middle East Airlines",
+   "conditionsOfCarriageUrl": "https://www.mea.com.lb/english/plan-and-book/legal-notices/conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/ME.svg"
+  },
+  "JI": {
+   "name": "Midway Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/JI.svg"
+  },
+  "K7": {
+   "name": "Mingalar Aviation Services Co., Ltd. Dba Mingalar Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/K7.svg"
+  },
+  "YM": {
+   "name": "Montenegro Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/YM.svg"
+  },
+  "5M": {
+   "name": "Montserrat Airways",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/5M.svg"
+  },
+  "M9": {
+   "name": "Motor Sich",
+   "conditionsOfCarriageUrl": "https://flymotorsich.com/en/pages/conditions",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/M9.svg"
+  },
+  "3E": {
+   "name": "Multi-Aero, Inc. dba Air Choice One",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/3E.svg"
+  },
+  "8M": {
+   "name": "Myanmar Airways International",
+   "conditionsOfCarriageUrl": "https://maiair.com/plan-your-journey/general-conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/8M.svg"
+  },
+  "UB": {
+   "name": "Myanmar National Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/UB.svg"
+  },
+  "MJ": {
+   "name": "MyWay Airlines",
+   "conditionsOfCarriageUrl": "https://mywayairlines.com/en/381/General-Condition-of-Carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/MJ.svg"
+  },
+  "JY": {
+   "name": "National Air Charters, Inc.",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/JY.svg"
+  },
+  "9Y": {
+   "name": "National Airways",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/9Y.svg"
+  },
+  "ON": {
+   "name": "Nauru Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/ON.svg"
+  },
+  "RA": {
+   "name": "Nepal Airlines",
+   "conditionsOfCarriageUrl": "https://nepalairlines.com.np/instructions",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/RA.svg"
+  },
+  "NE": {
+   "name": "Nesma Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/NE.svg"
+  },
+  "H6": {
+   "name": "NIL",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/H6.svg"
+  },
+  "NP": {
+   "name": "Nile Air",
+   "conditionsOfCarriageUrl": "https://www.nileair.com/#/en/home",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/NP.svg"
+  },
+  "DD": {
+   "name": "Nok Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/DD.svg"
+  },
+  "Y7": {
+   "name": "NordStar",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/Y7.svg"
+  },
+  "N4": {
+   "name": "Nordwind Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/N4.svg"
+  },
+  "N0": {
+   "name": "Norse Atlantic Airways",
+   "conditionsOfCarriageUrl": "https://flynorse.com/en-GB/support/coc",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/N0.svg"
+  },
+  "J3": {
+   "name": "Northwestern Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/J3.svg"
+  },
+  "HW": {
+   "name": "North-Wright Airways Ltd.",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/HW.svg"
+  },
+  "DY": {
+   "name": "Norwegian Air Shuttle",
+   "conditionsOfCarriageUrl": "https://www.norwegian.com/uk/booking/booking-information/legal/general-conditions-of-carriage/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/DY.svg"
+  },
+  "D8": {
+   "name": "Norwegian Air Sweden",
+   "conditionsOfCarriageUrl": "https://www.norwegian.com/en/booking/helpful-booking-info/legal/general-conditions-of-carriage/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/D8.svg"
+  },
+  "DI": {
+   "name": "Norwegian Air UK",
+   "conditionsOfCarriageUrl": "https://www.norwegian.com/uk/booking/booking-information/legal/general-conditions-of-carriage/"
+  },
+  "BJ": {
+   "name": "Nouvelair",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/BJ.svg"
+  },
+  "VQ": {
+   "name": "Novoair",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/VQ.svg"
+  },
+  "BK": {
+   "name": "Okay Airways",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/BK.svg"
+  },
+  "OA": {
+   "name": "Olympic Air",
+   "conditionsOfCarriageUrl": "https://www.olympicair.com/en/conditions-and-notices/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/OA.svg"
+  },
+  "WY": {
+   "name": "Oman Air",
+   "conditionsOfCarriageUrl": "https://www.omanair.com/au/en/conditions-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/WY.svg"
+  },
+  "OY": {
+   "name": "Omni Air International",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/OY.svg"
+  },
+  "O7": {
+   "name": "OMNI-BLU",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/O7.svg"
+  },
+  "8Q": {
+   "name": "Onur Air",
+   "conditionsOfCarriageUrl": "https://www.onurair.com/en/faq/detail/General-Terms/859/1332/0",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/8Q.svg"
+  },
+  "JF": {
+   "name": "OTT AIRLINES CO., LTD",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/JF.svg"
+  },
+  "OF": {
+   "name": "Overland Airways",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/OF.svg"
+  },
+  "BL": {
+   "name": "Pacific Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/BL.svg"
+  },
+  "8P": {
+   "name": "Pacific Coastal Airlines",
+   "conditionsOfCarriageUrl": "https://www.pacificcoastal.com/fare-terms-conditions/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/8P.svg"
+  },
+  "PK": {
+   "name": "Pakistan International Airlines",
+   "conditionsOfCarriageUrl": "https://www.piac.com.pk/conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/PK.svg"
+  },
+  "PB": {
+   "name": "PAL Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/PB.svg"
+  },
+  "2P": {
+   "name": "PAL Express",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/2P.svg"
+  },
+  "ZP": {
+   "name": "Paranair",
+   "conditionsOfCarriageUrl": "https://www.paranair.com/en-us/contract-of-carriage/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/ZP.svg"
+  },
+  "P6": {
+   "name": "Pascan",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/P6.svg"
+  },
+  "PC": {
+   "name": "Pegasus Airlines",
+   "conditionsOfCarriageUrl": "https://www.flypgs.com/en/useful-info/info-about-flights/general-rules",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/PC.svg"
+  },
+  "PR": {
+   "name": "Philippine Airlines",
+   "conditionsOfCarriageUrl": "https://www.philippineairlines.com/about-us/legal-notices/general-conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/PR.svg"
+  },
+  "PU": {
+   "name": "Plus Ultra Líneas Aéreas",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/PU.svg"
+  },
+  "CG": {
+   "name": "PNG Air",
+   "conditionsOfCarriageUrl": "http://cargo.pngair.com.pg/staticpages/office_other_details.aspx?details_type=T&carrier_code=CG&airport_code=UNG",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/CG.svg"
+  },
+  "PI": {
+   "name": "Polar Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/PI.svg"
+  },
+  "PD": {
+   "name": "Porter Airlines",
+   "conditionsOfCarriageUrl": "https://www.flyporter.com/en/travel-terms-and-conditions",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/PD.svg"
+  },
+  "P3": {
+   "name": "Porter Airlines",
+   "conditionsOfCarriageUrl": "https://www.flyporter.com/en/travel-terms-and-conditions"
+  },
+  "NI": {
+   "name": "Portugalia Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/NI.svg"
+  },
+  "PW": {
+   "name": "Precision Air",
+   "conditionsOfCarriageUrl": "https://www.precisionairtz.com/en/about-us/10-travel-planner/14-conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/PW.svg"
+  },
+  "P0": {
+   "name": "Proflight Zambia",
+   "conditionsOfCarriageUrl": "https://proflight-zambia.com/img/cms/documents/Terms&Conditions%20v30apr21.pdf",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/P0.svg"
+  },
+  "HH": {
+   "name": "Qanot Sharq LLC",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/HH.svg"
+  },
+  "QF": {
+   "name": "Qantas",
+   "conditionsOfCarriageUrl": "https://www.qantas.com/gb/en/book-a-trip/flights/conditions-of-carriage.html",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/QF.svg"
+  },
+  "QR": {
+   "name": "Qatar Airways",
+   "conditionsOfCarriageUrl": "https://www.qatarairways.com/en-gb/legal/conditions-of-carriage.html",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/QR.svg"
+  },
+  "QB": {
+   "name": "Qeshm Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/QB.svg"
+  },
+  "QW": {
+   "name": "Qingdao Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/QW.svg"
+  },
+  "L5": {
+   "name": "RED AIR S.R.L.",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/L5.svg"
+  },
+  "WZ": {
+   "name": "Red Wings",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/WZ.svg"
+  },
+  "8N": {
+   "name": "Regional Air Services",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/8N.svg"
+  },
+  "ZL": {
+   "name": "Regional Express",
+   "conditionsOfCarriageUrl": "https://www.rex.com.au/flightinfo/COC.aspx",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/ZL.svg"
+  },
+  "EE": {
+   "name": "Regional Jet",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/EE.svg"
+  },
+  "4P": {
+   "name": "Regional Sky",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/4P.svg"
+  },
+  "FV": {
+   "name": "Rossiya Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/FV.svg"
+  },
+  "RG": {
+   "name": "Rotana Jet Aviation",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/RG.svg"
+  },
+  "RW": {
+   "name": "Royal Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/RW.svg"
+  },
+  "AT": {
+   "name": "Royal Air Maroc",
+   "conditionsOfCarriageUrl": "https://www.royalairmaroc.com/uk-en/general-terms-and-conditions",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AT.svg"
+  },
+  "KB": {
+   "name": "Royal Bhutan Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/KB.svg"
+  },
+  "BI": {
+   "name": "Royal Brunei Airlines",
+   "conditionsOfCarriageUrl": "https://www.flyroyalbrunei.com/rba/carriage-conditions.php",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/BI.svg"
+  },
+  "RJ": {
+   "name": "Royal Jordanian",
+   "conditionsOfCarriageUrl": "https://www.rj.com/en/info-and-tips/conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/RJ.svg"
+  },
+  "DR": {
+   "name": "Ruili Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/DR.svg"
+  },
+  "WB": {
+   "name": "RwandAir",
+   "conditionsOfCarriageUrl": "https://www.rwandair.com/our-policies/terms-conditions-of-carriage/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/WB.svg"
+  },
+  "FR": {
+   "name": "Ryanair",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/FR.svg"
+  },
+  "S7": {
+   "name": "S7 Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/S7.svg"
+  },
+  "F2": {
+   "name": "Safarilink",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/F2.svg"
+  },
+  "PV": {
+   "name": "Saint Barth Commuter",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/PV.svg"
+  },
+  "OV": {
+   "name": "Salam Air (S.A.O.C)",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/OV.svg"
+  },
+  "OL": {
+   "name": "Samoa Airways",
+   "conditionsOfCarriageUrl": "https://www.samoaairways.com/flying-with-us/terms-and-conditions-of-carriage/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/OL.svg"
+  },
+  "SK": {
+   "name": "SAS",
+   "conditionsOfCarriageUrl": "https://www.flysas.com/gb-en/legal-info/conditions-of-carriage/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/SK.svg"
+  },
+  "SP": {
+   "name": "SATA Air Acores",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/SP.svg"
+  },
+  "9R": {
+   "name": "SATENA",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/9R.svg"
+  },
+  "SV": {
+   "name": "Saudi Arabian Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/SV.svg"
+  },
+  "SL": {
+   "name": "Scandinavian Airlines Ireland Limited",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/SL.svg"
+  },
+  "DV": {
+   "name": "SCAT Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/DV.svg"
+  },
+  "TR": {
+   "name": "Scoot",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/TR.svg"
+  },
+  "BB": {
+   "name": "Seaborne Airlines",
+   "conditionsOfCarriageUrl": "https://www.seaborneairlines.com/contract-of-carriage/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/BB.svg"
+  },
+  "SC": {
+   "name": "Shandong Airlines",
+   "conditionsOfCarriageUrl": "https://www.sda.cn/en/about/news/show/3195.html",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/SC.svg"
+  },
+  "FM": {
+   "name": "Shanghai Airlines",
+   "conditionsOfCarriageUrl": "https://www.ceair.com/global/en_static/Announcement/TravelTips/dsGeneralCondition/shanghaiAirlinesLuggageRules/shdomesticRules/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/FM.svg"
+  },
+  "SH": {
+   "name": "Sharp Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/SH.svg"
+  },
+  "ZH": {
+   "name": "Shenzhen Airlines",
+   "conditionsOfCarriageUrl": "https://www.shenzhenair.com/szair_B2C/getStaticHtml.action?htmlName=termService",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/ZH.svg"
+  },
+  "N9": {
+   "name": "Shree Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/N9.svg"
+  },
+  "3U": {
+   "name": "Sichuan Airlines",
+   "conditionsOfCarriageUrl": "www.scal.com.cn",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/3U.svg"
+  },
+  "3M": {
+   "name": "Silver Airways",
+   "conditionsOfCarriageUrl": "https://www.silverairways.com/docs/default-source/legal-documents/silver-airways-contract-of-carriage-05oct2021.pdf?sfvrsn=b273701b_1",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/3M.svg"
+  },
+  "SQ": {
+   "name": "Singapore Airlines",
+   "conditionsOfCarriageUrl": "https://www.singaporeair.com/en_UK/global_footer/conditions-carriage/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/SQ.svg"
+  },
+  "H2": {
+   "name": "Sky Airline",
+   "conditionsOfCarriageUrl": "https://www.skyairline.com/upload/Documents/Air_transport_contract.pdf",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/H2.svg"
+  },
+  "GQ": {
+   "name": "Sky Express",
+   "conditionsOfCarriageUrl": "https://bookings.skyexpress.gr/en/need-help/conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/GQ.svg"
+  },
+  "DO": {
+   "name": "Sky High Aviation Services",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/DO.svg"
+  },
+  "BC": {
+   "name": "Skymark Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/BC.svg"
+  },
+  "TE": {
+   "name": "Sky Taxi sp. z.o.o",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/TE.svg"
+  },
+  "PQ": {
+   "name": "SkyUp Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/PQ.svg"
+  },
+  "OO": {
+   "name": "SkyWest Airlines",
+   "conditionsOfCarriageUrl": "https://www.skywest.com/fly-skywest-airlines/customer-information#!contract-of-carriage"
+  },
+  "CW": {
+   "name": "SkyWest Charter LLC",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/CW.svg"
+  },
+  "5N": {
+   "name": "Smartavia",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/5N.svg"
+  },
+  "6Y": {
+   "name": "SmartLynx Airlines",
+   "conditionsOfCarriageUrl": "https://www.smartlynx.aero/en/passengers/before-the-flight/conditions-of-carriage"
+  },
+  "QS": {
+   "name": "Smartwings",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/QS.svg"
+  },
+  "6J": {
+   "name": "Solaseed Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/6J.svg"
+  },
+  "IE": {
+   "name": "Solomon Airlines",
+   "conditionsOfCarriageUrl": "https://www.flysolomons.com/bookings/conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/IE.svg"
+  },
+  "SA": {
+   "name": "South African Airways",
+   "conditionsOfCarriageUrl": "https://www.flysaa.com/documents/51855150/126723733/Conditions+of+Carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/SA.svg"
+  },
+  "9X": {
+   "name": "Southern Airways Express",
+   "conditionsOfCarriageUrl": "https://iflysouthern.com/contract-of-carriage/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/9X.svg"
+  },
+  "WN": {
+   "name": "Southwest Airlines",
+   "conditionsOfCarriageUrl": "https://www.southwest.com/html/about-southwest/index.html?clk=GFOOTER-CONTRACT-OF-CARRIAGE#_tab_5",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/WN.svg"
+  },
+  "SG": {
+   "name": "SpiceJet",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/SG.svg"
+  },
+  "NK": {
+   "name": "Spirit Airlines",
+   "conditionsOfCarriageUrl": "https://content.spirit.com/Shared/en-us/Documents/Contract_of_Carriage.pdf",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/NK.svg"
+  },
+  "P8": {
+   "name": "SprintAir",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/P8.svg"
+  },
+  "UL": {
+   "name": "SriLankan Airlines",
+   "conditionsOfCarriageUrl": "https://www.srilankan.com/Zh_cn/Corporate/conditions-of-carriage-for-passengers-and-baggage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/UL.svg"
+  },
+  "SJ": {
+   "name": "Sriwijaya Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/SJ.svg"
+  },
+  "7G": {
+   "name": "Star Flyer",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/7G.svg"
+  },
+  "JX": {
+   "name": "Starlux Airlines",
+   "conditionsOfCarriageUrl": "https://www.starlux-airlines.com/en-TW/terms-conditions/conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/JX.svg"
+  },
+  "LE": {
+   "name": "St Barth Executive",
+   "conditionsOfCarriageUrl": "https://www.stbarthexecutive.com/booking-and-carriage-terms/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LE.svg"
+  },
+  "8F": {
+   "name": "STP Airways",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/8F.svg"
+  },
+  "SD": {
+   "name": "Sudan Airways",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/SD.svg"
+  },
+  "EZ": {
+   "name": "Sun Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/EZ.svg"
+  },
+  "SY": {
+   "name": "Sun Country",
+   "conditionsOfCarriageUrl": "https://assets.ctfassets.net/2aov1ouggrmn/1oeBYihGf7m9y7W0WFcdfo/89f1754fcef67eb7da26286f019604d0/Contract_of_Carriage_Update_-_06182021.pdf",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/SY.svg"
+  },
+  "SR": {
+   "name": "Sundai",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/SR.svg"
+  },
+  "XQ": {
+   "name": "SunExpress",
+   "conditionsOfCarriageUrl": "https://www.sunexpress.com/en/terms-conditions-sunexpress/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/XQ.svg"
+  },
+  "WG": {
+   "name": "Sunwing",
+   "conditionsOfCarriageUrl": "https://www.sunwing.ca/en/sunwing-airlines/conditions-of-contract",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/WG.svg"
+  },
+  "Y8": {
+   "name": "Suparna Airlines Co., Ltd.",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/Y8.svg"
+  },
+  "PY": {
+   "name": "Surinaamse Luchtvaart Maatschappij",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/PY.svg"
+  },
+  "LX": {
+   "name": "SWISS",
+   "conditionsOfCarriageUrl": "https://www.swiss.com/de/en/terms-conditions/conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LX.svg"
+  },
+  "WO": {
+   "name": "Swoop",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/WO.svg"
+  },
+  "7E": {
+   "name": "Sylt Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/7E.svg"
+  },
+  "RB": {
+   "name": "Syrian Arab Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/RB.svg"
+  },
+  "DT": {
+   "name": "TAAG Angola Airlines",
+   "conditionsOfCarriageUrl": "http://www.taag.com/en/Taag/Conditions-of-Carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/DT.svg"
+  },
+  "5U": {
+   "name": "TAG Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/5U.svg"
+  },
+  "JJ": {
+   "name": "TAM Linhas Aereas S.A.",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/JJ.svg"
+  },
+  "QT": {
+   "name": "Tampa Cargo S.A.S",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/QT.svg"
+  },
+  "TP": {
+   "name": "TAP Air Portugal",
+   "conditionsOfCarriageUrl": "https://www.flytap.com/en-gb/transport-conditions?accordionid=1",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/TP.svg"
+  },
+  "3T": {
+   "name": "Tarco Aviation Co.LTD",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/3T.svg"
+  },
+  "RO": {
+   "name": "TAROM",
+   "conditionsOfCarriageUrl": "https://www.tarom.ro/en/travelling-terms-and-conditions",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/RO.svg"
+  },
+  "XJ": {
+   "name": "Thai Airasia X",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/XJ.svg"
+  },
+  "TG": {
+   "name": "Thai Airways",
+   "conditionsOfCarriageUrl": "https://www.thaiairways.com/en_GB/Terms_condition/contract_of_carriage.page?",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/TG.svg"
+  },
+  "WE": {
+   "name": "Thai Smile",
+   "conditionsOfCarriageUrl": "https://www.thaismileair.com/en/Terms-and-Conditions",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/WE.svg"
+  },
+  "GS": {
+   "name": "TianJin Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/GS.svg"
+  },
+  "TV": {
+   "name": "Tibet Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/TV.svg"
+  },
+  "IT": {
+   "name": "Tigerair Taiwan Co. Ltd",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/IT.svg"
+  },
+  "ZT": {
+   "name": "Titan Airways",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/ZT.svg"
+  },
+  "TM": {
+   "name": "Titan Airways Malta ltd",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/TM.svg"
+  },
+  "TJ": {
+   "name": "Tradewind Aviation",
+   "conditionsOfCarriageUrl": "https://s3.amazonaws.com/uploads.flytradewind.com/app/uploads/2021/08/08145706/Tradewind-Aviation-Contract-of-Carriage.pdf",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/TJ.svg"
+  },
+  "Q8": {
+   "name": "Trans Air Congo",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/Q8.svg"
+  },
+  "TO": {
+   "name": "Transavia France",
+   "conditionsOfCarriageUrl": "https://www.transavia.com/en-UK/conditions/conditions-of-carriage/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/TO.svg"
+  },
+  "HV": {
+   "name": "Transavia Holland",
+   "conditionsOfCarriageUrl": "https://www.transavia.com/en-UK/conditions/conditions-of-carriage/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/HV.svg"
+  },
+  "9N": {
+   "name": "Tropic Air",
+   "conditionsOfCarriageUrl": "https://www.tropicair.com/travel-info/conditions-of-carriage/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/9N.svg"
+  },
+  "BY": {
+   "name": "TUI Airways",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/BY.svg"
+  },
+  "X3": {
+   "name": "TUIfly",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/X3.svg"
+  },
+  "TB": {
+   "name": "TUI fly",
+   "conditionsOfCarriageUrl": "https://www.tuifly.be/en/legal/conditions_de_transport",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/TB.svg"
+  },
+  "OR": {
+   "name": "TUI fly Netherlands",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/OR.svg"
+  },
+  "6B": {
+   "name": "TUIfly Nordic",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/6B.svg"
+  },
+  "TU": {
+   "name": "Tunisair",
+   "conditionsOfCarriageUrl": "http://www.tunisair.com/site/publish/module/cgt/cgt.asp",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/TU.svg"
+  },
+  "TK": {
+   "name": "Turkish Airlines",
+   "conditionsOfCarriageUrl": "https://www.turkishairlines.com/en-gb/legal-notice/general-conditions-of-carriage/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/TK.svg"
+  },
+  "T5": {
+   "name": "Turkmenistan Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/T5.svg"
+  },
+  "U8": {
+   "name": "Tus Airways Ltd",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/U8.svg"
+  },
+  "TW": {
+   "name": "T'Way Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/TW.svg"
+  },
+  "T7": {
+   "name": "Twin Jet",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/T7.svg"
+  },
+  "UR": {
+   "name": "Uganda Airlines",
+   "conditionsOfCarriageUrl": "https://ugandairlines.com/conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/UR.svg"
+  },
+  "PS": {
+   "name": "Ukraine International Airlines",
+   "conditionsOfCarriageUrl": "https://www.flyuia.com/ua/en/information/rules-and-regulations/carriage-rules",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/PS.svg"
+  },
+  "UE": {
+   "name": "Ultimate Air Shuttle",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/UE.svg"
+  },
+  "B7": {
+   "name": "Uni Air",
+   "conditionsOfCarriageUrl": "https://www.uniair.com.tw/rwd/download/UNI%20%20Conditions%20of%20Carriage_en-US.pdf",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/B7.svg"
+  },
+  "UA": {
+   "name": "United Airlines",
+   "conditionsOfCarriageUrl": "https://www.united.com/ual/en/GB/fly/contract.html",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/UA.svg"
+  },
+  "4H": {
+   "name": "United Airways",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/4H.svg"
+  },
+  "U6": {
+   "name": "Ural Airlines",
+   "conditionsOfCarriageUrl": "https://www.uralairlines.ru/en/rules/dogovor-perevozki/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/U6.svg"
+  },
+  "UQ": {
+   "name": "Urumqi Air",
+   "conditionsOfCarriageUrl": "http://www.urumqi-air.com/air-pc/doc/Urumqi%20Airlines%20Co.,%20Ltd.%20General%20Conditions%20of%20International%20Carriage%20for%20Passengers%20and%20Baggage.pdf",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/UQ.svg"
+  },
+  "BS": {
+   "name": "US-Bangla Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/BS.svg"
+  },
+  "UT": {
+   "name": "UTair Aviation",
+   "conditionsOfCarriageUrl": "https://www.utair.ru/en/information/transport-regulations/obshchie-pravila-perevozki/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/UT.svg"
+  },
+  "HY": {
+   "name": "Uzbekistan Airways",
+   "conditionsOfCarriageUrl": "http://uzbekistan-airlines.de/en/?page_id=89",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/HY.svg"
+  },
+  "FC": {
+   "name": "Vee H Aviation Pty Ltd.",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/FC.svg"
+  },
+  "VJ": {
+   "name": "VietJet Air",
+   "conditionsOfCarriageUrl": "https://www.vietjetair.com/en/pages/terms-and-conditions-vietjet-1608015385508",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/VJ.svg"
+  },
+  "VN": {
+   "name": "Vietnam Airlines",
+   "conditionsOfCarriageUrl": "https://www.vietnamairlines.com/gb/en/legal/conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/VN.svg"
+  },
+  "VP": {
+   "name": "Villa Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/VP.svg"
+  },
+  "VS": {
+   "name": "Virgin Atlantic",
+   "conditionsOfCarriageUrl": "https://help.virginatlantic.com/gb/en/policies/conditions-of-carriage.html",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/VS.svg"
+  },
+  "VA": {
+   "name": "Virgin Australia",
+   "conditionsOfCarriageUrl": "https://www.virginaustralia.com/eu/en/about-us/policies/legal/conditions-of-carriage/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/VA.svg"
+  },
+  "UK": {
+   "name": "Vistara",
+   "conditionsOfCarriageUrl": "https://www.airvistara.com/gb/en/terms-and-conditions",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/UK.svg"
+  },
+  "VB": {
+   "name": "VivaAerobús",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/VB.svg"
+  },
+  "2Z": {
+   "name": "Voepass Linhas Aéreas",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/2Z.svg"
+  },
+  "Y4": {
+   "name": "Volaris",
+   "conditionsOfCarriageUrl": "https://cms.volaris.com/globalassets/pdfs/eng/contract-carriage-domestic-int-q6.pdf",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/Y4.svg"
+  },
+  "Q6": {
+   "name": "Volaris Costa Rica",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/Q6.svg"
+  },
+  "N3": {
+   "name": "Volaris El Salvador",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/N3.svg"
+  },
+  "V7": {
+   "name": "Volotea",
+   "conditionsOfCarriageUrl": "https://www.volotea.com/en/legal-conditions/conditions-of-carriage/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/V7.svg"
+  },
+  "VY": {
+   "name": "Vueling",
+   "conditionsOfCarriageUrl": "https://www.vueling.com/en/customer-services/conditions-of-carriage",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/VY.svg"
+  },
+  "EB": {
+   "name": "Wamos Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/EB.svg"
+  },
+  "PN": {
+   "name": "West Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/PN.svg"
+  },
+  "WU": {
+   "name": "Western Air Ltd",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/WU.svg"
+  },
+  "WS": {
+   "name": "WestJet",
+   "conditionsOfCarriageUrl": "https://www.westjet.com/en-ca/legal/travel-terms-conditions/westjet-flights",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/WS.svg"
+  },
+  "WF": {
+   "name": "Wideroe's Flyveselskap A.S.",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/WF.svg"
+  },
+  "WM": {
+   "name": "Winair",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/WM.svg"
+  },
+  "7W": {
+   "name": "Windrose Airlines",
+   "conditionsOfCarriageUrl": "https://windrose.aero/en/prepare_for_flight/prepare/rules/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/7W.svg"
+  },
+  "IW": {
+   "name": "Wings Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/IW.svg"
+  },
+  "W6": {
+   "name": "Wizz Air",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/W6.svg"
+  },
+  "5W": {
+   "name": "Wizz Air Abu Dhabi",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/5W.svg"
+  },
+  "W4": {
+   "name": "Wizz Air Malta",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/W4.svg"
+  },
+  "W9": {
+   "name": "Wizz Air UK",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/W9.svg"
+  },
+  "MF": {
+   "name": "Xiamen Airlines",
+   "conditionsOfCarriageUrl": "https://www.xiamenair.com/brandnew_EN/travel-transport-condition.html",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/MF.svg"
+  },
+  "YC": {
+   "name": "Yamal Airlines",
+   "conditionsOfCarriageUrl": "https://yamal.aero/passengers/",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/YC.svg"
+  },
+  "IY": {
+   "name": "Yemenia - Yemen Airways",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/IY.svg"
+  },
+  "YT": {
+   "name": "Yeti Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/YT.svg"
+  },
+  "GJ": {
+   "name": "Zhejiang Loong Airlines Co., Ltd",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/GJ.svg"
+  },
+  "Z4": {
+   "name": "Zoom Airlines",
+   "logoSymbolUrl": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/Z4.svg"
+  }
+ }
+}

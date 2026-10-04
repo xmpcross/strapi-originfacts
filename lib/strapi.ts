@@ -152,6 +152,51 @@ export type StrapiRoute = {
 };
 
 type ListResponse<T> = { data: T[]; meta: { pagination: { page: number; pageSize: number; pageCount: number; total: number } } };
+type MemoryCacheEntry<T> = { expiresAt: number; value?: T; promise?: Promise<T> };
+
+const REMOVED_DESTINATION_SLUGS = new Set([
+  'patagonia',
+  'provence',
+  'tuscany',
+  'yucatan-peninsula',
+]);
+
+const REMOVED_DESTINATION_NAMES = new Set([
+  'patagonia',
+  'provence',
+  'tuscany',
+  'yucatán peninsula',
+  'yucatan peninsula',
+]);
+
+function isRemovedDestination(destination: Pick<StrapiDestination, 'slug' | 'name'>) {
+  const slug = destination.slug?.toLowerCase();
+  const name = destination.name?.toLowerCase();
+  return REMOVED_DESTINATION_SLUGS.has(slug) || REMOVED_DESTINATION_NAMES.has(name);
+}
+
+const MEMORY_CACHE_TTL_MS = 60_000;
+const memoryCache = new Map<string, MemoryCacheEntry<unknown>>();
+
+async function memoryCached<T>(key: string, loader: () => Promise<T>, ttlMs = MEMORY_CACHE_TTL_MS): Promise<T> {
+  const now = Date.now();
+  const existing = memoryCache.get(key) as MemoryCacheEntry<T> | undefined;
+  if (existing?.value && existing.expiresAt > now) return existing.value;
+  if (existing?.promise) return existing.promise;
+
+  const promise = loader()
+    .then((value) => {
+      memoryCache.set(key, { value, expiresAt: Date.now() + ttlMs });
+      return value;
+    })
+    .catch((error) => {
+      memoryCache.delete(key);
+      throw error;
+    });
+
+  memoryCache.set(key, { promise, expiresAt: now + ttlMs });
+  return promise;
+}
 
 async function strapiFetch<T>(path: string, params?: Record<string, unknown>, revalidate = 60): Promise<T> {
   const query = params ? '?' + qs.stringify(params, { encodeValuesOnly: true }) : '';
@@ -171,13 +216,16 @@ async function strapiFetch<T>(path: string, params?: Record<string, unknown>, re
 
 export function mediaUrl(img: StrapiImage): string | null {
   if (!img?.url) return null;
-  return img.url.startsWith('http') ? img.url : `${BASE}${img.url}`;
+  const raw = img.url.startsWith('http') ? img.url : `${BASE}${img.url}`;
+  return raw.replace('https://strapi.fxnstudio.com', 'https://cms.fxnstudio.com');
 }
 
-export async function listArticles(opts: { page?: number; pageSize?: number; category?: string; destination?: string; q?: string } = {}) {
+export async function listArticles(opts: { page?: number; pageSize?: number; category?: string; destination?: string; destinations?: string[]; q?: string } = {}) {
   const filters: Record<string, unknown> = {};
   if (opts.category) filters.category = { slug: { $eqi: opts.category } };
-  if (opts.destination) filters.destinations = { slug: { $eqi: opts.destination } };
+  const destinationSlugs = opts.destinations?.filter(Boolean);
+  if (destinationSlugs?.length) filters.destinations = { slug: { $in: destinationSlugs } };
+  else if (opts.destination) filters.destinations = { slug: { $eqi: opts.destination } };
   if (opts.q?.trim()) {
     const q = opts.q.trim();
     filters.$or = [
@@ -344,13 +392,17 @@ export async function getCategory(slug: string) {
 }
 
 export async function listDestinations() {
-  return fetchAllPages<StrapiDestination>('destinations', {
-    sort: ['name:asc'],
-    populate: ['heroImage'],
-  });
+  return memoryCached('listDestinations', () =>
+    fetchAllPages<StrapiDestination>('destinations', {
+      sort: ['name:asc'],
+      populate: ['heroImage'],
+    }).then((destinations) => destinations.filter((d) => !isRemovedDestination(d))),
+  );
 }
 
 export async function getDestination(slug: string) {
+  if (REMOVED_DESTINATION_SLUGS.has(slug)) return null;
+
   const res = await strapiFetch<ListResponse<StrapiDestination>>('destinations', {
     filters: { slug: { $eq: slug } },
     populate: ['heroImage'],
@@ -387,37 +439,40 @@ export async function listCountryDestinations(limit = 12) {
  * Uses 1-3 paginated requests on /articles plus one on /destinations.
  */
 export async function listPopularCountryDestinations(limit = 8) {
-  const ready = await fetchAllPages<StrapiDestination>('destinations', {
-    filters: { type: { $eq: 'country' }, heroImage: { $notNull: true } },
-    populate: ['heroImage'],
+  const ranked = await memoryCached('listPopularCountryDestinations:ranked', async () => {
+    const ready = await fetchAllPages<StrapiDestination>('destinations', {
+      filters: { type: { $eq: 'country' }, heroImage: { $notNull: true } },
+      populate: ['heroImage'],
+    });
+
+    // Walk articles once and build a slug → count map.
+    const counts = new Map<string, number>();
+    type ArticleWithDests = { destinations?: { slug?: string }[] };
+    let page = 1;
+    const pageSize = 100;
+    while (true) {
+      const r = await strapiFetch<ListResponse<ArticleWithDests>>('articles', {
+        fields: ['id'],
+        populate: { destinations: { fields: ['slug'] } },
+        pagination: { page, pageSize },
+      });
+      for (const a of r.data) {
+        for (const d of a.destinations ?? []) {
+          if (d?.slug) counts.set(d.slug, (counts.get(d.slug) ?? 0) + 1);
+        }
+      }
+      const pageCount = r.meta?.pagination?.pageCount ?? 1;
+      if (page >= pageCount) break;
+      page++;
+    }
+
+    return ready
+      .map((c) => ({ c, count: counts.get(c.slug) ?? 0 }))
+      .sort((a, b) => b.count - a.count || a.c.name.localeCompare(b.c.name))
+      .map((r) => r.c);
   });
 
-  // Walk articles once and build a slug → count map.
-  const counts = new Map<string, number>();
-  type ArticleWithDests = { destinations?: { slug?: string }[] };
-  let page = 1;
-  const pageSize = 100;
-  while (true) {
-    const r = await strapiFetch<ListResponse<ArticleWithDests>>('articles', {
-      fields: ['id'],
-      populate: { destinations: { fields: ['slug'] } },
-      pagination: { page, pageSize },
-    });
-    for (const a of r.data) {
-      for (const d of a.destinations ?? []) {
-        if (d?.slug) counts.set(d.slug, (counts.get(d.slug) ?? 0) + 1);
-      }
-    }
-    const pageCount = r.meta?.pagination?.pageCount ?? 1;
-    if (page >= pageCount) break;
-    page++;
-  }
-
-  return ready
-    .map((c) => ({ c, count: counts.get(c.slug) ?? 0 }))
-    .sort((a, b) => b.count - a.count || a.c.name.localeCompare(b.c.name))
-    .slice(0, limit)
-    .map((r) => r.c);
+  return ranked.slice(0, limit);
 }
 
 /**
@@ -446,6 +501,20 @@ export async function listCitiesByCountryCode(code: string, limit = 100) {
   return res.data;
 }
 
+export async function listCountryAndCityDestinationsByCountryCodes(codes: string[]) {
+  const normalized = [...new Set(codes.map((code) => code?.toUpperCase()).filter(Boolean))];
+  if (normalized.length === 0) return [] as StrapiDestination[];
+
+  return fetchAllPages<StrapiDestination>('destinations', {
+    filters: {
+      type: { $in: ['country', 'city'] },
+      countryCode: { $in: normalized },
+    },
+    sort: ['type:asc', 'name:asc'],
+    populate: ['heroImage'],
+  }).then((destinations) => destinations.filter((d) => !isRemovedDestination(d)));
+}
+
 async function fetchAllPages<T>(
   collection: string,
   query: Record<string, unknown> & { pageSize?: number },
@@ -468,10 +537,12 @@ async function fetchAllPages<T>(
 }
 
 export async function listAirlines() {
-  return fetchAllPages<StrapiAirline>('airlines', {
-    sort: ['name:asc'],
-    populate: ['logo'],
-  });
+  return memoryCached('listAirlines', () =>
+    fetchAllPages<StrapiAirline>('airlines', {
+      sort: ['name:asc'],
+      populate: ['logo'],
+    }),
+  );
 }
 
 export async function getAirline(slug: string) {
@@ -484,10 +555,22 @@ export async function getAirline(slug: string) {
 }
 
 export async function listAirports() {
-  return fetchAllPages<StrapiAirport>('airports', {
-    sort: ['name:asc'],
-    populate: ['heroImage'],
-  });
+  return memoryCached('listAirports', () =>
+    fetchAllPages<StrapiAirport>('airports', {
+      sort: ['name:asc'],
+      populate: ['heroImage'],
+    }),
+  );
+}
+
+export async function listAirportSlugIndex() {
+  return memoryCached('listAirportSlugIndex', () =>
+    fetchAllPages<Pick<StrapiAirport, 'iata' | 'city' | 'name'>>('airports', {
+      sort: ['name:asc'],
+      fields: ['iata', 'city', 'name'],
+      pageSize: 500,
+    }),
+  );
 }
 
 export async function getAirport(iata: string) {
@@ -500,10 +583,12 @@ export async function getAirport(iata: string) {
 }
 
 export async function listCountries() {
-  return fetchAllPages<StrapiCountry>('countries', {
-    sort: ['name:asc'],
-    populate: ['heroImage'],
-  });
+  return memoryCached('listCountries', () =>
+    fetchAllPages<StrapiCountry>('countries', {
+      sort: ['name:asc'],
+      populate: ['heroImage'],
+    }),
+  );
 }
 
 export async function getCountry(code: string) {
@@ -516,11 +601,13 @@ export async function getCountry(code: string) {
 }
 
 export async function listCountriesByRegion(region: string) {
-  return fetchAllPages<StrapiCountry>('countries', {
-    filters: { region: { $eq: region } },
-    sort: ['name:asc'],
-    populate: ['heroImage'],
-  });
+  return memoryCached(`listCountriesByRegion:${region}`, () =>
+    fetchAllPages<StrapiCountry>('countries', {
+      filters: { region: { $eq: region } },
+      sort: ['name:asc'],
+      populate: ['heroImage'],
+    }),
+  );
 }
 
 export async function listAirportsByCountryCode(code: string, limit = 500) {

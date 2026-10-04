@@ -3,9 +3,37 @@
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { mediaUrl, type StrapiAirport, type StrapiAirline } from '@/lib/strapi';
+import { airportPath } from '@/lib/airport-slugs';
 
 const AIRPORTS_PAGE_SIZE = 12;
-const AIRLINES_PAGE_SIZE = 9;
+const AIRLINES_PAGE_SIZE = 12;
+
+const POPULAR_AIRPORT_PRIORITY = new Map(
+  [
+    'ATL', 'DXB', 'DFW', 'LHR', 'HND', 'DEN', 'IST', 'ORD', 'DEL', 'LAX', 'CAN', 'PVG',
+    'CDG', 'AMS', 'FRA', 'SIN', 'ICN', 'BKK', 'DOH', 'MAD', 'JFK', 'SFO', 'MIA', 'SEA',
+    'SYD', 'MEL', 'BNE', 'PER', 'ADL', 'OOL', 'CNS', 'CBR', 'DRW', 'HBA', 'TSV', 'AVV',
+  ].map((code, index) => [code, index + 1]),
+);
+
+const POPULAR_AIRLINE_PRIORITY = new Map(
+  [
+    'AA', 'DL', 'UA', 'WN', 'EK', 'QR', 'TK', 'SQ', 'CX', 'BA', 'LH', 'AF', 'KL', 'QF',
+    'JQ', 'VA', 'ZL', 'QQ', 'FC', 'TL', 'FP',
+  ].map((code, index) => [code, index + 1]),
+);
+
+const POPULAR_AIRLINE_NAME_PRIORITY = new Map(
+  [
+    'Qantas',
+    'Jetstar',
+    'Virgin Australia',
+    'Rex Airlines',
+    'Alliance Airlines',
+    'Airnorth',
+    'FlyPelican',
+  ].map((name, index) => [name.toLowerCase(), index + 1]),
+);
 
 export default function CountryDetailSections({
   countryName,
@@ -21,35 +49,55 @@ export default function CountryDetailSections({
 
   const filteredAirports = useMemo(() => {
     const q = airportQuery.trim().toLowerCase();
-    if (!q) return airports;
-    return airports.filter((a) =>
-      [a.iata, a.icao, a.name, a.city].some((v) => v && v.toLowerCase().includes(q)),
-    );
+    const matches = q
+      ? airports.filter((a) =>
+          [a.iata, a.icao, a.name, a.city].some((v) => v && v.toLowerCase().includes(q)),
+        )
+      : airports;
+    return sortAirportsByPopularity(matches);
   }, [airports, airportQuery]);
 
   const filteredAirlines = useMemo(() => {
     const q = airlineQuery.trim().toLowerCase();
-    if (!q) return airlines;
-    return airlines.filter((al) =>
-      [al.name, al.iataCode, al.icaoCode, al.city, al.type, al.legalName].some(
-        (v) => v && v.toLowerCase().includes(q),
-      ),
-    );
+    const matches = q
+      ? airlines.filter((al) =>
+          [al.name, al.iataCode, al.icaoCode, al.city, al.type, al.legalName].some(
+            (v) => v && v.toLowerCase().includes(q),
+          ),
+        )
+      : airlines;
+    return sortAirlinesByPopularity(matches);
   }, [airlines, airlineQuery]);
 
   return (
     <>
       {/* Airports */}
-      <section className="mx-auto mt-16 max-w-7xl px-6" data-testid="country-airports">
-        <header className="flex flex-wrap items-end justify-between gap-4 border-b border-forest-900/10 pb-3">
-          <h2 className="editorial-h text-2xl font-bold text-forest-900 lg:text-2xl">
-            Airports in {countryName}
-          </h2>
-          <span className="text-sm font-light text-forest-900/50">
-            {airportQuery.trim()
-              ? `${filteredAirports.length} of ${airports.length}`
-              : `${airports.length} airport${airports.length === 1 ? '' : 's'}`}
-          </span>
+      <section
+        className="mx-auto mt-16 max-w-7xl overflow-hidden rounded-[0.3rem] border border-forest-900/10 bg-gradient-to-br from-white via-[#f7fbff] to-[#fff8e6] px-6 py-8 sm:px-8"
+        data-testid="country-airports"
+      >
+        <header className="grid gap-6 border-b border-forest-900/10 pb-6 lg:grid-cols-[minmax(0,1fr)_180px] lg:items-end">
+          <div>
+            <p className="section-eyebrow">
+              <span className="inline-block h-px w-8 bg-primary-emphasis" />
+              Airport directory
+            </p>
+            <h2 className="editorial-h mt-3 text-2xl font-bold text-2xl">
+              Which major airports serve {countryName}?
+            </h2>
+            <p className="mt-3 max-w-4xl text-sm font-light leading-7 text-forest-900/70">
+              Compare the airport records linked to {countryName}. Use the list to jump from a city or IATA code to the
+              airport page with routes, nearby airports and planning details.
+            </p>
+          </div>
+          <div className="border-l-2 border-primary-emphasis pl-5">
+            <div className="font-urbanist text-4xl font-bold leading-none text-forest-900">
+              {airportQuery.trim() ? filteredAirports.length : airports.length}
+            </div>
+            <div className="mt-2 text-xs font-bold uppercase tracking-[0.2em] text-forest-900/55">
+              {airportQuery.trim() ? `of ${airports.length}` : `airport${airports.length === 1 ? '' : 's'}`}
+            </div>
+          </div>
         </header>
 
         {airports.length > 0 && (
@@ -68,16 +116,22 @@ export default function CountryDetailSections({
             No airports match “{airportQuery}”.
           </p>
         ) : (
-          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-6 overflow-hidden rounded-[0.3rem] border border-forest-900/10 bg-white/80">
+            <div className="hidden grid-cols-[110px_minmax(0,1fr)_minmax(0,0.7fr)_40px] gap-4 border-b border-forest-900/10 px-4 py-3 text-[10px] font-bold uppercase tracking-[0.18em] text-forest-900/45 md:grid">
+              <span>Code</span>
+              <span>Airport</span>
+              <span>City</span>
+              <span className="sr-only">Open</span>
+            </div>
             {filteredAirports.slice(0, AIRPORTS_PAGE_SIZE).map((a) => (
-              <AirportCard key={a.id} airport={a} />
+              <AirportCard key={a.id} airport={a} allAirports={airports} />
             ))}
           </div>
         )}
         {filteredAirports.length > AIRPORTS_PAGE_SIZE && (
           <div className="mt-6">
             <Link
-              href="/airports"
+              href={`/airports?country=${encodeURIComponent(countryName)}`}
               className="text-sm font-medium text-forest-700 hover:underline"
               data-testid="country-airports-view-all"
             >
@@ -88,16 +142,32 @@ export default function CountryDetailSections({
       </section>
 
       {/* Airlines */}
-      <section className="mx-auto mt-16 max-w-7xl px-6" data-testid="country-airlines">
-        <header className="flex flex-wrap items-end justify-between gap-4 border-b border-forest-900/10 pb-3">
-          <h2 className="editorial-h text-2xl font-bold text-forest-900 lg:text-2xl">
-            Airlines based in {countryName}
-          </h2>
-          <span className="text-sm font-light text-forest-900/50">
-            {airlineQuery.trim()
-              ? `${filteredAirlines.length} of ${airlines.length}`
-              : `${airlines.length} airline${airlines.length === 1 ? '' : 's'}`}
-          </span>
+      <section
+        className="mx-auto mt-16 max-w-7xl overflow-hidden rounded-[0.3rem] border border-forest-900/10 bg-white px-6 py-8 sm:px-8"
+        data-testid="country-airlines"
+      >
+        <header className="grid gap-6 border-b border-forest-900/10 pb-6 lg:grid-cols-[minmax(0,1fr)_180px] lg:items-end">
+          <div>
+            <p className="section-eyebrow">
+              <span className="inline-block h-px w-8 bg-forest-800/60" />
+              Airline directory
+            </p>
+            <h2 className="editorial-h mt-3 text-2xl font-bold text-2xl">
+              Which airlines are headquartered in {countryName}?
+            </h2>
+            <p className="mt-3 max-w-4xl text-sm font-light leading-7 text-forest-900/70">
+              Browse the airline brands connected to {countryName}. Each logo opens the carrier guide with route,
+              baggage and policy context where available.
+            </p>
+          </div>
+          <div className="border-l-2 border-forest-900/20 pl-5">
+            <div className="font-urbanist text-4xl font-bold leading-none text-forest-900">
+              {airlineQuery.trim() ? filteredAirlines.length : airlines.length}
+            </div>
+            <div className="mt-2 text-xs font-bold uppercase tracking-[0.2em] text-forest-900/55">
+              {airlineQuery.trim() ? `of ${airlines.length}` : `airline${airlines.length === 1 ? '' : 's'}`}
+            </div>
+          </div>
         </header>
 
         {airlines.length > 0 && (
@@ -116,39 +186,36 @@ export default function CountryDetailSections({
             No airlines match “{airlineQuery}”.
           </p>
         ) : (
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
             {filteredAirlines.slice(0, AIRLINES_PAGE_SIZE).map((al) => {
               const logo = mediaUrl(al.logo ?? null);
               return (
                 <Link
                   key={al.id}
                   href={`/airlines/${al.slug}`}
-                  className="group flex items-center gap-12 rounded-lg border border-forest-900/10 bg-paper p-4 transition hover:-translate-y-0.5 hover:border-forest-900/30 hover:shadow-sm"
+                  className="group flex min-h-[118px] items-center justify-between gap-4 rounded-[0.3rem] border border-forest-900/10 bg-white px-4 py-3 transition hover:-translate-y-0.5 hover:border-primary-emphasis/40 hover:shadow-sm"
+                  aria-label={`Open ${al.name} airline guide`}
+                  title={al.name}
                 >
-                  <div className="flex h-28 w-28 flex-none items-center justify-center overflow-hidden rounded-lg">
+                  <div className="flex h-[100px] w-[140px] shrink-0 items-center justify-start self-stretch">
                     {logo ? (
                       // eslint-disable-next-line @next/next/no-img-element
-                      <img src={logo} alt={al.name} className="h-full w-full object-contain" />
+                      <img
+                        src={logo}
+                        alt={al.name}
+                        className="block h-[100px] w-full object-contain object-left"
+                        loading="lazy"
+                      />
                     ) : (
-                      <span className="font-urbanist text-sm font-bold text-forest-900/60">
+                      <span className="flex h-[100px] w-full items-center justify-start font-urbanist text-2xl font-bold uppercase tracking-wider text-forest-900/60">
                         {(al.iataCode || al.name).slice(0, 3).toUpperCase()}
                       </span>
                     )}
                   </div>
-                  <div className="min-w-0 flex-1">
-                    <div className="flex items-center gap-2">
-                      <div className="truncate font-urbanist text-base font-bold text-forest-900 group-hover:text-forest-700">
-                        {al.name}
-                      </div>
-                      {al.iataCode && (
-                        <span className="flex-none rounded bg-forest-900 px-2 py-0.5 font-mono text-[10px] font-bold tracking-wider text-sand-100">
-                          {al.iataCode}
-                        </span>
-                      )}
-                    </div>
-                    <div className="mt-1 truncate text-xs text-forest-900/60">
-                      {[al.city, al.type].filter(Boolean).join(' · ')}
-                    </div>
+                  <div className="ml-auto min-w-0 flex-1 text-right">
+                    <h3 className="font-urbanist text-base font-bold leading-tight text-forest-950 transition group-hover:text-primary-emphasis">
+                      {al.name}
+                    </h3>
                   </div>
                 </Link>
               );
@@ -158,7 +225,7 @@ export default function CountryDetailSections({
         {filteredAirlines.length > AIRLINES_PAGE_SIZE && (
           <div className="mt-6">
             <Link
-              href="/airlines"
+              href={`/airlines?country=${encodeURIComponent(countryName)}`}
               className="text-sm font-medium text-forest-700 hover:underline"
               data-testid="country-airlines-view-all"
             >
@@ -169,6 +236,32 @@ export default function CountryDetailSections({
       </section>
     </>
   );
+}
+
+function sortAirportsByPopularity(airports: StrapiAirport[]) {
+  return [...airports].sort((a, b) => {
+    const aRank = POPULAR_AIRPORT_PRIORITY.get(a.iata?.toUpperCase()) ?? Number.MAX_SAFE_INTEGER;
+    const bRank = POPULAR_AIRPORT_PRIORITY.get(b.iata?.toUpperCase()) ?? Number.MAX_SAFE_INTEGER;
+    if (aRank !== bRank) return aRank - bRank;
+    return (a.city || a.name || a.iata).localeCompare(b.city || b.name || b.iata);
+  });
+}
+
+function sortAirlinesByPopularity(airlines: StrapiAirline[]) {
+  return [...airlines].sort((a, b) => {
+    const aRank = airlinePriority(a);
+    const bRank = airlinePriority(b);
+    if (aRank !== bRank) return aRank - bRank;
+    return a.name.localeCompare(b.name);
+  });
+}
+
+function airlinePriority(airline: StrapiAirline) {
+  const codeRank = airline.iataCode
+    ? POPULAR_AIRLINE_PRIORITY.get(airline.iataCode.toUpperCase())
+    : undefined;
+  const nameRank = POPULAR_AIRLINE_NAME_PRIORITY.get(airline.name.toLowerCase());
+  return codeRank ?? nameRank ?? Number.MAX_SAFE_INTEGER;
 }
 
 function SearchBox({
@@ -213,22 +306,37 @@ function SearchBox({
   );
 }
 
-function AirportCard({ airport }: { airport: StrapiAirport }) {
+function AirportCard({ airport, allAirports }: { airport: StrapiAirport; allAirports?: StrapiAirport[] }) {
   return (
     <Link
-      href={`/airports/${airport.iata.toLowerCase()}`}
-      className="group flex items-center justify-between gap-3 rounded-lg border border-forest-900/10 bg-paper px-4 py-3 transition hover:-translate-y-0.5 hover:border-forest-900/30"
+      href={airportPath(airport, allAirports)}
+      className="group grid gap-3 border-b border-forest-900/10 px-4 py-4 transition last:border-b-0 hover:bg-primary-hover/60 md:grid-cols-[110px_minmax(0,1fr)_minmax(0,0.7fr)_40px] md:items-center"
     >
-      <div className="min-w-0">
-        <div className="flex items-center gap-2">
-          <span className="flex-none rounded bg-forest-900 px-2 py-0.5 font-mono text-[10px] font-bold tracking-wider text-sand-100">
-            {airport.iata}
+      <div className="flex items-center gap-2">
+        <span className="rounded bg-forest-900 px-2.5 py-1 font-mono text-[11px] font-bold tracking-wider text-sand-100">
+          {airport.iata}
+        </span>
+        {airport.icao && (
+          <span className="hidden font-mono text-[11px] font-bold tracking-wider text-forest-900/45 md:inline">
+            {airport.icao}
           </span>
-          <div className="truncate font-urbanist text-base font-bold text-forest-900 group-hover:text-forest-700">
-            {airport.city || airport.name}
-          </div>
-        </div>
-        <div className="mt-1 truncate text-xs text-forest-900/60">{airport.name}</div>
+        )}
+      </div>
+      <div className="min-w-0">
+        <h3 className="truncate font-urbanist text-base font-bold leading-snug text-forest-900 group-hover:text-forest-700">
+          {airport.name}
+        </h3>
+        <p className="mt-1 truncate text-xs text-forest-900/50 md:hidden">
+          {[airport.city, airport.icao].filter(Boolean).join(' · ')}
+        </p>
+      </div>
+      <p className="hidden truncate text-sm text-forest-900/60 md:block">
+        {airport.city || 'Airport guide'}
+      </p>
+      <div className="hidden justify-end md:flex">
+        <span className="flex h-8 w-8 items-center justify-center rounded-full border border-forest-900/10 bg-white text-sm font-bold text-forest-900 transition group-hover:border-primary-emphasis group-hover:bg-primary-emphasis group-hover:text-white" aria-hidden>
+          →
+        </span>
       </div>
     </Link>
   );

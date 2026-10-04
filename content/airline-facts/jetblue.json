@@ -1,0 +1,269 @@
+{
+  "slug": "jetblue",
+  "official_website": "https://www.jetblue.com",
+  "modules": [
+    {
+      "id": "cabins",
+      "title": "Cabins and seating",
+      "lede": "Choose the onboard experience for your route, then compare seat selection and flexibility within that fare. Mint availability depends on the flight.",
+      "required": [
+        "main",
+        "evenmore",
+        "mint",
+        "bluefirst_launch"
+      ],
+      "fields": {
+        "main": {
+          "value": "JetBlue's Main experience includes seatback entertainment, Fly-Fi connectivity, and complimentary snacks and drinks. Connectivity and entertainment availability can vary by coverage area.",
+          "status": "official",
+          "source_url": "https://www.jetblue.com/flying-with-us/fares-simplified",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "evenmore": {
+          "value": "EvenMore adds extra legroom near the front, Group 2 boarding and dedicated overhead space. Priority security is available at participating airports; onboard food and drink perks depend on the flight.",
+          "status": "official",
+          "source_url": "https://www.jetblue.com/flying-with-us/evenmore",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "mint": {
+          "value": "Mint offers lie-flat seats or suites on all transatlantic flights and selected coast-to-coast, Caribbean and Latin America routes. Check the aircraft and seat map for the configuration on your flight.",
+          "status": "official",
+          "source_url": "https://www.jetblue.com/flying-with-us/mint",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "bluefirst_launch": {
+          "value": "BlueFirst is announced for rollout later in 2026 on flights without Mint. Do not assume it is available unless it appears for your chosen flight.",
+          "status": "official",
+          "source_url": "https://www.jetblue.com/flying-with-us/fares-simplified",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "All fares include a cabin bag and a personal item.",
+      "required": [
+        "carryon_bag_dimensions",
+        "personal_item",
+        "carryon_weight"
+      ],
+      "fields": {
+        "carryon_bag_dimensions": {
+          "value": "Carry-on bags must fit within 22 x 14 x 9 inches, including handles and wheels.",
+          "status": "official",
+          "source_url": "https://www.jetblue.com/help/carry-on-bags",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "personal_item": {
+          "value": "Personal items must fit under the seat and measure no more than 17 x 13 x 8 inches.",
+          "status": "official",
+          "source_url": "https://www.jetblue.com/help/carry-on-bags",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "carryon_weight": {
+          "value": "JetBlue publishes no carry-on weight limit; you must be able to lift your bag into the overhead bin if assistance is unavailable.",
+          "status": "official",
+          "source_url": "https://www.jetblue.com/help/carry-on-bags",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "Bag prices vary by route, fare, travel dates and when you pay. Use the booking's allowance before purchasing extras.",
+      "required": [
+        "checked_bag_fees",
+        "mint_baggage",
+        "prepay_bags"
+      ],
+      "fields": {
+        "checked_bag_fees": {
+          "value": "Base fares generally charge for checked bags. Route-specific exceptions and eligible loyalty or card benefits can apply.",
+          "status": "official",
+          "source_url": "https://www.jetblue.com/legal/fees",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "mint_baggage": {
+          "value": "Mint and Mint Flex include two checked bags, each up to 70 lb / 32 kg.",
+          "status": "official",
+          "source_url": "https://www.jetblue.com/legal/fees",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "prepay_bags": {
+          "value": "Adding the first two bags more than 24 hours before departure can save up to USD 10 per bag.",
+          "status": "official",
+          "source_url": "https://www.jetblue.com/legal/fees",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "lede": "JetBlue's current fee page lists Main Base. Older bookings may use Blue Basic terminology; follow the conditions attached to your ticket.",
+      "required": [
+        "seat_selection",
+        "change_cancel_fees",
+        "included_carryon"
+      ],
+      "fields": {
+        "seat_selection": {
+          "value": "Main Base charges for choosing a seat; otherwise a seat is assigned before departure.",
+          "status": "official",
+          "source_url": "https://www.jetblue.com/legal/fees",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "change_cancel_fees": {
+          "value": "Main Base and EvenMore Base have a USD 150 per-person change or cancellation fee; fare differences also apply to changes.",
+          "status": "official",
+          "source_url": "https://www.jetblue.com/legal/fees",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "included_carryon": {
+          "value": "Even the lowest fare includes one carry-on and one personal item within JetBlue's size limits.",
+          "status": "official",
+          "source_url": "https://www.jetblue.com/help/carry-on-bags",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "lede": "Start with Flight Tracker and Manage Trips to see your status, replacement itinerary and available choices.",
+      "required": [
+        "cancelled_flight",
+        "significant_disruption",
+        "refund_or_rebooking",
+        "delayed_departure"
+      ],
+      "fields": {
+        "cancelled_flight": {
+          "value": "JetBlue may automatically rebook a cancelled flight. Review the new itinerary in Manage Trips before choosing another option.",
+          "status": "official",
+          "source_url": "https://www.jetblue.com/help/delays-and-cancellations",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "significant_disruption": {
+          "value": "JetBlue lists arrival delays of at least three hours domestically or six hours internationally among qualifying disruptions. Airport changes, extra connections and certain other itinerary changes can also qualify.",
+          "status": "official",
+          "source_url": "https://www.jetblue.com/help/delays-and-cancellations",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "refund_or_rebooking": {
+          "value": "For qualifying disruptions, review free rebooking or cancellation for a refund to the original payment method, including eligible extras. Cancel online or contact JetBlue before departure if choosing a refund.",
+          "status": "official",
+          "source_url": "https://www.jetblue.com/help/delays-and-cancellations",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "delayed_departure": {
+          "value": "Continue planning around the original departure time: an estimated delay can shorten.",
+          "status": "official",
+          "source_url": "https://www.jetblue.com/help/delays-and-cancellations",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "lede": "Online check-in does not replace the airport bag-drop deadline or international document checks.",
+      "required": [
+        "online_checkin",
+        "domestic_bag_drop",
+        "international_cutoff",
+        "without_checked_bags"
+      ],
+      "fields": {
+        "online_checkin": {
+          "value": "Online and app check-in open 24 hours before departure.",
+          "status": "official",
+          "source_url": "https://www.jetblue.com/help/checking-in/check-in-online",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "domestic_bag_drop": {
+          "value": "Domestic bag drop closes 45 minutes before departure, or 60 minutes for flights from the U.S. Virgin Islands.",
+          "status": "official",
+          "source_url": "https://www.jetblue.com/help/checking-in/airport-check-in",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "international_cutoff": {
+          "value": "International check-in and bag drop require at least 60 minutes; Dublin requires at least 80 minutes.",
+          "status": "official",
+          "source_url": "https://www.jetblue.com/help/checking-in",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "without_checked_bags": {
+          "value": "Domestic boarding-pass cutoffs vary: 45 minutes at listed major airports, 60 minutes from the U.S. Virgin Islands and 30 minutes at other airports. Check your departure airport's listing.",
+          "status": "official",
+          "source_url": "https://www.jetblue.com/help/checking-in/airport-check-in",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "lede": "Use JetBlue's official contact and legal pages for support and your ticket conditions.",
+      "required": [
+        "official_website_url",
+        "contact_help_centre",
+        "conditions_of_carriage_url",
+        "cancellations_refunds"
+      ],
+      "fields": {
+        "official_website_url": {
+          "value": "https://www.jetblue.com",
+          "status": "official",
+          "source_url": "https://www.jetblue.com/help/checking-in",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "contact_help_centre": {
+          "value": "https://www.jetblue.com/contact-us",
+          "status": "official",
+          "source_url": "https://www.jetblue.com/help/checking-in",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://www.jetblue.com/legal/flights-terms",
+          "status": "official",
+          "source_url": "https://www.jetblue.com/legal/flights-terms",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "cancellations_refunds": {
+          "value": "https://www.jetblue.com/help/delays-and-cancellations",
+          "status": "official",
+          "source_url": "https://www.jetblue.com/help/delays-and-cancellations",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

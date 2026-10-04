@@ -1,0 +1,19 @@
+{
+  "slug": "fixture-placeholder-source",
+  "official_website": "https://www.example-carrier.test",
+  "modules": [
+    {
+      "id": "fares",
+      "title": "Fares",
+      "required": ["basic_fare"],
+      "fields": {
+        "basic_fare": {
+          "value": "1 small cabin bag",
+          "status": "official",
+          "source_url": "…",
+          "verified_at": "2026-08-24"
+        }
+      }
+    }
+  ]
+}

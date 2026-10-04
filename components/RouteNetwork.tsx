@@ -16,7 +16,7 @@ export default function RouteNetwork({ facts, airlineName }: { facts: RouteFacts
         <span className="inline-block h-px w-8 bg-forest-800/60" />
         Network overview
       </p>
-      <h2 className="editorial-h mt-3 text-2xl font-bold text-forest-900 lg:text-3xl">
+      <h2 className="editorial-h mt-3 text-2xl font-bold text-2xl">
         Where {airlineName} flies
       </h2>
       <p className="mt-3 max-w-3xl text-sm font-light leading-7 text-forest-900/75">

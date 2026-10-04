@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import typography from '@tailwindcss/typography';
 
 export default {
   content: ['./app/**/*.{ts,tsx}', './components/**/*.{ts,tsx}'],
@@ -6,47 +7,45 @@ export default {
     extend: {
       colors: {
         primary: {
-          emphasis: '#014fd3',
-          emphasisHover: '#0072de',
-          emphasisPressed: '#0046be',
+          emphasis: '#025ccc',
+          emphasisHover: '#014fd3',
+          emphasisPressed: '#003eab',
           highlight: '#0072de',
           highlightHover: '#025ccc',
           highlightPressed: '#014fd3',
-          hover: '#cfe9fe',
-          pressed: '#9bcffc',
+          hover: '#e6f2ff',
+          pressed: '#bcdcff',
         },
         secondary: {
-          DEFAULT: '#fff6d1',
-          emphasis: '#ffe200',
-          hover: '#fff200',
-          pressed: '#ffce00',
+          DEFAULT: '#fff8d6',
+          emphasis: '#f59e0b',
+          hover: '#fbbf24',
+          pressed: '#d97706',
         },
-        success: { emphasis: '#03721e' },
-        attention: { emphasis: '#983e00' },
-        danger: { emphasis: '#b00625' },
+        success: { emphasis: '#059669' },
+        attention: { emphasis: '#d97706' },
+        danger: { emphasis: '#dc2626' },
         forest: {
-          50: '#f0f4ff', 100: '#e7f4ff', 200: '#cfe9fe', 300: '#9bcffc',
-          400: '#4ea5f0', 500: '#0072de', 600: '#025ccc', 700: '#014fd3',
-          800: '#0046be', 900: '#092d74', 950: '#061b46',
+          50: '#f0f6fe', 100: '#e1edfe', 200: '#c7ddfd', 300: '#9cbdfb',
+          400: '#6895f7', 500: '#3b6cf2', 600: '#224ce6', 700: '#014fd3',
+          800: '#0f38a3', 900: '#0f2766', 950: '#091840',
         },
         sand: {
-          50: '#fffdf0', 100: '#fff6d1', 200: '#fff200', 300: '#ffe200',
-          400: '#ffce00', 500: '#d6aa00', 600: '#aa8400', 700: '#7b6000',
-          800: '#554200', 900: '#332800',
+          50: '#fffdf5', 100: '#fff8d6', 200: '#ffef99', 300: '#ffe152',
+          400: '#ffce00', 500: '#d6a300', 600: '#a87d00', 700: '#7d5b00',
+          800: '#593f00', 900: '#382700',
         },
-        terracotta: { 500: '#b85812', 600: '#983e00', 700: '#7a3100' },
-        ink: '#07142b',
-        paper: '#f0f2f4',
+        terracotta: { 500: '#d95a14', 600: '#b84407', 700: '#8c3103' },
+        ink: '#0f172a',
+        paper: '#f8fafc',
       },
       fontFamily: {
-        // All font-* utilities resolve to Plus Jakarta Sans so a single token
-        // change here would swap the entire site's typeface. The named keys
-        // (urbanist / outfit / display) are kept for backwards compatibility
-        // with existing usages.
-        sans: ['var(--font-jakarta)', 'system-ui', 'sans-serif'],
-        display: ['var(--font-jakarta)', 'system-ui', 'sans-serif'],
-        urbanist: ['var(--font-jakarta)', 'system-ui', 'sans-serif'],
-        outfit: ['var(--font-jakarta)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
+        display: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
+        satoshi: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
+        inter: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
+        urbanist: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
+        outfit: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
       },
       letterSpacing: { tightest: '0' },
       maxWidth: { '6xl': '1420px', '7xl': '1420px', prose: '68ch' },
@@ -59,5 +58,5 @@ export default {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [typography],
 } satisfies Config;

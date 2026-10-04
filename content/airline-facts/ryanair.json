@@ -1,0 +1,245 @@
+{
+  "slug": "ryanair",
+  "official_website": "https://www.ryanair.com",
+  "modules": [
+    {
+      "id": "cabins",
+      "title": "Cabins and seating",
+      "lede": "Choose a seat by location and legroom, or accept a free seat assignment at check-in. Use your flight's seat map because seat categories vary with the aircraft.",
+      "required": [
+        "seat_options",
+        "reserved_or_random",
+        "family_seating",
+        "change_seat"
+      ],
+      "fields": {
+        "seat_options": {
+          "value": "Reserved-seat options are Standard, Front and Extra-legroom seats. Categories and positions vary by aircraft; the booking seat map shows the options for your flight.",
+          "status": "official",
+          "source_url": "https://oat.ryanair.com/hr/en/useful-info/help-centre/terms-and-conditions",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "reserved_or_random": {
+          "value": "Pay to reserve a particular seat, or receive a free random seat when checking in between 24 and two hours before departure. Reserved-seat prices depend on location.",
+          "status": "official",
+          "source_url": "https://help.ryanair.com/hc/en-gb/articles/12892714228753-What-is-Ryanair-s-Seat-Policy",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "family_seating": {
+          "value": "Children aged 2 to 11 must sit beside an accompanying adult. With free random allocation, Ryanair seats children beside an adult on the same booking; other adults and teenagers may sit separately.",
+          "status": "official",
+          "source_url": "https://help.ryanair.com/hc/en-gb/articles/12891623365777-What-is-Ryanair-s-Seat-Policy",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "change_seat": {
+          "value": "Use My Booking and choose change seats to update a reserved seat, including after check-in.",
+          "status": "official",
+          "source_url": "https://help.ryanair.com/hc/en-gb/articles/12892533221521-Can-I-change-my-reserved-seats-after-I-have-bought-my-flights-or-checked-in",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "Distinguish the included under-seat bag from the larger, paid cabin-bag option.",
+      "required": [
+        "personal_item",
+        "priority_cabin_bag"
+      ],
+      "fields": {
+        "personal_item": {
+          "value": "All fares include one under-seat bag, maximum 40 x 30 x 20 cm.",
+          "status": "official",
+          "source_url": "https://help.ryanair.com/hc/en-us/articles/12888036565521-Ryanair-s-Bag-Policy",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "priority_cabin_bag": {
+          "value": "Priority & 2 Cabin Bags adds an overhead bag up to 10 kg and 55 x 40 x 20 cm.",
+          "status": "official",
+          "source_url": "https://help.ryanair.com/hc/en-us/articles/12888036565521-Ryanair-s-Bag-Policy",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "Choose the bag allowance when booking; Basic does not include a checked bag.",
+      "required": [
+        "checked_bag_options",
+        "purchase_limits"
+      ],
+      "fields": {
+        "checked_bag_options": {
+          "value": "Paid checked-bag options include 10 kg, 20 kg and 23 kg.",
+          "status": "official",
+          "source_url": "https://help.ryanair.com/hc/en-us/articles/12888036565521-Ryanair-s-Bag-Policy",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "purchase_limits": {
+          "value": "Up to three 20 kg bags or one 23 kg bag can be purchased per passenger.",
+          "status": "official",
+          "source_url": "https://help.ryanair.com/hc/en-us/articles/12888036565521-Ryanair-s-Bag-Policy",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "lede": "Basic suits travellers taking only a small bag. Compare the total price after adding the extras you need.",
+      "required": [
+        "basic_fare",
+        "regular_fare",
+        "plus_fare",
+        "voluntary_refunds"
+      ],
+      "fields": {
+        "basic_fare": {
+          "value": "Basic includes one small under-seat bag and a randomly allocated seat at check-in; no additional baggage is included.",
+          "status": "official",
+          "source_url": "https://help.ryanair.com/hc/en-ie/articles/12888555638161-What-are-Ryanair-s-fare-bundle-options",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "regular_fare": {
+          "value": "Regular adds a standard seat, priority boarding and a second cabin bag up to 10 kg.",
+          "status": "official",
+          "source_url": "https://help.ryanair.com/hc/en-ie/articles/12888555638161-What-are-Ryanair-s-fare-bundle-options",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "plus_fare": {
+          "value": "Plus includes a standard seat, a small cabin bag and a 20 kg checked bag.",
+          "status": "official",
+          "source_url": "https://help.ryanair.com/hc/en-ie/articles/12888555638161-What-are-Ryanair-s-fare-bundle-options",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "voluntary_refunds": {
+          "value": "Tickets are generally non-refundable if the flight operates and you choose not to travel.",
+          "status": "official",
+          "source_url": "https://help.ryanair.com/hc/en-ie/articles/12896766243857-Refund-Policy",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "lede": "Check My Bookings and the disruption message before buying replacement travel.",
+      "required": [
+        "cancelled_flight_options",
+        "long_delay_refund",
+        "care_and_compensation"
+      ],
+      "fields": {
+        "cancelled_flight_options": {
+          "value": "For a cancelled flight, request a refund, rerouting subject to availability, or a free change to another date on the same route.",
+          "status": "official",
+          "source_url": "https://help.ryanair.com/hc/en-gb/sections/12488375155473-Cancelled-Flight",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "long_delay_refund": {
+          "value": "For a delay of at least five hours, passengers who decide not to travel can request a refund.",
+          "status": "official",
+          "source_url": "https://help.ryanair.com/hc/en-us/categories/12488242270609-Cancelled-Delayed-and-Rescheduled-Flights",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "care_and_compensation": {
+          "value": "Care and compensation depend on the disruption and applicable passenger-rights rules. Extraordinary circumstances can exclude compensation. Contact Ryanair before arranging alternative transport and keep receipts.",
+          "status": "official",
+          "source_url": "https://help.ryanair.com/hc/en-us/categories/12488242270609-Cancelled-Delayed-and-Rescheduled-Flights",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "lede": "Online check-in and bag drop have different deadlines. Allow time for security after dropping bags.",
+      "required": [
+        "online_checkin",
+        "reserved_seat_checkin",
+        "airport_bag_drop",
+        "airport_checkin_fee"
+      ],
+      "fields": {
+        "online_checkin": {
+          "value": "Without a reserved seat, online check-in opens 24 hours before departure and closes two hours before.",
+          "status": "official",
+          "source_url": "https://help.ryanair.com/hc/en-gb/articles/12888949622417-When-can-I-check-in",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "reserved_seat_checkin": {
+          "value": "A pre-reserved seat allows online check-in up to 60 days ahead; both outbound and return flights must fall within that window.",
+          "status": "official",
+          "source_url": "https://help.ryanair.com/hc/en-gb/articles/12888949622417-When-can-I-check-in",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "airport_bag_drop": {
+          "value": "Check-in and bag-drop desks open no later than two hours before departure and close strictly 40 minutes before, unless Ryanair advises otherwise.",
+          "status": "official",
+          "source_url": "https://help.ryanair.com/hc/en-gb/articles/12890590563857-When-does-the-check-in-desk-open-and-close-for-my-flight",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "airport_checkin_fee": {
+          "value": "Airport check-in normally incurs a fee. Complete online check-in before its deadline.",
+          "status": "official",
+          "source_url": "https://help.ryanair.com/hc/en-gb/categories/12488813755537-Check-In-Travel-Documents",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "lede": "Use the official contact page to choose your country's support options.",
+      "required": [
+        "official_website_url",
+        "contact_help_centre",
+        "cancellations_refunds"
+      ],
+      "fields": {
+        "official_website_url": {
+          "value": "https://www.ryanair.com",
+          "status": "official",
+          "source_url": "https://help.ryanair.com/hc/en-gb/articles/12892354434065-Contact-Us",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "contact_help_centre": {
+          "value": "https://help.ryanair.com/hc/en-gb/articles/12892354434065-Contact-Us",
+          "status": "official",
+          "source_url": "https://help.ryanair.com/hc/en-gb/articles/12892354434065-Contact-Us",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "cancellations_refunds": {
+          "value": "https://help.ryanair.com/hc/en-ie/articles/12896766243857-Refund-Policy",
+          "status": "official",
+          "source_url": "https://help.ryanair.com/hc/en-ie/articles/12896766243857-Refund-Policy",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

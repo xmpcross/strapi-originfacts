@@ -1,0 +1,18 @@
+{
+  "slug": "fixture-country-domain",
+  "official_website": "https://www.qantas.com.au",
+  "modules": [
+    {
+      "id": "contact",
+      "title": "Contact",
+      "fields": {
+        "phone_home_market": {
+          "value": "13 13 13",
+          "status": "official",
+          "source_url": "https://www.qantas.com.au/help/contact-us",
+          "verified_at": "2026-08-24"
+        }
+      }
+    }
+  ]
+}

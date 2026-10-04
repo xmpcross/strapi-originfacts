@@ -1,0 +1,131 @@
+{
+ "slug": "chongqing-airlines",
+ "sources": [
+  "tripadvisor"
+ ],
+ "stats": {
+  "source": "all",
+  "reviewCount": 6,
+  "avgRating10": 4.3,
+  "recommendPct": null,
+  "subratings": null,
+  "firstReviewDate": "2018-04-13",
+  "lastReviewDate": "2023-04-10"
+ },
+ "statsBySource": {
+  "tripadvisor": {
+   "source": "tripadvisor",
+   "reviewCount": 6,
+   "avgRating10": 4.3,
+   "recommendPct": null,
+   "subratings": null,
+   "firstReviewDate": "2018-04-13",
+   "lastReviewDate": "2023-04-10",
+   "sourceUrl": "https://www.tripadvisor.com/Airline_Review-d8729052-Reviews-Chongqing-Airlines"
+  }
+ },
+ "reviews": [
+  {
+   "source": "tripadvisor",
+   "id": "ta-885626235",
+   "date": "2023-04-10",
+   "rating10": 4,
+   "title": "Poor flight",
+   "text": "The overall experience was quite poor. Flight booking and management could only be done with their parent company, China Southern. Their systems were not well integrated. Special meal request, seat selection and online check-in could not be done at all. Check in was a mess at Changi. The queue was very long and took an hour. There was no seatback IFE on the plane. Food and drink selections were poor. The only good thing was the friendly flight attendants.",
+   "author": "freddysg",
+   "authorCountry": null,
+   "authorLocation": "Singapore",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Singapore - Chongqing",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-741263479",
+   "date": "2020-01-25",
+   "rating10": 6,
+   "title": "Pleasant but not fancy",
+   "text": "OK flight, drinks and food supplied, service was good. Leg room reduced but OK for a 2 hour flight. No complaints.",
+   "author": "Chris",
+   "authorCountry": null,
+   "authorLocation": "Ho Chi Minh City",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Chongqing - Guangzhou",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-688679008",
+   "date": "2019-07-11",
+   "rating10": 4,
+   "title": "Total mess up with seats",
+   "text": "Checked in with plenty of time. They gave us (my wife and me) 2 seats apart for both domestic sector and international sector. We asked for them to be changed so we sat together. They changed the domestic sector but at the gate they changed it back again. They refused to change the international sector. Staff were unhelpful. So we did a swap privately with passengers. Also late leaving and arriving.",
+   "author": "phillipmarion2014",
+   "authorCountry": null,
+   "authorLocation": null,
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Chongqing - Guangzhou",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-638273641",
+   "date": "2018-12-08",
+   "rating10": 4,
+   "title": "Chongqing Airlines postponed my flight by one day with no reason stated",
+   "text": "I booked a flight of Chongqing Airlines on Trip.com last week. Flight number is OQ2359 and departure date to Phuket is 31 December 2018. Three days ago, Trip.com alerted me that Chongqing Airlines delayed the flight of arrival in Phuket from 7.55 pm to 8.55 pm. Two days ago, the online travel booking web-site informed me that Chongqing Airlines has postponed the flight by one day from 31 December to 1 January 2019 and estimated arrival timing is 9 pm. However, after checking Trip.com, the arrival timing was changed to 10 pm. Although it is a horrible booking experience, I wish to know whether there is such an inflight magazine named Chongqing Airlines Inflight Magazine onboard or whether Chongqing Airlines is using China Southern Airlines Inflight Magazine \"Gateway\" as its inflight magazine. Can previous passengers of Chongqing Airlines please let me know what is the title of Chongqing Airlines Inflight Magazine? Or should I book Chongqing Airlines flight again in order to clear my doubts? It is impossible to contact Chongqing Airlines by email or by phone in order for the staff to address my enquiries.",
+   "author": "Gan Y",
+   "authorCountry": null,
+   "authorLocation": null,
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Chongqing - Phuket",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-596609253",
+   "date": "2018-07-16",
+   "rating10": 2,
+   "title": "What a shamozzle",
+   "text": "Where to start? Multiple problems in new terminal (terminal 3). We had a group of around 40 people arrive, with a special 'Group' check-in counter opened just for us. But, each couple / single / family was taking 10 - 15 minutes to process. Turned out that there appeared to be an issue linking our eTickets with China Southern computer system (though Chongqing A/L is a subsiduary). Peoples onward legs to Australia were missing or wrong. The reason that I did not state our flight number was: we ended with seats on flight CZ3891, but were actually booked on CZ3426. Myself (and 5 other couples from the group) did not notice the switch until through the Health / Security / immigration checks, and looked for the Gate numbers, only to notice that the boarding time was almost an hour prior. We had problems finding anyone who spoke English to assist, but a security person finally suggested that we go to the stated departure gate to attempt a resolution. Well, you wouldn't believe it, the flight had been delayed. After checking, our seat bookings were valid, so we ended up okay. In fact this flight swap assisted one of the couples in our group whose home leg flight was not found at all, they were required to retrieve their luggage in Guangzhou, and line up again to check-in for the flight by giving them an extra 20 minutes to do so. On the original domestic flight, they would have been hard-pressed to make the next flight. The flights out of Brisbane at the beginning of the holiday were seamlessly straightforward and timely?!?",
+   "author": "Graham R",
+   "authorCountry": null,
+   "authorLocation": "Ipswich",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Chongqing - Guangzhou",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-573170814",
+   "date": "2018-04-13",
+   "rating10": 6,
+   "title": "A good experience",
+   "text": "All aspects of this flight, from boarding to disembarkation were efficient. As with most flights in China, the plane was full, but this presented no problem. Staff were very polite and helpful. The aircraft was clean. Cabin service was normal for China. Panzhihua is a mining city in the mountains of Sichuan. The airport and runway are on the top of a mountain. This brings some very windy conditions at times, but I did not experience this on the landing and the take-off on the outward flight. The runway abuts the edge of the mountain cliff, which is quite an experience and sight on take off. The airport does not have air-bridges. Apparently a new airport is planned at a lower altitude in a few years.",
+   "author": "Rod129",
+   "authorCountry": null,
+   "authorLocation": "Adelaide",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Chongqing - Panzhihua",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  }
+ ]
+}

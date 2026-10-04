@@ -10,6 +10,8 @@ import {
 import { SECTIONS } from '@/lib/sections';
 import BlogSidebar from '@/components/BlogSidebar';
 import type { Metadata } from 'next';
+import { breadcrumbJsonLd } from '@/lib/jsonld';
+import { JsonLd } from '@/components/SeoBlocks';
 
 export const revalidate = 60;
 
@@ -44,8 +46,11 @@ export default async function HotPostsPage({ searchParams }: Props) {
   const pageCount = Math.max(1, hotRes.meta?.pagination?.pageCount ?? 1);
   const startIndex = (page - 1) * PAGE_SIZE;
 
+  const breadcrumbs = breadcrumbJsonLd([{ name: 'Trending', url: '/hot-posts' }]);
+
   return (
     <div data-testid="hot-posts-page">
+      <JsonLd data={breadcrumbs} />
       <div className="mx-auto max-w-7xl px-6 py-16">
         <header data-testid="hot-posts-header">
           <h1 className="font-urbanist text-5xl font-bold leading-none tracking-tight text-forest-950 sm:text-6xl">

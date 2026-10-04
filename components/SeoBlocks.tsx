@@ -62,14 +62,14 @@ export function FaqSection({
 }) {
   if (!faqs.length) return null;
   return (
-    <section className="mx-auto mt-16 max-w-7xl px-6 pb-4" data-testid="faq">
+    <section id="faq" className="mx-auto mt-16 max-w-7xl scroll-mt-28 px-6 pb-4" data-testid="faq">
       {/* Title + description — single full-width column */}
       <div>
         <p className={eyebrowClassName}>
           <span className="inline-block h-px w-8 bg-forest-800/60" />
           FAQ
         </p>
-        <h2 className="editorial-h mt-3 text-2xl font-bold text-forest-900 lg:text-3xl">{title}</h2>
+        <h2 id="faq-heading" className="editorial-h mt-3 text-2xl font-bold text-2xl">{title}</h2>
         <p className="mt-4 text-sm font-light leading-7 text-forest-900/78">
           Quick answers to the details travellers usually check first, from codes and locations to the practical basics that help with planning.
         </p>

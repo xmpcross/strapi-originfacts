@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 88" role="img" aria-labelledby="title desc">
+  <title id="title">Qatar Airways</title>
+  <desc id="desc">Qatar Airways text logo styled in maroon and slate.</desc>
+  <rect width="320" height="88" fill="none"/>
+  <text x="8" y="48" fill="#7a1f45" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-weight="700" letter-spacing="2">QATAR</text>
+  <text x="12" y="72" fill="#5f6b7a" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="1.8">AIRWAYS</text>
+  <g transform="translate(236 18)" fill="none" stroke-linecap="round">
+    <path d="M6 9h58M0 18h70M7 27h56M18 36h36" stroke="#a9b1ba" stroke-width="4"/>
+    <path d="M28 44c18-11 29-25 38-42-22 13-36 28-43 45 9-6 17-8 28-8-11 5-17 12-20 23-4-8-5-13-3-18Z" fill="#7a1f45"/>
+  </g>
+</svg>

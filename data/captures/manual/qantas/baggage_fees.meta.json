@@ -1,0 +1,22 @@
+{
+  "carrier_key": "qantas",
+  "page_key": "baggage_fees",
+  "url": "https://www.qantas.com/en-au/baggage/pre-purchase-additional",
+  "locale": "en-au",
+  "fetched_at": "2026-08-24T02:54:54Z",
+  "http_status": null,
+  "final_url": "https://www.qantas.com/en-au/baggage/pre-purchase-additional",
+  "content_hash": "sha256:5f3835cc669cc573fce3b80243bad8d7455556671a1b2676ac9e606e3f60b4c6",
+  "text_length": 11119,
+  "capture_status": "manual",
+  "capture_method": "manual",
+  "captured_by": "kritin",
+  "captured_at": "2026-08-24",
+  "consent_action": "none_found",
+  "html_lang": "en-AU",
+  "detected_currencies": [
+    "$"
+  ],
+  "redirected": false,
+  "attempts": 0
+}

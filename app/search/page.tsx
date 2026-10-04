@@ -3,6 +3,8 @@ import { formatDistanceToNowStrict } from 'date-fns';
 import { listArticles, mediaUrl, type StrapiArticle } from '@/lib/strapi';
 import SearchInputForm from '@/components/SearchInputForm';
 import type { Metadata } from 'next';
+import { breadcrumbJsonLd } from '@/lib/jsonld';
+import { JsonLd } from '@/components/SeoBlocks';
 
 export const revalidate = 60;
 
@@ -57,8 +59,11 @@ export default async function SearchPage({ searchParams }: Props) {
     pageCount = Math.max(0, res.meta?.pagination?.pageCount ?? 0);
   }
 
+  const breadcrumbs = breadcrumbJsonLd([{ name: 'Search', url: '/search' }]);
+
   return (
     <div data-testid="search-page">
+      <JsonLd data={breadcrumbs} />
       <div className="mx-auto max-w-7xl px-6 py-16">
         <header data-testid="search-header">
           <div className="grid items-start gap-6 sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-12">

@@ -1,0 +1,46 @@
+{
+ "slug": "gx-airlines",
+ "sources": [
+  "tripadvisor"
+ ],
+ "stats": {
+  "source": "all",
+  "reviewCount": 1,
+  "avgRating10": 4.0,
+  "recommendPct": null,
+  "subratings": null,
+  "firstReviewDate": "2019-04-13",
+  "lastReviewDate": "2019-04-13"
+ },
+ "statsBySource": {
+  "tripadvisor": {
+   "source": "tripadvisor",
+   "reviewCount": 1,
+   "avgRating10": 4.0,
+   "recommendPct": null,
+   "subratings": null,
+   "firstReviewDate": "2019-04-13",
+   "lastReviewDate": "2019-04-13",
+   "sourceUrl": "https://www.tripadvisor.com/Airline_Review-d8729084-Reviews-GX-Airlines"
+  }
+ },
+ "reviews": [
+  {
+   "source": "tripadvisor",
+   "id": "ta-665918840",
+   "date": "2019-04-13",
+   "rating10": 4,
+   "title": "GX Airlines",
+   "text": "I did not enjoy my flight on GX Airlines. The staff on the other hand was very friendly. No food was served on our 2 and a half hour flight, only hot water. You had to place an order for coffee and pay cash for it. Coca Cola and Sprite were the only other drinks available. The people on the flight were very very noisy with many uncontrollable kids to add to my frustration! Never on any other airlines had I experienced such behaviour of people. But flying within China I suppose this is the norm!",
+   "author": "Tjaart H",
+   "authorCountry": null,
+   "authorLocation": "Pringle Bay",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Nanning - Xi'an",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  }
+ ]
+}

@@ -95,7 +95,7 @@ export default function ContactForm() {
       noValidate
     >
       <h2 className="editorial-h text-xl font-bold text-forest-900 sm:text-2xl">
-        Send us a message
+        How can you send us a message?
       </h2>
       <p id="contact-form-note" className="mt-1 text-sm font-light text-forest-900/70">
         Please don&apos;t send sensitive information (passport numbers, payment details, etc.)

@@ -1,0 +1,132 @@
+{
+  "slug": "aeroflot",
+  "official_website": "https://www.aeroflot.ru",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "Aeroflot's official packing guidance gives the following cabin-bag limits. Check your cabin's allowance before travel.",
+      "required": [
+        "standard_cabin_bag",
+        "additional_bag"
+      ],
+      "fields": {
+        "standard_cabin_bag": {
+          "value": "One cabin bag up to 10 kg, measuring no more than 55 x 40 x 25 cm.",
+          "status": "official",
+          "source_url": "https://t.me/s/aeroflot_official/4175",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "additional_bag": {
+          "value": "The same guidance permits an additional bag or backpack up to 5 kg, with combined dimensions no more than 80 cm.",
+          "status": "official",
+          "source_url": "https://t.me/s/aeroflot_official/4175",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "Do not assume every Economy ticket includes a suitcase.",
+      "required": [
+        "fare_specific_allowance"
+      ],
+      "fields": {
+        "fare_specific_allowance": {
+          "value": "Aeroflot directs passengers to the checked-baggage allowance for their selected fare. Confirm the piece count and weight on your ticket before adding a bag.",
+          "status": "official",
+          "source_url": "https://t.me/s/aeroflot_official/4175",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "lede": "Compare the fare conditions as well as the headline price, especially if you need checked luggage.",
+      "required": [
+        "fare_and_baggage"
+      ],
+      "fields": {
+        "fare_and_baggage": {
+          "value": "The checked-baggage entitlement follows the selected fare; the cabin-bag allowance is a separate limit.",
+          "status": "official",
+          "source_url": "https://t.me/s/aeroflot_official/4175",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "lede": "Use the airline's current disruption notice and booking record to find the arrangements for your flight.",
+      "required": [
+        "flight_updates",
+        "cancelled_flight_next_step",
+        "airport_assistance"
+      ],
+      "fields": {
+        "flight_updates": {
+          "value": "Aeroflot sends schedule updates using the booking's contact details and asks passengers to check the flight board and Manage Booking before leaving for the airport.",
+          "status": "official",
+          "source_url": "https://t.me/s/aeroflot_official/4218",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "cancelled_flight_next_step": {
+          "value": "Its current disruption notice directs passengers with cancelled flights to the airline's rebooking and refund instructions and advises them not to travel to the airport.",
+          "status": "official",
+          "source_url": "https://t.me/s/aeroflot_official/4218",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "airport_assistance": {
+          "value": "Aeroflot says assistance is provided under Russian Federal Aviation Rules. Ask the airline which services apply to your wait; this does not establish a universal cash-compensation entitlement.",
+          "status": "official",
+          "source_url": "https://t.me/s/aeroflot_official/4218",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "lede": "Check in ahead of travel, then confirm your airport's counter, bag-drop and gate deadlines. Those closing times are not independently confirmed here.",
+      "required": [
+        "online_checkin_opens"
+      ],
+      "fields": {
+        "online_checkin_opens": {
+          "value": "Aeroflot's official notice states that online check-in opens 24 hours before departure.",
+          "status": "official",
+          "source_url": "https://t.me/s/aeroflot_official/2979",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "lede": "Aeroflot's main site restricted access during this review. The guidance above is sourced from its verified official channel; exact fare and airport exceptions still need checking in your booking.",
+      "required": [
+        "official_website_url"
+      ],
+      "fields": {
+        "official_website_url": {
+          "value": "https://www.aeroflot.ru",
+          "status": "official",
+          "source_url": "https://t.me/s/aeroflot_official/4218",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

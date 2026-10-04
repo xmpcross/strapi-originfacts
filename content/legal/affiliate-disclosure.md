@@ -1,6 +1,6 @@
 # Affiliate Disclosure
 
-Last updated: 24 April 2026
+Last updated: 3 September 2026
 
 This Affiliate Disclosure applies to Originfacts at www.originfacts.com.
 
@@ -20,7 +20,13 @@ We participate in the Travelpayouts affiliate network. Travelpayouts connects af
 
 Travelpayouts, travel brands, and other third-party providers may use affiliate tracking technologies to record referrals, bookings, purchases, and commissions.
 
-## 3. We are not the travel provider
+## 3. Takeads
+
+We participate in the Takeads affiliate network. Some eligible links and sponsored travel options may be monetised through Takeads on a cost-per-click or cost-per-action basis.
+
+Takeads and participating advertisers may use affiliate tracking technologies to record visits, referrals, bookings, purchases, and commissions.
+
+## 4. We are not the travel provider
 
 Affiliate links do not mean that FXN HOLDINGS LIMITED or Originfacts sells, supplies, operates, or controls the travel product or service.
 
@@ -28,7 +34,7 @@ We do not directly sell travel bookings, take payment for bookings, issue ticket
 
 Your booking, purchase, cancellation, refund, complaint, or customer-service issue is with the third-party provider you choose.
 
-## 4. How affiliate relationships may affect content
+## 5. How affiliate relationships may affect content
 
 Affiliate relationships may influence:
 
@@ -42,7 +48,7 @@ We aim to make affiliate, sponsored, and commercial content clear to users.
 
 Where we use words such as "best", "cheapest", "recommended", "popular", or similar, you should read the surrounding explanation and always verify final price, availability, and terms with the third-party provider.
 
-## 5. Editorial standards
+## 6. Editorial standards
 
 We aim to provide useful travel information and resources. However, travel prices, availability, fees, rules, and provider policies can change quickly.
 
@@ -50,7 +56,7 @@ We may receive compensation from some providers and not others. We may not compa
 
 You should not rely only on Originfacts when making travel decisions. Always check the final provider page before booking.
 
-## 6. User reviews and incentives
+## 7. User reviews and incentives
 
 Users must not post fake reviews, misleading reviews, or undisclosed incentivised reviews.
 
@@ -58,11 +64,11 @@ If a user receives payment, free travel, a discount, gift, commission, employmen
 
 We may remove content that appears fake, misleading, manipulated, or insufficiently disclosed.
 
-## 7. No endorsement guarantee
+## 8. No endorsement guarantee
 
 A link to a third-party website does not mean that we guarantee, endorse, or accept responsibility for that provider, product, service, price, availability, safety, quality, suitability, or terms.
 
-## 8. Contact
+## 9. Contact
 
 For questions about affiliate links or commercial relationships, contact:
 

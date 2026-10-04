@@ -1,0 +1,46 @@
+{
+ "slug": "yemenia",
+ "sources": [
+  "tripadvisor"
+ ],
+ "stats": {
+  "source": "all",
+  "reviewCount": 1,
+  "avgRating10": 10.0,
+  "recommendPct": null,
+  "subratings": null,
+  "firstReviewDate": "2019-06-02",
+  "lastReviewDate": "2019-06-02"
+ },
+ "statsBySource": {
+  "tripadvisor": {
+   "source": "tripadvisor",
+   "reviewCount": 1,
+   "avgRating10": 10.0,
+   "recommendPct": null,
+   "subratings": null,
+   "firstReviewDate": "2019-06-02",
+   "lastReviewDate": "2019-06-02",
+   "sourceUrl": "https://www.tripadvisor.com/Airline_Review-d8729189-Reviews-Yemenia"
+  }
+ },
+ "reviews": [
+  {
+   "source": "tripadvisor",
+   "id": "ta-678434715",
+   "date": "2019-06-02",
+   "rating10": 10,
+   "title": "Mr",
+   "text": "The aircraft was very comfortable and the hostesses very friendly and helpful. The flight was punctual from Johannesburg and ex Jeddah. However there was a delay at Sanhaa airport.",
+   "author": "Goolam",
+   "authorCountry": null,
+   "authorLocation": null,
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Johannesburg - Jeddah",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  }
+ ]
+}

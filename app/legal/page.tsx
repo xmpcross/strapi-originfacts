@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { LEGAL_DOCS } from '@/lib/legal';
+import { breadcrumbJsonLd } from '@/lib/jsonld';
+import { JsonLd } from '@/components/SeoBlocks';
 
 export const metadata: Metadata = {
   title: 'Legal — Originfacts',
@@ -9,8 +11,11 @@ export const metadata: Metadata = {
 };
 
 export default function LegalIndexPage() {
+  const breadcrumbs = breadcrumbJsonLd([{ name: 'Legal', url: '/legal' }]);
+
   return (
     <div className="mx-auto max-w-5xl px-6 py-16" data-testid="legal-index">
+      <JsonLd data={breadcrumbs} />
       <header className="max-w-3xl">
         <p className="chip">Legal</p>
         <h1 className="editorial-h mt-5 text-3xl font-bold text-forest-900 sm:text-4xl">

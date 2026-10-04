@@ -1,0 +1,19 @@
+{
+  "slug": "fixture-pass",
+  "official_website": "https://www.qantas.com",
+  "modules": [
+    {
+      "id": "contact",
+      "title": "Contact",
+      "required": ["phone_home_market"],
+      "fields": {
+        "phone_home_market": {
+          "value": "13 13 13",
+          "status": "official",
+          "source_url": "https://www.qantas.com/en-au/help/contact-us",
+          "verified_at": "2026-08-24"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "fixture-wrong-host",
+  "official_website": "https://www.qantas.com",
+  "modules": [
+    {
+      "id": "contact",
+      "title": "Contact",
+      "required": ["phone_home_market"],
+      "fields": {
+        "phone_home_market": {
+          "value": "13 13 13",
+          "status": "official",
+          "source_url": "https://en.wikipedia.org/wiki/Qantas",
+          "verified_at": "2026-08-24"
+        }
+      }
+    }
+  ]
+}

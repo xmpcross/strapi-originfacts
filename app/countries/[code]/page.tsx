@@ -10,9 +10,12 @@ import {
   mediaUrl,
   type StrapiAirport,
 } from '@/lib/strapi';
-import { SITE_URL, DEFAULT_OG_IMAGE, countryFaqs, countryJsonLd, faqJsonLd } from '@/lib/entity-seo';
+import { SITE_URL, DEFAULT_OG_IMAGE, countryFaqs, countryJsonLd, faqJsonLd, articleBlogPostingJsonLd } from '@/lib/entity-seo';
+import { airportPath } from '@/lib/airport-slugs';
 import { JsonLd, FaqSection } from '@/components/SeoBlocks';
-import { absoluteUrl } from '@/lib/jsonld';
+import OutboundCitations from '@/components/OutboundCitations';
+import TableOfContents from '@/components/TableOfContents';
+import { breadcrumbJsonLd, absoluteUrl } from '@/lib/jsonld';
 import { buildMetaDescription, programmaticTitle } from '@/lib/seo';
 import type { Metadata } from 'next';
 
@@ -112,10 +115,26 @@ export default async function CountryPage({ params }: Props) {
     { airports: airports.length, airlines: airlines.length },
   );
 
+  const articleSchema = articleBlogPostingJsonLd({
+    headline: `${country.name} Travel Directory & Aviation Profile`,
+    description: country.about || `Travel directory for ${country.name} (${country.code}): commercial airports, airlines based in the country, and the busiest inbound routes.`,
+    url,
+    authorNameOrSlug: 'marcus-vance',
+    categoryName: 'Countries',
+    type: 'BlogPosting',
+  });
+
   return (
     <article data-testid={`country-page-${country.code}`}>
+      <JsonLd data={articleSchema} />
       <JsonLd data={countryJsonLd({ code: country.code, name: country.name }, url)} />
       <JsonLd data={faqJsonLd(faqs)} />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: 'Countries', url: '/countries' },
+          { name: country.name, url: `/countries/${country.code.toLowerCase()}` },
+        ])}
+      />
       {/* Breadcrumb */}
       <div className="mx-auto max-w-6xl px-6 pt-10">
         <nav className="text-xs uppercase tracking-widest text-forest-900/60">
@@ -144,11 +163,11 @@ export default async function CountryPage({ params }: Props) {
             <h1 className="editorial-h mt-3 text-3xl font-bold leading-tight sm:text-4xl">
               {country.name}
             </h1>
-            {country.about && (
-              <p className="mt-3 max-w-2xl text-sm font-light leading-relaxed opacity-85">
-                {country.about}
-              </p>
-            )}
+            <p className="mt-3 max-w-3xl text-sm font-light leading-relaxed opacity-85">
+              {country.about && country.about.split(/\s+/).length >= 40
+                ? country.about
+                : `Traveling to ${country.name} requires evaluating regional gateway airports, understanding national entry policies, and selecting efficient domestic transport corridors between key commercial centers. Our country directory synthesizes operating carrier networks, active airport facilities, and top inbound routes, enabling travelers to structure seamless itineraries and secure competitive flight connections across ${country.name}.`}
+            </p>
           </div>
         </div>
         <div className="mt-8 grid gap-6 sm:grid-cols-3">
@@ -158,11 +177,23 @@ export default async function CountryPage({ params }: Props) {
         </div>
       </header>
 
+      {/* Table of Contents */}
+      <div className="mx-auto max-w-6xl px-6">
+        <TableOfContents
+          items={[
+            { id: 'airports', text: `Major Airports in ${country.name} (${airports.length})` },
+            { id: 'airlines', text: `Operating Airlines (${airlines.length})` },
+            { id: 'routes', text: `Popular Inbound Routes (${routes.length})` },
+            { id: 'faq', text: `Frequently Asked Questions` },
+          ]}
+        />
+      </div>
+
       {/* Airports */}
-      <section className="mx-auto mt-16 max-w-6xl px-6">
+      <section id="airports" className="mx-auto mt-16 max-w-6xl scroll-mt-28 px-6">
         <header className="flex items-end justify-between border-b border-forest-900/10 pb-3">
-          <h2 className="editorial-h text-2xl font-bold text-forest-900 lg:text-3xl">
-            Airports in {country.name}
+          <h2 id="airports-heading" className="editorial-h text-2xl font-bold text-forest-900 lg:text-3xl">
+            Which major airports are located in {country.name}?
           </h2>
           <span className="text-sm font-light text-forest-900/50">
             {airports.length} airport{airports.length === 1 ? '' : 's'}
@@ -183,10 +214,10 @@ export default async function CountryPage({ params }: Props) {
       </section>
 
       {/* Airlines */}
-      <section className="mx-auto mt-16 max-w-6xl px-6">
+      <section id="airlines" className="mx-auto mt-16 max-w-6xl scroll-mt-28 px-6">
         <header className="flex items-end justify-between border-b border-forest-900/10 pb-3">
-          <h2 className="editorial-h text-2xl font-bold text-forest-900 lg:text-3xl">
-            Airlines based in {country.name}
+          <h2 id="airlines-heading" className="editorial-h text-2xl font-bold text-forest-900 lg:text-3xl">
+            Which airlines operate out of {country.name}?
           </h2>
           <span className="text-sm font-light text-forest-900/50">
             {airlines.length} airline{airlines.length === 1 ? '' : 's'}
@@ -237,10 +268,10 @@ export default async function CountryPage({ params }: Props) {
       </section>
 
       {/* Top inbound routes */}
-      <section className="mx-auto mt-16 max-w-6xl px-6 pb-20">
+      <section id="routes" className="mx-auto mt-16 max-w-6xl scroll-mt-28 px-6 pb-20">
         <header className="flex items-end justify-between border-b border-forest-900/10 pb-3">
-          <h2 className="editorial-h text-2xl font-bold text-forest-900 lg:text-3xl">
-            Popular routes to {country.name}
+          <h2 id="routes-heading" className="editorial-h text-2xl font-bold text-forest-900 lg:text-3xl">
+            Which popular routes fly into {country.name}?
           </h2>
           <span className="text-sm font-light text-forest-900/50">
             {routes.length} route{routes.length === 1 ? '' : 's'}
@@ -284,6 +315,9 @@ export default async function CountryPage({ params }: Props) {
       </section>
 
       <FaqSection faqs={faqs} title={`${country.name} — frequently asked questions`} />
+      <div className="mx-auto max-w-7xl px-6">
+        <OutboundCitations category="destinations" title={`${country.name} — Official Regulatory & Data Sources`} />
+      </div>
     </article>
   );
 }
@@ -300,7 +334,7 @@ function Stat({ label, value }: { label: string; value: string }) {
 function AirportCard({ airport }: { airport: StrapiAirport }) {
   return (
     <Link
-      href={`/airports/${airport.iata.toLowerCase()}`}
+      href={airportPath(airport)}
       className="group flex items-center justify-between gap-3 rounded-[0.3rem] border border-forest-900/10 bg-paper px-4 py-3 transition hover:-translate-y-0.5 hover:border-forest-900/30"
     >
       <div className="min-w-0">

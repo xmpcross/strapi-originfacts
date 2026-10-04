@@ -15,14 +15,14 @@ export default function PopularDestinationsBlock() {
   return (
     <section className="mt-20" data-testid="popular-destinations">
       <h2 className="editorial-h text-[1.5rem] font-bold text-forest-900">
-        Popular destinations
+        Popular flight searches from your nearest airport
       </h2>
       <p className="mt-2 text-[1rem] text-ink/75">
-        These alluring destinations from{' '}
+        Start with routes travellers often compare from{' '}
         <span className="text-primary-emphasis">
           {origin.name} {origin.iata}
         </span>{' '}
-        are picked just for you.
+        and open a prefilled search with sample dates. Use the cards as a shortcut, then adjust the dates and passengers for your real trip.
       </p>
       <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5">
         {destinations.map((d) => (
@@ -93,13 +93,13 @@ export default function PopularDestinationsBlock() {
           </div>
           <div className="flex flex-1 flex-col justify-between p-5">
             <div>
-              <h3 className="text-base font-bold text-forest-900">Want to fly for even less?</h3>
+              <h3 className="text-base font-bold text-forest-900">Need a different route?</h3>
               <p className="mt-2 text-xs text-ink/75">
-                Search our best deals, price drops, and travel hacks.
+                Open the full flight search and compare airlines, agencies and date combinations.
               </p>
             </div>
             <span className="inline-flex items-center gap-1 text-xs font-semibold text-primary-emphasis">
-              Browse deals
+              Search all flights
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"

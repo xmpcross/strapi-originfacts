@@ -1,0 +1,101 @@
+rank,iata,name,city,country,icao,aboutWords,hasHero,sourceUrlCount,routes,destinations,countries,carriers,uniquenessScore,status,missing
+1,ATL,Hartsfield-Jackson Atlanta International Airport,Atlanta,United States,KATL,606,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+2,LAX,Los Angeles International Airport,Los Angeles,United States,KLAX,192,yes,3,13,13,7,30,91,ready_review,450+ words of unique about content
+3,ORD,O'Hare International Airport,Chicago,United States,KORD,189,yes,3,10,10,5,17,91,ready_review,450+ words of unique about content
+4,JFK,John F. Kennedy International Airport,New York,United States,KJFK,190,yes,3,8,8,7,18,91,ready_review,450+ words of unique about content
+5,EWR,Newark Liberty International Airport,New York,United States,KEWR,184,yes,3,1,1,1,6,82,ready_review,450+ words of unique about content; 3+ tracked routes
+6,DFW,Dallas/Fort Worth International Airport,Dallas,United States,KDFW,203,yes,3,2,2,1,9,82,ready_review,450+ words of unique about content; 3+ tracked routes
+7,MIA,Miami International Airport,Miami,United States,KMIA,187,yes,3,1,1,1,3,82,ready_review,450+ words of unique about content; 3+ tracked routes
+8,SFO,San Francisco International Airport,San Francisco,United States,KSFO,192,yes,3,6,6,3,18,91,ready_review,450+ words of unique about content
+9,IAD,Washington Dulles International Airport,Washington,United States,KIAD,183,yes,3,1,1,1,5,82,ready_review,450+ words of unique about content; 3+ tracked routes
+10,IAH,George Bush Intercontinental Airport,Houston,United States,KIAH,590,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+11,LAS,McCarran International Airport,Las Vegas,United States,KLAS,187,yes,3,2,2,1,11,82,ready_review,450+ words of unique about content; 3+ tracked routes
+12,BOS,Logan International Airport,Boston,United States,KBOS,184,yes,3,2,2,2,13,82,ready_review,450+ words of unique about content; 3+ tracked routes
+13,SEA,Seattle-Tacoma International Airport,Seattle,United States,KSEA,188,yes,3,3,3,1,11,91,ready_review,450+ words of unique about content
+14,YYZ,Pearson International Airport,Toronto,Canada,CYYZ,204,yes,3,4,4,3,10,91,ready_review,450+ words of unique about content
+15,YVR,Vancouver International Airport,Vancouver,Canada,CYVR,185,yes,3,2,2,2,9,82,ready_review,450+ words of unique about content; 3+ tracked routes
+16,YUL,Montreal-Pierre Elliott Trudeau International Airport,Montreal,Canada,CYUL,185,yes,3,3,3,3,9,91,ready_review,450+ words of unique about content
+17,MEX,Benito Juarez International Airport,Mexico City,Mexico,MMMX,185,yes,3,2,2,2,11,82,ready_review,450+ words of unique about content; 3+ tracked routes
+18,CUN,Cancun International Airport,Cancun,Mexico,MMUN,597,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+19,LHR,London Heathrow Airport,London,United Kingdom,EGLL,606,yes,3,13,13,5,17,100,ready_review,
+20,CDG,Charles de Gaulle Airport,Paris,France,LFPG,175,yes,3,3,3,2,10,91,ready_review,450+ words of unique about content
+21,AMS,Amsterdam Airport Schiphol,Amsterdam,Netherlands,EHAM,620,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+22,FRA,Frankfurt Airport,Frankfurt,Germany,EDDF,185,yes,3,2,2,2,9,82,ready_review,450+ words of unique about content; 3+ tracked routes
+23,IST,Istanbul New Airport,Istanbul,Turkey,LTFM,599,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+24,MAD,Adolfo Suarez Madrid-Barajas Airport,Madrid,Spain,LEMD,192,yes,3,2,2,2,7,82,ready_review,450+ words of unique about content; 3+ tracked routes
+25,MUC,Franz Josef Strauss Airport,Munich,Germany,EDDM,595,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+26,BCN,Barcelona-El Prat Airport,Barcelona,Spain,LEBL,548,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+27,LGW,London Gatwick Airport,London,United Kingdom,EGKK,592,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+28,FCO,Leonardo da Vinci-Fiumicino Airport,Rome,Italy,LIRF,173,yes,3,1,1,1,4,82,ready_review,450+ words of unique about content; 3+ tracked routes
+29,ORY,Paris Orly Airport,Paris,France,LFPO,597,yes,2,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+30,ZRH,Zurich Airport,Zurich,Switzerland,LSZH,616,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+31,VIE,Vienna International Airport,Vienna,Austria,LOWW,589,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+32,DUB,Dublin Airport,Dublin,Ireland,EIDW,597,yes,2,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+33,CPH,Copenhagen Airport,Copenhagen,Denmark,EKCH,588,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+34,ARN,Stockholm Arlanda Airport,Stockholm,Sweden,ESSA,621,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+35,OSL,Oslo Airport Gardermoen,Oslo,Norway,ENGM,574,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+36,HEL,Helsinki-Vantaa Airport,Helsinki,Finland,EFHK,600,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+37,BRU,Brussels Airport,Brussels,Belgium,EBBR,195,yes,3,1,1,1,6,82,ready_review,450+ words of unique about content; 3+ tracked routes
+38,LIS,Lisbon Portela Airport,Lisbon,Portugal,LPPT,181,yes,3,1,1,1,3,82,ready_review,450+ words of unique about content; 3+ tracked routes
+39,ATH,Eleftherios Venizelos International Airport,Athens,Greece,LGAV,575,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+40,WAW,Frederic Chopin Airport,Warsaw,Poland,EPWA,599,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+41,PRG,Vaclav Havel Airport Prague,Prague,Czech Republic,LKPR,620,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+42,MAN,Manchester Airport,Manchester,United Kingdom,EGCC,183,yes,3,1,1,1,3,82,ready_review,450+ words of unique about content; 3+ tracked routes
+43,DUS,Dusseldorf International Airport,Dusseldorf,Germany,EDDL,582,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+44,BER,Brandenburg,Berlin,Germany,EDDB,573,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+45,MXP,Milano Malpensa Airport,Milan,Italy,LIMC,189,yes,3,2,2,2,7,82,ready_review,450+ words of unique about content; 3+ tracked routes
+46,GVA,Geneve Airport,Geneva,Switzerland,LSGG,596,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+47,DXB,Dubai Airport,Dubai,United Arab Emirates,OMDB,186,yes,3,1,1,1,4,82,ready_review,450+ words of unique about content; 3+ tracked routes
+48,DOH,Hamad International Airport,Doha,Qatar,OTHH,180,yes,3,1,1,1,8,82,ready_review,450+ words of unique about content; 3+ tracked routes
+49,AUH,Abu Dhabi International Airport,Abu Dhabi,United Arab Emirates,OMAA,194,yes,3,1,1,1,6,82,ready_review,450+ words of unique about content; 3+ tracked routes
+50,JED,King Abdulaziz International Airport,Jeddah,Saudi Arabia,OEJN,591,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+51,RUH,King Khaled International Airport,Riyadh,Saudi Arabia,OERK,595,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+52,KWI,Kuwait International Airport,Kuwait,Kuwait,OKBK,614,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+53,TLV,Ben Gurion International Airport,Tel Aviv-Yafo,Israel,LLBG,573,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+54,BAH,Bahrain International Airport,Bahrain,Bahrain,OBBI,190,yes,3,2,2,2,14,82,ready_review,450+ words of unique about content; 3+ tracked routes
+55,HKG,Hong Kong International Airport,Hong Kong,Hong Kong,VHHH,192,yes,3,12,12,6,25,91,ready_review,450+ words of unique about content
+56,SIN,Changi International Airport,Singapore,Singapore,WSSS,186,yes,3,18,18,13,36,91,ready_review,450+ words of unique about content
+57,ICN,Incheon International Airport,Seoul,South Korea,RKSI,183,yes,3,12,12,7,22,91,ready_review,450+ words of unique about content
+58,NRT,Narita International Airport,Tokyo,Japan,RJAA,180,yes,3,11,11,7,17,91,ready_review,450+ words of unique about content
+59,HND,Haneda Airport,Tokyo,Japan,RJTT,191,yes,3,3,3,3,7,91,ready_review,450+ words of unique about content
+60,BKK,Suvarnabhumi Airport,Bangkok,Thailand,VTBS,592,yes,3,4,4,4,23,100,ready_review,
+61,KUL,Kuala Lumpur International Airport,Kuala Lumpur,Malaysia,WMKK,180,yes,3,3,3,3,18,91,ready_review,450+ words of unique about content
+62,TPE,Taiwan Taoyuan International Airport,Taipei,Taiwan,RCTP,192,yes,3,12,12,5,19,91,ready_review,450+ words of unique about content
+63,PEK,Beijing Capital International Airport,Beijing,China,ZBAA,179,yes,3,19,19,4,18,91,ready_review,450+ words of unique about content
+64,PVG,Shanghai Pudong International Airport,Shanghai,China,ZSPD,174,yes,3,13,13,5,19,91,ready_review,450+ words of unique about content
+65,CAN,Guangzhou Baiyun International Airport,Guangzhou,China,ZGGG,174,yes,3,13,13,3,14,91,ready_review,450+ words of unique about content
+66,CTU,Chengdu Shuangliu International Airport,Chengdu,China,ZUUU,196,yes,3,12,12,2,13,91,ready_review,450+ words of unique about content
+67,KIX,Kansai International Airport,Osaka,Japan,RJBB,172,yes,3,5,5,3,12,91,ready_review,450+ words of unique about content
+68,DEL,Indira Gandhi International Airport,Delhi,India,VIDP,182,yes,3,7,7,1,5,91,ready_review,450+ words of unique about content
+69,BOM,Chhatrapati Shivaji International Airport,Mumbai,India,VABB,180,yes,3,6,6,1,6,91,ready_review,450+ words of unique about content
+70,BLR,Kempegowda International Airport,Bengaluru,India,VOBL,171,yes,3,4,4,1,6,91,ready_review,450+ words of unique about content
+71,HYD,Rajiv Gandhi International Airport,Hyderabad,India,VOHS,611,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+72,MAA,Chennai Airport,Chennai,India,VOMM,168,yes,3,3,3,2,8,91,ready_review,450+ words of unique about content
+73,SZX,Shenzhen Bao'an International Airport,Shenzhen,China,ZGSZ,178,yes,3,12,12,2,14,91,ready_review,450+ words of unique about content
+74,HAN,Noi Bai International Airport,Hanoi,Vietnam,VVNB,174,yes,3,1,1,1,4,82,ready_review,450+ words of unique about content; 3+ tracked routes
+75,SGN,Tan Son Nhat International Airport,Ho Chi Minh City,Vietnam,VVTS,612,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+76,CGK,Soekarno-Hatta International Airport,Jakarta,Indonesia,WIII,160,yes,3,2,2,2,14,82,ready_review,450+ words of unique about content; 3+ tracked routes
+77,DPS,Ngurah Rai International Airport,Denpasar (Bali),Indonesia,WADD,176,yes,3,1,1,1,7,82,ready_review,450+ words of unique about content; 3+ tracked routes
+78,MNL,Ninoy Aquino International Airport,Manila,Philippines,RPLL,173,yes,3,1,1,1,5,82,ready_review,450+ words of unique about content; 3+ tracked routes
+79,KTM,Tribhuvan International Airport,Kathmandu,Nepal,VNKT,596,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+80,CMB,Bandaranaike International Airport,Colombo,Sri Lanka,VCBI,591,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+81,SYD,Sydney (Kingsford Smith) Airport,Sydney,Australia,YSSY,183,yes,3,6,6,4,18,91,ready_review,450+ words of unique about content
+82,MEL,Tullamarine Airport,Melbourne,Australia,YMML,183,yes,3,3,3,3,13,91,ready_review,450+ words of unique about content
+83,BNE,Brisbane Airport,Brisbane,Australia,YBBN,166,yes,3,2,2,2,11,82,ready_review,450+ words of unique about content; 3+ tracked routes
+84,PER,Perth Airport,Perth,Australia,YPPH,169,yes,3,1,1,1,4,82,ready_review,450+ words of unique about content; 3+ tracked routes
+85,AKL,Auckland Airport,Auckland,New Zealand,NZAA,181,yes,3,3,3,1,10,91,ready_review,450+ words of unique about content
+86,JNB,O.R. Tambo International Airport,Johannesburg,South Africa,FAOR,169,yes,3,1,1,1,6,82,ready_review,450+ words of unique about content; 3+ tracked routes
+87,CPT,Cape Town International Airport,Cape Town,South Africa,FACT,186,yes,3,1,1,1,6,82,ready_review,450+ words of unique about content; 3+ tracked routes
+88,CAI,Cairo International Airport,Cairo,Egypt,HECA,586,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+89,ADD,Addis Ababa Bole International Airport,Addis Ababa,Ethiopia,HAAB,173,yes,3,1,1,1,9,82,ready_review,450+ words of unique about content; 3+ tracked routes
+90,LOS,Murtala Muhammed International Airport,Lagos,Nigeria,DNMM,551,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+91,NBO,Jomo Kenyatta International Airport,Nairobi,Kenya,HKJK,176,yes,3,1,1,1,4,82,ready_review,450+ words of unique about content; 3+ tracked routes
+92,CMN,Mohamed V International Airport,Casablanca,Morocco,GMMN,563,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+93,ALG,Houari Boumediene Airport,Algiers,Algeria,DAAG,608,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+94,GRU,Sao Paulo-Guarulhos International Airport,Sao Paulo,Brazil,SBGR,170,yes,3,3,3,2,13,91,ready_review,450+ words of unique about content
+95,EZE,Ministro Pistarini Airport,Buenos Aires,Argentina,SAEZ,172,yes,3,1,1,1,6,82,ready_review,450+ words of unique about content; 3+ tracked routes
+96,BOG,El Dorado International Airport,Bogota,Colombia,SKBO,587,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers
+97,SCL,Arturo Merino Benitez Airport,Santiago,Chile,SCEL,185,yes,3,1,1,1,5,82,ready_review,450+ words of unique about content; 3+ tracked routes
+98,LIM,Jorge Chavez International Airport,Lima,Peru,SPIM,176,yes,3,2,2,2,7,82,ready_review,450+ words of unique about content; 3+ tracked routes
+99,GIG,Galeao Antonio Carlos Jobim International Airport,Rio De Janeiro,Brazil,SBGL,174,yes,3,1,1,1,6,82,ready_review,450+ words of unique about content; 3+ tracked routes
+100,PTY,Tocumen International Airport,Panama City,Panama,MPTO,600,yes,3,0,0,0,0,82,ready_review,3+ tracked routes; 2+ tracked carriers

@@ -1,0 +1,18 @@
+{
+  "slug": "fixture-edu-pdf",
+  "official_website": "https://www.qantas.com",
+  "modules": [
+    {
+      "id": "contact",
+      "title": "Contact",
+      "fields": {
+        "correspondence_address": {
+          "value": "Qantas Airways Limited, 10 Bourke Road, Mascot NSW 2020, Australia",
+          "status": "official",
+          "source_url": "https://www.example-university.edu/files/travel-numbers.pdf",
+          "verified_at": "2026-08-24"
+        }
+      }
+    }
+  ]
+}

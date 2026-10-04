@@ -1,0 +1,2499 @@
+{
+  "imported_at": "2026-09-03T23:12:50.616Z",
+  "input": "data/missing-airlines-fetch-info-priority-filled.csv",
+  "added_count": 223,
+  "skipped_count": 232,
+  "added": [
+    {
+      "carrier_key": "aegean-airlines",
+      "name": "Aegean Airlines",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "aero-tropics-air-services",
+      "name": "Aero-Tropics Air Services",
+      "pageCount": 1,
+      "locale": "en-au",
+      "region": "Australia/Pacific"
+    },
+    {
+      "carrier_key": "aeroflot",
+      "name": "Aeroflot",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "aeromexico",
+      "name": "Aeroméxico",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "air-albania",
+      "name": "Air Albania",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "air-arabia",
+      "name": "Air Arabia",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "air-arabia-egypt",
+      "name": "Air Arabia Egypt",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Africa"
+    },
+    {
+      "carrier_key": "air-astana",
+      "name": "Air Astana",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "air-austral",
+      "name": "Air Austral",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "air-botswana",
+      "name": "Air Botswana",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Africa"
+    },
+    {
+      "carrier_key": "air-burkina",
+      "name": "Air Burkina",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Africa"
+    },
+    {
+      "carrier_key": "air-cambodia",
+      "name": "Air Cambodia",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "air-changan",
+      "name": "Air Changan",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "air-corsica",
+      "name": "Air Corsica",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "air-cote-divoire",
+      "name": "Air Cote D'Ivoire",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "air-dilijans",
+      "name": "Air Dilijans",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "air-europa",
+      "name": "Air Europa",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "air-greenland",
+      "name": "Air Greenland",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "air-japan",
+      "name": "Air Japan",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "air-macau",
+      "name": "Air Macau",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "air-madagascar",
+      "name": "Air Madagascar",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Africa"
+    },
+    {
+      "carrier_key": "air-mauritius",
+      "name": "Air Mauritius",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Africa"
+    },
+    {
+      "carrier_key": "air-moldova",
+      "name": "Air Moldova",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "air-niugini",
+      "name": "Air Niugini",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Australia/Pacific"
+    },
+    {
+      "carrier_key": "air-north",
+      "name": "Air North",
+      "pageCount": 4,
+      "locale": "en-ca",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "air-rarotonga",
+      "name": "Air Rarotonga",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Australia/Pacific"
+    },
+    {
+      "carrier_key": "air-saint-pierre",
+      "name": "Air Saint Pierre",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "air-serbia",
+      "name": "Air Serbia",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "air-seychelles",
+      "name": "Air Seychelles",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "air-tahiti",
+      "name": "Air Tahiti",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Australia/Pacific"
+    },
+    {
+      "carrier_key": "air-tahiti-nui",
+      "name": "Air Tahiti Nui",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "air-tanzania",
+      "name": "Air Tanzania",
+      "pageCount": 4,
+      "locale": "en-tz",
+      "region": "Africa"
+    },
+    {
+      "carrier_key": "air-tindi",
+      "name": "Air Tindi",
+      "pageCount": 3,
+      "locale": "en-ca",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "air-transat",
+      "name": "Air Transat",
+      "pageCount": 4,
+      "locale": "en-ca",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "air-vanuatu",
+      "name": "Air Vanuatu",
+      "pageCount": 5,
+      "locale": "en",
+      "region": "Australia/Pacific"
+    },
+    {
+      "carrier_key": "air-zimbabwe",
+      "name": "Air Zimbabwe",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Africa"
+    },
+    {
+      "carrier_key": "airbaltic",
+      "name": "airBaltic",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "airblue",
+      "name": "airblue",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "airbridgecargo",
+      "name": "AirBridgeCargo",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "aircalin",
+      "name": "Aircalin",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Australia/Pacific"
+    },
+    {
+      "carrier_key": "airkenya",
+      "name": "AirKenya",
+      "pageCount": 3,
+      "locale": "en-ke",
+      "region": "Africa"
+    },
+    {
+      "carrier_key": "airlink",
+      "name": "Airlink",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "airnorth",
+      "name": "Airnorth",
+      "pageCount": 4,
+      "locale": "en-au",
+      "region": "Australia/Pacific"
+    },
+    {
+      "carrier_key": "ajet",
+      "name": "Ajet",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "aklak-air",
+      "name": "Aklak Air",
+      "pageCount": 3,
+      "locale": "en-ca",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "all-nippon-airways",
+      "name": "All Nippon Airways",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "allegiant-air",
+      "name": "Allegiant Air",
+      "pageCount": 1,
+      "locale": "en-us",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "ana-wings",
+      "name": "ANA Wings",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "ariana-afghan-airlines",
+      "name": "Ariana Afghan Airlines",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "arkia",
+      "name": "Arkia",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "asiana-airlines",
+      "name": "Asiana Airlines",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "asl-airlines-france",
+      "name": "ASL Airlines France",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "atlantic-airways",
+      "name": "Atlantic Airways",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "atlas-air",
+      "name": "Atlas Air",
+      "pageCount": 4,
+      "locale": "en-us",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "austrian-airlines",
+      "name": "Austrian Airlines",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "avianca",
+      "name": "Avianca",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "South America"
+    },
+    {
+      "carrier_key": "avianca-costa-rica",
+      "name": "Avianca Costa Rica",
+      "pageCount": 5,
+      "locale": "en",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "avianca-ecuador",
+      "name": "Avianca Ecuador",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "South America"
+    },
+    {
+      "carrier_key": "aviastar-tu",
+      "name": "Aviastar-TU",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "azerbaijan-airlines",
+      "name": "Azerbaijan Airlines",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "beijing-capital-airlines",
+      "name": "Beijing Capital Airlines",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "bering-air",
+      "name": "Bering Air",
+      "pageCount": 3,
+      "locale": "en-us",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "bhutan-airlines",
+      "name": "Bhutan Airlines",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "binter-canarias",
+      "name": "Binter Canarias",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "blue1",
+      "name": "Blue1",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "boliviana-de-aviacion",
+      "name": "Boliviana de Aviación",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "South America"
+    },
+    {
+      "carrier_key": "brussels-airlines",
+      "name": "Brussels Airlines",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "buddha-air",
+      "name": "Buddha Air",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "bulgaria-air",
+      "name": "Bulgaria Air",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "cabo-verde-airlines",
+      "name": "Cabo Verde Airlines",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "calm-air",
+      "name": "Calm Air",
+      "pageCount": 4,
+      "locale": "en-ca",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "canadian-north",
+      "name": "Canadian North",
+      "pageCount": 3,
+      "locale": "en-ca",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "carpatair",
+      "name": "Carpatair",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "cayman-airways",
+      "name": "Cayman Airways",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "cemair",
+      "name": "CemAir",
+      "pageCount": 1,
+      "locale": "en-za",
+      "region": "Africa"
+    },
+    {
+      "carrier_key": "china-express-airlines",
+      "name": "China Express Airlines",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "china-southern-airlines",
+      "name": "China Southern Airlines",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "cm-airlines",
+      "name": "CM Airlines",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "conviasa",
+      "name": "Conviasa",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "South America"
+    },
+    {
+      "carrier_key": "copa-airlines",
+      "name": "Copa Airlines",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "corendon-airlines-europe",
+      "name": "Corendon Airlines Europe",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "corsair-international",
+      "name": "Corsair International",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "croatia-airlines",
+      "name": "Croatia Airlines",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "csa-czech-airlines",
+      "name": "CSA Czech Airlines",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "cyprus-airways",
+      "name": "Cyprus Airways",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "delta-air-lines",
+      "name": "Delta Air Lines",
+      "pageCount": 4,
+      "locale": "en-us",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "dhl-air-limited",
+      "name": "DHL Air Limited",
+      "pageCount": 3,
+      "locale": "en-gb",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "eastar-jet",
+      "name": "Eastar Jet",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "edelweiss-air",
+      "name": "Edelweiss Air",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "egyptair",
+      "name": "Egyptair",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Africa"
+    },
+    {
+      "carrier_key": "ethiopian-airlines",
+      "name": "Ethiopian Airlines",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Africa"
+    },
+    {
+      "carrier_key": "etihad-airways",
+      "name": "Etihad Airways",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "firefly",
+      "name": "Firefly",
+      "pageCount": 5,
+      "locale": "en-my",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "fly-one",
+      "name": "Fly One",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "frontier-airlines",
+      "name": "Frontier Airlines",
+      "pageCount": 4,
+      "locale": "en-us",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "fuzhou-airlines",
+      "name": "Fuzhou Airlines",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "georgian-airways",
+      "name": "Georgian Airways",
+      "pageCount": 5,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "gol-transportes-aereos",
+      "name": "Gol Transportes Aéreos",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "South America"
+    },
+    {
+      "carrier_key": "grand-canyon-scenic-airlines",
+      "name": "Grand Canyon Scenic Airlines",
+      "pageCount": 1,
+      "locale": "en-us",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "gulf-air",
+      "name": "Gulf Air",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "gx-airlines",
+      "name": "GX Airlines",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "hainan-airlines",
+      "name": "Hainan Airlines",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "hawaiian-airlines",
+      "name": "Hawaiian Airlines",
+      "pageCount": 3,
+      "locale": "en-us",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "helvetic-airways",
+      "name": "Helvetic Airways",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "himalaya-airlines",
+      "name": "Himalaya Airlines",
+      "pageCount": 5,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "hong-kong-airlines",
+      "name": "Hong Kong Airlines",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "hunnu-air",
+      "name": "Hunnu Air",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "iberia-express",
+      "name": "Iberia Express",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "icelandair",
+      "name": "Icelandair",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "israir-airlines",
+      "name": "Israir Airlines",
+      "pageCount": 5,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "jazeera-airways",
+      "name": "Jazeera Airways",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "jeju-air",
+      "name": "Jeju Air",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "jet2com",
+      "name": "Jet2.com",
+      "pageCount": 3,
+      "locale": "en-gb",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "jetstar-asia",
+      "name": "Jetstar Asia",
+      "pageCount": 4,
+      "locale": "en-sg",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "jetstar-japan",
+      "name": "Jetstar Japan",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "juneyao-airlines",
+      "name": "Juneyao Airlines",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "kam-air",
+      "name": "Kam Air",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "kenn-borek-air",
+      "name": "Kenn Borek Air",
+      "pageCount": 1,
+      "locale": "en-ca",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "kenya-airways",
+      "name": "Kenya Airways",
+      "pageCount": 4,
+      "locale": "en-ke",
+      "region": "Africa"
+    },
+    {
+      "carrier_key": "klm-royal-dutch-airlines",
+      "name": "KLM Royal Dutch Airlines",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "kuwait-airways",
+      "name": "Kuwait Airways",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "lam-mozambique-airlines",
+      "name": "LAM Mozambique Airlines",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Africa"
+    },
+    {
+      "carrier_key": "lanmei-airlines",
+      "name": "Lanmei Airlines",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "lao-airlines",
+      "name": "Lao Airlines",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "latam-airlines",
+      "name": "LATAM Airlines",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "South America"
+    },
+    {
+      "carrier_key": "latam-airlines-ecuador",
+      "name": "LATAM Airlines Ecuador",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "South America"
+    },
+    {
+      "carrier_key": "link-airways",
+      "name": "Link Airways",
+      "pageCount": 4,
+      "locale": "en-au",
+      "region": "Australia/Pacific"
+    },
+    {
+      "carrier_key": "loganair",
+      "name": "Loganair",
+      "pageCount": 4,
+      "locale": "en-gb",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "lot-polish",
+      "name": "LOT Polish",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "lucky-air",
+      "name": "Lucky Air",
+      "pageCount": 2,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "luxair",
+      "name": "Luxair",
+      "pageCount": 5,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "maldivian",
+      "name": "Maldivian",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "mandarin-airlines",
+      "name": "Mandarin Airlines",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "maya-island-air",
+      "name": "Maya Island Air",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "miat-mongolian-airlines",
+      "name": "MIAT Mongolian Airlines",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "middle-east-airlines",
+      "name": "Middle East Airlines",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "motor-sich-airlines",
+      "name": "Motor Sich Airlines",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "myanmar-airways-international",
+      "name": "Myanmar Airways International",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "myway-airlines",
+      "name": "Myway Airlines",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "national-airlines",
+      "name": "National Airlines",
+      "pageCount": 3,
+      "locale": "en-us",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "nauru-airlines",
+      "name": "Nauru Airlines",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Australia/Pacific"
+    },
+    {
+      "carrier_key": "neos",
+      "name": "Neos",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "nepal-airlines",
+      "name": "Nepal Airlines",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "nile-air",
+      "name": "Nile Air",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Africa"
+    },
+    {
+      "carrier_key": "nok-air",
+      "name": "Nok Air",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "nordwind-airlines",
+      "name": "Nordwind Airlines",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "norwegian-air-sweden",
+      "name": "Norwegian Air Sweden",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "nouvelair",
+      "name": "Nouvelair",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Africa"
+    },
+    {
+      "carrier_key": "novoair",
+      "name": "Novoair",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "olympic-air",
+      "name": "Olympic Air",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "oman-air",
+      "name": "Oman Air",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "onur-air",
+      "name": "Onur Air",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "pacific-coastal-airlines",
+      "name": "Pacific Coastal Airlines",
+      "pageCount": 4,
+      "locale": "en-ca",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "pegasus-airlines",
+      "name": "Pegasus Airlines",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "png-air",
+      "name": "PNG Air",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Australia/Pacific"
+    },
+    {
+      "carrier_key": "porter-airlines",
+      "name": "Porter Airlines",
+      "pageCount": 1,
+      "locale": "en-ca",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "precision-air",
+      "name": "Precision Air",
+      "pageCount": 4,
+      "locale": "en-tz",
+      "region": "Africa"
+    },
+    {
+      "carrier_key": "proflight-zambia",
+      "name": "Proflight Zambia",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Africa"
+    },
+    {
+      "carrier_key": "regional-air",
+      "name": "Regional Air",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "rex-regional-express",
+      "name": "Rex - Regional Express",
+      "pageCount": 4,
+      "locale": "en-au",
+      "region": "Australia/Pacific"
+    },
+    {
+      "carrier_key": "rossiya-airlines",
+      "name": "Rossiya Airlines",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "royal-air-maroc",
+      "name": "Royal Air Maroc",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Africa"
+    },
+    {
+      "carrier_key": "royal-brunei-airlines",
+      "name": "Royal Brunei Airlines",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "royal-jordanian",
+      "name": "Royal Jordanian",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "rusline",
+      "name": "RusLine",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "rwandair",
+      "name": "RwandAir",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Africa"
+    },
+    {
+      "carrier_key": "samoa-airways",
+      "name": "Samoa Airways",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Australia/Pacific"
+    },
+    {
+      "carrier_key": "sansa",
+      "name": "SANSA",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "sas-scandinavian",
+      "name": "SAS Scandinavian",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "scat",
+      "name": "SCAT",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "shandong-airlines",
+      "name": "Shandong Airlines",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "shanghai-airlines",
+      "name": "Shanghai Airlines",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "shenzhen-airlines",
+      "name": "Shenzhen Airlines",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "sichuan-airlines",
+      "name": "Sichuan Airlines",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "silver-airways",
+      "name": "Silver Airways",
+      "pageCount": 1,
+      "locale": "en-us",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "sky-airline",
+      "name": "Sky Airline",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "South America"
+    },
+    {
+      "carrier_key": "sky-airlines",
+      "name": "Sky Airlines",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "skyward-airlines",
+      "name": "Skyward Airlines",
+      "pageCount": 3,
+      "locale": "en-ca",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "skywest-airlines",
+      "name": "SkyWest Airlines",
+      "pageCount": 1,
+      "locale": "en-au",
+      "region": "Australia/Pacific"
+    },
+    {
+      "carrier_key": "solomon-airlines",
+      "name": "Solomon Airlines",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Australia/Pacific"
+    },
+    {
+      "carrier_key": "somon-air",
+      "name": "Somon Air",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "south-african-airways",
+      "name": "South African Airways",
+      "pageCount": 4,
+      "locale": "en-za",
+      "region": "Africa"
+    },
+    {
+      "carrier_key": "southern-airways-express",
+      "name": "Southern Airways Express",
+      "pageCount": 1,
+      "locale": "en-us",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "southwest-airlines",
+      "name": "Southwest Airlines",
+      "pageCount": 4,
+      "locale": "en-us",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "spicejet",
+      "name": "SpiceJet",
+      "pageCount": 3,
+      "locale": "en-in",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "spirit-airlines",
+      "name": "Spirit Airlines",
+      "pageCount": 1,
+      "locale": "en-us",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "srilankan-airlines",
+      "name": "SriLankan Airlines",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "starlux-airlines",
+      "name": "STARLUX Airlines",
+      "pageCount": 4,
+      "locale": "en-sg",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "sun-country-airlines",
+      "name": "Sun Country Airlines",
+      "pageCount": 1,
+      "locale": "en-us",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "sundair",
+      "name": "SundAir",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "sunexpress",
+      "name": "SunExpress",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "sunrise-airways",
+      "name": "Sunrise Airways",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "sunwing-airlines",
+      "name": "Sunwing Airlines",
+      "pageCount": 1,
+      "locale": "en-ca",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "taag-angola",
+      "name": "TAAG Angola",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Africa"
+    },
+    {
+      "carrier_key": "tajik-air",
+      "name": "Tajik Air",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "tap-air-portugal",
+      "name": "TAP Air Portugal",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "tarom",
+      "name": "Tarom",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "thai-lion-air",
+      "name": "Thai Lion Air",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "thai-smile",
+      "name": "THAI Smile",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "thai-vietjet-air",
+      "name": "Thai Vietjet Air",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "thomas-cook-airlines",
+      "name": "Thomas Cook Airlines",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "titan-airways-limited",
+      "name": "Titan Airways Limited",
+      "pageCount": 4,
+      "locale": "en-gb",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "trade-air",
+      "name": "Trade Air",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "tradewind-aviation",
+      "name": "Tradewind Aviation",
+      "pageCount": 4,
+      "locale": "en-us",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "transavia-france",
+      "name": "Transavia France",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "tunisair",
+      "name": "Tunisair",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Africa"
+    },
+    {
+      "carrier_key": "tunisair-express",
+      "name": "Tunisair Express",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Africa"
+    },
+    {
+      "carrier_key": "uni-air",
+      "name": "Uni Air",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "united-airlines",
+      "name": "United Airlines",
+      "pageCount": 4,
+      "locale": "en-us",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "ural-airlines",
+      "name": "Ural Airlines",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "urumqi-air",
+      "name": "Urumqi Air",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "us-bangla-airlines",
+      "name": "US-Bangla Airlines",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "uzbekistan-airways",
+      "name": "Uzbekistan Airways",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "vieques-air-link",
+      "name": "Vieques Air Link",
+      "pageCount": 3,
+      "locale": "en-us",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "vistara",
+      "name": "Vistara",
+      "pageCount": 1,
+      "locale": "en-in",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "viva-aerobus",
+      "name": "Viva Aerobus",
+      "pageCount": 3,
+      "locale": "en",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "viva-air-colombia",
+      "name": "Viva Air Colombia",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "South America"
+    },
+    {
+      "carrier_key": "volaris",
+      "name": "Volaris",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "North America"
+    },
+    {
+      "carrier_key": "volotea",
+      "name": "Volotea",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "windrose-airlines",
+      "name": "Windrose Airlines",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "xiamen-airlines",
+      "name": "Xiamen Airlines",
+      "pageCount": 4,
+      "locale": "en",
+      "region": "Asia"
+    },
+    {
+      "carrier_key": "yamal-airlines",
+      "name": "Yamal Airlines",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Europe"
+    },
+    {
+      "carrier_key": "yeti-airlines",
+      "name": "Yeti Airlines",
+      "pageCount": 1,
+      "locale": "en",
+      "region": "Asia"
+    }
+  ],
+  "skipped": [
+    {
+      "carrier_key": "abx-air-inc",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "adria-airways",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "aero-charter-ukraine",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "aero-mongolia",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "aeromar",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "african-express-airways",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "ahk-air-hong-kong-limited",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "aigle-azur",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "air-alsie",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "air-arabia-maroc",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "air-busan",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "air-cargo-carriers-llc",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "air-djibouti",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "air-iceland-connect",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "air-india-express",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "air-kiribati",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "air-koryo",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "air-libya",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "air-mekong",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "air-moana",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "air-namibia",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "air-niamey",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "air-nostrum",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "air-thanlwin",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "air-transport-international-llc",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "airline-urga",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "almasria-universal-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "amakusa-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "amerijet-international-inc",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "arik-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "aserca-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "atran",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "avion-express-lithuania",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "avion-express-malta",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "batik-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "bearskin-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "bemidji-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "berjaya-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "blue-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "blue-islands",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "breeze-airways",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "brit-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "buta-airways",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "bvi-airways",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "ceiba-intercontinental",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "central-mountain-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "chair-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "chautauqua-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "chengdu-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "china-cargo-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "china-united-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "chongqing-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "cimber",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "citilink",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "corendon-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "cronos-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "daallo-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "dana-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "danish-air-transport",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "dniproavia",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "donavia",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "donghai-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "dot-lt",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "eastern-airways",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "ellinair",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "enter-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "envoy-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "eritrean-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "ernest-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "euroatlantic-airways",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "european-air-charter",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "everts-air-cargo",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "expressjet",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "fat-far-eastern-air-transport",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "fedex",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "first-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "flair-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "fly-all-ways",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "fly-baghdad",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "flyarystan",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "flybe",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "flybosnia",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "flyegypt",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "fuji-dream-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "globus-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "gojet-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "grand-china-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "great-lakes-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "halcyonair",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "hawkair",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "hebei-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "heli-air-monaco",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "helijet",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "hop",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "horizon-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "ibex-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "intercaribbean-airways",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "iraero",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "iraqi-airways",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "island-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "izhavia",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "jambojet",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "japan-air-commuter",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "japan-transocean-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "jet-airways",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "jet-asia-airways",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "jet-aviation-business",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "jetsmart",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "jiangxi-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "jin-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "jordan-aviation",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "kalitta-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "kalstar-aviation",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "kan-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "kartika-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "kenmore-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "klm-cityhopper",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "kulula",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "kunming-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "la-compagnie",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "la-costena",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "lan-chile-cargo",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "lao-skyway",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "laser-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "latam-airlines-colombia",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "latam-airlines-paraguay",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "latam-airlines-peru",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "libyan-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "loong-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "lufthansa-cityline",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "lynden-air-cargo-llc",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "magnicharters",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "mahan-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "mango",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "martinair",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "mayair",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "mng-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "monacair",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "montenegro-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "myanmar-national-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "nam-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "niki",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "nippon-cargo-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "nokscoot",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "nordstar",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "norse-atlantic-uk",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "northern-air-cargo",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "northwest-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "northwestern-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "nova-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "okay-airways",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "orient-thai-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "pacific-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "pal-express",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "pascan-aviation",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "pawa-dominicana",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "polar-air-cargo-worldwide-inc",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "primera-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "qingdao-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "red-wings",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "royal-air-philippines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "ruili-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "s7-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "safarilink-aviation",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "safi-airways",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "sata-air-acores",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "sepehran-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "serene-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "severstal-air-company",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "shaheen-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "silkair",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "sky-angkor-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "skybahamas",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "skyjet-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "skymark-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "skyup-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "skywork-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "smartavia",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "solaseed-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "sounds-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "southern-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "spring-japan",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "sriwijaya-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "st-barth-commuter",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "starbow",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "sudan-airways",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "sun-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "sunclass-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "sunexpress-deutschland",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "suparna-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "surinam-airways",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "swoop",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "sylt-air-gmbh",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "syrianair",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "tag-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "tailwind-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "tame",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "tandem-aero",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "taquan-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "tar-aerolineas",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "tarco-aviation",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "tatarstan-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "thai-airasia-x",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "thomas-cook-airlines-belgium",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "tianjin-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "tigerair-mandala",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "transnusa",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "trigana-air-service",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "trip-linhas-aereas",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "tui-fly-deutschland",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "turkmenistan-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "tway-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "uls-airlines-cargo",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "uni-top-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "valuejet",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "vim-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "virgin-america",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "vladivostok-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "vlm-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "voepass-linhas-aereas",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "volga-dnepr-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "wamos-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "warbelows-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "west-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "westjet-encore",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "white-airways",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "wideroe",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "winair",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "wow-air",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "yakutia-airlines",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "yemenia",
+      "reason": "no valid page URLs in CSV"
+    },
+    {
+      "carrier_key": "zimex-aviation",
+      "reason": "no valid page URLs in CSV"
+    }
+  ]
+}

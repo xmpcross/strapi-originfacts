@@ -1,0 +1,46 @@
+{
+ "slug": "monacair",
+ "sources": [
+  "tripadvisor"
+ ],
+ "stats": {
+  "source": "all",
+  "reviewCount": 1,
+  "avgRating10": 8.0,
+  "recommendPct": null,
+  "subratings": null,
+  "firstReviewDate": "2019-12-28",
+  "lastReviewDate": "2019-12-28"
+ },
+ "statsBySource": {
+  "tripadvisor": {
+   "source": "tripadvisor",
+   "reviewCount": 1,
+   "avgRating10": 8.0,
+   "recommendPct": null,
+   "subratings": null,
+   "firstReviewDate": "2019-12-28",
+   "lastReviewDate": "2019-12-28",
+   "sourceUrl": "https://www.tripadvisor.com/Airline_Review-d19698656-Reviews-Monacair"
+  }
+ },
+ "reviews": [
+  {
+   "source": "tripadvisor",
+   "id": "ta-735150153",
+   "date": "2019-12-28",
+   "rating10": 8,
+   "title": "Slick operation",
+   "text": "Lovely start to our trip very slick operation! Smooth transition from arrival to boarding the helicopter......I was “SO EXCITED” to be flying back via helicopter for my 50th Birthday but unfortunately our British Airways flight was cancelled unknowingly to us that we could sadly not catch the Monacair flight and lost not only the experience but the €280 :-( such a shame as we Absolutely loved the arrival and MONTE CARLO! We shall return.",
+   "author": "lisa r",
+   "authorCountry": null,
+   "authorLocation": "Winchester",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Nice - Munich",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  }
+ ]
+}

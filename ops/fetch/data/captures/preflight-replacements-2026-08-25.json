@@ -1,0 +1,2563 @@
+{
+  "checked_at": "2026-08-25T12:11:51Z",
+  "rows": [
+    {
+      "carrier_key": "asiana",
+      "band": "1b",
+      "page_key": "baggage_carryon",
+      "url": "https://m.flyasiana.com/C/US/EN/contents/carry-on-baggage",
+      "http": {
+        "status": 403,
+        "final": "https://m.flyasiana.com/C/US/EN/contents/carry-on-baggage"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://m.flyasiana.com/C/US/EN/contents/carry-on-baggage"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://m.flyasiana.com/C/US/EN/contents/carry-on-baggage",
+      "note": "Replacement candidate for https://flyasiana.com/C/US/EN/contents/carry-on-baggage — Official Asiana mobile page for carry-on baggage.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "austrian",
+      "band": "1b",
+      "page_key": "baggage_checked",
+      "url": "https://www.austrian.com/au/en/checked-baggage",
+      "http": {
+        "status": 403,
+        "final": "https://www.austrian.com/au/en/checked-baggage"
+      },
+      "browser": {
+        "status": 404,
+        "final": "https://www.austrian.com/au/en/checked-baggage"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.austrian.com/au/en/checked-baggage",
+      "note": "Replacement candidate for https://www.austrian.com/at/en/checked-baggage — Official Austrian checked baggage page on accessible AU locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "bangkok-airways",
+      "band": "1b",
+      "page_key": "baggage_carryon",
+      "url": "https://www.bangkokair.com/eng/baggage-allowance",
+      "http": {
+        "status": 403,
+        "final": "https://www.bangkokair.com/eng/baggage-allowance"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.bangkokair.com/eng/baggage-allowance"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.bangkokair.com/eng/baggage-allowance",
+      "note": "Replacement candidate for https://www.bangkokair.com/carry-on-baggage — Official Bangkok Airways baggage allowance page includes unchecked/carry-on baggage.",
+      "findings": [
+        "non_200",
+        "collapsed_target"
+      ]
+    },
+    {
+      "carrier_key": "china-airlines",
+      "band": "1b",
+      "page_key": "baggage_carryon",
+      "url": "https://www.china-airlines.com/us/en/prepare-for-the-fly/information/baggage/carry-on-baggage",
+      "http": {
+        "status": 200,
+        "final": "https://www.china-airlines.com/us/en/prepare-for-the-fly/information/baggage/carry-on-baggage"
+      },
+      "resolved_by": "http",
+      "status": 200,
+      "final_url": "https://www.china-airlines.com/us/en/prepare-for-the-fly/information/baggage/carry-on-baggage",
+      "note": "Replacement candidate for https://www.china-airlines.com/au/en/fly/prepare-for-the-fly/baggage/carry-on-baggage — Official China Airlines carry-on baggage page on accessible US locale.",
+      "findings": []
+    },
+    {
+      "carrier_key": "easyjet",
+      "band": "1a",
+      "page_key": "baggage_carryon",
+      "url": "https://www.easyjet.com/en/help-centre/baggage/cabin-bags-and-hold-luggage",
+      "http": {
+        "status": 403,
+        "final": "https://www.easyjet.com/en/help-centre/baggage/cabin-bags-and-hold-luggage"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.easyjet.com/en/help-centre/baggage/cabin-bags-and-hold-luggage"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.easyjet.com/en/help-centre/baggage/cabin-bags-and-hold-luggage",
+      "note": "Replacement candidate for https://www.easyjet.com/en/help/baggage/cabin-bag-and-hold-luggage — Official easyJet Help Centre baggage page.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "eurowings",
+      "band": "1b",
+      "page_key": "baggage_carryon",
+      "url": "https://www.eurowings.com/en/information/baggage.html",
+      "http": {
+        "status": 200,
+        "final": "https://www.eurowings.com/en/information/baggage.html"
+      },
+      "resolved_by": "http",
+      "status": 200,
+      "final_url": "https://www.eurowings.com/en/information/baggage.html",
+      "note": "Replacement candidate for https://www.eurowings.com/en/information/luggage/hand-luggage.html — Official Eurowings baggage page includes hand baggage.",
+      "findings": []
+    },
+    {
+      "carrier_key": "eva-air",
+      "band": "1b",
+      "page_key": "baggage_carryon",
+      "url": "https://www.evaair.com/en-us/fly-prepare/baggage/free-baggage/carry-on-baggage/",
+      "http": {
+        "status": 403,
+        "final": "https://www.evaair.com/en-us/fly-prepare/baggage/free-baggage/carry-on-baggage/"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.evaair.com/en-us/fly-prepare/baggage/free-baggage/carry-on-baggage/"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.evaair.com/en-us/fly-prepare/baggage/free-baggage/carry-on-baggage/",
+      "note": "Replacement candidate for https://www.evaair.com/en-global/fly-prepare/baggage/free-baggage/carry-on-baggage/ — Official EVA Air carry-on baggage page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "fiji-airways",
+      "band": "1b",
+      "page_key": "baggage_carryon",
+      "url": "https://www.fijiairways.com/en-us/manage/baggage/carry-on-baggage",
+      "http": {
+        "status": 403,
+        "final": "https://www.fijiairways.com/en-us/manage/baggage/carry-on-baggage"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.fijiairways.com/en-us/manage/baggage/carry-on-baggage"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.fijiairways.com/en-us/manage/baggage/carry-on-baggage",
+      "note": "Replacement candidate for https://www.fijiairways.com/en-fj/manage/baggage/carry-on-baggage — Official Fiji Airways carry-on baggage page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "garuda-indonesia",
+      "band": "1b",
+      "page_key": "baggage_checked",
+      "url": "https://www.garuda-indonesia.com/static/en/garuda-indonesia-experience/baggage-info.html?lang=en&loc=id",
+      "http": {
+        "status": 403,
+        "final": "https://www.garuda-indonesia.com/static/en/garuda-indonesia-experience/baggage-info.html?lang=en&loc=id"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.garuda-indonesia.com/static/en/garuda-indonesia-experience/baggage-info.html?lang=en&loc=id"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.garuda-indonesia.com/static/en/garuda-indonesia-experience/baggage-info.html?lang=en&loc=id",
+      "note": "Replacement candidate for https://www.garuda-indonesia.com/id/en/garuda-indonesia-experience/on-ground/baggage/index — Official Garuda Indonesia static baggage information page.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "iberia",
+      "band": "1b",
+      "page_key": "baggage_carryon",
+      "url": "https://www.iberia.com/us/luggage/hand-luggage/",
+      "http": {
+        "status": 403,
+        "final": "https://www.iberia.com/us/luggage/hand-luggage/"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.iberia.com/us/luggage/hand-luggage/"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.iberia.com/us/luggage/hand-luggage/",
+      "note": "Replacement candidate for https://www.iberia.com/es/baggage/hand-luggage/ — Official Iberia hand luggage page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "indigo",
+      "band": "1b",
+      "page_key": "baggage_carryon",
+      "url": "https://www.goindigo.in/information/baggage-policy.html",
+      "http": {
+        "status": 403,
+        "final": "https://www.goindigo.in/information/baggage-policy.html"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.goindigo.in/information/baggage-policy.html"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.goindigo.in/information/baggage-policy.html",
+      "note": "Replacement candidate for https://www.goindigo.in/baggage/hand-baggage.html — Official IndiGo baggage policy page includes hand baggage.",
+      "findings": [
+        "non_200",
+        "collapsed_target"
+      ]
+    },
+    {
+      "carrier_key": "ita-airways",
+      "band": "1b",
+      "page_key": "baggage_carryon",
+      "url": "https://www.ita-airways.com/us/en/fly-ita/baggage/hand-baggage.html",
+      "http": {
+        "status": 403,
+        "final": "https://www.ita-airways.com/us/en/fly-ita/baggage/hand-baggage.html"
+      },
+      "browser": {
+        "status": 404,
+        "final": "https://www.ita-airways.com/us/en/fly-ita/baggage/hand-baggage.html"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.ita-airways.com/us/en/fly-ita/baggage/hand-baggage.html",
+      "note": "Replacement candidate for https://www.ita-airways.com/en_en/fly-ita/baggage/hand-baggage.html — Official ITA Airways hand baggage page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "japan-airlines",
+      "band": "1a",
+      "page_key": "baggage_carryon",
+      "url": "https://www.jal.co.jp/jp/en/inter/baggage/inflight/?from=breadcrumb",
+      "http": {
+        "status": 403,
+        "final": "https://www.jal.co.jp/jp/en/inter/baggage/inflight/?from=breadcrumb"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.jal.co.jp/jp/en/inter/baggage/inflight/?from=breadcrumb"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.jal.co.jp/jp/en/inter/baggage/inflight/?from=breadcrumb",
+      "note": "Replacement candidate for https://www.jal.co.jp/jp/en/inter/baggage/inflight/ — Official JAL carry-on baggage page with alternate query URL.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "jetstar",
+      "band": "1a",
+      "page_key": "baggage_carryon",
+      "url": "https://www.jetstar.com/us/en/help/articles/carry-on-baggage",
+      "http": {
+        "status": 403,
+        "final": "https://www.jetstar.com/us/en/help/articles/carry-on-baggage"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.jetstar.com/us/en/help/articles/carry-on-baggage"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.jetstar.com/us/en/help/articles/carry-on-baggage",
+      "note": "Replacement candidate for https://www.jetstar.com/au/en/help/articles/carry-on-baggage — Official Jetstar carry-on baggage page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "lufthansa",
+      "band": "1a",
+      "page_key": "baggage_carryon",
+      "url": "https://www.lufthansa.com/us/en/carry-on-baggage",
+      "http": {
+        "status": 403,
+        "final": "https://www.lufthansa.com/us/en/carry-on-baggage"
+      },
+      "browser": {
+        "status": 200,
+        "final": "https://www.lufthansa.com/us/en/carry-on-baggage"
+      },
+      "resolved_by": "browser",
+      "status": 200,
+      "final_url": "https://www.lufthansa.com/us/en/carry-on-baggage",
+      "note": "Replacement candidate for https://www.lufthansa.com/de/en/carry-on-baggage — Official Lufthansa carry-on baggage page on accessible US locale.",
+      "findings": [
+        "blocked_to_http"
+      ]
+    },
+    {
+      "carrier_key": "norse-atlantic",
+      "band": "1b",
+      "page_key": "baggage_carryon",
+      "url": "https://help.flynorse.com/categories/before-your-trip/62581dc5b77d7d27150dfe8f",
+      "http": {
+        "status": 200,
+        "final": "https://help.flynorse.com/categories/before-your-trip/62581dc5b77d7d27150dfe8f"
+      },
+      "resolved_by": "http",
+      "status": 200,
+      "final_url": "https://help.flynorse.com/categories/before-your-trip/62581dc5b77d7d27150dfe8f",
+      "note": "Replacement candidate for https://flynorse.com/en-US/support/baggage — Official Norse Atlantic help center category includes hand baggage article.",
+      "findings": [
+        "collapsed_target"
+      ]
+    },
+    {
+      "carrier_key": "norwegian",
+      "band": "1b",
+      "page_key": "baggage_carryon",
+      "url": "https://www.norwegian.com/us/legacy/customer-service/booking/baggage-charges/",
+      "http": {
+        "status": 403,
+        "final": "https://www.norwegian.com/us/legacy/customer-service/booking/baggage-charges/"
+      },
+      "browser": {
+        "status": 200,
+        "final": "https://www.norwegian.com/us/legacy/customer-service/booking/baggage-charges/"
+      },
+      "resolved_by": "browser",
+      "status": 200,
+      "final_url": "https://www.norwegian.com/us/legacy/customer-service/booking/baggage-charges/",
+      "note": "Replacement candidate for https://www.norwegian.com/en/travel-info/baggage/hand-baggage/ — Official Norwegian baggage charges page includes hand baggage.",
+      "findings": [
+        "blocked_to_http",
+        "collapsed_target"
+      ]
+    },
+    {
+      "carrier_key": "qatar-airways",
+      "band": "1a",
+      "page_key": "baggage_carryon",
+      "url": "https://www.qatarairways.com/en-us/baggage/allowance.html",
+      "http": {
+        "status": 403,
+        "final": "https://www.qatarairways.com/en-us/baggage/allowance.html"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.qatarairways.com/en-us/baggage/allowance.html"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.qatarairways.com/en-us/baggage/allowance.html",
+      "note": "Replacement candidate for https://www.qatarairways.com/en/baggage/allowance.html — Official Qatar Airways baggage allowance page on accessible US locale.",
+      "findings": [
+        "non_200",
+        "collapsed_target"
+      ]
+    },
+    {
+      "carrier_key": "sas",
+      "band": "1b",
+      "page_key": "baggage_carryon",
+      "url": "https://www.flysas.com/us-en/travel-info/baggage/carry-on/",
+      "http": {
+        "status": 403,
+        "final": "https://www.flysas.com/us-en/travel-info/baggage/carry-on/"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.flysas.com/us-en/travel-info/baggage/carry-on/?__cf_chl_rt_tk=ieLrKnw2aMgnA8iMTCdynwSTiXAL6XMKv0vL3i5U_3E-1787659797-1.0.1.1-vNgUlAl7lNGLi.K9CZsjXekHfJZGtf4A6pKl3yqdbR8"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.flysas.com/us-en/travel-info/baggage/carry-on/",
+      "note": "Replacement candidate for https://www.flysas.com/en/travel-info/baggage/carry-on/ — Official SAS carry-on baggage page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "scoot",
+      "band": "1a",
+      "page_key": "baggage_carryon",
+      "url": "https://www.flyscoot.com/en/plan/booking-your-flight/fares-fees",
+      "http": {
+        "status": 403,
+        "final": "https://www.flyscoot.com/en/plan/booking-your-flight/fares-fees"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.flyscoot.com/en/plan/booking-your-flight/fares-fees"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.flyscoot.com/en/plan/booking-your-flight/fares-fees",
+      "note": "Replacement candidate for https://www.flyscoot.com/en/plan/booking-your-flight/baggage — Official Scoot fares and fees page includes cabin baggage allowance.",
+      "findings": [
+        "non_200",
+        "collapsed_target"
+      ]
+    },
+    {
+      "carrier_key": "swiss",
+      "band": "1b",
+      "page_key": "baggage_carryon",
+      "url": "https://www.swiss.com/us/en/prepare/baggage/hand-baggage",
+      "http": {
+        "status": 403,
+        "final": "https://www.swiss.com/us/en/prepare/baggage/hand-baggage"
+      },
+      "browser": {
+        "status": 200,
+        "final": "https://www.swiss.com/us/en/prepare/baggage/hand-baggage"
+      },
+      "resolved_by": "browser",
+      "status": 200,
+      "final_url": "https://www.swiss.com/us/en/prepare/baggage/hand-baggage",
+      "note": "Replacement candidate for https://www.swiss.com/ch/en/prepare/baggage/hand-baggage — Official SWISS hand baggage page on accessible US locale.",
+      "findings": [
+        "blocked_to_http"
+      ]
+    },
+    {
+      "carrier_key": "transavia",
+      "band": "1b",
+      "page_key": "baggage_carryon",
+      "url": "https://www.transavia.com/help/en-eu/baggage/cabin-baggage/hand-luggage",
+      "http": {
+        "status": 403,
+        "final": "https://www.transavia.com/help/en-eu/baggage/cabin-baggage/hand-luggage"
+      },
+      "browser": {
+        "status": 200,
+        "final": "https://www.transavia.com/help/en-eu/baggage/cabin-baggage/hand-luggage"
+      },
+      "resolved_by": "browser",
+      "status": 200,
+      "final_url": "https://www.transavia.com/help/en-eu/baggage/cabin-baggage/hand-luggage",
+      "note": "Replacement candidate for https://www.transavia.com/help/en-eu/luggage/hand-luggage — Official Transavia hand luggage page on current help path.",
+      "findings": [
+        "blocked_to_http"
+      ]
+    },
+    {
+      "carrier_key": "tui-airways",
+      "band": "1b",
+      "page_key": "baggage_carryon",
+      "url": "https://www.tui.co.uk/flight/information/baggage-allowance?contentid=flight_information_baggage",
+      "http": {
+        "status": 403,
+        "final": "https://www.tui.co.uk/flight/information/baggage-allowance?contentid=flight_information_baggage"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.tui.co.uk/flight/information/baggage-allowance?contentid=flight_information_baggage"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.tui.co.uk/flight/information/baggage-allowance?contentid=flight_information_baggage",
+      "note": "Replacement candidate for https://www.tui.co.uk/flight/information/baggage-allowance — Official TUI Airways baggage allowance page with alternate query URL.",
+      "findings": [
+        "non_200",
+        "collapsed_target"
+      ]
+    },
+    {
+      "carrier_key": "asiana",
+      "band": "1b",
+      "page_key": "baggage_checked",
+      "url": "https://m.flyasiana.com/C/US/EN/contents/free-baggage",
+      "http": {
+        "status": 403,
+        "final": "https://m.flyasiana.com/C/US/EN/contents/free-baggage"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://m.flyasiana.com/C/US/EN/contents/free-baggage"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://m.flyasiana.com/C/US/EN/contents/free-baggage",
+      "note": "Replacement candidate for https://flyasiana.com/C/US/EN/contents/free-baggage — Official Asiana mobile page for checked/free baggage.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "austrian",
+      "band": "1b",
+      "page_key": "baggage_fees",
+      "url": "https://www.austrian.com/au/en/excess-baggage",
+      "http": {
+        "status": 403,
+        "final": "https://www.austrian.com/au/en/excess-baggage"
+      },
+      "browser": {
+        "status": 200,
+        "final": "https://www.austrian.com/au/en/excess-baggage"
+      },
+      "resolved_by": "browser",
+      "status": 200,
+      "final_url": "https://www.austrian.com/au/en/excess-baggage",
+      "note": "Replacement candidate for https://www.austrian.com/at/en/excess-baggage — Official Austrian excess baggage page on accessible AU locale.",
+      "findings": [
+        "blocked_to_http"
+      ]
+    },
+    {
+      "carrier_key": "bangkok-airways",
+      "band": "1b",
+      "page_key": "baggage_checked",
+      "url": "https://www.bangkokair.com/eng/baggage-allowance",
+      "http": {
+        "status": 403,
+        "final": "https://www.bangkokair.com/eng/baggage-allowance"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.bangkokair.com/eng/baggage-allowance"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.bangkokair.com/eng/baggage-allowance",
+      "note": "Replacement candidate for https://www.bangkokair.com/baggage-allowance — Official Bangkok Airways English baggage allowance page.",
+      "findings": [
+        "non_200",
+        "collapsed_target"
+      ]
+    },
+    {
+      "carrier_key": "china-airlines",
+      "band": "1b",
+      "page_key": "baggage_checked",
+      "url": "https://www.china-airlines.com/us/en/prepare-for-the-fly/information/baggage/checked-baggage",
+      "http": {
+        "status": 200,
+        "final": "https://www.china-airlines.com/us/en/prepare-for-the-fly/information/baggage/checked-baggage"
+      },
+      "resolved_by": "http",
+      "status": 200,
+      "final_url": "https://www.china-airlines.com/us/en/prepare-for-the-fly/information/baggage/checked-baggage",
+      "note": "Replacement candidate for https://www.china-airlines.com/au/en/fly/prepare-for-the-fly/baggage/checked-baggage — Official China Airlines checked baggage page on accessible US locale.",
+      "findings": []
+    },
+    {
+      "carrier_key": "easyjet",
+      "band": "1a",
+      "page_key": "baggage_checked",
+      "url": "https://www.easyjet.com/en/help-centre/baggage/hold-luggage",
+      "http": {
+        "status": 403,
+        "final": "https://www.easyjet.com/en/help-centre/baggage/hold-luggage"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.easyjet.com/en/help-centre/baggage/hold-luggage"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.easyjet.com/en/help-centre/baggage/hold-luggage",
+      "note": "Replacement candidate for https://www.easyjet.com/en/help/baggage/hold-luggage — Official easyJet Help Centre hold luggage page.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "eurowings",
+      "band": "1b",
+      "page_key": "baggage_fees",
+      "url": "https://www.eurowings.com/en/information/baggage/special-bulky-excess-baggage.html",
+      "http": {
+        "status": 200,
+        "final": "https://www.eurowings.com/en/information/baggage/special-bulky-excess-baggage.html"
+      },
+      "resolved_by": "http",
+      "status": 200,
+      "final_url": "https://www.eurowings.com/en/information/baggage/special-bulky-excess-baggage.html",
+      "note": "Replacement candidate for https://www.eurowings.com/en/information/luggage/excess-luggage.html — Official Eurowings excess, bulky and special baggage page.",
+      "findings": []
+    },
+    {
+      "carrier_key": "eva-air",
+      "band": "1b",
+      "page_key": "baggage_checked",
+      "url": "https://www.evaair.com/en-us/fly-prepare/baggage/free-baggage/checked-baggage/",
+      "http": {
+        "status": 403,
+        "final": "https://www.evaair.com/en-us/fly-prepare/baggage/free-baggage/checked-baggage/"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.evaair.com/en-us/fly-prepare/baggage/free-baggage/checked-baggage/"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.evaair.com/en-us/fly-prepare/baggage/free-baggage/checked-baggage/",
+      "note": "Replacement candidate for https://www.evaair.com/en-global/fly-prepare/baggage/free-baggage/checked-baggage/ — Official EVA Air checked baggage page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "fiji-airways",
+      "band": "1b",
+      "page_key": "baggage_checked",
+      "url": "https://www.fijiairways.com/en-us/manage/baggage/checked-baggage",
+      "http": {
+        "status": 403,
+        "final": "https://www.fijiairways.com/en-us/manage/baggage/checked-baggage"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.fijiairways.com/en-us/manage/baggage/checked-baggage"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.fijiairways.com/en-us/manage/baggage/checked-baggage",
+      "note": "Replacement candidate for https://www.fijiairways.com/en-fj/manage/baggage/checked-baggage — Official Fiji Airways checked baggage page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "iberia",
+      "band": "1b",
+      "page_key": "baggage_checked",
+      "url": "https://www.iberia.com/us/luggage/allowance-in-hold/",
+      "http": {
+        "status": 403,
+        "final": "https://www.iberia.com/us/luggage/allowance-in-hold/"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.iberia.com/us/luggage/allowance-in-hold/"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.iberia.com/us/luggage/allowance-in-hold/",
+      "note": "Replacement candidate for https://www.iberia.com/es/baggage/allowance-in-hold/ — Official Iberia checked baggage page on accessible US locale.",
+      "findings": [
+        "non_200",
+        "collapsed_target"
+      ]
+    },
+    {
+      "carrier_key": "indigo",
+      "band": "1b",
+      "page_key": "baggage_checked",
+      "url": "https://www.goindigo.in/information/baggage-policy.html",
+      "http": {
+        "status": 403,
+        "final": "https://www.goindigo.in/information/baggage-policy.html"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.goindigo.in/information/baggage-policy.html"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.goindigo.in/information/baggage-policy.html",
+      "note": "Replacement candidate for https://www.goindigo.in/baggage/checked-baggage.html — Official IndiGo baggage policy page includes checked baggage.",
+      "findings": [
+        "non_200",
+        "collapsed_target"
+      ]
+    },
+    {
+      "carrier_key": "ita-airways",
+      "band": "1b",
+      "page_key": "baggage_fees",
+      "url": "https://www.ita-airways.com/us/en/fly-ita/baggage/excess-baggage.html",
+      "http": {
+        "status": 403,
+        "final": "https://www.ita-airways.com/us/en/fly-ita/baggage/excess-baggage.html"
+      },
+      "browser": {
+        "status": 404,
+        "final": "https://www.ita-airways.com/us/en/fly-ita/baggage/excess-baggage.html"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.ita-airways.com/us/en/fly-ita/baggage/excess-baggage.html",
+      "note": "Replacement candidate for https://www.ita-airways.com/en_en/fly-ita/baggage/excess-baggage.html — Official ITA Airways excess baggage page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "japan-airlines",
+      "band": "1a",
+      "page_key": "baggage_checked",
+      "url": "https://www.jal.co.jp/jp/en/inter/baggage/checked/?from=breadcrumb",
+      "http": {
+        "status": 403,
+        "final": "https://www.jal.co.jp/jp/en/inter/baggage/checked/?from=breadcrumb"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.jal.co.jp/jp/en/inter/baggage/checked/?from=breadcrumb"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.jal.co.jp/jp/en/inter/baggage/checked/?from=breadcrumb",
+      "note": "Replacement candidate for https://www.jal.co.jp/jp/en/inter/baggage/checked/ — Official JAL checked baggage page with alternate query URL.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "jetstar",
+      "band": "1a",
+      "page_key": "baggage_checked",
+      "url": "https://www.jetstar.com/us/en/help/articles/checked-baggage",
+      "http": {
+        "status": 403,
+        "final": "https://www.jetstar.com/us/en/help/articles/checked-baggage"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.jetstar.com/us/en/help/articles/checked-baggage"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.jetstar.com/us/en/help/articles/checked-baggage",
+      "note": "Replacement candidate for https://www.jetstar.com/au/en/help/articles/checked-baggage — Official Jetstar checked baggage page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "lufthansa",
+      "band": "1a",
+      "page_key": "baggage_fees",
+      "url": "https://www.lufthansa.com/us/en/baggage-and-other-fees",
+      "http": {
+        "status": 403,
+        "final": "https://www.lufthansa.com/us/en/baggage-and-other-fees"
+      },
+      "browser": {
+        "status": 200,
+        "final": "https://www.lufthansa.com/us/en/baggage-and-other-fees"
+      },
+      "resolved_by": "browser",
+      "status": 200,
+      "final_url": "https://www.lufthansa.com/us/en/baggage-and-other-fees",
+      "note": "Replacement candidate for https://www.lufthansa.com/de/en/excess-baggage — Official Lufthansa baggage and other fees page.",
+      "findings": [
+        "blocked_to_http"
+      ]
+    },
+    {
+      "carrier_key": "norse-atlantic",
+      "band": "1b",
+      "page_key": "baggage_fees",
+      "url": "https://help.flynorse.com/categories/before-you-fly/62581dc5b77d7d27150dfe8f?page=3",
+      "http": {
+        "status": 200,
+        "final": "https://help.flynorse.com/categories/before-you-fly/62581dc5b77d7d27150dfe8f?page=3"
+      },
+      "resolved_by": "http",
+      "status": 200,
+      "final_url": "https://help.flynorse.com/categories/before-you-fly/62581dc5b77d7d27150dfe8f?page=3",
+      "note": "Replacement candidate for https://flynorse.com/en-US/support/optional-services-and-fees — Official Norse Atlantic help center page includes checked/excess baggage and service-fee references.",
+      "findings": []
+    },
+    {
+      "carrier_key": "norwegian",
+      "band": "1b",
+      "page_key": "baggage_fees",
+      "url": "https://www.norwegian.com/us/legacy/customer-service/booking/baggage-charges/",
+      "http": {
+        "status": 403,
+        "final": "https://www.norwegian.com/us/legacy/customer-service/booking/baggage-charges/"
+      },
+      "browser": {
+        "status": 200,
+        "final": "https://www.norwegian.com/us/legacy/customer-service/booking/baggage-charges/"
+      },
+      "resolved_by": "browser",
+      "status": 200,
+      "final_url": "https://www.norwegian.com/us/legacy/customer-service/booking/baggage-charges/",
+      "note": "Replacement candidate for https://www.norwegian.com/en/travel-info/baggage/excess-baggage/ — Official Norwegian baggage charges page includes excess baggage.",
+      "findings": [
+        "blocked_to_http",
+        "collapsed_target"
+      ]
+    },
+    {
+      "carrier_key": "qatar-airways",
+      "band": "1a",
+      "page_key": "baggage_checked",
+      "url": "https://www.qatarairways.com/en-us/baggage/allowance.html",
+      "http": {
+        "status": 403,
+        "final": "https://www.qatarairways.com/en-us/baggage/allowance.html"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.qatarairways.com/en-us/baggage/allowance.html"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.qatarairways.com/en-us/baggage/allowance.html",
+      "note": "Replacement candidate for https://www.qatarairways.com/en/baggage/allowance.html — Official Qatar Airways baggage allowance page on accessible US locale.",
+      "findings": [
+        "non_200",
+        "collapsed_target"
+      ]
+    },
+    {
+      "carrier_key": "sas",
+      "band": "1b",
+      "page_key": "baggage_checked",
+      "url": "https://www.flysas.com/us-en/travel-info/baggage/checked",
+      "http": {
+        "status": 403,
+        "final": "https://www.flysas.com/us-en/travel-info/baggage/checked"
+      },
+      "browser": {
+        "status": 200,
+        "final": "https://www.flysas.com/us-en/travel-info/baggage/checked"
+      },
+      "resolved_by": "browser",
+      "status": 200,
+      "final_url": "https://www.flysas.com/us-en/travel-info/baggage/checked",
+      "note": "Replacement candidate for https://www.flysas.com/en/travel-info/baggage/checked-baggage/ — Official SAS checked baggage page on accessible US locale.",
+      "findings": [
+        "blocked_to_http"
+      ]
+    },
+    {
+      "carrier_key": "scoot",
+      "band": "1a",
+      "page_key": "baggage_checked",
+      "url": "https://www.flyscoot.com/en/plan/booking-your-flight/fares-fees",
+      "http": {
+        "status": 403,
+        "final": "https://www.flyscoot.com/en/plan/booking-your-flight/fares-fees"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.flyscoot.com/en/plan/booking-your-flight/fares-fees"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.flyscoot.com/en/plan/booking-your-flight/fares-fees",
+      "note": "Replacement candidate for https://www.flyscoot.com/en/plan/booking-your-flight/baggage — Official Scoot fares and fees page includes checked baggage allowance.",
+      "findings": [
+        "non_200",
+        "collapsed_target"
+      ]
+    },
+    {
+      "carrier_key": "swiss",
+      "band": "1b",
+      "page_key": "baggage_fees",
+      "url": "https://www.swiss.com/us/en/prepare/baggage/excess-baggage",
+      "http": {
+        "status": 403,
+        "final": "https://www.swiss.com/us/en/prepare/baggage/excess-baggage"
+      },
+      "browser": {
+        "status": 200,
+        "final": "https://www.swiss.com/us/en/prepare/baggage/excess-baggage"
+      },
+      "resolved_by": "browser",
+      "status": 200,
+      "final_url": "https://www.swiss.com/us/en/prepare/baggage/excess-baggage",
+      "note": "Replacement candidate for https://www.swiss.com/ch/en/prepare/baggage/excess-baggage — Official SWISS excess baggage page on accessible US locale.",
+      "findings": [
+        "blocked_to_http"
+      ]
+    },
+    {
+      "carrier_key": "transavia",
+      "band": "1b",
+      "page_key": "baggage_fees",
+      "url": "https://www.transavia.com/help/en-eu/baggage/hold-luggage/hold-luggage",
+      "http": {
+        "status": 403,
+        "final": "https://www.transavia.com/help/en-eu/baggage/hold-luggage/hold-luggage"
+      },
+      "browser": {
+        "status": 404,
+        "final": "https://www.transavia.com/help/en-eu/baggage/hold-luggage/hold-luggage"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.transavia.com/help/en-eu/baggage/hold-luggage/hold-luggage",
+      "note": "Replacement candidate for https://www.transavia.com/help/en-eu/luggage/hold-luggage — Official Transavia hold luggage page on current help path.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "tui-airways",
+      "band": "1b",
+      "page_key": "baggage_checked",
+      "url": "https://www.tui.co.uk/flight/information/baggage-allowance?contentid=flight_information_baggage",
+      "http": {
+        "status": 403,
+        "final": "https://www.tui.co.uk/flight/information/baggage-allowance?contentid=flight_information_baggage"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.tui.co.uk/flight/information/baggage-allowance?contentid=flight_information_baggage"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.tui.co.uk/flight/information/baggage-allowance?contentid=flight_information_baggage",
+      "note": "Replacement candidate for https://www.tui.co.uk/flight/information/baggage-allowance — Official TUI Airways baggage allowance page with alternate query URL.",
+      "findings": [
+        "non_200",
+        "collapsed_target"
+      ]
+    },
+    {
+      "carrier_key": "asiana",
+      "band": "1b",
+      "page_key": "baggage_fees",
+      "url": "https://m.flyasiana.com/C/US/EN/contents/excess-baggage",
+      "http": {
+        "status": 403,
+        "final": "https://m.flyasiana.com/C/US/EN/contents/excess-baggage"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://m.flyasiana.com/C/US/EN/contents/excess-baggage"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://m.flyasiana.com/C/US/EN/contents/excess-baggage",
+      "note": "Replacement candidate for https://flyasiana.com/C/US/EN/contents/excess-baggage — Official Asiana mobile page for excess baggage fees.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "austrian",
+      "band": "1b",
+      "page_key": "checkin",
+      "url": "https://www.austrian.com/au/en/online-check-in",
+      "http": {
+        "status": 403,
+        "final": "https://www.austrian.com/au/en/online-check-in"
+      },
+      "browser": {
+        "status": 200,
+        "final": "https://www.austrian.com/au/en/online-check-in"
+      },
+      "resolved_by": "browser",
+      "status": 200,
+      "final_url": "https://www.austrian.com/au/en/online-check-in",
+      "note": "Replacement candidate for https://www.austrian.com/at/en/online-check-in — Official Austrian online check-in page on accessible AU locale.",
+      "findings": [
+        "blocked_to_http"
+      ]
+    },
+    {
+      "carrier_key": "bangkok-airways",
+      "band": "1b",
+      "page_key": "baggage_fees",
+      "url": "https://www.bangkokair.com/eng/baggage-allowance",
+      "http": {
+        "status": 403,
+        "final": "https://www.bangkokair.com/eng/baggage-allowance"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.bangkokair.com/eng/baggage-allowance"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.bangkokair.com/eng/baggage-allowance",
+      "note": "Replacement candidate for https://www.bangkokair.com/excess-baggage — Official Bangkok Airways page includes excess baggage table.",
+      "findings": [
+        "non_200",
+        "collapsed_target"
+      ]
+    },
+    {
+      "carrier_key": "china-airlines",
+      "band": "1b",
+      "page_key": "baggage_fees",
+      "url": "https://www.china-airlines.com/us/en/itinerary-booking/add-ons/purchase-excess-baggage",
+      "http": {
+        "status": 200,
+        "final": "https://www.china-airlines.com/us/en/itinerary-booking/add-ons/purchase-excess-baggage"
+      },
+      "resolved_by": "http",
+      "status": 200,
+      "final_url": "https://www.china-airlines.com/us/en/itinerary-booking/add-ons/purchase-excess-baggage",
+      "note": "Replacement candidate for https://www.china-airlines.com/au/en/fly/prepare-for-the-fly/baggage/excess-baggage — Official China Airlines prepaid/excess baggage page.",
+      "findings": []
+    },
+    {
+      "carrier_key": "easyjet",
+      "band": "1a",
+      "page_key": "baggage_fees",
+      "url": "https://www.easyjet.com/en/terms-and-conditions/fees",
+      "http": {
+        "status": 403,
+        "final": "https://www.easyjet.com/en/terms-and-conditions/fees"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.easyjet.com/en/terms-and-conditions/fees"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.easyjet.com/en/terms-and-conditions/fees",
+      "note": "Replacement candidate for https://www.easyjet.com/en/help/booking-and-check-in/fees-and-charges — Official easyJet fees and charges page.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "eurowings",
+      "band": "1b",
+      "page_key": "checkin",
+      "url": "https://www.eurowings.com/en/information/at-the-airport/check-in.html?origin=footer",
+      "http": {
+        "status": 404,
+        "final": "https://www.eurowings.com/en/information/at-the-airport/check-in.html?origin=footer"
+      },
+      "browser": {
+        "status": 404,
+        "final": "https://www.eurowings.com/en/information/at-the-airport/check-in.html?origin=footer"
+      },
+      "resolved_by": "neither",
+      "status": 404,
+      "final_url": "https://www.eurowings.com/en/information/at-the-airport/check-in.html?origin=footer",
+      "note": "Replacement candidate for https://www.eurowings.com/en/information/at-the-airport/check-in.html — Official Eurowings check-in page with alternate query URL.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "eva-air",
+      "band": "1b",
+      "page_key": "baggage_fees",
+      "url": "https://www.evaair.com/en-us/fly-prepare/baggage/extra-baggage/",
+      "http": {
+        "status": 403,
+        "final": "https://www.evaair.com/en-us/fly-prepare/baggage/extra-baggage/"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.evaair.com/en-us/fly-prepare/baggage/extra-baggage/"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.evaair.com/en-us/fly-prepare/baggage/extra-baggage/",
+      "note": "Replacement candidate for https://www.evaair.com/en-global/fly-prepare/baggage/extra-baggage/ — Official EVA Air extra baggage page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "fiji-airways",
+      "band": "1b",
+      "page_key": "baggage_fees",
+      "url": "https://www.fijiairways.com/en-us/manage/baggage/excess-baggage",
+      "http": {
+        "status": 403,
+        "final": "https://www.fijiairways.com/en-us/manage/baggage/excess-baggage"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.fijiairways.com/en-us/manage/baggage/excess-baggage"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.fijiairways.com/en-us/manage/baggage/excess-baggage",
+      "note": "Replacement candidate for https://www.fijiairways.com/en-fj/manage/baggage/excess-baggage — Official Fiji Airways excess baggage page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "iberia",
+      "band": "1b",
+      "page_key": "baggage_fees",
+      "url": "https://www.iberia.com/us/luggage/allowance-in-hold/",
+      "http": {
+        "status": 403,
+        "final": "https://www.iberia.com/us/luggage/allowance-in-hold/"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.iberia.com/us/luggage/allowance-in-hold/"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.iberia.com/us/luggage/allowance-in-hold/",
+      "note": "Replacement candidate for https://www.iberia.com/es/baggage/excess-baggage/ — Official Iberia checked baggage page includes additional and excess baggage prices.",
+      "findings": [
+        "non_200",
+        "collapsed_target"
+      ]
+    },
+    {
+      "carrier_key": "indigo",
+      "band": "1b",
+      "page_key": "baggage_fees",
+      "url": "https://www.goindigo.in/information/baggage-policy.html",
+      "http": {
+        "status": 403,
+        "final": "https://www.goindigo.in/information/baggage-policy.html"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.goindigo.in/information/baggage-policy.html"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.goindigo.in/information/baggage-policy.html",
+      "note": "Replacement candidate for https://www.goindigo.in/baggage/excess-baggage.html — Official IndiGo baggage policy page includes excess baggage charges.",
+      "findings": [
+        "non_200",
+        "collapsed_target"
+      ]
+    },
+    {
+      "carrier_key": "ita-airways",
+      "band": "1b",
+      "page_key": "checkin",
+      "url": "https://www.ita-airways.com/us/en/fly-ita/check-in.html",
+      "http": {
+        "status": 403,
+        "final": "https://www.ita-airways.com/us/en/fly-ita/check-in.html"
+      },
+      "browser": {
+        "status": 404,
+        "final": "https://www.ita-airways.com/us/en/fly-ita/check-in.html"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.ita-airways.com/us/en/fly-ita/check-in.html",
+      "note": "Replacement candidate for https://www.ita-airways.com/en_en/fly-ita/check-in.html — Official ITA Airways check-in page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "japan-airlines",
+      "band": "1a",
+      "page_key": "baggage_fees",
+      "url": "https://www.jal.co.jp/jp/en/inter/baggage/over/?from=breadcrumb",
+      "http": {
+        "status": 403,
+        "final": "https://www.jal.co.jp/jp/en/inter/baggage/over/?from=breadcrumb"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.jal.co.jp/jp/en/inter/baggage/over/?from=breadcrumb"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.jal.co.jp/jp/en/inter/baggage/over/?from=breadcrumb",
+      "note": "Replacement candidate for https://www.jal.co.jp/jp/en/inter/baggage/over/ — Official JAL excess baggage page with alternate query URL.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "jetstar",
+      "band": "1a",
+      "page_key": "baggage_fees",
+      "url": "https://www.jetstar.com/us/en/help/articles/fees-and-charges",
+      "http": {
+        "status": 403,
+        "final": "https://www.jetstar.com/us/en/help/articles/fees-and-charges"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.jetstar.com/us/en/help/articles/fees-and-charges"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.jetstar.com/us/en/help/articles/fees-and-charges",
+      "note": "Replacement candidate for https://www.jetstar.com/au/en/help/articles/fees-and-charges — Official Jetstar fees and charges page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "lufthansa",
+      "band": "1a",
+      "page_key": "checkin",
+      "url": "https://www.lufthansa.com/us/en/online-check-in",
+      "http": {
+        "status": 403,
+        "final": "https://www.lufthansa.com/us/en/online-check-in"
+      },
+      "browser": {
+        "status": 200,
+        "final": "https://www.lufthansa.com/us/en/online-check-in"
+      },
+      "resolved_by": "browser",
+      "status": 200,
+      "final_url": "https://www.lufthansa.com/us/en/online-check-in",
+      "note": "Replacement candidate for https://www.lufthansa.com/de/en/online-check-in — Official Lufthansa online check-in page on accessible US locale.",
+      "findings": [
+        "blocked_to_http"
+      ]
+    },
+    {
+      "carrier_key": "norse-atlantic",
+      "band": "1b",
+      "page_key": "checkin",
+      "url": "https://help.flynorse.com/categories/at-the-airport/62581dc9b77d7d27150dfebf",
+      "http": {
+        "status": 200,
+        "final": "https://help.flynorse.com/categories/at-the-airport/62581dc9b77d7d27150dfebf"
+      },
+      "resolved_by": "http",
+      "status": 200,
+      "final_url": "https://help.flynorse.com/categories/at-the-airport/62581dc9b77d7d27150dfebf",
+      "note": "Replacement candidate for https://flynorse.com/en-US/support/check-in — Official Norse Atlantic help center airport category includes check-in and bag-drop procedures.",
+      "findings": []
+    },
+    {
+      "carrier_key": "norwegian",
+      "band": "1b",
+      "page_key": "checkin",
+      "url": "https://www.norwegian.com/us/travel-info/check-in-and-boarding/",
+      "http": {
+        "status": 403,
+        "final": "https://www.norwegian.com/us/travel-info/check-in-and-boarding/"
+      },
+      "browser": {
+        "status": 200,
+        "final": "https://www.norwegian.com/us/travel-info/check-in-and-boarding/"
+      },
+      "resolved_by": "browser",
+      "status": 200,
+      "final_url": "https://www.norwegian.com/us/travel-info/check-in-and-boarding/",
+      "note": "Replacement candidate for https://www.norwegian.com/en/travel-info/check-in-and-boarding/ — Official Norwegian check-in and boarding page on accessible US locale.",
+      "findings": [
+        "blocked_to_http"
+      ]
+    },
+    {
+      "carrier_key": "qatar-airways",
+      "band": "1a",
+      "page_key": "baggage_fees",
+      "url": "https://www.qatarairways.com/en/baggage/excess.html?iid=ALL16799190",
+      "http": {
+        "status": 403,
+        "final": "https://www.qatarairways.com/en/baggage/excess.html?iid=ALL16799190"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.qatarairways.com/en/baggage/excess.html?iid=ALL16799190"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.qatarairways.com/en/baggage/excess.html?iid=ALL16799190",
+      "note": "Replacement candidate for https://www.qatarairways.com/en/baggage/excess.html — Official Qatar Airways excess baggage page with alternate query URL.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "sas",
+      "band": "1b",
+      "page_key": "baggage_fees",
+      "url": "https://www.flysas.com/en/travel-info/baggage/extra-baggage",
+      "http": {
+        "status": 403,
+        "final": "https://www.flysas.com/en/travel-info/baggage/extra-baggage"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.flysas.com/en/travel-info/baggage/extra-baggage?__cf_chl_rt_tk=hcuDkfiY8rR_.WEJlY5BqPTf4gWhhzBEMmU82jVyMeE-1787659849-1.0.1.1-9fnsSoTXZa3_QZp2farzkmz9dZvHCEIu_oJtK4Z5JQ4"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.flysas.com/en/travel-info/baggage/extra-baggage",
+      "note": "Replacement candidate for https://www.flysas.com/en/travel-info/baggage/excess-baggage/ — Official SAS extra baggage fees page.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "scoot",
+      "band": "1a",
+      "page_key": "baggage_fees",
+      "url": "https://www.flyscoot.com/en/plan/scoot-fees-chart",
+      "http": {
+        "status": 403,
+        "final": "https://www.flyscoot.com/en/plan/scoot-fees-chart"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.flyscoot.com/en/plan/scoot-fees-chart"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.flyscoot.com/en/plan/scoot-fees-chart",
+      "note": "Replacement candidate for https://www.flyscoot.com/en/plan/booking-your-flight/fees-chart — Official Scoot fees chart page.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "swiss",
+      "band": "1b",
+      "page_key": "checkin",
+      "url": "https://www.swiss.com/us/en/prepare/check-in/online-check-in",
+      "http": {
+        "status": 403,
+        "final": "https://www.swiss.com/us/en/prepare/check-in/online-check-in"
+      },
+      "browser": {
+        "status": 200,
+        "final": "https://www.swiss.com/us/en/fly/check-in/online-check-in"
+      },
+      "resolved_by": "browser",
+      "status": 200,
+      "final_url": "https://www.swiss.com/us/en/fly/check-in/online-check-in",
+      "note": "Replacement candidate for https://www.swiss.com/ch/en/prepare/check-in/online-check-in — Official SWISS online check-in page on accessible US locale.",
+      "findings": [
+        "blocked_to_http"
+      ]
+    },
+    {
+      "carrier_key": "transavia",
+      "band": "1b",
+      "page_key": "checkin",
+      "url": "https://www.transavia.com/help/en-eu/check-in/check-in",
+      "http": {
+        "status": 403,
+        "final": "https://www.transavia.com/help/en-eu/check-in/check-in"
+      },
+      "browser": {
+        "status": 404,
+        "final": "https://www.transavia.com/help/en-eu/check-in/check-in"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.transavia.com/help/en-eu/check-in/check-in",
+      "note": "Replacement candidate for https://www.transavia.com/help/en-eu/check-in — Official Transavia check-in page on current help path.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "tui-airways",
+      "band": "1b",
+      "page_key": "baggage_fees",
+      "url": "https://www.tui.co.uk/flight/information/excess-baggage?contentid=flight_information_excess_baggage",
+      "http": {
+        "status": 403,
+        "final": "https://www.tui.co.uk/flight/information/excess-baggage?contentid=flight_information_excess_baggage"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.tui.co.uk/flight/information/excess-baggage?contentid=flight_information_excess_baggage"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.tui.co.uk/flight/information/excess-baggage?contentid=flight_information_excess_baggage",
+      "note": "Replacement candidate for https://www.tui.co.uk/flight/information/excess-baggage — Official TUI Airways excess baggage page with alternate query URL.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "asiana",
+      "band": "1b",
+      "page_key": "checkin",
+      "url": "https://m.flyasiana.com/C/US/EN/contents/online-check-in",
+      "http": {
+        "status": 403,
+        "final": "https://m.flyasiana.com/C/US/EN/contents/online-check-in"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://m.flyasiana.com/C/US/EN/contents/online-check-in"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://m.flyasiana.com/C/US/EN/contents/online-check-in",
+      "note": "Replacement candidate for https://flyasiana.com/C/US/EN/contents/online-check-in — Official Asiana mobile page for online check-in.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "austrian",
+      "band": "1b",
+      "page_key": "conditions_of_carriage",
+      "url": "https://www.austrian.com/au/en/legal/conditions-of-carriage",
+      "http": {
+        "status": 403,
+        "final": "https://www.austrian.com/au/en/legal/conditions-of-carriage"
+      },
+      "browser": {
+        "status": 200,
+        "final": "https://www.austrian.com/au/en/legal/conditions-of-carriage"
+      },
+      "resolved_by": "browser",
+      "status": 200,
+      "final_url": "https://www.austrian.com/au/en/legal/conditions-of-carriage",
+      "note": "Replacement candidate for https://www.austrian.com/at/en/conditions-of-carriage — Official Austrian legal conditions of carriage page.",
+      "findings": [
+        "blocked_to_http"
+      ]
+    },
+    {
+      "carrier_key": "bangkok-airways",
+      "band": "1b",
+      "page_key": "checkin",
+      "url": "https://www.bangkokair.com/eng/conditions/check-in-boarding",
+      "http": {
+        "status": 403,
+        "final": "https://www.bangkokair.com/eng/conditions/check-in-boarding"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.bangkokair.com/eng/conditions/check-in-boarding"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.bangkokair.com/eng/conditions/check-in-boarding",
+      "note": "Replacement candidate for https://www.bangkokair.com/check-in — Official Bangkok Airways check-in and boarding conditions page.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "china-airlines",
+      "band": "1b",
+      "page_key": "checkin",
+      "url": "https://www.china-airlines.com/us/en/prepare-for-the-fly/information/check-in/online-check-in",
+      "http": {
+        "status": 200,
+        "final": "https://www.china-airlines.com/us/en/prepare-for-the-fly/information/check-in/online-check-in"
+      },
+      "resolved_by": "http",
+      "status": 200,
+      "final_url": "https://www.china-airlines.com/us/en/prepare-for-the-fly/information/check-in/online-check-in",
+      "note": "Replacement candidate for https://www.china-airlines.com/au/en/fly/at-the-airport/online-check-in — Official China Airlines online check-in information page.",
+      "findings": []
+    },
+    {
+      "carrier_key": "easyjet",
+      "band": "1a",
+      "page_key": "checkin",
+      "url": "https://www.easyjet.com/en/help-centre/booking-and-check-in/check-in",
+      "http": {
+        "status": 403,
+        "final": "https://www.easyjet.com/en/help-centre/booking-and-check-in/check-in"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.easyjet.com/en/help-centre/booking-and-check-in/check-in"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.easyjet.com/en/help-centre/booking-and-check-in/check-in",
+      "note": "Replacement candidate for https://www.easyjet.com/en/help/booking-and-check-in/check-in — Official easyJet Help Centre check-in page.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "eurowings",
+      "band": "1b",
+      "page_key": "conditions_of_carriage",
+      "url": "https://www.eurowings.com/en/information/legal/conditions-of-carriage.html?origin=footer",
+      "http": {
+        "status": 404,
+        "final": "https://www.eurowings.com/en/information/legal/conditions-of-carriage.html?origin=footer"
+      },
+      "browser": {
+        "status": 404,
+        "final": "https://www.eurowings.com/en/information/legal/conditions-of-carriage.html?origin=footer"
+      },
+      "resolved_by": "neither",
+      "status": 404,
+      "final_url": "https://www.eurowings.com/en/information/legal/conditions-of-carriage.html?origin=footer",
+      "note": "Replacement candidate for https://www.eurowings.com/en/information/legal/conditions-of-carriage.html — Official Eurowings conditions of carriage page with alternate query URL.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "eva-air",
+      "band": "1b",
+      "page_key": "checkin",
+      "url": "https://www.evaair.com/en-us/fly-prepare/check-in/online-check-in/",
+      "http": {
+        "status": 403,
+        "final": "https://www.evaair.com/en-us/fly-prepare/check-in/online-check-in/"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.evaair.com/en-us/fly-prepare/check-in/online-check-in/"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.evaair.com/en-us/fly-prepare/check-in/online-check-in/",
+      "note": "Replacement candidate for https://www.evaair.com/en-global/fly-prepare/check-in/online-check-in/ — Official EVA Air online check-in page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "fiji-airways",
+      "band": "1b",
+      "page_key": "checkin",
+      "url": "https://www.fijiairways.com/en-us/manage/check-in",
+      "http": {
+        "status": 403,
+        "final": "https://www.fijiairways.com/en-us/manage/check-in"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.fijiairways.com/en-us/manage/check-in"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.fijiairways.com/en-us/manage/check-in",
+      "note": "Replacement candidate for https://www.fijiairways.com/en-fj/manage/check-in — Official Fiji Airways check-in page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "iberia",
+      "band": "1b",
+      "page_key": "checkin",
+      "url": "https://www.iberia.com/us/online-checkin/",
+      "http": {
+        "status": 403,
+        "final": "https://www.iberia.com/us/online-checkin/"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.iberia.com/us/online-checkin/"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.iberia.com/us/online-checkin/",
+      "note": "Replacement candidate for https://www.iberia.com/es/online-checkin/ — Official Iberia online check-in page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "indigo",
+      "band": "1b",
+      "page_key": "checkin",
+      "url": "https://www.goindigo.in/check-in.html?linkNav=check-in_header",
+      "http": {
+        "status": 403,
+        "final": "https://www.goindigo.in/check-in.html?linkNav=check-in_header"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.goindigo.in/check-in.html?linkNav=check-in_header"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.goindigo.in/check-in.html?linkNav=check-in_header",
+      "note": "Replacement candidate for https://www.goindigo.in/check-in.html — Official IndiGo check-in page with alternate query URL.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "ita-airways",
+      "band": "1b",
+      "page_key": "conditions_of_carriage",
+      "url": "https://www.ita-airways.com/us/en/legal/conditions-of-carriage-group/conditions-of-carriage-ita",
+      "http": {
+        "status": 403,
+        "final": "https://www.ita-airways.com/us/en/legal/conditions-of-carriage-group/conditions-of-carriage-ita"
+      },
+      "browser": {
+        "status": 200,
+        "final": "https://www.ita-airways.com/us/en/legal/conditions-of-carriage-group/conditions-of-carriage-ita"
+      },
+      "resolved_by": "browser",
+      "status": 200,
+      "final_url": "https://www.ita-airways.com/us/en/legal/conditions-of-carriage-group/conditions-of-carriage-ita",
+      "note": "Replacement candidate for https://www.ita-airways.com/en_en/footer/terms-and-conditions/conditions-of-carriage.html — Official ITA Airways conditions of carriage page.",
+      "findings": [
+        "blocked_to_http"
+      ]
+    },
+    {
+      "carrier_key": "japan-airlines",
+      "band": "1a",
+      "page_key": "checkin",
+      "url": "https://www.jal.co.jp/jp/en/inter/boarding/online-checkin/?from=breadcrumb",
+      "http": {
+        "status": 403,
+        "final": "https://www.jal.co.jp/jp/en/inter/boarding/online-checkin/?from=breadcrumb"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.jal.co.jp/jp/en/inter/boarding/online-checkin/?from=breadcrumb"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.jal.co.jp/jp/en/inter/boarding/online-checkin/?from=breadcrumb",
+      "note": "Replacement candidate for https://www.jal.co.jp/jp/en/inter/boarding/online-checkin/ — Official JAL online check-in page with alternate query URL.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "jetstar",
+      "band": "1a",
+      "page_key": "checkin",
+      "url": "https://www.jetstar.com/us/en/help/articles/online-check-in",
+      "http": {
+        "status": 403,
+        "final": "https://www.jetstar.com/us/en/help/articles/online-check-in"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.jetstar.com/us/en/help/articles/online-check-in"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.jetstar.com/us/en/help/articles/online-check-in",
+      "note": "Replacement candidate for https://www.jetstar.com/au/en/help/articles/online-check-in — Official Jetstar online check-in page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "lufthansa",
+      "band": "1a",
+      "page_key": "conditions_of_carriage",
+      "url": "https://www.lufthansa.com/us/en/terms-and-conditions-lh",
+      "http": {
+        "status": 403,
+        "final": "https://www.lufthansa.com/us/en/terms-and-conditions-lh"
+      },
+      "browser": {
+        "status": 200,
+        "final": "https://www.lufthansa.com/us/en/terms-and-conditions-lh"
+      },
+      "resolved_by": "browser",
+      "status": 200,
+      "final_url": "https://www.lufthansa.com/us/en/terms-and-conditions-lh",
+      "note": "Replacement candidate for https://www.lufthansa.com/de/en/conditions-of-carriage — Official Lufthansa conditions of carriage page.",
+      "findings": [
+        "blocked_to_http"
+      ]
+    },
+    {
+      "carrier_key": "norse-atlantic",
+      "band": "1b",
+      "page_key": "conditions_of_carriage",
+      "url": "https://connections.flynorse.com/en",
+      "http": {
+        "status": 429,
+        "final": "https://connections.flynorse.com/en"
+      },
+      "browser": {
+        "status": 429,
+        "final": "https://connections.flynorse.com/en"
+      },
+      "resolved_by": "neither",
+      "status": 429,
+      "final_url": "https://connections.flynorse.com/en",
+      "note": "Replacement candidate for https://flynorse.com/en-US/legal/conditions-of-carriage — Official Norse Atlantic connections page links to Norse conditions of carriage and legal information.",
+      "findings": [
+        "non_200",
+        "homepage_or_search"
+      ]
+    },
+    {
+      "carrier_key": "norwegian",
+      "band": "1b",
+      "page_key": "conditions_of_carriage",
+      "url": "https://www.norwegian.com/en/booking/booking-information/legal/general-conditions-of-carriage/",
+      "http": {
+        "status": 403,
+        "final": "https://www.norwegian.com/en/booking/booking-information/legal/general-conditions-of-carriage/"
+      },
+      "browser": {
+        "status": 200,
+        "final": "https://www.norwegian.com/en/booking/booking-information/legal/general-conditions-of-carriage/"
+      },
+      "resolved_by": "browser",
+      "status": 200,
+      "final_url": "https://www.norwegian.com/en/booking/booking-information/legal/general-conditions-of-carriage/",
+      "note": "Replacement candidate for https://www.norwegian.com/en/ipr/conditions-of-carriage/ — Official Norwegian general conditions of carriage page.",
+      "findings": [
+        "blocked_to_http"
+      ]
+    },
+    {
+      "carrier_key": "qatar-airways",
+      "band": "1a",
+      "page_key": "checkin",
+      "url": "https://www.qatarairways.com/en-us/services-checking-in.html",
+      "http": {
+        "status": 403,
+        "final": "https://www.qatarairways.com/en-us/services-checking-in.html"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.qatarairways.com/en-us/services-checking-in.html"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.qatarairways.com/en-us/services-checking-in.html",
+      "note": "Replacement candidate for https://www.qatarairways.com/en/services-checking-in.html — Official Qatar Airways checking-in page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "sas",
+      "band": "1b",
+      "page_key": "checkin",
+      "url": "https://www.flysas.com/us-en/check-in/",
+      "http": {
+        "status": 403,
+        "final": "https://www.flysas.com/us-en/check-in/"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.flysas.com/us-en/check-in/?__cf_chl_rt_tk=YG29njb5gCIIPa7.l104C8j._SDS.AP7..Z5J3dRcik-1787659874-1.0.1.1-oVkNb2r6.Y_YZbH2hWcaVXCSjcBtWcSOKjgpXPFVUO8"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.flysas.com/us-en/check-in/",
+      "note": "Replacement candidate for https://www.flysas.com/en/check-in/ — Official SAS check-in page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "scoot",
+      "band": "1a",
+      "page_key": "checkin",
+      "url": "https://www.flyscoot.com/en/plan/before-you-fly/checking-in",
+      "http": {
+        "status": 403,
+        "final": "https://www.flyscoot.com/en/plan/before-you-fly/checking-in"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.flyscoot.com/en/plan/before-you-fly/checking-in"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.flyscoot.com/en/plan/before-you-fly/checking-in",
+      "note": "Replacement candidate for https://www.flyscoot.com/en/plan/your-trip/check-in — Official Scoot checking-in page.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "swiss",
+      "band": "1b",
+      "page_key": "conditions_of_carriage",
+      "url": "https://www.swiss.com/us/en/terms-conditions/conditions-of-carriage",
+      "http": {
+        "status": 403,
+        "final": "https://www.swiss.com/us/en/terms-conditions/conditions-of-carriage"
+      },
+      "browser": {
+        "status": 200,
+        "final": "https://www.swiss.com/us/en/terms-conditions/conditions-of-carriage"
+      },
+      "resolved_by": "browser",
+      "status": 200,
+      "final_url": "https://www.swiss.com/us/en/terms-conditions/conditions-of-carriage",
+      "note": "Replacement candidate for https://www.swiss.com/ch/en/terms-conditions/conditions-of-carriage — Official SWISS conditions of carriage page on accessible US locale.",
+      "findings": [
+        "blocked_to_http"
+      ]
+    },
+    {
+      "carrier_key": "transavia",
+      "band": "1b",
+      "page_key": "conditions_of_carriage",
+      "url": "https://www.transavia.com/en-EU/conditions/conditions-of-carriage/",
+      "http": {
+        "status": 403,
+        "final": "https://www.transavia.com/en-EU/conditions/conditions-of-carriage/"
+      },
+      "browser": {
+        "status": 200,
+        "final": "https://www.transavia.com/en-EU/conditions/conditions-of-carriage/"
+      },
+      "resolved_by": "browser",
+      "status": 200,
+      "final_url": "https://www.transavia.com/en-EU/conditions/conditions-of-carriage/",
+      "note": "Replacement candidate for https://www.transavia.com/en-EU/terms-and-conditions/conditions-of-carriage/ — Official Transavia conditions of carriage page.",
+      "findings": [
+        "blocked_to_http",
+        "collapsed_target"
+      ]
+    },
+    {
+      "carrier_key": "tui-airways",
+      "band": "1b",
+      "page_key": "checkin",
+      "url": "https://www.tui.co.uk/flight/information/check-in?contentid=flight_information_check_in",
+      "http": {
+        "status": 403,
+        "final": "https://www.tui.co.uk/flight/information/check-in?contentid=flight_information_check_in"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.tui.co.uk/flight/information/check-in?contentid=flight_information_check_in"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.tui.co.uk/flight/information/check-in?contentid=flight_information_check_in",
+      "note": "Replacement candidate for https://www.tui.co.uk/flight/information/check-in — Official TUI Airways check-in page with alternate query URL.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "asiana",
+      "band": "1b",
+      "page_key": "conditions_of_carriage",
+      "url": "https://flyasiana.com/C/ID/EN/contents/terms-of-transportation-and-notification?site_preference=normal",
+      "http": {
+        "status": 403,
+        "final": "https://flyasiana.com/C/ID/EN/contents/terms-of-transportation-and-notification?site_preference=normal"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://flyasiana.com/C/ID/EN/contents/terms-of-transportation-and-notification?site_preference=normal"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://flyasiana.com/C/ID/EN/contents/terms-of-transportation-and-notification?site_preference=normal",
+      "note": "Replacement candidate for https://flyasiana.com/C/US/EN/contents/conditions-of-carriage — Official Asiana conditions/tariff page with normal-site preference.",
+      "findings": [
+        "non_200",
+        "collapsed_target"
+      ]
+    },
+    {
+      "carrier_key": "austrian",
+      "band": "1b",
+      "page_key": "fare_conditions",
+      "url": "https://www.austrian.com/au/en/economy-tariffs",
+      "http": {
+        "status": 403,
+        "final": "https://www.austrian.com/au/en/economy-tariffs"
+      },
+      "browser": {
+        "status": 200,
+        "final": "https://www.austrian.com/au/en/economy-tariffs"
+      },
+      "resolved_by": "browser",
+      "status": 200,
+      "final_url": "https://www.austrian.com/au/en/economy-tariffs",
+      "note": "Replacement candidate for https://www.austrian.com/at/en/fares — Official Austrian fare/tariff information page.",
+      "findings": [
+        "blocked_to_http"
+      ]
+    },
+    {
+      "carrier_key": "bangkok-airways",
+      "band": "1b",
+      "page_key": "conditions_of_carriage",
+      "url": "https://www.bangkokair.com/eng/conditions/conditions-of-carriage",
+      "http": {
+        "status": 403,
+        "final": "https://www.bangkokair.com/eng/conditions/conditions-of-carriage"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.bangkokair.com/eng/conditions/conditions-of-carriage"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.bangkokair.com/eng/conditions/conditions-of-carriage",
+      "note": "Replacement candidate for https://www.bangkokair.com/conditions-of-carriage — Official Bangkok Airways English conditions of carriage page.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "china-airlines",
+      "band": "1b",
+      "page_key": "conditions_of_carriage",
+      "url": "https://www.china-airlines.com/us/en/terms-and-conditions/conditions-of-carriage",
+      "http": {
+        "status": 200,
+        "final": "https://www.china-airlines.com/us/en/terms-and-conditions/conditions-of-carriage"
+      },
+      "resolved_by": "http",
+      "status": 200,
+      "final_url": "https://www.china-airlines.com/us/en/terms-and-conditions/conditions-of-carriage",
+      "note": "Replacement candidate for https://www.china-airlines.com/au/en/terms-and-conditions/conditions-of-carriage — Official China Airlines conditions of carriage page on accessible US locale.",
+      "findings": []
+    },
+    {
+      "carrier_key": "easyjet",
+      "band": "1a",
+      "page_key": "conditions_of_carriage",
+      "url": "https://www.easyjet.com/en/help-centre/policy-terms-and-conditions",
+      "http": {
+        "status": 403,
+        "final": "https://www.easyjet.com/en/help-centre/policy-terms-and-conditions"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.easyjet.com/en/help-centre/policy-terms-and-conditions"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.easyjet.com/en/help-centre/policy-terms-and-conditions",
+      "note": "Replacement candidate for https://www.easyjet.com/en/terms-and-conditions — Official easyJet policy and terms hub.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "eurowings",
+      "band": "1b",
+      "page_key": "fare_conditions",
+      "url": "https://www.eurowings.com/en/booking/offers/fares.html",
+      "http": {
+        "status": 404,
+        "final": "https://www.eurowings.com/en/booking/offers/fares.html"
+      },
+      "browser": {
+        "status": 404,
+        "final": "https://www.eurowings.com/content/eurowings/en/4u/404"
+      },
+      "resolved_by": "neither",
+      "status": 404,
+      "final_url": "https://www.eurowings.com/en/booking/offers/fares.html",
+      "note": "Replacement candidate for https://www.eurowings.com/en/information/at-the-airport/fares.html — Official Eurowings fares page.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "eva-air",
+      "band": "1b",
+      "page_key": "conditions_of_carriage",
+      "url": "https://www.evaair.com/en-us/customer-services/tariffs-and-conditions/conditions-of-carriage/",
+      "http": {
+        "status": 403,
+        "final": "https://www.evaair.com/en-us/customer-services/tariffs-and-conditions/conditions-of-carriage/"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.evaair.com/en-us/customer-services/tariffs-and-conditions/conditions-of-carriage/"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.evaair.com/en-us/customer-services/tariffs-and-conditions/conditions-of-carriage/",
+      "note": "Replacement candidate for https://www.evaair.com/en-global/customer-services/tariffs-and-conditions/conditions-of-carriage/ — Official EVA Air conditions of carriage page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "fiji-airways",
+      "band": "1b",
+      "page_key": "conditions_of_carriage",
+      "url": "https://www.fijiairways.com/en-us/about-fiji-airways/conditions-of-carriage",
+      "http": {
+        "status": 403,
+        "final": "https://www.fijiairways.com/en-us/about-fiji-airways/conditions-of-carriage"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.fijiairways.com/en-us/about-fiji-airways/conditions-of-carriage"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.fijiairways.com/en-us/about-fiji-airways/conditions-of-carriage",
+      "note": "Replacement candidate for https://www.fijiairways.com/en-fj/about-fiji-airways/conditions-of-carriage — Official Fiji Airways conditions of carriage page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "iberia",
+      "band": "1b",
+      "page_key": "conditions_of_carriage",
+      "url": "https://www.iberia.com/us/general-conditions-of-carriage/",
+      "http": {
+        "status": 403,
+        "final": "https://www.iberia.com/us/general-conditions-of-carriage/"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.iberia.com/us/general-conditions-of-carriage/"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.iberia.com/us/general-conditions-of-carriage/",
+      "note": "Replacement candidate for https://www.iberia.com/es/general-conditions-of-carriage/ — Official Iberia general conditions of carriage page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "indigo",
+      "band": "1b",
+      "page_key": "conditions_of_carriage",
+      "url": "https://www.goindigo.in/information/conditions-of-carriage.html?linkNav=conditions-of-carriage_footer",
+      "http": {
+        "status": 403,
+        "final": "https://www.goindigo.in/information/conditions-of-carriage.html?linkNav=conditions-of-carriage_footer"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.goindigo.in/information/conditions-of-carriage.html?linkNav=conditions-of-carriage_footer"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.goindigo.in/information/conditions-of-carriage.html?linkNav=conditions-of-carriage_footer",
+      "note": "Replacement candidate for https://www.goindigo.in/information/conditions-of-carriage.html — Official IndiGo conditions of carriage page with alternate query URL.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "ita-airways",
+      "band": "1b",
+      "page_key": "fare_conditions",
+      "url": "https://www.ita-airways.com/us/en/fly-ita/fare-rules.html",
+      "http": {
+        "status": 403,
+        "final": "https://www.ita-airways.com/us/en/fly-ita/fare-rules.html"
+      },
+      "browser": {
+        "status": 404,
+        "final": "https://www.ita-airways.com/us/en/fly-ita/fare-rules.html"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.ita-airways.com/us/en/fly-ita/fare-rules.html",
+      "note": "Replacement candidate for https://www.ita-airways.com/en_en/fly-ita/fare-rules.html — Official ITA Airways fare rules page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "japan-airlines",
+      "band": "1a",
+      "page_key": "conditions_of_carriage",
+      "url": "https://www.jal.co.jp/jp/en/carriage/",
+      "http": {
+        "status": 403,
+        "final": "https://www.jal.co.jp/jp/en/carriage/"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.jal.co.jp/jp/en/carriage/"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.jal.co.jp/jp/en/carriage/",
+      "note": "Replacement candidate for https://www.jal.co.jp/jp/en/inter/carriage/ — Official JAL conditions of carriage hub.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "jetstar",
+      "band": "1a",
+      "page_key": "conditions_of_carriage",
+      "url": "https://www.jetstar.com/us/en/conditions-of-carriage-jq",
+      "http": {
+        "status": 403,
+        "final": "https://www.jetstar.com/us/en/conditions-of-carriage-jq"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.jetstar.com/us/en/conditions-of-carriage-jq"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.jetstar.com/us/en/conditions-of-carriage-jq",
+      "note": "Replacement candidate for https://www.jetstar.com/au/en/conditions-of-carriage — Official Jetstar conditions of carriage page.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "lufthansa",
+      "band": "1a",
+      "page_key": "fare_conditions",
+      "url": "https://www.lufthansa.com/us/en/fares-and-classes",
+      "http": {
+        "status": 403,
+        "final": "https://www.lufthansa.com/us/en/fares-and-classes"
+      },
+      "browser": {
+        "status": 404,
+        "final": "https://www.lufthansa.com/us/en/fares-and-classes"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.lufthansa.com/us/en/fares-and-classes",
+      "note": "Replacement candidate for https://www.lufthansa.com/de/en/fares-and-classes — Official Lufthansa fares and classes page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "norse-atlantic",
+      "band": "1b",
+      "page_key": "fare_conditions",
+      "url": "https://help.flynorse.com/categories/before-your-trip/62581dc5b77d7d27150dfe8f",
+      "http": {
+        "status": 200,
+        "final": "https://help.flynorse.com/categories/before-your-trip/62581dc5b77d7d27150dfe8f"
+      },
+      "resolved_by": "http",
+      "status": 200,
+      "final_url": "https://help.flynorse.com/categories/before-your-trip/62581dc5b77d7d27150dfe8f",
+      "note": "Replacement candidate for https://flynorse.com/en-US/support/fare-types — Official Norse Atlantic help center includes fare rules/refund and booking articles.",
+      "findings": [
+        "collapsed_target"
+      ]
+    },
+    {
+      "carrier_key": "norwegian",
+      "band": "1b",
+      "page_key": "fare_conditions",
+      "url": "https://www.norwegian.com/us/booking/booking-information/fare-types/",
+      "http": {
+        "status": 403,
+        "final": "https://www.norwegian.com/us/booking/booking-information/fare-types/"
+      },
+      "browser": {
+        "status": 404,
+        "final": "https://www.norwegian.com/us/booking/booking-information/fare-types/"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.norwegian.com/us/booking/booking-information/fare-types/",
+      "note": "Replacement candidate for https://www.norwegian.com/en/booking/booking-information/fare-types/ — Official Norwegian fare types page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "qatar-airways",
+      "band": "1a",
+      "page_key": "conditions_of_carriage",
+      "url": "https://www.qatarairways.com/en-jp/legal/conditions-of-carriage.html",
+      "http": {
+        "status": 403,
+        "final": "https://www.qatarairways.com/en-jp/legal/conditions-of-carriage.html"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.qatarairways.com/en-jp/legal/conditions-of-carriage.html"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.qatarairways.com/en-jp/legal/conditions-of-carriage.html",
+      "note": "Replacement candidate for https://www.qatarairways.com/en/legal/conditions-of-carriage.html — Official Qatar Airways conditions of carriage page on accessible JP locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "sas",
+      "band": "1b",
+      "page_key": "fare_conditions",
+      "url": "https://www.flysas.com/us-en/travel-info/ticket-options/",
+      "http": {
+        "status": 403,
+        "final": "https://www.flysas.com/us-en/travel-info/ticket-options/"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.flysas.com/us-en/travel-info/ticket-options/?__cf_chl_rt_tk=bF3R8nTlZKg.n7Gqy6wIrnfYYDiPkesS4g0eOajOKqM-1787659899-1.0.1.1-ZIZ6FMPp9JgUJADy2tAtMdYcfsEOUHSqldrnQHT6i5I"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.flysas.com/us-en/travel-info/ticket-options/",
+      "note": "Replacement candidate for https://www.flysas.com/en/travel-info/ticket-options/ — Official SAS ticket options/fare page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "scoot",
+      "band": "1a",
+      "page_key": "conditions_of_carriage",
+      "url": "https://www.flyscoot.com/en/terms-and-conditions/conditions-of-carriage?ref=footer",
+      "http": {
+        "status": 403,
+        "final": "https://www.flyscoot.com/en/terms-and-conditions/conditions-of-carriage?ref=footer"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.flyscoot.com/en/terms-and-conditions/conditions-of-carriage?ref=footer"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.flyscoot.com/en/terms-and-conditions/conditions-of-carriage?ref=footer",
+      "note": "Replacement candidate for https://www.flyscoot.com/en/terms-and-conditions/conditions-of-carriage — Official Scoot conditions of carriage page with alternate query URL.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "swiss",
+      "band": "1b",
+      "page_key": "fare_conditions",
+      "url": "https://www.swiss.com/us/en/book-and-manage/fare-conditions",
+      "http": {
+        "status": 403,
+        "final": "https://www.swiss.com/us/en/book-and-manage/fare-conditions"
+      },
+      "browser": {
+        "status": 404,
+        "final": "https://www.swiss.com/us/en/book-and-manage/fare-conditions"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.swiss.com/us/en/book-and-manage/fare-conditions",
+      "note": "Replacement candidate for https://www.swiss.com/ch/en/book-and-manage/fare-conditions — Official SWISS fare conditions page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "transavia",
+      "band": "1b",
+      "page_key": "fare_conditions",
+      "url": "https://www.transavia.com/en-EU/conditions/conditions-of-carriage/",
+      "http": {
+        "status": 403,
+        "final": "https://www.transavia.com/en-EU/conditions/conditions-of-carriage/"
+      },
+      "browser": {
+        "status": 200,
+        "final": "https://www.transavia.com/en-EU/conditions/conditions-of-carriage/"
+      },
+      "resolved_by": "browser",
+      "status": 200,
+      "final_url": "https://www.transavia.com/en-EU/conditions/conditions-of-carriage/",
+      "note": "Replacement candidate for https://www.transavia.com/help/en-eu/booking/fares — Official Transavia conditions page includes fare conditions.",
+      "findings": [
+        "blocked_to_http",
+        "collapsed_target"
+      ]
+    },
+    {
+      "carrier_key": "tui-airways",
+      "band": "1b",
+      "page_key": "conditions_of_carriage",
+      "url": "https://www.tui.co.uk/destinations/info/flight-conditions-of-carriage",
+      "http": {
+        "status": 403,
+        "final": "https://www.tui.co.uk/destinations/info/flight-conditions-of-carriage"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.tui.co.uk/destinations/info/flight-conditions-of-carriage"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.tui.co.uk/destinations/info/flight-conditions-of-carriage",
+      "note": "Replacement candidate for https://www.tui.co.uk/destinations/info/conditions-of-carriage — Official TUI Airways current flight conditions of carriage page.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "asiana",
+      "band": "1b",
+      "page_key": "fare_conditions",
+      "url": "https://flyasiana.com/C/ID/EN/contents/terms-of-transportation-and-notification?site_preference=normal",
+      "http": {
+        "status": 403,
+        "final": "https://flyasiana.com/C/ID/EN/contents/terms-of-transportation-and-notification?site_preference=normal"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://flyasiana.com/C/ID/EN/contents/terms-of-transportation-and-notification?site_preference=normal"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://flyasiana.com/C/ID/EN/contents/terms-of-transportation-and-notification?site_preference=normal",
+      "note": "Replacement candidate for https://flyasiana.com/C/US/EN/contents/fare-rules — Official Asiana tariff/fare conditions page.",
+      "findings": [
+        "non_200",
+        "collapsed_target"
+      ]
+    },
+    {
+      "carrier_key": "bangkok-airways",
+      "band": "1b",
+      "page_key": "fare_conditions",
+      "url": "https://www.bangkokair.com/eng/conditions/fares-taxes-fees-and-charges",
+      "http": {
+        "status": 403,
+        "final": "https://www.bangkokair.com/eng/conditions/fares-taxes-fees-and-charges"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.bangkokair.com/eng/conditions/fares-taxes-fees-and-charges"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.bangkokair.com/eng/conditions/fares-taxes-fees-and-charges",
+      "note": "Replacement candidate for https://www.bangkokair.com/fare-rules — Official Bangkok Airways fares, taxes, fees and charges page.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "china-airlines",
+      "band": "1b",
+      "page_key": "fare_conditions",
+      "url": "https://www.china-airlines.com/us/en/itinerary-booking/ticket-information/fare-family/economy-class",
+      "http": {
+        "status": 200,
+        "final": "https://www.china-airlines.com/us/en/itinerary-booking/ticket-information/fare-family/economy-class"
+      },
+      "resolved_by": "http",
+      "status": 200,
+      "final_url": "https://www.china-airlines.com/us/en/itinerary-booking/ticket-information/fare-family/economy-class",
+      "note": "Replacement candidate for https://www.china-airlines.com/au/en/booking/book-flights/fare-family — Official China Airlines fare family page.",
+      "findings": []
+    },
+    {
+      "carrier_key": "easyjet",
+      "band": "1a",
+      "page_key": "fare_conditions",
+      "url": "https://www.easyjet.com/en/terms-and-conditions/key-terms",
+      "http": {
+        "status": 403,
+        "final": "https://www.easyjet.com/en/terms-and-conditions/key-terms"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.easyjet.com/en/terms-and-conditions/key-terms"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.easyjet.com/en/terms-and-conditions/key-terms",
+      "note": "Replacement candidate for https://www.easyjet.com/en/terms-and-conditions — Official easyJet key booking terms page.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "eva-air",
+      "band": "1b",
+      "page_key": "fare_conditions",
+      "url": "https://www.evaair.com/en-us/plan-and-book/fare-family/",
+      "http": {
+        "status": 403,
+        "final": "https://www.evaair.com/en-us/plan-and-book/fare-family/"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.evaair.com/en-us/plan-and-book/fare-family/"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.evaair.com/en-us/plan-and-book/fare-family/",
+      "note": "Replacement candidate for https://www.evaair.com/en-global/plan-and-book/fare-family/ — Official EVA Air fare family page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "fiji-airways",
+      "band": "1b",
+      "page_key": "fare_conditions",
+      "url": "https://www.fijiairways.com/en-us/book/fare-types",
+      "http": {
+        "status": 403,
+        "final": "https://www.fijiairways.com/en-us/book/fare-types"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.fijiairways.com/en-us/book/fare-types"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.fijiairways.com/en-us/book/fare-types",
+      "note": "Replacement candidate for https://www.fijiairways.com/en-fj/book/fare-types — Official Fiji Airways fare types page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "iberia",
+      "band": "1b",
+      "page_key": "fare_conditions",
+      "url": "https://www.iberia.com/us/fares/",
+      "http": {
+        "status": 403,
+        "final": "https://www.iberia.com/us/fares/"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.iberia.com/us/fares/"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.iberia.com/us/fares/",
+      "note": "Replacement candidate for https://www.iberia.com/es/fares/ — Official Iberia fares page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "indigo",
+      "band": "1b",
+      "page_key": "fare_conditions",
+      "url": "https://www.goindigo.in/information/fare-rules.html?linkNav=fare-rules_footer",
+      "http": {
+        "status": 403,
+        "final": "https://www.goindigo.in/information/fare-rules.html?linkNav=fare-rules_footer"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.goindigo.in/information/fare-rules.html?linkNav=fare-rules_footer"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.goindigo.in/information/fare-rules.html?linkNav=fare-rules_footer",
+      "note": "Replacement candidate for https://www.goindigo.in/information/fare-rules.html — Official IndiGo fare rules page with alternate query URL.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "japan-airlines",
+      "band": "1a",
+      "page_key": "fare_conditions",
+      "url": "https://www.jal.co.jp/jp/en/inter/fare/?from=breadcrumb",
+      "http": {
+        "status": 403,
+        "final": "https://www.jal.co.jp/jp/en/inter/fare/?from=breadcrumb"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.jal.co.jp/jp/en/inter/fare/?from=breadcrumb"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.jal.co.jp/jp/en/inter/fare/?from=breadcrumb",
+      "note": "Replacement candidate for https://www.jal.co.jp/jp/en/inter/fare/ — Official JAL international fare page with alternate query URL.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "jetstar",
+      "band": "1a",
+      "page_key": "fare_conditions",
+      "url": "https://www.jetstar.com/us/en/help/articles/fares",
+      "http": {
+        "status": 403,
+        "final": "https://www.jetstar.com/us/en/help/articles/fares"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.jetstar.com/us/en/help/articles/fares"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.jetstar.com/us/en/help/articles/fares",
+      "note": "Replacement candidate for https://www.jetstar.com/au/en/help/articles/fares — Official Jetstar fares page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "qatar-airways",
+      "band": "1a",
+      "page_key": "fare_conditions",
+      "url": "https://www.qatarairways.com/en-us/fare-families.html",
+      "http": {
+        "status": 403,
+        "final": "https://www.qatarairways.com/en-us/fare-families.html"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.qatarairways.com/en-us/fare-families.html"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.qatarairways.com/en-us/fare-families.html",
+      "note": "Replacement candidate for https://www.qatarairways.com/en/fare-families.html — Official Qatar Airways fare families page on accessible US locale.",
+      "findings": [
+        "non_200"
+      ]
+    },
+    {
+      "carrier_key": "scoot",
+      "band": "1a",
+      "page_key": "fare_conditions",
+      "url": "https://www.flyscoot.com/en/plan/booking-your-flight/fares-fees",
+      "http": {
+        "status": 403,
+        "final": "https://www.flyscoot.com/en/plan/booking-your-flight/fares-fees"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.flyscoot.com/en/plan/booking-your-flight/fares-fees"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.flyscoot.com/en/plan/booking-your-flight/fares-fees",
+      "note": "Replacement candidate for https://www.flyscoot.com/en/plan/booking-your-flight/fare-bundles — Official Scoot fares and fees page includes fare bundles.",
+      "findings": [
+        "non_200",
+        "collapsed_target"
+      ]
+    },
+    {
+      "carrier_key": "tui-airways",
+      "band": "1b",
+      "page_key": "fare_conditions",
+      "url": "https://www.tui.co.uk/destinations/info/booking-conditions?contentid=booking_conditions",
+      "http": {
+        "status": 403,
+        "final": "https://www.tui.co.uk/destinations/info/booking-conditions?contentid=booking_conditions"
+      },
+      "browser": {
+        "status": 403,
+        "final": "https://www.tui.co.uk/destinations/info/booking-conditions?contentid=booking_conditions"
+      },
+      "resolved_by": "neither",
+      "status": 403,
+      "final_url": "https://www.tui.co.uk/destinations/info/booking-conditions?contentid=booking_conditions",
+      "note": "Replacement candidate for https://www.tui.co.uk/destinations/info/booking-conditions — Official TUI booking conditions page with alternate query URL.",
+      "findings": [
+        "non_200"
+      ]
+    }
+  ]
+}

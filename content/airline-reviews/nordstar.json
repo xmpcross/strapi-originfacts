@@ -1,0 +1,80 @@
+{
+ "slug": "nordstar",
+ "sources": [
+  "tripadvisor"
+ ],
+ "stats": {
+  "source": "all",
+  "reviewCount": 3,
+  "avgRating10": 6.0,
+  "recommendPct": null,
+  "subratings": null,
+  "firstReviewDate": "2017-01-18",
+  "lastReviewDate": "2020-08-06"
+ },
+ "statsBySource": {
+  "tripadvisor": {
+   "source": "tripadvisor",
+   "reviewCount": 3,
+   "avgRating10": 6.0,
+   "recommendPct": null,
+   "subratings": null,
+   "firstReviewDate": "2017-01-18",
+   "lastReviewDate": "2020-08-06",
+   "sourceUrl": "https://www.tripadvisor.com/Airline_Review-d8728937-Reviews-Nordstar-Airlines"
+  }
+ },
+ "reviews": [
+  {
+   "source": "tripadvisor",
+   "id": "ta-763394674",
+   "date": "2020-08-06",
+   "rating10": 2,
+   "title": "the worst company in the 'economy' class",
+   "text": "The worst company ever. Today I was convinced of this for the last time. I thought I'd give a chance ... We fly every year, but when we have to deal with this kind of ‘airline’ it always ends in disgust.",
+   "author": "Sergey K",
+   "authorCountry": null,
+   "authorLocation": null,
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Moscow - Krasnoyarsk",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-544689002",
+   "date": "2017-12-02",
+   "rating10": 6,
+   "title": "Nothing special",
+   "text": "Nothing special, but flight was delayed for about 1/2 hour. Luckily I had booked hotel in Moscow for the night before catching early morning plane out of Moscow. Will be problematic if I had a tight connecting flight. No food served, no entertainment. Drinks were free, at least. Announcements in both Russian and English. Not many airlines fly out of Makhachkala, so choices are limited.",
+   "author": "ShilohinBC",
+   "authorCountry": null,
+   "authorLocation": null,
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Makhachkala - Moscow",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-453008642",
+   "date": "2017-01-18",
+   "rating10": 10,
+   "title": "The service is great",
+   "text": "I travelled from Moscow to Krasnoyarsk, the price is good, there was no tv, nor something to do, but the flight asistants are quitet nice, and the food is really nice",
+   "author": "Juan S",
+   "authorCountry": null,
+   "authorLocation": "Bogota",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Moscow - Krasnoyarsk",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  }
+ ]
+}

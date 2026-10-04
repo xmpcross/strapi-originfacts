@@ -1,0 +1,4002 @@
+{
+  "imported_at": "2026-09-04T01:19:39.510Z",
+  "input": "data/all-airlines-filled-v3.csv",
+  "added_count": 153,
+  "updated_count": 238,
+  "selector_added_count": 0,
+  "skipped_count": 665,
+  "carriers_total": 451,
+  "added": [
+    {
+      "carrier_key": "apg-airlines",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "asky-airlines",
+      "pageCount": 4
+    },
+    {
+      "carrier_key": "aerolineas-argentinas",
+      "pageCount": 5
+    },
+    {
+      "carrier_key": "aeromexico-connect",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "afriqiyah-airways",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "air-algerie",
+      "pageCount": 4
+    },
+    {
+      "carrier_key": "air-alsie",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "air-atlanta",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "air-cairo",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "air-caledonie",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "air-canada-rouge",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "air-caraibes",
+      "pageCount": 4
+    },
+    {
+      "carrier_key": "air-century",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "air-congo",
+      "pageCount": 4
+    },
+    {
+      "carrier_key": "air-creebec",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "air-do",
+      "pageCount": 5
+    },
+    {
+      "carrier_key": "air-europa-express",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "air-guilin",
+      "pageCount": 4
+    },
+    {
+      "carrier_key": "air-kiribati",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "air-montenegro",
+      "pageCount": 4
+    },
+    {
+      "carrier_key": "air-niamey",
+      "pageCount": 4
+    },
+    {
+      "carrier_key": "air-peace",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "air-premia",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "airconnect",
+      "pageCount": 4
+    },
+    {
+      "carrier_key": "airdolomiti",
+      "pageCount": 5
+    },
+    {
+      "carrier_key": "alliance-air",
+      "pageCount": 4
+    },
+    {
+      "carrier_key": "alliance-airlines",
+      "pageCount": 4
+    },
+    {
+      "carrier_key": "american-eagle",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "armenia-airways",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "armenian-airlines",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "auric-air",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "aurigny",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "avelo-airlines",
+      "pageCount": 4
+    },
+    {
+      "carrier_key": "avianca-el-salvador",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "avior-airlines",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "azimuth",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "azul-airlines",
+      "pageCount": 5
+    },
+    {
+      "carrier_key": "bahamasair",
+      "pageCount": 4
+    },
+    {
+      "carrier_key": "bamboo-airways",
+      "pageCount": 4
+    },
+    {
+      "carrier_key": "batik-air-malaysia",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "beond",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "biman-bangladesh-airlines",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "blue-bird-airways",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "buraq-air",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "buzz",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "calima-aviacion-sl",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "camair-co",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "canaryfly",
+      "pageCount": 4
+    },
+    {
+      "carrier_key": "cape-air",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "cargolux",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "caribbean-airlines",
+      "pageCount": 4
+    },
+    {
+      "carrier_key": "centrum-air",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "chalair-aviation",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "cityjet",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "clic",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "condor",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "contour-airlines",
+      "pageCount": 4
+    },
+    {
+      "carrier_key": "cubana",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "danish-air-transport",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "deutsche-bahn-ag",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "discover-airlines",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "dobrolet",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "drukair",
+      "pageCount": 5
+    },
+    {
+      "carrier_key": "el-al",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "eagle-atlantic-airlines",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "eastern-airlines-llc",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "electra-airways",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "eurolot",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "eznis-airways",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "flyyo",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "fastjet-zimbabwe",
+      "pageCount": 4
+    },
+    {
+      "carrier_key": "federal-air",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "fly-arna",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "fly-caminter",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "fly-lili",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "fly-pro",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "flyegypt",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "flyjinnah",
+      "pageCount": 4
+    },
+    {
+      "carrier_key": "flynamibia",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "flysafair",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "flynas",
+      "pageCount": 4
+    },
+    {
+      "carrier_key": "freebird-airlines",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "french-bee",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "german-airways",
+      "pageCount": 4
+    },
+    {
+      "carrier_key": "getjet-airlines",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "halcyonair",
+      "pageCount": 4
+    },
+    {
+      "carrier_key": "harbour-air-seaplanes",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "hisky",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "hisky-europe",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "ikar",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "jetairfly",
+      "pageCount": 4
+    },
+    {
+      "carrier_key": "km-malta-airlines",
+      "pageCount": 4
+    },
+    {
+      "carrier_key": "komiaviatrans",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "leav",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "laparkan-airways-inc",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "libyan-wings",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "linear-air",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "lufthansa-city-airlines",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "malawi-airlines",
+      "pageCount": 4
+    },
+    {
+      "carrier_key": "mann-yadanarpon-airlines",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "marabu",
+      "pageCount": 4
+    },
+    {
+      "carrier_key": "mauritania-airlines",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "mavi-gok-airlines",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "nesma-airlines",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "norse-atlantic-airways",
+      "pageCount": 4
+    },
+    {
+      "carrier_key": "north-wright-airways",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "norwegian-air-shuttle",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "omni-air-international",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "pal-airlines",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "pia",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "play",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "paranair",
+      "pageCount": 4
+    },
+    {
+      "carrier_key": "peach",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "peoples",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "porter-airlines-canada",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "primera-air",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "punta-europa",
+      "pageCount": 4
+    },
+    {
+      "carrier_key": "qazaq-air",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "republic-airways",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "riyadh-air",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "royal-flight",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "rutaca-airlines",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "sata",
+      "pageCount": 4
+    },
+    {
+      "carrier_key": "sata-air-acores",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "salamair",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "seaborne-airlines",
+      "pageCount": 4
+    },
+    {
+      "carrier_key": "sharp-airlines",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "shree-airlines",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "skippers-aviation",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "sky-express-greece",
+      "pageCount": 4
+    },
+    {
+      "carrier_key": "skyalps",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "skyjet-airlines",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "skytaxi",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "skyup-mt",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "skyline-express-airline",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "smartlynx-airlines-estonia",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "southwind-airlines",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "starflyer",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "tui-fly-deutschland",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "tuifly-netherlands",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "tuifly-nordis",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "toki-air",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "tropic-air",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "tus-airways",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "twin-jet",
+      "pageCount": 2
+    },
+    {
+      "carrier_key": "uia",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "ups",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "uganda-airlines",
+      "pageCount": 1
+    },
+    {
+      "carrier_key": "vanilla-air",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "vision-air-moldova",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "wideroe",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "world2fly",
+      "pageCount": 3
+    },
+    {
+      "carrier_key": "avianca-express",
+      "pageCount": 4
+    }
+  ],
+  "updated": [
+    {
+      "carrier_key": "ana-wings"
+    },
+    {
+      "carrier_key": "asl-airlines-france"
+    },
+    {
+      "carrier_key": "aegean-airlines"
+    },
+    {
+      "carrier_key": "aer-lingus"
+    },
+    {
+      "carrier_key": "aero-tropics-air-services"
+    },
+    {
+      "carrier_key": "aeroflot"
+    },
+    {
+      "carrier_key": "aeromexico"
+    },
+    {
+      "carrier_key": "air-arabia-egypt"
+    },
+    {
+      "carrier_key": "air-burkina"
+    },
+    {
+      "carrier_key": "air-cambodia"
+    },
+    {
+      "carrier_key": "air-changan"
+    },
+    {
+      "carrier_key": "air-china"
+    },
+    {
+      "carrier_key": "air-corsica"
+    },
+    {
+      "carrier_key": "air-cote-divoire"
+    },
+    {
+      "carrier_key": "air-dilijans"
+    },
+    {
+      "carrier_key": "air-europa"
+    },
+    {
+      "carrier_key": "air-france"
+    },
+    {
+      "carrier_key": "air-greenland"
+    },
+    {
+      "carrier_key": "air-india"
+    },
+    {
+      "carrier_key": "air-japan"
+    },
+    {
+      "carrier_key": "air-macau"
+    },
+    {
+      "carrier_key": "air-madagascar"
+    },
+    {
+      "carrier_key": "air-moldova"
+    },
+    {
+      "carrier_key": "air-new-zealand"
+    },
+    {
+      "carrier_key": "air-north"
+    },
+    {
+      "carrier_key": "air-rarotonga"
+    },
+    {
+      "carrier_key": "air-saint-pierre"
+    },
+    {
+      "carrier_key": "air-serbia"
+    },
+    {
+      "carrier_key": "air-seychelles"
+    },
+    {
+      "carrier_key": "air-tahiti"
+    },
+    {
+      "carrier_key": "air-tahiti-nui"
+    },
+    {
+      "carrier_key": "air-tanzania"
+    },
+    {
+      "carrier_key": "air-tindi"
+    },
+    {
+      "carrier_key": "air-transat"
+    },
+    {
+      "carrier_key": "air-vanuatu"
+    },
+    {
+      "carrier_key": "airasia"
+    },
+    {
+      "carrier_key": "airasia-x"
+    },
+    {
+      "carrier_key": "airbridgecargo"
+    },
+    {
+      "carrier_key": "aircalin"
+    },
+    {
+      "carrier_key": "airlink"
+    },
+    {
+      "carrier_key": "airnorth"
+    },
+    {
+      "carrier_key": "alaska-airlines"
+    },
+    {
+      "carrier_key": "allegiant-air"
+    },
+    {
+      "carrier_key": "ariana-afghan-airlines"
+    },
+    {
+      "carrier_key": "arkia"
+    },
+    {
+      "carrier_key": "asiana-airlines"
+    },
+    {
+      "carrier_key": "atlantic-airways"
+    },
+    {
+      "carrier_key": "atlas-air"
+    },
+    {
+      "carrier_key": "austrian-airlines"
+    },
+    {
+      "carrier_key": "avianca"
+    },
+    {
+      "carrier_key": "avianca-ecuador"
+    },
+    {
+      "carrier_key": "aviastar-tu"
+    },
+    {
+      "carrier_key": "bangkok-airways"
+    },
+    {
+      "carrier_key": "beijing-capital-airlines"
+    },
+    {
+      "carrier_key": "bering-air"
+    },
+    {
+      "carrier_key": "bhutan-airlines"
+    },
+    {
+      "carrier_key": "binter-canarias"
+    },
+    {
+      "carrier_key": "blue1"
+    },
+    {
+      "carrier_key": "boliviana-de-aviacion"
+    },
+    {
+      "carrier_key": "british-airways"
+    },
+    {
+      "carrier_key": "brussels-airlines"
+    },
+    {
+      "carrier_key": "buddha-air"
+    },
+    {
+      "carrier_key": "bulgaria-air"
+    },
+    {
+      "carrier_key": "cm-airlines"
+    },
+    {
+      "carrier_key": "csa-czech-airlines"
+    },
+    {
+      "carrier_key": "calm-air"
+    },
+    {
+      "carrier_key": "cathay-pacific"
+    },
+    {
+      "carrier_key": "cayman-airways"
+    },
+    {
+      "carrier_key": "cebu-pacific"
+    },
+    {
+      "carrier_key": "china-airlines"
+    },
+    {
+      "carrier_key": "china-eastern"
+    },
+    {
+      "carrier_key": "china-southern-airlines"
+    },
+    {
+      "carrier_key": "conviasa"
+    },
+    {
+      "carrier_key": "copa-airlines"
+    },
+    {
+      "carrier_key": "corendon-airlines-europe"
+    },
+    {
+      "carrier_key": "corsair-international"
+    },
+    {
+      "carrier_key": "croatia-airlines"
+    },
+    {
+      "carrier_key": "cyprus-airways"
+    },
+    {
+      "carrier_key": "dhl-air-limited"
+    },
+    {
+      "carrier_key": "delta-air-lines"
+    },
+    {
+      "carrier_key": "eva-air"
+    },
+    {
+      "carrier_key": "eastar-jet"
+    },
+    {
+      "carrier_key": "egyptair"
+    },
+    {
+      "carrier_key": "emirates"
+    },
+    {
+      "carrier_key": "ethiopian-airlines"
+    },
+    {
+      "carrier_key": "etihad-airways"
+    },
+    {
+      "carrier_key": "eurowings"
+    },
+    {
+      "carrier_key": "fiji-airways"
+    },
+    {
+      "carrier_key": "firefly"
+    },
+    {
+      "carrier_key": "fly-one"
+    },
+    {
+      "carrier_key": "flydubai"
+    },
+    {
+      "carrier_key": "frontier-airlines"
+    },
+    {
+      "carrier_key": "gx-airlines"
+    },
+    {
+      "carrier_key": "garuda-indonesia"
+    },
+    {
+      "carrier_key": "georgian-airways"
+    },
+    {
+      "carrier_key": "gol-transportes-aereos"
+    },
+    {
+      "carrier_key": "grand-canyon-scenic-airlines"
+    },
+    {
+      "carrier_key": "gulf-air"
+    },
+    {
+      "carrier_key": "hk-express"
+    },
+    {
+      "carrier_key": "hainan-airlines"
+    },
+    {
+      "carrier_key": "hawaiian-airlines"
+    },
+    {
+      "carrier_key": "hong-kong-airlines"
+    },
+    {
+      "carrier_key": "ita-airways"
+    },
+    {
+      "carrier_key": "iberia"
+    },
+    {
+      "carrier_key": "iberia-express"
+    },
+    {
+      "carrier_key": "indigo"
+    },
+    {
+      "carrier_key": "israir-airlines"
+    },
+    {
+      "carrier_key": "japan-airlines"
+    },
+    {
+      "carrier_key": "jet2com"
+    },
+    {
+      "carrier_key": "jetstar"
+    },
+    {
+      "carrier_key": "jetstar-asia"
+    },
+    {
+      "carrier_key": "jetstar-japan"
+    },
+    {
+      "carrier_key": "juneyao-airlines"
+    },
+    {
+      "carrier_key": "klm-royal-dutch-airlines"
+    },
+    {
+      "carrier_key": "kenn-borek-air"
+    },
+    {
+      "carrier_key": "kenya-airways"
+    },
+    {
+      "carrier_key": "korean-air"
+    },
+    {
+      "carrier_key": "kuwait-airways"
+    },
+    {
+      "carrier_key": "lam-mozambique-airlines"
+    },
+    {
+      "carrier_key": "latam-airlines"
+    },
+    {
+      "carrier_key": "latam-airlines-ecuador"
+    },
+    {
+      "carrier_key": "lanmei-airlines"
+    },
+    {
+      "carrier_key": "lao-airlines"
+    },
+    {
+      "carrier_key": "link-airways"
+    },
+    {
+      "carrier_key": "lion-air"
+    },
+    {
+      "carrier_key": "lucky-air"
+    },
+    {
+      "carrier_key": "lufthansa"
+    },
+    {
+      "carrier_key": "luxair"
+    },
+    {
+      "carrier_key": "miat-mongolian-airlines"
+    },
+    {
+      "carrier_key": "maldivian"
+    },
+    {
+      "carrier_key": "mandarin-airlines"
+    },
+    {
+      "carrier_key": "maya-island-air"
+    },
+    {
+      "carrier_key": "middle-east-airlines"
+    },
+    {
+      "carrier_key": "motor-sich-airlines"
+    },
+    {
+      "carrier_key": "myanmar-airways-international"
+    },
+    {
+      "carrier_key": "myway-airlines"
+    },
+    {
+      "carrier_key": "national-airlines"
+    },
+    {
+      "carrier_key": "nauru-airlines"
+    },
+    {
+      "carrier_key": "neos"
+    },
+    {
+      "carrier_key": "nepal-airlines"
+    },
+    {
+      "carrier_key": "nile-air"
+    },
+    {
+      "carrier_key": "nok-air"
+    },
+    {
+      "carrier_key": "nordwind-airlines"
+    },
+    {
+      "carrier_key": "norwegian-air-sweden"
+    },
+    {
+      "carrier_key": "nouvelair"
+    },
+    {
+      "carrier_key": "novoair"
+    },
+    {
+      "carrier_key": "olympic-air"
+    },
+    {
+      "carrier_key": "oman-air"
+    },
+    {
+      "carrier_key": "onur-air"
+    },
+    {
+      "carrier_key": "png-air"
+    },
+    {
+      "carrier_key": "pacific-coastal-airlines"
+    },
+    {
+      "carrier_key": "pegasus-airlines"
+    },
+    {
+      "carrier_key": "philippine-airlines"
+    },
+    {
+      "carrier_key": "porter-airlines"
+    },
+    {
+      "carrier_key": "precision-air"
+    },
+    {
+      "carrier_key": "proflight-zambia"
+    },
+    {
+      "carrier_key": "qatar-airways"
+    },
+    {
+      "carrier_key": "regional-air"
+    },
+    {
+      "carrier_key": "rex-regional-express"
+    },
+    {
+      "carrier_key": "rossiya-airlines"
+    },
+    {
+      "carrier_key": "royal-air-maroc"
+    },
+    {
+      "carrier_key": "royal-brunei-airlines"
+    },
+    {
+      "carrier_key": "royal-jordanian"
+    },
+    {
+      "carrier_key": "rusline"
+    },
+    {
+      "carrier_key": "rwandair"
+    },
+    {
+      "carrier_key": "sansa"
+    },
+    {
+      "carrier_key": "sas-scandinavian"
+    },
+    {
+      "carrier_key": "scat"
+    },
+    {
+      "carrier_key": "starlux-airlines"
+    },
+    {
+      "carrier_key": "swiss"
+    },
+    {
+      "carrier_key": "samoa-airways"
+    },
+    {
+      "carrier_key": "saudia"
+    },
+    {
+      "carrier_key": "scoot"
+    },
+    {
+      "carrier_key": "shandong-airlines"
+    },
+    {
+      "carrier_key": "shanghai-airlines"
+    },
+    {
+      "carrier_key": "shenzhen-airlines"
+    },
+    {
+      "carrier_key": "sichuan-airlines"
+    },
+    {
+      "carrier_key": "silver-airways"
+    },
+    {
+      "carrier_key": "singapore-airlines"
+    },
+    {
+      "carrier_key": "skywest-airlines"
+    },
+    {
+      "carrier_key": "skyward-airlines"
+    },
+    {
+      "carrier_key": "solomon-airlines"
+    },
+    {
+      "carrier_key": "somon-air"
+    },
+    {
+      "carrier_key": "south-african-airways"
+    },
+    {
+      "carrier_key": "southern-airways-express"
+    },
+    {
+      "carrier_key": "southwest-airlines"
+    },
+    {
+      "carrier_key": "spicejet"
+    },
+    {
+      "carrier_key": "spirit-airlines"
+    },
+    {
+      "carrier_key": "srilankan-airlines"
+    },
+    {
+      "carrier_key": "sun-country-airlines"
+    },
+    {
+      "carrier_key": "sunexpress"
+    },
+    {
+      "carrier_key": "sundair"
+    },
+    {
+      "carrier_key": "sunrise-airways"
+    },
+    {
+      "carrier_key": "sunwing-airlines"
+    },
+    {
+      "carrier_key": "taag-angola"
+    },
+    {
+      "carrier_key": "tap-air-portugal"
+    },
+    {
+      "carrier_key": "thai-airways"
+    },
+    {
+      "carrier_key": "thai-smile"
+    },
+    {
+      "carrier_key": "tui-airways"
+    },
+    {
+      "carrier_key": "tajik-air"
+    },
+    {
+      "carrier_key": "tarom"
+    },
+    {
+      "carrier_key": "thai-airasia"
+    },
+    {
+      "carrier_key": "thai-lion-air"
+    },
+    {
+      "carrier_key": "thai-vietjet-air"
+    },
+    {
+      "carrier_key": "thomas-cook-airlines"
+    },
+    {
+      "carrier_key": "titan-airways-limited"
+    },
+    {
+      "carrier_key": "trade-air"
+    },
+    {
+      "carrier_key": "tradewind-aviation"
+    },
+    {
+      "carrier_key": "transavia"
+    },
+    {
+      "carrier_key": "transavia-france"
+    },
+    {
+      "carrier_key": "tunisair"
+    },
+    {
+      "carrier_key": "tunisair-express"
+    },
+    {
+      "carrier_key": "turkish-airlines"
+    },
+    {
+      "carrier_key": "us-bangla-airlines"
+    },
+    {
+      "carrier_key": "uni-air"
+    },
+    {
+      "carrier_key": "united-airlines"
+    },
+    {
+      "carrier_key": "ural-airlines"
+    },
+    {
+      "carrier_key": "urumqi-air"
+    },
+    {
+      "carrier_key": "uzbekistan-airways"
+    },
+    {
+      "carrier_key": "vieques-air-link"
+    },
+    {
+      "carrier_key": "vietjet"
+    },
+    {
+      "carrier_key": "vietnam-airlines"
+    },
+    {
+      "carrier_key": "virgin-atlantic"
+    },
+    {
+      "carrier_key": "virgin-australia"
+    },
+    {
+      "carrier_key": "vistara"
+    },
+    {
+      "carrier_key": "viva-aerobus"
+    },
+    {
+      "carrier_key": "viva-air-colombia"
+    },
+    {
+      "carrier_key": "volaris"
+    },
+    {
+      "carrier_key": "volotea"
+    },
+    {
+      "carrier_key": "vueling"
+    },
+    {
+      "carrier_key": "windrose-airlines"
+    },
+    {
+      "carrier_key": "wizz-air"
+    },
+    {
+      "carrier_key": "xiamen-airlines"
+    },
+    {
+      "carrier_key": "yamal-airlines"
+    },
+    {
+      "carrier_key": "yeti-airlines"
+    },
+    {
+      "carrier_key": "airbaltic"
+    },
+    {
+      "carrier_key": "airblue"
+    },
+    {
+      "carrier_key": "easyjet"
+    }
+  ],
+  "selectorAdded": [],
+  "skipped": [
+    {
+      "carrier_key": "40-mile-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "9-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "abx-air-inc",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "act-havayollari-as",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "ahk-air-hong-kong-limited",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "ais-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "aix-connect",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "alpavia",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "alrosa",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "apa-guam",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "arincaeronautical-radio-inc",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "as-salaam-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "asl-airlines-ireland",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "asl-airways",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "atsa-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "azur-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "abacus-international-pte-ltd",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "accesrail",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "adria-airways",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "advanced-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "aero-dili",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "aero-k",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "aero-mongolia",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "aero-nomad-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "aero-charter-ukraine",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "aeroitalia",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "aerolink",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "aerostan",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "aerolineas-sosa",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "aeromar",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "aeronautical-telecommunications-ltdaerotel",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "aeropelican-air-services",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "aeroservis",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "aerotranscargo",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "aerovias-dap",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "africa-world-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "african-express-airways",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "afrinat-international-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "aigle-azur",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "air-anka",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "air-antilles",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "air-arabia-abu-dhabi",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "air-arabia-maroc",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "air-atlanta-europe",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "air-berlin",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "air-busan",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "air-canada-express",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "air-cargo-carriers-llc",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "air-cargo-germany",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "air-djibouti",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "air-excel",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "air-flamenco",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "air-iceland-connect",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "air-incheon",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "air-india-express",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "air-inuit",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "air-kbz",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "air-koryo",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "air-libya",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "air-link",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "air-lituanica",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "air-manas",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "air-mekong",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "air-moana",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "air-mobility-command",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "air-namibia",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "air-nostrum",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "air-ocean-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "air-panama",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "air-samarkand",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "air-seoul",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "air-thanlwin",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "air-timor",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "air-transport-association-of-americadba-airlines-for-america",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "air-transport-international-llc",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "air-travel",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "air-wisconsin",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "air-x-charter",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "airasia-cambodia",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "airborneo",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "airexplore",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "airswift",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "airfast-indonesia",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "airhub-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "airline-urga",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "airmax-sa",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "airshop-bv",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "airzena",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "ak-bars-aero",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "akasa-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "almasria-universal-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "alaska-seaplanes",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "albastar",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "alexandria-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "alpha-air-transport",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "alsa-grupo-slu",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "amadeus-it-group-sa",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "amakusa-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "amaszonas",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "amaszonas-uruguay",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "amelia",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "amerijet-international-inc",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "amtrak",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "andes-lineas-aereas",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "angara-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "anguilla-air-services",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "animawings",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "arajet",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "arctic-transportation-services-inc-ryan-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "arik-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "arkhangelsk-2",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "arktika",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "aruba-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "ascend-airways",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "aserca-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "asian-wings-airways",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "asman-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "atran",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "aurora",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "austral-lineas-aereas",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "australian-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "avia-traffic-company",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "aviacon-zitotrans-air-company-jsc",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "avialeasing-aviation-company",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "avianca-brazil",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "avianca-guatemala",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "avianca-peru",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "avion-express-lithuania",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "avion-express-malta",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "aztec-airways",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "ba-cityflyer",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "ba-euroflyer",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "bb-airways",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "bbn-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "bh-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "bmi-regional",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "bqb-lineas-aereas",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "bra",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "bvi-airways",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "badr-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "balkan",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "bassaka-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "batik-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "bearskin-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "bees-airline",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "belavia",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "bemidji-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "berjaya-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "bermudair",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "berniq-airways",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "blue-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "blue-islands",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "bonza",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "breeze-airways",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "bringer-air-cargo",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "brit-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "buffalo-airways-ltd",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "bul-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "buta-airways",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "ceiba-intercontinental",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "cjsc-royal-flight-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "caicos-express-airways",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "cambodia-airways",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "cargojet-airways-ltd",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "caribbean-air-export-import-inc",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "cebgo",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "central-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "central-mountain-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "chair-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "challenge-air-cargo-ltd",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "challenge-airlines-be",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "challenge-airlines-il",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "charter-air-transport-inc",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "chautauqua-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "chengdu-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "china-cargo-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "china-postal-airlines-ltd",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "china-united-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "chongqing-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "chu-kong-passenger-transport-co-ltd",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "cimber",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "cinnamon-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "citilink",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "coastal-aviation",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "cobalt-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "colorful-guizhou-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "commutair",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "compass-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "conquest-air-inc",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "corendon-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "corendon-dutch-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "cronos-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "crown-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "dhl-aero-expreso-sa",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "dhl-aviation-eemea-bscc",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "dhl-de-guatemala",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "dot-lt",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "daallo-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "dan-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "dana-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "denver-air-connection-dac",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "department-of-national-defence",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "dniproavia",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "dokasch",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "donavia",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "donghai-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "e-savtravel",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "eaglexpress-air-charter-sdnbhddbaeaglexpress-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "eastern-air-lines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "eastern-airways",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "ecojet",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "electronic-data-systems-corporation",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "ellinair",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "emetebe-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "empire-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "endeavor-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "enter-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "envoy-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "equaflight",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "eritrean-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "ernest-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "eswatini-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "euro-asia-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "euroatlantic-airways",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "euroairlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "european-air-charter",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "european-air-transport",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "european-cargo-services-bv",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "eurostar",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "everts-air-cargo",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "express-airline",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "expressjet",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "fat-far-eastern-air-transport",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "flyone-armenia",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "fedex",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "finistair",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "first-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "fitsair",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "flair-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "flexflight",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "flightlink",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "fly-all-ways",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "fly-baghdad",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "fly-branson-travel-dba-branson-airexpress",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "fly-jordan",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "fly-one-romania",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "fly-oya",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "fly-red-sea",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "fly2sky",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "flyals",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "flyaden",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "flyarystan",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "flybosnia",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "flygabon",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "flykhiva",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "flyone-asia",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "flybe",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "flybondi",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "flybusteam",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "freedom-airline-express",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "french-armed-forces",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "fuji-dream-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "gp-aviation",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "galileo-international",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "gambia-bird-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "gazpromavia",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "georgian-wings",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "ghadames-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "global-aviation-gea",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "global-aviation-services-group",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "global-feeder-services",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "globeair",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "globus-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "globus-lls",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "gojet-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "grand-china-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "grant-aviation",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "great-lakes-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "greater-bay-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "green-africa-airways",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "grumeti-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "gullivair",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "guyane-express-fly",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "hop",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "hahn-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "hahn-air-technologies",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "hawkair",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "hayways",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "hebei-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "heli-air-monaco",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "helicopteros-del-sureste",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "helijet",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "heron-aviation",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "heston-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "hi-fly-ltd",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "hinterland-aviation",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "hong-kong-air-cargo-carrier-limited",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "horizon-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "humo-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "hydro-quebec",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "heli-securite-helicopter-airline",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "iata-clearing-houseinternational-air-transport-association",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "ibc-airways",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "ihy-izmir-havayollari-as",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "infini-travel-information-inc",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "iryo",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "ita-software-inc",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "iberojet",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "ibex-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "ibom-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "indonesia-airasia",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "innoaviation",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "insel-air-aruba",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "intercaribbean-airways",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "iraero",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "iran-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "iran-airtour",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "iran-aseman-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "iraqi-airways",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "island-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "island-air-express",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "islena-de-inversiones-sa-de-cvdba-islena-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "itek-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "izhavia",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "jandm-alaska-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "jsc-sirena-travel",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "jsc-aircompany-atma",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "jsc-kazaviaspas",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "jsc-transport-automated-informationsystems-tais",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "jambojet",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "japan-air-commuter",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "japan-transocean-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "jet-airways",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "jet-airways-inc",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "jet-asia-airways",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "jet-aviation-business",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "jet-ops",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "jetair-caribbean",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "jetlite",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "jetsmart",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "jetsmart-argentina",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "jetsmart-peru",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "jiangxi-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "jin-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "jonair",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "jonika-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "jordan-aviation",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "joy-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "k-mile-air-co-ltd",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "kc-international-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "klm-cityhopper",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "kalitta-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "kalstar-aviation",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "kamchatka-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "kan-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "kartika-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "kenmore-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "khabarovsk-avia",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "korongo-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "kosmos",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "kostroma-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "krasavia",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "kulula",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "kunming-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "kyrgyz-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "lan-chile-cargo",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "lanhsa",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "laser-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "latam-airlines-brasil",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "latam-airlines-colombia",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "latam-airlines-paraguay",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "latam-airlines-peru",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "latam-express",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "lift-airline",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "la-compagnie",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "la-costena",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "lanexang-airways-international",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "lao-skyway",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "lauda-europe",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "level",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "levu",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "liat-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "libyan-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "linea-aerea-carguera-de-colombia-sa",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "longtail-aviation",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "loong-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "lufthansa-cityline",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "lufthansa-systems",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "lulutai-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "lumiwings",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "luxwing",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "lynden-air-cargo-llc",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "lynx-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "mayair",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "mhs-aviation",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "mng-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "myairline",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "magnicharters",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "mahan-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "malta-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "maluti-sky",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "mango",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "manta-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "marathon-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "martinair",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "mas-de-carga-sa-de-cv-dba-masair",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "maximus-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "meraj-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "mesa-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "metrojet",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "mistral-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "moldavian-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "monacair",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "montenegro-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "myanmar-national-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "nam-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "norra",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "nova-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "nakina-air-service",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "naryan-mar-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "navios-evolusi-solusindo",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "navitaire",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "new-pacific-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "nexus-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "niger-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "niki",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "ningxia-cargo-airlines-coltd",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "nippon-cargo-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "nokscoot",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "nolinor-aviation",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "nomad-aviation",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "nomad-aviation-pty-ltd",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "nordstar",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "norse-atlantic-uk",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "north-flying",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "northern-air-cargo",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "northwest",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "northwest-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "northwestern-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "norwegian-long-haul",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "novair",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "nyxair",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "okay-airways",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "oneclick",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "onejet",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "orient-thai-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "oriental-air-bridge",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "pal-express",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "pawa-dominicana",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "pm-air-llc",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "pt-my-indo-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "pacific-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "panama-airways",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "panorama-airways",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "papillon-airways",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "pascan-aviation",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "passionair",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "pattaya-airways",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "pelita-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "petroleum-air-services",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "philippines-airasia",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "phoenix-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "piedmont-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "pobeda",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "polar-air-cargo-worldwide-inc",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "polar-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "populair",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "portugalia-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "premier-trans-aire-inc",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "premium-jet-ag",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "qanot-sharq",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "qeshm-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "qingdao-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "quikjet-cargo-airlines-pvt-ltd",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "radixx-solutions-international-inc",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "rano-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "raya-airways-sdn-bhddba-raya-airways",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "red-sea-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "red-wings",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "regional-jet-ou",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "regional-sky",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "renegade-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "rise-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "rotana-jet",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "royal-air-philippines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "ruili-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "ryanair-uk",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "s7-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "satco",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "seair-international",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "sf-airlines-company-ltd",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "sita-airlines-worldwidetelecommunications-and-information-sv",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "skol",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "sks-airways",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "sncf",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "stp-airways",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "sun-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "sabre-inc",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "safarilink-aviation",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "safi-airways",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "sapsan",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "seaport-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "sepehran-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "serene-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "serve-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "severstal-air-company",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "shaheen-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "shirak-avia",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "shun-tak-china-travel-ship",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "sila",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "silk-avia",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "silk-way-west-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "silkair",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "silver-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "sky-airline-peru",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "sky-angkor-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "sky-fru",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "sky-gates-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "sky-high",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "sky-lease-i-inc",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "sky-mali",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "sky-vision-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "sky-wings-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "skybahamas",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "skyup-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "skywork-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "skymark-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "skytrans-australia",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "small-planet-airlines-poland",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "smartavia",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "smartlynx-malta",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "smartwings-czechia",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "smartwings-hungary",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "smartwings-poland",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "smokey-bay-air-inc",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "solaseed-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "sounds-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "southern-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "southern-air-charter",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "southern-sky-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "special-ground-handling-service-xh",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "spring-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "spring-japan",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "springjet",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "sriwijaya-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "st-barth-commuter",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "stabo-air-limited",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "star-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "star-peru",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "starbow",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "sudan-airways",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "sun-air-express",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "sun-phuquoc-airways",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "sunexpress-deutschland",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "sunclass-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "sunday-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "sunlight-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "sunrise-dominicana",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "sunsplash-aviation-llc",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "suparna-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "super-air-jet",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "surinam-airways",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "swiftair",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "swoop",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "sylt-air-gmbh",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "syrianair",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "tway-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "tab-transportes-aereos-bolivianos",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "tag-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "tame",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "tar-aerolineas",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "tik-systems",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "trip-linhas-aereas",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "tailwind-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "tampa-cargo",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "tandem-aero",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "taquan-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "tarco-aviation",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "tashkent-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "tassili-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "tatarstan-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "tayaran-jet",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "tbilisi-airways",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "terra-avia",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "texel-air-ltd",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "tezjet",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "thai-airasia-x",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "the-landline-company",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "thomas-cook-airlines-belgium",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "tianjin-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "tibet-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "tigerair-mandala",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "tigerair-taiwan",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "total-linhas-aereas",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "trans-air-congo",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "transair-senegal",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "transnusa",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "travel-service-slovensko",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "travel-technology-interactive-sa",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "travelsky-technology-limited",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "trenitalia",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "trigana-air-service",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "turkmenistan-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "ubm-aviation-oag",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "uls-airlines-cargo",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "ur-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "utair",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "uvt-aero",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "ultimate-jetcharters",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "umza-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "uni-top-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "united-nigeria-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "universal-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "up-israel",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "uzbekistan-express",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "vim-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "vlm-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "voepass-linhas-aereas",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "valuejet",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "videcom-international-limited",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "vietravel-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "villa-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "virgin-america",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "vladivostok-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "volaris-costa-rica",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "volaris-el-salvador",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "volga-dnepr-airlines",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "volo",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "wow-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "wamos-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "warbelows-air",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "webjet-linhas-aereas",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "west-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "west-link-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "westjet-encore",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "western-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "white-airways",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "winair",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "wingo",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "wings-air",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "wings-of-lebanon",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "wizz-air-abu-dhabi",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "wizz-air-malta",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "wizz-air-uk",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "world-atlantic-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "world-ticket-ltd",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "world2fly-portugal",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "worldspan",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "wright-air-service",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "xejet",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "xpressair",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "yanair",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "yto-cargo-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "yakutia-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "yemenia",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "zipair",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "zagros-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "zambezi-airlines",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "zambia-airways",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "zapways-inc",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "zimex-aviation",
+      "reason": "has official/help only, no page URLs for fetch manifest"
+    },
+    {
+      "carrier_key": "aero",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "flycaa",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "flyadeal",
+      "reason": "no usable filled fields"
+    },
+    {
+      "carrier_key": "ifly",
+      "reason": "no usable filled fields"
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "slug": "alaska-airlines",
+  "official_website": "https://www.alaskaair.com",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "A Saver ticket still includes the standard cabin-bag allowance.",
+      "required": [
+        "carryon_bag_dimensions"
+      ],
+      "fields": {
+        "carryon_bag_dimensions": {
+          "value": "One carry-on bag up to 22 x 14 x 9 inches, including wheels and handles, plus one smaller personal item.",
+          "status": "official",
+          "source_url": "https://www.alaskaair.com/content/travel-info/fly-alaska/travel-tips?lid=nav%3Ainfo-tips",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "The allowance depends on route, cabin, ticketing date and eligible benefits. Check the policy shown on your booking.",
+      "required": [
+        "north_america_fees",
+        "standard_bag_limit",
+        "first_class_allowance"
+      ],
+      "fields": {
+        "north_america_fees": {
+          "value": "For tickets issued on or after April 10, 2026, standard North America Main Cabin/Saver fees are USD 45 for the first bag and USD 55 for the second. Hawaii interisland pricing differs.",
+          "status": "official",
+          "source_url": "https://www.alaskaair.com/content/travel-info/baggage/checked-bags",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "standard_bag_limit": {
+          "value": "Standard bags may weigh up to 50 lb and measure up to 62 linear inches.",
+          "status": "official",
+          "source_url": "https://www.alaskaair.com/content/travel-info/baggage/checked-bags",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "first_class_allowance": {
+          "value": "Passengers confirmed in First Class at check-in receive two bags up to 70 lb each. Later upgrades do not refund bag fees already paid.",
+          "status": "official",
+          "source_url": "https://www.alaskaair.com/content/travel-info/baggage/checked-bags",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "lede": "Saver trades seat choice and flexibility for a lower fare while retaining Main Cabin onboard amenities.",
+      "required": [
+        "seat_assignment",
+        "cabin_baggage",
+        "cancellation_credit",
+        "changes"
+      ],
+      "fields": {
+        "seat_assignment": {
+          "value": "Seats are assigned at check-in; groups are not guaranteed seats together.",
+          "status": "official",
+          "source_url": "https://www.alaskaair.com/content/travel-info/flight-experience/saver",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "cabin_baggage": {
+          "value": "Saver includes the same carry-on allowance as Main. Saver passengers normally board in group F, when overhead space may be limited.",
+          "status": "official",
+          "source_url": "https://www.alaskaair.com/content/travel-info/flight-experience/saver",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "cancellation_credit": {
+          "value": "A Saver ticket cancelled at least 14 days before the first departure is eligible for a 50% credit. Outside the 24-hour cancellation policy, other refunds are restricted.",
+          "status": "official",
+          "source_url": "https://www.alaskaair.com/content/travel-info/flight-experience/saver",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "changes": {
+          "value": "Eligible same-day confirmed changes are available for a fee; other changes and standby are not allowed.",
+          "status": "official",
+          "source_url": "https://www.alaskaair.com/content/travel-info/flight-experience/saver",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "lede": "Airline-caused disruption is handled separately from the restrictions on voluntarily changing a Saver ticket.",
+      "required": [
+        "rebooking",
+        "meals",
+        "overnight_care",
+        "refund_options"
+      ],
+      "fields": {
+        "rebooking": {
+          "value": "For cancellation or significant delay, Alaska offers the next available Alaska or Hawaiian flight without an additional charge.",
+          "status": "official",
+          "source_url": "https://www.alaskaair.com/content/about-us/customer-commitment/customer-commitment-delay-care",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "meals": {
+          "value": "For a controllable delay of two hours or more, passengers continuing their journey are offered a reasonable meal voucher at the airport.",
+          "status": "official",
+          "source_url": "https://www.alaskaair.com/content/about-us/customer-commitment/customer-commitment-delay-care",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "overnight_care": {
+          "value": "For a controllable overnight disruption at least 100 miles from home, accommodation and hotel transport are provided subject to availability; reasonable reimbursement applies when voucher hotels are unavailable.",
+          "status": "official",
+          "source_url": "https://www.alaskaair.com/content/about-us/customer-commitment/customer-commitment-delay-care",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "refund_options": {
+          "value": "Alaska says it will tell eligible passengers about refund entitlement before offering alternative transport or credits. Weather and other uncontrollable events can exclude the listed amenities.",
+          "status": "official",
+          "source_url": "https://www.alaskaair.com/content/about-us/customer-commitment/customer-commitment-delay-care",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "lede": "These are completion deadlines, not recommended airport arrival times. Join the bag-drop queue well beforehand.",
+      "required": [
+        "domestic_cutoff",
+        "international_cutoff",
+        "airport_exceptions",
+        "boarding_cutoff"
+      ],
+      "fields": {
+        "domestic_cutoff": {
+          "value": "For domestic U.S. flights, check-in and bag acceptance close 50 minutes before departure.",
+          "status": "official",
+          "source_url": "https://www.alaskaair.com/content/travel-info/at-the-airport/airport-boarding-times",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "international_cutoff": {
+          "value": "International check-in and bag acceptance close 60 minutes before departure; Guadalajara requires 90 minutes.",
+          "status": "official",
+          "source_url": "https://www.alaskaair.com/content/travel-info/at-the-airport/airport-boarding-times",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "airport_exceptions": {
+          "value": "King Salmon and Dillingham require 60 minutes. The published Hawaii interisland cutoff is 30 minutes. Pets travelling in the hold have earlier deadlines.",
+          "status": "official",
+          "source_url": "https://www.alaskaair.com/content/travel-info/at-the-airport/airport-boarding-times",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "boarding_cutoff": {
+          "value": "Be checked in and available at the gate at least 30 minutes before departure.",
+          "status": "official",
+          "source_url": "https://www.alaskaair.com/content/travel-info/at-the-airport/airport-boarding-times",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "lede": "Use Alaska's help centre for booking support and the published contract for the terms governing travel.",
+      "required": [
+        "official_website_url",
+        "contact_help_centre",
+        "conditions_of_carriage_url"
+      ],
+      "fields": {
+        "official_website_url": {
+          "value": "https://www.alaskaair.com",
+          "status": "official",
+          "source_url": "https://www.alaskaair.com/content/about-us/help-contact",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "contact_help_centre": {
+          "value": "https://www.alaskaair.com/content/about-us/help-contact",
+          "status": "official",
+          "source_url": "https://www.alaskaair.com/content/about-us/help-contact",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://www.alaskaair.com/content/legal/contract-of-carriage",
+          "status": "official",
+          "source_url": "https://www.alaskaair.com/content/legal/contract-of-carriage",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

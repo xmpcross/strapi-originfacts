@@ -22,3 +22,42 @@ scripts/.airport-ingest-progress.json
 .yarn-cache/
 .npm/
 ops/data/
+
+# Local tooling: a symlink to /opt/scripts/originfacts on the build host.
+# Absolute and machine-specific, so it dangles anywhere else — on Vercel it
+# made `next build` fail with ENOENT stat /vercel/path0/scripts.
+scripts
+
+# Editor swap files
+.*.swp
+
+# Stage 1 capture archive — large, and reproducible by re-running the fetcher.
+# Excluded per-entry, not as a directory: git cannot re-include a file inside
+# an excluded directory, so `data/captures/` would have made the negation below
+# silently inert.
+data/captures/*
+# ...except the reachability report. It is small, it is the artifact we re-run
+# and diff against, and a capture archive is not the same kind of thing as a
+# measurement of whether capturing is possible at all.
+!data/captures/reachability.json
+# Manual captures are tracked in full, bytes included.
+#
+# An automated capture is reproducible — re-run the fetcher and you get it back.
+# A manual one is not: nobody can re-run a person saving a page from a browser
+# they were sitting at, on a date that has passed, from a carrier that refuses
+# this host. The bytes ARE the evidence, so they are versioned.
+#
+# Gotcha, hit twice while writing these rules: git will not descend into an
+# excluded directory, so a negation for a file inside one is silently inert.
+# That is why the parent is `data/captures/*` rather than `data/captures/`, and
+# why both the directory and its children are re-included below. Verify any
+# change here with `git check-ignore -v`, not by reading it.
+!data/captures/manual/
+!data/captures/manual/**
+# ...but not the extraction output that lands beside them. candidates.json is
+# derived from the tracked bytes by a tracked script, so it is reproducible in
+# the way the HTML is not, and versioning it would dirty the tree on every
+# re-extract.
+data/captures/manual/**/candidates.json
+ops/fetch/node_modules
+run/

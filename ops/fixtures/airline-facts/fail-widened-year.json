@@ -1,0 +1,18 @@
+{
+  "slug": "fixture-widened",
+  "official_website": "https://www.qantas.com",
+  "modules": [
+    {
+      "id": "history",
+      "title": "History",
+      "fields": {
+        "founded": {
+          "value": "1920",
+          "status": "official",
+          "source_url": "https://www.qantas.com/en-au/about-us/our-company.html",
+          "verified_at": "1920-01-01T00:00:00Z"
+        }
+      }
+    }
+  ]
+}

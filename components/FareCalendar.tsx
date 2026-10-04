@@ -33,6 +33,73 @@ const DOW = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 const pad = (n: number) => String(n).padStart(2, '0');
 const toISO = (y: number, m: number, d: number) => `${y}-${pad(m + 1)}-${pad(d)}`;
 const monthKey = (y: number, m: number) => `${y}-${pad(m + 1)}`;
+const DOW_SHORT = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const MONTH_SHORT = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+export function DepartureIcon({ className = 'size-4 flex-none text-[#001e73]' }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <rect x="3" y="18" width="18" height="2" rx="0.5" />
+      <path d="M20.8 7.2c.5-.8.2-1.9-.6-2.4-.8-.5-1.9-.2-2.4.6l-3.1 5.3-7.5-3.3 2.1-4.8-2.6.7-3.8 6-3.7-1.6 2.5 4 4.5 1.6 14.6-6.1z" />
+    </svg>
+  );
+}
+
+export function ArrivalIcon({ className = 'size-4 flex-none text-[#001e73]' }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <rect x="3" y="18" width="18" height="2" rx="0.5" />
+      <path d="M3.2 7.5l2.2.8 1.8-1.5 2.5.8V2.5h2.5v7.1l6.5 2.5c.8.3 1.2 1.2.9 2s-1.2 1.2-2 .9l-4.5-1.8-4.5 2.2-5.4 1.8z" />
+    </svg>
+  );
+}
+
+export function DateIcon({ className = 'size-4 flex-none text-[#001e73]' }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.8}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+      <line x1="16" y1="2" x2="16" y2="6" />
+      <line x1="8" y1="2" x2="8" y2="6" />
+      <line x1="3" y1="10" x2="21" y2="10" />
+    </svg>
+  );
+}
+
+function stepIsoDate(iso: string, days: number): string {
+  if (!iso || iso.length !== 10) return iso;
+  const [y, m, d] = iso.split('-').map(Number);
+  const dt = new Date(y, m - 1, d);
+  dt.setDate(dt.getDate() + days);
+  return dt.toISOString().slice(0, 10);
+}
+
+function fmtNiceDate(iso: string): string {
+  if (!iso || iso.length !== 10) return '';
+  const [y, m, d] = iso.split('-').map(Number);
+  const dt = new Date(y, m - 1, d);
+  if (isNaN(dt.getTime())) return '';
+  return `${DOW_SHORT[dt.getDay()]}, ${MONTH_SHORT[dt.getMonth()]} ${d}`;
+}
+
 /** ISO YYYY-MM-DD → dd/mm/yyyy for display. */
 const fmtDDMM = (iso: string) =>
   iso && iso.length === 10 ? `${iso.slice(8, 10)}/${iso.slice(5, 7)}/${iso.slice(0, 4)}` : '';
@@ -193,33 +260,96 @@ export default function FareCalendar({
     </div>
   );
 
-  const label =
-    depart && (oneWay || !ret)
-      ? fmtDDMM(depart)
-      : depart && ret
-        ? `${fmtDDMM(depart)} – ${fmtDDMM(ret)}`
-        : '';
+  const departFmt = depart ? fmtNiceDate(depart) : '';
+  const retFmt = ret ? fmtNiceDate(ret) : '';
 
   return (
-    <div className="relative min-w-[150px] flex-1" ref={boxRef}>
-      {/* Trigger — styled as a form field showing dd/mm/yyyy */}
-      <button
-        type="button"
-        onClick={() => setOpen((o) => !o)}
-        aria-label="Choose dates"
-        className="flex h-full w-full items-center gap-2 px-3 py-2.5 text-left text-sm text-forest-900 focus:outline-none focus:ring-2 focus:ring-forest-900/70"
-      >
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="size-4 flex-none text-forest-900/50" aria-hidden>
-          <rect x="3" y="4" width="18" height="17" rx="2" />
-          <path d="M3 9h18M8 2v4M16 2v4" strokeLinecap="round" />
-        </svg>
-        <span className={label ? '' : 'text-forest-900/45'}>
-          {label || (oneWay ? 'Depart' : 'Depart – Return')}
-        </span>
-      </button>
+    <div className="relative min-w-[240px] flex-1" ref={boxRef}>
+      {/* Trigger — cheapOair style with date steppers (< >) */}
+      <div className="flex h-full w-full items-center justify-between gap-3 px-3.5 py-2.5 text-left text-sm font-medium text-forest-900">
+        <div className="flex items-center gap-2">
+          <DateIcon className="size-4 flex-none text-[#001e73]" />
+          <button
+            type="button"
+            onClick={() => setOpen((o) => !o)}
+            className={departFmt ? 'font-medium text-[#001e73] hover:underline' : 'text-forest-900/50'}
+          >
+            {departFmt || 'Depart'}
+          </button>
+          {depart && (
+            <span className="inline-flex items-center gap-1 text-xs text-forest-900/50">
+              <button
+                type="button"
+                aria-label="Previous day"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onChange(stepIsoDate(depart, -1), ret);
+                }}
+                className="px-0.5 font-bold hover:text-forest-900"
+              >
+                ‹
+              </button>
+              <button
+                type="button"
+                aria-label="Next day"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onChange(stepIsoDate(depart, 1), ret);
+                }}
+                className="px-0.5 font-bold hover:text-forest-900"
+              >
+                ›
+              </button>
+            </span>
+          )}
+        </div>
+
+        {!oneWay && (
+          <>
+            <span className="select-none font-light text-forest-900/40">—</span>
+
+            <div className="flex items-center gap-2">
+              <DateIcon className="size-4 flex-none text-[#001e73]" />
+              <button
+                type="button"
+                onClick={() => setOpen((o) => !o)}
+                className={retFmt ? 'font-medium text-[#001e73] hover:underline' : 'text-forest-900/50'}
+              >
+                {retFmt || 'Return'}
+              </button>
+              {ret && (
+                <span className="inline-flex items-center gap-1 text-xs text-forest-900/50">
+                  <button
+                    type="button"
+                    aria-label="Previous day"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onChange(depart, stepIsoDate(ret, -1));
+                    }}
+                    className="px-0.5 font-bold hover:text-forest-900"
+                  >
+                    ‹
+                  </button>
+                  <button
+                    type="button"
+                    aria-label="Next day"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onChange(depart, stepIsoDate(ret, 1));
+                    }}
+                    className="px-0.5 font-bold hover:text-forest-900"
+                  >
+                    ›
+                  </button>
+                </span>
+              )}
+            </div>
+          </>
+        )}
+      </div>
 
       {open && (
-        <div className="absolute left-0 top-[calc(100%+8px)] z-40 w-[min(560px,92vw)] rounded-xl border border-forest-900/12 bg-white p-4 shadow-2xl">
+        <div className="absolute left-0 top-[calc(100%+8px)] z-40 w-[min(560px,92vw)] rounded-[8px] border border-forest-900/12 bg-white p-4 shadow-2xl">
           {/* Tabs + exact labels */}
           <div className="mb-3 flex flex-wrap items-center justify-between gap-3 border-b border-forest-900/10 pb-3">
             <div className="flex items-center gap-5 text-[13px] font-semibold tracking-wide">

@@ -1,0 +1,22 @@
+{
+  "carrier_key": "qantas",
+  "page_key": "conditions_of_carriage",
+  "url": "https://www.qantas.com/gb/en/book-a-trip/flights/conditions-of-carriage.html",
+  "locale": "en-gb",
+  "fetched_at": "2026-08-24T02:54:55Z",
+  "http_status": null,
+  "final_url": "https://www.qantas.com/gb/en/book-a-trip/flights/conditions-of-carriage.html",
+  "content_hash": "sha256:573d7e2ecef9c49192b07c48291967b90d9fd258617da0f3cbcb0895ebd10302",
+  "text_length": 106438,
+  "capture_status": "manual",
+  "capture_method": "manual",
+  "captured_by": "kritin",
+  "captured_at": "2026-08-24",
+  "consent_action": "none_found",
+  "html_lang": "en-GB",
+  "detected_currencies": [
+    "$"
+  ],
+  "redirected": false,
+  "attempts": 0
+}

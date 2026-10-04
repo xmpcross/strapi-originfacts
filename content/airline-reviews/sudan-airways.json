@@ -1,0 +1,80 @@
+{
+ "slug": "sudan-airways",
+ "sources": [
+  "tripadvisor"
+ ],
+ "stats": {
+  "source": "all",
+  "reviewCount": 3,
+  "avgRating10": 6.0,
+  "recommendPct": null,
+  "subratings": null,
+  "firstReviewDate": "2016-03-04",
+  "lastReviewDate": "2017-06-01"
+ },
+ "statsBySource": {
+  "tripadvisor": {
+   "source": "tripadvisor",
+   "reviewCount": 3,
+   "avgRating10": 6.0,
+   "recommendPct": null,
+   "subratings": null,
+   "firstReviewDate": "2016-03-04",
+   "lastReviewDate": "2017-06-01",
+   "sourceUrl": "https://www.tripadvisor.com/Airline_Review-d8729158-Reviews-Sudan-Airways"
+  }
+ },
+ "reviews": [
+  {
+   "source": "tripadvisor",
+   "id": "ta-489745696",
+   "date": "2017-06-01",
+   "rating10": 10,
+   "title": "Riyadh",
+   "text": "Not bad at this time good service and good staff and it should be developing to the best day by day. With the best possible",
+   "author": "الرئيس ا",
+   "authorCountry": null,
+   "authorLocation": null,
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Khartoum - Riyadh",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-377317647",
+   "date": "2016-05-28",
+   "rating10": 4,
+   "title": "Travelling in sudan airways is so irritating",
+   "text": "As been the cheapest airline to travel from Nigeria to sudan, there have been a lot of mess regarding their takeoff time, they usually postponed ones booking till next time atleast a week, which means after u get to the airport on the day of your flight, u would found that there plane isn't arrive yet, and you will receive an information from any of their agent saying flight for today has been cancelled, so you have to wait till next week. which means go back home till next fix time, a lot of people has experienced such kind of mess. didn't you?",
+   "author": "avidreader2016",
+   "authorCountry": null,
+   "authorLocation": "Khartoum",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Kano - Khartoum",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-352794122",
+   "date": "2016-03-04",
+   "rating10": 4,
+   "title": "PRAY BEFORE TAKING OFF AND SAY THANKS UPON LANDING",
+   "text": "I took this flight - usually old airbuses - on numerous occasions and never really had any problems or bad experiences of any sort bar losing one bag to what seemed like acid rain. Crew were always helpful but the baggage service was something else! However, there were numerous fatal crashes during my few years in the Sudan and maybe my praying somehow helped?",
+   "author": "kelvinwilliama2014",
+   "authorCountry": null,
+   "authorLocation": "Istanbul",
+   "cabin": "First Class",
+   "typeTraveller": null,
+   "route": "Khartoum - Port Sudan",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  }
+ ]
+}

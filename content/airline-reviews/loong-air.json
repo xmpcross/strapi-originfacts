@@ -1,0 +1,46 @@
+{
+ "slug": "loong-air",
+ "sources": [
+  "tripadvisor"
+ ],
+ "stats": {
+  "source": "all",
+  "reviewCount": 1,
+  "avgRating10": 10.0,
+  "recommendPct": null,
+  "subratings": null,
+  "firstReviewDate": "2018-12-18",
+  "lastReviewDate": "2018-12-18"
+ },
+ "statsBySource": {
+  "tripadvisor": {
+   "source": "tripadvisor",
+   "reviewCount": 1,
+   "avgRating10": 10.0,
+   "recommendPct": null,
+   "subratings": null,
+   "firstReviewDate": "2018-12-18",
+   "lastReviewDate": "2018-12-18",
+   "sourceUrl": "https://www.tripadvisor.com/Airline_Review-d8729202-Reviews-Loong-Air"
+  }
+ },
+ "reviews": [
+  {
+   "source": "tripadvisor",
+   "id": "ta-640364681",
+   "date": "2018-12-18",
+   "rating10": 10,
+   "title": "Quite flight",
+   "text": "Flight on time, freindly crew. Didn't like the seaweed biscuit snacks, but the chicken burger was nice.. The crew make english translation for me for each message, the only foreigner on that flight, Definitely, I'll fly with them again!",
+   "author": "Zakaria",
+   "authorCountry": null,
+   "authorLocation": "Marrakech",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Guilin - Jinghong",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  }
+ ]
+}

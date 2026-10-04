@@ -1,0 +1,46 @@
+{
+ "slug": "qingdao-airlines",
+ "sources": [
+  "tripadvisor"
+ ],
+ "stats": {
+  "source": "all",
+  "reviewCount": 1,
+  "avgRating10": 8.0,
+  "recommendPct": null,
+  "subratings": null,
+  "firstReviewDate": "2019-10-20",
+  "lastReviewDate": "2019-10-20"
+ },
+ "statsBySource": {
+  "tripadvisor": {
+   "source": "tripadvisor",
+   "reviewCount": 1,
+   "avgRating10": 8.0,
+   "recommendPct": null,
+   "subratings": null,
+   "firstReviewDate": "2019-10-20",
+   "lastReviewDate": "2019-10-20",
+   "sourceUrl": "https://www.tripadvisor.com/Airline_Review-d8728963-Reviews-Qingdao-Airlines"
+  }
+ },
+ "reviews": [
+  {
+   "source": "tripadvisor",
+   "id": "ta-719978316",
+   "date": "2019-10-20",
+   "rating10": 8,
+   "title": "Not bad but lacking the fine touches",
+   "text": "Checkin was awesome, no queue at all but the ground staff were less than welcoming. Plane, on time but you board from T1 and take a bus all the way to the far end of T2. In flight announcements were unintelligible and they don't serve Qingdao beer, only soft drinks. Otherwise not bad for a Chinese airline.",
+   "author": "MattwalesNorthWales",
+   "authorCountry": null,
+   "authorLocation": "Chengdu",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Chengdu - Nha Trang",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  }
+ ]
+}

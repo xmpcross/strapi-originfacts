@@ -6,15 +6,41 @@ const strapiHost = new URL(
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
-  allowedDevOrigins: ['preview.fxnstudio.com'],
+  allowedDevOrigins: ['preview.fxnstudio.com', '51.161.208.188'],
+  // Markdown and JSON read from disk at request time. The paths are built with
+  // join(process.cwd(), …) rather than written as literals, so Next's file
+  // tracer cannot follow them and would leave these out of the serverless
+  // bundle — the loaders catch their own errors, so the result is a green
+  // build serving pages with no airline reviews and no legal text.
+  outputFileTracingIncludes: {
+    '/**': [
+      './content/airline-facts/**',
+      './content/airline-reviews/**',
+      './content/legal/**',
+      './content/pages/**',
+      './data/airline-refs/**',
+      './data/route-facts/**',
+    ],
+  },
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: strapiHost },
+      { protocol: 'https', hostname: 'cms.fxnstudio.com' },
+      { protocol: 'https', hostname: 'strapi.fxnstudio.com' },
       { protocol: 'https', hostname: 'images.unsplash.com' },
     ],
   },
   async redirects() {
     return [
+      // Canonical host: redirect bare domain (originfacts.com) to www.originfacts.com
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'originfacts.com' }],
+        destination: 'https://www.originfacts.com/:path*',
+        permanent: true,
+      },
+      // Hotels top-level route -> Category listing permanent 301
+      { source: '/hotels', destination: '/category/hotels', permanent: true },
       // Travel Resources merged into Travel Tips on 2026-05-02.
       { source: '/category/travel-resources', destination: '/category/travel-tips', permanent: true },
       // Car Rental → Car Rentals (category renamed in Strapi, 2026-05-20).

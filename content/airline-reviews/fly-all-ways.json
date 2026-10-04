@@ -1,0 +1,63 @@
+{
+ "slug": "fly-all-ways",
+ "sources": [
+  "tripadvisor"
+ ],
+ "stats": {
+  "source": "all",
+  "reviewCount": 2,
+  "avgRating10": 5.0,
+  "recommendPct": null,
+  "subratings": null,
+  "firstReviewDate": "2019-06-09",
+  "lastReviewDate": "2019-09-26"
+ },
+ "statsBySource": {
+  "tripadvisor": {
+   "source": "tripadvisor",
+   "reviewCount": 2,
+   "avgRating10": 5.0,
+   "recommendPct": null,
+   "subratings": null,
+   "firstReviewDate": "2019-06-09",
+   "lastReviewDate": "2019-09-26",
+   "sourceUrl": "https://www.tripadvisor.com/Airline_Review-d17213149-Reviews-Fly-Allways"
+  }
+ },
+ "reviews": [
+  {
+   "source": "tripadvisor",
+   "id": "ta-713119141",
+   "date": "2019-09-26",
+   "rating10": 4,
+   "title": "Difficult to get in contact",
+   "text": "I've been trying to book a ticket from Curacao to Paramaribo, but the payment system on their website isn't working. Even after trying with different creditcards we still receive a failed payment status. I've triend to call them several times as well as sending an email, but I just can't get a hold of them. Poor customer service...",
+   "author": "mdek13",
+   "authorCountry": null,
+   "authorLocation": "Amsterdam",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Curaçao - Paramaribo",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-680182218",
+   "date": "2019-06-09",
+   "rating10": 6,
+   "title": "Friendly",
+   "text": "Good aircraft, friendly service. Airline would only take “cash” money upon purchase of ticket. On one flight they called me to tell me the plane was leaving 2 hrs early... it didn’t. On the return flight we left 1 hour earlier than the time on my ticket. Wanted to travel with them again...... but there is no return flight for my destination ?!",
+   "author": "stephen b",
+   "authorCountry": null,
+   "authorLocation": "Curaçao",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Curaçao - Santo Domingo",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  }
+ ]
+}

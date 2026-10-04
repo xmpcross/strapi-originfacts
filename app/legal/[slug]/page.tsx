@@ -11,6 +11,8 @@ import {
 } from '@/lib/legal';
 import LegalTableOfContents from '@/components/LegalTableOfContents';
 import { clampDescription } from '@/lib/seo';
+import { breadcrumbJsonLd } from '@/lib/jsonld';
+import { JsonLd } from '@/components/SeoBlocks';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -22,9 +24,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const doc = getLegalDoc(slug);
   if (!doc) return { title: 'Not found' };
+  const description =
+    doc.description.length >= 80
+      ? doc.description
+      : `${doc.title} for Originfacts, including website policies, user rights, affiliate disclosures, contact options and related legal information.`;
   return {
     title: `${doc.title} — Originfacts`,
-    description: clampDescription(doc.description),
+    description: clampDescription(description),
   };
 }
 
@@ -40,12 +46,18 @@ export default async function LegalPage({ params }: Props) {
   const rawHtml = await marked.parse(md, { async: true });
   const html = addHeadingIds(rawHtml);
 
+  const breadcrumbs = breadcrumbJsonLd([
+    { name: 'Legal', url: '/legal' },
+    { name: doc.title, url: `/legal/${slug}` },
+  ]);
+
   return (
     <article
       id="top"
       className="mx-auto max-w-7xl px-6 py-16"
       data-testid={`legal-page-${slug}`}
     >
+      <JsonLd data={breadcrumbs} />
       {/* Header */}
       <header className="max-w-3xl">
         <nav className="text-xs uppercase tracking-widest text-forest-900/60">

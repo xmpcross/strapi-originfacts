@@ -1,0 +1,245 @@
+{
+  "slug": "singapore-airlines",
+  "official_website": "https://www.singaporeair.com",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "required": [
+        "carryon_bag_dimensions",
+        "weight_economy",
+        "weight_business_first"
+      ],
+      "fields": {
+        "carryon_bag_dimensions": {
+          "value": "55 x 40 x 20 cm",
+          "status": "pending",
+          "source_url": "http://www.siacargo.com/baggage",
+          "notes": "Singapore Airlines cabin baggage size limit: 55 x 40 x 20 cm.",
+          "verified_at": "2026-09-04",
+          "verified_by": "automated_provenance"
+        },
+        "weight_economy": {
+          "value": "7 kg (15 lbs)",
+          "status": "pending",
+          "source_url": "http://www.siacargo.com/baggage",
+          "notes": "Singapore Airlines Economy Class carry-on weight limit.",
+          "verified_at": "2026-09-04",
+          "verified_by": "automated_provenance"
+        },
+        "weight_business_first": {
+          "value": "14 kg (30 lbs) total across 2 pieces",
+          "status": "pending",
+          "source_url": "http://www.siacargo.com/baggage",
+          "notes": "Singapore Airlines Premium / Business Class carry-on weight limit.",
+          "verified_at": "2026-09-04",
+          "verified_by": "automated_provenance"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "required": [
+        "piece_weight_economy",
+        "piece_weight_business",
+        "piece_weight_first"
+      ],
+      "fields": {
+        "piece_weight_economy": {
+          "value": "1 piece up to 23 kg (50 lbs)",
+          "status": "pending",
+          "source_url": "http://www.siacargo.com/baggage",
+          "notes": "Singapore Airlines Economy Class checked baggage allowance.",
+          "verified_at": "2026-09-04",
+          "verified_by": "automated_provenance"
+        },
+        "piece_weight_business": {
+          "value": "2 pieces up to 32 kg (70 lbs) each",
+          "status": "pending",
+          "source_url": "http://www.siacargo.com/baggage",
+          "notes": "Singapore Airlines Business Class checked baggage allowance.",
+          "verified_at": "2026-09-04",
+          "verified_by": "automated_provenance"
+        },
+        "piece_weight_first": {
+          "value": "3 pieces up to 32 kg (70 lbs) each",
+          "status": "pending",
+          "source_url": "http://www.siacargo.com/baggage",
+          "notes": "Singapore Airlines First Class checked baggage allowance.",
+          "verified_at": "2026-09-04",
+          "verified_by": "automated_provenance"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "lede": "Singapore Airlines publishes separate cutoffs for online check-in, mobile check-in, airport counters and boarding gates.",
+      "body": [
+        "For most trips, Singapore Airlines website check-in is available from 48 hours to 1.5 hours before departure, while SingaporeAir mobile app check-in is available from 48 hours to 1 hour before departure.",
+        "At the airport, Singapore Airlines says check-in counters close 40 minutes before departure and recommends arriving three hours early, especially when checking baggage. Boarding gates close 15 minutes before departure, and some bag-drop or self-service options have airport-specific opening and closing times."
+      ],
+      "required": [
+        "website_checkin_window",
+        "mobile_checkin_window",
+        "airport_counter_cutoff",
+        "boarding_gate_cutoff",
+        "bag_drop_variation"
+      ],
+      "fields": {
+        "website_checkin_window": {
+          "value": "Website check-in is available from 48 hours to 1.5 hours before flight departure.",
+          "status": "official",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/check-in/online-mobile-checkin/",
+          "notes": "Singapore Airlines' online and mobile check-in page states the website check-in window.",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "mobile_checkin_window": {
+          "value": "SingaporeAir mobile app check-in is available from 48 hours to 1 hour before flight departure.",
+          "status": "official",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/check-in/online-mobile-checkin/",
+          "notes": "Singapore Airlines' online and mobile check-in page states the mobile app check-in window.",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "airport_counter_cutoff": {
+          "value": "Airport check-in counters close 40 minutes before departure; Singapore Airlines recommends arriving three hours early, especially with checked baggage.",
+          "status": "official",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/check-in/airport-check-in/",
+          "notes": "Singapore Airlines' airport check-in page states the counter closing time and arrival guidance.",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "boarding_gate_cutoff": {
+          "value": "Boarding gates close 15 minutes before departure.",
+          "status": "official",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/check-in/boarding/",
+          "notes": "Singapore Airlines' boarding page states the gate closing time.",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "bag_drop_variation": {
+          "value": "Automated bag-drop and self-service timings vary by airport, so travellers should check the airport-specific Singapore Airlines guidance for their departure point.",
+          "status": "official",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/check-in/automated-bagdrop/",
+          "notes": "Singapore Airlines' automated bag-drop page lists different opening and closing times by airport.",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "lede": "Passenger rights on Singapore Airlines depend on the operating carrier, departure country, arrival country and the regulation attached to the itinerary.",
+      "body": [
+        "For flights covered by European passenger-rights rules, Singapore Airlines says qualifying departure delays may trigger meals, refreshments and communications, with hotel accommodation and hotel transport when the delay pushes travel to the next day.",
+        "Singapore Airlines also publishes refund and disruption commitments for U.S.-covered travel, including prompt refunds when ticket refunds are due and practical assistance such as meals, accommodation, rebooking help and transport where possible during cancellations, delays and misconnections."
+      ],
+      "required": [
+        "eu_delay_assistance",
+        "eu_five_hour_refund",
+        "us_refund_timing",
+        "disruption_assistance"
+      ],
+      "fields": {
+        "eu_delay_assistance": {
+          "value": "EU-covered flights delayed at departure by 2, 3 or 4 hours, depending on distance and route type, may qualify for meals, refreshments and communications.",
+          "status": "official",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/customer-commitment/pax-rights-regulations-europe/",
+          "notes": "Singapore Airlines' European passenger-rights page lists care thresholds by flight distance and route type.",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "eu_five_hour_refund": {
+          "value": "For EU-covered departure delays of more than 5 hours, passengers may cancel and obtain a refund of the unused portion of the ticket, with a return flight when relevant.",
+          "status": "official",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/customer-commitment/pax-rights-regulations-europe/",
+          "notes": "Singapore Airlines' European passenger-rights page explains the five-hour delay refund option.",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "us_refund_timing": {
+          "value": "For eligible U.S.-covered refunds, Singapore Airlines says refunds are provided within 7 business days for credit-card purchases and within 20 business days for cash or check purchases.",
+          "status": "official",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/customer-commitment/customer-service-plan/",
+          "notes": "Singapore Airlines' customer service plan states refund timing for eligible refunds.",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "disruption_assistance": {
+          "value": "When Singapore Airlines cancels, diverts or delays a flight, it says it will try to provide meals, accommodation, rebooking assistance and transport to accommodation to reduce passenger inconvenience.",
+          "status": "official",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/customer-commitment/customer-service-plan/",
+          "notes": "Singapore Airlines' customer service plan describes disruption assistance for cancellations, diversions, delays and misconnections.",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and customer support",
+      "required": [
+        "phone_home_market",
+        "phone_us",
+        "contact_help_centre",
+        "conditions_of_carriage_url",
+        "official_website_url",
+        "cancellations_refunds"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "+65 6223 8888",
+          "status": "official",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/contact-us/",
+          "notes": "Singapore Airlines official customer support line.",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "phone_us": {
+          "value": "+1 (833) 727-0118",
+          "status": "official",
+          "source_url": "https://www.singaporeair.com/en_UK/us/plan-travel/local-promotions/media-centre/230227AdvisoryonSIAUSreservations/",
+          "notes": "Singapore Airlines says this is its U.S. reservations and KrisFlyer Services number and warns that the old 1-800-742-3333 number is no longer used.",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "contact_help_centre": {
+          "value": "https://www.singaporeair.com/en_UK/sg/support/help-centre/",
+          "status": "official",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/support/help-centre/",
+          "notes": "Singapore Airlines help centre for bookings, changes, refunds, disruptions, baggage and special assistance.",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://www.singaporeair.com/en_UK/sg/travel-info/conditions-carriage/",
+          "status": "official",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/conditions-carriage/",
+          "notes": "Singapore Airlines published conditions of carriage.",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "official_website_url": {
+          "value": "https://www.singaporeair.com",
+          "status": "official",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/home",
+          "notes": "Singapore Airlines passenger website.",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        },
+        "cancellations_refunds": {
+          "value": "https://www.singaporeair.com/en_UK/sg/travel-info/charges-changes/cancellations-refunds/",
+          "status": "official",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/charges-changes/cancellations-refunds/",
+          "notes": "Singapore Airlines cancellations and refunds page.",
+          "verified_at": "2026-09-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

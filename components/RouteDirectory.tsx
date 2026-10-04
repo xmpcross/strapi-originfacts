@@ -350,7 +350,7 @@ function PopularRoutesStrip({ routes }: { routes: StrapiRoute[] }) {
 
   return (
     <section className="mt-12" data-testid="popular-routes">
-      <h2 className="editorial-h text-[1.5rem] font-bold text-forest-900">Popular flight routes</h2>
+      <h2 className="editorial-h text-[1.5rem] font-bold text-forest-900">Which popular flight routes can you explore?</h2>
       <div
         ref={trackRef}
         onMouseEnter={() => setPaused(true)}

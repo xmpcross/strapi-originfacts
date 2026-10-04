@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <defs>
+    <linearGradient id="bg-marcus" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07142b"/>
+      <stop offset="100%" stop-color="#166534"/>
+    </linearGradient>
+  </defs>
+  <rect width="160" height="160" rx="80" fill="url(#bg-marcus)"/>
+  <circle cx="80" cy="58" r="28" fill="#ffffff" opacity="0.95"/>
+  <path d="M36 134c0-26 19.5-43 44-43s44 17 44 43" fill="#ffffff" opacity="0.95"/>
+  <text x="80" y="65" text-anchor="middle" fill="#07142b" font-family="system-ui, sans-serif" font-weight="bold" font-size="22">MV</text>
+</svg>

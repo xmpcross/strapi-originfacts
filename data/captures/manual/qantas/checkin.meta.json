@@ -1,0 +1,20 @@
+{
+  "carrier_key": "qantas",
+  "page_key": "checkin",
+  "url": "https://www.qantas.com/en-au/manage-booking/check-in",
+  "locale": "en-au",
+  "fetched_at": "2026-08-24T02:54:55Z",
+  "http_status": null,
+  "final_url": "https://www.qantas.com/en-au/manage-booking/check-in",
+  "content_hash": "sha256:6ca5e7f240a50e6e5ae884fb85c81b8641c182effd945987a0c3afa59674de83",
+  "text_length": 15679,
+  "capture_status": "manual",
+  "capture_method": "manual",
+  "captured_by": "kritin",
+  "captured_at": "2026-08-24",
+  "consent_action": "none_found",
+  "html_lang": "en-AU",
+  "detected_currencies": [],
+  "redirected": false,
+  "attempts": 0
+}

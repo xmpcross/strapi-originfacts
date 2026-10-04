@@ -1,0 +1,14 @@
+{
+  "total_airlines": 1096,
+  "in_fetch_manifest": 278,
+  "not_in_fetch_manifest": 818,
+  "with_capture_folder": 278,
+  "with_ok_pages": 86,
+  "with_article_selector": 8,
+  "with_candidates": 8,
+  "missing_rows": 1088,
+  "files": [
+    "/opt/projects/originfacts.com/ops/fetch/reports/all-airlines-fetch-data-audit.csv",
+    "/opt/projects/originfacts.com/ops/fetch/reports/all-airlines-missing-fetch-data.csv"
+  ]
+}

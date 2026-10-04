@@ -13,15 +13,14 @@ export default function SearchByDestinationBlock() {
   return (
     <section className="mt-32" data-testid="cheap-flights-by-destination">
       <h2 className="editorial-h text-[1.5rem] font-bold text-forest-900">
-        Search cheap flights by destination
+        Where can you find cheap flights by destination?
       </h2>
       <p className="mt-2 max-w-4xl text-[1rem] text-ink/75">
-        Compare deals from hundreds of airline sites in one place. Flights below are priced from{' '}
+        Use these destination rows when you know where you want to go but still want a faster route into the search form. Each link starts from{' '}
         <span className="text-primary-emphasis font-semibold">
           {origin.name} {origin.iata}
         </span>{' '}
-        — your nearest airport. Whether you&apos;re booking a last-minute getaway or planning
-        ahead, browse popular destinations below to surface the best fares for your next trip.
+        first, then shows alternative major origins so you can compare city pairs, positioning flights and nearby airport options.
       </p>
       <div className="mt-6 grid grid-cols-1 gap-x-12 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
         {destinations.map((dest) => {
@@ -41,7 +40,7 @@ export default function SearchByDestinationBlock() {
                   rel="noopener noreferrer sponsored"
                   className="flex-1 text-sm font-semibold text-[#1411ec] hover:text-primary-emphasis"
                 >
-                  {dest.name} flights from {origin.name}
+                  Cheap flights to {dest.name} from {origin.name}
                 </a>
                 <span
                   className="rounded-full p-1.5 text-forest-900/40 transition group-hover:bg-forest-900/5 group-hover:text-primary-emphasis"

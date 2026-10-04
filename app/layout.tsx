@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Figtree, Inter, Plus_Jakarta_Sans, Urbanist } from 'next/font/google';
+import { Figtree, Inter, Outfit, Plus_Jakarta_Sans, Urbanist } from 'next/font/google';
 import Script from 'next/script';
 import './globals.css';
 import Header from '@/components/Header';
@@ -24,6 +24,13 @@ const urbanist = Urbanist({
   subsets: ['latin'],
   variable: '--font-urbanist',
   weight: ['400', '500', '600', '700', '800'],
+  display: 'swap',
+});
+
+const outfit = Outfit({
+  subsets: ['latin'],
+  variable: '--font-outfit',
+  weight: ['300', '400', '500', '600', '700', '800'],
   display: 'swap',
 });
 
@@ -76,7 +83,16 @@ export const metadata: Metadata = {
       'application/rss+xml': [{ url: '/feed.xml', title: 'Originfacts RSS' }],
     },
   },
-  other: ADSENSE_ENABLED ? { 'google-adsense-account': ADSENSE_CLIENT } : {},
+  other: {
+    // Affiliate network site verification. Unlike the Impact tag below, these
+    // are plain name/content pairs, so they go through the metadata API rather
+    // than being hand-written into the body.
+    'mitgo-verification': 'c35b4b6a-ddfe-4741-ab3e-2c1b7538a949',
+    'Takeads-verification': 'd5d48ab4-be05-4198-bb51-e1492a80937c',
+    'verify-admitad': 'f0703eb480',
+    'ahrefs-site-verification': '9f39dc9055559be529e3fa6460b115fc2cbbed0f424148902c26a1170c54f046',
+    ...(ADSENSE_ENABLED ? { 'google-adsense-account': ADSENSE_CLIENT } : {}),
+  },
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
@@ -84,7 +100,39 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html lang="en" className={`${inter.variable} ${urbanist.variable} ${jakarta.variable} ${figtree.variable}`}>
-      <body className="min-h-screen flex flex-col font-sans font-normal grain" data-testid="app-shell">
+      <head>
+        {/* Impact.com site verification (second tag). Written verbatim with `value`,
+            as Impact provides it; the metadata API would rewrite `value` to `content`. */}
+        <meta {...({ name: 'impact-site-verification', value: '766261aa-958f-4a83-998f-3674e1686da0' } as Record<string, string>)} />
+        {/* Google Tag Manager */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T7MWHNST');`,
+          }}
+        />
+        {/* End Google Tag Manager */}
+        <script
+          {...({ nowprocket: '', 'nitro-exclude': '' } as Record<string, string>)}
+          type="text/javascript"
+          id="sa-dynamic-optimization"
+          data-uuid="5dd6702c-eaa5-420e-a784-a4685d29cc71"
+          src="https://dashboard.searchatlas.com/scripts/dynamic_optimization.js"
+          async
+        />
+        <script
+          async
+          defer
+          src="https://widget.getyourguide.com/dist/pa.umd.production.min.js"
+          data-gyg-partner-id="H8Y3KHZ"
+        />
+        {/* Ahrefs Web Analytics */}
+        <script src="https://analytics.ahrefs.com/analytics.js" data-key="KbPcf3YVlIhEJPDxFrNztQ" async />
+      </head>
+      <body className={`${inter.variable} ${urbanist.variable} ${outfit.variable} ${jakarta.variable} ${figtree.variable} min-h-screen flex flex-col font-sans font-normal grain`} data-testid="app-shell">
         {/* Impact.com site verification — raw tag (React 19 hoists it into <head>).
             Kept as the verbatim <meta name=… value=…> Impact provides; not routed
             through Next's metadata API, which would rewrite `value` to `content`. */}
@@ -127,10 +175,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             crossOrigin="anonymous"
           />
         )}
-        {/* Travelpayouts "extra monetization" (tp-em.com) removed: it serves
-            popunder/redirect-style ads, which violates the AdSense Program
-            Policies (unexpected redirects / pop-unders) and blocks approval.
-            Do not re-add while running AdSense. */}
         {/* Travelpayouts white-label SDK is loaded by <TpwlLoader /> on the
             flight-search page itself (the only page with tpwl containers) so
             it re-initialises on client-side navigation — see
@@ -143,17 +187,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <FixedSocialFollow />
         <Footer />
         <CookieConsent />
-        {/* VigLink (Sovrn Commerce) — auto-affiliates outbound merchant links.
-            Loaded just before </body> per Sovrn's install snippet. */}
-        <Script id="viglink" strategy="afterInteractive">{`
-          var vglnk = {key: 'afc24eff86a1f79d72ff2337684e5150'};
-          (function(d, t) {var s = d.createElement(t);
-            s.type = 'text/javascript';s.async = true;
-            s.src = '//cdn.viglink.com/api/vglnk.js';
-            var r = d.getElementsByTagName(t)[0];
-            r.parentNode.insertBefore(s, r);
-          }(document, 'script'));
-        `}</Script>
+        <script src="https://convertlink.com/script/7295bcfa-4dc7-4794-8b6c-4434f5945457/bundle.js" />
       </body>
     </html>
   );

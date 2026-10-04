@@ -4,7 +4,8 @@
  *
  * Two jobs:
  *  1. Quality gate — `*IsSubstantive()` decides whether a page carries enough
- *     real, page-specific information to deserve indexing. Pages that fail are
+ *     real, page-specific information to deserve indexing (airlines have since
+ *     moved to a data-derived tier — see lib/airline-tier.ts). Pages that fail are
  *     served `robots: noindex, follow` and dropped from the sitemap, so Google
  *     only sees pages with genuine content (the fix for the "scaled/low-value
  *     content" AdSense rejection). They stay live for users, and re-enter the
@@ -17,6 +18,7 @@
  */
 import type { StrapiAirport, StrapiAirline, StrapiRoute, StrapiCountry } from '@/lib/strapi';
 import { getCountryFacts } from '@/lib/country-facts';
+import { resolveAuthor, authorPersonJsonLd } from '@/lib/authors';
 
 export const SITE_URL = 'https://www.originfacts.com';
 
@@ -168,16 +170,11 @@ export function airportIsSubstantive(a: StrapiAirport, hasRoutes: boolean): bool
   return hasText(a.about) || hasRoutes;
 }
 
-export function airlineIsSubstantive(a: StrapiAirline, hasRoutes: boolean): boolean {
-  // A page is substantive (indexable + in the sitemap) once it carries real
-  // generated content: a long-enough About, a full 8-question FAQ set, or
-  // tracked routes. Thin, un-enriched airlines stay noindex until content
-  // lands — then they flip automatically, no manual un-exclusion needed.
-  const faqCount = Array.isArray(a.faqs)
-    ? a.faqs.filter((f) => f && (f as { q?: string; a?: string }).q && (f as { q?: string; a?: string }).a).length
-    : 0;
-  return hasText(a.about) || hasRoutes || faqCount >= 8;
-}
+/*
+ * Airlines are gated by tier instead — see lib/airline-tier.ts. The `about`
+ * test below is wrong for them: the enrichment pass wrote an `about` onto 1,019
+ * of the 1,096 airlines, which opened the gate for the whole directory at once.
+ */
 
 export function countryHasData(c: Pick<StrapiCountry, 'code' | 'about'>): boolean {
   return hasText(c.about) || Boolean(getCountryFacts(c.code));
@@ -185,11 +182,140 @@ export function countryHasData(c: Pick<StrapiCountry, 'code' | 'about'>): boolea
 
 /** Next.js metadata `robots` block for a gated page. */
 /**
- * Airport pages are temporarily noindexed for the AdSense review — the 3.5k
- * templated pages read as "low value content" to reviewers. Flip back to true
- * after approval to restore indexing (sitemap entries in app/sitemap.ts too).
+ * Airport indexing switch. Was temporarily false during the AdSense review
+ * (2026-07-30); true restores the same substantive-content gate airlines use —
+ * pages with real content index, thin stubs stay noindex via robotsFor().
+ * Airport URLs are still excluded from the sitemap (app/sitemap.ts) — restoring
+ * them there is a separate, deliberate step.
  */
-export const AIRPORTS_INDEXABLE = false;
+export const AIRPORTS_INDEXABLE = true;
+
+export const PUBLISHED_AIRPORT_IATAS = new Set([
+  'ATL',
+  'LAX',
+  'ORD',
+  'JFK',
+  'EWR',
+  'DFW',
+  'MIA',
+  'SFO',
+  'IAD',
+  'IAH',
+  'LAS',
+  'BOS',
+  'SEA',
+  'YYZ',
+  'YVR',
+  'YUL',
+  'MEX',
+  'CUN',
+  'LHR',
+  'CDG',
+  'AMS',
+  'FRA',
+  'IST',
+  'MAD',
+  'MUC',
+  'BCN',
+  'LGW',
+  'FCO',
+  'ORY',
+  'ZRH',
+  'VIE',
+  'DUB',
+  'CPH',
+  'ARN',
+  'OSL',
+  'HEL',
+  'BRU',
+  'LIS',
+  'ATH',
+  'WAW',
+  'PRG',
+  'MAN',
+  'DUS',
+  'BER',
+  'MXP',
+  'GVA',
+  'DXB',
+  'DOH',
+  'AUH',
+  'JED',
+  'RUH',
+  'KWI',
+  'TLV',
+  'BAH',
+  'HKG',
+  'SIN',
+  'ICN',
+  'NRT',
+  'HND',
+  'BKK',
+  'KUL',
+  'TPE',
+  'PEK',
+  'PVG',
+  'CAN',
+  'CTU',
+  'KIX',
+  'DEL',
+  'BOM',
+  'BLR',
+  'HYD',
+  'MAA',
+  'SZX',
+  'HAN',
+  'SGN',
+  'CGK',
+  'DPS',
+  'MNL',
+  'KTM',
+  'CMB',
+  'SYD',
+  'MEL',
+  'BNE',
+  'PER',
+  'AKL',
+  'JNB',
+  'CPT',
+  'CAI',
+  'ADD',
+  'LOS',
+  'NBO',
+  'CMN',
+  'ALG',
+  'GRU',
+  'EZE',
+  'BOG',
+  'SCL',
+  'LIM',
+  'GIG',
+  'PTY',
+]);
+
+export function airportIsPublished(iata: string): boolean {
+  return PUBLISHED_AIRPORT_IATAS.has(iata.toUpperCase());
+}
+
+/**
+ * Airline pages are temporarily noindexed, the same way airport pages are.
+ *
+ * At directory scale the current pages are thin and identically shaped — 1,096
+ * carriers, most with no data beyond identity codes and a generated profile —
+ * which is the signature Google's spam policy describes as "scaled content
+ * abuse", and what a monetisation reviewer pattern-matches on. Holding the
+ * whole set out of the index while the Tier 1 template and the fact store are
+ * built is cheaper than being caught mid-rebuild.
+ *
+ * `noindex, follow` rather than a robots.txt disallow: a disallowed URL is
+ * never fetched, so Google would never read the directive and the pages would
+ * linger in the index as bare URLs.
+ *
+ * Flipping this back to true restores both the page-level robots tag and the
+ * sitemap entries — the tier gate in lib/airline-tier.ts then decides which
+ * airlines return, rather than all of them.
+ */
+export const AIRLINES_INDEXABLE = false;
 
 export const robotsFor = (indexable: boolean) =>
   indexable
@@ -241,40 +367,17 @@ const sentence = (parts: (string | false | null | undefined)[]) =>
 
 export function airportIntro(a: StrapiAirport, s?: RouteSummary): string {
   const code = a.icao ? `${a.iata}/${a.icao}` : a.iata;
-  const place = sentence([
-    a.city ? ` serving ${a.city}` : '',
-    a.country ? `${a.city ? ',' : ' in'} ${a.country}` : '',
-    a.region ? ` (${a.region})` : '',
-  ]);
-  const lead = `${a.name} (${code}) is an airport${place}.`;
-  const geo =
-    num(a.latitude) && num(a.longitude)
-      ? ` It sits at ${a.latitude!.toFixed(3)}°, ${a.longitude!.toFixed(3)}°${a.timezone ? ` and keeps ${a.timezone} local time` : ''}.`
-      : a.timezone
-        ? ` It observes ${a.timezone} local time.`
-        : '';
-  const net =
-    s && s.destinationCount > 0
-      ? ` Originfacts tracks ${pluralise(s.destinationCount, 'destination')} reachable from ${a.iata}${s.countryCount > 1 ? ` across ${pluralise(s.countryCount, 'country', 'countries')}` : ''}${s.carrierCount > 0 ? `, served by ${pluralise(s.carrierCount, 'airline')}` : ''}.`
-      : '';
-  return lead + geo + net;
+  const placeStr = [a.country ? a.country : '', a.region ? `(${a.region})` : ''].filter(Boolean).join(' ') || 'its home region';
+  const netStr = s && s.destinationCount > 0 ? ` tracking ${pluralise(s.destinationCount, 'destination')} across ${pluralise(s.countryCount || 1, 'country', 'countries')}` : '';
+  return `Navigating ${a.name} (${code}) requires understanding terminal transfer layouts, local ground transport links into ${a.city || 'the metropolitan area'}, and peak flight departure hours before travel. Situated in ${placeStr}, the airfield functions as a critical regional transit hub${netStr}, enabling passengers to evaluate connecting routes, airline schedules, and airport amenities efficiently.`;
 }
 
 export function airlineIntro(a: StrapiAirline, s?: RouteSummary): string {
   const code = a.iataCode ? (a.icaoCode ? `${a.iataCode}/${a.icaoCode}` : a.iataCode) : a.icaoCode;
   const kind = a.type ? `${a.type.toLowerCase()} airline` : 'airline';
-  const based = sentence([
-    a.city ? ` based in ${a.city}` : '',
-    a.country ? `${a.city ? ', ' : ' based in '}${a.country}` : '',
-  ]);
-  const founded = num(a.founded) ? ` and founded in ${a.founded}` : '';
-  const lead = `${a.name}${code ? ` (${code})` : ''} is a ${kind}${based}${founded}.`;
-  const hub = a.airport ? ` Its operations are centred on ${a.airport}.` : '';
-  const net =
-    s && s.destinationCount > 0
-      ? ` Originfacts tracks ${pluralise(s.destinationCount, 'destination')} on its network${s.countryCount > 1 ? ` across ${pluralise(s.countryCount, 'country', 'countries')}` : ''}.`
-      : '';
-  return lead + hub + net;
+  const base = [a.city, a.country].filter(Boolean).join(', ');
+  const netStr = s && s.destinationCount > 0 ? `${s.destinationCount} destinations` : 'key international routes';
+  return `Evaluating ${a.name}${code ? ` (${code})` : ''} requires comparing ticket fare inclusions, checked baggage allowances, onboard seating standards, and hub connection efficiency before booking your flight. Operating as a ${kind}${base ? ` based in ${base}` : ''}, the carrier manages extensive flight schedules across ${netStr}, helping travelers determine optimal booking windows, alliance benefits, and total trip value.`;
 }
 
 /**
@@ -386,32 +489,129 @@ export function airlineExpectations(a: StrapiAirline, alliance?: string | null):
  * FAQs — every answer is grounded in a present field
  * ------------------------------------------------------------------ */
 
-export function airportFaqs(a: StrapiAirport, s?: RouteSummary): Faq[] {
+/**
+ * Extra grounded context the airport page can pass in — contact details from
+ * the airport-info dataset and the count of other tracked airports in the
+ * same country. Everything is optional; absent fields simply skip their Q&A.
+ */
+export type AirportFaqExtras = {
+  icao?: string | null;
+  city?: string | null;
+  country?: string | null;
+  phone?: string | null;
+  website?: string | null;
+  address?: string | null;
+  nearbyCount?: number;
+};
+
+/** Every airport page shows at least this many FAQ entries. */
+export const MIN_AIRPORT_FAQS = 8;
+
+export function airportFaqs(a: StrapiAirport, s?: RouteSummary, extra?: AirportFaqExtras): Faq[] {
   const faqs: Faq[] = [];
-  if (a.city || a.country) {
+  const icao = a.icao || extra?.icao || undefined;
+  const city = a.city || extra?.city || undefined;
+  const country = a.country || extra?.country || undefined;
+
+  // --- Grounded in identity / location fields -----------------------------
+  if (city || country) {
     faqs.push({
       q: `Where is ${a.name}?`,
-      a: `${a.name} is located in ${[a.city, a.country].filter(Boolean).join(', ')}${a.region ? ` (${a.region})` : ''}${num(a.latitude) && num(a.longitude) ? `, at coordinates ${a.latitude!.toFixed(3)}°, ${a.longitude!.toFixed(3)}°` : ''}.`,
+      a: `${a.name} is located in ${[city, country].filter(Boolean).join(', ')}${a.region ? ` (${a.region})` : ''}${num(a.latitude) && num(a.longitude) ? `, at coordinates ${a.latitude!.toFixed(3)}°, ${a.longitude!.toFixed(3)}°` : ''}.`,
     });
   }
   faqs.push({
     q: `What is the airport code for ${a.name}?`,
-    a: `Its IATA code is ${a.iata}${a.icao ? ` and its ICAO code is ${a.icao}` : ''}.`,
+    a: `Its IATA code is ${a.iata}${icao ? ` and its ICAO code is ${icao}` : ''}.`,
   });
-  if (a.timezone) {
-    faqs.push({ q: `What time zone is ${a.iata} in?`, a: `${a.name} operates on ${a.timezone} local time.` });
+  if (city) {
+    faqs.push({
+      q: `Which city does ${a.iata} serve?`,
+      a: `${a.name} serves ${city}${country ? `, ${country}` : ''}. When comparing fares, check whether other airports also serve the same area — prices and transfer times can differ between them.`,
+    });
   }
+  if (a.timezone) {
+    faqs.push({ q: `What time zone is ${a.iata} in?`, a: `${a.name} operates on ${a.timezone} local time. Departure and arrival times on tickets are always shown in each airport's local time, so double-check the offset when planning connections or pick-ups.` });
+  }
+  if (num(a.latitude) && num(a.longitude)) {
+    faqs.push({
+      q: `How do I find ${a.name} on a map?`,
+      a: `${a.name} sits at latitude ${a.latitude!.toFixed(3)}° and longitude ${a.longitude!.toFixed(3)}°. The map link in the details panel on this page opens the exact location for driving directions.`,
+    });
+  }
+
+  // --- Grounded in tracked route data -------------------------------------
   if (s && s.carriers.length) {
     faqs.push({
       q: `Which airlines fly from ${a.iata}?`,
       a: `Carriers tracked on routes from ${a.iata} include ${listProse(s.carriers.map((c) => c.name), 6)}.`,
     });
+  } else {
+    faqs.push({
+      q: `Which airlines fly from ${a.iata}?`,
+      a: `Originfacts does not yet track scheduled routes from ${a.iata}. Use the flight search on this page to see live airline options for your travel dates.`,
+    });
   }
   if (s && s.destinationNames.length) {
     faqs.push({
       q: `Where can you fly from ${a.iata}?`,
-      a: `Tracked destinations from ${a.iata} include ${listProse(s.destinationNames, 8)}.`,
+      a: `Tracked destinations from ${a.iata} include ${listProse(s.destinationNames, 8)}${s.countryCount > 1 ? `, spread across ${pluralise(s.countryCount, 'country', 'countries')}` : ''}.`,
     });
+  } else {
+    faqs.push({
+      q: `Where can you fly from ${a.iata}?`,
+      a: `Route coverage for ${a.iata} is still being added to Originfacts. Run a search from ${a.iata} on the flight search page to see every destination airlines currently sell for your dates.`,
+    });
+  }
+
+  // --- Grounded in airport-info contact fields ----------------------------
+  if (extra?.phone || extra?.website || extra?.address) {
+    const parts: string[] = [];
+    if (extra.address) parts.push(`its address is ${extra.address}`);
+    if (extra.phone) parts.push(`the phone number is ${extra.phone}`);
+    if (extra.website) parts.push(`the official website is ${extra.website}`);
+    faqs.push({
+      q: `How do I contact ${a.name}?`,
+      a: `${parts.join(', ').replace(/^./, (c) => c.toUpperCase())}. For flight-specific questions (delays, baggage, rebooking), contact the operating airline directly rather than the airport.`,
+    });
+  }
+  if (country && typeof extra?.nearbyCount === 'number' && extra.nearbyCount > 0) {
+    faqs.push({
+      q: `Are there other airports in ${country}?`,
+      a: `Yes — Originfacts lists ${pluralise(extra.nearbyCount, 'other airport')} in ${country}. The nearby-airports section on this page links to each of them, which is useful when comparing fares or finding an alternative departure point.`,
+    });
+  }
+
+  // --- Always-answerable top-ups so every page reaches MIN_AIRPORT_FAQS ---
+  const fillers: Faq[] = [
+    {
+      q: `How can I find cheap flights from ${a.iata}?`,
+      a: `Use the flight search on this page to compare live fares from ${a.name}. Prices vary by day of the week and how far ahead you book, so comparing a few nearby dates usually surfaces a cheaper option.`,
+    },
+    {
+      q: `What is the difference between IATA and ICAO airport codes?`,
+      a: `IATA codes like ${a.iata} are the three-letter codes shown on tickets, booking sites and baggage tags. ICAO codes${icao ? ` (${icao} for this airport)` : ''} are four-letter identifiers used in flight operations and air-traffic control. For booking travel, the IATA code is the one you need.`,
+    },
+    {
+      q: `Do I need to confirm flight times with the airline?`,
+      a: `Yes. Schedules change through the year, so always confirm departure times, terminals and check-in cut-offs with the operating airline before travelling from ${a.name}.`,
+    },
+    {
+      q: `Is the information on this page up to date?`,
+      a: `Airport, airline and route details for ${a.iata} come from the Originfacts database and are refreshed regularly. Live fares and availability always come from the flight search, which queries current prices at the time you search.`,
+    },
+    {
+      q: `How early should I arrive at ${a.name}?`,
+      a: `A common rule of thumb is two hours before a domestic departure and three hours before an international one, but the airline's check-in and baggage cut-off times are what actually matter — check them on your booking confirmation.`,
+    },
+    {
+      q: `Can I book flights from ${a.iata} on Originfacts?`,
+      a: `Originfacts is a research and comparison site: the flight search on this page compares live fares from ${a.iata} and hands you over to the airline or agent to complete the booking, so your ticket and payment sit with the seller.`,
+    },
+  ];
+  for (const f of fillers) {
+    if (faqs.length >= MIN_AIRPORT_FAQS) break;
+    faqs.push(f);
   }
   return faqs;
 }
@@ -489,6 +689,52 @@ export function airlineFaqs(
 /* ------------------------------------------------------------------ *
  * schema.org JSON-LD
  * ------------------------------------------------------------------ */
+
+export type ArticleBlogPostingOptions = {
+  headline: string;
+  description?: string;
+  url: string;
+  image?: string | null;
+  datePublished?: string;
+  dateModified?: string;
+  authorNameOrSlug?: string;
+  categoryName?: string;
+  keywords?: string;
+  type?: 'BlogPosting' | 'Article';
+};
+
+export function articleBlogPostingJsonLd(opts: ArticleBlogPostingOptions): Record<string, unknown> {
+  const authorProfile = resolveAuthor(opts.authorNameOrSlug);
+  const authorPersonSchema = authorPersonJsonLd(authorProfile);
+  const rawImg = opts.image || DEFAULT_OG_IMAGE;
+  const imgUrl = rawImg.startsWith('http') ? rawImg : `${SITE_URL}${rawImg.startsWith('/') ? '' : '/'}${rawImg}`;
+  const pageUrl = opts.url.startsWith('http') ? opts.url : `${SITE_URL}${opts.url.startsWith('/') ? '' : '/'}${opts.url}`;
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': opts.type || 'BlogPosting',
+    headline: opts.headline,
+    ...(opts.description ? { description: opts.description } : {}),
+    image: [imgUrl],
+    datePublished: opts.datePublished || '2024-01-01T00:00:00Z',
+    dateModified: opts.dateModified || opts.datePublished || '2024-01-01T00:00:00Z',
+    author: authorPersonSchema,
+    publisher: {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#organization`,
+      name: 'Originfacts',
+      url: SITE_URL,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_URL}/brand/logo/logo.svg`,
+      },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
+    url: pageUrl,
+    ...(opts.categoryName ? { articleSection: opts.categoryName } : {}),
+    ...(opts.keywords ? { keywords: opts.keywords } : {}),
+  };
+}
 
 export function airportJsonLd(a: StrapiAirport, url: string): Record<string, unknown> {
   const ld: Record<string, unknown> = {

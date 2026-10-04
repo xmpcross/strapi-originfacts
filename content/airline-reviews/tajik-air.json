@@ -1,0 +1,114 @@
+{
+ "slug": "tajik-air",
+ "sources": [
+  "tripadvisor"
+ ],
+ "stats": {
+  "source": "all",
+  "reviewCount": 5,
+  "avgRating10": 7.2,
+  "recommendPct": null,
+  "subratings": null,
+  "firstReviewDate": "2018-07-05",
+  "lastReviewDate": "2019-08-27"
+ },
+ "statsBySource": {
+  "tripadvisor": {
+   "source": "tripadvisor",
+   "reviewCount": 5,
+   "avgRating10": 7.2,
+   "recommendPct": null,
+   "subratings": null,
+   "firstReviewDate": "2018-07-05",
+   "lastReviewDate": "2019-08-27",
+   "sourceUrl": "https://www.tripadvisor.com/Airline_Review-d13803997-Reviews-Tajik-Air"
+  }
+ },
+ "reviews": [
+  {
+   "source": "tripadvisor",
+   "id": "ta-703778617",
+   "date": "2019-08-27",
+   "rating10": 2,
+   "title": "The most terrible airline I have ever experienced",
+   "text": "I would not recommend anybody to fly with this airline. It is just the most terrible one. Our flight was operated with 6 hours of delay and no apologies from the personnel. The flight attendants were very rude on board. At the end I found out that my baggage was broken.",
+   "author": "Jinn F",
+   "authorCountry": null,
+   "authorLocation": null,
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Dushanbe - New Delhi",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-639745402",
+   "date": "2018-12-15",
+   "rating10": 8,
+   "title": "Good",
+   "text": "Travelled from Dushanbe to Delhi ...... ..... Travelled by small aircraft ...... Had a great experience Flewed over Himalayan glaciers ........ On board good Complementary Sandwich On time Overall ok good service",
+   "author": "AnandakumarKrishnan",
+   "authorCountry": null,
+   "authorLocation": "Dharmapuri",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Dushanbe - New Delhi",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-620419996",
+   "date": "2018-09-29",
+   "rating10": 8,
+   "title": "A regional touch",
+   "text": "A 767 aircraft on a 2-3-2 configuration. It's full capacity and lot of children. Service was great even though an old airplane. No entertainment. On time departure and no baggage were lost. Value for money and very little options.",
+   "author": "Nouzab",
+   "authorCountry": null,
+   "authorLocation": "Viti Levu",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Dushanbe - St. Petersburg",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-620416959",
+   "date": "2018-09-29",
+   "rating10": 8,
+   "title": "Mixed reactions",
+   "text": "It was a cheos at the airport. No queue and it looks all family But as a foreigner I was given priority at times. It's old 757 aircraft. Even had a problem with interior ceiling. Good service. Lot of children. Delayed by 90 min.",
+   "author": "Nouzab",
+   "authorCountry": null,
+   "authorLocation": "Viti Levu",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Novosibirsk - Dushanbe",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-593304926",
+   "date": "2018-07-05",
+   "rating10": 10,
+   "title": "Excellent hospitality",
+   "text": "Right from the time you board till you get off, you are very well looked after. The hostesses are so helpful and courteous. It's a very nice experience",
+   "author": "Mehzabin87",
+   "authorCountry": null,
+   "authorLocation": "Pune",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "New Delhi - Dushanbe",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  }
+ ]
+}

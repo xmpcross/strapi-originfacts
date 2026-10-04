@@ -1,0 +1,18 @@
+{
+  "slug": "fixture-disputed-dupe",
+  "official_website": "https://www.qantas.com",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "fields": {
+        "cabin_weight": {
+          "value": null,
+          "status": "disputed",
+          "conflicting_values": ["10 kg", "10 kg"],
+          "notes": "Marked disputed but both readings are the same — this is unconfirmed, not conflicting."
+        }
+      }
+    }
+  ]
+}

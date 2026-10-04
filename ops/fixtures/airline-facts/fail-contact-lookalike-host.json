@@ -1,0 +1,18 @@
+{
+  "slug": "fixture-lookalike",
+  "official_website": "https://www.qantas.com",
+  "modules": [
+    {
+      "id": "contact",
+      "title": "Contact",
+      "fields": {
+        "phone_us": {
+          "value": "+1 800 227 4500",
+          "status": "official",
+          "source_url": "https://qantas.com.attacker.example/support",
+          "verified_at": "2026-08-24"
+        }
+      }
+    }
+  ]
+}

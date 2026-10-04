@@ -21,6 +21,11 @@ import type { Metadata } from 'next';
 export const revalidate = 60;
 
 const PAGE_SIZE = 10;
+const FLIGHTS_PAGE_SIZE = 11;
+
+type FeedItem =
+  | { type: 'article'; article: StrapiArticle }
+  | { type: 'sponsor'; sponsor: 'qatar'; id: string };
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -61,7 +66,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   const page = Math.max(1, Number((await searchParams).page) || 1);
   return {
     title: page > 1 ? `${c.name} — page ${page}` : c.name,
-    description: clampDescription(c.description),
+    description: page > 1 ? `${clampDescription(c.description)} (Page ${page})` : clampDescription(c.description),
     alternates: { canonical: page > 1 ? `/category/${slug}?page=${page}` : `/category/${slug}` },
   };
 }
@@ -73,14 +78,15 @@ export default async function CategoryPage({ params, searchParams }: Props) {
 
   const category = await resolveCategory(slug);
   if (!category) notFound();
+  const pageSize = slug === 'flights' ? FLIGHTS_PAGE_SIZE : PAGE_SIZE;
 
   const [articlesRes, sidebar, categoryTiles] = await Promise.all([
     (slug === 'destinations'
-      ? listDestinationArticles({ pageSize: PAGE_SIZE, page })
-      : listArticles({ category: slug, pageSize: PAGE_SIZE, page })
+      ? listDestinationArticles({ pageSize, page })
+      : listArticles({ category: slug, pageSize, page })
     ).catch(() => ({
       data: [] as StrapiArticle[],
-      meta: { pagination: { page: 1, pageSize: PAGE_SIZE, pageCount: 0, total: 0 } },
+      meta: { pagination: { page: 1, pageSize, pageCount: 0, total: 0 } },
     })),
     listSidebarArticles(5).catch(() => ({ recent: [], popular: [] })),
     listSidebarCategoryTiles(
@@ -89,6 +95,10 @@ export default async function CategoryPage({ params, searchParams }: Props) {
   ]);
 
   const articles = articlesRes.data;
+  const feedItems = slug === 'flights' ? withFlightSponsorCards(articles) : articles.map((article) => ({
+    type: 'article' as const,
+    article,
+  }));
   const total = articlesRes.meta?.pagination?.total ?? 0;
   const pageCount = Math.max(1, articlesRes.meta?.pagination?.pageCount ?? 1);
 
@@ -105,7 +115,7 @@ export default async function CategoryPage({ params, searchParams }: Props) {
       name: a.title,
       url: `/articles/${a.slug}`,
       image: mediaUrl(a.coverImage ?? null),
-      position: (page - 1) * PAGE_SIZE + i + 1,
+      position: (page - 1) * pageSize + i + 1,
     })),
   });
 
@@ -184,12 +194,16 @@ export default async function CategoryPage({ params, searchParams }: Props) {
                   className="grid items-start gap-[15px] sm:grid-cols-2"
                   data-testid="category-feed"
                 >
-                  {articles.map((a, i) => (
-                    <li key={a.id}>
-                      <CategoryFeedCard
-                        article={a}
-                        imageAspect={i % 2 === 0 ? 'aspect-[16/9]' : 'aspect-[40/27]'}
-                      />
+                  {feedItems.map((item, i) => (
+                    <li key={item.type === 'article' ? item.article.id : item.id}>
+                      {item.type === 'article' ? (
+                        <CategoryFeedCard
+                          article={item.article}
+                          imageAspect={i % 2 === 0 ? 'aspect-[16/9]' : 'aspect-[40/27]'}
+                        />
+                      ) : (
+                        <QatarAirwaysFeedBanner slotIndex={i + 1} />
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -210,6 +224,98 @@ export default async function CategoryPage({ params, searchParams }: Props) {
         </div>
       </div>
     </div>
+  );
+}
+
+function withFlightSponsorCards(articles: StrapiArticle[]): FeedItem[] {
+  const feedItems: FeedItem[] = [];
+
+  articles.forEach((article, index) => {
+    const articlePosition = index + 1;
+    feedItems.push({ type: 'article', article });
+
+    if (articlePosition % 3 === 0) {
+      feedItems.push({
+        type: 'sponsor',
+        sponsor: 'qatar',
+        id: `sponsor-qatar-airways-after-post-${articlePosition}`,
+      });
+    }
+  });
+
+  return feedItems;
+}
+
+function QatarAirwaysFeedBanner({ slotIndex }: { slotIndex: number }) {
+  return (
+    <aside
+      className="group mx-auto flex h-full min-h-[430px] w-full max-w-[540px] flex-col overflow-hidden rounded-[0.4rem] border border-solid border-[#e5e7eb] bg-white ring-1 ring-forest-900/5"
+      data-testid={`flights-category-qatar-feed-banner-${slotIndex}`}
+      aria-label="Sponsored Qatar Airways flight offer"
+    >
+      <a
+        href="https://tatrck.com/h/0Hu30_OZ0RC7?model=cpa"
+        target="_blank"
+        rel="sponsored nofollow noopener noreferrer"
+        className="flex h-full flex-col"
+      >
+        <div className="relative aspect-[16/9] overflow-hidden bg-gradient-to-br from-[#f4e8ee] via-[#fbf7f9] to-[#ffffff]">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(122,31,69,0.1),transparent_30%),linear-gradient(135deg,rgba(255,255,255,0.35),rgba(122,31,69,0.04))]" />
+          <div className="absolute inset-x-0 top-0 flex items-start justify-between gap-4 p-5 text-forest-950">
+            <span className="rounded-full bg-white px-3 py-1 font-urbanist text-[10px] font-bold uppercase tracking-[0.18em] text-[#7a1f45]">
+              Sponsored
+            </span>
+            <span className="inline-flex h-10 w-32 items-center justify-center rounded-full bg-white px-3">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/ads/qatar-airways-logo.svg"
+                alt="Qatar Airways"
+                className="h-7 w-full object-contain"
+                loading="lazy"
+              />
+            </span>
+          </div>
+          <div className="absolute bottom-5 left-5 right-5">
+            <p className="font-urbanist text-[11px] font-bold uppercase tracking-[0.2em] text-[#7a1f45]/75">
+              Long-haul flight options
+            </p>
+            <p className="mt-2 max-w-sm font-urbanist text-3xl font-bold leading-[1.02] text-forest-950">
+              Compare routes through Doha
+            </p>
+          </div>
+        </div>
+        <div className="flex flex-1 flex-col p-5">
+          <p className="w-fit rounded-full bg-[#7a1f45] px-3 py-1 font-urbanist text-[11px] font-bold uppercase tracking-wider text-white">
+            Qatar Airways
+          </p>
+          <h2 className="mt-3 font-urbanist text-[clamp(1.1rem,1vw+0.85rem,1.4rem)] font-bold leading-snug text-forest-950 transition group-hover:text-[#7a1f45]">
+            Search Qatar Airways fares and routes
+          </h2>
+          <p className="mt-5 text-sm leading-6 text-ink/70 sm:text-base">
+            Compare Qatar Airways flight options for long-haul trips, premium cabins and one-stop connections through Doha.
+          </p>
+          <span className="mt-5 inline-flex w-fit items-center gap-2 rounded-full border border-forest-900/15 bg-white px-4 py-2 font-urbanist text-[11px] font-bold uppercase tracking-widest text-forest-900 transition group-hover:border-[#7a1f45] group-hover:text-[#7a1f45]">
+            Search Qatar Airways
+            <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-forest-900 text-white transition group-hover:bg-[#7a1f45]">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2.5}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-3 w-3"
+                aria-hidden
+              >
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
+              </svg>
+            </span>
+          </span>
+        </div>
+      </a>
+    </aside>
   );
 }
 

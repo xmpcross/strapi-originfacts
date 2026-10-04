@@ -1,0 +1,228 @@
+{
+  "slug": "qantas",
+  "official_website": "https://www.qantas.com",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "required": [
+        "carryon_bag_dimensions",
+        "weight_economy",
+        "weight_business_first"
+      ],
+      "fields": {
+        "carryon_bag_dimensions": {
+          "value": "55 x 40 x 20 cm",
+          "status": "official",
+          "source_url": "https://www.qantas.com/au/en/baggage/carry-on-baggage.html",
+          "notes": "Qantas cabin baggage size limit: 55 x 40 x 20 cm.",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_review"
+        },
+        "weight_economy": {
+          "value": "7 kg (15 lbs)",
+          "status": "official",
+          "source_url": "https://www.qantas.com/au/en/baggage/carry-on-baggage.html",
+          "notes": "Qantas Economy Class carry-on weight limit.",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_review"
+        },
+        "weight_business_first": {
+          "value": "14 kg (30 lbs) total across 2 pieces",
+          "status": "official",
+          "source_url": "https://www.qantas.com/au/en/baggage/carry-on-baggage.html",
+          "notes": "Qantas Business / First Class carry-on weight limit.",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_review"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "required": [
+        "piece_weight_economy",
+        "piece_weight_business",
+        "piece_weight_first"
+      ],
+      "fields": {
+        "piece_weight_economy": {
+          "value": "1 piece up to 23 kg (50 lbs)",
+          "status": "official",
+          "source_url": "https://www.qantas.com/au/en/baggage/checked-baggage.html",
+          "notes": "Qantas Economy Class checked baggage allowance.",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_review"
+        },
+        "piece_weight_business": {
+          "value": "2 pieces up to 32 kg (70 lbs) each",
+          "status": "official",
+          "source_url": "https://www.qantas.com/au/en/baggage/checked-baggage.html",
+          "notes": "Qantas Business Class checked baggage allowance.",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_review"
+        },
+        "piece_weight_first": {
+          "value": "3 pieces up to 32 kg (70 lbs) each",
+          "status": "official",
+          "source_url": "https://www.qantas.com/au/en/baggage/checked-baggage.html",
+          "notes": "Qantas First Class checked baggage allowance.",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_review"
+        }
+      }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "required": [
+        "fare_name",
+        "seat_selection_included",
+        "change_cancellation_policy"
+      ],
+      "fields": {
+        "fare_name": {
+          "value": "Red e-Deal (Economy Basic)",
+          "status": "official",
+          "source_url": "https://www.qantas.com/au/en/book-a-trip/flights/fare-types.html",
+          "notes": "Qantas Economy Red e-Deal lowest published fare class.",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_review"
+        },
+        "seat_selection_included": {
+          "value": "Paid advance seat selection for Economy; complimentary at online check-in (24h prior)",
+          "status": "official",
+          "source_url": "https://www.qantas.com/au/en/book-a-trip/flights/seat-selection.html",
+          "notes": "Advance seat selection policy for Economy Red e-Deal fares.",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_review"
+        },
+        "change_cancellation_policy": {
+          "value": "Changes permitted for a fee ($99 AUD domestic) plus fare difference; non-refundable",
+          "status": "official",
+          "source_url": "https://www.qantas.com/au/en/book-a-trip/flights/fare-types.html",
+          "notes": "Change fees and refund terms for Red e-Deal fares.",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_review"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "required": [
+        "duty_of_care_policy",
+        "refund_rebooking_policy"
+      ],
+      "fields": {
+        "duty_of_care_policy": {
+          "value": "Meal & refreshment vouchers for delays over 2 hours; hotel accommodation and airport transfers for overnight delays",
+          "status": "official",
+          "source_url": "https://www.qantas.com/au/en/book-a-trip/flights/customer-charter.html",
+          "notes": "Qantas Customer Charter obligation during major delays.",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_review"
+        },
+        "refund_rebooking_policy": {
+          "value": "Full refund to original form of payment or free rebooking on next available Qantas flight if delayed 2+ hours",
+          "status": "official",
+          "source_url": "https://www.qantas.com/au/en/book-a-trip/flights/customer-charter.html",
+          "notes": "Qantas disruption refund and rebooking policy.",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_review"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "online_checkin_opens",
+        "domestic_cutoff_minutes"
+      ],
+      "fields": {
+        "online_checkin_opens": {
+          "value": "24 hours before scheduled departure via qantas.com or Qantas App",
+          "status": "official",
+          "source_url": "https://www.qantas.com/au/en/travel-info/check-in.html",
+          "notes": "Qantas online & mobile app check-in opening window.",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_review"
+        },
+        "domestic_cutoff_minutes": {
+          "value": "30 minutes before departure (45 min with checked baggage)",
+          "status": "official",
+          "source_url": "https://www.qantas.com/au/en/travel-info/check-in.html",
+          "notes": "Qantas domestic flight check-in and bag drop closing time.",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_review"
+        },
+        "international_cutoff_minutes": {
+          "value": "60 minutes before departure for international flights",
+          "status": "official",
+          "source_url": "https://www.qantas.com/au/en/travel-info/check-in.html",
+          "notes": "Qantas international flight check-in closing cutoff.",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_review"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and customer support",
+      "required": [
+        "phone_home_market"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "13 13 13 (Australia) / +61 2 8222 2439 (International)",
+          "status": "official",
+          "source_url": "https://www.qantas.com/au/en/support/contact-us.html",
+          "notes": "Qantas official telephone customer service line.",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_review"
+        },
+        "phone_us": {
+          "value": "1-800-227-4500 (US Toll-Free)",
+          "status": "official",
+          "source_url": "https://www.qantas.com/au/en/support/contact-us.html",
+          "notes": "Qantas US customer service phone line.",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_review"
+        },
+        "email": {
+          "value": "customerrelations@qantas.com.au",
+          "status": "official",
+          "source_url": "https://www.qantas.com/au/en/support/contact-us.html",
+          "notes": "Qantas customer relations email support.",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_review"
+        },
+        "contact_help_centre": {
+          "value": "https://www.qantas.com/au/en/support/contact-us.html",
+          "status": "official",
+          "source_url": "https://www.qantas.com/au/en/support/contact-us.html",
+          "notes": "Qantas official help centre portal.",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_review"
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://www.qantas.com/au/en/book-a-trip/flights/conditions-of-carriage.html",
+          "status": "official",
+          "source_url": "https://www.qantas.com/au/en/book-a-trip/flights/conditions-of-carriage.html",
+          "notes": "Qantas published conditions of carriage.",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_review"
+        },
+        "registered_address": {
+          "value": "10 Bourke Road, Mascot, NSW 2020, Australia",
+          "status": "official",
+          "source_url": "https://www.qantas.com/au/en/support/contact-us.html",
+          "notes": "Qantas Airways Limited corporate headquarters.",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_review"
+        }
+      }
+    }
+  ]
+}

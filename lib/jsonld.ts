@@ -51,11 +51,19 @@ export function absoluteUrl(pathOrUrl: string): string {
 /** Stable node id — every page that mentions the org must use this @id. */
 export const ORG_ID = `${SITE_URL}/#organization`;
 
-const ORG_SAME_AS = [
+export const ORG_SAME_AS = [
   'https://x.com/realoriginfacts',
   'https://www.facebook.com/originfacts/',
   'https://www.linkedin.com/company/143027896/',
+  'https://www.instagram.com/originfacts/',
+  'https://www.youtube.com/@originfacts',
   'https://www.reddit.com/r/Originfacts/',
+  'https://pinterest.com/originfacts/',
+  'https://www.wikidata.org/wiki/Special:Search?search=Originfacts',
+  'https://en.wikipedia.org/w/index.php?search=Originfacts',
+  'https://find-and-update.company-information.service.gov.uk/company/16134139',
+  'https://www.crunchbase.com/organization/originfacts',
+  'https://www.trustpilot.com/review/originfacts.com',
 ];
 
 /** Public-facing contact address (also shown on /contact and /legal/contact). */
@@ -73,9 +81,8 @@ export function organizationJsonLd(opts: { withContactPoint?: boolean } = {}): R
     '@type': 'Organization',
     '@id': ORG_ID,
     name: 'Originfacts',
+    legalName: 'FXN HOLDINGS LIMITED',
     url: SITE_URL,
-    // PNG rather than the site's SVG — Google's logo rich-result support for
-    // SVG is unreliable.
     logo: {
       '@type': 'ImageObject',
       url: `${SITE_URL}/brand/logo/originfacts-logo.png`,
@@ -85,6 +92,28 @@ export function organizationJsonLd(opts: { withContactPoint?: boolean } = {}): R
     description:
       'The facts behind every place worth visiting — plus the latest on flights, hotels, airlines, airports and destinations.',
     sameAs: ORG_SAME_AS,
+    identifier: [
+      {
+        '@type': 'PropertyValue',
+        propertyID: 'UK Companies House Registration Number',
+        value: '16134139',
+      },
+    ],
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '61 Bridge Street',
+      addressLocality: 'Kington',
+      postalCode: 'HR5 3DJ',
+      addressCountry: 'GB',
+    },
+    knowsAbout: [
+      'Aviation',
+      'Commercial Airlines',
+      'Airports',
+      'International Flight Routes',
+      'Travel Destination History',
+      'Passenger Rights',
+    ],
     ...(opts.withContactPoint
       ? {
           contactPoint: [

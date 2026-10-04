@@ -1,0 +1,8 @@
+[
+  { "file": "baggage_checked.html",        "page_key": "baggage_checked",        "url": "https://www.qantas.com/en-au/baggage/checked",                                   "locale": "en-au", "captured_by": "kritin", "captured_at": "2026-08-24" },
+  { "file": "baggage_carryon.html",        "page_key": "baggage_carryon",        "url": "https://www.qantas.com/en-au/baggage/carry-on",                                  "locale": "en-au", "captured_by": "kritin", "captured_at": "2026-08-24" },
+  { "file": "baggage_fees.html",           "page_key": "baggage_fees",           "url": "https://www.qantas.com/en-au/baggage/pre-purchase-additional",                   "locale": "en-au", "captured_by": "kritin", "captured_at": "2026-08-24" },
+  { "file": "fare_conditions.html",        "page_key": "fare_conditions",        "url": "https://www.qantas.com/en-au/book/flights/fare-types",                           "locale": "en-au", "captured_by": "kritin", "captured_at": "2026-08-24" },
+  { "file": "checkin.html",                "page_key": "checkin",                "url": "https://www.qantas.com/en-au/manage-booking/check-in",                           "locale": "en-au", "captured_by": "kritin", "captured_at": "2026-08-24" },
+  { "file": "conditions_of_carriage.html", "page_key": "conditions_of_carriage", "url": "https://www.qantas.com/gb/en/book-a-trip/flights/conditions-of-carriage.html",   "locale": "en-gb", "captured_by": "kritin", "captured_at": "2026-08-24" }
+]

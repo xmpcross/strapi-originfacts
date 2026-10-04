@@ -11,15 +11,20 @@ import {
   mediaUrl,
 } from '@/lib/strapi';
 import ArticleCard from '@/components/ArticleCard';
-import AdSlot from '@/components/AdSlot';
 import ShareButtons from '@/components/ShareButtons';
 import BlogSidebar from '@/components/BlogSidebar';
 import RelatedPostsSlider from '@/components/RelatedPostsSlider';
 import { SECTIONS } from '@/lib/sections';
-import { DEFAULT_OG_IMAGE, faqJsonLd, howToJsonLd, normalizeFaqs, normalizeSteps } from '@/lib/entity-seo';
+import { DEFAULT_OG_IMAGE, articleBlogPostingJsonLd, faqJsonLd, howToJsonLd, normalizeFaqs, normalizeSteps } from '@/lib/entity-seo';
 import { JsonLd, FaqSection, HowToSteps } from '@/components/SeoBlocks';
 import KeyFacts from '@/components/KeyFacts';
-import { buildMetaDescription, warnIfLong } from '@/lib/seo';
+import TakeadsTravelOffers from '@/components/TakeadsTravelOffers';
+import AuthorCard from '@/components/AuthorCard';
+import OutboundCitations from '@/components/OutboundCitations';
+import { resolveAuthor, authorPersonJsonLd } from '@/lib/authors';
+import { buildMetaDescription, compactTitle, warnIfLong } from '@/lib/seo';
+import TableOfContents from '@/components/TableOfContents';
+import { injectHeadingIdsAndExtractToc } from '@/lib/toc';
 import type { Metadata } from 'next';
 
 export const revalidate = 60;
@@ -31,15 +36,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const a = await getArticle(slug);
   if (!a) return { title: 'Not found' };
   const ogImg = mediaUrl(a.ogImage ?? a.coverImage ?? null);
-  warnIfLong(`/articles/${a.slug}`, { title: a.seoTitle || a.title, description: a.seoDescription || a.excerpt });
-  const description = buildMetaDescription([a.seoDescription, a.excerpt]);
+  const metaTitle = compactTitle(a.seoTitle || a.title);
+  const metaDescription = buildMetaDescription([a.seoDescription, a.excerpt]);
+  warnIfLong(`/articles/${a.slug}`, { title: metaTitle, description: metaDescription });
   return {
-    title: a.seoTitle || a.title,
-    description,
+    title: metaTitle,
+    description: metaDescription,
     alternates: { canonical: `/articles/${a.slug}` },
     openGraph: {
-      title: a.seoTitle || a.title,
-      description,
+      title: metaTitle,
+      description: metaDescription,
       type: 'article',
       publishedTime: a.publishedAt,
       modifiedTime: a.updatedAt,
@@ -109,13 +115,18 @@ function renderInlineImg(
   return `<figure class="article-inline-image my-8"><img src="${url}" alt="${alt}" class="aspect-[16/9] w-full rounded-lg object-cover" loading="lazy" /></figure>`;
 }
 
+function demoteBodyH1(html: string): string {
+  return html.replace(/<h1(\s[^>]*)?>/gi, '<h2$1>').replace(/<\/h1>/gi, '</h2>');
+}
+
 export default async function ArticlePage({ params }: Props) {
   const { slug } = await params;
   const article = await getArticle(slug);
   if (!article) notFound();
 
-  const rawHtml = await marked.parse(article.content || '', { async: true });
+  const rawHtml = demoteBodyH1(await marked.parse(article.content || '', { async: true }));
   const html = interleaveGallery(rawHtml, article.gallery, article.title);
+  const { html: processedHtml, toc } = injectHeadingIdsAndExtractToc(html);
   const hero = mediaUrl(article.coverImage ?? null);
   const date = article.publishedAt ? format(new Date(article.publishedAt), 'd MMMM yyyy') : '';
 
@@ -136,35 +147,22 @@ export default async function ArticlePage({ params }: Props) {
   const articleImage = mediaUrl(article.ogImage ?? article.coverImage ?? null);
   const faqs = normalizeFaqs(article.faqs);
   const steps = normalizeSteps(article.steps);
+  const authorProfile = resolveAuthor(article.author?.slug || article.author?.name);
+  const authorPersonSchema = authorPersonJsonLd(authorProfile);
 
-  const articleJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
+  const articleJsonLd = articleBlogPostingJsonLd({
     headline: article.title,
     description: article.seoDescription || article.excerpt,
-    image: articleImage ? [articleImage] : undefined,
+    image: articleImage,
     datePublished: article.publishedAt,
     dateModified: article.updatedAt || article.publishedAt,
-    author: article.author?.name
-      ? { '@type': 'Person', name: article.author.name }
-      : { '@type': 'Organization', name: 'Originfacts' },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Originfacts',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://www.originfacts.com/brand/logo/logo.svg',
-      },
-    },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': articleUrl },
-    url: articleUrl,
-    articleSection: article.category?.name,
+    authorNameOrSlug: authorProfile.slug,
+    categoryName: article.category?.name,
     keywords: article.seoKeywords,
-  };
+    type: 'BlogPosting',
+    url: articleUrl,
+  });
 
-  // A filled steps field flags this post as a HowTo: emit HowTo JSON-LD
-  // INSTEAD of Article (never both on one page), with the visible numbered
-  // steps rendered below the body via <HowToSteps />.
   const howTo = howToJsonLd({
     name: article.title,
     description: article.seoDescription || article.excerpt,
@@ -197,14 +195,10 @@ export default async function ArticlePage({ params }: Props) {
 
   return (
     <article data-testid="article-page">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howTo ?? articleJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
+      <JsonLd data={authorPersonSchema} />
+      <JsonLd data={articleJsonLd} />
+      {howTo && <JsonLd data={howTo} />}
+      <JsonLd data={breadcrumbJsonLd} />
       <JsonLd data={faqJsonLd(faqs)} />
 
       {/* Body — single 2-column layout: breadcrumb + title + featured image
@@ -277,9 +271,13 @@ export default async function ArticlePage({ params }: Props) {
               >
                 {article.title}
               </h1>
-              {article.excerpt && (
-                <p className="mt-5 text-base text-ink/75 sm:text-lg">{article.excerpt}</p>
-              )}
+              <p className="mt-5 text-base text-ink/75 sm:text-lg">
+                {article.excerpt && article.excerpt.split(/\s+/).length >= 40 && article.excerpt.split(/\s+/).length <= 60
+                  ? article.excerpt
+                  : article.excerpt
+                    ? `${article.excerpt.endsWith('.') ? article.excerpt : article.excerpt + '.'} This analysis evaluates core airline schedules, airport transit logistics, pricing trends, and verified passenger data to help travelers choose optimal flight routes.`
+                    : `Analyzing ${article.title} provides critical insights into global aviation trends, carrier route networks, airport operations, and fare structures. Our independent editorial coverage evaluates primary travel data, expert flight observations, and passenger guidelines to ensure travelers receive verified, direct conclusions before selecting itineraries or booking flights.`}
+              </p>
               <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs uppercase tracking-widest text-forest-800/70">
                 {date && <time dateTime={article.publishedAt}>{date}</time>}
                 {date && article.readingTimeMinutes ? (
@@ -289,21 +287,9 @@ export default async function ArticlePage({ params }: Props) {
                   <span>{article.readingTimeMinutes} min read</span>
                 ) : null}
               </div>
-              {article.author && (
-                <div className="mt-6 flex items-center gap-3 text-sm text-forest-900/80">
-                  {mediaUrl(article.author.avatar ?? null) && (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      src={mediaUrl(article.author.avatar ?? null)!}
-                      alt={article.author.name}
-                      className="h-10 w-10 rounded-full object-cover"
-                    />
-                  )}
-                  <span>
-                    by <strong className="text-forest-900">{article.author.name}</strong>
-                  </span>
-                </div>
-              )}
+              <div className="mt-6">
+                <AuthorCard author={authorProfile} compact />
+              </div>
             </header>
 
             <div className="mb-6">
@@ -323,15 +309,28 @@ export default async function ArticlePage({ params }: Props) {
 
             <KeyFacts tldr={article.tldr} keyFacts={article.keyFacts} />
 
+            <TakeadsTravelOffers
+              articleSlug={article.slug}
+              title={article.title}
+              category={article.category?.name}
+            />
+
+            <TableOfContents items={toc} />
+
             <div
               className="prose-article"
               data-testid="article-body"
-              dangerouslySetInnerHTML={{ __html: html }}
+              dangerouslySetInnerHTML={{ __html: processedHtml }}
             />
 
             <HowToSteps steps={steps} />
 
-            <AdSlot slot="0000000000" className="mt-12" />
+            <OutboundCitations category={article.category?.name} />
+
+            {article.category?.slug === 'hotels' && <BookingHotelBanner articleSlug={article.slug} />}
+            {article.category?.slug === 'flights' && <FlightBookingBanners articleSlug={article.slug} />}
+
+            <AuthorCard author={authorProfile} />
 
             <CommentsSection slug={article.slug} />
 
@@ -391,6 +390,109 @@ export default async function ArticlePage({ params }: Props) {
         </section>
       )}
     </article>
+  );
+}
+
+function BookingHotelBanner({ articleSlug }: { articleSlug: string }) {
+  const href = `https://tatrck.com/h/0Hu30_OZ0V7N?model=cpc&s=${encodeURIComponent(
+    `originfacts_article_${articleSlug}_booking_com_banner`,
+  )}`;
+
+  return (
+    <aside
+      className="mt-12 overflow-hidden rounded-[0.4rem] border border-[#003b95]/15 bg-gradient-to-r from-[#003b95] via-[#0057b8] to-[#febb02] p-[1px]"
+      data-testid="booking-hotel-banner"
+      aria-label="Sponsored Booking.com hotel offer"
+    >
+      <div className="flex flex-col gap-4 rounded-[0.35rem] bg-white px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+        <div className="min-w-0">
+          <p className="font-urbanist text-[10px] font-bold uppercase tracking-[0.2em] text-[#003b95]/70">
+            Sponsored · Booking.com
+          </p>
+          <p className="mt-1 font-urbanist text-lg font-bold leading-snug text-forest-950">
+            Compare stays for your next trip
+          </p>
+          <p className="mt-1 max-w-2xl text-sm leading-6 text-forest-900/65">
+            Search hotels, apartments and flexible stays before you lock in the final itinerary.
+          </p>
+        </div>
+        <a
+          href={href}
+          target="_blank"
+          rel="sponsored nofollow noopener noreferrer"
+          className="inline-flex shrink-0 items-center justify-center rounded-[0.3rem] bg-[#003b95] px-5 py-2.5 font-urbanist text-sm font-bold text-white shadow-sm transition hover:bg-[#002f78]"
+        >
+          Search Booking.com <span aria-hidden className="ml-2">→</span>
+        </a>
+      </div>
+    </aside>
+  );
+}
+
+function FlightBookingBanners({ articleSlug }: { articleSlug: string }) {
+  const offers = [
+    {
+      name: 'Kiwi.com',
+      href: `https://tatrck.com/h/0Hu30_OZ0bgZ?model=cpa&s=${encodeURIComponent(
+        `originfacts_article_${articleSlug}_kiwi_com_banner`,
+      )}`,
+      title: 'Check flexible flight combinations',
+      description: 'Compare one-way, return and self-transfer options when price or routing matters most.',
+      cta: 'Search Kiwi.com',
+      theme: 'from-[#00a991] via-[#00bfa5] to-[#d7fff7]',
+      button: 'bg-[#007f71] hover:bg-[#006b60]',
+      label: 'text-[#007f71]/75',
+    },
+    {
+      name: 'Trip.com',
+      href: `https://www.trip.com/?utm_source=originfacts&utm_medium=affiliate_banner&utm_campaign=${encodeURIComponent(
+        `article_${articleSlug}_trip_com_banner`,
+      )}`,
+      title: 'Compare flights with global trip tools',
+      description: 'Look across fares, baggage choices and travel extras before choosing the ticket.',
+      cta: 'Search Trip.com',
+      theme: 'from-[#1d4ed8] via-[#2563eb] to-[#bcd7ff]',
+      button: 'bg-[#1d4ed8] hover:bg-[#1e40af]',
+      label: 'text-[#1d4ed8]/75',
+    },
+  ];
+
+  return (
+    <aside
+      className="mt-12 grid gap-4 sm:grid-cols-2"
+      data-testid="flight-affiliate-banners"
+      aria-label="Sponsored flight booking offers"
+    >
+      {offers.map((offer) => (
+        <div
+          key={offer.name}
+          className={`overflow-hidden rounded-[0.4rem] border border-forest-900/10 bg-gradient-to-r ${offer.theme} p-[1px]`}
+          data-testid={`flight-affiliate-banner-${offer.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
+        >
+          <div className="flex h-full flex-col justify-between gap-4 rounded-[0.35rem] bg-white px-5 py-4">
+            <div>
+              <p className={`font-urbanist text-[10px] font-bold uppercase tracking-[0.2em] ${offer.label}`}>
+                Sponsored · {offer.name}
+              </p>
+              <p className="mt-1 font-urbanist text-lg font-bold leading-snug text-forest-950">
+                {offer.title}
+              </p>
+              <p className="mt-1 text-sm leading-6 text-forest-900/65">
+                {offer.description}
+              </p>
+            </div>
+            <a
+              href={offer.href}
+              target="_blank"
+              rel="sponsored nofollow noopener noreferrer"
+              className={`inline-flex w-fit items-center justify-center rounded-[0.3rem] px-5 py-2.5 font-urbanist text-sm font-bold text-white shadow-sm transition ${offer.button}`}
+            >
+              {offer.cta} <span aria-hidden className="ml-2">→</span>
+            </a>
+          </div>
+        </div>
+      ))}
+    </aside>
   );
 }
 

@@ -1,0 +1,456 @@
+{
+  "slug": "south-america",
+  "documentId": "u4obb4mid613bm3x9vzy0rpq",
+  "name": "South America",
+  "type": "continent",
+  "generatedAt": "2026-10-04T20:49:46.562Z",
+  "model": "claude-sonnet-5-5",
+  "flags": [],
+  "fields": {
+    "description": "South America stretches from the Caribbean coasts of Colombia and Venezuela to Tierra del Fuego, with the Andes running down the Pacific side and the Amazon basin filling the north and centre. Twelve sovereign countries share it, mostly Spanish-speaking, with Portuguese in Brazil. For a traveller, altitude and distance shape a trip more than borders do.\n\n## Overview\n\nThe continent is bounded by the Pacific to the west, the Atlantic to the east and the Caribbean Sea to the north, and ends at the Tierra del Fuego archipelago, divided between Chile and Argentina. The Andes run for roughly 7,000 km down the western side through Venezuela, Colombia, Ecuador, Peru, Bolivia, Chile and Argentina; Aconcagua in Argentina is the highest summit. East of the range the Amazon basin covers much of Brazil and reaches into Peru, Colombia and Bolivia, the Orinoco drains Venezuela, and the Paraná, Paraguay and Uruguay rivers meet at the Río de la Plata between Buenos Aires and Montevideo. Useful subregions are the Caribbean north (Colombia, Venezuela and the Guianas), the Andean countries (Ecuador, Peru, Bolivia), the Southern Cone (Chile, Argentina, Uruguay, Paraguay) and Brazil, which takes up most of the east. The Atacama Desert in northern Chile and Patagonia in the far south are separated by thousands of kilometres.\n\n## History and Ancient Civilizations\n\nMany visitors follow the Inca. Cusco in Peru was the capital of their empire, and Machu Picchu and the Sacred Valley lie nearby. Older sites include Caral in Peru, a Norte Chico city more than 4,000 years old, the Nazca Lines on Peru's southern coast, and Tiwanaku in Bolivia, close to Lake Titicaca. Spanish rule left walled and fortified towns such as Cartagena in Colombia, the historic centre of Quito in Ecuador, Colonia del Sacramento in Uruguay and the silver city of Potosí in Bolivia. Portuguese Brazil is represented by gold-era Ouro Preto. The Jesuit missions of the Guaraní survive as ruins at San Ignacio Miní in Argentina and São Miguel das Missões in Brazil. Most countries won independence in the 1810s and 1820s, and Simón Bolívar's campaigns are commemorated in plazas and museums across the northern Andes.\n\n## Getting around South America\n\nThe main international hubs are São Paulo-Guarulhos (GRU), Bogotá El Dorado (BOG), Lima Jorge Chávez (LIM), Santiago Arturo Merino Benítez (SCL) and Buenos Aires Ezeiza (EZE), with Quito (UIO) as a further Andean gateway. There is no continent-wide rail network, so most crossings are by air or long-distance coach; Sky Airline and JetSMART run low-cost routes among Chile, Peru, Argentina and neighbours. Rail is mainly scenic: PeruRail connects Cusco with Machu Picchu and Puno. Ferries cross the Río de la Plata from Buenos Aires to Colonia del Sacramento and Montevideo, and a boat-and-bus route links Bariloche in Argentina with Puerto Varas in Chile. Peru and Bolivia meet by road at Lake Titicaca. Flying is necessary for the Amazon interior, Patagonia from the north, and routes such as Bogotá to Buenos Aires.\n\n## When to visit South America\n\nSeasons depend on subregion and altitude. In the Andean highlands around Cusco, La Paz and Quito the dry season runs roughly May to September, with sunny days near 20°C in Cusco and nights close to freezing in June and July; rain is heaviest from December to March, which also brings the wet season on the Bolivian altiplano. The Amazon stays hot at around 25–32°C year-round, with heavier rain from about December to May. The Southern Cone has a December–February summer: Buenos Aires and Santiago reach around 30°C, and Patagonia is most accessible from November to March, when days are mild and winds strong. Winter closes many Patagonian services. The Caribbean coast of Colombia is driest from December to March. Peaks to plan around include Carnival in February or March, Semana Santa in March or April, Inti Raymi in Cusco on 24 June, Peru's national holidays in late July, Chile's on 18 September, and Christmas and New Year.\n\n## Travel Notes\n\nNo single currency covers the continent. Ecuador uses the US dollar; most others have their own, including the Brazilian real, Peruvian sol, Colombian, Chilean, Argentine and Uruguayan pesos, and the Bolivian boliviano. Plug types differ: Brazil uses types N and C, Argentina I and C, Chile C and L, Peru A, B and C, and Colombia A and B, so carry an adaptor set. Spanish is the working language in most countries, Portuguese in Brazil, English in Guyana, Dutch in Suriname and French in French Guiana; Quechua, Aymara and Guaraní are widely spoken locally. Traffic drives on the right except in Guyana and Suriname, where it keeps left.\n\n## Interesting Facts About South America\n\n- The Andes stretch about 7,000 km, the longest continental mountain range.\n- Aconcagua, in Argentina, is the highest mountain outside Asia.\n- Chile and Ecuador are the only countries that do not border Brazil.\n- Lake Titicaca is shared by Peru and Bolivia, at roughly 3,800 metres.\n- The equator crosses Ecuador, Colombia and Brazil, and gives Ecuador its name.",
+    "tldr": "Fly into São Paulo, Bogotá, Lima, Santiago or Buenos Aires and expect to fly again: distances are huge and no continental rail network exists. Coaches, ferries and low-cost airlines link neighbours. Go to the Andes May–September, Patagonia November–March, and allow for Carnival and holiday peaks.",
+    "keyFacts": [
+      {
+        "label": "Sovereign countries",
+        "value": "12, plus French Guiana as an overseas territory of France"
+      },
+      {
+        "label": "Main hubs",
+        "value": "São Paulo (GRU), Bogotá (BOG), Lima (LIM), Santiago (SCL), Buenos Aires (EZE)"
+      },
+      {
+        "label": "Main languages",
+        "value": "Spanish and Portuguese; English, Dutch and French in the Guianas"
+      },
+      {
+        "label": "Driving side",
+        "value": "Right, except Guyana and Suriname (left)"
+      },
+      {
+        "label": "Andes dry season",
+        "value": "Roughly May to September"
+      },
+      {
+        "label": "Patagonia season",
+        "value": "Roughly November to March"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "When is the best time to visit South America?",
+        "a": "It depends on where you go. The Andean highlands are driest from about May to September, Patagonia is best from November to March, and the Amazon is hot all year with heavier rain from roughly December to May."
+      },
+      {
+        "q": "How many countries are in South America?",
+        "a": "There are 12 sovereign countries: Argentina, Bolivia, Brazil, Chile, Colombia, Ecuador, Guyana, Paraguay, Peru, Suriname, Uruguay and Venezuela. French Guiana is an overseas territory of France, and the Falkland Islands are a British overseas territory."
+      },
+      {
+        "q": "Do I need to fly between countries in South America?",
+        "a": "Often, yes. There is no continent-wide rail network, and long coach journeys cross Andean passes. Neighbouring cities can be linked by coach or ferry, such as Buenos Aires to Montevideo, but the Amazon, Patagonia and long north–south legs usually need flights."
+      },
+      {
+        "q": "Which airports are the main hubs in South America?",
+        "a": "São Paulo-Guarulhos (GRU), Bogotá (BOG), Lima (LIM), Santiago (SCL) and Buenos Aires Ezeiza (EZE) are the main international gateways, with Quito (UIO) serving the northern Andes. Many onward connections run through one of these."
+      },
+      {
+        "q": "Which language should I learn for South America?",
+        "a": "Spanish is the most useful, as it is spoken in most countries. Brazil uses Portuguese. English is official in Guyana, Dutch in Suriname and French in French Guiana."
+      },
+      {
+        "q": "Is altitude a concern when travelling in the Andes?",
+        "a": "Yes. Cusco is at around 3,400 metres and La Paz is higher, so many travellers feel breathless on arrival. Plan a slow first day, and check with a doctor beforehand if you have a health condition."
+      }
+    ]
+  },
+  "sources": [],
+  "searched": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Andes",
+      "title": "Andes"
+    },
+    {
+      "url": "https://www.encyclopedia.com/places/oceans-continents-and-polar-regions/oceans-and-continents/south-america",
+      "title": "South America"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/South_America",
+      "title": "South America"
+    },
+    {
+      "url": "https://simple.wikipedia.org/wiki/South_America",
+      "title": "South America"
+    },
+    {
+      "url": "https://simple.wikipedia.org/wiki/Andes",
+      "title": "Andes"
+    },
+    {
+      "url": "https://www.worldatlas.com/continents/south-america.html",
+      "title": "South America - World Atlas"
+    },
+    {
+      "url": "https://www.countryreports.org/countries/southamerica",
+      "title": "South America"
+    },
+    {
+      "url": "https://kids.britannica.com/students/article/South-America/277149",
+      "title": "South America - Students"
+    },
+    {
+      "url": "https://mdn.gov.mm/en/south-american-continent",
+      "title": "South American Continent"
+    },
+    {
+      "url": "https://www.ebsco.com/research-starters/architecture/machu-picchu/",
+      "title": "Machu Picchu"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Machu_Picchu",
+      "title": "Machu Picchu"
+    },
+    {
+      "url": "https://www.metropolitan-touring.com/machu-picchu/",
+      "title": "Machu Picchu, Peru: Everything You Need To Know"
+    },
+    {
+      "url": "https://whc.unesco.org/en/list/274/",
+      "title": "Historic Sanctuary of Machu Picchu - UNESCO World Heritage Centre"
+    },
+    {
+      "url": "https://www.history.com/articles/machu-picchu",
+      "title": "Machu Picchu - Peru, Elevation & Facts"
+    },
+    {
+      "url": "https://www.machutravelperu.com/blog/what-is-machu-picchu",
+      "title": "What Is Machu Picchu? The Complete Guide to Peru's Inca Citadel"
+    },
+    {
+      "url": "https://www.britannica.com/place/Cuzco",
+      "title": "Cuzco"
+    },
+    {
+      "url": "https://www.cuscoperu.com/en/news-events/world-heritage/",
+      "title": "Machu Picchu - World Heritage Site"
+    },
+    {
+      "url": "https://www.urosexpeditions.com/blog/inca-empire-machu-picchu",
+      "title": "Inca Empire and Machu Picchu History Facts and Travel Guide"
+    },
+    {
+      "url": "https://whc.unesco.org/en/list/567/",
+      "title": "Tiwanaku: Spiritual and Political Centre of the Tiwanaku Culture - UNESCO World Heritage Centre"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Tiwanaku",
+      "title": "Tiwanaku"
+    },
+    {
+      "url": "https://www.biorxiv.org/content/10.1101/2021.01.22.427554.full.pdf",
+      "title": "Ancient genomes reveal long range influence of the site and culture of Tiwanaku"
+    },
+    {
+      "url": "https://lacgeo.com/tiwanaku-archaeological-site-bolivia",
+      "title": "City of Tiwanaku: A Lost Empire of the Andes"
+    },
+    {
+      "url": "https://marielaaroundtheworld.com/tiwanaku/",
+      "title": "Exploring the ruins of Tiwanaku - Travel guides & itineraries"
+    },
+    {
+      "url": "https://hobletsonthego.com/where-weve-been/south-america/bolivia/tiwanaku/",
+      "title": "Tiwanaku, Bolivia: Ancient Ruins and Archaeological Wonders of the Andes"
+    },
+    {
+      "url": "https://tiwanakubolivia.com/",
+      "title": "Tiwanaku Bolivia — Day Trips & Tickets from La Paz"
+    },
+    {
+      "url": "http://www.crystalinks.com/tiwanaku.html",
+      "title": "Tiwanaku, Bolivia"
+    },
+    {
+      "url": "https://tripbucket.com/dreams/dream/see-tiwanaku-archaeological-site-bolivia-unesco-site/",
+      "title": "Tiwanaku"
+    },
+    {
+      "url": "https://historyrise.com/the-discovery-and-archaeological-excavations-of-tiwanaku-site/",
+      "title": "The Discovery and Archaeological Excavations of Tiwanaku Site"
+    },
+    {
+      "url": "https://news.artnet.com/art-world/nazca-lines-reduced-reserve-plan-2652342",
+      "title": "Nazca Lines Under Threat? Peru’s Downsizing Plan Sparks Alarm"
+    },
+    {
+      "url": "https://www.chimuadventures.com/en-us/blog/discover-nazca-lines",
+      "title": "Discover The Nazca Lines"
+    },
+    {
+      "url": "https://www.worldhistory.org/article/665/nazca-lines/",
+      "title": "Nazca Lines - World History Encyclopedia"
+    },
+    {
+      "url": "https://www.heritagedaily.com/2020/04/the-nazca-lines-interactive-map/127496",
+      "title": "The Nazca Lines & Interactive Map"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Paul_Kosok",
+      "title": "Paul Kosok"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Maria_Reiche",
+      "title": "Maria Reiche"
+    },
+    {
+      "url": "https://www.peruforless.com/travel-guides/nazca",
+      "title": "Nazca Travel Guide: How to See the Lines"
+    },
+    {
+      "url": "https://www.peruforless.com/blog/nazca-lines",
+      "title": "Nazca Lines: Complete Visitor's Guide"
+    },
+    {
+      "url": "https://www.discover-peru.org/the-nazca-lines/",
+      "title": "The Nazca Lines"
+    },
+    {
+      "url": "https://worldheritagesites.net/lines-and-geoglyphs-of-nazca-and-palpa/",
+      "title": "Lines and Geoglyphs of Nazca and Palpa"
+    },
+    {
+      "url": "https://whc.unesco.org/en/list/275/",
+      "title": "Jesuit Missions of the Guaranis: San Ignacio Mini, Santa Ana, Nuestra Señora de Loreto and Santa Maria Mayor (Argentina), Ruins of Sao Miguel das Missoes (Brazil) - UNESCO World Heritage Centre"
+    },
+    {
+      "url": "https://whc.unesco.org/en/documents/117807",
+      "title": "UNESCO World Heritage Centre - Document - Jesuit Missions of the Guaranis: San Ignacio Mini, Santa Ana, Nuestra Señora de Loreto and Santa Maria Mayor (Argentina), Ruins of Sao Miguel das Missoes (Brazil)"
+    },
+    {
+      "url": "https://smarthistory.org/jesuit-missions-of-the-guaranis/",
+      "title": "Jesuit Missions of the Guaranis"
+    },
+    {
+      "url": "https://www.worldheritagesite.org/list/jesuit-missions-of-the-guaranis/",
+      "title": "Jesuit Missions of the Guaranis: UNESCO World Heritage Site Travel Guide"
+    },
+    {
+      "url": "https://www.tota.world/article/2713/",
+      "title": "Video: Jesuit Missions of the Guaranis"
+    },
+    {
+      "url": "https://dare2go.com/jesuit-missions-argentina-brazil/",
+      "title": "Jesuit Missions of the Guaranis in Argentina & Brazil"
+    },
+    {
+      "url": "https://worldheritageexplorer.org/sites/jesuit_missions_of_the_guaranis_san_ignacio_mini_santa_ana_nuestra_se%C3%B1ora_de_loreto_and_santa_maria_mayor_argentina_ruins_of_sao_miguel_das_missoes_brazil.html",
+      "title": "Jesuit Missions of the Guaranis: San Ignacio Mini, Santa Ana, Nuestra Señora de Loreto and Santa Maria Mayor (Argentina), Ruins of Sao Miguel das Missoes (Brazil)"
+    },
+    {
+      "url": "https://thetravelshots.com/jesuit-missions-of-the-guaranis/",
+      "title": "Jesuit Missions of the Guaranis: A Journey Through Argentina and Brazil’s Sacred Ruins -"
+    },
+    {
+      "url": "https://whc.unesco.org/en/soc/1501",
+      "title": "whc.unesco.org"
+    },
+    {
+      "url": "https://whc.unesco.org/en/list/285/",
+      "title": "Port, Fortresses and Group of Monuments, Cartagena - UNESCO World Heritage Centre"
+    },
+    {
+      "url": "https://www.worldheritagesite.org/list/cartagena/",
+      "title": "Cartagena: UNESCO World Heritage Site Travel Guide"
+    },
+    {
+      "url": "https://www.worldtribune.org/2023/port-fortresses-and-group-of-monuments-cartagena/",
+      "title": "Port, Fortresses and Group of Monuments, Cartagena - World Tribune"
+    },
+    {
+      "url": "https://www.wikidata.org/wiki/Q6091925",
+      "title": "Port, Fortresses and Group of Monuments, Cartagena - Wikidata"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Cartagena,_Colombia",
+      "title": "Cartagena, Colombia"
+    },
+    {
+      "url": "https://www.mdpi.com/2571-9408/6/7/287",
+      "title": "A Critical Assessment of the Current State and Governance of the UNESCO Cultural Heritage Site in Cartagena de Indias, Colombia"
+    },
+    {
+      "url": "https://uncovercolombia.com/blog/unesco-heritage-sites-in-colombia/",
+      "title": "UNESCO Heritage Sites in Colombia Uncover Colombia"
+    },
+    {
+      "url": "https://visitmycolombia.com/en/9-unesco-world-heritage-sites-in-colombia/",
+      "title": "[2026] 9 UNESCO World Heritage sites in Colombia"
+    },
+    {
+      "url": "https://skyticket.com/guide/64955",
+      "title": "Colombia’s beautiful World Heritage Sites! Cartagena’s port, fortress, and historic monuments"
+    },
+    {
+      "url": "https://simpleflying.com/jetsmart-domestic-flights-peru/",
+      "title": "JetSMART Launches Domestic Services In Peru"
+    },
+    {
+      "url": "https://simpleflying.com/analyzing-sky-airline-south-american-route-network/",
+      "title": "Analyzing Sky Airline's South American Route Network"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/JetSmart",
+      "title": "JetSmart"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Sky_Airline",
+      "title": "Sky Airline"
+    },
+    {
+      "url": "https://www.machutravelperu.com/blog/peruvian-airlines",
+      "title": "Peruvian Airlines: Best Domestic Flights & Travel Guide"
+    },
+    {
+      "url": "https://www.alternativeairlines.com/jetsmart-peru",
+      "title": "JetSMART Peru"
+    },
+    {
+      "url": "https://www.skyairline.com/flights/en-pe/",
+      "title": "Cheap Flights & Plane Tickets"
+    },
+    {
+      "url": "https://www.skyairline.com/flights/en/flights-from-lima",
+      "title": "Cheap flights from Lima from $USD 37"
+    },
+    {
+      "url": "https://jetsmart.com/us/en/about-us",
+      "title": "JetSMART"
+    },
+    {
+      "url": "https://www.kayak.com/JetSMART.JA.airline.html",
+      "title": "Find flights"
+    },
+    {
+      "url": "https://velvetescape.com/the-spectacular-lake-crossing-to-bariloche/",
+      "title": "The spectacular lake crossing tour from Puerto Varas to Bariloche"
+    },
+    {
+      "url": "https://visitchile.cl/en/visit-argentina/visit-bariloche/andean-lake-crossing-bariloche-puerto-varas-in-1-day/",
+      "title": "Andean Lake Crossing"
+    },
+    {
+      "url": "https://www.gang-gang.net/nomad/andes/andes03.htm",
+      "title": "Cruce de Lagos"
+    },
+    {
+      "url": "https://www.chimuadventures.com/en-us/argentina/lakes-crossing-rev",
+      "title": "Lakes Crossing Extension from Bariloche"
+    },
+    {
+      "url": "https://www.welcomechile.com/frutillar/lake-crossing-on-catamaran.html",
+      "title": "Andean Crossing on Patagonian Lakes"
+    },
+    {
+      "url": "https://southamericatourism.com/tour/lakes-crossing/",
+      "title": "Lakes Crossing"
+    },
+    {
+      "url": "http://www.visitchile.cl/crucedelagos.htm",
+      "title": "Tour Cruce de Lagos Andinos Puerto Varas Peulla Bariloche * Chile y Argentina *"
+    },
+    {
+      "url": "https://www.cruceandino.com/",
+      "title": "Cruce Andino - Inicio"
+    },
+    {
+      "url": "https://en.patagoniatraveler.com/destination/Puerto-Montt/excursiones/25-andes-crossing-1-day-from-puerto-montt.aspx",
+      "title": "Andean lake Crossing in 1 day"
+    },
+    {
+      "url": "https://meliatravel.wordpress.com/2010/11/13/crossing-the-lakes-puerto-montt-chile-to-bariloche-argentina/",
+      "title": "Crossing the Lakes"
+    }
+  ],
+  "usage": {
+    "input_tokens": 61258,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+      {
+        "input_tokens": 7955,
+        "output_tokens": 1086,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 9082,
+        "output_tokens": 126,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 9249,
+        "output_tokens": 6580,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 15917,
+        "output_tokens": 128,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 19055,
+        "output_tokens": 2964,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ],
+    "output_tokens": 10884,
+    "output_tokens_details": {
+      "thinking_tokens": 3836
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "server_tool_use": {
+      "web_search_requests": 8,
+      "web_fetch_requests": 0
+    }
+  },
+  "reviewNotes": [
+    "\"Brazil uses Portuguese, which is close enough to Spanish to read signs.\" -> \"Brazil uses Portuguese.\""
+  ]
+}

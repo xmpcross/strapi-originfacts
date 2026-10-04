@@ -1,0 +1,546 @@
+{
+  "slug": "africa",
+  "documentId": "c2k6hwcgoik99rlvmwqc4tjk",
+  "name": "Africa",
+  "type": "continent",
+  "generatedAt": "2026-10-04T20:48:07.684Z",
+  "model": "claude-sonnet-5-5",
+  "flags": [],
+  "fields": {
+    "description": "Africa is the second-largest continent, covering around 30 million km² and divided almost equally by the equator. Distances between subregions are long, and most air and rail networks are built around national or regional hubs. Plan by subregion rather than treating the continent as a single route.\n\n## Overview\n\nAfrica is bounded by the Mediterranean, the Atlantic, the Red Sea and the Indian Ocean. The Atlas range runs across the north-west, south of it lies the Sahara, and the semi-arid Sahel forms the band beneath the desert. Highlands and the Rift Valley run through the east, where Kilimanjaro in Tanzania is the highest point and Lake Victoria the largest lake. The Nile, Congo, Niger and Zambezi are the great rivers. The usual subregions are North Africa, West Africa, Central Africa, East Africa and Southern Africa, with Madagascar and other Indian Ocean islands often treated alongside the east. Scale matters: Cairo, Nairobi and Johannesburg are separate flights apart, not a day's drive.\n\n## History and Ancient Civilizations\n\nMost of what you see on the ground comes from a handful of periods. In Egypt, the pyramids at Giza and the temples at Karnak, near Luxor, belong to the pharaonic Nile civilisation. Carthage, in Tunisia, preserves Punic and Roman remains. In Ethiopia, Aksum has the stelae of the Aksumite kingdom, and the rock-hewn churches of Lalibela are a pilgrimage site. Great Zimbabwe, in Zimbabwe, is the largest stone ruin of the Shona-speaking Zimbabwe culture. Olduvai Gorge in Tanzania is tied to the story of early humans. The Atlantic slave trade is remembered at Gorée Island in Senegal and Cape Coast Castle in Ghana, and apartheid-era imprisonment at Robben Island off Cape Town in South Africa. The medina of Fez in Morocco shows the Islamic cities of the Maghreb.\n\n## Getting around Africa\n\nLong-haul traffic runs through a few hubs: Addis Ababa Bole (ADD), Johannesburg OR Tambo (JNB), Nairobi Jomo Kenyatta (NBO), Cairo (CAI), Casablanca Mohammed V (CMN), Lagos (LOS) and Cape Town (CPT). At Johannesburg, the Gautrain links the airport with Sandton and Pretoria on an 80 km commuter network. Rail is patchy: Morocco's Al Boraq high-speed line links Tangier and Casablanca, while TAZARA connects Dar es Salaam with Kapiri Mposhi in Zambia, though its passenger service has been interrupted, so check before planning around it. Ferries cross the Strait of Gibraltar between Tangier and Spain and run from Dar es Salaam to Zanzibar. Elsewhere, long-distance buses and shared taxis link neighbouring countries. Flying is the realistic choice across the Sahara, the Congo Basin, or between subregions; no through route connects Cairo to Cape Town.\n\n## When to visit Africa\n\nSeasons differ by subregion, so there is no single best month. East Africa has a long rainy season roughly from March to May and shorter rains around November and December; the drier months from June to October suit safaris, including the Serengeti and Maasai Mara migration season. Southern Africa is driest from May to September, which is its winter, while Cape Town has wet winters and dry summers. Victoria Falls carries most water after the rains, around March to May. West Africa's coast is wet roughly from May to October, and the Harmattan brings dust from December to February. North Africa is more comfortable in spring and autumn, with the Sahara hottest in summer. Madagascar's cyclone season falls between January and March. Peaks include Christmas and New Year across South Africa, Easter, and Ramadan and Eid in Muslim-majority countries, whose dates shift each year.\n\n## Travel Notes\n\nCurrencies are fragmented. Eight West African countries share the West African CFA franc, six Central African countries the Central African CFA franc, and South Africa's rand is linked to Lesotho, Eswatini and Namibia through the Common Monetary Area. Plugs vary: Kenya, Uganda, Nigeria and Ghana mainly use three-pin type G, South Africa uses type M, and Egypt and Morocco use round-pin plugs. French helps across the Maghreb, West and Central Africa; English across much of East and Southern Africa; Swahili in East Africa; Portuguese in Angola and Mozambique. Traffic drives on the left in South Africa, Kenya, Tanzania, Uganda, Zambia and Zimbabwe, and on the right in Egypt, Morocco, Ethiopia and Nigeria.\n\n## Interesting Facts About Africa\n\n- Kilimanjaro in Tanzania is Africa's highest point at 5,895 metres.\n- The equator divides Africa into two almost equal halves.\n- Lake Victoria is the largest lake on the continent.\n- Zero latitude meets zero longitude in the Gulf of Guinea.\n- Africa covers about 30 million square kilometres, second only to Asia.",
+    "tldr": "Africa is huge, so plan by subregion. Main hubs are Addis Ababa, Johannesburg, Nairobi, Cairo, Casablanca and Lagos. Fly between subregions; buses, shared taxis and a few rail lines connect neighbours. East Africa's dry season is June–October, Southern Africa's May–September, and North Africa suits spring and autumn.",
+    "keyFacts": [
+      {
+        "label": "Area",
+        "value": "About 30 million km², divided almost equally by the equator"
+      },
+      {
+        "label": "Subregions",
+        "value": "North, West, Central, East and Southern Africa"
+      },
+      {
+        "label": "Main hubs",
+        "value": "ADD, JNB, NBO, CAI, CMN, LOS, CPT"
+      },
+      {
+        "label": "Highest point",
+        "value": "Kilimanjaro, Tanzania, 5,895 m"
+      },
+      {
+        "label": "Dry season",
+        "value": "East Africa June–October; Southern Africa May–September"
+      },
+      {
+        "label": "Shared currencies",
+        "value": "West and Central African CFA francs; South African rand area"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What are the main airport hubs in Africa?",
+        "a": "Addis Ababa Bole (ADD), Johannesburg OR Tambo (JNB), Nairobi Jomo Kenyatta (NBO), Cairo (CAI), Casablanca Mohammed V (CMN), Lagos (LOS) and Cape Town (CPT) are the main connecting points. Most journeys between subregions route through one of them."
+      },
+      {
+        "q": "When is the best time for a safari in Africa?",
+        "a": "It depends on the region. In East Africa the drier months of June to October suit safaris, including the Serengeti and Maasai Mara migration. In Southern Africa, the dry winter from May to September is the usual window for wildlife viewing."
+      },
+      {
+        "q": "Can you travel across Africa by train?",
+        "a": "Not continuously. Rail exists in separate national or regional networks, such as Morocco's Al Boraq line between Tangier and Casablanca, the Gautrain around Johannesburg, and TAZARA from Dar es Salaam to Zambia. Between them, you will need flights, buses or shared taxis."
+      },
+      {
+        "q": "How do you cross between countries in Africa?",
+        "a": "Mostly by long-distance bus, shared taxi or flight. Ferries cross the Strait of Gibraltar between Tangier and Spain, and run between Dar es Salaam and Zanzibar. Across the Sahara and Congo Basin, flying is usually the practical option."
+      },
+      {
+        "q": "Which side of the road do they drive on in Africa?",
+        "a": "It varies by country. Traffic drives on the left in South Africa, Kenya, Tanzania, Uganda, Zambia and Zimbabwe, and on the right in Egypt, Morocco, Ethiopia and Nigeria. Check before hiring a car across a border."
+      },
+      {
+        "q": "How many countries are there in Africa?",
+        "a": "Africa has 54 internationally recognised sovereign countries, which is the largest number on any continent. They are usually grouped into North, West, Central, East and Southern Africa, though the exact boundaries of the subregions vary by organisation."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Geography_of_Africa",
+      "title": "Geography of Africa – Wikipedia"
+    },
+    {
+      "url": "https://www.britannica.com/summary/Africa",
+      "title": "Peoples, geography, and history of Africa – Britannica"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Gautrain",
+      "title": "Gautrain – Wikipedia"
+    },
+    {
+      "url": "https://www.gautrain.co.za/commuter/stationinfo?stationName=OR+Tambo",
+      "title": "OR Tambo station – Gautrain"
+    },
+    {
+      "url": "https://www.railwaygazette.com/passenger/tazara-restarts-cross-border-passenger-services-within-the-realities-of-current-operating-constraints/70496.article",
+      "title": "TAZARA restarts cross-border passenger services – Railway Gazette"
+    },
+    {
+      "url": "https://vajiramandravi.com/current-affairs/africa/",
+      "title": "Africa: Map, Geographical Features – Vajiram & Ravi"
+    }
+  ],
+  "searched": [
+    {
+      "url": "https://vajiramandravi.com/current-affairs/africa/",
+      "title": "Africa, Map, Time, Geographical Features, Mountains, Rivers"
+    },
+    {
+      "url": "https://www.worldatlas.com/webimage/countrys/af.htm",
+      "title": "Africa Map / Map of Africa - Worldatlas.com"
+    },
+    {
+      "url": "https://www.mappr.co/thematic-maps/african-continent/",
+      "title": "The African Continent: Map, History & Key Facts (2026) - Mappr"
+    },
+    {
+      "url": "https://www.ducksters.com/geography/africa.php",
+      "title": "Geography for Kids: African countries and the continent of Africa"
+    },
+    {
+      "url": "https://www.britannica.com/summary/Africa",
+      "title": "Peoples, geography, and history of Africa"
+    },
+    {
+      "url": "https://www.enchantedlearning.com/school/Africa/Africamap.shtml",
+      "title": "Africa Map - ZoomSchool.com"
+    },
+    {
+      "url": "https://geology.com/world/africa-satellite-image.shtml",
+      "title": "Africa Map and Satellite Image"
+    },
+    {
+      "url": "https://www.whatarethe7continents.com/africa-continent/",
+      "title": "Africa Continent"
+    },
+    {
+      "url": "https://lotusarise.com/africa-world-geography-for-upsc/",
+      "title": "Africa"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Geography_of_Africa",
+      "title": "Geography of Africa"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Geography_of_Tanzania",
+      "title": "Geography of Tanzania"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Geography_of_Western_Sahara",
+      "title": "Geography of Western Sahara"
+    },
+    {
+      "url": "https://www.worldatlas.com/webimage/countrys/aflandst.htm",
+      "title": "Africa Landforms and Land Statistics - Africa Landforms, Land Statistics"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Geography_of_Djibouti",
+      "title": "Geography of Djibouti"
+    },
+    {
+      "url": "https://encyclopedia2.thefreedictionary.com/African+continent",
+      "title": "African continent"
+    },
+    {
+      "url": "https://continenten.com/en/africa/",
+      "title": "Africa — Map, 54 Countries, People & Facts"
+    },
+    {
+      "url": "https://visitafrica.site/about/geography-of-africa-2/",
+      "title": "Geography of Africa"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Gautrain",
+      "title": "Gautrain"
+    },
+    {
+      "url": "https://www.gautrain.co.za/commuter/stationinfo?stationName=OR+Tambo",
+      "title": "OR Tambo International Airport, Kempton Park GPS S:26° ..."
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Marlboro_(Gautrain_station)",
+      "title": "Marlboro (Gautrain station)"
+    },
+    {
+      "url": "https://ortambo-airport.co.za/",
+      "title": "Home - O.R. Tambo International Airport"
+    },
+    {
+      "url": "https://ortambo-airport.co.za/gautrain-transfers/",
+      "title": "GAUTRAIN & TRANSFERS - O.R. Tambo International Airport"
+    },
+    {
+      "url": "https://www.skyscanner.net/flights/arrivals-departures/jnb/johannesburg-o-r-tambo-arrivals-departures",
+      "title": "Johannesburg O.R. Tambo Airport (JNB) Arrivals and Departures"
+    },
+    {
+      "url": "https://www.johannesburg-airport.com/gautrain.html",
+      "title": "Gautrain"
+    },
+    {
+      "url": "https://www.johannesburg-airport.co.za/about.html",
+      "title": "About OR Tambo International Airport"
+    },
+    {
+      "url": "https://www.thetraveler.org/johannesburg-gautrain-guide-airport-sandton-rosebank/",
+      "title": "Johannesburg Gautrain Guide: Airport, Sandton & Rosebank"
+    },
+    {
+      "url": "https://www.railjournal.com/passenger/main-line/tazara-restarts-cross-border-passenger-service/",
+      "title": "Tazara restarts cross-border passenger service - International Railway Journal"
+    },
+    {
+      "url": "https://www.thecitizen.co.tz/tanzania/news/national/tazara-announces-resumption-of-cross-border-passenger-train-in-february-5318460",
+      "title": "Tazara announces resumption of cross-border passenger train in February"
+    },
+    {
+      "url": "https://www.railwaygazette.com/passenger/tazara-restarts-cross-border-passenger-services-within-the-realities-of-current-operating-constraints/70496.article",
+      "title": "TAZARA restarts cross-border passenger services ‘within the realities of current operating constraints’"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/TAZARA_Railway",
+      "title": "TAZARA Railway"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Zambia_Railways",
+      "title": "Zambia Railways"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Transport_in_Zambia",
+      "title": "Transport in Zambia"
+    },
+    {
+      "url": "https://www.railway.supply/tazara-cross-border-passenger-service-returns-on-mukuba/",
+      "title": "TAZARA cross-border passenger service resumes Feb 10, 2026 - Railway Supply"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Mpika_railway_station",
+      "title": "Mpika railway station"
+    },
+    {
+      "url": "https://www.railway.supply/tazara-cross-border-passenger-services-restart-on-feb-10/",
+      "title": "TAZARA cross-border passenger services restart Feb 2026 - Railway Supply"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Al_Boraq",
+      "title": "Al Boraq"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Rail_transport_in_Morocco",
+      "title": "Rail transport in Morocco"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/High-speed_rail_in_Morocco",
+      "title": "High-speed rail in Morocco"
+    },
+    {
+      "url": "https://www.journeybeyondtravel.com/blog/morocco-high-speed-train.html",
+      "title": "Your Guide to the Morocco High Speed Train: The Al-Boraq - Journey Beyond Travel"
+    },
+    {
+      "url": "https://www.seat61.com/train-travel-in-morocco.htm",
+      "title": "A beginner's guide to Train travel in Morocco"
+    },
+    {
+      "url": "https://www.moroccotrains.com/",
+      "title": "Morocco Trains"
+    },
+    {
+      "url": "https://alboraqtrain.com/",
+      "title": "Al Boraq Train Morocco"
+    },
+    {
+      "url": "https://oncftickets.com/",
+      "title": "ONCF Train Tickets Morocco"
+    },
+    {
+      "url": "https://citytoursmorocco.com/morocco-train-routes",
+      "title": "Morocco Train Routes Guide 2026"
+    },
+    {
+      "url": "https://www.directferries.com/tangier_tarifa_ferry.htm",
+      "title": "Tangier to Tarifa ferry"
+    },
+    {
+      "url": "https://www.rome2rio.com/s/Strait-of-Gibraltar-crossing/Tangier",
+      "title": "Strait of Gibraltar crossing to Tangier - 3 ways to travel ..."
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Port_of_Tarifa",
+      "title": "Port of Tarifa"
+    },
+    {
+      "url": "https://ca.directferries.com/tarifa_tangier_ferry.htm",
+      "title": "Tarifa to Tangier ferry"
+    },
+    {
+      "url": "https://www.directferries.co.uk/blog/travelling-from-tarifa-to-tangier-complete-ferry-and-travel-guide",
+      "title": "Travelling from Tarifa to Tangier: Complete Ferry & Travel Guide"
+    },
+    {
+      "url": "https://adventuresoface.com/tarifa-to-tangier-ferry/",
+      "title": "The Tarifa to Tangier Ferry: Everything You Need to Know"
+    },
+    {
+      "url": "https://www.tangierexcursions.com/morocco-travel-tips/how-to-get-to-tangier-from-tarifa/",
+      "title": "How To Get To Tangier From Tarifa By Ferry (2026)? Practical Guide"
+    },
+    {
+      "url": "https://hiddengibraltar.com/blogs/news/morocco-from-gibraltar",
+      "title": "Morocco From Gibraltar: Ferry, Crossing & Tours"
+    },
+    {
+      "url": "https://ferry-guide.com/routes/ferry-tarifa-tangier/",
+      "title": "Ferry Tarifa - Tangier › Travel time › Prices › Timetable › ferry-guide.com"
+    },
+    {
+      "url": "https://24camels.com/tarifa-to-tangier-ferry/",
+      "title": "Tarifa to Tangier Ferry: Explore the Strait's Gateway (2026)"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Addis_Ababa_Bole_International_Airport",
+      "title": "Addis Ababa Bole International Airport"
+    },
+    {
+      "url": "https://aviation-airport.fandom.com/wiki/Addis_Ababa_Bole_International_Airport",
+      "title": "Addis Ababa Bole International Airport"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/List_of_Ethiopian_Airlines_destinations",
+      "title": "List of Ethiopian Airlines destinations"
+    },
+    {
+      "url": "https://www.routesonline.com/airlines/3489/ethiopian-airlines/about/",
+      "title": "About"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Ethiopian_Airlines",
+      "title": "Ethiopian Airlines"
+    },
+    {
+      "url": "https://www.flightradar24.com/data/airports/add",
+      "title": "Addis Ababa Bole (ADD) (HAAB) arrivals, departures, routes and reviews"
+    },
+    {
+      "url": "https://www.remitly.com/blog/travel/addis-ababa-airport/",
+      "title": "Addis Ababa Airport Guide: Gateway to Ethiopia and East Africa"
+    },
+    {
+      "url": "https://www.alternativeairlines.com/addis-ababa-bole-international-airport",
+      "title": "Addis Ababa Bole International Airport"
+    },
+    {
+      "url": "https://www.world-airport-codes.com/ethiopia/bole-international-40.html",
+      "title": "Addis Ababa Bole International Airport (ADD ..."
+    },
+    {
+      "url": "https://boleairport.com/popular-destinations-from-addis-ababa/",
+      "title": "Popular Destinations - BoleAirport.com: Your Independent Guide to Ethiopian Travel"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Great_Zimbabwe",
+      "title": "Great Zimbabwe"
+    },
+    {
+      "url": "https://whc.unesco.org/en/list/364/",
+      "title": "Great Zimbabwe National Monument - UNESCO World Heritage Centre"
+    },
+    {
+      "url": "https://www.afd.fr/en/actualites/communique-de-presse/government-zimbabwe-partners-afd-launch-great-zimbabwe-development-project",
+      "title": "The Government of Zimbabwe partners with AFD to launch the Great Zimbabwe Development Project"
+    },
+    {
+      "url": "https://www.britannica.com/place/Masvingo",
+      "title": "Masvingo"
+    },
+    {
+      "url": "https://www.africanworldheritagesites.org/cultural-places/ancient-sub-saharan-civilisations/great-zimbabwe.html",
+      "title": "Great Zimbabwe National Monument (Zimbabwe)"
+    },
+    {
+      "url": "https://byolife.co.zw/listing/great-zimbabwe/",
+      "title": "Great Zimbabwe National Monument"
+    },
+    {
+      "url": "https://visitzimbabwe.com/zimbabwe/travel-guides/historical-sites/great-zimbabwe-history",
+      "title": "Zimbabwe's UNESCO Sites & Historical Landmarks: Complete Heritage Guide"
+    },
+    {
+      "url": "https://zimbabwetravelhub.com/great-zimbabwe-ruins-a-guide-to-the-ancient-stone-city/",
+      "title": "Great Zimbabwe Ruins: A Guide To The Ancient Stone City"
+    },
+    {
+      "url": "https://geographyworlds.com/blog/great-zimbabwe-unesco-world-heritage/",
+      "title": "Great Zimbabwe UNESCO World Heritage: History & Facts"
+    },
+    {
+      "url": "https://grokipedia.com/page/Masvingo",
+      "title": "Masvingo — Grokipedia"
+    }
+  ],
+  "usage": {
+    "input_tokens": 151219,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+      {
+        "input_tokens": 7962,
+        "output_tokens": 1164,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 9167,
+        "output_tokens": 154,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 9702,
+        "output_tokens": 61,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 9974,
+        "output_tokens": 271,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 13350,
+        "output_tokens": 310,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 13701,
+        "output_tokens": 167,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 13909,
+        "output_tokens": 82,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 14032,
+        "output_tokens": 399,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 14472,
+        "output_tokens": 6000,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 20576,
+        "output_tokens": 520,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 24374,
+        "output_tokens": 3217,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ],
+    "output_tokens": 12345,
+    "output_tokens_details": {
+      "thinking_tokens": 3463
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "server_tool_use": {
+      "web_search_requests": 8,
+      "web_fetch_requests": 0
+    }
+  },
+  "reviewNotes": [
+    "\"A trip rarely crosses more than one climate zone or language area, distances bet\" -> \"Distances between subregions are long, and most air and rail networks are built \"",
+    "\"Britannica puts the continent's average elevation at about 670 metres, which exp\" -> \"\""
+  ]
+}

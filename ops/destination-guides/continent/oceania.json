@@ -1,0 +1,509 @@
+{
+  "slug": "oceania",
+  "documentId": "r0k53ab0uwlzce9sb2y10mcg",
+  "name": "Oceania",
+  "type": "continent",
+  "generatedAt": "2026-10-04T20:52:46.469Z",
+  "model": "claude-sonnet-5-5",
+  "flags": [],
+  "fields": {
+    "description": "Oceania is one continental landmass, Australia, plus thousands of Pacific islands grouped into Australasia, Melanesia, Micronesia and Polynesia. For a traveller that means long flights, sharply different climates and cultures between island groups, and almost no overland travel beyond what exists inside Australia, New Zealand and larger islands such as New Guinea. Most journeys are made by air or sea.\n\n## Overview\n\nAtlases divide Oceania into four subregions. Australasia centres on Australia and New Zealand. Melanesia runs from New Guinea, shared by Papua New Guinea and Indonesia, east through the Solomon Islands, Vanuatu and New Caledonia to Fiji. Micronesia, in the western Pacific, includes Palau, Guam, the Federated States of Micronesia, the Marshall Islands, Nauru and Kiribati. Polynesia spreads across the central and eastern Pacific and takes in Samoa, Tonga, the Cook Islands, French Polynesia, Hawaii and Rapa Nui. Only Australia is of continental scale, with a dry interior, the Great Dividing Range along the east coast and the Murray–Darling river system in the south-east. New Zealand is mountainous, with the Southern Alps running down the South Island. Elsewhere you find volcanic islands, raised limestone and coral atolls. Fourteen sovereign states sit alongside territories tied to France, the United States, New Zealand and Chile. Distances are the defining feature: neighbouring island groups can be hours apart by air.\n\n## History and Ancient Civilizations\n\nAboriginal and Torres Strait Islander peoples have lived in Australia for tens of thousands of years. At Murujuga in Western Australia, a World Heritage cultural landscape, cliff faces carry more than a million petroglyphs, some thought to be up to 50,000 years old. Seafaring peoples later settled the Pacific islands over many centuries. On Pohnpei in the Federated States of Micronesia, Nan Madol is a group of more than 100 artificial islets of basalt and coral, inscribed by UNESCO in 2016. Rapa Nui, which belongs to Chile, has 887 moai within its national park. European contact came with explorers and then colonisation: Port Arthur in Tasmania, Australia, belongs to the listed Australian Convict Sites, and the Waitangi Treaty Grounds in New Zealand mark the 1840 Treaty of Waitangi between Māori chiefs and the Crown. Chief Roi Mata's Domain on Efate, Vanuatu, is also World Heritage listed.\n\n## Getting around Oceania\n\nLong-haul traffic funnels through a few hubs: Sydney (SYD), Melbourne (MEL), Brisbane (BNE), Auckland (AKL), Nadi (NAN) in Fiji and Honolulu (HNL) in Hawaii. Nadi is described as a regional hub for the South Pacific, and many onward services to Vanuatu, Samoa, Tonga and other islands are routed through Fiji, Auckland or Brisbane. Port Moresby (POM) links Papua New Guinea, where many towns are not joined by road and flying is routine. In the north-west Pacific, Guam (GUM) is the main gateway for Micronesia. There is no international rail network, and passenger ferries between countries are rare, so crossing from one nation to the next is usually a flight. Even within Australia, crossing between Perth and the east coast is a multi-hour flight rather than a drive. In New Zealand, ferries cross Cook Strait between the two main islands. In Australia and New Zealand, roads and domestic flights both work well; elsewhere, check which islands have scheduled flights.\n\n## When to visit Oceania\n\nAustralia and New Zealand follow Southern Hemisphere seasons: summer runs December to February and winter June to August. Southern Australia and New Zealand suit December to March for beaches and walking, while skiing is a winter activity. In northern Australia, around Darwin and Cairns, the wet season runs roughly November to April, with monsoon rain and cyclone risk; May to October is the dry season. The South Pacific islands, including Fiji, Vanuatu, Tonga, Samoa and French Polynesia, are generally drier from May to October and wetter, with cyclones possible, from November to April. Papua New Guinea varies by region. Micronesia and Guam are warm all year, and north-west Pacific typhoons are most frequent in the second half of the year. Hawaii is drier from roughly April to October. Christmas and New Year, Easter and the July school holidays mean fuller flights in Australia and New Zealand.\n\n## Travel Notes\n\nCurrencies are fragmented. The Australian dollar is also used in Kiribati, Nauru and Tuvalu; the US dollar in Hawaii, Guam, Palau, the Federated States of Micronesia and the Marshall Islands; the CFP franc in French Polynesia and New Caledonia. Australia, New Zealand, Fiji and Papua New Guinea use the Type I plug; Hawaii and Guam use US-style sockets. Traffic drives on the left in Australia, New Zealand, Fiji, Papua New Guinea, Tonga and Samoa, and on the right in the US territories, French Polynesia, New Caledonia and Vanuatu. English helps widely; French is spoken in French Polynesia, New Caledonia and Vanuatu, while Tok Pisin and Bislama serve as lingua francas in Papua New Guinea and Vanuatu.\n\n## Interesting Facts About Oceania\n\n- Rapa Nui's national park protects 887 moai statues, a World Heritage site.\n- Nan Madol on Pohnpei comprises more than 100 artificial islets.\n- Murujuga in Western Australia holds more than a million petroglyphs.\n- Papua New Guinea is home to more than 800 languages.\n- Kiribati's Line Islands, at UTC+14, are among the first places to see each new day.",
+    "tldr": "Oceania is mostly ocean, so expect flights between countries via hubs such as Sydney, Auckland, Nadi, Honolulu, Brisbane and Guam. There is no international rail. Southern Australia and New Zealand suit the southern summer; tropical islands are generally drier from May to October, with wetter, cyclone-prone months from November to April.",
+    "keyFacts": [
+      {
+        "label": "Subregions",
+        "value": "Australasia, Melanesia, Micronesia and Polynesia"
+      },
+      {
+        "label": "Sovereign states",
+        "value": "14, plus territories tied to France, the US, New Zealand and Chile"
+      },
+      {
+        "label": "Main hubs",
+        "value": "SYD, MEL, BNE, AKL, NAN, HNL, POM and GUM"
+      },
+      {
+        "label": "Driving side",
+        "value": "Left in Australia, New Zealand, Fiji, Papua New Guinea; right in the US territories and French territories"
+      },
+      {
+        "label": "Dry season, tropical Pacific",
+        "value": "Generally May to October"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you travel between countries in Oceania?",
+        "a": "Mostly by air. There is no international rail network and few scheduled international ferries. Flights connect through hubs such as Sydney, Brisbane, Auckland, Nadi and Honolulu, and smaller islands are often reached via Fiji, Auckland or Brisbane."
+      },
+      {
+        "q": "What is the best time to visit the South Pacific islands?",
+        "a": "The drier months from May to October are generally the usual choice for Fiji, Vanuatu, Tonga, Samoa and French Polynesia. November to April is wetter and carries cyclone risk, although conditions vary by island group and year."
+      },
+      {
+        "q": "Which airports are the main gateways to Oceania?",
+        "a": "Sydney (SYD), Melbourne (MEL), Brisbane (BNE) and Auckland (AKL) handle much of the long-haul traffic. Nadi (NAN) is a regional hub for the South Pacific, Honolulu (HNL) serves Hawaii, and Guam (GUM) serves Micronesia."
+      },
+      {
+        "q": "Is Oceania a continent?",
+        "a": "Oceania is a geographical region rather than a single landmass. Australia is the continental core, and the rest is thousands of Pacific islands. Atlases group them into Australasia, Melanesia, Micronesia and Polynesia."
+      },
+      {
+        "q": "Which side of the road do they drive on in Oceania?",
+        "a": "It varies by country. Australia, New Zealand, Fiji, Papua New Guinea, Tonga and Samoa drive on the left. The US territories, French Polynesia, New Caledonia and Vanuatu drive on the right. Check the local rules before hiring a car."
+      },
+      {
+        "q": "Are there World Heritage sites in the Pacific islands?",
+        "a": "Yes. Examples include Nan Madol on Pohnpei in the Federated States of Micronesia, Chief Roi Mata's Domain on Efate in Vanuatu, and Rapa Nui National Park, which belongs to Chile."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "url": "https://www.worldatlas.com/articles/the-four-sub-regions-of-oceania.html",
+      "title": "The Four Sub-regions Of Oceania"
+    },
+    {
+      "url": "https://whc.unesco.org/en/list/1503/gallery/",
+      "title": "Nan Madol: UNESCO World Heritage Centre"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Rapa_Nui_National_Park",
+      "title": "Rapa Nui National Park - Wikipedia"
+    },
+    {
+      "url": "https://www.qantas.com/travelinsider/en/explore/australia/western-australia/murujuga-cultural-landscape.html",
+      "title": "Murujuga Cultural Landscape - Qantas Travel Insider"
+    },
+    {
+      "url": "https://www.abc.net.au/news/2025-07-12/paris-unesco-world-heritage-ruling-on-murjuga-rock-art-wa/105522888",
+      "title": "UNESCO approves world heritage listing for Murujuga rock art - ABC News"
+    },
+    {
+      "url": "https://www.qantas.com/au/en/qantas-experience/at-the-airport/airport-guides/nadi-airport-guide.html",
+      "title": "Nadi Airport guide - Qantas"
+    }
+  ],
+  "searched": [
+    {
+      "url": "https://www.worldatlas.com/articles/the-four-sub-regions-of-oceania.html",
+      "title": "The Four Sub-regions Of Oceania"
+    },
+    {
+      "url": "https://www.worldatlas.com/articles/what-is-oceania.html",
+      "title": "What Is Oceania?"
+    },
+    {
+      "url": "https://encyclopedia.pub/entry/33179",
+      "title": "Oceania"
+    },
+    {
+      "url": "https://geography.fandom.com/wiki/Oceania",
+      "title": "Oceania"
+    },
+    {
+      "url": "https://kids.britannica.com/kids/article/Oceania/390073",
+      "title": "Oceania - Kids"
+    },
+    {
+      "url": "https://www.studentsofhistory.com/oceania-geography-regions",
+      "title": "The Geography of Oceania"
+    },
+    {
+      "url": "https://claritydeskhub.com/oceania-upsc/",
+      "title": "Divisions of Oceania"
+    },
+    {
+      "url": "https://www.hotbot.com/answers/what-countries-are-in-oceania",
+      "title": "What countries are in oceania?- HotBot Topics"
+    },
+    {
+      "url": "https://graphsearch.epfl.ch/en/concept/11448/concepts",
+      "title": "graphsearch.epfl.ch"
+    },
+    {
+      "url": "https://graphsearch.epfl.ch/en/category/geography-of-oceania/concepts?page=1",
+      "title": "graphsearch.epfl.ch"
+    },
+    {
+      "url": "https://www.abc.net.au/news/2025-07-12/paris-unesco-world-heritage-ruling-on-murjuga-rock-art-wa/105522888",
+      "title": "UNESCO approves world heritage listing for WA's Murujuga rock art - ABC News"
+    },
+    {
+      "url": "https://www.sbs.com.au/news/article/murujuga-rock-art-wins-world-heritage-listing-but-fears-remain/3nt19s61b",
+      "title": "Murujuga rock art wins World Heritage listing, but fears remain"
+    },
+    {
+      "url": "https://www.qantas.com/travelinsider/en/explore/australia/western-australia/murujuga-cultural-landscape.html",
+      "title": "Western Australia’s Murujuga Cultural Landscape Achieves UNESCO World Heritage Listing"
+    },
+    {
+      "url": "https://www.artnews.com/art-news/news/murujuga-rock-art-australia-receives-unesco-world-heritage-status-1234747309/",
+      "title": "Murujuga Rock Art in Australia Receives UNESCO World Heritage Status"
+    },
+    {
+      "url": "https://www.abc.net.au/btn/classroom/unesco-rock-art/105556712",
+      "title": "UNESCO Rock Art - Behind The News"
+    },
+    {
+      "url": "https://theconversation.com/explainer-why-the-rock-art-of-murujuga-deserves-world-heritage-status-102100",
+      "title": "Explainer: why the rock art of Murujuga deserves World Heritage status"
+    },
+    {
+      "url": "https://www.uwa.edu.au/news/article/2025/july/we-were-part-of-the-world-heritage-listing-of-murujuga-heres-why-all-australians-should-be-proud",
+      "title": "We were part of the world heritage listing of Murujuga. Here’s why all Australians should be proud"
+    },
+    {
+      "url": "https://unmonumental.substack.com/p/murujuga-rock-art-on-the-burrup-peninsula",
+      "title": "murujuga rock art on the burrup peninsula"
+    },
+    {
+      "url": "https://www.yahoo.com/news/ancient-aboriginal-rock-art-african-224652292.html",
+      "title": "Ancient Aboriginal rock art, African sites make UNESCO World Heritage list"
+    },
+    {
+      "url": "https://national-parks.org/chile/rapa-nui/",
+      "title": "Rapa Nui National Park"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Rapa_Nui_National_Park",
+      "title": "Rapa Nui National Park"
+    },
+    {
+      "url": "https://www.divergenttravelers.com/rapa-nui-national-park-easter-island/",
+      "title": "Rapa Nui National Park: Moai of Easter Island"
+    },
+    {
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g316040-d318547-r640202590-Rapa_Nui_National_Park-Easter_Island.html",
+      "title": "UNESCO World Heritage Site - Review of Rapa Nui National Park, Easter Island, Chile - Tripadvisor"
+    },
+    {
+      "url": "https://whc.unesco.org/en/list/715",
+      "title": "Rapa Nui National Park - UNESCO World Heritage Centre"
+    },
+    {
+      "url": "https://www.internationalparks.org/chile/Rapa%20Nui",
+      "title": "Rapa Nui, Chile: Ratings & Visitor Guide"
+    },
+    {
+      "url": "https://worldheritageexplorer.org/sites/rapa_nui_national_park.html",
+      "title": "Rapa Nui National Park"
+    },
+    {
+      "url": "https://nationalparksassociation.org/chile-national-parks/rapa-nui-national-park/",
+      "title": "Rapa Nui National Park"
+    },
+    {
+      "url": "https://www.travelandtourworld.com/news/article/easter-island-chile-a-remote-unesco-world-heritage-destination-of-ancient-moai-and-living-culture/",
+      "title": "Easter Island, Chile: A Remote UNESCO World Heritage Destination of Ancient Moai and Living Culture - Travel And Tour World"
+    },
+    {
+      "url": "https://whc.unesco.org/en/list/1503/gallery/",
+      "title": "Nan Madol: Ceremonial Centre of Eastern Micronesia - Gallery - UNESCO World Heritage Centre"
+    },
+    {
+      "url": "https://hpo.pohnpeistate.gov.fm/nan-madol-site/",
+      "title": "Nan Madol Site"
+    },
+    {
+      "url": "https://www.tripadvisor.com/Attraction_Review-g311330-d312351-Reviews-Nan_Madol-Pohnpei.html",
+      "title": "Nan Madol, Pohnpei"
+    },
+    {
+      "url": "https://southpacificislands.travel/discover-nan-madol-the-ruined-coral-city/",
+      "title": "Discover Nan Madol: The Ruined Coral City - Pacific Tourism Organisation"
+    },
+    {
+      "url": "https://www.tripadvisor.co.uk/Attraction_Review-g311330-d312351-Reviews-Nan_Madol-Pohnpei.html",
+      "title": "Nan Madol, Pohnpei"
+    },
+    {
+      "url": "https://sacred-sites.org/nan-madol-sacred-city-of-micronesia/",
+      "title": "Nan Madol"
+    },
+    {
+      "url": "https://kendrickuy.com/2019/01/27/nan-madol-pohnpei-micronesia/",
+      "title": "My Experience Exploring The Ancient Ruins Of Nan Madol In Micronesia"
+    },
+    {
+      "url": "https://www.pohnpei-adventure.com/nan-madol/",
+      "title": "Nan Madol Ruins"
+    },
+    {
+      "url": "https://www.ahoymatey.blog/pohnpei-nan-madol/",
+      "title": "Pohnpei's Nan Madol: The Ancient Venice Of Micronesia"
+    },
+    {
+      "url": "https://visitpohnpei.travel/nan-madol-pohnpei/",
+      "title": "Nan Madol Pohnpei"
+    },
+    {
+      "url": "https://maps.apple.com/place?place-id=IDE59BCE0907D8CA7",
+      "title": "Nadi International Airport in Nadi, Fiji - Apple Maps"
+    },
+    {
+      "url": "https://www.qantas.com/au/en/qantas-experience/at-the-airport/airport-guides/nadi-airport-guide.html",
+      "title": "Nadi airport guide"
+    },
+    {
+      "url": "https://www.travelonline.com/flights/airports/nadi-international-airport",
+      "title": "Nadi International Airport"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Nadi_International_Airport",
+      "title": "Nadi International Airport"
+    },
+    {
+      "url": "https://centreforaviation.com/data/profiles/airports/nadi-international-airport-nan",
+      "title": "Nadi International Airport Profile"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Fiji_Link",
+      "title": "Fiji Link"
+    },
+    {
+      "url": "https://www.airportsfiji.com/nadi_aiport.php",
+      "title": "Airports Fiji limited & Nadi International Airport & Nausori Airport & Fiji Air Traffic Management & Nadi Flight Information Region - Nadi Airport"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Fiji_Airways",
+      "title": "Fiji Airways"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Pacific_Island_Air",
+      "title": "Pacific Island Air"
+    },
+    {
+      "url": "https://www.newzealand.com/us/feature/treaty-of-waitangi/",
+      "title": "Treaty of Waitangi"
+    },
+    {
+      "url": "https://www.unesco.org/en/memory-world/treaty-waitangi",
+      "title": "The Treaty of Waitangi - Memory of the World"
+    },
+    {
+      "url": "https://www.waitangitribunal.govt.nz/en/about/the-treaty/about-the-treaty",
+      "title": "About the treaty"
+    },
+    {
+      "url": "https://www.heritage.org.nz/list-details/6/Listing",
+      "title": "Heritage New Zealand - Waitangi Treaty Grounds"
+    },
+    {
+      "url": "https://www.ncl.com/shore-excursions/BYO_15/Waitangi-Treaty-Grounds",
+      "title": "Bay of Islands, New Zealand Waitangi Treaty Grounds Excursion"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Waitangi,_Northland",
+      "title": "Waitangi, Northland"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Treaty_of_Waitangi",
+      "title": "Treaty of Waitangi"
+    },
+    {
+      "url": "https://bay-of-islands.co.nz/places-to-see/waitangi/",
+      "title": "Waitangi - Bay of Islands Travel Guide - New Zealand"
+    },
+    {
+      "url": "https://explorewhangarei.co.nz/waitangi-treaty-grounds-history/",
+      "title": "Waitangi Treaty Grounds"
+    },
+    {
+      "url": "https://www.newzealand-spirit.com/guides/waitangi-treaty-grounds-guide/",
+      "title": "Waitangi Treaty Grounds guide 2026 — tours, tickets, what to see, NZD costs"
+    },
+    {
+      "url": "https://portarthur.org.au/history/",
+      "title": "A Summary of the History of Port Arthur Historic Site, Tasmania"
+    },
+    {
+      "url": "https://www.dcceew.gov.au/parks-heritage/heritage/places/national/port-arthur",
+      "title": "Port Arthur Historic Site - DCCEEW"
+    },
+    {
+      "url": "https://www.tripadvisor.com/Attraction_Review-g504319-d258126-Reviews-Port_Arthur_Historic_Site-Port_Arthur_Tasmania.html",
+      "title": "Port Arthur Historic Site - All You SHOULD Know Before Going (2026 Reviews)"
+    },
+    {
+      "url": "https://tasmania.com/points-of-interest/port-arthur/",
+      "title": "Port Arthur Historic Site, Tasmania"
+    },
+    {
+      "url": "https://culturalattractionsofaustralia.com/attractions/port-arthur-historic-site/",
+      "title": "Visit Port Arthur Historic Site - Cultural Attractions of Australia"
+    },
+    {
+      "url": "https://www.thetravellinglindfields.com/2017/01/port-arthur-tasmania-world-heritage.html",
+      "title": "The Travelling Lindfields: Port Arthur, Tasmania: A World Heritage Convict Site"
+    },
+    {
+      "url": "https://www.tasmaniaunearthed.com.au/blog/port-arthur-historic-site",
+      "title": "Guide to Port Arthur Historic Site"
+    },
+    {
+      "url": "https://www.tasmanian-convict-trail.com/port-arthur-historic-site-6/",
+      "title": "Port Arthur Historic Site"
+    },
+    {
+      "url": "https://culturalheritageonline.com/places/australian-convict-sites/",
+      "title": "Australian Convict Sites - CHO"
+    }
+  ],
+  "usage": {
+    "input_tokens": 155066,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+      {
+        "input_tokens": 7993,
+        "output_tokens": 701,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 8735,
+        "output_tokens": 247,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 9388,
+        "output_tokens": 102,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 10059,
+        "output_tokens": 312,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 13104,
+        "output_tokens": 378,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 13523,
+        "output_tokens": 139,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 13703,
+        "output_tokens": 295,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 14039,
+        "output_tokens": 4904,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 18997,
+        "output_tokens": 1055,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 20088,
+        "output_tokens": 1851,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 25437,
+        "output_tokens": 3573,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ],
+    "output_tokens": 13557,
+    "output_tokens_details": {
+      "thinking_tokens": 3902
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "server_tool_use": {
+      "web_search_requests": 8,
+      "web_fetch_requests": 0
+    }
+  },
+  "reviewNotes": [
+    "\"- Kiribati's Line Islands lie on the far side of the International Date Line.\" -> \"- Kiribati's Line Islands, at UTC+14, are among the first places to see each new\""
+  ]
+}

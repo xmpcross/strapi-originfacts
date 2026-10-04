@@ -1,0 +1,475 @@
+{
+  "slug": "north-america",
+  "documentId": "jccpn6txurih29hpzs4rs5qp",
+  "name": "North America",
+  "type": "continent",
+  "generatedAt": "2026-10-04T20:47:56.066Z",
+  "model": "claude-sonnet-5-5",
+  "flags": [],
+  "fields": {
+    "description": "North America runs from Arctic Canada to the Panamanian isthmus and out across the Caribbean, covering about 24.7 million km² and 23 sovereign states. For a traveller it is three very large countries linked by long flights and highways, then Central America and island chains where distances are shorter but land and sea connections are thinner.\n\n## Overview\n\nNorth America has 23 sovereign states, and Greenland belongs to it geographically. The Rocky Mountains form the western spine, continuing south as the Sierra Madre ranges of Mexico, while the Appalachians rise in the east and the Great Plains fill the interior. The Mississippi–Missouri system drains much of the United States, and the Great Lakes and St Lawrence River link the Canada–US border country to the Atlantic. Coasts meet the Arctic, Pacific and Atlantic oceans, the Gulf of Mexico and the Caribbean Sea. Subregions are usually taken as Canada and the United States, Mexico, Central America (Belize to Panama) and the Caribbean, an island arc running from the Bahamas and Cuba down to Trinidad and Tobago. Scale is the main planning issue: Canada and the United States are among the largest countries in the world, so a coast-to-coast trip crosses several time zones, while the Caribbean is split into many separate island jurisdictions.\n\n## History and Ancient Civilizations\n\nMost pre-colonial sites you can visit sit in Mexico and Central America. Chichen Itza in Yucatán, Mexico, is a Maya city dominated by the Temple of Kukulcán and was inscribed by UNESCO in 1988. Palenque in Chiapas and Teotihuacan, north-east of Mexico City, are also in Mexico; Tikal in Guatemala and Copán in Honduras are further Maya cities. In Mexico City, the Templo Mayor marks the centre of Aztec Tenochtitlan beside the Zócalo. In the United States, Cahokia Mounds near Collinsville, Illinois, is a World Heritage Site with Monks Mound, and Mesa Verde in Colorado preserves Ancestral Puebloan cliff dwellings. Colonial history appears in Old Québec (Canada), the colonial zone of Santo Domingo (Dominican Republic) and Old Havana (Cuba). L'Anse aux Meadows in Newfoundland, Canada, records Norse presence. Independence Hall in Philadelphia, United States, ties to 1776, and Haiti's Citadelle Laferrière to the revolution that ended in 1804.\n\n## Getting around North America\n\nLong-haul traffic funnels through Toronto Pearson (YYZ), New York JFK, Atlanta (ATL), Miami (MIA), Chicago O'Hare (ORD), Dallas–Fort Worth (DFW), Vancouver (YVR), Mexico City (MEX), Cancún (CUN) and Panama City's Tocumen (PTY), where Copa Airlines connects Central America and the Caribbean. Between countries, flying is the default: Volaris and Viva Aerobus link Mexico with the United States, and WestJet and Flair cover Canada. Overland, the US–Canada–Mexico borders are crossed by road and coach, and the Pan-American Highway runs through Central America to Panama. Coach lines such as Tica Bus run across Central American borders. Amtrak and VIA Rail operate the main intercity passenger trains in the north, though the network is thin compared with Europe. Ferries serve Playa del Carmen–Cozumel, the British Columbia coast and many Caribbean island pairs. Distances make flying necessary for coast-to-coast journeys, for Alaska and the Canadian north, and for most island hopping in the Caribbean.\n\n## When to visit North America\n\nSeasons differ sharply by latitude. Canada and the northern United States have cold winters, with daytime highs around or below 0°C from December to February, and mild summers from June to August at roughly 20–28°C. The US Southwest is very hot in July and August, often above 38°C, so spring and autumn suit it better. Mexico City and the Central American highlands are cooler, around 20–25°C by day, with a dry season from November to April and rain from May to October. Coastal Mexico, Central America and the Caribbean are warm all year at about 26–32°C; the Atlantic hurricane season runs from 1 June to 30 November and peaks from August to October. Holiday peaks include Christmas and New Year, US spring break in March, Semana Santa in March or April, Canadian and US summer holidays in July and August, and Día de Muertos on 1–2 November in Mexico.\n\n## Travel Notes\n\nCurrencies are national in the three large countries, but the Eastern Caribbean dollar is shared by several Lesser Antilles states, and El Salvador and Panama use the US dollar in daily life. Plugs in the US, Canada, Mexico and most of Central America are types A and B at about 120 V. English is enough across most of Canada and the United States, Spanish is essential in Mexico and Central America, and French matters in Québec and Haiti. Traffic drives on the right in the three large countries, Central America, Cuba and the Dominican Republic, but on the left in Jamaica, the Bahamas, Barbados, and Trinidad and Tobago.\n\n## Interesting Facts About North America\n\n- Greenland, the world's largest island, is geographically part of North America.\n- Lake Superior is the largest freshwater lake in the world by surface area.\n- Cahokia's Monks Mound is the largest prehistoric earthwork in the Americas.\n- Mexico City stands on the site of the Aztec capital Tenochtitlan.\n- The Panama Canal links the Atlantic and Pacific oceans across Panama.",
+    "tldr": "North America covers about 24.7 million km² and 23 countries, so plan around flights: Toronto, New York, Atlanta, Miami, Mexico City, Cancún and Panama City are the main hubs. Trains are thin outside the north-east; coaches and low-cost airlines link countries. Winters are cold in the north, the Caribbean hurricane season runs June to November.",
+    "keyFacts": [
+      {
+        "label": "Area",
+        "value": "About 24.7 million km²"
+      },
+      {
+        "label": "Sovereign states",
+        "value": "23"
+      },
+      {
+        "label": "Main languages",
+        "value": "English, Spanish and French"
+      },
+      {
+        "label": "Main hubs",
+        "value": "YYZ, JFK, ATL, MIA, MEX, CUN, PTY"
+      },
+      {
+        "label": "Hurricane season",
+        "value": "1 June to 30 November"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How many countries are in North America?",
+        "a": "North America has 23 sovereign states, including Canada, the United States, Mexico, the seven Central American countries and the island nations of the Caribbean. Greenland is geographically part of the continent but belongs to the Kingdom of Denmark."
+      },
+      {
+        "q": "What are the main airports for reaching North America?",
+        "a": "Common gateways include Toronto Pearson (YYZ), New York JFK, Atlanta (ATL), Miami (MIA), Chicago O'Hare (ORD), Vancouver (YVR), Mexico City (MEX), Cancún (CUN) and Panama City Tocumen (PTY). Miami and Panama City are the usual connections for the Caribbean and Central America."
+      },
+      {
+        "q": "Can you travel between countries in North America by train?",
+        "a": "Only in limited cases. Amtrak and VIA Rail run passenger trains in the north, but there is no continent-wide network, and Mexico and Central America have little intercity rail. Coaches, flights and the Pan-American Highway are the usual ways to cross borders."
+      },
+      {
+        "q": "When is hurricane season in the Caribbean?",
+        "a": "The Atlantic hurricane season runs from 1 June to 30 November, with activity peaking from August to October. Many travellers choose the drier months from December to April for the Caribbean, though storms can still occur outside the peak."
+      },
+      {
+        "q": "Which Maya and Aztec sites can you visit?",
+        "a": "In Mexico, Chichen Itza, Palenque, Teotihuacan and the Templo Mayor in Mexico City are all open to visitors. Tikal in Guatemala and Copán in Honduras are further Maya sites, and Cahokia Mounds in Illinois covers the Mississippian culture."
+      },
+      {
+        "q": "Which side of the road do they drive on?",
+        "a": "Most of the continent drives on the right, including the United States, Canada, Mexico, Central America, Cuba and the Dominican Republic. Jamaica, the Bahamas, Barbados, and Trinidad and Tobago drive on the left, so check before hiring a car."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "url": "https://en.wikipedia.org/wiki/North_America",
+      "title": "North America - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Chichen_Itza",
+      "title": "Chichen Itza - Wikipedia"
+    },
+    {
+      "url": "https://whc.unesco.org/en/list/198/",
+      "title": "Cahokia Mounds State Historic Site - UNESCO World Heritage Centre"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Cahokia",
+      "title": "Cahokia - Wikipedia"
+    },
+    {
+      "url": "https://mapguesser.fr/en/blogs/north-american-countries-complete-list",
+      "title": "How Many Countries in North America? Full List of 23"
+    }
+  ],
+  "searched": [
+    {
+      "url": "https://www.worldatlas.com/articles/the-largest-countries-in-north-america.html",
+      "title": "The Largest Countries In North America"
+    },
+    {
+      "url": "https://www.worldometers.info/geography/7-continents/north-america/",
+      "title": "7 Continents: North America - Worldometer"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Geography_of_the_United_States",
+      "title": "Geography of the United States"
+    },
+    {
+      "url": "https://www.nationsonline.org/oneworld/america.htm",
+      "title": "Countries by Continent: American Countries - Nations Online Project"
+    },
+    {
+      "url": "https://mapguesser.fr/en/blogs/north-american-countries-complete-list",
+      "title": "MapGuesser"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/North_America",
+      "title": "North America"
+    },
+    {
+      "url": "https://humanidades.com/en/north-america/",
+      "title": "North America: what it is and its characteristics"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Landmass",
+      "title": "Landmass"
+    },
+    {
+      "url": "https://www.worldatlas.com/webimage/countrys/nalandst.htm",
+      "title": "North America Landforms and Land Statistics - North America Landforms, Land Statistics"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Northern_America",
+      "title": "Northern America"
+    },
+    {
+      "url": "https://sah-archipedia.org/buildings/IL-01-163-0015",
+      "title": "Cahokia Mounds State Historic Site"
+    },
+    {
+      "url": "https://dnrhistoric.illinois.gov/experience/sites/site.cahokia-mounds.html",
+      "title": "Cahokia Mounds - Illinois Historic Preservation Division"
+    },
+    {
+      "url": "https://whc.unesco.org/en/list/198/",
+      "title": "Cahokia Mounds State Historic Site - UNESCO World Heritage Centre"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Cahokia",
+      "title": "Cahokia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Monks_Mound",
+      "title": "Monks Mound"
+    },
+    {
+      "url": "https://www.greatriverroad-illinois.org/Cahokia-Mounds-State-Historic-Site",
+      "title": "Great River Road Illinois - - Cahokia Mounds State Historic Site"
+    },
+    {
+      "url": "https://www.legendsofamerica.com/il-cahokia/",
+      "title": "Cahokia Mounds, Illinois"
+    },
+    {
+      "url": "https://thelocaltourist.com/cahokia-mounds/",
+      "title": "Centuries of Secrets at Cahokia Mounds"
+    },
+    {
+      "url": "https://worldheritageusa.org/sites/cahokia-mounds-state-historic-site/",
+      "title": "Cahokia Mounds State Historic Site - World Heritage USA"
+    },
+    {
+      "url": "https://reclaimingwonders.com/cahokia-mounds/",
+      "title": "Cahokia Mounds: How to See the Best Indian Mounds / Reclaiming Wonders"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/List_of_World_Heritage_Sites_in_Mexico",
+      "title": "List of World Heritage Sites in Mexico"
+    },
+    {
+      "url": "https://www.contexttravel.com/stories/articles/top-pyramids-in-mexico-to-visit",
+      "title": "Uncovering the Mysteries of Mexico's Pyramids and Aztec History in Mexico City"
+    },
+    {
+      "url": "https://lugares.inah.gob.mx/en/node/4335",
+      "title": "Chichén Itzá"
+    },
+    {
+      "url": "https://www.nationalgeographic.com/travel/world-heritage/article/chichen-itza",
+      "title": "Chichen Itza -- World Heritage Site -- National Geographic"
+    },
+    {
+      "url": "https://www.history.com/articles/chichen-itza",
+      "title": "Chichen Itza - Mexico, Pyramid & Facts"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Chichen_Itza",
+      "title": "Chichen Itza"
+    },
+    {
+      "url": "https://everything-everywhere.com/unesco-world-heritage-site-277-pre-hispanic-city-chichen-itza/",
+      "title": "Pre-Hispanic City of Chichen-Itza"
+    },
+    {
+      "url": "https://worldheritagesites.net/chichen-itza/",
+      "title": "Pre-Hispanic City of Chichen Itza"
+    },
+    {
+      "url": "https://worldheritageexplorer.org/sites/pre-hispanic_city_of_chichen-itza.html",
+      "title": "Pre-Hispanic City of Chichen-Itza"
+    },
+    {
+      "url": "https://passport.acqua.travel/exploring-mexico-ancient-ruins-teotihuacan-chichen-itza/",
+      "title": "Mexico’s Ancient Ruins: Teotihuacan to Chichen Itza"
+    },
+    {
+      "url": "https://www.worldatlas.com/geography/how-many-countries-are-there-in-north-america.html",
+      "title": "How Many Countries Are There In North America?"
+    },
+    {
+      "url": "https://kids.britannica.com/kids/article/North-America/353542",
+      "title": "North America - Kids"
+    },
+    {
+      "url": "https://www.worldatlas.com/webimage/countrys/na.htm",
+      "title": "North America Map / Map of North America - Facts, Geography, History of North America - Worldatlas.com"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/List_of_North_American_countries_by_area",
+      "title": "List of North American countries by area"
+    },
+    {
+      "url": "https://www.yourdictionary.com/articles/north-america-countries-list-territories",
+      "title": "How Many Countries Are in North America? Full List + Territories"
+    },
+    {
+      "url": "https://www.countries-ofthe-world.com/countries-of-north-america.html",
+      "title": "List of countries in North America in alphabetical order"
+    },
+    {
+      "url": "https://statisticstimes.com/geography/north-american-countries-by-area.php",
+      "title": "North American countries by Area - StatisticsTimes.com"
+    },
+    {
+      "url": "https://factsinstitute.com/countries/countries-in-north-america/",
+      "title": "The 23 Countries in North America in Alphabetical Order - The Facts Institute"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Outline_of_North_America",
+      "title": "Outline of North America"
+    },
+    {
+      "url": "https://ea.pennds.org/what-countries-are-in-north-american-continent-full-list-territories-and-geopolitical-facts",
+      "title": "What Countries Are In North American Continent: Full List, Territories, And Geopolitical Facts - pennds.org"
+    },
+    {
+      "url": "https://simple.wikipedia.org/wiki/North_America",
+      "title": "North America"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Geography_of_North_America",
+      "title": "Geography of North America"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/United_States",
+      "title": "United States"
+    },
+    {
+      "url": "https://samplecontents.library.ph/wikipedia/wp/n/North_America.htm",
+      "title": "North America"
+    },
+    {
+      "url": "https://continenten.com/en/north-america/countries/",
+      "title": "All 23 Countries in North America — List with Capitals"
+    },
+    {
+      "url": "https://everything-everywhere.com/unesco-world-heritage-sites-mexico/",
+      "title": "UNESCO World Heritage Sites in Mexico"
+    },
+    {
+      "url": "https://whc.unesco.org/en/list/483/",
+      "title": "Pre-Hispanic City of Chichen-Itza - UNESCO World Heritage Centre"
+    },
+    {
+      "url": "https://whc.unesco.org/en/search/?criteria=chichen+itza&maxrows=48",
+      "title": "UNESCO - Search - UNESCO World Heritage Center"
+    },
+    {
+      "url": "https://www.momentslog.com/culture/mexican-cultural-heritage-sites-teotihuacan-and-chichen-itza",
+      "title": "Mexican Cultural Heritage Sites: Teotihuacan and Chichen Itza - Moments Log"
+    },
+    {
+      "url": "https://theclio.com/entry/159417",
+      "title": "Cahokia Mounds - Clio"
+    },
+    {
+      "url": "https://www.tripadvisor.com/Attraction_Review-g35832-d274020-Reviews-Cahokia_Mounds_State_Historic_Site-Collinsville_Illinois.html",
+      "title": "Cahokia Mounds State Historic Site - All You SHOULD Know Before Going (2026 Reviews)"
+    },
+    {
+      "url": "https://www.riversandroutes.com/directory/cahokia-mounds-world-heritage-site/",
+      "title": "Cahokia Mounds World Heritage Site"
+    },
+    {
+      "url": "https://mythicmississippi.illinois.edu/native-illinois/cahokia-mounds-whs/",
+      "title": "Cahokia Mounds WHS"
+    },
+    {
+      "url": "https://www.yelp.com/biz/cahokia-mounds-collinsville",
+      "title": "CAHOKIA MOUNDS - Updated September 2026 - 371 Photos - 104 Reviews - 30 Ramey Dr, Collinsville, Illinois - Parks - Phone Number - Yelp"
+    },
+    {
+      "url": "https://www.nps.gov/articles/000/cahokia-mounds-state-historic-site-world-heritage-site.htm",
+      "title": "Last updated: July 23, 2020"
+    },
+    {
+      "url": "https://study.com/academy/lesson/aztec-templo-mayor-history-facts.html",
+      "title": "Aztec Templo Mayor"
+    },
+    {
+      "url": "https://goop.com/place/mexico/mexico-city/centro-historico-museums/templo-mayor/",
+      "title": "Templo Mayor"
+    },
+    {
+      "url": "https://www.historyhit.com/locations/templo-mayor/",
+      "title": "Templo Mayor - History and Facts"
+    },
+    {
+      "url": "https://www.mexperience.com/travel/pyramids/templo-mayor/",
+      "title": "Experience Templo Mayor"
+    },
+    {
+      "url": "https://www.markaroundtheworld.com/post/touring-the-templo-mayor-exploring-aztec-history-in-mexico-city",
+      "title": "Touring the Templo Mayor: Exploring Aztec History in Mexico City"
+    },
+    {
+      "url": "https://www.tourme.app/mx/blog/templo-mayor-mexico-city-guide",
+      "title": "How to Visit Templo Mayor in Mexico City (2026 Guide)"
+    },
+    {
+      "url": "https://the-earlybird.co/portfolio/templo-mayor-mexico-city/",
+      "title": "Templo Mayor, Mexico City - The Earlybird"
+    },
+    {
+      "url": "https://podcast.duolingo.com/episode-121-mexico-city-tenochtitlan-una-ciudad-oculta",
+      "title": "Spanish French Inglés Inglês"
+    },
+    {
+      "url": "https://graphsearch.epfl.ch/en/concept/1988656",
+      "title": "graphsearch.epfl.ch"
+    }
+  ],
+  "usage": {
+    "input_tokens": 108605,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+      {
+        "input_tokens": 7919,
+        "output_tokens": 653,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 8613,
+        "output_tokens": 206,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 9004,
+        "output_tokens": 88,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 9658,
+        "output_tokens": 324,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 11640,
+        "output_tokens": 299,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 11980,
+        "output_tokens": 103,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 12124,
+        "output_tokens": 3894,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 16068,
+        "output_tokens": 2259,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 21599,
+        "output_tokens": 3261,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ],
+    "output_tokens": 11087,
+    "output_tokens_details": {
+      "thinking_tokens": 2979
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "server_tool_use": {
+      "web_search_requests": 8,
+      "web_fetch_requests": 0
+    }
+  },
+  "reviewNotes": [
+    "\"is a Maya city dominated by the Temple of Kukulcán and was inscribed by UNESCO i\" -> \"is a Maya city dominated by the Temple of Kukulcán and was inscribed by UNESCO i\"",
+    "\"- Chichen Itza was inscribed as a UNESCO World Heritage Site in 1989.\" -> \"- Lake Superior is the largest freshwater lake in the world by surface area.\"",
+    "\"- Cahokia's Monks Mound is the largest earthen structure at the Illinois site.\" -> \"- Cahokia's Monks Mound is the largest prehistoric earthwork in the Americas.\""
+  ]
+}

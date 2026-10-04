@@ -85,6 +85,9 @@ export default async function HomePage() {
 
   return (
     <div data-testid="home-page">
+      {/* The page's single H1 — describes the site, not the lead story.
+          Visually hidden so the designed hero layout is untouched. */}
+      <h1 className="sr-only">Originfacts — The facts behind every place worth visiting</h1>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
@@ -285,15 +288,12 @@ function HeroOverlayStory({
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-black/5" />
         <div className="absolute inset-x-4 bottom-4 text-white sm:inset-x-5 sm:bottom-5">
           <HeroStoryMeta article={article} light />
-          {size === 'large' ? (
-            <h1 className={`mt-2 font-urbanist font-extrabold leading-[1.05] text-white ${titleSize}`}>
-              {article.title}
-            </h1>
-          ) : (
-            <h2 className={`mt-2 font-urbanist font-extrabold leading-[1.05] text-white ${titleSize}`}>
-              {article.title}
-            </h2>
-          )}
+          {/* Always h2: the page's single h1 is the site masthead heading —
+              an article title must not be the homepage's H1. Same classes,
+              so the visual design is unchanged. */}
+          <h2 className={`mt-2 font-urbanist font-extrabold leading-[1.05] text-white ${titleSize}`}>
+            {article.title}
+          </h2>
         </div>
       </Link>
     </article>

@@ -22,6 +22,7 @@ import {
 import { getAirportWeather, weatherLabel } from '@/lib/open-meteo';
 import { JsonLd, FaqSection } from '@/components/SeoBlocks';
 import { breadcrumbJsonLd } from '@/lib/jsonld';
+import { haversineKm } from '@/lib/geo';
 import { buildMetaDescription } from '@/lib/seo';
 import { getSiteCounts, countRoutesFromAirport } from '@/lib/counts';
 import type { Metadata } from 'next';
@@ -82,7 +83,9 @@ export default async function AirportPage({ params }: Props) {
   const [routes, sameCountry, routeTotal, siteCounts] = await Promise.all([
     listRoutesFromAirport(airport.iata, 15).catch(() => []),
     airport.countryCode
-      ? listAirportsByCountryCode(airport.countryCode, 30).catch(() => [])
+      // Full country list — a 30-row ALPHABETICAL cap would exclude the
+      // genuinely nearest airports before the distance sort even runs.
+      ? listAirportsByCountryCode(airport.countryCode, 500).catch(() => [])
       : Promise.resolve([]),
     countRoutesFromAirport(airport.iata).catch(() => 0),
     getSiteCounts().catch(() => null),
@@ -100,7 +103,24 @@ export default async function AirportPage({ params }: Props) {
   if (routeTotal > 0) summary.routeTotal = routeTotal;
   const hero = airportHeroImage(airport.iata, mediaUrl(airport.heroImage ?? null));
   const url = `${SITE_URL}/airports/${airport.iata.toLowerCase()}`;
-  const nearby = sameCountry.filter((a) => a.iata && a.iata !== airport.iata).slice(0, 9);
+  // "Nearby airports" must mean NEARBY: sort same-country airports by
+  // great-circle distance from this one (the dataset has coordinates). When
+  // this airport has no coordinates the list stays alphabetical and the
+  // section heading says what it really is instead.
+  const originLat = airport.latitude ?? airportInfo?.latitude;
+  const originLon = airport.longitude ?? airportInfo?.longitude;
+  const hasOriginCoords = typeof originLat === 'number' && typeof originLon === 'number';
+  const nearby = sameCountry
+    .filter((a) => a.iata && a.iata !== airport.iata)
+    .map((a) => ({
+      ...a,
+      distanceKm:
+        hasOriginCoords && typeof a.latitude === 'number' && typeof a.longitude === 'number'
+          ? haversineKm(originLat, originLon, a.latitude, a.longitude)
+          : null,
+    }))
+    .sort((a, b) => (a.distanceKm ?? Infinity) - (b.distanceKm ?? Infinity))
+    .slice(0, 9);
   const faqs = airportFaqs(airport, summary, {
     icao: airportInfo?.icao,
     city: airportInfo?.city,
@@ -175,7 +195,9 @@ export default async function AirportPage({ params }: Props) {
     { href: '#overview', label: 'Overview' },
     ...(summary.carriers.length > 0 ? [{ href: '#airlines', label: 'Airlines' }] : []),
     { href: '#routes', label: 'Routes' },
-    ...(nearby.length > 0 ? [{ href: '#nearby-airports', label: 'Nearby airports' }] : []),
+    ...(nearby.length > 0
+      ? [{ href: '#nearby-airports', label: hasOriginCoords ? 'Nearby airports' : 'Other airports' }]
+      : []),
     { href: '#faq', label: 'FAQ' },
   ];
 
@@ -524,7 +546,7 @@ export default async function AirportPage({ params }: Props) {
             <div>
               <p className="section-eyebrow">
                 <span className="inline-block h-px w-8 bg-forest-800/60" />
-                Nearby airports
+                {hasOriginCoords ? 'Nearby airports' : 'Airport directory'}
               </p>
               <h2 className="editorial-h mt-3 text-2xl font-bold text-forest-900 lg:text-3xl">
                 Other airports in {airport.country}
@@ -548,7 +570,10 @@ export default async function AirportPage({ params }: Props) {
                   <div className="truncate font-urbanist text-sm font-bold text-forest-900 group-hover:text-forest-700">
                     {a.city || a.name}
                   </div>
-                  <div className="truncate text-xs text-forest-900/60">{a.name}</div>
+                  <div className="truncate text-xs text-forest-900/60">
+                    {a.name}
+                    {typeof a.distanceKm === 'number' && ` · ${a.distanceKm.toLocaleString()} km away`}
+                  </div>
                 </div>
               </Link>
             ))}

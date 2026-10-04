@@ -69,7 +69,7 @@ export default function SubscribeBlock() {
                   <span>
                     I consent to receive newsletter via email. For further information, please review our{' '}
                     <a
-                      href="#"
+                      href="/legal/privacy"
                       className="font-medium text-[#080808] no-underline"
                       style={{ borderBottom: '1px solid #777' }}
                     >

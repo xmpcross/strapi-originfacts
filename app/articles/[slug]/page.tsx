@@ -75,7 +75,7 @@ function interleaveGallery(
   const nonEmpty = chunks.filter((c) => c.trim());
   if (nonEmpty.length === 0) {
     // No paragraphs to interleave with — just append all images at the end.
-    return html + gallery.map((img) => renderInlineImg(img, fallbackAlt)).join('');
+    return html + gallery.map((img, n) => renderInlineImg(img, fallbackAlt, n + 1)).join('');
   }
 
   // Evenly spread N images across (paragraphCount + 1) gaps.
@@ -86,14 +86,14 @@ function interleaveGallery(
   nonEmpty.forEach((chunk, i) => {
     out.push(chunk);
     if (nextGalleryIdx < gallery.length && (i + 1) % step === 0) {
-      out.push(renderInlineImg(gallery[nextGalleryIdx], fallbackAlt));
+      out.push(renderInlineImg(gallery[nextGalleryIdx], fallbackAlt, nextGalleryIdx + 1));
       nextGalleryIdx += 1;
     }
   });
 
   // Stragglers (gallery longer than paragraph slots) — append at the end.
   while (nextGalleryIdx < gallery.length) {
-    out.push(renderInlineImg(gallery[nextGalleryIdx], fallbackAlt));
+    out.push(renderInlineImg(gallery[nextGalleryIdx], fallbackAlt, nextGalleryIdx + 1));
     nextGalleryIdx += 1;
   }
   return out.join('');
@@ -102,10 +102,14 @@ function interleaveGallery(
 function renderInlineImg(
   img: NonNullable<NonNullable<Awaited<ReturnType<typeof getArticle>>>['gallery']>[number],
   fallbackAlt: string,
+  imageNumber?: number,
 ): string {
   const url = mediaUrl(img);
   if (!url) return '';
-  const alt = (img.alternativeText || fallbackAlt).replace(/"/g, '&quot;');
+  // Authored alternativeText (Strapi media library field) wins. The fallback
+  // is numbered so multiple gallery images never share one verbatim alt; it
+  // deliberately does NOT describe image content we cannot see.
+  const alt = (img.alternativeText || (imageNumber ? `${fallbackAlt} — image ${imageNumber}` : fallbackAlt)).replace(/"/g, '&quot;');
   return `<figure class="article-inline-image my-8"><img src="${url}" alt="${alt}" class="aspect-[16/9] w-full rounded-lg object-cover" loading="lazy" /></figure>`;
 }
 
@@ -118,6 +122,15 @@ export default async function ArticlePage({ params }: Props) {
   const html = interleaveGallery(rawHtml, article.gallery, article.title);
   const hero = mediaUrl(article.coverImage ?? null);
   const date = article.publishedAt ? format(new Date(article.publishedAt), 'd MMMM yyyy') : '';
+  // Visible freshness signal: show the modified date only when it is
+  // meaningfully after publication (>24h), so untouched articles don't
+  // pretend to have been updated.
+  const updatedDate =
+    article.updatedAt &&
+    article.publishedAt &&
+    new Date(article.updatedAt).getTime() - new Date(article.publishedAt).getTime() > 24 * 60 * 60 * 1000
+      ? format(new Date(article.updatedAt), 'd MMMM yyyy')
+      : '';
 
   // Related by category + sidebar + prev/next post by publishedAt
   const [relatedRes, sidebar, categoryTiles, adjacent] = await Promise.all([
@@ -293,6 +306,14 @@ export default async function ArticlePage({ params }: Props) {
               )}
               <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs uppercase tracking-widest text-forest-800/70">
                 {date && <time dateTime={article.publishedAt}>{date}</time>}
+                {updatedDate && (
+                  <>
+                    <span aria-hidden className="text-forest-900/40">·</span>
+                    <span>
+                      Updated <time dateTime={article.updatedAt}>{updatedDate}</time>
+                    </span>
+                  </>
+                )}
                 {date && article.readingTimeMinutes ? (
                   <span aria-hidden className="text-forest-900/40">·</span>
                 ) : null}

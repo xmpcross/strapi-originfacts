@@ -18,6 +18,7 @@ import {
   type StrapiCountry,
   type StrapiDestination,
 } from '@/lib/strapi';
+import MoreStoriesList from '@/components/MoreStoriesList';
 import ArticleCard from '@/components/ArticleCard';
 import ContinentCountriesGrid from '@/components/ContinentCountriesGrid';
 import CountryAbout from '@/components/CountryAbout';
@@ -661,6 +662,7 @@ function CityStoriesSection({
           ))}
         </div>
       )}
+      <MoreStoriesList articles={articles.slice(8)} title={`More stories from ${destination.name}`} />
     </section>
   );
 }
@@ -1214,6 +1216,9 @@ function CountryDestinationPage({
             ))}
           </div>
         )}
+        {articles.length > 4 && (
+          <MoreStoriesList articles={articles.slice(4)} title={`More stories from ${destination.name}`} />
+        )}
       </section>
     </article>
   );
@@ -1699,6 +1704,7 @@ function ContinentDestinationPage({
               <ArticleCard key={a.id} article={a} size="compact" imageClassName="h-[200px]" />
             ))}
           </div>
+          <MoreStoriesList articles={articles.slice(8)} title={`More stories from ${destination.name}`} />
         </section>
       )}
     </article>

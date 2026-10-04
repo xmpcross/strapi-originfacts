@@ -149,6 +149,8 @@ export default function PopularHotelsByCity({
   const [data, setData] = useState<HotelResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [scope, setScope] = useState<HotelScope>('popular');
+  // Bumped when the already-selected tab is clicked, so an empty tab can be retried.
+  const [retry, setRetry] = useState(0);
   const [cityContext, setCityContext] = useState<GeoResponse | null>(null);
   const responsesByScopeRef = useRef<Partial<Record<HotelScope, HotelResponse>>>({});
   const hasFixedCity = Boolean(city?.trim());
@@ -185,8 +187,11 @@ export default function PopularHotelsByCity({
     const resolvedCityContext = cityContext;
 
     async function load() {
+      // Only answers that had hotels are remembered, so a tab that came back empty
+      // (DataForSEO error, or the site mid-restart during a deploy) retries when
+      // it is clicked again instead of staying empty for the whole visit.
       const cachedResponse = responsesByScopeRef.current[scope];
-      if (cachedResponse) {
+      if (cachedResponse?.hotels?.length) {
         setData(cachedResponse);
         setLoading(false);
         return;
@@ -219,8 +224,10 @@ export default function PopularHotelsByCity({
         if (active) {
           const nextData = { city, country, ...hotelData };
           setData(nextData);
-          responsesByScopeRef.current = { ...responsesByScopeRef.current, [scope]: nextData };
-          writeHotelBrowserCache(browserCacheKey, nextData);
+          if (nextData.hotels?.length) {
+            responsesByScopeRef.current = { ...responsesByScopeRef.current, [scope]: nextData };
+            writeHotelBrowserCache(browserCacheKey, nextData);
+          }
         }
       } catch {
         if (active) setData({ city: 'your city', hotels: [] });
@@ -233,7 +240,7 @@ export default function PopularHotelsByCity({
     return () => {
       active = false;
     };
-  }, [cityContext, scope, hasCoordinates, lat, lng]);
+  }, [cityContext, scope, retry, hasCoordinates, lat, lng]);
 
   // No coordinates means the search can't be pinned to this city: show nothing
   // rather than hotels from somewhere else.
@@ -286,7 +293,10 @@ export default function PopularHotelsByCity({
               <button
                 key={item.value}
                 type="button"
-                onClick={() => setScope(item.value)}
+                onClick={() => {
+                  if (item.value === scope) setRetry((n) => n + 1);
+                  setScope(item.value);
+                }}
                 className={`shrink-0 rounded-full px-4 py-2 text-[11px] font-bold uppercase tracking-wider transition ${
                   scope === item.value
                     ? 'bg-forest-950 text-white shadow-sm'

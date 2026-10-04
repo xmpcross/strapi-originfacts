@@ -213,7 +213,7 @@ export default async function FlightsPage({
           <h2 className="editorial-h text-[1.5rem] font-bold text-forest-900">
             How does booking flights with Originfacts work?
           </h2>
-          <p className="mt-2 max-w-4xl text-[1rem] text-ink/75">
+          <p className="mt-2 max-w-none text-[1rem] text-ink/75">
             Use these notes before you leave the search page. They explain how live fares work, why prices change, and what Originfacts does after you choose a flight.
           </p>
           <div className="mt-6 grid gap-x-12 sm:grid-cols-1 lg:grid-cols-2">

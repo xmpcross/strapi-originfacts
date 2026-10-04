@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { readPageMarkdown } from '@/lib/pages';
 import { clampDescription } from '@/lib/seo';
 import { JsonLd } from '@/components/SeoBlocks';
-import OutboundCitations from '@/components/OutboundCitations';
 import TableOfContents from '@/components/TableOfContents';
 import { injectHeadingIdsAndExtractToc } from '@/lib/toc';
 import { ORG_ID, organizationJsonLd, absoluteUrl, breadcrumbJsonLd } from '@/lib/jsonld';
@@ -89,7 +88,6 @@ export default async function MethodologyPage() {
         dangerouslySetInnerHTML={{ __html: processedHtml }}
       />
 
-      <OutboundCitations title="Primary Regulatory Bodies & Operational Standards" />
     </article>
   );
 }

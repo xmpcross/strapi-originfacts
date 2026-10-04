@@ -5,7 +5,7 @@ import SearchByDestinationBlock from '@/components/SearchByDestinationBlock';
 import { JsonLd } from '@/components/SeoBlocks';
 import { breadcrumbJsonLd } from '@/lib/jsonld';
 import { faqJsonLd } from '@/lib/entity-seo';
-import TpwlLoader from '@/components/TpwlLoader';
+import TpwlLoader, { TpwlLoaderHead } from '@/components/TpwlLoader';
 import TpwlCurrencyCaret from '@/components/TpwlCurrencyCaret';
 import TpwlOriginSync from '@/components/TpwlOriginSync';
 import AirlineResultsFilter from '@/components/AirlineResultsFilter';
@@ -126,6 +126,7 @@ export default async function FlightsPage({
       {/* The booking FAQ below is rendered visibly further down the page —
           FAQPage schema mirrors that exact Q&A set. */}
       <JsonLd data={faqJsonLd(BOOKING_FAQ)} />
+      <TpwlLoaderHead />
       <TpwlLoader />
       <TpwlCurrencyCaret />
       <TpwlOriginSync />

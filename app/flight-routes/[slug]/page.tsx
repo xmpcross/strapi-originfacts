@@ -107,7 +107,7 @@ export default async function RoutePage({ params }: Props) {
     headline: title,
     description,
     url,
-    authorNameOrSlug: 'elena-rostova',
+    authorNameOrSlug: 'k-spellman',
     categoryName: 'Flight Routes',
     type: 'BlogPosting',
   });

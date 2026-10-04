@@ -118,7 +118,7 @@ export default async function CountryPage({ params }: Props) {
     headline: `${country.name} Travel Directory & Aviation Profile`,
     description: country.about || `Travel directory for ${country.name} (${country.code}): commercial airports, airlines based in the country, and the busiest inbound routes.`,
     url,
-    authorNameOrSlug: 'marcus-vance',
+    authorNameOrSlug: 'k-spellman',
     categoryName: 'Countries',
     type: 'BlogPosting',
   });

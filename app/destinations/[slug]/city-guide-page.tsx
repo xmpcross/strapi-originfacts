@@ -4,7 +4,6 @@
 import { Fragment } from 'react';
 import Link from 'next/link';
 import ArticleCard from '@/components/ArticleCard';
-import CountryAbout from '@/components/CountryAbout';
 import FlightSearchCTA from '@/components/FlightSearchCTA';
 import KeyFacts from '@/components/KeyFacts';
 import MoreStoriesList from '@/components/MoreStoriesList';
@@ -105,33 +104,120 @@ function SectionNav({ label, sections }: { label: string; sections: { id: string
 const sectionAnchor = (heading: string) =>
   heading.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
-/** A destination's written guide: its `## ` sections with an in-page index. */
-function GuideSections({ sections }: { sections: AboutSection[] }) {
+type GuideKind = 'stay' | 'todo' | 'around' | 'when' | 'tips' | 'other';
+
+const GUIDE_KINDS: { prefix: string; kind: GuideKind; label: string }[] = [
+  { prefix: 'Where to stay', kind: 'stay', label: 'Where to stay' },
+  { prefix: 'Things to do', kind: 'todo', label: 'Things to do' },
+  { prefix: 'Getting around', kind: 'around', label: 'Getting around' },
+  { prefix: 'When to visit', kind: 'when', label: 'When to visit' },
+  { prefix: 'Practical tips', kind: 'tips', label: 'Tips' },
+];
+
+function guideKind(heading: string) {
+  return GUIDE_KINDS.find((k) => heading.startsWith(k.prefix)) ?? { kind: 'other' as const, label: heading };
+}
+
+// Heroicons outline paths (MIT), drawn at 24×24.
+const GUIDE_ICON_PATHS: Record<GuideKind, string[]> = {
+  stay: ['M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25'],
+  todo: ['M15 10.5a3 3 0 11-6 0 3 3 0 016 0z', 'M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z'],
+  around: ['M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5'],
+  when: ['M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z'],
+  tips: ['M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18'],
+  other: ['M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25'],
+};
+
+function GuideIcon({ kind, className }: { kind: GuideKind; className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className={className}>
+      {GUIDE_ICON_PATHS[kind].map((d) => (
+        <path key={d} d={d} />
+      ))}
+    </svg>
+  );
+}
+
+const isBulletList = (paragraph: string) => {
+  const lines = paragraph.split('\n').map((l) => l.trim()).filter(Boolean);
+  return lines.length > 1 && lines.every((l) => /^[-*]\s+/.test(l));
+};
+
+/** One guide section's body: prose paragraphs, or a bullet list as tip cards. */
+function GuideBody({ paragraphs }: { paragraphs: string[] }) {
+  return (
+    <div className="space-y-5">
+      {paragraphs.map((p) =>
+        isBulletList(p) ? (
+          <ul key={p} className="grid gap-3 sm:grid-cols-2">
+            {p.split('\n').map((l) => l.trim().replace(/^[-*]\s+/, '')).filter(Boolean).map((tip) => (
+              <li key={tip} className="flex gap-3 rounded-xl border border-forest-900/10 bg-forest-50/60 p-4 text-[15px] leading-6 text-forest-900/80">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-primary-emphasis">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+                <span>{tip}</span>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p key={p} className="max-w-[68ch] leading-8 text-forest-900/80">{p}</p>
+        ),
+      )}
+    </div>
+  );
+}
+
+/** A destination's written guide: its `## ` sections, one row each, with jump chips. */
+function GuideSections({ name, sections }: { name: string; sections: AboutSection[] }) {
   if (sections.length === 0) return null;
   return (
     <section id="guide" className="mx-auto max-w-7xl scroll-mt-28 px-6 pt-14" data-testid="destination-guide">
-      <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_240px]">
-        <div className="max-w-3xl space-y-12">
-          {sections.map((section) => (
-            <div key={section.heading} id={sectionAnchor(section.heading ?? '')} className="scroll-mt-28">
-              <CountryAbout sections={[section]} headingAs="h2" singleColumnBullets />
-            </div>
-          ))}
-        </div>
-        <aside className="hidden lg:block">
-          <div className="sticky top-28 border-l-2 border-primary-emphasis pl-5">
-            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary-emphasis">In this guide</p>
-            <ul className="mt-4 space-y-3 text-sm font-semibold text-forest-900/70">
-              {sections.map((section) => (
-                <li key={section.heading}>
-                  <a href={`#${sectionAnchor(section.heading ?? '')}`} className="hover:text-forest-950 hover:underline">
-                    {section.heading}
-                  </a>
-                </li>
-              ))}
-            </ul>
+      <div className="overflow-hidden rounded-2xl border border-forest-900/10 bg-white">
+        <header className="flex flex-col gap-5 border-b border-forest-900/10 bg-gradient-to-br from-forest-50 via-white to-sand-50 px-6 py-7 sm:px-10 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-primary-emphasis">Travel guide</div>
+            <div className="editorial-h mt-2 text-2xl font-bold text-forest-950 sm:text-3xl">The {name} guide</div>
           </div>
-        </aside>
+          <nav aria-label="In this guide" className="flex flex-wrap gap-2">
+            {sections.map((section) => {
+              const { kind, label } = guideKind(section.heading ?? '');
+              return (
+                <a
+                  key={section.heading}
+                  href={`#${sectionAnchor(section.heading ?? '')}`}
+                  className="inline-flex items-center gap-2 rounded-full border border-forest-900/15 bg-white px-3.5 py-2 text-sm font-semibold text-forest-900/80 transition hover:border-primary-emphasis hover:text-primary-emphasis"
+                >
+                  <GuideIcon kind={kind} className="h-4 w-4" />
+                  {label}
+                </a>
+              );
+            })}
+          </nav>
+        </header>
+
+        <div className="divide-y divide-forest-900/10">
+          {sections.map((section, i) => {
+            const { kind } = guideKind(section.heading ?? '');
+            return (
+              <article
+                key={section.heading}
+                id={sectionAnchor(section.heading ?? '')}
+                className="grid scroll-mt-28 gap-5 px-6 py-9 sm:px-10 lg:grid-cols-[260px_minmax(0,1fr)] lg:gap-12 lg:py-12"
+              >
+                <div className="lg:sticky lg:top-28 lg:self-start">
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-hover text-primary-emphasis">
+                      <GuideIcon kind={kind} className="h-6 w-6" />
+                    </span>
+                    <span className="text-sm font-bold tabular-nums text-forest-900/35">{String(i + 1).padStart(2, '0')}</span>
+                  </div>
+                  <h2 className="editorial-h mt-4 text-2xl font-bold leading-tight text-forest-950">{section.heading}</h2>
+                </div>
+                <GuideBody paragraphs={section.paragraphs} />
+              </article>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
@@ -201,7 +287,7 @@ export default function CityGuidePage({
         </div>
       </section>
 
-      <GuideSections sections={guide} />
+      <GuideSections name={destination.name} sections={guide} />
       <CityStoriesSection destination={destination} articles={articles} />
       <CityPopularHotelsSection destination={destination} airports={airports} />
       <CityGettingThereSection destination={destination} airports={airports} routes={routes} />

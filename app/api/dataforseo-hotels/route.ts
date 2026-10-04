@@ -27,6 +27,7 @@ type DataForSeoHotelItem = {
     currency?: string | null;
     discount_text?: string | null;
   } | null;
+  location?: { latitude?: number | null; longitude?: number | null } | null;
 };
 
 type DataForSeoResponse = {
@@ -125,6 +126,30 @@ function resolveScope(value: string | null): HotelScope {
   return value && value in HOTEL_SCOPES ? (value as HotelScope) : 'popular';
 }
 
+/**
+ * Google Hotels via DataForSEO ignores a city named in the keyword or in
+ * location_name and returns hotels from anywhere (Amsterdam returned Banjarmasin
+ * and Taiwan; "Amsterdam hotels" + location "Netherlands" returned Las Vegas).
+ * Anchoring the search with location_coordinate and a plain keyword ("hotels",
+ * "luxury hotels") returns local results, and every result is still dropped if
+ * it lies more than MAX_HOTEL_DISTANCE_KM from the anchor.
+ */
+const MAX_HOTEL_DISTANCE_KM = 30;
+
+function parseCoordinate(value: string | null, limit: number): number | null {
+  if (value === null || value.trim() === '') return null;
+  const n = Number(value);
+  return Number.isFinite(n) && Math.abs(n) <= limit ? n : null;
+}
+
+function distanceKm(aLat: number, aLng: number, bLat: number, bLng: number): number {
+  const rad = Math.PI / 180;
+  const h =
+    Math.sin(((bLat - aLat) * rad) / 2) ** 2 +
+    Math.cos(aLat * rad) * Math.cos(bLat * rad) * Math.sin(((bLng - aLng) * rad) / 2) ** 2;
+  return 2 * 6371 * Math.asin(Math.sqrt(h));
+}
+
 function isHotelSearchItem(item: DataForSeoHotelItem): item is DataForSeoHotelSearchItem {
   return item.type === 'hotel_search_item' && typeof item.title === 'string' && item.title.trim().length > 0;
 }
@@ -135,14 +160,20 @@ function cacheKey({
   scope,
   currency,
   limit,
+  lat,
+  lng,
 }: {
   city: string;
   country: string;
   scope: HotelScope;
   currency: string;
   limit: number;
+  lat: number;
+  lng: number;
 }) {
-  return [city, country, scope, currency, limit]
+  // v2: coordinate-anchored searches. Entries cached by the old city/country
+  // search are never read again (they held hotels from other countries).
+  return ['v2', city, country, scope, currency, limit, lat.toFixed(2), lng.toFixed(2)]
     .map((part) => String(part).trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''))
     .join('__');
 }
@@ -183,14 +214,20 @@ export async function GET(request: Request) {
   }
 
   const country = countryNameFromCode(safeCity(input.get('country')));
-  const locationName = country || city;
+  const lat = parseCoordinate(input.get('lat'), 90);
+  const lng = parseCoordinate(input.get('lng'), 180);
+  if (lat === null || lng === null) {
+    // Without coordinates the search cannot be pinned to the city; show no
+    // hotels rather than another country's.
+    return NextResponse.json({ hotels: [], error: 'lat and lng are required.' }, { status: 400 });
+  }
   const scope = resolveScope(input.get('scope'));
   const scopeConfig = HOTEL_SCOPES[scope];
   const limit = Math.min(Math.max(Number(input.get('limit') || 6), 1), 6);
   const currency = (input.get('currency') || 'USD').toUpperCase().replace(/[^A-Z]/g, '').slice(0, 3) || 'USD';
   const checkIn = addDays(21);
   const checkOut = addDays(22);
-  const key = cacheKey({ city, country, scope, currency, limit });
+  const key = cacheKey({ city, country, scope, currency, limit, lat, lng });
   const forceRefresh = input.get('refresh') === '1';
   const cache = await readHotelCache();
   const cached = cache[key];
@@ -219,10 +256,11 @@ export async function GET(request: Request) {
       },
       body: JSON.stringify([
         {
-          keyword: `${city} ${scopeConfig.suffix}`,
-          location_name: locationName,
+          keyword: scopeConfig.suffix,
+          location_coordinate: `${lat.toFixed(5)},${lng.toFixed(5)}`,
           language_code: 'en',
-          depth: limit,
+          // Fetch extra so the distance and lodging filters can still fill `limit`.
+          depth: 20,
           check_in: checkIn,
           check_out: checkOut,
           currency,
@@ -246,6 +284,12 @@ export async function GET(request: Request) {
     const hotels: HotelResult[] = items
       .filter(isHotelSearchItem)
       .filter((item) => isLodging({ name: item.title }))
+      .filter((item) => {
+        const itemLat = item.location?.latitude;
+        const itemLng = item.location?.longitude;
+        if (typeof itemLat !== 'number' || typeof itemLng !== 'number') return false;
+        return distanceKm(lat, lng, itemLat, itemLng) <= MAX_HOTEL_DISTANCE_KM;
+      })
       .slice(0, limit)
       .map((item) => ({
         id: item.hotel_identifier || item.title,

@@ -47,19 +47,25 @@ const HOTEL_SCOPES = [
 ] as const;
 
 const BOOKING_AFFILIATE_URL = 'https://tatrck.com/h/0Hu30_OZ0V7N?model=cpc';
-const HOTEL_BROWSER_CACHE_PREFIX = 'originfacts:hotels-near-you:v3';
+// v4: results are now anchored by coordinates; v3 entries could hold hotels
+// from the wrong country and are no longer read.
+const HOTEL_BROWSER_CACHE_PREFIX = 'originfacts:hotels-near-you:v4';
 const HOTEL_BROWSER_CACHE_TTL_MS = 1000 * 60 * 60 * 24 * 7;
 
 function hotelBrowserCacheKey({
   city,
   country,
   scope,
+  lat,
+  lng,
 }: {
   city: string;
   country: string;
   scope: HotelScope;
+  lat: number;
+  lng: number;
 }) {
-  return [HOTEL_BROWSER_CACHE_PREFIX, city, country, scope]
+  return [HOTEL_BROWSER_CACHE_PREFIX, city, country, scope, lat.toFixed(2), lng.toFixed(2)]
     .map((part) => part.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''))
     .join(':');
 }
@@ -119,6 +125,8 @@ function formatMoney(value: number | null, currency: string | null) {
 export default function PopularHotelsByCity({
   city,
   country,
+  lat,
+  lng,
   eyebrow = 'Hotels near you',
   title,
   description,
@@ -126,6 +134,9 @@ export default function PopularHotelsByCity({
 }: {
   city?: string;
   country?: string;
+  /** City coordinates; the hotel search is anchored here. Without them nothing renders. */
+  lat?: number;
+  lng?: number;
   eyebrow?: string;
   title?: string;
   description?: string;
@@ -137,6 +148,7 @@ export default function PopularHotelsByCity({
   const [cityContext, setCityContext] = useState<GeoResponse | null>(null);
   const responsesByScopeRef = useRef<Partial<Record<HotelScope, HotelResponse>>>({});
   const hasFixedCity = Boolean(city?.trim());
+  const hasCoordinates = typeof lat === 'number' && typeof lng === 'number';
 
   useEffect(() => {
     if (hasFixedCity) {
@@ -163,7 +175,7 @@ export default function PopularHotelsByCity({
   }, [city, country, hasFixedCity]);
 
   useEffect(() => {
-    if (!cityContext?.name) return;
+    if (!cityContext?.name || !hasCoordinates) return;
 
     let active = true;
     const resolvedCityContext = cityContext;
@@ -178,7 +190,7 @@ export default function PopularHotelsByCity({
 
       const city = resolvedCityContext.name || 'New York';
       const country = resolvedCityContext.country || 'United States';
-      const browserCacheKey = hotelBrowserCacheKey({ city, country, scope });
+      const browserCacheKey = hotelBrowserCacheKey({ city, country, scope, lat: lat!, lng: lng! });
       const browserCachedResponse = readHotelBrowserCache(browserCacheKey);
       if (browserCachedResponse) {
         responsesByScopeRef.current = { ...responsesByScopeRef.current, [scope]: browserCachedResponse };
@@ -189,7 +201,15 @@ export default function PopularHotelsByCity({
 
       setLoading(true);
       try {
-        const params = new URLSearchParams({ city, country, scope, limit: '6', currency: 'USD' });
+        const params = new URLSearchParams({
+          city,
+          country,
+          scope,
+          limit: '6',
+          currency: 'USD',
+          lat: String(lat),
+          lng: String(lng),
+        });
         const hotelRes = await fetch(`/api/dataforseo-hotels?${params.toString()}`);
         const hotelData = (await hotelRes.json()) as HotelResponse;
         if (active) {
@@ -209,7 +229,11 @@ export default function PopularHotelsByCity({
     return () => {
       active = false;
     };
-  }, [cityContext, scope]);
+  }, [cityContext, scope, hasCoordinates, lat, lng]);
+
+  // No coordinates means the search can't be pinned to this city: show nothing
+  // rather than hotels from somewhere else.
+  if (!hasCoordinates) return null;
 
   const hotels = data?.hotels ?? [];
   const cityLabel = data?.city && data.city !== 'your city' ? data.city : 'your area';

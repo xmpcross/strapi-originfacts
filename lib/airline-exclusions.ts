@@ -62,3 +62,82 @@ export const NON_AIRLINE_SLUGS: ReadonlySet<string> = new Set([
 export function isNonAirline(slug: string): boolean {
   return NON_AIRLINE_SLUGS.has(slug);
 }
+
+/**
+ * Cargo-only carriers: freight, express-parcel and postal operators that sell
+ * no passenger seats. They are real airlines and keep their pages, but the
+ * /airlines directory lists commercial passenger airlines only.
+ *
+ * The CMS `type` field cannot do this job — every one of the 1,096 records is
+ * `Scheduled` or `Low-cost`, DHL and FedEx included — so the list is kept by
+ * hand. Reviewed against the Strapi directory on 2026-10-05; the slug is the
+ * Strapi slug. Mixed passenger/cargo operators (ASL Airlines France, National
+ * Airlines, Air Atlanta Icelandic, North Flying) are deliberately left out.
+ */
+export const CARGO_AIRLINE_SLUGS: ReadonlySet<string> = new Set([
+  // Express parcel and postal integrators
+  'abx-air-inc',
+  'air-transport-international-llc',
+  'ahk-air-hong-kong-limited',
+  'china-postal-airlines-ltd',
+  'dhl-aero-expreso-sa',
+  'dhl-air-limited',
+  'dhl-aviation-eemea-bscc',
+  'dhl-de-guatemala',
+  'empire-airlines',
+  'european-cargo-services-bv',
+  'fedex',
+  'sf-airlines-company-ltd',
+  'ups',
+  'yto-cargo-airlines',
+  // Freight airlines
+  'aerotranscargo',
+  'air-cargo-carriers-llc',
+  'air-cargo-germany',
+  'air-incheon',
+  'airbridgecargo',
+  'amerijet-international-inc',
+  'asl-airlines-ireland',
+  'asl-airways',
+  'atlas-air',
+  'bringer-air-cargo',
+  'cargojet-airways-ltd',
+  'cargolux',
+  'central-airlines',
+  'challenge-air-cargo-ltd',
+  'challenge-airlines-be',
+  'challenge-airlines-il',
+  'china-cargo-airlines',
+  'everts-air-cargo',
+  'hong-kong-air-cargo-carrier-limited',
+  'kalitta-air',
+  'kc-international-airlines',
+  'lan-chile-cargo',
+  'longtail-aviation',
+  'lynden-air-cargo-llc',
+  'martinair',
+  'mas-de-carga-sa-de-cv-dba-masair',
+  'maximus-air',
+  'mng-airlines',
+  'ningxia-cargo-airlines-coltd',
+  'nippon-cargo-airlines',
+  'northern-air-cargo',
+  'polar-air-cargo-worldwide-inc',
+  'quikjet-cargo-airlines-pvt-ltd',
+  'raya-airways-sdn-bhddba-raya-airways',
+  'silk-way-west-airlines',
+  'sky-gates-airlines',
+  'sky-lease-i-inc',
+  'southern-air',
+  'suparna-airlines',
+  'swiftair',
+  'tampa-cargo',
+  'texel-air-ltd',
+  'uls-airlines-cargo',
+  'uni-top-airlines',
+  'volga-dnepr-airlines',
+]);
+
+export function isCargoOnlyAirline(a: { slug: string; type?: string }): boolean {
+  return a.type === 'Cargo' || CARGO_AIRLINE_SLUGS.has(a.slug);
+}

@@ -7,7 +7,6 @@ import { breadcrumbJsonLd } from '@/lib/jsonld';
 import { faqJsonLd } from '@/lib/entity-seo';
 import TpwlLoader from '@/components/TpwlLoader';
 import AirlineResultsFilter from '@/components/AirlineResultsFilter';
-import ComparisonTable from '@/components/ComparisonTable';
 
 export const metadata = {
   title: 'Cheap flight search',
@@ -212,19 +211,6 @@ export default async function FlightsPage({
         </section>
 
         <SearchByDestinationBlock />
-
-        <div className="mt-16">
-          <ComparisonTable
-            caption="Flight Ticket Fares vs Inclusion Comparison Matrix"
-            head={['Fare Category', 'Seat Selection', 'Cabin Baggage', 'Checked Luggage', 'Changes & Cancellations']}
-            rows={[
-              ['Basic Economy', 'Random assignment at check-in', '1 Personal Item (Under-seat)', 'Fee required', 'Non-refundable / Fee applies'],
-              ['Standard Economy', 'Standard seat choice', '1 Personal Item + 1 Overhead Bag (7kg)', '1 Bag included (23kg)', 'Changes allowed with fee'],
-              ['Flexi Economy', 'Free seat selection', '1 Personal Item + 1 Overhead Bag (7kg)', '1-2 Bags included (23kg)', 'Free changes / Refundable credit'],
-              ['Business Class', 'Priority seat selection / Lay-flat', '2 Overhead Bags + Personal Item', '2-3 Bags included (32kg)', 'Fully refundable / Free changes'],
-            ]}
-          />
-        </div>
 
         {/* ---------- Booking flights with Originfacts (FAQ) ---------- */}
         <section className="mt-20" data-testid="booking-faq">

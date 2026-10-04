@@ -64,7 +64,7 @@ export default function ScheduleWidget({
     // referencing the site's Next/font variables works.
     const FONT_CSS = `
       :host, :host *:not(svg):not(svg *) {
-        font-family: var(--font-inter), system-ui, sans-serif !important;
+        font-family: var(--font-outfit), 'Outfit', system-ui, sans-serif !important;
       }
     `;
     const injected = new WeakSet<ShadowRoot>();

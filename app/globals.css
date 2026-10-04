@@ -257,13 +257,6 @@
   .localization-button-currencies {
     display: none !important;
   }
-  /* Flight-search page only: force Inter on all headings (h1–h6) and body text,
-     overriding the site's Urbanist/Figtree/Jakarta faces. Scoped to the page
-     wrapper so no other page is affected. */
-  .font-inter-scope,
-  .font-inter-scope :where(h1, h2, h3, h4, h5, h6, p, a, span, li, div, button, input, label, dl, dt, dd) {
-    font-family: var(--font-inter), system-ui, sans-serif !important;
-  }
   .eyebrow-tag::before {
     content: "\2708";
     @apply text-[11px] leading-none;

@@ -1,0 +1,46 @@
+{
+ "slug": "iraero",
+ "sources": [
+  "tripadvisor"
+ ],
+ "stats": {
+  "source": "all",
+  "reviewCount": 1,
+  "avgRating10": 2.0,
+  "recommendPct": null,
+  "subratings": null,
+  "firstReviewDate": "2019-07-07",
+  "lastReviewDate": "2019-07-07"
+ },
+ "statsBySource": {
+  "tripadvisor": {
+   "source": "tripadvisor",
+   "reviewCount": 1,
+   "avgRating10": 2.0,
+   "recommendPct": null,
+   "subratings": null,
+   "firstReviewDate": "2019-07-07",
+   "lastReviewDate": "2019-07-07",
+   "sourceUrl": "https://www.tripadvisor.com/Airline_Review-d13635962-Reviews-IrAero"
+  }
+ },
+ "reviews": [
+  {
+   "source": "tripadvisor",
+   "id": "ta-687683577",
+   "date": "2019-07-07",
+   "rating10": 2,
+   "title": "Flight cancellation without notice! No one ever reply to inquiries!",
+   "text": "We arrived at the airport and was informed after an hour that the flight was cancelled! No one could help. We finally had to take taxi again and then train to St Petersburg. The experience is awful, especially to tourists! After returning to our home country, we sent out numerous email to the airline, but reply has never been received. And the so-called online feedback form is invalid because you can't submit anything there! You MUST remember this airline, and NEVER purchase any service from it!",
+   "author": "B W",
+   "authorCountry": null,
+   "authorLocation": null,
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Zhukovsky - St. Petersburg",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  }
+ ]
+}

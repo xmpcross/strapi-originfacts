@@ -1,0 +1,131 @@
+{
+ "slug": "royal-air-philippines",
+ "sources": [
+  "tripadvisor"
+ ],
+ "stats": {
+  "source": "all",
+  "reviewCount": 6,
+  "avgRating10": 3.3,
+  "recommendPct": null,
+  "subratings": null,
+  "firstReviewDate": "2022-12-07",
+  "lastReviewDate": "2023-04-24"
+ },
+ "statsBySource": {
+  "tripadvisor": {
+   "source": "tripadvisor",
+   "reviewCount": 6,
+   "avgRating10": 3.3,
+   "recommendPct": null,
+   "subratings": null,
+   "firstReviewDate": "2022-12-07",
+   "lastReviewDate": "2023-04-24",
+   "sourceUrl": "https://www.tripadvisor.com/Airline_Review-d19698660-Reviews-Royal-Air-Philippines"
+  }
+ },
+ "reviews": [
+  {
+   "source": "tripadvisor",
+   "id": "ta-887628361",
+   "date": "2023-04-24",
+   "rating10": 2,
+   "title": "Flight attendant Customer Service not good",
+   "text": "Female Flight attendant prioritize foreigners regarding on the luggage to put on the overhead bin. So they end up removing our bags and put it under our sit , not even comfortable the whole flight. She didn’t find other overhead bin to put up our bags . Flight RW 708 April 25,2023 Caticlan - Manila PNR: DSMZJG Boarding Time: 11:50 ETD: 12:20 Royal Air",
+   "author": "Kim L",
+   "authorCountry": null,
+   "authorLocation": null,
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Panay Island - Manila",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-884372359",
+   "date": "2023-04-01",
+   "rating10": 2,
+   "title": "Cancel flight",
+   "text": "After changing our flight time to more then 5 hours later, was informed we could pay another 12k we could catch a later flight or we could catch a flight a day earlier, when asked for a credit to use at another time was told excuse after excuse why we couldn’t, so in the end we had to book with another airline,, total lack of customer service,, last time we will ever use this airline",
+   "author": "jason l",
+   "authorCountry": null,
+   "authorLocation": "Philippines",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Panay Island - Manila",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-881424571",
+   "date": "2023-03-08",
+   "rating10": 2,
+   "title": "Ms",
+   "text": "Never again! delayed flight! waste of time! such a terrible experience,my first and last flight at this airline 👎👎👎👎👎👎👎👎",
+   "author": "Aa",
+   "authorCountry": null,
+   "authorLocation": null,
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Panay Island - Manila",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-876184532",
+   "date": "2023-01-24",
+   "rating10": 6,
+   "title": "Not great, but offers a convenient route",
+   "text": "It's very convenient that this airline offers a direct flight between Taipei and Boracay (Caticlan) but the check-in process was terrible. It seemed as if a lot of people didn't have their documentation in order, or it took an unreasonably long time to verify each person's documents. Either way, the efficiency of the ground staff at the check-in counter should be improved, and the airline should be proactive in making sure that passengers in line have their required documents before they get to the counter. I've been in much longer lines that have moved much quicker than this one did. As for the quality of the flight experience, the aircraft interior had quite a bit of wear and tear, the legroom was not great, and there was a logo of another airline on one of the monitors. Fortunately, the flight crew was friendly and professional. Overall, I'd probably deal with the sub-optimal check-in and airplane quality to avoid Manila on a flight to Caticlan. But that says more about how horrible transiting in Manila is than it says about this airline.",
+   "author": "BnomadiC",
+   "authorCountry": null,
+   "authorLocation": "Singapore",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Taipei - Panay Island",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-874671594",
+   "date": "2023-01-10",
+   "rating10": 2,
+   "title": "Insurance?Forget, it just way how to suck your money",
+   "text": "I purchased my ticket ,together with insurance-saying. anything happened you are safe and covered,even for cancellation. I cancelled my flight and how was my surprise, the cancellation fee plus no show was the same like cost of the ticket,without insurance.Plus,one of the worse ignorant customer service.I highly recommend you to choose among others local airlines.Never ever.",
+   "author": "Eva H",
+   "authorCountry": null,
+   "authorLocation": "England",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Manila - Panay Island",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-871009594",
+   "date": "2022-12-07",
+   "rating10": 6,
+   "title": "good and not so good",
+   "text": "the flight going to Caticlan was like, you are in a roller coaster. kaskasero si pilot haha. Natrauma ung brother kong first time mag airplane. But the flight going home was nice, we were able to sleep pa. its like when i fly with air asia (yung pauwi)",
+   "author": "Pets23",
+   "authorCountry": null,
+   "authorLocation": "Caloocan",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Manila - Panay Island",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  }
+ ]
+}

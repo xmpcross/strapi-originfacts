@@ -19,6 +19,7 @@ import { JsonLd, FaqSection } from '@/components/SeoBlocks';
 import { getFlySfoAirlineProfile } from '@/lib/flysfo-airline';
 import { breadcrumbJsonLd } from '@/lib/jsonld';
 import AirlineReviews from '@/components/AirlineReviews';
+import AirlineShowcase from '@/components/AirlineShowcase';
 import AirlineFlightSearch from '@/components/AirlineFlightSearch';
 import AboutParagraphs from '@/components/AboutParagraphs';
 import type { Metadata } from 'next';
@@ -137,6 +138,37 @@ export default async function AirlinePage({ params }: Props) {
     { label: 'Popular routes', value: routes.length ? String(routes.length) : undefined },
   ].filter((fact) => fact.value);
 
+  // Redesigned "showcase" layout — currently piloted on Aircalin only. All
+  // other airlines keep the original layout below. Content/JSON-LD identical.
+  if (slug === 'aircalin') {
+    return (
+      <AirlineShowcase
+        airline={airline}
+        url={url}
+        logo={logo}
+        intro={intro}
+        aboutParas={aboutParas}
+        expectations={expectations}
+        goodToKnowCards={goodToKnowCards}
+        faqs={faqs}
+        routes={routes}
+        routeFacts={routeFacts}
+        relatedAirlines={relatedAirlines}
+        summary={summary}
+        longestRoute={longestRoute}
+        avgKm={avgKm}
+        customerPhone={customerPhone}
+        baggagePhone={baggagePhone}
+        alliance={alliance}
+        websiteHref={websiteHref}
+        keyDestinations={keyDestinations}
+        hubCity={hubCity}
+        hubLabel={hubLabel}
+        frequentFlyerProgram={frequentFlyerProgram}
+      />
+    );
+  }
+
   return (
     <article data-testid={`airline-page-${slug}`}>
       <JsonLd data={airlineJsonLd(airline, url)} />
@@ -157,9 +189,9 @@ export default async function AirlinePage({ params }: Props) {
       </div>
 
       {/* Hero */}
-      <header className="mx-auto mt-6 max-w-6xl px-6">
-        <div className="overflow-hidden rounded-[0.3rem] border-0 bg-gradient-to-br from-white via-forest-50/45 to-sand-50">
-          <div className="grid gap-8 px-6 py-8 lg:grid-cols-[minmax(0,1.4fr)_minmax(280px,0.8fr)] lg:px-8 lg:py-10">
+      <header className="mt-6 bg-gradient-to-br from-white via-forest-50/45 to-sand-50">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="grid gap-8 py-8 lg:grid-cols-[minmax(0,1.4fr)_minmax(280px,0.8fr)] lg:py-10">
             <div className="flex flex-col gap-5">
               {/* Status pill + region · country (top row, matching the reference) */}
               <div className="flex flex-wrap items-center gap-x-3 gap-y-2">

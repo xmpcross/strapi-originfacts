@@ -1,0 +1,63 @@
+{
+ "slug": "suparna-airlines",
+ "sources": [
+  "tripadvisor"
+ ],
+ "stats": {
+  "source": "all",
+  "reviewCount": 2,
+  "avgRating10": 9.0,
+  "recommendPct": null,
+  "subratings": null,
+  "firstReviewDate": "2018-05-29",
+  "lastReviewDate": "2018-07-01"
+ },
+ "statsBySource": {
+  "tripadvisor": {
+   "source": "tripadvisor",
+   "reviewCount": 2,
+   "avgRating10": 9.0,
+   "recommendPct": null,
+   "subratings": null,
+   "firstReviewDate": "2018-05-29",
+   "lastReviewDate": "2018-07-01",
+   "sourceUrl": "https://www.tripadvisor.com/Airline_Review-d13804010-Reviews-Suparna-Airlines"
+  }
+ },
+ "reviews": [
+  {
+   "source": "tripadvisor",
+   "id": "ta-592081803",
+   "date": "2018-07-01",
+   "rating10": 8,
+   "title": "Punctual airline with limited network",
+   "text": "This airline has been punctual when I have flown with them between Jinan and Taizhou/Luqiao. Flying time is normally also shorter than the scheduled time. You get a hot meal also in economy class",
+   "author": "Stellan D",
+   "authorCountry": null,
+   "authorLocation": "Bromma",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Jinan - Taizhou",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-583748296",
+   "date": "2018-05-29",
+   "rating10": 10,
+   "title": "Excellent flight with first class service all around",
+   "text": "I was concerned about flying on an airline that I hadn't heard of before but needed to make the trip--my fears were unfounded--the service was excellent all the way around, from the ticketing through the gate personnel--everyone was very professional and courteous --on board the almost new Boeing 787 the flight attendants were as good as anyone could be --attentive, professional and friendly----on time departure and early arrival --very enjoyable",
+   "author": "Phil N",
+   "authorCountry": null,
+   "authorLocation": "Ontario",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Shanghai - Harbin",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  }
+ ]
+}

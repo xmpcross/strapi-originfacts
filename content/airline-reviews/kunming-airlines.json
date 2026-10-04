@@ -1,0 +1,63 @@
+{
+ "slug": "kunming-airlines",
+ "sources": [
+  "tripadvisor"
+ ],
+ "stats": {
+  "source": "all",
+  "reviewCount": 2,
+  "avgRating10": 9.0,
+  "recommendPct": null,
+  "subratings": null,
+  "firstReviewDate": "2018-02-02",
+  "lastReviewDate": "2019-03-01"
+ },
+ "statsBySource": {
+  "tripadvisor": {
+   "source": "tripadvisor",
+   "reviewCount": 2,
+   "avgRating10": 9.0,
+   "recommendPct": null,
+   "subratings": null,
+   "firstReviewDate": "2018-02-02",
+   "lastReviewDate": "2019-03-01",
+   "sourceUrl": "https://www.tripadvisor.com/Airline_Review-d8729106-Reviews-Kunming-Airlines"
+  }
+ },
+ "reviews": [
+  {
+   "source": "tripadvisor",
+   "id": "ta-655733598",
+   "date": "2019-03-01",
+   "rating10": 10,
+   "title": "All good",
+   "text": "A short flight on time, professional service, check in process efficient. We wouldn’t hesitate to fly with Kunming Airlines again.",
+   "author": "NswAustraliaDidi",
+   "authorCountry": null,
+   "authorLocation": null,
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Kunming - Lijiang",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-558008895",
+   "date": "2018-02-02",
+   "rating10": 8,
+   "title": "The flight was fine, on time, and the service staff courteous and accommodating.",
+   "text": "Although the flights themselves were comfortable and timely, I had a very bad experience at the airport in Xiamen. I went to inquire about how to get into the city--since unlike most Chinese cities there was no subway connection, nor \"bashi\" busses from the airport to different parts of the city--and the next thing I knew I was in a limousine on my way to the hotel for 70 Yuan! I found out from others who had come into the airport that if I had simply walked outside to a cab driver, my fare would have been half of that cost. Beware of the rip off \"taxi inquiry desk!\"",
+   "author": "Judi M",
+   "authorCountry": null,
+   "authorLocation": "Malaga",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Kunming - Xiamen",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  }
+ ]
+}

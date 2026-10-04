@@ -93,7 +93,15 @@ export default async function AirportPage({ params }: Props) {
   const hero = airportHeroImage(airport.iata, mediaUrl(airport.heroImage ?? null));
   const url = `${SITE_URL}/airports/${airport.iata.toLowerCase()}`;
   const nearby = sameCountry.filter((a) => a.iata && a.iata !== airport.iata).slice(0, 9);
-  const faqs = airportFaqs(airport, summary);
+  const faqs = airportFaqs(airport, summary, {
+    icao: airportInfo?.icao,
+    city: airportInfo?.city,
+    country: airportInfo?.country,
+    phone: airportInfo?.phone,
+    website: airportInfo?.website,
+    address: airportInfoAddress(airportInfo),
+    nearbyCount: nearby.length,
+  });
 
   const aboutSections = airport.about ? parseAboutSections(airport.about) : [];
   const infoSection = aboutSections.find((s) => /airport information/i.test(s.heading || ''));

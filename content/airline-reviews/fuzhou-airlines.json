@@ -1,0 +1,46 @@
+{
+ "slug": "fuzhou-airlines",
+ "sources": [
+  "tripadvisor"
+ ],
+ "stats": {
+  "source": "all",
+  "reviewCount": 1,
+  "avgRating10": 8.0,
+  "recommendPct": null,
+  "subratings": null,
+  "firstReviewDate": "2017-09-12",
+  "lastReviewDate": "2017-09-12"
+ },
+ "statsBySource": {
+  "tripadvisor": {
+   "source": "tripadvisor",
+   "reviewCount": 1,
+   "avgRating10": 8.0,
+   "recommendPct": null,
+   "subratings": null,
+   "firstReviewDate": "2017-09-12",
+   "lastReviewDate": "2017-09-12",
+   "sourceUrl": "https://www.tripadvisor.com/Airline_Review-d8729200-Reviews-Fuzhou-Airlines"
+  }
+ },
+ "reviews": [
+  {
+   "source": "tripadvisor",
+   "id": "ta-523786837",
+   "date": "2017-09-12",
+   "rating10": 8,
+   "title": "On time, efficient, friendly",
+   "text": "To my surprise this airline operates on time. Planes are comfortable, staff friendly. My earlier experience is that planes from the CA has never operated on time. So this is a very welcome surprise. This airline seems to be well operated. Everything from custom services, baggage handling is done very professional. Keep up the good work.",
+   "author": "MineReiseplaner",
+   "authorCountry": null,
+   "authorLocation": "Lillestrom",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Harbin - Hulunbuir",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  }
+ ]
+}

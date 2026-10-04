@@ -386,32 +386,129 @@ export function airlineExpectations(a: StrapiAirline, alliance?: string | null):
  * FAQs — every answer is grounded in a present field
  * ------------------------------------------------------------------ */
 
-export function airportFaqs(a: StrapiAirport, s?: RouteSummary): Faq[] {
+/**
+ * Extra grounded context the airport page can pass in — contact details from
+ * the airport-info dataset and the count of other tracked airports in the
+ * same country. Everything is optional; absent fields simply skip their Q&A.
+ */
+export type AirportFaqExtras = {
+  icao?: string | null;
+  city?: string | null;
+  country?: string | null;
+  phone?: string | null;
+  website?: string | null;
+  address?: string | null;
+  nearbyCount?: number;
+};
+
+/** Every airport page shows at least this many FAQ entries. */
+export const MIN_AIRPORT_FAQS = 8;
+
+export function airportFaqs(a: StrapiAirport, s?: RouteSummary, extra?: AirportFaqExtras): Faq[] {
   const faqs: Faq[] = [];
-  if (a.city || a.country) {
+  const icao = a.icao || extra?.icao || undefined;
+  const city = a.city || extra?.city || undefined;
+  const country = a.country || extra?.country || undefined;
+
+  // --- Grounded in identity / location fields -----------------------------
+  if (city || country) {
     faqs.push({
       q: `Where is ${a.name}?`,
-      a: `${a.name} is located in ${[a.city, a.country].filter(Boolean).join(', ')}${a.region ? ` (${a.region})` : ''}${num(a.latitude) && num(a.longitude) ? `, at coordinates ${a.latitude!.toFixed(3)}°, ${a.longitude!.toFixed(3)}°` : ''}.`,
+      a: `${a.name} is located in ${[city, country].filter(Boolean).join(', ')}${a.region ? ` (${a.region})` : ''}${num(a.latitude) && num(a.longitude) ? `, at coordinates ${a.latitude!.toFixed(3)}°, ${a.longitude!.toFixed(3)}°` : ''}.`,
     });
   }
   faqs.push({
     q: `What is the airport code for ${a.name}?`,
-    a: `Its IATA code is ${a.iata}${a.icao ? ` and its ICAO code is ${a.icao}` : ''}.`,
+    a: `Its IATA code is ${a.iata}${icao ? ` and its ICAO code is ${icao}` : ''}.`,
   });
-  if (a.timezone) {
-    faqs.push({ q: `What time zone is ${a.iata} in?`, a: `${a.name} operates on ${a.timezone} local time.` });
+  if (city) {
+    faqs.push({
+      q: `Which city does ${a.iata} serve?`,
+      a: `${a.name} serves ${city}${country ? `, ${country}` : ''}. When comparing fares, check whether other airports also serve the same area — prices and transfer times can differ between them.`,
+    });
   }
+  if (a.timezone) {
+    faqs.push({ q: `What time zone is ${a.iata} in?`, a: `${a.name} operates on ${a.timezone} local time. Departure and arrival times on tickets are always shown in each airport's local time, so double-check the offset when planning connections or pick-ups.` });
+  }
+  if (num(a.latitude) && num(a.longitude)) {
+    faqs.push({
+      q: `How do I find ${a.name} on a map?`,
+      a: `${a.name} sits at latitude ${a.latitude!.toFixed(3)}° and longitude ${a.longitude!.toFixed(3)}°. The map link in the details panel on this page opens the exact location for driving directions.`,
+    });
+  }
+
+  // --- Grounded in tracked route data -------------------------------------
   if (s && s.carriers.length) {
     faqs.push({
       q: `Which airlines fly from ${a.iata}?`,
       a: `Carriers tracked on routes from ${a.iata} include ${listProse(s.carriers.map((c) => c.name), 6)}.`,
     });
+  } else {
+    faqs.push({
+      q: `Which airlines fly from ${a.iata}?`,
+      a: `Originfacts does not yet track scheduled routes from ${a.iata}. Use the flight search on this page to see live airline options for your travel dates.`,
+    });
   }
   if (s && s.destinationNames.length) {
     faqs.push({
       q: `Where can you fly from ${a.iata}?`,
-      a: `Tracked destinations from ${a.iata} include ${listProse(s.destinationNames, 8)}.`,
+      a: `Tracked destinations from ${a.iata} include ${listProse(s.destinationNames, 8)}${s.countryCount > 1 ? `, spread across ${pluralise(s.countryCount, 'country', 'countries')}` : ''}.`,
     });
+  } else {
+    faqs.push({
+      q: `Where can you fly from ${a.iata}?`,
+      a: `Route coverage for ${a.iata} is still being added to Originfacts. Run a search from ${a.iata} on the flight search page to see every destination airlines currently sell for your dates.`,
+    });
+  }
+
+  // --- Grounded in airport-info contact fields ----------------------------
+  if (extra?.phone || extra?.website || extra?.address) {
+    const parts: string[] = [];
+    if (extra.address) parts.push(`its address is ${extra.address}`);
+    if (extra.phone) parts.push(`the phone number is ${extra.phone}`);
+    if (extra.website) parts.push(`the official website is ${extra.website}`);
+    faqs.push({
+      q: `How do I contact ${a.name}?`,
+      a: `${parts.join(', ').replace(/^./, (c) => c.toUpperCase())}. For flight-specific questions (delays, baggage, rebooking), contact the operating airline directly rather than the airport.`,
+    });
+  }
+  if (country && typeof extra?.nearbyCount === 'number' && extra.nearbyCount > 0) {
+    faqs.push({
+      q: `Are there other airports in ${country}?`,
+      a: `Yes — Originfacts lists ${pluralise(extra.nearbyCount, 'other airport')} in ${country}. The nearby-airports section on this page links to each of them, which is useful when comparing fares or finding an alternative departure point.`,
+    });
+  }
+
+  // --- Always-answerable top-ups so every page reaches MIN_AIRPORT_FAQS ---
+  const fillers: Faq[] = [
+    {
+      q: `How can I find cheap flights from ${a.iata}?`,
+      a: `Use the flight search on this page to compare live fares from ${a.name}. Prices vary by day of the week and how far ahead you book, so comparing a few nearby dates usually surfaces a cheaper option.`,
+    },
+    {
+      q: `What is the difference between IATA and ICAO airport codes?`,
+      a: `IATA codes like ${a.iata} are the three-letter codes shown on tickets, booking sites and baggage tags. ICAO codes${icao ? ` (${icao} for this airport)` : ''} are four-letter identifiers used in flight operations and air-traffic control. For booking travel, the IATA code is the one you need.`,
+    },
+    {
+      q: `Do I need to confirm flight times with the airline?`,
+      a: `Yes. Schedules change through the year, so always confirm departure times, terminals and check-in cut-offs with the operating airline before travelling from ${a.name}.`,
+    },
+    {
+      q: `Is the information on this page up to date?`,
+      a: `Airport, airline and route details for ${a.iata} come from the Originfacts database and are refreshed regularly. Live fares and availability always come from the flight search, which queries current prices at the time you search.`,
+    },
+    {
+      q: `How early should I arrive at ${a.name}?`,
+      a: `A common rule of thumb is two hours before a domestic departure and three hours before an international one, but the airline's check-in and baggage cut-off times are what actually matter — check them on your booking confirmation.`,
+    },
+    {
+      q: `Can I book flights from ${a.iata} on Originfacts?`,
+      a: `Originfacts is a research and comparison site: the flight search on this page compares live fares from ${a.iata} and hands you over to the airline or agent to complete the booking, so your ticket and payment sit with the seller.`,
+    },
+  ];
+  for (const f of fillers) {
+    if (faqs.length >= MIN_AIRPORT_FAQS) break;
+    faqs.push(f);
   }
   return faqs;
 }

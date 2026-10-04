@@ -1,5 +1,6 @@
 import {
   facetCounts,
+  facetTone,
   getAirlineReviews,
   pickRepresentative,
   ratingBands,
@@ -22,6 +23,14 @@ import {
  */
 
 const STAR_PATH = 'M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z';
+
+// Facet chips carry a verdict, so they never rely on colour alone — each tone
+// ships its own glyph and the tooltip spells the score out.
+const TONE_STYLES: Record<'positive' | 'negative' | 'neutral', { chip: string; glyph: string }> = {
+  positive: { chip: 'border-success-emphasis/25 bg-success-emphasis/[0.08] text-success-emphasis', glyph: '✓' },
+  negative: { chip: 'border-forest-900/15 bg-forest-900/[0.05] text-forest-900/70', glyph: '−' },
+  neutral: { chip: 'border-forest-900/10 bg-forest-900/[0.03] text-forest-900/65', glyph: '' },
+};
 
 function Stars({ value, size = 14, id }: { value: number; size?: number; id: string }) {
   // `value` is 0–5 and may be fractional, so each star is filled by percentage
@@ -87,82 +96,99 @@ export default function AirlineReviews({ slug, name }: { slug: string; name: str
 
         {/* Summary: score + histogram on the left, what was flown on the right */}
         <div className="mt-6 grid gap-8 border-b border-forest-900/10 pb-7 lg:grid-cols-[minmax(0,430px)_minmax(0,1fr)]">
-          <div className="flex flex-wrap items-start gap-x-9 gap-y-5">
-            <div className="min-w-[118px]">
-              {stars5 !== null && <Stars value={stars5} size={21} id="overall" />}
-              {stats.avgRating10 !== null && (
-                <div className="mt-2 font-urbanist text-[2.6rem] font-bold leading-none text-forest-900">
-                  {stats.avgRating10.toFixed(1)}
-                  <span className="text-lg font-semibold text-forest-900/40">/10</span>
+          <div>
+            <div className="flex flex-wrap items-start gap-x-10 gap-y-6">
+              {/* Headline score: one star beside the number, the way a rating
+                  summary is normally read — not five stars competing with the
+                  histogram directly next to it. */}
+              <div className="min-w-[132px]">
+                <div className="flex items-center gap-2">
+                  <svg width="30" height="30" viewBox="0 0 20 20" aria-hidden="true" className="flex-none">
+                    <path d={STAR_PATH} fill="#ffce00" />
+                  </svg>
+                  {stats.avgRating10 !== null && (
+                    <span className="font-urbanist text-[2.7rem] font-bold leading-none text-forest-900">
+                      {stats.avgRating10.toFixed(1)}
+                      <span className="text-lg font-semibold text-forest-900/40">/10</span>
+                    </span>
+                  )}
                 </div>
-              )}
-              <div className="mt-2 text-xs text-forest-900/55">
-                {stats.reviewCount.toLocaleString()} review{stats.reviewCount === 1 ? '' : 's'}
+                <div className="mt-2 text-xs text-forest-900/55">
+                  {stats.reviewCount.toLocaleString()} review{stats.reviewCount === 1 ? '' : 's'}
+                </div>
               </div>
 
-              {/* Only sources that record a recommend signal produce this line. */}
-              {stats.recommendPct !== null && (
-                <div className="mt-3 flex items-start gap-1.5 text-xs text-forest-900/70">
-                  <span className="mt-[1px] font-bold text-success-emphasis">✓</span>
-                  <span>
-                    <span className="font-bold text-forest-900">{stats.recommendPct}%</span> would
-                    recommend
-                  </span>
-                </div>
-              )}
+              <ul className="min-w-[210px] flex-1 space-y-[3px]">
+                {bands.map((band) => (
+                  <li key={band.star} className="flex items-center gap-2.5 text-xs text-forest-900/60">
+                    <span className="flex flex-none items-center gap-1 tabular-nums">
+                      {band.star}
+                      <svg width="11" height="11" viewBox="0 0 20 20" aria-hidden="true">
+                        <path d={STAR_PATH} fill="#ffce00" />
+                      </svg>
+                    </span>
+                    <span className="h-[9px] flex-1 overflow-hidden rounded-[4px] bg-forest-900/[0.08]">
+                      <span
+                        className="block h-full rounded-[4px] bg-primary-emphasis"
+                        style={{ width: `${(band.count / maxBand) * 100}%` }}
+                      />
+                    </span>
+                    <span className="w-7 flex-none text-right tabular-nums text-forest-900/70">
+                      {band.count}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <ul className="min-w-[190px] flex-1 space-y-1.5">
-              {bands.map((band) => (
-                <li key={band.star} className="flex items-center gap-2.5 text-xs text-forest-900/60">
-                  <span className="flex flex-none items-center gap-1 tabular-nums">
-                    {band.star}
-                    <svg width="11" height="11" viewBox="0 0 20 20" aria-hidden="true">
-                      <path d={STAR_PATH} fill="#ffce00" />
-                    </svg>
-                  </span>
-                  <span className="h-2.5 flex-1 overflow-hidden rounded-full bg-forest-900/[0.08]">
-                    <span
-                      className="block h-full rounded-full bg-forest-700"
-                      style={{ width: `${(band.count / maxBand) * 100}%` }}
-                    />
-                  </span>
-                  <span className="w-7 flex-none text-right tabular-nums text-forest-900/70">
-                    {band.count}
-                  </span>
-                </li>
-              ))}
-            </ul>
+            {/* Only sources that record a recommend signal produce this line. */}
+            {stats.recommendPct !== null && (
+              <p className="mt-5 flex items-center gap-2 text-xs text-forest-900/70">
+                <span className="font-bold text-success-emphasis">✓</span>
+                <span>
+                  <span className="font-bold text-forest-900">{stats.recommendPct}%</span> would
+                  recommend to a friend
+                </span>
+              </p>
+            )}
           </div>
 
           <div>
             <h3 className="text-sm font-bold text-forest-900">What travellers flew</h3>
             <p className="mt-1 text-xs leading-5 text-forest-900/55">
               Counted from the {stats.reviewCount.toLocaleString()} review
-              {stats.reviewCount === 1 ? '' : 's'} below — a tally of the flights reviewed, not a
-              summary of what reviewers said.
+              {stats.reviewCount === 1 ? '' : 's'} below — a tally of the flights reviewed, with each
+              chip carrying the average score those reviewers gave. Nothing here reads their prose
+              or summarises what they said.
             </p>
 
             {(cabins.length > 0 || routes.length > 0) && (
               <div className="mt-3 flex flex-wrap gap-2">
-                {cabins.map((cabin) => (
-                  <span
-                    key={`cabin-${cabin.label}`}
-                    className="rounded-full border border-forest-200 bg-forest-100/70 px-3 py-1 text-xs font-semibold text-forest-900/80"
-                  >
-                    {cabin.label} ({cabin.count})
-                  </span>
-                ))}
-                {routes.map((route) => (
-                  <span
-                    key={`route-${route.label}`}
-                    className="rounded-full border border-forest-900/10 bg-forest-900/[0.03] px-3 py-1 text-xs text-forest-900/65"
-                  >
-                    {route.label} ({route.count})
-                  </span>
-                ))}
+                {[...cabins, ...routes].map((facet) => {
+                  const tone = facetTone(facet);
+                  const style = TONE_STYLES[tone];
+                  return (
+                    <span
+                      key={`${facet.label}-${facet.count}`}
+                      title={
+                        facet.avg !== null
+                          ? `${facet.count} review${facet.count === 1 ? '' : 's'}, averaging ${facet.avg.toFixed(1)}/10`
+                          : `${facet.count} review${facet.count === 1 ? '' : 's'}`
+                      }
+                      className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold ${style.chip}`}
+                    >
+                      {style.glyph && <span aria-hidden="true">{style.glyph}</span>}
+                      {facet.label} ({facet.count})
+                    </span>
+                  );
+                })}
               </div>
             )}
+
+            <p className="mt-2.5 text-[11px] leading-5 text-forest-900/40">
+              ✓ marks a group averaging 7/10 or better, − one averaging 4/10 or worse, across at
+              least three reviews.
+            </p>
 
             {subs.length > 0 && (
               <>
@@ -257,14 +283,19 @@ export default function AirlineReviews({ slug, name }: { slug: string; name: str
 }
 
 function ReviewCard({ review, multiSource }: { review: AirlineReview; multiSource: boolean }) {
-  const tags = [
-    review.cabin,
-    review.route,
-    review.date ? `Flew ${review.date.slice(0, 7)}` : null,
-  ].filter(Boolean) as string[];
+  // The store keeps the date the review was published, not the date of travel,
+  // so it is reported as "Posted …" below rather than badged as a flight month.
+  const tags = [review.cabin, review.route].filter(Boolean) as string[];
 
-  const text = review.text.length > 300 ? `${review.text.slice(0, 297).trimEnd()}…` : review.text;
+  const LIMIT = 260;
+  const long = review.text.length > LIMIT;
+  // Break on a word so the visible half never ends mid-word.
+  const cut = long ? review.text.lastIndexOf(' ', LIMIT) : review.text.length;
+  const head = long ? review.text.slice(0, cut > 0 ? cut : LIMIT).trimEnd() : review.text;
+  const rest = long ? review.text.slice(cut > 0 ? cut : LIMIT).trim() : '';
+
   const place = review.authorCountry ?? review.authorLocation ?? null;
+  const posted = formatPosted(review.date);
 
   return (
     <article className="flex flex-col rounded-[0.3rem] border border-forest-900/10 bg-white p-5">
@@ -302,13 +333,45 @@ function ReviewCard({ review, multiSource }: { review: AirlineReview; multiSourc
         </div>
       )}
 
-      <p className="mt-3 text-sm font-light leading-6 text-forest-900/75">{text}</p>
+      {/* <details> keeps the full text in the markup — and therefore indexable —
+          while showing the same truncated card as the reference, with no client
+          JavaScript. */}
+      {long ? (
+        <details className="group mt-3">
+          <summary className="cursor-pointer list-none text-sm font-light leading-6 text-forest-900/75 [&::-webkit-details-marker]:hidden">
+            <span>{head}</span>
+            <span className="group-open:hidden">
+              …{' '}
+              <span className="font-normal text-primary-emphasis hover:underline">See more</span>
+            </span>
+            <span className="hidden group-open:inline"> {rest}</span>
+          </summary>
+          <span className="mt-1 inline-block text-sm text-primary-emphasis hover:underline">
+            See less
+          </span>
+        </details>
+      ) : (
+        <p className="mt-3 text-sm font-light leading-6 text-forest-900/75">{head}</p>
+      )}
 
       <p className="mt-auto pt-4 text-xs text-forest-900/45">
-        {review.author ?? 'Traveller'}
+        {posted ? `Posted ${posted} by ` : ''}
+        {review.author ?? 'a traveller'}
         {place ? `, ${place}` : ''}
         {multiSource && <span className="text-forest-900/30"> · {sourceLabel(review.source)}</span>}
       </p>
     </article>
   );
+}
+
+/** "2024-02-11" → "February 2024". Month precision only: the day adds nothing
+ *  to a review card, and a relative age would go stale in a cached render. */
+function formatPosted(date: string): string | null {
+  if (!/^\d{4}-\d{2}/.test(date)) return null;
+  const [year, month] = date.split('-');
+  const name = new Date(Date.UTC(Number(year), Number(month) - 1, 1)).toLocaleString('en-GB', {
+    month: 'long',
+    timeZone: 'UTC',
+  });
+  return `${name} ${year}`;
 }

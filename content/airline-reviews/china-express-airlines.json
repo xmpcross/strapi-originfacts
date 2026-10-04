@@ -1,0 +1,46 @@
+{
+ "slug": "china-express-airlines",
+ "sources": [
+  "tripadvisor"
+ ],
+ "stats": {
+  "source": "all",
+  "reviewCount": 1,
+  "avgRating10": 8.0,
+  "recommendPct": null,
+  "subratings": null,
+  "firstReviewDate": "2018-10-18",
+  "lastReviewDate": "2018-10-18"
+ },
+ "statsBySource": {
+  "tripadvisor": {
+   "source": "tripadvisor",
+   "reviewCount": 1,
+   "avgRating10": 8.0,
+   "recommendPct": null,
+   "subratings": null,
+   "firstReviewDate": "2018-10-18",
+   "lastReviewDate": "2018-10-18",
+   "sourceUrl": "https://www.tripadvisor.com/Airline_Review-d8728957-Reviews-China-Express-Airlines"
+  }
+ },
+ "reviews": [
+  {
+   "source": "tripadvisor",
+   "id": "ta-626133146",
+   "date": "2018-10-18",
+   "rating10": 8,
+   "title": "Smooth trip",
+   "text": "First I was a bit skeptical because I never heard about that airline and there was little information on the internet. But since it was the only direct connection between Chongqing and Zhangjiajie and the price was very good I gave it a go. I was positively surprised: The flight was punctual, nice staff and everything went smooth. Just note that you can only book directly with the airline if you speak Chinese because their website is Chinese only. I used an international booking website (opodo.com) which worked perfectly fine. Another useful information is that China Express departs at Chongqing airport from terminal 2. Almost all other airlines (international and domestic) depart from terminal 3. There are free buses connecting the terminals but you should plan some extra time if you have a connection with another airline.",
+   "author": "martinLD1",
+   "authorCountry": null,
+   "authorLocation": "St. Gallen",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Chongqing - Zhangjiajie",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  }
+ ]
+}

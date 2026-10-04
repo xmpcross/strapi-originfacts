@@ -1,0 +1,63 @@
+{
+ "slug": "izhavia",
+ "sources": [
+  "tripadvisor"
+ ],
+ "stats": {
+  "source": "all",
+  "reviewCount": 2,
+  "avgRating10": 6.0,
+  "recommendPct": null,
+  "subratings": null,
+  "firstReviewDate": "2018-07-18",
+  "lastReviewDate": "2018-09-30"
+ },
+ "statsBySource": {
+  "tripadvisor": {
+   "source": "tripadvisor",
+   "reviewCount": 2,
+   "avgRating10": 6.0,
+   "recommendPct": null,
+   "subratings": null,
+   "firstReviewDate": "2018-07-18",
+   "lastReviewDate": "2018-09-30",
+   "sourceUrl": "https://www.tripadvisor.com/Airline_Review-d14190681-Reviews-Izhavia"
+  }
+ },
+ "reviews": [
+  {
+   "source": "tripadvisor",
+   "id": "ta-620616964",
+   "date": "2018-09-30",
+   "rating10": 6,
+   "title": "Good onboard service but very cramped for space",
+   "text": "With a fleet of relatively old Russian YAK-42 aircraft, the six abreast seating on board Izhavia was very cramped. This was a pity because otherwise the service was reasonably good. There was still the old fashioned idea of a sweet to suck on at departure and, although the food was not outstanding, there were three choices for the main meal. Service was efficient and overall the impression was good; pity about the shortage of personal space.",
+   "author": "Clive G",
+   "authorCountry": null,
+   "authorLocation": "London",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Moscow - Izhevsk",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-597461573",
+   "date": "2018-07-18",
+   "rating10": 6,
+   "title": "It is an experience alright...",
+   "text": "Even though I was warned about the experience I was going to have with this plane, there is no way to explain it in simple words. The plane used by the airline is the Yakovlev Yak-42, a good aeroplane that makes you feel you are in a jet fighter. The aeroplane is very powerful on its takeoff and the pilot does not seem to be afraid of pulling a steep ascent and turn almost immediately. The seats are not comfortable and the space between the seats is good for average passengers... if you are tall like me, space is less than optimal. I started to suffer on that ascent as the seat in front of me pulled back enough to squeeze my knee cap in agony. The food is not bad, you get chicken, fish or beef with buckwheat (a traditional Russian food), some candy and pastry. The food is acceptable but the experience with the tiny table and uncomfortable chain makes it hard to enjoy. By the way, remember I told you the aeroplane gives you to vibe of jet fighter? One of those experiences is the sound... The aeroplane is VERY noisy, having a conversation with anyone is pretty tricky as you need to (practically) yell all the time. I could still hear the turbine with my noise cancelling headphones... The landing was the last bit of the experience and at this point, you feel marvelled of the Russian engineering. If you want to know how it feels to land on this plane, I invite you to check the youtube video called \"Hot Shots Topper Landing\" I am honestly not exaggerating with the landing scene, the pilot hit so hard the runway the compartments above our head opened and the plane bounced back just to touch the runway once more 5 seconds later. Now... don't get me wrong, there were parts of the flight that I found interesting. Never got in a plane through an entrance so small that I needed to be careful not to hit my head and knee at the same time. And I certainly have never flown with a Russian airline before, so this might be a premium experience overall. Here is the part that is a bit ironic of this review. Russians tend to use the train to travel from Moscow to Izhevsk and back (which is 16 hours trip)... if you are a tourist that might be ok for you, but when you are traveling for business, this is the best way to go as a train ride after so many hours to get to Russia was an experience I did not want to have.",
+   "author": "rodrigoelp",
+   "authorCountry": null,
+   "authorLocation": "Sydney",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Moscow - Izhevsk",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  }
+ ]
+}

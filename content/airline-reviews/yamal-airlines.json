@@ -1,0 +1,114 @@
+{
+ "slug": "yamal-airlines",
+ "sources": [
+  "tripadvisor"
+ ],
+ "stats": {
+  "source": "all",
+  "reviewCount": 5,
+  "avgRating10": 8.0,
+  "recommendPct": null,
+  "subratings": null,
+  "firstReviewDate": "2017-07-25",
+  "lastReviewDate": "2019-06-15"
+ },
+ "statsBySource": {
+  "tripadvisor": {
+   "source": "tripadvisor",
+   "reviewCount": 5,
+   "avgRating10": 8.0,
+   "recommendPct": null,
+   "subratings": null,
+   "firstReviewDate": "2017-07-25",
+   "lastReviewDate": "2019-06-15",
+   "sourceUrl": "https://www.tripadvisor.com/Airline_Review-d12665302-Reviews-Yamal-Airlines"
+  }
+ },
+ "reviews": [
+  {
+   "source": "tripadvisor",
+   "id": "ta-681778359",
+   "date": "2019-06-15",
+   "rating10": 6,
+   "title": "Whatever",
+   "text": "Iam not the guy who will complain about sit comfort , food or drinks ... but guys , how is possible in an international flight from Greece to Russia all the announcements in flight to be only in russian? Has never happen to me before. And during take off the cabin crew skip the seat belt check. On the plus , quite clean plane , smooth landing , and the fastest by far way i did between Greece - St. Petersburg. Normally have done it around 4 hours , this time in 3:20.",
+   "author": "Emilios P",
+   "authorCountry": null,
+   "authorLocation": "Zakynthos",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Zakynthos - St. Petersburg",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-620643282",
+   "date": "2018-09-30",
+   "rating10": 8,
+   "title": "Comfortable and spacious modern aircraft",
+   "text": "The Yamal Airlines fleet mainly consists of Western built jets, although it utilises modern Russian built Sukhoi Superjets on many of its internal services including its Tyumen to Irkutsk route. I often suffer in economy class by having my knees pressed up against the seat in front, but with only five abreast seating and more than ample legroom, I was able to stretch my legs out with ease. This made the journey both smooth and very comfortable. The cabin feels spacious for a relatively small aircraft making it more appealing than the restricted space on many Boeing 737 or Airbus A320 series aircraft. The overhead bins are also sizeable considering the smaller dimensions of the plane. The journey from Tyumen has an intermediate stop in Krasnoyarsk, where all passengers must disembark with their hand luggage to await the onward flight to Irkutsk which left about forty minutes later. As with the other five flights taken on Russian airlines during this trip, the aircraft departed on time and there were no queues of departing aircraft at the uncrowded airports we flew from. Overall, a very positive experience and I’d happily fly with this airline and on this aircraft type again.",
+   "author": "Clive G",
+   "authorCountry": null,
+   "authorLocation": "London",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Tyumen - Irkutsk",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-618771643",
+   "date": "2018-09-22",
+   "rating10": 10,
+   "title": "Pretty good service but narrow seats",
+   "text": "Since the flight we took was a charter flight I did not have high expectations. Surprisingly, the service was good and the food wasn't bad. Staff was welcoming. The only disadvantage I had was narrow seats. It was not possible to keep legs straight while my height is just 163 cm, I can't imagine how uncomfortable it was for tall people...",
+   "author": "galinalhagpa",
+   "authorCountry": null,
+   "authorLocation": "Chelyabinsk",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Chelyabinsk - Antalya",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-521267407",
+   "date": "2017-09-04",
+   "rating10": 10,
+   "title": "Excellent service",
+   "text": "Flight Sabetta-Moscow. Good and clean airplane, an A 321. The service on board was very good and toilet clean. The flight left on time. The overhall impression was good. I will reccomend this Airline. The cabin crews were very polite and nice.The meal service was very good.",
+   "author": "Alessandro1974Zagreb",
+   "authorCountry": null,
+   "authorLocation": "Zagreb",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Novy Urengoy - Moscow",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-505375471",
+   "date": "2017-07-25",
+   "rating10": 6,
+   "title": "could have been better",
+   "text": "The airline services could have been better. There wasn't enough legroom and no in-flight entertainment. The flight-attendants were a bit rude and did not speak a word in English. Same thing for the pilot announcements. No announcement was made in English, only in Russian which left me at a loss. However, the flight departed Domodedovo airport exactly in time.",
+   "author": "Danilo R",
+   "authorCountry": null,
+   "authorLocation": "Moscow",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Moscow - Burgas",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  }
+ ]
+}

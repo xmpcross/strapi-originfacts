@@ -1,0 +1,97 @@
+{
+ "slug": "starbow",
+ "sources": [
+  "tripadvisor"
+ ],
+ "stats": {
+  "source": "all",
+  "reviewCount": 4,
+  "avgRating10": 7.0,
+  "recommendPct": null,
+  "subratings": null,
+  "firstReviewDate": "2017-02-08",
+  "lastReviewDate": "2017-09-05"
+ },
+ "statsBySource": {
+  "tripadvisor": {
+   "source": "tripadvisor",
+   "reviewCount": 4,
+   "avgRating10": 7.0,
+   "recommendPct": null,
+   "subratings": null,
+   "firstReviewDate": "2017-02-08",
+   "lastReviewDate": "2017-09-05",
+   "sourceUrl": "https://www.tripadvisor.com/Airline_Review-d12124803-Reviews-Starbow-No-Longer-Operating"
+  }
+ },
+ "reviews": [
+  {
+   "source": "tripadvisor",
+   "id": "ta-521442863",
+   "date": "2017-09-05",
+   "rating10": 8,
+   "title": "Friendly and competent",
+   "text": "We had a smooth flight. We we're served cookies and excellent fruit juice. The airport staff at Tamale was very friendly. When they discovered a laptop in our checked-in bagage at the x-ray, they found us in the waiting area and gave us the opportunity to take it out for it not to be damaged.",
+   "author": "LikeditNijmegen",
+   "authorCountry": null,
+   "authorLocation": null,
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Tamale - Accra",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-518736289",
+   "date": "2017-08-29",
+   "rating10": 8,
+   "title": "Competent, good prices",
+   "text": "I have made several trips with Starbow between Accra and Tamale. The flights are sometimes delayed for up to an hour. I have never been canceled. The cabin crew and ground staff are helpful. I make my reservations online and that works fine.",
+   "author": "Ed L",
+   "authorCountry": null,
+   "authorLocation": "Grants Pass",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Accra - Tamale",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-508165088",
+   "date": "2017-08-02",
+   "rating10": 4,
+   "title": "Cancelled without informing",
+   "text": "I went with Starbow from Accra to Kumasi and although the trip was slightly delayed it was overall not a bad experience. However, on the return trip I arrived at the airport to find that my flight had been cancelled and that nobody had alerted me to this. I had to catch a flight from the other airline (AWA) in order to catch my connecting flight from Accra. However, they required that I pay extra and be on the waiting list. Thankfully the AWA flight was delayed for 2 hours therefore I was able to get a seat on that flight.",
+   "author": "jchuii",
+   "authorCountry": null,
+   "authorLocation": "Newcastle upon Tyne",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Kumasi - Accra",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-458209261",
+   "date": "2017-02-08",
+   "rating10": 8,
+   "title": "Short trip to Damang",
+   "text": "I made two trips on Starbow Airlines back and forth to Accra. It is a very short trip time-wise but the cabin crews are friendly, efficient and great looking. A small packet of biscuits, water and fruit juice is served with a minimum of fuss and baggage is handled well and you see it going on and off the flight. This is always re-assuring when traveling on internal flights in Africa. The aircraft are clean and well presented and I must say this is one of my better experiences.",
+   "author": "Nigel B",
+   "authorCountry": null,
+   "authorLocation": "Johannesburg",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Sekondi-Takoradi - Accra",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  }
+ ]
+}

@@ -76,7 +76,14 @@ export const metadata: Metadata = {
       'application/rss+xml': [{ url: '/feed.xml', title: 'Originfacts RSS' }],
     },
   },
-  other: ADSENSE_ENABLED ? { 'google-adsense-account': ADSENSE_CLIENT } : {},
+  other: {
+    // Affiliate network site verification. Unlike the Impact tag below, these
+    // are plain name/content pairs, so they go through the metadata API rather
+    // than being hand-written into the body.
+    'mitgo-verification': 'c35b4b6a-ddfe-4741-ab3e-2c1b7538a949',
+    'Takeads-verification': 'd5d48ab4-be05-4198-bb51-e1492a80937c',
+    ...(ADSENSE_ENABLED ? { 'google-adsense-account': ADSENSE_CLIENT } : {}),
+  },
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {

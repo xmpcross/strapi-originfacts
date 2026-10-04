@@ -1,0 +1,46 @@
+{
+ "slug": "ruili-airlines",
+ "sources": [
+  "tripadvisor"
+ ],
+ "stats": {
+  "source": "all",
+  "reviewCount": 1,
+  "avgRating10": 2.0,
+  "recommendPct": null,
+  "subratings": null,
+  "firstReviewDate": "2017-05-18",
+  "lastReviewDate": "2017-05-18"
+ },
+ "statsBySource": {
+  "tripadvisor": {
+   "source": "tripadvisor",
+   "reviewCount": 1,
+   "avgRating10": 2.0,
+   "recommendPct": null,
+   "subratings": null,
+   "firstReviewDate": "2017-05-18",
+   "lastReviewDate": "2017-05-18",
+   "sourceUrl": "https://www.tripadvisor.com/Airline_Review-d8729139-Reviews-Ruili-Airlines"
+  }
+ },
+ "reviews": [
+  {
+   "source": "tripadvisor",
+   "id": "ta-485273535",
+   "date": "2017-05-18",
+   "rating10": 2,
+   "title": "Unpleasant experience",
+   "text": "My recent trip from Shenyang to Qingdao wasn't enjoyable at all. This was due to the fact the flight was delayed by 100 minutes. The boarding time was a regular one. We have been welcomed and took our seats. Everything seemed to go smoothly but with no apparent reason the pilot didn't start the procedure for our taking off. We wondered what was going wrong since the weather was fine and all the other flights regularly took off. We weren't given any explanation for that. In other words we had to spend one hour and forty minutes inside the aircraft with no AC on. Passengers asked the hostesses the reason of the delay but the only answer we could get from them was that the departure time hadn't been decided yet. To cut it short I was lucky I didn't have any connecting flight to take otherwise it would have been a serious issue.",
+   "author": "Gorgan",
+   "authorCountry": null,
+   "authorLocation": "Florence",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Shenyang - Qingdao",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  }
+ ]
+}

@@ -1,0 +1,114 @@
+{
+ "slug": "regional-air",
+ "sources": [
+  "tripadvisor"
+ ],
+ "stats": {
+  "source": "all",
+  "reviewCount": 5,
+  "avgRating10": 5.6,
+  "recommendPct": null,
+  "subratings": null,
+  "firstReviewDate": "2018-09-28",
+  "lastReviewDate": "2022-06-17"
+ },
+ "statsBySource": {
+  "tripadvisor": {
+   "source": "tripadvisor",
+   "reviewCount": 5,
+   "avgRating10": 5.6,
+   "recommendPct": null,
+   "subratings": null,
+   "firstReviewDate": "2018-09-28",
+   "lastReviewDate": "2022-06-17",
+   "sourceUrl": "https://www.tripadvisor.com/Airline_Review-d10533108-Reviews-Regional-Air"
+  }
+ },
+ "reviews": [
+  {
+   "source": "tripadvisor",
+   "id": "ta-843319682",
+   "date": "2022-06-17",
+   "rating10": 2,
+   "title": "Unacceptable service",
+   "text": "We are flying to Seronera on Regional Air. The plane was there and we arrived on time but they delayed the flight because other passengers were late. We lost the morning in the Serengeti; not because a weather delay which we would understand, but because other passengers were late. That is completely unacceptable and unprofessional.",
+   "author": "Alan L",
+   "authorCountry": null,
+   "authorLocation": null,
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Arusha - Serengeti National Park",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-719698511",
+   "date": "2019-10-19",
+   "rating10": 8,
+   "title": "Nice plane on this bush flight",
+   "text": "While most planes flying in and out of the Kogatende airstrip in the northern Serengeti were the single prop Cessna Grand Voyager type, Regional Air showed up with this Dash 8-100 turbo-prop plane. This was a comfortable flight with a few intermediate stops, with in-flight service of mints and water.",
+   "author": "fearlessbob",
+   "authorCountry": null,
+   "authorLocation": null,
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Arusha - Zanzibar Island",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-642551177",
+   "date": "2018-12-30",
+   "rating10": 2,
+   "title": "An awful airline service, “Avoid” at all cost!",
+   "text": "I went to Ngorongoro Crater and after finishing a wonderful time at the Crater Lodge, I took a flight from Lake Manyara to Dar Es Salaam. When I purchased the ticket, I was told that the flight would make a stop-over at Arusha and then continue to Dar Es Salaam. I left Lake Manyara at around 11:45 and only landed in Dar Es Salaam at 18:05, where the original schedule indicated an arrival at 14:35. What caused the delay was the fact that I was put on a number of detours, first from Lake Manyara to Kilamanjiro, then from Kilamanjiro to Arusha, waited for two hours and then departed to Zanzibar before making a final stop at Dar Es Salaam. What I found most unacceptable was that I was only being told about all these detours and delays at last minute, about 15 minutes before I board onto the various segments of the plane ride. The airline staff also gave out conflicting misleading information about the re-route and the delays. If one is travelling within Tanzania for Safari or hiking, I strongly suggest that you avoid Regional Air, this is an awful experience,stick with Costal Airline and you would be better-off for sure!",
+   "author": "Chiuming",
+   "authorCountry": null,
+   "authorLocation": "Hong Kong",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Lake Manyara National Park - Dar es Salaam",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-638666815",
+   "date": "2018-12-10",
+   "rating10": 8,
+   "title": "Was not sure of a small plane.",
+   "text": "Was very happy none the less. Clean aircraft good pilot and great views. It sure saves time not driving this route.",
+   "author": "puckstopper31",
+   "authorCountry": null,
+   "authorLocation": "Edmonton",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Serengeti National Park - Lake Manyara National Park",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-620131485",
+   "date": "2018-09-28",
+   "rating10": 8,
+   "title": "Smooth flight from Arusha to North Serengeti",
+   "text": "According to the schedule provided by our tour operator for the flight from Arusha National Airport to Kogatende air strip in North Serengeti should have departed at 8.00 but the only other passenger told me that he uses this flight frequently and that departure usually is at 9.00. The flight took about 50 minutes, the pilot (there was no co-pilot) of the 12-seater indicated during the flight the location of a crater and otherwise concentrated on the flight which was without any turbulence.",
+   "author": "Helmut S",
+   "authorCountry": null,
+   "authorLocation": "Bangkok",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Arusha - Serengeti National Park",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  }
+ ]
+}

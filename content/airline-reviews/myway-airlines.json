@@ -1,0 +1,97 @@
+{
+ "slug": "myway-airlines",
+ "sources": [
+  "tripadvisor"
+ ],
+ "stats": {
+  "source": "all",
+  "reviewCount": 4,
+  "avgRating10": 6.0,
+  "recommendPct": null,
+  "subratings": null,
+  "firstReviewDate": "2019-07-15",
+  "lastReviewDate": "2021-06-18"
+ },
+ "statsBySource": {
+  "tripadvisor": {
+   "source": "tripadvisor",
+   "reviewCount": 4,
+   "avgRating10": 6.0,
+   "recommendPct": null,
+   "subratings": null,
+   "firstReviewDate": "2019-07-15",
+   "lastReviewDate": "2021-06-18",
+   "sourceUrl": "https://www.tripadvisor.com/Airline_Review-d17550100-Reviews-MyWay-Airlines"
+  }
+ },
+ "reviews": [
+  {
+   "source": "tripadvisor",
+   "id": "ta-793029525",
+   "date": "2021-06-18",
+   "rating10": 2,
+   "title": "Flight was cancelled by airline and no money back.",
+   "text": "My flight was cancelled by airline month in advance the flight. And no any moneyback. For any questions \"when money will be refunded\" they are playing in stupid guys and saying \"we don't know, once it will be refunded, now there are so many requests that we don't know\".",
+   "author": "swinopass",
+   "authorCountry": null,
+   "authorLocation": "St. Petersburg",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Tel Aviv - Tbilisi",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-776361009",
+   "date": "2020-11-02",
+   "rating10": 2,
+   "title": "Fligths cancelled by company, totally ignoring emails, not possible to communicate in any form.",
+   "text": "Our fligths on june were cancelled by company, and from the cancellation time was not possible to reach company in any way, all telephones disconnected, no answers to any mails except automatic reply, and also month after no answers. Only option is send mail to rebook and pay tickets difference even without any obligation that fligths will be avaliable and what regulationas will be on this time. Company doesn't follow law regulations to refund money in period, that defined by law. Reccomend to think very good before dealing with company, you will not get your money back",
+   "author": "Toma H",
+   "authorCountry": null,
+   "authorLocation": null,
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Tel Aviv - Tbilisi",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-732967041",
+   "date": "2019-12-15",
+   "rating10": 10,
+   "title": "Great flight !",
+   "text": "The crew was welcoming and friendly and the flight was calm and easy. The sits were comfortable and with enough leg space.",
+   "author": "Limor P",
+   "authorCountry": null,
+   "authorLocation": null,
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Tel Aviv - Tbilisi",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-689789908",
+   "date": "2019-07-15",
+   "rating10": 10,
+   "title": "Great flight with small delay",
+   "text": "the flight had a small delay (30 minutes) but the flight was great, even with small hot meal and great service.",
+   "author": "Gabe_family2013",
+   "authorCountry": null,
+   "authorLocation": "Tel Aviv",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Tel Aviv - Tbilisi",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  }
+ ]
+}

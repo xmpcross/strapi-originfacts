@@ -1,0 +1,63 @@
+{
+ "slug": "daallo-airlines",
+ "sources": [
+  "tripadvisor"
+ ],
+ "stats": {
+  "source": "all",
+  "reviewCount": 2,
+  "avgRating10": 6.0,
+  "recommendPct": null,
+  "subratings": null,
+  "firstReviewDate": "2020-09-25",
+  "lastReviewDate": "2022-08-05"
+ },
+ "statsBySource": {
+  "tripadvisor": {
+   "source": "tripadvisor",
+   "reviewCount": 2,
+   "avgRating10": 6.0,
+   "recommendPct": null,
+   "subratings": null,
+   "firstReviewDate": "2020-09-25",
+   "lastReviewDate": "2022-08-05",
+   "sourceUrl": "https://www.tripadvisor.com/Airline_Review-d8728917-Reviews-Daallo-Airlines"
+  }
+ },
+ "reviews": [
+  {
+   "source": "tripadvisor",
+   "id": "ta-852285922",
+   "date": "2022-08-05",
+   "rating10": 2,
+   "title": "Do not ride daallo. It’s a joke",
+   "text": "Daallos service is utterly horrendous. I don’t know how they are allowed to run a business. Customer service do not know how to carry out their jobs",
+   "author": "abdiweli",
+   "authorCountry": null,
+   "authorLocation": null,
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Dubai - Bosaso",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-771865352",
+   "date": "2020-09-25",
+   "rating10": 10,
+   "title": "Outstanding service",
+   "text": "The captains take off and landing was so smooth never felt it, also the flight crew was outstanding, friendly and efficient to my service, I recommend Dallao airline to anyone traveling to Dubai.",
+   "author": "Vineshree N",
+   "authorCountry": null,
+   "authorLocation": null,
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Mogadishu - Dubai",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  }
+ ]
+}

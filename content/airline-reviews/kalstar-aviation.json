@@ -1,0 +1,46 @@
+{
+ "slug": "kalstar-aviation",
+ "sources": [
+  "tripadvisor"
+ ],
+ "stats": {
+  "source": "all",
+  "reviewCount": 1,
+  "avgRating10": 2.0,
+  "recommendPct": null,
+  "subratings": null,
+  "firstReviewDate": "2016-12-22",
+  "lastReviewDate": "2016-12-22"
+ },
+ "statsBySource": {
+  "tripadvisor": {
+   "source": "tripadvisor",
+   "reviewCount": 1,
+   "avgRating10": 2.0,
+   "recommendPct": null,
+   "subratings": null,
+   "firstReviewDate": "2016-12-22",
+   "lastReviewDate": "2016-12-22",
+   "sourceUrl": "https://www.tripadvisor.com/Airline_Review-d11831105-Reviews-Kalstar-Aviation"
+  }
+ },
+ "reviews": [
+  {
+   "source": "tripadvisor",
+   "id": "ta-446197689",
+   "date": "2016-12-22",
+   "rating10": 2,
+   "title": "Most bad experience ever",
+   "text": "After the check-in they told us the flight is late. After 2 hours we asked again and they told us they cancelled the flight. So no informations, no support. The staff had no idea what to do and just let us waiting. After 7hours at the airport we booked an other flight with an other airline. Refund we've got but not for the day we've lost. Even if it's indonesia - the service was terrible. Never again!!",
+   "author": "Cori88",
+   "authorCountry": null,
+   "authorLocation": "Switzerland",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Denpasar - Labuan Island",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  }
+ ]
+}

@@ -1,0 +1,97 @@
+{
+ "slug": "vim-airlines",
+ "sources": [
+  "tripadvisor"
+ ],
+ "stats": {
+  "source": "all",
+  "reviewCount": 4,
+  "avgRating10": 4.0,
+  "recommendPct": null,
+  "subratings": null,
+  "firstReviewDate": "2016-09-22",
+  "lastReviewDate": "2017-07-22"
+ },
+ "statsBySource": {
+  "tripadvisor": {
+   "source": "tripadvisor",
+   "reviewCount": 4,
+   "avgRating10": 4.0,
+   "recommendPct": null,
+   "subratings": null,
+   "firstReviewDate": "2016-09-22",
+   "lastReviewDate": "2017-07-22",
+   "sourceUrl": "https://www.tripadvisor.com/Airline_Review-d10823594-Reviews-Vim-Airlines-No-Longer-Operating"
+  }
+ },
+ "reviews": [
+  {
+   "source": "tripadvisor",
+   "id": "ta-504652927",
+   "date": "2017-07-22",
+   "rating10": 2,
+   "title": "Delays, delays and delays!",
+   "text": "I had to use this airline rather often several years ago, but I remember only one flight which wasn`t delayed. All the others were delayed, and we didn`t get any help from the airline. Everything else is normal during the flight.",
+   "author": "A2230NV_",
+   "authorCountry": null,
+   "authorLocation": "Moscow",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Chambery - Moscow",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-492629343",
+   "date": "2017-06-12",
+   "rating10": 2,
+   "title": "CANCELLATION WITHOUT PRIOR NOTIFICATION",
+   "text": "I was surprised at the time I entered the airport and saw the paging screen, my flight was cancelled. I didn't get any notifications from the airline while I should've caught my next flight to Bangkok. Have talked with the crew, but it all became horrible. They didn't help me at all. Finally bought ticket from other airlines.",
+   "author": "Eliza O",
+   "authorCountry": null,
+   "authorLocation": "Adelaide",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "St. Petersburg - Moscow",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-438583361",
+   "date": "2016-11-19",
+   "rating10": 8,
+   "title": "Not so bad for charter",
+   "text": "Not bad for charter Not real lowcost but it worth it Little bit delay for departure but we are arrived in Moscow in schedule time Thanks for good service on the board and special for the meals But no check-in online!",
+   "author": "Anatoly Kovtun",
+   "authorCountry": null,
+   "authorLocation": "Rimini",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Rimini - Moscow",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-421238855",
+   "date": "2016-09-22",
+   "rating10": 4,
+   "title": "Inadequate compensation when flight was cancelled",
+   "text": "Flight was delayed due to weather conditions. 10 minutes before boarding we were advised of this cancellation. No alternatives offered. The only way to receive a refund was to travel the 6 hours by bus to Hoh Chi Minh city. From there we were offered a flight from HCMC to our final destination, however at an unsuitable flight ( time wise). As a result we had to pay additional cost for flight, hotel in HCMC and bus fare. Plane is very basic, same applies to service.",
+   "author": "AnnaTeAroha",
+   "authorCountry": null,
+   "authorLocation": null,
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Da Lat - Siem Reap",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  }
+ ]
+}

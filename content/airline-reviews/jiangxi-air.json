@@ -1,0 +1,46 @@
+{
+ "slug": "jiangxi-air",
+ "sources": [
+  "tripadvisor"
+ ],
+ "stats": {
+  "source": "all",
+  "reviewCount": 1,
+  "avgRating10": 8.0,
+  "recommendPct": null,
+  "subratings": null,
+  "firstReviewDate": "2021-05-19",
+  "lastReviewDate": "2021-05-19"
+ },
+ "statsBySource": {
+  "tripadvisor": {
+   "source": "tripadvisor",
+   "reviewCount": 1,
+   "avgRating10": 8.0,
+   "recommendPct": null,
+   "subratings": null,
+   "firstReviewDate": "2021-05-19",
+   "lastReviewDate": "2021-05-19",
+   "sourceUrl": "https://www.tripadvisor.com/Airline_Review-d13804007-Reviews-Jiangxi-Air"
+  }
+ },
+ "reviews": [
+  {
+   "source": "tripadvisor",
+   "id": "ta-789275590",
+   "date": "2021-05-19",
+   "rating10": 8,
+   "title": "Better than expected",
+   "text": "Pros: More leg room than expected. More than most other airlines I've flown. Wonderful service from the flight staff. Flew both ways, comfortable flights with soft take off and landing. Cons: Older and worn seating. Lack of inflight entertainment, central Screens mostly playing adverts. Inflight snacks were average to poor. Overall, for the price it was a good flight, leg room was welcome and super friendly flight crew was a plus, but bring some books or load up some films on your mobile device.",
+   "author": "Majita1",
+   "authorCountry": null,
+   "authorLocation": null,
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Xi'an - Nanchang",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  }
+ ]
+}

@@ -1,0 +1,114 @@
+{
+ "slug": "grand-china-air",
+ "sources": [
+  "tripadvisor"
+ ],
+ "stats": {
+  "source": "all",
+  "reviewCount": 5,
+  "avgRating10": 8.4,
+  "recommendPct": null,
+  "subratings": null,
+  "firstReviewDate": "2017-06-27",
+  "lastReviewDate": "2019-08-15"
+ },
+ "statsBySource": {
+  "tripadvisor": {
+   "source": "tripadvisor",
+   "reviewCount": 5,
+   "avgRating10": 8.4,
+   "recommendPct": null,
+   "subratings": null,
+   "firstReviewDate": "2017-06-27",
+   "lastReviewDate": "2019-08-15",
+   "sourceUrl": "https://www.tripadvisor.com/Airline_Review-d8728930-Reviews-Grand-China-Air"
+  }
+ },
+ "reviews": [
+  {
+   "source": "tripadvisor",
+   "id": "ta-699384975",
+   "date": "2019-08-15",
+   "rating10": 10,
+   "title": "Air flight",
+   "text": "Excellent service and very obliging staff. We had very comfortable flight. Landing and taking off was very smooth.",
+   "author": "Pratibha G",
+   "authorCountry": null,
+   "authorLocation": "Sydney",
+   "cabin": "First Class",
+   "typeTraveller": null,
+   "route": "Sydney - London",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-572984030",
+   "date": "2018-04-12",
+   "rating10": 10,
+   "title": "I miss you my Shwesandaw Pagoda",
+   "text": "For many traveller Shwesandaw Pagoda of Bagan is a spiritual center point, just like reaching the top of Mt.Everest is for others. Mt.Everest has been there since times immemorial. Shwesandaw, however, is much 'younger'. According to legends circulating, Shwesandaw was built around 1057 on orders of King Anawratha as a tribute to Buddha following the conquest of the Mon and Thaton Kingdoms. Every brick seems to have been placed by famous Mon artists. This may explain its lasting fame, attracting photographers from all over the world, not to mention never ending crowds of locals who come to Shwesandaw to meditate. In 2018 people have a choice between legend and reality. Yes, reality is what the eyes can see. But nowadays what is really reality? I prefer to close my eyes and dream of the glory of Shwesandaw. Remember accessing any holy site in Myanmar requires leaving your footware and socks right next to the flight of stairs (there are four ,one on each side) you choose for a unique climbing experience. You need two strong legs, and even stronger arms. The steps are high and without the help of a bannister on one side, and strong arms, I would never reach the top. Every platform is full of people, more so as the time of sunset is drawing near. The western Mountains are right there beyond the majestic Ayerwaddy Rivers cutting Myanmar practically into East Myanmar (where Bagan's plateau of thousands of pagodas lie), and the Western side, with the coastal mountains running along the Bay of Bengal. The sunset is a moment in time. Yes, there will be millions of other sunsets, It's not polite to interview meditating people, but I dared asking a few what they feel. Many told me they don't want to miss such a unique experience, because who knows if they will ever be able to return to Bagan. Others were sad because they were thinking that by this time next year they would be accompanying the setting sun into their own sunset from which there is no return. Call yourself lucky if the future finds you again on top of Shwesandaw, just like myself, blessed enough to touch those ancient stones, year after year. Locals tell me those ancient walls may hide some of Lord Buddha's hair, incorporated into the pagoda's walls, praying silently for the country's future. According to legend, the defeated Thatons offered to King Anawratha some of Buddha's holy hairs. But this is all legend. Pick your choice. Most people will spend maximum four nights in Bagan. With thousands of pagodas, temples, large and small, there is little time left for Shwesandaw, but for sure, one of those sunset afternoons will find you in front of Shwesandaw ready to remove your shoes. I am still waiting with my camera ready to catch one enterprising traveller attempting go up or to come down without using the handrails. People carry hundreds of types of cameras, and I am sure every one takes excellent pictures.But you will thank me if your choose a camera that takes wide-angle lens that don't require stitching segments into a panorama. Your cameras will need lots of batteries(AA, AAA, etc) because nothing will make you more depressed than for the sunset to catch you on top of the Shwesandaw with the camera blinking at you with the message \"change your batteries\". It happened to me once. Ever since I have been carrying two cameras. Walking around the square shaped terraces would be easy, were it not for the stretched out legs, either checking the pictures they have just taken or waiting silently for the next moment to catch the shining face of the sun playing with you hide and seek Sun sets very fast. Give yourself a little time to go down, walk around the pagoda, meet the locals trying to sell you memorable gifts of local arts. I usually bring home T-shirts, table cloths, sand paintings, longyis (wrap arounds worn by local men and women) The longyis are worn by most members of Htulaw, Myanmar Parliament. Then suddenly nature switches into sleep mode, just like your laptop, get",
+   "author": "Koko D4d32",
+   "authorCountry": null,
+   "authorLocation": "Los Angeles",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Los Angeles - Yangon (Rangoon)",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-572051831",
+   "date": "2018-04-08",
+   "rating10": 6,
+   "title": "New Airline Experience",
+   "text": "They offered a reasonable fare and the time of travel was what we needed. Even though only a short flight (2.5 hours) the staff were friendly and helpfull. Would travel with them again",
+   "author": "Gary W",
+   "authorCountry": null,
+   "authorLocation": "Sydney",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Beijing - Guilin",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-565530448",
+   "date": "2018-03-09",
+   "rating10": 10,
+   "title": "Floating Comfort (for me)",
+   "text": "Floating Comfort (for me) I never thought I would ever write about a flight, when tens of millions of people fly to all corners of the planet, but maybe somebody will be interested in a few personal remarks. As we have been flying between USA and Myanmar very frequently, our most obvious choice was China Airlines (Los Angeles to Taipei), then after about three hours and a change of plane,and about five hours later, in the morning of the following day, arrive at the beautiful and Modern Yangon International Airport. How many hours? A total of about 18. Most people arriving in Yangon will visit Bagan as part of a classic tour of Myanmar. In my case I prefer to head straight to Bagan. My personal problem was waiting 5+ hours in the Domestic terminal to catch the last flight of the day that arrives in Bagan, after stopping first at Heho to drop off people who head for the famous Inle Lake, then stopping in Bagan, and finally returning to Yangon. When you travel yearly you don't pay attention very much to legroom, seat comfort, In-flight Entertainment (except following the flight map), but Customer Service ,and Value for Money are very important for us. The flight attendants are very polite, very well trained, and speak excellent English. They hardly seem to take a rest, so many hours standing, preparing the food tray, offering refreshments, picking up blanket or head-pillows that somehow ended up on the aisle floor, passing out immigration forms, to mention some of their duties. Very likely the first class passengers experience more comfort, both physical... and culinary, but their deep pockets don't seem to protest... You will probably ask me: Why always China Airlines through Taipei? Because right now it's the most convenient. Yes, you can fly into Yangon using the services of other airlines.What I see on the tarmac when I arrive or fly back to the US, are planes belonging China eastern, China Southern, Malaysia Airlines, and Singapore Airline. They all approach Yangon from their respective countries.",
+   "author": "Koko D4d32",
+   "authorCountry": null,
+   "authorLocation": "Los Angeles",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Los Angeles - Taipei",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  },
+  {
+   "source": "tripadvisor",
+   "id": "ta-496688408",
+   "date": "2017-06-27",
+   "rating10": 6,
+   "title": "First experience",
+   "text": "Departure from Terminal 1. Paid for slight overweight. Got official invoice for both ticket and overweight at the airport. Standard service for short domestic flight. Two times drink, warm food. Nothing special. Stewardess' were very nice. Arrival before scheduled time. I can recommend that.",
+   "author": "Ondrej K.",
+   "authorCountry": null,
+   "authorLocation": "Yichang",
+   "cabin": "Economy",
+   "typeTraveller": null,
+   "route": "Beijing - Yichang",
+   "aircraft": null,
+   "recommended": null,
+   "subratings": null
+  }
+ ]
+}

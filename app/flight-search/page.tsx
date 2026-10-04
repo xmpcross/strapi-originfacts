@@ -141,7 +141,7 @@ export default async function FlightsPage({
 })();`}
       </Script>
 
-      <div data-testid="fly-page" className="font-inter-scope">
+      <div data-testid="fly-page">
         <div className="bg-[#f0f3f5]">
           <div className="fs-search-band mx-auto max-w-7xl px-6 pb-14 pt-16">
             <header className="max-w-3xl" data-testid="flight-search-hero">

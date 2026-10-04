@@ -91,27 +91,56 @@ export function ratingBands(reviews: AirlineReview[]): { star: number; count: nu
 }
 
 /**
- * Frequency of a free-text facet (cabin, route) across the stored reviews.
+ * Frequency of a free-text facet (cabin, route) across the stored reviews, with
+ * the mean score of the reviews carrying it.
+ *
  * These chips are counted from the reviews themselves — nothing here is
- * inferred, summarised or otherwise asserted on the reviewers' behalf.
+ * inferred, summarised or otherwise asserted on the reviewers' behalf. `avg` is
+ * the arithmetic mean of the 0–10 ratings on those same reviews, so a chip
+ * shown as well- or poorly-rated reports their scores rather than reading their
+ * prose. It is null when no review in the group carried a rating.
  */
 export function facetCounts(
   reviews: AirlineReview[],
   key: 'cabin' | 'route',
   limit: number
-): { label: string; count: number }[] {
-  const counts = new Map<string, number>();
+): { label: string; count: number; avg: number | null }[] {
+  const groups = new Map<string, { count: number; rated: number[] }>();
 
   for (const review of reviews) {
     const value = review[key];
     if (!value) continue;
-    counts.set(value, (counts.get(value) ?? 0) + 1);
+    const group = groups.get(value) ?? { count: 0, rated: [] };
+    group.count += 1;
+    if (review.rating10 !== null) group.rated.push(review.rating10);
+    groups.set(value, group);
   }
 
-  return [...counts.entries()]
-    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+  return [...groups.entries()]
+    .sort((a, b) => b[1].count - a[1].count || a[0].localeCompare(b[0]))
     .slice(0, limit)
-    .map(([label, count]) => ({ label, count }));
+    .map(([label, { count, rated }]) => ({
+      label,
+      count,
+      avg: rated.length
+        ? Math.round((rated.reduce((sum, n) => sum + n, 0) / rated.length) * 10) / 10
+        : null,
+    }));
+}
+
+/**
+ * How a facet chip should read: well-rated, poorly-rated, or neither.
+ *
+ * The thresholds sit wide apart deliberately — a group whose mean lands in the
+ * middle gets no verdict rather than a borderline one, and a group too small to
+ * mean anything is left neutral instead of being labelled off one or two
+ * scores.
+ */
+export function facetTone(facet: { count: number; avg: number | null }): 'positive' | 'negative' | 'neutral' {
+  if (facet.avg === null || facet.count < 3) return 'neutral';
+  if (facet.avg >= 7) return 'positive';
+  if (facet.avg <= 4) return 'negative';
+  return 'neutral';
 }
 
 /**

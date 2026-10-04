@@ -1,16 +1,13 @@
 'use client';
 
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { mediaUrl, type StrapiAirline, type AirlineRegion, type AirlineType } from '@/lib/strapi';
+import { useEffect, useMemo, useState } from 'react';
+import { mediaUrl, type AirlineRegion, type AirlineType } from '@/lib/strapi';
+import { DIRECTORY_REGIONS, type DirectoryAirline } from '@/lib/airline-directory';
+import { CheckIcon, IataBadge } from '@/components/FeaturedAirlineGuides';
 
-const REGION_ORDER: AirlineRegion[] = ['Africa', 'Asia', 'Europe', 'North America', 'Oceania', 'South America'];
-const TYPE_OPTIONS: AirlineType[] = ['Scheduled', 'Low-cost', 'Regional', 'Charter', 'Cargo'];
-
-// Short, factual intros shown above each region's airline list. Three sentences
-// each — geography, market shape, notable carriers — kept editorial rather than
-// promotional.
+// Short, factual intros shown above each region's airline list when the
+// directory is grouped by region.
 const REGION_INTROS: Record<AirlineRegion, string> = {
   Africa:
     'African aviation is dominated by long-established flag carriers — Ethiopian, Kenya Airways, EgyptAir, South African Airways — alongside a rising cohort of low-cost operators like FlySafair and Air Peace. Intra-continental connectivity has historically been routed via Addis Ababa, Johannesburg or Casablanca, though direct mid-haul links are slowly multiplying. Open Skies agreements under SAATM aim to liberalise the network further over the coming years.',
@@ -25,137 +22,170 @@ const REGION_INTROS: Record<AirlineRegion, string> = {
   'South America':
     'South American aviation is led by LATAM (formed from LAN Chile and TAM merger), Avianca, Copa, Gol and Azul, with Aerolíneas Argentinas operating the largest domestic Argentine network. Bogotá, Panama City, Lima, São Paulo and Santiago are the main intercontinental gateways. Low-cost carriers JetSMART, Sky Airline and Flybondi expanded rapidly through the late 2010s, though dollarisation pressures and currency volatility shape pricing across the continent.',
 };
-const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-const PER_REGION_LIMIT = 9;
-const POPULAR_LIMIT = 20;
-const POPULAR_SLIDE_MS = 2200;
 
-// Curated list of well-known international carriers, ordered by global
-// recognition. Matched against airline.iataCode case-insensitively — entries
-// not in the dataset are silently skipped.
-const POPULAR_IATA = [
-  'QF', 'JQ', 'VA', 'TR', 'AA', 'EK', 'UA', 'SQ', 'BA', 'AF',
-  'LH', 'KL', 'CX', 'QR', 'EY', 'TK', 'NH', 'JL', 'AC', 'DL',
-  'NZ', 'EI', 'IB', 'AY', 'OS', 'LX',
-];
+const LETTERS = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''), '#'];
+const OTHER_REGION = 'Other';
+type GroupBy = 'az' | 'region';
 
-function firstLetterBucket(name: string): string {
-  const first = (name ?? '').trim().charAt(0).toUpperCase();
+function fold(s: string): string {
+  return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+}
+
+function letterOf(name: string): string {
+  const first = fold(name.trim()).charAt(0).toUpperCase();
   return /[A-Z]/.test(first) ? first : '#';
 }
 
+function slugify(s: string): string {
+  return s.replace(/\s+/g, '-').toLowerCase();
+}
+
+function letterId(l: string): string {
+  return `letter-${l === '#' ? 'num' : l.toLowerCase()}`;
+}
+
+type Group = { key: string; id: string; title: string; airlines: DirectoryAirline[] };
+
+/**
+ * The searchable airline list on /airlines. Renders every listed airline on
+ * the server (no useSearchParams, so the page never bails out to client-only
+ * rendering and crawlers get every /airlines/<slug> link), then filters in
+ * place once hydrated.
+ */
 export default function AirlineDirectory({
   airlines,
   publishedSlugs = [],
   ceasedSlugs = [],
 }: {
-  airlines: StrapiAirline[];
+  airlines: DirectoryAirline[];
   publishedSlugs?: string[];
   /** Carriers that have stopped flying — shown with a "Ceased operations" label. */
   ceasedSlugs?: string[];
 }) {
-  const searchParams = useSearchParams();
-  const initialCountry = searchParams.get('country')?.trim() ?? '';
-  const [query, setQuery] = useState(initialCountry);
-  const [activeType, setActiveType] = useState<AirlineType | null>(null);
-  const [activeRegion, setActiveRegion] = useState<AirlineRegion | null>(null);
-  const [activeLetter, setActiveLetter] = useState<string | null>(null);
-  const [onlyVerified, setOnlyVerified] = useState<boolean>(false);
-  const [expandedRegions, setExpandedRegions] = useState<Set<AirlineRegion>>(new Set());
+  const [query, setQuery] = useState('');
+  const [region, setRegion] = useState<AirlineRegion | null>(null);
+  const [type, setType] = useState<AirlineType | null>(null);
+  const [verifiedOnly, setVerifiedOnly] = useState(false);
+  const [groupBy, setGroupBy] = useState<GroupBy>('az');
+
+  // Country pages link here as /airlines?country=<name>. Read it after
+  // hydration rather than through useSearchParams, which would make the whole
+  // directory client-rendered.
+  useEffect(() => {
+    const country = new URLSearchParams(window.location.search).get('country')?.trim();
+    if (country) setQuery(country);
+  }, []);
 
   const publishedSet = useMemo(() => new Set(publishedSlugs), [publishedSlugs]);
   const ceasedSet = useMemo(() => new Set(ceasedSlugs), [ceasedSlugs]);
 
-  const toggleRegion = (r: AirlineRegion) =>
-    setExpandedRegions((prev) => {
-      const next = new Set(prev);
-      if (next.has(r)) next.delete(r); else next.add(r);
-      return next;
-    });
+  const indexed = useMemo(
+    () =>
+      airlines
+        .map((a) => ({
+          airline: a,
+          letter: letterOf(a.name),
+          hay: fold([a.name, a.iataCode, a.country, a.city].filter(Boolean).join(' ')),
+        }))
+        .sort((x, y) => x.airline.name.localeCompare(y.airline.name, 'en', { sensitivity: 'base' })),
+    [airlines],
+  );
 
-  const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    return airlines.filter((a) => {
-      if (onlyVerified && !publishedSet.has(a.slug)) return false;
-      if (activeType && a.type !== activeType) return false;
-      if (activeRegion && a.region !== activeRegion) return false;
-      if (activeLetter && firstLetterBucket(a.name) !== activeLetter) return false;
-      if (!q) return true;
-      const hay = [a.name, a.iataCode, a.icaoCode, a.country, a.city, a.legalName]
-        .filter(Boolean)
-        .join(' ')
-        .toLowerCase();
-      return hay.includes(q);
-    });
-  }, [airlines, query, activeType, activeRegion, activeLetter, onlyVerified, publishedSet]);
-
-  // Which letters actually have airlines in the (base) dataset — used to grey out unused ones.
-  const availableLetters = useMemo(() => {
-    const set = new Set<string>();
-    for (const a of airlines) set.add(firstLetterBucket(a.name));
-    return set;
+  const typeOptions = useMemo(() => {
+    const seen = new Set<AirlineType>();
+    for (const a of airlines) if (a.type) seen.add(a.type);
+    return Array.from(seen).sort();
   }, [airlines]);
 
-  const byRegion = useMemo(() => {
-    const map = new Map<AirlineRegion, StrapiAirline[]>();
-    for (const a of filtered) {
-      const r = (a.region || 'Asia') as AirlineRegion;
-      if (!map.has(r)) map.set(r, []);
-      map.get(r)!.push(a);
+  const regionCounts = useMemo(() => {
+    const m = new Map<string, number>();
+    for (const a of airlines) {
+      const r = a.region ?? OTHER_REGION;
+      m.set(r, (m.get(r) ?? 0) + 1);
     }
-    return map;
-  }, [filtered]);
+    return m;
+  }, [airlines]);
 
-  const countryCount = useMemo(
-    () => new Set(airlines.map((a) => a.country).filter(Boolean)).size,
-    [airlines],
-  );
-  const regionCount = useMemo(
-    () => new Set(airlines.map((a) => a.region).filter(Boolean)).size,
-    [airlines],
+  const q = fold(query.trim());
+  const filtered = useMemo(
+    () =>
+      indexed.filter(({ airline: a, hay }) => {
+        if (verifiedOnly && !publishedSet.has(a.slug)) return false;
+        if (region && a.region !== region) return false;
+        if (type && a.type !== type) return false;
+        return !q || hay.includes(q);
+      }),
+    [indexed, verifiedOnly, publishedSet, region, type, q],
   );
 
-  const orderedRegions = REGION_ORDER.filter((r) => byRegion.has(r));
+  const groups: Group[] = useMemo(() => {
+    const map = new Map<string, DirectoryAirline[]>();
+    for (const f of filtered) {
+      const k = groupBy === 'az' ? f.letter : f.airline.region ?? OTHER_REGION;
+      if (!map.has(k)) map.set(k, []);
+      map.get(k)!.push(f.airline);
+    }
+    if (groupBy === 'az') {
+      return LETTERS.filter((l) => map.has(l)).map((l) => ({ key: l, id: letterId(l), title: l, airlines: map.get(l)! }));
+    }
+    return [...DIRECTORY_REGIONS, OTHER_REGION]
+      .filter((r) => map.has(r))
+      .map((r) => ({ key: r, id: `region-${slugify(r)}`, title: r, airlines: map.get(r)! }));
+  }, [filtered, groupBy]);
+
+  const hasFilters = Boolean(q) || region !== null || type !== null || verifiedOnly;
+  const clearAll = () => {
+    setQuery('');
+    setRegion(null);
+    setType(null);
+    setVerifiedOnly(false);
+  };
+
+  const groupKeys = new Set(groups.map((g) => g.key));
+  const jumpItems =
+    groupBy === 'az'
+      ? LETTERS.map((l) => ({ key: l, label: l, href: `#${letterId(l)}` }))
+      : [...DIRECTORY_REGIONS, OTHER_REGION]
+          .filter((r) => regionCounts.has(r))
+          .map((r) => ({ key: r, label: r, href: `#region-${slugify(r)}` }));
+
+  const countText = (
+    <>
+      <strong className="font-semibold text-forest-950">{filtered.length.toLocaleString()}</strong> of{' '}
+      {airlines.length.toLocaleString()} airlines
+    </>
+  );
 
   return (
-    <div className="mt-12">
-      {/* Summary cards */}
-      <div className="grid gap-5 sm:grid-cols-3">
-        <SummaryCard
-          label="Airlines Indexed"
-          value={airlines.length.toLocaleString()}
-          blurb="Every commercial carrier with scheduled, low-cost, regional, charter, or cargo service."
-          icon={<PlaneIcon />}
-        />
-        <SummaryCard
-          label="Countries Covered"
-          value={countryCount.toLocaleString()}
-          blurb="Countries of registration represented across the index — flag carriers to single-route startups."
-          icon={<GlobeIcon />}
-        />
-        <SummaryCard
-          label="Global Regions"
-          value={regionCount.toLocaleString()}
-          blurb="Six continental groupings, each with its own dominant carriers and route geography."
-          icon={<CompassIcon />}
-        />
-      </div>
+    <section className="mt-14" aria-labelledby="airline-directory-heading" data-testid="airline-directory">
+      <h2 id="airline-directory-heading" className="text-2xl font-bold leading-tight sm:text-3xl">
+        Browse all airlines
+      </h2>
+      <p className="mt-2 text-sm text-forest-900/70 sm:text-base">
+        Search by airline name, two-letter IATA code, country or city.
+      </p>
 
-      {/* Search + Filters Header */}
-      <div className="mt-10 rounded-2xl border border-forest-900/10 bg-forest-900/[0.02] p-5 sm:p-6">
-        <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-          <div className="relative flex-1">
-            <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4 text-forest-900/40">
-              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+      {/* Search + filters */}
+      <div className="mt-5 rounded-[0.3rem] border border-forest-900/10 bg-paper p-4 sm:p-5">
+        <div className="flex flex-col gap-3 md:flex-row md:items-center">
+          <div className="relative min-w-0 flex-1">
+            <label htmlFor="airline-search" className="sr-only">
+              Search airlines
+            </label>
+            <span className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3.5 text-forest-900/45">
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
-            </div>
+            </span>
             <input
+              id="airline-search"
               type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search by airline name, IATA code (e.g. SQ, QF, AA), or country…"
-              className="w-full rounded-xl border border-forest-900/15 bg-white pl-11 pr-10 py-3 font-sans text-base text-ink placeholder:text-forest-900/40 focus:border-forest-900 focus:outline-none focus:ring-2 focus:ring-forest-800/20 shadow-xs"
+              placeholder="Name, IATA code or country"
+              autoComplete="off"
+              spellCheck={false}
+              className="h-12 w-full rounded-[0.3rem] border border-forest-900/20 bg-white pl-11 pr-11 text-base text-ink shadow-xs placeholder:text-forest-900/45 focus:border-primary-emphasis focus:outline-none focus:ring-2 focus:ring-primary-emphasis/25 [&::-webkit-search-cancel-button]:hidden"
               data-testid="airline-search"
             />
             {query && (
@@ -163,423 +193,282 @@ export default function AirlineDirectory({
                 type="button"
                 onClick={() => setQuery('')}
                 aria-label="Clear search"
-                className="absolute inset-y-0 right-0 flex items-center pr-3 text-xs text-forest-900/40 hover:text-forest-900"
+                className="absolute inset-y-0 right-0 flex w-11 items-center justify-center text-forest-900/50 hover:text-forest-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-emphasis"
               >
-                ✕
+                <svg className="h-4 w-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden>
+                  <path d="M4 4l8 8M12 4l-8 8" strokeLinecap="round" />
+                </svg>
               </button>
             )}
           </div>
 
-          <div className="flex items-center gap-2 text-xs font-semibold text-forest-900/70">
-            <span className="rounded-lg bg-white px-3 py-2 border border-forest-900/10 shadow-2xs">
-              Showing <strong className="text-forest-900">{filtered.length}</strong> of {airlines.length} carriers
+          <div className="flex items-center gap-3">
+            <span className="text-xs font-bold uppercase tracking-widest text-forest-900/55" id="group-by-label">
+              Group by
             </span>
+            <div
+              role="radiogroup"
+              aria-labelledby="group-by-label"
+              className="inline-flex rounded-[0.3rem] border border-forest-900/20 bg-white p-0.5"
+            >
+              {(
+                [
+                  ['az', 'A–Z'],
+                  ['region', 'Region'],
+                ] as const
+              ).map(([value, label]) => (
+                <button
+                  key={value}
+                  type="button"
+                  role="radio"
+                  aria-checked={groupBy === value}
+                  onClick={() => setGroupBy(value)}
+                  className={`h-10 rounded-[0.2rem] px-4 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-primary-emphasis ${
+                    groupBy === value ? 'bg-forest-950 text-white' : 'text-forest-900/75 hover:bg-forest-900/5'
+                  }`}
+                  data-testid={`airline-group-${value}`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Filter Chips */}
-        <div className="mt-5 flex flex-wrap items-center gap-2 border-t border-forest-900/10 pt-4">
-          <span className="text-xs uppercase tracking-widest font-bold text-forest-900/50 mr-1">Filter:</span>
-          <FilterChip
-            label="Verified Guides Only"
-            active={onlyVerified}
-            onClick={() => setOnlyVerified(!onlyVerified)}
-          />
-          <FilterChip
-            label="All Types"
-            active={activeType === null}
-            onClick={() => setActiveType(null)}
-          />
-          {TYPE_OPTIONS.map((t) => (
-            <FilterChip
-              key={t}
-              label={t}
-              active={activeType === t}
-              onClick={() => setActiveType(activeType === t ? null : t)}
-            />
-          ))}
-        </div>
-
-        {/* Region Filter Chips */}
-        <div className="mt-3 flex flex-wrap items-center gap-2">
-          <span className="text-xs uppercase tracking-widest font-bold text-forest-900/50 mr-1">Region:</span>
-          <FilterChip
-            label="All Regions"
-            active={activeRegion === null}
-            onClick={() => setActiveRegion(null)}
-          />
-          {REGION_ORDER.map((r) => (
-            <FilterChip
-              key={r}
-              label={r}
-              active={activeRegion === r}
-              onClick={() => setActiveRegion(activeRegion === r ? null : r)}
-            />
-          ))}
-        </div>
-
-        {/* A-Z letter filter */}
-        <div className="mt-4 flex flex-wrap items-center gap-1 border-t border-forest-900/10 pt-3">
-          <span className="mr-2 text-xs uppercase tracking-widest font-bold text-forest-900/50">Alphabet:</span>
-          <LetterChip
-            label="All"
-            active={activeLetter === null}
-            onClick={() => setActiveLetter(null)}
-          />
-          {LETTERS.map((L) => (
-            <LetterChip
-              key={L}
-              label={L}
-              active={activeLetter === L}
-              disabled={!availableLetters.has(L)}
-              onClick={() => setActiveLetter(activeLetter === L ? null : L)}
-            />
-          ))}
-          {availableLetters.has('#') && (
-            <LetterChip
-              label="#"
-              active={activeLetter === '#'}
-              onClick={() => setActiveLetter(activeLetter === '#' ? null : '#')}
-            />
-          )}
-        </div>
-      </div>
-
-      {/* Results */}
-      <div className="mt-10 grid gap-12 lg:grid-cols-[180px,1fr]">
-        {/* Sticky region nav (desktop) */}
-        <nav className="hidden lg:block">
-          <div className="sticky top-24 space-y-1">
-            <p className="mb-3 text-xs uppercase tracking-widest text-forest-900/50">Jump to</p>
-            {orderedRegions.map((r) => (
-              <a
+        <div className="mt-4 space-y-3 border-t border-forest-900/10 pt-4">
+          <ChipRow label="Region">
+            <Chip active={region === null} onClick={() => setRegion(null)}>
+              All
+            </Chip>
+            {DIRECTORY_REGIONS.filter((r) => regionCounts.has(r)).map((r) => (
+              <Chip
                 key={r}
-                href={`#region-${r.replace(/\s+/g, '-').toLowerCase()}`}
-                className="block rounded-[0.3rem] px-3 py-2 text-sm text-forest-900/80 transition hover:bg-forest-900/5 hover:text-forest-900"
+                active={region === r}
+                onClick={() => setRegion(region === r ? null : r)}
+                testId={`airline-region-filter-${slugify(r)}`}
               >
                 {r}
-                <span className="ml-2 text-xs text-forest-900/40">{byRegion.get(r)?.length ?? 0}</span>
-              </a>
+                <span className={region === r ? 'text-white/70' : 'text-forest-900/50'}>{regionCounts.get(r)}</span>
+              </Chip>
             ))}
-          </div>
-        </nav>
-
-        <div className="min-w-0">
-          {filtered.length === 0 ? (
-            <p className="mt-10 text-center text-forest-900/60" data-testid="airlines-empty">
-              No airlines match that search. Try clearing a filter.
-            </p>
-          ) : (
-            orderedRegions.map((r) => {
-              const regionList = byRegion.get(r)!;
-              const isExpanded = expandedRegions.has(r);
-              const displayed = isExpanded ? regionList : regionList.slice(0, PER_REGION_LIMIT);
-              const overflow = regionList.length - PER_REGION_LIMIT;
-              return (
-                <section
-                  key={r}
-                  id={`region-${r.replace(/\s+/g, '-').toLowerCase()}`}
-                  className="mb-16 scroll-mt-24"
-                  data-testid={`region-${r.replace(/\s+/g, '-').toLowerCase()}`}
-                >
-                  <header className="flex items-baseline justify-between border-b border-forest-900/10 pb-3">
-                    <h2 className="editorial-h text-[1.5rem] font-bold text-forest-900">{r}</h2>
-                    <span className="text-sm font-light text-forest-900/50">
-                      {regionList.length} airline{regionList.length === 1 ? '' : 's'}
-                      {overflow > 0 && !isExpanded && (
-                        <span className="ml-2 text-forest-900/40">· showing {PER_REGION_LIMIT}</span>
-                      )}
-                    </span>
-                  </header>
-                  {REGION_INTROS[r] && (
-                    <p className="mt-4 w-full text-sm text-forest-900/70" data-testid={`airline-region-intro-${r.replace(/\s+/g, '-').toLowerCase()}`}>
-                      {REGION_INTROS[r]}
-                    </p>
-                  )}
-                  <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                    {displayed.map((a) => (
-                      <AirlineCard key={a.id} airline={a} isVerified={publishedSet.has(a.slug)} hasCeased={ceasedSet.has(a.slug)} />
-                    ))}
-                  </div>
-                  {overflow > 0 && (
-                    <div className="mt-6">
-                      <button
-                        type="button"
-                        onClick={() => toggleRegion(r)}
-                        aria-expanded={isExpanded}
-                        className="text-sm font-medium text-forest-700 underline hover:no-underline"
-                        data-testid={`region-toggle-${r.replace(/\s+/g, '-').toLowerCase()}`}
-                      >
-                        {isExpanded
-                          ? `Show less ↑`
-                          : `View all ${regionList.length} airlines in ${r} →`}
-                      </button>
-                    </div>
-                  )}
-                </section>
-              );
-            })
-          )}
+          </ChipRow>
+          <ChipRow label="Type">
+            <Chip active={type === null} onClick={() => setType(null)}>
+              All
+            </Chip>
+            {typeOptions.map((t) => (
+              <Chip key={t} active={type === t} onClick={() => setType(type === t ? null : t)}>
+                {t}
+              </Chip>
+            ))}
+            <span className="mx-1 h-5 w-px flex-none bg-forest-900/15" aria-hidden />
+            <Chip active={verifiedOnly} onClick={() => setVerifiedOnly((v) => !v)} testId="airline-verified-filter">
+              <CheckIcon className="h-3.5 w-3.5" />
+              Verified guides
+            </Chip>
+          </ChipRow>
         </div>
       </div>
+
+      {/* Sticky jump navigation + result count. top = height of the fixed site header. */}
+      <div className="sticky top-[75px] z-30 -mx-4 mt-6 border-y border-forest-900/10 bg-white/95 px-4 backdrop-blur sm:mx-0 sm:rounded-[0.3rem] sm:border sm:px-2">
+        <div className="flex items-center gap-3 py-1.5">
+          <nav aria-label={groupBy === 'az' ? 'Jump to letter' : 'Jump to region'} className="min-w-0 flex-1">
+            <ul className="no-scrollbar flex gap-0.5 overflow-x-auto">
+              {jumpItems.map((item) => {
+                const enabled = groupKeys.has(item.key);
+                const size = groupBy === 'az' ? 'w-8' : 'px-2.5';
+                return (
+                  <li key={item.key} className="flex-none">
+                    {enabled ? (
+                      <a
+                        href={item.href}
+                        className={`flex h-8 items-center justify-center whitespace-nowrap rounded-[0.2rem] text-sm font-semibold text-forest-950 transition hover:bg-primary-hover hover:text-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-emphasis ${size}`}
+                        data-testid={groupBy === 'az' ? `letter-${item.key}` : `jump-region-${slugify(item.key)}`}
+                      >
+                        {item.label}
+                      </a>
+                    ) : (
+                      <span
+                        className={`flex h-8 items-center justify-center whitespace-nowrap text-sm font-semibold text-forest-900/25 ${size}`}
+                        aria-hidden
+                      >
+                        {item.label}
+                      </span>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+          <p className="hidden flex-none pr-2 text-sm text-forest-900/65 md:block" aria-live="polite" data-testid="airline-result-count">
+            {countText}
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-4 flex flex-wrap items-center justify-between gap-x-4 gap-y-1 text-sm text-forest-900/70">
+        <p className="md:hidden" aria-live="polite">
+          Showing {countText}
+        </p>
+        {hasFilters && filtered.length > 0 && (
+          <button
+            type="button"
+            onClick={clearAll}
+            className="ml-auto font-semibold text-primary-emphasis underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-emphasis"
+          >
+            Clear filters
+          </button>
+        )}
+      </div>
+
+      {filtered.length === 0 ? (
+        <div className="mt-6 rounded-[0.3rem] border border-dashed border-forest-900/20 px-6 py-12 text-center" data-testid="airlines-empty">
+          <p className="text-base font-semibold text-forest-950">
+            No airlines match {q ? `“${query.trim()}”` : 'these filters'}.
+          </p>
+          <p className="mt-1 text-sm text-forest-900/65">Try the airline&rsquo;s IATA code, its country, or fewer filters.</p>
+          <button
+            type="button"
+            onClick={clearAll}
+            className="mt-5 rounded-[0.3rem] bg-forest-950 px-4 py-2.5 text-sm font-semibold text-white hover:bg-forest-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-emphasis"
+          >
+            Clear all filters
+          </button>
+        </div>
+      ) : (
+        groups.map((g) => (
+          <section
+            key={g.key}
+            id={g.id}
+            className="scroll-mt-[140px] pt-6"
+            aria-labelledby={`${g.id}-heading`}
+            data-testid={g.id}
+          >
+            <header className="flex items-baseline justify-between gap-4 border-b border-forest-900/10 pb-2">
+              <h3 id={`${g.id}-heading`} className="text-2xl font-bold leading-none">
+                {g.title}
+              </h3>
+              <span className="text-sm text-forest-900/55">
+                {g.airlines.length} airline{g.airlines.length === 1 ? '' : 's'}
+              </span>
+            </header>
+            {groupBy === 'region' && REGION_INTROS[g.key as AirlineRegion] && (
+              <p
+                className="mt-3 max-w-4xl text-sm leading-relaxed text-forest-900/70"
+                data-testid={`airline-region-intro-${slugify(g.key)}`}
+              >
+                {REGION_INTROS[g.key as AirlineRegion]}
+              </p>
+            )}
+            <ul className="mt-3 grid gap-2 sm:mt-4 sm:grid-cols-2 sm:gap-2.5 lg:grid-cols-3 xl:grid-cols-4">
+              {g.airlines.map((a) => (
+                <li key={a.slug}>
+                  <AirlineCard airline={a} isVerified={publishedSet.has(a.slug)} hasCeased={ceasedSet.has(a.slug)} />
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))
+      )}
+    </section>
+  );
+}
+
+function ChipRow({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <div className="flex items-center gap-3" role="group" aria-label={label}>
+      <span className="w-14 flex-none text-xs font-bold uppercase tracking-widest text-forest-900/55">{label}</span>
+      <div className="no-scrollbar -my-1 flex min-w-0 flex-1 items-center gap-1.5 overflow-x-auto py-1 sm:flex-wrap sm:overflow-visible">
+        {children}
+      </div>
     </div>
   );
 }
 
-function SummaryCard({
-  label,
-  value,
-  blurb,
-  icon,
+function Chip({
+  active,
+  onClick,
+  children,
+  testId,
 }: {
-  label: string;
-  value: string;
-  blurb: string;
-  icon: React.ReactNode;
+  active: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+  testId?: string;
 }) {
-  return (
-    <div
-      className="flex items-start justify-between gap-4 rounded-[0.3rem] border border-forest-900/10 bg-forest-900/[0.02] p-5"
-      data-testid={`airlines-summary-${label.toLowerCase()}`}
-    >
-      <div className="min-w-0 flex-1">
-        <div className="text-xs uppercase tracking-widest text-forest-900/60">{label}</div>
-        <div className="mt-2 text-3xl font-bold leading-none text-forest-900">{value}</div>
-        <p className="mt-3 text-sm leading-snug text-forest-900/65">{blurb}</p>
-      </div>
-      <div
-        aria-hidden
-        className="flex h-12 w-12 flex-none items-center justify-center text-forest-900/55"
-      >
-        {icon}
-      </div>
-    </div>
-  );
-}
-
-function PlaneIcon() {
-  return (
-    <svg viewBox="0 0 48 48" className="h-10 w-10" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M6 26 L 24 6 L 28 8 L 22 22 L 38 24 L 42 26 L 24 30 L 18 42 L 14 40 L 18 26 L 6 26 Z" />
-      <line x1="14" y1="44" x2="34" y2="44" />
-    </svg>
-  );
-}
-
-function GlobeIcon() {
-  return (
-    <svg viewBox="0 0 48 48" className="h-10 w-10" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="24" cy="24" r="18" />
-      <ellipse cx="24" cy="24" rx="9" ry="18" />
-      <line x1="6" y1="24" x2="42" y2="24" />
-      <path d="M8 14 C 16 18, 32 18, 40 14" />
-      <path d="M8 34 C 16 30, 32 30, 40 34" />
-    </svg>
-  );
-}
-
-function CompassIcon() {
-  return (
-    <svg viewBox="0 0 48 48" className="h-10 w-10" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="24" cy="24" r="18" />
-      <polygon points="24,12 28,24 24,36 20,24" fill="currentColor" stroke="none" opacity="0.85" />
-      <circle cx="24" cy="24" r="1.5" fill="currentColor" />
-    </svg>
-  );
-}
-
-function FilterChip({ label, active, onClick }: { label: string; active: boolean; onClick: () => void }) {
   return (
     <button
       type="button"
       onClick={onClick}
-      className={
-        'rounded-full border px-3 py-1 text-xs font-medium uppercase tracking-wider transition ' +
-        (active
-          ? 'border-forest-900 bg-forest-900 text-sand-100'
-          : 'border-forest-900/20 text-forest-900/80 hover:border-forest-900/40 hover:bg-forest-900/5')
-      }
+      aria-pressed={active}
+      className={`inline-flex h-9 flex-none items-center gap-1.5 whitespace-nowrap rounded-full border px-3.5 text-sm font-medium transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-primary-emphasis ${
+        active
+          ? 'border-forest-950 bg-forest-950 text-white'
+          : 'border-forest-900/20 bg-white text-forest-900/85 hover:border-forest-900/40 hover:bg-forest-900/[0.04]'
+      }`}
+      data-testid={testId}
     >
-      {label}
-    </button>
-  );
-}
-
-function LetterChip({
-  label,
-  active,
-  disabled = false,
-  onClick,
-}: {
-  label: string;
-  active: boolean;
-  disabled?: boolean;
-  onClick: () => void;
-}) {
-  return (
-    <button
-      type="button"
-      onClick={disabled ? undefined : onClick}
-      disabled={disabled}
-      className={
-        'inline-flex h-8 min-w-[2rem] items-center justify-center rounded-[0.3rem] border px-2 text-xs font-bold tracking-wider transition ' +
-        (active
-          ? 'border-forest-900 bg-forest-900 text-sand-100'
-          : disabled
-            ? 'cursor-not-allowed border-forest-900/10 text-forest-900/20'
-            : 'border-forest-900/20 text-forest-900/80 hover:border-forest-900/40 hover:bg-forest-900/5')
-      }
-      data-testid={`letter-${label}`}
-    >
-      {label}
+      {children}
     </button>
   );
 }
 
 function AirlineCard({
   airline,
-  isVerified = false,
-  hasCeased = false,
+  isVerified,
+  hasCeased,
 }: {
-  airline: StrapiAirline;
-  isVerified?: boolean;
-  hasCeased?: boolean;
+  airline: DirectoryAirline;
+  isVerified: boolean;
+  hasCeased: boolean;
 }) {
-  const logo = mediaUrl(airline.logo ?? null);
+  const logo = airline.logo ? mediaUrl({ url: airline.logo }) : null;
+  const meta = [airline.country, airline.type].filter(Boolean).join(' · ');
 
   return (
     <Link
       href={`/airlines/${airline.slug}`}
-      className="group relative flex items-center gap-4 rounded-[0.3rem] border border-forest-900/10 bg-[#f7f8fa] p-4 transition hover:-translate-y-0.5 hover:border-forest-900/30 hover:shadow-sm"
+      className="group flex h-full items-center gap-3 rounded-[0.3rem] border border-forest-900/10 bg-white px-3 py-2.5 transition sm:py-3 hover:border-primary-emphasis/50 hover:bg-primary-hover/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-emphasis"
       data-testid={`airline-card-${airline.slug}`}
     >
-      <div className="flex h-[5.25rem] w-[5.25rem] flex-none items-center justify-center overflow-hidden bg-transparent p-0">
+      <span className="flex h-10 w-14 flex-none items-center justify-center overflow-hidden sm:h-12 sm:w-16">
         {logo ? (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={logo} alt={airline.name} className="h-full w-full object-contain" />
+          <img src={logo} alt="" className="max-h-full max-w-full object-contain" loading="lazy" decoding="async" />
         ) : (
-          <span className="text-sm font-bold text-forest-900/60">
+          <span className="text-sm font-bold text-forest-900/45" aria-hidden>
             {(airline.iataCode || airline.name).slice(0, 3).toUpperCase()}
           </span>
         )}
-      </div>
-      <div className="min-w-0 flex-1">
-        <div className="flex items-center gap-2">
-          <div className="truncate text-base font-bold text-forest-900 group-hover:text-forest-700">
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className="flex items-start justify-between gap-2">
+          <span className="line-clamp-2 text-[15px] font-semibold leading-snug text-forest-950 group-hover:text-primary-emphasis">
             {airline.name}
-          </div>
-          {airline.iataCode && (
-            <span className="flex-none rounded-[0.3rem] bg-forest-900 px-2 py-0.5 text-[10px] font-bold tracking-wider text-sand-100">
-              {airline.iataCode}
-            </span>
-          )}
-        </div>
-        <div className="mt-1 truncate text-xs text-forest-900/60">
-          {[airline.country, airline.city].filter(Boolean).join(' · ')}
-          {airline.type && <span className="ml-2 text-forest-900/40">· {airline.type}</span>}
-        </div>
-        {isVerified && (
-          <div className="mt-2 inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-bold text-emerald-800">
-            <svg className="h-3 w-3 fill-current" viewBox="0 0 16 16"><path d="m3.5 8.2 2.8 2.7 6.2-6" /></svg>
-            Verified Guide
-          </div>
-        )}
-        {hasCeased && (
-          <div
-            className="mt-2 inline-flex items-center rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-bold text-amber-900"
-            data-testid={`airline-ceased-${airline.slug}`}
-          >
-            Ceased operations
-          </div>
-        )}
-      </div>
-    </Link>
-  );
-}
-
-export function PopularAirlinesStrip({ airlines }: { airlines: StrapiAirline[] }) {
-  // Build IATA → airline lookup, then walk POPULAR_IATA in order so the
-  // strip mirrors the curated ranking. Drop carriers we don't have data for.
-  const popular = useMemo(() => {
-    const byIata = new Map<string, StrapiAirline>();
-    for (const a of airlines) {
-      if (a.iataCode) byIata.set(a.iataCode.toUpperCase(), a);
-    }
-    const out: StrapiAirline[] = [];
-    for (const code of POPULAR_IATA) {
-      const a = byIata.get(code);
-      if (a) out.push(a);
-      if (out.length >= POPULAR_LIMIT) break;
-    }
-    return out;
-  }, [airlines]);
-
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [paused, setPaused] = useState(false);
-
-  const step = useCallback(() => {
-    const track = trackRef.current;
-    if (!track) return;
-    const firstItem = track.firstElementChild as HTMLElement | null;
-    if (!firstItem) return;
-    const styles = getComputedStyle(track);
-    const gap = parseFloat(styles.columnGap || styles.gap || '0') || 0;
-    const stride = firstItem.offsetWidth + gap;
-    const maxScroll = track.scrollWidth - track.clientWidth;
-    let next = track.scrollLeft + stride;
-    if (next >= maxScroll - 2) next = 0;
-    track.scrollTo({ left: next, behavior: 'smooth' });
-  }, []);
-
-  useEffect(() => {
-    if (paused || popular.length <= 1) return;
-    const id = window.setInterval(step, POPULAR_SLIDE_MS);
-    return () => window.clearInterval(id);
-  }, [paused, popular.length, step]);
-
-  if (popular.length === 0) return null;
-
-  return (
-    <section className="mt-12" data-testid="popular-airlines">
-      <div
-        ref={trackRef}
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
-        onFocus={() => setPaused(true)}
-        onBlur={() => setPaused(false)}
-        className="mt-5 flex snap-x snap-mandatory gap-[10px] overflow-x-auto scroll-smooth pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-      >
-        {popular.map((a) => (
-          <PopularAirlineCard key={a.id} airline={a} />
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function PopularAirlineCard({ airline }: { airline: StrapiAirline }) {
-  const logo = mediaUrl(airline.logo ?? null);
-  return (
-    <Link
-      href={`/airlines/${airline.slug}`}
-      className="snap-start group flex h-[96px] w-[220px] shrink-0 items-center gap-3 rounded-[4px] border-0 bg-white px-4 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-1px_rgba(0,0,0,0.06)] transition hover:shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-2px_rgba(0,0,0,0.05)]"
-      data-testid={`popular-airline-${airline.slug}`}
-    >
-      <div className="flex h-[4.2rem] w-[4.2rem] flex-none items-center justify-center overflow-hidden rounded-md bg-white">
-        {logo ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img src={logo} alt={airline.name} className="h-full w-full object-contain" />
-        ) : (
-          <span className="text-xs font-bold text-forest-900/60">
-            {(airline.iataCode || airline.name).slice(0, 3).toUpperCase()}
+          </span>
+          {airline.iataCode && <IataBadge code={airline.iataCode} />}
+        </span>
+        {meta && <span className="mt-0.5 block truncate text-xs text-forest-900/60">{meta}</span>}
+        {(isVerified || hasCeased) && (
+          <span className="mt-1.5 flex flex-wrap gap-1">
+            {isVerified && (
+              <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] font-semibold text-emerald-800 ring-1 ring-inset ring-emerald-600/20">
+                <CheckIcon className="h-3 w-3" />
+                Verified guide
+              </span>
+            )}
+            {hasCeased && (
+              <span
+                className="inline-flex items-center rounded-full bg-amber-50 px-2 py-0.5 text-[11px] font-semibold text-amber-900 ring-1 ring-inset ring-amber-600/25"
+                data-testid={`airline-ceased-${airline.slug}`}
+              >
+                Ceased operations
+              </span>
+            )}
           </span>
         )}
-      </div>
-      <div className="min-w-0 flex-1">
-        <p className="line-clamp-2 text-sm font-bold leading-tight text-forest-950 group-hover:text-primary-emphasis">
-          {airline.name}
-        </p>
-      </div>
+      </span>
     </Link>
   );
 }

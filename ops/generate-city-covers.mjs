@@ -21,7 +21,9 @@ loadEnvFile(path.join(ROOT, '.env.local'));
 loadEnvFile('/opt/strapi-cms-git/backend/ai-writer-cli/.env');
 
 const STRAPI_URL = (process.env.STRAPI_URL || process.env.NEXT_PUBLIC_STRAPI_URL || 'https://cms.fxnstudio.com').replace(/\/$/, '');
-const STRAPI_WRITE_TOKEN = process.env.STRAPI_WRITE_TOKEN || process.env.STRAPI_API_TOKEN || '';
+// Uploading media needs the CMS scripts' token (ai-writer-cli/.env); the site's
+// STRAPI_WRITE_TOKEN is refused by /api/upload with a 403.
+const STRAPI_WRITE_TOKEN = process.env.STRAPI_API_TOKEN || process.env.STRAPI_WRITE_TOKEN || '';
 const FAL_KEY = process.env.FAL_KEY || '';
 const OUT_DIR = '/root/originfacts-city-covers';
 const FAL_MODEL = 'fal-ai/flux/dev';

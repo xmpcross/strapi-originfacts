@@ -143,7 +143,7 @@ export default function CityGuidePage({
   heroDescription,
   countryHref,
   routes,
-  airports,
+  airports: cmsAirports,
   articles,
   activityQuery,
   faqBlock,
@@ -160,6 +160,10 @@ export default function CityGuidePage({
   faqBlock: React.ReactNode;
   hasFaqs: boolean;
 }) {
+  // The airport most tracked routes land at leads: the CMS order put Don Mueang
+  // ahead of Suvarnabhumi for Bangkok, though every tracked route flies to BKK.
+  const arrivals = (iata: string) => routes.filter((r) => r.destination?.iata === iata).length;
+  const airports = [...cmsAirports].sort((a, b) => arrivals(b.iata) - arrivals(a.iata));
   const destIata = airports[0]?.iata || routes.find((r) => r.destination?.iata)?.destination?.iata;
   const country = airports.find((airport) => airport.country)?.country || countryNameFromCode(destination.countryCode);
   const flightSearchHref = destIata ? `/flight-search?destination=${encodeURIComponent(destIata)}` : '/flight-search';

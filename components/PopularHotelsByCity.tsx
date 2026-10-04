@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 type HotelScope = (typeof HOTEL_SCOPES)[number]['value'];
 
@@ -147,6 +147,8 @@ export default function PopularHotelsByCity({
   const [retry, setRetry] = useState(0);
   const [cityContext, setCityContext] = useState<GeoResponse | null>(null);
   const responsesByScopeRef = useRef<Partial<Record<HotelScope, HotelResponse>>>({});
+  const inflightRef = useRef<Partial<Record<HotelScope, Promise<HotelResponse | null>>>>({});
+  const sectionRef = useRef<HTMLElement>(null);
   const hasFixedCity = Boolean(city?.trim());
   const hasCoordinates = typeof lat === 'number' && typeof lng === 'number';
 
@@ -174,67 +176,112 @@ export default function PopularHotelsByCity({
     };
   }, [city, country, hasFixedCity]);
 
+  /*
+   * Fetch one tab: memory, then localStorage, then the API. A tab already being
+   * fetched (by the background preload, a hover or a click) shares that request.
+   * Only answers that had hotels are remembered, so a tab that came back empty
+   * (DataForSEO error, or the site mid-restart) retries when it is clicked again.
+   */
+  const fetchScope = useCallback(
+    (target: HotelScope): Promise<HotelResponse | null> => {
+      if (!cityContext?.name || !hasCoordinates) return Promise.resolve(null);
+      const remembered = responsesByScopeRef.current[target];
+      if (remembered?.hotels?.length) return Promise.resolve(remembered);
+      const pending = inflightRef.current[target];
+      if (pending) return pending;
+
+      const cityName = cityContext.name || 'New York';
+      const countryName = cityContext.country || 'United States';
+      const browserCacheKey = hotelBrowserCacheKey({ city: cityName, country: countryName, scope: target, lat: lat!, lng: lng! });
+      const stored = readHotelBrowserCache(browserCacheKey);
+      if (stored) {
+        const value = { city: cityName, country: countryName, ...stored };
+        responsesByScopeRef.current[target] = value;
+        return Promise.resolve(value);
+      }
+
+      const params = new URLSearchParams({
+        city: cityName,
+        country: countryName,
+        scope: target,
+        limit: '6',
+        currency: 'USD',
+        lat: String(lat),
+        lng: String(lng),
+      });
+      const request = fetch(`/api/dataforseo-hotels?${params.toString()}`)
+        .then((res) => res.json() as Promise<HotelResponse>)
+        .then((hotelData) => {
+          const value = { city: cityName, country: countryName, ...hotelData };
+          if (value.hotels?.length) {
+            responsesByScopeRef.current[target] = value;
+            writeHotelBrowserCache(browserCacheKey, value);
+          }
+          return value;
+        })
+        .catch((): HotelResponse => ({ city: 'your city', hotels: [] }))
+        .finally(() => {
+          delete inflightRef.current[target];
+        });
+      inflightRef.current[target] = request;
+      return request;
+    },
+    [cityContext, hasCoordinates, lat, lng],
+  );
+
+  // The selected tab.
   useEffect(() => {
     if (!cityContext?.name || !hasCoordinates) return;
-
     let active = true;
-    const resolvedCityContext = cityContext;
-
-    async function load() {
-      // Only answers that had hotels are remembered, so a tab that came back empty
-      // (DataForSEO error, or the site mid-restart during a deploy) retries when
-      // it is clicked again instead of staying empty for the whole visit.
-      const cachedResponse = responsesByScopeRef.current[scope];
-      if (cachedResponse?.hotels?.length) {
-        setData(cachedResponse);
-        setLoading(false);
-        return;
-      }
-
-      const city = resolvedCityContext.name || 'New York';
-      const country = resolvedCityContext.country || 'United States';
-      const browserCacheKey = hotelBrowserCacheKey({ city, country, scope, lat: lat!, lng: lng! });
-      const browserCachedResponse = readHotelBrowserCache(browserCacheKey);
-      if (browserCachedResponse) {
-        responsesByScopeRef.current = { ...responsesByScopeRef.current, [scope]: browserCachedResponse };
-        setData({ city, country, ...browserCachedResponse });
-        setLoading(false);
-        return;
-      }
-
-      setLoading(true);
-      try {
-        const params = new URLSearchParams({
-          city,
-          country,
-          scope,
-          limit: '6',
-          currency: 'USD',
-          lat: String(lat),
-          lng: String(lng),
-        });
-        const hotelRes = await fetch(`/api/dataforseo-hotels?${params.toString()}`);
-        const hotelData = (await hotelRes.json()) as HotelResponse;
-        if (active) {
-          const nextData = { city, country, ...hotelData };
-          setData(nextData);
-          if (nextData.hotels?.length) {
-            responsesByScopeRef.current = { ...responsesByScopeRef.current, [scope]: nextData };
-            writeHotelBrowserCache(browserCacheKey, nextData);
-          }
-        }
-      } catch {
-        if (active) setData({ city: 'your city', hotels: [] });
-      } finally {
-        if (active) setLoading(false);
-      }
+    const remembered = responsesByScopeRef.current[scope];
+    if (remembered?.hotels?.length) {
+      setData(remembered);
+      setLoading(false);
+      return;
     }
-
-    load();
+    setLoading(true);
+    fetchScope(scope).then((value) => {
+      if (!active) return;
+      setData(value ?? { city: 'your city', hotels: [] });
+      setLoading(false);
+    });
     return () => {
       active = false;
     };
-  }, [cityContext, scope, retry, hasCoordinates, lat, lng]);
+  }, [cityContext, scope, retry, hasCoordinates, fetchScope]);
+
+  // Preload the other tabs once the section is near the screen, three at a time.
+  // A tab that is not stored on the server takes several seconds (a live
+  // DataForSEO search), so by the time a visitor clicks CBD or Airport it is
+  // usually ready. Visitors who never scroll this far trigger no searches.
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el || !cityContext?.name || !hasCoordinates || typeof IntersectionObserver === 'undefined') return;
+    let cancelled = false;
+    const preload = () => {
+      const queue = HOTEL_SCOPES.map((item) => item.value).filter(
+        (value) => !responsesByScopeRef.current[value]?.hotels?.length,
+      );
+      const worker = async () => {
+        while (!cancelled && queue.length) await fetchScope(queue.shift()!);
+      };
+      void Promise.all([worker(), worker(), worker()]);
+    };
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          observer.disconnect();
+          preload();
+        }
+      },
+      { rootMargin: '600px 0px' },
+    );
+    observer.observe(el);
+    return () => {
+      cancelled = true;
+      observer.disconnect();
+    };
+  }, [cityContext, hasCoordinates, fetchScope]);
 
   // No coordinates means the search can't be pinned to this city: show nothing
   // rather than hotels from somewhere else.
@@ -246,6 +293,7 @@ export default function PopularHotelsByCity({
 
   return (
     <section
+      ref={sectionRef}
       id="hotels"
       className="mt-20 border-0 p-0 shadow-none scroll-mt-28"
       data-testid="popular-hotels-by-city"
@@ -291,6 +339,10 @@ export default function PopularHotelsByCity({
                   if (item.value === scope) setRetry((n) => n + 1);
                   setScope(item.value);
                 }}
+                // Start fetching on intent, before the click lands.
+                onMouseEnter={() => void fetchScope(item.value)}
+                onFocus={() => void fetchScope(item.value)}
+                onTouchStart={() => void fetchScope(item.value)}
                 className={`shrink-0 rounded-full px-4 py-2 text-[11px] font-bold uppercase tracking-wider transition ${
                   scope === item.value
                     ? 'bg-forest-950 text-white shadow-sm'

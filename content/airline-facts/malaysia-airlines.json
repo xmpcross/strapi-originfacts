@@ -73,6 +73,39 @@
       }
     },
     {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "lede": "Counter check-in times vary by departure airport; Malaysia Airlines lists them for Kuala Lumpur, international and domestic airports.",
+      "required": [
+        "online_checkin",
+        "bag_drop_cutoff",
+        "gate_close"
+      ],
+      "fields": {
+        "online_checkin": {
+          "value": "Web and mobile check-in open 48 hours and close 90 minutes before departure.",
+          "status": "official",
+          "source_url": "https://www.malaysiaairlines.com/my/en/plan-your-trip/check-in.html",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        },
+        "bag_drop_cutoff": {
+          "value": "Drop off checked baggage at the baggage drop counter at least 60 minutes before departure.",
+          "status": "official",
+          "source_url": "https://www.malaysiaairlines.com/my/en/plan-your-trip/check-in.html",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        },
+        "gate_close": {
+          "value": "The boarding gate closes 30 minutes before departure.",
+          "status": "official",
+          "source_url": "https://www.malaysiaairlines.com/my/en/plan-your-trip/check-in.html",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
       "id": "contact",
       "title": "Contact and customer support",
       "required": [

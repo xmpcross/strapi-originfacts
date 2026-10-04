@@ -5,70 +5,82 @@
     {
       "id": "carryon",
       "title": "Carry-on",
+      "lede": "What fits in the cabin depends on the ticket type; Economy Superlight includes only a small bag.",
       "required": [
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "personal_item",
+        "carryon_weight"
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
+          "value": "Carry-on bag up to 55 x 40 x 23 cm (21.7 x 15.7 x 9.1 in).",
+          "status": "official",
           "source_url": "https://www.finnair.com/fi-en/baggage-on-finnair-flights/carry-on-baggage",
-          "notes": "Finnair cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
+        "personal_item": {
+          "value": "Small bag up to 40 x 30 x 15 cm (15.7 x 11.8 x 5.9 in).",
+          "status": "official",
           "source_url": "https://www.finnair.com/fi-en/baggage-on-finnair-flights/carry-on-baggage",
-          "notes": "Finnair Economy Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
+        "carryon_weight": {
+          "value": "Maximum combined weight of carry-on bag and small bag: 8 kg or 12 kg (17.6 / 26.5 lb) depending on ticket type; the 12 kg limit is listed for Business.",
+          "status": "official",
           "source_url": "https://www.finnair.com/fi-en/baggage-on-finnair-flights/carry-on-baggage",
-          "notes": "Finnair Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source",
+          "notes": "The page gives the limit as '8/12 kg' and lists 12 kg against Business Flex."
+        },
+        "superlight": {
+          "value": "Economy Superlight does not include a carry-on bag; it can be bought as an extra. Finnair Plus Silver, Gold, Platinum and Platinum Lumo members get one complimentary carry-on bag on European flights with a Superlight ticket.",
+          "status": "official",
+          "source_url": "https://www.finnair.com/fi-en/baggage-on-finnair-flights/carry-on-baggage",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "baggage",
       "title": "Checked baggage",
+      "lede": "Allowances vary by ticket type and route. Light and Superlight tickets include no checked bag.",
       "required": [
         "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "piece_weight_premium_economy",
+        "piece_weight_business"
       ],
       "fields": {
         "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
+          "value": "Economy Classic and Flex: 1 piece of 23 kg on most routes; 2 pieces of 23 kg each between Japan and Europe. Economy Light and Superlight: 0 checked bags.",
+          "status": "official",
           "source_url": "https://www.finnair.com/fi-en/baggage-on-finnair-flights/checked-baggage",
-          "notes": "Finnair Economy Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source",
+          "notes": "Allowance for Japan flights depends on the departure/destination country and ticket options."
+        },
+        "piece_weight_premium_economy": {
+          "value": "Premium Economy Classic and Flex: 2 pieces of 23 kg each between Japan or North America and Europe; 1 piece of 23 kg to/from Asia and the Middle East. Premium Economy Light: 0 checked bags.",
+          "status": "official",
+          "source_url": "https://www.finnair.com/fi-en/baggage-on-finnair-flights/checked-baggage",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         },
         "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
+          "value": "Business Classic and Flex: 3 pieces of 32 kg each between Japan and Europe; 2 pieces of 32 kg each to/from Asia, the Middle East and North America; 1 piece of 23 kg on other routes. Business Light: 0 checked bags.",
+          "status": "official",
           "source_url": "https://www.finnair.com/fi-en/baggage-on-finnair-flights/checked-baggage",
-          "notes": "Finnair Business Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
+        "size": {
+          "value": "Each bag up to 90 cm x 75 cm x 45 cm (35 in x 30 in x 18 in). Maximum weight 23 kg (50 lb) in Economy and Premium Economy; in Business, 23 kg on short-haul and 32 kg (70 lb) on long-haul flights.",
+          "status": "official",
           "source_url": "https://www.finnair.com/fi-en/baggage-on-finnair-flights/checked-baggage",
-          "notes": "Finnair First Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         }
       }
     },

@@ -1,91 +1,175 @@
 {
   "slug": "american-airlines",
-  "official_website": "http://www.usairways.com",
+  "official_website": "https://www.aa.com",
   "modules": [
     {
       "id": "carryon",
       "title": "Carry-on",
+      "lede": "You can bring 1 personal item and 1 carry-on bag on board if they meet the size requirements.",
       "required": [
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "personal_item"
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "http://www.usairways.com/baggage",
-          "notes": "American Airlines cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "1 carry-on bag, no larger than 22 x 14 x 9 inches (56 x 36 x 23 cm) including handles and wheels; it must fit in the overhead bin or under the seat in front of you.",
+          "status": "official",
+          "source_url": "https://www.aa.com/i18n/travel-info/baggage/carry-on-baggage.jsp",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "http://www.usairways.com/baggage",
-          "notes": "American Airlines Economy Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "personal_item": {
+          "value": "1 personal item, such as a purse or small handbag, no larger than 18 x 14 x 8 inches (45 x 35 x 20 cm); it must fit under the seat in front of you.",
+          "status": "official",
+          "source_url": "https://www.aa.com/i18n/travel-info/baggage/carry-on-baggage.jsp",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "http://www.usairways.com/baggage",
-          "notes": "American Airlines Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "regional_valet": {
+          "value": "On regional American Eagle flights, a carry-on larger than the personal-item size must be valet-checked at the gate at no charge.",
+          "status": "official",
+          "source_url": "https://www.aa.com/i18n/travel-info/baggage/carry-on-baggage.jsp",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "baggage",
       "title": "Checked baggage",
+      "lede": "Bag fees are charged per person, each direction. Allowances depend on route, cabin and AAdvantage or oneworld status.",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "checked_bag_fees",
+        "size_weight",
+        "premium_cabin_allowance"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "http://www.usairways.com/baggage",
-          "notes": "American Airlines Economy Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "checked_bag_fees": {
+          "value": "Within/between the U.S., Puerto Rico, U.S. Virgin Islands, Canada, Caribbean (except Cuba / Haiti), Mexico, Central America (except Panama) and Guyana: 1st checked bag $50 ($45 if you pay online), 2nd checked bag $60 ($55 if you pay online). Basic Economy pays $5 more for the 1st and 2nd bags.",
+          "status": "official",
+          "source_url": "https://www.aa.com/i18n/travel-info/baggage/checked-baggage-policy.jsp",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source",
+          "notes": "Fees as updated by American on May 18, 2026."
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.usairways.com/baggage",
-          "notes": "American Airlines Business Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "size_weight": {
+          "value": "Each bag up to 62 in / 158 cm (length + width + height) and 50 lbs / 23 kgs. First / Business free bags may weigh up to 70 lbs / 32 kgs. On flights to / from Australia or New Zealand, free bags may weigh up to 70 lbs / 32 kgs.",
+          "status": "official",
+          "source_url": "https://www.aa.com/i18n/travel-info/baggage/checked-baggage-policy.jsp",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.usairways.com/baggage",
-          "notes": "American Airlines First Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "premium_cabin_allowance": {
+          "value": "First 2 checked bags are free for confirmed Domestic First, Business and Premium Economy customers; first 3 are free for confirmed Flagship First and Flagship Business Plus customers.",
+          "status": "official",
+          "source_url": "https://www.aa.com/i18n/travel-info/baggage/checked-baggage-policy.jsp",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        },
+        "free_first_bag_routes": {
+          "value": "The first checked bag is free on trips to destinations including Australia, New Zealand, Japan, China, India and Trans-Atlantic routes; Basic Economy is excluded on several of these.",
+          "status": "official",
+          "source_url": "https://www.aa.com/i18n/travel-info/baggage/checked-baggage-policy.jsp",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "lede": "American's conditions of carriage set out rebooking, refunds and overnight care.",
+      "required": [
+        "rebooking",
+        "refund",
+        "overnight_care"
+      ],
+      "fields": {
+        "rebooking": {
+          "value": "If your flight is cancelled or a delay could cause you to miss your connection, American rebooks you on the next American flight with available seats at no additional cost. If no American flight is available until the next day and the disruption is American's fault, it rebooks you on a partner airline.",
+          "status": "official",
+          "source_url": "https://www.aa.com/i18n/customer-service/support/conditions-of-carriage.jsp",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        },
+        "refund": {
+          "value": "If your flight is cancelled or delayed by 3 or more hours (domestic) / 4 or more hours (international) and you don't accept the alternative arrangements, or none are available, American refunds the remaining ticket value and any optional fees.",
+          "status": "official",
+          "source_url": "https://www.aa.com/i18n/customer-service/support/conditions-of-carriage.jsp",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        },
+        "overnight_care": {
+          "value": "If the disruption is American's fault, or you're diverted, and you don't board before 11:59 p.m. local time on your scheduled arrival day, American arranges an overnight stay or covers an approved hotel when you're away from home. For delays beyond its control, such as weather, you pay for your own hotel and meals.",
+          "status": "official",
+          "source_url": "https://www.aa.com/i18n/customer-service/support/conditions-of-carriage.jsp",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "lede": "Some airports have earlier check-in times (75 or 90 minutes); American lists them on its check-in page.",
+      "required": [
+        "online_checkin",
+        "domestic_cutoff",
+        "international_cutoff"
+      ],
+      "fields": {
+        "online_checkin": {
+          "value": "Online or in the app from 24 hours before departure until 45 minutes before (90 minutes for international flights).",
+          "status": "official",
+          "source_url": "https://www.aa.com/i18n/travel-info/check-in-and-arrival.jsp",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        },
+        "domestic_cutoff": {
+          "value": "Within the U.S.: check in and check bags at least 45 minutes before scheduled departure.",
+          "status": "official",
+          "source_url": "https://www.aa.com/i18n/travel-info/check-in-and-arrival.jsp",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        },
+        "international_cutoff": {
+          "value": "To or from destinations outside the U.S.: at least 60 minutes before scheduled departure.",
+          "status": "official",
+          "source_url": "https://www.aa.com/i18n/travel-info/check-in-and-arrival.jsp",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        },
+        "boarding_close": {
+          "value": "Boarding ends 15 minutes before departure.",
+          "status": "official",
+          "source_url": "https://www.aa.com/i18n/customer-service/support/conditions-of-carriage.jsp",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
+      "lede": "Use American's own pages and phone number for support and your ticket conditions.",
       "required": [
         "phone_home_market"
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800-433-7300",
-          "status": "pending",
-          "source_url": "http://www.usairways.com/baggage",
-          "notes": "American Airlines official customer support line.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "800-433-7300",
+          "status": "official",
+          "source_url": "https://www.aa.com/i18n/customer-service/support/conditions-of-carriage.jsp",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source",
+          "notes": "Listed under 'Call us anytime' in American's conditions of carriage."
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://www.aa.com/i18n/customer-service/support/conditions-of-carriage.jsp",
+          "status": "official",
+          "source_url": "https://www.aa.com/i18n/customer-service/support/conditions-of-carriage.jsp",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         }
       }
     }

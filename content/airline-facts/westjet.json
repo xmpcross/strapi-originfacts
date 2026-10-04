@@ -73,6 +73,53 @@
       }
     },
     {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "lede": "Airport kiosks don't support check-in; they print bag tags and boarding passes only.",
+      "required": [
+        "online_checkin",
+        "domestic_cutoff",
+        "international_cutoff"
+      ],
+      "fields": {
+        "online_checkin": {
+          "value": "Check-in opens 24 hours before departure for most flights.",
+          "status": "official",
+          "source_url": "https://www.westjet.com/en-ca/manage/check-in",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        },
+        "domestic_cutoff": {
+          "value": "Domestic: check-in closes 1 hour (60 minutes) before departure. WestJet recommends arriving 2 hours (120 minutes) before.",
+          "status": "official",
+          "source_url": "https://www.westjet.com/en-ca/manage/check-in",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        },
+        "international_cutoff": {
+          "value": "U.S. & international: check-in closes 1 hour (60 minutes) before departure, or 1 hour 15 minutes (75 minutes) from Calgary, Edmonton, Toronto and Vancouver. Recommended arrival is 2 hours 30 minutes (150 minutes) before.",
+          "status": "official",
+          "source_url": "https://www.westjet.com/en-ca/manage/check-in",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        },
+        "bag_drop": {
+          "value": "Bags are accepted up to 3 hours (180 minutes) before departure at most locations, until the check-in cut-off; WestJet recommends dropping them 1 hour 30 minutes (90 minutes) before.",
+          "status": "official",
+          "source_url": "https://www.westjet.com/en-ca/manage/check-in",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        },
+        "boarding": {
+          "value": "Arrive at the gate 40 minutes before departure; boarding cut-off is 15 minutes before departure.",
+          "status": "official",
+          "source_url": "https://www.westjet.com/en-ca/manage/check-in",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
       "id": "contact",
       "title": "Contact and customer support",
       "required": [

@@ -6,6 +6,7 @@ import { JsonLd } from '@/components/SeoBlocks';
 import { breadcrumbJsonLd } from '@/lib/jsonld';
 import { faqJsonLd } from '@/lib/entity-seo';
 import TpwlLoader from '@/components/TpwlLoader';
+import TpwlHeroContrast from '@/components/TpwlHeroContrast';
 import AirlineResultsFilter from '@/components/AirlineResultsFilter';
 
 export const metadata = {
@@ -125,6 +126,7 @@ export default async function FlightsPage({
           FAQPage schema mirrors that exact Q&A set. */}
       <JsonLd data={faqJsonLd(BOOKING_FAQ)} />
       <TpwlLoader />
+      <TpwlHeroContrast />
 
       {/* TPWL renders the search form and result list in their containers below. */}
 
@@ -141,26 +143,18 @@ export default async function FlightsPage({
       </Script>
 
       <div data-testid="fly-page">
-        <div data-testid="fs-search-section" className="bg-gradient-to-b from-white via-white to-[#edf4ff]">
-          <div className="fs-search-band mx-auto max-w-7xl px-6 pb-16 pt-14 lg:pt-16">
-            <div data-testid="flight-search-hero" className="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_340px]">
-              <header className="max-w-4xl">
-                <h1 className="editorial-h max-w-4xl text-[clamp(2rem,3vw,3rem)] font-bold leading-[1.08] text-forest-900">
-                  Compare cheap flights before you book
-                </h1>
-                <p className="mt-4 text-base text-forest-900/80 max-w-3xl leading-relaxed">
-                  Finding cheap flights requires scanning real-time fare data across major carriers and independent booking channels before selecting your itinerary. Originfacts aggregates live airfares from over 500 airlines, allowing you to instantly compare route options, evaluate flexible date drops, review baggage inclusions, and access verified direct provider links for maximum savings without hidden fees.
-                </p>
-              </header>
-              <aside className="relative hidden h-[168px] overflow-hidden rounded-[18px] bg-forest-900 shadow-lg lg:block" aria-label="Travel inspiration">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/generated/airports/airport-enu-hero.jpg" alt="Traveler overlooking a destination" className="h-full w-full object-cover opacity-80" />
-                <div className="absolute inset-0 bg-gradient-to-r from-forest-950/80 via-forest-950/20 to-transparent" />
-                <p className="absolute bottom-5 left-5 max-w-[220px] text-xl font-bold leading-tight text-white">Find the fare that matches the trip, not just the headline price.</p>
-              </aside>
-            </div>
+        <div
+          data-testid="fs-search-section"
+          className="bg-gradient-to-br from-primary-emphasisPressed via-primary-emphasis to-primary-highlight"
+        >
+          <div className="fs-search-band mx-auto max-w-7xl px-6 pb-14 pt-12 lg:pb-16 lg:pt-16">
+            <header data-testid="flight-search-hero" className="text-center">
+              <h1 className="editorial-h mx-auto max-w-4xl text-[clamp(2rem,3.5vw,3.25rem)] font-bold leading-[1.08] !text-white">
+                Compare flight deals from 100s of sites
+              </h1>
+            </header>
 
-            <div className="tpwl-search-wrap mt-10">
+            <div className="tpwl-search-wrap mt-8 lg:mt-10">
               <div id="tpwl-search" />
             </div>
           </div>
@@ -173,6 +167,8 @@ export default async function FlightsPage({
         </div>
 
         <PopularDestinationsBlock />
+
+        <SearchByDestinationBlock />
 
         {/* ---------- How to find a cheap flight ---------- */}
         <section className="mt-20" data-testid="travel-pros">
@@ -209,8 +205,6 @@ export default async function FlightsPage({
             ))}
           </ol>
         </section>
-
-        <SearchByDestinationBlock />
 
         {/* ---------- Booking flights with Originfacts (FAQ) ---------- */}
         <section className="mt-20" data-testid="booking-faq">

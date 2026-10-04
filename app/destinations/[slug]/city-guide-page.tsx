@@ -160,7 +160,7 @@ function GuideBody({ paragraphs }: { paragraphs: string[] }) {
             ))}
           </ul>
         ) : (
-          <p key={p} className="max-w-[68ch] leading-8 text-forest-900/80">{p}</p>
+          <p key={p} className="leading-8 text-forest-900/80">{p}</p>
         ),
       )}
     </div>

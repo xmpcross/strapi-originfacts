@@ -76,10 +76,8 @@
     font-weight: 700 !important;
   }
 
-  /* Airline Directory & Airline Detail Pages Typography (font inherited from body). */
-
-
-  [data-testid="airlines-page"] h3,
+  /* Airline Detail Pages Typography (font inherited from body). The /airlines
+     directory sizes its own h3s (card titles and A–Z group headings). */
   [data-testid^="airline-page-"] h3 {
     font-size: 1.5rem !important;
   }

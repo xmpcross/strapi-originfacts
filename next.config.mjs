@@ -59,6 +59,14 @@ const nextConfig = {
         destination: '/articles/airport-vs-city-car-rentals-cheaper',
         permanent: true,
       },
+      // Retired 5 Oct 2026 after a fact-check: the "2026 openings" it listed
+      // were fictional, cancelled or already open. Hidden from listings via
+      // HIDDEN_ARTICLE_SLUGS in lib/strapi.ts.
+      {
+        source: '/articles/melbourne-design-hotels-opening-2026',
+        destination: '/destinations/melbourne',
+        permanent: true,
+      },
       // Retired hard-coded author profiles (4 Oct 2026) point at the default
       // CMS author.
       { source: '/authors/elena-rostova', destination: '/authors/k-spellman', permanent: true },

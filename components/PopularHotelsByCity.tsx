@@ -340,6 +340,15 @@ export default function PopularHotelsByCity({
   );
 }
 
+/* Google Hotels photos (via DataForSEO) arrive as 287×192 thumbnails: the size is
+   the `=s287-w287-h192-…` suffix on the googleusercontent URL. Ask Google for a
+   size that fits the card instead; other image hosts are returned unchanged. */
+function sizedHotelImage(url: string, width: number, height: number): string {
+  if (!/^https:\/\/lh\d\.googleusercontent\.com\//.test(url)) return url;
+  const base = url.replace(/=[^/=]*$/, '');
+  return `${base}=w${width}-h${height}-k-no`;
+}
+
 function HotelFeatureCard({ hotel }: { hotel: Hotel }) {
   const price = formatMoney(hotel.price, hotel.currency);
 
@@ -354,7 +363,7 @@ function HotelFeatureCard({ hotel }: { hotel: Hotel }) {
       {hotel.image ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          src={hotel.image}
+          src={sizedHotelImage(hotel.image, 1200, 800)}
           alt={hotel.name}
           className="absolute inset-0 h-full w-full object-cover opacity-85 transition duration-500 group-hover:scale-[1.03]"
           loading="lazy"
@@ -397,7 +406,7 @@ function HotelCompactCard({ hotel, rank }: { hotel: Hotel; rank: number }) {
         {hotel.image ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src={hotel.image}
+            src={sizedHotelImage(hotel.image, 600, 400)}
             alt={hotel.name}
             className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
             loading="lazy"

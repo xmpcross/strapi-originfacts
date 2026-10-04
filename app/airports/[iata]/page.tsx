@@ -4,7 +4,8 @@ import {
   getAirport,
   listAirportSlugIndex,
   listRoutesFromAirport,
-  listAirportsByCountryCode,
+  listAirports,
+  listDestinations,
   mediaUrl,
 } from '@/lib/strapi';
 import type { StrapiAirport } from '@/lib/strapi';
@@ -146,11 +147,10 @@ export default async function AirportPage({ params }: Props) {
   const canonicalPath = airportPath(airport, allAirports);
   if (iata.toLowerCase() !== airportSlug(airport, allAirports)) permanentRedirect(canonicalPath);
 
-  const [routes, sameCountry] = await Promise.all([
+  const [routes, everyAirport, destinations] = await Promise.all([
     listRoutesFromAirport(airport.iata, 15).catch(() => []),
-    airport.countryCode
-      ? listAirportsByCountryCode(airport.countryCode, 30).catch(() => [])
-      : Promise.resolve([]),
+    listAirports().catch(() => []),
+    listDestinations().catch(() => []),
   ]);
   const airportInfo = await getAirportInfoByCode({ iata: airport.iata, icao: airport.icao });
   const weatherLatitude = airport.latitude ?? airportInfo?.latitude;
@@ -163,7 +163,18 @@ export default async function AirportPage({ params }: Props) {
   const summary = summariseRoutes(routes, 'destination');
   const hero = airportHeroImage(airport.iata, mediaUrl(airport.heroImage ?? null));
   const url = `${SITE_URL}${canonicalPath}`;
-  const nearby = sameCountry.filter((a) => a.iata && a.iata !== airport.iata).slice(0, 9);
+  const nearby = nearestAirports(airport, everyAirport, 9);
+  const countryDestination = destinations.find(
+    (d) => d.type === 'country' && d.countryCode && airport.countryCode && d.countryCode.toLowerCase() === airport.countryCode.toLowerCase(),
+  );
+  const cityDestination = airport.city
+    ? destinations.find(
+        (d) =>
+          d.type === 'city' &&
+          d.name.toLowerCase() === airport.city!.toLowerCase() &&
+          (!d.countryCode || !airport.countryCode || d.countryCode.toLowerCase() === airport.countryCode.toLowerCase()),
+      )
+    : undefined;
   const faqs = airportFaqs(airport, summary, {
     icao: airportInfo?.icao,
     city: airportInfo?.city,
@@ -266,13 +277,31 @@ export default async function AirportPage({ params }: Props) {
       <JsonLd
         data={breadcrumbJsonLd([
           { name: 'Airports', url: '/airports' },
-          { name: `${airport.name} (${airport.iata})`, url: airportPath(airport, [airport]) },
+          ...(countryDestination ? [{ name: countryDestination.name, url: `/destinations/${countryDestination.slug}` }] : []),
+          ...(cityDestination ? [{ name: cityDestination.name, url: `/destinations/${cityDestination.slug}` }] : []),
+          { name: `${airport.name} (${airport.iata})`, url: canonicalPath },
         ])}
       />
 
       <div className="mx-auto max-w-7xl px-6 pt-10">
         <nav className="text-xs uppercase tracking-widest text-forest-900/60">
           <Link href="/airports" className="hover:text-forest-900">Airports</Link>
+          {countryDestination && (
+            <>
+              <span className="mx-2 text-forest-900/30">/</span>
+              <Link href={`/destinations/${countryDestination.slug}`} className="hover:text-forest-900">
+                {countryDestination.name}
+              </Link>
+            </>
+          )}
+          {cityDestination && (
+            <>
+              <span className="mx-2 text-forest-900/30">/</span>
+              <Link href={`/destinations/${cityDestination.slug}`} className="hover:text-forest-900">
+                {cityDestination.name}
+              </Link>
+            </>
+          )}
           <span className="mx-2 text-forest-900/30">/</span>
           <span className="text-forest-900/80">{airport.iata}</span>
         </nav>
@@ -281,7 +310,7 @@ export default async function AirportPage({ params }: Props) {
       <header className="relative mx-auto mt-6 max-w-7xl overflow-hidden rounded-[0.3rem] border border-forest-900/10">
         {hero ? (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={hero} alt={airport.name} className="h-[550px] w-full object-cover" />
+          <img src={hero} alt={airport.name} className="h-[550px] w-full object-cover" fetchPriority="high" />
         ) : (
           <div className="h-[300px] w-full bg-gradient-to-br from-forest-950 via-forest-900 to-forest-700 sm:h-[380px]" />
         )}
@@ -836,6 +865,7 @@ export default async function AirportPage({ params }: Props) {
                     </div>
                     <div className="mt-1 line-clamp-2 min-h-[2rem] text-xs leading-5 text-forest-900/60">
                       {a.name}
+                      {a.distanceKm != null && <> · {Math.round(a.distanceKm).toLocaleString('en-US')} km</>}
                     </div>
                   </div>
                 </Link>
@@ -1398,4 +1428,37 @@ function formatWeatherTime(value?: string): string {
   if (!value) return 'Now';
   const match = value.match(/T(\d{2}:\d{2})/);
   return match ? match[1] : value;
+}
+
+type NearbyAirport = StrapiAirport & { distanceKm: number | null };
+
+function distanceKm(aLat: number, aLon: number, bLat: number, bLon: number): number {
+  const rad = Math.PI / 180;
+  const dLat = (bLat - aLat) * rad;
+  const dLon = (bLon - aLon) * rad;
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(aLat * rad) * Math.cos(bLat * rad) * Math.sin(dLon / 2) ** 2;
+  return 2 * 6371 * Math.asin(Math.sqrt(h));
+}
+
+/**
+ * The closest airports by great-circle distance, across borders. Replaces the
+ * first nine airports of the country alphabetically, which every airport in a
+ * country linked to (all 569 US pages linked Aberdeen, Abilene, Adak…), leaving
+ * most airports with no inbound link. Falls back to same-country airports when
+ * this airport has no coordinates.
+ */
+function nearestAirports(airport: StrapiAirport, all: StrapiAirport[], limit: number): NearbyAirport[] {
+  const others = all.filter((a) => a.iata && a.iata !== airport.iata);
+  const { latitude: lat, longitude: lon } = airport;
+  if (typeof lat !== 'number' || typeof lon !== 'number') {
+    return others
+      .filter((a) => a.countryCode && a.countryCode === airport.countryCode)
+      .slice(0, limit)
+      .map((a) => ({ ...a, distanceKm: null }));
+  }
+  return others
+    .filter((a) => typeof a.latitude === 'number' && typeof a.longitude === 'number')
+    .map((a) => ({ ...a, distanceKm: distanceKm(lat, lon, a.latitude!, a.longitude!) }))
+    .sort((a, b) => a.distanceKm! - b.distanceKm!)
+    .slice(0, limit);
 }

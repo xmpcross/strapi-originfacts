@@ -297,7 +297,7 @@ export default async function DestinationPage({ params }: Props) {
       <section className="relative h-[55vh] min-h-[380px] overflow-hidden bg-forest-900">
         {hero && (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={hero} alt={destination.name} className="absolute inset-0 h-full w-full object-cover" />
+          <img src={hero} alt={destination.name} className="absolute inset-0 h-full w-full object-cover" fetchPriority="high" />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-forest-950/90 via-forest-950/30 to-forest-950/10" />
         <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pb-14 text-sand-100">
@@ -421,7 +421,7 @@ function CityDestinationPage({
       <section className="relative min-h-[520px] overflow-hidden bg-forest-950">
         {hero && (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={hero} alt={destination.name} className="absolute inset-0 h-full w-full object-cover" />
+          <img src={hero} alt={destination.name} className="absolute inset-0 h-full w-full object-cover" fetchPriority="high" />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-forest-950 via-forest-950/45 to-forest-950/10" />
         <div className="relative mx-auto flex min-h-[520px] max-w-7xl flex-col justify-end px-6 pb-12 pt-24 text-white">

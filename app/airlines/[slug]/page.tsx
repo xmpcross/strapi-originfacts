@@ -25,8 +25,10 @@ import { getAirlineReviews } from '@/lib/airline-reviews';
 import { getAirlineRef } from '@/lib/airline-refs';
 import AirlineTier1, { derivedFaqs } from '@/components/airline-tier1/AirlineTier1';
 import { breadcrumbJsonLd, absoluteUrl } from '@/lib/jsonld';
-import { buildMetaDescription, programmaticTitle } from '@/lib/seo';
+import { buildMetaDescription, compactTitle, programmaticTitle } from '@/lib/seo';
 import AirlineReviews from '@/components/AirlineReviews';
+import AirlineStatusNotice from '@/components/AirlineStatusNotice';
+import { getCeasedAirline, ceasedOnPhrase } from '@/lib/airline-status';
 import AirlineShowcase from '@/components/AirlineShowcase';
 import AirlineFlightSearch from '@/components/AirlineFlightSearch';
 import AboutParagraphs from '@/components/AboutParagraphs';
@@ -41,18 +43,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const a = await getAirline(slug);
   if (!a) return { title: 'Not found' };
   const routes = await listRoutesByCarrier(slug, 1).catch(() => []);
-  const description = buildMetaDescription([
-    a.shortDescription,
-    a.about,
-    airlineIntro(a).length >= 80 ? airlineIntro(a) : null,
-    `${a.name} airline profile with country, hub, IATA and ICAO codes, routes, baggage context, passenger notes and booking checks for travellers comparing flights.`,
-  ]);
+  // A ceased carrier gets a historical description and title; live carriers
+  // go through the shared builder with a keyword title and logo og:image.
+  const ceased = getCeasedAirline(a.slug);
+  const description = ceased
+    ? buildMetaDescription([
+        `${a.name} ceased operations ${ceasedOnPhrase(ceased.ceasedOn)}. Historical profile with its IATA and ICAO codes, base, and the network it flew.`,
+      ])
+    : buildMetaDescription([
+        a.shortDescription,
+        a.about,
+        airlineIntro(a).length >= 80 ? airlineIntro(a) : null,
+        `${a.name} airline profile with country, hub, IATA and ICAO codes, routes, baggage context, passenger notes and booking checks for travellers comparing flights.`,
+      ]);
   const url = `${SITE_URL}/airlines/${a.slug}`;
   const logo = a.logo && a.logo.url ? a.logo : null;
-  const title = programmaticTitle(
-    a.iataCode ? `${a.name} (${a.iataCode})` : a.name,
-    'Routes, Hubs & Fleet',
-  );
+  const title = ceased
+    ? compactTitle(`${a.name} (ceased operations)`, 60)
+    : programmaticTitle(a.iataCode ? `${a.name} (${a.iataCode})` : a.name, 'Routes, Hubs & Fleet');
   return {
     title,
     description,
@@ -75,8 +83,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: 'summary_large_image',
       images: [logo ? absoluteUrl(mediaUrl(logo)!) : DEFAULT_OG_IMAGE],
     },
+    // A ceased carrier is never indexable, published guide or not.
     robots: robotsFor(
-      airlineGuideIsPublished(a.slug) || (AIRLINES_INDEXABLE && airlineIsIndexable(a, routes.length > 0)),
+      !ceased &&
+        (airlineGuideIsPublished(a.slug) || (AIRLINES_INDEXABLE && airlineIsIndexable(a, routes.length > 0))),
     ),
   };
 }
@@ -94,7 +104,13 @@ export default async function AirlinePage({ params }: Props) {
   const logo = mediaUrl(airline.logo ?? null);
   const summary = summariseRoutes(routes, 'destination');
   const url = `${SITE_URL}/airlines/${airline.slug}`;
-  const intro = airlineIntro(airline, summary);
+  // Sourced cessation date (Wikidata) — see lib/airline-status.ts. When set,
+  // the page says so up front, drops the booking widget and stops describing
+  // the carrier as something to book.
+  const ceased = getCeasedAirline(airline.slug);
+  const intro = ceased
+    ? `${airline.name}${airline.iataCode ? ` (${airline.iataCode})` : ''} ceased operations ${ceasedOnPhrase(ceased.ceasedOn)}. This profile is kept as a historical reference: the codes, base${airline.country ? ` in ${airline.country}` : ''} and network details below describe the carrier as it operated, not a service that can be booked today.`
+    : airlineIntro(airline, summary);
   const relatedAirlines = countryAirlines.filter((c) => c.slug !== airline.slug).slice(0, 6);
 
   // Network stats derived from the tracked route list.
@@ -193,6 +209,7 @@ export default async function AirlinePage({ params }: Props) {
     const tier1Faqs = derivedFaqs(airline, routeFacts, alliance);
     const tier1AirlineLd: Record<string, unknown> = { ...airlineJsonLd(airline, url), '@id': `${url}#airline` };
     if (airline.founded) tier1AirlineLd.foundingDate = String(airline.founded);
+    if (ceased) tier1AirlineLd.dissolutionDate = ceased.ceasedOn;
     if (alliance) tier1AirlineLd.memberOf = { '@type': 'Organization', name: alliance };
 
     return (
@@ -206,6 +223,7 @@ export default async function AirlinePage({ params }: Props) {
             { name: airline.name, url: `/airlines/${airline.slug}` },
           ])}
         />
+        {ceased && <AirlineStatusNotice name={airline.name} ceased={ceased} />}
         <AirlineTier1
           airline={airline}
           routeFacts={routeFacts}
@@ -221,7 +239,7 @@ export default async function AirlinePage({ params }: Props) {
 
   // Redesigned "showcase" layout — currently piloted on Aircalin only. All
   // other airlines keep the original layout below. Content/JSON-LD identical.
-  if (slug === 'aircalin') {
+  if (slug === 'aircalin' && !ceased) {
     return (
       <AirlineShowcase
         airline={airline}
@@ -253,7 +271,7 @@ export default async function AirlinePage({ params }: Props) {
   return (
     <article className="bg-[#fbfcff]" data-testid={`airline-page-${slug}`}>
       <JsonLd data={articleSchema} />
-      <JsonLd data={airlineJsonLd(airline, url)} />
+      <JsonLd data={ceased ? { ...airlineJsonLd(airline, url), dissolutionDate: ceased.ceasedOn } : airlineJsonLd(airline, url)} />
       <JsonLd data={faqJsonLd(faqs)} />
       <JsonLd
         data={breadcrumbJsonLd([
@@ -261,6 +279,7 @@ export default async function AirlinePage({ params }: Props) {
           { name: airline.name, url: `/airlines/${airline.slug}` },
         ])}
       />
+      {ceased && <AirlineStatusNotice name={airline.name} ceased={ceased} />}
       <div className="mx-auto max-w-7xl px-6 pt-8">
         <nav className="border-y border-forest-900/10 py-3 font-urbanist text-xs font-bold uppercase tracking-widest text-forest-900/60">
           <Link href="/airlines" className="hover:text-forest-900">Airlines</Link>
@@ -303,7 +322,7 @@ export default async function AirlinePage({ params }: Props) {
               </div>
 
               <p className="mt-6 max-w-4xl text-base font-normal leading-8 text-forest-900/80">
-                {airline.shortDescription?.trim() && airline.shortDescription.trim().split(/\s+/).length >= 40 && airline.shortDescription.trim().split(/\s+/).length <= 60
+                {!ceased && airline.shortDescription?.trim() && airline.shortDescription.trim().split(/\s+/).length >= 40 && airline.shortDescription.trim().split(/\s+/).length <= 60
                   ? airline.shortDescription.trim()
                   : intro}
               </p>
@@ -357,10 +376,13 @@ export default async function AirlinePage({ params }: Props) {
         </div>
       </header>
 
-      {/* Flight search — full-width, below the hero */}
-      <div className="mx-auto mt-8 w-[1170px] max-w-full px-6" data-testid="airline-flight-search-wrap">
-        <AirlineFlightSearch />
-      </div>
+      {/* Flight search — full-width, below the hero. Never shown for a
+          carrier that has ceased operations. */}
+      {!ceased && (
+        <div className="mx-auto mt-8 w-[1170px] max-w-full px-6" data-testid="airline-flight-search-wrap">
+          <AirlineFlightSearch />
+        </div>
+      )}
 
       {/* About + Details — two columns: details (30%) on the left, about (60%) offset to the right */}
       <section className="mx-auto mt-14 max-w-7xl px-6 pb-20" data-testid="airline-about">
@@ -422,7 +444,7 @@ export default async function AirlinePage({ params }: Props) {
               About {airline.name}
             </p>
             <h2 className="mt-3 font-urbanist text-3xl font-bold leading-tight text-forest-950">
-              What to know before booking {airline.name}
+              {ceased ? `About ${airline.name}` : `What to know before booking ${airline.name}`}
             </h2>
             <div className="mt-5">
               <AboutParagraphs paragraphs={aboutParas} />
@@ -442,7 +464,7 @@ export default async function AirlinePage({ params }: Props) {
             Good to know
           </p>
           <h2 className="mt-3 font-urbanist text-3xl font-bold leading-tight text-forest-950">
-            Flying with {airline.name} — what to expect
+            {ceased ? `Flying with ${airline.name} — how it operated` : `Flying with ${airline.name} — what to expect`}
           </h2>
           {goodToKnowCards.length > 0 ? (
             <div className="mt-8 grid gap-4 sm:grid-cols-2">

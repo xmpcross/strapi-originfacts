@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { JsonLd, FaqSection } from '@/components/SeoBlocks';
-import OutboundCitations from '@/components/OutboundCitations';
 import { faqJsonLd, type Faq } from '@/lib/entity-seo';
 import { breadcrumbJsonLd } from '@/lib/jsonld';
 
@@ -76,7 +75,6 @@ export default function FaqPage() {
 
       <FaqSection faqs={SITE_FAQS} title="General &amp; Booking Questions" />
 
-      <OutboundCitations title="Primary Civil Aviation & Government Standards" />
     </article>
   );
 }

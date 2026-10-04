@@ -8,7 +8,6 @@ import { JsonLd } from '@/components/SeoBlocks';
 import { ORG_ID, organizationJsonLd, absoluteUrl, breadcrumbJsonLd } from '@/lib/jsonld';
 import { getAllAuthors, authorPersonJsonLd } from '@/lib/authors';
 import AuthorCard from '@/components/AuthorCard';
-import OutboundCitations from '@/components/OutboundCitations';
 import TableOfContents from '@/components/TableOfContents';
 import { injectHeadingIdsAndExtractToc } from '@/lib/toc';
 
@@ -79,8 +78,6 @@ export default async function AboutPage() {
         data-testid="about-body"
         dangerouslySetInnerHTML={{ __html: processedHtml }}
       />
-
-      <OutboundCitations title="Official Primary Research & Government Sources" />
 
       <section className="mt-16 border-t border-forest-900/10 pt-12">
         <h2 className="editorial-h text-2xl font-bold text-forest-950 sm:text-3xl">

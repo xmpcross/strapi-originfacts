@@ -60,14 +60,6 @@ Every destination has a story. Before we write about how to get there or where t
 
 Travel content goes stale fast. We focus on current routes, current pricing patterns, current visa rules, and current travel realities — and we revisit content as conditions change.
 
-### Which Official Data Sources Do We Verify?
-
-Our editorial team cross-references all claims against primary government and civil aviation databases:
-- **Aviation & Passenger Rights:** [U.S. Department of Transportation (DOT)](https://www.transportation.gov/airconsumer), [U.S. Bureau of Transportation Statistics](https://www.bts.gov/topics/airlines-jet-fuel-and-transportation-data), [Federal Aviation Administration (FAA)](https://www.faa.gov/hazmat/packsafe), [EU Air Passenger Rights Portal](https://europa.eu/youreurope/citizens/travel/passenger-rights/air/index_en.htm), and [Australian CASA Regulations](https://www.casa.gov.au/passengers-and-can-i-pack-that).
-- **International Technical Standards:** [IATA Passenger Standards](https://www.iata.org/en/programs/passenger/) and [ICAO Aviation Safety Guidelines](https://www.icao.int/safety/Pages/default.aspx).
-- **Destination & Health Safety:** [U.S. Department of State Travel Advisories](https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories.html), [CDC Travelers' Health Guidance](https://wwwnc.cdc.gov/travel), [UN Tourism (UNWTO)](https://www.unwto.org/tourism-data/unwto-tourism-dashboard), [WHO International Travel & Health](https://www.who.int/ith), and [Australian Smartraveller](https://www.smartraveller.gov.au/).
-- **Academic Research:** Research publications from the [MIT International Center for Air Transportation](https://icat.mit.edu/) and [Embry-Riddle Aeronautical University](https://erau.edu/research).
-
 ### Who Reads Originfacts?
 
 Originfacts is built for readers around the world. Our content is currently published in English.

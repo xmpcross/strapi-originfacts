@@ -1,6 +1,6 @@
 import 'server-only';
 import { unstable_cache } from 'next/cache';
-import { getYourGuideLink, isTakeadsMerchant } from '@/lib/partner-links';
+import { getYourGuideLink, isTakeadsMerchant, partnerLink } from '@/lib/partner-links';
 
 /*
  * Takeads Monetize API. The publisher key is TAKEADS_PUBLIC_KEY in the
@@ -142,15 +142,40 @@ async function resolveIris(
  * day per URL. Null when the URL is not a Takeads merchant or Takeads has no
  * link for it.
  */
-export const resolveTakeadsLink = unstable_cache(
-  async (url: string): Promise<string | null> => {
-    if (!isTakeadsMerchant(url)) return null;
+const cachedTrackingLink = unstable_cache(
+  async (url: string): Promise<string> => {
     const resolved = await resolveIris([url]);
-    return resolved.get(url)?.trackingLink ?? null;
+    const link = resolved.get(url)?.trackingLink;
+    // Throw instead of returning null: unstable_cache keeps a returned value for
+    // a day but does not keep a thrown error, so one failed lookup (API blip,
+    // restart) cannot leave a merchant untracked until tomorrow.
+    if (!link) throw new Error('Takeads returned no tracking link');
+    return link;
   },
-  ['takeads-resolve-link-v1'],
+  ['takeads-resolve-link-v2'],
   { revalidate: 86_400, tags: ['takeads'] },
 );
+
+export async function resolveTakeadsLink(url: string): Promise<string | null> {
+  if (!isTakeadsMerchant(url)) return null;
+  try {
+    return await cachedTrackingLink(url);
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * The link to put in a server-rendered page: the Takeads tracking link itself
+ * (https://tatrck.com/h/…?url=…&model=cpc&s=<subId>), resolved on the server.
+ * Falls back to the /go redirect if Takeads cannot be reached, so the link is
+ * never dead. Client components cannot call this (it needs the API key); they
+ * use partnerLink() / /go.
+ */
+export async function takeadsHref(url: string, subId: string): Promise<string> {
+  const tracking = await resolveTakeadsLink(url);
+  return tracking ? addTrackingParameters(tracking, subId) : partnerLink(url, subId);
+}
 
 const resolveBaseOffers = unstable_cache(
   async (): Promise<TakeadsOffer[]> => {

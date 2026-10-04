@@ -12,7 +12,13 @@ const BASE = (process.env.NEXT_PUBLIC_STRAPI_URL || 'https://cms.fxnstudio.com')
  * - airport-vs-city-car-rentals-which-saves-money: duplicate of
  *   airport-vs-city-car-rentals-cheaper (2026-09 AdSense audit).
  */
-export const HIDDEN_ARTICLE_SLUGS: readonly string[] = ['airport-vs-city-car-rentals-which-saves-money'];
+export const HIDDEN_ARTICLE_SLUGS: readonly string[] = [
+  'airport-vs-city-car-rentals-which-saves-money',
+  // Retired 5 Oct 2026: none of its seven "2026 openings" checked out (four
+  // don't exist or were cancelled, three opened in 2024-25). Redirected in
+  // next.config.mjs.
+  'melbourne-design-hotels-opening-2026',
+];
 
 /** Strapi filter clause that drops HIDDEN_ARTICLE_SLUGS; spread into `filters`. */
 const visibleArticles = (): Record<string, unknown> =>

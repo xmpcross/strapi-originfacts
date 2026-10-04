@@ -20,7 +20,7 @@ import {
   airportIntro,
   airportFaqs,
   airportJsonLd,
-  articleBlogPostingJsonLd,
+  entityWebPageJsonLd,
   faqJsonLd,
   robotsFor,
   summariseRoutes,
@@ -260,14 +260,13 @@ export default async function AirportPage({ params }: Props) {
     { href: '#faq', label: 'FAQ' },
   ];
 
-  const articleSchema = articleBlogPostingJsonLd({
-    headline: `${airport.name} (${airport.iata}) Airport Guide`,
+  const articleSchema = entityWebPageJsonLd({
+    name: `${airport.name} (${airport.iata}) Airport Guide`,
     description: airport.about || heroSummary,
     url,
     image: hero,
     author: await resolveAuthor(),
-    categoryName: 'Airports',
-    type: 'BlogPosting',
+    mainEntity: { '@id': `${url}#airport` },
   });
 
   return (

@@ -12,7 +12,7 @@ import {
   airlineExpectations,
   airlineFaqs,
   airlineJsonLd,
-  articleBlogPostingJsonLd,
+  entityWebPageJsonLd,
   faqJsonLd,
   robotsFor,
   summariseRoutes,
@@ -201,14 +201,13 @@ export default async function AirlinePage({ params }: Props) {
     { label: 'Popular routes', value: routes.length ? String(routes.length) : undefined },
   ].filter((fact) => fact.value);
 
-  const articleSchema = articleBlogPostingJsonLd({
-    headline: `${airline.name} Airline Guide & Carrier Profile`,
+  const articleSchema = entityWebPageJsonLd({
+    name: `${airline.name} Airline Guide & Carrier Profile`,
     description: airline.about || intro,
-    url: `${SITE_URL}/airlines/${airline.slug}`,
+    url,
     image: logo,
     author: await resolveAuthor(),
-    categoryName: 'Airlines',
-    type: 'BlogPosting',
+    mainEntity: { '@id': `${url}#airline` },
   });
 
   // Published Tier 1 guides & Tier 2 carriers. Render modern policy layout

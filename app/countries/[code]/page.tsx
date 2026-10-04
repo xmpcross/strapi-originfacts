@@ -10,7 +10,7 @@ import {
   mediaUrl,
   type StrapiAirport,
 } from '@/lib/strapi';
-import { SITE_URL, DEFAULT_OG_IMAGE, countryFaqs, countryJsonLd, faqJsonLd, articleBlogPostingJsonLd } from '@/lib/entity-seo';
+import { SITE_URL, DEFAULT_OG_IMAGE, countryFaqs, countryJsonLd, faqJsonLd, entityWebPageJsonLd } from '@/lib/entity-seo';
 import { resolveAuthor } from '@/lib/authors';
 import { airportPath } from '@/lib/airport-slugs';
 import { JsonLd, FaqSection } from '@/components/SeoBlocks';
@@ -115,13 +115,12 @@ export default async function CountryPage({ params }: Props) {
     { airports: airports.length, airlines: airlines.length },
   );
 
-  const articleSchema = articleBlogPostingJsonLd({
-    headline: `${country.name} Travel Directory & Aviation Profile`,
+  const articleSchema = entityWebPageJsonLd({
+    mainEntity: { '@id': `${url}#country` },
+    name: `${country.name} Travel Directory & Aviation Profile`,
     description: country.about || `Travel directory for ${country.name} (${country.code}): commercial airports, airlines based in the country, and the busiest inbound routes.`,
     url,
     author: await resolveAuthor(),
-    categoryName: 'Countries',
-    type: 'BlogPosting',
   });
 
   return (

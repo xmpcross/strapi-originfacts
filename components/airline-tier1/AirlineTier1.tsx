@@ -30,7 +30,6 @@ import type { AirlineReviewFile } from '@/lib/airline-reviews';
 import { facetCounts, ratingBands, sourceLabel, SOURCE_META } from '@/lib/airline-reviews';
 import type { AirlineRef } from '@/lib/airline-refs';
 import { AIRLINE_REF_SOURCE } from '@/lib/airline-refs';
-import OutboundCitations from '@/components/OutboundCitations';
 import s from './AirlineTier1.module.css';
 
 /**
@@ -366,13 +365,6 @@ export default function AirlineTier1({
           </aside>
         </div>
       </main>
-
-      <div className={s.wrap}>
-        <OutboundCitations
-          category="airlines"
-          title={`${airline.name} — Regulatory Authorities & Aviation Standards`}
-        />
-      </div>
 
       <div className={s.pagefoot}>
         <div className={s.wrap}>

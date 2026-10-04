@@ -89,7 +89,7 @@ export const sectionAnchor = (heading: string) =>
 
 export type GuideKind =
   | 'stay' | 'todo' | 'around' | 'when' | 'tips'
-  | 'overview' | 'visa' | 'facts' | 'resources' | 'other';
+  | 'overview' | 'visa' | 'facts' | 'resources' | 'history' | 'other';
 
 // First match wins, so the longer country prefixes sit before generic ones.
 const GUIDE_KINDS: { prefix: string; kind: GuideKind; label: string }[] = [
@@ -98,7 +98,9 @@ const GUIDE_KINDS: { prefix: string; kind: GuideKind; label: string }[] = [
   { prefix: 'Famous Attractions', kind: 'todo', label: 'Attractions' },
   { prefix: 'Highlights', kind: 'todo', label: 'Highlights' },
   { prefix: 'Getting around', kind: 'around', label: 'Getting around' },
+  { prefix: 'How to plan', kind: 'around', label: 'Planning' },
   { prefix: 'When to visit', kind: 'when', label: 'When to visit' },
+  { prefix: 'Best time to visit', kind: 'when', label: 'When to go' },
   { prefix: 'Weather', kind: 'when', label: 'Weather' },
   { prefix: 'Practical tips', kind: 'tips', label: 'Tips' },
   { prefix: 'Practical', kind: 'tips', label: 'Practical' },
@@ -106,6 +108,8 @@ const GUIDE_KINDS: { prefix: string; kind: GuideKind; label: string }[] = [
   { prefix: 'Visa', kind: 'visa', label: 'Visa' },
   { prefix: 'Interesting Facts', kind: 'facts', label: 'Facts' },
   { prefix: 'Official Resources', kind: 'resources', label: 'Resources' },
+  { prefix: 'History', kind: 'history', label: 'History' },
+  { prefix: 'Travel Notes', kind: 'tips', label: 'Travel notes' },
 ];
 
 function guideKind(heading: string) {
@@ -123,6 +127,7 @@ const GUIDE_ICON_PATHS: Record<GuideKind, string[]> = {
   visa: ['M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm1.294 6.336a6.721 6.721 0 01-3.17.789 6.721 6.721 0 01-3.168-.789 3.376 3.376 0 016.338 0z'],
   facts: ['M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z'],
   resources: ['M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244'],
+  history: ['M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25'],
   other: ['M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25'],
 };
 

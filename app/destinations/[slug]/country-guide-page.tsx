@@ -5,6 +5,7 @@
 import Link from 'next/link';
 import ArticleCard from '@/components/ArticleCard';
 import CountryDetailSections from '@/components/CountryDetailSections';
+import { toCountryAirlineItems, toCountryAirportItems } from '@/lib/country-lists';
 import KeyFacts from '@/components/KeyFacts';
 import MoreStoriesList from '@/components/MoreStoriesList';
 import { type CountryFacts, flagImageUrl, formatPopulation, getCountryFacts } from '@/lib/country-facts';
@@ -88,7 +89,11 @@ export default function CountryGuidePage({
 
       {(airports.length > 0 || airlines.length > 0) && (
         <div id="airports" className="scroll-mt-28">
-          <CountryDetailSections countryName={destination.name} airports={airports} airlines={airlines} />
+          <CountryDetailSections
+            countryName={destination.name}
+            airports={toCountryAirportItems(airports)}
+            airlines={toCountryAirlineItems(airlines)}
+          />
         </div>
       )}
 

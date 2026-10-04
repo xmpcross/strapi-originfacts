@@ -118,14 +118,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         />
         {/* End Google Tag Manager */}
         <script
-          {...({ nowprocket: '', 'nitro-exclude': '' } as Record<string, string>)}
-          type="text/javascript"
-          id="sa-dynamic-optimization"
-          data-uuid="5dd6702c-eaa5-420e-a784-a4685d29cc71"
-          src="https://dashboard.searchatlas.com/scripts/dynamic_optimization.js"
-          async
-        />
-        <script
           async
           defer
           src="https://widget.getyourguide.com/dist/pa.umd.production.min.js"

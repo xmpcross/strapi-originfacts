@@ -25,7 +25,7 @@ import { buildMetaDescription, compactTitle, warnIfLong } from '@/lib/seo';
 import TableOfContents from '@/components/TableOfContents';
 import { injectHeadingIdsAndExtractToc } from '@/lib/toc';
 import type { Metadata } from 'next';
-import { partnerLink } from '@/lib/partner-links';
+import { takeadsHref } from '@/lib/takeads';
 
 export const revalidate = 60;
 
@@ -405,8 +405,8 @@ export default async function ArticlePage({ params }: Props) {
   );
 }
 
-function BookingHotelBanner({ articleSlug }: { articleSlug: string }) {
-  const href = partnerLink('https://www.booking.com/', `originfacts_article_${articleSlug}_booking_com_banner`);
+async function BookingHotelBanner({ articleSlug }: { articleSlug: string }) {
+  const href = await takeadsHref('https://www.booking.com/', `originfacts_article_${articleSlug}_booking_com_banner`);
 
   return (
     <aside
@@ -439,11 +439,15 @@ function BookingHotelBanner({ articleSlug }: { articleSlug: string }) {
   );
 }
 
-function FlightBookingBanners({ articleSlug }: { articleSlug: string }) {
+async function FlightBookingBanners({ articleSlug }: { articleSlug: string }) {
+  const [kiwiHref, tripHref] = await Promise.all([
+    takeadsHref('https://www.kiwi.com/', `originfacts_article_${articleSlug}_kiwi_com_banner`),
+    takeadsHref('https://www.trip.com/', `originfacts_article_${articleSlug}_trip_com_banner`),
+  ]);
   const offers = [
     {
       name: 'Kiwi.com',
-      href: partnerLink('https://www.kiwi.com/', `originfacts_article_${articleSlug}_kiwi_com_banner`),
+      href: kiwiHref,
       title: 'Check flexible flight combinations',
       description: 'Compare one-way, return and self-transfer options when price or routing matters most.',
       cta: 'Search Kiwi.com',
@@ -453,7 +457,7 @@ function FlightBookingBanners({ articleSlug }: { articleSlug: string }) {
     },
     {
       name: 'Trip.com',
-      href: partnerLink('https://www.trip.com/', `originfacts_article_${articleSlug}_trip_com_banner`),
+      href: tripHref,
       title: 'Compare flights with global trip tools',
       description: 'Look across fares, baggage choices and travel extras before choosing the ticket.',
       cta: 'Search Trip.com',

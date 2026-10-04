@@ -121,7 +121,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.3,
   }));
 
-  const authorPaths: MetadataRoute.Sitemap = getAllAuthors().map((a) => ({
+  const authorPaths: MetadataRoute.Sitemap = (await getAllAuthors()).map((a) => ({
     url: `${SITE_URL}/authors/${a.slug}`,
    
     changeFrequency: 'monthly' as const,

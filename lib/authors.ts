@@ -1,5 +1,16 @@
 import { SITE_URL } from '@/lib/entity-seo';
+import { listAuthorSlugsWithArticles, listAuthors, mediaUrl, type StrapiAuthor } from '@/lib/strapi';
 
+/**
+ * Author profiles come from the CMS `authors` collection (name, photo, bio,
+ * role, links). Bylines follow each article's CMS author; articles without one,
+ * and the directory pages (airports, airlines, routes, destinations,
+ * countries), are bylined DEFAULT_AUTHOR_SLUG.
+ *
+ * The hard-coded profiles that used to live here (Kritin Vashist, Elena
+ * Rostova, Marcus Vance, the Editorial Desk) were retired on 4 Oct 2026; their
+ * URLs redirect to /authors/k-spellman (next.config.mjs).
+ */
 export interface AuthorProfile {
   slug: string;
   name: string;
@@ -17,158 +28,81 @@ export interface AuthorProfile {
   expertise: string[];
 }
 
-export const DEFAULT_AUTHOR: AuthorProfile = {
-  slug: 'kritin-vashist',
-  name: 'Kritin Vashist',
-  jobTitle: 'Founder & Editor-in-Chief',
-  role: 'Founder & Managing Editor',
-  bio: 'Travel journalist, aviation researcher, and founder of Originfacts. Specializes in commercial airline economics, route development, airport hub infrastructure, and cultural origin histories.',
-  longBio:
-    'Kritin Vashist leads Originfacts as Founder and Editor-in-Chief, establishing rigorous editorial standards across all aviation, destination, and transportation research. Combining digital media expertise with deep route logistics analysis, Kritin oversees primary data verification pipelines, carrier fare evaluations, and cultural origin guides, ensuring travelers receive factual, independent travel intelligence before booking flights.',
-  avatar: '/brand/authors/kritin-vashist.svg',
-  email: 'contact@originfacts.com',
-  socials: {
-    x: 'https://x.com/realoriginfacts',
-    linkedin: 'https://www.linkedin.com/company/143027896/',
-  },
-  expertise: [
-    'Aviation History',
-    'Airline Economics',
-    'Airport Hub Infrastructure',
-    'Flight Route Analysis',
-    'Destination Heritage',
-  ],
+export const DEFAULT_AUTHOR_SLUG = 'k-spellman';
+
+const PLACEHOLDER_AVATAR = '/brand/authors/originfacts-team.svg';
+
+/** Used only when the CMS cannot be reached. */
+const FALLBACK_AUTHOR: AuthorProfile = {
+  slug: DEFAULT_AUTHOR_SLUG,
+  name: 'K Spellman',
+  jobTitle: 'Founder & Editor',
+  role: 'Founder & Editor',
+  bio: 'K Spellman is the founder and editor of Originfacts.',
+  avatar: PLACEHOLDER_AVATAR,
+  expertise: [],
 };
 
-export const AUTHORS: Record<string, AuthorProfile> = {
-  'kritin-vashist': DEFAULT_AUTHOR,
-  kritin: DEFAULT_AUTHOR,
-  'elena-rostova': {
-    slug: 'elena-rostova',
-    name: 'Elena Rostova',
-    jobTitle: 'Senior Aviation & Transport Analyst',
-    role: 'Senior Aviation Editor',
-    bio: 'Commercial aviation analyst and travel writer with over a decade of experience covering airline fleet strategies, cabin products, airport transfer hubs, and passenger rights.',
-    longBio:
-      'Elena Rostova serves as Senior Aviation Editor at Originfacts, specializing in commercial airline operations, fleet strategies, and global airport transfer infrastructure. Bringing over a decade of transport analysis experience, Elena authors comprehensive carrier breakdowns, cabin product reviews, and flight route evaluations to help travelers optimize layover schedules and assess ticket values.',
-    avatar: '/brand/authors/elena-rostova.svg',
-    email: 'contact@originfacts.com',
+function toProfile(a: StrapiAuthor): AuthorProfile {
+  const bio = (a.bio ?? '').trim();
+  const firstParagraph = bio.split(/\n\s*\n/)[0]?.trim() || bio;
+  const title = a.role?.trim() || (a.slug === DEFAULT_AUTHOR_SLUG ? 'Founder & Editor' : 'Contributor');
+  return {
+    slug: a.slug,
+    name: a.name,
+    jobTitle: title,
+    role: title,
+    bio: firstParagraph,
+    longBio: bio && bio !== firstParagraph ? bio : undefined,
+    avatar: mediaUrl(a.avatar ?? null) || PLACEHOLDER_AVATAR,
+    // The CMS email is a personal inbox: never published.
     socials: {
-      x: 'https://x.com/realoriginfacts',
-      linkedin: 'https://www.linkedin.com/company/143027896/',
+      ...(a.twitter ? { x: a.twitter } : {}),
+      ...(a.linkedin ? { linkedin: a.linkedin } : {}),
+      ...(a.website ? { website: a.website } : {}),
     },
-    expertise: [
-      'Commercial Airlines',
-      'Cabin Products & Seats',
-      'Airport Operations',
-      'Long-Haul Flight Routes',
-      'Passenger Protection Rules',
-    ],
-  },
-  'marcus-vance': {
-    slug: 'marcus-vance',
-    name: 'Marcus Vance',
-    jobTitle: 'Destinations & Cultural History Lead',
-    role: 'Destinations Editor',
-    bio: 'Historical researcher and travel writer focusing on origin stories, urban geography, cultural heritage, and immersive destination guides across Europe, Asia, and the Americas.',
-    longBio:
-      'Marcus Vance directs destination research and cultural history coverage at Originfacts, bridging historical urban geography with modern travel planning. Marcus analyzes regional heritage, local transit links, and seasonal visiting windows across Europe, Asia, and the Americas, providing readers with authoritative background context and practical itinerary structures before embarking on international journeys.',
-    avatar: '/brand/authors/marcus-vance.svg',
-    email: 'contact@originfacts.com',
-    socials: {
-      x: 'https://x.com/realoriginfacts',
-      linkedin: 'https://www.linkedin.com/company/143027896/',
-    },
-    expertise: [
-      'Cultural Heritage',
-      'Urban Geography',
-      'European Destinations',
-      'Historical Travel Guides',
-      'Regional Gastronomy',
-    ],
-  },
-  'originfacts-team': {
-    slug: 'originfacts-team',
-    name: 'Originfacts Editorial Desk',
-    jobTitle: 'Editorial Research & Verification Desk',
-    role: 'Editorial Desk',
-    bio: 'The central editorial desk at Originfacts responsible for routine route verification, airport data updates, hotel inventory audits, and factual accuracy compliance.',
-    longBio:
-      'The Originfacts Editorial Desk maintains site-wide factual accuracy by continuously auditing commercial airport databases, flight route schedules, and carrier policy updates. Operating under strict verification guidelines, our central research team cross-references all published aviation metrics against primary civil aviation sources to guarantee transparent, reliable travel guidance for global readers.',
-    avatar: '/brand/authors/originfacts-team.svg',
-    email: 'contact@originfacts.com',
-    socials: {
-      x: 'https://x.com/realoriginfacts',
-      linkedin: 'https://www.linkedin.com/company/143027896/',
-    },
-    expertise: [
-      'Fact Verification',
-      'Flight Route Auditing',
-      'Airport Code Registries',
-      'Travel Data Compliance',
-    ],
-  },
-  'k-spellman': {
-    slug: 'k-spellman',
-    name: 'K Spellman',
-    jobTitle: 'Contributing Editorial Researcher',
-    role: 'Contributing Researcher',
-    bio: 'Travel and destination researcher contributing to destination guides, airport reviews, and flight intelligence at Originfacts.',
-    longBio:
-      'K Spellman is an editorial contributor and researcher at Originfacts, focusing on destination guides, airport transport logistics, and comprehensive travel reviews.',
-    avatar: '/brand/authors/originfacts-team.svg',
-    email: 'contact@originfacts.com',
-    socials: {
-      x: 'https://x.com/realoriginfacts',
-      linkedin: 'https://www.linkedin.com/company/143027896/',
-    },
-    expertise: [
-      'Destination Guides',
-      'Airport Logistics',
-      'Travel Reviews',
-      'Editorial Research',
-    ],
-  },
-};
-
-/**
- * Authors with a public profile. Every post is bylined K Spellman (editorial
- * decision, 4 Oct 2026); Kritin Vashist stays as founder. The Elena Rostova,
- * Marcus Vance and Editorial Desk pages redirect to K Spellman (next.config).
- */
-export function getAllAuthors(): AuthorProfile[] {
-  return [AUTHORS['k-spellman']!, DEFAULT_AUTHOR];
+    expertise: a.credentials ? a.credentials.split(/[,;\n]/).map((s) => s.trim()).filter(Boolean) : [],
+  };
 }
 
-/**
- * Look up an author page by its slug, or null when no such author exists.
- *
- * This used to fall back to DEFAULT_AUTHOR, which made the `notFound()` guard in
- * app/authors/[slug] unreachable: every slug resolved, so /authors/<anything>
- * returned HTTP 200 rendering a real profile. That is an unbounded soft-404
- * surface — verified live before this change, /authors/does-not-exist-xyz
- * answered 200.
- *
- * Byline resolution still wants a fallback, and still gets one: that is
- * `resolveAuthor()` below. Routing must not.
- */
-export function getAuthorBySlug(slug: string): AuthorProfile | null {
-  const key = slug.toLowerCase().trim();
-  return AUTHORS[key] ?? null;
+async function cmsProfiles(): Promise<AuthorProfile[]> {
+  const authors = await listAuthors().catch(() => [] as StrapiAuthor[]);
+  return authors.filter((a) => a.slug && a.name).map(toProfile);
 }
 
-export function resolveAuthor(rawNameOrSlug?: string | null): AuthorProfile {
-  // Bylines: every post is K Spellman, whatever the caller passes.
-  void rawNameOrSlug;
-  return AUTHORS['k-spellman']!;
+/** The byline for a CMS author slug; DEFAULT_AUTHOR_SLUG when unset or unknown. */
+export async function resolveAuthor(slug?: string | null): Promise<AuthorProfile> {
+  const profiles = await cmsProfiles();
+  const wanted = (slug || DEFAULT_AUTHOR_SLUG).toLowerCase();
+  return (
+    profiles.find((p) => p.slug === wanted) ??
+    profiles.find((p) => p.slug === DEFAULT_AUTHOR_SLUG) ??
+    FALLBACK_AUTHOR
+  );
+}
+
+/** An author page by slug, or null (routing must not fall back). */
+export async function getAuthorBySlug(slug: string): Promise<AuthorProfile | null> {
+  const profiles = await cmsProfiles();
+  return profiles.find((p) => p.slug === slug.toLowerCase().trim()) ?? null;
+}
+
+/** Authors shown in lists and the sitemap: the default byline plus anyone with an article. */
+export async function getAllAuthors(): Promise<AuthorProfile[]> {
+  const [profiles, withArticles] = await Promise.all([
+    cmsProfiles(),
+    listAuthorSlugsWithArticles().catch(() => new Set<string>()),
+  ]);
+  const listed = profiles.filter((p) => p.slug === DEFAULT_AUTHOR_SLUG || withArticles.has(p.slug));
+  return listed.length > 0 ? listed : [FALLBACK_AUTHOR];
 }
 
 export function authorPersonJsonLd(author: AuthorProfile): Record<string, unknown> {
   const authorUrl = `${SITE_URL}/authors/${author.slug}`;
-  const sameAsList: string[] = [];
-  if (author.socials?.x) sameAsList.push(author.socials.x);
-  if (author.socials?.linkedin) sameAsList.push(author.socials.linkedin);
-  if (author.socials?.website) sameAsList.push(author.socials.website);
+  const sameAsList = [author.socials?.x, author.socials?.linkedin, author.socials?.website].filter(
+    (s): s is string => Boolean(s),
+  );
+  const image = author.avatar.startsWith('http') ? author.avatar : `${SITE_URL}${author.avatar}`;
 
   return {
     '@context': 'https://schema.org',
@@ -178,15 +112,14 @@ export function authorPersonJsonLd(author: AuthorProfile): Record<string, unknow
     jobTitle: author.jobTitle,
     description: author.bio,
     url: authorUrl,
-    image: `${SITE_URL}${author.avatar}`,
+    image,
     worksFor: {
       '@type': 'Organization',
       '@id': `${SITE_URL}/#organization`,
       name: 'Originfacts',
       url: SITE_URL,
     },
-    ...(author.email ? { email: `mailto:${author.email}` } : {}),
     ...(sameAsList.length > 0 ? { sameAs: sameAsList } : {}),
-    knowsAbout: author.expertise,
+    ...(author.expertise.length > 0 ? { knowsAbout: author.expertise } : {}),
   };
 }

@@ -29,6 +29,7 @@ import TableOfContents from '@/components/TableOfContents';
 import { getCountryFacts } from '@/lib/country-facts';
 import { operableCarriers } from '@/lib/route-carriers';
 import { SITE_URL, DEFAULT_OG_IMAGE, articleBlogPostingJsonLd, faqJsonLd, normalizeFaqs } from '@/lib/entity-seo';
+import { resolveAuthor } from '@/lib/authors';
 import { JsonLd, FaqSection } from '@/components/SeoBlocks';
 import { breadcrumbJsonLd } from '@/lib/jsonld';
 import KeyFacts from '@/components/KeyFacts';
@@ -192,7 +193,7 @@ export default async function DestinationPage({ params }: Props) {
     description: destinationMetaDescription(destination),
     url: `${SITE_URL}/destinations/${destination.slug}`,
     image: hero,
-    authorNameOrSlug: 'k-spellman',
+    author: await resolveAuthor(),
     categoryName: 'Destinations',
     type: 'BlogPosting',
   });

@@ -59,11 +59,15 @@ const nextConfig = {
         destination: '/articles/airport-vs-city-car-rentals-cheaper',
         permanent: true,
       },
-      // Every post is bylined K Spellman (4 Oct 2026); the retired byline
-      // pages point at that profile.
+      // Retired hard-coded author profiles (4 Oct 2026) point at the default
+      // CMS author.
       { source: '/authors/elena-rostova', destination: '/authors/k-spellman', permanent: true },
       { source: '/authors/marcus-vance', destination: '/authors/k-spellman', permanent: true },
       { source: '/authors/originfacts-team', destination: '/authors/k-spellman', permanent: true },
+      // Author profiles come from the CMS since 4 Oct 2026; the hard-coded
+      // founder profile is retired (the CMS describes K Spellman as founder).
+      { source: '/authors/kritin-vashist', destination: '/authors/k-spellman', permanent: true },
+      { source: '/authors/kritin', destination: '/authors/k-spellman', permanent: true },
       // Staging → production: bounce every /flights visit on the
       // originfacts.fxnstudio.com host over to www.originfacts.com so
       // bookings go through the production TravelPayouts affiliate config.

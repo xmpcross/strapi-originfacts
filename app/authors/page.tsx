@@ -23,8 +23,8 @@ const authorsIndexJsonLd = {
     'Meet the editorial authors, aviation researchers, and travel specialists behind Originfacts. Discover bios, expertise, and published travel guides.',
 };
 
-export default function AuthorsIndexPage() {
-  const authors = getAllAuthors();
+export default async function AuthorsIndexPage() {
+  const authors = await getAllAuthors();
 
   return (
     <article className="mx-auto max-w-7xl px-6 py-16" data-testid="authors-page">

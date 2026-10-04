@@ -230,27 +230,59 @@ async function strapiFetch<T>(path: string, params?: Record<string, unknown>, re
     throw new Error(`Strapi ${res.status} on ${url}: ${await res.text().catch(() => '')}`);
   }
   const body = await res.json();
-  return path === 'articles' ? (withSiteByline(body) as T) : body;
+  return path === 'articles' ? (withDefaultAuthor(body) as T) : body;
 }
 
 /**
- * Every article is bylined K Spellman (editorial decision, 4 Oct 2026),
- * whatever author the CMS record carries. Applied here so the homepage, cards,
- * RSS, schema and author pages all agree. Only records that populated `author`
- * are touched, so field-limited queries keep their shape.
+ * Articles keep the author set in the CMS; an article with none (the `author`
+ * relation populated but empty) is bylined the default author, K Spellman, so
+ * cards, RSS and schema never show a post without a byline. Field-limited
+ * queries that did not populate `author` are left alone.
  */
-export const SITE_BYLINE = { name: 'K Spellman', slug: 'k-spellman' } as const;
-
-function withSiteByline(body: unknown): unknown {
+function withDefaultAuthor(body: unknown): unknown {
   const data = (body as { data?: unknown })?.data;
   if (!Array.isArray(data)) return body;
   for (const item of data as Array<Record<string, unknown>>) {
-    if (item && 'author' in item) {
-      const prev = item.author as { id?: number } | null;
-      item.author = { id: prev?.id ?? 0, ...SITE_BYLINE };
+    if (item && 'author' in item && !item.author) {
+      item.author = { id: 0, name: 'K Spellman', slug: 'k-spellman' };
     }
   }
   return body;
+}
+
+
+export type StrapiAuthor = {
+  id: number;
+  name: string;
+  slug: string;
+  bio?: string | null;
+  role?: string | null;
+  credentials?: string | null;
+  twitter?: string | null;
+  linkedin?: string | null;
+  website?: string | null;
+  avatar?: StrapiImage;
+};
+
+/** Author profiles from the CMS `authors` collection (cached in memory). */
+export async function listAuthors() {
+  return memoryCached('listAuthors', () =>
+    fetchAllPages<StrapiAuthor>('authors', {
+      sort: ['name:asc'],
+      populate: ['avatar'],
+    }),
+  );
+}
+
+/** Slugs of authors that at least one article is assigned to in the CMS. */
+export async function listAuthorSlugsWithArticles(): Promise<Set<string>> {
+  return memoryCached('listAuthorSlugsWithArticles', async () => {
+    const articles = await fetchAllPages<Pick<StrapiArticle, 'author'>>('articles', {
+      fields: ['slug'],
+      populate: { author: { fields: ['slug'] } },
+    });
+    return new Set(articles.map((a) => a.author?.slug).filter((s): s is string => Boolean(s)));
+  });
 }
 
 export function mediaUrl(img: StrapiImage): string | null {

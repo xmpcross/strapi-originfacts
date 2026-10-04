@@ -10,6 +10,7 @@ import { airportPath } from '@/lib/airport-slugs';
 import { buildMetaDescription } from '@/lib/seo';
 import { operableCarriers } from '@/lib/route-carriers';
 import { SITE_URL, DEFAULT_OG_IMAGE, articleBlogPostingJsonLd, faqJsonLd, type Faq } from '@/lib/entity-seo';
+import { resolveAuthor } from '@/lib/authors';
 import { JsonLd, FaqSection } from '@/components/SeoBlocks';
 import TableOfContents from '@/components/TableOfContents';
 import type { TocItem } from '@/lib/toc';
@@ -107,7 +108,7 @@ export default async function RoutePage({ params }: Props) {
     headline: title,
     description,
     url,
-    authorNameOrSlug: 'k-spellman',
+    author: await resolveAuthor(),
     categoryName: 'Flight Routes',
     type: 'BlogPosting',
   });

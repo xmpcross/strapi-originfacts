@@ -27,6 +27,7 @@ import {
   AIRPORTS_INDEXABLE,
 } from '@/lib/entity-seo';
 import type { RouteSummary } from '@/lib/entity-seo';
+import { resolveAuthor } from '@/lib/authors';
 import { getAirportWeather, weatherLabel } from '@/lib/open-meteo';
 import { JsonLd, FaqSection } from '@/components/SeoBlocks';
 import { breadcrumbJsonLd } from '@/lib/jsonld';
@@ -264,7 +265,7 @@ export default async function AirportPage({ params }: Props) {
     description: airport.about || heroSummary,
     url,
     image: hero,
-    authorNameOrSlug: 'k-spellman',
+    author: await resolveAuthor(),
     categoryName: 'Airports',
     type: 'BlogPosting',
   });

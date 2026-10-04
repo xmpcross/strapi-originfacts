@@ -13,7 +13,7 @@ function isWikipediaUrl(url: string): boolean {
 /** Turn a bullet of the form `domain.tld — description` into a clickable link.
  *  Also handles plain markdown links `[text](https://url)`. Falls back to the
  *  raw text when neither pattern matches. */
-function renderBulletContent(text: string): ReactNode {
+export function renderBulletContent(text: string): ReactNode {
   const md = text.match(/^\[([^\]]+)\]\((https?:\/\/[^)]+)\)(.*)$/);
   if (md) {
     const [, label, url, rest] = md;

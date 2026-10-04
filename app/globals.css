@@ -308,7 +308,7 @@
     @apply inline-flex items-center gap-1.5 rounded-[0.2rem] bg-forest-900 px-2.5 py-[0.3rem] text-[11px] font-bold uppercase tracking-wider text-sand-100;
   }
   /* Hide the Travelpayouts currency selector in the flight-search widget
-     (light-DOM case; the shadow-DOM case is handled by TpwlHideCurrency). */
+     (light-DOM case only: the widget's shadow DOM is not reachable from here). */
   .localization-button-currencies {
     display: none !important;
   }
@@ -533,12 +533,6 @@ html.flight-search-active #tpwl-tickets {
 [data-testid="localization-list-currencies"] > *:hover {
   background: rgba(7, 20, 43, 0.05);
   color: #014fd3;
-}
-
-[data-testid="popular-hotel-cities"] h5 {
-  color: #ffffff !important;
-  font-size: 1.3rem;
-  font-weight: 600 !important;
 }
 
 /* Article body — 18px / 300 body text, keep headings bold */

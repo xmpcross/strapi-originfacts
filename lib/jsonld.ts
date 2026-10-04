@@ -56,7 +56,6 @@ export const ORG_SAME_AS = [
   'https://www.facebook.com/originfacts/',
   'https://www.linkedin.com/company/143027896/',
   'https://www.instagram.com/originfacts/',
-  'https://www.youtube.com/@originfacts',
   'https://www.reddit.com/r/Originfacts/',
   'https://pinterest.com/originfacts/',
   'https://find-and-update.company-information.service.gov.uk/company/16134139',

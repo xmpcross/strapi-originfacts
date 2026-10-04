@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import {
-  listArticles,
+  listArticleIndex,
   listAirlines,
   listAirports,
   listDestinations,
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 
 export default async function SitemapPage() {
   const [articlesRes, destinations, allAirlines, allAirports, coverage] = await Promise.all([
-    listArticles({ pageSize: 200 }).catch(() => ({ data: [], meta: null as never })),
+    listArticleIndex().catch(() => ({ data: [], meta: null as never })),
     listDestinations().catch(() => []),
     listAirlines().catch(() => []),
     listAirports().catch(() => []),

@@ -136,18 +136,27 @@ export default async function ArticlePage({ params }: Props) {
   const hero = mediaUrl(article.coverImage ?? null);
   const date = article.publishedAt ? format(new Date(article.publishedAt), 'd MMMM yyyy') : '';
 
-  // Related by category + sidebar + prev/next post by publishedAt
-  const [relatedRes, sidebar, categoryTiles, adjacent] = await Promise.all([
+  // Related: articles about the same destinations first, then the same
+  // category (category alone sent a Bangkok flights post to six "Perth to X"
+  // posts). Plus sidebar and prev/next post by publishedAt.
+  type ArticleList = Awaited<ReturnType<typeof listArticles>>['data'];
+  const destinationSlugs = (article.destinations ?? []).map((d) => d.slug).filter(Boolean);
+  const [sameDestinationRes, relatedRes, sidebar, categoryTiles, adjacent] = await Promise.all([
+    destinationSlugs.length > 0
+      ? listArticles({ destinations: destinationSlugs, pageSize: 12 }).catch(() => ({ data: [] as ArticleList }))
+      : Promise.resolve({ data: [] as ArticleList }),
     article.category
-      ? listArticles({ category: article.category.slug, pageSize: 12 }).catch(() => ({ data: [] as Awaited<ReturnType<typeof listArticles>>['data'] }))
-      : Promise.resolve({ data: [] as Awaited<ReturnType<typeof listArticles>>['data'] }),
+      ? listArticles({ category: article.category.slug, pageSize: 12 }).catch(() => ({ data: [] as ArticleList }))
+      : Promise.resolve({ data: [] as ArticleList }),
     listSidebarArticles(5).catch(() => ({ recent: [], popular: [] })),
     listSidebarCategoryTiles(
       SECTIONS.filter((s) => s.slug !== 'destinations').map((s) => s.slug),
     ).catch(() => []),
     getAdjacentArticles(article.publishedAt, article.id).catch(() => ({ prev: null, next: null })),
   ]);
-  const related = relatedRes.data.filter((x) => x.id !== article.id).slice(0, 8);
+  const related = [...sameDestinationRes.data, ...relatedRes.data]
+    .filter((x, i, all) => x.id !== article.id && all.findIndex((y) => y.id === x.id) === i)
+    .slice(0, 8);
 
   const articleUrl = `https://www.originfacts.com/articles/${article.slug}`;
   const articleImage = mediaUrl(article.ogImage ?? article.coverImage ?? null);

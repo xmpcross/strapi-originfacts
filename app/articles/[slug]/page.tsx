@@ -153,7 +153,7 @@ export default async function ArticlePage({ params }: Props) {
   const articleImage = mediaUrl(article.ogImage ?? article.coverImage ?? null);
   const faqs = normalizeFaqs(article.faqs);
   const steps = normalizeSteps(article.steps);
-  const authorProfile = resolveAuthor(article.author?.slug || article.author?.name);
+  const authorProfile = await resolveAuthor(article.author?.slug);
   const authorPersonSchema = authorPersonJsonLd(authorProfile);
 
   const articleJsonLd = articleBlogPostingJsonLd({
@@ -162,7 +162,7 @@ export default async function ArticlePage({ params }: Props) {
     image: articleImage,
     datePublished: article.publishedAt,
     dateModified: article.updatedAt || article.publishedAt,
-    authorNameOrSlug: authorProfile.slug,
+    author: authorProfile,
     categoryName: article.category?.name,
     keywords: article.seoKeywords,
     type: 'BlogPosting',

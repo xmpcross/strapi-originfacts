@@ -17,6 +17,7 @@ import {
   robotsFor,
   summariseRoutes,
 } from '@/lib/entity-seo';
+import { resolveAuthor } from '@/lib/authors';
 import { JsonLd, FaqSection } from '@/components/SeoBlocks';
 import { airlineGuideIsPublished, airlineIsIndexable, airlineTier } from '@/lib/airline-tier';
 import { getFlySfoAirlineProfile } from '@/lib/flysfo-airline';
@@ -205,7 +206,7 @@ export default async function AirlinePage({ params }: Props) {
     description: airline.about || intro,
     url: `${SITE_URL}/airlines/${airline.slug}`,
     image: logo,
-    authorNameOrSlug: 'k-spellman',
+    author: await resolveAuthor(),
     categoryName: 'Airlines',
     type: 'BlogPosting',
   });

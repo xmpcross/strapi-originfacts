@@ -19,7 +19,7 @@
 import type { StrapiAirport, StrapiAirline, StrapiRoute, StrapiCountry } from '@/lib/strapi';
 import { getCountryFacts } from '@/lib/country-facts';
 import { operableCarriers } from '@/lib/route-carriers';
-import { resolveAuthor, authorPersonJsonLd } from '@/lib/authors';
+import { authorPersonJsonLd, type AuthorProfile } from '@/lib/authors';
 
 export const SITE_URL = 'https://www.originfacts.com';
 
@@ -705,14 +705,15 @@ export type ArticleBlogPostingOptions = {
   image?: string | null;
   datePublished?: string;
   dateModified?: string;
-  authorNameOrSlug?: string;
+  /** The byline, resolved by the caller with `await resolveAuthor()`. */
+  author: AuthorProfile;
   categoryName?: string;
   keywords?: string;
   type?: 'BlogPosting' | 'Article';
 };
 
 export function articleBlogPostingJsonLd(opts: ArticleBlogPostingOptions): Record<string, unknown> {
-  const authorProfile = resolveAuthor(opts.authorNameOrSlug);
+  const authorProfile = opts.author;
   const authorPersonSchema = authorPersonJsonLd(authorProfile);
   const rawImg = opts.image || DEFAULT_OG_IMAGE;
   const imgUrl = rawImg.startsWith('http') ? rawImg : `${SITE_URL}${rawImg.startsWith('/') ? '' : '/'}${rawImg}`;

@@ -36,7 +36,7 @@ export default async function AboutPage() {
 
   const rawHtml = await marked.parse(md, { async: true });
   const { html: processedHtml, toc } = injectHeadingIdsAndExtractToc(rawHtml);
-  const authors = getAllAuthors();
+  const authors = await getAllAuthors();
 
   return (
     <article className="mx-auto max-w-7xl px-6 py-16" data-testid="about-page">

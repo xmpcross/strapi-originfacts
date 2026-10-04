@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { getAuthorBySlug, AUTHORS, authorPersonJsonLd } from '@/lib/authors';
+import { DEFAULT_AUTHOR_SLUG, getAllAuthors, getAuthorBySlug, authorPersonJsonLd } from '@/lib/authors';
 import { listArticles } from '@/lib/strapi';
 import ArticleCard from '@/components/ArticleCard';
 import { JsonLd } from '@/components/SeoBlocks';
@@ -13,16 +13,19 @@ type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const author = getAuthorBySlug(slug);
+  const author = await getAuthorBySlug(slug);
   if (!author) return { title: 'Author Not Found' };
 
   const metaTitle = `${author.name} — ${author.jobTitle}`;
   const metaDescription = clampDescription(author.bio);
 
+  // Authors with no published article stay reachable but out of the index.
+  const listed = (await getAllAuthors()).some((a) => a.slug === author.slug);
   return {
     title: metaTitle,
     description: metaDescription,
     alternates: { canonical: `/authors/${author.slug}` },
+    ...(listed ? {} : { robots: { index: false, follow: true } }),
     openGraph: {
       title: metaTitle,
       description: metaDescription,
@@ -33,22 +36,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export function generateStaticParams() {
-  return Object.keys(AUTHORS).map((slug) => ({ slug }));
+export async function generateStaticParams() {
+  return (await getAllAuthors()).map((a) => ({ slug: a.slug }));
 }
 
 export default async function AuthorProfilePage({ params }: Props) {
   const { slug } = await params;
-  const author = getAuthorBySlug(slug);
+  const author = await getAuthorBySlug(slug);
   if (!author) notFound();
 
   // Fetch articles to display authored works
-  const allArticlesRes = await listArticles({ pageSize: 50 }).catch(() => ({ data: [] }));
+  const allArticlesRes = await listArticles({ pageSize: 200 }).catch(() => ({ data: [] }));
   const articles = allArticlesRes.data;
 
   // Filter articles associated with author name/slug or fallback to top recent articles
+  // An article with no CMS author is bylined DEFAULT_AUTHOR_SLUG.
   const authoredArticles = articles.filter(
-    (a) => a.author?.slug === author.slug || a.author?.name?.toLowerCase().includes(author.name.split(' ')[0]!.toLowerCase()),
+    (a) => (a.author?.slug || DEFAULT_AUTHOR_SLUG) === author.slug,
   );
   // No fallback to `articles.slice(0, 6)`. That filled an author with no
   // articles using the site's six most recent ones, under a heading that then

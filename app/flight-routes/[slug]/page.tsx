@@ -7,6 +7,7 @@ import PriceCalendar from '@/components/PriceCalendar';
 import ScheduleWidget from '@/components/ScheduleWidget';
 import ExpandableDescription from '@/components/ExpandableDescription';
 import { airportPath } from '@/lib/airport-slugs';
+import { buildMetaDescription } from '@/lib/seo';
 import { SITE_URL, DEFAULT_OG_IMAGE, articleBlogPostingJsonLd, faqJsonLd, type Faq } from '@/lib/entity-seo';
 import { JsonLd, FaqSection } from '@/components/SeoBlocks';
 import OutboundCitations from '@/components/OutboundCitations';
@@ -64,8 +65,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   const description = facts.length
     ? `Flights from ${from} (${r.origin.iata}) to ${to} (${r.destination.iata}): ${facts.join(', ')}. Compare live fares and see where to book.`
-    : r.about?.slice(0, 155) ||
-      `Flights from ${from} (${r.origin.iata}) to ${to} (${r.destination.iata}): carriers, schedules and where to book.`;
+    : buildMetaDescription([
+        r.about,
+        `Flights from ${from} (${r.origin.iata}) to ${to} (${r.destination.iata}): carriers, schedules and where to book.`,
+      ]);
 
   const hero = mediaUrl(r.destination.heroImage ?? null);
   return {

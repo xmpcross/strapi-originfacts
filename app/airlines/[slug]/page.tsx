@@ -5,6 +5,7 @@ import RouteNetwork from '@/components/RouteNetwork';
 import { getRouteFacts } from '@/lib/route-facts';
 import {
   SITE_URL,
+  DEFAULT_OG_IMAGE,
   AIRLINES_INDEXABLE,
   airlineIntro,
   airlineAbout,
@@ -23,7 +24,8 @@ import { getAirlineFacts } from '@/lib/airline-facts';
 import { getAirlineReviews } from '@/lib/airline-reviews';
 import { getAirlineRef } from '@/lib/airline-refs';
 import AirlineTier1, { derivedFaqs } from '@/components/airline-tier1/AirlineTier1';
-import { breadcrumbJsonLd } from '@/lib/jsonld';
+import { breadcrumbJsonLd, absoluteUrl } from '@/lib/jsonld';
+import { buildMetaDescription, compactTitle, programmaticTitle } from '@/lib/seo';
 import AirlineReviews from '@/components/AirlineReviews';
 import AirlineStatusNotice from '@/components/AirlineStatusNotice';
 import { getCeasedAirline, ceasedOnPhrase } from '@/lib/airline-status';
@@ -31,7 +33,6 @@ import AirlineShowcase from '@/components/AirlineShowcase';
 import AirlineFlightSearch from '@/components/AirlineFlightSearch';
 import AboutParagraphs from '@/components/AboutParagraphs';
 import type { Metadata } from 'next';
-import { clampDescription, compactTitle } from '@/lib/seo';
 
 export const revalidate = 60;
 
@@ -42,17 +43,46 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const a = await getAirline(slug);
   if (!a) return { title: 'Not found' };
   const routes = await listRoutesByCarrier(slug, 1).catch(() => []);
+  // A ceased carrier gets a historical description and title; live carriers
+  // go through the shared builder with a keyword title and logo og:image.
   const ceased = getCeasedAirline(a.slug);
-  const fallback =
-    `${a.name} airline profile with country, hub, IATA and ICAO codes, routes, baggage context, passenger notes and booking checks for travellers comparing flights.`;
-  const sourceDescription = ceased
-    ? `${a.name} ceased operations ${ceasedOnPhrase(ceased.ceasedOn)}. Historical profile with its IATA and ICAO codes, base, and the network it flew.`
-    : a.about || (airlineIntro(a).length >= 80 ? airlineIntro(a) : fallback);
-  const desc = clampDescription(sourceDescription);
+  const description = ceased
+    ? buildMetaDescription([
+        `${a.name} ceased operations ${ceasedOnPhrase(ceased.ceasedOn)}. Historical profile with its IATA and ICAO codes, base, and the network it flew.`,
+      ])
+    : buildMetaDescription([
+        a.shortDescription,
+        a.about,
+        airlineIntro(a).length >= 80 ? airlineIntro(a) : null,
+        `${a.name} airline profile with country, hub, IATA and ICAO codes, routes, baggage context, passenger notes and booking checks for travellers comparing flights.`,
+      ]);
+  const url = `${SITE_URL}/airlines/${a.slug}`;
+  const logo = a.logo && a.logo.url ? a.logo : null;
+  const title = ceased
+    ? compactTitle(`${a.name} (ceased operations)`, 60)
+    : programmaticTitle(a.iataCode ? `${a.name} (${a.iataCode})` : a.name, 'Routes, Hubs & Fleet');
   return {
-    title: ceased ? compactTitle(`${a.name} (ceased operations)`, 60) : compactTitle(a.name),
-    description: desc,
-    alternates: { canonical: `${SITE_URL}/airlines/${a.slug}` },
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+      url,
+      images: logo
+        ? [{
+            url: absoluteUrl(mediaUrl(logo)!),
+            width: logo.width ?? 512,
+            height: logo.height ?? 512,
+            alt: `${a.name} logo`,
+          }]
+        : [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630, alt: 'Originfacts' }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: [logo ? absoluteUrl(mediaUrl(logo)!) : DEFAULT_OG_IMAGE],
+    },
     // A ceased carrier is never indexable, published guide or not.
     robots: robotsFor(
       !ceased &&

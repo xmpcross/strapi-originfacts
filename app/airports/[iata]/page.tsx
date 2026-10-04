@@ -32,7 +32,7 @@ import ComparisonTable from '@/components/ComparisonTable';
 import { breadcrumbJsonLd } from '@/lib/jsonld';
 import type { Metadata } from 'next';
 import topAirportSources from '@/data/airport-sources/top-100-official-links.json';
-import { clampDescription, compactTitle } from '@/lib/seo';
+import { buildMetaDescription, compactTitle } from '@/lib/seo';
 
 export const revalidate = 60;
 
@@ -100,10 +100,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const routes = await listRoutesFromAirport(a.iata, 1).catch(() => []);
   const hero = airportHeroImage(a.iata, mediaUrl(a.heroImage ?? null));
   const metaTitle = compactTitle(`${a.name} (${a.iata}) airport guide`);
-  const description = clampDescription(
-    a.about ||
-      `${a.name} (${a.iata})${a.city ? ` in ${a.city}` : ''}${a.country ? `, ${a.country}` : ''}: codes, location, airlines, top destinations, terminal notes and ground-transfer basics.`,
-  );
+  const description = buildMetaDescription([
+    a.about,
+    `${a.name} (${a.iata})${a.city ? ` in ${a.city}` : ''}${a.country ? `, ${a.country}` : ''}: codes, location, airlines, top destinations, terminal notes and ground-transfer basics.`,
+  ]);
   return {
     title: metaTitle,
     description,

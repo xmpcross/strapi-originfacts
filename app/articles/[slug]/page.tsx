@@ -22,7 +22,7 @@ import TakeadsTravelOffers from '@/components/TakeadsTravelOffers';
 import AuthorCard from '@/components/AuthorCard';
 import OutboundCitations from '@/components/OutboundCitations';
 import { resolveAuthor, authorPersonJsonLd } from '@/lib/authors';
-import { clampDescription, compactTitle, warnIfLong } from '@/lib/seo';
+import { buildMetaDescription, compactTitle, warnIfLong } from '@/lib/seo';
 import TableOfContents from '@/components/TableOfContents';
 import { injectHeadingIdsAndExtractToc } from '@/lib/toc';
 import type { Metadata } from 'next';
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!a) return { title: 'Not found' };
   const ogImg = mediaUrl(a.ogImage ?? a.coverImage ?? null);
   const metaTitle = compactTitle(a.seoTitle || a.title);
-  const metaDescription = clampDescription(a.seoDescription || a.excerpt);
+  const metaDescription = buildMetaDescription([a.seoDescription, a.excerpt]);
   warnIfLong(`/articles/${a.slug}`, { title: metaTitle, description: metaDescription });
   return {
     title: metaTitle,

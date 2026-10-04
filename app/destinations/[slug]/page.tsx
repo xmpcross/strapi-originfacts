@@ -28,12 +28,13 @@ import OutboundCitations from '@/components/OutboundCitations';
 import PopularHotelsByCity from '@/components/PopularHotelsByCity';
 import TableOfContents from '@/components/TableOfContents';
 import { getCountryFacts } from '@/lib/country-facts';
-import { SITE_URL, articleBlogPostingJsonLd, faqJsonLd, normalizeFaqs } from '@/lib/entity-seo';
+import { SITE_URL, DEFAULT_OG_IMAGE, articleBlogPostingJsonLd, faqJsonLd, normalizeFaqs } from '@/lib/entity-seo';
 import { JsonLd, FaqSection } from '@/components/SeoBlocks';
 import { breadcrumbJsonLd } from '@/lib/jsonld';
 import KeyFacts from '@/components/KeyFacts';
-import { clampDescription, compactTitle } from '@/lib/seo';
+import { buildMetaDescription, clampDescription, compactTitle } from '@/lib/seo';
 import { airportPath } from '@/lib/airport-slugs';
+import { absoluteUrl } from '@/lib/jsonld';
 import type { Metadata } from 'next';
 
 export const revalidate = 60;
@@ -55,10 +56,33 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const d = await getDestination(slug);
   if (!d) return { title: 'Not found' };
+  // Title and description come from main's destination helpers; the PR adds
+  // the hero og:image on top.
+  const description = destinationMetaDescription(d);
+  const hero = d.heroImage && d.heroImage.url ? d.heroImage : null;
+  const title = destinationMetaTitle(d);
   return {
-    title: destinationMetaTitle(d),
-    description: destinationMetaDescription(d),
+    title,
+    description,
     alternates: { canonical: `/destinations/${slug}` },
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+      url: `/destinations/${slug}`,
+      images: hero
+        ? [{
+            url: absoluteUrl(mediaUrl(hero)!),
+            width: hero.width ?? 1024,
+            height: hero.height ?? 576,
+            alt: `${d.name} travel guide`,
+          }]
+        : [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630, alt: 'Originfacts' }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: [hero ? absoluteUrl(mediaUrl(hero)!) : DEFAULT_OG_IMAGE],
+    },
   };
 }
 
@@ -70,7 +94,8 @@ function destinationMetaTitle(destination: StrapiDestination) {
 }
 
 function destinationMetaDescription(destination: StrapiDestination) {
-  if (destination.description?.trim()) return clampDescription(destination.description);
+  const fromDescription = buildMetaDescription([destination.description]);
+  if (fromDescription) return fromDescription;
 
   const country = countryNameFromCode(destination.countryCode);
   if (destination.type === 'city') {

@@ -189,7 +189,9 @@ function contextualKeys(context: string): TakeadsOfferKey[] {
 export function addTrackingParameters(href: string, subId: string): string {
   try {
     const url = new URL(href);
-    url.searchParams.set('model', 'CPC');
+    // Lowercase, as in the tracking links the Takeads dashboard issues
+    // (https://tatrck.com/h/0Hu30_OZ0V7N?model=cpc for Booking.com).
+    url.searchParams.set('model', 'cpc');
     url.searchParams.set('s', subId.replace(/[^a-zA-Z0-9_-]/g, '_').slice(0, 200));
     return url.toString();
   } catch {

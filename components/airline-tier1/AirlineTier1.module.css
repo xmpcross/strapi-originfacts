@@ -32,8 +32,8 @@
   --foot-bg: #ffffff;
   --foot-text: #334155;
 
-  --t1-body: var(--font-inter), 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  --t1-head: var(--font-inter), 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --t1-body: var(--font-outfit), 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --t1-head: var(--font-urbanist), 'Urbanist', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --t1-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   background: var(--paper);

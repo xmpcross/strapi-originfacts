@@ -19,16 +19,16 @@
   .leading-relaxed {
     max-width: 100%;
   }
-  /* Default body text & paragraphs — Inter */
+  /* Default body text & paragraphs — Outfit */
   body, p {
-    font-family: var(--font-inter), 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-family: var(--font-outfit), 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
     font-weight: 400;
     letter-spacing: -0.011em;
     color: #334155;
   }
-  /* All headings → Inter */
+  /* All headings → Urbanist */
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-inter), 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-family: var(--font-urbanist), 'Urbanist', system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
     font-weight: 700 !important;
     letter-spacing: -0.02em !important;
     line-height: 1.25;
@@ -93,7 +93,7 @@
   [data-testid^="airline-page-"] h5,
   [data-testid^="airline-page-"] h6,
   [data-testid^="airline-page-"] .title {
-    font-family: var(--font-inter), 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-family: var(--font-urbanist), 'Urbanist', system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
   }
 
   [data-testid="airlines-page"],
@@ -102,7 +102,7 @@
   [data-testid="airlines-page"] a,
   [data-testid^="airline-page-"],
   [data-testid^="airline-page-"] p {
-    font-family: var(--font-outfit), 'Outfit', system-ui, sans-serif;
+    font-family: var(--font-outfit), 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   }
 
   [data-testid="airlines-page"] h3,
@@ -154,7 +154,7 @@
   [data-testid^="airport-page-"],
   [data-testid="airports-page"],
   [data-testid="airport-hubs-page"] {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: var(--font-outfit), 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   }
 
   [data-testid^="airport-page-"] h1,
@@ -165,7 +165,7 @@
   [data-testid="airports-page"] h2,
   [data-testid="airports-page"] h3,
   [data-testid="airports-page"] h4 {
-    font-family: var(--font-inter), 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-family: var(--font-urbanist), 'Urbanist', system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
   }
 
   [data-testid^="airport-page-"] h1 {
@@ -202,7 +202,7 @@
 
   [data-testid^="airport-page-"] p,
   [data-testid^="airport-page-"] li {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: var(--font-outfit), 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.65;
@@ -647,7 +647,7 @@ html.flight-search-active #tpwl-tickets {
 .prose-article table caption {
   caption-side: top;
   text-align: left;
-  font-family: var(--font-urbanist), sans-serif;
+  font-family: var(--font-urbanist), 'Urbanist', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 0.875rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -659,7 +659,7 @@ html.flight-search-active #tpwl-tickets {
 }
 
 .prose-article table th {
-  font-family: var(--font-urbanist), sans-serif;
+  font-family: var(--font-urbanist), 'Urbanist', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;

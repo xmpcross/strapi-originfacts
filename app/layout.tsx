@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Figtree, Inter, Outfit, Plus_Jakarta_Sans, Urbanist } from 'next/font/google';
+import { Outfit, Urbanist } from 'next/font/google';
 import Script from 'next/script';
 import './globals.css';
 import Header from '@/components/Header';
@@ -13,13 +13,7 @@ import { ADSENSE_CLIENT, ADSENSE_ENABLED } from '@/lib/adsense';
 import { DEFAULT_OG_IMAGE } from '@/lib/entity-seo';
 import { listSidebarArticles } from '@/lib/strapi';
 
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  weight: ['300', '400', '500', '600', '700'],
-  display: 'swap',
-});
-
+// Headings, titles and h1–h6 on every page (globals.css + tailwind `font-display`/`font-urbanist`).
 const urbanist = Urbanist({
   subsets: ['latin'],
   variable: '--font-urbanist',
@@ -27,27 +21,11 @@ const urbanist = Urbanist({
   display: 'swap',
 });
 
+// Body text and paragraphs on every page (globals.css + tailwind `font-sans`).
 const outfit = Outfit({
   subsets: ['latin'],
   variable: '--font-outfit',
   weight: ['300', '400', '500', '600', '700', '800'],
-  display: 'swap',
-});
-
-// Site-wide default font. Every Tailwind font-* utility resolves to this via
-// the tailwind.config.ts fontFamily map.
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  variable: '--font-jakarta',
-  weight: ['300', '400', '500', '600', '700', '800'],
-  display: 'swap',
-});
-
-// Heading-only typeface. Wired into globals.css h1–h6 rule.
-const figtree = Figtree({
-  subsets: ['latin'],
-  variable: '--font-figtree',
-  weight: ['400', '500', '600', '700', '800', '900'],
   display: 'swap',
 });
 
@@ -101,7 +79,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const sidebar = await listSidebarArticles(7).catch(() => ({ recent: [], popular: [] }));
 
   return (
-    <html lang="en" className={`${inter.variable} ${urbanist.variable} ${jakarta.variable} ${figtree.variable}`}>
+    <html lang="en" className={`${urbanist.variable} ${outfit.variable}`}>
       <head>
         {/* Impact.com site verification (second tag). Written verbatim with `value`,
             as Impact provides it; the metadata API would rewrite `value` to `content`. */}
@@ -126,7 +104,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {/* Ahrefs Web Analytics */}
         <script src="https://analytics.ahrefs.com/analytics.js" data-key="KbPcf3YVlIhEJPDxFrNztQ" async />
       </head>
-      <body className={`${inter.variable} ${urbanist.variable} ${outfit.variable} ${jakarta.variable} ${figtree.variable} min-h-screen flex flex-col font-sans font-normal grain`} data-testid="app-shell">
+      <body className={`${urbanist.variable} ${outfit.variable} min-h-screen flex flex-col font-sans font-normal grain`} data-testid="app-shell">
         {/* Impact.com site verification — raw tag (React 19 hoists it into <head>).
             Kept as the verbatim <meta name=… value=…> Impact provides; not routed
             through Next's metadata API, which would rewrite `value` to `content`. */}

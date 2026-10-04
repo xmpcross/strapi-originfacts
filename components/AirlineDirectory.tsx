@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { mediaUrl, type StrapiAirline, type AirlineRegion, type AirlineType } from '@/lib/strapi';
+import { spelledCount, capitalise } from '@/lib/format';
 
 const REGION_ORDER: AirlineRegion[] = ['Africa', 'Asia', 'Europe', 'North America', 'Oceania', 'South America'];
 const TYPE_OPTIONS: AirlineType[] = ['Scheduled', 'Low-cost', 'Regional', 'Charter', 'Cargo'];
@@ -43,7 +44,16 @@ function firstLetterBucket(name: string): string {
   return /[A-Z]/.test(first) ? first : '#';
 }
 
-export default function AirlineDirectory({ airlines }: { airlines: StrapiAirline[] }) {
+export default function AirlineDirectory({
+  airlines,
+  stats,
+}: {
+  airlines: StrapiAirline[];
+  /** Canonical dataset counts (lib/counts.ts) from the server page — keeps
+   *  the Regions card at the true region count instead of counting bad data
+   *  (e.g. the stray legacy "Asia-Pacific" value made this card say 7). */
+  stats?: { regions: number };
+}) {
   const [query, setQuery] = useState('');
   const [activeType, setActiveType] = useState<AirlineType | null>(null);
   const [activeRegion, setActiveRegion] = useState<AirlineRegion | null>(null);
@@ -93,10 +103,7 @@ export default function AirlineDirectory({ airlines }: { airlines: StrapiAirline
     () => new Set(airlines.map((a) => a.country).filter(Boolean)).size,
     [airlines],
   );
-  const regionCount = useMemo(
-    () => new Set(airlines.map((a) => a.region).filter(Boolean)).size,
-    [airlines],
-  );
+  const regionCount = stats?.regions ?? new Set(airlines.map((a) => a.region).filter(Boolean)).size;
 
   const orderedRegions = REGION_ORDER.filter((r) => byRegion.has(r));
 
@@ -119,7 +126,7 @@ export default function AirlineDirectory({ airlines }: { airlines: StrapiAirline
         <SummaryCard
           label="Regions"
           value={regionCount.toLocaleString()}
-          blurb="Six continental groupings, each with its own dominant carriers and route geography."
+          blurb={`${capitalise(spelledCount(regionCount))} continental groupings, each with its own dominant carriers and route geography.`}
           icon={<CompassIcon />}
         />
       </div>

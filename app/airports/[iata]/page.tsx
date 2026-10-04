@@ -22,6 +22,7 @@ import {
 import { getAirportWeather, weatherLabel } from '@/lib/open-meteo';
 import { JsonLd, FaqSection } from '@/components/SeoBlocks';
 import { buildMetaDescription } from '@/lib/seo';
+import { getSiteCounts, countRoutesFromAirport } from '@/lib/counts';
 import type { Metadata } from 'next';
 
 export const revalidate = 60;
@@ -77,11 +78,13 @@ export default async function AirportPage({ params }: Props) {
   const airport = await getAirport(iata);
   if (!airport) notFound();
 
-  const [routes, sameCountry] = await Promise.all([
+  const [routes, sameCountry, routeTotal, siteCounts] = await Promise.all([
     listRoutesFromAirport(airport.iata, 15).catch(() => []),
     airport.countryCode
       ? listAirportsByCountryCode(airport.countryCode, 30).catch(() => [])
       : Promise.resolve([]),
+    countRoutesFromAirport(airport.iata).catch(() => 0),
+    getSiteCounts().catch(() => null),
   ]);
   const airportInfo = await getAirportInfoByCode({ iata: airport.iata, icao: airport.icao });
   const weatherLatitude = airport.latitude ?? airportInfo?.latitude;
@@ -92,10 +95,25 @@ export default async function AirportPage({ params }: Props) {
   });
 
   const summary = summariseRoutes(routes, 'destination');
+  // Dataset total, not the 15-route sample — copy builders assert this count.
+  if (routeTotal > 0) summary.routeTotal = routeTotal;
   const hero = airportHeroImage(airport.iata, mediaUrl(airport.heroImage ?? null));
   const url = `${SITE_URL}/airports/${airport.iata.toLowerCase()}`;
   const nearby = sameCountry.filter((a) => a.iata && a.iata !== airport.iata).slice(0, 9);
-  const faqs = airportFaqs(airport, summary);
+  const faqs = airportFaqs(airport, summary, {
+    icao: airportInfo?.icao,
+    city: airportInfo?.city,
+    country: airportInfo?.country,
+    phone: airportInfo?.phone,
+    website: airportInfo?.website,
+    address: airportInfoAddress(airportInfo),
+    // Dataset count for this airport's country — never nearby.length (the
+    // 9-card rendered sample), which is how "9 other airports in Australia"
+    // shipped while the dataset held 130.
+    countryAirportCount: airport.countryCode
+      ? siteCounts?.airportsByCountryCode[airport.countryCode.toUpperCase()]
+      : undefined,
+  });
 
   const aboutSections = airport.about ? parseAboutSections(airport.about) : [];
   const infoSection = aboutSections.find((s) => /airport information/i.test(s.heading || ''));

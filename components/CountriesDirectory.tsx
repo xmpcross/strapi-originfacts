@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import type { AirlineRegion } from '@/lib/strapi';
+import { spelledCount, capitalise } from '@/lib/format';
 
 const REGION_ORDER: AirlineRegion[] = ['Africa', 'Asia', 'Europe', 'North America', 'Oceania', 'South America'];
 const PER_REGION_LIMIT = 12;
@@ -10,20 +11,27 @@ const PER_REGION_LIMIT = 12;
 // Short intros shown above each region's country grid. Kept factual and
 // concrete — geography, aviation context, what makes the region distinct —
 // without travel-brochure language.
-const REGION_INTROS: Record<AirlineRegion, string> = {
-  Africa:
-    'Fifty-four countries from the Sahara to the Cape, with some of the world\'s fastest-growing aviation networks linking ancient civilisations, savannah wildlife corridors, and a young, fast-urbanising population.',
-  Asia:
-    'From Tokyo to Istanbul, Asia spans 48 countries and roughly 60% of humanity — megacity hubs, monsoon coasts, Himalayan passes, and Pacific archipelagos all stitched together by the world\'s densest long-haul corridors.',
-  Europe:
-    'Forty-plus countries packed into a small landmass where the Schengen zone lets travellers cross between cultures in a single afternoon — Atlantic surf to Aegean islands, Lapland fjords to Lisbon.',
-  'North America':
-    'Three vast nations plus Central America and the Caribbean — Arctic tundra, desert canyons, tropical beaches, and the busy air corridors that connect them, including some of the world\'s highest-traffic city pairs.',
-  Oceania:
+//
+// Any count a blurb asserts is INTERPOLATED from the rows actually rendered
+// below it — never hardcoded. The dataset counts countries *and territories*
+// with scheduled service, which is why interpolation beats quoting sovereign-
+// state totals ("fifty-four") that contradict the header count beside it.
+const REGION_INTROS: Record<AirlineRegion, (count: number) => string> = {
+  Africa: (n) =>
+    `${cap(spelledCount(n))} countries and territories from the Sahara to the Cape, with some of the world's fastest-growing aviation networks linking ancient civilisations, savannah wildlife corridors, and a young, fast-urbanising population.`,
+  Asia: (n) =>
+    `From Tokyo to Istanbul, Asia spans ${n} countries and territories and roughly 60% of humanity — megacity hubs, monsoon coasts, Himalayan passes, and Pacific archipelagos all stitched together by the world's densest long-haul corridors.`,
+  Europe: (n) =>
+    `${cap(spelledCount(n))} countries and territories packed into a small landmass where the Schengen zone lets travellers cross between cultures in a single afternoon — Atlantic surf to Aegean islands, Lapland fjords to Lisbon.`,
+  'North America': (n) =>
+    `${cap(spelledCount(n))} countries and territories from Arctic tundra through Central America to the Caribbean — desert canyons, tropical beaches, and the busy air corridors that connect them, including some of the world's highest-traffic city pairs.`,
+  Oceania: () =>
     'Australia, New Zealand and thousands of Pacific islands. Long-haul flights are the norm; the region\'s gateways open onto the Great Barrier Reef, Māori marae, and remote atolls few travellers ever reach.',
-  'South America':
-    'Twelve countries spanning Caribbean tropics, Andean altiplano, Amazonian rainforest and Patagonian ice. Most intercontinental journeys route through São Paulo, Bogotá, or Lima before fanning out across the continent.',
+  'South America': (n) =>
+    `${cap(spelledCount(n))} countries and territories spanning Caribbean tropics, Andean altiplano, Amazonian rainforest and Patagonian ice. Most intercontinental journeys route through São Paulo, Bogotá, or Lima before fanning out across the continent.`,
 };
+
+const cap = capitalise;
 
 export type CountryRow = {
   code: string;
@@ -42,7 +50,16 @@ function flagEmoji(code: string): string {
   return String.fromCodePoint(...[...cc].map((c) => 0x1f1e6 + c.charCodeAt(0) - 65));
 }
 
-export default function CountriesDirectory({ countries }: { countries: CountryRow[] }) {
+export default function CountriesDirectory({
+  countries,
+  stats,
+}: {
+  countries: CountryRow[];
+  /** Canonical dataset counts from lib/counts.ts getSiteCounts(), passed by
+   *  the server page so stat blocks agree with every other page. Falls back
+   *  to deriving from the rows when absent. */
+  stats?: { airports: number; regions: number };
+}) {
   const [query, setQuery] = useState('');
   const [activeRegion, setActiveRegion] = useState<AirlineRegion | null>(null);
   const [expandedRegions, setExpandedRegions] = useState<Set<AirlineRegion>>(new Set());
@@ -73,14 +90,15 @@ export default function CountriesDirectory({ countries }: { countries: CountryRo
     return map;
   }, [filtered]);
 
-  const totalAirports = useMemo(
-    () => countries.reduce((sum, c) => sum + c.airportCount, 0),
-    [countries],
-  );
-  const regionCount = useMemo(
-    () => new Set(countries.map((c) => c.region).filter(Boolean)).size,
-    [countries],
-  );
+  const totalAirports = stats?.airports ?? countries.reduce((sum, c) => sum + c.airportCount, 0);
+  const regionCount = stats?.regions ?? new Set(countries.map((c) => c.region).filter(Boolean)).size;
+  // Unfiltered per-region totals — region intros assert dataset facts, so
+  // they must not shrink when a search filter narrows the visible list.
+  const regionTotals = useMemo(() => {
+    const m = new Map<AirlineRegion, number>();
+    for (const c of countries) if (c.region) m.set(c.region, (m.get(c.region) ?? 0) + 1);
+    return m;
+  }, [countries]);
 
   const orderedRegions = REGION_ORDER.filter((r) => byRegion.has(r));
 
@@ -103,7 +121,7 @@ export default function CountriesDirectory({ countries }: { countries: CountryRo
         <SummaryCard
           label="Regions"
           value={regionCount.toString()}
-          blurb="Six continental groupings, each spanning dozens of countries and time zones."
+          blurb={`${cap(spelledCount(regionCount))} continental groupings, each spanning dozens of countries and time zones.`}
           icon={<CompassIcon />}
         />
       </div>
@@ -185,7 +203,7 @@ export default function CountriesDirectory({ countries }: { countries: CountryRo
                   </header>
                   {REGION_INTROS[r] && (
                     <p className="mt-4 w-full text-sm text-forest-900/70" data-testid={`region-intro-${r.replace(/\s+/g, '-').toLowerCase()}`}>
-                      {REGION_INTROS[r]}
+                      {REGION_INTROS[r](regionTotals.get(r) ?? regionList.length)}
                     </p>
                   )}
                   <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">

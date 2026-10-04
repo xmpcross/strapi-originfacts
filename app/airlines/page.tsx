@@ -1,4 +1,5 @@
 import { listAirlines, mediaUrl } from '@/lib/strapi';
+import { getSiteCounts } from '@/lib/counts';
 import AirlineDirectory, { PopularAirlinesStrip } from '@/components/AirlineDirectory';
 import ExpandableDescription from '@/components/ExpandableDescription';
 import { JsonLd } from '@/components/SeoBlocks';
@@ -17,7 +18,7 @@ export const metadata = {
 };
 
 export default async function AirlinesPage() {
-  const airlines = await listAirlines().catch(() => []);
+  const [airlines, siteCounts] = await Promise.all([listAirlines().catch(() => []), getSiteCounts()]);
 
   const collectionJsonLd = collectionPageJsonLd({
     name: HUB.name,
@@ -43,7 +44,7 @@ export default async function AirlinesPage() {
 
       <PopularAirlinesStrip airlines={airlines} />
 
-      <AirlineDirectory airlines={airlines} />
+      <AirlineDirectory airlines={airlines} stats={{ regions: siteCounts.regions }} />
     </div>
   );
 }

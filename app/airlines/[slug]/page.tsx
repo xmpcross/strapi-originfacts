@@ -20,6 +20,7 @@ import { JsonLd, FaqSection } from '@/components/SeoBlocks';
 import { getFlySfoAirlineProfile } from '@/lib/flysfo-airline';
 import { breadcrumbJsonLd, absoluteUrl } from '@/lib/jsonld';
 import { buildMetaDescription, programmaticTitle } from '@/lib/seo';
+import { countRoutesByCarrier } from '@/lib/counts';
 import AirlineReviews from '@/components/AirlineReviews';
 import AirlineFlightSearch from '@/components/AirlineFlightSearch';
 import AboutParagraphs from '@/components/AboutParagraphs';
@@ -72,13 +73,16 @@ export default async function AirlinePage({ params }: Props) {
   const airline = await getAirline(slug);
   if (!airline) notFound();
 
-  const [routes, flySfoProfile, countryAirlines] = await Promise.all([
+  const [routes, routeTotal, flySfoProfile, countryAirlines] = await Promise.all([
     listRoutesByCarrier(slug, 15).catch(() => []),
+    countRoutesByCarrier(slug).catch(() => 0),
     getFlySfoAirlineProfile(airline).catch(() => null),
     airline.country ? listAirlinesByCountry(airline.country, 12).catch(() => []) : Promise.resolve([]),
   ]);
   const logo = mediaUrl(airline.logo ?? null);
   const summary = summariseRoutes(routes, 'destination');
+  // Dataset total, not the 15-route sample — copy builders assert this count.
+  if (routeTotal > 0) summary.routeTotal = routeTotal;
   const url = `${SITE_URL}/airlines/${airline.slug}`;
   const intro = airlineIntro(airline, summary);
   const relatedAirlines = countryAirlines.filter((c) => c.slug !== airline.slug).slice(0, 6);

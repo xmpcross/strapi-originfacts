@@ -153,6 +153,21 @@ export type StrapiRoute = {
 
 type ListResponse<T> = { data: T[]; meta: { pagination: { page: number; pageSize: number; pageCount: number; total: number } } };
 
+/**
+ * Total record count for a collection (optionally filtered) straight from
+ * Strapi's pagination meta — one row of payload regardless of collection
+ * size. This is THE way to state dataset sizes in copy; never derive a
+ * "how many X" claim from a capped list fetch (see lib/counts.ts).
+ */
+export async function countRecords(path: string, filters?: Record<string, unknown>, revalidate = 3600): Promise<number> {
+  const res = await strapiFetch<ListResponse<unknown>>(
+    path,
+    { ...(filters ? { filters } : {}), pagination: { pageSize: 1 } },
+    revalidate,
+  );
+  return res.meta?.pagination?.total ?? 0;
+}
+
 async function strapiFetch<T>(path: string, params?: Record<string, unknown>, revalidate = 60): Promise<T> {
   const query = params ? '?' + qs.stringify(params, { encodeValuesOnly: true }) : '';
   const url = `${BASE}/api/${path}${query}`;

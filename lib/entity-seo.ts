@@ -207,7 +207,23 @@ export type RouteSummary = {
   destinationNames: string[];
   countryNames: string[];
   carriers: { name: string; slug: string; iataCode?: string }[];
+  /** TOTAL tracked routes for this entity per the DATASET (from
+   *  lib/counts.ts countRoutesFromAirport / countRoutesByCarrier). The other
+   *  fields are derived from a CAPPED sample fetch (typically 15 routes) and
+   *  must never be presented as dataset totals; when routeTotal is set, the
+   *  copy builders use it for count claims and drop the sample-derived
+   *  country/carrier tallies whenever the sample is incomplete. */
+  routeTotal?: number;
 };
+
+/** The destination count that copy may assert: the dataset total when known,
+ *  else the sample size (which is then, by definition, all we track). */
+export const trackedCount = (s: RouteSummary): number => s.routeTotal ?? s.destinationCount;
+
+/** True when the sample covers the whole dataset, making sample-derived
+ *  tallies (countries spanned, carrier counts) safe to state as facts. */
+export const sampleComplete = (s: RouteSummary): boolean =>
+  s.routeTotal === undefined || s.routeTotal <= s.destinationCount;
 
 export function summariseRoutes(routes: StrapiRoute[], side: 'origin' | 'destination' = 'destination'): RouteSummary {
   const dests = new Map<string, string>();
@@ -255,7 +271,9 @@ export function airportIntro(a: StrapiAirport, s?: RouteSummary): string {
         : '';
   const net =
     s && s.destinationCount > 0
-      ? ` Originfacts tracks ${pluralise(s.destinationCount, 'destination')} reachable from ${a.iata}${s.countryCount > 1 ? ` across ${pluralise(s.countryCount, 'country', 'countries')}` : ''}${s.carrierCount > 0 ? `, served by ${pluralise(s.carrierCount, 'airline')}` : ''}.`
+      ? sampleComplete(s)
+        ? ` Originfacts tracks ${pluralise(trackedCount(s), 'destination')} reachable from ${a.iata}${s.countryCount > 1 ? ` across ${pluralise(s.countryCount, 'country', 'countries')}` : ''}${s.carrierCount > 0 ? `, served by ${pluralise(s.carrierCount, 'airline')}` : ''}.`
+        : ` Originfacts tracks ${pluralise(trackedCount(s), 'destination')} reachable from ${a.iata}, served by airlines including ${listProse(s.carriers.map((c) => c.name), 4)}.`
       : '';
   return lead + geo + net;
 }
@@ -272,7 +290,7 @@ export function airlineIntro(a: StrapiAirline, s?: RouteSummary): string {
   const hub = a.airport ? ` Its operations are centred on ${a.airport}.` : '';
   const net =
     s && s.destinationCount > 0
-      ? ` Originfacts tracks ${pluralise(s.destinationCount, 'destination')} on its network${s.countryCount > 1 ? ` across ${pluralise(s.countryCount, 'country', 'countries')}` : ''}.`
+      ? ` Originfacts tracks ${pluralise(trackedCount(s), 'destination')} on its network${sampleComplete(s) && s.countryCount > 1 ? ` across ${pluralise(s.countryCount, 'country', 'countries')}` : ''}.`
       : '';
   return lead + hub + net;
 }
@@ -313,7 +331,7 @@ export function airlineAbout(
   const closing: string[] = [];
   if (s && s.destinationCount > 0) {
     closing.push(
-      `On the network side, Originfacts currently tracks ${pluralise(s.destinationCount, 'destination')}${s.countryCount > 1 ? ` across ${pluralise(s.countryCount, 'country', 'countries')}` : ''} served by ${name}.`,
+      `On the network side, Originfacts currently tracks ${pluralise(trackedCount(s), 'destination')}${sampleComplete(s) && s.countryCount > 1 ? ` across ${pluralise(s.countryCount, 'country', 'countries')}` : ''} served by ${name}.`,
     );
     if (opts?.longestRouteSentence) closing.push(opts.longestRouteSentence);
   }
@@ -386,32 +404,136 @@ export function airlineExpectations(a: StrapiAirline, alliance?: string | null):
  * FAQs — every answer is grounded in a present field
  * ------------------------------------------------------------------ */
 
-export function airportFaqs(a: StrapiAirport, s?: RouteSummary): Faq[] {
+/**
+ * Extra grounded context the airport page can pass in — contact details from
+ * the airport-info dataset and the count of other tracked airports in the
+ * same country. Everything is optional; absent fields simply skip their Q&A.
+ */
+export type AirportFaqExtras = {
+  icao?: string | null;
+  city?: string | null;
+  country?: string | null;
+  phone?: string | null;
+  website?: string | null;
+  address?: string | null;
+  /** TOTAL airports in this airport's country per the DATASET
+   *  (lib/counts.ts airportsByCountryCode), including this one. Never pass
+   *  the rendered nearby-cards length — FAQ answers are extraction targets
+   *  and must state dataset facts, not the visible sample. */
+  countryAirportCount?: number;
+};
+
+/** Every airport page shows at least this many FAQ entries. */
+export const MIN_AIRPORT_FAQS = 8;
+
+export function airportFaqs(a: StrapiAirport, s?: RouteSummary, extra?: AirportFaqExtras): Faq[] {
   const faqs: Faq[] = [];
-  if (a.city || a.country) {
+  const icao = a.icao || extra?.icao || undefined;
+  const city = a.city || extra?.city || undefined;
+  const country = a.country || extra?.country || undefined;
+
+  // --- Grounded in identity / location fields -----------------------------
+  if (city || country) {
     faqs.push({
       q: `Where is ${a.name}?`,
-      a: `${a.name} is located in ${[a.city, a.country].filter(Boolean).join(', ')}${a.region ? ` (${a.region})` : ''}${num(a.latitude) && num(a.longitude) ? `, at coordinates ${a.latitude!.toFixed(3)}°, ${a.longitude!.toFixed(3)}°` : ''}.`,
+      a: `${a.name} is located in ${[city, country].filter(Boolean).join(', ')}${a.region ? ` (${a.region})` : ''}${num(a.latitude) && num(a.longitude) ? `, at coordinates ${a.latitude!.toFixed(3)}°, ${a.longitude!.toFixed(3)}°` : ''}.`,
     });
   }
   faqs.push({
     q: `What is the airport code for ${a.name}?`,
-    a: `Its IATA code is ${a.iata}${a.icao ? ` and its ICAO code is ${a.icao}` : ''}.`,
+    a: `Its IATA code is ${a.iata}${icao ? ` and its ICAO code is ${icao}` : ''}.`,
   });
-  if (a.timezone) {
-    faqs.push({ q: `What time zone is ${a.iata} in?`, a: `${a.name} operates on ${a.timezone} local time.` });
+  if (city) {
+    faqs.push({
+      q: `Which city does ${a.iata} serve?`,
+      a: `${a.name} serves ${city}${country ? `, ${country}` : ''}. When comparing fares, check whether other airports also serve the same area — prices and transfer times can differ between them.`,
+    });
   }
+  if (a.timezone) {
+    faqs.push({ q: `What time zone is ${a.iata} in?`, a: `${a.name} operates on ${a.timezone} local time. Departure and arrival times on tickets are always shown in each airport's local time, so double-check the offset when planning connections or pick-ups.` });
+  }
+  if (num(a.latitude) && num(a.longitude)) {
+    faqs.push({
+      q: `How do I find ${a.name} on a map?`,
+      a: `${a.name} sits at latitude ${a.latitude!.toFixed(3)}° and longitude ${a.longitude!.toFixed(3)}°. The map link in the details panel on this page opens the exact location for driving directions.`,
+    });
+  }
+
+  // --- Grounded in tracked route data -------------------------------------
   if (s && s.carriers.length) {
     faqs.push({
       q: `Which airlines fly from ${a.iata}?`,
       a: `Carriers tracked on routes from ${a.iata} include ${listProse(s.carriers.map((c) => c.name), 6)}.`,
     });
+  } else {
+    faqs.push({
+      q: `Which airlines fly from ${a.iata}?`,
+      a: `Originfacts does not yet track scheduled routes from ${a.iata}. Use the flight search on this page to see live airline options for your travel dates.`,
+    });
   }
   if (s && s.destinationNames.length) {
     faqs.push({
       q: `Where can you fly from ${a.iata}?`,
-      a: `Tracked destinations from ${a.iata} include ${listProse(s.destinationNames, 8)}.`,
+      a: `Originfacts tracks ${pluralise(trackedCount(s), 'destination')} from ${a.iata} — including ${listProse(s.destinationNames, 8)}${sampleComplete(s) && s.countryCount > 1 ? `, spread across ${pluralise(s.countryCount, 'country', 'countries')}` : ''}.`,
     });
+  } else {
+    faqs.push({
+      q: `Where can you fly from ${a.iata}?`,
+      a: `Route coverage for ${a.iata} is still being added to Originfacts. Run a search from ${a.iata} on the flight search page to see every destination airlines currently sell for your dates.`,
+    });
+  }
+
+  // --- Grounded in airport-info contact fields ----------------------------
+  if (extra?.phone || extra?.website || extra?.address) {
+    const parts: string[] = [];
+    if (extra.address) parts.push(`its address is ${extra.address}`);
+    if (extra.phone) parts.push(`the phone number is ${extra.phone}`);
+    if (extra.website) parts.push(`the official website is ${extra.website}`);
+    faqs.push({
+      q: `How do I contact ${a.name}?`,
+      a: `${parts.join(', ').replace(/^./, (c) => c.toUpperCase())}. For flight-specific questions (delays, baggage, rebooking), contact the operating airline directly rather than the airport.`,
+    });
+  }
+  // Dataset count, minus this airport itself. The rendered nearby-airports
+  // strip is a small sample — never the number this answer states.
+  const otherAirports = typeof extra?.countryAirportCount === 'number' ? extra.countryAirportCount - 1 : 0;
+  if (country && otherAirports > 0) {
+    faqs.push({
+      q: `Are there other airports in ${country}?`,
+      a: `Yes — Originfacts lists ${pluralise(otherAirports, 'other airport')} in ${country}. The nearby-airports section on this page links to a selection of them, which is useful when comparing fares or finding an alternative departure point.`,
+    });
+  }
+
+  // --- Always-answerable top-ups so every page reaches MIN_AIRPORT_FAQS ---
+  const fillers: Faq[] = [
+    {
+      q: `How can I find cheap flights from ${a.iata}?`,
+      a: `Use the flight search on this page to compare live fares from ${a.name}. Prices vary by day of the week and how far ahead you book, so comparing a few nearby dates usually surfaces a cheaper option.`,
+    },
+    {
+      q: `What is the difference between IATA and ICAO airport codes?`,
+      a: `IATA codes like ${a.iata} are the three-letter codes shown on tickets, booking sites and baggage tags. ICAO codes${icao ? ` (${icao} for this airport)` : ''} are four-letter identifiers used in flight operations and air-traffic control. For booking travel, the IATA code is the one you need.`,
+    },
+    {
+      q: `Do I need to confirm flight times with the airline?`,
+      a: `Yes. Schedules change through the year, so always confirm departure times, terminals and check-in cut-offs with the operating airline before travelling from ${a.name}.`,
+    },
+    {
+      q: `Is the information on this page up to date?`,
+      a: `Airport, airline and route details for ${a.iata} come from the Originfacts database and are refreshed regularly. Live fares and availability always come from the flight search, which queries current prices at the time you search.`,
+    },
+    {
+      q: `How early should I arrive at ${a.name}?`,
+      a: `A common rule of thumb is two hours before a domestic departure and three hours before an international one, but the airline's check-in and baggage cut-off times are what actually matter — check them on your booking confirmation.`,
+    },
+    {
+      q: `Can I book flights from ${a.iata} on Originfacts?`,
+      a: `Originfacts is a research and comparison site: the flight search on this page compares live fares from ${a.iata} and hands you over to the airline or agent to complete the booking, so your ticket and payment sit with the seller.`,
+    },
+  ];
+  for (const f of fillers) {
+    if (faqs.length >= MIN_AIRPORT_FAQS) break;
+    faqs.push(f);
   }
   return faqs;
 }
@@ -453,7 +575,7 @@ export function airlineFaqs(
   if (s && s.destinationCount > 0) {
     faqs.push({
       q: `How many destinations does ${name} fly to?`,
-      a: `Originfacts currently tracks ${pluralise(s.destinationCount, 'destination')} on ${name}'s network${s.countryCount > 1 ? ` across ${pluralise(s.countryCount, 'country', 'countries')}` : ''}. The airline's full network is typically larger — see its official route map for the complete picture.`,
+      a: `Originfacts currently tracks ${pluralise(trackedCount(s), 'destination')} on ${name}'s network${sampleComplete(s) && s.countryCount > 1 ? ` across ${pluralise(s.countryCount, 'country', 'countries')}` : ''}. The airline's full network is typically larger — see its official route map for the complete picture.`,
     });
   }
 

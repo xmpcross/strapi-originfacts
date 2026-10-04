@@ -1,4 +1,5 @@
 import { listAirports, listCountries, destinationSlugByCountryCode, countryHref } from '@/lib/strapi';
+import { getSiteCounts } from '@/lib/counts';
 import CountriesDirectory, { type CountryRow } from '@/components/CountriesDirectory';
 import ExpandableDescription from '@/components/ExpandableDescription';
 import { JsonLd } from '@/components/SeoBlocks';
@@ -17,10 +18,11 @@ export const metadata = {
 };
 
 export default async function CountriesPage() {
-  const [strapiCountries, airports, destSlugs] = await Promise.all([
+  const [strapiCountries, airports, destSlugs, siteCounts] = await Promise.all([
     listCountries().catch(() => []),
     listAirports().catch(() => []),
     destinationSlugByCountryCode(),
+    getSiteCounts(),
   ]);
 
   // Build aggregates (airport + city counts) from airports keyed by ISO code.
@@ -92,7 +94,10 @@ export default async function CountriesPage() {
         <ExpandableDescription text={HUB.intro} />
       </header>
 
-      <CountriesDirectory countries={countries} />
+      <CountriesDirectory
+        countries={countries}
+        stats={{ airports: siteCounts.airports, regions: siteCounts.regions }}
+      />
     </div>
   );
 }

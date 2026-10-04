@@ -5,35 +5,40 @@
     {
       "id": "carryon",
       "title": "Carry-on",
+      "lede": "Hand baggage and a personal item are free; the number of hand bags depends on class and destination.",
       "required": [
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_weight",
+        "personal_item"
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "https://www.flytap.com/baggage",
-          "notes": "TAP Air Portugal cabin baggage size limit: 55 x 40 x 20 cm.",
+          "value": "Hand baggage up to 55 x 40 x 25 cm / 22 x 16 x 10 in.",
+          "status": "official",
+          "source_url": "https://www.flytap.com/en-cv/baggage/hand-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "https://www.flytap.com/baggage",
-          "notes": "TAP Air Portugal Economy Class carry-on weight limit.",
+        "carryon_weight": {
+          "value": "Hand baggage up to 10 kg / 22 lbs per item.",
+          "status": "official",
+          "source_url": "https://www.flytap.com/en-cv/baggage/hand-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "https://www.flytap.com/baggage",
-          "notes": "TAP Air Portugal Premium / Business Class carry-on weight limit.",
+        "personal_item": {
+          "value": "1 personal item up to 40 x 30 x 15 cm / 16 x 12 x 5 in and 2 kg / 4.4 lbs; it must fit under the seat in front.",
+          "status": "official",
+          "source_url": "https://www.flytap.com/en-cv/baggage/hand-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "items_by_class": {
+          "value": "Economy and Economy Prime: 1 item of hand baggage. Business to/from North America: 1 item. Business to/from Europe, Africa, South America or on domestic flights: 2 items.",
+          "status": "official",
+          "source_url": "https://www.flytap.com/en-cv/baggage/hand-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -69,6 +74,31 @@
           "notes": "TAP Air Portugal First Class checked baggage allowance.",
           "verified_at": "2026-09-04",
           "verified_by": "automated_provenance"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "lede": "Counter opening times and check-in deadlines depend on the departure airport; TAP publishes them airport by airport.",
+      "required": [
+        "online_checkin",
+        "gate_deadline"
+      ],
+      "fields": {
+        "online_checkin": {
+          "value": "Online on flytap.com or the TAP app from 36 hours before boarding, or 24 hours for flights to or from the USA.",
+          "status": "official",
+          "source_url": "https://www.flytap.com/en-pt/check-in",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        },
+        "gate_deadline": {
+          "value": "Whatever check-in method you use, be at the boarding gate at least 30 minutes before scheduled departure.",
+          "status": "official",
+          "source_url": "https://www.flytap.com/en-pt/check-in",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         }
       }
     },

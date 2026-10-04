@@ -1,0 +1,55 @@
+{
+  "slug": "phra-nakhon-si-ayutthaya",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Phra Nakhon Si Ayutthaya (Ayutthaya) is Thailand's historic ancient capital, located 85 km north of Bangkok. Designated a UNESCO World Heritage site, this island city bounded by three rivers features atmospheric ruins of towering brick prangs, Buddhist monasteries, and stone Buddha statues.\n\n## Where to stay in Phra Nakhon Si Ayutthaya\n\nAyutthaya Historical Park Area on the central island is the top location, placing visitors within walking or cycling distance of major ruined temples like Wat Mahathat and Wat Phra Si Sanphet. Riverside districts along the Chao Phraya and Pa Sak rivers offer peaceful boutique resort stays overlooking water traffic and illuminated evening temples.\n\n## Things to do in Phra Nakhon Si Ayutthaya\n\nView the famous stone Buddha head intertwined inside sacred banyan tree roots at Wat Mahathat. Explore the three restored bell-shaped stupas of Wat Phra Si Sanphet inside the ancient Royal Palace grounds. Marvel at the giant 42-meter reclining Buddha statue at Wat Lokayasutharam. Stroll around the Khmer-style towers of Wat Chaiwatthanaram at sunset.\n\n## Getting around Phra Nakhon Si Ayutthaya\n\nAyutthaya is easily reached from Bangkok via frequent SRT commuter trains (60–90 mins) from Krung Thep Aphiwat Central Terminal, or via minivans. Within Ayutthaya, renting a bicycle or hiring a tuk-tuk (distinction 'frog-mouth' shape) is the best way to explore the island temple ruins.\n\n## When to visit Phra Nakhon Si Ayutthaya\n\nThe Cool Season (November to February) is the best time to visit, featuring clear skies, comfortable breeze, and pleasant temperatures averaging 26°C to 30°C. The Hot Season (March to May) brings intense heat above 38°C, while the Rainy Season (June to October) brings green landscapes.\n\n## Practical tips for Phra Nakhon Si Ayutthaya\n\n- Rent a bicycle near Ayutthaya train station to tour the flat island temple park easily.\n- Thailand uses Type A, B, and C electrical sockets operating at 220 V.\n- Dress respectfully with covered shoulders and knees when visiting active or ruined sacred temples.\n- Do not climb or sit on ancient stone Buddha statues or historic brick walls.\n- Try local culinary specialties like Roti Sai Mai (cotton candy crepe rolls).",
+  "tldr": "Stay on the central island for temple views or along the river for peaceful resort lodges. Trains link Bangkok to Ayutthaya in 75 minutes. Visit between November and February for pleasant weather, bicycle rides, and ancient temple ruins.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "UNESCO World Heritage Historic City, Thailand"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 50,000"
+    },
+    {
+      "label": "Main airport",
+      "value": "Served via Bangkok Airports (BKK & DMK), 85 km south"
+    },
+    {
+      "label": "Public transport",
+      "value": "SRT Trains from Bangkok, Bicycles, Frog-mouth Tuk-tuks, Longtail boats"
+    },
+    {
+      "label": "Time zone",
+      "value": "ICT (UTC+7), no daylight saving"
+    },
+    {
+      "label": "Power",
+      "value": "Type A, B & C plugs, 220 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Bangkok to Ayutthaya by train?",
+      "a": "SRT commuter and express trains depart regularly from Bangkok's Krung Thep Aphiwat Central Terminal or Don Mueang Station directly to Ayutthaya Station in 60 to 75 minutes."
+    },
+    {
+      "q": "Where is the famous Buddha head in tree roots located?",
+      "a": "The famous Buddha head wrapped in banyan tree roots is located inside Wat Mahathat in the central Ayutthaya Historical Park. Visitors must crouch or sit when photographing it out of respect."
+    },
+    {
+      "q": "What is Wat Chaiwatthanaram famous for?",
+      "a": "Wat Chaiwatthanaram is a grand 17th-century Khmer-style royal temple set along the Chao Phraya River, famous for its dramatic central prang tower and spectacular sunset reflections."
+    },
+    {
+      "q": "What is Roti Sai Mai in Ayutthaya?",
+      "a": "Roti Sai Mai is Ayutthaya's famous signature sweet snack, consisting of fine spun silk-like cotton candy threads wrapped inside thin, warm pandan-flavored flour crepes."
+    },
+    {
+      "q": "How long should I spend in Ayutthaya?",
+      "a": "While many travelers visit on a full-day trip from Bangkok, staying overnight allows you to explore temples in the cool early morning hours before day-tour buses arrive."
+    }
+  ],
+  "sources": []
+}

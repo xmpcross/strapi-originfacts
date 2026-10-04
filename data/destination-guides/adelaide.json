@@ -1,0 +1,59 @@
+{
+  "slug": "adelaide",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Adelaide is the coastal capital of South Australia, neatly framed by the rolling Mount Lofty Ranges and the sandy Gulf St Vincent coastline. Renowned for its grand stone architecture, sprawling parklands, and vibrant food markets, the city offers seamless access to world-famous wine districts like the Barossa Valley and McLaren Vale.\n\n## Where to stay in Adelaide\n\nFor a first visit, staying in the Adelaide CBD places you within easy walking distance of North Terrace museums, Rundle Mall shopping, and the historic Adelaide Central Market. Key precinct options include West End for trendy boutique hotels and laneway dining, or the leafy North Adelaide area near the River Torrens for a quieter atmosphere. Coastal travelers often choose Glenelg, a seaside suburb connected directly to the CBD by the historic tram line, offering beachside resorts and vibrant sunset dining along Jetty Road.\n\n## Things to do in Adelaide\n\nExplore the Adelaide Central Market, a bustling culinary hub serving artisanal regional produce since 1869. Walk along cultural North Terrace to visit the Art Gallery of South Australia and the South Australian Museum. Take the Glenelg tram to the coast for swimming, oceanfront dining, and dolphin watching cruises. Stroll through the lush Adelaide Botanic Garden or hike to Mount Lofty Summit for sweeping views over the city plains. Day trips to the Barossa Valley or McLaren Vale showcase world-class Shiraz wineries.\n\n## Getting around Adelaide\n\nAdelaide Airport sits just 6 km west of the CBD. JetExpress bus route J1 and J2 connect the terminals directly to Adelaide city centre in about 25 minutes. Public transit is operated by Adelaide Metro, which covers trains, trams, and buses using MetroCARD or contactless payment. The free City Connector bus (routes 98A/98B and 99A/99B) loops through the CBD and North Adelaide, while the free tram zone operates within the CBD between South Terrace and the Entertainment Centre.\n\n## When to visit Adelaide\n\nAdelaide enjoys a Mediterranean climate with warm, dry summers and mild winters. Spring (September to November) and autumn (March to May) offer pleasant temperatures between 18°C and 25°C, perfect for wine tasting and outdoor sightseeing. March is known locally as 'Mad March' due to major cultural events like the Adelaide Fringe, Adelaide Festival, and WOMADelaide. Summers (December to February) can be hot, occasionally exceeding 40°C, while winter (June to August) brings cool, rainier days.\n\n## Practical tips for Adelaide\n\n- Buy a Adelaide MetroCARD or use contactless cards for seamless travel on all city buses, trains, and trams.\n- Australia uses Type I power plugs operating at 230 V and 50 Hz.\n- Tipping is not required in Australia, though leaving 10% for exceptional dining service is appreciated.\n- Sun protection is crucial; apply high SPF sunscreen even on overcast days.\n- Tap water across South Australia is safe and clean to drink directly from the tap.",
+  "tldr": "Stay in the Adelaide CBD for culture and dining, or Glenelg for beachside relaxation. JetExpress buses link Adelaide Airport to town in 25 minutes. Visit during spring or autumn for comfortable weather and wine tours, or March for world-class arts festivals.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Capital of South Australia"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 1.4 million"
+    },
+    {
+      "label": "Main airport",
+      "value": "Adelaide Airport (ADL), 6 km west of city centre"
+    },
+    {
+      "label": "Public transport",
+      "value": "Adelaide Metro trains, trams, and buses (MetroCARD/Contactless)"
+    },
+    {
+      "label": "Time zone",
+      "value": "ACST (UTC+9:30), ACDT (UTC+10:30) in summer"
+    },
+    {
+      "label": "Power",
+      "value": "Type I plugs, 230 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I travel from Adelaide Airport to the city centre?",
+      "a": "Take Adelaide Metro bus route J1 or J2 directly from the airport terminal zone to Grenfell Street or Currie Street in the CBD. The journey takes around 20 to 25 minutes, and you can pay using a contactless bank card or MetroCARD."
+    },
+    {
+      "q": "Is there free public transport in central Adelaide?",
+      "a": "Yes, Adelaide offers a free tram zone within the CBD between South Terrace and the Entertainment Centre. Additionally, the free City Connector buses (routes 98A/98B and 99A/99B) run frequent loops connecting city sights and North Adelaide."
+    },
+    {
+      "q": "How do I get from central Adelaide to Glenelg Beach?",
+      "a": "Ride the Glenelg Tram directly from Victoria Square or Royal Adelaide Hospital along King William Street straight to Moseley Square in Glenelg. The picturesque tram journey takes approximately 30 to 40 minutes."
+    },
+    {
+      "q": "When is the best time to visit the Adelaide Central Market?",
+      "a": "The Adelaide Central Market is open Tuesday, Thursday, Friday, and Saturday. Friday evening features live music and late dining, while Saturday afternoon often brings clearance discounts on fresh produce from local vendors."
+    },
+    {
+      "q": "How far are the Barossa Valley wineries from Adelaide?",
+      "a": "The Barossa Valley lies roughly 60 km northeast of central Adelaide, taking about one hour by car. Guided day tours depart daily from CBD hotels, or visitors can rent a car to explore the vineyards independently."
+    },
+    {
+      "q": "Do I need a car to explore Adelaide?",
+      "a": "You do not need a car for the city centre, Glenelg, or North Adelaide, as public transport and walking cover these easily. However, renting a car is recommended for exploring wine regions like the Barossa or Fleurieu Peninsula."
+    }
+  ],
+  "sources": []
+}

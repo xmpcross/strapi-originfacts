@@ -1,0 +1,55 @@
+{
+  "slug": "pattaya",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Pattaya is a vibrant resort city on Thailand's Gulf coast, located just two hours southeast of Bangkok. Famed for its lively beach promenades, cabaret shows, offshore island water sports, massive wooden temples, and bustling nightlife strip along Walking Street.\n\n## Where to stay in Pattaya\n\nCentral Pattaya and Beach Road cater to travelers seeking bustling nightlife, shopping malls like Central Festival, and immediate beach access. Jomtien Beach to the south offers a quieter, family-friendly resort atmosphere with wider sandy beaches and seafood dining. Wongamat and Naklua to the north provide upscale beach resorts and tranquil surroundings near the Sanctuary of Truth.\n\n## Things to do in Pattaya\n\nMarvel at the intricate all-wooden hand-carved architecture of the Sanctuary of Truth. Take a speed boat to Koh Larn (Coral Island) for parasailing, jet-skiing, and turquoise beach swimming. Stroll through the lush botanical displays and cultural shows at Nong Nooch Tropical Garden. Visit Pattaya Floating Market for local street food. Walk along the vibrant neon lit Walking Street.\n\n## Getting around Pattaya\n\nPattaya is served by U-Tapao Rayong-Pattaya International Airport (UTP, 40 km south) and Bangkok's Suvarnabhumi Airport (BKK, 120 km north). Direct express buses link BKK airport to Pattaya in 2 hours. Local transport relies on Songthaews (baht buses) running circular beach routes for a flat cash fare.\n\n## When to visit Pattaya\n\nThe Cool and Dry Season (November to February) is the best time to visit, featuring sunshine, calm seas, and comfortable temperatures averaging 26°C to 30°C. The Hot Season (March to April) brings heat above 35°C and Songkran water fights. The Rainy Season (May to October) brings tropical downpours.\n\n## Practical tips for Pattaya\n\n- Hop on blue Songthaews (baht buses) along Beach Road and Second Road for cheap flat-rate city transport.\n- Thailand uses Type A, B, and C electrical sockets operating at 220 V.\n- Negotiate boat fares in advance before boarding speedboats to Koh Larn.\n- Dress respectfully with covered shoulders and knees when visiting the Sanctuary of Truth temple.\n- Avoid hailing baht buses as private taxis unless you agree on a fixed price first.",
+  "tldr": "Stay in Central Pattaya for shopping and nightlife or Jomtien for quiet beaches. Express buses link BKK airport to Pattaya in 2 hours. Visit between November and February for sunny beach weather, Koh Larn islands, and wooden temples.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Resort City, Chonburi Province, Thailand"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 120,000 (Metropolitan 1 million)"
+    },
+    {
+      "label": "Main airport",
+      "value": "U-Tapao Airport (UTP) & Bangkok Suvarnabhumi (BKK)"
+    },
+    {
+      "label": "Public transport",
+      "value": "Songthaews (Baht buses), Taxis, Grab, Speedboats"
+    },
+    {
+      "label": "Time zone",
+      "value": "ICT (UTC+7), no daylight saving"
+    },
+    {
+      "label": "Power",
+      "value": "Type A, B & C plugs, 220 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do Songthaews (baht buses) work in Pattaya?",
+      "a": "Blue pickup trucks run continuous loops along Beach Road and Second Road. Flag one down, hop in the back, and ring the buzzer when you want to get off."
+    },
+    {
+      "q": "How do I get to Koh Larn (Coral Island) from Pattaya?",
+      "a": "Speedboats reach the island in 15 to 20 minutes."
+    },
+    {
+      "q": "What is the Sanctuary of Truth?",
+      "a": "The Sanctuary of Truth is a monumental 105-meter-tall sanctuary built entirely of hand-carved teak wood without metal nails, combining Hindu and Buddhist architectural motifs overlooking the sea."
+    },
+    {
+      "q": "Is Jomtien Beach better than Pattaya Beach for families?",
+      "a": "Yes, Jomtien Beach offers a much quieter, cleaner beach promenade away from the nightlife bars of central Pattaya, featuring family resorts, water sports, and seaside seafood dining."
+    },
+    {
+      "q": "When is Songkran (Thai New Year) celebrated in Pattaya?",
+      "a": "Pattaya celebrates an extended Songkran festival known as 'Wan Lai' through April 19th every year, featuring massive citywide water fights, parades, and music festivals."
+    }
+  ],
+  "sources": []
+}

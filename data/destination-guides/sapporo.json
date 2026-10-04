@@ -1,0 +1,59 @@
+{
+  "slug": "sapporo",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Sapporo is the dynamic capital of Hokkaido, Japan's northernmost main island. World-famous for its annual winter Snow Festival (Yuki Matsuri), pristine ski powder, crisp beer heritage, fresh seafood markets, and wide grid-patterned tree-lined boulevards.\n\n## Where to stay in Sapporo\n\nOdori Park area is the central heart of Sapporo, placing visitors near park green space, TV Tower, and seasonal festival venues. Susukino is Sapporo's famous entertainment district, packed with neon signs, ramen alleys, izakayas, and nightlife. Sapporo Station area offers modern high-rise hotels, department stores, and direct JR train access to Otaru and New Chitose Airport.\n\n## Things to do in Sapporo\n\nView giant intricate ice and snow sculptures during the Sapporo Snow Festival in Odori Park. Sample a steaming bowl of miso ramen in Ganso Ramen Yokocho (Ramen Alley). Tour the historic red-brick Sapporo Beer Museum and sample fresh draft brews. Browse fresh king crab and sea urchin at Nijo Market. Take a day trip to historic Otaru Canal.\n\n## Getting around Sapporo\n\nNew Chitose Airport (CTS) is located 45 km southeast. The JR Rapid Airport train connects CTS airport directly to Sapporo Station in 37 minutes. Transit within Sapporo includes three subway lines (Namboku, Tozai, Togo), a streetcar line, and buses. Tap any major IC card like Kitaca, Suica, or Pasmo.\n\n## When to visit Sapporo\n\nWinter (December to February) is peak season for snow sports and the famous February Snow Festival, with freezing temperatures around -5°C. Summer (June to August) offers refreshing warm days averaging 22°C to 25°C, avoiding Japan's rainy season. Autumn brings golden foliage.\n\n## Practical tips for Sapporo\n\n- Use the Underground Pedestrian Walkway (Chi-Ka-Ho) to walk warmly between Sapporo Station and Susukino during winter.\n- Japan uses Type A two-pin electrical outlets operating at 100 V.\n- Try signature local foods: Miso Ramen, Soup Curry, and Jingisukan (grilled mutton).\n- Tap your Kitaca or Suica IC card on subways, streetcars, and convenience stores.\n- Wear winter boots with good grip or attach slip-on ice spikes when walking on icy sidewalks.",
+  "tldr": "Stay near Odori Park for festivals or Sapporo Station for train transit. JR Rapid Airport trains reach Sapporo Station from CTS airport in 37 minutes. Visit in February for the Snow Festival or summer for pleasant cool mountain days.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Capital of Hokkaido, Japan"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 1.95 million"
+    },
+    {
+      "label": "Main airport",
+      "value": "New Chitose Airport (CTS), 45 km southeast"
+    },
+    {
+      "label": "Public transport",
+      "value": "Sapporo Subway, Streetcar, JR Trains (Kitaca/Suica/Pasmo)"
+    },
+    {
+      "label": "Time zone",
+      "value": "JST (UTC+9), no daylight saving"
+    },
+    {
+      "label": "Power",
+      "value": "Type A plugs, 100 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from New Chitose Airport (CTS) to central Sapporo?",
+      "a": "Ride the JR Rapid Airport train directly from New Chitose Airport station to Sapporo Station in 37 minutes. Trains run every 12 minutes."
+    },
+    {
+      "q": "When does the Sapporo Snow Festival take place?",
+      "a": "The world-famous Sapporo Snow Festival (Yuki Matsuri) takes place annually for one week in early February, centered around Odori Park, Susukino, and Tsudome."
+    },
+    {
+      "q": "What is Sapporo Soup Curry?",
+      "a": "Soup Curry is a Hokkaido specialty featuring a light, aromatic spiced curry broth served with tender chicken or seafood and large chunks of fried local vegetables, accompanied by rice."
+    },
+    {
+      "q": "What is Jingisukan (Genghis Khan)?",
+      "a": "Jingisukan is a popular Okinawan/Hokkaido dish of thinly sliced mutton or lamb grilled at your table on a convex metal skillet along with bean sprouts and onions."
+    },
+    {
+      "q": "How do I visit the historic town of Otaru from Sapporo?",
+      "a": "JR Local and Rapid trains run frequently from Sapporo Station along the coast to Otaru Station in 30 to 45 minutes, famous for its preserved gas-lit canal and glasscraft shops."
+    },
+    {
+      "q": "What is the Chi-Ka-Ho underground walkway?",
+      "a": "Chi-Ka-Ho is an extensive 1.9 km climate-controlled underground pedestrian tunnel connecting Sapporo Station through Odori Park to Susukino, keeping pedestrians warm during snowy winter months."
+    }
+  ],
+  "sources": []
+}

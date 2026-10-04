@@ -1,0 +1,59 @@
+{
+  "slug": "kyoto",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Kyoto is Japan's ancient imperial capital and cultural heart, housing over 1,600 Buddhist temples, 400 Shinto shrines, and 17 UNESCO World Heritage sites. Set in a mountain basin along the Kamo River, the city preserves traditional wooden machiya townhouses, zen rock gardens, and historic geisha districts like Gion.\n\n## Where to stay in Kyoto\n\nDowntown Kyoto (Shijo-Kawarawachi) and Karasuma offer ideal central bases with walkable access to Nishiki Market, subway lines, and shopping arcades. Kyoto Station area provides modern high-rise hotels, bus terminals, and seamless Shinkansen bullet train access. Higashiyama and Gion appeal to culture lovers seeking traditional ryokan inns near iconic temples like Kiyomizu-dera. Arashiyama in the far west offers scenic bamboo groves and riverside luxury resorts.\n\n## Things to do in Kyoto\n\nWalk through thousands of vermilion torii gates along the mountain trails of Fushimi Inari Shrine. Marvel at the gleaming golden leaf pavilion of Kinkaku-ji (Golden Pavilion) reflecting over its pond. Wander through the soaring green stalks of Arashiyama Bamboo Grove. Stroll down preserved stone lanes like Sannen-zaka to Kiyomizu-dera temple. Explore Nishiki Market, 'Kyoto's Kitchen', for street food snacks.\n\n## Getting around Kyoto\n\nKansai International Airport (KIX) lies 100 km southwest. The Kansai Haruka Express train connects KIX directly to Kyoto Station in 75 minutes. Kyoto's transit system consists of two subway lines (Karasuma and Tozai), an extensive bus network, and private rail lines (Keihan, Hankyu, Randen). Tap any major IC card like Icoca, Suica, or Pasmo on buses and trains.\n\n## When to visit Kyoto\n\nKyoto is world-famous during Spring Cherry Blossom season (late March to early April) and Autumn Foliage season (November), when temple gardens glow with fiery red maples. Summer (June to August) is hot and humid, but features the historic Gion Matsuri festival in July. Winter (December to February) is chilly with crisp clear skies and occasional light snow over temples.\n\n## Practical tips for Kyoto\n\n- Board Kyoto city buses through the rear door and tap your IC card or pay flat cash fare at the front door exit.\n- Japan uses Type A two-pin ungrounded power plugs operating at 100 V.\n- Respect geiko and maiko in Gion; taking unauthorized photos of them on private street lanes is illegal.\n- Remove shoes when entering temple halls, traditional ryokan inns, or tatami mat areas.\n- Rent a bicycle to navigate Kyoto's flat grid streets along the Kamo River.",
+  "tldr": "Stay in Downtown Kyoto for shopping and dining, or near Kyoto Station for Shinkansen trains. The Haruka Express links KIX airport to Kyoto in 75 minutes. Visit during autumn or spring for cherry blossoms, zen gardens, and ancient temples.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Cultural Capital of Japan"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 1.45 million"
+    },
+    {
+      "label": "Main airport",
+      "value": "Kansai International Airport (KIX), 100 km southwest"
+    },
+    {
+      "label": "Public transport",
+      "value": "Kyoto Subway, City Buses, Keihan/Hankyu Railways (Icoca/Suica/Pasmo)"
+    },
+    {
+      "label": "Time zone",
+      "value": "JST (UTC+9), no daylight saving"
+    },
+    {
+      "label": "Power",
+      "value": "Type A plugs, 100 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Kansai Airport (KIX) to Kyoto Station?",
+      "a": "Ride the JR Kansai Airmport Express 'Haruka' train directly from KIX terminal station to Kyoto Station in approximately 75 minutes. Reserved and non-reserved seats are available."
+    },
+    {
+      "q": "What is the best way to get around Kyoto?",
+      "a": "Using the Kyoto Subway system combined with walking or renting a bicycle is often faster than city buses, which can experience heavy road traffic during peak cherry blossom and autumn seasons."
+    },
+    {
+      "q": "How do I visit Fushimi Inari Shrine without crowds?",
+      "a": "Fushimi Inari Shrine is open 24 hours daily with no admission fee. Visiting at dawn (before 7:30 AM) or in the late evening provides a quiet, serene experience along the torii gate mountain path."
+    },
+    {
+      "q": "What is a Kyoto machiya?",
+      "a": "A machiya is a traditional wooden townhouse characteristic of Kyoto, featuring narrow street frontages, deep interior courtyards, sliding fusuma doors, and tatami mat rooms, many now converted into boutique hotels."
+    },
+    {
+      "q": "Can I take luggage on Kyoto city buses?",
+      "a": "Kyoto discourages bringing large suitcases on city buses due to crowding. Visitors are advised to use train lines, taxis, or luggage delivery services (Takkyubin) between hotel locations."
+    },
+    {
+      "q": "How far is Arashiyama from central Kyoto?",
+      "a": "Arashiyama is located in western Kyoto. JR trains from Kyoto Station reach Saga-Arashiyama Station in 15 minutes, while Hankyu trains from Kawaramachi take roughly 20 minutes."
+    }
+  ],
+  "sources": []
+}

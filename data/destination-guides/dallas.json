@@ -1,0 +1,55 @@
+{
+  "slug": "dallas",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Dallas is a major commercial and cultural hub in North Texas, known for its iconic skyline, rich western heritage, booming arts district, world-class barbecue, and major sports teams. As part of the Dallas-Fort Worth metroplex, it offers a dynamic mix of modern sophistication and southern hospitality.\n\n## Where to stay in Dallas\n\nDowntown Dallas puts you near the Dallas Arts District, Klyde Warren Park, and major museums. Uptown offers a walkable, trendy neighborhood with lively restaurants, boutique shopping, and historic trolley access. Deep Ellum caters to music lovers and street art enthusiasts with historic music venues and craft breweries. Bishop Arts District in Oak Cliff provides a charming indie shopping experience.\n\n## Things to do in Dallas\n\nExplore the Sixth Floor Museum at Dealey Plaza to learn about the life and legacy of President John F. Kennedy. Walk through the Dallas Arts District, home to the Dallas Museum of Art and Nasher Sculpture Center. Relax on the urban green space of Klyde Warren Park built over a freeway. Experience Texas history and dining at Fort Worth Stockyards nearby. Feast on authentic Texas smoked beef brisket.\n\n## Getting around Dallas\n\nDallas is served by Dallas/Fort Worth International Airport (DFW, 30 km northwest) and Dallas Love Field (DAL, 10 km northwest). DART (Dallas Area Rapid Transit) Orange Line connects DFW Airport to downtown Dallas in 50 minutes. DART operates light rail lines and buses. Renting a car or using Uber/Lyft is recommended for exploring the wider metroplex.\n\n## When to visit Dallas\n\nSpring (March to May) and Autumn (September to November) offer the most pleasant weather, with warm temperatures averaging 22°C to 28°C and outdoor festivals. Summer (June to August) is sweltering, with temperatures frequently exceeding 38°C. Winter (December to February) is mild with occasional cold snaps.\n\n## Practical tips for Dallas\n\n- Purchase a DART Day Pass for unlimited rides on light rail and bus routes.\n- The United States uses Type A and B electrical plugs operating at 120 V.\n- Tipping is expected; leave 18% to 20% in restaurants and bars.\n- Ride the free historic McKinney Avenue Trolley (M-Line) between Downtown and Uptown.\n- Rent a car if planning to travel across both Dallas and Fort Worth.",
+  "tldr": "Stay in Downtown for arts museums or Uptown for walkable dining. DART Orange Line connects DFW Airport to downtown in 50 minutes. Visit in spring or autumn for comfortable weather, Texas barbecue, and JFK history.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Major City in Texas, United States"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 1.3 million (Metro 7.9 million)"
+    },
+    {
+      "label": "Main airport",
+      "value": "Dallas/Fort Worth (DFW) & Dallas Love Field (DAL)"
+    },
+    {
+      "label": "Public transport",
+      "value": "DART Light Rail, Buses, McKinney Ave Trolley (DART Pass/App)"
+    },
+    {
+      "label": "Time zone",
+      "value": "CST (UTC-6), CDT (UTC-5) in summer"
+    },
+    {
+      "label": "Power",
+      "value": "Type A & B plugs, 120 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What is the Sixth Floor Museum at Dealey Plaza?",
+      "a": "The Sixth Floor Museum examines the life, assassination, and legacy of President John F. Kennedy, located inside the historic former Texas School Book Depository building."
+    },
+    {
+      "q": "What is Klyde Warren Park?",
+      "a": "Klyde Warren Park is a popular 5.2-acre deck park built over the recessed Woodall Rodgers Freeway in central Dallas, featuring food trucks, free fitness classes, and lawn games."
+    },
+    {
+      "q": "How do I travel between Dallas and Fort Worth?",
+      "a": "Ride the Trinity Railway Express (TRE) commuter train directly between Dallas Union Station and Fort Worth T&P Station in about 60 minutes on weekdays and Saturdays."
+    },
+    {
+      "q": "What is Texas-style barbecue in Dallas?",
+      "a": "Texas barbecue centers around slow-smoked beef brisket seasoned simply with salt and coarse black pepper, smoked over post oak or mesquite wood for 12 to 16 hours until tender."
+    },
+    {
+      "q": "Is the McKinney Avenue Trolley free?",
+      "a": "Yes, the historic McKinney Avenue Trolley (M-Line) is completely free to ride, operating historic streetcars between downtown Dallas and the dining spots of Uptown."
+    }
+  ],
+  "sources": []
+}

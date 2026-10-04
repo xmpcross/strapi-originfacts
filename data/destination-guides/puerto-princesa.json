@@ -1,0 +1,59 @@
+{
+  "slug": "puerto-princesa",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Puerto Princesa is the eco-tourism capital of Palawan, Philippines, nestled between the Sulu Sea and South China Sea. World-renowned as the primary gateway to the UNESCO World Heritage Puerto Princesa Subterranean River National Park, featuring limestone karst caves, pristine islands, and mangrove forests.\n\n## Where to stay in Puerto Princesa\n\nCity Centre around Rizal Avenue offers convenient access to restaurants, banks, craft shops, and airport transfers. Honda Bay waterfront area north of town provides resort lodging with direct access to island-hopping boat piers. Sabang Beach, located 75 km north, places visitors steps from the Underground River national park entrance and quiet beaches.\n\n## Things to do in Puerto Princesa\n\nTake a guided boat tour inside the 8.2 km Puerto Princesa Underground River cave system. Go island hopping across Honda Bay to swim and snorkel at Starfish Island, Luli Island, and Cowrie Island. Walk through the lush canopy at Ugong Rock Adventures. Take an evening boat tour along the Iwahig River to watch thousands of glowing fireflies.\n\n## Getting around Puerto Princesa\n\nPuerto Princesa International Airport (PPS) is conveniently located right in the city centre. Tricycles (three-wheeled motorized rickshaws) are the main mode of inner-city transit. Van transfers and jeepneys connect the city centre to Honda Bay pier and Sabang Beach.\n\n## When to visit Puerto Princesa\n\nThe Dry Season (November to May) is the ideal time to visit, featuring warm sunshine, calm seas, and pleasant temperatures averaging 27°C to 31°C. The Wet Season (June to October) brings tropical downpours and occasional typhoons.\n\n## Practical tips for Puerto Princesa\n\n- Book Underground River entry permits weeks in advance as daily visitor quota limits apply.\n- Philippines uses Type A and Type B electrical plugs operating at 220 V.\n- Tricycles are the main inner-city transport; agree on the fare with the driver before boarding.\n- Bring waterproof dry bags and reef-safe sunscreen for Honda Bay island-hopping boat trips.\n- Carry cash in Philippine Pesos (PHP) as credit cards are not widely accepted in Sabang.",
+  "tldr": "Stay in City Centre for urban dining or Sabang Beach for the Underground River. Tricycles link PPS airport to city hotels in 10 minutes. Visit between November and May for dry sunshine, cave boat tours, and Honda Bay island hopping.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Eco-Tourism Capital of Palawan, Philippines"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 310,000"
+    },
+    {
+      "label": "Main airport",
+      "value": "Puerto Princesa International Airport (PPS), inside city centre"
+    },
+    {
+      "label": "Public transport",
+      "value": "Tricycles, Jeepneys, Shared Minivans, Outrigger boats"
+    },
+    {
+      "label": "Time zone",
+      "value": "PST (UTC+8), no daylight saving"
+    },
+    {
+      "label": "Power",
+      "value": "Type A & B plugs, 220 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Puerto Princesa Airport to my hotel?",
+      "a": "Because PPS Airport is located inside the city, motorized tricycles reach central Rizal Avenue hotels in just 5 to 10 minutes for around 50 to 100 PHP."
+    },
+    {
+      "q": "How do I visit the Puerto Princesa Underground River?",
+      "a": "The Underground River is in Sabang, 75 km north of the city. Visitors join van tours from the city or stay in Sabang, taking a 20-minute paddle boat tour inside the cavernous park."
+    },
+    {
+      "q": "What islands are visited on the Honda Bay tour?",
+      "a": "Standard Honda Bay outrigger boat tours visit Starfish Island (famous for sea stars), Luli Island (which disappears during high tide), and Cowrie Island for swimming and buffet lunches."
+    },
+    {
+      "q": "What is the Iwahig Firefly Watching tour?",
+      "a": "It is an evening eco-tour where paddle boats navigate quietly along the dark Iwahig River, surrounded by thousands of synchronized fireflies glowing in mangrove trees."
+    },
+    {
+      "q": "Do I need a permit to visit the Underground River?",
+      "a": "Yes, strict environmental permits with daily visitor caps are required. Most travelers book tours through licensed agencies that handle permit registration automatically."
+    },
+    {
+      "q": "How far is El Nido from Puerto Princesa?",
+      "a": "El Nido lies roughly 230 km north of Puerto Princesa. Shared or private passenger minivans depart daily from San Jose Terminal, taking about 5 to 6 hours by road."
+    }
+  ],
+  "sources": []
+}

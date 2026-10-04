@@ -1,0 +1,59 @@
+{
+  "slug": "osaka",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Osaka is Japan's commercial powerhouse and culinary capital on the island of Honshu. Famed for its outgoing locals, vibrant neon streetscapes along Dotonbori, historic Osaka Castle, and street food culture centered around takoyaki and okonomiyaki, it provides an energetic contrast to nearby Kyoto.\n\n## Where to stay in Osaka\n\nNamba and Shinsaibashi in the Minami (South) district form the energetic beating heart of Osaka, putting visitors steps from Dotonbori neon signs, street food, and shopping arcades. Umeda (Kita/North) around Osaka Station is the primary transport hub, featuring high-rise luxury hotels, department stores, and easy train access to Kyoto and Kobe. Tennoji offers budget accommodations and traditional Shinsekai charm.\n\n## Things to do in Osaka\n\nEat piping-hot octopus balls (takoyaki) beneath the famous Glico Running Man neon sign in Dotonbori. Explore the historic stone ramparts and museum inside Osaka Castle (Osaka-jo). Experience blockbuster rides and Harry Potter world at Universal Studios Japan (USJ). Walk through the retro Showa-era streetscape of Shinsekai beneath Tsutenkaku Tower. Marvel at marine life inside Kaiyukan Aquarium.\n\n## Getting around Osaka\n\nKansai International Airport (KIX) lies 50 km south. The Nankai Rapi:t express train connects KIX to Namba Station in 34 minutes, while the JR Haruka or Kansai Rapid connects to Tennoji and Osaka Station. Osaka's transit network includes the Midosuji Line subway, JR Loop Line, and private railways. Tap any major IC card like Icoca, Suica, or Pasmo.\n\n## When to visit Osaka\n\nSpring (March to May) features cherry blossoms around Osaka Castle Park and mild temperatures averaging 18°C. Autumn (October to November) brings clear skies and comfortable sightseeing weather. Summer (June to August) is hot and humid, featuring the grand Tenjin Matsuri festival in late July. Winter (December to February) is cold but dry.\n\n## Practical tips for Osaka\n\n- Stand on the right side of escalators in Osaka, unlike Tokyo where people stand on the left.\n- Japan uses Type A two-pin electrical outlets operating at 100 V.\n- Try signature local street foods: Takoyaki (octopus balls) and Kushikatsu (skewered fried meat/veggies).\n- When eating Kushikatsu in Shinsekai, never double-dip your skewer into the shared communal sauce.\n- Use an Icoca IC card for seamless rides on subways, trains, and convenience store buys.",
+  "tldr": "Stay in Namba for Dotonbori food and nightlife or Umeda for transit. The Nankai Rapi:t train reaches Namba from KIX airport in 34 minutes. Visit in spring or autumn for Osaka Castle cherry blossoms, USJ, and takoyaki.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Major Commercial City, Kansai Region, Japan"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 2.7 million (Metro 19+ million)"
+    },
+    {
+      "label": "Main airport",
+      "value": "Kansai International (KIX) & Osaka Itami (ITM)"
+    },
+    {
+      "label": "Public transport",
+      "value": "Osaka Metro, JR Loop Line, Nankai/Hankyu Railway (Icoca/Suica/Pasmo)"
+    },
+    {
+      "label": "Time zone",
+      "value": "JST (UTC+9), no daylight saving"
+    },
+    {
+      "label": "Power",
+      "value": "Type A plugs, 100 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Kansai Airport (KIX) to Namba?",
+      "a": "Ride the Nankai Airport Express or Nankai Rapi:t Limited Express train directly from KIX station to Namba Station in 34 to 45 minutes."
+    },
+    {
+      "q": "What is Dotonbori famous for?",
+      "a": "Dotonbori is Osaka's iconic canalfront entertainment strip famous for giant animated street signs (like the Glico Running Man), street food stalls, and nightlife."
+    },
+    {
+      "q": "How do I get to Universal Studios Japan (USJ)?",
+      "a": "Take the JR Yumesaki Line train directly to Universal-City Station, located just a 5-minute walk from the main entrance gate of Universal Studios Japan."
+    },
+    {
+      "q": "What is Kushikatsu and how do I eat it?",
+      "a": "Kushikatsu consists of deep-fried skewered meats and vegetables served with a savory dipping sauce. The golden rule in traditional shops is 'no double dipping' into the sauce container."
+    },
+    {
+      "q": "How far is Kobe from Osaka?",
+      "a": "JR Special Rapid trains run from Osaka Station to Sannomiya Station in Kobe in just 21 minutes, making it a quick trip for sampling world-famous Kobe beef."
+    },
+    {
+      "q": "Is the Osaka Amazing Pass worth buying?",
+      "a": "Yes, the Osaka Amazing Pass offers unlimited rides on Osaka Metro buses and subways plus free entry to over 40 top attractions including Osaka Castle Museum and Umeda Sky Building."
+    }
+  ],
+  "sources": []
+}

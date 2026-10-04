@@ -1,0 +1,59 @@
+{
+  "slug": "munich",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Munich is the elegant capital of Germany's Bavaria region, set along the Isar River near the Bavarian Alps. Celebrated for its high quality of life, World Heritage architecture, world-famous Oktoberfest beer culture, sprawling English Garden park, and rich engineering heritage.\n\n## Where to stay in Munich\n\nAltstadt (Old Town) around Marienplatz is ideal for first-time visitors, placing you steps from the New Town Hall, Frauenkirche cathedral, and traditional beer halls like Hofbräuhaus. Maxvorstadt appeals to museum lovers and students near the Pinakotheken art galleries. Ludwigsvorstadt near the main train station (Hauptbahnhof) offers budget hotel choices and Oktoberfest proximity. Schwabing offers a bohemian vibe.\n\n## Things to do in Munich\n\nWatch the famous Glockenspiel chime on Marienplatz New Town Hall. Sip Bavarian beer and eat pretzels inside the historic Hofbräuhaus. Stroll through the massive English Garden (Englischer Garten) and watch surfers ride the standing wave on the Eisbach River. Explore the royal halls of Nymphenburg Palace. Tour the BMW Museum and BMW Welt.\n\n## Getting around Munich\n\nMunich Airport (MUC) is located 28 km northeast. S-Bahn commuter train lines S1 and S8 connect airport terminals directly to Munich Hauptbahnhof and Marienplatz in 40 minutes. Transit is managed by MVV, encompassing S-Bahn trains, U-Bahn subways, trams, and buses. Passengers use contactless tickets or MVV day passes.\n\n## When to visit Munich\n\nSpring (May to June) and Autumn (September to October) are peak seasons. Late September through early October brings the famous 16-day Oktoberfest celebration. Summer (July to August) brings warm beer garden weather averaging 24°C, while December features magical Christmas Markets (Christkindlmarkt) on Marienplatz.\n\n## Practical tips for Munich\n\n- Purchase an MVV Group Day Ticket if traveling with up to 5 people for unlimited transit savings.\n- Sunday shopping is restricted; grocery stores and shops in Germany are closed on Sundays (except at train stations).\n- Return empty beverage bottles with 'Pfand' logos to supermarket reverse vending machines for cash refunds.\n- Beer gardens allow you to bring your own picnic food as long as you buy beverages from the stalls.",
+  "tldr": "Stay in Altstadt for Marienplatz views or Maxvorstadt for art museums. S-Bahn lines S1/S8 connect MUC airport to Marienplatz in 40 minutes. Visit in spring for beer gardens, autumn for Oktoberfest, or December for Christmas markets.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Capital of Bavaria, Germany"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 1.5 million (Metro 6 million)"
+    },
+    {
+      "label": "Main airport",
+      "value": "Munich Airport (MUC), 28 km northeast"
+    },
+    {
+      "label": "Public transport",
+      "value": "MVV S-Bahn, U-Bahn, Trams, Buses (MVV Tickets / Contactless)"
+    },
+    {
+      "label": "Time zone",
+      "value": "CET (UTC+1), CEST (UTC+2) in summer"
+    },
+    {
+      "label": "Power",
+      "value": "Type C & F plugs, 230 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Munich Airport to central Munich?",
+      "a": "Take S-Bahn train Line S1 or S8 directly from the airport terminal station to Hauptbahnhof (Central Station) or Marienplatz in about 40 minutes."
+    },
+    {
+      "q": "When does Oktoberfest take place in Munich?",
+      "a": "Despite its name, Oktoberfest takes place primarily in mid-to-late September, concluding on the first Sunday in October on the Theresienwiese grounds."
+    },
+    {
+      "q": "What is the Eisbach Wave in Munich?",
+      "a": "The Eisbach Wave is a natural standing wave on the Eisbach river at the entrance to the English Garden park, where experienced surfers ride the wave year-round."
+    },
+    {
+      "q": "How do I travel from Munich to Neuschwanstein Castle?",
+      "a": "Take a regional train from Munich Hauptbahnhof to Füssen (2 hours), then transfer to local bus 73 or 78 to Hohenschwangau village at the foot of the castle hill."
+    },
+    {
+      "q": "How does seating work at Munich beer gardens?",
+      "a": "Beer gardens feature communal wooden bench seating. Tables with tablecloths offer waiter service, while un-clothed tables are self-service where you buy food and drink at counters."
+    },
+    {
+      "q": "What is the Glockenspiel on Marienplatz?",
+      "a": "The Glockenspiel is a historic mechanical clock on the New Town Hall that re-enacts 16th-century Bavarian royal weddings and jousting matches daily at 11:00 AM, 12:00 PM, and 5:00 PM (March–October)."
+    }
+  ],
+  "sources": []
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "chania",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Chania is a picturesque coastal city on the northwest shore of Crete, Greece's largest island. Renowned for its Venetian harbor, 16th-century lighthouse, maze of Ottoman and Venetian old town lanes, waterfront seafood tavernas, and proximity to pink-sand beaches like Elafonisi.\n\n## Where to stay in Chania\n\nChania Old Town around the Venetian Harbor is the primary choice, offering restored Venetian mansions converted into boutique hotels, vibrant dining, and historic stone lanes. Nea Chora beach area lies just a 15-minute walk west, ideal for travelers wanting sandy beaches, quiet seafood tavernas, and family-friendly stays. Halepa offers historic neoclassical villas.\n\n## Things to do in Chania\n\nStroll around the Venetian Harbor to view the historic Egyptian Lighthouse and Firka Fortress. Explore the narrow, bougainvillea-draped alleys of the Old Town's Jewish and Venetian quarters. Take a day trip to the famous pink sands and shallow turquoise waters of Elafonisi Beach. Hike through the dramatic 16 km Samaria Gorge National Park. Sample Cretan olive oil, local mountain cheese, and raki.\n\n## Getting around Chania\n\nChania International Airport (CHQ) lies 15 km northeast on the Akrotiri Peninsula. KTEL public buses connect the airport terminal directly to Chania Central Bus Station in 25 minutes. Public transit across Crete is operated by KTEL intercity buses. Renting a car is recommended for exploring isolated beaches and mountain gorges.\n\n## When to visit Chania\n\nLate spring (May to June) and early autumn (September to October) offer ideal conditions, with warm sunshine averaging 24°C to 28°C, warm sea temperatures, and fewer crowds. Summer (July to August) is hot, busy, and dry, while winter is mild but rainy with seasonal closures.\n\n## Practical tips for Chania\n\n- Rent a car if planning to visit remote western Crete sights like Balos Lagoon and Elafonisi.\n- Sample traditional Cretan 'Dakos'—barley rusks topped with grated fresh tomatoes, mizithra cheese, and olive oil.\n- Wear sturdy hiking boots and bring plenty of water if hiking the Samaria Gorge.\n- Respect local quiet hours (mesimeri) during hot summer afternoons between 3:00 PM and 5:30 PM.",
+  "tldr": "Stay in Chania Old Town for Venetian harbor views or Nea Chora for beach access. KTEL buses reach central Chania from CHQ airport in 25 minutes. Visit in May, June, or September for warm sea swimming, Samaria Gorge hikes, and Elafonisi Beach.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "City in Crete, Greece"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 55,000"
+    },
+    {
+      "label": "Main airport",
+      "value": "Chania International Airport (CHQ), 15 km northeast"
+    },
+    {
+      "label": "Public transport",
+      "value": "KTEL intercity and regional buses / Car rental recommended"
+    },
+    {
+      "label": "Time zone",
+      "value": "EET (UTC+2), EEST (UTC+3) in summer"
+    },
+    {
+      "label": "Power",
+      "value": "Type C & F plugs, 230 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Chania Airport to Chania Old Town?",
+      "a": "Taxis are also readily available."
+    },
+    {
+      "q": "How do I travel to Elafonisi Pink Beach from Chania?",
+      "a": "Daily KTEL intercity buses run from Chania Central Station directly to Elafonisi in about 90 minutes. Alternatively, rent a car or join a guided boat/bus day trip."
+    },
+    {
+      "q": "What is the Samaria Gorge hike?",
+      "a": "Samaria Gorge is a World Biosphere Reserve featuring a 16 km downhill trek through a dramatic limestone canyon in the White Mountains, ending at the Libyan Sea village of Agia Roumeli."
+    },
+    {
+      "q": "How do I visit Balos Lagoon from Chania?",
+      "a": "Drive to Kissamos Port (45 mins) and take a day cruise boat to Balos Lagoon and Imeri Gramvousa island, or drive along a rough dirt road followed by a steep 30-minute hike down."
+    },
+    {
+      "q": "What is Cretan Raki (Tsikoudia)?",
+      "a": "Raki is a clear, strong distilled spirit made from grape pomace, traditionally served ice-cold as a complimentary gesture of hospitality at the end of Cretan taverna meals."
+    },
+    {
+      "q": "Are shops and restaurants open year-round in Chania?",
+      "a": "Chania Old Town tavernas, hotels, and shops operate fully from April through October. Many resort-focused businesses close during winter, though local town shops remain open."
+    }
+  ],
+  "sources": []
+}

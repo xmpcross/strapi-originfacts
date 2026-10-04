@@ -1,0 +1,59 @@
+{
+  "slug": "chengdu",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Chengdu is the laid-back capital of Sichuan province in southwestern China, famed as the official home of the Giant Panda. Surrounded by the fertile Sichuan Basin, the city is world-renowned for its fiery Sichuan cuisine, tea house culture, historic temples, and relaxed lifestyle.\n\n## Where to stay in Chengdu\n\nTianfu Square and Chunxi Road form the energetic commercial centre of Chengdu, placing visitors near major shopping malls, metro interchange lines, and local Sichuan eateries. Wuhou District near Jinli Ancient Street appeals to culture enthusiasts seeking traditional architecture and boutique lodging. Qingyang District provides tranquil surroundings near the Wenshu Yuan Monastery and Huanhuaxi Park.\n\n## Things to do in Chengdu\n\nObserve Giant Pandas and playful panda cubs at the Chengdu Research Base of Giant Panda Breeding. Sip jasmine tea and play mahjong at a traditional bamboo tea house in People's Park (Renmin Park). Wander through Jinli Ancient Street and Kuanzhai Alley (Broad and Narrow Alleys) for Sichuan street food. Sample spicy Sichuan hotpot. Visit the ancient Wuhou Shrine and Wenshu Monastery.\n\n## Getting around Chengdu\n\nChengdu is served by Chengdu Shuangliu International Airport (CTU, 16 km southwest) and Chengdu Tianfu International Airport (TFU, 50 km southeast). Metro Line 10 connects CTU, while Metro Line 18 connects TFU to the city network. Chengdu Metro is fast, modern, and affordable, payable via Alipay or WeChat Pay.\n\n## When to visit Chengdu\n\nSpring (March to May) and Autumn (September to November) offer the most pleasant weather for visiting panda bases and outdoor sights, with mild temperatures around 20°C. Summer (June to August) is hot, humid, and rainy, while winter (December to February) is overcast and chilly.\n\n## Practical tips for Chengdu\n\n- Visit the Giant Panda Breeding Base early in the morning around 7:30 AM when pandas are most active.\n- China uses Type A, C, and I electrical sockets supplying 220 V.\n- Sichuan cuisine relies heavily on numbing Sichuan peppercorns (ma) and chili peppers (la).\n- Set up Alipay or WeChat Pay before arriving to pay for metro rides and street food easily.\n- Keep your passport with you for entry checks at tourist sights.",
+  "tldr": "Stay near Chunxi Road for shopping or Wuhou for traditional streets. Metro Line 10 reaches Chengdu centre from Shuangliu Airport in 20 minutes. Visit in spring or autumn for Giant Pandas, bamboo tea houses, and Sichuan hotpot.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Capital of Sichuan Province, China"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 21 million"
+    },
+    {
+      "label": "Main airport",
+      "value": "Chengdu Shuangliu (CTU) & Chengdu Tianfu (TFU)"
+    },
+    {
+      "label": "Public transport",
+      "value": "Chengdu Metro network (Alipay/WeChat Pay)"
+    },
+    {
+      "label": "Time zone",
+      "value": "CST (UTC+8), no daylight saving"
+    },
+    {
+      "label": "Power",
+      "value": "Type A, C & I plugs, 220 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get to the Chengdu Giant Panda Breeding Base?",
+      "a": "Take Chengdu Metro Line 3 to Panda Avenue Station, then transfer to the official tourist feeder bus directly to the front gates of the panda base in about 15 minutes."
+    },
+    {
+      "q": "How far is Chengdu Tianfu Airport (TFU) from the city centre?",
+      "a": "Tianfu Airport lies 50 km southeast of Chengdu. The express Metro Line 18 connects TFU directly to South Railway Station in central Chengdu in roughly 40 minutes."
+    },
+    {
+      "q": "What makes Sichuan hotpot unique?",
+      "a": "Sichuan hotpot uses a rich broth flavored with rendered tallow, red chili peppers, and numbing Sichuan peppercorns (hua jiao), creating a signature 'mala' numbing-spicy sensation."
+    },
+    {
+      "q": "What can I do at People's Park (Renmin Park)?",
+      "a": "People's Park offers authentic local culture where you can sip green tea at Heming Tea House, watch locals play mahjong, admire bonsai gardens, and experience traditional ear-cleaning services."
+    },
+    {
+      "q": "How far is Mount Emei and the Leshan Giant Buddha from Chengdu?",
+      "a": "High-speed trains from Chengdu East Railway Station reach Leshan in 50 minutes and Mount Emei station in 70 minutes, making both achievable as day trips."
+    },
+    {
+      "q": "Do I need to book Panda Base tickets in advance?",
+      "a": "Yes, real-name ticket reservation via official WeChat mini-programs is required in advance, as morning visitor slots sell out quickly during peak travel months."
+    }
+  ],
+  "sources": []
+}

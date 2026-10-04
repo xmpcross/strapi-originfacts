@@ -1,0 +1,59 @@
+{
+  "slug": "krabi",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Krabi is a coastal province on Southern Thailand's Andaman coast, famed for its towering karst limestone cliffs, emerald lagoons, and idyllic offshore islands. Serving as a base for rock climbing, scuba diving, and island hopping, it showcases iconic natural wonders like Railay Beach and Phi Phi Islands.\n\n## Where to stay in Krabi\n\nAo Nang is the main resort beach town, providing a wide array of beachfront hotels, restaurants, tour counters, and longtail boat piers. Railay Beach, accessible only by boat due to surrounding cliff faces, offers secluded luxury resorts and budget beachfront bungalows ideal for rock climbers and beach lovers. Krabi Town on the river appeals to budget travelers seeking authentic night market food. Klong Muang and Tubkaek offer quiet luxury beachfront resorts.\n\n## Things to do in Krabi\n\nTake a longtail boat to Railay Beach to swim at Phra Nang Cave Beach and watch rock climbers tackle sheer limestone walls. Join a Four Islands boat tour to visit Koh Poda, Chicken Island, and the sandbar at Koh Mor. Hike up the 1,260 steps at Tiger Cave Temple (Wat Tham Suea) for sweeping mountain vistas. Swim in the crystal-clear thermal waters of the Emerald Pool and Hot Springs in Thung Teao Forest Park. Take a day boat trip to Maya Bay on Koh Phi Phi.\n\n## Getting around Krabi\n\nKrabi International Airport (KBV) is located 15 km east of Krabi Town and 27 km from Ao Nang. Airport bus shuttles, private minivans, and taxis connect the terminal to Ao Nang in 45 minutes. Longtail boats serve as the primary water taxi method for reaching Railay, Ton Sai, and offshore islands. On land, local songthaews run regularly between Krabi Town and Ao Nang.\n\n## When to visit Krabi\n\nKrabi enjoys a tropical climate. The High Season (November to April) brings sunny skies, calm emerald seas, and pleasant temperatures averaging 28°C to 32°C, perfect for island cruises and diving. The Monsoon Season (May to October) brings heavy tropical rains, high ocean swells, and rough seas, though accommodation rates drop significantly.\n\n## Practical tips for Krabi\n\n- Book longtail boat tickets at official booth counters in Ao Nang to avoid inflated prices.\n- Thailand uses Type A, B, and C power plugs operating at 220 V.\n- Wear sturdy shoes and carry plenty of water if climbing the 1,260 stairs to Tiger Cave Temple.\n- Inspect sea conditions; red flags on beaches mean swimming and boat departures are unsafe.\n- Bring waterproof dry bags to protect cameras and electronics during boat transfers.",
+  "tldr": "Stay in Ao Nang for dining and longtail boat piers, or Railay Beach for cliffside luxury. Airport buses reach Ao Nang from KBV in 45 minutes. Visit between November and April for calm seas, rock climbing, and island hopping.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Coastal Destination in Southern Thailand"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 32,000 (Krabi Town)"
+    },
+    {
+      "label": "Main airport",
+      "value": "Krabi International Airport (KBV), 27 km from Ao Nang"
+    },
+    {
+      "label": "Public transport",
+      "value": "Longtail boats, Songthaews, Airport buses, Taxis"
+    },
+    {
+      "label": "Time zone",
+      "value": "ICT (UTC+7), no daylight saving"
+    },
+    {
+      "label": "Power",
+      "value": "Type A, B & C plugs, 220 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Krabi Airport to Ao Nang Beach?",
+      "a": "Taxis and private minivans are also available."
+    },
+    {
+      "q": "How do I get to Railay Beach from Ao Nang?",
+      "a": "Railay is cut off by cliffs and reachable only by boat."
+    },
+    {
+      "q": "What is included in the Krabi Four Islands tour?",
+      "a": "The popular Four Islands longtail or speedboat tour visits Koh Poda, Chicken Island (Koh Kai), Koh Tub, Koh Mor sandbar, and Phra Nang Cave Beach for snorkeling and swimming."
+    },
+    {
+      "q": "Can beginners go rock climbing in Railay?",
+      "a": "Yes, Railay has numerous certified climbing schools offering half-day and full-day introductory climbing courses with professional equipment and instructors tailored for complete beginners."
+    },
+    {
+      "q": "Is Krabi Town worth visiting?",
+      "a": "Yes, Krabi Town offers an authentic local feel with the lively Chao Fah Night Market, Riverside Crab Statue walking promenade, and affordable local seafood restaurants away from resort crowds."
+    },
+    {
+      "q": "How far is Koh Phi Phi from Krabi?",
+      "a": "Ferries depart daily from Klong Jilad Pier in Krabi Town to Koh Phi Phi Don in about 90 minutes. High-speed speedboats from Ao Nang reach Phi Phi in roughly 45 minutes."
+    }
+  ],
+  "sources": []
+}

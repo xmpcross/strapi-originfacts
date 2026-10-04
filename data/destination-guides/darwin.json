@@ -1,0 +1,59 @@
+{
+  "slug": "darwin",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Darwin is the tropical capital of Australia's Northern Territory, perched on the Timor Sea. Positioned closer to South East Asia than to Sydney, it is celebrated for its multicultural night markets, rich Indigenous heritage, WWII historical sites, and proximity to Kakadu and Litchfield National Parks.\n\n## Where to stay in Darwin\n\nStaying along the Darwin Waterfront precinct offers modern hotels, wave pools, lagoon swimming, and waterfront dining away from marine stingers. The CBD around Mitchell Street provides budget hostels, boutique hotels, and lively pubs within easy walking distance of Crocosaurus Cove and Mindil Beach transit stops. For a quieter coastal atmosphere, Fannie Bay and Cullens Bay Marina offer apartment accommodations overlooking yacht harbors and historic coastal reserves.\n\n## Things to do in Darwin\n\nWatch spectacular tropical sunsets while sampling Asian street food at the Mindil Beach Sunset Market. Learn about Indigenous art and Northern Territory natural history at the Museum and Art Gallery of the Northern Territory (MAGNT). Swim safely in the Darwin Waterfront Recreation Lagoon or tackle the Wave Pool. Explore WWII aviation history at the Darwin Military Museum at East Point. Day trips to Litchfield National Park offer safe swimming beneath thundering waterfalls.\n\n## Getting around Darwin\n\nDarwin International Airport is situated 13 km north of the city centre. Airport shuttles, taxis, and rideshares connect to the CBD in 15 minutes, as there is no direct rail link. TransitNT operates Darwin's public bus network. Passengers can purchase cash bus tickets from drivers or buy a reusable TapAndRide card. Most central sights, waterfront dining, and markets are easily reachable on foot or via short taxi rides.\n\n## When to visit Darwin\n\nDarwin experiences two distinct tropical seasons: Dry and Wet. The Dry Season (May to October) is the prime time to visit, characterized by warm, rainless days averaging 30°C, cooler nights, and outdoor night markets. The Wet Season (November to April) brings high humidity, dramatic electrical storms, tropical downpours, and lush landscapes, though some national park roads may flood.\n\n## Practical tips for Darwin\n\n- Never swim in natural ocean waters or unpatrolled rivers due to dangerous saltwater crocodiles and box jellyfish.\n- Australia uses Type I electrical plugs operating at 230 V.\n- Mindil Beach Sunset Market runs on Thursday and Sunday evenings from May to October.\n- Drink plenty of water and wear lightweight cotton clothing for tropical heat.\n- Hire a four-wheel-drive vehicle if planning self-drive trips to remote Kakadu locations.",
+  "tldr": "Stay along the Darwin Waterfront or Mitchell Street in the CBD. Shuttles reach the airport in 15 minutes. Visit during the Dry Season (May to October) for pleasant warm weather, sunset markets, and national park swimming holes.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Capital of the Northern Territory"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 150,000"
+    },
+    {
+      "label": "Main airport",
+      "value": "Darwin International Airport (DRW), 13 km north of CBD"
+    },
+    {
+      "label": "Public transport",
+      "value": "TransitNT bus network (TapAndRide card or cash)"
+    },
+    {
+      "label": "Time zone",
+      "value": "ACST (UTC+9:30), no daylight saving"
+    },
+    {
+      "label": "Power",
+      "value": "Type I plugs, 230 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Darwin Airport to central Darwin?",
+      "a": "Taking a taxi, rideshare, or pre-booked airport shuttle bus is the quickest option, taking about 15 to 20 minutes to reach Mitchell Street or the Darwin Waterfront precinct."
+    },
+    {
+      "q": "Is it safe to swim in the ocean around Darwin?",
+      "a": "No, ocean swimming around Darwin is dangerous due to saltwater crocodiles and lethal box jellyfish. Stick to safe swimming locations like the Darwin Waterfront Recreation Lagoon or Litchfield waterfalls."
+    },
+    {
+      "q": "When does the Mindil Beach Sunset Market take place?",
+      "a": "The Mindil Beach Sunset Market operates every Thursday and Sunday evening from late April through October during Darwin's Dry Season, offering street food and artisan craft stalls."
+    },
+    {
+      "q": "How far is Litchfield National Park from Darwin?",
+      "a": "Litchfield National Park is approximately 120 km south of Darwin, taking about 90 minutes by car. It is a popular day trip destination for swimming in freshwater plunge pools."
+    },
+    {
+      "q": "Do I need a 4WD vehicle to visit Kakadu National Park?",
+      "a": "Major paved roads to Jabiru and Cooinda are accessible by 2WD cars during the Dry Season. However, a 4WD vehicle is required for unpaved tracks leading to Jim Jim and Twin Falls."
+    },
+    {
+      "q": "What is the difference between Darwin's Wet and Dry seasons?",
+      "a": "The Dry Season (May–October) features clear skies, 30°C weather, and minimal rain. The Wet Season (November–April) brings hot humidity, heavy tropical rain, monsoon storms, and lush waterfalls."
+    }
+  ],
+  "sources": []
+}

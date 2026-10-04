@@ -1,0 +1,59 @@
+{
+  "slug": "brisbane",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Brisbane is the sun-drenched capital of Queensland, built along the winding loops of the Brisbane River. Known for its laid-back subtropical lifestyle, outdoor dining, and striking urban parklands, the city serves as the primary gateway to Australia's Gold Coast and Sunshine Coast regions.\n\n## Where to stay in Brisbane\n\nFirst-time visitors often choose the Brisbane CBD for central access to Queen Street Mall, historic arcades, and central train stations. South Bank is another top area, famous for its lush parklands, cultural precinct, and artificial beach overlooking the skyline. Fortitude Valley appeals to younger travelers and nightlife seekers with its indie boutiques, rooftop bars, and vibrant music venues. For a quieter riverside setting with upscale dining, Howard Smith Wharves and Kangaroo Point provide magnificent cliffside views and direct access to river boardwalks.\n\n## Things to do in Brisbane\n\nRelax at South Bank Parklands and swim at Streets Beach, Australia's only inner-city man-made lagoon. Walk across the Kurilpa or Goodwill footbridges to the Cultural Centre, housing the Gallery of Modern Art (GOMA) and Queensland Museum. Climb the iconic Story Bridge for panoramic views, or dine under its arches at Howard Smith Wharves. Take a CityCat ferry cruise along the river to New Farm Park, or cuddle koalas at Lone Pine Koala Sanctuary. Day trips to Moreton Island offer sand dune tobogganing and dolphin feeding.\n\n## Getting around Brisbane\n\nBrisbane Airport is situated 13 km northeast of the CBD. The Airtrain rail service reaches Central and South Bank stations in 20 minutes, departing every 15 minutes during peak hours. Translink operates Brisbane's integrated network of trains, buses, and CityCat ferries. Travelers can pay using a contactless payment card or a reusable Go Card. The free CityHopper ferry offers scenic river transit between North Quay, South Bank, and Sydney Street.\n\n## When to visit Brisbane\n\nBrisbane boasts a subtropical climate with warm weather year-round. Autumn (March to May) and spring (September to November) bring ideal conditions with temperatures averaging 20°C to 28°C and lower humidity. Winter (June to August) is mild and dry, with sunny days averaging 22°C. Summer (December to February) brings hot, humid weather and occasional heavy afternoon thunderstorms, though it remains popular for coastal trips.\n\n## Practical tips for Brisbane\n\n- Tap on and off with your contactless card or Go Card when boarding translink buses, trains, and ferries.\n- Australia uses Type I power outlets supplying 230 V electricity.\n- Swim between the red and yellow flags at patrolled coastal beaches near Brisbane.\n- Rideshare services like Uber and Didi operate widely alongside traditional taxis.\n- Keep a water bottle and hat handy, as UV levels remain elevated throughout the year.",
+  "tldr": "Base yourself in South Bank for parklands and culture, or the CBD for shopping. The Airtrain connects Brisbane Airport to the city in 20 minutes. Visit between April and October for dry, warm weather and outdoor river cruises.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Capital of Queensland"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 2.6 million"
+    },
+    {
+      "label": "Main airport",
+      "value": "Brisbane Airport (BNE), 13 km northeast of CBD"
+    },
+    {
+      "label": "Public transport",
+      "value": "Translink trains, buses, and CityCat ferries (Go Card/Contactless)"
+    },
+    {
+      "label": "Time zone",
+      "value": "AEST (UTC+10), no daylight saving"
+    },
+    {
+      "label": "Power",
+      "value": "Type I plugs, 230 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Brisbane Airport to the city centre?",
+      "a": "The Airtrain connects Brisbane Airport directly to Brisbane Central and South Bank stations in about 20 minutes. Trains run every 15 to 30 minutes, and tickets can be booked online or purchased at airport station counters."
+    },
+    {
+      "q": "Is there free public transport along the Brisbane River?",
+      "a": "Yes, the red CityHopper ferry is a free inner-city service that runs every 30 minutes between North Quay, South Bank, Maritime Museum, and Sydney Street, offering great sightseeing views."
+    },
+    {
+      "q": "How do I travel from Brisbane to Lone Pine Koala Sanctuary?",
+      "a": "Take Translink bus route 430 from Queen Street Bus Station directly to Lone Pine in about 40 minutes, or enjoy a scenic river cruise operated by Mirimar Boat Cruises departing from South Bank."
+    },
+    {
+      "q": "Can I swim at South Bank in central Brisbane?",
+      "a": "Yes, Streets Beach at South Bank is a free, lifeguard-patrolled artificial beach with real sand and clear lagoon waters overlooking the Brisbane river and city skyline."
+    },
+    {
+      "q": "Does Brisbane use daylight saving time in summer?",
+      "a": "No, Queensland stays on Australian Eastern Standard Time (AEST / UTC+10) all year round, so Brisbane does not observe daylight saving time during summer months."
+    },
+    {
+      "q": "What is the best way to travel from Brisbane to the Gold Coast?",
+      "a": "Translink trains run frequently from Brisbane Central and South Bank to Nerang or Robina stations on the Gold Coast in about 70 minutes, connecting with local bus and G:link light rail services."
+    }
+  ],
+  "sources": []
+}

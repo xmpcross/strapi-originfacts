@@ -1,0 +1,59 @@
+{
+  "slug": "hamburg",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Hamburg is Germany's major maritime gateway and second-largest city, set on the Elbe River. Boasting more bridges than Venice and Amsterdam combined, it features historic red-brick warehouse districts, massive port docks, serene Alster lakes, and a famous music and nightlife heritage.\n\n## Where to stay in Hamburg\n\nAltstadt and Neustadt form the central commercial heart, placing visitors near the grand Town Hall (Rathaus), Binnenalster lake, and luxury shopping arcades. Speicherstadt and HafenCity appeal to modern architectural lovers near the Elbphilharmonie concert hall. St. Pauli and Sternschanze cater to younger travelers and nightlife seekers near the Reeperbahn entertainment strip.\n\n## Things to do in Hamburg\n\nMarvel at the soaring glass architecture and harbor views from the plaza of the Elbphilharmonie concert hall. Explore Speicherstadt, the world's largest historic red-brick warehouse complex. Tour Miniatur Wunderland, the world's largest model railway exhibition. Take a harbour boat cruise through the busy Port of Hamburg. Walk around Inner Alster Lake.\n\n## Getting around Hamburg\n\nHamburg Airport (HAM) is situated 8 km north. S-Bahn line S1 connects airport terminals directly to Hamburg Hauptbahnhof in 25 minutes. Public transport is managed by HVV, encompassing S-Bahn, U-Bahn, buses, and HADAG harbor ferries. Pay using contactless tickets or HVV day passes.\n\n## When to visit Hamburg\n\nLate spring and summer (May to September) bring the best weather with mild temperatures averaging 20°C to 24°C, long summer evenings, and open-air waterfront dining. May hosts the massive Port Anniversary festival (Hafengeurtstag). Winter is crisp with Christmas markets.\n\n## Practical tips for Hamburg\n\n- Buy an HVV 9am Day Ticket for economical unlimited travel across S-Bahn, U-Bahn, and harbor ferries.\n- Use HADAG ferry line 62 from Landungsbrücken as a cheap scenic harbor cruise.\n- Visit Miniatur Wunderland by reserving timed-entry tickets online in advance.\n- Carry cash for small bakeries and traditional market stalls.",
+  "tldr": "Stay in Altstadt for Rathaus shopping or HafenCity near Elbphilharmonie. S-Bahn line S1 links HAM airport to Hauptbahnhof in 25 minutes. Visit between May and September for harbor cruises, Speicherstadt warehouses, and Alster lake walks.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Major City State in Germany"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 1.9 million"
+    },
+    {
+      "label": "Main airport",
+      "value": "Hamburg Airport (HAM), 8 km north"
+    },
+    {
+      "label": "Public transport",
+      "value": "HVV S-Bahn, U-Bahn, Buses, HADAG Ferries (HVV Tickets / Contactless)"
+    },
+    {
+      "label": "Time zone",
+      "value": "CET (UTC+1), CEST (UTC+2) in summer"
+    },
+    {
+      "label": "Power",
+      "value": "Type C & F plugs, 230 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Hamburg Airport to the city centre?",
+      "a": "S-Bahn train Line S1 runs directly from the airport station beneath Terminals 1 and 2 to Hamburg Hauptbahnhof (Central Station) in 25 minutes."
+    },
+    {
+      "q": "Can I visit the Elbphilharmonie plaza for free?",
+      "a": "Yes, tickets to the public observation Plaza of the Elbphilharmonie are free when collected on-site on the day of your visit, offering 360-degree views over the port and river."
+    },
+    {
+      "q": "What is Speicherstadt?",
+      "a": "Speicherstadt is a UNESCO World Heritage site consisting of an extensive 19th-century complex of historic red-brick oak-pile warehouses built along narrow water canals."
+    },
+    {
+      "q": "How do I take a cheap harbor tour in Hamburg?",
+      "a": "Hop on public HADAG Ferry Line 62 from Landungsbrücken Pier 3. It operates as part of the standard HVV transit network, cruising past fish markets, container docks, and Övelgönne beach."
+    },
+    {
+      "q": "What is Miniatur Wunderland?",
+      "a": "Miniatur Wunderland is the world's largest model railway exhibition, featuring intricate miniature landscapes of European and global cities, airports with moving planes, and automated trains."
+    },
+    {
+      "q": "What is the Reeperbahn?",
+      "a": "The Reeperbahn in the St. Pauli district is Hamburg's famous night entertainment and red-light strip, packed with music venues, bars, theaters, and famous Beatles history spots."
+    }
+  ],
+  "sources": []
+}

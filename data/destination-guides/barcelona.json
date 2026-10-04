@@ -1,0 +1,59 @@
+{
+  "slug": "barcelona",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Barcelona is the cosmopolitan capital of Spain's Catalonia region, perched along the Mediterranean coast. Famous for the whimsical Antoni Gaudí architecture, Gothic Quarter alleyways, world-class culinary scene, vibrant beach culture, and passionate soccer heritage.\n\n## Where to stay in Barcelona\n\nEixample is the top district for first-time visitors, featuring grid avenues lined with modernist architecture, luxury shopping along Passeig de Gràcia, and easy access to Sagrada Família. El Born and the Gothic Quarter (Barri Gòtic) provide historic charm, medieval lanes, tapas bars, and boutique lodging. Barceloneta appeals to sunseekers wanting direct beach access and seafood chiringuitos.\n\n## Things to do in Barcelona\n\nMarvel at Antoni Gaudí's unfinished masterpiece, the Basílica de la Sagrada Família. Stroll through the whimsical gingerbread houses and mosaic serpentine benches of Park Güell. Explore Casa Batlló and La Pedrera along Passeig de Gràcia. Sample fresh tapas and jamón ibérico at La Boqueria market off La Rambla. Relax on Barceloneta Beach.\n\n## Getting around Barcelona\n\nJosep Tarradellas Barcelona-El Prat Airport (BCN) lies 12 km southwest. The Aerobús express bus links terminals to Plaça de Catalunya in 25 minutes, while Metro Line L9 Sud connects to the city network. TMB operates Barcelona's subways and buses. Passengers use contactless payment or T-casual multi-journey cards.\n\n## When to visit Barcelona\n\nSpring (May to June) and Autumn (September to October) are prime times to visit, featuring warm sunny days averaging 22°C to 25°C, perfect for beach strolls and sightseeing without extreme heat. Summer (July to August) is hot, humid, and crowded. Winter (December to February) is mild and sunny.\n\n## Practical tips for Barcelona\n\n- Keep personal belongings and bags secure in crowded tourist spots like La Rambla to prevent pickpocketing.\n- Spain uses Type C and Type F European two-prong electrical outlets operating at 230 V.\n- Dinner in Spain is served late; restaurants open for evening service around 8:00 PM or 8:30 PM.\n- Buy Sagrada Família and Park Güell timed-entry tickets weeks in advance online.\n- Use the T-casual 10-journey transit pass for economical rides across subways and buses.",
+  "tldr": "Stay in Eixample for Gaudí architecture or El Born for tapas bars. The Aerobús links BCN airport to Plaça de Catalunya in 25 minutes. Visit in May, June, or September for warm sunshine, Sagrada Família, and Mediterranean beaches.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Capital of Catalonia, Spain"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 1.6 million (Metro 5.6 million)"
+    },
+    {
+      "label": "Main airport",
+      "value": "Barcelona-El Prat Airport (BCN), 12 km southwest"
+    },
+    {
+      "label": "Public transport",
+      "value": "TMB Metro, Buses, FGC Trains, Trams (T-casual / Contactless)"
+    },
+    {
+      "label": "Time zone",
+      "value": "CET (UTC+1), CEST (UTC+2) in summer"
+    },
+    {
+      "label": "Power",
+      "value": "Type C & F plugs, 230 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Barcelona Airport to central Barcelona?",
+      "a": "The Aerobús express shuttle (A1 from T1, A2 from T2) runs every 5 to 10 minutes to Plaça de Catalunya in 25 minutes. Metro Line L9 Sud and R2 Nord train also connect directly."
+    },
+    {
+      "q": "How far in advance should I book Sagrada Família tickets?",
+      "a": "Book Sagrada Família entry tickets online at least two to three weeks in advance, especially during spring and summer months, as daily timed slots sell out fast."
+    },
+    {
+      "q": "Is La Rambla safe for tourists?",
+      "a": "La Rambla is generally safe but is a major hotspot for skilled pickpockets. Keep wallets in front pockets, carry backpacks in front, and avoid street shell games."
+    },
+    {
+      "q": "How do I travel from Barcelona to Montserrat Monastery?",
+      "a": "Take the FGC R5 train from Plaça d'Espanya to Aeri de Montserrat (1 hour), then ride the scenic cable car (Aeri) or rack railway (Cremallera) up the mountain peak."
+    },
+    {
+      "q": "What is a T-casual transit card?",
+      "a": "The T-casual is an individual multi-journey transit card providing 10 rides on Barcelona subways, buses, trams, and suburban trains across Zone 1 for an economical flat rate."
+    },
+    {
+      "q": "When do restaurants open for dinner in Barcelona?",
+      "a": "Traditional restaurants open for lunch from 1:30 PM to 4:00 PM and for dinner from 8:00 PM or 8:30 PM until late. Tapas bars often serve continuously through the afternoon."
+    }
+  ],
+  "sources": []
+}

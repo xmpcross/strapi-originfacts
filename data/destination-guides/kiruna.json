@@ -1,0 +1,59 @@
+{
+  "slug": "kiruna",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Kiruna is Sweden's northernmost city, situated deep inside the Arctic Circle in Swedish Lapland. Famous as a premier winter wilderness gateway for viewing the Northern Lights (Aurora Borealis), staying at the world-famous Icehotel, dog sledding, and experiencing indigenous Sami culture.\n\n## Where to stay in Kiruna\n\nNew Kiruna City Centre offers modern Scandinavian hotels, shops, and restaurants built as part of an historic urban relocation project. Jukkasjärvi, located 17 km east, is the iconic home of the Icehotel, offering ice suites, warm chalets, and river views. Abisko, located 90 km west, is world-renowned for clear skies and Aurora viewing lodges.\n\n## Things to do in Kiruna\n\nSpend a night wrapped in reindeer skins inside a hand-carved ice room at the Icehotel in Jukkasjärvi. Hunt for the Northern Lights on a guided snowmobile or husky sled safari in Abisko National Park. Learn about indigenous Arctic reindeer herding at a local Sami village. Tour the massive LKAB underground iron ore mine. Hike the King's Trail (Kungsleden) in summer.\n\n## Getting around Kiruna\n\nKiruna Airport (KRN) is located 9 km southeast. Airport buses and pre-booked taxis connect to the city centre and Icehotel in 15 to 20 minutes. The Arctic train line connects Kiruna Railway Station west to Abisko and Narvik (Norway). Guided tour transfers are the primary method for activity transport.\n\n## When to visit Kiruna\n\nWinter (December to March) is peak season for Northern Lights viewing, snowmobiling, ice hotels, and dog sledding, with dark Arctic nights and temperatures averaging -10°C to -20°C. Summer (June to July) features 24-hour Midnight Sun, hiking, and fishing under constant daylight.\n\n## Practical tips for Kiruna\n\n- Dress in heavy insulated layers, thermal underwear, wool socks, and windproof outer gear for sub-zero cold.\n- Book Icehotel accommodations and Northern Lights tours months in advance for winter stays.\n- Kiruna is relocating its entire city centre 3 km east due to iron mine underground expansion.\n- Sweden is completely cashless; carry credit cards or mobile payment apps.",
+  "tldr": "Stay in New Kiruna or Jukkasjärvi near the Icehotel. Airport buses reach central Kiruna from KRN in 15 minutes. Visit between December and March for Northern Lights, husky sledding, and Icehotel stays.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "City in Swedish Lapland (Inside Arctic Circle)"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 23,000"
+    },
+    {
+      "label": "Main airport",
+      "value": "Kiruna Airport (KRN), 9 km southeast"
+    },
+    {
+      "label": "Public transport",
+      "value": "Local buses, Arctic rail (Kiruna-Abisko-Narvik) / Tour transfers"
+    },
+    {
+      "label": "Time zone",
+      "value": "CET (UTC+1), CEST (UTC+2) in summer"
+    },
+    {
+      "label": "Power",
+      "value": "Type C & F plugs, 230 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Kiruna Airport to the Icehotel?",
+      "a": "Pre-booked airport taxis or Icehotel transfer shuttles connect Kiruna Airport directly to Jukkasjärvi in about 15 minutes."
+    },
+    {
+      "q": "When can I see the Northern Lights (Aurora Borealis) in Kiruna?",
+      "a": "Northern Lights are visible from September through March when nights are dark. December to February offers the longest dark night hours for optimal viewing."
+    },
+    {
+      "q": "What is the Icehotel in Jukkasjärvi?",
+      "a": "The Icehotel is the world's first hotel constructed entirely out of ice and snow harvested from the Torne River, redesigned every winter by international artists with themed ice suites."
+    },
+    {
+      "q": "Why is the entire city of Kiruna moving?",
+      "a": "Kiruna is undergoing a massive urban relocation 3 km east because LKAB's underground iron ore mining operations are causing ground subsidence beneath the old city center."
+    },
+    {
+      "q": "How do I travel from Kiruna to Abisko National Park?",
+      "a": "Take the scenic Arctic passenger train from Kiruna Railway Station directly to Abisko Turiststation in about 75 minutes, or book an organized Aurora tour transfer."
+    },
+    {
+      "q": "What is the Midnight Sun in Kiruna?",
+      "a": "From late May through mid-July, Kiruna experiences 24-hour continuous daylight where the sun never sets below the horizon, allowing midnight hiking and outdoor adventures."
+    }
+  ],
+  "sources": []
+}

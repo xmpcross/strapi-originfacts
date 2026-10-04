@@ -1,0 +1,59 @@
+{
+  "slug": "rhodes-town",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Rhodes Town is the historic capital of Rhodes island in Greece's Dodecanese archipelago. Home to one of Europe's best-preserved medieval fortified towns, it combines grand Palace of the Grand Master architecture, ancient Greek history, vibrant harbor promenades, and sun-drenched Aegean beaches.\n\n## Where to stay in Rhodes Town\n\nRhodes Medieval Town inside the historic stone walls offers romantic boutique hotel stays in restored Knights Hospitaller buildings. Mandraki Harbor district provides modern commercial hotels near yacht piers, deer statues, and shopping streets. Elli Beach area at the island's northern tip suits travelers wanting clear sea swimming and beachfront tavernas.\n\n## Things to do in Rhodes Town\n\nWalk through the monumental Palace of the Grand Master of the Knights of Rhodes. Stroll along the cobbled Street of the Knights inside the medieval walled city. See the iconic bronze deer statues standing at the entrance of Mandraki Harbor. Swim in the crystal-clear waters of Elli Beach. Take a day trip to the whitewashed village and ancient Acropolis of Lindos.\n\n## Getting around Rhodes Town\n\nRhodes International Airport (RHO) lies 14 km southwest. KTEL public buses connect the airport terminal directly to Rhodes Town Central Bus Station in 30 minutes. Public transit across Rhodes is operated by KTEL intercity buses. Renting a car or scooter is popular for exploring remote island bays.\n\n## When to visit Rhodes Town\n\nLate spring (May to June) and early autumn (September to October) bring ideal conditions with warm sunshine averaging 24°C to 28°C, warm seas, and fewer crowds. Summer (July to August) is hot, sunny, and busy, while winter brings quiet local island life.\n\n## Practical tips for Rhodes Town\n\n- Wear flat, sturdy walking shoes inside the Medieval Town; historic cobbled streets are uneven.\n- Rent a car to drive to the dramatic hilltop Acropolis of Lindos and Anthony Quinn Bay.\n- Enjoy fresh seafood at local tavernas around Mandraki Harbor and Neorion.\n- Currency is the Euro (€); credit cards are accepted across most hotels and restaurants.",
+  "tldr": "Stay in Medieval Town for historic stone lodging or Elli Beach for coastal swimming. KTEL buses reach Rhodes Town from RHO airport in 30 minutes. Visit in May, June, or September for warm sea swimming, Knights Palace tours, and Lindos day trips.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Capital of Rhodes Island, Greece"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 50,000"
+    },
+    {
+      "label": "Main airport",
+      "value": "Rhodes International Airport (RHO), 14 km southwest"
+    },
+    {
+      "label": "Public transport",
+      "value": "KTEL island buses, City buses / Car rental recommended"
+    },
+    {
+      "label": "Time zone",
+      "value": "EET (UTC+2), EEST (UTC+3) in summer"
+    },
+    {
+      "label": "Power",
+      "value": "Type C & F plugs, 230 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Rhodes Airport to Rhodes Town?",
+      "a": "Taxis are also readily available."
+    },
+    {
+      "q": "What is the Palace of the Grand Master?",
+      "a": "It is a magnificent 14th-century medieval castle built by the Knights Hospitaller of St. John, featuring massive stone towers, courtyard mosaic floors, and historical museum exhibits."
+    },
+    {
+      "q": "How do I travel from Rhodes Town to Lindos?",
+      "a": "KTEL intercity buses run regularly from Rhodes Town Central Bus Station to Lindos (50 km south) in about 60 minutes, dropping passengers near the whitewashed village and Acropolis path."
+    },
+    {
+      "q": "What are the bronze deer statues at Mandraki Harbor?",
+      "a": "The bronze stag and hind statues ('Elafos' and 'Elafina') stand on stone pillars at the entrance of Mandraki Harbor, traditionally believed to mark the site where the ancient Colossus of Rhodes stood."
+    },
+    {
+      "q": "Can I take a day trip to Turkey from Rhodes?",
+      "a": "Yes, daily passenger catamarans run from Mandraki Harbor to the coastal town of Marmaris in Turkey in just 60 minutes, requiring a valid passport for customs clearance."
+    },
+    {
+      "q": "Is the Medieval Town of Rhodes pedestrianized?",
+      "a": "Yes, the interior of the Medieval Walled Town is largely pedestrianized, making it a peaceful area to explore historic cobblestone lanes and squares on foot."
+    }
+  ],
+  "sources": []
+}

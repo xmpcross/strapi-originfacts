@@ -1,0 +1,59 @@
+{
+  "slug": "chicago",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Chicago is the bustling metropolis of the American Midwest, situated along the southwestern shores of Lake Michigan in Illinois. Famous for its groundbreaking skyscraper architecture, deep-dish pizza, world-class art museums, jazz and blues heritage, and sprawling lakefront parklands.\n\n## Where to stay in Chicago\n\nThe Loop is Chicago's downtown heart, surrounded by historic architecture, Millennium Park, and major theater venues. River North offers upscale hotels, art galleries, and vibrant dining along the Chicago Riverwalk. The Magnificent Mile (Michigan Avenue) appeals to high-end shoppers and museumgoers. Neighborhoods like West Loop cater to foodies with Michelin-starred restaurants, while Lincoln Park provides quiet leafy streets.\n\n## Things to do in Chicago\n\nTake an open-air Architecture River Cruise along the Chicago River to learn about skyscraper design. Pose before the reflective 'Bean' (Cloud Gate) sculpture in Millennium Park. Admire masterpieces like Seurat's pointillism at the Art Institute of Chicago. Take in 360-degree city views from the Willis Tower Skydeck or 360 Chicago. Feast on authentic Chicago deep-dish pizza and Italian beef sandwiches.\n\n## Getting around Chicago\n\nChicago is served by O'Hare International Airport (ORD, 29 km northwest) and Midway International Airport (MDW, 18 km southwest). The CTA 'L' train Blue Line connects O'Hare to the Loop in 45 minutes, while the Orange Line connects Midway in 25 minutes. Public transit is managed by the Chicago Transit Authority (CTA) using Ventra cards or contactless bank cards.\n\n## When to visit Chicago\n\nSummer (June to August) is peak season, bringing festival vibes, warm lake breezes averaging 28°C, and beach activity along Lake Michigan. Autumn (September to October) offers crisp pleasant weather and autumn foliage. Winter (December to February) is bitterly cold and snowy ('The Windy City'), while Spring (April to May) brings blooming gardens.\n\n## Practical tips for Chicago\n\n- Tap your contactless credit card or phone at CTA 'L' train turnstiles for instant ride payment.\n- The United States uses Type A and B electrical plugs operating at 120 V.\n- Tipping in restaurants is customary; leave 18% to 20% for good service.\n- Walk the Chicago Riverwalk for open-air waterfront dining and kayak rentals.\n- Dress in thermal layers and heavy outerwear if visiting during winter months.",
+  "tldr": "Stay in The Loop for Millennium Park or West Loop for dining. CTA 'L' trains connect O'Hare (Blue Line) and Midway (Orange Line) to downtown. Visit in summer for river cruises, lake beaches, and deep-dish pizza.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Major City in Illinois, United States"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 2.7 million (Metro 9.5 million)"
+    },
+    {
+      "label": "Main airport",
+      "value": "O'Hare International (ORD) & Midway International (MDW)"
+    },
+    {
+      "label": "Public transport",
+      "value": "CTA 'L' Trains, CTA Buses, Metra Rail (Ventra/Contactless)"
+    },
+    {
+      "label": "Time zone",
+      "value": "CST (UTC-6), CDT (UTC-5) in summer"
+    },
+    {
+      "label": "Power",
+      "value": "Type A & B plugs, 120 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from O'Hare Airport to downtown Chicago?",
+      "a": "Take the CTA Blue Line 'L' train directly from the airport terminal station to downtown Loop stations."
+    },
+    {
+      "q": "How do I get from Midway Airport to downtown Chicago?",
+      "a": "Ride the CTA Orange Line 'L' train from Midway Station directly to the downtown Loop in about 25 minutes."
+    },
+    {
+      "q": "What is Chicago deep-dish pizza?",
+      "a": "Chicago deep-dish pizza features a thick, buttery crust baked in a high-sided pan, layered heavily with mozzarella cheese, meat or vegetable fillings, and topped with chunky crushed tomato sauce."
+    },
+    {
+      "q": "What is the 'Bean' in Chicago?",
+      "a": "The 'Bean' is the popular nickname for Cloud Gate, a monumental 110-ton seamless stainless steel sculpture designed by Anish Kapoor, located in Millennium Park reflecting the skyline."
+    },
+    {
+      "q": "What is the Chicago Architecture Foundation River Cruise?",
+      "a": "It is an official 90-minute boat tour along all three branches of the Chicago River led by expert docents detailing the history, engineering, and design of Chicago's famous skyscrapers."
+    },
+    {
+      "q": "Are Lake Michigan beaches free to enter in Chicago?",
+      "a": "Yes, all 26 miles of Chicago's public beaches along Lake Michigan, including Oak Street Beach and North Avenue Beach, are completely free and open to the public during summer."
+    }
+  ],
+  "sources": []
+}

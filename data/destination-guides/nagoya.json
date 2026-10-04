@@ -1,0 +1,59 @@
+{
+  "slug": "nagoya",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Nagoya is Japan's industrial and automotive heartland, situated in Aichi Prefecture on Honshu island. Home to Toyota Motor Corporation, the city blends cutting-edge technology and maglev train innovation with rich samurai history, feudal castles, and a distinct regional culinary scene.\n\n## Where to stay in Nagoya\n\nNagoya Station (Meieki) is the premier hub, featuring ultra-modern skyscraper hotel towers, subterranean shopping arcades, and direct Shinkansen bullet train links. Sakae is Nagoya's bustling downtown entertainment and shopping district, home to department stores, the Chubu Electric Power MIRAI TOWER, and vibrant nightlife. Fushimi offers a quiet central business base.\n\n## Things to do in Nagoya\n\nMarvel at the golden shachihoko roof ornaments and restored Honmaru Palace at Nagoya Castle. Explore the world of high-speed rail and maglev trains at the SCMAGLEV and Railway Park. Tour the Toyota Commemorative Museum of Industry and Technology. Wander through the sacred grounds of Atsuta Shrine. Feast on local Nagoya specialties like Hitsumabushi eel.\n\n## Getting around Nagoya\n\nChubu Centrair International Airport (NGO) lies 35 km south on an artificial island. The Meitetsu Airport Rapid Express (Mu Sky) train connects Centrair directly to Meitetsu Nagoya Station in 28 minutes. Transit includes subways, Meitetsu railways, and JR lines. Tap any major IC card like Suica, Pasmo, or Manaca.\n\n## When to visit Nagoya\n\nSpring (March to May) features cherry blossoms around Nagoya Castle park and mild temperatures averaging 18°C. Autumn (October to November) brings clear, comfortable sightseeing days. Summer (June to August) is hot and humid, while winter is chilly and dry.\n\n## Practical tips for Nagoya\n\n- Try 'Hitsumabushi' (grilled eel over rice) and eat it in three distinct traditional stages.\n- Japan uses Type A two-pin electrical outlets operating at 100 V.\n- Use a Manaca or Suica IC card for seamless rides across subways, Meitetsu trains, and buses.\n- Experience 'Nagoya Morning Service' at local coffee shops where coffee comes with free toast and eggs.\n- Book Ghibli Park entry tickets months in advance online before traveling.",
+  "tldr": "Stay at Nagoya Station for Shinkansen trains or Sakae for shopping and dining. Meitetsu Mu Sky trains reach Nagoya from Centrair Airport in 28 minutes. Visit in spring or autumn for Nagoya Castle, train museums, and eel cuisine.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Major Industrial City, Aichi Prefecture, Japan"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 2.3 million"
+    },
+    {
+      "label": "Main airport",
+      "value": "Chubu Centrair International Airport (NGO), 35 km south"
+    },
+    {
+      "label": "Public transport",
+      "value": "Nagoya Subway, Meitetsu Rail, JR Lines (Manaca/Suica/Pasmo)"
+    },
+    {
+      "label": "Time zone",
+      "value": "JST (UTC+9), no daylight saving"
+    },
+    {
+      "label": "Power",
+      "value": "Type A plugs, 100 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Chubu Centrair Airport to central Nagoya?",
+      "a": "Take the Meitetsu Airport Limited Express 'Mu Sky' train directly from Centrair terminal station to Meitetsu Nagoya Station in 28 minutes."
+    },
+    {
+      "q": "What is Hitsumabushi and how do I eat it?",
+      "a": "Hitsumabushi is Nagoya's signature grilled eel dish served in a wooden bowl. Eat 1/3 plain, 1/3 with seasonings (wasabi/nori), and 1/3 mixed with hot dashi broth as tea-rice (ochazuke)."
+    },
+    {
+      "q": "How do I visit Ghibli Park from Nagoya?",
+      "a": "Take the Higashiyama Subway Line to Fujigaoka Station, then transfer to the Linimo maglev train to Aichi Earth Expo Memorial Park station. Tickets must be reserved months ahead."
+    },
+    {
+      "q": "What can I see at the SCMAGLEV and Railway Park?",
+      "a": "Located in Port Nagoya, this museum displays historic Japanese steam trains, bullet train generations, and the world-record holding SCMAGLEV superconducting magnetic levitation train."
+    },
+    {
+      "q": "What is Nagoya Castle famous for?",
+      "a": "Nagoya Castle is famous for its pair of golden shachihoko (mythical tiger-headed carp) atop its main keep roof, and its meticulously restored timber Honmaru Palace featuring gold-leaf screen paintings."
+    },
+    {
+      "q": "What is Nagoya 'Morning Service'?",
+      "a": "Morning Service is a famous local cafe tradition where ordering a cup of coffee during breakfast hours (until 11:00 AM) includes complimentary thick-cut buttered toast and boiled eggs."
+    }
+  ],
+  "sources": []
+}

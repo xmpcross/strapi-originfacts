@@ -1,0 +1,59 @@
+{
+  "slug": "melbourne",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Melbourne is Australia's cultural and culinary capital, set along Port Phillip Bay on the Yarra River. Renowned for its Victorian architecture, maze of street-art-filled laneways, world-class coffee scene, and obsession with live sports, the city is a major hub for arts, fashion, and international events.\n\n## Where to stay in Melbourne\n\nStaying within the Melbourne CBD puts you in the heart of the Free Tram Zone, close to Flinders Street Station, Federation Square, and iconic coffee laneways like Degraves Street. Southbank offers luxury high-rise hotels along the Yarra River promenade near Crown Entertainment Complex and the Arts Precinct. Fitzroy and Collingwood cater to creative minds with indie fashion, vintage shops, and craft breweries. St Kilda is ideal for seaside stays, famous for its historic pier, Luna Park, and evening penguin watching.\n\n## Things to do in Melbourne\n\nWander through famous laneways like Hosier Lane for street art and Centre Place for espresso bars. Browse regional delicacies at Queen Victoria Market, the largest open-air market in the Southern Hemisphere. Visit the National Gallery of Victoria (NGV) and ACMI at Federation Square. Catch a cricket match or Australian rules football game at the Melbourne Cricket Ground (MCG). Take a day trip along the breathtaking Great Ocean Road to view the Twelve Apostles.\n\n## Getting around Melbourne\n\nMelbourne Airport (Tullamarine) lies 23 km northwest of the city. The SkyBus express shuttle runs 24/7 to Southern Cross Station in 20 to 30 minutes. Public transport across Greater Melbourne includes trains, trams, and buses managed by Public Transport Victoria (PTV). Riders pay using a physical or digital myki card. Trams within the CBD boundaries form the Free Tram Zone, requiring no payment.\n\n## When to visit Melbourne\n\nMelbourne is famous for experiencing 'four seasons in one day'. Autumn (March to May) and spring (September to November) are prime times to visit, featuring mild weather and colorful foliage. Summer (December to February) brings warm to hot days, outdoor festivals, and the Australian Open tennis tournament. Winter (June to August) is cool and crisp, averaging 14°C, ideal for cozy pub dining and museum visits.\n\n## Practical tips for Melbourne\n\n- Trams within the CBD and Docklands area are completely free; tap your myki only when traveling outside the free zone.\n- Australia uses Type I power plugs rated at 230 V.\n- Melbourne's coffee culture is precise; order a 'flat white' for a classic local espresso experience.\n- Drivers must perform a 'hook turn' at designated right-turn intersections in the city centre to yield to trams.\n- Always carry a light jacket or umbrella due to rapid weather changes.",
+  "tldr": "Stay in the CBD for coffee laneways and free trams, or Fitzroy for dining and nightlife. SkyBus connects Tullamarine Airport to Southern Cross Station in 25 minutes. Visit during autumn or spring for pleasant weather, world-class dining, and cultural festivals.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Capital of Victoria"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 5.2 million"
+    },
+    {
+      "label": "Main airport",
+      "value": "Melbourne Airport (MEL), 23 km northwest of CBD"
+    },
+    {
+      "label": "Public transport",
+      "value": "PTV trains, trams, and buses (myki card / Free Tram Zone)"
+    },
+    {
+      "label": "Time zone",
+      "value": "AEST (UTC+10), AEDT (UTC+11) in summer"
+    },
+    {
+      "label": "Power",
+      "value": "Type I plugs, 230 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Melbourne Airport (Tullamarine) to the city centre?",
+      "a": "Ride the SkyBus express shuttle directly from the airport arrival terminals to Southern Cross Station in the CBD. Buses run every 10 to 15 minutes 24/7, taking roughly 25 minutes."
+    },
+    {
+      "q": "How does the Free Tram Zone work in Melbourne?",
+      "a": "Trams operating within the designated CBD grid and Docklands boundary are free for all passengers. You do not need to touch on or off with a myki card inside this zone."
+    },
+    {
+      "q": "Where can I see wild penguins near Melbourne?",
+      "a": "You can spot wild little penguins at the end of St Kilda Pier at dusk, or take a day trip to the famous Penguin Parade on Phillip Island, located 90 minutes southeast of Melbourne."
+    },
+    {
+      "q": "What is a myki card and where can I buy one?",
+      "a": "Myki is Melbourne's reusable transit card for trains, trams, and buses. You can buy a physical card at train stations and convenience stores, or download a digital myki to Google Wallet."
+    },
+    {
+      "q": "How do I get from Melbourne to the Great Ocean Road?",
+      "a": "Renting a car offers the best flexibility to drive the coastal highway from Torquay to the Twelve Apostles. Alternatively, numerous tour operators offer full-day guided bus tours departing from CBD hotels."
+    },
+    {
+      "q": "When does the Australian Open take place in Melbourne?",
+      "a": "The Australian Open tennis tournament takes place annually during the last two weeks of January at Melbourne Park, located just a short walk or tram ride from the CBD."
+    }
+  ],
+  "sources": []
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "chiang-mai",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Chiang Mai is the cultural capital of Northern Thailand, cradled by mist-shrouded mountains along the Ping River. Formerly the seat of the Lanna Kingdom, the city is famous for its historic moated Old City, hundreds of ornate golden temples, night bazaars, and ethical elephant sanctuaries.\n\n## Where to stay in Chiang Mai\n\nStaying inside the Old City surrounded by historic brick walls and moats keeps you within walking distance of famous temples like Wat Chedi Luang, cozy cafes, and Sunday Walking Street markets. Night Bazaar area east of the Old City suits shoppers wanting night markets, international hotels, and Ping River dining. Nimmanhaemin (Nimman) to the west is Chiang Mai's modern trendy district, popular for hipster coffee shops, boutique hotels, co-working spaces, and Maya Lifestyle Mall.\n\n## Things to do in Chiang Mai\n\nAscend Mount Doi Suthep to visit Wat Phra That Doi Suthep, a sacred golden chedi offering panoramic views over the city. Walk through the Old City to admire the teak architecture of Wat Phan Tao and the ancient stupa of Wat Chedi Luang. Spend a day at an ethical elephant rescue sanctuary in the Mae Taeng Valley. Explore the massive Sunday Walking Street Market along Ratchadamnoen Road. Take a Northern Thai cooking class to master Khao Soi curry noodles.\n\n## Getting around Chiang Mai\n\nChiang Mai International Airport (CNX) is located just 5 km southwest of the Old City. Taxis, airport buses (RTC Smart Bus), and Grab rideshares reach the city centre in 15 minutes. Within Chiang Mai, songthaews (red shared pickup trucks called 'Rod Daeng') serve as the main public transport. Passengers flag them down and pay a flat fee within the city. Tuk-tuks and Grab cars are also widely available.\n\n## When to visit Chiang Mai\n\nChiang Mai is best visited during the Cool Season (November to February), when days are sunny with temperatures around 28°C and nights are comfortably cool at 15°C. November features the Loy Krathong and Yi Peng lantern festivals. The Hot Season (March to April) brings extreme heat above 38°C and smoky seasonal agricultural burning. The Rainy Season (May to October) brings lush green landscapes and afternoon showers.\n\n## Practical tips for Chiang Mai\n\n- Cover shoulders and knees when visiting temples; remove shoes before entering temple halls.\n- Thailand uses Type A, B, and C electrical plugs operating at 220 V.\n- Negotiate fares before boarding tuk-tuks, or use Grab for transparent pricing.\n- Rent a scooter only if you hold a valid international driving permit with a motorcycle endorsement.\n- Try local culinary specialties like Khao Soi curry noodles and Sai Oua herbal sausage.",
+  "tldr": "Stay in the Old City for historic temples or Nimman for modern cafes. CNX airport is only 15 minutes from downtown by taxi. Visit between November and February for cool mountain weather, night markets, and lantern festivals.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Cultural Capital of Northern Thailand"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 130,000 (Metropolitan 1 million)"
+    },
+    {
+      "label": "Main airport",
+      "value": "Chiang Mai International Airport (CNX), 5 km southwest"
+    },
+    {
+      "label": "Public transport",
+      "value": "Songthaew (red trucks), Tuk-tuks, Grab, RTC Smart Bus"
+    },
+    {
+      "label": "Time zone",
+      "value": "ICT (UTC+7), no daylight saving"
+    },
+    {
+      "label": "Power",
+      "value": "Type A, B & C plugs, 220 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Chiang Mai Airport to the Old City?",
+      "a": "Chiang Mai Airport is only 5 km from the Old City."
+    },
+    {
+      "q": "How do songthaews (red trucks) work in Chiang Mai?",
+      "a": "Songthaews are shared red pickup trucks. Flag one down, state your destination to the driver, and if it aligns with their route, hop in the back."
+    },
+    {
+      "q": "What is the difference between Loy Krathong and Yi Peng festivals?",
+      "a": "Loy Krathong involves floating illuminated flower baskets on rivers, while Yi Peng is Northern Thailand's lantern festival where thousands of paper sky lanterns are released into the night sky in November."
+    },
+    {
+      "q": "How do I choose an ethical elephant sanctuary in Chiang Mai?",
+      "a": "Look for sanctuaries with strict 'no-riding' policies that focus on rescue, rehabilitation, observation, and feeding in natural forest environments, such as Elephant Nature Park."
+    },
+    {
+      "q": "How do I get to Wat Phra That Doi Suthep temple?",
+      "a": "Take a red songthaew from Chang Puak Gate or Chiang Mai University up the scenic winding mountain road to Doi Suthep in about 30 minutes, or hire a private Grab car."
+    },
+    {
+      "q": "What is Chiang Mai's 'smoky season'?",
+      "a": "Smoky season occurs between late February and April due to seasonal agricultural crop burning in Northern Thailand, causing poor air quality. Traveling during November to January avoids this period."
+    }
+  ],
+  "sources": []
+}

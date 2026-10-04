@@ -1,0 +1,59 @@
+{
+  "slug": "new-york",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "New York City is America's premier cultural, financial, and media capital, situated where the Hudson River meets the Atlantic Ocean. Spanning five boroughs—Manhattan, Brooklyn, Queens, the Bronx, and Staten Island—it is iconic for its soaring skyline, Broadway theater, world-class museums, and 24-hour energy.\n\n## Where to stay in New York\n\nMidtown Manhattan is ideal for first-time visitors, placing you near Times Square, Broadway theaters, Grand Central, and Rockefeller Center. Lower Manhattan (SoHo, Tribeca, Financial District) appeals to travelers seeking historic cobblestone streets, boutique shopping, and 9/11 Memorial access. Greenwich Village and Chelsea offer brownstone charm and High Line park access. Williamsburg in Brooklyn provides skyline views and hipster dining.\n\n## Things to do in New York\n\nStroll through vast Central Park and row a boat on the lake. Marvel at the neon lights of Times Square and catch a Broadway musical. Admire 360-degree vistas from Summit One Vanderbilt, Empire State Building, or Edge. Walk across the historic Brooklyn Bridge. Explore world-class art at the Metropolitan Museum of Art (Met) and MoMA. Take the Staten Island Ferry past the Statue of Liberty.\n\n## Getting around New York\n\nNYC is served by John F. Kennedy (JFK), LaGuardia (LGA), and Newark Liberty (EWR). The JFK AirTrain connects to the NYC Subway (E, J, Z lines) or LIRR train at Jamaica Station. The MTA Subway runs 24/7. Passengers tap any contactless credit card or smartphone at turnstiles using the OMNY payment system.\n\n## When to visit New York\n\nAutumn (September to November) and Spring (April to June) are ideal times to visit, featuring crisp, mild weather averaging 18°C to 22°C. The holiday season (late November to December) brings magical festive light displays, the Rockefeller Center Christmas Tree, and window decorations. Summer (July to August) is hot and humid, while winter brings cold days and occasional snow.\n\n## Practical tips for New York\n\n- Tap any contactless credit card or phone wallet at subway turnstiles via OMNY for automatic fare capping.\n- The United States uses Type A and B electrical plugs operating at 120 V.\n- Walk on the right side of sidewalks and pull to the side if stopping to check maps.\n- Take the free Staten Island Ferry for fantastic views of the Statue of Liberty and harbour.",
+  "tldr": "Stay in Midtown for Broadway and Central Park or SoHo for shopping. JFK AirTrain connects to LIRR/Subway at Jamaica Station. Visit in autumn or December for crisp weather, Broadway shows, and holiday lights.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Major City in New York, United States"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 8.3 million (Metro 20 million)"
+    },
+    {
+      "label": "Main airport",
+      "value": "JFK, LGA (Queens) & EWR (Newark, NJ)"
+    },
+    {
+      "label": "Public transport",
+      "value": "MTA Subway (24/7), MTA Buses, LIRR, NJ Transit (OMNY/Contactless)"
+    },
+    {
+      "label": "Time zone",
+      "value": "EST (UTC-5), EDT (UTC-4) in summer"
+    },
+    {
+      "label": "Power",
+      "value": "Type A & B plugs, 120 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from JFK Airport to Manhattan?",
+      "a": "Take the JFK AirTrain to Jamaica Station, then transfer to the LIRR train to Penn Station or Grand Central (20 mins), or take the MTA E subway line to Midtown (45 mins)."
+    },
+    {
+      "q": "How does OMNY work on the NYC Subway?",
+      "a": "OMNY allows you to tap any contactless credit card, debit card, or smartphone wallet directly at subway turnstiles and bus readers. After 12 paid rides in a week, remaining rides are free."
+    },
+    {
+      "q": "How do I see the Statue of Liberty for free?",
+      "a": "Ride the free Staten Island Ferry departing every 15 to 30 minutes from Whitehall Terminal in Lower Manhattan. The 25-minute scenic boat ride passes directly by the Statue of Liberty."
+    },
+    {
+      "q": "What is the High Line park?",
+      "a": "The High Line is an elevated 1.45-mile public park built on a historic disused freight rail line on Manhattan's West Side, featuring gardens, art installations, and Hudson River views."
+    },
+    {
+      "q": "How far in advance should I book Broadway tickets?",
+      "a": "Popular shows should be booked weeks or months ahead online. For discount same-day tickets, visit the TKTS booth in Times Square or Lincoln Center."
+    },
+    {
+      "q": "Are NYC subway trains safe at night?",
+      "a": "Yes, the subway operates 24/7 and remains widely used. Stand in designated conductor boarding areas marked on platforms and ride in central carriages with other passengers late at night."
+    }
+  ],
+  "sources": []
+}

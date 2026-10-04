@@ -1,0 +1,59 @@
+{
+  "slug": "prague",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Prague is the fairytale capital of the Czech Republic, straddling the Vltava River in central Europe. Nicknamed the 'City of a Hundred Spires', it enchants visitors with its remarkably preserved Gothic cathedrals, Baroque palaces, medieval Charles Bridge, historic astronomical clock, and world-class beer culture.\n\n## Where to stay in Prague\n\nOld Town (Staré Město) places you in the heart of the action, steps from Old Town Square, the Astronomical Clock, and Charles Bridge. Lesser Town (Malá Strana) offers romantic, quieter cobbled streets beneath Prague Castle. New Town (Nové Město) around Wenceslas Square provides modern commercial hotels, shopping, and major rail links. Vinohrady appeals to travelers seeking trendy cafes and local residential charm.\n\n## Things to do in Prague\n\nWalk across the statue-lined Charles Bridge at sunrise. Marvel at the mechanical performance of the 600-year-old Astronomical Clock on Old Town Square. Explore the monumental complex of Prague Castle and St. Vitus Cathedral. Wander through the Jewish Quarter (Josefov) and its historic cemetery. Enjoy sweeping city panoramas from Petřín Hill Lookout Tower. Sample Czech Pilsner beer.\n\n## Getting around Prague\n\nVáclav Havel Airport Prague (PRG) lies 12 km west. The Airport Express (AE) bus connects terminals directly to Prague Main Railway Station (Hlavní Nádraží) in 30 minutes. City transit is operated by DPP, including three Metro lines (A, B, C), trams, and buses. Passengers tap contactless credit cards on yellow tram/metro readers.\n\n## When to visit Prague\n\nSpring (May to June) and Autumn (September to October) feature wonderful weather with temperatures averaging 18°C to 22°C and fewer crowds. Summer (July to August) is warm and crowded. December brings festive magic with traditional Christmas Markets filling Old Town Square.\n\n## Practical tips for Prague\n\n- Tap your contactless card on yellow electronic readers inside trams and metro stations for instant 30-min or 90-min passes.\n- Czech Republic uses Type C and Type E European two-pin electrical sockets operating at 230 V.\n- Currency is the Czech Koruna (CZK), not the Euro; cards are accepted widely.\n- Avoid converting money at street exchange booths with zero commission flags due to hidden fees.\n- Order a 'Pivo' (Czech beer); local draft Pilsner Urquell is often cheaper than bottled water.",
+  "tldr": "Stay in Old Town for central historic monuments or Malá Strana below the castle. Airport Express buses link PRG airport to Main Station in 30 minutes. Visit in spring or autumn for pleasant weather, Charles Bridge walks, and Czech Pilsner.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Capital of the Czech Republic"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 1.3 million"
+    },
+    {
+      "label": "Main airport",
+      "value": "Václav Havel Airport Prague (PRG), 12 km west"
+    },
+    {
+      "label": "Public transport",
+      "value": "DPP Metro (Lines A, B, C), Trams, Buses (Contactless / PID Litagret)"
+    },
+    {
+      "label": "Time zone",
+      "value": "CET (UTC+1), CEST (UTC+2) in summer"
+    },
+    {
+      "label": "Power",
+      "value": "Type C & E plugs, 230 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Prague Airport to the city centre?",
+      "a": "Take the Airport Express (AE) bus directly to Prague Main Train Station (Hlavní Nádraží) in 30 minutes, or take trolleybus 59 to Nádraží Veleslavín and transfer to Metro Line A."
+    },
+    {
+      "q": "What happens on the hour at the Prague Astronomical Clock?",
+      "a": "Every hour from 9:00 AM to 11:00 PM, a trapdoor opens above the 15th-century astronomical clock face and figures of the Twelve Apostles process past, concluding with a golden rooster crowing."
+    },
+    {
+      "q": "How do I visit Prague Castle?",
+      "a": "Take Tram 22 up the hill to the Pražský hrad stop. The castle grounds are free to enter, while circuit tickets grant entry to St. Vitus Cathedral, Old Royal Palace, and Golden Lane."
+    },
+    {
+      "q": "Can I pay in Euros in Prague?",
+      "a": "While some tourist shops accept Euros at poor exchange rates, the official currency is the Czech Koruna (CZK). Paying by credit card or using Czech Koruna cash is recommended."
+    },
+    {
+      "q": "What is a Trdelník?",
+      "a": "Trdelník is a sweet rolled pastry baked over open charcoal coals, coated in sugar and walnuts, and often filled with ice cream or chocolate, popular at tourist stalls across Old Town."
+    },
+    {
+      "q": "Is Prague a walkable city?",
+      "a": "Yes, Prague's historic core (Old Town, Jewish Quarter, Charles Bridge, Malá Strana) is compact and highly walkable, though comfortable walking shoes are essential for cobble streets."
+    }
+  ],
+  "sources": []
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "ho-chi-minh-city",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Ho Chi Minh City (formerly Saigon) is Vietnam's economic engine and largest metropolis, pulsing with relentless energy. Located along the Saigon River, the city blends French colonial landmarks, historic war memorials, bustling street markets, and modern skyscrapers surrounded by an endless sea of motorbikes.\n\n## Where to stay in Ho Chi Minh City\n\nDistrict 1 is the primary hub for travelers, placing you within walking distance of Ben Thanh Market, Dong Khoi luxury boutiques, and major museums. Pham Ngu Lao and Bui Vien in District 1 cater to backpackers with budget guesthouses, rooftop bars, and vibrant street nightlife. District 3 offers a quieter residential feel with leafy boulevards, colonial villas, and superb local street food. District 2 (Thao Dien) across the river appeals to ex-pats with boutique cafes and art galleries.\n\n## Things to do in Ho Chi Minh City\n\nVisit the War Remnants Museum for a powerful historical perspective on the Vietnam War. Admire French colonial architecture at the Notre Dame Cathedral Basilica, Central Post Office, and Saigon Opera House. Explore the underground tunnels of the Reunification Palace (Independence Palace). Hunt for souvenirs and sample pho at Ben Thanh Market. Take a day trip to crawl through the historic Cu Chi Tunnels or cruise the Mekong Delta.\n\n## Getting around Ho Chi Minh City\n\nTan Son Nhat International Airport (SGN) is situated 7 km north of District 1. Yellow airport bus 109 connects to central Saigon in 30 minutes, while Grab cars and airport taxis provide direct transfers. Public transit relies primarily on an extensive public bus network. Grab (motorbike and car) is the easiest way to travel. The first line of the Saigon Metro is opening along major corridors.\n\n## When to visit Ho Chi Minh City\n\nHo Chi Minh City experiences a tropical climate divided into two seasons. The Dry Season (December to April) is the best time to visit, featuring lower humidity, minimal rainfall, and temperatures averaging 28°C to 34°C. The Wet Season (May to November) brings afternoon tropical downpours and humid conditions, though rain storms pass quickly.\n\n## Practical tips for Ho Chi Minh City\n\n- Cross busy streets steadily at a constant pace without sudden stops so motorbikes can navigate around you.\n- Vietnam uses Type A, C, and F electrical outlets supplying 220 V power.\n- Use Grab app for transparent motorbike and car taxi fares throughout the city.\n- Keep valuables and smartphones secure away from curb edges to prevent motorbike snatch thefts.\n- Enjoy traditional iced milk coffee (Ca Phe Sua Da) at roadside sidewalk cafes.",
+  "tldr": "Stay in District 1 near Ben Thanh Market for central sightseeing or District 3 for quieter colonial streets. Airport bus 109 links SGN airport to town in 30 minutes. Visit between December and April for dry sunshine, war history museums, and street food.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Commercial Capital of Vietnam"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 9.3 million"
+    },
+    {
+      "label": "Main airport",
+      "value": "Tan Son Nhat International Airport (SGN), 7 km north"
+    },
+    {
+      "label": "Public transport",
+      "value": "Grab rideshare, public buses, Saigon Metro Line 1"
+    },
+    {
+      "label": "Time zone",
+      "value": "ICT (UTC+7), no daylight saving"
+    },
+    {
+      "label": "Power",
+      "value": "Type A, C & F plugs, 220 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Tan Son Nhat Airport to District 1?",
+      "a": "Take public yellow bus route 109 directly to October 23 Park near Ben Thanh Market in about 30 to 45 minutes, or book a Grab car / official Vinasun taxi at designated airport pick-up zones."
+    },
+    {
+      "q": "What are the Cu Chi Tunnels and how do I visit them?",
+      "a": "The Cu Chi Tunnels are a massive 250 km underground network used by Viet Cong soldiers during the Vietnam War. Located 70 km northwest of Saigon, they are accessible via half-day bus or speedboat tours."
+    },
+    {
+      "q": "Is it safe to ride Grab motorbikes in Saigon?",
+      "a": "Yes, Grab motorbikes are a popular, fast, and cheap way to beat Saigon traffic. Drivers provide helmets for passengers, but ensure you keep legs tucked in and hold on during busy intersections."
+    },
+    {
+      "q": "How far is the Mekong Delta from Ho Chi Minh City?",
+      "a": "My Tho and Ben Tre in the Mekong Delta lie about 85 km southwest of Saigon, taking roughly two hours by road. Day tours offer longtail sampan boat cruises through coconut palm canals."
+    },
+    {
+      "q": "What is the best street food area in Ho Chi Minh City?",
+      "a": "Vinh Khanh Street in District 4 is famous for street seafood and grilled snails, while Su Vanh Hanh in District 10 and Ben Thanh Night Market offer incredible local Vietnamese noodle dishes."
+    },
+    {
+      "q": "What currency is used in Vietnam and do I need cash?",
+      "a": "The local currency is Vietnamese Dong (VND). While major hotels and shopping malls accept credit cards, cash is essential for street food vendors, local buses, markets, and small cafes."
+    }
+  ],
+  "sources": []
+}

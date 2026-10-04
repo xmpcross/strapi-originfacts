@@ -1,0 +1,55 @@
+{
+  "slug": "beijing",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Beijing is China's grand capital city, steeped in over 3,000 years of imperial history. Situated on the Northern China Plain, it boasts immense historic treasures like the Forbidden City, Temple of Heaven, and Summer Palace, framed by modern Olympic architecture and bustling alleyway hutongs.\n\n## Where to stay in Beijing\n\nDongcheng District around Wangfujing and Tiananmen Square is the top location for tourists, offering walking access to imperial sites, shopping streets, and central metro lines. Xicheng District provides authentic lodging inside traditional quadrangle courtyards (Siheyuan) tucked away in historic hutongs. Chaoyang District around Sanlitun and Guomao caters to business travelers and nightlife seekers with luxury international hotels and sky bars.\n\n## Things to do in Beijing\n\nWalk across immense Tiananmen Square and tour the opulent halls of the Forbidden City (Palace Museum). Walk along the ancient ramparts of the Great Wall of China at Mutianyu or Badaling. Admire the marble architecture of the Temple of Heaven where emperors prayed for good harvests. Stroll through the lakeside gardens of the Summer Palace. Cycle through traditional alleyways (hutongs) around Houhai Lake.\n\n## Getting around Beijing\n\nBeijing Capital International Airport (PEK) lies 32 km northeast, while Beijing Daxing International Airport (PKX) lies 46 km south. Both airports connect via high-speed Airport Express subway lines to the city network. Beijing Metro is extensive, affordable, and fully bilingual (English/Chinese). Riders pay using contactless transit cards, Alipay, or WeChat Pay.\n\n## When to visit Beijing\n\nAutumn (September to November) is universally considered the finest time to visit Beijing, bringing clear blue skies, comfortable temperatures averaging 18°C, and golden autumn foliage. Spring (March to May) brings mild weather, though sandstorms occasionally occur. Summer (June to August) is hot and humid, while winter (December to February) is freezing and dry.\n\n## Practical tips for Beijing\n\n- Download WeChat or Alipay prior to arrival and link your credit card for digital payments across China.\n- China uses Type A, C, and I power outlets operating at 220 V.\n- Carry your physical passport everywhere, as security checkpoints at sights and metro stations require it.\n- Book Forbidden City and Great Wall entry tickets online days in advance as daily visitor caps apply.\n- Avoid traveling during Chinese National Day Golden Week (first week of October).",
+  "tldr": "Stay in Dongcheng near Wangfujing for central sights or a courtyard hotel in the hutongs. Capital Airport Express connects PEK to Dongzhimen in 25 minutes. Visit in autumn for crisp weather, the Forbidden City, and Great Wall hikes.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Capital of the People's Republic of China"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 21.8 million"
+    },
+    {
+      "label": "Main airport",
+      "value": "Beijing Capital (PEK) & Beijing Daxing (PKX)"
+    },
+    {
+      "label": "Public transport",
+      "value": "Beijing Metro network (Alipay/WeChat Pay/Yikatong)"
+    },
+    {
+      "label": "Time zone",
+      "value": "CST (UTC+8), no daylight saving"
+    },
+    {
+      "label": "Power",
+      "value": "Type A, C & I plugs, 220 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Beijing Capital Airport (PEK) to central Beijing?",
+      "a": "Take the Capital Airport Express subway line from Terminal 2 or 3 directly to Sanyuanqiao or Dongzhimen stations in 25 minutes, then transfer to Beijing Metro Line 2 or 10."
+    },
+    {
+      "q": "Which section of the Great Wall of China is best to visit from Beijing?",
+      "a": "Mutianyu is the most recommended section, located 70 km northeast of Beijing. It features fully restored wall ramparts, cable cars, a toboggan ride, and fewer crowds than Badaling."
+    },
+    {
+      "q": "How do I book tickets for the Forbidden City (Palace Museum)?",
+      "a": "Forbidden City tickets must be reserved online via the official booking mini-program on WeChat up to 7 days in advance. Tickets are tied to your passport number and sell out rapidly."
+    },
+    {
+      "q": "Can I pay with credit cards or cash in Beijing?",
+      "a": "Cash and international credit cards are rarely accepted at local shops and restaurants. Visitors should set up Alipay or WeChat Pay with an international credit card prior to arrival."
+    },
+    {
+      "q": "What is a Beijing hutong?",
+      "a": "Hutongs are narrow, historic residential alleyways lined with traditional single-story quadrangle courtyard houses (Siheyuan) characteristic of imperial Beijing's urban layout."
+    }
+  ],
+  "sources": []
+}

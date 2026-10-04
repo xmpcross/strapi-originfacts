@@ -1,0 +1,59 @@
+{
+  "slug": "hiroshima",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Hiroshima is a historic city on Japan's Honshu island along the Seto Inland Sea. Globally recognized as a symbol of peace and resilience, it attracts visitors to its Peace Memorial Park and Museum, while offering incredible natural beauty, regional okonomiyaki cuisine, and the famous floating torii gate of Miyajima Island.\n\n## Where to stay in Hiroshima\n\nDowntown Hiroshima (Hondori and Hatchobori) is the best area for first-time travelers, putting you within walking distance of the Peace Park, shopping arcades, and Okonomimura dining hall. Hiroshima Station area provides convenient access to Shinkansen bullet trains, JR regional lines, and modern hotel towers. Staying on Miyajima Island (Itsukushima) offers an unforgettable overnight experience in traditional ryokan inns with hot spring baths.\n\n## Things to do in Hiroshima\n\nReflect at the Hiroshima Peace Memorial Park, Atomic Bomb Dome (Genbaku Dome), and Peace Memorial Museum. Take a 10-minute ferry to Miyajima Island to admire the UNESCO World Heritage Itsukushima Shrine and its floating red torii gate. Ascend Mount Misen via cable car for sweeping vistas over the Seto Inland Sea. Feast on Hiroshima-style layered okonomiyaki at Okonomimura. Tour the historic Hiroshima Castle.\n\n## Getting around Hiroshima\n\nHiroshima Airport (HIJ) is situated 50 km east of the city centre. Airport limousine buses reach Hiroshima Station in 45 minutes. City transit relies on Hiroden (Hiroshima Electric Railway), Japan's largest streetcar (tram) network. Passengers can pay using any major Japanese IC card like Suica, Pasmo, or Icoca, or purchase a 1-Day Streetcar Pass.\n\n## When to visit Hiroshima\n\nHiroshima enjoys a temperate maritime climate. Spring (March to May) features cherry blossoms along the Motoyasu River and comfortable temperatures averaging 18°C. Autumn (September to November) brings clear skies and vibrant red maple leaves on Miyajima Island. Summer (June to August) is hot, humid, and rainy, while winter (December to February) is chilly with occasional snow.\n\n## Practical tips for Hiroshima\n\n- Ride Hiroden streetcars for easy transit between Hiroshima Station, Peace Park, and Miyajima ferry port.\n- Japan uses Type A ungrounded electrical outlets operating at 100 V.\n- Hiroshima okonomiyaki includes a layer of fried yakisoba noodles; specify your preferred toppings.\n- Board streetcars from the rear door and tap your IC card or pay cash at the front exit.\n- Tipping is not customary in Japan; service charges are included in dining bills.",
+  "tldr": "Stay downtown near Hondori arcades or at Hiroshima Station for Shinkansen trains. Limousine buses reach Hiroshima Station from HIJ airport in 45 minutes. Visit during spring or autumn for Peace Park visits, Miyajima maple leaves, and okonomiyaki.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Capital of Hiroshima Prefecture, Japan"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 1.2 million"
+    },
+    {
+      "label": "Main airport",
+      "value": "Hiroshima Airport (HIJ), 50 km east"
+    },
+    {
+      "label": "Public transport",
+      "value": "Hiroden Streetcars, JR Trains, Ferries (Suica/Pasmo/Icoca)"
+    },
+    {
+      "label": "Time zone",
+      "value": "JST (UTC+9), no daylight saving"
+    },
+    {
+      "label": "Power",
+      "value": "Type A plugs, 100 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I travel from Hiroshima Station to the Peace Memorial Park?",
+      "a": "Take Hiroden streetcar Line 2 or Line 6 from Hiroshima Station directly to the Genbaku-Dome-Mae (Atomic Bomb Dome) stop in approximately 15 minutes."
+    },
+    {
+      "q": "How do I get from Hiroshima to Miyajima Island?",
+      "a": "Take the JR Sanyo Line train or Hiroden Streetcar Line 2 from central Hiroshima to Miyajimaguchi Station (30 minutes), then walk to the ferry terminal for a 10-minute JR ferry ride to Miyajima."
+    },
+    {
+      "q": "What is the difference between Hiroshima and Osaka okonomiyaki?",
+      "a": "Osaka okonomiyaki mixes all ingredients into a batter before grilling, whereas Hiroshima-style okonomiyaki layers cabbage, pork, fried yakisoba or udon noodles, and a fried egg individually on a thin crepe base."
+    },
+    {
+      "q": "How do I get from Hiroshima Airport to Hiroshima Station?",
+      "a": "Hiroshima Airport Limousine Buses depart regularly from the arrival terminal directly to Hiroshima Station's Shinkansen entrance, taking roughly 45 minutes."
+    },
+    {
+      "q": "Are wild deer present on Miyajima Island?",
+      "a": "Yes, tame wild sika deer roam freely through Miyajima village and around Itsukushima Shrine. Visitors are asked not to feed or touch them to protect their natural behavior."
+    },
+    {
+      "q": "Is the Japan Rail (JR) Pass valid on the Miyajima ferry?",
+      "a": "Yes, the nationwide JR Pass and regional JR West passes cover the official JR West Miyajima Ferry operating between Miyajimaguchi and Miyajima Island."
+    }
+  ],
+  "sources": []
+}

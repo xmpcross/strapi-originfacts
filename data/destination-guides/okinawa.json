@@ -1,0 +1,59 @@
+{
+  "slug": "okinawa",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Okinawa is Japan's tropical island paradise, anchoring the Ryukyu island chain in the southwestern Pacific. Celebrated for its unique indigenous Ryukyu Kingdom culture, subtropical climate, turquoise ocean waters, world-class coral reef diving, and healthy longevity cuisine.\n\n## Where to stay in Okinawa\n\nNaha is Okinawa's capital city, with Kokusai-dori (International Street) offering central access to shops, monorail transit, and local izakayas. Chatan (American Village) appeals to resort lovers wanting coastal boardwalks, sunset beaches, and international dining. Onna Village along the west coast features luxury oceanfront beach resorts, private coves, and water sport piers.\n\n## Things to do in Okinawa\n\nMarvel at giant whale sharks and manta rays inside the massive Kuroshio Sea tank at Okinawa Churaumi Aquarium. Stroll down vibrant Kokusai-dori in Naha for Ryukyuan souvenirs and street food. Explore the stone walls of historic Shuri Castle. Snorkel or dive through the turquoise waters of the Kerama Islands. Sample local Okinawa Soba and Goya Champuru.\n\n## Getting around Okinawa\n\nNaha Airport (OKA) is located 5 km west of Naha city centre. The Okinawa Urban Monorail (Yui Rail) connects the terminal directly to Kokusai-dori and Shuri in 25 minutes. Transit on the main island relies on public buses and taxis. Renting a car is essential for exploring northern beaches and aquarium sights.\n\n## When to visit Okinawa\n\nSpring (April to May) and Autumn (October to November) offer ideal weather averaging 24°C to 27°C with warm ocean swimming and low humidity. Summer (June to August) is hot and tropical, perfect for diving, though typhoons can occur between July and September. Winter is mild.\n\n## Practical tips for Okinawa\n\n- Rent a car at Naha Airport if planning to explore beaches, Cape Manzamo, or Churaumi Aquarium.\n- Japan uses Type A two-pin electrical outlets operating at 100 V.\n- Use OKICA transit card or contactless bank cards on the Yui Rail monorail in Naha.\n- Try unique Okinawan foods like Okinawa Soba noodles, Rafute (braised pork belly), and Blue Seal ice cream.\n- Apply reef-safe sunscreen when swimming or snorkeling over fragile coral reefs.",
+  "tldr": "Stay in Naha for monorail shopping or Onna Village for beach resorts. Yui Rail monorail connects OKA airport to Naha in 15 minutes. Visit in April, May, or October for pleasant warmth, coral snorkeling, and Churaumi Aquarium.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Prefectural Island Chain, Japan"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 1.45 million"
+    },
+    {
+      "label": "Main airport",
+      "value": "Naha Airport (OKA), 5 km west of city centre"
+    },
+    {
+      "label": "Public transport",
+      "value": "Yui Rail Monorail, Public Buses / Car rental strongly recommended"
+    },
+    {
+      "label": "Time zone",
+      "value": "JST (UTC+9), no daylight saving"
+    },
+    {
+      "label": "Power",
+      "value": "Type A plugs, 100 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Naha Airport to central Naha?",
+      "a": "Take the Okinawa Urban Monorail (Yui Rail) directly from Naha Airport station to Kencho-mae or Makishi stations along Kokusai-dori in about 15 minutes."
+    },
+    {
+      "q": "How far is Okinawa Churaumi Aquarium from Naha?",
+      "a": "Churaumi Aquarium lies 90 km north of Naha in Motobu. Driving via the Okinawa Expressway takes about 90 minutes, while express highway buses take 2 hours."
+    },
+    {
+      "q": "What is the difference between Okinawan cuisine and traditional Japanese food?",
+      "a": "Okinawan cuisine incorporates unique Ryukyuan influences, featuring pork dishes (Rafute), bitter melon stir-fry (Goya Champuru), Okinawa Soba noodles, and sweet purple potatoes."
+    },
+    {
+      "q": "How do I visit the Kerama Islands from Okinawa?",
+      "a": "High-speed passenger ferries depart daily from Tomari Port in Naha to Tokashiki Island (35 mins) and Zamami Island (50 mins), famous for crystal-clear 'Kerama Blue' ocean waters."
+    },
+    {
+      "q": "Do I need an International Driving Permit (IDP) to rent a car in Okinawa?",
+      "a": "Yes, foreign travelers must present a valid International Driving Permit (IDP) issued under the 1949 Geneva Convention along with their home driver's license to rent a car."
+    },
+    {
+      "q": "What is Shuri Castle?",
+      "a": "Shuri Castle was the majestic red wooden palace of the Ryukyu Kingdom from the 15th century. Currently under meticulous reconstruction following a 2019 fire, visitors can observe the traditional restoration park."
+    }
+  ],
+  "sources": []
+}

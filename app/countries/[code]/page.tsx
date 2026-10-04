@@ -13,7 +13,7 @@ import {
 import { SITE_URL, DEFAULT_OG_IMAGE, countryFaqs, countryJsonLd, faqJsonLd } from '@/lib/entity-seo';
 import { JsonLd, FaqSection } from '@/components/SeoBlocks';
 import { absoluteUrl } from '@/lib/jsonld';
-import { buildMetaDescription } from '@/lib/seo';
+import { buildMetaDescription, programmaticTitle } from '@/lib/seo';
 import type { Metadata } from 'next';
 
 export const revalidate = 60;
@@ -56,7 +56,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { code } = await params;
   const country = await resolveCountry(code);
   if (!country) return { title: 'Country not found' };
-  const title = `${country.name} — airports, airlines & top routes`;
+  const title = programmaticTitle(`${country.name} Travel Guide`, 'Flights, Airports & Airlines');
   const description = buildMetaDescription([
     country.about,
     `Travel directory for ${country.name} (${country.code}): commercial airports, airlines based in the country, and the busiest inbound routes.`,

@@ -56,6 +56,27 @@ export function stripMarkdown(input?: string | null): string {
 }
 
 /**
+ * SERP-safe budget for the page-specific part of a <title>. The root layout
+ * appends " · Originfacts" via its title template, so the full tag runs ~14
+ * chars longer than this; Google truncates around 60 visible chars, keeping
+ * the keyword-bearing front of the title intact either way.
+ */
+export const TITLE_MAX = 60;
+
+/**
+ * Title builder for programmatic templates: "{base} — {keywordTail}", e.g.
+ * "Qantas (QF) — Routes, Hubs & Fleet". When the combined form would blow the
+ * TITLE_MAX budget the keyword tail is dropped whole — a long entity name
+ * ("Saint Helena, Ascension and Tristan da Cunha") keeps its full, correct
+ * name rather than a truncated tail. Never cuts inside the name itself.
+ */
+export function programmaticTitle(base: string, keywordTail: string, max = TITLE_MAX): string {
+  const clean = base.replace(/\s+/g, ' ').trim();
+  const full = `${clean} — ${keywordTail}`;
+  return full.length <= max ? full : clean;
+}
+
+/**
  * The one description builder every template's generateMetadata should use.
  * Takes candidate sources in priority order — purpose-written summary fields
  * first (seoDescription, excerpt, shortDescription), derived body text

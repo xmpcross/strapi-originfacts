@@ -24,7 +24,7 @@ import { getCountryFacts } from '@/lib/country-facts';
 import { faqJsonLd, normalizeFaqs, DEFAULT_OG_IMAGE } from '@/lib/entity-seo';
 import { JsonLd, FaqSection } from '@/components/SeoBlocks';
 import KeyFacts from '@/components/KeyFacts';
-import { buildMetaDescription } from '@/lib/seo';
+import { buildMetaDescription, programmaticTitle } from '@/lib/seo';
 import { absoluteUrl } from '@/lib/jsonld';
 import type { Metadata } from 'next';
 
@@ -40,12 +40,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!d) return { title: 'Not found' };
   const description = buildMetaDescription([d.description]);
   const hero = d.heroImage && d.heroImage.url ? d.heroImage : null;
+  const title = programmaticTitle(`${d.name} Travel Guide`, 'Flights, Airports & Airlines');
   return {
-    title: d.name,
+    title,
     description,
     alternates: { canonical: `/destinations/${slug}` },
     openGraph: {
-      title: d.name,
+      title,
       description,
       type: 'article',
       url: `/destinations/${slug}`,

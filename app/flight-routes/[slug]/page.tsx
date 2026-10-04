@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const r = await getRoute(slug);
   if (!r || !r.origin || !r.destination) return { title: 'Route not found' };
-  const title = `Flights from ${r.origin.city || r.origin.name} to ${r.destination.city || r.destination.name} (${r.origin.iata} → ${r.destination.iata})`;
+  const title = `${r.origin.city || r.origin.name} to ${r.destination.city || r.destination.name} Flights (${r.origin.iata} → ${r.destination.iata})`;
   const desc =
     r.about?.slice(0, 150) ||
     `Cheap flights from ${r.origin.iata} to ${r.destination.iata}. Carriers, flight time, distance, and where to book.`;

@@ -19,7 +19,7 @@ import {
 import { JsonLd, FaqSection } from '@/components/SeoBlocks';
 import { getFlySfoAirlineProfile } from '@/lib/flysfo-airline';
 import { breadcrumbJsonLd, absoluteUrl } from '@/lib/jsonld';
-import { buildMetaDescription } from '@/lib/seo';
+import { buildMetaDescription, programmaticTitle } from '@/lib/seo';
 import AirlineReviews from '@/components/AirlineReviews';
 import AirlineFlightSearch from '@/components/AirlineFlightSearch';
 import AboutParagraphs from '@/components/AboutParagraphs';
@@ -37,12 +37,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const description = buildMetaDescription([a.shortDescription, a.about, airlineIntro(a)]);
   const url = `${SITE_URL}/airlines/${a.slug}`;
   const logo = a.logo && a.logo.url ? a.logo : null;
+  const title = programmaticTitle(
+    a.iataCode ? `${a.name} (${a.iataCode})` : a.name,
+    'Routes, Hubs & Fleet',
+  );
   return {
-    title: a.name,
+    title,
     description,
     alternates: { canonical: url },
     openGraph: {
-      title: a.name,
+      title,
       description,
       type: 'article',
       url,

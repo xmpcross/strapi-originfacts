@@ -1,6 +1,29 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { buildMetaDescription, stripMarkdown, clampDescription, DESCRIPTION_MAX } from '../lib/seo';
+import {
+  buildMetaDescription,
+  stripMarkdown,
+  clampDescription,
+  programmaticTitle,
+  DESCRIPTION_MAX,
+  TITLE_MAX,
+} from '../lib/seo';
+
+test('programmaticTitle: normal case keeps the keyword tail', () => {
+  assert.equal(programmaticTitle('Qantas (QF)', 'Routes, Hubs & Fleet'), 'Qantas (QF) — Routes, Hubs & Fleet');
+});
+
+test('programmaticTitle: long names drop the tail whole, name never truncated', () => {
+  const long = 'Saint Helena, Ascension and Tristan da Cunha Travel Guide';
+  const out = programmaticTitle(long, 'Flights, Airports & Airlines');
+  assert.equal(out, long);
+  assert.ok(out.length <= Math.max(TITLE_MAX, long.length));
+});
+
+test('programmaticTitle: boundary exactly at TITLE_MAX keeps the tail', () => {
+  const base = 'x'.repeat(TITLE_MAX - ' — tail'.length);
+  assert.equal(programmaticTitle(base, 'tail'), `${base} — tail`);
+});
 
 test('markdown-heavy input is stripped before slicing', () => {
   const md = [

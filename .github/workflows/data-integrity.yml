@@ -1,0 +1,45 @@
+# Aviation-data integrity gate.
+#
+# Runs the reconciliation harness against the live Strapi dataset and FAILS
+# when new high-confidence violations appear that are not in the accepted
+# baseline (docs/data/integrity-baseline.json). Complements the server-side
+# gate that ingest-travelpayouts.js runs after every ingest — this catches
+# drift between ingests and gates harness/baseline changes in PRs.
+#
+# Required repo secrets:
+#   STRAPI_PUBLIC_URL   e.g. https://strapi.fxnstudio.com
+#   STRAPI_API_TOKEN    read-only token
+name: data-integrity
+
+on:
+  schedule:
+    - cron: '30 21 * * 1' # weekly, Monday 21:30 UTC
+  workflow_dispatch: {}
+  pull_request:
+    paths:
+      - 'ops/validate-aviation-data.mjs'
+      - 'docs/data/integrity-baseline.json'
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Reconcile dataset against reference registries
+        env:
+          STRAPI_URL: ${{ secrets.STRAPI_PUBLIC_URL }}
+          STRAPI_API_TOKEN: ${{ secrets.STRAPI_API_TOKEN }}
+        run: |
+          node ops/validate-aviation-data.mjs \
+            --gate docs/data/integrity-baseline.json \
+            --out integrity-report.md
+          echo '## Data integrity report' >> "$GITHUB_STEP_SUMMARY"
+          head -c 60000 integrity-report.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: integrity-report
+          path: integrity-report.md

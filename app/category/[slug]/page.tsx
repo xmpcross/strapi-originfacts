@@ -66,7 +66,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   const page = Math.max(1, Number((await searchParams).page) || 1);
   return {
     title: page > 1 ? `${c.name} — page ${page}` : c.name,
-    description: clampDescription(c.description),
+    description: page > 1 ? `${clampDescription(c.description)} (Page ${page})` : clampDescription(c.description),
     alternates: { canonical: page > 1 ? `/category/${slug}?page=${page}` : `/category/${slug}` },
   };
 }

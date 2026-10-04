@@ -108,10 +108,31 @@ export const AUTHORS: Record<string, AuthorProfile> = {
       'Travel Data Compliance',
     ],
   },
+  'k-spellman': {
+    slug: 'k-spellman',
+    name: 'K Spellman',
+    jobTitle: 'Contributing Editorial Researcher',
+    role: 'Contributing Researcher',
+    bio: 'Travel and destination researcher contributing to destination guides, airport reviews, and flight intelligence at Originfacts.',
+    longBio:
+      'K Spellman is an editorial contributor and researcher at Originfacts, focusing on destination guides, airport transport logistics, and comprehensive travel reviews.',
+    avatar: '/brand/authors/originfacts-team.svg',
+    email: 'contact@originfacts.com',
+    socials: {
+      x: 'https://x.com/realoriginfacts',
+      linkedin: 'https://www.linkedin.com/company/143027896/',
+    },
+    expertise: [
+      'Destination Guides',
+      'Airport Logistics',
+      'Travel Reviews',
+      'Editorial Research',
+    ],
+  },
 };
 
 export function getAllAuthors(): AuthorProfile[] {
-  return [DEFAULT_AUTHOR, AUTHORS['elena-rostova']!, AUTHORS['marcus-vance']!, AUTHORS['originfacts-team']!];
+  return [DEFAULT_AUTHOR, AUTHORS['elena-rostova']!, AUTHORS['marcus-vance']!, AUTHORS['originfacts-team']!, AUTHORS['k-spellman']!];
 }
 
 /**

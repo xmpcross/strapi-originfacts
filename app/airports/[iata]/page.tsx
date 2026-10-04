@@ -82,6 +82,13 @@ async function findAirportByCodeOrSlug(
     if (resolvedSlug === normalized) return getAirport(airport.iata);
   }
 
+  // Fallback: match by city/name base slug if request omitted the -iata suffix (e.g. /airports/tokyo, /airports/singapore)
+  // so the page component can redirect cleanly to its canonical URL rather than returning 404.
+  for (const airport of allAirports) {
+    const base = slugifyAirportPart(airport.city || airport.name || airport.iata);
+    if (base === normalized) return getAirport(airport.iata);
+  }
+
   return getAirport(slugOrCode);
 }
 

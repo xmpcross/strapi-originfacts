@@ -101,6 +101,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en" className={`${inter.variable} ${urbanist.variable} ${jakarta.variable} ${figtree.variable}`}>
       <head>
+        {/* Impact.com site verification (second tag). Written verbatim with `value`,
+            as Impact provides it; the metadata API would rewrite `value` to `content`. */}
+        <meta {...({ name: 'impact-site-verification', value: '766261aa-958f-4a83-998f-3674e1686da0' } as Record<string, string>)} />
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
@@ -126,6 +129,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           src="https://widget.getyourguide.com/dist/pa.umd.production.min.js"
           data-gyg-partner-id="H8Y3KHZ"
         />
+        {/* Ahrefs Web Analytics */}
+        <script src="https://analytics.ahrefs.com/analytics.js" data-key="KbPcf3YVlIhEJPDxFrNztQ" async />
       </head>
       <body className={`${inter.variable} ${urbanist.variable} ${outfit.variable} ${jakarta.variable} ${figtree.variable} min-h-screen flex flex-col font-sans font-normal grain`} data-testid="app-shell">
         {/* Impact.com site verification — raw tag (React 19 hoists it into <head>).

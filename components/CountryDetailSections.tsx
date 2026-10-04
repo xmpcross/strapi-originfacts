@@ -124,7 +124,7 @@ export default function CountryDetailSections({
               <span className="sr-only">Open</span>
             </div>
             {filteredAirports.slice(0, AIRPORTS_PAGE_SIZE).map((a) => (
-              <AirportCard key={a.id} airport={a} />
+              <AirportCard key={a.id} airport={a} allAirports={airports} />
             ))}
           </div>
         )}
@@ -306,10 +306,10 @@ function SearchBox({
   );
 }
 
-function AirportCard({ airport }: { airport: StrapiAirport }) {
+function AirportCard({ airport, allAirports }: { airport: StrapiAirport; allAirports?: StrapiAirport[] }) {
   return (
     <Link
-      href={airportPath(airport)}
+      href={airportPath(airport, allAirports)}
       className="group grid gap-3 border-b border-forest-900/10 px-4 py-4 transition last:border-b-0 hover:bg-primary-hover/60 md:grid-cols-[110px_minmax(0,1fr)_minmax(0,0.7fr)_40px] md:items-center"
     >
       <div className="flex items-center gap-2">

@@ -135,7 +135,7 @@ export default async function HomePage() {
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
-                        src="https://www.tqlkg.com/image-101771882-15455232"
+                        src="https://c.fareportal.com/gcms/Portals/2/affiliatebanners/CA-promo1-Banners/728x90.jpg"
                         width={1120}
                         height={120}
                         alt="CheapOair — Join ClubMiles and save up to 20% on select hotels"
@@ -185,7 +185,7 @@ function Hero({ hero, side }: { hero?: StrapiArticle; side: StrapiArticle[] }) {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="https://www.ftjcfx.com/image-101771882-13709196"
+                src="https://c.fareportal.com/gcms/Portals/2/affiliatebanners/affirm_banners/240X400.gif"
                 width={300}
                 height={500}
                 alt="CheapOair and Affirm — Take a cheap flight, fly now pay later"

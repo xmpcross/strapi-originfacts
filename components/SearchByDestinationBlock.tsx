@@ -38,7 +38,7 @@ export default function SearchByDestinationBlock() {
                   href={tpwlSearchUrl(origin.iata, dest.iata)}
                   target="_blank"
                   rel="noopener noreferrer sponsored"
-                  className="flex-1 text-[1rem] font-semibold text-forest-900 transition hover:text-primary-emphasis"
+                  className="flex-1 text-[14px] font-normal text-forest-900 transition hover:text-primary-emphasis"
                 >
                   Cheap flights to {dest.name} from {origin.name}
                 </a>
@@ -68,7 +68,7 @@ export default function SearchByDestinationBlock() {
                       href={tpwlSearchUrl(o.iata, dest.iata)}
                       target="_blank"
                       rel="noopener noreferrer sponsored"
-                      className="block py-1 text-[1rem] text-forest-900 transition hover:text-primary-emphasis"
+                      className="block py-1 text-[14px] font-normal text-forest-900 transition hover:text-primary-emphasis"
                     >
                       From {o.name} → {dest.name}{' '}
                       <span className="text-xs text-forest-900/40">

@@ -1,0 +1,280 @@
+{
+  "_source": "OpenStreetMap Nominatim city-centre coordinates for city-type destinations, looked up 5 Oct 2026 (one request per second, results checked against each destination's country). Data (c) OpenStreetMap contributors, ODbL. Tasmania is anchored on Hobart.",
+  "cities": {
+    "adelaide": {
+      "lat": -34.92818,
+      "lng": 138.59993,
+      "osm": "relation/11381689"
+    },
+    "amsterdam": {
+      "lat": 52.37308,
+      "lng": 4.89245,
+      "osm": "relation/271110"
+    },
+    "athens": {
+      "lat": 37.97556,
+      "lng": 23.73483,
+      "osm": "node/441183"
+    },
+    "bangkok": {
+      "lat": 13.75249,
+      "lng": 100.49351,
+      "osm": "relation/92277"
+    },
+    "barcelona": {
+      "lat": 41.38258,
+      "lng": 2.17707,
+      "osm": "relation/347950"
+    },
+    "beijing": {
+      "lat": 39.90571,
+      "lng": 116.3913,
+      "osm": "relation/912940"
+    },
+    "brisbane": {
+      "lat": -27.46896,
+      "lng": 153.0235,
+      "osm": "relation/14027280"
+    },
+    "chania": {
+      "lat": 35.51208,
+      "lng": 24.01915,
+      "osm": "node/31376615"
+    },
+    "chengdu": {
+      "lat": 30.65987,
+      "lng": 104.06332,
+      "osm": "relation/2110264"
+    },
+    "chennai": {
+      "lat": 13.08009,
+      "lng": 80.2808,
+      "osm": "relation/1766358"
+    },
+    "chiang-mai": {
+      "lat": 18.78828,
+      "lng": 98.98588,
+      "osm": "relation/18271830"
+    },
+    "chicago": {
+      "lat": 41.87556,
+      "lng": -87.62442,
+      "osm": "relation/122604"
+    },
+    "dallas": {
+      "lat": 32.77627,
+      "lng": -96.79686,
+      "osm": "relation/6571629"
+    },
+    "darwin": {
+      "lat": -12.46044,
+      "lng": 130.84105,
+      "osm": "node/1639099539"
+    },
+    "denpasar": {
+      "lat": -8.66533,
+      "lng": 115.21762,
+      "osm": "relation/7789828"
+    },
+    "fukuoka": {
+      "lat": 33.5899,
+      "lng": 130.40175,
+      "osm": "relation/4008611"
+    },
+    "gothenburg": {
+      "lat": 57.70723,
+      "lng": 11.96702,
+      "osm": "node/25930131"
+    },
+    "guangzhou": {
+      "lat": 23.12884,
+      "lng": 113.25896,
+      "osm": "relation/3287346"
+    },
+    "hamburg": {
+      "lat": 53.55017,
+      "lng": 10.00132,
+      "osm": "relation/62782"
+    },
+    "heraklion": {
+      "lat": 35.33908,
+      "lng": 25.13328,
+      "osm": "node/29438069"
+    },
+    "hiroshima": {
+      "lat": 34.39172,
+      "lng": 132.45176,
+      "osm": "relation/4097196"
+    },
+    "ho-chi-minh-city": {
+      "lat": 10.77373,
+      "lng": 106.7166,
+      "osm": "relation/1973756"
+    },
+    "houston": {
+      "lat": 29.75894,
+      "lng": -95.3677,
+      "osm": "relation/2688911"
+    },
+    "interlaken": {
+      "lat": 46.68552,
+      "lng": 7.85851,
+      "osm": "relation/1682493"
+    },
+    "istanbul": {
+      "lat": 41.00638,
+      "lng": 28.97587,
+      "osm": "node/1882099475"
+    },
+    "jakarta": {
+      "lat": -6.1754,
+      "lng": 106.82717,
+      "osm": "relation/6362934"
+    },
+    "kiruna": {
+      "lat": 67.84961,
+      "lng": 20.30625,
+      "osm": "node/12245954798"
+    },
+    "krabi": {
+      "lat": 8.05924,
+      "lng": 98.91243,
+      "osm": "node/14247095946"
+    },
+    "kuressaare": {
+      "lat": 58.25277,
+      "lng": 22.48492,
+      "osm": "relation/350695"
+    },
+    "kyoto": {
+      "lat": 35.01158,
+      "lng": 135.76814,
+      "osm": "relation/357794"
+    },
+    "london": {
+      "lat": 51.50745,
+      "lng": -0.12777,
+      "osm": "relation/175342"
+    },
+    "los-angeles": {
+      "lat": 34.05369,
+      "lng": -118.24277,
+      "osm": "relation/207359"
+    },
+    "luang-prabang": {
+      "lat": 19.88874,
+      "lng": 102.1359,
+      "osm": "node/116056557"
+    },
+    "melbourne": {
+      "lat": -37.81425,
+      "lng": 144.96317,
+      "osm": "relation/4246124"
+    },
+    "mumbai": {
+      "lat": 19.055,
+      "lng": 72.8692,
+      "osm": "node/16173235"
+    },
+    "munich": {
+      "lat": 48.13711,
+      "lng": 11.57538,
+      "osm": "relation/62428"
+    },
+    "nagoya": {
+      "lat": 35.1851,
+      "lng": 136.89984,
+      "osm": "relation/4576938"
+    },
+    "new-york": {
+      "lat": 40.71273,
+      "lng": -74.00602,
+      "osm": "relation/175905"
+    },
+    "okinawa": {
+      "lat": 26.33437,
+      "lng": 127.80566,
+      "osm": "relation/4556086"
+    },
+    "osaka": {
+      "lat": 34.69376,
+      "lng": 135.50145,
+      "osm": "relation/358674"
+    },
+    "paris": {
+      "lat": 48.8535,
+      "lng": 2.34839,
+      "osm": "relation/71525"
+    },
+    "pattaya": {
+      "lat": 12.93669,
+      "lng": 100.8865,
+      "osm": "relation/12645794"
+    },
+    "perth": {
+      "lat": -31.9559,
+      "lng": 115.86058,
+      "osm": "node/29277817"
+    },
+    "phra-nakhon-si-ayutthaya": {
+      "lat": 14.35354,
+      "lng": 100.56457,
+      "osm": "relation/10839539"
+    },
+    "phuket": {
+      "lat": 7.88479,
+      "lng": 98.38915,
+      "osm": "relation/18271854"
+    },
+    "prague": {
+      "lat": 50.08747,
+      "lng": 14.42125,
+      "osm": "relation/435514"
+    },
+    "puerto-princesa": {
+      "lat": 9.73986,
+      "lng": 118.74382,
+      "osm": "relation/9481097"
+    },
+    "rhodes-town": {
+      "lat": 36.44372,
+      "lng": 28.22737,
+      "osm": "node/126244310"
+    },
+    "rome": {
+      "lat": 41.89332,
+      "lng": 12.48293,
+      "osm": "relation/41485"
+    },
+    "san-francisco": {
+      "lat": 37.78794,
+      "lng": -122.40752,
+      "osm": "relation/111968"
+    },
+    "sapporo": {
+      "lat": 43.06194,
+      "lng": 141.35429,
+      "osm": "relation/4085749"
+    },
+    "shenzhen": {
+      "lat": 22.54457,
+      "lng": 114.05454,
+      "osm": "relation/3464353"
+    },
+    "sydney": {
+      "lat": -33.86984,
+      "lng": 151.20828,
+      "osm": "relation/5750005"
+    },
+    "tasmania": {
+      "lat": -42.88251,
+      "lng": 147.32812,
+      "osm": "relation/10632745"
+    },
+    "vienna": {
+      "lat": 48.20835,
+      "lng": 16.3725,
+      "osm": "relation/109166"
+    }
+  }
+}

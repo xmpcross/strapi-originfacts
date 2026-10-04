@@ -25,6 +25,7 @@ import CountryDetailSections from '@/components/CountryDetailSections';
 import CountryFactsPanel from '@/components/CountryFactsPanel';
 import FlightSearchCTA from '@/components/FlightSearchCTA';
 import PopularHotelsByCity from '@/components/PopularHotelsByCity';
+import destinationCoordinates from '@/data/destination-coordinates.json';
 import TableOfContents from '@/components/TableOfContents';
 import { getCountryFacts } from '@/lib/country-facts';
 import { operableCarriers } from '@/lib/route-carriers';
@@ -561,12 +562,29 @@ function CityPopularHotelsSection({
   airports: StrapiAirport[];
 }) {
   const country = airports.find((airport) => airport.country)?.country || countryNameFromCode(destination.countryCode) || '';
+  // Anchor the hotel search on the city centre (data/destination-coordinates.json;
+  // destinations carry no coordinates in the CMS). Fall back to an airport in
+  // the same city; with neither, the widget renders nothing rather than guess.
+  const centre = (destinationCoordinates.cities as Record<string, { lat: number; lng: number }>)[destination.slug];
+  const cityAirport = airports.find(
+    (a) =>
+      a.city?.toLowerCase() === destination.name.toLowerCase() &&
+      typeof a.latitude === 'number' &&
+      typeof a.longitude === 'number',
+  );
+  const anchor = centre
+    ? { latitude: centre.lat, longitude: centre.lng }
+    : cityAirport
+      ? { latitude: cityAirport.latitude, longitude: cityAirport.longitude }
+      : undefined;
 
   return (
     <div className="mx-auto max-w-7xl px-6 pb-12" data-testid="city-popular-hotels">
       <PopularHotelsByCity
         city={destination.name}
         country={country}
+        lat={anchor?.latitude}
+        lng={anchor?.longitude}
         eyebrow="Popular hotels"
         title={`Popular hotels in ${destination.name}`}
         description={`Compare highly rated ${destination.name} hotels from live Google Hotels data before choosing where to stay. Use the filters to scan central, airport, luxury, budget and family-friendly options for the city.`}

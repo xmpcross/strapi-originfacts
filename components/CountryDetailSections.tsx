@@ -2,7 +2,8 @@
 
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
-import { mediaUrl, type StrapiAirport, type StrapiAirline } from '@/lib/strapi';
+import { mediaUrl } from '@/lib/strapi';
+import type { CountryAirlineItem, CountryAirportItem } from '@/lib/country-lists';
 import { airportPath } from '@/lib/airport-slugs';
 
 const AIRPORTS_PAGE_SIZE = 12;
@@ -41,8 +42,8 @@ export default function CountryDetailSections({
   airlines,
 }: {
   countryName: string;
-  airports: StrapiAirport[];
-  airlines: StrapiAirline[];
+  airports: CountryAirportItem[];
+  airlines: CountryAirlineItem[];
 }) {
   const [airportQuery, setAirportQuery] = useState('');
   const [airlineQuery, setAirlineQuery] = useState('');
@@ -236,7 +237,7 @@ export default function CountryDetailSections({
   );
 }
 
-function sortAirportsByPopularity(airports: StrapiAirport[]) {
+function sortAirportsByPopularity(airports: CountryAirportItem[]) {
   return [...airports].sort((a, b) => {
     const aRank = POPULAR_AIRPORT_PRIORITY.get(a.iata?.toUpperCase()) ?? Number.MAX_SAFE_INTEGER;
     const bRank = POPULAR_AIRPORT_PRIORITY.get(b.iata?.toUpperCase()) ?? Number.MAX_SAFE_INTEGER;
@@ -245,7 +246,7 @@ function sortAirportsByPopularity(airports: StrapiAirport[]) {
   });
 }
 
-function sortAirlinesByPopularity(airlines: StrapiAirline[]) {
+function sortAirlinesByPopularity(airlines: CountryAirlineItem[]) {
   return [...airlines].sort((a, b) => {
     const aRank = airlinePriority(a);
     const bRank = airlinePriority(b);
@@ -254,7 +255,7 @@ function sortAirlinesByPopularity(airlines: StrapiAirline[]) {
   });
 }
 
-function airlinePriority(airline: StrapiAirline) {
+function airlinePriority(airline: CountryAirlineItem) {
   const codeRank = airline.iataCode
     ? POPULAR_AIRLINE_PRIORITY.get(airline.iataCode.toUpperCase())
     : undefined;
@@ -304,7 +305,7 @@ function SearchBox({
   );
 }
 
-function AirportCard({ airport, allAirports }: { airport: StrapiAirport; allAirports?: StrapiAirport[] }) {
+function AirportCard({ airport, allAirports }: { airport: CountryAirportItem; allAirports?: CountryAirportItem[] }) {
   return (
     <Link
       href={airportPath(airport, allAirports)}

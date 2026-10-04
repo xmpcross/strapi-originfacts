@@ -204,10 +204,126 @@ async function writeHotelCache(cache: HotelCache) {
   await rename(tmp, HOTEL_CACHE_FILE);
 }
 
-async function saveHotelCacheEntry(key: string, payload: HotelApiPayload & { cachedAt: string }) {
-  const latestCache = await readHotelCache();
-  latestCache[key] = payload;
-  await writeHotelCache(latestCache);
+/*
+ * Saves run one at a time. Each save reads the file, adds its entry and writes
+ * it back, so two saves at once (several hotel tabs preloading together) used to
+ * drop one entry, and shared the same temp file name.
+ */
+let saveQueue: Promise<void> = Promise.resolve();
+
+function saveHotelCacheEntry(key: string, payload: HotelApiPayload & { cachedAt: string }): Promise<void> {
+  saveQueue = saveQueue
+    .then(async () => {
+      const latestCache = await readHotelCache();
+      latestCache[key] = payload;
+      await writeHotelCache(latestCache);
+    })
+    .catch((error) => {
+      console.warn('[dataforseo-hotels] cache write failed', error instanceof Error ? error.message : error);
+    });
+  return saveQueue;
+}
+
+class DataForSeoError extends Error {}
+
+type SearchInput = {
+  key: string;
+  city: string;
+  country: string;
+  scope: HotelScope;
+  currency: string;
+  limit: number;
+  lat: number;
+  lng: number;
+};
+
+/* Identical searches running at the same time (a preload and a click, or two
+   visitors) share one DataForSEO request. */
+const inflightSearches = new Map<string, Promise<HotelApiPayload & { cachedAt: string }>>();
+
+function sharedHotelSearch(input: SearchInput) {
+  let search = inflightSearches.get(input.key);
+  if (!search) {
+    search = liveHotelSearch(input).finally(() => inflightSearches.delete(input.key));
+    inflightSearches.set(input.key, search);
+  }
+  return search;
+}
+
+async function liveHotelSearch({ key, city, country, scope, currency, limit, lat, lng }: SearchInput) {
+  const scopeConfig = HOTEL_SCOPES[scope];
+  const checkIn = addDays(21);
+  const checkOut = addDays(22);
+  const credentials = Buffer.from(`${DATAFORSEO_LOGIN}:${DATAFORSEO_PASSWORD}`).toString('base64');
+
+  const response = await fetch(DATAFORSEO_URL, {
+    method: 'POST',
+    cache: 'no-store',
+    headers: {
+      Authorization: `Basic ${credentials}`,
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    body: JSON.stringify([
+      {
+        keyword: scopeConfig.suffix,
+        location_coordinate: `${lat.toFixed(5)},${lng.toFixed(5)}`,
+        language_code: 'en',
+        // Fetch extra so the distance and lodging filters can still fill `limit`.
+        depth: 20,
+        check_in: checkIn,
+        check_out: checkOut,
+        currency,
+        adults: 2,
+        sort_by: 'highest_rating',
+        min_rating: 4,
+        is_vacation_rentals: false,
+      },
+    ]),
+  });
+
+  const data = (await response.json()) as DataForSeoResponse & { status_message?: string };
+  if (!response.ok) {
+    throw new DataForSeoError(data.status_message || `DataForSEO returned ${response.status}.`);
+  }
+
+  const items = data.tasks?.flatMap((task) => task.result?.flatMap((result) => result.items ?? []) ?? []) ?? [];
+  const hotels: HotelResult[] = items
+    .filter(isHotelSearchItem)
+    .filter((item) => isLodging({ name: item.title }))
+    .filter((item) => {
+      const itemLat = item.location?.latitude;
+      const itemLng = item.location?.longitude;
+      if (typeof itemLat !== 'number' || typeof itemLng !== 'number') return false;
+      return distanceKm(lat, lng, itemLat, itemLng) <= MAX_HOTEL_DISTANCE_KM;
+    })
+    .slice(0, limit)
+    .map((item) => ({
+      id: item.hotel_identifier || item.title,
+      name: item.title,
+      stars: item.stars ?? null,
+      image: item.overview_images?.[0] ?? null,
+      rating: item.reviews?.value ?? null,
+      reviews: item.reviews?.votes_count ?? null,
+      price: item.prices?.price ?? null,
+      currency: item.prices?.currency ?? currency,
+      discount: item.prices?.discount_text ?? null,
+      href: '', // filled in by withAffiliateHotelLinks
+    }));
+
+  const payload: HotelApiPayload & { cachedAt: string } = {
+    city,
+    country,
+    scope,
+    scopeLabel: scopeConfig.label,
+    checkIn,
+    checkOut,
+    hotels,
+    cached: false,
+    cachedAt: new Date().toISOString(),
+  };
+  if (hotels.length > 0) await saveHotelCacheEntry(key, payload);
+  return payload;
 }
 
 export async function GET(request: Request) {
@@ -233,11 +349,8 @@ export async function GET(request: Request) {
     return NextResponse.json({ hotels: [], error: 'lat and lng are required.' }, { status: 400 });
   }
   const scope = resolveScope(input.get('scope'));
-  const scopeConfig = HOTEL_SCOPES[scope];
   const limit = Math.min(Math.max(Number(input.get('limit') || 6), 1), 6);
   const currency = (input.get('currency') || 'USD').toUpperCase().replace(/[^A-Z]/g, '').slice(0, 3) || 'USD';
-  const checkIn = addDays(21);
-  const checkOut = addDays(22);
   const key = cacheKey({ city, country, scope, currency, limit, lat, lng });
   const forceRefresh = input.get('refresh') === '1';
   const cache = await readHotelCache();
@@ -254,88 +367,17 @@ export async function GET(request: Request) {
     }
   }
 
-  const credentials = Buffer.from(`${DATAFORSEO_LOGIN}:${DATAFORSEO_PASSWORD}`).toString('base64');
-
   try {
-    const response = await fetch(DATAFORSEO_URL, {
-      method: 'POST',
-      cache: 'no-store',
-      headers: {
-        Authorization: `Basic ${credentials}`,
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify([
-        {
-          keyword: scopeConfig.suffix,
-          location_coordinate: `${lat.toFixed(5)},${lng.toFixed(5)}`,
-          language_code: 'en',
-          // Fetch extra so the distance and lodging filters can still fill `limit`.
-          depth: 20,
-          check_in: checkIn,
-          check_out: checkOut,
-          currency,
-          adults: 2,
-          sort_by: 'highest_rating',
-          min_rating: 4,
-          is_vacation_rentals: false,
-        },
-      ]),
-    });
-
-    const data = (await response.json()) as DataForSeoResponse & { status_message?: string };
-    if (!response.ok) {
-      return NextResponse.json(
-        { hotels: [], error: data.status_message || `DataForSEO returned ${response.status}.` },
-        { status: 502 },
-      );
-    }
-
-    const items = data.tasks?.flatMap((task) => task.result?.flatMap((result) => result.items ?? []) ?? []) ?? [];
-    const hotels: HotelResult[] = items
-      .filter(isHotelSearchItem)
-      .filter((item) => isLodging({ name: item.title }))
-      .filter((item) => {
-        const itemLat = item.location?.latitude;
-        const itemLng = item.location?.longitude;
-        if (typeof itemLat !== 'number' || typeof itemLng !== 'number') return false;
-        return distanceKm(lat, lng, itemLat, itemLng) <= MAX_HOTEL_DISTANCE_KM;
-      })
-      .slice(0, limit)
-      .map((item) => ({
-        id: item.hotel_identifier || item.title,
-        name: item.title,
-        stars: item.stars ?? null,
-        image: item.overview_images?.[0] ?? null,
-        rating: item.reviews?.value ?? null,
-        reviews: item.reviews?.votes_count ?? null,
-        price: item.prices?.price ?? null,
-        currency: item.prices?.currency ?? currency,
-        discount: item.prices?.discount_text ?? null,
-        href: '', // filled in by withAffiliateHotelLinks below
-      }));
-
-    const unlinked: HotelApiPayload & { cachedAt: string } = {
-      city,
-      country,
-      scope,
-      scopeLabel: scopeConfig.label,
-      checkIn,
-      checkOut,
-      hotels,
-      cached: false,
-      cachedAt: new Date().toISOString(),
-    };
+    const unlinked = await sharedHotelSearch({ key, city, country, scope, currency, limit, lat, lng });
     const payload = await withAffiliateHotelLinks(unlinked);
-    if (hotels.length > 0) {
-      await saveHotelCacheEntry(key, payload);
-    }
-
     return NextResponse.json(
       payload,
       { headers: { 'Cache-Control': 'public, max-age=300, s-maxage=3600' } },
     );
-  } catch {
+  } catch (error) {
+    if (error instanceof DataForSeoError) {
+      return NextResponse.json({ hotels: [], error: error.message }, { status: 502 });
+    }
     if (cached) {
       const normalizedCached = await withAffiliateHotelLinks(cached);
       return NextResponse.json(

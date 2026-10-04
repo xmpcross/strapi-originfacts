@@ -8,6 +8,7 @@ import CookieConsent from '@/components/CookieConsent';
 import FixedRightBar from '@/components/FixedRightBar';
 import FixedPopularNow from '@/components/FixedPopularNow';
 import FixedScrollToTop from '@/components/FixedScrollToTop';
+import TpwlFullLoadLinks from '@/components/TpwlFullLoadLinks';
 import FixedSocialFollow from '@/components/FixedSocialFollow';
 import { DEFAULT_OG_IMAGE } from '@/lib/entity-seo';
 import { listSidebarArticles } from '@/lib/strapi';
@@ -130,6 +131,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <FixedPopularNow articles={sidebar.popular} />
         <FixedRightBar popularPosts={sidebar.popular} />
         <FixedScrollToTop />
+        <TpwlFullLoadLinks />
         <FixedSocialFollow />
         <Footer />
         <CookieConsent />

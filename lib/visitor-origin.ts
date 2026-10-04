@@ -152,9 +152,12 @@ export function resolveVisitorOrigin(): Promise<Origin | null> {
 }
 
 export function useVisitorOrigin(): Origin {
-  const [origin, setOrigin] = useState<Origin>(
-    () => getOriginFromUrl() ?? readCache() ?? FALLBACK_ORIGIN,
-  );
+  // Start from the fallback on the server and in the browser alike. Reading the
+  // URL or sessionStorage here made the browser's first render differ from the
+  // server HTML once a city was cached (React error #418, and React then
+  // re-renders the whole tree on the client). The real origin is applied right
+  // after mount.
+  const [origin, setOrigin] = useState<Origin>(FALLBACK_ORIGIN);
 
   useEffect(() => {
     const handleUpdate = () => {
@@ -162,6 +165,7 @@ export function useVisitorOrigin(): Origin {
       setOrigin(updated);
     };
 
+    handleUpdate();
     if (!getOriginFromUrl() && !readCache()) {
       resolveVisitorOrigin().then((o) => {
         if (o) setOrigin(o);

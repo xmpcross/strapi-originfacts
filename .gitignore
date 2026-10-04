@@ -1,5 +1,8 @@
 node_modules
 .next
+.next-build
+.next-prev
+.next-failed
 out
 .vercel
 .env

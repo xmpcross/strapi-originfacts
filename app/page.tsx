@@ -26,6 +26,7 @@ import FeaturedCountries from '@/components/FeaturedCountries';
 import SectionDescription from '@/components/SectionDescription';
 import BlogSidebar from '@/components/BlogSidebar';
 import SubscribeBlock from '@/components/SubscribeBlock';
+import { partnerLink } from '@/lib/partner-links';
 
 export const revalidate = 60;
 
@@ -130,28 +131,26 @@ export default async function HomePage() {
         return s.slug === 'flights'
           ? [
               sectionEl,
-              // CJ affiliate banner (728×90) — sits between Flights and Hotels.
+              // CheapOair (Takeads) banner — sits between Flights and Hotels.
               <section key="ad-after-flights" className="py-10" data-testid="home-ad-banner">
                 <div className="mx-auto max-w-7xl px-6">
                   <p className="text-center text-[10px] font-bold uppercase tracking-[0.3em] text-forest-900/50">
                     Advertisement
                   </p>
-                  <div className="mt-3 flex justify-center overflow-x-auto">
-                    <a
-                      href="https://www.jdoqocy.com/click-101771882-15455232"
-                      target="_blank"
-                      rel="sponsored noopener"
-                    >
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src="https://c.fareportal.com/gcms/Portals/2/affiliatebanners/CA-promo1-Banners/728x90.jpg"
-                        width={1120}
-                        height={120}
-                        alt="CheapOair — Join ClubMiles and save up to 20% on select hotels"
-                        className="border-0 max-w-full h-auto"
-                      />
-                    </a>
-                  </div>
+                  <a
+                    href={partnerLink('https://www.cheapoair.com/', 'originfacts_home_banner_wide')}
+                    target="_blank"
+                    rel="sponsored nofollow noopener noreferrer"
+                    className="mx-auto mt-3 flex max-w-[728px] flex-col items-start justify-between gap-4 rounded-[0.4rem] border border-forest-900/10 bg-gradient-to-r from-[#eef6ff] to-white px-6 py-5 transition hover:shadow-md sm:flex-row sm:items-center"
+                  >
+                    <span>
+                      <span className="block text-xs font-bold uppercase tracking-wider text-primary-emphasis">CheapOair</span>
+                      <span className="mt-1 block text-lg font-bold leading-snug text-forest-900">Compare flights and book online</span>
+                    </span>
+                    <span className="inline-flex shrink-0 items-center rounded-[0.3rem] bg-primary-emphasis px-4 py-2 text-sm font-semibold text-white">
+                      Search CheapOair →
+                    </span>
+                  </a>
                 </div>
               </section>,
             ]
@@ -184,22 +183,19 @@ function Hero({ hero, side }: { hero?: StrapiArticle; side: StrapiArticle[] }) {
             <p className="pt-1 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-forest-900/45">
               Advertisement
             </p>
-            {/* CJ affiliate banner (300×500) */}
+            {/* CheapOair (Takeads) */}
             <a
-              href="https://www.dpbolvw.net/click-101771882-13709196"
+              href={partnerLink('https://www.cheapoair.com/', 'originfacts_home_banner_side')}
               target="_blank"
-              rel="sponsored noopener"
-              className="mx-auto mt-2 block w-fit"
+              rel="sponsored nofollow noopener noreferrer"
+              className="mt-2 block rounded-[0.3rem] border border-forest-900/10 bg-gradient-to-b from-[#eef6ff] to-white p-5 transition hover:shadow-md"
               data-testid="home-hero-left-ad-banner"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="https://c.fareportal.com/gcms/Portals/2/affiliatebanners/affirm_banners/240X400.gif"
-                width={300}
-                height={500}
-                alt="CheapOair and Affirm — Take a cheap flight, fly now pay later"
-                className="border-0"
-              />
+              <span className="block text-xs font-bold uppercase tracking-wider text-primary-emphasis">CheapOair</span>
+              <span className="mt-2 block text-lg font-bold leading-snug text-forest-900">Compare flights and book online</span>
+              <span className="mt-4 inline-flex items-center rounded-[0.3rem] bg-primary-emphasis px-4 py-2 text-sm font-semibold text-white">
+                Search CheapOair →
+              </span>
             </a>
           </div>
         </div>

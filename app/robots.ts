@@ -8,12 +8,12 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: ['AhrefsSiteAudit', 'AhrefsBot', 'SEBot-WA', 'SE Ranking', 'SE Ranking bot'],
         allow: '/',
-        disallow: ['/cdn-cgi/'],
+        disallow: ['/cdn-cgi/', '/go'],
       },
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/cdn-cgi/'],
+        disallow: ['/api/', '/cdn-cgi/', '/go'],
       },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,

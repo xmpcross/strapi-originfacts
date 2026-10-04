@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
-import { bookingHotelSearch } from '@/lib/cj';
+import { bookingSearchLink } from '@/lib/partner-links';
 
 
 type GeoResponse = {
@@ -195,7 +195,7 @@ function countryKey(country?: string) {
 
 function bookingDestinationUrl(city: HotelCityCard, countryLabel: string) {
   const destination = [city.name, city.region, countryLabel].filter(Boolean).join(', ');
-  return bookingHotelSearch(destination);
+  return bookingSearchLink(destination, 'originfacts_hotel_cities');
 }
 
 export default function PopularHotelCitiesBlock() {

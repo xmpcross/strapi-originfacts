@@ -9,7 +9,6 @@ import FixedRightBar from '@/components/FixedRightBar';
 import FixedPopularNow from '@/components/FixedPopularNow';
 import FixedScrollToTop from '@/components/FixedScrollToTop';
 import FixedSocialFollow from '@/components/FixedSocialFollow';
-import { ADSENSE_CLIENT, ADSENSE_ENABLED } from '@/lib/adsense';
 import { DEFAULT_OG_IMAGE } from '@/lib/entity-seo';
 import { listSidebarArticles } from '@/lib/strapi';
 
@@ -57,16 +56,15 @@ export const metadata: Metadata = {
     },
   },
   other: {
-    // Affiliate network site verification. Unlike the Impact tag below, these
-    // are plain name/content pairs, so they go through the metadata API rather
-    // than being hand-written into the body.
+    // Affiliate network and SEO tool site verification.
     'mitgo-verification': 'c35b4b6a-ddfe-4741-ab3e-2c1b7538a949',
     'Takeads-verification': 'd5d48ab4-be05-4198-bb51-e1492a80937c',
-    'verify-admitad': 'f0703eb480',
     'ahrefs-site-verification': '9f39dc9055559be529e3fa6460b115fc2cbbed0f424148902c26a1170c54f046',
-    ...(ADSENSE_ENABLED ? { 'google-adsense-account': ADSENSE_CLIENT } : {}),
   },
 };
+
+// Takeads platform ID (public: it appears in the Convertlink script URL).
+const TAKEADS_PLATFORM_ID = (process.env.TAKEADS_PLATFORM_ID ?? '').trim();
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const sidebar = await listSidebarArticles(7).catch(() => ({ recent: [], popular: [] }));
@@ -74,9 +72,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en" className={inter.variable}>
       <head>
-        {/* Impact.com site verification (second tag). Written verbatim with `value`,
-            as Impact provides it; the metadata API would rewrite `value` to `content`. */}
-        <meta {...({ name: 'impact-site-verification', value: '766261aa-958f-4a83-998f-3674e1686da0' } as Record<string, string>)} />
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
@@ -98,10 +93,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <script src="https://analytics.ahrefs.com/analytics.js" data-key="KbPcf3YVlIhEJPDxFrNztQ" async />
       </head>
       <body className={`${inter.variable} min-h-screen flex flex-col font-sans font-normal grain`} data-testid="app-shell">
-        {/* Impact.com site verification — raw tag (React 19 hoists it into <head>).
-            Kept as the verbatim <meta name=… value=…> Impact provides; not routed
-            through Next's metadata API, which would rewrite `value` to `content`. */}
-        <meta {...({ name: 'impact-site-verification', value: '3604ebda-47ea-4c1a-ad1e-8d7976f411ce' } as Record<string, string>)} />
         <Script id="consent-default" strategy="beforeInteractive">{`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -130,16 +121,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           gtag('js', new Date());
           gtag('config', 'G-TY066MKR0Z');
         `}</Script>
-        {/* AdSense loader — plain <script async>; React 19 hoists it into <head>
-            so it sits exactly as the AdSense snippet expects. */}
-        {ADSENSE_ENABLED && (
-          // eslint-disable-next-line @next/next/no-sync-scripts
-          <script
-            async
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
-            crossOrigin="anonymous"
-          />
-        )}
         {/* Travelpayouts white-label SDK is loaded by <TpwlLoader /> on the
             flight-search page itself (the only page with tpwl containers) so
             it re-initialises on client-side navigation — see
@@ -152,14 +133,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <FixedSocialFollow />
         <Footer />
         <CookieConsent />
-        {/* Affiliate link converter: loaded after the page is idle — as a
-            synchronous script it was the largest main-thread cost on mobile
-            (~2 s of scripting on the homepage, SEO audit Oct 2026). */}
-        <Script
-          id="convertlink"
-          strategy="lazyOnload"
-          src="https://convertlink.com/script/7295bcfa-4dc7-4794-8b6c-4434f5945457/bundle.js"
-        />
+        {/* Takeads link converter (Convertlink), keyed by TAKEADS_PLATFORM_ID in
+            .env.local. Loaded after the page is idle — as a synchronous script it
+            was the largest main-thread cost on mobile (~2 s of scripting on the
+            homepage, SEO audit Oct 2026). */}
+        {TAKEADS_PLATFORM_ID && (
+          <Script
+            id="convertlink"
+            strategy="lazyOnload"
+            src={`https://convertlink.com/script/${TAKEADS_PLATFORM_ID}/bundle.js`}
+          />
+        )}
       </body>
     </html>
   );

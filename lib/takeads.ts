@@ -1,6 +1,12 @@
 import 'server-only';
 import { unstable_cache } from 'next/cache';
+import { getYourGuideLink, isTakeadsMerchant } from '@/lib/partner-links';
 
+/*
+ * Takeads Monetize API. The publisher key is TAKEADS_PUBLIC_KEY in the
+ * project's .env.local (Takeads dashboard → API / Monetize API → public key);
+ * without it every Takeads link falls back to the plain merchant URL.
+ */
 const API_URL = 'https://api.takeads.com/v1/product/monetize-api/v2/resolve';
 
 export type TakeadsOfferKey =
@@ -98,43 +104,70 @@ type ResolveResponse = {
   data?: Array<{ iri: string; trackingLink: string; imageUrl?: string | null }>;
 };
 
+/** Ask Takeads for tracking links. Returns an empty map on any failure. */
+async function resolveIris(
+  iris: string[],
+  withImages = false,
+): Promise<Map<string, { trackingLink: string; imageUrl?: string | null }>> {
+  const publicKey = process.env.TAKEADS_PUBLIC_KEY;
+  if (!publicKey || iris.length === 0) return new Map();
+
+  try {
+    const response = await fetch(API_URL, {
+      method: 'PUT',
+      headers: {
+        Authorization: `Bearer ${publicKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ iris, withImages }),
+    });
+
+    if (!response.ok) {
+      console.warn(`Takeads resolve failed with HTTP ${response.status}`);
+      return new Map();
+    }
+
+    const payload = (await response.json()) as ResolveResponse;
+    return new Map(
+      (payload.data ?? []).filter((item) => item.trackingLink).map((item) => [item.iri, item]),
+    );
+  } catch (error) {
+    console.warn('Takeads resolve request failed', error instanceof Error ? error.message : error);
+    return new Map();
+  }
+}
+
+/**
+ * Tracking link for one merchant URL (used by the /go redirect), cached for a
+ * day per URL. Null when the URL is not a Takeads merchant or Takeads has no
+ * link for it.
+ */
+export const resolveTakeadsLink = unstable_cache(
+  async (url: string): Promise<string | null> => {
+    if (!isTakeadsMerchant(url)) return null;
+    const resolved = await resolveIris([url]);
+    return resolved.get(url)?.trackingLink ?? null;
+  },
+  ['takeads-resolve-link-v1'],
+  { revalidate: 86_400, tags: ['takeads'] },
+);
+
 const resolveBaseOffers = unstable_cache(
   async (): Promise<TakeadsOffer[]> => {
-    const publicKey = process.env.TAKEADS_PUBLIC_KEY;
-    if (!publicKey) return [];
+    const takeadsOffers = OFFER_DEFINITIONS.filter((offer) => isTakeadsMerchant(offer.url));
+    const resolved = await resolveIris(takeadsOffers.map((offer) => offer.url), true);
 
-    try {
-      const response = await fetch(API_URL, {
-        method: 'PUT',
-        headers: {
-          Authorization: `Bearer ${publicKey}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          iris: OFFER_DEFINITIONS.map((offer) => offer.url),
-          withImages: true,
-        }),
-      });
-
-      if (!response.ok) {
-        console.warn(`Takeads resolve failed with HTTP ${response.status}`);
-        return [];
+    return OFFER_DEFINITIONS.flatMap((offer) => {
+      // GetYourGuide is a direct partnership, not Takeads.
+      if (offer.key === 'getyourguide') {
+        return [{ ...offer, href: getYourGuideLink(offer.url), imageUrl: null }];
       }
-
-      const payload = (await response.json()) as ResolveResponse;
-      const resolved = new Map((payload.data ?? []).map((item) => [item.iri, item]));
-
-      return OFFER_DEFINITIONS.flatMap((offer) => {
-        const match = resolved.get(offer.url);
-        if (!match?.trackingLink) return [];
-        return [{ ...offer, href: match.trackingLink, imageUrl: match.imageUrl ?? null }];
-      });
-    } catch (error) {
-      console.warn('Takeads resolve request failed', error instanceof Error ? error.message : error);
-      return [];
-    }
+      const match = resolved.get(offer.url);
+      if (!match?.trackingLink) return [];
+      return [{ ...offer, href: match.trackingLink, imageUrl: match.imageUrl ?? null }];
+    });
   },
-  ['takeads-originfacts-travel-offers-v1'],
+  ['takeads-originfacts-travel-offers-v2'],
   { revalidate: 86_400, tags: ['takeads'] },
 );
 
@@ -153,7 +186,7 @@ function contextualKeys(context: string): TakeadsOfferKey[] {
   return DEFAULT_KEYS;
 }
 
-function addTrackingParameters(href: string, subId: string): string {
+export function addTrackingParameters(href: string, subId: string): string {
   try {
     const url = new URL(href);
     url.searchParams.set('model', 'CPC');
@@ -182,6 +215,9 @@ export async function getContextualTakeadsOffers({
     .slice(0, limit)
     .map((offer) => ({
       ...offer,
-      href: addTrackingParameters(offer.href, `originfacts_article_${articleSlug}_${offer.key}`),
+      href:
+        offer.key === 'getyourguide'
+          ? offer.href
+          : addTrackingParameters(offer.href, `originfacts_article_${articleSlug}_${offer.key}`),
     }));
 }

@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { bookingHotelSearch } from '@/lib/cj';
+import { bookingSearchLink } from '@/lib/partner-links';
 
 type HotelScope = (typeof HOTEL_SCOPES)[number]['value'];
 
@@ -92,10 +92,10 @@ function readHotelBrowserCache(key: string): HotelResponse | null {
     return {
       ...parsed,
       cached: true,
-      // Rebuilt on read: entries stored before the CJ switch carry the dead tatrck.com link.
+      // Rebuilt on read, so entries stored under an older link scheme are never served.
       hotels: parsed.hotels?.map((hotel) => ({
         ...hotel,
-        href: bookingHotelSearch([hotel.name, parsed.city].filter(Boolean).join(', ')),
+        href: bookingSearchLink([hotel.name, parsed.city].filter(Boolean).join(', '), 'originfacts_city_hotel_card'),
       })),
     };
   } catch {

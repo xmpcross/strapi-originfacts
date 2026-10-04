@@ -39,6 +39,7 @@ import { buildMetaDescription, clampDescription, compactTitle } from '@/lib/seo'
 import { airportPath } from '@/lib/airport-slugs';
 import { absoluteUrl } from '@/lib/jsonld';
 import type { Metadata } from 'next';
+import { getYourGuideLink } from '@/lib/partner-links';
 
 export const revalidate = 60;
 
@@ -984,7 +985,7 @@ function GetYourGuideActivityWidget({
               <a
                 target="_blank"
                 rel="sponsored nofollow noopener noreferrer"
-                href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(query)}`}
+                href={getYourGuideLink(query)}
                 className="font-medium text-forest-800 underline underline-offset-4"
               >
                 GetYourGuide

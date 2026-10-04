@@ -27,7 +27,6 @@ import CountryFactsPanel from '@/components/CountryFactsPanel';
 import FlightSearchCTA from '@/components/FlightSearchCTA';
 import PopularHotelsByCity from '@/components/PopularHotelsByCity';
 import destinationCoordinates from '@/data/destination-coordinates.json';
-import TableOfContents from '@/components/TableOfContents';
 import { getCountryFacts } from '@/lib/country-facts';
 import { operableCarriers } from '@/lib/route-carriers';
 import { SITE_URL, DEFAULT_OG_IMAGE, entityWebPageJsonLd, faqJsonLd, normalizeFaqs } from '@/lib/entity-seo';
@@ -187,7 +186,7 @@ export default async function DestinationPage({ params }: Props) {
   const hero = mediaUrl(destination.heroImage ?? null);
   const activityQuery = buildActivityWidgetQuery(destination, routes);
   const heroDescription = isCity
-    ? buildCityHeroDescription(destination, cityAirports, routes, articles.length)
+    ? buildCityHeroDescription(destination, cityAirports)
     : destination.description;
 
   // Article/BlogPosting JSON-LD for destination guides
@@ -206,6 +205,7 @@ export default async function DestinationPage({ params }: Props) {
   });
 
   const breadcrumbItems: { name: string; url: string }[] = [{ name: 'Destinations', url: '/destinations' }];
+  let countryHref: string | undefined;
   if (isCountry) {
     breadcrumbItems.push({ name: 'Countries', url: '/countries' });
   } else if (isCity && destination.countryCode) {
@@ -214,10 +214,8 @@ export default async function DestinationPage({ params }: Props) {
       // Link the country crumb to its destination guide; /countries/<code>
       // would only redirect there.
       const countryGuide = await getDestinationByCountryCode(destination.countryCode).catch(() => null);
-      breadcrumbItems.push({
-        name: cName,
-        url: countryGuide ? `/destinations/${countryGuide.slug}` : `/countries/${destination.countryCode.toLowerCase()}`,
-      });
+      countryHref = countryGuide ? `/destinations/${countryGuide.slug}` : `/countries/${destination.countryCode.toLowerCase()}`;
+      breadcrumbItems.push({ name: cName, url: countryHref });
     }
   }
   breadcrumbItems.push({ name: destination.name, url: `/destinations/${destination.slug}` });
@@ -285,19 +283,21 @@ export default async function DestinationPage({ params }: Props) {
         <CityDestinationPage
           destination={destination}
           hero={hero}
-          heroDescription={heroDescription}
+          heroDescription={heroDescription ?? ''}
+          countryHref={countryHref}
           routes={routes}
           airports={cityAirports}
           articles={articles}
           activityQuery={activityQuery}
           faqBlock={faqBlock}
+          hasFaqs={faqs.length >= 2}
         />
         {citationsBlock}
       </>
     );
   }
 
-  // Non-country destinations (city / region) keep the original layout unchanged.
+  // Regions that are not continents keep the original layout.
   return (
     <div data-testid={`destination-page-${slug}`}>
       <JsonLd data={articleSchema} />
@@ -336,20 +336,6 @@ export default async function DestinationPage({ params }: Props) {
           </div>
         )}
       </div>
-
-      {destination.type === 'city' && (
-        <CityPlanningSections destination={destination} routes={routes} airports={cityAirports} articlesCount={articles.length} />
-      )}
-
-      {destination.type === 'city' && (
-        <CitySeoGuide destination={destination} routes={routes} airports={cityAirports} articlesCount={articles.length} />
-      )}
-
-      {destination.type === 'city' && (
-        <div className="mx-auto max-w-7xl px-6">
-          <GetYourGuideActivityWidget destination={destination} query={activityQuery} />
-        </div>
-      )}
 
       {/* Sponsored search CTA — only when we have a representative city IATA */}
       {(() => {
@@ -402,143 +388,104 @@ function CityDestinationPage({
   destination,
   hero,
   heroDescription,
+  countryHref,
   routes,
   airports,
   articles,
   activityQuery,
   faqBlock,
+  hasFaqs,
 }: {
   destination: StrapiDestination;
   hero: string | null;
-  heroDescription?: string;
+  heroDescription: string;
+  countryHref?: string;
   routes: Awaited<ReturnType<typeof listRoutesToDestination>>;
   airports: StrapiAirport[];
   articles: Awaited<ReturnType<typeof listArticles>>['data'];
   activityQuery: string;
   faqBlock: React.ReactNode;
+  hasFaqs: boolean;
 }) {
-  const destIata = routes.find((r) => r.destination?.iata)?.destination?.iata;
-  const country =
-    airports.find((airport) => airport.country)?.country ||
-    countryNameFromCode(destination.countryCode) ||
-    'the region';
-  const primaryAirport = airports[0];
+  const destIata = airports[0]?.iata || routes.find((r) => r.destination?.iata)?.destination?.iata;
+  const country = airports.find((airport) => airport.country)?.country || countryNameFromCode(destination.countryCode);
+  const flightSearchHref = destIata ? `/flight-search?destination=${encodeURIComponent(destIata)}` : '/flight-search';
+
+  // Only link sections that render: stories, routes and airports are empty for
+  // part of the catalogue, and FaqSection renders nothing under two Q&As.
+  const sections = [
+    articles.length > 0 && { id: 'stories', label: 'Stories' },
+    { id: 'hotels', label: 'Hotels' },
+    (airports.length > 0 || routes.length > 0) && { id: 'getting-there', label: 'Getting there' },
+    { id: 'things-to-do', label: 'Things to do' },
+    hasFaqs && { id: 'faq', label: 'FAQ' },
+  ].filter((s): s is { id: string; label: string } => Boolean(s));
 
   return (
     <article className="city-destination-page" data-testid={`destination-page-${destination.slug}`}>
-      <section className="relative min-h-[520px] overflow-hidden bg-forest-950">
+      <section className="relative overflow-hidden bg-forest-950">
         {hero && (
           // eslint-disable-next-line @next/next/no-img-element
           <img src={hero} alt={destination.name} className="absolute inset-0 h-full w-full object-cover" fetchPriority="high" />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-forest-950 via-forest-950/45 to-forest-950/10" />
-        <div className="relative mx-auto flex min-h-[520px] max-w-7xl flex-col justify-end px-6 pb-12 pt-24 text-white">
-          <div className="max-w-4xl">
-            <div className="text-xs font-bold uppercase tracking-[0.22em] text-white/75">
-              City guide{country !== 'the region' ? ` · ${country}` : ''}
-            </div>
-            <h1 className="editorial-h mt-4 text-4xl font-bold leading-tight !text-[#ffffff] sm:text-5xl lg:text-6xl">
-              {destination.name}
-            </h1>
-            {heroDescription && (
-              <p className="mt-5 max-w-3xl text-lg leading-8 text-white/90">
-                {heroDescription}
-              </p>
+        <div className="absolute inset-0 bg-gradient-to-t from-forest-950 via-forest-950/55 to-forest-950/10" />
+        <div className="relative mx-auto flex min-h-[460px] max-w-7xl flex-col justify-end px-6 pb-12 pt-24 text-white sm:min-h-[520px]">
+          <nav aria-label="Breadcrumb" className="text-xs font-semibold text-white/75">
+            <Link href="/destinations" className="hover:text-white hover:underline">Destinations</Link>
+            {country && (
+              <>
+                <span className="mx-2 text-white/40">/</span>
+                {countryHref ? (
+                  <Link href={countryHref} className="hover:text-white hover:underline">{country}</Link>
+                ) : (
+                  <span>{country}</span>
+                )}
+              </>
             )}
-          </div>
-          <div className="mt-8 grid max-w-4xl gap-3 sm:grid-cols-3">
-            <CityHeroMetric label="Stories" value={articles.length} />
-            <CityHeroMetric label="Routes" value={routes.length} />
-            <CityHeroMetric label="Airports" value={airports.length} />
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-14" data-testid="city-overview-panel">
-        <TableOfContents
-          items={[
-            { id: 'overview', text: `Overview & City Snapshot` },
-            { id: 'seasons', text: `Best Time to Visit (Peak vs Low Season)` },
-            { id: 'flight-routes', text: `Direct & 1-Stop Flight Routes (${routes.length})` },
-            { id: 'airports', text: `Airports Near ${destination.name}` },
-            { id: 'hotels', text: `Popular Hotels & Neighborhoods` },
-            { id: 'faq', text: `Frequently Asked Questions` },
-          ]}
-        />
-        <KeyFacts
-          tldr={destination.tldr}
-          keyFacts={destination.keyFacts}
-          title={`${destination.name} at a glance`}
-        />
-        <div className="mt-8 grid gap-8 lg:grid-cols-[360px_minmax(0,1fr)]">
-          <aside className="rounded-[0.3rem] border border-forest-900/10 bg-gradient-to-br from-[#f7fbff] via-white to-[#fff8e6] p-6">
-            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary-emphasis">
-              Planning snapshot
-            </p>
-            <div className="mt-5 space-y-5">
-              <CitySnapshotItem label="Country context" value={country} />
-              <CitySnapshotItem
-                label="Primary airport"
-                value={primaryAirport ? primaryAirport.name : 'Airport coverage expanding'}
-                href={primaryAirport ? airportPath(primaryAirport, airports) : undefined}
-              />
-              <CitySnapshotItem
-                label="Best first check"
-                value={destIata ? `Search flights to ${destIata}` : 'Compare live flight options'}
-                href={destIata ? `/flight-search?destination=${encodeURIComponent(destIata)}` : '/flight-search'}
-              />
-            </div>
-            <div className="mt-6 border-t border-forest-900/10 pt-5">
-              <h3 className="text-lg font-bold text-forest-950">
-                What this snapshot helps with
-              </h3>
-              <p className="mt-3 text-sm leading-7 text-forest-900/72">
-                Use these quick signals to avoid the most common planning mistake: choosing a cheap fare or hotel
-                before checking how the airport, neighbourhood and onward route fit together.
-              </p>
-              <ul className="mt-4 space-y-2 text-sm leading-6 text-forest-900/72">
-                <li>Match the airport to your arrival plans.</li>
-                <li>Check hotel areas before comparing prices.</li>
-                <li>Use routes to spot practical connections.</li>
-              </ul>
-            </div>
-          </aside>
-
-          <div id="overview" className="border-y border-forest-900/10 py-8 scroll-mt-28">
-            <p className="section-eyebrow">
-              <span className="inline-block h-px w-8 bg-primary-emphasis" />
-              Start here
-            </p>
-            <h2 id="overview-heading" className="editorial-h mt-3 text-3xl font-bold text-forest-950">
-              Build your {destination.name} trip around arrivals, areas and routes
-            </h2>
-            <p className="mt-4 max-w-4xl text-base leading-7 text-forest-900/72">
-              Use this city page to compare the practical pieces that shape a trip: where you arrive, where you stay,
-              which routes are currently tracked and what local stories can help you choose smarter.
-            </p>
-            <p className="mt-4 max-w-4xl text-base leading-7 text-forest-900/72">
-              Start by confirming the airport and arrival time, then compare central hotel areas with airport-area
-              stays if your itinerary includes an early departure, late landing or short stopover. After that, use
-              the route and article sections to understand how {destination.name} connects with nearby regions,
-              major gateways and the rest of {country}.
-            </p>
-            <p className="mt-4 max-w-4xl text-base leading-7 text-forest-900/72">
-              This page is designed for quick trip decisions rather than generic inspiration. It brings together
-              flight context, hotel discovery, local activities and related Originfacts stories so you can move from
-              “where should I go?” to “what should I book first?” with fewer open tabs.
-            </p>
+          </nav>
+          <h1 className="editorial-h mt-4 text-4xl font-bold leading-tight !text-[#ffffff] sm:text-5xl lg:text-6xl">
+            {destination.name}
+          </h1>
+          <p className="mt-5 max-w-3xl text-lg leading-8 text-white/90">{heroDescription}</p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              href={flightSearchHref}
+              className="rounded-full bg-white px-5 py-2.5 text-sm font-bold text-forest-950 transition hover:bg-sand-100"
+            >
+              {destIata ? `Search flights to ${destIata}` : 'Search flights'}
+            </Link>
+            <a
+              href="#hotels"
+              className="rounded-full border border-white/40 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-white/10"
+            >
+              Compare hotels
+            </a>
           </div>
         </div>
       </section>
 
+      <nav
+        aria-label={`${destination.name} guide sections`}
+        className="border-b border-forest-900/10 bg-paper"
+        data-testid="city-section-nav"
+      >
+        <div className="mx-auto flex max-w-7xl gap-6 overflow-x-auto px-6 text-sm font-semibold text-forest-900/70">
+          {sections.map((s) => (
+            <a key={s.id} href={`#${s.id}`} className="shrink-0 border-b-2 border-transparent py-4 hover:border-primary-emphasis hover:text-forest-950">
+              {s.label}
+            </a>
+          ))}
+        </div>
+      </nav>
+
+      <section className="mx-auto max-w-7xl px-6 pt-10" data-testid="city-overview-panel">
+        <CityGlance destination={destination} country={country} countryHref={countryHref} airports={airports} routes={routes} articlesCount={articles.length} />
+        <KeyFacts tldr={destination.tldr} keyFacts={destination.keyFacts} title={`${destination.name} at a glance`} />
+      </section>
+
+      <CityStoriesSection destination={destination} articles={articles} />
       <CityPopularHotelsSection destination={destination} airports={airports} />
-      <CityPlanningSections destination={destination} routes={routes} airports={airports} articlesCount={articles.length} />
-
-      <div className="mx-auto max-w-7xl px-6">
-        <GetYourGuideActivityWidget destination={destination} query={activityQuery} />
-      </div>
-
-      <CitySeoGuide destination={destination} routes={routes} airports={airports} articlesCount={articles.length} />
+      <CityGettingThereSection destination={destination} airports={airports} routes={routes} />
 
       {destIata && (
         <div className="mx-auto max-w-7xl px-6">
@@ -552,8 +499,10 @@ function CityDestinationPage({
         </div>
       )}
 
-      <CityRoutesSection destination={destination} routes={routes} />
-      <CityStoriesSection destination={destination} articles={articles} />
+      <div id="things-to-do" className="mx-auto max-w-7xl scroll-mt-28 px-6">
+        <GetYourGuideActivityWidget destination={destination} query={activityQuery} />
+      </div>
+
       {faqBlock}
       <div className="pb-20" />
     </article>
@@ -609,29 +558,67 @@ function countryNameFromCode(code?: string) {
   }
 }
 
-function CityHeroMetric({ label, value }: { label: string; value: number }) {
+function CityGlance({
+  destination,
+  country,
+  countryHref,
+  airports,
+  routes,
+  articlesCount,
+}: {
+  destination: StrapiDestination;
+  country: string;
+  countryHref?: string;
+  airports: StrapiAirport[];
+  routes: Awaited<ReturnType<typeof listRoutesToDestination>>;
+  articlesCount: number;
+}) {
+  const primaryAirport = airports[0];
+  const timezone = airports.find((airport) => airport.timezone)?.timezone;
+  const items = [
+    country && { label: 'Country', value: country, href: countryHref },
+    primaryAirport && {
+      label: airports.length > 1 ? `Main airport (of ${airports.length})` : 'Airport',
+      value: `${primaryAirport.name} (${primaryAirport.iata})`,
+      href: airportPath(primaryAirport, airports),
+    },
+    timezone && { label: 'Time zone', value: timezone.replace(/_/g, ' ') },
+    routes.length > 0 && {
+      label: 'Tracked routes',
+      value: `${routes.length} inbound route${routes.length === 1 ? '' : 's'}`,
+      href: '#getting-there',
+    },
+    articlesCount > 0 && {
+      label: 'Originfacts stories',
+      value: `${articlesCount} stor${articlesCount === 1 ? 'y' : 'ies'}`,
+      href: '#stories',
+    },
+  ].filter((item): item is { label: string; value: string; href?: string } => Boolean(item));
+
+  if (items.length === 0) return null;
+
   return (
-    <div className="border border-white/25 bg-white/10 px-4 py-3 backdrop-blur">
-      <div className="text-2xl font-bold leading-none text-white">{value.toLocaleString()}</div>
-      <div className="mt-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white/70">{label}</div>
-    </div>
-  );
-}
-
-function CitySnapshotItem({ label, value, href }: { label: string; value: string; href?: string }) {
-  const content = (
-    <>
-      <dt className="text-[10px] font-bold uppercase tracking-[0.18em] text-forest-900/50">{label}</dt>
-      <dd className="mt-1 text-lg font-bold leading-tight text-forest-950">{value}</dd>
-    </>
-  );
-
-  return href ? (
-    <Link href={href} className="block border-b border-forest-900/10 pb-4 last:border-b-0 last:pb-0">
-      {content}
-    </Link>
-  ) : (
-    <div className="border-b border-forest-900/10 pb-4 last:border-b-0 last:pb-0">{content}</div>
+    <dl
+      className="grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-forest-900/10 bg-forest-900/10 lg:auto-cols-fr lg:grid-flow-col lg:grid-cols-none"
+      aria-label={`${destination.name} at a glance`}
+      data-testid="city-glance"
+    >
+      {items.map((item, i) => (
+        <div
+          key={item.label}
+          className={`bg-white p-4 sm:p-5 ${items.length % 2 === 1 && i === items.length - 1 ? 'col-span-2 lg:col-span-1' : ''}`}
+        >
+          <dt className="text-[10px] font-bold uppercase tracking-[0.18em] text-forest-900/50">{item.label}</dt>
+          <dd className="mt-1.5 text-base font-bold leading-snug text-forest-950">
+            {item.href ? (
+              <Link href={item.href} className="hover:text-primary-emphasis hover:underline">{item.value}</Link>
+            ) : (
+              item.value
+            )}
+          </dd>
+        </div>
+      ))}
+    </dl>
   );
 }
 
@@ -642,295 +629,106 @@ function CityStoriesSection({
   destination: StrapiDestination;
   articles: Awaited<ReturnType<typeof listArticles>>['data'];
 }) {
-  return (
-    <section className="mx-auto max-w-7xl px-6 pb-12 pt-[50px]" data-testid="city-stories">
-      <header className="flex flex-col gap-3 border-b border-forest-900/10 pb-4 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <p className="section-eyebrow">
-            <span className="inline-block h-px w-8 bg-primary-emphasis" />
-            Local stories
-          </p>
-          <h2 className="editorial-h mt-3 text-3xl font-bold text-forest-950">
-            {articles.length === 0 ? `Stories from ${destination.name} coming soon` : `Stories from ${destination.name}`}
-          </h2>
-        </div>
-        {articles.length > 0 && (
-          <span className="text-sm text-forest-900/55">
-            {articles.length} stor{articles.length === 1 ? 'y' : 'ies'}
-          </span>
-        )}
-      </header>
-      {articles.length > 0 && (
-        <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-          {articles.slice(0, 8).map((article) => (
-            <ArticleCard key={article.id} article={article} size="md" />
-          ))}
-        </div>
-      )}
-      <MoreStoriesList articles={articles.slice(8)} title={`More stories from ${destination.name}`} />
-    </section>
-  );
-}
-
-function CityRoutesSection({
-  destination,
-  routes,
-}: {
-  destination: StrapiDestination;
-  routes: Awaited<ReturnType<typeof listRoutesToDestination>>;
-}) {
-  if (routes.length === 0) return null;
+  if (articles.length === 0) return null;
+  const [lead, ...rest] = articles;
+  const side = rest.slice(0, 4);
 
   return (
-    <section id="flight-routes" className="mx-auto max-w-7xl scroll-mt-28 px-6" data-testid="destination-routes">
+    <section id="stories" className="mx-auto max-w-7xl scroll-mt-28 px-6 pt-14" data-testid="city-stories">
       <header className="flex items-end justify-between border-b border-forest-900/10 pb-3">
-        <h2 id="flight-routes-heading" className="editorial-h text-2xl font-bold text-forest-900 lg:text-2xl">
-          Which flight routes connect to {destination.name}?
+        <h2 className="editorial-h text-2xl font-bold text-forest-950 lg:text-3xl">
+          Read before you go to {destination.name}
         </h2>
-        <span className="text-sm font-light text-forest-900/50">
-          {routes.length} route{routes.length === 1 ? '' : 's'}
+        <span className="text-sm text-forest-900/55">
+          {articles.length} stor{articles.length === 1 ? 'y' : 'ies'}
         </span>
       </header>
-      <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {routes.map((route) => (
-          <RouteCard key={route.id} r={route} />
-        ))}
+      <div className={`mt-8 grid gap-8 ${side.length > 0 ? 'lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]' : 'max-w-3xl'}`}>
+        <ArticleCard article={lead} size="lg" />
+        {side.length > 0 && (
+          <div className="grid content-start gap-6 sm:grid-cols-2">
+            {side.map((article) => (
+              <ArticleCard key={article.id} article={article} size="compact" />
+            ))}
+          </div>
+        )}
       </div>
-      <div className="mt-6">
-        <Link href="/flight-routes" className="text-sm font-medium text-forest-700 hover:underline">
-          Browse all routes →
-        </Link>
-      </div>
+      {articles.length > 5 && (
+        <MoreStoriesList articles={articles.slice(5)} title={`More stories from ${destination.name}`} />
+      )}
     </section>
   );
 }
 
-function CitySeoGuide({
+function CityGettingThereSection({
   destination,
-  routes,
   airports,
-  articlesCount,
+  routes,
 }: {
   destination: StrapiDestination;
-  routes: Awaited<ReturnType<typeof listRoutesToDestination>>;
   airports: StrapiAirport[];
-  articlesCount: number;
+  routes: Awaited<ReturnType<typeof listRoutesToDestination>>;
 }) {
-  const country =
-    airports.find((airport) => airport.country)?.country ||
-    countryNameFromCode(destination.countryCode) ||
-    'the region';
-  const primaryAirport = airports[0];
-  const originCities = unique(
-    routes
-      .map((route) => route.origin?.city || route.origin?.name)
-      .filter((name): name is string => Boolean(name)),
-  ).slice(0, 4);
-  const airlines = unique(routes.flatMap((route) => operableCarriers(route).map((carrier) => carrier.name))).slice(0, 4);
-  const routeSummary = originCities.length
-    ? `Current route data connects ${destination.name} with ${formatList(originCities)}, giving travellers a quick view of useful inbound flight patterns.`
-    : `Route coverage for ${destination.name} is still growing, so use the flight search tools alongside this guide when comparing live fares.`;
-
-  const sections = [
-    {
-      title: `Where to stay in ${destination.name}`,
-      body: `For a first visit, compare central neighbourhoods with airport-area hotels before choosing the lowest nightly rate. Central stays usually work better for sightseeing, dining and short city breaks, while airport hotels can make sense for early departures, late arrivals or one-night stopovers in ${country}.`,
-    },
-    {
-      title: `Airport and arrival planning`,
-      body: primaryAirport
-        ? `${primaryAirport.name} is the main airport matched to ${destination.name}. Check the exact airport name on your ticket, then compare transfer time, arrival hour and baggage rules before booking tight onward plans.`
-        : `Before booking flights to ${destination.name}, check whether the fare uses a primary or secondary airport and how long the transfer into the city is likely to take.`,
-    },
-    {
-      title: `Flight and route context`,
-      body: `${routeSummary} ${airlines.length ? `Airlines appearing in the current route set include ${formatList(airlines)}.` : 'Airlines and schedules can change by season, so confirm the final carrier, fare rules and baggage allowance before payment.'}`,
-    },
-    {
-      title: `How to use this ${destination.name} guide`,
-      body: `Start with the city overview, then compare articles, airport details, activity ideas and flight routes. ${articlesCount > 0 ? `Originfacts currently links ${articlesCount} related ${articlesCount === 1 ? 'story' : 'stories'} to ${destination.name}.` : `Originfacts is still adding local stories for ${destination.name}.`} Use the live booking pages only after you know the area, airport and route that fit your trip.`,
-    },
-  ];
-
-  const checklist = [
-    'Confirm the arrival airport.',
-    'Compare central and airport hotels.',
-    'Check transfer time before booking.',
-    'Review baggage and fare rules.',
-    'Save flexible plans for late arrivals.',
-  ];
+  if (airports.length === 0 && routes.length === 0) return null;
+  const carriers = unique(routes.flatMap((route) => operableCarriers(route).map((carrier) => carrier.name)));
 
   return (
-    <section className="mx-auto mt-12 max-w-7xl px-6" data-testid="city-seo-guide">
-      <div className="rounded-[0.3rem] border border-forest-900/10 bg-gradient-to-br from-white via-[#f7fbff] to-[#fff8e6] p-6 sm:p-8">
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_300px]">
-          <div>
-            <p className="section-eyebrow">
-              <span className="inline-block h-px w-8 bg-primary-emphasis" />
-              Practical city guide
-            </p>
-            <h2 className="editorial-h mt-3 text-3xl font-bold text-forest-950">
-              How should you plan a trip to {destination.name}?
-            </h2>
-            <p className="mt-4 max-w-4xl text-base leading-7 text-forest-900/72">
-              Use this guide to connect the big travel decisions for {destination.name}: where to stay, which airport
-              to use, how flight routes compare and what to verify before booking.
-            </p>
-          </div>
-          <div className="border-l-2 border-primary-emphasis pl-5">
-            <div className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary-emphasis">
-              Quick checklist
-            </div>
-            <ul className="mt-4 space-y-2 text-sm leading-6 text-forest-900/72">
-              {checklist.map((item) => (
-                <li key={item}>{item}</li>
+    <section id="getting-there" className="mx-auto max-w-7xl scroll-mt-28 px-6 pt-14" data-testid="city-getting-there">
+      <header className="border-b border-forest-900/10 pb-3">
+        <h2 className="editorial-h text-2xl font-bold text-forest-950 lg:text-3xl">
+          Getting to {destination.name}
+        </h2>
+      </header>
+      <div className="mt-8 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
+        {airports.length > 0 && (
+          <div data-testid="city-airports">
+            <h3 className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary-emphasis">
+              {airports.length === 1 ? 'Airport' : `${airports.length} airports`}
+            </h3>
+            <ul className="mt-4 space-y-3">
+              {airports.map((airport) => (
+                <li key={airport.id}>
+                  <Link
+                    href={airportPath(airport, airports)}
+                    className="flex items-center gap-4 rounded-lg border border-forest-900/10 bg-paper p-4 transition hover:border-forest-900/30 hover:shadow-sm"
+                  >
+                    <span className="rounded bg-forest-950 px-2 py-1 font-mono text-sm font-bold text-white">{airport.iata}</span>
+                    <span className="text-sm font-bold leading-snug text-forest-950">{airport.name}</span>
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
-        </div>
-
-        <div className="mt-8 grid gap-5 md:grid-cols-2">
-          {sections.map((section) => (
-            <article key={section.title} className="border-t border-forest-900/10 pt-5">
-              <h3 className="text-xl font-bold text-forest-950">{section.title}</h3>
-              <p className="mt-3 text-sm leading-7 text-forest-900/72">{section.body}</p>
-            </article>
-          ))}
+        )}
+        <div data-testid="destination-routes" className={airports.length === 0 ? 'lg:col-span-2' : ''}>
+          <h3 className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary-emphasis">
+            {routes.length > 0 ? `${routes.length} tracked route${routes.length === 1 ? '' : 's'}` : 'Routes'}
+          </h3>
+          {routes.length > 0 ? (
+            <>
+              {carriers.length > 0 && (
+                <p className="mt-3 text-sm leading-6 text-forest-900/70">
+                  Flown by {formatList(carriers.slice(0, 5))}
+                  {carriers.length > 5 ? ` and ${carriers.length - 5} more` : ''}.
+                </p>
+              )}
+              <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                {routes.map((route) => (
+                  <RouteCard key={route.id} r={route} />
+                ))}
+              </div>
+              <Link href="/flight-routes" className="mt-5 inline-block text-sm font-medium text-forest-700 hover:underline">
+                Browse all routes →
+              </Link>
+            </>
+          ) : (
+            <p className="mt-3 text-sm leading-6 text-forest-900/70">
+              No routes into {destination.name} are tracked yet. Live fares are still available from flight search.
+            </p>
+          )}
         </div>
       </div>
     </section>
-  );
-}
-
-function CityPlanningSections({
-  destination,
-  routes,
-  airports,
-  articlesCount,
-}: {
-  destination: StrapiDestination;
-  routes: Awaited<ReturnType<typeof listRoutesToDestination>>;
-  airports: StrapiAirport[];
-  articlesCount: number;
-}) {
-  const routeCities = unique(
-    routes
-      .map((route) => route.origin?.city || route.origin?.name)
-      .filter((name): name is string => Boolean(name)),
-  ).slice(0, 5);
-  const carriers = unique(routes.flatMap((route) => operableCarriers(route).map((carrier) => carrier.name))).slice(0, 5);
-  const country =
-    airports.find((airport) => airport.country)?.country ||
-    countryNameFromCode(destination.countryCode) ||
-    'the region';
-  const airportNames = airports.map((airport) => airport.name).slice(0, 3);
-  const primaryAirport = airportNames[0];
-
-  return (
-    <section className="mx-auto max-w-7xl px-6" data-testid="city-planning-sections">
-      <div className="grid gap-8 border-y border-forest-900/10 py-12 lg:grid-cols-[0.85fr_1.15fr]">
-        <div>
-          <p className="section-eyebrow">
-            <span className="inline-block h-px w-8 bg-forest-800/60" />
-            City planning notes
-          </p>
-          <h2 className="editorial-h mt-3 text-3xl font-bold text-forest-900">
-            Plan {destination.name} with airports, routes and stays in one view
-          </h2>
-          <p className="mt-4 text-base font-light leading-7 text-forest-900/75">
-            Use this page as the practical starting point for {destination.name}. It connects the city guide with
-            flight routes, airport context, hotel planning and local activity ideas, so you can compare the trip before
-            opening separate booking tabs.
-          </p>
-          <p className="mt-4 text-base font-light leading-7 text-forest-900/75">
-            {primaryAirport
-              ? `${primaryAirport} is the main airport record we match to ${destination.name}, and the route data below shows where Originfacts currently has structured flight coverage.`
-              : `Originfacts is still expanding airport-level coverage for ${destination.name}, so use the route and article sections here as the first planning layer.`}
-          </p>
-        </div>
-
-        <div className="grid gap-4 sm:grid-cols-2">
-          <CityPlanningCard
-            label="Airport access"
-            title={airports.length ? `${airports.length} airport${airports.length === 1 ? '' : 's'} linked to the city` : 'Airport coverage is being expanded'}
-            body={
-              airportNames.length
-                ? `${airportNames.join(', ')} ${airports.length === 1 ? 'serves' : 'serve'} ${destination.name}. Check airport pages for terminal, route and nearby-airport details before booking a tight connection.`
-                : `When flying to ${destination.name}, compare the airport named on your ticket with transfer time into the city centre before choosing the lowest fare.`
-            }
-          />
-          <CityPlanningCard
-            label="Routes"
-            title={routes.length ? `${routes.length} tracked inbound route${routes.length === 1 ? '' : 's'}` : 'Route data is still growing'}
-            body={
-              routeCities.length
-                ? `Tracked origins include ${formatList(routeCities)}. These routes help show which city pairs already have structured flight data on Originfacts.`
-                : `Use the flight search module on this page to compare live fares while Originfacts expands structured routes for ${destination.name}.`
-            }
-          />
-          <CityPlanningCard
-            label="Airlines"
-            title={carriers.length ? `${carriers.length} carrier${carriers.length === 1 ? '' : 's'} in route data` : 'Carrier mix varies by route'}
-            body={
-              carriers.length
-                ? `${formatList(carriers)} appear in the current route set. Always confirm baggage, seat and change rules on the seller page before paying.`
-                : `Carrier options can change by season, so compare direct airline prices with metasearch results before locking in dates.`
-            }
-          />
-          <CityPlanningCard
-            label="Where to stay"
-            title={`Hotel planning for ${destination.name}`}
-            body={`For ${destination.name}, compare central stays against airport-area hotels if you have an early departure, late arrival or short stopover in ${country}.`}
-          />
-        </div>
-      </div>
-
-      {/*
-        The seasonal comparison table was removed here. It was captioned per
-        destination — "Travel Windows for {name}" — but its rows were hardcoded
-        and identical on all 258 destination pages: peak Nov–Feb at 25–32°C,
-        low season Jun–Aug with "tropical rainfall". That is wrong for most of
-        the set (Tuscany, Provence, Patagonia among them) and it was presented
-        as destination-specific research.
-
-        Restore it only from real per-destination climate data on the
-        destination record, not from literals in the template.
-      */}
-
-      <div className="grid gap-6 py-12 lg:grid-cols-3" data-testid="city-useful-context">
-        <CityContextNote
-          title={`Before booking ${destination.name}`}
-          body={`Look at the airport name, not just the city label. Some itineraries use secondary airports or awkward arrival times that can erase the saving from a cheaper fare.`}
-        />
-        <CityContextNote
-          title="Best use of this page"
-          body={`Start with articles if you want editorial guidance, routes if you are comparing flights, and activities if you already know your dates. Together they give ${destination.name} more context than a plain destination stub.`}
-        />
-        <CityContextNote
-          title="What to verify live"
-          body="Confirm fares, baggage, hotel cancellation rules, transfer times and activity availability on the booking provider before paying, because those details can change faster than destination pages."
-        />
-      </div>
-    </section>
-  );
-}
-
-function CityPlanningCard({ label, title, body }: { label: string; title: string; body: string }) {
-  return (
-    <article className="rounded-[0.3rem] border border-forest-900/10 bg-white p-5 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
-      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-primary-emphasis">{label}</p>
-      <h3 className="mt-3 text-xl font-bold leading-tight text-forest-950">{title}</h3>
-      <p className="mt-3 text-sm font-light leading-7 text-forest-900/72">{body}</p>
-    </article>
-  );
-}
-
-function CityContextNote({ title, body }: { title: string; body: string }) {
-  return (
-    <article className="border-t border-forest-900/10 pt-5">
-      <h3 className="text-lg font-bold text-forest-950">{title}</h3>
-      <p className="mt-3 text-sm font-light leading-7 text-forest-900/72">{body}</p>
-    </article>
   );
 }
 
@@ -1017,19 +815,15 @@ function buildActivityWidgetQuery(
   return [destination.name, countryHint].filter(Boolean).join(', ');
 }
 
-function buildCityHeroDescription(
-  destination: StrapiDestination,
-  airports: StrapiAirport[],
-  routes: Awaited<ReturnType<typeof listRoutesToDestination>>,
-  articlesCount: number,
-) {
+function buildCityHeroDescription(destination: StrapiDestination, airports: StrapiAirport[]) {
+  // The CMS lead wins unless it was saved truncated (Bangkok's ends in "…").
+  const description = destination.description?.trim();
+  if (description && !description.endsWith('…')) return description;
   const override = CITY_HERO_DESCRIPTION_OVERRIDES[destination.slug];
   if (override) return override;
 
   const country = airports.find((airport) => airport.country)?.country || countryNameFromCode(destination.countryCode);
-  const primaryAirport = airports[0]?.name;
-
-  return `Visiting ${destination.name}${country ? `, ${country}` : ''} requires choosing optimal flight routes, matching local arrival hubs like ${primaryAirport || 'regional gateway airports'} to key neighborhoods, and timing travel around seasonal weather patterns. Our comprehensive destination guide synthesizes real-time carrier connectivity, airport transit options, hotel area recommendations, and verified editorial coverage, empowering travelers to structure seamless itineraries and secure competitive flight prices.`;
+  return `Plan ${destination.name}${country ? `, ${country}` : ''}: where to stay, how to get there and what to do, with the hotels, airports, flight routes and stories Originfacts tracks for the city.`;
 }
 
 /* -------------------------------------------------------------------------- */

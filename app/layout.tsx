@@ -189,7 +189,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <FixedSocialFollow />
         <Footer />
         <CookieConsent />
-        <script src="https://convertlink.com/script/7295bcfa-4dc7-4794-8b6c-4434f5945457/bundle.js" />
+        {/* Affiliate link converter: loaded after the page is idle — as a
+            synchronous script it was the largest main-thread cost on mobile
+            (~2 s of scripting on the homepage, SEO audit Oct 2026). */}
+        <Script
+          id="convertlink"
+          strategy="lazyOnload"
+          src="https://convertlink.com/script/7295bcfa-4dc7-4794-8b6c-4434f5945457/bundle.js"
+        />
       </body>
     </html>
   );

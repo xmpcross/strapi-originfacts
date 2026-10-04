@@ -305,6 +305,7 @@ export default async function ArticlePage({ params }: Props) {
                   src={hero}
                   alt={article.coverImage?.alternativeText || article.title}
                   className="aspect-[16/9] w-full rounded-[0.3rem] object-cover"
+                  fetchPriority="high"
                 />
               </div>
             )}

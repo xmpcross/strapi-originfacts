@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { DEFAULT_AUTHOR_SLUG, getAllAuthors, getAuthorBySlug, authorPersonJsonLd } from '@/lib/authors';
-import { listArticles } from '@/lib/strapi';
+import { listArticleIndex } from '@/lib/strapi';
 import ArticleCard from '@/components/ArticleCard';
 import { JsonLd } from '@/components/SeoBlocks';
 import { clampDescription } from '@/lib/seo';
@@ -46,7 +46,7 @@ export default async function AuthorProfilePage({ params }: Props) {
   if (!author) notFound();
 
   // Fetch articles to display authored works
-  const allArticlesRes = await listArticles({ pageSize: 200 }).catch(() => ({ data: [] }));
+  const allArticlesRes = await listArticleIndex().catch(() => ({ data: [] }));
   const articles = allArticlesRes.data;
 
   // Filter articles associated with author name/slug or fallback to top recent articles

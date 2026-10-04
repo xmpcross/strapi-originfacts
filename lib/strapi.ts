@@ -297,6 +297,27 @@ export function mediaUrl(img: StrapiImage): string | null {
   return raw.replace('https://strapi.fxnstudio.com', 'https://cms.fxnstudio.com');
 }
 
+/**
+ * Every visible article with only what listings need: no body text, tags or
+ * destinations. listArticles({ pageSize: 200 }) returned ~2.5 MB, over the
+ * 2 MB Next.js data-cache limit, so the sitemap, the HTML sitemap and author
+ * pages re-downloaded it from the CMS on every render ("items over 2MB can not
+ * be cached" in the logs, ~270 times a day).
+ */
+export async function listArticleIndex() {
+  return strapiFetch<ListResponse<StrapiArticle>>('articles', {
+    sort: ['publishedAt:desc'],
+    fields: ['title', 'slug', 'excerpt', 'publishedAt', 'updatedAt', 'readingTimeMinutes'],
+    populate: {
+      coverImage: { fields: ['url', 'alternativeText', 'width', 'height', 'formats'] },
+      category: { fields: ['name', 'slug'] },
+      author: { fields: ['name', 'slug'] },
+    },
+    pagination: { pageSize: 200 },
+    filters: visibleArticles(),
+  });
+}
+
 export async function listArticles(opts: { page?: number; pageSize?: number; category?: string; destination?: string; destinations?: string[]; q?: string } = {}) {
   const filters: Record<string, unknown> = { ...visibleArticles() };
   if (opts.category) filters.category = { slug: { $eqi: opts.category } };

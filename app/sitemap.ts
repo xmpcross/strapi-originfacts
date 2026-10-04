@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 import {
-  listArticles,
+  listArticleIndex,
   listAirlines,
   listAirports,
   listCountries,
@@ -28,7 +28,7 @@ function lastModifiedOf(record: { updatedAt?: string | null; publishedAt?: strin
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const [articlesRes, destinations, airlines, airports, countries, coverage] = await Promise.all([
-    listArticles({ pageSize: 200 }).catch(() => ({ data: [], meta: null as never })),
+    listArticleIndex().catch(() => ({ data: [], meta: null as never })),
     listDestinations().catch(() => []),
     listAirlines().catch(() => []),
     listAirports().catch(() => []),

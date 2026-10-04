@@ -342,8 +342,6 @@ export default async function ArticlePage({ params }: Props) {
             {article.category?.slug === 'hotels' && <BookingHotelBanner articleSlug={article.slug} />}
             {article.category?.slug === 'flights' && <FlightBookingBanners articleSlug={article.slug} />}
 
-            <AuthorCard author={authorProfile} />
-
             <CommentsSection slug={article.slug} />
 
             {(adjacent.prev || adjacent.next) && (

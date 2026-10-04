@@ -30,7 +30,7 @@ import destinationCoordinates from '@/data/destination-coordinates.json';
 import TableOfContents from '@/components/TableOfContents';
 import { getCountryFacts } from '@/lib/country-facts';
 import { operableCarriers } from '@/lib/route-carriers';
-import { SITE_URL, DEFAULT_OG_IMAGE, articleBlogPostingJsonLd, faqJsonLd, normalizeFaqs } from '@/lib/entity-seo';
+import { SITE_URL, DEFAULT_OG_IMAGE, entityWebPageJsonLd, faqJsonLd, normalizeFaqs } from '@/lib/entity-seo';
 import { resolveAuthor } from '@/lib/authors';
 import { JsonLd, FaqSection } from '@/components/SeoBlocks';
 import { breadcrumbJsonLd } from '@/lib/jsonld';
@@ -190,14 +190,18 @@ export default async function DestinationPage({ params }: Props) {
     : destination.description;
 
   // Article/BlogPosting JSON-LD for destination guides
-  const articleSchema = articleBlogPostingJsonLd({
-    headline: destinationMetaTitle(destination),
+  const centre = (destinationCoordinates.cities as Record<string, { lat: number; lng: number }>)[destination.slug];
+  const articleSchema = entityWebPageJsonLd({
+    name: destinationMetaTitle(destination),
     description: destinationMetaDescription(destination),
     url: `${SITE_URL}/destinations/${destination.slug}`,
     image: hero,
     author: await resolveAuthor(),
-    categoryName: 'Destinations',
-    type: 'BlogPosting',
+    mainEntity: {
+      '@type': destination.type === 'city' ? 'City' : destination.type === 'country' ? 'Country' : 'Place',
+      name: destination.name,
+      ...(centre ? { geo: { '@type': 'GeoCoordinates', latitude: centre.lat, longitude: centre.lng } } : {}),
+    },
   });
 
   const breadcrumbItems: { name: string; url: string }[] = [{ name: 'Destinations', url: '/destinations' }];

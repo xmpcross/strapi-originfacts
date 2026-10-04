@@ -19,6 +19,7 @@
 import type { StrapiAirport, StrapiAirline, StrapiRoute, StrapiCountry } from '@/lib/strapi';
 import { getCountryFacts } from '@/lib/country-facts';
 import { operableCarriers } from '@/lib/route-carriers';
+import { buildMetaDescription } from '@/lib/seo';
 import { authorPersonJsonLd, type AuthorProfile } from '@/lib/authors';
 
 export const SITE_URL = 'https://www.originfacts.com';
@@ -749,10 +750,50 @@ export function articleBlogPostingJsonLd(opts: ArticleBlogPostingOptions): Recor
   };
 }
 
+export type EntityWebPageOptions = {
+  name: string;
+  description?: string;
+  url: string;
+  image?: string | null;
+  author: AuthorProfile;
+  /** The thing the page is about, by @id or as an inline node. */
+  mainEntity?: Record<string, unknown>;
+  about?: Record<string, unknown>[];
+};
+
+/**
+ * Directory pages (airports, airlines, routes, destinations, countries) are
+ * reference pages about an entity, not blog posts: a WebPage whose mainEntity
+ * is the Airport/Airline/Country/Place. Replaces the BlogPosting they used to
+ * emit. Markdown in the source text ("## Overview") is stripped.
+ */
+export function entityWebPageJsonLd(opts: EntityWebPageOptions): Record<string, unknown> {
+  const rawImg = opts.image || DEFAULT_OG_IMAGE;
+  const imgUrl = rawImg.startsWith('http') ? rawImg : `${SITE_URL}${rawImg.startsWith('/') ? '' : '/'}${rawImg}`;
+  const pageUrl = opts.url.startsWith('http') ? opts.url : `${SITE_URL}${opts.url.startsWith('/') ? '' : '/'}${opts.url}`;
+  const description = opts.description ? buildMetaDescription([opts.description], 300) : '';
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': pageUrl,
+    url: pageUrl,
+    name: opts.name,
+    ...(description ? { description } : {}),
+    image: imgUrl,
+    inLanguage: 'en',
+    isPartOf: { '@id': `${SITE_URL}/#website` },
+    publisher: { '@id': `${SITE_URL}/#organization` },
+    author: authorPersonJsonLd(opts.author),
+    ...(opts.mainEntity ? { mainEntity: opts.mainEntity } : {}),
+    ...(opts.about && opts.about.length > 0 ? { about: opts.about } : {}),
+  };
+}
+
 export function airportJsonLd(a: StrapiAirport, url: string): Record<string, unknown> {
   const ld: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'Airport',
+    '@id': `${url}#airport`,
     name: a.name,
     iataCode: a.iata,
     url,
@@ -762,7 +803,12 @@ export function airportJsonLd(a: StrapiAirport, url: string): Record<string, unk
     ld.address = {
       '@type': 'PostalAddress',
       ...(a.city ? { addressLocality: a.city } : {}),
-      ...(a.country ? { addressCountry: a.country } : {}),
+      // ISO 3166-1 alpha-2 where known (schema.org's preferred form).
+      ...(a.countryCode && /^[A-Za-z]{2}$/.test(a.countryCode)
+        ? { addressCountry: a.countryCode.toUpperCase() }
+        : a.country
+          ? { addressCountry: a.country }
+          : {}),
     };
   }
   if (num(a.latitude) && num(a.longitude)) {
@@ -775,6 +821,7 @@ export function airlineJsonLd(a: StrapiAirline, url: string): Record<string, unk
   const ld: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'Airline',
+    '@id': `${url}#airline`,
     name: a.name,
     url,
   };
@@ -824,6 +871,7 @@ export function countryJsonLd(c: CountryLike, url: string): Record<string, unkno
   return {
     '@context': 'https://schema.org',
     '@type': 'Country',
+    '@id': `${url}#country`,
     name: c.name,
     identifier: c.code,
     url,

@@ -9,7 +9,7 @@ import ExpandableDescription from '@/components/ExpandableDescription';
 import { airportPath } from '@/lib/airport-slugs';
 import { buildMetaDescription } from '@/lib/seo';
 import { operableCarriers } from '@/lib/route-carriers';
-import { SITE_URL, DEFAULT_OG_IMAGE, articleBlogPostingJsonLd, faqJsonLd, type Faq } from '@/lib/entity-seo';
+import { SITE_URL, DEFAULT_OG_IMAGE, entityWebPageJsonLd, faqJsonLd, type Faq } from '@/lib/entity-seo';
 import { resolveAuthor } from '@/lib/authors';
 import { JsonLd, FaqSection } from '@/components/SeoBlocks';
 import TableOfContents from '@/components/TableOfContents';
@@ -104,13 +104,13 @@ export default async function RoutePage({ params }: Props) {
   const description = route.about?.slice(0, 200) || `Direct and connecting flights from ${origin.city || origin.name} (${origin.iata}) to ${destination.city || destination.name} (${destination.iata}). Carrier comparison, duration, and cheap fare calendar.`;
   const url = `${SITE_URL}/flight-routes/${slug}`;
 
-  const articleSchema = articleBlogPostingJsonLd({
-    headline: title,
+  const articleSchema = entityWebPageJsonLd({
+    name: title,
     description,
     url,
     author: await resolveAuthor(),
-    categoryName: 'Flight Routes',
-    type: 'BlogPosting',
+    // The route's two airports, by the @id their own pages declare.
+    about: [origin, destination].map((a) => ({ '@id': `${SITE_URL}${airportPath(a)}#airport`, '@type': 'Airport', name: a.name, iataCode: a.iata })),
   });
 
   const routeFaqs: Faq[] = [

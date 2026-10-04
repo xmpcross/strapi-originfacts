@@ -6,6 +6,7 @@ import { JsonLd } from '@/components/SeoBlocks';
 import { breadcrumbJsonLd } from '@/lib/jsonld';
 import { faqJsonLd } from '@/lib/entity-seo';
 import TpwlLoader from '@/components/TpwlLoader';
+import TpwlCurrencyCaret from '@/components/TpwlCurrencyCaret';
 import AirlineResultsFilter from '@/components/AirlineResultsFilter';
 
 export const metadata = {
@@ -125,6 +126,7 @@ export default async function FlightsPage({
           FAQPage schema mirrors that exact Q&A set. */}
       <JsonLd data={faqJsonLd(BOOKING_FAQ)} />
       <TpwlLoader />
+      <TpwlCurrencyCaret />
 
       {/* TPWL renders the search form and result list in their containers below. */}
 
@@ -143,7 +145,7 @@ export default async function FlightsPage({
       <div data-testid="fly-page">
         <div
           data-testid="fs-search-section"
-          className="bg-gradient-to-br from-[#f2f8ff] via-primary-hover to-primary-pressed"
+          className="bg-gradient-to-br from-[#f8fbff] via-[#eef6ff] to-[#d9eaff]"
         >
           <div className="fs-search-band mx-auto max-w-7xl px-6 pb-14 pt-12 lg:pb-16 lg:pt-16">
             <header data-testid="flight-search-hero" className="text-center">

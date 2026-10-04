@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';
 import path from 'node:path';
-import { bookingHotelSearch } from '@/lib/cj';
+import { bookingSearchLink } from '@/lib/partner-links';
 
 const DATAFORSEO_URL = 'https://api.dataforseo.com/v3/business_data/google/hotel_searches/live';
 const DATAFORSEO_LOGIN = process.env.DATAFORSEO_LOGIN;
@@ -78,11 +78,9 @@ function isLodging(hotel: Pick<HotelResult, 'name'>): boolean {
   return !NON_LODGING_NAME.test(hotel.name);
 }
 
-/* Booking.com search for the hotel by name, through our CJ affiliate link. The
-   old Travelpayouts link (tatrck.com) began redirecting to an empty Location,
-   which left visitors on a blank page. */
+/* Booking.com search for the hotel by name, through Takeads (/go). */
 function hotelBookingHref(hotelName: string, city?: string) {
-  return bookingHotelSearch([hotelName, city].filter(Boolean).join(', '));
+  return bookingSearchLink([hotelName, city].filter(Boolean).join(', '), 'originfacts_city_hotel_card');
 }
 
 function withAffiliateHotelLinks<T extends HotelApiPayload>(payload: T): T {

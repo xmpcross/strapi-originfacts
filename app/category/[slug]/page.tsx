@@ -17,6 +17,7 @@ import { JsonLd } from '@/components/SeoBlocks';
 import { breadcrumbJsonLd, collectionPageJsonLd } from '@/lib/jsonld';
 import { clampDescription } from '@/lib/seo';
 import type { Metadata } from 'next';
+import { partnerLink } from '@/lib/partner-links';
 
 export const revalidate = 60;
 
@@ -254,7 +255,7 @@ function QatarAirwaysFeedBanner({ slotIndex }: { slotIndex: number }) {
       aria-label="Sponsored Qatar Airways flight offer"
     >
       <a
-        href="https://tatrck.com/h/0Hu30_OZ0RC7?model=cpa"
+        href={partnerLink('https://www.qatarairways.com/', `originfacts_category_flights_qatar_${slotIndex}`)}
         target="_blank"
         rel="sponsored nofollow noopener noreferrer"
         className="flex h-full flex-col"

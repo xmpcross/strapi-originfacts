@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { partnerLink } from '@/lib/partner-links';
 
 type FlightLeg = {
   airline?: string;
@@ -1071,9 +1072,9 @@ export default function FlightDealsPreviewClient({ routes = [] }: { routes?: Str
               </p>
             </div>
             <a
-              href="https://cheapoair.com"
+              href={partnerLink('https://www.cheapoair.com/', 'originfacts_flight_deals_preview')}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="sponsored nofollow noopener noreferrer"
               className="mt-4 inline-flex items-center gap-1 text-xs font-bold text-[#004ce6] hover:underline"
             >
               Open app →

@@ -5,6 +5,10 @@ const strapiHost = new URL(
 
 const nextConfig = {
   reactStrictMode: true,
+  // deploy-originfacts.sh builds into .next-build (NEXT_DIST_DIR) while the
+  // live server keeps serving .next, then swaps the directories in. `next
+  // start` runs without the variable and reads .next.
+  distDir: process.env.NEXT_DIST_DIR || '.next',
   poweredByHeader: false,
   allowedDevOrigins: ['preview.fxnstudio.com', '51.161.208.188'],
   // Markdown and JSON read from disk at request time. The paths are built with

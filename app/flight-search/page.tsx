@@ -7,6 +7,7 @@ import { breadcrumbJsonLd } from '@/lib/jsonld';
 import { faqJsonLd } from '@/lib/entity-seo';
 import TpwlLoader from '@/components/TpwlLoader';
 import TpwlCurrencyCaret from '@/components/TpwlCurrencyCaret';
+import TpwlOriginSync from '@/components/TpwlOriginSync';
 import AirlineResultsFilter from '@/components/AirlineResultsFilter';
 
 export const metadata = {
@@ -127,6 +128,7 @@ export default async function FlightsPage({
       <JsonLd data={faqJsonLd(BOOKING_FAQ)} />
       <TpwlLoader />
       <TpwlCurrencyCaret />
+      <TpwlOriginSync />
 
       {/* TPWL renders the search form and result list in their containers below. */}
 

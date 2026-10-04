@@ -11,7 +11,7 @@ import { injectHeadingIdsAndExtractToc } from '@/lib/toc';
 import { ORG_ID, organizationJsonLd, absoluteUrl, breadcrumbJsonLd } from '@/lib/jsonld';
 
 export const metadata: Metadata = {
-  title: 'Editorial Methodology & Standards | Originfacts',
+  title: 'Editorial Methodology & Standards',
   description: clampDescription(
     'Discover how Originfacts researches, verifies, and publishes travel guides, flight analysis, and destination facts with strict human editorial oversight and transparency.',
   ),

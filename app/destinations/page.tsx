@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { listDestinations, mediaUrl } from '@/lib/strapi';
 import DestinationsDirectory from '@/components/DestinationsDirectory';
+import DirectoryLinkList from '@/components/DirectoryLinkList';
 import CategoryDescription from '@/components/CategoryDescription';
 import { JsonLd } from '@/components/SeoBlocks';
 import { breadcrumbJsonLd, collectionPageJsonLd } from '@/lib/jsonld';
@@ -163,7 +164,20 @@ export default async function DestinationsPage() {
         </div>
       </section>
 
-      <Suspense>
+      <Suspense
+        fallback={
+          <DirectoryLinkList
+            label="All destinations"
+            groups={(['region', 'country', 'city'] as const).map((type) => ({
+              title: type === 'city' ? 'Cities' : type === 'country' ? 'Countries' : 'Regions',
+              links: destinations
+                .filter((d) => d.type === type)
+                .sort((a, b) => a.name.localeCompare(b.name))
+                .map((d) => ({ href: `/destinations/${d.slug}`, label: d.name })),
+            }))}
+          />
+        }
+      >
         <DestinationsDirectory destinations={compactDestinations} />
       </Suspense>
     </div>

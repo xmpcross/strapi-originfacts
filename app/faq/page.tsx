@@ -6,7 +6,7 @@ import { faqJsonLd, type Faq } from '@/lib/entity-seo';
 import { breadcrumbJsonLd } from '@/lib/jsonld';
 
 export const metadata: Metadata = {
-  title: 'Frequently Asked Questions (FAQ) — Originfacts',
+  title: 'Frequently Asked Questions (FAQ)',
   description:
     'Answers to common questions about Originfacts, flight search, live pricing, booking, editorial standards, and affiliate partnerships.',
   alternates: { canonical: '/faq' },

@@ -13,6 +13,7 @@ export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: 'Top international airport hubs',
+  alternates: { canonical: '/airports/hubs' },
   description:
     "The world's busiest international airports — 100 hubs across 6 continents, with terminal, runway and airline detail for each.",
 };

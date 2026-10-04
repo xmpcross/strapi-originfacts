@@ -1,4 +1,4 @@
-import { listRoutes } from '@/lib/strapi';
+import { listRoutes, type StrapiAirport, type StrapiRoute } from '@/lib/strapi';
 import RouteDirectory from '@/components/RouteDirectory';
 import ExpandableDescription from '@/components/ExpandableDescription';
 import { JsonLd } from '@/components/SeoBlocks';
@@ -18,6 +18,22 @@ export const metadata = {
 
 export default async function FlightsPage() {
   const routes = await listRoutes().catch(() => []);
+
+  // RouteDirectory is a client component, so everything passed to it is
+  // serialised into the page. Full airport/airline records made this page
+  // 22 MB; send only the fields the directory renders.
+  const compactAirport = (a?: StrapiAirport) =>
+    a
+      ? ({ iata: a.iata, city: a.city, country: a.country, name: a.name, region: a.region } as StrapiAirport)
+      : undefined;
+  const compactRoutes: StrapiRoute[] = routes.map((r) => ({
+    id: r.id,
+    slug: r.slug,
+    popularity: r.popularity,
+    origin: compactAirport(r.origin),
+    destination: compactAirport(r.destination),
+    carriers: (r.carriers ?? []).map((c) => ({ id: c.id }) as NonNullable<StrapiRoute['carriers']>[number]),
+  }));
 
   const collectionJsonLd = collectionPageJsonLd({
     name: HUB.name,
@@ -44,7 +60,7 @@ export default async function FlightsPage() {
         <ExpandableDescription text={HUB.intro} />
       </header>
 
-      <RouteDirectory routes={routes} />
+      <RouteDirectory routes={compactRoutes} />
     </div>
   );
 }

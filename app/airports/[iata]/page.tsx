@@ -1,4 +1,4 @@
-import { notFound, redirect } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import Link from 'next/link';
 import {
   getAirport,
@@ -8,6 +8,7 @@ import {
   mediaUrl,
 } from '@/lib/strapi';
 import type { StrapiAirport } from '@/lib/strapi';
+import { operableCarriers } from '@/lib/route-carriers';
 import { airportPath, airportSlug, preferredAirportSlug, slugifyAirportPart } from '@/lib/airport-slugs';
 import { airportInfoAddress, getAirportInfoByCode } from '@/lib/airport-info';
 import {
@@ -27,14 +28,19 @@ import {
 import type { RouteSummary } from '@/lib/entity-seo';
 import { getAirportWeather, weatherLabel } from '@/lib/open-meteo';
 import { JsonLd, FaqSection } from '@/components/SeoBlocks';
-import OutboundCitations from '@/components/OutboundCitations';
-import ComparisonTable from '@/components/ComparisonTable';
 import { breadcrumbJsonLd } from '@/lib/jsonld';
 import type { Metadata } from 'next';
 import topAirportSources from '@/data/airport-sources/top-100-official-links.json';
 import { buildMetaDescription, compactTitle } from '@/lib/seo';
 
 export const revalidate = 60;
+
+// An empty list opts the route into on-demand ISR: each page renders on its
+// first request and is then cached and revalidated, instead of rendering on
+// every request (it was served `private, no-store`).
+export async function generateStaticParams() {
+  return [];
+}
 
 type Props = { params: Promise<{ iata: string }> };
 
@@ -78,7 +84,11 @@ async function findAirportByCodeOrSlug(
     if (preferredSlug === normalized) return getAirport(airport.iata);
 
     const base = slugifyAirportPart(airport.city || airport.name || airport.iata);
-    const resolvedSlug = slugCounts.get(base)! > 1 ? `${base}-${airport.iata.toLowerCase()}` : base;
+    const code = airport.iata.toLowerCase();
+    // Mirrors airportSlug(): duplicate city slugs and 3-letter city slugs that
+    // are not the airport's own code both take an -iata suffix.
+    const resolvedSlug =
+      slugCounts.get(base)! > 1 || (/^[a-z]{3}$/.test(base) && base !== code) ? `${base}-${code}` : base;
     if (resolvedSlug === normalized) return getAirport(airport.iata);
   }
 
@@ -99,7 +109,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!a) return { title: 'Airport not found', robots: { index: false, follow: false } };
   const routes = await listRoutesFromAirport(a.iata, 1).catch(() => []);
   const hero = airportHeroImage(a.iata, mediaUrl(a.heroImage ?? null));
-  const metaTitle = compactTitle(`${a.name} (${a.iata}) airport guide`);
+  // "X Airport (IATA) guide" — not "X Airport (IATA) airport guide".
+  const metaTitle = compactTitle(
+    /\b(airport|airfield|aerodrome|airstrip)\b/i.test(a.name) ? `${a.name} (${a.iata}) guide` : `${a.name} Airport (${a.iata}) guide`,
+  );
   const description = buildMetaDescription([
     a.about,
     `${a.name} (${a.iata})${a.city ? ` in ${a.city}` : ''}${a.country ? `, ${a.country}` : ''}: codes, location, airlines, top destinations, terminal notes and ground-transfer basics.`,
@@ -131,7 +144,7 @@ export default async function AirportPage({ params }: Props) {
   const airport = await findAirportByCodeOrSlug(iata, allAirports);
   if (!airport) notFound();
   const canonicalPath = airportPath(airport, allAirports);
-  if (iata.toLowerCase() !== airportSlug(airport, allAirports)) redirect(canonicalPath);
+  if (iata.toLowerCase() !== airportSlug(airport, allAirports)) permanentRedirect(canonicalPath);
 
   const [routes, sameCountry] = await Promise.all([
     listRoutesFromAirport(airport.iata, 15).catch(() => []),
@@ -739,18 +752,6 @@ export default async function AirportPage({ params }: Props) {
                 ))}
               </div>
 
-              <div className="mt-6">
-                <ComparisonTable
-                  caption={`Airport Express Train vs Taxi vs Rideshare: Ground Transport at ${airport.name} (${airport.iata})`}
-                  head={['Transit Option', 'Est. Travel Time', 'Typical Cost Range', 'Service Frequency', 'Best For']}
-                  rows={[
-                    ['Airport Express Train / Rail', '15 - 30 mins', 'Moderate (A$15 - A$25)', 'Every 10 - 15 mins', 'Avoiding road traffic & peak hour speed'],
-                    ['Taxi / Licensed Meter Cab', '25 - 45 mins', 'Higher (A$45 - A$75+)', 'Immediate at ranks', 'Door-to-door & heavy luggage'],
-                    ['App Rideshare (Uber/Ola)', '25 - 45 mins', 'Variable (A$40 - A$70)', 'On-demand via app', 'Direct hotel transfer'],
-                    ['Public Bus / Airport Shuttle', '35 - 60 mins', 'Lowest (A$4 - A$12)', 'Every 20 - 30 mins', 'Budget solo travellers'],
-                  ]}
-                />
-              </div>
             </div>
 
             <aside
@@ -849,7 +850,6 @@ export default async function AirportPage({ params }: Props) {
       </div>
 
       <div className="mx-auto max-w-7xl px-6">
-        <OutboundCitations category="airports" title={`${airport.name} (${airport.iata}) — Aviation Authorities & Primary Data Sources`} />
       </div>
 
       <div className="pb-20" />
@@ -1310,7 +1310,7 @@ function uniqueFactRows(
 function dedupeAirlineCards(routes: Awaited<ReturnType<typeof listRoutesFromAirport>>) {
   const seen = new Map<string, { slug: string; name: string; iataCode?: string; logoUrl?: string | null }>();
   for (const route of routes) {
-    for (const carrier of route.carriers ?? []) {
+    for (const carrier of operableCarriers(route)) {
       if (!carrier?.slug || !carrier.name || seen.has(carrier.slug)) continue;
       seen.set(carrier.slug, {
         slug: carrier.slug,

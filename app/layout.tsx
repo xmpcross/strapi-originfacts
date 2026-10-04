@@ -77,8 +77,10 @@ export const metadata: Metadata = {
     ],
   },
   twitter: { card: 'summary_large_image', images: [DEFAULT_OG_IMAGE] },
+  // No canonical here: every page inherited canonical "/" from the layout, so
+  // pages without their own (e.g. /legal/*) told Google they were the homepage.
+  // The homepage sets its own in app/page.tsx.
   alternates: {
-    canonical: '/',
     types: {
       'application/rss+xml': [{ url: '/feed.xml', title: 'Originfacts RSS' }],
     },

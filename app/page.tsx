@@ -9,7 +9,7 @@ import {
   mediaUrl,
   type StrapiArticle,
 } from '@/lib/strapi';
-import { ORG_ID, organizationJsonLd, breadcrumbJsonLd } from '@/lib/jsonld';
+import { ORG_ID, organizationJsonLd } from '@/lib/jsonld';
 
 const FEATURED_COUNTRY_SLUGS = [
   'japan',
@@ -28,6 +28,15 @@ import BlogSidebar from '@/components/BlogSidebar';
 import SubscribeBlock from '@/components/SubscribeBlock';
 
 export const revalidate = 60;
+
+export const metadata = {
+  alternates: {
+    canonical: '/',
+    types: {
+      'application/rss+xml': [{ url: '/feed.xml', title: 'Originfacts RSS' }],
+    },
+  },
+};
 
 export default async function HomePage() {
   const [perSection, countries, sidebar, categoryTiles] = await Promise.all([
@@ -71,8 +80,10 @@ export default async function HomePage() {
   const websiteJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
+    '@id': 'https://www.originfacts.com/#website',
     name: 'Originfacts',
     url: 'https://www.originfacts.com',
+    inLanguage: 'en',
     publisher: { '@id': ORG_ID },
     potentialAction: {
       '@type': 'SearchAction',
@@ -80,8 +91,6 @@ export default async function HomePage() {
       'query-input': 'required name=search_term_string',
     },
   };
-
-  const breadcrumbs = breadcrumbJsonLd([]);
 
   return (
     <div data-testid="home-page">
@@ -93,10 +102,10 @@ export default async function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
-      />
+
+      {/* The page's own H1; the hero card titles below are h2s, so the H1 no
+          longer changes with whichever article is featured. */}
+      <h1 className="sr-only">Originfacts — travel facts, flights, airports and hotels for every place worth visiting</h1>
 
       <Hero hero={hero} side={side} />
 
@@ -321,15 +330,9 @@ function HeroOverlayStory({
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-black/5" />
         <div className="absolute inset-x-4 bottom-4 text-white sm:inset-x-5 sm:bottom-5">
           <HeroStoryMeta article={article} light />
-          {size === 'large' ? (
-            <h1 className={`mt-2 font-urbanist font-extrabold leading-[1.05] text-white ${titleSize}`}>
-              {article.title}
-            </h1>
-          ) : (
-            <h2 className={`mt-2 font-urbanist font-extrabold leading-[1.05] text-white ${titleSize}`}>
-              {article.title}
-            </h2>
-          )}
+          <h2 className={`mt-2 font-urbanist font-extrabold leading-[1.05] text-white ${titleSize}`}>
+            {article.title}
+          </h2>
         </div>
       </Link>
     </article>

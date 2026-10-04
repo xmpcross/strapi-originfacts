@@ -29,8 +29,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ? doc.description
       : `${doc.title} for Originfacts, including website policies, user rights, affiliate disclosures, contact options and related legal information.`;
   return {
-    title: `${doc.title} — Originfacts`,
+    title: doc.title,
     description: clampDescription(description),
+    alternates: { canonical: `/legal/${doc.slug}` },
   };
 }
 

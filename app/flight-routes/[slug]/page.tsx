@@ -8,9 +8,9 @@ import ScheduleWidget from '@/components/ScheduleWidget';
 import ExpandableDescription from '@/components/ExpandableDescription';
 import { airportPath } from '@/lib/airport-slugs';
 import { buildMetaDescription } from '@/lib/seo';
+import { operableCarriers } from '@/lib/route-carriers';
 import { SITE_URL, DEFAULT_OG_IMAGE, articleBlogPostingJsonLd, faqJsonLd, type Faq } from '@/lib/entity-seo';
 import { JsonLd, FaqSection } from '@/components/SeoBlocks';
-import OutboundCitations from '@/components/OutboundCitations';
 import TableOfContents from '@/components/TableOfContents';
 import type { TocItem } from '@/lib/toc';
 import { breadcrumbJsonLd } from '@/lib/jsonld';
@@ -59,7 +59,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (typeof r.durationMinutes === 'number' && r.durationMinutes > 0) {
     facts.push(`around ${formatBlockTime(r.durationMinutes)} block time`);
   }
-  const carrierCount = (r.carriers ?? []).length;
+  const carrierCount = operableCarriers(r).length;
   if (carrierCount > 0) {
     facts.push(`${carrierCount} tracked airline${carrierCount === 1 ? '' : 's'}`);
   }
@@ -98,7 +98,7 @@ export default async function RoutePage({ params }: Props) {
   if (!route || !route.origin || !route.destination) notFound();
 
   const { origin, destination } = route;
-  const carriers = route.carriers ?? [];
+  const carriers = operableCarriers(route);
   const title = `Flights from ${origin.city || origin.name} to ${destination.city || destination.name} (${origin.iata} → ${destination.iata})`;
   const description = route.about?.slice(0, 200) || `Direct and connecting flights from ${origin.city || origin.name} (${origin.iata}) to ${destination.city || destination.name} (${destination.iata}). Carrier comparison, duration, and cheap fare calendar.`;
   const url = `${SITE_URL}/flight-routes/${slug}`;
@@ -317,7 +317,6 @@ export default async function RoutePage({ params }: Props) {
       <FaqSection faqs={routeFaqs} title={`Frequently asked questions about ${origin.city || origin.name} to ${destination.city || destination.name} flights`} />
 
       <div className="mx-auto max-w-7xl px-6">
-        <OutboundCitations category="flights" title={`${origin.iata} → ${destination.iata} — Civil Aviation & Operational Data Sources`} />
       </div>
     </article>
   );

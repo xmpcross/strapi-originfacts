@@ -24,10 +24,10 @@ import CountryAbout from '@/components/CountryAbout';
 import CountryDetailSections from '@/components/CountryDetailSections';
 import CountryFactsPanel from '@/components/CountryFactsPanel';
 import FlightSearchCTA from '@/components/FlightSearchCTA';
-import OutboundCitations from '@/components/OutboundCitations';
 import PopularHotelsByCity from '@/components/PopularHotelsByCity';
 import TableOfContents from '@/components/TableOfContents';
 import { getCountryFacts } from '@/lib/country-facts';
+import { operableCarriers } from '@/lib/route-carriers';
 import { SITE_URL, DEFAULT_OG_IMAGE, articleBlogPostingJsonLd, faqJsonLd, normalizeFaqs } from '@/lib/entity-seo';
 import { JsonLd, FaqSection } from '@/components/SeoBlocks';
 import { breadcrumbJsonLd } from '@/lib/jsonld';
@@ -38,6 +38,13 @@ import { absoluteUrl } from '@/lib/jsonld';
 import type { Metadata } from 'next';
 
 export const revalidate = 60;
+
+// An empty list opts the route into on-demand ISR: each page renders on its
+// first request and is then cached and revalidated, instead of rendering on
+// every request (it was served `private, no-store`).
+export async function generateStaticParams() {
+  return [];
+}
 
 const CONTINENTS = ['Africa', 'Asia', 'Europe', 'North America', 'Oceania', 'South America'] as const;
 const GYG_EXCLUDED_TOUR_IDS_BY_DESTINATION: Record<string, string> = {
@@ -214,7 +221,6 @@ export default async function DestinationPage({ params }: Props) {
   const faqs = normalizeFaqs(destination.faqs);
   const citationsBlock = (
     <div className="mx-auto max-w-7xl px-6">
-      <OutboundCitations category="destinations" title={`${destination.name} — Verified Primary & Government Sources`} />
     </div>
   );
   const faqBlock = (
@@ -694,7 +700,7 @@ function CitySeoGuide({
       .map((route) => route.origin?.city || route.origin?.name)
       .filter((name): name is string => Boolean(name)),
   ).slice(0, 4);
-  const airlines = unique(routes.flatMap((route) => route.carriers?.map((carrier) => carrier.name) ?? [])).slice(0, 4);
+  const airlines = unique(routes.flatMap((route) => operableCarriers(route).map((carrier) => carrier.name))).slice(0, 4);
   const routeSummary = originCities.length
     ? `Current route data connects ${destination.name} with ${formatList(originCities)}, giving travellers a quick view of useful inbound flight patterns.`
     : `Route coverage for ${destination.name} is still growing, so use the flight search tools alongside this guide when comparing live fares.`;
@@ -786,7 +792,7 @@ function CityPlanningSections({
       .map((route) => route.origin?.city || route.origin?.name)
       .filter((name): name is string => Boolean(name)),
   ).slice(0, 5);
-  const carriers = unique(routes.flatMap((route) => route.carriers?.map((carrier) => carrier.name) ?? [])).slice(0, 5);
+  const carriers = unique(routes.flatMap((route) => operableCarriers(route).map((carrier) => carrier.name))).slice(0, 5);
   const country =
     airports.find((airport) => airport.country)?.country ||
     countryNameFromCode(destination.countryCode) ||

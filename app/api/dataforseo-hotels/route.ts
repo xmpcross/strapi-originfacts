@@ -68,10 +68,19 @@ type HotelApiPayload = {
 
 type HotelCache = Record<string, HotelApiPayload & { cachedAt: string }>;
 
+// Google Hotels returns some non-lodging businesses as hotels (a Bangkok
+// cannabis dispensary topped "Popular hotels" — SEO audit, Oct 2026). Drop
+// anything whose name advertises a business we must not promote.
+const NON_LODGING_NAME = /cannabis|dispensary|marijuana|\bweed\b|\b420\b|smoke ?shop|vape|大麻|กัญชา/i;
+
+function isLodging(hotel: Pick<HotelResult, 'name'>): boolean {
+  return !NON_LODGING_NAME.test(hotel.name);
+}
+
 function withAffiliateHotelLinks<T extends HotelApiPayload>(payload: T): T {
   return {
     ...payload,
-    hotels: payload.hotels.map((hotel) => ({
+    hotels: payload.hotels.filter(isLodging).map((hotel) => ({
       ...hotel,
       href: BOOKING_AFFILIATE_URL,
     })),
@@ -236,6 +245,7 @@ export async function GET(request: Request) {
     const items = data.tasks?.flatMap((task) => task.result?.flatMap((result) => result.items ?? []) ?? []) ?? [];
     const hotels: HotelResult[] = items
       .filter(isHotelSearchItem)
+      .filter((item) => isLodging({ name: item.title }))
       .slice(0, limit)
       .map((item) => ({
         id: item.hotel_identifier || item.title,

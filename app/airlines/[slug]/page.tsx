@@ -36,6 +36,13 @@ import type { Metadata } from 'next';
 
 export const revalidate = 60;
 
+// An empty list opts the route into on-demand ISR: each page renders on its
+// first request and is then cached and revalidated, instead of rendering on
+// every request (it was served `private, no-store`).
+export async function generateStaticParams() {
+  return [];
+}
+
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

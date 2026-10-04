@@ -390,6 +390,12 @@ html.flight-search-active [data-testid="fs-search-section"] {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1) !important;
 }
 
+/* /flight-search hero is blue until a search runs; TpwlHeroContrast reads this
+   inside the widget's shadow DOM to keep its text links readable. */
+html:not(.flight-search-active) [data-testid="fs-search-section"] {
+  --tpwl-hero-ink: #ffffff;
+}
+
 /* ---------- /flights: hide browse sections once search results render ----------
    The bootstrap script in app/flights/page.tsx toggles
    `.flight-search-active` on <html> whenever ?flightSearch is in the URL

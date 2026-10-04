@@ -350,6 +350,28 @@ export async function listDestinations() {
   });
 }
 
+/**
+ * ISO country code (uppercased) → destination slug, for linking a country at
+ * its canonical URL. `/countries/<code>` permanently redirects to
+ * `/destinations/<slug>` whenever a CMS destination exists, so internal links
+ * should go straight to the destination and skip the 308 hop. Codes without a
+ * destination fall back to `/countries/<code>` (which renders directly).
+ */
+export async function destinationSlugByCountryCode(): Promise<Record<string, string>> {
+  const dests = await listDestinations().catch(() => []);
+  const map: Record<string, string> = {};
+  for (const d of dests) {
+    if (d.countryCode && d.slug) map[d.countryCode.toUpperCase()] = d.slug;
+  }
+  return map;
+}
+
+/** Canonical href for a country: its destination page when one exists. */
+export function countryHref(code: string, slugMap: Record<string, string>): string {
+  const slug = slugMap[code.toUpperCase()];
+  return slug ? `/destinations/${slug}` : `/countries/${code.toLowerCase()}`;
+}
+
 export async function getDestination(slug: string) {
   const res = await strapiFetch<ListResponse<StrapiDestination>>('destinations', {
     filters: { slug: { $eq: slug } },

@@ -21,7 +21,7 @@ const NAV_TREE: NavItem[] = [
     href: '/articles',
     children: [
       { label: 'Flights', href: '/category/flights' },
-      { label: 'Hotels', href: '/hotels' },
+      { label: 'Hotels', href: '/category/hotels' },
       { label: 'Car Rentals', href: '/category/car-rentals' },
       { label: 'Travel Tips', href: '/category/travel-tips' },
     ],

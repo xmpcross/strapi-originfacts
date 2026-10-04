@@ -33,6 +33,11 @@ export default async function SitemapPage() {
     .filter((a) => a.iata)
     .sort((a, b) => a.iata.localeCompare(b.iata));
   const sortedCountries = [...countries].sort((a, b) => a.name.localeCompare(b.name));
+  // Canonical country links: /countries/<code> 308s to the destination page
+  // when one exists — link the destination directly.
+  const destSlugByCode = Object.fromEntries(
+    destinations.filter((d) => d.countryCode && d.slug).map((d) => [d.countryCode!.toUpperCase(), d.slug]),
+  );
 
   const linkClass = 'text-primary-emphasis hover:text-primary-highlight hover:underline';
   const sectionTitle = 'editorial-h text-2xl font-bold text-forest-900';
@@ -77,7 +82,7 @@ export default async function SitemapPage() {
           <ul className="mt-4 space-y-2 text-sm">
             <li><Link href="/flight-search" className={linkClass}>Flight Search</Link></li>
             <li><Link href="/flight-routes" className={linkClass}>Flight Routes</Link></li>
-            <li><Link href="/hotels" className={linkClass}>Hotels</Link></li>
+            <li><Link href="/category/hotels" className={linkClass}>Hotels</Link></li>
             <li><Link href="/countries" className={linkClass}>Countries</Link></li>
             <li><Link href="/airlines" className={linkClass}>Airlines</Link></li>
             <li><Link href="/airports" className={linkClass}>Airports</Link></li>
@@ -136,7 +141,12 @@ export default async function SitemapPage() {
           <ul className="mt-4 grid gap-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
             {sortedCountries.map((c) => (
               <li key={c.id}>
-                <Link href={`/countries/${c.code.toLowerCase()}`} className={linkClass}>{c.name}</Link>
+                <Link
+                  href={destSlugByCode[c.code.toUpperCase()] ? `/destinations/${destSlugByCode[c.code.toUpperCase()]}` : `/countries/${c.code.toLowerCase()}`}
+                  className={linkClass}
+                >
+                  {c.name}
+                </Link>
               </li>
             ))}
           </ul>

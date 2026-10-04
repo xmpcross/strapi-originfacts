@@ -7,6 +7,8 @@ import {
   listArticles,
   listCountriesByRegion,
   listRoutesToDestination,
+  destinationSlugByCountryCode,
+  countryHref,
   mediaUrl,
   type StrapiAirline,
   type StrapiAirport,
@@ -92,6 +94,13 @@ export default async function DestinationPage({ params }: Props) {
 
   const hero = mediaUrl(destination.heroImage ?? null);
 
+  // Canonical hrefs for country chips: /countries/<code> 308s to the
+  // destination page when one exists, so link the destination directly.
+  const destSlugs = countries.length ? await destinationSlugByCountryCode() : {};
+  const hrefByCode = Object.fromEntries(
+    countries.map((c) => [c.code.toUpperCase(), countryHref(c.code, destSlugs)]),
+  );
+
   // Editor-managed FAQs (Strapi json field), appended below whichever layout
   // renders. FaqSection + faqJsonLd both no-op when < 2 real Q&As survive
   // normalisation.
@@ -127,6 +136,7 @@ export default async function DestinationPage({ params }: Props) {
           hero={hero}
           countries={countries}
           articles={articles}
+          hrefByCode={hrefByCode}
         />
         {faqBlock}
       </>
@@ -468,11 +478,13 @@ function ContinentDestinationPage({
   hero,
   countries,
   articles,
+  hrefByCode,
 }: {
   destination: StrapiDestination;
   hero: string | null;
   countries: StrapiCountry[];
   articles: Awaited<ReturnType<typeof listArticles>>['data'];
+  hrefByCode?: Record<string, string>;
 }) {
   // Parse the markdown description into a short lead + named sections, the
   // same way the country page does. Overview / Travel Notes / Interesting
@@ -591,7 +603,7 @@ function ContinentDestinationPage({
       )}
 
       {/* 3. Countries — full width, with A-Z letter filter */}
-      <ContinentCountriesGrid countries={countries} regionName={destination.name} />
+      <ContinentCountriesGrid countries={countries} regionName={destination.name} hrefByCode={hrefByCode} />
 
       {/* 3a. Travel Notes — full width, below Countries */}
       {travelNotesSection && (

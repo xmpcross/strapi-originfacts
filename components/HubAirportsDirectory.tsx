@@ -110,7 +110,7 @@ function HubCard({ airport }: { airport: StrapiAirport }) {
   const img = mediaUrl(airport.heroImage ?? null);
   return (
     <Link
-      href={`/airports/${airport.iata}`}
+      href={`/airports/${airport.iata.toLowerCase()}`}
       className="group flex h-full overflow-hidden rounded-lg border border-forest-900/10 bg-[#f7f8fa] transition hover:-translate-y-0.5 hover:border-forest-900/30 hover:shadow-sm"
       data-testid={`hub-card-${airport.iata}`}
     >

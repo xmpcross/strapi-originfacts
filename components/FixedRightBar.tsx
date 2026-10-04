@@ -33,7 +33,7 @@ const NAV_TREE: NavItem[] = [
   { label: 'Home', href: '/' },
   { label: 'Destinations', href: '/destinations' },
   { label: 'Flights', href: '/category/flights' },
-  { label: 'Hotels', href: '/hotels' },
+  { label: 'Hotels', href: '/category/hotels' },
   {
     label: 'More Articles',
     href: '/articles',

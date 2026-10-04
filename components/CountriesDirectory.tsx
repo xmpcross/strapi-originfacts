@@ -31,6 +31,9 @@ export type CountryRow = {
   region: AirlineRegion | null;
   airportCount: number;
   cityCount: number;
+  /** Canonical link target (destination page when one exists) — computed
+   *  server-side via countryHref(); falls back to /countries/<code>. */
+  href?: string;
 };
 
 function flagEmoji(code: string): string {
@@ -294,7 +297,7 @@ function FilterChip({ label, active, onClick }: { label: string; active: boolean
 function CountryCard({ country }: { country: CountryRow }) {
   return (
     <Link
-      href={`/countries/${country.code.toLowerCase()}`}
+      href={country.href ?? `/countries/${country.code.toLowerCase()}`}
       className="group flex items-center gap-3 rounded-[0.3rem] border border-forest-900/10 bg-[#f7f8fa] px-4 py-3 transition hover:-translate-y-0.5 hover:border-forest-900/30"
       data-testid={`country-card-${country.code}`}
     >

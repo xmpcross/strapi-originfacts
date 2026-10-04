@@ -1,4 +1,4 @@
-import { listAirports, listCountries } from '@/lib/strapi';
+import { listAirports, listCountries, destinationSlugByCountryCode, countryHref } from '@/lib/strapi';
 import CountriesDirectory, { type CountryRow } from '@/components/CountriesDirectory';
 import ExpandableDescription from '@/components/ExpandableDescription';
 import { JsonLd } from '@/components/SeoBlocks';
@@ -17,9 +17,10 @@ export const metadata = {
 };
 
 export default async function CountriesPage() {
-  const [strapiCountries, airports] = await Promise.all([
+  const [strapiCountries, airports, destSlugs] = await Promise.all([
     listCountries().catch(() => []),
     listAirports().catch(() => []),
+    destinationSlugByCountryCode(),
   ]);
 
   // Build aggregates (airport + city counts) from airports keyed by ISO code.
@@ -49,6 +50,7 @@ export default async function CountriesPage() {
           region: c.region ?? a?.region ?? null,
           airportCount: a?.airports ?? 0,
           cityCount: a?.cities.size ?? 0,
+          href: countryHref(c.code, destSlugs),
         };
       })
       .sort((x, y) => x.name.localeCompare(y.name));
@@ -63,6 +65,7 @@ export default async function CountriesPage() {
           region: a.region,
           airportCount: a.airports,
           cityCount: a.cities.size,
+          href: countryHref(code, destSlugs),
         };
       })
       .sort((x, y) => x.name.localeCompare(y.name));
@@ -75,7 +78,7 @@ export default async function CountriesPage() {
     itemListName: 'Countries',
     items: countries.map((c) => ({
       name: c.name,
-      url: `/countries/${c.code.toLowerCase()}`,
+      url: c.href ?? `/countries/${c.code.toLowerCase()}`,
     })),
   });
 

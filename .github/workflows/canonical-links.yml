@@ -1,0 +1,42 @@
+# Non-blocking canonical-link audit.
+#
+# Crawls the PRODUCTION site (GitHub runners can't reach the private Strapi
+# backend, so building the app in CI isn't possible) and reports internal
+# links whose href differs from the target's canonical URL. The job never
+# fails the pipeline — it's a report, surfaced in the run summary and as an
+# artifact. Run it locally against a build with:
+#   node ops/check-canonical-links.mjs http://127.0.0.1:3000
+name: canonical-links
+
+on:
+  schedule:
+    - cron: '0 21 * * 1' # weekly, Monday 21:00 UTC (Tue 05:00 AWST)
+  workflow_dispatch: {}
+  pull_request:
+    paths:
+      - 'components/Header.tsx'
+      - 'components/Footer.tsx'
+      - 'components/MobileNav.tsx'
+      - 'components/FixedRightBar.tsx'
+      - 'ops/check-canonical-links.mjs'
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    continue-on-error: true # non-blocking by design
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Crawl production for non-canonical internal links
+        # Always exits 0; the count line and report are informational.
+        run: |
+          node ops/check-canonical-links.mjs https://www.originfacts.com \
+            --max 80 --out non-canonical-links.md
+          echo '## Canonical-link audit' >> "$GITHUB_STEP_SUMMARY"
+          cat non-canonical-links.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: non-canonical-links-report
+          path: non-canonical-links.md

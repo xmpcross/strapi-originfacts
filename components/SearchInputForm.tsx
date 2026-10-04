@@ -87,7 +87,7 @@ export default function SearchInputForm({
             aria-haspopup="listbox"
             aria-expanded={open}
             data-testid="search-filter-trigger"
-            className="flex h-12 items-center gap-2 whitespace-nowrap pr-4 font-urbanist text-[12px] font-bold uppercase tracking-widest text-forest-950"
+            className="flex h-12 items-center gap-2 whitespace-nowrap pr-4 text-[12px] font-bold uppercase tracking-widest text-forest-950"
           >
             {filter}
             <svg
@@ -121,7 +121,7 @@ export default function SearchInputForm({
                         setFilter(f);
                         setOpen(false);
                       }}
-                      className={`block w-full px-4 py-1.5 text-left font-urbanist text-[12px] font-bold uppercase tracking-widest transition ${
+                      className={`block w-full px-4 py-1.5 text-left text-[12px] font-bold uppercase tracking-widest transition ${
                         active
                           ? 'text-primary-emphasis'
                           : 'text-forest-900 hover:bg-forest-900/5'
@@ -173,7 +173,7 @@ export default function SearchInputForm({
 
         <button
           type="submit"
-          className="hidden sm:inline-flex h-10 items-center rounded-[20px] bg-forest-900 px-5 font-urbanist text-[14px] font-bold capitalize tracking-wider text-white transition hover:bg-primary-emphasis"
+          className="hidden sm:inline-flex h-10 items-center rounded-[20px] bg-forest-900 px-5 text-[14px] font-bold capitalize tracking-wider text-white transition hover:bg-primary-emphasis"
         >
           Search
         </button>

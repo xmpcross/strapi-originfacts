@@ -170,7 +170,7 @@ export default function AirlineDirectory({
             )}
           </div>
 
-          <div className="flex items-center gap-2 text-xs font-mono font-semibold text-forest-900/70">
+          <div className="flex items-center gap-2 text-xs font-semibold text-forest-900/70">
             <span className="rounded-lg bg-white px-3 py-2 border border-forest-900/10 shadow-2xs">
               Showing <strong className="text-forest-900">{filtered.length}</strong> of {airlines.length} carriers
             </span>
@@ -344,7 +344,7 @@ function SummaryCard({
     >
       <div className="min-w-0 flex-1">
         <div className="text-xs uppercase tracking-widest text-forest-900/60">{label}</div>
-        <div className="mt-2 font-urbanist text-3xl font-bold leading-none text-forest-900">{value}</div>
+        <div className="mt-2 text-3xl font-bold leading-none text-forest-900">{value}</div>
         <p className="mt-3 text-sm leading-snug text-forest-900/65">{blurb}</p>
       </div>
       <div
@@ -422,7 +422,7 @@ function LetterChip({
       onClick={disabled ? undefined : onClick}
       disabled={disabled}
       className={
-        'inline-flex h-8 min-w-[2rem] items-center justify-center rounded-[0.3rem] border px-2 font-mono text-xs font-bold tracking-wider transition ' +
+        'inline-flex h-8 min-w-[2rem] items-center justify-center rounded-[0.3rem] border px-2 text-xs font-bold tracking-wider transition ' +
         (active
           ? 'border-forest-900 bg-forest-900 text-sand-100'
           : disabled
@@ -458,18 +458,18 @@ function AirlineCard({
           // eslint-disable-next-line @next/next/no-img-element
           <img src={logo} alt={airline.name} className="h-full w-full object-contain" />
         ) : (
-          <span className="font-urbanist text-sm font-bold text-forest-900/60">
+          <span className="text-sm font-bold text-forest-900/60">
             {(airline.iataCode || airline.name).slice(0, 3).toUpperCase()}
           </span>
         )}
       </div>
       <div className="min-w-0 flex-1">
         <div className="flex items-center gap-2">
-          <div className="truncate font-urbanist text-base font-bold text-forest-900 group-hover:text-forest-700">
+          <div className="truncate text-base font-bold text-forest-900 group-hover:text-forest-700">
             {airline.name}
           </div>
           {airline.iataCode && (
-            <span className="flex-none rounded-[0.3rem] bg-forest-900 px-2 py-0.5 font-mono text-[10px] font-bold tracking-wider text-sand-100">
+            <span className="flex-none rounded-[0.3rem] bg-forest-900 px-2 py-0.5 text-[10px] font-bold tracking-wider text-sand-100">
               {airline.iataCode}
             </span>
           )}
@@ -570,13 +570,13 @@ function PopularAirlineCard({ airline }: { airline: StrapiAirline }) {
           // eslint-disable-next-line @next/next/no-img-element
           <img src={logo} alt={airline.name} className="h-full w-full object-contain" />
         ) : (
-          <span className="font-urbanist text-xs font-bold text-forest-900/60">
+          <span className="text-xs font-bold text-forest-900/60">
             {(airline.iataCode || airline.name).slice(0, 3).toUpperCase()}
           </span>
         )}
       </div>
       <div className="min-w-0 flex-1">
-        <p className="line-clamp-2 font-urbanist text-sm font-bold leading-tight text-forest-950 group-hover:text-primary-emphasis">
+        <p className="line-clamp-2 text-sm font-bold leading-tight text-forest-950 group-hover:text-primary-emphasis">
           {airline.name}
         </p>
       </div>

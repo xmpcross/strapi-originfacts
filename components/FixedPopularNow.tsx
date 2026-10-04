@@ -27,7 +27,7 @@ export default function FixedPopularNow({ articles }: { articles: StrapiArticle[
     >
       <div className="pointer-events-auto flex flex-col items-center">
         <div className="mb-2 flex w-[80px] items-start justify-center">
-          <span className="font-urbanist text-[12px] font-bold uppercase leading-tight tracking-wider text-forest-900">
+          <span className="text-[12px] font-bold uppercase leading-tight tracking-wider text-forest-900">
             Popular
             <br />
             Now
@@ -104,14 +104,14 @@ function PopularThumb({ article, rank }: { article: StrapiArticle; rank: number 
       {/* Rank overlay on hover */}
       <span
         aria-hidden
-        className="absolute inset-1 flex items-center justify-center rounded-full bg-black/35 font-urbanist text-xl font-bold text-white opacity-0 transition duration-300 group-hover:opacity-100"
+        className="absolute inset-1 flex items-center justify-center rounded-full bg-black/35 text-xl font-bold text-white opacity-0 transition duration-300 group-hover:opacity-100"
       >
         {rankStr}
       </span>
       {/* Title popover to the right on hover */}
       <span
         aria-hidden
-        className="pointer-events-none absolute left-full top-1/2 ml-5 -translate-y-1/2 translate-x-2 w-[260px] rounded-md bg-white px-3 py-2 font-urbanist text-sm font-bold leading-tight text-forest-900 opacity-0 shadow-[0_1px_3px_rgba(0,0,0,0.15)] transition group-hover:translate-x-0 group-hover:opacity-100"
+        className="pointer-events-none absolute left-full top-1/2 ml-5 -translate-y-1/2 translate-x-2 w-[260px] rounded-md bg-white px-3 py-2 text-sm font-bold leading-tight text-forest-900 opacity-0 shadow-[0_1px_3px_rgba(0,0,0,0.15)] transition group-hover:translate-x-0 group-hover:opacity-100"
       >
         {article.title}
       </span>

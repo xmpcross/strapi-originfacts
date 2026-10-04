@@ -159,7 +159,7 @@ export default function AirlineShowcase({
                     // eslint-disable-next-line @next/next/no-img-element
                     <img src={logo} alt={airline.name} className="h-full w-auto object-contain" />
                   ) : (
-                    <span className="font-urbanist text-2xl font-bold text-forest-900">
+                    <span className="text-2xl font-bold text-forest-900">
                       {(airline.iataCode || airline.name).slice(0, 3).toUpperCase()}
                     </span>
                   )}
@@ -175,7 +175,7 @@ export default function AirlineShowcase({
                   : intro}
               </p>
 
-              <div className="flex flex-wrap items-center gap-3 font-mono text-xs">
+              <div className="flex flex-wrap items-center gap-3 text-xs">
                 {airline.iataCode && (
                   <span className="rounded-[0.3rem] bg-sand-300 px-3 py-1.5 font-bold tracking-wider text-forest-950">
                     IATA · {airline.iataCode}
@@ -237,9 +237,9 @@ export default function AirlineShowcase({
             <div className="mx-auto grid max-w-6xl grid-cols-2 divide-x divide-white/10 px-6 lg:grid-cols-4">
               {heroStats.slice(0, 4).map((stat) => (
                 <div key={stat.label} className="px-4 py-5 first:pl-0 lg:py-6">
-                  <div className="font-urbanist text-2xl font-bold text-sand-200 lg:text-3xl">{stat.value}</div>
+                  <div className="text-2xl font-bold text-sand-200 lg:text-3xl">{stat.value}</div>
                   <div className="mt-1 text-[11px] uppercase tracking-[0.2em] text-white/45">{stat.label}</div>
-                  {stat.hint && <div className="mt-0.5 truncate font-mono text-xs text-white/55">{stat.hint}</div>}
+                  {stat.hint && <div className="mt-0.5 truncate text-xs text-white/55">{stat.hint}</div>}
                 </div>
               ))}
             </div>
@@ -264,7 +264,7 @@ export default function AirlineShowcase({
             </a>
           ))}
           {airline.iataCode && (
-            <span className="ms-auto hidden flex-none font-mono text-xs font-bold tracking-wider text-forest-900/35 sm:block">
+            <span className="ms-auto hidden flex-none text-xs font-bold tracking-wider text-forest-900/35 sm:block">
               {[airline.iataCode, airline.icaoCode].filter(Boolean).join(' · ')}
             </span>
           )}
@@ -296,7 +296,7 @@ export default function AirlineShowcase({
             <div className="flex items-center justify-between bg-forest-950 px-5 py-3.5">
               <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-sand-100">Key airline details</h3>
               {(airline.iataCode || airline.icaoCode) && (
-                <span className="font-mono text-[11px] font-bold tracking-wider text-sand-300">
+                <span className="text-[11px] font-bold tracking-wider text-sand-300">
                   {[airline.iataCode, airline.icaoCode].filter(Boolean).join(' · ')}
                 </span>
               )}
@@ -369,12 +369,12 @@ export default function AirlineShowcase({
                     data-testid={`gtk-card-${i}`}
                   >
                     <span
-                      className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-forest-950 font-urbanist text-sm font-bold text-sand-200"
+                      className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-forest-950 text-sm font-bold text-sand-200"
                       aria-hidden
                     >
                       {String(i + 1).padStart(2, '0')}
                     </span>
-                    <h3 className="mt-4 font-urbanist text-base font-bold text-forest-900">{card.title}</h3>
+                    <h3 className="mt-4 text-base font-bold text-forest-900">{card.title}</h3>
                     <p className="mt-1.5 text-sm font-light leading-7 text-forest-900/78">{card.body}</p>
                   </div>
                 ))}
@@ -507,13 +507,13 @@ export default function AirlineShowcase({
                       // eslint-disable-next-line @next/next/no-img-element
                       <img src={relLogo} alt={rel.name} className="h-full w-full object-contain" />
                     ) : (
-                      <span className="font-urbanist text-lg font-bold text-forest-900/60">
+                      <span className="text-lg font-bold text-forest-900/60">
                         {(rel.iataCode || rel.name).slice(0, 2).toUpperCase()}
                       </span>
                     )}
                   </span>
                   <span className="min-w-0">
-                    <span className="block truncate font-urbanist text-base font-bold text-forest-900 group-hover:text-forest-700">
+                    <span className="block truncate text-base font-bold text-forest-900 group-hover:text-forest-700">
                       {rel.name}
                     </span>
                     <span className="mt-0.5 block text-xs text-forest-900/60">
@@ -594,19 +594,19 @@ function ShowcaseRouteCard({
           // eslint-disable-next-line @next/next/no-img-element
           <img src={logo} alt={airlineName} className="h-full w-full object-contain" />
         ) : (
-          <span className="font-urbanist text-lg font-bold text-forest-900/60">
+          <span className="text-lg font-bold text-forest-900/60">
             {airlineName.slice(0, 2).toUpperCase()}
           </span>
         )}
       </span>
       <span className="min-w-0 flex-1">
-        <span className="block font-urbanist text-lg font-bold tracking-wide text-forest-900 group-hover:text-forest-700">
+        <span className="block text-lg font-bold tracking-wide text-forest-900 group-hover:text-forest-700">
           {routeCodes || destCity}
         </span>
         {cityPair && <span className="mt-0.5 block truncate text-xs text-forest-900/60">{cityPair}</span>}
       </span>
       <span className="flex-none text-right">
-        {duration && <span className="block font-urbanist text-sm font-bold text-forest-900">{duration}</span>}
+        {duration && <span className="block text-sm font-bold text-forest-900">{duration}</span>}
         <span className="block text-xs text-forest-900/50">
           {distanceKm ? `${distanceKm.toLocaleString()} km` : 'direct'}
         </span>

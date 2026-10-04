@@ -10,7 +10,7 @@ function Eyebrow({ article, light = false }: { article: StrapiArticle; light?: b
   if (!category && !relative) return null;
   return (
     <div
-      className={`font-urbanist text-[11px] font-bold uppercase tracking-wider ${
+      className={`text-[11px] font-bold uppercase tracking-wider ${
         light ? 'text-white/85' : 'text-primary-emphasis'
       }`}
     >
@@ -68,7 +68,7 @@ function LargeCard({ article, priority = false }: { article: StrapiArticle; prio
       <div className="mt-4">
         <Eyebrow article={article} />
         <Link href={`/articles/${article.slug}`}>
-          <h3 className="mt-2 font-urbanist text-xl font-bold leading-snug text-forest-950 transition group-hover:text-primary-emphasis sm:text-2xl">
+          <h3 className="mt-2 text-xl font-bold leading-snug text-forest-950 transition group-hover:text-primary-emphasis sm:text-2xl">
             {article.title}
           </h3>
         </Link>
@@ -89,7 +89,7 @@ function MediumCard({ article }: { article: StrapiArticle }) {
       <div className="mt-3">
         <Eyebrow article={article} />
         <Link href={`/articles/${article.slug}`}>
-          <h3 className="mt-2 font-urbanist text-base font-bold leading-snug text-forest-950 transition group-hover:text-primary-emphasis sm:text-lg">
+          <h3 className="mt-2 text-base font-bold leading-snug text-forest-950 transition group-hover:text-primary-emphasis sm:text-lg">
             {article.title}
           </h3>
         </Link>
@@ -121,7 +121,7 @@ function MiniRow({ article }: { article: StrapiArticle }) {
       </div>
       <div className="min-w-0">
         <Eyebrow article={article} />
-        <h4 className="mt-1 line-clamp-2 font-urbanist text-sm font-bold leading-snug text-forest-950 transition group-hover:text-primary-emphasis">
+        <h4 className="mt-1 line-clamp-2 text-sm font-bold leading-snug text-forest-950 transition group-hover:text-primary-emphasis">
           {article.title}
         </h4>
       </div>

@@ -32,7 +32,7 @@ export default function FixedSocialFollow() {
       {/* "FOLLOW" pill — dark capsule with vertical text */}
       <div className="flex h-[100px] w-[44px] items-center justify-center rounded-full bg-forest-950 shadow-[0_1px_3px_rgba(0,0,0,0.25)]">
         <span
-          className="font-urbanist text-[11px] font-bold uppercase tracking-[0.25em] text-white [writing-mode:vertical-rl] [transform:rotate(180deg)]"
+          className="text-[11px] font-bold uppercase tracking-[0.25em] text-white [writing-mode:vertical-rl] [transform:rotate(180deg)]"
         >
           Follow
         </span>

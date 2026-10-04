@@ -40,7 +40,7 @@ export default function KeyFacts({
       data-testid="key-facts"
       aria-label={title}
     >
-      <p className="font-urbanist text-[11px] font-bold uppercase tracking-widest text-primary-emphasis">
+      <p className="text-[11px] font-bold uppercase tracking-widest text-primary-emphasis">
         {title}
       </p>
       {summary && (

@@ -77,7 +77,7 @@ export default async function LegalPage({ params }: Props) {
       {/* Mobile ToC — collapsible, shown only below lg */}
       {headings.length > 0 && (
         <details className="mt-8 rounded-lg border border-forest-900/10 bg-paper p-4 lg:hidden">
-          <summary className="cursor-pointer select-none font-urbanist text-sm font-bold text-forest-900">
+          <summary className="cursor-pointer select-none text-sm font-bold text-forest-900">
             On this page · {headings.length} section{headings.length === 1 ? '' : 's'}
           </summary>
           <ul className="mt-4 space-y-2">

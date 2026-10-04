@@ -25,6 +25,7 @@ import { buildMetaDescription, compactTitle, warnIfLong } from '@/lib/seo';
 import TableOfContents from '@/components/TableOfContents';
 import { injectHeadingIdsAndExtractToc } from '@/lib/toc';
 import type { Metadata } from 'next';
+import { cjLink } from '@/lib/cj';
 
 export const revalidate = 60;
 
@@ -230,7 +231,7 @@ export default async function ArticlePage({ params }: Props) {
               <ol
                 itemScope
                 itemType="https://schema.org/BreadcrumbList"
-                className="flex flex-wrap items-center gap-x-3 gap-y-1 font-urbanist text-[12px] font-bold uppercase tracking-widest"
+                className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[12px] font-bold uppercase tracking-widest"
               >
                 <li
                   itemProp="itemListElement"
@@ -405,7 +406,9 @@ export default async function ArticlePage({ params }: Props) {
 }
 
 function BookingHotelBanner({ articleSlug }: { articleSlug: string }) {
-  const href = `https://tatrck.com/h/0Hu30_OZ0V7N?model=cpc&s=${encodeURIComponent(
+  // CJ Booking.com link (the Travelpayouts tatrck.com one now redirects to an
+  // empty Location). CJ reports the sid per click, so the article stays traceable.
+  const href = `${cjLink('bookingAU')}?sid=${encodeURIComponent(
     `originfacts_article_${articleSlug}_booking_com_banner`,
   )}`;
 
@@ -417,10 +420,10 @@ function BookingHotelBanner({ articleSlug }: { articleSlug: string }) {
     >
       <div className="flex flex-col gap-4 rounded-[0.35rem] bg-white px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="min-w-0">
-          <p className="font-urbanist text-[10px] font-bold uppercase tracking-[0.2em] text-[#003b95]/70">
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#003b95]/70">
             Sponsored · Booking.com
           </p>
-          <p className="mt-1 font-urbanist text-lg font-bold leading-snug text-forest-950">
+          <p className="mt-1 text-lg font-bold leading-snug text-forest-950">
             Compare stays for your next trip
           </p>
           <p className="mt-1 max-w-2xl text-sm leading-6 text-forest-900/65">
@@ -431,7 +434,7 @@ function BookingHotelBanner({ articleSlug }: { articleSlug: string }) {
           href={href}
           target="_blank"
           rel="sponsored nofollow noopener noreferrer"
-          className="inline-flex shrink-0 items-center justify-center rounded-[0.3rem] bg-[#003b95] px-5 py-2.5 font-urbanist text-sm font-bold text-white shadow-sm transition hover:bg-[#002f78]"
+          className="inline-flex shrink-0 items-center justify-center rounded-[0.3rem] bg-[#003b95] px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-[#002f78]"
         >
           Search Booking.com <span aria-hidden className="ml-2">→</span>
         </a>
@@ -482,10 +485,10 @@ function FlightBookingBanners({ articleSlug }: { articleSlug: string }) {
         >
           <div className="flex h-full flex-col justify-between gap-4 rounded-[0.35rem] bg-white px-5 py-4">
             <div>
-              <p className={`font-urbanist text-[10px] font-bold uppercase tracking-[0.2em] ${offer.label}`}>
+              <p className={`text-[10px] font-bold uppercase tracking-[0.2em] ${offer.label}`}>
                 Sponsored · {offer.name}
               </p>
-              <p className="mt-1 font-urbanist text-lg font-bold leading-snug text-forest-950">
+              <p className="mt-1 text-lg font-bold leading-snug text-forest-950">
                 {offer.title}
               </p>
               <p className="mt-1 text-sm leading-6 text-forest-900/65">
@@ -496,7 +499,7 @@ function FlightBookingBanners({ articleSlug }: { articleSlug: string }) {
               href={offer.href}
               target="_blank"
               rel="sponsored nofollow noopener noreferrer"
-              className={`inline-flex w-fit items-center justify-center rounded-[0.3rem] px-5 py-2.5 font-urbanist text-sm font-bold text-white shadow-sm transition ${offer.button}`}
+              className={`inline-flex w-fit items-center justify-center rounded-[0.3rem] px-5 py-2.5 text-sm font-bold text-white shadow-sm transition ${offer.button}`}
             >
               {offer.cta} <span aria-hidden className="ml-2">→</span>
             </a>
@@ -613,7 +616,7 @@ function CommentsSection({ slug }: { slug: string }) {
         <div>
           <button
             type="submit"
-            className="inline-flex h-11 items-center justify-center rounded-[0.3rem] bg-forest-900 px-6 font-urbanist text-sm font-bold uppercase tracking-wider text-white transition hover:bg-primary-emphasis"
+            className="inline-flex h-11 items-center justify-center rounded-[0.3rem] bg-forest-900 px-6 text-sm font-bold uppercase tracking-wider text-white transition hover:bg-primary-emphasis"
           >
             Post Comment
           </button>
@@ -702,7 +705,7 @@ function AdjacentPostCard({
             )}
             {relative && <span className="text-forest-900/55">{relative}</span>}
           </div>
-          <h3 className="mt-2 line-clamp-2 font-urbanist text-lg font-bold leading-snug text-forest-950 transition group-hover:text-primary-emphasis sm:text-xl">
+          <h3 className="mt-2 line-clamp-2 text-lg font-bold leading-snug text-forest-950 transition group-hover:text-primary-emphasis sm:text-xl">
             {article.title}
           </h3>
         </div>

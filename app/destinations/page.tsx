@@ -58,10 +58,10 @@ export default async function DestinationsPage() {
       <header className="border-b border-forest-900/15 pb-8" data-testid="destinations-header">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-end">
           <div className="min-w-0 max-w-4xl">
-            <p className="font-mono text-[11px] font-bold uppercase tracking-[0.22em] text-primary-emphasis">
+            <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-primary-emphasis">
               Originfacts destination index
             </p>
-            <h1 className="mt-4 font-urbanist text-5xl font-bold leading-none tracking-tight text-forest-950 sm:text-6xl">
+            <h1 className="mt-4 text-5xl font-bold leading-none tracking-tight text-forest-950 sm:text-6xl">
               Destinations
             </h1>
             <div className="mt-5 max-w-3xl">
@@ -81,7 +81,7 @@ export default async function DestinationsPage() {
         </div>
 
         <nav
-          className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-forest-900/10 pt-5 font-urbanist text-[13px] font-bold uppercase tracking-widest text-forest-950"
+          className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-forest-900/10 pt-5 text-[13px] font-bold uppercase tracking-widest text-forest-950"
           aria-label="Categories"
           data-testid="destinations-subnav"
         >
@@ -131,7 +131,7 @@ export default async function DestinationsPage() {
             key={item.title}
             className="border-l-2 border-primary-emphasis bg-white py-1 pl-5"
           >
-            <h2 className="font-urbanist text-xl font-bold leading-tight text-forest-950">
+            <h2 className="text-xl font-bold leading-tight text-forest-950">
               {item.title}
             </h2>
             <p className="mt-3 text-base leading-relaxed text-forest-900/70">{item.text}</p>
@@ -142,10 +142,10 @@ export default async function DestinationsPage() {
       <section className="mt-10 bg-gradient-to-br from-[#f8fbff] via-white to-[#fff8e6] px-6 py-8 ring-1 ring-forest-900/10 sm:px-8">
         <div className="grid gap-8 lg:grid-cols-[320px_minmax(0,1fr)]">
           <div>
-            <p className="font-mono text-[11px] font-bold uppercase tracking-[0.22em] text-primary-emphasis">
+            <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-primary-emphasis">
               Planning layer
             </p>
-            <h2 className="mt-3 font-urbanist text-3xl font-bold leading-tight text-forest-950">
+            <h2 className="mt-3 text-3xl font-bold leading-tight text-forest-950">
               What each guide brings together
             </h2>
           </div>
@@ -187,10 +187,10 @@ export default async function DestinationsPage() {
 function DestinationStat({ label, value }: { label: string; value: number }) {
   return (
     <div className="bg-[#f8fafc] p-5" data-testid={`destinations-stat-${label.toLowerCase()}`}>
-      <div className="font-urbanist text-3xl font-bold leading-none text-forest-950">
+      <div className="text-3xl font-bold leading-none text-forest-950">
         {value.toLocaleString()}
       </div>
-      <div className="mt-2 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-forest-900/60">
+      <div className="mt-2 text-[10px] font-bold uppercase tracking-[0.2em] text-forest-900/60">
         {label}
       </div>
     </div>

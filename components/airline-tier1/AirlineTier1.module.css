@@ -32,13 +32,9 @@
   --foot-bg: #ffffff;
   --foot-text: #334155;
 
-  --t1-body: var(--font-outfit), 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  --t1-head: var(--font-urbanist), 'Urbanist', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  --t1-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--t1-body);
   font-size: 16.5px;
   line-height: 1.65;
   font-weight: 400;
@@ -67,12 +63,10 @@
 .root h2,
 .root h3,
 .root h4 {
-  font-family: var(--t1-head);
   margin: 0;
   line-height: 1.12;
   letter-spacing: -0.02em;
 }
-.mono { font-family: var(--t1-mono); }
 
 /* Site default container: maxWidth 6xl/7xl (1420px) with px-6 gutters. */
 .wrap { max-width: 1420px; margin: 0 auto; padding: 0 24px; }
@@ -121,7 +115,6 @@
   transform: scale(1.06);
 }
 .eyebrow {
-  font-family: var(--t1-mono);
   font-size: 11px;
   letter-spacing: .2em;
   text-transform: uppercase;
@@ -136,7 +129,6 @@
   line-height: 1.1;
 }
 .code {
-  font-family: var(--t1-mono);
   font-size: .48em;
   font-weight: 500;
   letter-spacing: .04em;
@@ -148,7 +140,6 @@
 
 .codes {
   border: 1px solid var(--hero-rule);
-  font-family: var(--t1-mono);
   font-size: 12px;
   min-width: 236px;
   margin: 0;
@@ -168,7 +159,6 @@
   border-top: 1px solid var(--hero-rule);
   display: flex;
   overflow-x: auto;
-  font-family: var(--t1-mono);
   font-size: 11px;
   letter-spacing: .12em;
   text-transform: uppercase;
@@ -193,7 +183,6 @@
   flex-wrap: wrap;
   padding-top: 11px;
   padding-bottom: 11px;
-  font-family: var(--t1-mono);
   font-size: 11.5px;
 }
 .ledgerLabel { letter-spacing: .14em; text-transform: uppercase; color: var(--slate-light); }
@@ -216,7 +205,6 @@
 .intro .kicker {
   margin: 0 0 8px;
   color: var(--sector-from);
-  font-family: var(--t1-mono);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: .14em;
@@ -229,7 +217,6 @@
   border: 1px solid var(--rule-strong);
   border-radius: 8px;
   color: var(--ink);
-  font-family: var(--t1-head);
   font-size: 13px;
   font-weight: 600;
   padding: 8px 13px;
@@ -256,7 +243,6 @@
 .moduleHead h2,
 .moduleHead h3 { font-size: 1.5rem !important; font-weight: 700; }
 .stamp {
-  font-family: var(--t1-mono);
   font-size: 10.5px;
   letter-spacing: .1em;
   text-transform: uppercase;
@@ -276,7 +262,6 @@
 .module table { width: 100%; border-collapse: collapse; margin: 6px 0 20px; font-size: 15.5px; }
 .module caption {
   text-align: left;
-  font-family: var(--t1-mono);
   font-size: 11px;
   letter-spacing: .13em;
   text-transform: uppercase;
@@ -286,7 +271,6 @@
 .module th,
 .module td { text-align: left; padding: 11px 14px 11px 0; border-bottom: 1px solid var(--rule-soft); vertical-align: top; }
 .module thead th {
-  font-family: var(--t1-head);
   font-size: 11.5px;
   font-weight: 600;
   letter-spacing: .09em;
@@ -294,8 +278,8 @@
   color: var(--slate);
   border-bottom: 1px solid var(--rule-strong);
 }
-.module tbody th { font-family: var(--t1-head); font-size: 15px; font-weight: 600; }
-.num { font-family: var(--t1-mono); font-size: 14.5px; white-space: nowrap; }
+.module tbody th { font-size: 15px; font-weight: 600; }
+.num { font-size: 14.5px; white-space: nowrap; }
 .tableScroll { overflow-x: auto; }
 
 /* Preview contact panel: high-signal details become scannable cards instead
@@ -331,7 +315,6 @@
   display: block;
   margin-bottom: 5px;
   color: var(--slate);
-  font-family: var(--t1-mono);
   font-size: 10px;
   font-weight: 600;
   letter-spacing: .1em;
@@ -352,7 +335,6 @@
 }
 .sectorText { padding: 26px 28px; display: flex; flex-direction: column; gap: 6px; }
 .sectorEyebrow {
-  font-family: var(--t1-mono);
   font-size: 10.5px;
   letter-spacing: .16em;
   text-transform: uppercase;
@@ -360,7 +342,6 @@
   margin: 0;
 }
 .sectorRoute {
-  font-family: var(--t1-head);
   font-size: 26px;
   font-weight: 700;
   letter-spacing: -.02em;
@@ -370,7 +351,6 @@
   text-wrap: balance;
 }
 .sectorMeta {
-  font-family: var(--t1-mono);
   font-size: 13px;
   font-weight: 500;
   color: var(--ink);
@@ -389,12 +369,10 @@
 /* The arc is schematic and fixed, so it scales rather than reflows. */
 .sectorSvg { width: 100%; height: auto; max-width: 420px; display: block; }
 .sectorDistance {
-  font-family: var(--t1-mono);
   font-size: 13px;
   fill: var(--slate);
 }
 .sectorCode {
-  font-family: var(--t1-head);
   font-size: 13px;
   font-weight: 700;
   letter-spacing: .06em;
@@ -412,7 +390,6 @@
 }
 .fieldList > div:last-child { border-bottom: 0; }
 .fieldList dt {
-  font-family: var(--t1-head);
   font-size: 14.5px;
   font-weight: 600;
   color: var(--ink);
@@ -439,13 +416,12 @@
   text-transform: uppercase;
   color: var(--check);
   margin-bottom: 8px;
-  font-family: var(--t1-mono);
   font-weight: 600;
 }
 
 /* hard rule callout */
 .ruleBox { border: 1px solid var(--ink); padding: 18px 22px; margin: 22px 0; display: flex; gap: 18px; align-items: flex-start; }
-.ruleKey { font-family: var(--t1-mono); font-size: 26px; font-weight: 600; line-height: 1; white-space: nowrap; padding-top: 2px; }
+.ruleKey { font-size: 26px; font-weight: 600; line-height: 1; white-space: nowrap; padding-top: 2px; }
 .ruleBox p { font-size: 15.5px; }
 
 /* Sources disagree — solid and amber-ruled, so it never reads as "not done". */
@@ -462,7 +438,6 @@
 .isPending h2 { color: var(--slate); }
 .pendingNote { color: var(--slate); font-size: 15.5px; }
 .pendingNote code {
-  font-family: var(--t1-mono);
   font-size: 13px;
   background: var(--card);
   padding: 2px 6px;
@@ -504,7 +479,6 @@
   margin-top: 24px;
   padding-top: 16px;
   border-top: 1px solid var(--rule-soft);
-  font-family: var(--t1-mono);
   font-size: 11.5px;
   line-height: 1.75;
   color: var(--slate);
@@ -524,7 +498,6 @@
 .module details { border-bottom: 1px solid var(--rule-soft); padding: 15px 0; }
 .module details:last-of-type { border-bottom: 0; }
 .module summary {
-  font-family: var(--t1-head);
   font-weight: 600;
   font-size: 16.5px;
   cursor: pointer;
@@ -534,7 +507,7 @@
   gap: 16px;
 }
 .module summary::-webkit-details-marker { display: none; }
-.module summary::after { content: "+"; font-family: var(--t1-mono); color: var(--slate); }
+.module summary::after { content: "+"; color: var(--slate); }
 .module details[open] summary::after { content: "–"; }
 .module details p { margin-top: 12px; font-size: 16px; color: var(--ink-soft); }
 
@@ -542,7 +515,6 @@
 .rail { position: sticky; top: 56px; font-size: 14.5px; }
 .railBlock { border-top: 2px solid #b8c2d0; padding-top: 14px; margin-bottom: 34px; }
 .railBlock h3 {
-  font-family: var(--t1-head);
   font-size: 1.2rem !important;
   font-weight: 700;
   letter-spacing: normal;
@@ -554,9 +526,9 @@
 .rail li:last-child { border-bottom: 0; }
 .rail a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule-strong); }
 .rail a:hover { border-bottom-color: var(--ink); }
-.when { font-family: var(--t1-mono); font-size: 11.5px; color: var(--slate-light); white-space: nowrap; }
+.when { font-size: 11.5px; color: var(--slate-light); white-space: nowrap; }
 
-.byline { font-family: var(--t1-mono); font-size: 11.5px; color: var(--slate); line-height: 1.8; margin: 0; }
+.byline { font-size: 11.5px; color: var(--slate); line-height: 1.8; margin: 0; }
 .byline strong { color: var(--ink); font-weight: 600; }
 
 .pagefoot {
@@ -564,7 +536,6 @@
   color: var(--foot-text);
   border-top: 1px solid var(--rule);
   padding: 30px 0;
-  font-family: var(--t1-mono);
   font-size: 11.5px;
 }
 .pagefoot a { color: var(--ink); }
@@ -577,7 +548,6 @@
   background: var(--check-bg);
   border-bottom: 1px solid var(--check);
   color: var(--check);
-  font-family: var(--t1-mono);
   font-size: 12px;
   line-height: 1.6;
   padding: 12px 0;
@@ -639,7 +609,6 @@
   margin-bottom: 14px;
 }
 .cabinTag {
-  font-family: var(--t1-mono);
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -672,7 +641,6 @@
   color: var(--slate);
 }
 .specValue {
-  font-family: var(--t1-mono);
   font-weight: 600;
   color: var(--ink);
 }
@@ -680,7 +648,6 @@
   margin-top: auto;
 }
 .highlightTitle {
-  font-family: var(--t1-mono);
   font-size: 10px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -724,7 +691,6 @@
   color: var(--ink);
 }
 .typeBadge {
-  font-family: var(--t1-mono);
   font-size: 11px;
   padding: 3px 8px;
   border-radius: 4px;
@@ -778,7 +744,6 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
 }
 .baggageDimVal {
-  font-family: var(--t1-head);
   font-size: 28px;
   font-weight: 800;
   color: var(--ink);
@@ -792,7 +757,6 @@
 .baggageTagBadge {
   background: #0072de;
   color: #ffffff;
-  font-family: var(--t1-mono);
   font-size: 11px;
   font-weight: 600;
   padding: 6px 14px;
@@ -843,7 +807,6 @@
   color: var(--slate);
 }
 .bagWeightVal {
-  font-family: var(--t1-head);
   font-size: 1rem !important;
   font-weight: 600 !important;
   letter-spacing: 0.3px !important;
@@ -919,7 +882,6 @@
   flex-shrink: 0;
 }
 .contactTitle {
-  font-family: var(--t1-head);
   font-size: 15px;
   font-weight: 700;
   color: var(--ink);
@@ -958,7 +920,6 @@
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
 }
 .netStatVal {
-  font-family: var(--t1-head);
   font-size: 1.4rem;
   font-weight: 800;
   color: #001e73;
@@ -1022,7 +983,6 @@
 .netHubIata {
   background: #f0f6fe;
   color: #025ccc;
-  font-family: var(--t1-mono);
   font-size: 11px;
   font-weight: 700;
   padding: 2px 6px;
@@ -1031,7 +991,6 @@
 .netHubBadge {
   font-size: 12px;
   color: var(--slate);
-  font-family: var(--t1-mono);
 }
 .netPillsGrid {
   display: flex;
@@ -1065,7 +1024,6 @@
   color: #025ccc;
 }
 .netPillIata {
-  font-family: var(--t1-mono);
   font-size: 11px;
   opacity: 0.8;
 }
@@ -1089,7 +1047,6 @@
 }
 .netSectorLabel {
   font-size: 11px;
-  font-family: var(--t1-mono);
   text-transform: uppercase;
   color: var(--slate);
   letter-spacing: 0.08em;
@@ -1119,7 +1076,6 @@
   max-width: 260px;
 }
 .netSectorKm {
-  font-family: var(--t1-head);
   font-size: 14px;
   font-weight: 800;
   color: #001e73;

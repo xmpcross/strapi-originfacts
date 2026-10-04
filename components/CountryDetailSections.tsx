@@ -91,7 +91,7 @@ export default function CountryDetailSections({
             </p>
           </div>
           <div className="border-l-2 border-primary-emphasis pl-5">
-            <div className="font-urbanist text-4xl font-bold leading-none text-forest-900">
+            <div className="text-4xl font-bold leading-none text-forest-900">
               {airportQuery.trim() ? filteredAirports.length : airports.length}
             </div>
             <div className="mt-2 text-xs font-bold uppercase tracking-[0.2em] text-forest-900/55">
@@ -161,7 +161,7 @@ export default function CountryDetailSections({
             </p>
           </div>
           <div className="border-l-2 border-forest-900/20 pl-5">
-            <div className="font-urbanist text-4xl font-bold leading-none text-forest-900">
+            <div className="text-4xl font-bold leading-none text-forest-900">
               {airlineQuery.trim() ? filteredAirlines.length : airlines.length}
             </div>
             <div className="mt-2 text-xs font-bold uppercase tracking-[0.2em] text-forest-900/55">
@@ -207,13 +207,13 @@ export default function CountryDetailSections({
                         loading="lazy"
                       />
                     ) : (
-                      <span className="flex h-[100px] w-full items-center justify-start font-urbanist text-2xl font-bold uppercase tracking-wider text-forest-900/60">
+                      <span className="flex h-[100px] w-full items-center justify-start text-2xl font-bold uppercase tracking-wider text-forest-900/60">
                         {(al.iataCode || al.name).slice(0, 3).toUpperCase()}
                       </span>
                     )}
                   </div>
                   <div className="ml-auto min-w-0 flex-1 text-right">
-                    <h3 className="font-urbanist text-base font-bold leading-tight text-forest-950 transition group-hover:text-primary-emphasis">
+                    <h3 className="text-base font-bold leading-tight text-forest-950 transition group-hover:text-primary-emphasis">
                       {al.name}
                     </h3>
                   </div>
@@ -313,17 +313,17 @@ function AirportCard({ airport, allAirports }: { airport: StrapiAirport; allAirp
       className="group grid gap-3 border-b border-forest-900/10 px-4 py-4 transition last:border-b-0 hover:bg-primary-hover/60 md:grid-cols-[110px_minmax(0,1fr)_minmax(0,0.7fr)_40px] md:items-center"
     >
       <div className="flex items-center gap-2">
-        <span className="rounded bg-forest-900 px-2.5 py-1 font-mono text-[11px] font-bold tracking-wider text-sand-100">
+        <span className="rounded bg-forest-900 px-2.5 py-1 text-[11px] font-bold tracking-wider text-sand-100">
           {airport.iata}
         </span>
         {airport.icao && (
-          <span className="hidden font-mono text-[11px] font-bold tracking-wider text-forest-900/45 md:inline">
+          <span className="hidden text-[11px] font-bold tracking-wider text-forest-900/45 md:inline">
             {airport.icao}
           </span>
         )}
       </div>
       <div className="min-w-0">
-        <h3 className="truncate font-urbanist text-base font-bold leading-snug text-forest-900 group-hover:text-forest-700">
+        <h3 className="truncate text-base font-bold leading-snug text-forest-900 group-hover:text-forest-700">
           {airport.name}
         </h3>
         <p className="mt-1 truncate text-xs text-forest-900/50 md:hidden">

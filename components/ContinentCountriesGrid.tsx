@@ -166,12 +166,12 @@ function CountryChip({ country, href }: { country: StrapiCountry; href?: string 
     >
       <span className="text-2xl" aria-hidden>{flagEmoji(country.code)}</span>
       <div className="min-w-0 flex-1">
-        <div className="font-urbanist text-sm font-bold text-forest-900 transition group-hover:text-forest-700">
+        <div className="text-sm font-bold text-forest-900 transition group-hover:text-forest-700">
           {country.name}
         </div>
         {country.currency && (
           <div className="mt-0.5 truncate text-xs text-forest-900/60">
-            <span className="font-mono">{country.code}</span>
+            <span className="">{country.code}</span>
             <span className="ml-2">{country.currency}</span>
           </div>
         )}

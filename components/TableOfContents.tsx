@@ -40,14 +40,14 @@ export default function TableOfContents({
               d="M4 6h16M4 12h16M4 18h7"
             />
           </svg>
-          <h2 className="font-urbanist text-xs font-bold uppercase tracking-widest text-forest-950">
+          <h2 className="text-xs font-bold uppercase tracking-widest text-forest-950">
             {title}
           </h2>
         </div>
         <button
           type="button"
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center gap-1 font-urbanist text-[11px] font-semibold text-forest-800/70 hover:text-primary-emphasis focus:outline-none"
+          className="flex items-center gap-1 text-[11px] font-semibold text-forest-800/70 hover:text-primary-emphasis focus:outline-none"
           aria-expanded={isOpen}
           aria-label={isOpen ? 'Collapse Table of Contents' : 'Expand Table of Contents'}
         >
@@ -70,7 +70,7 @@ export default function TableOfContents({
             return (
               <li
                 key={`${item.id}-${idx}`}
-                className={`${isH3 ? 'ml-4 list-[circle]' : 'list-decimal'} list-inside font-urbanist leading-relaxed text-forest-900/80`}
+                className={`${isH3 ? 'ml-4 list-[circle]' : 'list-decimal'} list-inside leading-relaxed text-forest-900/80`}
               >
                 <a
                   href={`#${item.id}`}

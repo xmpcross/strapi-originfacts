@@ -24,7 +24,7 @@ export default async function TakeadsTravelOffers({
     >
       <div className="mb-4 flex flex-wrap items-end justify-between gap-2">
         <div>
-          <p className="font-urbanist text-[10px] font-bold uppercase tracking-[0.2em] text-primary-emphasis">
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary-emphasis">
             Sponsored travel options
           </p>
           <h2 id="takeads-travel-options" className="editorial-h mt-1 text-xl text-forest-950">
@@ -45,7 +45,7 @@ export default async function TakeadsTravelOffers({
             data-takeads-merchant={offer.key}
           >
             <div className="flex min-h-8 items-center justify-between gap-3">
-              <span className="font-urbanist text-xs font-bold uppercase tracking-wider text-forest-900/55">
+              <span className="text-xs font-bold uppercase tracking-wider text-forest-900/55">
                 {offer.name}
               </span>
               {offer.imageUrl && (
@@ -54,11 +54,11 @@ export default async function TakeadsTravelOffers({
                 <img src={offer.imageUrl} alt={`${offer.name} logo`} className="max-h-8 max-w-24 object-contain" loading="lazy" />
               )}
             </div>
-            <span className="mt-3 font-urbanist text-base font-bold text-forest-950 group-hover:text-primary-emphasis">
+            <span className="mt-3 text-base font-bold text-forest-950 group-hover:text-primary-emphasis">
               {offer.title}
             </span>
             <span className="mt-1 text-sm leading-5 text-forest-900/65">{offer.description}</span>
-            <span className="mt-auto pt-3 font-urbanist text-xs font-bold text-primary-emphasis">
+            <span className="mt-auto pt-3 text-xs font-bold text-primary-emphasis">
               {offer.cta} <span aria-hidden>→</span>
             </span>
           </a>

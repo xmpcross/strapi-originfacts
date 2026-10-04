@@ -129,7 +129,7 @@ export default async function CategoryPage({ params, searchParams }: Props) {
         <header data-testid="category-header">
           <div className="grid items-start gap-6 sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-12">
             <div className="min-w-0">
-              <h1 className="font-urbanist text-5xl font-bold leading-none tracking-tight text-forest-950 sm:text-6xl">
+              <h1 className="text-5xl font-bold leading-none tracking-tight text-forest-950 sm:text-6xl">
                 {category.name}
               </h1>
               {category.description && (
@@ -140,15 +140,15 @@ export default async function CategoryPage({ params, searchParams }: Props) {
               className="flex h-32 w-32 flex-col items-center justify-center rounded-[0.3rem] bg-[#f1f5f9] text-forest-950"
               data-testid="category-article-count"
             >
-              <span className="font-urbanist text-4xl font-bold leading-none">{total}</span>
-              <span className="mt-2 font-urbanist text-[11px] font-bold uppercase tracking-widest text-forest-900/70">
+              <span className="text-4xl font-bold leading-none">{total}</span>
+              <span className="mt-2 text-[11px] font-bold uppercase tracking-widest text-forest-900/70">
                 {total === 1 ? 'Article' : 'Articles'}
               </span>
             </div>
           </div>
 
           <nav
-            className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 border-y border-forest-900/15 py-4 font-urbanist text-[14px] font-bold uppercase tracking-widest text-forest-950"
+            className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 border-y border-forest-900/15 py-4 text-[14px] font-bold uppercase tracking-widest text-forest-950"
             aria-label="Categories"
             data-testid="category-subnav"
           >
@@ -262,7 +262,7 @@ function QatarAirwaysFeedBanner({ slotIndex }: { slotIndex: number }) {
         <div className="relative aspect-[16/9] overflow-hidden bg-gradient-to-br from-[#f4e8ee] via-[#fbf7f9] to-[#ffffff]">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(122,31,69,0.1),transparent_30%),linear-gradient(135deg,rgba(255,255,255,0.35),rgba(122,31,69,0.04))]" />
           <div className="absolute inset-x-0 top-0 flex items-start justify-between gap-4 p-5 text-forest-950">
-            <span className="rounded-full bg-white px-3 py-1 font-urbanist text-[10px] font-bold uppercase tracking-[0.18em] text-[#7a1f45]">
+            <span className="rounded-full bg-white px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-[#7a1f45]">
               Sponsored
             </span>
             <span className="inline-flex h-10 w-32 items-center justify-center rounded-full bg-white px-3">
@@ -276,25 +276,25 @@ function QatarAirwaysFeedBanner({ slotIndex }: { slotIndex: number }) {
             </span>
           </div>
           <div className="absolute bottom-5 left-5 right-5">
-            <p className="font-urbanist text-[11px] font-bold uppercase tracking-[0.2em] text-[#7a1f45]/75">
+            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#7a1f45]/75">
               Long-haul flight options
             </p>
-            <p className="mt-2 max-w-sm font-urbanist text-3xl font-bold leading-[1.02] text-forest-950">
+            <p className="mt-2 max-w-sm text-3xl font-bold leading-[1.02] text-forest-950">
               Compare routes through Doha
             </p>
           </div>
         </div>
         <div className="flex flex-1 flex-col p-5">
-          <p className="w-fit rounded-full bg-[#7a1f45] px-3 py-1 font-urbanist text-[11px] font-bold uppercase tracking-wider text-white">
+          <p className="w-fit rounded-full bg-[#7a1f45] px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-white">
             Qatar Airways
           </p>
-          <h2 className="mt-3 font-urbanist text-[clamp(1.1rem,1vw+0.85rem,1.4rem)] font-bold leading-snug text-forest-950 transition group-hover:text-[#7a1f45]">
+          <h2 className="mt-3 text-[clamp(1.1rem,1vw+0.85rem,1.4rem)] font-bold leading-snug text-forest-950 transition group-hover:text-[#7a1f45]">
             Search Qatar Airways fares and routes
           </h2>
           <p className="mt-5 text-sm leading-6 text-ink/70 sm:text-base">
             Compare Qatar Airways flight options for long-haul trips, premium cabins and one-stop connections through Doha.
           </p>
-          <span className="mt-5 inline-flex w-fit items-center gap-2 rounded-full border border-forest-900/15 bg-white px-4 py-2 font-urbanist text-[11px] font-bold uppercase tracking-widest text-forest-900 transition group-hover:border-[#7a1f45] group-hover:text-[#7a1f45]">
+          <span className="mt-5 inline-flex w-fit items-center gap-2 rounded-full border border-forest-900/15 bg-white px-4 py-2 text-[11px] font-bold uppercase tracking-widest text-forest-900 transition group-hover:border-[#7a1f45] group-hover:text-[#7a1f45]">
             Search Qatar Airways
             <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-forest-900 text-white transition group-hover:bg-[#7a1f45]">
               <svg
@@ -354,7 +354,7 @@ function CategoryFeedCard({
         )}
       </Link>
       <div>
-        <div className="flex items-center gap-3 font-urbanist text-[11px] font-bold uppercase tracking-wider">
+        <div className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-wider">
           {category && (
             <Link
               href={`/category/${article.category?.slug ?? ''}`}
@@ -366,7 +366,7 @@ function CategoryFeedCard({
           {dateStr && <span className="text-forest-900/55">{dateStr}</span>}
         </div>
         <Link href={`/articles/${article.slug}`}>
-          <h2 className="mt-3 font-urbanist text-[clamp(1.1rem,1vw+0.85rem,1.4rem)] font-bold leading-snug text-forest-950 transition group-hover:text-primary-emphasis">
+          <h2 className="mt-3 text-[clamp(1.1rem,1vw+0.85rem,1.4rem)] font-bold leading-snug text-forest-950 transition group-hover:text-primary-emphasis">
             {article.title}
           </h2>
         </Link>
@@ -378,7 +378,7 @@ function CategoryFeedCard({
         <div className="mt-5">
           <Link
             href={`/articles/${article.slug}`}
-            className="inline-flex items-center gap-2 rounded-full border border-forest-900/15 bg-white px-4 py-2 font-urbanist text-[11px] font-bold uppercase tracking-widest text-forest-900 transition hover:border-primary-emphasis hover:text-primary-emphasis"
+            className="inline-flex items-center gap-2 rounded-full border border-forest-900/15 bg-white px-4 py-2 text-[11px] font-bold uppercase tracking-widest text-forest-900 transition hover:border-primary-emphasis hover:text-primary-emphasis"
           >
             Read More
             <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-forest-900 text-white transition group-hover:bg-primary-emphasis">
@@ -428,7 +428,7 @@ function Pagination({
             key={p}
             href={href}
             aria-current={active ? 'page' : undefined}
-            className={`inline-flex h-10 min-w-[2.5rem] items-center justify-center rounded-[0.3rem] border px-3 font-urbanist text-sm font-bold transition ${
+            className={`inline-flex h-10 min-w-[2.5rem] items-center justify-center rounded-[0.3rem] border px-3 text-sm font-bold transition ${
               active
                 ? 'border-primary-emphasis bg-primary-emphasis text-white'
                 : 'border-forest-900/15 bg-white text-forest-900 hover:border-primary-emphasis hover:text-primary-emphasis'

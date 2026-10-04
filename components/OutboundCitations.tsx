@@ -170,7 +170,7 @@ export default function OutboundCitations({
     >
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-forest-900/10 pb-4">
         <div>
-          <span className="font-urbanist text-[11px] font-bold uppercase tracking-widest text-primary-emphasis">
+          <span className="text-[11px] font-bold uppercase tracking-widest text-primary-emphasis">
             Fact Checking &amp; Authority
           </span>
           <h3 id="citations-heading" className="editorial-h mt-1 text-xl font-bold text-forest-900 sm:text-2xl">
@@ -178,9 +178,9 @@ export default function OutboundCitations({
           </h3>
         </div>
         <div className="flex flex-wrap items-center gap-2 text-xs font-semibold text-forest-900/70">
-          <span className="rounded-full bg-forest-900/10 px-2.5 py-0.5 text-forest-950 font-mono text-[11px]">.gov</span>
-          <span className="rounded-full bg-forest-900/10 px-2.5 py-0.5 text-forest-950 font-mono text-[11px]">.edu</span>
-          <span className="rounded-full bg-forest-900/10 px-2.5 py-0.5 text-forest-950 font-mono text-[11px]">ICAO / IATA</span>
+          <span className="rounded-full bg-forest-900/10 px-2.5 py-0.5 text-forest-950 text-[11px]">.gov</span>
+          <span className="rounded-full bg-forest-900/10 px-2.5 py-0.5 text-forest-950 text-[11px]">.edu</span>
+          <span className="rounded-full bg-forest-900/10 px-2.5 py-0.5 text-forest-950 text-[11px]">ICAO / IATA</span>
         </div>
       </div>
 
@@ -193,10 +193,10 @@ export default function OutboundCitations({
           <li key={idx} className="flex flex-col justify-between rounded-lg border border-forest-900/10 bg-white p-4 transition hover:border-forest-900/30 hover:shadow-sm">
             <div>
               <div className="flex items-center justify-between gap-2">
-                <span className="font-urbanist text-[11px] font-bold uppercase tracking-wider text-forest-900/60">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-forest-900/60">
                   {src.publisher}
                 </span>
-                <span className="rounded bg-primary-emphasis/10 px-2 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wider text-primary-emphasis">
+                <span className="rounded bg-primary-emphasis/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary-emphasis">
                   {src.domainType}
                 </span>
               </div>
@@ -204,7 +204,7 @@ export default function OutboundCitations({
                 href={src.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 block font-urbanist text-sm font-bold text-forest-950 transition hover:text-primary-emphasis hover:underline"
+                className="mt-2 block text-sm font-bold text-forest-950 transition hover:text-primary-emphasis hover:underline"
               >
                 {src.title} <span aria-hidden="true" className="inline-block text-xs">↗</span>
               </a>
@@ -212,7 +212,7 @@ export default function OutboundCitations({
                 {src.description}
               </p>
             </div>
-            <div className="mt-3 pt-2 border-t border-forest-900/5 text-[11px] font-mono text-forest-900/50 truncate">
+            <div className="mt-3 pt-2 border-t border-forest-900/5 text-[11px] text-forest-900/50 truncate">
               {src.url}
             </div>
           </li>

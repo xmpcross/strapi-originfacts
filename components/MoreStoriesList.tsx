@@ -15,7 +15,7 @@ export default function MoreStoriesList({
   if (articles.length === 0) return null;
   return (
     <nav aria-label={title} className="mt-8" data-testid="more-stories">
-      <h3 className="font-urbanist text-lg font-bold text-forest-900">{title}</h3>
+      <h3 className="text-lg font-bold text-forest-900">{title}</h3>
       <ul className="mt-3 grid gap-x-8 gap-y-2 text-base text-forest-900/80 sm:grid-cols-2">
         {articles.map((article) => (
           <li key={article.id}>

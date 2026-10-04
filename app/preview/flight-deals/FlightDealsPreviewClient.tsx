@@ -573,7 +573,7 @@ export default function FlightDealsPreviewClient({ routes = [] }: { routes?: Str
                 <span className="text-slate-300">|</span>
                 <div className="flex items-center gap-1.5">
                   <span>Save now - use</span>
-                  <span className="rounded-lg border border-dashed border-slate-400 bg-white px-2 py-0.5 font-mono font-bold text-[#0a3161] tracking-wider">
+                  <span className="rounded-lg border border-dashed border-slate-400 bg-white px-2 py-0.5 font-bold text-[#0a3161] tracking-wider">
                     SAVE50
                   </span>
                   <button
@@ -2142,9 +2142,9 @@ export default function FlightDealsPreviewClient({ routes = [] }: { routes?: Str
           <details className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 text-slate-100 shadow-xl">
             <summary className="cursor-pointer bg-slate-950 p-4 text-xs font-bold text-slate-300 hover:text-white flex items-center justify-between">
               <span>Inspect Raw SerpApi `google_flights` Payload</span>
-              <span className="rounded bg-emerald-500/20 px-2 py-0.5 text-[10px] text-emerald-400 font-mono">200 OK</span>
+              <span className="rounded bg-emerald-500/20 px-2 py-0.5 text-[10px] text-emerald-400 ">200 OK</span>
             </summary>
-            <pre className="max-h-96 overflow-auto p-4 font-mono text-[11px] text-emerald-400 leading-relaxed selection:bg-slate-700">
+            <pre className="max-h-96 overflow-auto p-4 text-[11px] text-emerald-400 leading-relaxed selection:bg-slate-700">
               {rawApiJson}
             </pre>
           </details>

@@ -53,7 +53,7 @@ export default function FixedScrollToTop() {
       </span>
 
       {/* Vertical text — reads bottom-to-top */}
-      <span className="font-urbanist text-[14px] font-bold uppercase leading-[80px] tracking-[0.05em] text-[#ffffff] [writing-mode:vertical-rl] [transform:rotate(180deg)]">
+      <span className="text-[14px] font-bold uppercase leading-[80px] tracking-[0.05em] text-[#ffffff] [writing-mode:vertical-rl] [transform:rotate(180deg)]">
         Scroll to Top
       </span>
     </button>

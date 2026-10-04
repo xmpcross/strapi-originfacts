@@ -31,12 +31,12 @@ export function HowToSteps({
           <li key={i} id={`step-${i + 1}`} className="flex gap-4">
             <span
               aria-hidden
-              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary-emphasis font-urbanist text-sm font-bold text-white"
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary-emphasis text-sm font-bold text-white"
             >
               {i + 1}
             </span>
             <div className="min-w-0">
-              <h3 className="font-urbanist text-lg font-bold leading-snug text-forest-900">{s.name}</h3>
+              <h3 className="text-lg font-bold leading-snug text-forest-900">{s.name}</h3>
               <p className="mt-1.5 text-[15px] font-light leading-7 text-forest-900/78">{s.text}</p>
             </div>
           </li>
@@ -82,7 +82,7 @@ export function FaqSection({
       <dl className="mt-8 grid gap-x-10 gap-y-3 lg:grid-cols-2 lg:items-start">
         {faqs.map((f, i) => (
           <details key={i} className="group border-b border-forest-900/10 pb-3">
-            <summary className="flex cursor-pointer list-none items-start justify-between gap-4 py-3 font-urbanist text-base font-bold leading-snug text-forest-900 marker:content-none">
+            <summary className="flex cursor-pointer list-none items-start justify-between gap-4 py-3 text-base font-bold leading-snug text-forest-900 marker:content-none">
               <span>{f.q}</span>
               <span className="mt-0.5 text-lg font-light text-forest-900/45 transition group-open:rotate-45">+</span>
             </summary>

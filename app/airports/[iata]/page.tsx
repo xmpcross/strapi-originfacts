@@ -327,7 +327,7 @@ export default async function AirportPage({ params }: Props) {
           <p className="mt-4 w-full text-sm font-light leading-relaxed sm:text-base" style={{ color: '#ffffff' }}>
             {heroSummary}
           </p>
-          <div className="mt-5 flex flex-wrap items-center gap-3 font-mono text-xs">
+          <div className="mt-5 flex flex-wrap items-center gap-3 text-xs">
             <span className="rounded-[0.3rem] bg-sand-100 px-3 py-1.5 font-bold tracking-wider text-forest-950">
               IATA · {airport.iata}
             </span>
@@ -403,7 +403,7 @@ export default async function AirportPage({ params }: Props) {
                 narrativeSections.map((section, i) =>
                   section.heading ? (
                     <div key={i} className="mt-8">
-                      <h3 className="font-urbanist text-xl font-bold text-forest-900">{section.heading}</h3>
+                      <h3 className="text-xl font-bold text-forest-900">{section.heading}</h3>
                       {renderProse(section.paragraphs, i)}
                     </div>
                   ) : (
@@ -460,7 +460,7 @@ export default async function AirportPage({ params }: Props) {
                 </div>
                 <div className="mt-5 flex items-end justify-between gap-4 border-b border-forest-900/10 pb-4">
                   <div>
-                    <div className="font-urbanist text-4xl font-bold leading-none text-forest-900">
+                    <div className="text-4xl font-bold leading-none text-forest-900">
                       {formatTemperature(airportWeather.current.temperature2m)}
                     </div>
                     <div className="mt-2 text-sm font-semibold text-forest-900/80">
@@ -507,7 +507,7 @@ export default async function AirportPage({ params }: Props) {
             <header className="border-b border-forest-900/10 bg-gradient-to-br from-white via-paper to-sand-100/70 px-6 py-7 lg:px-8">
               <div className="grid gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(360px,1fr)]">
                 <div>
-                <p className="flex items-center gap-3 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-forest-900/62">
+                <p className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.2em] text-forest-900/62">
                   <span className="inline-block h-px w-8 bg-forest-800/45" />
                   Practical guide
                 </p>
@@ -526,11 +526,11 @@ export default async function AirportPage({ params }: Props) {
                       className="relative rounded-[0.3rem] border border-forest-900/10 bg-white/80 p-4 shadow-[0_1px_2px_rgba(0,0,0,0.03)]"
                     >
                       <div className="flex items-center gap-3">
-                        <span className="flex h-8 w-8 items-center justify-center rounded-[0.3rem] bg-forest-900 font-mono text-[11px] font-bold text-sand-100">
+                        <span className="flex h-8 w-8 items-center justify-center rounded-[0.3rem] bg-forest-900 text-[11px] font-bold text-sand-100">
                           {index + 1}
                         </span>
                         <div>
-                          <div className="font-mono text-xs font-bold tracking-[0.18em] text-forest-950">
+                          <div className="text-xs font-bold tracking-[0.18em] text-forest-950">
                             {terminal.name}
                           </div>
                           <div className="mt-1 text-[10px] uppercase tracking-[0.14em] text-forest-900/55">
@@ -550,11 +550,11 @@ export default async function AirportPage({ params }: Props) {
                 className="rounded-[0.3rem] border border-forest-900/10 p-6 shadow-[0_1px_2px_rgba(0,0,0,0.03)]"
                 style={{ backgroundColor: '#ffffff' }}
               >
-                <h3 className="font-urbanist text-xl font-bold text-forest-900">What should you check before leaving for {airport.iata}?</h3>
+                <h3 className="text-xl font-bold text-forest-900">What should you check before leaving for {airport.iata}?</h3>
                 <ol className="mt-5 space-y-4 text-sm leading-6">
                   {airportGuide.checklist.map((item, index) => (
                     <li key={item} className="grid grid-cols-[2rem_minmax(0,1fr)] gap-3">
-                      <span className="flex h-8 w-8 items-center justify-center rounded-[0.3rem] bg-forest-900 font-mono text-[11px] font-bold text-sand-100">
+                      <span className="flex h-8 w-8 items-center justify-center rounded-[0.3rem] bg-forest-900 text-[11px] font-bold text-sand-100">
                         {index + 1}
                       </span>
                       <span className="pt-1 text-forest-900/78">{item}</span>
@@ -564,16 +564,16 @@ export default async function AirportPage({ params }: Props) {
               </div>
 
               <div className="rounded-[0.3rem] border border-forest-900/10 bg-white p-6 shadow-[0_1px_2px_rgba(0,0,0,0.03)]">
-                <p className="font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-forest-900/50">
+                <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-forest-900/50">
                   Start here
                 </p>
-                <h3 className="mt-2 font-urbanist text-xl font-bold text-forest-900">
+                <h3 className="mt-2 text-xl font-bold text-forest-900">
                   How do terminal transfers work at {airport.iata}?
                 </h3>
                 <div className="mt-4 grid gap-3 md:grid-cols-3">
                   {airportGuide.terminals.map((terminal) => (
                     <div key={terminal.name} className="rounded-[0.3rem] bg-forest-900/[0.04] p-4">
-                      <div className="font-mono text-xs font-bold tracking-[0.18em] text-forest-900/55">
+                      <div className="text-xs font-bold tracking-[0.18em] text-forest-900/55">
                         {terminal.name}
                       </div>
                       <p className="mt-2 text-sm leading-6 text-forest-900/78">{terminal.body}</p>
@@ -626,17 +626,17 @@ export default async function AirportPage({ params }: Props) {
                       loading="lazy"
                     />
                   ) : (
-                    <span className="font-mono text-xs font-bold tracking-wider text-forest-900/60">
+                    <span className="text-xs font-bold tracking-wider text-forest-900/60">
                       {airline.iataCode || airline.name.slice(0, 3).toUpperCase()}
                     </span>
                   )}
                 </div>
                 <div className="min-w-0">
-                  <div className="line-clamp-2 font-urbanist text-base font-bold leading-tight text-forest-900 group-hover:text-forest-700">
+                  <div className="line-clamp-2 text-base font-bold leading-tight text-forest-900 group-hover:text-forest-700">
                     {airline.name}
                   </div>
                   {airline.iataCode && (
-                    <div className="mt-1 font-mono text-[11px] tracking-[0.18em] text-forest-900/45">
+                    <div className="mt-1 text-[11px] tracking-[0.18em] text-forest-900/45">
                       {airline.iataCode}
                     </div>
                   )}
@@ -679,10 +679,10 @@ export default async function AirportPage({ params }: Props) {
                 className="group flex items-center justify-between rounded-[0.3rem] border border-forest-900/10 bg-white p-5 transition hover:-translate-y-0.5 hover:border-forest-900/30 hover:shadow-sm"
               >
                 <div>
-                  <div className="font-mono text-xs font-bold tracking-wider text-forest-900/70">
+                  <div className="text-xs font-bold tracking-wider text-forest-900/70">
                     {r.origin?.iata} → {r.destination?.iata}
                   </div>
-                  <div className="mt-2 font-urbanist text-base font-bold text-forest-900 group-hover:text-forest-700">
+                  <div className="mt-2 text-base font-bold text-forest-900 group-hover:text-forest-700">
                     {r.destination?.city || r.destination?.name}
                   </div>
                   <div className="mt-1 text-xs text-forest-900/60">
@@ -691,7 +691,7 @@ export default async function AirportPage({ params }: Props) {
                 </div>
                 {r.distanceKm && (
                   <div className="text-right text-xs text-forest-900/50">
-                    <div className="font-mono font-bold text-forest-900/70">
+                    <div className="font-bold text-forest-900/70">
                       {r.distanceKm.toLocaleString()} km
                     </div>
                     {r.durationMinutes && <div className="mt-1">{formatDuration(r.durationMinutes)}</div>}
@@ -731,8 +731,8 @@ export default async function AirportPage({ params }: Props) {
                 className="rounded-[0.3rem] border border-forest-900/10 bg-white p-5 shadow-[0_1px_2px_rgba(0,0,0,0.03)]"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <h3 className="font-urbanist text-lg font-bold leading-snug text-forest-900">{card.title}</h3>
-                  <span className="rounded-[0.3rem] bg-forest-900/[0.06] px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-forest-900/58">
+                  <h3 className="text-lg font-bold leading-snug text-forest-900">{card.title}</h3>
+                  <span className="rounded-[0.3rem] bg-forest-900/[0.06] px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-forest-900/58">
                     {card.label}
                   </span>
                 </div>
@@ -753,10 +753,10 @@ export default async function AirportPage({ params }: Props) {
             <div className="overflow-hidden rounded-[0.3rem] border border-forest-900/10 bg-gradient-to-br from-white via-sand-100/70 to-paper p-6 shadow-[0_1px_2px_rgba(0,0,0,0.03)]">
               <div className="flex flex-wrap items-end justify-between gap-3">
                 <div>
-                  <p className="font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-forest-900/50">
+                  <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-forest-900/50">
                     Budget check
                   </p>
-                  <h3 className="mt-2 font-urbanist text-xl font-bold text-forest-900">What are key ground costs at {airport.iata}?</h3>
+                  <h3 className="mt-2 text-xl font-bold text-forest-900">What are key ground costs at {airport.iata}?</h3>
                 </div>
                 <p className="max-w-sm text-sm font-light leading-6 text-forest-900/68">
                   Prices can change, so use these notes to spot likely cost items before checking the official source.
@@ -769,10 +769,10 @@ export default async function AirportPage({ params }: Props) {
                     className="rounded-[0.3rem] border border-forest-900/10 bg-white/82 p-4 shadow-[0_1px_2px_rgba(0,0,0,0.03)]"
                   >
                     <div className="flex items-center gap-3">
-                      <span className="flex h-8 w-8 items-center justify-center rounded-[0.3rem] bg-forest-900 font-mono text-[11px] font-bold text-sand-100">
+                      <span className="flex h-8 w-8 items-center justify-center rounded-[0.3rem] bg-forest-900 text-[11px] font-bold text-sand-100">
                         {String(index + 1).padStart(2, '0')}
                       </span>
-                      <div className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-forest-900/60">
+                      <div className="text-[11px] font-bold uppercase tracking-[0.16em] text-forest-900/60">
                         {note.title}
                       </div>
                     </div>
@@ -787,7 +787,7 @@ export default async function AirportPage({ params }: Props) {
               className="rounded-[0.3rem] border border-forest-900/10 p-6 shadow-[0_1px_2px_rgba(0,0,0,0.03)]"
               style={{ backgroundColor: '#ffffff' }}
             >
-              <h3 className="font-urbanist text-xl font-bold text-forest-900">Which official data sources support this guide?</h3>
+              <h3 className="text-xl font-bold text-forest-900">Which official data sources support this guide?</h3>
               <ul className="mt-4 space-y-3 text-sm leading-6">
                 {officialPlanningGuide.sources.map((source) => (
                   <li key={source.href}>
@@ -850,17 +850,17 @@ export default async function AirportPage({ params }: Props) {
                       />
                     ) : (
                       <div className="flex h-full items-center justify-center bg-gradient-to-br from-forest-950 via-forest-800 to-forest-700">
-                        <span className="font-mono text-2xl font-bold tracking-[0.2em] text-sand-100">
+                        <span className="text-2xl font-bold tracking-[0.2em] text-sand-100">
                           {a.iata}
                         </span>
                       </div>
                     )}
-                    <span className="absolute left-3 top-3 rounded-[0.3rem] bg-forest-950/90 px-2.5 py-1 font-mono text-[10px] font-bold tracking-wider text-sand-100">
+                    <span className="absolute left-3 top-3 rounded-[0.3rem] bg-forest-950/90 px-2.5 py-1 text-[10px] font-bold tracking-wider text-sand-100">
                       {a.iata}
                     </span>
                   </div>
                   <div className="p-4">
-                    <div className="truncate font-urbanist text-base font-bold text-forest-900 group-hover:text-forest-700">
+                    <div className="truncate text-base font-bold text-forest-900 group-hover:text-forest-700">
                       {a.city || a.name}
                     </div>
                     <div className="mt-1 line-clamp-2 min-h-[2rem] text-xs leading-5 text-forest-900/60">

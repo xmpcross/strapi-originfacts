@@ -246,7 +246,7 @@ function CategoryLabel({ article, light = false }: { article: StrapiArticle; lig
       {chips.slice(0, 4).map((name) => (
         <span
           key={name}
-          className={`font-urbanist inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider ${light ? 'text-white' : 'text-primary-emphasis'}`}
+          className={`inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider ${light ? 'text-white' : 'text-primary-emphasis'}`}
         >
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-secondary-emphasis" />
           {name}
@@ -291,7 +291,7 @@ function HeroCompactStory({ article }: { article: StrapiArticle }) {
       <div className="mt-3">
         <HeroStoryMeta article={article} />
         <Link href={`/articles/${article.slug}`}>
-          <h2 className="mt-1 font-urbanist text-base font-extrabold leading-tight text-forest-950 transition group-hover:text-primary-highlight">
+          <h2 className="mt-1 text-base font-extrabold leading-tight text-forest-950 transition group-hover:text-primary-highlight">
             {article.title}
           </h2>
         </Link>
@@ -330,7 +330,7 @@ function HeroOverlayStory({
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-black/5" />
         <div className="absolute inset-x-4 bottom-4 text-white sm:inset-x-5 sm:bottom-5">
           <HeroStoryMeta article={article} light />
-          <h2 className={`mt-2 font-urbanist font-extrabold leading-[1.05] text-white ${titleSize}`}>
+          <h2 className={`mt-2 font-extrabold leading-[1.05] text-white ${titleSize}`}>
             {article.title}
           </h2>
         </div>
@@ -344,7 +344,7 @@ function HeroTextStory({ article }: { article: StrapiArticle }) {
     <article className="group" data-testid={`hero-text-${article.slug}`}>
       <HeroStoryMeta article={article} />
       <Link href={`/articles/${article.slug}`}>
-        <h2 className="mt-1 font-urbanist text-base font-extrabold leading-tight text-forest-950 transition group-hover:text-primary-highlight">
+        <h2 className="mt-1 text-base font-extrabold leading-tight text-forest-950 transition group-hover:text-primary-highlight">
           {article.title}
         </h2>
       </Link>
@@ -379,7 +379,7 @@ function HeroMiniStory({ article }: { article: StrapiArticle }) {
       </div>
       <div className="min-w-0">
         <HeroStoryMeta article={article} />
-        <h2 className="mt-1 line-clamp-2 font-urbanist text-sm font-bold leading-snug text-forest-950 transition group-hover:text-primary-highlight">
+        <h2 className="mt-1 line-clamp-2 text-sm font-bold leading-snug text-forest-950 transition group-hover:text-primary-highlight">
           {article.title}
         </h2>
       </div>
@@ -393,7 +393,7 @@ function HeroStoryMeta({ article, light = false }: { article: StrapiArticle; lig
     ? formatDistanceToNowStrict(new Date(article.publishedAt), { addSuffix: true })
     : null;
   return (
-    <div className={`font-urbanist text-[10px] font-extrabold uppercase tracking-wide ${light ? 'text-white/85' : 'text-primary-emphasis'}`}>
+    <div className={`text-[10px] font-extrabold uppercase tracking-wide ${light ? 'text-white/85' : 'text-primary-emphasis'}`}>
       <span>{category}</span>
       {relative && (
         <>
@@ -527,7 +527,7 @@ function FlightFeatureArticle({ article }: { article: StrapiArticle }) {
       <div className="mt-4">
         <FlightMetaLine article={article} />
         <Link href={`/articles/${article.slug}`}>
-          <h3 className="mt-2 font-urbanist text-2xl font-extrabold leading-[1.08] text-forest-950 transition group-hover:text-primary-highlight sm:text-3xl">
+          <h3 className="mt-2 text-2xl font-extrabold leading-[1.08] text-forest-950 transition group-hover:text-primary-highlight sm:text-3xl">
             <span className="mr-2 inline-block -skew-x-6 bg-[#ffd21e] px-2 py-0.5 italic text-black">
               {highlight}
             </span>
@@ -564,7 +564,7 @@ function FlightSideArticle({ article, reverse = false }: { article: StrapiArticl
     <div className={reverse ? 'text-left sm:text-right' : 'text-left'}>
       <FlightMetaLine article={article} />
       <Link href={`/articles/${article.slug}`}>
-        <h3 className="mt-2 font-urbanist text-lg font-extrabold leading-tight text-forest-950 transition group-hover:text-primary-highlight sm:text-xl">
+        <h3 className="mt-2 text-lg font-extrabold leading-tight text-forest-950 transition group-hover:text-primary-highlight sm:text-xl">
           {article.title}
         </h3>
       </Link>
@@ -584,7 +584,7 @@ function FlightListArticle({ article }: { article: StrapiArticle }) {
     <article className="group py-6" data-testid={`flights-list-${article.slug}`}>
       <FlightMetaLine article={article} />
       <Link href={`/articles/${article.slug}`}>
-        <h3 className="mt-2 font-urbanist text-lg font-extrabold leading-tight text-forest-950 transition group-hover:text-primary-highlight sm:text-xl">
+        <h3 className="mt-2 text-lg font-extrabold leading-tight text-forest-950 transition group-hover:text-primary-highlight sm:text-xl">
           {article.title}
         </h3>
       </Link>
@@ -595,7 +595,7 @@ function FlightListArticle({ article }: { article: StrapiArticle }) {
 function FlightMetaLine({ article }: { article: StrapiArticle }) {
   const category = article.category?.name ?? 'Flights';
   return (
-    <div className="font-urbanist text-[11px] font-extrabold uppercase tracking-wide text-forest-900/60">
+    <div className="text-[11px] font-extrabold uppercase tracking-wide text-forest-900/60">
       {category}
       <span className="mx-1.5 text-forest-900/35">~</span>
       <span>{article.readingTimeMinutes ?? 5} min read</span>
@@ -676,7 +676,7 @@ function TravelTipCard({
         )}
       </Link>
       <div className="mt-5 flex flex-1 flex-col">
-        <div className="font-urbanist text-[11px] font-bold uppercase tracking-wider text-primary-emphasis">
+        <div className="text-[11px] font-bold uppercase tracking-wider text-primary-emphasis">
           {category && <span>{category}</span>}
           {category && relative && (
             <span aria-hidden className="mx-2 text-forest-900/40">✱</span>
@@ -684,7 +684,7 @@ function TravelTipCard({
           {relative && <span className="text-forest-900/55">{relative}</span>}
         </div>
         <Link href={`/articles/${article.slug}`}>
-          <h3 className="mt-2 font-urbanist text-xl font-bold leading-snug text-forest-950 transition group-hover:text-primary-highlight">
+          <h3 className="mt-2 text-xl font-bold leading-snug text-forest-950 transition group-hover:text-primary-highlight">
             {article.title}
           </h3>
         </Link>
@@ -696,7 +696,7 @@ function TravelTipCard({
         <div className="mt-5">
           <Link
             href={`/articles/${article.slug}`}
-            className="inline-flex items-center gap-2 rounded-full border border-forest-900/15 bg-white px-4 py-2 font-urbanist text-[11px] font-bold uppercase tracking-widest text-forest-900 transition hover:border-primary-emphasis hover:text-primary-emphasis"
+            className="inline-flex items-center gap-2 rounded-full border border-forest-900/15 bg-white px-4 py-2 text-[11px] font-bold uppercase tracking-widest text-forest-900 transition hover:border-primary-emphasis hover:text-primary-emphasis"
           >
             Read More
             <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-forest-900 text-white transition group-hover:bg-primary-emphasis">
@@ -732,12 +732,12 @@ function EditorialSectionHeader({ section }: { section: Section }) {
   return (
     <div>
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-        <h2 className="font-urbanist text-2xl font-bold leading-tight text-forest-900 sm:text-3xl">
+        <h2 className="text-2xl font-bold leading-tight text-forest-900 sm:text-3xl">
           {section.title}
         </h2>
         <Link
           href={`/category/${section.slug}`}
-          className="inline-flex w-fit items-center justify-center rounded-[0.3rem] border border-forest-900 px-4 py-2 font-urbanist text-xs font-bold uppercase tracking-wider text-forest-900 transition hover:bg-primary-emphasis hover:text-white"
+          className="inline-flex w-fit items-center justify-center rounded-[0.3rem] border border-forest-900 px-4 py-2 text-xs font-bold uppercase tracking-wider text-forest-900 transition hover:bg-primary-emphasis hover:text-white"
           data-testid={`section-all-${section.slug}`}
         >
           See all
@@ -770,7 +770,7 @@ function FeatureArticle({ article }: { article: StrapiArticle }) {
       <div className="mt-5">
         <CategoryLabel article={article} />
         <Link href={`/articles/${article.slug}`}>
-          <h3 className="font-urbanist mt-3 text-xl font-bold leading-tight text-forest-900 transition group-hover:text-primary-highlight sm:text-2xl">
+          <h3 className="mt-3 text-xl font-bold leading-tight text-forest-900 transition group-hover:text-primary-highlight sm:text-2xl">
             {article.title}
           </h3>
         </Link>
@@ -804,7 +804,7 @@ function CompactArticleRow({ article }: { article: StrapiArticle }) {
         </div>
         <div className="min-w-0">
           <CategoryLabel article={article} />
-          <h3 className="mt-2 line-clamp-2 font-urbanist text-base font-bold leading-snug text-forest-900 transition group-hover:text-primary-highlight sm:text-lg">
+          <h3 className="mt-2 line-clamp-2 text-base font-bold leading-snug text-forest-900 transition group-hover:text-primary-highlight sm:text-lg">
             {article.title}
           </h3>
           <ArticleMeta article={article} compact />
@@ -817,7 +817,7 @@ function CompactArticleRow({ article }: { article: StrapiArticle }) {
 function ArticleMeta({ article, compact = false }: { article: StrapiArticle; compact?: boolean }) {
   return (
     <div className={`flex flex-wrap items-center gap-2 text-sm text-forest-900/75 ${compact ? 'mt-3' : 'mt-4'}`}>
-      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary-emphasis font-urbanist text-sm font-bold text-primary-emphasis">
+      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary-emphasis text-sm font-bold text-primary-emphasis">
         {(article.author?.name || 'O').slice(0, 1).toUpperCase()}
       </span>
       {article.author?.name && <span>{article.author.name}</span>}

@@ -31,7 +31,7 @@ export default function CategoryShowcase({ tiles }: { tiles: SidebarCategoryTile
                   )}
                 </div>
                 <div className="min-w-0">
-                  <h3 className="font-urbanist text-base font-bold uppercase tracking-wide text-forest-900 transition group-hover:text-primary-emphasis">
+                  <h3 className="text-base font-bold uppercase tracking-wide text-forest-900 transition group-hover:text-primary-emphasis">
                     {t.name}
                   </h3>
                   <p className="mt-1 text-xs text-forest-900/60">

@@ -471,7 +471,7 @@ function CityDestinationPage({
         />
         <div className="mt-8 grid gap-8 lg:grid-cols-[360px_minmax(0,1fr)]">
           <aside className="rounded-[0.3rem] border border-forest-900/10 bg-gradient-to-br from-[#f7fbff] via-white to-[#fff8e6] p-6">
-            <p className="font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-primary-emphasis">
+            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary-emphasis">
               Planning snapshot
             </p>
             <div className="mt-5 space-y-5">
@@ -488,7 +488,7 @@ function CityDestinationPage({
               />
             </div>
             <div className="mt-6 border-t border-forest-900/10 pt-5">
-              <h3 className="font-urbanist text-lg font-bold text-forest-950">
+              <h3 className="text-lg font-bold text-forest-950">
                 What this snapshot helps with
               </h3>
               <p className="mt-3 text-sm leading-7 text-forest-900/72">
@@ -611,7 +611,7 @@ function countryNameFromCode(code?: string) {
 function CityHeroMetric({ label, value }: { label: string; value: number }) {
   return (
     <div className="border border-white/25 bg-white/10 px-4 py-3 backdrop-blur">
-      <div className="font-urbanist text-2xl font-bold leading-none text-white">{value.toLocaleString()}</div>
+      <div className="text-2xl font-bold leading-none text-white">{value.toLocaleString()}</div>
       <div className="mt-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white/70">{label}</div>
     </div>
   );
@@ -621,7 +621,7 @@ function CitySnapshotItem({ label, value, href }: { label: string; value: string
   const content = (
     <>
       <dt className="text-[10px] font-bold uppercase tracking-[0.18em] text-forest-900/50">{label}</dt>
-      <dd className="mt-1 font-urbanist text-lg font-bold leading-tight text-forest-950">{value}</dd>
+      <dd className="mt-1 text-lg font-bold leading-tight text-forest-950">{value}</dd>
     </>
   );
 
@@ -777,7 +777,7 @@ function CitySeoGuide({
             </p>
           </div>
           <div className="border-l-2 border-primary-emphasis pl-5">
-            <div className="font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-primary-emphasis">
+            <div className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary-emphasis">
               Quick checklist
             </div>
             <ul className="mt-4 space-y-2 text-sm leading-6 text-forest-900/72">
@@ -791,7 +791,7 @@ function CitySeoGuide({
         <div className="mt-8 grid gap-5 md:grid-cols-2">
           {sections.map((section) => (
             <article key={section.title} className="border-t border-forest-900/10 pt-5">
-              <h3 className="font-urbanist text-xl font-bold text-forest-950">{section.title}</h3>
+              <h3 className="text-xl font-bold text-forest-950">{section.title}</h3>
               <p className="mt-3 text-sm leading-7 text-forest-900/72">{section.body}</p>
             </article>
           ))}
@@ -917,8 +917,8 @@ function CityPlanningSections({
 function CityPlanningCard({ label, title, body }: { label: string; title: string; body: string }) {
   return (
     <article className="rounded-[0.3rem] border border-forest-900/10 bg-white p-5 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
-      <p className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-primary-emphasis">{label}</p>
-      <h3 className="mt-3 font-urbanist text-xl font-bold leading-tight text-forest-950">{title}</h3>
+      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-primary-emphasis">{label}</p>
+      <h3 className="mt-3 text-xl font-bold leading-tight text-forest-950">{title}</h3>
       <p className="mt-3 text-sm font-light leading-7 text-forest-900/72">{body}</p>
     </article>
   );
@@ -927,7 +927,7 @@ function CityPlanningCard({ label, title, body }: { label: string; title: string
 function CityContextNote({ title, body }: { title: string; body: string }) {
   return (
     <article className="border-t border-forest-900/10 pt-5">
-      <h3 className="font-urbanist text-lg font-bold text-forest-950">{title}</h3>
+      <h3 className="text-lg font-bold text-forest-950">{title}</h3>
       <p className="mt-3 text-sm font-light leading-7 text-forest-900/72">{body}</p>
     </article>
   );
@@ -1310,10 +1310,10 @@ function CountryPlanningNote({
         <div className="grid divide-y divide-forest-900/10 md:grid-cols-3 md:divide-x md:divide-y-0">
           {coverageItems.map((item, index) => (
             <article key={item.label} className="p-6 sm:p-7">
-              <div className="font-mono text-[11px] font-bold tracking-[0.18em] text-primary-emphasis">
+              <div className="text-[11px] font-bold tracking-[0.18em] text-primary-emphasis">
                 {String(index + 1).padStart(2, '0')}
               </div>
-              <h3 className="mt-3 font-urbanist text-lg font-bold text-forest-950">{item.label}</h3>
+              <h3 className="mt-3 text-lg font-bold text-forest-950">{item.label}</h3>
               <p className="mt-3 text-sm font-light leading-7 text-forest-900/72">{item.body}</p>
             </article>
           ))}
@@ -1326,7 +1326,7 @@ function CountryPlanningNote({
 function PlanningStat({ label, value }: { label: string; value: number }) {
   return (
     <div className="px-2 py-2">
-      <div className="font-urbanist text-2xl font-bold leading-none text-forest-900">
+      <div className="text-2xl font-bold leading-none text-forest-900">
         {value.toLocaleString()}
       </div>
       <div className="mt-1 text-[10px] font-bold uppercase tracking-[0.16em] text-forest-900/55">{label}</div>
@@ -1365,7 +1365,7 @@ function CountryCitiesSection({
           </p>
         </div>
         <div className="border-l-2 border-primary-emphasis pl-5">
-          <div className="font-urbanist text-4xl font-bold leading-none text-forest-900">
+          <div className="text-4xl font-bold leading-none text-forest-900">
             {cities.length}
           </div>
           <div className="mt-2 text-xs font-bold uppercase tracking-[0.22em] text-forest-900/55">
@@ -1422,7 +1422,7 @@ function CountryCityCard({
       <div className="absolute inset-0 bg-gradient-to-t from-forest-950/75 via-forest-950/15 to-forest-950/35" />
       <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5">
         <div className="min-w-0">
-          <h5 className="truncate font-urbanist text-2xl font-bold leading-none !text-white drop-shadow-sm">
+          <h5 className="truncate text-2xl font-bold leading-none !text-white drop-shadow-sm">
             {city.name}
           </h5>
           <p
@@ -1468,7 +1468,7 @@ function cityCardDescription(city: StrapiDestination) {
 function HeroStat({ label, value, display }: { label: string; value: number; display?: string }) {
   return (
     <div>
-      <div className="font-urbanist text-3xl font-bold leading-none text-forest-900">
+      <div className="text-3xl font-bold leading-none text-forest-900">
         {display ?? value.toLocaleString()}
       </div>
       <div className="mt-2 text-xs uppercase tracking-widest text-forest-900/60">{label}</div>
@@ -1484,17 +1484,17 @@ function RouteCard({ r }: { r: Awaited<ReturnType<typeof listRoutesToDestination
       data-testid={`destination-route-${r.slug}`}
     >
       <div>
-        <div className="font-mono text-xs font-bold tracking-wider text-forest-900/70">
+        <div className="text-xs font-bold tracking-wider text-forest-900/70">
           {r.origin?.iata} → {r.destination?.iata}
         </div>
-        <div className="mt-2 font-urbanist text-base font-bold text-forest-900 group-hover:text-forest-700">
+        <div className="mt-2 text-base font-bold text-forest-900 group-hover:text-forest-700">
           From {r.origin?.city || r.origin?.name}
         </div>
         <div className="mt-1 text-xs text-forest-900/60">{r.origin?.country}</div>
       </div>
       {r.distanceKm && (
         <div className="text-right text-xs text-forest-900/50">
-          <div className="font-mono font-bold text-forest-900/70">
+          <div className="font-bold text-forest-900/70">
             {r.distanceKm.toLocaleString()} km
           </div>
           {r.durationMinutes && (
@@ -1791,7 +1791,7 @@ function ContinentTravelToolkit({
                   className="group flex items-center justify-between gap-4 border-b border-forest-900/10 py-3"
                 >
                   <span>
-                    <span className="block font-urbanist text-base font-bold text-forest-950 group-hover:text-primary-highlight">
+                    <span className="block text-base font-bold text-forest-950 group-hover:text-primary-highlight">
                       {airport.city || airport.name}
                     </span>
                     <span className="mt-1 block text-xs font-bold uppercase tracking-[0.16em] text-forest-900/55">
@@ -1817,7 +1817,7 @@ function ContinentTravelToolkit({
           <div className="mt-6 space-y-4">
             {timing.notes.map((note) => (
               <div key={note.label} className="border-l-2 border-primary-emphasis pl-4">
-                <h3 className="font-urbanist text-base font-bold text-forest-950">{note.label}</h3>
+                <h3 className="text-base font-bold text-forest-950">{note.label}</h3>
                 <p className="mt-1 text-sm leading-6 text-forest-900/70">{note.body}</p>
               </div>
             ))}
@@ -1848,7 +1848,7 @@ function ContinentTravelToolkit({
                 href={`/destinations/${city.slug}`}
                 className="group border-b border-forest-900/10 py-3"
               >
-                <h3 className="font-urbanist text-lg font-bold text-forest-950 group-hover:text-primary-highlight">
+                <h3 className="text-lg font-bold text-forest-950 group-hover:text-primary-highlight">
                   {city.name}
                 </h3>
                 {city.countryCode && (
@@ -1960,12 +1960,12 @@ function CountryChip({ country }: { country: StrapiCountry }) {
     >
       <span className="text-2xl" aria-hidden>{flagEmoji(country.code)}</span>
       <div className="min-w-0 flex-1">
-        <div className="font-urbanist text-sm font-bold text-forest-900 transition group-hover:text-forest-700">
+        <div className="text-sm font-bold text-forest-900 transition group-hover:text-forest-700">
           {country.name}
         </div>
         {country.currency && (
           <div className="mt-0.5 truncate text-xs text-forest-900/60">
-            <span className="font-mono">{country.code}</span>
+            <span className="">{country.code}</span>
             <span className="ml-2">{country.currency}</span>
           </div>
         )}
@@ -2053,7 +2053,7 @@ function ContinentPlanningContent({
         </div>
 
         <aside className="rounded-[0.3rem] border border-forest-900/10 bg-[#f8fafc] p-6">
-          <h3 className="font-urbanist text-xl font-bold leading-tight text-forest-950">
+          <h3 className="text-xl font-bold leading-tight text-forest-950">
             Best planning angle
           </h3>
           <p className="mt-3 text-sm font-normal leading-7 text-forest-900/70">{angle.summary}</p>
@@ -2189,7 +2189,7 @@ function ContinentFactsPanel({
             className="flex items-baseline justify-between gap-4 py-2 first:pt-0 last:pb-0"
           >
             <dt className="text-xs uppercase tracking-widest text-forest-900/60">{r.label}</dt>
-            <dd className="text-right font-urbanist font-bold text-forest-900">{r.value}</dd>
+            <dd className="text-right font-bold text-forest-900">{r.value}</dd>
           </div>
         ))}
       </dl>

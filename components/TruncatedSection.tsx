@@ -36,7 +36,7 @@ export default function TruncatedSection({
       data-testid={`truncated-section-${section.heading?.toLowerCase().replace(/\s+/g, '-')}`}
     >
       {section.heading && (
-        <h3 className="!mt-0 font-urbanist text-xl font-bold text-forest-900">
+        <h3 className="!mt-0 text-xl font-bold text-forest-900">
           {section.heading}
         </h3>
       )}

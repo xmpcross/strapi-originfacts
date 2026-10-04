@@ -174,7 +174,7 @@ function PlaceSegment({
                   {p.label}
                   {p.sub && <span className="text-forest-900/50"> · {p.sub}</span>}
                 </span>
-                <span className="flex-none font-mono text-xs font-bold text-forest-900/55">{p.code}</span>
+                <span className="flex-none text-xs font-bold text-forest-900/55">{p.code}</span>
               </button>
             </li>
           ))}

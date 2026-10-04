@@ -51,7 +51,7 @@ export default function CountryFactsPanel({
             loading="lazy"
           />
           {countryCode && (
-            <span className="font-mono text-xs font-bold tracking-widest text-forest-900/60">
+            <span className="text-xs font-bold tracking-widest text-forest-900/60">
               {countryCode.toUpperCase()}
             </span>
           )}
@@ -62,7 +62,7 @@ export default function CountryFactsPanel({
           {rows.map((r) => (
             <div key={r.label} className="flex items-baseline justify-between gap-4 py-2 first:pt-0 last:pb-0">
               <dt className="text-xs uppercase tracking-widest text-forest-900/60">{r.label}</dt>
-              <dd className="text-right font-urbanist font-bold text-forest-900">{r.value}</dd>
+              <dd className="text-right font-bold text-forest-900">{r.value}</dd>
             </div>
           ))}
         </dl>

@@ -99,7 +99,7 @@ export default function DestinationsDirectory({
         />
 
         <div className="mt-4 flex flex-wrap items-center gap-2">
-          <span className="mr-1 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-forest-900/50">
+          <span className="mr-1 text-[10px] font-bold uppercase tracking-[0.2em] text-forest-900/50">
             Show
           </span>
           <FilterChip label="All" active={filter === 'all'} onClick={() => setFilter('all')} />
@@ -264,7 +264,7 @@ function SectionHeader({
   return (
     <header className="mt-16 flex flex-wrap items-end justify-between gap-4 border-b border-forest-900/10 pb-4">
       <div>
-        <p className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-primary-emphasis">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-primary-emphasis">
           Browse by type
         </p>
         <h2 className="editorial-h mt-2 text-2xl font-bold text-forest-950 lg:text-3xl">{title}</h2>
@@ -277,7 +277,7 @@ function SectionHeader({
           <button
             type="button"
             onClick={onViewAll}
-            className="font-urbanist text-sm font-bold uppercase tracking-wider text-primary-emphasis hover:underline"
+            className="text-sm font-bold uppercase tracking-wider text-primary-emphasis hover:underline"
           >
             View all
           </button>
@@ -322,7 +322,7 @@ function DestinationTile({
       <div className="absolute inset-0 bg-gradient-to-t from-forest-950/90 via-forest-950/25 to-forest-950/20" />
       <div className="absolute inset-x-0 bottom-0 p-4 text-white sm:p-5">
         {d.type && (
-          <div className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-white/70">
+          <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/70">
             {d.type}
             {d.countryCode && <span className="ml-2 opacity-80">· {d.countryCode}</span>}
           </div>
@@ -347,7 +347,7 @@ function FilterChip({
       type="button"
       onClick={onClick}
       className={
-        'rounded-[0.3rem] border px-3 py-2 font-urbanist text-xs font-bold uppercase tracking-wider transition ' +
+        'rounded-[0.3rem] border px-3 py-2 text-xs font-bold uppercase tracking-wider transition ' +
         (active
           ? 'border-primary-emphasis bg-primary-emphasis text-white'
           : 'border-forest-900/15 bg-white text-forest-900/80 hover:border-primary-emphasis/40 hover:bg-primary-emphasis/5')

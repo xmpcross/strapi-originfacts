@@ -288,7 +288,7 @@ export default async function AirlinePage({ params }: Props) {
       />
       {ceased && <AirlineStatusNotice name={airline.name} ceased={ceased} />}
       <div className="mx-auto max-w-7xl px-6 pt-8">
-        <nav className="border-y border-forest-900/10 py-3 font-urbanist text-xs font-bold uppercase tracking-widest text-forest-900/60">
+        <nav className="border-y border-forest-900/10 py-3 text-xs font-bold uppercase tracking-widest text-forest-900/60">
           <Link href="/airlines" className="hover:text-forest-900">Airlines</Link>
           <span className="mx-2 text-forest-900/30">/</span>
           <span className="text-forest-900/80">{airline.name}</span>
@@ -301,7 +301,7 @@ export default async function AirlinePage({ params }: Props) {
             <div className="bg-gradient-to-br from-[#f8fbff] via-white to-[#fff8e6] p-6 sm:p-8 lg:p-10">
               <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
                 {airline.type && (
-                  <span className="inline-flex items-center rounded-[0.3rem] bg-primary-emphasis px-3 py-1.5 font-urbanist text-[11px] font-bold uppercase tracking-[0.14em] text-white">
+                  <span className="inline-flex items-center rounded-[0.3rem] bg-primary-emphasis px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-white">
                     {airline.type}
                   </span>
                 )}
@@ -318,7 +318,7 @@ export default async function AirlinePage({ params }: Props) {
                     // eslint-disable-next-line @next/next/no-img-element
                     <img src={logo} alt={airline.name} className="max-h-full max-w-full object-contain" />
                   ) : (
-                    <span className="font-urbanist text-2xl font-bold text-forest-900/60">
+                    <span className="text-2xl font-bold text-forest-900/60">
                       {(airline.iataCode || airline.name).slice(0, 3).toUpperCase()}
                     </span>
                   )}
@@ -334,7 +334,7 @@ export default async function AirlinePage({ params }: Props) {
                   : intro}
               </p>
 
-              <div className="mt-7 flex flex-wrap items-center gap-3 font-mono text-xs">
+              <div className="mt-7 flex flex-wrap items-center gap-3 text-xs">
                 {airline.iataCode && (
                   <span className="rounded-[0.3rem] bg-forest-900 px-3 py-1.5 font-bold tracking-wider text-white">
                     IATA · {airline.iataCode}
@@ -359,11 +359,11 @@ export default async function AirlinePage({ params }: Props) {
             </div>
 
             <aside className="border-t border-forest-900/10 bg-forest-950 p-6 text-white lg:border-l lg:border-t-0 lg:p-8">
-              <h2 className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-white/55">Airline snapshot</h2>
+              <h2 className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/55">Airline snapshot</h2>
               <dl className="mt-6 grid gap-px overflow-hidden rounded-[0.3rem] bg-white/15">
                 {heroFacts.map((fact) => (
                   <div key={fact.label} className="bg-forest-950 px-4 py-4">
-                    <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/45">{fact.label}</dt>
+                    <dt className="text-[10px] uppercase tracking-[0.2em] text-white/45">{fact.label}</dt>
                     <dd className="mt-1 text-sm font-semibold text-white">{fact.value}</dd>
                   </div>
                 ))}
@@ -373,7 +373,7 @@ export default async function AirlinePage({ params }: Props) {
                   href={websiteHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center rounded-[0.3rem] bg-white px-5 py-3 font-urbanist text-sm font-bold uppercase tracking-wider text-forest-950 transition hover:bg-[#fff8e6]"
+                  className="mt-6 inline-flex items-center rounded-[0.3rem] bg-white px-5 py-3 text-sm font-bold uppercase tracking-wider text-forest-950 transition hover:bg-[#fff8e6]"
                 >
                   Official website
                 </a>
@@ -395,7 +395,7 @@ export default async function AirlinePage({ params }: Props) {
       <section className="mx-auto mt-14 max-w-7xl px-6 pb-20" data-testid="airline-about">
         <div className="grid gap-8 lg:grid-cols-[360px_minmax(0,1fr)]">
           <aside className="self-start rounded-[0.3rem] border border-forest-900/10 bg-white p-6">
-            <h3 className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-primary-emphasis">
+            <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-primary-emphasis">
               Operating details
             </h3>
             <dl className="mt-5 space-y-4">
@@ -450,7 +450,7 @@ export default async function AirlinePage({ params }: Props) {
               <span className="inline-block h-px w-8 bg-primary-emphasis" />
               About {airline.name}
             </p>
-            <h2 className="mt-3 font-urbanist text-3xl font-bold leading-tight text-forest-950">
+            <h2 className="mt-3 text-3xl font-bold leading-tight text-forest-950">
               {ceased ? `About ${airline.name}` : `What to know before booking ${airline.name}`}
             </h2>
             <div className="mt-5">
@@ -470,7 +470,7 @@ export default async function AirlinePage({ params }: Props) {
             <span className="inline-block h-px w-8 bg-primary-emphasis" />
             Good to know
           </p>
-          <h2 className="mt-3 font-urbanist text-3xl font-bold leading-tight text-forest-950">
+          <h2 className="mt-3 text-3xl font-bold leading-tight text-forest-950">
             {ceased ? `Flying with ${airline.name} — how it operated` : `Flying with ${airline.name} — what to expect`}
           </h2>
           {goodToKnowCards.length > 0 ? (
@@ -478,13 +478,13 @@ export default async function AirlinePage({ params }: Props) {
               {goodToKnowCards.map((card, i) => (
                 <div key={i} className="flex gap-4 bg-white p-5 ring-1 ring-forest-900/10" data-testid={`gtk-card-${i}`}>
                   <span
-                    className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-forest-900 font-urbanist text-sm font-bold text-white"
+                    className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-forest-900 text-sm font-bold text-white"
                     aria-hidden
                   >
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   <div className="min-w-0">
-                    <h3 className="font-urbanist text-base font-bold text-forest-950">{card.title}</h3>
+                    <h3 className="text-base font-bold text-forest-950">{card.title}</h3>
                     <p className="mt-1.5 text-sm font-normal leading-7 text-forest-900/78">{card.body}</p>
                   </div>
                 </div>
@@ -524,7 +524,7 @@ export default async function AirlinePage({ params }: Props) {
                 <span className="inline-block h-px w-8 bg-forest-800/60" />
                 Route network
               </p>
-              <h2 className="mt-3 font-urbanist text-3xl font-bold leading-tight text-forest-950">
+              <h2 className="mt-3 text-3xl font-bold leading-tight text-forest-950">
                 Popular routes operated by {airline.name}
               </h2>
             </div>
@@ -585,7 +585,7 @@ export default async function AirlinePage({ params }: Props) {
               <span className="inline-block h-px w-8 bg-forest-800/60" />
               Route network
             </p>
-            <h2 className="mt-3 font-urbanist text-3xl font-bold leading-tight text-forest-950">
+            <h2 className="mt-3 text-3xl font-bold leading-tight text-forest-950">
               Popular routes operated by {airline.name}
             </h2>
             <p className="mt-3 text-sm font-light text-forest-900/60">
@@ -624,7 +624,7 @@ export default async function AirlinePage({ params }: Props) {
             <span className="inline-block h-px w-8 bg-forest-800/60" />
             More from {airline.country}
           </p>
-          <h2 className="mt-3 font-urbanist text-3xl font-bold leading-tight text-forest-950">
+          <h2 className="mt-3 text-3xl font-bold leading-tight text-forest-950">
             Other airlines based in {airline.country}
           </h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -642,13 +642,13 @@ export default async function AirlinePage({ params }: Props) {
                       // eslint-disable-next-line @next/next/no-img-element
                       <img src={relLogo} alt={rel.name} className="h-full w-full object-contain" />
                     ) : (
-                      <span className="font-urbanist text-lg font-bold text-forest-900/60">
+                      <span className="text-lg font-bold text-forest-900/60">
                         {(rel.iataCode || rel.name).slice(0, 2).toUpperCase()}
                       </span>
                     )}
                   </span>
                   <span className="min-w-0">
-                    <span className="block truncate font-urbanist text-base font-bold text-forest-900 group-hover:text-forest-700">
+                    <span className="block truncate text-base font-bold text-forest-900 group-hover:text-forest-700">
                       {rel.name}
                     </span>
                     <span className="mt-0.5 block text-xs text-forest-900/60">
@@ -671,7 +671,7 @@ function StatTile({ label, value, hint }: { label: string; value: string; hint?:
   return (
     <div className="rounded-[0.3rem] border border-forest-900/10 bg-white/85 p-5 shadow-[0_1px_2px_rgba(0,0,0,0.03)]">
       <div className="text-[11px] uppercase tracking-[0.2em] text-forest-900/50">{label}</div>
-      <div className="mt-2 font-urbanist text-2xl font-bold text-forest-900">{value}</div>
+      <div className="mt-2 text-2xl font-bold text-forest-900">{value}</div>
       {hint && <div className="mt-1 truncate text-xs text-forest-900/60">{hint}</div>}
     </div>
   );
@@ -715,19 +715,19 @@ function RouteCard({
           // eslint-disable-next-line @next/next/no-img-element
           <img src={logo} alt={airlineName} className="h-full w-full object-contain" />
         ) : (
-          <span className="font-urbanist text-lg font-bold text-forest-900/60">
+          <span className="text-lg font-bold text-forest-900/60">
             {airlineName.slice(0, 2).toUpperCase()}
           </span>
         )}
       </span>
       <span className="min-w-0 flex-1">
-        <span className="block font-urbanist text-lg font-bold tracking-wide text-forest-900 group-hover:text-forest-700">
+        <span className="block text-lg font-bold tracking-wide text-forest-900 group-hover:text-forest-700">
           {routeCodes || destCity}
         </span>
         {cityPair && <span className="mt-0.5 block truncate text-xs text-forest-900/60">{cityPair}</span>}
       </span>
       <span className="flex-none text-right">
-        {duration && <span className="block font-urbanist text-sm font-bold text-forest-900">{duration}</span>}
+        {duration && <span className="block text-sm font-bold text-forest-900">{duration}</span>}
         <span className="block text-xs text-forest-900/50">
           {distanceKm ? `${distanceKm.toLocaleString()} km` : 'direct'}
         </span>
@@ -792,7 +792,7 @@ function InfoRow({
       <dd
         className={
           'mt-1 text-sm text-forest-900 ' +
-          (mono ? 'font-mono font-bold tracking-wider ' : 'font-light ') +
+          (mono ? 'font-bold tracking-wider ' : 'font-light ') +
           (multiline ? 'whitespace-pre-wrap ' : '')
         }
       >

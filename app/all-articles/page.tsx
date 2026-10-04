@@ -93,7 +93,7 @@ export default async function ArticlesPage({ searchParams }: Props) {
         />
         <button
           type="submit"
-          className="rounded-[0.3rem] bg-primary-emphasis px-4 py-2 font-urbanist text-xs font-bold uppercase tracking-wider text-white transition hover:bg-primary-emphasis-hover"
+          className="rounded-[0.3rem] bg-primary-emphasis px-4 py-2 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-primary-emphasis-hover"
         >
           Search
         </button>

@@ -17,7 +17,7 @@ export default function AirlineStatusNotice({ name, ceased }: { name: string; ce
         className="flex flex-col gap-2 border-l-4 border-amber-500 bg-amber-50 px-5 py-4 text-sm leading-6 text-forest-900 sm:flex-row sm:items-start sm:justify-between sm:gap-6"
       >
         <p>
-          <strong className="font-urbanist text-base font-bold">{name} has ceased operations</strong>
+          <strong className="text-base font-bold">{name} has ceased operations</strong>
           <span className="block text-forest-900/80">
             Wikidata records this carrier as dissolved {when}. This page is kept as a historical reference
             — the airline does not currently sell tickets, and the codes, contacts and policies below describe
@@ -28,7 +28,7 @@ export default function AirlineStatusNotice({ name, ceased }: { name: string; ce
           href={ceased.wikidata}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-none self-start font-mono text-[11px] uppercase tracking-wider text-forest-900/60 underline-offset-2 hover:underline"
+          className="flex-none self-start text-[11px] uppercase tracking-wider text-forest-900/60 underline-offset-2 hover:underline"
         >
           Source · Wikidata{AIRLINE_STATUS_SOURCE.retrieved() ? ` · retrieved ${AIRLINE_STATUS_SOURCE.retrieved()}` : ''}
         </a>

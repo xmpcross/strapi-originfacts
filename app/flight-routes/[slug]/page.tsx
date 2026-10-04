@@ -157,7 +157,7 @@ export default async function RoutePage({ params }: Props) {
       />
       {/* Hero — origin → destination */}
       <header className="mx-auto mt-10 max-w-7xl px-6">
-        <p className="font-urbanist text-xs uppercase tracking-wider text-forest-800/70">
+        <p className="text-xs uppercase tracking-wider text-forest-800/70">
           Route · {origin.iata} → {destination.iata}
         </p>
         <h1 className="editorial-h mt-4 text-[1.875rem] font-bold leading-tight text-forest-900">
@@ -177,7 +177,7 @@ export default async function RoutePage({ params }: Props) {
               <path d="M2 12 L38 12 M30 4 L38 12 L30 20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
             {route.distanceKm && (
-              <span className="font-mono text-xs font-bold tracking-wider text-forest-900/70">
+              <span className="text-xs font-bold tracking-wider text-forest-900/70">
                 {route.distanceKm.toLocaleString()} km
               </span>
             )}
@@ -191,7 +191,7 @@ export default async function RoutePage({ params }: Props) {
             href={searchUrl}
             target="_blank"
             rel="sponsored nofollow noopener"
-            className="inline-flex items-center gap-2 rounded-[0.3rem] bg-forest-900 px-6 py-3 font-urbanist text-sm font-bold uppercase tracking-wider text-sand-100 transition hover:bg-forest-800"
+            className="inline-flex items-center gap-2 rounded-[0.3rem] bg-forest-900 px-6 py-3 text-sm font-bold uppercase tracking-wider text-sand-100 transition hover:bg-forest-800"
             data-testid="route-search-cta"
           >
             Find flights {origin.iata} → {destination.iata} →
@@ -332,8 +332,8 @@ function AirportCard({
 }) {
   return (
     <div className={'rounded-[0.3rem] border border-forest-900/10 bg-paper p-5 ' + (align === 'right' ? 'sm:text-right' : '')}>
-      <div className="font-mono text-xs font-bold tracking-wider text-forest-900/60">{airport.iata}</div>
-      <div className="mt-1 font-urbanist text-xl font-bold text-forest-900">{airport.city || airport.name}</div>
+      <div className="text-xs font-bold tracking-wider text-forest-900/60">{airport.iata}</div>
+      <div className="mt-1 text-xl font-bold text-forest-900">{airport.city || airport.name}</div>
       <div className="mt-1 text-sm text-forest-900/60">
         {airport.name}
         {airport.country && <span className="block text-xs text-forest-900/50">{airport.country}</span>}
@@ -345,7 +345,7 @@ function AirportCard({
 function Stat({ label, value, mono = false }: { label: string; value: string; mono?: boolean }) {
   return (
     <div>
-      <div className={'font-urbanist text-2xl font-bold text-forest-900 lg:text-3xl ' + (mono ? 'font-mono !text-xl lg:!text-2xl' : '')}>
+      <div className={'text-2xl font-bold text-forest-900 lg:text-3xl ' + (mono ? '!text-xl lg:!text-2xl' : '')}>
         {value}
       </div>
       <div className="mt-1 text-xs uppercase tracking-widest text-forest-900/60">{label}</div>
@@ -379,7 +379,7 @@ function CarrierCard({
             // eslint-disable-next-line @next/next/no-img-element
             <img src={logo} alt={carrier.name} className="h-full w-full object-contain" />
           ) : (
-            <span className="font-urbanist text-xs font-bold text-forest-900/60">
+            <span className="text-xs font-bold text-forest-900/60">
               {(carrier.iataCode || carrier.name).slice(0, 3).toUpperCase()}
             </span>
           )}
@@ -387,12 +387,12 @@ function CarrierCard({
         <div className="min-w-0 flex-1">
           <Link
             href={`/airlines/${carrier.slug}`}
-            className="block font-urbanist text-base font-bold text-forest-900 hover:text-forest-700"
+            className="block text-base font-bold text-forest-900 hover:text-forest-700"
           >
             {carrier.name}
           </Link>
           {carrier.iataCode && (
-            <span className="mt-1 inline-block rounded-[0.3rem] bg-forest-900 px-2 py-0.5 font-mono text-[10px] font-bold tracking-wider text-sand-100">
+            <span className="mt-1 inline-block rounded-[0.3rem] bg-forest-900 px-2 py-0.5 text-[10px] font-bold tracking-wider text-sand-100">
               {carrier.iataCode}
             </span>
           )}
@@ -417,13 +417,13 @@ function AirportLink({ airport }: { airport: { iata: string; name: string; city?
       className="group flex items-center justify-between rounded-[0.3rem] border border-forest-900/10 bg-paper p-5 transition hover:border-forest-900/30"
     >
       <div>
-        <div className="font-mono text-xs font-bold tracking-wider text-forest-900/60">{airport.iata}</div>
-        <div className="mt-1 font-urbanist text-base font-bold text-forest-900 group-hover:text-forest-700">
+        <div className="text-xs font-bold tracking-wider text-forest-900/60">{airport.iata}</div>
+        <div className="mt-1 text-base font-bold text-forest-900 group-hover:text-forest-700">
           {airport.city || airport.name}
         </div>
         <div className="mt-1 text-xs text-forest-900/50">Airport guide</div>
       </div>
-      <span className="font-urbanist text-2xl text-forest-900/40 transition group-hover:translate-x-1 group-hover:text-forest-600">→</span>
+      <span className="text-2xl text-forest-900/40 transition group-hover:translate-x-1 group-hover:text-forest-600">→</span>
     </Link>
   );
 }

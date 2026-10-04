@@ -6,6 +6,7 @@
  * before they are added.
  */
 import type { StrapiDestination } from '@/lib/strapi';
+import bangkok from '@/data/destination-guides/bangkok.json';
 import perth from '@/data/destination-guides/perth.json';
 
 export type GuideSource = { url: string; title: string };
@@ -19,7 +20,7 @@ export type DestinationGuide = {
   sources: GuideSource[];
 };
 
-const GUIDES: Record<string, DestinationGuide> = { perth };
+const GUIDES: Record<string, DestinationGuide> = { bangkok, perth };
 
 export function getDestinationGuide(slug: string): DestinationGuide | null {
   return GUIDES[slug] ?? null;

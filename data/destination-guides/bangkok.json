@@ -1,0 +1,101 @@
+{
+  "slug": "bangkok",
+  "generatedAt": "2026-10-04T19:10:51.107Z",
+  "model": "claude-opus-5-5",
+  "description": "Bangkok lies on the Chao Phraya River in central Thailand, and it serves as both the country's capital and its main gateway. Most visitors come to see the royal and temple architecture of the old Rattanakosin quarter, to eat street food in Chinatown and the night markets, and to shop in malls linked by elevated Skytrain lines. Many also use the city as a base for river trips and day trips to Ayutthaya.\n\n## Where to stay in Bangkok\n\nOn a first visit, Rattanakosin and neighbouring Banglamphu put you within walking distance of the Grand Palace, Wat Pho and the river piers. Banglamphu also takes in Khao San Road, a backpacker street that stays loud late into the night. The trade-off is that neither area has a Skytrain or metro station close by. Sukhumvit runs east along the BTS Sukhumvit Line and has the widest range of rooftop bars and nightlife, as well as international food. It also has easy connections to the Airport Rail Link. Silom and Sathorn make up the business district. Here the BTS and MRT meet near Lumphini Park, and Patpong's night market keeps the evenings busy. Families often choose the Riverside, where the Chao Phraya Express Boat lets you skip road traffic to reach the temples. For a short stopover, the Phaya Thai and Makkasan stations on the Airport Rail Link line are practical, or stay near Don Mueang if your flight is early.\n\n## Things to do in Bangkok\n\nStart at the Grand Palace, where Wat Phra Kaew holds the Emerald Buddha, Thailand's most revered image. Visitors must cover their shoulders and knees. A short walk south brings you to Wat Pho, where a gold-leafed reclining Buddha about 46 metres long fills an entire hall. The temple also hosts a traditional Thai massage school. From Tha Tien pier, a cross-river ferry takes you to Wat Arun, whose central prang is covered in pieces of Chinese porcelain. In the evening, Yaowarat Road in Chinatown fills with street-food vendors under neon signs. At the weekend, Chatuchak Market, next to Mo Chit BTS and Chatuchak Park MRT stations, has thousands of stalls selling clothes, antiques and plants. Jim Thompson House, near the National Stadium BTS stop, is a set of traditional teak houses collected by the American who revived Thai silk. For a day trip, Ayutthaya is about 80 km north and reachable by train. It was the former royal capital, and its ruined temples are now a UNESCO World Heritage Site.\n\n## Getting around Bangkok\n\nFrom Suvarnabhumi Airport (BKK), the Airport Rail Link runs from the basement of the terminal to Phaya Thai in about 26–30 minutes, stopping at six stations on the way. You can change to the BTS at Phaya Thai or to the MRT at Makkasan. Metered taxis leave from the public taxi stand on the arrivals side. Journey times by road depend heavily on traffic. From Don Mueang (DMK), a walkway connects the terminal to the SRT Dark Red Line, which reaches Krung Thep Aphiwat Central Terminal (Bang Sue) in about 15 minutes, where you can change to the MRT Blue Line. Airport buses and taxis also serve Don Mueang. In the city, the BTS Skytrain's Sukhumvit and Silom lines and the MRT Blue and Purple lines cover most districts visitors use. The Chao Phraya Express Boat is the quickest way to reach the riverside temples and the old town.\n\n## When to visit Bangkok\n\nBangkok has a tropical monsoon climate and is hot all year. Average monthly temperatures range from roughly 26°C in December to about 31°C in April. The cool, dry season runs from November to February, when afternoon highs of around 31–33°C come with lower humidity and little rain. Because the weather is easiest then, these months are also the busiest for visitors. March to May is the hot season, with April the peak. The south-west monsoon brings rain from about May to October. Expect heavy afternoon downpours and occasional flooded streets, particularly from August to October. Travelling during the wet season usually means fewer crowds. In April, Songkran marks the Thai New Year with city-wide water fights. Loi Krathong falls in November, when people float candlelit offerings on the Chao Phraya and the city's canals.\n\n## Practical tips for Bangkok\n\n- Buy a Rabbit card for the BTS Skytrain to avoid ticket queues; the MRT accepts contactless bank cards at the gates.\n- Thai sockets run on 220V and usually take plug types A, B, C and O, so bring a universal adaptor.\n- Cover your shoulders and knees at the Grand Palace and in temples, and take off your shoes before entering temple halls.\n- Tipping is not expected, but rounding up a taxi fare or leaving small change at a restaurant is common.\n- Ignore anyone near the Grand Palace who says it is closed and offers to guide you elsewhere; this is a long-running scam that ends in a gem shop.\n- Thai law strictly protects the monarchy, so avoid disrespectful remarks about the royal family and stand when the royal anthem plays before cinema screenings.",
+  "tldr": "Stay in Rattanakosin or Banglamphu to be near the temples, in Sukhumvit for nightlife and Skytrain access, or in Silom and on the Riverside for a quieter base. From Suvarnabhumi, the Airport Rail Link reaches Phaya Thai in about 30 minutes. From Don Mueang, the SRT Dark Red Line reaches Bang Sue in about 15 minutes. November to February is the driest and least humid time to visit.",
+  "keyFacts": [
+    {
+      "label": "Country",
+      "value": "Thailand (capital city)"
+    },
+    {
+      "label": "Language",
+      "value": "Thai"
+    },
+    {
+      "label": "Currency",
+      "value": "Thai baht (THB)"
+    },
+    {
+      "label": "Time zone",
+      "value": "Indochina Time, UTC+7"
+    },
+    {
+      "label": "Airports",
+      "value": "Suvarnabhumi (BKK), Don Mueang (DMK)"
+    },
+    {
+      "label": "Plug type",
+      "value": "A, B, C, O; 220V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Suvarnabhumi Airport to central Bangkok?",
+      "a": "Take the Airport Rail Link from the airport's basement station. It reaches Phaya Thai in about 26–30 minutes, where you can change to the BTS Skytrain, or you can change to the MRT at Makkasan. Metered taxis leave from the official stand, but in traffic the journey can take much longer."
+    },
+    {
+      "q": "How do I get from Don Mueang Airport into the city?",
+      "a": "A walkway links the terminal to the SRT Dark Red Line. Trains reach Krung Thep Aphiwat Central Terminal at Bang Sue in about 15 minutes, and you can change to the MRT Blue Line there. Airport buses and metered taxis are the other options."
+    },
+    {
+      "q": "Which area of Bangkok is best for first-time visitors?",
+      "a": "If seeing the temples matters most, stay in Rattanakosin or Banglamphu, which are close to the Grand Palace and Wat Pho. If you want easy Skytrain access, more restaurant choice and nightlife, Sukhumvit or Silom are more convenient, and the river boat or a short taxi ride gets you to the old town."
+    },
+    {
+      "q": "When is the rainy season in Bangkok?",
+      "a": "The rainy season runs from about May to October. The heaviest rain usually falls from August to October, mostly as afternoon or evening downpours. November to February is the dry, cooler season. March to May is the hottest time of year, with April at the peak."
+    },
+    {
+      "q": "What should I wear to visit the Grand Palace and temples?",
+      "a": "Cover your shoulders and knees. Avoid sleeveless tops, shorts and short skirts, and take off your shoes before entering temple halls. Wear light trousers or a long skirt with a T-shirt, and bring a scarf that can cover your shoulders if needed."
+    },
+    {
+      "q": "Is Ayutthaya worth a day trip from Bangkok?",
+      "a": "Yes, if you're interested in history. Ayutthaya was Siam's royal capital before Bangkok, and its ruined temples are a UNESCO World Heritage Site. It is about 80 km north and reachable by train, and once there you can get around the ruins by bicycle or tuk-tuk."
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://mapa-metro.com/en/thailand/bangkok/airport-rail-link-bangkok-map.htm",
+      "title": "Bangkok Airport Rail Link"
+    },
+    {
+      "url": "https://www.rome2rio.com/s/Suvarnabhumi-Airport-BKK/Phaya-Thai",
+      "title": "Suvarnabhumi Airport (BKK) to Phaya Thai"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Don_Mueang_railway_station",
+      "title": "Don Mueang railway station – Wikipedia"
+    },
+    {
+      "url": "https://www.rome2rio.com/Train/Don-Muang-Airport-DMK/Bang-Sue-MRT-Station",
+      "title": "Don Muang Airport (DMK) to Bang Sue MRT Station trains"
+    },
+    {
+      "url": "https://theo-courant.com/en/bangkok-don-mueang-airport-red-line-transport/",
+      "title": "Don Mueang Airport and the Red Line"
+    },
+    {
+      "url": "https://www.kupi.com/en/explore/thailand/bangkok/weather",
+      "title": "Bangkok Weather Guide"
+    },
+    {
+      "url": "https://www.kuoni.co.uk/destinations/south-east-asia/thailand/bangkok/best-time-to-visit/",
+      "title": "Best Time To Visit Bangkok – Kuoni"
+    },
+    {
+      "url": "https://www.traveloka.com/en-sg/explore/guides/bangkok-weather-temperature-forecast/1002859",
+      "title": "Bangkok Weather by Month & Temperature"
+    },
+    {
+      "url": "https://www.afar.com/places/wat-pho-bangkok",
+      "title": "Wat Pho – AFAR"
+    },
+    {
+      "url": "https://www.idctravel.com/attraction/chatuchak-weekend-market.html",
+      "title": "Chatuchak Weekend Market Full Guide"
+    }
+  ]
+}

@@ -229,7 +229,28 @@ async function strapiFetch<T>(path: string, params?: Record<string, unknown>, re
   if (!res.ok) {
     throw new Error(`Strapi ${res.status} on ${url}: ${await res.text().catch(() => '')}`);
   }
-  return res.json();
+  const body = await res.json();
+  return path === 'articles' ? (withSiteByline(body) as T) : body;
+}
+
+/**
+ * Every article is bylined K Spellman (editorial decision, 4 Oct 2026),
+ * whatever author the CMS record carries. Applied here so the homepage, cards,
+ * RSS, schema and author pages all agree. Only records that populated `author`
+ * are touched, so field-limited queries keep their shape.
+ */
+export const SITE_BYLINE = { name: 'K Spellman', slug: 'k-spellman' } as const;
+
+function withSiteByline(body: unknown): unknown {
+  const data = (body as { data?: unknown })?.data;
+  if (!Array.isArray(data)) return body;
+  for (const item of data as Array<Record<string, unknown>>) {
+    if (item && 'author' in item) {
+      const prev = item.author as { id?: number } | null;
+      item.author = { id: prev?.id ?? 0, ...SITE_BYLINE };
+    }
+  }
+  return body;
 }
 
 export function mediaUrl(img: StrapiImage): string | null {

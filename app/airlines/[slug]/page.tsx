@@ -205,7 +205,7 @@ export default async function AirlinePage({ params }: Props) {
     description: airline.about || intro,
     url: `${SITE_URL}/airlines/${airline.slug}`,
     image: logo,
-    authorNameOrSlug: 'elena-rostova',
+    authorNameOrSlug: 'k-spellman',
     categoryName: 'Airlines',
     type: 'BlogPosting',
   });

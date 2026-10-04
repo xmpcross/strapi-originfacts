@@ -192,7 +192,7 @@ export default async function DestinationPage({ params }: Props) {
     description: destinationMetaDescription(destination),
     url: `${SITE_URL}/destinations/${destination.slug}`,
     image: hero,
-    authorNameOrSlug: 'marcus-vance',
+    authorNameOrSlug: 'k-spellman',
     categoryName: 'Destinations',
     type: 'BlogPosting',
   });

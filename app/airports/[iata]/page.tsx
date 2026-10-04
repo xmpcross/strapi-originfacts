@@ -264,7 +264,7 @@ export default async function AirportPage({ params }: Props) {
     description: airport.about || heroSummary,
     url,
     image: hero,
-    authorNameOrSlug: 'elena-rostova',
+    authorNameOrSlug: 'k-spellman',
     categoryName: 'Airports',
     type: 'BlogPosting',
   });

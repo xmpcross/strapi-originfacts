@@ -131,8 +131,13 @@ export const AUTHORS: Record<string, AuthorProfile> = {
   },
 };
 
+/**
+ * Authors with a public profile. Every post is bylined K Spellman (editorial
+ * decision, 4 Oct 2026); Kritin Vashist stays as founder. The Elena Rostova,
+ * Marcus Vance and Editorial Desk pages redirect to K Spellman (next.config).
+ */
 export function getAllAuthors(): AuthorProfile[] {
-  return [DEFAULT_AUTHOR, AUTHORS['elena-rostova']!, AUTHORS['marcus-vance']!, AUTHORS['originfacts-team']!, AUTHORS['k-spellman']!];
+  return [AUTHORS['k-spellman']!, DEFAULT_AUTHOR];
 }
 
 /**
@@ -153,29 +158,9 @@ export function getAuthorBySlug(slug: string): AuthorProfile | null {
 }
 
 export function resolveAuthor(rawNameOrSlug?: string | null): AuthorProfile {
-  if (!rawNameOrSlug) return DEFAULT_AUTHOR;
-  const s = rawNameOrSlug.toLowerCase().trim();
-  if (AUTHORS[s]) return AUTHORS[s]!;
-  if (s.includes('kritin')) return DEFAULT_AUTHOR;
-  if (s.includes('elena') || s.includes('rostova')) return AUTHORS['elena-rostova']!;
-  if (s.includes('marcus') || s.includes('vance')) return AUTHORS['marcus-vance']!;
-  if (s.includes('team') || s.includes('desk') || s.includes('editorial')) return AUTHORS['originfacts-team']!;
-
-  // If a custom string author is provided by CMS, construct a named profile dynamically
-  return {
-    slug: s.replace(/[^a-z0-9]+/g, '-'),
-    name: rawNameOrSlug,
-    jobTitle: 'Travel Writer & Contributor',
-    role: 'Editorial Contributor',
-    bio: `${rawNameOrSlug} is a travel researcher and editorial contributor for Originfacts, specializing in verified destination guides and travel analysis.`,
-    avatar: '/brand/authors/default-avatar.svg',
-    email: 'contact@originfacts.com',
-    socials: {
-      x: 'https://x.com/realoriginfacts',
-      linkedin: 'https://www.linkedin.com/company/143027896/',
-    },
-    expertise: ['Travel Writing', 'Destination Research', 'Fact Verification'],
-  };
+  // Bylines: every post is K Spellman, whatever the caller passes.
+  void rawNameOrSlug;
+  return AUTHORS['k-spellman']!;
 }
 
 export function authorPersonJsonLd(author: AuthorProfile): Record<string, unknown> {

@@ -6,7 +6,6 @@ import { JsonLd } from '@/components/SeoBlocks';
 import { breadcrumbJsonLd } from '@/lib/jsonld';
 import { faqJsonLd } from '@/lib/entity-seo';
 import TpwlLoader from '@/components/TpwlLoader';
-import TpwlHeroContrast from '@/components/TpwlHeroContrast';
 import AirlineResultsFilter from '@/components/AirlineResultsFilter';
 
 export const metadata = {
@@ -126,7 +125,6 @@ export default async function FlightsPage({
           FAQPage schema mirrors that exact Q&A set. */}
       <JsonLd data={faqJsonLd(BOOKING_FAQ)} />
       <TpwlLoader />
-      <TpwlHeroContrast />
 
       {/* TPWL renders the search form and result list in their containers below. */}
 
@@ -145,11 +143,11 @@ export default async function FlightsPage({
       <div data-testid="fly-page">
         <div
           data-testid="fs-search-section"
-          className="bg-gradient-to-br from-primary-emphasisPressed via-primary-emphasis to-primary-highlight"
+          className="bg-gradient-to-br from-[#f2f8ff] via-primary-hover to-primary-pressed"
         >
           <div className="fs-search-band mx-auto max-w-7xl px-6 pb-14 pt-12 lg:pb-16 lg:pt-16">
             <header data-testid="flight-search-hero" className="text-center">
-              <h1 className="editorial-h mx-auto max-w-4xl text-[clamp(2rem,3.5vw,3.25rem)] font-bold leading-[1.08] !text-white">
+              <h1 className="editorial-h mx-auto max-w-4xl text-[clamp(2rem,3.5vw,3.25rem)] font-bold leading-[1.08] text-forest-900">
                 Compare flight deals from 100s of sites
               </h1>
             </header>

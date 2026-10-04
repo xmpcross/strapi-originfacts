@@ -1,0 +1,428 @@
+{
+  "slug": "europe",
+  "documentId": "pal7lkj04segorpim4ujyxhz",
+  "name": "Europe",
+  "type": "continent",
+  "generatedAt": "2026-10-04T20:45:58.925Z",
+  "model": "claude-sonnet-5-5",
+  "flags": [],
+  "fields": {
+    "description": "Europe is a continent of short distances and many borders: roughly 10 million km² between the Atlantic and the Ural Mountains, divided among dozens of states. For a traveller that means dense rail networks, frequent short flights, several currencies and plug types, and Roman, medieval and twentieth-century history within a day's travel of each other.\n\n## Overview\n\nEurope is the western end of the Eurasian landmass, bounded by the Arctic Ocean to the north, the Atlantic to the west and the Mediterranean and Black Seas to the south. The eastern limit is conventionally drawn along the Ural Mountains, and transcontinental states such as Russia and Türkiye make any country count depend on the definition used. The main ranges are the Alps, Pyrenees, Carpathians and Caucasus; the Volga, Danube and Rhine are the principal rivers. Travellers usually think in subregions: the Nordic countries and Iceland, the British Isles, Western Europe around France and the Benelux, Central Europe from Germany to Hungary, the Baltic states, Eastern Europe, the Balkans, and the Iberian and Italian peninsulas. Distances are modest by world standards but not trivial, and a trip from Lisbon to Helsinki or from Athens to Reykjavik is a flight, not a rail journey.\n\n## History and Ancient Civilizations\n\nGreece holds the oldest layer most visitors seek out: the Minoan palace at Knossos on Crete and the Acropolis in Athens, where the classical city-state left its temples. Rome then spread across the continent, and you meet it at the Colosseum in Rome and at Pompeii in Italy, the Pont du Gard in France, the theatre at Mérida in Spain and Hadrian's Wall in England. Stonehenge in England is older than all of these. Medieval and later Europe is on show at Mont-Saint-Michel in France, the Alhambra in Granada, Spain, and the walled old town of Dubrovnik in Croatia, while Hagia Sophia in Istanbul, Türkiye, records the Byzantine and Ottoman eras. The twentieth century is the most heavily documented: the Normandy landing beaches in France, the Auschwitz-Birkenau memorial in Poland and the Berlin Wall Memorial on Bernauer Strasse in Germany explain the two world wars and the Cold War division.\n\n## Getting around Europe\n\nThe main international hubs are London Heathrow (LHR), Paris Charles de Gaulle (CDG), Amsterdam Schiphol (AMS), Frankfurt (FRA), Munich (MUC), Madrid (MAD), Rome Fiumicino (FCO) and Istanbul (IST). Low-cost carriers such as Ryanair, easyJet and Wizz Air link secondary airports across the continent. On land, national high-speed networks, including France's TGV, Germany's ICE, Spain's AVE and Italy's Frecce, connect major cities, and Eurostar runs through the Channel Tunnel from London St Pancras to Paris, Brussels and Amsterdam. Interrail and Eurail passes cover many national operators, and ÖBB's Nightjet runs overnight services between Austria, Germany, Italy and other countries. Ferries matter on the Baltic, such as Helsinki to Tallinn, as well as the North Sea, the Adriatic between Italy and Greece, and the English Channel. Flying is necessary for Iceland, the larger islands, and the long runs between the Iberian, Nordic and eastern ends of the continent.\n\n## When to visit Europe\n\nClimate follows latitude and distance from the Atlantic. The Mediterranean coasts of Spain, Italy and Greece are hot and dry from June to September, with daytime highs often around 28–33°C, while April–May and late September–October are milder, at roughly 18–25°C. Central Europe, including Germany, Austria and Czechia, suits May to September, when highs are around 20–27°C; winters sit near freezing. In the Nordic countries, June to August brings highs of roughly 15–22°C, the midnight sun in northern Norway runs from about late May to late July, and the northern lights are seen from around September to March. Eastern Europe has cold winters, with January in Moscow well below freezing. Alpine ski resorts operate from around December to March. Crowds and closures peak at Christmas and New Year, at Easter in March or April, and in August, when France and Italy take their main holidays and Ferragosto falls on 15 August.\n\n## Travel Notes\n\nMost EU members share the euro, but several keep their own currencies, including the pound sterling, Swiss franc, Swedish, Norwegian and Danish kronor, Polish złoty, Czech koruna and Hungarian forint. Continental Europe mostly uses Type C and F plugs; the UK, Ireland, Malta and Cyprus use Type G, Switzerland has its own Type J, and Italy and Denmark have local variants, so carry an adapter. Traffic drives on the right except in the UK, Ireland, Cyprus and Malta. English is widely understood in the Nordic countries and the Netherlands, while German, French, Spanish and Russian each help over wide areas.\n\n## Interesting Facts About Europe\n\n- The Volga, flowing through Russia, is generally cited as Europe's longest river.\n- Vatican City is the smallest sovereign state in the world.\n- Istanbul straddles Europe and Asia across the Bosphorus strait.\n- Iceland sits on the Mid-Atlantic Ridge between two tectonic plates.\n- The Danube passes through ten countries on its way to the Black Sea.",
+    "tldr": "Fly into hubs such as London, Paris, Amsterdam, Frankfurt or Istanbul, then move by high-speed rail, overnight trains, ferries and low-cost flights. Distances between the Iberian, Nordic and eastern ends call for flying. Mediterranean summers run June to September, central Europe May to September, Nordic summer June to August, and ski season December to March.",
+    "keyFacts": [
+      {
+        "label": "Area",
+        "value": "About 10 million km²"
+      },
+      {
+        "label": "Eastern boundary",
+        "value": "Conventionally the Ural Mountains"
+      },
+      {
+        "label": "Main hubs",
+        "value": "LHR, CDG, AMS, FRA, MUC, MAD, FCO, IST"
+      },
+      {
+        "label": "Cross-border travel",
+        "value": "Eurostar, TGV, ICE, Nightjet, Interrail and Eurail passes, ferries, low-cost airlines"
+      },
+      {
+        "label": "Currency",
+        "value": "The euro in most EU states; many national currencies elsewhere"
+      },
+      {
+        "label": "Driving side",
+        "value": "Right, except the UK, Ireland, Cyprus and Malta"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What is the best way to travel between European countries?",
+        "a": "Rail suits most city-to-city trips in Western and Central Europe, using networks such as TGV, ICE and Eurostar. Use low-cost airlines for long distances, such as from the Iberian Peninsula to Scandinavia, and ferries for the Baltic, Adriatic and Channel crossings."
+      },
+      {
+        "q": "Which airports are the main hubs in Europe?",
+        "a": "London Heathrow (LHR), Paris Charles de Gaulle (CDG), Amsterdam Schiphol (AMS), Frankfurt (FRA), Munich (MUC), Madrid (MAD), Rome Fiumicino (FCO) and Istanbul (IST) are the main international gateways, with many onward connections across the continent."
+      },
+      {
+        "q": "When is the best time to visit Europe?",
+        "a": "It depends on the subregion. Mediterranean countries are warmest from June to September but milder in spring and autumn. Central Europe suits May to September, the Nordic countries June to August, and the Alps have snow from around December to March."
+      },
+      {
+        "q": "Does all of Europe use the euro?",
+        "a": "No. Most EU members use the euro, but the UK, Switzerland, Norway, Sweden, Denmark, Poland, Czechia, Hungary and others keep their own currencies. Check each country's currency before you cross a border."
+      },
+      {
+        "q": "Which side of the road do they drive on in Europe?",
+        "a": "Traffic drives on the right in most of Europe. The exceptions are the UK, Ireland, Cyprus and Malta, where traffic drives on the left. Hire cars and signage change accordingly at the Channel and on those islands."
+      },
+      {
+        "q": "What plug adapter do I need for Europe?",
+        "a": "Germany, France, Spain and much of the continent use Type C and F sockets. The UK, Ireland, Malta and Cyprus use Type G, and Switzerland uses Type J, so a multi-type adapter is the safest choice for a multi-country trip."
+      }
+    ]
+  },
+  "sources": [],
+  "searched": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Geography_of_the_European_Union",
+      "title": "Geography of the European Union"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Eastern_Europe",
+      "title": "Eastern Europe"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/List_of_European_countries_by_area",
+      "title": "List of European countries by area"
+    },
+    {
+      "url": "https://en.wikipedia.beta.wmcloud.org/wiki/Europe",
+      "title": "Europe - Wikipedia, the free encyclopedia"
+    },
+    {
+      "url": "https://kids.britannica.com/kids/article/Ural-Mountains/346220",
+      "title": "Ural Mountains - Kids"
+    },
+    {
+      "url": "https://pressbooks.pub/worldgeo/chapter/europe/",
+      "title": "Europe"
+    },
+    {
+      "url": "https://www.countries-ofthe-world.com/countries-of-europe.html",
+      "title": "List of countries in Europe in alphabetical order"
+    },
+    {
+      "url": "https://geographyworlds.com/blog/how-big-is-europe/",
+      "title": "How Big Is Europe? Size, Area & Country Count (2026)"
+    },
+    {
+      "url": "https://www.epicroadtrips.us/2003/summer/nola/nola_offsite/FQ_en.wikipedia.org/en.wikipedia.org/wiki/Europe.html",
+      "title": "Europe - Wikipedia, the free encyclopedia"
+    },
+    {
+      "url": "https://solarspell-dls.sfis.asu.edu/mea/wikipedia/wp/e/Europe.htm",
+      "title": "Checked content"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Eurostar",
+      "title": "Eurostar"
+    },
+    {
+      "url": "https://www.eurostar.com/rw-en/train",
+      "title": "Trains across Europe"
+    },
+    {
+      "url": "https://www.eurostar.com/us-en/train",
+      "title": "Eurostar trains"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/High_Speed_1",
+      "title": "High Speed 1"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/HSL_1",
+      "title": "HSL 1"
+    },
+    {
+      "url": "https://www.raileurope.com/en-us/trains/eurostar",
+      "title": "Eurostar train tickets, routes, timetables"
+    },
+    {
+      "url": "https://uk.trip.com/trains/eurostar/",
+      "title": "Cheap Eurostar Tickets, Times & Routes"
+    },
+    {
+      "url": "https://www.thetrainline.com/en/train-times/london-st-pancras-international-to-amsterdam",
+      "title": "London St Pancras International → Amsterdam by Train"
+    },
+    {
+      "url": "https://us.trip.com/trains/eurostar/route/london-st-pancras-international-to-amsterdam-centraal/",
+      "title": "London St. Pancras International to Amsterdam Centraal Eurostar Trains from $208.77"
+    },
+    {
+      "url": "https://www.eurail.com/en/plan-your-trip/trip-ideas/trains-europe/night-trains/obb-nightjet",
+      "title": "ÖBB Nightjet night train"
+    },
+    {
+      "url": "https://www.thetrainline.com/en-us/train-companies/obb/nightjet",
+      "title": "ÖBB Nightjet"
+    },
+    {
+      "url": "https://www.cd.cz/en/nase-vlaky/nocni-vlaky/-35120/",
+      "title": "ÖBB Nightjet overnight trains"
+    },
+    {
+      "url": "https://nightride.com/en/blog/the-obb-night-train-network",
+      "title": "The ÖBB night train network"
+    },
+    {
+      "url": "https://www.seat61.com/trains-and-routes/nightjet.htm",
+      "title": "A guide to Nightjet sleeper trains"
+    },
+    {
+      "url": "https://myeurotrain.com/obb-nightjet-complete-guide-to-routes-cabins-booking/",
+      "title": "ÖBB Nightjet: Complete Guide to Routes, Cabins & Booking"
+    },
+    {
+      "url": "https://www.eurotrekker.com/night-trains/oebb-nightjet",
+      "title": "Eurotrekker"
+    },
+    {
+      "url": "https://www.thetraveler.org/europe-night-trains-2025-2026-new-routes-network-guide/",
+      "title": "Europe Night Trains 2025-2026"
+    },
+    {
+      "url": "https://grokipedia.com/page/Nightjet",
+      "title": "Nightjet — Grokipedia"
+    },
+    {
+      "url": "https://www.oag.com/busiest-airports-world",
+      "title": "Busiest Airports in the World"
+    },
+    {
+      "url": "https://skyrefund.com/en/blog/busiest-airports-in-europe",
+      "title": "What is the Busiest airport in Europe: Complete Guide"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Transport_in_the_European_Union",
+      "title": "Transport in the European Union"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/List_of_the_busiest_airports_in_Europe_(2010%E2%80%932015)",
+      "title": "List of the busiest airports in Europe (2010%E2%80%932015)"
+    },
+    {
+      "url": "https://flightqueue.com/busiest-airports-europe",
+      "title": "Busiest Airports in Europe 2025 — Top 20 Ranked by ACI Europe"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Frankfurt_Airport",
+      "title": "Frankfurt Airport"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic_(2010%E2%80%932019)",
+      "title": "List of busiest airports by passenger traffic (2010%E2%80%932019)"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/List_of_the_busiest_airports_in_Europe",
+      "title": "List of the busiest airports in Europe"
+    },
+    {
+      "url": "https://aviationa2z.com/index.php/2025/03/24/airline-monopolies-who-rules-europes-10-busiest-airports/",
+      "title": "Airline Monopolies: Who Rules Europe's 10 Busiest Airports - Aviation A2Z"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/List_of_the_busiest_airports_in_the_European_Union",
+      "title": "List of the busiest airports in the European Union"
+    },
+    {
+      "url": "https://www.ferryscanner.com/en/ferry-routes/train-folkestone-calais",
+      "title": "Folkestone - Calais Eurotunnel Shuttle Train Ticket Prices and Schedules"
+    },
+    {
+      "url": "https://www.leshuttle.com/uk-en",
+      "title": "Eurotunnel LeShuttle™: Folkestone To Calais In 35 Minutes. Book Now!"
+    },
+    {
+      "url": "https://www.directferries.com/eurotunnel.htm",
+      "title": "Eurotunnel booking, Eurotunnel prices and timetables"
+    },
+    {
+      "url": "https://www.ferryscanner.com/en/ferry-companies/leshuttle",
+      "title": "LeShuttle (Eurotunnel): Channel Ticket Prices & Timetable 2026"
+    },
+    {
+      "url": "https://www.directferries.co.uk/eurotunnel.htm",
+      "title": "Eurotunnel - Tickets, Prices, Schedules - Direct Ferries"
+    },
+    {
+      "url": "https://calais-dover.com/eurotunnel/",
+      "title": "Eurotunnel from Calais to England"
+    },
+    {
+      "url": "https://ferry.uk/eurotunnel/",
+      "title": "Eurotunnel Le Shuttle - Info & Ticket Booking - Ferry.uk"
+    },
+    {
+      "url": "https://www.ferriestofrance.co.uk/advice/le-shuttle",
+      "title": "Travelling by Le Shuttle: Timetable, Ticket Prices & What To Expect"
+    },
+    {
+      "url": "https://chunnel.co.uk/folkestone-to-calais/",
+      "title": "Folkestone to Calais by Eurotunnel 2026: Crossing, Cost & Time"
+    },
+    {
+      "url": "https://we3travel.com/17-european-archaeological-sites-that-will-change-how-you-see-history/",
+      "title": "17 European Archaeological Sites That Will Change How You See History - We3Travel"
+    },
+    {
+      "url": "https://www.bucketlisttravels.com/round-up/ancient-ruins-sites-and-monuments",
+      "title": "55 Best Ancient sites, ruins & monuments you can visit"
+    },
+    {
+      "url": "https://luggageandlipstick.com/ancient-ruins/",
+      "title": "62 Ancient Ruins to See in Your Lifetime! - Luggage and Lipstick"
+    },
+    {
+      "url": "https://www.artnews.com/list/art-news/artists/worlds-most-important-archaeological-sites-1234636277/",
+      "title": "Do You Dig It? See the World’s 25 Most Important Archaeological Sites"
+    },
+    {
+      "url": "https://footyintl.com/blogs/world-culture/top-12-historic-places-to-visit-in-europe",
+      "title": "The Top 12 Historic Places to Visit in Europe"
+    },
+    {
+      "url": "https://www.avygeo.com/en/activities/archaeological-sites",
+      "title": "Top 20 largest archaeological sites in the world"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Pompeii",
+      "title": "Pompeii"
+    },
+    {
+      "url": "https://www.visititaly.eu/unesco/pompeii-the-ancient-city-buried-by-vesuvius-unesco-site-from-1997",
+      "title": "Pompeii, the ancient city buried by Vesuvius: Unesco Site from 1997"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Foreign_influences_on_Pompeii",
+      "title": "Foreign influences on Pompeii"
+    },
+    {
+      "url": "https://unearththevoyage.com/the-world-s-most-fascinating-archaeological-sites-you-can-visit-d8120d1c/",
+      "title": "The World's Most Fascinating Archaeological Sites You Can Visit"
+    },
+    {
+      "url": "https://www.chronik-der-mauer.de/en/sites/184076/checkpoint-charlie",
+      "title": "Checkpoint Charlie"
+    },
+    {
+      "url": "https://questoapp.com/berlin/places-to-visit/checkpoint-charlie",
+      "title": "Checkpoint Charlie Berlin - Cold War History & Museum Guide"
+    },
+    {
+      "url": "https://www.alltrails.com/trail/germany/berlin/entlang-der-ehemaligen-mauer-zum-check-point-charlie",
+      "title": "The Berlin Wall and Checkpoint Charlie Walking Tour, Berlin, Germany - 39 Reviews, Map"
+    },
+    {
+      "url": "https://www.storyhunt.io/en/articles/checkpoint-charlie",
+      "title": "Checkpoint Charlie Berlin (2026): Standoff History & Visit Guide"
+    },
+    {
+      "url": "https://www.visitberlin.de/en/checkpoint-charlie",
+      "title": "Checkpoint Charlie Berlin: history & information"
+    },
+    {
+      "url": "https://onlybyland.com/checkpoint-charlie/",
+      "title": "Checkpoint Charlie: Discover the History of this Berlin Icon"
+    },
+    {
+      "url": "https://www.travel2berlin.com/post/checkpoint-charlie-berlin-guide",
+      "title": "Checkpoint Charlie Berlin"
+    },
+    {
+      "url": "https://ww2.aaa.com/tripcanvas/attraction/checkpoint-charlie-VA634",
+      "title": "checkpoint charlie VA634"
+    },
+    {
+      "url": "https://www.npr.org/2005/07/05/4730106/berlin-council-targets-checkpoint-charlie-memorial",
+      "title": "berlin council targets checkpoint charlie memorial"
+    },
+    {
+      "url": "https://www.lifeinnorway.net/weather-in-scandinavia/",
+      "title": "The Myths and Realities of Weather in Scandinavia - Life in Norway"
+    },
+    {
+      "url": "https://www.visitnordic.com/en/weather-in-scandinavia",
+      "title": "Weather & Climate in Scandinavia → Nordic Travel Guide"
+    },
+    {
+      "url": "https://www.holiday-weather.com/continent/europe/northern_europe",
+      "title": "Northern Europe's Countries and Weather Overview"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Climate_of_Norway",
+      "title": "Climate of Norway"
+    },
+    {
+      "url": "https://www.authentic-scandinavia.com/travel-info/planning-your-tour/weather-and-climate",
+      "title": "What's the weather and climate like in Scandinavia? / Authentic Scandinavia"
+    },
+    {
+      "url": "https://www.backpackingtours.com/blog/europe-weather-best-time-to-visit-europe",
+      "title": "Europe Weather by Month: Best Time to Visit"
+    },
+    {
+      "url": "https://www.authentic-scandinavia.com/travel-info/useful-information/seasons-and-climate",
+      "title": "FAQs about seasons & climate / Authentic Scandinavia"
+    },
+    {
+      "url": "https://www.norwaytourism.org/norway-in-summer/",
+      "title": "Norway in Summer: Weather & Guide (2026)"
+    },
+    {
+      "url": "https://www.tripcrafters.com/travel/europe-weather-and-best-time-to-visit-europe",
+      "title": "Europe Weather And Best Time To Visit Europe (2026)"
+    }
+  ],
+  "usage": {
+    "input_tokens": 25371,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+      {
+        "input_tokens": 7975,
+        "output_tokens": 579,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 8595,
+        "output_tokens": 165,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 8801,
+        "output_tokens": 7852,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ],
+    "output_tokens": 8596,
+    "output_tokens_details": {
+      "thinking_tokens": 5033
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "server_tool_use": {
+      "web_search_requests": 8,
+      "web_fetch_requests": 0
+    }
+  },
+  "reviewNotes": [
+    "\"Use low-cost airlines for long distances, such as Iberia to Scandinavia,\" -> \"Use low-cost airlines for long distances, such as from the Iberian Peninsula to \""
+  ]
+}

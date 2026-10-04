@@ -1,0 +1,483 @@
+{
+  "slug": "asia",
+  "documentId": "zbrnr5sgigtsmlfk2m6tcmbq",
+  "name": "Asia",
+  "type": "continent",
+  "generatedAt": "2026-10-04T20:49:34.686Z",
+  "model": "claude-sonnet-5-5",
+  "flags": [],
+  "fields": {
+    "description": "Asia covers around 44 million square kilometres and holds roughly 60 per cent of the world's people, so planning a trip here means choosing a subregion first. Himalayan peaks, Siberian taiga, Gulf deserts, monsoon coasts and island chains sit between hubs that are often hours apart by air, and their seasons rarely coincide.\n\n## Overview\n\nAsia is bounded by the Arctic Ocean to the north, the Pacific to the east and the Indian Ocean to the south, with the Ural Mountains, the Caucasus and the Bosphorus conventionally marking the western edge. The Himalaya and Karakoram carry Everest, at 8,849 m the highest point on Earth, while Lake Baikal in Siberia is the deepest lake. The Yangtze, Yellow, Mekong, Ganges, Indus, Ob, Tigris and Euphrates drain very different landscapes. UN statistics divide the continent into Eastern, Southern, South-eastern, Western and Central Asia, with Siberia sitting in Russia's north. Southern Asia holds about 2 billion people and Eastern Asia about 1.6 billion. Scale shapes every itinerary: the Trans-Mongolian train from Moscow to Beijing takes about six days, and a single country such as Indonesia or Russia can need several flights.\n\n## History and Ancient Civilizations\n\nMuch of the ancient world can be visited. In Pakistan, Mohenjo-daro and Harappa preserve Indus Valley cities, and in Iraq the ruins of Babylon and the ziggurat at Ur belong to Mesopotamia. Persepolis in Iran recalls the Achaemenid Persian empire, and Petra in Jordan the Nabataeans. In China, the Great Wall and the Terracotta Army near Xi'an date from imperial unification, while the Registan in Samarkand, Uzbekistan, recalls the Silk Road. Buddhist and Hindu sites include the Ajanta caves in India and Borobudur in Indonesia. Angkor in Cambodia, spread over about 400 square kilometres, preserves the capitals of the Khmer Empire. Mongol rule left fewer standing monuments, though Erdene Zuu monastery in Mongolia stands near the site of Karakorum. European colonial ports remain in Old Goa in India and the Dutch-built fort at Galle in Sri Lanka.\n\n## Getting around Asia\n\nThe main long-haul hubs include Dubai (DXB), Doha (DOH), Istanbul (IST), Delhi (DEL), Bangkok Suvarnabhumi (BKK), Singapore Changi (SIN), Kuala Lumpur (KUL), Hong Kong (HKG), Beijing Capital (PEK), Seoul Incheon (ICN) and Tokyo's Haneda (HND) and Narita (NRT). Low-cost carriers such as AirAsia from Kuala Lumpur, Scoot from Singapore, IndiGo in India and Cebu Pacific in the Philippines link many neighbouring capitals. On land, Japan's Shinkansen and China's high-speed network are the main fast rail, Indian Railways covers the subcontinent, and the Trans-Siberian and Trans-Mongolian lines cross Russia towards Mongolia and China. Ferries connect Singapore with Indonesia's Riau islands and Busan with Fukuoka. Fly across Indonesia and the Philippines, much of Siberia and Central Asia, and between the Gulf and East Asia, where overland routes are impractical.\n\n## When to visit Asia\n\nAsia has no single season. South Asia's southwest monsoon brings heavy rain from about June to September, so Rajasthan and Delhi are better from November to March, when days run roughly 20 to 28°C, while May and June can exceed 40°C. Mainland Southeast Asia is wetter from about May to October and drier from November to April. The Philippines and Vietnam are exposed to typhoons between roughly June and November. East Asia suits March to May and September to November, with Japan's cherry blossom in late March and April. Gulf summers from June to August are commonly above 40°C, and November to March is milder. Siberia's winters fall far below freezing. Peaks affect bookings: Lunar New Year in January or February, Songkran in Thailand on 13 to 15 April, Japan's Golden Week from late April, China's National Day holiday from 1 October, and Diwali in October or November. Ramadan moves earlier each year.\n\n## Travel Notes\n\nThere is no continent-wide currency: Japan uses the yen, China the yuan, Thailand the baht, and India, Pakistan, Nepal and Sri Lanka each issue their own rupee. Plug types vary: Japan uses A and B, China A, C and I, India mainly D, Thailand A, B and C, while Singapore, Malaysia, Hong Kong and the UAE use G, so carry a universal adaptor. Traffic drives on the left in Japan, India, Thailand, Indonesia, Malaysia, Singapore, Sri Lanka and Hong Kong, and on the right in mainland China, South Korea, Vietnam and the Philippines. English helps in India, Singapore, Malaysia and the Philippines, Russian across Central Asia, Arabic in the Gulf and Mandarin in China.\n\n## Interesting Facts About Asia\n\n- Everest, at 8,849 metres, is Earth's highest point and lies in Asia.\n- Lake Baikal in Siberia is the world's deepest lake.\n- The Trans-Siberian Railway is the world's longest railway line.\n- Angkor Archaeological Park in Cambodia covers about 400 square kilometres.\n- Asia is home to roughly 60 per cent of the world's population.",
+    "tldr": "Asia is a set of regions, not one trip. Fly via hubs such as Dubai, Delhi, Bangkok, Singapore, Hong Kong, Beijing, Seoul and Tokyo, use low-cost airlines between neighbours, and take trains in Japan, China, India and Russia. Time South Asia and Southeast Asia around monsoons, and East Asia for spring and autumn.",
+    "keyFacts": [
+      {
+        "label": "Area",
+        "value": "Around 44 million square kilometres"
+      },
+      {
+        "label": "Population",
+        "value": "Roughly 60% of the world's people"
+      },
+      {
+        "label": "Highest point",
+        "value": "Everest, 8,849 m"
+      },
+      {
+        "label": "Main subregions",
+        "value": "East, South, South-east, West and Central Asia"
+      },
+      {
+        "label": "Long-distance rail",
+        "value": "Trans-Mongolian, Moscow to Beijing, about six days"
+      },
+      {
+        "label": "Currency",
+        "value": "No shared continental currency"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Which airports are the main hubs for Asia?",
+        "a": "Dubai (DXB), Doha (DOH), Istanbul (IST), Delhi (DEL), Bangkok (BKK), Singapore (SIN), Kuala Lumpur (KUL), Hong Kong (HKG), Beijing (PEK), Seoul Incheon (ICN) and Tokyo Haneda (HND) and Narita (NRT) are the main connecting points between regions."
+      },
+      {
+        "q": "What is the best time of year to visit Asia?",
+        "a": "It depends on the subregion. India is generally more comfortable from November to March, mainland Southeast Asia from November to April, and East Asia in spring and autumn. The Gulf is milder from November to March."
+      },
+      {
+        "q": "Can you travel across Asia by train?",
+        "a": "Partly. The Trans-Siberian and Trans-Mongolian lines run from Moscow to Vladivostok or Beijing, with the Moscow to Beijing journey taking around six days. Japan, China and India have extensive domestic networks, but there is no single continuous passenger network."
+      },
+      {
+        "q": "How do you get between countries in Asia cheaply?",
+        "a": "Low-cost carriers such as AirAsia, Scoot, IndiGo and Cebu Pacific connect many neighbouring capitals. Overland buses and trains cross some borders in mainland Southeast Asia, and ferries link Singapore with Indonesia's Riau islands and Busan with Fukuoka."
+      },
+      {
+        "q": "Do countries in Asia drive on the left or right?",
+        "a": "It varies by country. Japan, India, Thailand, Indonesia, Malaysia, Singapore, Sri Lanka and Hong Kong drive on the left. Mainland China, South Korea, Vietnam and the Philippines drive on the right, so check the local rule before hiring a vehicle."
+      },
+      {
+        "q": "Is there one currency or plug type across Asia?",
+        "a": "No. Each country issues its own currency, and plug types range from A and B in Japan to D in India and G in Singapore, Malaysia and Hong Kong. A universal adaptor covers most trips."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "url": "https://www.nationsonline.org/oneworld/asia.htm",
+      "title": "Countries of Asia - Nations Online Project"
+    },
+    {
+      "url": "https://www.mappr.co/thematic-maps/asia-country-map/",
+      "title": "Asia Continent and Country Map"
+    },
+    {
+      "url": "https://www.worldometers.info/world-population/asia-population/",
+      "title": "Asia Population - Worldometer"
+    },
+    {
+      "url": "https://www.britannica.com/topic/Trans-Siberian-Railroad",
+      "title": "Trans-Siberian Railroad - Britannica"
+    },
+    {
+      "url": "https://www.seat61.com/trans-siberian-railway.htm",
+      "title": "Trans-Siberian Railway - The Man in Seat 61"
+    },
+    {
+      "url": "https://whc.unesco.org/en/list/668/",
+      "title": "Angkor - UNESCO World Heritage Centre"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Trans-Siberian_Railway",
+      "title": "Trans-Siberian Railway - Wikipedia"
+    }
+  ],
+  "searched": [
+    {
+      "url": "https://www.worldometers.info/world-population/asia-population/",
+      "title": "Asia Population (2026) - Worldometer"
+    },
+    {
+      "url": "https://www.theworldcounts.com/populations/continents/asia",
+      "title": "Population of Asia"
+    },
+    {
+      "url": "https://www.populationreview.org/continent/asia",
+      "title": "Asia Population & Countries (2026)"
+    },
+    {
+      "url": "https://factsinstitute.com/ranking/asia-population/",
+      "title": "Asia Population 2026: Total Population, Growth & Country Rankings - The Facts Institute"
+    },
+    {
+      "url": "https://worldstats.io/continent/asia",
+      "title": "Asia Population (2026) - Countries, Stats & Demographics"
+    },
+    {
+      "url": "https://worldpopulationreview.com/continents/asia",
+      "title": "Asia Population 2026"
+    },
+    {
+      "url": "https://worldpopulationreview.com/continents",
+      "title": "Population by Continent 2026"
+    },
+    {
+      "url": "https://www.scribd.com/document/59342138/Asia",
+      "title": "0% found this document useful (0 votes)"
+    },
+    {
+      "url": "https://www.scribd.com/document/840924544/Asia-Study-Notes",
+      "title": "0% found this document useful (0 votes)"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Trans-Siberian_Railway",
+      "title": "Trans-Siberian Railway"
+    },
+    {
+      "url": "https://rusmania.com/what-is-the-trans-siberian-railway",
+      "title": "What is the Trans-Siberian Railway?"
+    },
+    {
+      "url": "https://www.britannica.com/topic/Trans-Siberian-Railroad",
+      "title": "Trans-Siberian Railroad"
+    },
+    {
+      "url": "https://www.nomadicmatt.com/travel-blogs/how-to-travel-the-trans-siberian-railway-2/",
+      "title": "How to Travel on the Trans-Siberian Railway (Updated 2026)"
+    },
+    {
+      "url": "https://www.travelchinaguide.com/china-trains/international-tickets/trans-siberian-railway.htm",
+      "title": "Trans-Siberian Railway: Stops, Branches, Trans-Mongolia Trains"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=HkwaMPRyMLI",
+      "title": "World’s Longest Railway: Trans-Siberian Journey - Vladivostok to Moscow 2026 - Full Video - YouTube"
+    },
+    {
+      "url": "https://www.russiantrain.com/trans_siberian",
+      "title": "Trans-Siberian Railway: ticket search, train times, package tours."
+    },
+    {
+      "url": "https://www.russiantrains.com/en/route/trans-siberian-railway",
+      "title": "Trans-Siberian Train Tickets from Moscow to Vladivostok"
+    },
+    {
+      "url": "https://www.russianrail.com/route/moscow-to-vladivostok",
+      "title": "Moscow to Vladivostok Trains: price, tickets, booking online"
+    },
+    {
+      "url": "https://asiapacific.unfpa.org/en/topics/population-trends",
+      "title": "UNFPA Asia and the Pacific"
+    },
+    {
+      "url": "https://worldostats.com/continents/asia/",
+      "title": "Asia Population, Countries, Land Area & Growth (2025 Data)"
+    },
+    {
+      "url": "https://www.nationsonline.org/oneworld/asia.htm",
+      "title": "Countries by Continent :: Asian Countries - Nations Online Project"
+    },
+    {
+      "url": "https://www.mappr.co/thematic-maps/asia-country-map/",
+      "title": "Asia Continent and Country Map"
+    },
+    {
+      "url": "https://www.nationsonline.org/oneworld/asia_map.htm",
+      "title": "Political Map of Asia - Nations Online Project"
+    },
+    {
+      "url": "https://sudarshangurjar.com/asia-%E2%9E%9C-world-geography-for-upsc-ias/",
+      "title": "Asia"
+    },
+    {
+      "url": "https://lotusarise.com/asia-world-geography-for-upsc/",
+      "title": "Asia - World Geography for UPSC IAS (Notes) - UPSC Notes » LotusArise IAS"
+    },
+    {
+      "url": "https://3delevationmap.com/continent/asia/",
+      "title": "Asia 3D Elevation Map: Mount Everest (29,032 ft) to Dead Sea shore (−1,444 ft)"
+    },
+    {
+      "url": "https://www.whatarethe7continents.com/asia-continent/",
+      "title": "Asia Continent"
+    },
+    {
+      "url": "https://continenten.com/en/asia/",
+      "title": "Asia — Map, 48 Countries, People & Facts"
+    },
+    {
+      "url": "https://universalium.en-academic.com/76184/Asia",
+      "title": "Asia"
+    },
+    {
+      "url": "https://www.seat61.com/trans-siberian-railway.htm",
+      "title": "How to plan & book a journey on the Trans-Siberian Railway"
+    },
+    {
+      "url": "https://visitrussia.com/transsib/trains.htm",
+      "title": "Trans Siberian Trains"
+    },
+    {
+      "url": "https://www.russianrail.com/route/vladivostok-to-moscow",
+      "title": "Vladivostok to Moscow Trains: prices, tickets, book online"
+    },
+    {
+      "url": "https://discoveryrussia.com/tour/285/",
+      "title": "Trans-Siberian: Moscow to Vladivostok"
+    },
+    {
+      "url": "https://www.thebaltican.com/blog/13-stops-on-the-trans-siberian",
+      "title": "A guide to 13 stops on the Trans-Siberian — The Baltican"
+    },
+    {
+      "url": "https://www.adventure-life.com/cambodia/articles/brief-introduction-to-siem-reap",
+      "title": "Brief Introduction to Siem Reap"
+    },
+    {
+      "url": "https://whc.unesco.org/en/list/668/",
+      "title": "Angkor - UNESCO World Heritage Centre"
+    },
+    {
+      "url": "https://everything-everywhere.com/angkor-wat-cambodia-importance/",
+      "title": "Angkor, Cambodia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/List_of_World_Heritage_Sites_in_Cambodia",
+      "title": "List of World Heritage Sites in Cambodia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Siem_Reap_province",
+      "title": "Siem Reap province"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Angkor",
+      "title": "Angkor"
+    },
+    {
+      "url": "https://www.britannica.com/topic/Khmer-Empire",
+      "title": "Khmer empire"
+    },
+    {
+      "url": "https://www.audleytravel.com/us/cambodia/country-guides/temples-of-angkor",
+      "title": "Angkor Wat & the temples of Angkor"
+    },
+    {
+      "url": "https://drop-intheocean.com/destination/cambodia/angkor-wat-siem-reap/",
+      "title": "ANGKOR WAT / SIEM REAP - Cambodia - Drop in the Ocean"
+    },
+    {
+      "url": "https://www.webuildvalue.com/en/facts/longest-rail-routes.html",
+      "title": "From the Trans-Siberian Railway to the Brenner Tunnel: Discover the World's Longest Rail Routes"
+    },
+    {
+      "url": "https://www.travelallrussia.com/blog/100th-anniversary-trans-siberian-railway",
+      "title": "Trans-Siberian Railway's 100th Anniversary"
+    },
+    {
+      "url": "https://brainly.com/question/47936315",
+      "title": "[FREE] How many time zones does the Trans-Siberian Railway pass through? - brainly.com"
+    },
+    {
+      "url": "https://artofthetravel.com/posts/trans-siberian-railway/",
+      "title": "Trans-Siberian Railway: Complete Guide to the World's Longest Train"
+    },
+    {
+      "url": "https://geographyworlds.com/blog/trans-siberian-railway-guide/",
+      "title": "Trans-Siberian Railway Guide"
+    },
+    {
+      "url": "https://www.spotatrain.com/journeys/trans-siberian-railway/",
+      "title": "Trans-Siberian Railway — Route Map, Tickets & Guide"
+    },
+    {
+      "url": "https://britannica.com/print/article/602319",
+      "title": "Trans-Siberian Railroad"
+    },
+    {
+      "url": "https://www.gokunming.com/en/blog/item/4557/china-laos-railway-now-connecting-cities-of-kunming-and-vientiane",
+      "title": "China-Laos railway now connecting cities of Kunming and Vientiane"
+    },
+    {
+      "url": "https://www.stimson.org/2021/high-speed-rail-in-laos/",
+      "title": "High-Speed Rail in Laos • Stimson Center"
+    },
+    {
+      "url": "https://www.scmp.com/week-asia/economics/article/3158015/china-backed-belt-and-road-railway-opens-high-speed-change",
+      "title": "As China-backed belt and road railway opens, high-speed change heads to Laos"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Kunming-Singapore_Railway",
+      "title": "Kunming-Singapore Railway"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Vientiane_railway_station",
+      "title": "Vientiane railway station"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Boten%E2%80%93Vientiane_railway",
+      "title": "Boten%E2%80%93Vientiane railway"
+    },
+    {
+      "url": "https://www.indochinatour.com/laos-guide/china-laos-railway.html",
+      "title": "China Laos Railway 2026- Kunming"
+    },
+    {
+      "url": "https://www.france24.com/en/live-news/20211203-game-changer-laos-opens-chinese-built-railway-line",
+      "title": "'Game changer': Laos opens Chinese-built railway line"
+    },
+    {
+      "url": "https://www.cnn.com/2024/03/25/travel/china-south-east-asia-travel-train-infrastructure-intl-hnk/index.html",
+      "title": "China is trying to connect Southeast Asia by high-speed rail. Here’s how that’s going"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Kunming-Vientiane_through_train",
+      "title": "Kunming-Vientiane through train"
+    }
+  ],
+  "usage": {
+    "input_tokens": 120456,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+      {
+        "input_tokens": 7947,
+        "output_tokens": 680,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 8668,
+        "output_tokens": 233,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 8977,
+        "output_tokens": 83,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 9824,
+        "output_tokens": 295,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 12304,
+        "output_tokens": 492,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 12837,
+        "output_tokens": 175,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 13164,
+        "output_tokens": 73,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 13278,
+        "output_tokens": 485,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 13804,
+        "output_tokens": 5767,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      },
+      {
+        "input_tokens": 19653,
+        "output_tokens": 3399,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message",
+        "model": null
+      }
+    ],
+    "output_tokens": 11682,
+    "output_tokens_details": {
+      "thinking_tokens": 3212
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "server_tool_use": {
+      "web_search_requests": 8,
+      "web_fetch_requests": 0
+    }
+  },
+  "reviewNotes": [
+    "\"Everest, at 8,848 m the highest point on Earth\" -> \"Everest, at 8,849 m the highest point on Earth\"",
+    "\"- Everest, at 8,848 metres, is Earth's highest point and lies in Asia.\" -> \"- Everest, at 8,849 metres, is Earth's highest point and lies in Asia.\"",
+    "\"The Trans-Siberian Railroad is the world's longest single rail system.\" -> \"The Trans-Siberian Railway is the world's longest railway line.\""
+  ]
+}

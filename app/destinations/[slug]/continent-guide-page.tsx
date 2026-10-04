@@ -37,13 +37,14 @@ export default function ContinentGuidePage({
   const intro = sections.find((s) => !s.heading)?.paragraphs.join(' ');
   const facts = (destination.facts as ContinentFacts | undefined) ?? {};
 
-  // The guide: the CMS sections, with the planning and timing notes slotted in
-  // before the facts list.
+  // The guide: the CMS sections. A description without researched "Getting
+  // around" / "When to visit" sections gets the template's planning and timing
+  // notes slotted in before the facts list instead.
   const factsSections = named.filter((s) => s.heading?.startsWith('Interesting Facts'));
+  const researched = named.some((s) => s.heading?.startsWith('When to visit') || s.heading?.startsWith('Getting around'));
   const guide: AboutSection[] = [
     ...named.filter((s) => !s.heading?.startsWith('Interesting Facts')),
-    planningSection(name, facts),
-    timingSection(name),
+    ...(researched ? [] : [planningSection(name, facts), timingSection(name)]),
     ...factsSections,
   ];
 

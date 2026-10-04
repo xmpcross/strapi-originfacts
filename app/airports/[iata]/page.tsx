@@ -21,6 +21,7 @@ import {
 } from '@/lib/entity-seo';
 import { getAirportWeather, weatherLabel } from '@/lib/open-meteo';
 import { JsonLd, FaqSection } from '@/components/SeoBlocks';
+import { breadcrumbJsonLd } from '@/lib/jsonld';
 import { buildMetaDescription } from '@/lib/seo';
 import { getSiteCounts, countRoutesFromAirport } from '@/lib/counts';
 import type { Metadata } from 'next';
@@ -180,7 +181,14 @@ export default async function AirportPage({ params }: Props) {
 
   return (
     <article data-testid={`airport-page-${airport.iata}`}>
-      <JsonLd data={airportJsonLd(airport, url)} />
+      <JsonLd data={airportJsonLd(airport, url, { phone: airportInfo?.phone, website: airportInfo?.website })} />
+      {/* Mirrors the visible "Airports / {name}" breadcrumb nav below. */}
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: 'Airports', url: '/airports' },
+          { name: airport.name, url: `/airports/${airport.iata.toLowerCase()}` },
+        ])}
+      />
       <JsonLd data={faqJsonLd(faqs)} />
 
       <div className="mx-auto max-w-7xl px-6 pt-10">

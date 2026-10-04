@@ -12,7 +12,7 @@ import {
 } from '@/lib/strapi';
 import { SITE_URL, DEFAULT_OG_IMAGE, countryFaqs, countryJsonLd, faqJsonLd } from '@/lib/entity-seo';
 import { JsonLd, FaqSection } from '@/components/SeoBlocks';
-import { absoluteUrl } from '@/lib/jsonld';
+import { absoluteUrl, breadcrumbJsonLd } from '@/lib/jsonld';
 import { buildMetaDescription, programmaticTitle } from '@/lib/seo';
 import type { Metadata } from 'next';
 
@@ -116,6 +116,13 @@ export default async function CountryPage({ params }: Props) {
     <article data-testid={`country-page-${country.code}`}>
       <JsonLd data={countryJsonLd({ code: country.code, name: country.name }, url)} />
       <JsonLd data={faqJsonLd(faqs)} />
+      {/* Mirrors the visible "Countries / {code}" breadcrumb nav below. */}
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: 'Countries', url: '/countries' },
+          { name: country.name, url: `/countries/${country.code.toLowerCase()}` },
+        ])}
+      />
       {/* Breadcrumb */}
       <div className="mx-auto max-w-6xl px-6 pt-10">
         <nav className="text-xs uppercase tracking-widest text-forest-900/60">

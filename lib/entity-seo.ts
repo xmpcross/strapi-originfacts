@@ -612,7 +612,13 @@ export function airlineFaqs(
  * schema.org JSON-LD
  * ------------------------------------------------------------------ */
 
-export function airportJsonLd(a: StrapiAirport, url: string): Record<string, unknown> {
+export function airportJsonLd(
+  a: StrapiAirport,
+  url: string,
+  // Contact details the page already renders (from the airport-info dataset) —
+  // schema states only what is visible on the page.
+  extra?: { phone?: string | null; website?: string | null },
+): Record<string, unknown> {
   const ld: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'Airport',
@@ -630,6 +636,30 @@ export function airportJsonLd(a: StrapiAirport, url: string): Record<string, unk
   }
   if (num(a.latitude) && num(a.longitude)) {
     ld.geo = { '@type': 'GeoCoordinates', latitude: a.latitude, longitude: a.longitude };
+  }
+  if (extra?.phone) ld.telephone = extra.phone;
+  if (extra?.website && /^https?:\/\//.test(extra.website)) ld.sameAs = [extra.website];
+  return ld;
+}
+
+/**
+ * Place-typed JSON-LD for destination guides. The destination `type` field
+ * maps to the closest schema.org Place subtype; anything unrecognised stays
+ * a plain Place. Only fields present on the record are emitted.
+ */
+export function destinationJsonLd(
+  d: { name: string; type?: string; countryCode?: string },
+  url: string,
+): Record<string, unknown> {
+  const typeMap: Record<string, string> = { country: 'Country', city: 'City', region: 'Place', continent: 'Continent' };
+  const ld: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': typeMap[d.type ?? ''] ?? 'Place',
+    name: d.name,
+    url,
+  };
+  if (d.countryCode && d.type === 'city') {
+    ld.containedInPlace = { '@type': 'Country', name: d.countryCode };
   }
   return ld;
 }

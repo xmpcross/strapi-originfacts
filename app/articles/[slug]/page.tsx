@@ -145,8 +145,13 @@ export default async function ArticlePage({ params }: Props) {
     image: articleImage ? [articleImage] : undefined,
     datePublished: article.publishedAt,
     dateModified: article.updatedAt || article.publishedAt,
+    // A byline only becomes schema.org Person when it is a real person's
+    // name. House/team bylines ("FXN Studio Editorial") are an Organization —
+    // asserting them as Person is a machine-readable falsehood.
     author: article.author?.name
-      ? { '@type': 'Person', name: article.author.name }
+      ? /editorial|studio|team|staff|desk|newsroom/i.test(article.author.name)
+        ? { '@type': 'Organization', name: article.author.name }
+        : { '@type': 'Person', name: article.author.name }
       : { '@type': 'Organization', name: 'Originfacts' },
     publisher: {
       '@type': 'Organization',

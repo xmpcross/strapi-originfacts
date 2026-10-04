@@ -23,7 +23,7 @@ import CountryDetailSections from '@/components/CountryDetailSections';
 import CountryFactsPanel from '@/components/CountryFactsPanel';
 import FlightSearchCTA from '@/components/FlightSearchCTA';
 import { getCountryFacts } from '@/lib/country-facts';
-import { faqJsonLd, normalizeFaqs, DEFAULT_OG_IMAGE } from '@/lib/entity-seo';
+import { faqJsonLd, normalizeFaqs, destinationJsonLd, DEFAULT_OG_IMAGE } from '@/lib/entity-seo';
 import { JsonLd, FaqSection } from '@/components/SeoBlocks';
 import KeyFacts from '@/components/KeyFacts';
 import { buildMetaDescription, programmaticTitle } from '@/lib/seo';
@@ -105,8 +105,11 @@ export default async function DestinationPage({ params }: Props) {
   // renders. FaqSection + faqJsonLd both no-op when < 2 real Q&As survive
   // normalisation.
   const faqs = normalizeFaqs(destination.faqs);
+  // faqBlock renders in all three layout variants, so the Place-typed entity
+  // schema (Country/City/Continent per the record's type) rides along with it.
   const faqBlock = (
     <>
+      <JsonLd data={destinationJsonLd(destination, absoluteUrl(`/destinations/${destination.slug}`))} />
       <JsonLd data={faqJsonLd(faqs)} />
       <FaqSection faqs={faqs} title={`${destination.name} — frequently asked questions`} />
     </>

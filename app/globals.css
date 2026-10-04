@@ -385,9 +385,13 @@ html.flight-search-active [data-testid="fs-search-section"] {
   z-index: 50 !important;
   margin-top: 0 !important;
   padding: 5px 0 !important;
-  background: #ffffff !important;
-  background-color: #ffffff !important;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* /flight-search top band — the search page and the results view share it. */
+.fs-hero-bg {
+  background-color: #eef6ff;
+  background-image: linear-gradient(to bottom right, #f8fbff, #eef6ff, #d9eaff);
 }
 
 /* ---------- /flights: hide browse sections once search results render ----------
@@ -419,9 +423,11 @@ html.flight-search-active [data-testid="fs-search-section"],
 html.flight-search-active .fs-search-band {
   padding-top: 5px !important;
   padding-bottom: 5px !important;
-  background: #ffffff !important;
-  background-color: #ffffff !important;
-  background-image: none !important;
+}
+/* The results view keeps the search page's gradient (.fs-hero-bg) behind the
+   compact search bar; the inner band stays transparent so it shows through. */
+html.flight-search-active .fs-search-band {
+  background: transparent !important;
 }
 html.flight-search-active .tpwl-search-wrap {
   margin-top: 0;

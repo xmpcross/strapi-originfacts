@@ -145,7 +145,7 @@ export default async function FlightsPage({
       <div data-testid="fly-page">
         <div
           data-testid="fs-search-section"
-          className="bg-gradient-to-br from-[#f8fbff] via-[#eef6ff] to-[#d9eaff]"
+          className="fs-hero-bg"
         >
           <div className="fs-search-band mx-auto max-w-7xl px-6 pb-14 pt-12 lg:pb-16 lg:pt-16">
             <header data-testid="flight-search-hero" className="text-center">

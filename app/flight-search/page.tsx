@@ -150,8 +150,8 @@ export default async function FlightsPage({
           className="fs-hero-bg"
         >
           <div className="fs-search-band mx-auto max-w-7xl px-6 pb-14 pt-12 lg:pb-16 lg:pt-16">
-            <header data-testid="flight-search-hero" className="text-center">
-              <h1 className="editorial-h mx-auto max-w-4xl text-[clamp(2rem,3.5vw,3.25rem)] font-bold leading-[1.08] text-forest-900">
+            <header data-testid="flight-search-hero" className="text-left">
+              <h1 className="editorial-h max-w-4xl text-[3rem] font-bold leading-[1.08] text-forest-900">
                 Compare flight deals from 100s of sites
               </h1>
             </header>

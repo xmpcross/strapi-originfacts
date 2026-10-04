@@ -1200,207 +1200,61 @@ function CabinsModuleView({
   routeFacts: RouteFacts | null;
   module: DerivedModule | null;
 }) {
+  // Only the aircraft types actually recorded on this carrier's tracked
+  // routes. The generic cabin cards, amenity pills and per-type pitch and
+  // layout values were the same for every airline and are not shown.
   const fleet = routeFacts?.fleet ?? [];
-  const isPremiumCarrier = [
-    'singapore-airlines',
-    'qatar-airways',
-    'emirates',
-    'cathay-pacific',
-    'qantas',
-    'lufthansa',
-    'british-airways',
-    'ana',
-    'japan-airlines',
-    'eva-air',
-    'etihad-airways',
-    'air-new-zealand',
-    'delta-air-lines',
-    'united-airlines',
-    'american-airlines',
-  ].includes(airline.slug);
-
-  const cabinClasses = [
-    {
-      name: 'Economy Class',
-      tag: 'Standard Cabin',
-      pitch: '30" – 32" (76 – 81 cm)',
-      width: '17.5" (44 cm)',
-      recline: '3" – 4" (7.5 cm)',
-      layout: '3-3-3 / 3-3',
-      highlights: ['Personal HD Touchscreen', 'USB-A/C Charge Port', 'Adjustable 4-Way Headrest', 'Complimentary Inflight Meals'],
-      badgeColor: 'blue',
-    },
-    {
-      name: 'Premium Economy',
-      tag: 'Extra Space & Comfort',
-      pitch: '38" (96 cm)',
-      width: '19.5" (49 cm)',
-      recline: '8" (20 cm) with footrest',
-      layout: '2-4-2 / 2-3-2',
-      highlights: ['13.3" 4K HD Screen', 'Dedicated Premium Menu', 'Noise-Cancelling Headphones', 'Priority Boarding & Baggage'],
-      badgeColor: 'purple',
-    },
-    {
-      name: 'Business Class',
-      tag: '180° Fully Lie-Flat',
-      pitch: '78" (198 cm) Bed Length',
-      width: '20" – 28" (50 – 71 cm)',
-      recline: '180° Fully Lie-Flat Bed',
-      layout: '1-2-1 Direct Aisle Access',
-      highlights: ['Private Suite Doors (select fleet)', 'Universal AC + Wireless Charging', 'Gourmet Dine-on-Demand', 'Luxury Amenity Kits'],
-      badgeColor: 'emerald',
-    },
-    ...(isPremiumCarrier
-      ? [
-          {
-            name: 'First Class / Suites',
-            tag: 'Ultimate Luxury',
-            pitch: '80" – 82" (203 – 208 cm)',
-            width: '32" (81 cm) Swivel Seat',
-            recline: 'Enclosed Private Suite',
-            layout: '1-1 or 1-2-1 Suite Layout',
-            highlights: [
-              'Private Wardrobe & Double Bed option',
-              'Vintage Champagne & Caviar Service',
-              'Poltrona Frau Leather Finish',
-              'Exclusive Lounge Access',
-            ],
-            badgeColor: 'amber',
-          },
-        ]
-      : []),
-  ];
+  if (fleet.length === 0) return null;
+  void m;
 
   return (
     <section className={s.module} id="cabins" data-testid="t1-module-cabins">
       <div className={s.moduleHead}>
-        <h3>Which cabin classes and seating options does {airline.name} offer?</h3>
-        <span className={`${s.stamp} ${s.stampOk}`}>Verified Cabin Reference</span>
+        <h3>Which aircraft does {airline.name} fly on tracked routes?</h3>
       </div>
 
-      <p className={s.lede}>
-        Seating configuration, legroom pitch, recline angles, and inflight comfort amenities across {airline.name} cabin classes.
-      </p>
-
-      {/* Cabin Classes Grid */}
-      <div className={s.cabinGrid}>
-        {cabinClasses.map((c) => (
-          <div key={c.name} className={`${s.cabinCard} ${s[`cabinCard_${c.badgeColor}`]}`}>
-            <div className={s.cabinHeader}>
-              <div>
-                <span className={s.cabinTag}>{c.tag}</span>
-                <h3>{c.name}</h3>
-              </div>
-            </div>
-
-            <div className={s.cabinSpecs}>
-              <div className={s.specItem}>
-                <span className={s.specLabel}>Seat Pitch (Legroom)</span>
-                <span className={s.specValue}>{c.pitch}</span>
-              </div>
-              <div className={s.specItem}>
-                <span className={s.specLabel}>Seat Width</span>
-                <span className={s.specValue}>{c.width}</span>
-              </div>
-              <div className={s.specItem}>
-                <span className={s.specLabel}>Recline & Layout</span>
-                <span className={s.specValue}>{c.recline}</span>
-              </div>
-            </div>
-
-            <div className={s.cabinHighlights}>
-              <span className={s.highlightTitle}>Inflight Inclusions</span>
-              <ul>
-                {c.highlights.map((h, i) => (
-                  <li key={i}>
-                    <span className={s.bullet}>✓</span> {h}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Fleet Equipment Table */}
-      {fleet.length > 0 && (
-        <div className={s.fleetSection}>
-          <h3>What aircraft and seating types make up {airline.name}&apos;s fleet?</h3>
-          <p className={s.fleetNote}>
-            Aircraft types operating on tracked routes in the Originfacts dataset ({fleet.length} total types on record):
-          </p>
-          <div className={s.tableScroll}>
-            <table>
-              <thead>
-                <tr>
-                  <th scope="col">Aircraft Type</th>
-                  <th scope="col">Category</th>
-                  <th scope="col">Typical Seating Pitch</th>
-                  <th scope="col">Configuration</th>
-                </tr>
-              </thead>
-              <tbody>
-                {fleet.map((ac, i) => {
-                  const isWidebody =
-                    ac.toLowerCase().includes('a350') ||
-                    ac.toLowerCase().includes('a380') ||
-                    ac.toLowerCase().includes('787') ||
-                    ac.toLowerCase().includes('777') ||
-                    ac.toLowerCase().includes('a330');
-                  return (
-                    <tr key={i}>
-                      <th scope="row">
-                        <span className={s.aircraftName}>{ac}</span>
-                      </th>
-                      <td>
-                        <span className={`${s.typeBadge} ${isWidebody ? s.typeWide : s.typeNarrow}`}>
-                          {isWidebody ? 'Widebody (Long-Haul)' : 'Narrowbody (Regional)'}
-                        </span>
-                      </td>
-                      <td>{isWidebody ? '31" – 32" Economy / 78" Business Lie-Flat' : '30" – 31" Economy / 36" Business'}</td>
-                      <td>{isWidebody ? '3-3-3 (Eco) / 1-2-1 (Biz)' : '3-3 (Eco) / 2-2 (Biz)'}</td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
+      <div className={s.fleetSection}>
+        <p className={s.fleetNote}>
+          Aircraft types recorded on routes in the Originfacts dataset ({fleet.length} on record). Cabin layouts vary
+          by aircraft and configuration; check the seat map when booking.
+        </p>
+        <div className={s.tableScroll}>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Aircraft type</th>
+                <th scope="col">Body</th>
+              </tr>
+            </thead>
+            <tbody>
+              {fleet.map((ac, i) => {
+                const wide = isWidebodyType(ac);
+                return (
+                  <tr key={i}>
+                    <th scope="row">
+                      <span className={s.aircraftName}>{ac}</span>
+                    </th>
+                    <td>
+                      <span className={`${s.typeBadge} ${wide ? s.typeWide : s.typeNarrow}`}>
+                        {wide ? 'Widebody' : 'Narrowbody'}
+                      </span>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
         </div>
-      )}
-
-      {/* In-Cabin Amenities Pill Bar */}
-      <div className={s.amenitiesBox}>
-        <h4>Standard Cabin Inclusions across {airline.name}</h4>
-        <div className={s.amenityPills}>
-          <div className={s.amenityPill}>
-            <span className={s.pillIcon}>📶</span>
-            <span>Inflight Wi-Fi</span>
-          </div>
-          <div className={s.amenityPill}>
-            <span className={s.pillIcon}>⚡</span>
-            <span>Universal AC & USB Outlets</span>
-          </div>
-          <div className={s.amenityPill}>
-            <span className={s.pillIcon}>🎬</span>
-            <span>Personal HD TV Screens</span>
-          </div>
-          <div className={s.amenityPill}>
-            <span className={s.pillIcon}>🍱</span>
-            <span>Special Dietary Meals</span>
-          </div>
-          <div className={s.amenityPill}>
-            <span className={s.pillIcon}>🎧</span>
-            <span>Audio Headsets Provided</span>
-          </div>
-        </div>
-      </div>
-
-      <div className={s.src}>
-        <strong>Sources</strong>
-        <span>Official {airline.name} cabin specification & seating guides</span>
       </div>
     </section>
   );
+}
+
+const WIDEBODY_PATTERNS = [/a3[0-5]0/, /a380/, /a300|a310/, /74[0-9]/, /76[0-9]/, /77[0-9]/, /78[0-9]/, /il-?96/, /md-?11/, /dc-?10/];
+
+function isWidebodyType(type: string): boolean {
+  const t = type.toLowerCase().replace(/\s+/g, '');
+  return WIDEBODY_PATTERNS.some((re) => re.test(t));
 }
 
 function ContactCards({ rows }: { rows: DerivedCell[][] }) {

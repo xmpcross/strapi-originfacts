@@ -26,7 +26,7 @@ export const DEFAULT_AUTHOR: AuthorProfile = {
   longBio:
     'Kritin Vashist leads Originfacts as Founder and Editor-in-Chief, establishing rigorous editorial standards across all aviation, destination, and transportation research. Combining digital media expertise with deep route logistics analysis, Kritin oversees primary data verification pipelines, carrier fare evaluations, and cultural origin guides, ensuring travelers receive factual, independent travel intelligence before booking flights.',
   avatar: '/brand/authors/kritin-vashist.svg',
-  email: 'kritin@originfacts.com',
+  email: 'contact@originfacts.com',
   socials: {
     x: 'https://x.com/realoriginfacts',
     linkedin: 'https://www.linkedin.com/company/143027896/',

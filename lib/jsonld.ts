@@ -59,8 +59,6 @@ export const ORG_SAME_AS = [
   'https://www.youtube.com/@originfacts',
   'https://www.reddit.com/r/Originfacts/',
   'https://pinterest.com/originfacts/',
-  'https://www.wikidata.org/wiki/Special:Search?search=Originfacts',
-  'https://en.wikipedia.org/w/index.php?search=Originfacts',
   'https://find-and-update.company-information.service.gov.uk/company/16134139',
   'https://www.crunchbase.com/organization/originfacts',
   'https://www.trustpilot.com/review/originfacts.com',

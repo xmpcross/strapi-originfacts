@@ -20,7 +20,6 @@ import { JsonLd, FaqSection, HowToSteps } from '@/components/SeoBlocks';
 import KeyFacts from '@/components/KeyFacts';
 import TakeadsTravelOffers from '@/components/TakeadsTravelOffers';
 import AuthorCard from '@/components/AuthorCard';
-import OutboundCitations from '@/components/OutboundCitations';
 import { resolveAuthor, authorPersonJsonLd } from '@/lib/authors';
 import { buildMetaDescription, compactTitle, warnIfLong } from '@/lib/seo';
 import TableOfContents from '@/components/TableOfContents';
@@ -28,6 +27,13 @@ import { injectHeadingIdsAndExtractToc } from '@/lib/toc';
 import type { Metadata } from 'next';
 
 export const revalidate = 60;
+
+// An empty list opts the route into on-demand ISR: each page renders on its
+// first request and is then cached and revalidated, instead of rendering on
+// every request (it was served `private, no-store`).
+export async function generateStaticParams() {
+  return [];
+}
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -124,7 +130,7 @@ export default async function ArticlePage({ params }: Props) {
   const article = await getArticle(slug);
   if (!article) notFound();
 
-  const rawHtml = demoteBodyH1(await marked.parse(article.content || '', { async: true }));
+  const rawHtml = demoteBodyH1(await marked.parse(unescapeNewlines(article.content || ''), { async: true }));
   const html = interleaveGallery(rawHtml, article.gallery, article.title);
   const { html: processedHtml, toc } = injectHeadingIdsAndExtractToc(html);
   const hero = mediaUrl(article.coverImage ?? null);
@@ -271,13 +277,9 @@ export default async function ArticlePage({ params }: Props) {
               >
                 {article.title}
               </h1>
-              <p className="mt-5 text-base text-ink/75 sm:text-lg">
-                {article.excerpt && article.excerpt.split(/\s+/).length >= 40 && article.excerpt.split(/\s+/).length <= 60
-                  ? article.excerpt
-                  : article.excerpt
-                    ? `${article.excerpt.endsWith('.') ? article.excerpt : article.excerpt + '.'} This analysis evaluates core airline schedules, airport transit logistics, pricing trends, and verified passenger data to help travelers choose optimal flight routes.`
-                    : `Analyzing ${article.title} provides critical insights into global aviation trends, carrier route networks, airport operations, and fare structures. Our independent editorial coverage evaluates primary travel data, expert flight observations, and passenger guidelines to ensure travelers receive verified, direct conclusions before selecting itineraries or booking flights.`}
-              </p>
+              {article.excerpt ? (
+                <p className="mt-5 text-base text-ink/75 sm:text-lg">{article.excerpt}</p>
+              ) : null}
               <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs uppercase tracking-widest text-forest-800/70">
                 {date && <time dateTime={article.publishedAt}>{date}</time>}
                 {date && article.readingTimeMinutes ? (
@@ -325,7 +327,6 @@ export default async function ArticlePage({ params }: Props) {
 
             <HowToSteps steps={steps} />
 
-            <OutboundCitations category={article.category?.name} />
 
             {article.category?.slug === 'hotels' && <BookingHotelBanner articleSlug={article.slug} />}
             {article.category?.slug === 'flights' && <FlightBookingBanners articleSlug={article.slug} />}
@@ -713,4 +714,13 @@ function AdjacentPostCard({
       </div>
     </Link>
   );
+}
+
+/**
+ * Some CMS entries were saved with escaped newlines ("\\n\\n## Heading"), so
+ * marked saw one long line and put the whole article inside a single heading.
+ * Only content that carries an escaped paragraph break is touched.
+ */
+function unescapeNewlines(content: string): string {
+  return content.includes('\\n\\n') ? content.replace(/(?:\\r)?\\n/g, '\n') : content;
 }

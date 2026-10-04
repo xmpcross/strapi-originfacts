@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const author = getAuthorBySlug(slug);
   if (!author) return { title: 'Author Not Found' };
 
-  const metaTitle = `${author.name} — ${author.jobTitle} | Originfacts`;
+  const metaTitle = `${author.name} — ${author.jobTitle}`;
   const metaDescription = clampDescription(author.bio);
 
   return {

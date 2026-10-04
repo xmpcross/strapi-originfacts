@@ -13,7 +13,7 @@
 
 export const DESCRIPTION_MAX = 150;
 /** Budget for compactTitle(); programmaticTitle() uses TITLE_MAX below. */
-export const COMPACT_TITLE_MAX = 45;
+export const COMPACT_TITLE_MAX = 60;
 const TITLE_WARN = 60;
 const DESCRIPTION_WARN = 160;
 

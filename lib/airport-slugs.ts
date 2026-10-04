@@ -39,6 +39,13 @@ export function airportSlug(airport: Pick<StrapiAirport, 'iata' | 'city' | 'name
   const base = slugifyAirportPart(airport.city || airport.name || airport.iata);
   if (!base) return airport.iata.toLowerCase();
 
+  // The route reads any 3-letter slug as an IATA code first, so a 3-letter
+  // city slug ("sal", "uyo", "kos") resolved to a different airport or a 404.
+  // Suffix it unless it IS this airport's code.
+  if (/^[a-z]{3}$/.test(base) && base !== airport.iata.toLowerCase()) {
+    return `${base}-${airport.iata.toLowerCase()}`;
+  }
+
   const duplicateCity = allAirports.some((candidate) => {
     if (candidate.iata.toUpperCase() === iataUpper) return false;
     return slugifyAirportPart(candidate.city || candidate.name || candidate.iata) === base;

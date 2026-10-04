@@ -13,7 +13,6 @@ import {
 import { SITE_URL, DEFAULT_OG_IMAGE, countryFaqs, countryJsonLd, faqJsonLd, articleBlogPostingJsonLd } from '@/lib/entity-seo';
 import { airportPath } from '@/lib/airport-slugs';
 import { JsonLd, FaqSection } from '@/components/SeoBlocks';
-import OutboundCitations from '@/components/OutboundCitations';
 import TableOfContents from '@/components/TableOfContents';
 import { breadcrumbJsonLd, absoluteUrl } from '@/lib/jsonld';
 import { buildMetaDescription, programmaticTitle } from '@/lib/seo';
@@ -316,7 +315,6 @@ export default async function CountryPage({ params }: Props) {
 
       <FaqSection faqs={faqs} title={`${country.name} — frequently asked questions`} />
       <div className="mx-auto max-w-7xl px-6">
-        <OutboundCitations category="destinations" title={`${country.name} — Official Regulatory & Data Sources`} />
       </div>
     </article>
   );

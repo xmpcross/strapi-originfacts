@@ -58,7 +58,7 @@ export default async function SitemapPage() {
     .sort((a, b) => a.name.localeCompare(b.name));
 
   const airports = allAirports
-    .filter((a) => a.iata && (AIRPORTS_INDEXABLE || airportIsPublished(a.iata)) && airportIsSubstantive(a, coverage.originIatas.has(a.iata)))
+    .filter((a) => a.iata && (AIRPORTS_INDEXABLE || airportIsPublished(a.iata)) && airportIsSubstantive(a, coverage.originIatas.has(a.iata.toLowerCase())))
     .sort((a, b) => a.iata.localeCompare(b.iata));
 
   const linkClass = 'text-primary-emphasis hover:text-primary-highlight hover:underline';

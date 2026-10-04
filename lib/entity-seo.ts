@@ -18,6 +18,7 @@
  */
 import type { StrapiAirport, StrapiAirline, StrapiRoute, StrapiCountry } from '@/lib/strapi';
 import { getCountryFacts } from '@/lib/country-facts';
+import { operableCarriers } from '@/lib/route-carriers';
 import { resolveAuthor, authorPersonJsonLd } from '@/lib/authors';
 
 export const SITE_URL = 'https://www.originfacts.com';
@@ -166,8 +167,16 @@ export function howToJsonLd(opts: {
  * `hasRoutes` is supplied by the caller — the page passes `routes.length > 0`;
  * the sitemap passes route-coverage set membership (see fetchRouteCoverage).
  */
+/**
+ * An airport page is indexable only when it carries data of its own: at least
+ * one tracked route, or a reviewed guide (PUBLISHED_AIRPORT_IATAS). An `about`
+ * no longer qualifies on its own — the ingest wrote one onto nearly every
+ * airport ("is a medium airport serving…" / "is the main air gateway for…"),
+ * which opened the gate for 3,574 of 3,587 airports, 84% of them showing "No
+ * routes tracked" (SEO re-audit, 4 Oct 2026). Pages stay live, noindex/follow.
+ */
 export function airportIsSubstantive(a: StrapiAirport, hasRoutes: boolean): boolean {
-  return hasText(a.about) || hasRoutes;
+  return hasRoutes || (Boolean(a.iata) && airportIsPublished(a.iata));
 }
 
 /*
@@ -185,8 +194,7 @@ export function countryHasData(c: Pick<StrapiCountry, 'code' | 'about'>): boolea
  * Airport indexing switch. Was temporarily false during the AdSense review
  * (2026-07-30); true restores the same substantive-content gate airlines use —
  * pages with real content index, thin stubs stay noindex via robotsFor().
- * Airport URLs are still excluded from the sitemap (app/sitemap.ts) — restoring
- * them there is a separate, deliberate step.
+ * The gate itself is airportIsSubstantive() (routes or a reviewed guide).
  */
 export const AIRPORTS_INDEXABLE = true;
 
@@ -344,7 +352,7 @@ export function summariseRoutes(routes: StrapiRoute[], side: 'origin' | 'destina
     const name = end?.city || end?.name;
     if (end?.iata && name) dests.set(end.iata, name);
     if (end?.country) countries.add(end.country);
-    for (const c of r.carriers ?? []) {
+    for (const c of operableCarriers(r)) {
       if (c?.slug && c.name) carriers.set(c.slug, { name: c.name, slug: c.slug, iataCode: c.iataCode });
     }
   }
@@ -716,8 +724,12 @@ export function articleBlogPostingJsonLd(opts: ArticleBlogPostingOptions): Recor
     headline: opts.headline,
     ...(opts.description ? { description: opts.description } : {}),
     image: [imgUrl],
-    datePublished: opts.datePublished || '2024-01-01T00:00:00Z',
-    dateModified: opts.dateModified || opts.datePublished || '2024-01-01T00:00:00Z',
+    // Only real dates: a missing date is omitted rather than invented (the old
+    // 2024-01-01 fallback stamped ~3,900 entity pages with the same fake date).
+    ...(opts.datePublished ? { datePublished: opts.datePublished } : {}),
+    ...(opts.dateModified || opts.datePublished
+      ? { dateModified: opts.dateModified || opts.datePublished }
+      : {}),
     author: authorPersonSchema,
     publisher: {
       '@type': 'Organization',
@@ -726,7 +738,7 @@ export function articleBlogPostingJsonLd(opts: ArticleBlogPostingOptions): Recor
       url: SITE_URL,
       logo: {
         '@type': 'ImageObject',
-        url: `${SITE_URL}/brand/logo/logo.svg`,
+        url: `${SITE_URL}/brand/logo/originfacts-logo.png`,
       },
     },
     mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },

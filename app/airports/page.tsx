@@ -1,10 +1,12 @@
-import { listAirports, mediaUrl } from '@/lib/strapi';
+import { fetchRouteCoverage, listAirports, mediaUrl } from '@/lib/strapi';
 import AirportDirectory from '@/components/AirportDirectory';
+import DirectoryLinkList from '@/components/DirectoryLinkList';
 import CategoryDescription from '@/components/CategoryDescription';
 import { JsonLd } from '@/components/SeoBlocks';
 import { breadcrumbJsonLd, collectionPageJsonLd } from '@/lib/jsonld';
 import { HUB_INTROS, HUB_PATHS } from '@/lib/hub-intros';
 import { airportPath } from '@/lib/airport-slugs';
+import { AIRPORTS_INDEXABLE, airportIsPublished, airportIsSubstantive } from '@/lib/entity-seo';
 import { SECTIONS } from '@/lib/sections';
 import Link from 'next/link';
 import { Suspense } from 'react';
@@ -21,7 +23,10 @@ export const metadata = {
 };
 
 export default async function AirportsPage() {
-  const airports = await listAirports().catch(() => []);
+  const [airports, coverage] = await Promise.all([
+    listAirports().catch(() => []),
+    fetchRouteCoverage().catch(() => ({ originIatas: new Set<string>(), carrierSlugs: new Set<string>() })),
+  ]);
 
   const compactAirports = airports.map((a) => ({
     id: a.id,
@@ -99,7 +104,30 @@ export default async function AirportsPage() {
         </nav>
       </header>
 
-      <Suspense>
+      <Suspense
+        fallback={
+          <DirectoryLinkList
+            label="All airports"
+            groups={[
+              {
+                title: 'Airport guides',
+                // Same gate as the sitemap: only indexable airport guides.
+                links: airports
+                  .filter(
+                    (a) =>
+                      (AIRPORTS_INDEXABLE || airportIsPublished(a.iata)) &&
+                      airportIsSubstantive(a, coverage.originIatas.has(a.iata.toLowerCase())),
+                  )
+                  .sort((a, b) => (a.city || a.name).localeCompare(b.city || b.name))
+                  .map((a) => ({
+                    href: airportPath(a, airports),
+                    label: a.city ? `${a.city} — ${a.name} (${a.iata})` : `${a.name} (${a.iata})`,
+                  })),
+              },
+            ]}
+          />
+        }
+      >
         <AirportDirectory airports={compactAirports} />
       </Suspense>
     </div>

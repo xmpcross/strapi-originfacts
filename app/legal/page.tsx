@@ -5,7 +5,8 @@ import { breadcrumbJsonLd } from '@/lib/jsonld';
 import { JsonLd } from '@/components/SeoBlocks';
 
 export const metadata: Metadata = {
-  title: 'Legal — Originfacts',
+  title: 'Legal',
+  alternates: { canonical: '/legal' },
   description:
     'Terms, privacy, cookies, affiliate disclosure, disclaimer, accessibility, and contact details for Originfacts.',
 };

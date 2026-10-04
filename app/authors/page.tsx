@@ -7,7 +7,7 @@ import { clampDescription } from '@/lib/seo';
 import { absoluteUrl, breadcrumbJsonLd } from '@/lib/jsonld';
 
 export const metadata: Metadata = {
-  title: 'Editorial Authors & Travel Experts | Originfacts',
+  title: 'Editorial Authors & Travel Experts',
   description: clampDescription(
     'Meet the editorial authors, aviation researchers, and travel specialists behind Originfacts. Discover bios, expertise, and published travel guides.',
   ),

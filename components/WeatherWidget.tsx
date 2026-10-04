@@ -221,16 +221,16 @@ export default function WeatherWidget() {
     >
       <div className="flex items-center justify-between gap-3">
         <div className="min-w-0">
-          <p className="font-urbanist text-[10px] font-bold uppercase tracking-widest text-forest-900/55">
+          <p className="text-[10px] font-bold uppercase tracking-widest text-forest-900/55">
             {label}
           </p>
-          <p className="mt-0.5 truncate font-urbanist text-sm font-bold text-forest-950">
+          <p className="mt-0.5 truncate text-sm font-bold text-forest-950">
             {weather.city}
           </p>
         </div>
         <div className="flex items-center gap-2">
           <span aria-hidden className="text-2xl leading-none">{icon}</span>
-          <span className="font-urbanist text-xl font-bold leading-none text-forest-950">
+          <span className="text-xl font-bold leading-none text-forest-950">
             {displayTemp}°
           </span>
         </div>

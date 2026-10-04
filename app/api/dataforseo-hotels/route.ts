@@ -1,11 +1,11 @@
 import { NextResponse } from 'next/server';
 import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';
 import path from 'node:path';
+import { bookingHotelSearch } from '@/lib/cj';
 
 const DATAFORSEO_URL = 'https://api.dataforseo.com/v3/business_data/google/hotel_searches/live';
 const DATAFORSEO_LOGIN = process.env.DATAFORSEO_LOGIN;
 const DATAFORSEO_PASSWORD = process.env.DATAFORSEO_PASSWORD;
-const BOOKING_AFFILIATE_URL = 'https://tatrck.com/h/0Hu30_OZ0V7N?model=cpc';
 const HOTEL_CACHE_FILE = path.join(process.cwd(), 'data', 'hotel-search-cache.json');
 const HOTEL_CACHE_TTL_MS = 1000 * 60 * 60 * 24 * 7;
 
@@ -78,12 +78,19 @@ function isLodging(hotel: Pick<HotelResult, 'name'>): boolean {
   return !NON_LODGING_NAME.test(hotel.name);
 }
 
+/* Booking.com search for the hotel by name, through our CJ affiliate link. The
+   old Travelpayouts link (tatrck.com) began redirecting to an empty Location,
+   which left visitors on a blank page. */
+function hotelBookingHref(hotelName: string, city?: string) {
+  return bookingHotelSearch([hotelName, city].filter(Boolean).join(', '));
+}
+
 function withAffiliateHotelLinks<T extends HotelApiPayload>(payload: T): T {
   return {
     ...payload,
     hotels: payload.hotels.filter(isLodging).map((hotel) => ({
       ...hotel,
-      href: BOOKING_AFFILIATE_URL,
+      href: hotelBookingHref(hotel.name, payload.city),
     })),
   };
 }
@@ -301,7 +308,7 @@ export async function GET(request: Request) {
         price: item.prices?.price ?? null,
         currency: item.prices?.currency ?? currency,
         discount: item.prices?.discount_text ?? null,
-        href: BOOKING_AFFILIATE_URL,
+        href: hotelBookingHref(item.title, city),
       }));
 
     const payload: HotelApiPayload & { cachedAt: string } = {

@@ -26,7 +26,7 @@ export default function ComparisonTable({
     <div className={`my-6 overflow-hidden rounded-[0.4rem] border border-forest-900/12 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.04)] ${className}`} data-testid="comparison-table">
       <div className="overflow-x-auto">
         <table className="w-full border-collapse text-left text-sm text-forest-950">
-          <caption className="border-b border-forest-900/10 bg-forest-900/[0.03] px-5 py-3.5 text-left font-urbanist text-sm font-bold uppercase tracking-wider text-forest-900">
+          <caption className="border-b border-forest-900/10 bg-forest-900/[0.03] px-5 py-3.5 text-left text-sm font-bold uppercase tracking-wider text-forest-900">
             {caption}
           </caption>
           <thead>
@@ -35,7 +35,7 @@ export default function ComparisonTable({
                 <th
                   key={i}
                   scope="col"
-                  className="px-5 py-3 font-urbanist text-xs font-bold uppercase tracking-wider text-forest-900"
+                  className="px-5 py-3 text-xs font-bold uppercase tracking-wider text-forest-900"
                 >
                   {h}
                 </th>
@@ -50,7 +50,7 @@ export default function ComparisonTable({
                     <th
                       key={c}
                       scope="row"
-                      className="px-5 py-3.5 font-urbanist font-bold text-forest-950 whitespace-nowrap"
+                      className="px-5 py-3.5 font-bold text-forest-950 whitespace-nowrap"
                     >
                       {cell}
                     </th>

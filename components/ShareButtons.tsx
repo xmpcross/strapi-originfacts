@@ -52,7 +52,7 @@ export default function ShareButtons({ title, slug }: Props) {
       className="inline-flex items-center rounded-full bg-[#f1f5f9] py-1 pl-4 pr-2 shadow-[0_1px_3px_rgba(0,0,0,0.06)]"
       data-testid="share-buttons"
     >
-      <span className="font-urbanist text-[12px] font-bold uppercase tracking-widest text-forest-950">
+      <span className="text-[12px] font-bold uppercase tracking-widest text-forest-950">
         Share
       </span>
       <span aria-hidden className="mx-3 h-5 w-px bg-forest-900/15" />

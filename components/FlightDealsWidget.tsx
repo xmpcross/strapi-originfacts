@@ -176,10 +176,10 @@ export default function FlightDealsWidget() {
         className="rounded-[0.3rem] border border-forest-900/10 bg-white p-4 shadow-sm"
         data-testid="flight-deals-widget-empty"
       >
-        <p className="font-urbanist text-[10px] font-bold uppercase tracking-widest text-forest-900/55">
+        <p className="text-[10px] font-bold uppercase tracking-widest text-forest-900/55">
           Cheap flights
         </p>
-        <p className="mt-2 font-urbanist text-sm font-bold text-forest-950">
+        <p className="mt-2 text-sm font-bold text-forest-950">
           Compare every airline in one search.
         </p>
         <a
@@ -201,10 +201,10 @@ export default function FlightDealsWidget() {
       data-testid="flight-deals-widget"
     >
       <div className="flex items-baseline justify-between gap-2">
-        <p className="font-urbanist text-[10px] font-bold uppercase tracking-widest text-forest-900/55">
+        <p className="text-[10px] font-bold uppercase tracking-widest text-forest-900/55">
           Cheap flights from
         </p>
-        <p className="font-urbanist text-[11px] font-bold text-forest-950">
+        <p className="text-[11px] font-bold text-forest-950">
           {origin.city ? `${origin.city} (${origin.iata})` : origin.iata}
         </p>
       </div>
@@ -228,7 +228,7 @@ export default function FlightDealsWidget() {
                 data-testid={`flight-deal-${d.destination}`}
               >
                 <div className="min-w-0">
-                  <p className="font-urbanist text-sm font-bold text-forest-950 group-hover:text-primary-emphasis">
+                  <p className="text-sm font-bold text-forest-950 group-hover:text-primary-emphasis">
                     {origin.iata} → {d.destination}
                   </p>
                   <p className="mt-0.5 text-[11px] text-forest-900/60">
@@ -236,7 +236,7 @@ export default function FlightDealsWidget() {
                     {d.returnAt ? ` – ${formatDate(d.returnAt)}` : ''} · {d.airline}
                   </p>
                 </div>
-                <p className="shrink-0 font-urbanist text-base font-bold text-primary-emphasis">
+                <p className="shrink-0 text-base font-bold text-primary-emphasis">
                   {formatPrice(d.price, d.currency)}
                 </p>
               </a>

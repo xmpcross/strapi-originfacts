@@ -233,7 +233,7 @@ function SummaryCard({
     >
       <div className="min-w-0 flex-1">
         <div className="text-xs uppercase tracking-widest text-forest-900/60">{label}</div>
-        <div className="mt-2 font-urbanist text-3xl font-bold leading-none text-forest-900">{value}</div>
+        <div className="mt-2 text-3xl font-bold leading-none text-forest-900">{value}</div>
         <p className="mt-3 text-sm leading-snug text-forest-900/65">{blurb}</p>
       </div>
       <div
@@ -306,10 +306,10 @@ function CountryCard({ country }: { country: CountryRow }) {
       </span>
       <div className="min-w-0 flex-1">
         <div className="flex items-center gap-2">
-          <div className="truncate font-urbanist text-base font-bold text-forest-900 group-hover:text-forest-700">
+          <div className="truncate text-base font-bold text-forest-900 group-hover:text-forest-700">
             {country.name}
           </div>
-          <span className="flex-none rounded-[0.3rem] bg-forest-900 px-2 py-0.5 font-mono text-[10px] font-bold tracking-wider text-sand-100">
+          <span className="flex-none rounded-[0.3rem] bg-forest-900 px-2 py-0.5 text-[10px] font-bold tracking-wider text-sand-100">
             {country.code}
           </span>
         </div>

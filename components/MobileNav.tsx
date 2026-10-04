@@ -99,7 +99,7 @@ function MobileNavDrawer({ onClose }: { onClose: () => void }) {
       data-testid="mobile-nav-drawer"
     >
       <div className="flex items-center justify-between border-b border-forest-900/10 px-6 py-3">
-        <span className="font-urbanist text-base font-bold uppercase tracking-wider text-forest-950">
+        <span className="text-base font-bold uppercase tracking-wider text-forest-950">
           Menu
         </span>
         <button
@@ -166,7 +166,7 @@ function MobileNavItem({
           <Link
             href={item.href}
             onClick={onClose}
-            className={`font-urbanist ${sizeClass} flex-1 font-bold capitalize leading-none tracking-tight text-forest-950 transition hover:text-primary-emphasis`}
+            className={`${sizeClass} flex-1 font-bold capitalize leading-none tracking-tight text-forest-950 transition hover:text-primary-emphasis`}
           >
             <span className="inline-flex items-baseline gap-2">
               {item.label}
@@ -177,7 +177,7 @@ function MobileNavItem({
           <button
             type="button"
             onClick={() => hasChildren && setExpanded((v) => !v)}
-            className={`font-urbanist ${sizeClass} flex-1 text-left font-bold capitalize leading-none tracking-tight text-forest-950`}
+            className={`${sizeClass} flex-1 text-left font-bold capitalize leading-none tracking-tight text-forest-950`}
           >
             <span className="inline-flex items-baseline gap-2">
               {item.label}

@@ -107,7 +107,7 @@ export default function AirlineReviews({ slug, name }: { slug: string; name: str
                     <path d={STAR_PATH} fill="#ffce00" />
                   </svg>
                   {stats.avgRating10 !== null && (
-                    <span className="font-urbanist text-[2.7rem] font-bold leading-none text-forest-900">
+                    <span className="text-[2.7rem] font-bold leading-none text-forest-900">
                       {stats.avgRating10.toFixed(1)}
                       <span className="text-lg font-semibold text-forest-900/40">/10</span>
                     </span>
@@ -203,7 +203,7 @@ export default function AirlineReviews({ slug, name }: { slug: string; name: str
                           style={{ width: `${(sub.avg / 5) * 100}%` }}
                         />
                       </span>
-                      <span className="w-7 text-right font-mono font-bold text-forest-900">
+                      <span className="w-7 text-right font-bold text-forest-900">
                         {sub.avg.toFixed(1)}
                       </span>
                     </li>
@@ -315,7 +315,7 @@ function ReviewCard({ review, multiSource }: { review: AirlineReview; multiSourc
       </div>
 
       {review.title && (
-        <h3 className="mt-2.5 font-urbanist text-[0.95rem] font-bold leading-snug text-forest-900">
+        <h3 className="mt-2.5 text-[0.95rem] font-bold leading-snug text-forest-900">
           {review.title.replace(/ customer review$/i, '')}
         </h3>
       )}

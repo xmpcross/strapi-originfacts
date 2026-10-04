@@ -150,11 +150,11 @@ export default async function CountryPage({ params }: Props) {
           <div>
             <div className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-widest opacity-80">
               {country.region && <span>{country.region}</span>}
-              <span className="rounded-[0.3rem] bg-forest-950/60 px-2 py-0.5 font-mono font-bold tracking-wider">
+              <span className="rounded-[0.3rem] bg-forest-950/60 px-2 py-0.5 font-bold tracking-wider">
                 ISO · {country.code}
               </span>
               {country.currency && (
-                <span className="rounded-[0.3rem] bg-forest-950/60 px-2 py-0.5 font-mono font-bold tracking-wider">
+                <span className="rounded-[0.3rem] bg-forest-950/60 px-2 py-0.5 font-bold tracking-wider">
                   {country.currency}
                 </span>
               )}
@@ -239,18 +239,18 @@ export default async function CountryPage({ params }: Props) {
                       // eslint-disable-next-line @next/next/no-img-element
                       <img src={logo} alt={al.name} className="h-full w-full object-contain" />
                     ) : (
-                      <span className="font-urbanist text-sm font-bold text-forest-900/60">
+                      <span className="text-sm font-bold text-forest-900/60">
                         {(al.iataCode || al.name).slice(0, 3).toUpperCase()}
                       </span>
                     )}
                   </div>
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-2">
-                      <div className="truncate font-urbanist text-base font-bold text-forest-900 group-hover:text-forest-700">
+                      <div className="truncate text-base font-bold text-forest-900 group-hover:text-forest-700">
                         {al.name}
                       </div>
                       {al.iataCode && (
-                        <span className="flex-none rounded-[0.3rem] bg-forest-900 px-2 py-0.5 font-mono text-[10px] font-bold tracking-wider text-sand-100">
+                        <span className="flex-none rounded-[0.3rem] bg-forest-900 px-2 py-0.5 text-[10px] font-bold tracking-wider text-sand-100">
                           {al.iataCode}
                         </span>
                       )}
@@ -287,10 +287,10 @@ export default async function CountryPage({ params }: Props) {
                 className="group flex items-center justify-between rounded-[0.3rem] border border-forest-900/10 bg-paper p-5 transition hover:-translate-y-0.5 hover:border-forest-900/30 hover:shadow-sm"
               >
                 <div>
-                  <div className="font-mono text-xs font-bold tracking-wider text-forest-900/70">
+                  <div className="text-xs font-bold tracking-wider text-forest-900/70">
                     {r.origin?.iata} → {r.destination?.iata}
                   </div>
-                  <div className="mt-2 font-urbanist text-base font-bold text-forest-900 group-hover:text-forest-700">
+                  <div className="mt-2 text-base font-bold text-forest-900 group-hover:text-forest-700">
                     {r.destination?.city || r.destination?.name}
                   </div>
                   <div className="mt-1 text-xs text-forest-900/60">
@@ -299,7 +299,7 @@ export default async function CountryPage({ params }: Props) {
                 </div>
                 {r.distanceKm && (
                   <div className="text-right text-xs text-forest-900/50">
-                    <div className="font-mono font-bold text-forest-900/70">
+                    <div className="font-bold text-forest-900/70">
                       {r.distanceKm.toLocaleString()} km
                     </div>
                     {r.durationMinutes && (
@@ -323,7 +323,7 @@ export default async function CountryPage({ params }: Props) {
 function Stat({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <div className="font-urbanist text-3xl font-bold leading-none sm:text-3xl">{value}</div>
+      <div className="text-3xl font-bold leading-none sm:text-3xl">{value}</div>
       <div className="mt-2 text-xs uppercase tracking-widest opacity-70">{label}</div>
     </div>
   );
@@ -337,10 +337,10 @@ function AirportCard({ airport }: { airport: StrapiAirport }) {
     >
       <div className="min-w-0">
         <div className="flex items-center gap-2">
-          <span className="flex-none rounded-[0.3rem] bg-forest-900 px-2 py-0.5 font-mono text-[10px] font-bold tracking-wider text-sand-100">
+          <span className="flex-none rounded-[0.3rem] bg-forest-900 px-2 py-0.5 text-[10px] font-bold tracking-wider text-sand-100">
             {airport.iata}
           </span>
-          <div className="truncate font-urbanist text-sm font-bold text-forest-900 group-hover:text-forest-700">
+          <div className="truncate text-sm font-bold text-forest-900 group-hover:text-forest-700">
             {airport.city || airport.name}
           </div>
         </div>

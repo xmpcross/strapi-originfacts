@@ -122,7 +122,7 @@ function RelatedCard({ article }: { article: StrapiArticle }) {
           <div className="aspect-[4/3] w-full bg-gradient-to-br from-primary-hover to-primary-pressed" />
         )}
       </div>
-      <h3 className="mt-4 line-clamp-2 font-urbanist text-base font-bold leading-snug text-forest-950 transition group-hover:text-primary-emphasis sm:text-lg">
+      <h3 className="mt-4 line-clamp-2 text-base font-bold leading-snug text-forest-950 transition group-hover:text-primary-emphasis sm:text-lg">
         {article.title}
       </h3>
     </Link>

@@ -45,7 +45,7 @@ export default async function HubsPage() {
       <header data-testid="airport-hubs-header">
         <div className="grid items-start gap-6 sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-12">
           <div className="min-w-0">
-            <h1 className="font-urbanist text-5xl font-bold leading-none tracking-tight text-forest-950 sm:text-6xl">
+            <h1 className="text-5xl font-bold leading-none tracking-tight text-forest-950 sm:text-6xl">
               Top international airport hubs
             </h1>
             <CategoryDescription
@@ -57,15 +57,15 @@ export default async function HubsPage() {
             className="flex h-32 w-32 flex-col items-center justify-center rounded-[0.3rem] bg-[#f1f5f9] text-forest-950"
             data-testid="airport-hubs-count"
           >
-            <span className="font-urbanist text-4xl font-bold leading-none">{hubs.length.toLocaleString()}</span>
-            <span className="mt-2 font-urbanist text-[11px] font-bold uppercase tracking-widest text-forest-900/70">
+            <span className="text-4xl font-bold leading-none">{hubs.length.toLocaleString()}</span>
+            <span className="mt-2 text-[11px] font-bold uppercase tracking-widest text-forest-900/70">
               Hubs
             </span>
           </div>
         </div>
 
         <nav
-          className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 border-y border-forest-900/15 py-4 font-urbanist text-[14px] font-bold uppercase tracking-widest text-forest-950"
+          className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 border-y border-forest-900/15 py-4 text-[14px] font-bold uppercase tracking-widest text-forest-950"
           aria-label="Categories"
           data-testid="airport-hubs-subnav"
         >

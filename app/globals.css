@@ -19,16 +19,16 @@
   .leading-relaxed {
     max-width: 100%;
   }
-  /* Default body text & paragraphs — Outfit */
-  body, p {
-    font-family: var(--font-outfit), 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
+  /* The site's only font. Everything else (headings, sections, widgets below)
+     inherits it; do not add per-section font-family rules. */
+  body {
+    font-family: var(--font-inter), 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight: 400;
     letter-spacing: -0.011em;
     color: #334155;
   }
-  /* All headings → Urbanist */
+  /* All headings */
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-urbanist), 'Urbanist', system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
     font-weight: 700 !important;
     letter-spacing: -0.02em !important;
     line-height: 1.25;
@@ -59,7 +59,7 @@
   }
 
   /* Single post page — headings bumped to weight 700 (overrides the
-     global 600). Font-family is already Urbanist from the global rule. */
+     global 600). Font-family is inherited (Inter) from body. */
   [data-testid="article-page"] h1,
   [data-testid="article-page"] h2,
   [data-testid="article-page"] h3,
@@ -76,34 +76,8 @@
     font-weight: 700 !important;
   }
 
-  /* Airline Directory & Airline Detail Pages Typography:
-     - Headings (h1 - h6, titles) -> Google Font Urbanist
-     - Paragraphs & body -> Google Font Outfit */
-  [data-testid="airlines-page"] h1,
-  [data-testid="airlines-page"] h2,
-  [data-testid="airlines-page"] h3,
-  [data-testid="airlines-page"] h4,
-  [data-testid="airlines-page"] h5,
-  [data-testid="airlines-page"] h6,
-  [data-testid="airlines-page"] .title,
-  [data-testid^="airline-page-"] h1,
-  [data-testid^="airline-page-"] h2,
-  [data-testid^="airline-page-"] h3,
-  [data-testid^="airline-page-"] h4,
-  [data-testid^="airline-page-"] h5,
-  [data-testid^="airline-page-"] h6,
-  [data-testid^="airline-page-"] .title {
-    font-family: var(--font-urbanist), 'Urbanist', system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
-  }
+  /* Airline Directory & Airline Detail Pages Typography (font inherited from body). */
 
-  [data-testid="airlines-page"],
-  [data-testid="airlines-page"] p,
-  [data-testid="airlines-page"] span,
-  [data-testid="airlines-page"] a,
-  [data-testid^="airline-page-"],
-  [data-testid^="airline-page-"] p {
-    font-family: var(--font-outfit), 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  }
 
   [data-testid="airlines-page"] h3,
   [data-testid^="airline-page-"] h3 {
@@ -151,22 +125,7 @@
   }
 
   /* Airport Template Page Typography (Extracted from flightfares.one) */
-  [data-testid^="airport-page-"],
-  [data-testid="airports-page"],
-  [data-testid="airport-hubs-page"] {
-    font-family: var(--font-outfit), 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  }
 
-  [data-testid^="airport-page-"] h1,
-  [data-testid^="airport-page-"] h2,
-  [data-testid^="airport-page-"] h3,
-  [data-testid^="airport-page-"] h4,
-  [data-testid="airports-page"] h1,
-  [data-testid="airports-page"] h2,
-  [data-testid="airports-page"] h3,
-  [data-testid="airports-page"] h4 {
-    font-family: var(--font-urbanist), 'Urbanist', system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
-  }
 
   [data-testid^="airport-page-"] h1 {
     font-size: clamp(2rem, 3.5vw, 3.25rem) !important;
@@ -202,7 +161,6 @@
 
   [data-testid^="airport-page-"] p,
   [data-testid^="airport-page-"] li {
-    font-family: var(--font-outfit), 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.65;
@@ -223,7 +181,7 @@
     font-size: clamp(1.1rem, 0.8vw + 0.85rem, 1.4rem) !important;
   }
   /* Single post page sidebar — Popular/Recent post row titles render
-     in Outfit 600 at 18px (overrides the article-page Urbanist 700
+     at 600 / 18px (overrides the article-page 700
      heading rule above). Specificity 0,2,1 beats the heading rule's
      0,1,1, so this wins even though both are !important. */
   [data-testid="article-page"] [data-testid="blog-sidebar"] h4 {
@@ -313,7 +271,7 @@
 
 @layer components {
   .editorial-h {
-    @apply font-display font-bold tracking-tightest;
+    @apply font-bold tracking-tightest;
   }
   /* Auto-sliding marquee for the cities rail (seamless loop via duplicated items). */
   @keyframes cities-marquee {
@@ -386,6 +344,14 @@ html.flight-search-active [data-testid="fs-search-section"] {
   margin-top: 0 !important;
   padding: 5px 0 !important;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Travelpayouts widgets render in Shadow DOM and read their font from
+   --font-main; custom properties inherit through the shadow boundary. */
+#tpwl-search,
+#tpwl-tickets,
+#tpwl-modals {
+  --font-main: var(--font-inter), 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 /* /flight-search top band — the search page and the results view share it. */
@@ -575,15 +541,15 @@ html.flight-search-active #tpwl-tickets {
   font-weight: 600 !important;
 }
 
-/* Article body — Outfit body text at 18px / 300, keep headings bold */
+/* Article body — 18px / 300 body text, keep headings bold */
 .prose-article {
   @apply prose prose-stone
          prose-p:font-sans prose-p:font-light
          prose-li:font-sans prose-li:font-light
-         prose-headings:font-display prose-headings:font-bold prose-headings:tracking-tightest prose-headings:text-forest-900
+         prose-headings:font-bold prose-headings:tracking-tightest prose-headings:text-forest-900
          prose-a:text-primary-emphasis prose-a:no-underline hover:prose-a:text-primary-highlight hover:prose-a:underline
          prose-strong:font-medium prose-strong:text-ink
-         prose-blockquote:border-l-sand-500 prose-blockquote:font-display prose-blockquote:font-normal prose-blockquote:text-forest-900 prose-blockquote:not-italic;
+         prose-blockquote:border-l-sand-500 prose-blockquote:font-normal prose-blockquote:text-forest-900 prose-blockquote:not-italic;
   max-width: 100%;
   margin-left: 0;
   margin-right: 0;
@@ -653,7 +619,6 @@ html.flight-search-active #tpwl-tickets {
 .prose-article table caption {
   caption-side: top;
   text-align: left;
-  font-family: var(--font-urbanist), 'Urbanist', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 0.875rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -665,7 +630,6 @@ html.flight-search-active #tpwl-tickets {
 }
 
 .prose-article table th {
-  font-family: var(--font-urbanist), 'Urbanist', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;

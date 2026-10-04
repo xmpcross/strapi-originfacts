@@ -124,7 +124,7 @@ export default function FixedRightBar({
                 )}
                 <span
                   aria-hidden
-                  className="pointer-events-none absolute right-full top-1/2 mr-5 -translate-y-1/2 translate-x-2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 font-urbanist text-[11px] font-bold uppercase tracking-wider text-forest-900 opacity-0 shadow-[0_1px_3px_rgba(0,0,0,0.15)] transition group-hover:translate-x-0 group-hover:opacity-100"
+                  className="pointer-events-none absolute right-full top-1/2 mr-5 -translate-y-1/2 translate-x-2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider text-forest-900 opacity-0 shadow-[0_1px_3px_rgba(0,0,0,0.15)] transition group-hover:translate-x-0 group-hover:opacity-100"
                 >
                   {item.label}
                 </span>
@@ -189,7 +189,7 @@ function SidebarPanel({
         </nav>
 
         <aside className="hidden flex-1 max-w-md lg:block" aria-label="Popular posts">
-          <h2 className="flex items-center gap-3 font-urbanist text-[11px] font-bold uppercase tracking-widest text-forest-900">
+          <h2 className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-widest text-forest-900">
             Popular
             <span aria-hidden className="h-px w-10 bg-forest-900/20" />
           </h2>
@@ -233,7 +233,7 @@ function SidebarNavItem({
           <Link
             href={item.href}
             onClick={onClose}
-            className={`font-urbanist ${sizeClass} font-bold capitalize leading-none tracking-tight text-forest-950 transition hover:text-primary-emphasis`}
+            className={`${sizeClass} font-bold capitalize leading-none tracking-tight text-forest-950 transition hover:text-primary-emphasis`}
           >
             {item.label}
           </Link>
@@ -241,7 +241,7 @@ function SidebarNavItem({
           <button
             type="button"
             onClick={() => hasChildren && setExpanded((v) => !v)}
-            className={`font-urbanist ${sizeClass} font-bold capitalize leading-none tracking-tight text-forest-950 transition hover:text-primary-emphasis`}
+            className={`${sizeClass} font-bold capitalize leading-none tracking-tight text-forest-950 transition hover:text-primary-emphasis`}
           >
             {item.label}
           </button>
@@ -322,12 +322,12 @@ function SidebarPanelPostRow({
         )}
       </div>
       <div className="min-w-0">
-        <div className="font-urbanist text-[10px] font-bold uppercase tracking-wider text-primary-emphasis">
+        <div className="text-[10px] font-bold uppercase tracking-wider text-primary-emphasis">
           {category && <span>{category}</span>}
           {category && dateStr && <span aria-hidden className="mx-1 text-forest-900/40">✱</span>}
           {dateStr && <span className="text-forest-900/55">{dateStr}</span>}
         </div>
-        <h3 className="mt-1 line-clamp-2 font-urbanist text-base font-bold leading-snug text-forest-950 transition group-hover:text-primary-emphasis">
+        <h3 className="mt-1 line-clamp-2 text-base font-bold leading-snug text-forest-950 transition group-hover:text-primary-emphasis">
           {article.title}
         </h3>
       </div>

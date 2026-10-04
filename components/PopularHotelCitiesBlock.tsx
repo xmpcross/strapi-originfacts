@@ -1,8 +1,8 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import { bookingHotelSearch } from '@/lib/cj';
 
-const BOOKING_AFFILIATE_URL = 'https://tatrck.com/h/0Hu30_OZ0V7N?model=cpc';
 
 type GeoResponse = {
   name?: string;
@@ -195,9 +195,7 @@ function countryKey(country?: string) {
 
 function bookingDestinationUrl(city: HotelCityCard, countryLabel: string) {
   const destination = [city.name, city.region, countryLabel].filter(Boolean).join(', ');
-  return `${BOOKING_AFFILIATE_URL}&url=${encodeURIComponent(
-    `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(destination)}`,
-  )}`;
+  return bookingHotelSearch(destination);
 }
 
 export default function PopularHotelCitiesBlock() {
@@ -257,7 +255,7 @@ export default function PopularHotelCitiesBlock() {
             <div className="absolute inset-0 bg-gradient-to-b from-forest-950/82 via-forest-950/18 to-transparent" />
             <div className="absolute left-4 top-4 flex items-center gap-2 text-white sm:left-5 sm:top-5">
               <h5
-                className="font-urbanist leading-none text-white drop-shadow-sm"
+                className="leading-none text-white drop-shadow-sm"
                 style={{ color: '#ffffff', fontSize: '1.3rem', fontWeight: '600' }}
               >
                 {city.name}

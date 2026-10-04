@@ -36,7 +36,7 @@ export default function LegalIndexPage() {
               className="group block rounded-lg border border-forest-900/10 bg-paper p-6 transition hover:-translate-y-0.5 hover:border-forest-900/30 hover:shadow-sm"
               data-testid={`legal-link-${doc.slug}`}
             >
-              <div className="font-urbanist text-lg font-bold text-forest-900 group-hover:text-forest-700">
+              <div className="text-lg font-bold text-forest-900 group-hover:text-forest-700">
                 {doc.title}
               </div>
               <p className="mt-2 text-sm text-forest-900/70">{doc.description}</p>

@@ -57,7 +57,7 @@ export default function BlogSidebar({
                   )}
                   <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-black/55" />
                   <div className="absolute inset-0 flex items-center justify-between px-4">
-                    <span className="font-urbanist text-sm font-bold uppercase tracking-wider text-white">
+                    <span className="text-sm font-bold uppercase tracking-wider text-white">
                       {t.name}
                     </span>
                     <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white/25 text-xs font-bold text-white backdrop-blur">
@@ -233,7 +233,7 @@ function SidebarPostRow({ article }: { article: StrapiArticle }) {
         )}
       </div>
       <div className="min-w-0">
-        <h4 className="line-clamp-2 font-urbanist text-sm font-bold leading-snug text-forest-950 transition group-hover:text-primary-emphasis">
+        <h4 className="line-clamp-2 text-sm font-bold leading-snug text-forest-950 transition group-hover:text-primary-emphasis">
           {article.title}
         </h4>
         {dateStr && (

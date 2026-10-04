@@ -40,12 +40,7 @@ export default {
         paper: '#f8fafc',
       },
       fontFamily: {
-        sans: ['var(--font-outfit)', 'Outfit', 'system-ui', 'sans-serif'],
-        display: ['var(--font-urbanist)', 'Urbanist', 'system-ui', 'sans-serif'],
-        satoshi: ['var(--font-outfit)', 'Outfit', 'system-ui', 'sans-serif'],
-        inter: ['var(--font-outfit)', 'Outfit', 'system-ui', 'sans-serif'],
-        urbanist: ['var(--font-urbanist)', 'Urbanist', 'system-ui', 'sans-serif'],
-        outfit: ['var(--font-outfit)', 'Outfit', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
       },
       letterSpacing: { tightest: '0' },
       maxWidth: { '6xl': '1420px', '7xl': '1420px', prose: '68ch' },

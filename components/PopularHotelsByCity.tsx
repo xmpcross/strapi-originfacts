@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { bookingHotelSearch } from '@/lib/cj';
 
 type HotelScope = (typeof HOTEL_SCOPES)[number]['value'];
 
@@ -46,7 +47,6 @@ const HOTEL_SCOPES = [
   { value: 'family', label: 'Family' },
 ] as const;
 
-const BOOKING_AFFILIATE_URL = 'https://tatrck.com/h/0Hu30_OZ0V7N?model=cpc';
 // v4: results are now anchored by coordinates; v3 entries could hold hotels
 // from the wrong country and are no longer read.
 const HOTEL_BROWSER_CACHE_PREFIX = 'originfacts:hotels-near-you:v4';
@@ -92,7 +92,11 @@ function readHotelBrowserCache(key: string): HotelResponse | null {
     return {
       ...parsed,
       cached: true,
-      hotels: parsed.hotels?.map((hotel) => ({ ...hotel, href: BOOKING_AFFILIATE_URL })),
+      // Rebuilt on read: entries stored before the CJ switch carry the dead tatrck.com link.
+      hotels: parsed.hotels?.map((hotel) => ({
+        ...hotel,
+        href: bookingHotelSearch([hotel.name, parsed.city].filter(Boolean).join(', ')),
+      })),
     };
   } catch {
     return null;
@@ -251,12 +255,12 @@ export default function PopularHotelsByCity({
         <header className="border-b border-forest-900/10 pb-6">
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_280px] lg:items-end">
             <div>
-              <p className="font-urbanist text-[11px] font-bold uppercase tracking-[0.22em] text-primary-emphasis">
+              <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-primary-emphasis">
                 {eyebrow}
               </p>
               <h2
                 id="hotels-heading"
-                className="mt-3 max-w-3xl font-urbanist text-3xl font-bold leading-[1.05] text-forest-950 sm:text-4xl"
+                className="mt-3 max-w-3xl text-3xl font-bold leading-[1.05] text-forest-950 sm:text-4xl"
               >
                 {title || `Compare hotel areas near ${cityLabel}`}
               </h2>
@@ -266,7 +270,7 @@ export default function PopularHotelsByCity({
               </p>
             </div>
             <div className="rounded-[0.4rem] bg-white px-4 py-3 text-sm shadow-sm ring-1 ring-forest-900/10">
-              <span className="block font-urbanist text-[10px] font-bold uppercase tracking-[0.18em] text-forest-900/45">
+              <span className="block text-[10px] font-bold uppercase tracking-[0.18em] text-forest-900/45">
                 Search context
               </span>
               <span className="mt-1 block font-semibold text-forest-950">{searchContextLabel}</span>
@@ -283,7 +287,7 @@ export default function PopularHotelsByCity({
                 key={item.value}
                 type="button"
                 onClick={() => setScope(item.value)}
-                className={`shrink-0 rounded-full px-4 py-2 font-urbanist text-[11px] font-bold uppercase tracking-wider transition ${
+                className={`shrink-0 rounded-full px-4 py-2 text-[11px] font-bold uppercase tracking-wider transition ${
                   scope === item.value
                     ? 'bg-forest-950 text-white shadow-sm'
                     : 'bg-white text-forest-900/65 ring-1 ring-forest-900/10 hover:text-primary-emphasis'
@@ -350,16 +354,16 @@ function HotelFeatureCard({ hotel }: { hotel: Hotel }) {
       )}
       <div className="absolute inset-0 bg-gradient-to-t from-forest-950 via-forest-950/35 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-6">
-        <span className="rounded-full bg-white/95 px-3 py-1 font-urbanist text-[11px] font-bold uppercase tracking-wider text-forest-950">
+        <span className="rounded-full bg-white/95 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-forest-950">
           Best match
         </span>
-        <h3 className="mt-4 max-w-xl font-urbanist text-3xl font-bold leading-tight !text-[#ffffff]" style={{ color: '#ffffff' }}>
+        <h3 className="mt-4 max-w-xl text-3xl font-bold leading-tight !text-[#ffffff]" style={{ color: '#ffffff' }}>
           {hotel.name}
         </h3>
         <HotelMeta hotel={hotel} className="mt-3 text-white/82" />
         <div className="mt-5 flex flex-wrap items-end justify-between gap-3">
           <HotelPrice price={price} prominent />
-          <span className="rounded-full bg-white px-4 py-2 font-urbanist text-xs font-bold uppercase tracking-wider text-forest-950 transition group-hover:bg-primary-emphasis group-hover:text-white">
+          <span className="rounded-full bg-white px-4 py-2 text-xs font-bold uppercase tracking-wider text-forest-950 transition group-hover:bg-primary-emphasis group-hover:text-white">
             View on Booking.com
           </span>
         </div>
@@ -391,13 +395,13 @@ function HotelCompactCard({ hotel, rank }: { hotel: Hotel; rank: number }) {
         ) : (
           <div className="h-full bg-gradient-to-br from-[#dbeafe] to-[#dcfce7]" />
         )}
-        <span className="absolute left-2 top-2 rounded-full bg-white/95 px-2 py-0.5 font-urbanist text-[10px] font-bold text-forest-950">
+        <span className="absolute left-2 top-2 rounded-full bg-white/95 px-2 py-0.5 text-[10px] font-bold text-forest-950">
           #{rank}
         </span>
       </div>
       <div className="flex min-w-0 flex-col p-4">
         <HotelMeta hotel={hotel} className="text-forest-900/55" />
-        <h3 className="mt-2 line-clamp-2 font-urbanist text-base font-bold leading-snug text-forest-950">
+        <h3 className="mt-2 line-clamp-2 text-base font-bold leading-snug text-forest-950">
           {hotel.name}
         </h3>
         {hotel.reviews ? (
@@ -437,7 +441,7 @@ function HotelPrice({ price, prominent = false }: { price: string | null; promin
       {price ? (
         <>
           <span className="block">Sample rate from</span>
-          <strong className={prominent ? 'font-urbanist text-3xl text-white' : 'font-urbanist text-lg text-forest-950'}>
+          <strong className={prominent ? 'text-3xl text-white' : 'text-lg text-forest-950'}>
             {price}
           </strong>
         </>

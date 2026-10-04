@@ -28,17 +28,17 @@ export default function CjOfferCTA({
     >
       <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="min-w-0">
-          <p className="font-urbanist text-[10px] font-bold uppercase tracking-widest text-primary-emphasis">
+          <p className="text-[10px] font-bold uppercase tracking-widest text-primary-emphasis">
             Sponsored · {name}
           </p>
-          <p className="mt-1.5 font-urbanist text-lg font-bold text-forest-950">{title}</p>
+          <p className="mt-1.5 text-lg font-bold text-forest-950">{title}</p>
           {subtitle && <p className="mt-1 text-sm text-forest-900/65">{subtitle}</p>}
         </div>
         <a
           href={href}
           target="_blank"
           rel="sponsored noopener"
-          className="inline-flex shrink-0 items-center gap-2 rounded-full bg-primary-emphasis px-5 py-2.5 font-urbanist text-sm font-bold text-white shadow-sm transition hover:bg-primary-pressed"
+          className="inline-flex shrink-0 items-center gap-2 rounded-full bg-primary-emphasis px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-primary-pressed"
         >
           {cta}
           <span aria-hidden>→</span>

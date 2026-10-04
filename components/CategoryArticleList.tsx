@@ -30,7 +30,7 @@ function Row({ article }: { article: StrapiArticle }) {
       data-testid={`category-row-${article.slug}`}
     >
       <div className="border-l-2 border-primary-emphasis/40 pl-3 sm:pl-4">
-        <div className="font-urbanist text-3xl font-bold leading-none text-primary-emphasis sm:text-4xl">
+        <div className="text-3xl font-bold leading-none text-primary-emphasis sm:text-4xl">
           {dp?.day ?? '--'}
         </div>
         <div className="mt-2 text-[10px] font-semibold tracking-widest text-forest-900/60">

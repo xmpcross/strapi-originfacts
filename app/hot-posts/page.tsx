@@ -53,7 +53,7 @@ export default async function HotPostsPage({ searchParams }: Props) {
       <JsonLd data={breadcrumbs} />
       <div className="mx-auto max-w-7xl px-6 py-16">
         <header data-testid="hot-posts-header">
-          <h1 className="font-urbanist text-5xl font-bold leading-none tracking-tight text-forest-950 sm:text-6xl">
+          <h1 className="text-5xl font-bold leading-none tracking-tight text-forest-950 sm:text-6xl">
             Trending
           </h1>
         </header>
@@ -136,13 +136,13 @@ function HotPostCard({
         )}
         <span
           aria-hidden
-          className="absolute -bottom-2 -left-2 inline-flex h-14 w-14 items-center justify-center rounded-full bg-forest-950 font-urbanist text-xl font-bold text-white shadow-[0_4px_12px_rgba(0,0,0,0.25)] sm:-bottom-3 sm:-left-3 sm:h-16 sm:w-16 sm:text-2xl"
+          className="absolute -bottom-2 -left-2 inline-flex h-14 w-14 items-center justify-center rounded-full bg-forest-950 text-xl font-bold text-white shadow-[0_4px_12px_rgba(0,0,0,0.25)] sm:-bottom-3 sm:-left-3 sm:h-16 sm:w-16 sm:text-2xl"
         >
           {rankStr}
         </span>
       </Link>
       <div>
-        <div className="flex items-center gap-3 font-urbanist text-[11px] font-bold uppercase tracking-wider">
+        <div className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-wider">
           {category && (
             <Link
               href={`/category/${article.category?.slug ?? ''}`}
@@ -154,7 +154,7 @@ function HotPostCard({
           {dateStr && <span className="text-forest-900/55">{dateStr}</span>}
         </div>
         <Link href={`/articles/${article.slug}`}>
-          <h2 className="mt-3 font-urbanist text-[clamp(1.05rem,0.6vw+0.9rem,1.25rem)] font-bold leading-snug text-forest-950 transition group-hover:text-primary-emphasis">
+          <h2 className="mt-3 text-[clamp(1.05rem,0.6vw+0.9rem,1.25rem)] font-bold leading-snug text-forest-950 transition group-hover:text-primary-emphasis">
             {article.title}
           </h2>
         </Link>
@@ -191,7 +191,7 @@ function Pagination({ current, total }: { current: number; total: number }) {
             key={p}
             href={href}
             aria-current={active ? 'page' : undefined}
-            className={`inline-flex h-10 min-w-[2.5rem] items-center justify-center rounded-[0.3rem] border px-3 font-urbanist text-sm font-bold transition ${
+            className={`inline-flex h-10 min-w-[2.5rem] items-center justify-center rounded-[0.3rem] border px-3 text-sm font-bold transition ${
               active
                 ? 'border-primary-emphasis bg-primary-emphasis text-white'
                 : 'border-forest-900/15 bg-white text-forest-900 hover:border-primary-emphasis hover:text-primary-emphasis'

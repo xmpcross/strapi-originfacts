@@ -19,7 +19,7 @@ export default function DirectoryLinkList({ groups, label }: { groups: Directory
         .filter((g) => g.links.length > 0)
         .map((group) => (
           <section key={group.title}>
-            <h2 className="font-urbanist text-2xl font-bold text-forest-950">{group.title}</h2>
+            <h2 className="text-2xl font-bold text-forest-950">{group.title}</h2>
             <ul className="mt-4 grid gap-x-6 gap-y-2 text-base text-forest-900/80 sm:grid-cols-2 lg:grid-cols-4">
               {group.links.map((link) => (
                 <li key={link.href}>

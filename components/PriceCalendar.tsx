@@ -71,17 +71,16 @@ export default function PriceCalendar({
 
     // Widget renders into a Shadow DOM (<tp-cascoon>…<template shadowrootmode="open">),
     // so external stylesheets don't apply. Inject our font overrides into the shadow root
-    // as it appears. CSS custom properties (--font-outfit/--font-urbanist) inherit through
+    // as it appears. CSS custom properties (--font-inter) inherit through
     // the shadow boundary, so we can reference the site's Next/font variables.
     const FONT_CSS = `
       :host, :host *:not(svg):not(svg *) {
-        font-family: var(--font-outfit), system-ui, sans-serif !important;
+        font-family: var(--font-inter), 'Inter', system-ui, sans-serif !important;
       }
       :host h1, :host h2, :host h3, :host h4, :host h5, :host h6,
       :host .calendar_info_direction,
       :host .year-cell__label,
       :host .year-cell__value {
-        font-family: var(--font-urbanist), system-ui, sans-serif !important;
         letter-spacing: -0.01em;
       }
       .root .calendar-layout--border,

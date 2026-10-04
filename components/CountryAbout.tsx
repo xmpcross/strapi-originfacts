@@ -100,7 +100,7 @@ function SectionBlock({
     <div className={first ? '' : 'mt-8'}>
       {section.heading && (
         <h3
-          className={`${first ? '!mt-0 ' : ''}font-urbanist text-xl font-bold text-forest-900`}
+          className={`${first ? '!mt-0 ' : ''}text-xl font-bold text-forest-900`}
         >
           {section.heading}
         </h3>

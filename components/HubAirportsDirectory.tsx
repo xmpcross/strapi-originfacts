@@ -97,7 +97,7 @@ export default function HubAirportsDirectory({
             )}
           </label>
 
-          <div className="flex items-center gap-2 text-xs font-mono font-semibold text-forest-900/70">
+          <div className="flex items-center gap-2 text-xs font-semibold text-forest-900/70">
             <span className="rounded-lg border border-forest-900/10 bg-white px-3 py-2 shadow-2xs">
               Showing <strong className="text-forest-900">{filtered.length}</strong> of {airports.length} hubs
             </span>
@@ -140,10 +140,10 @@ export default function HubAirportsDirectory({
           <section className="overflow-hidden rounded-2xl border border-forest-900/10 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.04)]" aria-labelledby="hub-results-title">
             <div className="grid gap-6 bg-gradient-to-br from-[#f7fbff] via-white to-[#fff9eb] p-6 lg:grid-cols-[minmax(0,1fr)_280px] lg:p-8">
               <div>
-                <p className="font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-forest-900/45">
+                <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-forest-900/45">
                   {selectedLabel}
                 </p>
-                <h2 id="hub-results-title" className="mt-2 font-urbanist text-3xl font-bold leading-tight text-forest-950">
+                <h2 id="hub-results-title" className="mt-2 text-3xl font-bold leading-tight text-forest-950">
                   Hub airport results
                 </h2>
                 <p className="mt-3 max-w-3xl text-sm leading-7 text-forest-900/68">
@@ -163,12 +163,12 @@ export default function HubAirportsDirectory({
               <div className="border-t border-forest-900/10 px-6 py-5 lg:px-8">
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <div>
-                    <p className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-forest-900/45">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-forest-900/45">
                       First matches
                     </p>
-                    <h3 className="mt-1 font-urbanist text-xl font-bold text-forest-950">Which primary airport gateways should you review?</h3>
+                    <h3 className="mt-1 text-xl font-bold text-forest-950">Which primary airport gateways should you review?</h3>
                   </div>
-                  <span className="rounded-full bg-forest-900/[0.06] px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-forest-900/55">
+                  <span className="rounded-full bg-forest-900/[0.06] px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-forest-900/55">
                     {filtered.length} total
                   </span>
                 </div>
@@ -199,15 +199,15 @@ export default function HubAirportsDirectory({
               >
                 <header className="flex flex-wrap items-start justify-between gap-4 border-b border-forest-900/10 pb-4">
                   <div>
-                    <p className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-forest-900/42">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-forest-900/42">
                       Regional hub group
                     </p>
                     <h3 className="editorial-h mt-1 text-2xl font-bold text-forest-900">{r}</h3>
                     <p className="mt-2 max-w-3xl text-sm leading-6 text-forest-900/62">{REGION_NOTES[r]}</p>
                   </div>
                   <div className="rounded-[0.3rem] bg-forest-900 px-3 py-2 text-right text-sand-100">
-                    <div className="font-urbanist text-xl font-bold leading-none">{list.length}</div>
-                    <div className="mt-1 font-mono text-[10px] font-bold uppercase tracking-[0.14em] text-sand-100/65">
+                    <div className="text-xl font-bold leading-none">{list.length}</div>
+                    <div className="mt-1 text-[10px] font-bold uppercase tracking-[0.14em] text-sand-100/65">
                       {list.length === 1 ? 'hub' : 'hubs'}
                     </div>
                   </div>
@@ -233,8 +233,8 @@ export default function HubAirportsDirectory({
 function ResultMetric({ label, value }: { label: string; value: string }) {
   return (
     <div className="rounded-[0.3rem] bg-forest-900/[0.04] p-3">
-      <dt className="font-mono text-[10px] font-bold uppercase tracking-[0.14em] text-forest-900/48">{label}</dt>
-      <dd className="mt-1 font-urbanist text-2xl font-bold leading-none text-forest-950">{value}</dd>
+      <dt className="text-[10px] font-bold uppercase tracking-[0.14em] text-forest-900/48">{label}</dt>
+      <dd className="mt-1 text-2xl font-bold leading-none text-forest-950">{value}</dd>
     </div>
   );
 }
@@ -268,17 +268,17 @@ function FeaturedHubCard({
       <div className="absolute inset-0 bg-gradient-to-t from-forest-950 via-forest-950/60 to-forest-950/20" />
       <div className="relative flex min-h-[220px] flex-col justify-between p-5">
         <div className="flex items-center justify-between gap-3">
-          <span className="rounded-full bg-white/15 px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-white">
+          <span className="rounded-full bg-white/15 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.16em] text-white">
             0{rank}
           </span>
-          <span className="rounded-full bg-white px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-forest-950">
+          <span className="rounded-full bg-white px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-forest-950">
             {airport.iata}
           </span>
         </div>
         <div>
-          <h4 className="font-urbanist text-xl font-bold leading-tight text-white">{airport.city || airport.name}</h4>
+          <h4 className="text-xl font-bold leading-tight text-white">{airport.city || airport.name}</h4>
           <p className="mt-2 line-clamp-2 text-sm leading-6 text-white/80">{airport.name}</p>
-          <p className="mt-3 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-white/70">
+          <p className="mt-3 text-[11px] font-bold uppercase tracking-[0.14em] text-white/70">
             {[airport.country, airport.region].filter(Boolean).join(' / ')}
           </p>
         </div>
@@ -311,25 +311,25 @@ function HubCard({
           className="h-44 w-full object-cover transition duration-500 group-hover:scale-[1.02]"
         />
       ) : (
-        <div className="flex h-44 w-full items-center justify-center bg-forest-900/10 font-mono text-xl font-bold text-forest-900/40">
+        <div className="flex h-44 w-full items-center justify-center bg-forest-900/10 text-xl font-bold text-forest-900/40">
           {airport.iata}
         </div>
       )}
       <div className="flex flex-1 flex-col p-4">
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-forest-900/60">
-            <span className="font-mono font-bold text-forest-900">{airport.iata}</span>
-            {airport.icao && <span className="font-mono opacity-70">{airport.icao}</span>}
+            <span className="font-bold text-forest-900">{airport.iata}</span>
+            {airport.icao && <span className="opacity-70">{airport.icao}</span>}
           </div>
           <span className="text-base" aria-hidden>{flagEmoji(airport.countryCode)}</span>
         </div>
-        <div className="font-urbanist mt-1 text-base font-bold leading-snug text-forest-900 transition group-hover:text-forest-700">
+        <div className="mt-1 text-base font-bold leading-snug text-forest-900 transition group-hover:text-forest-700">
           {airport.name}
         </div>
         <div className="mt-auto pt-4">
           <div className="flex items-center justify-between gap-3 border-t border-forest-900/10 pt-3 text-xs text-forest-900/62">
             <span>{airport.city || airport.country}</span>
-            <span className="font-mono uppercase tracking-[0.12em]">{airport.region}</span>
+            <span className="uppercase tracking-[0.12em]">{airport.region}</span>
           </div>
         </div>
       </div>
@@ -360,7 +360,7 @@ function FilterChip({
       }
     >
       <span>{label}</span>
-      <span className={active ? 'font-mono text-sand-100/60' : 'font-mono text-forest-900/42'}>{count}</span>
+      <span className={active ? 'text-sand-100/60' : 'text-forest-900/42'}>{count}</span>
     </button>
   );
 }

@@ -138,7 +138,7 @@ export default async function AirlinesPage() {
       <header data-testid="airlines-header">
         <div className="grid items-start gap-6 sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-12">
           <div className="min-w-0">
-            <h1 className="font-urbanist text-5xl font-bold leading-none tracking-tight text-forest-950 sm:text-6xl">
+            <h1 className="text-5xl font-bold leading-none tracking-tight text-forest-950 sm:text-6xl">
               Airlines
             </h1>
             <CategoryDescription text={HUB.intro} />
@@ -147,15 +147,15 @@ export default async function AirlinesPage() {
             className="flex h-32 w-32 flex-col items-center justify-center rounded-[0.3rem] bg-[#f1f5f9] text-forest-950"
             data-testid="airlines-count"
           >
-            <span className="font-urbanist text-4xl font-bold leading-none">{airlines.length.toLocaleString()}</span>
-            <span className="mt-2 font-urbanist text-[11px] font-bold uppercase tracking-widest text-forest-900/70">
+            <span className="text-4xl font-bold leading-none">{airlines.length.toLocaleString()}</span>
+            <span className="mt-2 text-[11px] font-bold uppercase tracking-widest text-forest-900/70">
               Airlines
             </span>
           </div>
         </div>
 
         <nav
-          className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 border-y border-forest-900/15 py-4 font-urbanist text-[14px] font-bold uppercase tracking-widest text-forest-950"
+          className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 border-y border-forest-900/15 py-4 text-[14px] font-bold uppercase tracking-widest text-forest-950"
           aria-label="Categories"
           data-testid="airlines-subnav"
         >
@@ -204,7 +204,7 @@ export default async function AirlinesPage() {
             key={item.title}
             className="rounded-[0.3rem] border border-forest-900/10 bg-white p-6 shadow-xs"
           >
-            <h2 className="font-urbanist text-2xl font-bold leading-tight text-forest-950">
+            <h2 className="text-2xl font-bold leading-tight text-forest-950">
               {item.title}
             </h2>
             <p className="mt-3 text-base leading-relaxed text-forest-900/70">{item.text}</p>
@@ -213,7 +213,7 @@ export default async function AirlinesPage() {
       </section>
 
       <section className="mt-8 rounded-[0.3rem] border border-forest-900/10 bg-[#f8fafc] p-6 sm:p-8">
-        <h2 className="font-urbanist text-3xl font-bold leading-tight text-forest-950">
+        <h2 className="text-3xl font-bold leading-tight text-forest-950">
           What makes an airline page useful
         </h2>
         <div className="mt-4 grid gap-5 text-base leading-relaxed text-forest-900/70 md:grid-cols-2">

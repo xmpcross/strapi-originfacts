@@ -47,7 +47,7 @@ export default function ContactPage() {
             </h2>
             <a
               href="mailto:contact@originfacts.com"
-              className="mt-2 block font-urbanist text-xl font-bold text-forest-900 hover:text-forest-700"
+              className="mt-2 block text-xl font-bold text-forest-900 hover:text-forest-700"
             >
               contact@originfacts.com
             </a>

@@ -176,7 +176,7 @@ export default function RouteDirectory({ routes }: { routes: StrapiRoute[] }) {
                         type="button"
                         onClick={() => toggleRegion(r)}
                         aria-expanded={isExpanded}
-                        className="inline-flex items-center gap-2 rounded-full border border-forest-900/20 px-5 py-2 font-urbanist text-sm font-bold text-forest-900 transition hover:border-forest-900 hover:bg-forest-900 hover:text-sand-100"
+                        className="inline-flex items-center gap-2 rounded-full border border-forest-900/20 px-5 py-2 text-sm font-bold text-forest-900 transition hover:border-forest-900 hover:bg-forest-900 hover:text-sand-100"
                         data-testid={`region-toggle-${r.replace(/\s+/g, '-').toLowerCase()}`}
                       >
                         {isExpanded
@@ -214,7 +214,7 @@ function SummaryCard({
     >
       <div className="min-w-0 flex-1">
         <div className="text-xs uppercase tracking-widest text-forest-900/60">{label}</div>
-        <div className="mt-2 font-urbanist text-3xl font-bold leading-none text-forest-900">{value}</div>
+        <div className="mt-2 text-3xl font-bold leading-none text-forest-900">{value}</div>
         <p className="mt-3 text-sm leading-snug text-forest-900/65">{blurb}</p>
       </div>
       <div
@@ -284,16 +284,16 @@ function RouteCard({ route }: { route: StrapiRoute }) {
       data-testid={`route-card-${route.slug}`}
     >
       <div className="flex items-center gap-2">
-        <span className="flex-none rounded-[0.3rem] bg-forest-900 px-2 py-0.5 font-mono text-[10px] font-bold tracking-wider text-sand-100">
+        <span className="flex-none rounded-[0.3rem] bg-forest-900 px-2 py-0.5 text-[10px] font-bold tracking-wider text-sand-100">
           {o.iata}
         </span>
         <span className="text-forest-900/40">→</span>
-        <span className="flex-none rounded-[0.3rem] bg-forest-700 px-2 py-0.5 font-mono text-[10px] font-bold tracking-wider text-sand-100">
+        <span className="flex-none rounded-[0.3rem] bg-forest-700 px-2 py-0.5 text-[10px] font-bold tracking-wider text-sand-100">
           {d.iata}
         </span>
       </div>
       <div className="min-w-0">
-        <div className="truncate font-urbanist text-sm font-bold text-forest-900 group-hover:text-forest-700">
+        <div className="truncate text-sm font-bold text-forest-900 group-hover:text-forest-700">
           {o.city || o.name} → {d.city || d.name}
         </div>
         <div className="mt-1 truncate text-xs text-forest-900/60">
@@ -376,12 +376,12 @@ function PopularRouteCard({ route }: { route: StrapiRoute }) {
       className="snap-start group flex h-[78px] w-[240px] shrink-0 flex-col justify-center gap-1.5 rounded-[4px] border border-forest-900/10 bg-[#f7f8fa] px-4 shadow-[0_1px_3px_rgba(0,0,0,0.04)] transition hover:border-forest-900/25 hover:shadow-[0_4px_12px_rgba(0,0,0,0.06)]"
       data-testid={`popular-route-${route.slug}`}
     >
-      <div className="flex items-center gap-2 font-mono text-[11px] font-bold tracking-wider">
+      <div className="flex items-center gap-2 text-[11px] font-bold tracking-wider">
         <span className="flex-none rounded-[0.3rem] bg-forest-900 px-2 py-0.5 text-sand-100">{o.iata}</span>
         <span className="text-forest-900/40">→</span>
         <span className="flex-none rounded-[0.3rem] bg-forest-700 px-2 py-0.5 text-sand-100">{d.iata}</span>
       </div>
-      <p className="truncate font-urbanist text-sm font-bold leading-tight text-forest-950 group-hover:text-primary-emphasis">
+      <p className="truncate text-sm font-bold leading-tight text-forest-950 group-hover:text-primary-emphasis">
         {o.city || o.name} → {d.city || d.name}
       </p>
     </Link>

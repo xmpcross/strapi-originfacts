@@ -68,7 +68,7 @@ export default async function SearchPage({ searchParams }: Props) {
         <header data-testid="search-header">
           <div className="grid items-start gap-6 sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-12">
             <div className="min-w-0">
-              <h1 className="font-urbanist text-3xl font-bold leading-tight tracking-tight text-forest-950 sm:text-4xl">
+              <h1 className="text-3xl font-bold leading-tight tracking-tight text-forest-950 sm:text-4xl">
                 {q ? (
                   <>
                     Search results for <span>&ldquo;{q}&rdquo;</span> in {filterLabel}
@@ -86,14 +86,14 @@ export default async function SearchPage({ searchParams }: Props) {
                 className="mt-6 flex flex-wrap items-center gap-2"
                 data-testid="search-popular"
               >
-                <span className="mr-2 font-urbanist text-[12px] font-bold uppercase tracking-widest text-forest-950">
+                <span className="mr-2 text-[12px] font-bold uppercase tracking-widest text-forest-950">
                   Popular Searches:
                 </span>
                 {POPULAR_SEARCHES.map((term) => (
                   <Link
                     key={term}
                     href={`/search?q=${encodeURIComponent(term)}`}
-                    className={`inline-flex items-center rounded-full border px-4 py-1.5 font-urbanist text-[12px] font-bold uppercase tracking-widest transition ${
+                    className={`inline-flex items-center rounded-full border px-4 py-1.5 text-[12px] font-bold uppercase tracking-widest transition ${
                       q.toLowerCase() === term.toLowerCase()
                         ? 'border-primary-emphasis bg-primary-emphasis text-white'
                         : 'border-forest-900/15 bg-white text-forest-900 hover:border-primary-emphasis hover:text-primary-emphasis'
@@ -110,8 +110,8 @@ export default async function SearchPage({ searchParams }: Props) {
                 className="flex h-32 w-32 flex-col items-center justify-center rounded-[0.3rem] bg-[#f1f5f9] text-forest-950"
                 data-testid="search-match-count"
               >
-                <span className="font-urbanist text-4xl font-bold leading-none">{total}</span>
-                <span className="mt-2 font-urbanist text-[11px] font-bold uppercase tracking-widest text-forest-900/70">
+                <span className="text-4xl font-bold leading-none">{total}</span>
+                <span className="mt-2 text-[11px] font-bold uppercase tracking-widest text-forest-900/70">
                   {total === 1 ? 'Match' : 'Matches'}
                 </span>
               </div>
@@ -184,7 +184,7 @@ function SearchResultRow({ article }: { article: StrapiArticle }) {
       </Link>
 
       <div className="min-w-0">
-        <div className="font-urbanist text-[11px] font-bold uppercase tracking-wider">
+        <div className="text-[11px] font-bold uppercase tracking-wider">
           {category && (
             <span className="text-primary-emphasis">{category}</span>
           )}
@@ -194,7 +194,7 @@ function SearchResultRow({ article }: { article: StrapiArticle }) {
           {relative && <span className="text-forest-900/55">{relative}</span>}
         </div>
         <Link href={`/articles/${article.slug}`}>
-          <h3 className="mt-2 font-urbanist text-[clamp(1.1rem,0.8vw+0.85rem,1.45rem)] font-bold leading-snug text-forest-950 transition hover:text-primary-emphasis">
+          <h3 className="mt-2 text-[clamp(1.1rem,0.8vw+0.85rem,1.45rem)] font-bold leading-snug text-forest-950 transition hover:text-primary-emphasis">
             {article.title}
           </h3>
         </Link>
@@ -204,7 +204,7 @@ function SearchResultRow({ article }: { article: StrapiArticle }) {
           </p>
         )}
         <div className="mt-4">
-          <span className="inline-flex items-center rounded-[0.3rem] bg-[#f1f5f9] px-3 py-1 font-urbanist text-[11px] font-bold uppercase tracking-widest text-forest-900/70">
+          <span className="inline-flex items-center rounded-[0.3rem] bg-[#f1f5f9] px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-forest-900/70">
             Post
           </span>
         </div>
@@ -242,7 +242,7 @@ function Pagination({
             key={p}
             href={href}
             aria-current={active ? 'page' : undefined}
-            className={`inline-flex h-10 min-w-[2.5rem] items-center justify-center rounded-[0.3rem] border px-3 font-urbanist text-sm font-bold transition ${
+            className={`inline-flex h-10 min-w-[2.5rem] items-center justify-center rounded-[0.3rem] border px-3 text-sm font-bold transition ${
               active
                 ? 'border-primary-emphasis bg-primary-emphasis text-white'
                 : 'border-forest-900/15 bg-white text-forest-900 hover:border-primary-emphasis hover:text-primary-emphasis'

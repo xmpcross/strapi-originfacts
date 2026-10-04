@@ -99,7 +99,7 @@ export default function Tier1AirlineCarousel({ slides }: { slides: Tier1GuideSli
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between border-b border-forest-900/10 pb-5">
         <div>
           <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-700/10 px-3 py-1 font-mono text-xs font-semibold text-emerald-800 border border-emerald-700/20">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-700/10 px-3 py-1 text-xs font-semibold text-emerald-800 border border-emerald-700/20">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
@@ -169,7 +169,7 @@ export default function Tier1AirlineCarousel({ slides }: { slides: Tier1GuideSli
               >
                 ←
               </button>
-              <span className="font-mono text-xs font-bold text-forest-900/70 px-1">
+              <span className="text-xs font-bold text-forest-900/70 px-1">
                 {String(startIndex + 1).padStart(2, '0')}/{String(totalSlides).padStart(2, '0')}
               </span>
               <button
@@ -236,26 +236,26 @@ function FeaturedGuideCard({ slide }: { slide: Tier1GuideSlide }) {
               // eslint-disable-next-line @next/next/no-img-element
               <img src={logo} alt={slide.airline.name} className="h-full w-full object-contain object-left scale-105" />
             ) : (
-              <span className="font-urbanist text-lg font-bold text-forest-900/60">
+              <span className="text-lg font-bold text-forest-900/60">
                 {(slide.airline.iataCode || slide.airline.name).slice(0, 3)}
               </span>
             )}
           </div>
           {slide.airline.iataCode && (
-            <span className="rounded-md bg-forest-900/90 px-2 py-0.5 font-mono text-[11px] font-bold text-sand-100 shadow-xs">
+            <span className="rounded-md bg-forest-900/90 px-2 py-0.5 text-[11px] font-bold text-sand-100 shadow-xs">
               {slide.airline.iataCode}
             </span>
           )}
         </div>
 
-        <h3 className="mt-3 font-urbanist text-lg font-bold text-forest-900 group-hover:text-forest-700 line-clamp-1">
+        <h3 className="mt-3 text-lg font-bold text-forest-900 group-hover:text-forest-700 line-clamp-1">
           {slide.airline.name}
         </h3>
         <p className="mt-0.5 text-xs text-forest-900/60 truncate">
           {[slide.homeCountry, slide.airline.type || 'Commercial Carrier'].filter(Boolean).join(' · ')}
         </p>
 
-        <div className="mt-4 space-y-1.5 border-t border-forest-900/10 pt-3 text-[11px] font-mono text-forest-900/80">
+        <div className="mt-4 space-y-1.5 border-t border-forest-900/10 pt-3 text-[11px] text-forest-900/80">
           <div className="flex items-center justify-between">
             <span className="text-forest-900/60">Verified Policy Facts:</span>
             <span className="inline-flex items-center gap-1 font-bold text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200/50">

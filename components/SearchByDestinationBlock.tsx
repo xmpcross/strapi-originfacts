@@ -71,7 +71,7 @@ export default function SearchByDestinationBlock() {
                       className="block py-1 text-sm text-[#1411ec] hover:text-primary-emphasis"
                     >
                       From {o.name} → {dest.name}{' '}
-                      <span className="font-mono text-xs text-forest-900/40">
+                      <span className="text-xs text-forest-900/40">
                         {o.iata}–{dest.iata}
                       </span>
                     </a>

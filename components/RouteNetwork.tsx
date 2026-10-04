@@ -47,7 +47,7 @@ export default function RouteNetwork({ facts, airlineName }: { facts: RouteFacts
       <div className="mt-8 grid gap-8 lg:grid-cols-[1.35fr_1fr]">
         {/* Destinations */}
         <div>
-          <h3 className="font-urbanist text-base font-bold text-forest-900">Destinations served</h3>
+          <h3 className="text-base font-bold text-forest-900">Destinations served</h3>
           <p className="mt-1 text-sm font-light text-forest-900/60">
             Cities {airlineName} flies to, most-served first.
           </p>
@@ -56,7 +56,7 @@ export default function RouteNetwork({ facts, airlineName }: { facts: RouteFacts
 
         {/* Hubs + fleet */}
         <div>
-          <h3 className="font-urbanist text-base font-bold text-forest-900">Main hubs</h3>
+          <h3 className="text-base font-bold text-forest-900">Main hubs</h3>
           <p className="mt-1 text-sm font-light text-forest-900/60">Busiest departure bases, by route count.</p>
           <div className="mt-4 flex flex-col gap-2.5">
             {facts.topHubs.map((h) => (
@@ -75,7 +75,7 @@ export default function RouteNetwork({ facts, airlineName }: { facts: RouteFacts
 
           {facts.fleet.length > 0 && (
             <>
-              <h3 className="mt-6 font-urbanist text-base font-bold text-forest-900">Fleet</h3>
+              <h3 className="mt-6 text-base font-bold text-forest-900">Fleet</h3>
               <p className="mt-1 text-sm font-light text-forest-900/60">Aircraft types on record for these routes.</p>
               <ExpandableChips items={facts.fleet} initial={12} testId="rn-fleet" />
             </>
@@ -115,10 +115,10 @@ export default function RouteNetwork({ facts, airlineName }: { facts: RouteFacts
               <path d="M40 145 Q180 18 320 145" fill="none" stroke="url(#rn-arc)" strokeWidth="3" strokeDasharray="4 6" strokeLinecap="round" />
               <circle cx="40" cy="145" r="6" fill="#0c5fe0" />
               <circle cx="320" cy="145" r="6" fill="#b96f18" />
-              <text x="40" y="169" textAnchor="middle" fontSize="13" fontWeight="700" fill="#12262f" className="font-urbanist">
+              <text x="40" y="169" textAnchor="middle" fontSize="13" fontWeight="700" fill="#12262f" className="">
                 {facts.longestRoute.fromIata}
               </text>
-              <text x="320" y="169" textAnchor="middle" fontSize="13" fontWeight="700" fill="#12262f" className="font-urbanist">
+              <text x="320" y="169" textAnchor="middle" fontSize="13" fontWeight="700" fill="#12262f" className="">
                 {facts.longestRoute.toIata}
               </text>
               <text x="180" y="150" textAnchor="middle" fontSize="12" fill="#5a6b72">
@@ -150,7 +150,7 @@ function StatTile({
   return (
     <div className="rounded-[0.3rem] border border-forest-900/10 bg-white/85 p-4 shadow-[0_1px_2px_rgba(0,0,0,0.03)]">
       <div
-        className={`font-urbanist text-2xl font-bold leading-none tabular-nums lg:text-[1.7rem] ${
+        className={`text-2xl font-bold leading-none tabular-nums lg:text-[1.7rem] ${
           accent ? 'text-primary-emphasis' : 'text-forest-900'
         }`}
       >

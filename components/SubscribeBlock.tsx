@@ -59,7 +59,7 @@ export default function SubscribeBlock() {
                   <input
                     type="submit"
                     value="Subscribe"
-                    className="h-[30px] cursor-pointer rounded-[15px] border-0 bg-[#080808] px-[18px] pt-[2px] font-urbanist text-sm font-bold uppercase tracking-wider text-white outline-none transition hover:bg-primary-emphasis"
+                    className="h-[30px] cursor-pointer rounded-[15px] border-0 bg-[#080808] px-[18px] pt-[2px] text-sm font-bold uppercase tracking-wider text-white outline-none transition hover:bg-primary-emphasis"
                   />
                 </div>
                 <p

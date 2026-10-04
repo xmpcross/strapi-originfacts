@@ -9,7 +9,7 @@ export default function MarqueeTitle({ text, repeat = 8 }: { text: string; repea
         {items.map((_, i) => (
           <span
             key={i}
-            className="font-urbanist text-4xl font-bold uppercase tracking-tight text-forest-900 sm:text-5xl"
+            className="text-4xl font-bold uppercase tracking-tight text-forest-900 sm:text-5xl"
           >
             <span>{text}</span>
             <span aria-hidden className="mx-8 inline-block text-primary-emphasis">✱</span>
@@ -19,7 +19,7 @@ export default function MarqueeTitle({ text, repeat = 8 }: { text: string; repea
         {items.map((_, i) => (
           <span
             key={`dup-${i}`}
-            className="font-urbanist text-4xl font-bold uppercase tracking-tight text-forest-900 sm:text-5xl"
+            className="text-4xl font-bold uppercase tracking-tight text-forest-900 sm:text-5xl"
             aria-hidden
           >
             <span>{text}</span>

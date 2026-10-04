@@ -1,0 +1,59 @@
+{
+  "slug": "paris",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Paris is the iconic capital of France, set along the sweeping Seine River. Celebrated globally as the city of light, art, gastronomy, and fashion, it features grand boulevards, world-renowned museums like the Louvre, medieval cathedrals, and cozy neighborhood sidewalk bistros.\n\n## Where to stay in Paris\n\nLe Marais (3rd/4th arr.) is one of Paris's most charming historic districts, offering narrow medieval streets, boutique shopping, and trendy cafes. Saint-Germain-des-Prés (6th arr.) appeals to culture lovers near classic literary cafes and Luxembourg Gardens. The 7th arrondissement places you steps from the Eiffel Tower. Opera / Grands Boulevards (9th arr.) offers great shopping near Galeries Lafayette.\n\n## Things to do in Paris\n\nAscend the iconic Eiffel Tower for sweeping panoramas across Paris. View Mona Lisa and Venus de Milo inside the monumental Louvre Museum. Stroll along the Seine River to admire Notre-Dame Cathedral and Sainte-Chapelle's stained glass. Walk up the Champs-Élysées to the Arc de Triomphe. Explore bohemian Montmartre and the Sacré-Cœur Basilica.\n\n## Getting around Paris\n\nParis is served by Charles de Gaulle Airport (CDG, 25 km northeast) and Orly Airport (ORY, 13 km south). RER B train connects CDG to central stations (Gare du Nord, Châtelet) in 35 minutes. RATP operates the Paris Métro, RER, buses, and trams. Pay using Navigo Easy transit passes or contactless tickets.\n\n## When to visit Paris\n\nSpring (April to May) and Autumn (September to October) are peak seasons, featuring pleasant weather averaging 18°C to 22°C, blooming gardens, and café culture. Summer (July to August) is warm, though many local shops close in August for annual holidays. December features magical holiday illuminations.\n\n## Practical tips for Paris\n\n- Buy a Navigo Easy card at Metro stations to load digital single or daily transit passes.\n- France uses Type C and Type F European two-pin electrical plugs operating at 230 V.\n- Greet shopkeepers with 'Bonjour' upon entering shops; polite greeting is central to French etiquette.\n- Book Louvre Museum and Eiffel Tower summit tickets weeks in advance online.\n- Service is included in dining bills; leaving small extra change for good service is appreciated.",
+  "tldr": "Stay in Le Marais for historic streets or Saint-Germain for cafe culture. RER B trains reach central Paris from CDG airport in 35 minutes. Visit in spring or autumn for comfortable weather, Louvre Museum visits, and Seine river cruises.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Capital of France"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 2.1 million (Metro 12 million)"
+    },
+    {
+      "label": "Main airport",
+      "value": "Charles de Gaulle (CDG) & Orly (ORY)"
+    },
+    {
+      "label": "Public transport",
+      "value": "RATP Métro, RER trains, Buses, Trams (Navigo Easy / Contactless)"
+    },
+    {
+      "label": "Time zone",
+      "value": "CET (UTC+1), CEST (UTC+2) in summer"
+    },
+    {
+      "label": "Power",
+      "value": "Type C & F plugs, 230 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Charles de Gaulle Airport (CDG) to central Paris?",
+      "a": "Take the RER B commuter train directly from CDG Terminal 1 or 2 stations to Gare du Nord, Châtelet-Les Halles, or Saint-Michel in about 35 minutes."
+    },
+    {
+      "q": "How do I buy tickets for the Louvre Museum?",
+      "a": "Louvre Museum tickets must be purchased online in advance for a specific time slot via the official website. Walk-up ticket lines are rarely available during peak months."
+    },
+    {
+      "q": "How do I get to Palace of Versailles from Paris?",
+      "a": "Ride the RER C train from central Paris stations (like Saint-Michel or Champ de Mars) directly to Versailles Château Rive Gauche station in roughly 40 minutes."
+    },
+    {
+      "q": "What is the Navigo Easy pass?",
+      "a": "Navigo Easy is a reusable contactless transit card that allows you to load T+ metro tickets, bus fares, or daily passes electronically at any RATP station counter or ticket machine."
+    },
+    {
+      "q": "Can I climb to the top of the Eiffel Tower?",
+      "a": "Yes, you can take elevators or climb stairs to the 2nd floor, then take a dedicated summit elevator to the top observation platform at 276 meters. Summit tickets should be booked early."
+    },
+    {
+      "q": "What is the best way to explore Montmartre?",
+      "a": "Take Metro Line 2 to Anvers or Line 12 to Abbesses, then walk up through artistic square Place du Tertre to Sacré-Cœur Basilica for breathtaking views over Paris."
+    }
+  ],
+  "sources": []
+}

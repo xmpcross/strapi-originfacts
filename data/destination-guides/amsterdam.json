@@ -1,0 +1,59 @@
+{
+  "slug": "amsterdam",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Amsterdam is the iconic canal-ring capital of the Netherlands, world-famous for its golden age Golden Age architecture, gabled merchant houses, artistic heritage, vibrant cycling culture, and historic waterways lined with houseboats and leafy elm trees.\n\n## Where to stay in Amsterdam\n\nGrachtengordel (Canal Belt) offers historic boutique hotel stays along UNESCO-listed canals within walking distance of major sights. Museumkwartier (Museum Quarter) appeals to art lovers, placing you steps from the Rijksmuseum, Van Gogh Museum, and lush Vondelpark. Jordaan provides picturesque narrow lanes, indie boutiques, and cozy brown cafes. De Pijp offers a trendy local vibe near Albert Cuyp Market.\n\n## Things to do in Amsterdam\n\nCruise along historic 17th-century canals past gabled merchant mansions. View masterpieces by Rembrandt and Vermeer at the monumental Rijksmuseum. Explore the world's largest collection of Vincent van Gogh works at the Van Gogh Museum. Pay quiet respects at the Anne Frank House. Rent a bicycle to ride through Vondelpark. Wander through the fragrant Bloemenmarkt flower market.\n\n## Getting around Amsterdam\n\nAmsterdam Airport Schiphol (AMS) is located 15 km southwest. NS Dutch Railways train service links Schiphol Airport directly to Amsterdam Centraal Station in 14 minutes. City public transport is operated by GVB, covering trams, metro, buses, and free IJ river ferries. Passengers tap on and tap off using contactless credit cards or OV-chipkaart.\n\n## When to visit Amsterdam\n\nSpring (April to May) is a peak time to visit, featuring blooming tulips at nearby Keukenhof Gardens, mild weather around 16°C, and King's Day celebrations on April 27. Summer (June to August) brings long sunny days and canal side dining. Autumn (September to November) offers crisp days and golden foliage, while Winter features cozy 'gezellig' atmosphere and light festivals.\n\n## Practical tips for Amsterdam\n\n- Always tap on AND tap off with your contactless card or GVB pass when boarding and exiting trams and buses.\n- The Netherlands uses Type C and Type F European two-pin electrical plugs at 230 V.\n- Stay out of designated red bike lanes when walking; cyclists ride fast and have right of way.\n- Book Anne Frank House and Van Gogh Museum entry tickets weeks in advance online.\n- Cash is rarely accepted; bank cards and contactless payments dominate.",
+  "tldr": "Stay in the Canal Belt for historic views or Museumkwartier for art galleries. NS trains reach Centraal Station from AMS airport in 14 minutes. Visit in spring for Keukenhof tulips, King's Day, and canal boat cruises.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Capital of the Netherlands"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 920,000"
+    },
+    {
+      "label": "Main airport",
+      "value": "Amsterdam Airport Schiphol (AMS), 15 km southwest"
+    },
+    {
+      "label": "Public transport",
+      "value": "GVB Trams, Metro, Buses, NS Trains (Contactless / OV-chipkaart)"
+    },
+    {
+      "label": "Time zone",
+      "value": "CET (UTC+1), CEST (UTC+2) in summer"
+    },
+    {
+      "label": "Power",
+      "value": "Type C & F plugs, 230 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Schiphol Airport to central Amsterdam?",
+      "a": "Take the NS Dutch Railways train from Schiphol Airport station directly under the terminal to Amsterdam Centraal Station. Trains run 24/7, taking just 14 minutes."
+    },
+    {
+      "q": "How do I buy tickets for the Anne Frank House?",
+      "a": "Anne Frank House tickets are sold exclusively online via the official website, released every Tuesday morning for dates six weeks in advance. Tickets sell out almost immediately."
+    },
+    {
+      "q": "Can I pay for Amsterdam trams with a credit card?",
+      "a": "Yes, GVB trams and buses accept contactless credit cards, debit cards, and smartphone wallets. Remember to tap on when boarding and tap off when exiting."
+    },
+    {
+      "q": "How do I visit Keukenhof Tulip Gardens from Amsterdam?",
+      "a": "Take the Keukenhof Express bus from Schiphol Airport or RAI Station directly to the gardens in Lisse during the spring blooming season (late March to mid-May)."
+    },
+    {
+      "q": "Where can I rent a bike in Amsterdam?",
+      "a": "Bike rental shops (like MacBike and Black Bikes) are located near Centraal Station and throughout the city."
+    },
+    {
+      "q": "Are the IJ ferries in Amsterdam free?",
+      "a": "Yes, the blue GVB passenger ferries departing behind Amsterdam Centraal Station across the IJ river to Amsterdam Noord (including NDSM Wharf) are completely free."
+    }
+  ],
+  "sources": []
+}

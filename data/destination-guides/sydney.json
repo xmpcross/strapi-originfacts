@@ -1,0 +1,59 @@
+{
+  "slug": "sydney",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Sydney is Australia's largest city, built around one of the world's most spectacular natural harbors. Famous for the sail-like arches of the Sydney Opera House and the massive steel arc of the Harbour Bridge, the city combines urban excitement with iconic surf beaches like Bondi and Manly.\n\n## Where to stay in Sydney\n\nCircular Quay and The Rocks place you right on the harbor, steps from ferries, the Opera House, and historic cobbled lanes. The Sydney CBD offers central shopping along Pitt Street Mall and easy rail links at Town Hall and Wynyard stations. Darling Harbour caters to families with waterfront dining, wildlife attractions, and maritime museums. Surry Hills and Paddington draw visitors seeking trendy fashion boutiques, cozy cafes, and Victorian terrace houses, while Bondi Beach suits sunseekers wanting early morning coastal vibes.\n\n## Things to do in Sydney\n\nTake a ferry from Circular Quay to Manly Beach for sweeping views of Sydney Harbour. Tour the iconic Sydney Opera House or walk across the Sydney Harbour Bridge. Relax on the golden sands of Bondi Beach and hike the breathtaking Bondi to Coogee Coastal Walk. Explore historic sandstone buildings and weekend artisan markets in The Rocks. Day trips to the Blue Mountains showcase dramatic sandstone cliffs, eucalyptus forests, and the famous Three Sisters rock formation.\n\n## Getting around Sydney\n\nSydney Airport (Kingsford Smith) is located 8 km south of the city. The Airport Link train reaches Central Station in 13 minutes, running every 5 to 10 minutes. Transport for NSW operates trains, buses, light rail, and ferries. You can pay seamlessly by tapping any contactless credit card, debit card, or phone, or by using an Opal card.\n\n## When to visit Sydney\n\nSydney enjoys a sunny climate year-round. Spring (September to November) and autumn (March to May) feature warm, comfortable days averaging 22°C, perfect for harbor cruises and coastal walks. Summer (December to February) brings hot weather ideal for swimming, alongside major celebrations like New Year's Eve fireworks. Winter (June to August) is crisp and mild, featuring the Vivid Sydney light and music festival in late May and June.\n\n## Practical tips for Sydney\n\n- Tap on and off with the same contactless card or device for automatic fare caps across trains, ferries, and buses.\n- Australia uses Type I electrical plugs supplying 230 V power.\n- Always swim between the red and yellow flags on surf beaches, where lifeguards patrol.\n- Ferries departing Circular Quay are the most scenic way to explore harbor suburbs.\n- Alcohol consumption in public parks is restricted to designated areas and times.",
+  "tldr": "Stay near Circular Quay for harbor views or Surry Hills for cafes. The Airport Link train reaches Central Station in 13 minutes. Visit during spring or autumn for beach walks, or December for summer warmth and New Year's celebrations.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Capital of New South Wales"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 5.3 million"
+    },
+    {
+      "label": "Main airport",
+      "value": "Sydney Airport (SYD), 8 km south of CBD"
+    },
+    {
+      "label": "Public transport",
+      "value": "Transport for NSW trains, buses, light rail, ferries (Contactless/Opal)"
+    },
+    {
+      "label": "Time zone",
+      "value": "AEST (UTC+10), AEDT (UTC+11) in summer"
+    },
+    {
+      "label": "Power",
+      "value": "Type I plugs, 230 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Sydney Airport to the city centre?",
+      "a": "Catch the Airport Link train directly from T1 International or T2/T3 Domestic terminals to Central, Town Hall, or Circular Quay stations. The train ride takes roughly 13 to 18 minutes."
+    },
+    {
+      "q": "Can I pay for public transport in Sydney with my credit card?",
+      "a": "Yes, you can tap on and tap off all Sydney trains, buses, light rail lines, and ferries using any contactless credit card, debit card, or smartphone wallet with identical pricing to an Opal card."
+    },
+    {
+      "q": "What is the best way to travel from Circular Quay to Manly Beach?",
+      "a": "Take the iconic F1 Manly Ferry from Circular Quay Wharf 3. The scenic 30-minute ferry cruise crosses Sydney Harbour past the Opera House and Harbour Headlands straight to Manly Wharf."
+    },
+    {
+      "q": "How do I get from Sydney city centre to Bondi Beach?",
+      "a": "Take a train from Central or Town Hall to Bondi Junction station, then transfer to bus route 333 or 379, which takes you directly to Bondi Beach in about 15 minutes."
+    },
+    {
+      "q": "How far are the Blue Mountains from Sydney?",
+      "a": "The Blue Mountains are located 100 km west of Sydney. Direct trains run from Central Station to Katoomba in about two hours, providing easy access to Scenic World and the Three Sisters."
+    },
+    {
+      "q": "When does Vivid Sydney take place?",
+      "a": "Vivid Sydney, an annual festival of light installations, music, and ideas, takes place over three weeks from late May through mid-June across Circular Quay, Darling Harbour, and the city centre."
+    }
+  ],
+  "sources": []
+}

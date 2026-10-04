@@ -1,0 +1,59 @@
+{
+  "slug": "jakarta",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Jakarta is Indonesia's mega-capital on the northwest coast of Java, a bustling metropolis where modern skyscrapers tower above historic Dutch colonial quarters and vibrant kampungs. As the nation's political and financial engine, it offers incredible culinary diversity, world-class shopping malls, and rich national museums.\n\n## Where to stay in Jakarta\n\nCentral Jakarta (Jakarta Pusat) around Jalan Thamrin and Plaza Indonesia is the top choice for first-time visitors, offering international luxury hotels, embassy districts, and direct access to TransJakarta busways. Menteng provides upscale, leafy residential surroundings with heritage boutique hotels. South Jakarta (Jakarta Selatan) areas like Senopati, Kemang, and Mega Kuningan cater to dining and nightlife with trendy cocktail bars and cafes. Kota Tua (Old Town) in the north appeals to history enthusiasts.\n\n## Things to do in Jakarta\n\nVisit the iconic National Monument (Monas) towering over Merdeka Square, and take the lift to the observation deck. Explore Kota Tua (Old Jakarta) to admire Dutch colonial architecture around Fatahillah Square and sip coffee at historic Cafe Batavia. Tour Istiqlal Mosque, the largest mosque in Southeast Asia, and the adjacent Jakarta Cathedral. Discover Indonesian maritime history at Sunda Kelapa harbor where traditional wooden pinisi schooners dock.\n\n## Getting around Jakarta\n\nSoekarno-Hatta International Airport (CGK) lies 30 km northwest of the city. The Airport Rail Link train reaches Sudirman Baru (BNI City) station in 45 minutes. TransJakarta operates the world's longest bus rapid transit (BRT) system using dedicated bus lanes. Travelers can also ride the modern Jakarta MRT line between Bundaran HI and Lebak Bulus. Payment requires an electronic money card like JakCard, e-Money, or Flazz.\n\n## When to visit Jakarta\n\nJakarta features a tropical monsoon climate. The Dry Season (June to September) is the best time to explore, bringing less rainfall, lower humidity, and clearer skies averaging 31°C. The Wet Season (October to May) brings intense heavy rain, frequent urban flooding, and high humidity, with January and February being the wettest months.\n\n## Practical tips for Jakarta\n\n- Buy a prepaid JakCard or Flazz card at stations to pay for TransJakarta BRT and MRT rides.\n- Indonesia uses European Type C and Type F round two-pin electrical outlets at 230 V.\n- Use Bluebird or Silverbird taxis, or Grab rideshares for comfortable, metered city transit.\n- Dress modestly when visiting Istiqlal Mosque or government institutions.\n- Allow extra travel time during weekday rush hours due to heavy traffic congestion.",
+  "tldr": "Stay in Central Jakarta near Thamrin for shopping and MRT access. The Airport Rail Link reaches BNI City station in 45 minutes. Visit between June and September for dry weather, historical sightseeing in Kota Tua, and night markets.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Capital of Indonesia"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 10.5 million (Metro 30+ million)"
+    },
+    {
+      "label": "Main airport",
+      "value": "Soekarno-Hatta International Airport (CGK), 30 km northwest"
+    },
+    {
+      "label": "Public transport",
+      "value": "TransJakarta BRT, Jakarta MRT, Commuter Line, Grab"
+    },
+    {
+      "label": "Time zone",
+      "value": "WIB (UTC+7), no daylight saving"
+    },
+    {
+      "label": "Power",
+      "value": "Type C & F plugs, 230 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I travel from Soekarno-Hatta Airport to central Jakarta?",
+      "a": "The Airport Rail Link (Railink) train runs from CGK Airport to BNI City station in central Jakarta in 45 minutes. Alternatively, Damri airport buses and metered Bluebird taxis connect to major hotels."
+    },
+    {
+      "q": "How does the TransJakarta bus system work?",
+      "a": "TransJakarta is a dedicated Bus Rapid Transit (BRT) system with enclosed stations and traffic-separated lanes. You enter via electronic turnstiles using an e-Money, Flazz, or JakCard prepaid card."
+    },
+    {
+      "q": "What is there to see in Kota Tua (Jakarta Old Town)?",
+      "a": "Kota Tua features preserved Dutch colonial buildings centered around Fatahillah Square, including the Jakarta History Museum, Wayang Puppet Museum, Fine Art Museum, and the historic Cafe Batavia."
+    },
+    {
+      "q": "Can non-Muslim tourists visit Istiqlal Mosque?",
+      "a": "Yes, non-Muslim tourists are welcome outside prayer times. Visitor guides conduct tours starting from the visitor center, and modest attire covering arms and legs is required."
+    },
+    {
+      "q": "What is the odd-even traffic rule in Jakarta?",
+      "a": "Jakarta enforces an odd-even license plate rule on major thoroughfares during weekday peak morning and evening hours. Taxis, electric vehicles, and public transport are exempt from these restrictions."
+    },
+    {
+      "q": "How do I get to the Thousand Islands (Kepulauan Seribu) from Jakarta?",
+      "a": "Ferries and speedboats depart daily from Marina Ancol harbor in North Jakarta, taking 30 minutes to two hours to reach resort islands like Pulau Macan, Pramuka, and Tidung."
+    }
+  ],
+  "sources": []
+}

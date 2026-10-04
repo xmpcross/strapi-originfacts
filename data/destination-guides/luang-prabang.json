@@ -1,0 +1,59 @@
+{
+  "slug": "luang-prabang",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Luang Prabang is the spiritual heart of Laos, nestled at the confluence of the Nam Khan and Mekong Rivers. Designated a UNESCO World Heritage site, this peaceful town is renowned for its blend of French colonial architecture, gilded Buddhist monasteries, morning alms-giving rituals, and turquoise Kuang Si Waterfalls.\n\n## Where to stay in Luang Prabang\n\nStaying in the UNESCO Peninsula Historic Centre puts you steps from night markets, heritage French colonial boutique hotels, and major temples like Wat Xieng Thong. Night Market / Phousi Hill area offers affordable guesthouses, cozy cafes, and river views. Staying along the Nam Khan River provides a tranquil, leafy setting across bamboo footbridges, while luxury resort properties sit slightly outside town along the Mekong River banks.\n\n## Things to do in Luang Prabang\n\nObserve the silent Tak Bat morning alms-giving ceremony at dawn along Sisavangvong Road. Explore Wat Xieng Thong, Luang Prabang's grandest temple featuring sweeping tiered roofs and glass mosaics. Climb Mount Phousi's 355 steps at sunset for panoramic 360-degree views over the town and Mekong River. Swim in the multi-tiered turquoise pools of Kuang Si Waterfalls. Take a sunset Mekong river cruise to the sacred Pak Ou Caves.\n\n## Getting around Luang Prabang\n\nLuang Prabang International Airport (LPQ) lies just 4 km northeast of the town centre. Airport taxis charge a flat fee into town, taking roughly 10 minutes. Luang Prabang is also connected via the high-speed Lao-China Railway (LCR) station located 12 km south. The town centre is highly walkable and bike-friendly. Tuk-tuks and electric minivans handle longer trips to Kuang Si Waterfalls.\n\n## When to visit Luang Prabang\n\nLuang Prabang is best visited during the Dry Season (November to March), featuring warm, sunny days averaging 25°C to 28°C and cool nights. April brings extreme heat above 38°C and the vibrant Pi Mai Lao (Lao New Year) water festival. The Rainy Season (May to October) brings lush green scenery and roaring Kuang Si waterfalls, with rain usually falling in brief afternoon downpours.\n\n## Practical tips for Luang Prabang\n\n- Observe the morning alms ritual respectfully from a distance; dress modestly and do not use flash photography.\n- Laos uses Type A, B, and C electrical sockets operating at 230 V.\n- Thai Baht and US Dollars are widely accepted alongside the local Lao Kip (LAK).\n- Cross the Nam Khan River via the seasonal bamboo footbridge during the dry season.\n- Rent a bicycle to explore the peaceful UNESCO peninsula at a relaxed pace.",
+  "tldr": "Stay on the UNESCO Peninsula for French heritage hotels and temples. Taxis reach the town from LPQ airport in 10 minutes. Visit between November and March for cool dry weather, Kuang Si waterfalls, and Mekong river cruises.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "UNESCO World Heritage City, Laos"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 55,000"
+    },
+    {
+      "label": "Main airport",
+      "value": "Luang Prabang International Airport (LPQ), 4 km northeast"
+    },
+    {
+      "label": "Public transport",
+      "value": "Tuk-tuks, electric minivans, bicycles, high-speed rail (LCR)"
+    },
+    {
+      "label": "Time zone",
+      "value": "ICT (UTC+7), no daylight saving"
+    },
+    {
+      "label": "Power",
+      "value": "Type A, B & C plugs, 230 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Luang Prabang Airport to the town centre?",
+      "a": "Luang Prabang Airport is only 4 km from town."
+    },
+    {
+      "q": "How do I buy tickets for the Lao-China Railway (LCR) high-speed train?",
+      "a": "You can purchase LCR high-speed train tickets via the official LCR Ticket app, through local travel agencies, or directly at station ticket counters up to 3 days in advance with a passport."
+    },
+    {
+      "q": "How far are Kuang Si Waterfalls from Luang Prabang?",
+      "a": "Kuang Si Waterfalls are located 29 km southwest of Luang Prabang. Shared tuk-tuks, minivans, or motorbikes reach the waterfall entrance in about 45 to 60 minutes."
+    },
+    {
+      "q": "What are the guidelines for attending the Tak Bat (Morning Alms) ceremony?",
+      "a": "Dress conservatively with shoulders and knees covered, maintain a respectful distance, turn off camera flashes, and do not make physical contact with monks or disrupt the sacred procession."
+    },
+    {
+      "q": "What is inside the Pak Ou Caves?",
+      "a": "The Pak Ou Caves are two sacred limestone caves (Tham Ting and Tham Theung) located along the Mekong River packed with thousands of wooden and resin Buddha statues left by pilgrims over centuries."
+    },
+    {
+      "q": "Can I rent a motor scooter in Luang Prabang?",
+      "a": "Yes, automatic motor scooters are widely available for rental in town. Ensure you wear a helmet and drive carefully on rural unpaved roads leading to waterfalls and craft villages."
+    }
+  ],
+  "sources": []
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "houston",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Houston is Texas's largest city and the space exploration capital of the United States, set near the Gulf of Mexico. Known for NASA Johnson Space Center, a world-class Museum District, diverse international dining, thriving energy sector, and southern hospitality.\n\n## Where to stay in Houston\n\nDowntown Houston offers modern high-rise hotels near Discovery Green park, sports stadiums, and theater venues. The Museum District and Montrose offer walkable leafy streets near world-class art collections, boutique shopping, and quirky cafes. The Galleria/Uptown area caters to luxury shoppers near Texas's largest shopping mall. Texas Medical Center provides lodging for medical travelers.\n\n## Things to do in Houston\n\nTouch a real moon rock and view Saturn V rockets at Space Center Houston (NASA). Explore the Museum of Fine Arts and Houston Museum of Natural Science in the Museum District. Walk or kayak along Buffalo Bayou Park with views of the skyline. Sample diverse global food from Tex-Mex to Vietnamese cajun crawfish. Catch a ballgame at Minute Maid Park.\n\n## Getting around Houston\n\nHouston is served by George Bush Intercontinental Airport (IAH, 37 km north) and William P. Hobby Airport (HOU, 15 km southeast). METRO bus route 102 connects IAH to downtown in 50 minutes. METRORail light rail lines connect Downtown, the Museum District, and the Medical Center. Renting a car or using rideshares is essential due to the city's vast layout.\n\n## When to visit Houston\n\nAutumn (October to November) and Spring (March to April) offer the finest weather with mild temperatures averaging 22°C to 26°C. March hosts the massive Houston Livestock Show and Rodeo. Summer (June to September) is hot, humid, and rainy, while winter is mild.\n\n## Practical tips for Houston\n\n- Rent a car for convenience, as Houston is geographically spread out with limited rail coverage.\n- The United States uses Type A and B electrical plugs operating at 120 V.\n- Tipping in restaurants is customary; leave 18% to 20% for good service.\n- Visit Space Center Houston on weekday mornings to avoid long lines for tram tours.\n- Try unique local food like Vietnamese-Cajun crawfish and Tex-Mex fajitas.",
+  "tldr": "Stay in Downtown for sports venues or the Museum District for culture. METRO bus 102 connects IAH airport to downtown in 50 minutes. Visit in spring or autumn for pleasant weather, Space Center Houston, and global dining.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Major City in Texas, United States"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 2.3 million (Metro 7.3 million)"
+    },
+    {
+      "label": "Main airport",
+      "value": "Bush Intercontinental (IAH) & Hobby Airport (HOU)"
+    },
+    {
+      "label": "Public transport",
+      "value": "METRORail Light Rail, METRO Buses (Q Card/Contactless)"
+    },
+    {
+      "label": "Time zone",
+      "value": "CST (UTC-6), CDT (UTC-5) in summer"
+    },
+    {
+      "label": "Power",
+      "value": "Type A & B plugs, 120 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Bush Intercontinental Airport (IAH) to downtown Houston?",
+      "a": "Taxis and Uber/Lyft rideshares are also widely available."
+    },
+    {
+      "q": "How do I visit Space Center Houston (NASA)?",
+      "a": "Space Center Houston is located in Nassau Bay, 40 km southeast of downtown. Visitors can take NASA Tram Tours of Johnson Space Center, view astronaut training facilities, and see real spacecraft."
+    },
+    {
+      "q": "What is the Houston Museum District?",
+      "a": "The Museum District is a pedestrian-friendly cultural zone housing 19 museums, galleries, and cultural centers within a 1.5-mile radius, including 11 with free admission year-round."
+    },
+    {
+      "q": "What is the Houston Livestock Show and Rodeo?",
+      "a": "Held annually in March at NRG Stadium, it is the world's largest livestock show and rodeo, featuring professional rodeo competitions, concert performances, carnival rides, and Texas barbecue."
+    },
+    {
+      "q": "What is Vietnamese-Cajun crawfish in Houston?",
+      "a": "It is a signature Houston fusion dish where boiled Louisiana crawfish are tossed in garlic butter, lemongrass, and Cajun spices, created by Vietnamese immigrants in the Gulf Coast region."
+    },
+    {
+      "q": "Is the METRORail light rail convenient for tourists?",
+      "a": "Yes, the METRORail Red Line connects Downtown, Midtown, the Museum District, Texas Medical Center, and NRG Park directly along a straightforward 12-mile corridor."
+    }
+  ],
+  "sources": []
+}

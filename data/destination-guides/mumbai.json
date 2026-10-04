@@ -1,0 +1,59 @@
+{
+  "slug": "mumbai",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Mumbai is India's financial powerhouse and entertainment capital on the Arabian Sea. Formerly known as Bombay, this mega-metropolis blends historic British Victorian Gothic architecture, Bollywood glamour, sprawling coastal promenades, bustling markets, and sacred seaside shrines.\n\n## Where to stay in Mumbai\n\nSouth Mumbai (Colaba and Fort) is the prime area for first-time visitors, placing you within walking distance of the Gateway of India, Taj Mahal Palace hotel, art galleries, and colonial monuments. Bandra and Juhu in the Western Suburbs cater to upscale travelers, foodies, and nightlife enthusiasts near Bollywood celebrity homes and sunset beaches. Marine Drive (the 'Queen's Necklace') offers iconic bay views.\n\n## Things to do in Mumbai\n\nStand before the historic Gateway of India and view the Taj Mahal Palace Hotel overlooking the Arabian Sea. Take a ferry from Colaba to the ancient rock-cut cave temples of Elephanta Island. Walk along the sweeping curve of Marine Drive at sunset. Observe the incredible logistics of Mumbai's Dabbawalas delivering hot lunches. Marvel at Chhatrapati Shivaji Maharaj Terminus (CSMT).\n\n## Getting around Mumbai\n\nChhatrapati Shivaji Maharaj International Airport (BOM) lies 28 km north of South Mumbai. Prepaid airport taxis, Uber, and the newly opening Aqua Line Metro connect to central business zones. Mumbai's suburban railway network ('local trains') forms the city's transport backbone, alongside the Mumbai Metro and black-and-yellow metered auto-rickshaws.\n\n## When to visit Mumbai\n\nWinter (November to February) is the best time to visit Mumbai, offering pleasant, dry weather with temperatures averaging 20°C to 30°C and lower humidity. Summer (March to May) is sweltering and humid. The Monsoon Season (June to September) brings torrential rain, heavy sea swells, and localized street flooding.\n\n## Practical tips for Mumbai\n\n- Avoid traveling on suburban local trains during peak weekday morning and evening rush hours due to intense crowding.\n- India uses Type C, D, and M power outlets supplying 230 V electricity.\n- Use metered black-and-yellow auto-rickshaws or Uber/Ola for reliable city rides.\n- Sample local street food specialties like Vada Pav (spiced potato burger) and Pav Bhaji.\n- Drink bottled mineral water exclusively and avoid unboiled ice.",
+  "tldr": "Stay in Colaba for heritage sights or Bandra for dining and beach walks. Taxis reach South Mumbai from BOM airport in 45 minutes. Visit between November and February for pleasant weather, Gateway of India views, and street food.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Financial Capital of India"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 21 million"
+    },
+    {
+      "label": "Main airport",
+      "value": "Chhatrapati Shivaji Maharaj International Airport (BOM), 28 km north"
+    },
+    {
+      "label": "Public transport",
+      "value": "Suburban Local Trains, Mumbai Metro, BEST buses, Taxis/Uber/Ola"
+    },
+    {
+      "label": "Time zone",
+      "value": "IST (UTC+5:30), no daylight saving"
+    },
+    {
+      "label": "Power",
+      "value": "Type C, D & M plugs, 230 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Mumbai Airport (BOM) to Colaba in South Mumbai?",
+      "a": "Take a pre-paid official airport taxi (Cool Cab) or an Uber/Ola rideshare via the Eastern Freeway. The drive takes roughly 45 to 60 minutes depending on city traffic."
+    },
+    {
+      "q": "How do I visit the Elephanta Caves from Mumbai?",
+      "a": "Ferries depart every 30 minutes from the jetty behind the Gateway of India in Colaba. The scenic 60-minute boat ride across Mumbai Harbour reaches Elephanta Island's 5th-century rock-cut cave temples."
+    },
+    {
+      "q": "What are Mumbai Dabbawalas?",
+      "a": "Dabbawalas are a world-famous delivery community that collects over 200,000 home-cooked lunchboxes (dabbas) every morning and delivers them with near-zero error rates using suburban trains and bicycles."
+    },
+    {
+      "q": "What is Vada Pav?",
+      "a": "Vada Pav is Mumbai's iconic street food snack, consisting of a deep-fried spiced potato dumpling (vada) placed inside a soft bread bun (pav), served with garlic and green chili chutneys."
+    },
+    {
+      "q": "Can I ride the local trains as a tourist?",
+      "a": "Yes, local trains are cheap and efficient. Buy a First Class ticket or First Class Ladies' Compartment pass at station windows to avoid the extreme rush in Second Class carriages."
+    },
+    {
+      "q": "What is Marine Drive's 'Queen's Necklace'?",
+      "a": "Marine Drive is a 3.6 km C-shaped coastal boulevard along Netaji Subhash Chandra Bose Road. At night, streetlights along the curved bay resemble a glowing string of pearls, earning its famous nickname."
+    }
+  ],
+  "sources": []
+}

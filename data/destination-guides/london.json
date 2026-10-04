@@ -1,0 +1,59 @@
+{
+  "slug": "london",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "London is the historic global capital of the United Kingdom, set along the winding River Thames. Famed for its royal palaces, ancient landmarks like the Tower of London, West End theater district, world-class free museums, and diverse culinary culture across historic boroughs.\n\n## Where to stay in London\n\nCovent Garden and Soho place you in the heart of West End theaterland, surrounded by boutique shopping, dining, and central Tube lines. South Kensington suits families and museum lovers near the Natural History Museum and V&A. Mayfair and Westminster cater to luxury stays near royal parks and Big Ben. Shoreditch appeals to trendy travelers seeking street art, indie market halls, and nightlife.\n\n## Things to do in London\n\nMarvel at Big Ben, the Houses of Parliament, and Westminster Abbey. Explore royal history and the Crown Jewels at the Tower of London. View ancient world artifacts at the British Museum and modern masterpieces at Tate Modern. Take in panoramic vistas from the London Eye or The Horizon 22 deck. Catch a West End musical. Stroll through Hyde Park.\n\n## Getting around London\n\nLondon is served by Heathrow (LHR), Gatwick (LGW), Stansted (STN), Luton (LTN), and London City (LCY). The high-speed Elizabeth line reaches central London from Heathrow in 35 minutes. Transport for London (TfL) operates the Underground (Tube), Overground, buses, and river buses. Pay by tapping any contactless credit card or Oyster card.\n\n## When to visit London\n\nSpring (May to June) and Autumn (September to October) feature pleasant weather averaging 18°C, blooming royal parks, and manageable crowds. Summer (July to August) brings long daylight hours, outdoor festivals, and warm days. December offers festive magic with Oxford Street Christmas lights and Winter Wonderland.\n\n## Practical tips for London\n\n- Tap in and tap out with the same contactless card or device at Tube barriers for automatic daily fare capping.\n- The UK uses Type G three-pin rectangular electrical plugs operating at 230 V.\n- Stand on the right side of escalators on the London Underground; leave the left clear for walkers.\n- Most major museums (British Museum, Natural History Museum, National Gallery) offer free general admission.\n- Keep an umbrella or raincoat handy as London weather can shift quickly.",
+  "tldr": "Stay in Covent Garden for West End theater or South Kensington for free museums. The Elizabeth line connects LHR airport to central London in 35 minutes. Visit in spring or autumn for pleasant weather, royal parks, and theater shows.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Capital of the United Kingdom"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 9 million"
+    },
+    {
+      "label": "Main airport",
+      "value": "Heathrow (LHR), Gatwick (LGW), Stansted (STN), Luton (LTN), City (LCY)"
+    },
+    {
+      "label": "Public transport",
+      "value": "TfL Underground (Tube), Buses, Overground, Elizabeth Line (Contactless/Oyster)"
+    },
+    {
+      "label": "Time zone",
+      "value": "GMT (UTC+0), BST (UTC+1) in summer"
+    },
+    {
+      "label": "Power",
+      "value": "Type G plugs, 230 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Heathrow Airport to central London?",
+      "a": "The high-speed Elizabeth line runs directly from Heathrow Terminals 2, 3, 4, and 5 to Paddington, Tottenham Court Road, and Liverpool Street in 35 to 45 minutes."
+    },
+    {
+      "q": "Can I pay for the London Underground with my credit card?",
+      "a": "Yes, you can tap on and tap off all Tube, bus, Overground, and Elizabeth line services using any contactless credit card, debit card, or smartphone wallet with automatic daily fare capping."
+    },
+    {
+      "q": "Are London's major museums free to enter?",
+      "a": "Yes, major national museums including the British Museum, Natural History Museum, Science Museum, National Gallery, and Tate Modern offer completely free general admission."
+    },
+    {
+      "q": "How do I ride a red double-decker bus in London?",
+      "a": "Board through the front door and tap your contactless card on the yellow reader."
+    },
+    {
+      "q": "What is the best way to travel from London to Windsor Castle?",
+      "a": "Direct South Western Railway trains depart from London Waterloo Station to Windsor & Eton Riverside Station in about 55 minutes, placing you a short uphill walk from the castle entrance."
+    },
+    {
+      "q": "How far in advance should I book West End theater tickets?",
+      "a": "Popular musicals and plays should be booked weeks or months ahead online. For discount same-day tickets, visit the official TKTS booth in Leicester Square."
+    }
+  ],
+  "sources": []
+}

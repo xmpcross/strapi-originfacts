@@ -1,0 +1,59 @@
+{
+  "slug": "heraklion",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Heraklion is the coastal capital and economic engine of Crete, Greece. Situated on the island's northern shore, it serves as the primary gateway to the ancient Minoan Palace of Knossos, featuring massive Venetian fortress walls, lively harbor cafes, and world-class archaeological museums.\n\n## Where to stay in Heraklion\n\nHeraklion Old Town inside the Venetian walls is the best area for tourists, offering pedestrian streets around Lions Square (Morosini Fountain), boutique hotels, and seafood tavernas. The Venetian Harbor area provides waterfront hotels with views of Koules Fortress. Ammoudara beach district, located 5 km west, appeals to resort seekers wanting sandy beaches.\n\n## Things to do in Heraklion\n\nExplore the reconstructed Minoan ruins and colourful frescoes at the Palace of Knossos. Discover the golden Minoan bee pendant and Phaistos Disc at the Heraklion Archaeological Museum. Walk along the ramparts of the 16th-century Venetian Koules Fortress guarding the harbor. Sip Greek iced coffee at Lions Square. Take a day trip to Elounda or Spinalonga Island.\n\n## Getting around Heraklion\n\nHeraklion International Airport (HER) is located just 4 km east. Local urban buses (Blue Line) connect the terminal directly to the central bus station and Lions Square in 15 minutes. Intercity transit across Crete is operated by KTEL (Green Line) buses. Renting a car is recommended for exploring remote beaches.\n\n## When to visit Heraklion\n\nMay to June and September to October are ideal months, featuring warm sunshine averaging 24°C to 28°C, warm sea temperatures, and fewer crowds. Summer (July to August) is hot and busy, while winter brings quiet local life and cooler rainy weather.\n\n## Practical tips for Heraklion\n\n- Buy a combined ticket covering both the Palace of Knossos and the Archaeological Museum for savings.\n- Taste authentic Cretan specialties like Bougatsa pastry at Lions Square cafes.\n- Rent a car to explore eastern Crete destinations like Agios Nikolaos and Vai Palm Beach.\n- Wear hat and sunscreen at Knossos as archaeological ruins offer minimal shade.",
+  "tldr": "Stay in Heraklion Old Town near Lions Square for central sights or Ammoudara for beaches. Local blue buses link HER airport to town in 15 minutes. Visit in May, June, or September for Knossos Palace, archaeological treasures, and Cretan cuisine.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Capital of Crete, Greece"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 175,000"
+    },
+    {
+      "label": "Main airport",
+      "value": "Heraklion International Airport (HER), 4 km east"
+    },
+    {
+      "label": "Public transport",
+      "value": "Urban Blue Buses, KTEL Intercity Green Buses / Car rental recommended"
+    },
+    {
+      "label": "Time zone",
+      "value": "EET (UTC+2), EEST (UTC+3) in summer"
+    },
+    {
+      "label": "Power",
+      "value": "Type C & F plugs, 230 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Heraklion Airport to the city centre?",
+      "a": "Local Blue Bus route 1 or 6 runs frequently from outside the arrival hall directly to Lions Square and the Central Bus Station in central Heraklion in 15 minutes."
+    },
+    {
+      "q": "How far is the Palace of Knossos from central Heraklion?",
+      "a": "The Palace of Knossos lies 5 km south of Heraklion. Local Blue Bus Line 2 departs every 20 minutes from the city center, reaching the archaeological site gates in 20 minutes."
+    },
+    {
+      "q": "What is the Phaistos Disc in the Archaeological Museum?",
+      "a": "The Phaistos Disc is an enigmatic 2nd-millennium BCE clay disc discovered at the Minoan palace of Phaistos, stamped on both sides with an undeciphered spiral sequence of hieroglyphic symbols."
+    },
+    {
+      "q": "What is Koules Fortress?",
+      "a": "Koules (Rocca a Mare) is a massive 16th-century Venetian sea fortress built at the entrance of Heraklion's Old Port, featuring thick stone walls, cannons, and rooftop harbor views."
+    },
+    {
+      "q": "How do I get to Spinalonga Island from Heraklion?",
+      "a": "Drive or take a KTEL bus east to Elounda or Plaka (75 km), then take a 10-minute passenger boat across to the historic island fortress and former leper colony of Spinalonga."
+    },
+    {
+      "q": "Where can I try traditional Bougatsa in Heraklion?",
+      "a": "Phyllosophies at Morosini (Lions) Square has been serving warm, handmade Cretan Bougatsa—a crispy phyllo pastry filled with sweet semolina cream or savory cheese—since 1922."
+    }
+  ],
+  "sources": []
+}

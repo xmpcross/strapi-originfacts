@@ -1,0 +1,59 @@
+{
+  "slug": "gothenburg",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Gothenburg is Sweden's relaxed West Coast capital, renowned for its leafy boulevards, historic canals, vibrant craft beer scene, archipelago islands, and world-class seafood. Positioned along the Göta Älv river, it offers a maritime charm and eco-friendly Scandinavian lifestyle.\n\n## Where to stay in Gothenburg\n\nInnomstaden (City Centre) and Avenyn (Kungsportsavenyn) form the bustling heart of Gothenburg, placing visitors near department stores, restaurants, and tram lines. Haga is the historic 19th-century district known for cobblestone lanes, preserved wooden houses, and traditional fika cafes. Majorna appeals to creative travelers seeking indie bars, vintage shops, and seafood restaurants near the harbor.\n\n## Things to do in Gothenburg\n\nStroll through the historic Haga neighborhood and savor a giant cinnamon bun ('Hagabullen') during traditional Swedish fika. Ride thrill coasters at Liseberg amusement park. Take a car-free ferry to explore the granite islands of the Southern Gothenburg Archipelago. Browse fresh fish at Feskekörka ('Fish Church') market hall. Explore contemporary art at the Gothenburg Museum of Art.\n\n## Getting around Gothenburg\n\nGothenburg Landvetter Airport (GOT) lies 25 km east. Flygbussarna airport coaches connect the airport directly to Gothenburg Central Station (Nils Ericson Terminal) in 20 minutes. Public transit is operated by Västtrafik, featuring an extensive blue tram network, buses, and ferries. Pay using contactless bank cards or the Västtrafik To Go app.\n\n## When to visit Gothenburg\n\nSummer (June to August) is peak season, bringing long daylight hours, mild weather averaging 22°C, and lively open-air dining along Avenyn. Spring and autumn offer crisp weather and foliage, while December brings festive lights to Liseberg's Christmas market.\n\n## Practical tips for Gothenburg\n\n- Tap your contactless credit card or phone on blue Västtrafik readers when boarding trams and buses.\n- Embrace Swedish 'Fika'—taking a relaxing break with coffee and a fresh pastry with friends.\n- Take the public ferry from Saltholmen to visit car-free islands like Vrångö and Styrsö.\n- Gothenburg is almost entirely cashless; bank cards and mobile payments are required everywhere.",
+  "tldr": "Stay near Avenyn for central sights or Haga for historic wooden lanes and fika cafes. Flygbussarna buses connect GOT airport to Central Station in 20 minutes. Visit in summer for archipelago ferries, seafood, and Liseberg park.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Major City in Sweden"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 600,000"
+    },
+    {
+      "label": "Main airport",
+      "value": "Gothenburg Landvetter Airport (GOT), 25 km east"
+    },
+    {
+      "label": "Public transport",
+      "value": "Västtrafik Trams, Buses, Ferries (Contactless / Västtrafik App)"
+    },
+    {
+      "label": "Time zone",
+      "value": "CET (UTC+1), CEST (UTC+2) in summer"
+    },
+    {
+      "label": "Power",
+      "value": "Type C & F plugs, 230 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Gothenburg Landvetter Airport to the city centre?",
+      "a": "Flygbussarna airport coaches run frequently between Landvetter Airport and Gothenburg Central Station, taking roughly 20 to 25 minutes."
+    },
+    {
+      "q": "How do I visit the Southern Gothenburg Archipelago?",
+      "a": "Take Tram 11 from central Gothenburg to the Saltholmen ferry terminal (30 mins), then hop on a Västtrafik passenger ferry to car-free islands like Vrångö, Styrsö, or Brännö."
+    },
+    {
+      "q": "What is a Hagabullen?",
+      "a": "A Hagabullen is a famous giant Swedish cinnamon bun, measuring up to 30 cm in diameter, baked fresh at Café Husaren in the historic Haga neighborhood."
+    },
+    {
+      "q": "Is Gothenburg cashless?",
+      "a": "Yes, Gothenburg is practically 100% cashless. Restaurants, cafes, trams, museums, and shops accept credit cards or contactless mobile payments exclusively."
+    },
+    {
+      "q": "What is Liseberg?",
+      "a": "Liseberg is Scandinavia's largest amusement park, located in central Gothenburg, featuring historic wooden roller coasters, modern thrill rides, gardens, and seasonal Christmas markets."
+    },
+    {
+      "q": "What is Feskekörka?",
+      "a": "Feskekörka ('Fish Church') is Gothenburg's iconic 1874 indoor fish market hall designed to resemble a Gothic stone church, serving fresh West Coast oysters, salmon, and shrimp."
+    }
+  ],
+  "sources": []
+}

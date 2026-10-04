@@ -1,0 +1,55 @@
+{
+  "slug": "los-angeles",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Los Angeles is America's entertainment capital in Southern California, stretching across a vast coastal basin framed by the Pacific Ocean and Santa Monica Mountains. Famous for Hollywood film studios, celebrity culture, sun-drenched beaches, world-class art museums, and sprawling freeway culture.\n\n## Where to stay in Los Angeles\n\nSanta Monica and Venice Beach are top coastal picks, offering oceanfront hotels, beach boardwalks, and sunset dining. Hollywood and West Hollywood cater to film lovers and nightlife enthusiasts near the Walk of Fame and Sunset Strip. Downtown Los Angeles (DTLA) provides modern hotel towers near Crypto.com Arena, The Broad museum, and Grand Central Market. Beverly Hills suits luxury travelers.\n\n## Things to do in Los Angeles\n\nStroll past star plaques along the Hollywood Walk of Fame and view the iconic Hollywood Sign. Peer through telescopes and view city vistas from Griffith Observatory. Ride the solar-powered Ferris wheel on Santa Monica Pier. Browse contemporary masterpieces at The Broad and Getty Center. Take a studio tour at Universal Studios Hollywood or Warner Bros Studios.\n\n## Getting around Los Angeles\n\nLos Angeles International Airport (LAX) lies 24 km southwest of downtown. The LAX FlyAway bus connects terminals to Union Station in 35 minutes. Transit across LA includes Metro Rail trains, Metro Buses, and Metrolink. Riders pay using a physical TAP card or digital TAP app. Because LA is vast, renting a car or using Uber/Lyft is widely preferred.\n\n## When to visit Los Angeles\n\nLA enjoys a Mediterranean climate with 300+ sunny days annually. Spring (March to May) and Autumn (September to November) are prime seasons with pleasant weather around 22°C to 25°C and fewer crowds. Summer (June to August) brings beach weather, though coastal morning fog ('June Gloom') occurs. Winter is mild with occasional rain.\n\n## Practical tips for Los Angeles\n\n- Rent a car if planning to explore spread-out areas like Malibu, Anaheim, and Pasadena.\n- The United States uses Type A and B electrical plugs operating at 120 V.\n- Tipping is customary across restaurants and bars; leave 18% to 20% for service.\n- Allow ample extra drive time during weekday peak traffic hours on major freeways like I-405 and I-10.\n- Use digital TAP card on Apple/Google Wallet for Metro trains and bus lines.",
+  "tldr": "Stay in Santa Monica for beach walks or Hollywood for studio tours. LAX FlyAway buses link LAX to Union Station in 35 minutes. Visit in spring or autumn for pleasant sunshine, Griffith Observatory, and Getty Center art.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Major City in California, United States"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 3.8 million (Metro 12.5 million)"
+    },
+    {
+      "label": "Main airport",
+      "value": "Los Angeles International Airport (LAX), 24 km southwest"
+    },
+    {
+      "label": "Public transport",
+      "value": "LA Metro Rail & Bus network (TAP Card/App) / Car rental recommended"
+    },
+    {
+      "label": "Time zone",
+      "value": "PST (UTC-8), PDT (UTC-7) in summer"
+    },
+    {
+      "label": "Power",
+      "value": "Type A & B plugs, 120 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What is the best way to see the Hollywood Sign?",
+      "a": "Great viewing locations include Griffith Observatory, Lake Hollywood Park, or hiking trails along Mount Hollywood. Driving directly up to the sign itself is prohibited in residential zones."
+    },
+    {
+      "q": "How do I travel between Santa Monica and Hollywood?",
+      "a": "Ride the Metro E Line train from Santa Monica to 7th St/Metro Center, then transfer to the B Line train to Hollywood/Highland (approx. 60 minutes), or take an Uber/Lyft car."
+    },
+    {
+      "q": "What studio tour is best in Los Angeles?",
+      "a": "Warner Bros. Studio Tour Hollywood offers an authentic behind-the-scenes look at active working soundstages, set backlots, and prop departments, while Universal Studios combines studio tours with theme park rides."
+    },
+    {
+      "q": "What is the 'June Gloom' in Los Angeles?",
+      "a": "June Gloom refers to an early summer weather pattern where late night and morning marine fog hangs over coastal areas like Santa Monica before clearing for warm afternoon sun."
+    },
+    {
+      "q": "Do I need a car in Los Angeles?",
+      "a": "While Metro rail connects DTLA, Santa Monica, Hollywood, and Pasadena, renting a car or using rideshares is highly recommended for exploring Malibu, Beverly Hills, and orange county theme parks."
+    }
+  ],
+  "sources": []
+}

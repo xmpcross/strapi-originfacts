@@ -1,0 +1,59 @@
+{
+  "slug": "istanbul",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Istanbul is Turkey's transcontinental metropolis straddling the Bosphorus Strait, bridging Europe and Asia. Boasting a rich history as the capital of the Roman, Byzantine, and Ottoman empires, it enchants visitors with grand domes, minarets, bustling bazaars, and vibrant culinary traditions.\n\n## Where to stay in Istanbul\n\nSultanahmet in the Historic Peninsula is ideal for first-time visitors, placing you within walking distance of the Hagia Sophia, Blue Mosque, and Topkapi Palace. Karaköy and Galata offer trendy boutique hotels, art galleries, and steep cobblestone streets near Galata Tower. Taksim Square and Beyoğlu cater to nightlife lovers along Istiklal Street. Kadıköy on the Asian side offers authentic local market life.\n\n## Things to do in Istanbul\n\nMarvel at the monumental dome and ancient mosaics of Hagia Sophia. Explore the ornate courtyards and Imperial Harem inside Topkapi Palace. Stand beneath the blue ceramic tiles of the Blue Mosque. Descend into the subterranean Basilica Cistern. Bargain for carpets and spices inside the historic Grand Bazaar and Spice Bazaar. Take a scenic Bosphorus Strait ferry cruise.\n\n## Getting around Istanbul\n\nIstanbul is served by Istanbul Airport (IST, 40 km north) and Sabiha Gökçen Airport (SAW, 35 km east). Metro Line M11 connects IST to the city subway network, while Havaist airport buses connect directly to Aksaray and Taksim. Transit includes Metro lines, historic trams, Marmaray rail, and Bosphorus ferries. Pay using an Istanbulkart.\n\n## When to visit Istanbul\n\nSpring (April to May) and Autumn (September to November) offer the most comfortable weather with temperatures averaging 18°C to 24°C, mild breezes, and blooming tulip gardens in April. Summer (July to August) is hot and humid, while Winter (December to February) brings cool days and occasional snow.\n\n## Practical tips for Istanbul\n\n- Buy a prepaid Istanbulkart at airport or metro station kiosks for cheap rides across all public transit.\n- Dress modestly when entering mosques; women must cover their heads with a scarf and cover arms and legs.\n- Always negotiate prices politely when shopping for souvenirs inside the Grand Bazaar.\n- Enjoy traditional Turkish tea (Çay) served in tulip-shaped glasses at waterfront cafes.",
+  "tldr": "Stay in Sultanahmet for historic monuments or Karaköy for trendy dining. Havaist buses and Metro M11 link IST airport to the city. Visit in spring or autumn for comfortable weather, Hagia Sophia tours, and Bosphorus cruises.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Transcontinental Metropolis, Turkey"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 15.8 million"
+    },
+    {
+      "label": "Main airport",
+      "value": "Istanbul Airport (IST) & Sabiha Gökçen Airport (SAW)"
+    },
+    {
+      "label": "Public transport",
+      "value": "Metro, Trams, Marmaray Rail, Bosphorus Ferries (Istanbulkart)"
+    },
+    {
+      "label": "Time zone",
+      "value": "TRT (UTC+3), no daylight saving"
+    },
+    {
+      "label": "Power",
+      "value": "Type C & F plugs, 230 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Istanbul Airport (IST) to Sultanahmet or Taksim?",
+      "a": "Ride the Havaist airport express bus directly to Taksim Square or Aksaray (45–60 mins), or take Metro Line M11 from IST and transfer to Line M2 into central Beyoğlu."
+    },
+    {
+      "q": "Do I need to cover my head when visiting Hagia Sophia?",
+      "a": "Yes, Hagia Sophia is an active mosque. Female visitors must cover their hair with a scarf and wear clothing covering shoulders and knees. Shoes must be removed before stepping onto prayer carpets."
+    },
+    {
+      "q": "How do I cross between the European and Asian sides of Istanbul?",
+      "a": "Take a public Şehir Hatları passenger ferry from Eminönü or Karaköy to Kadıköy or Üsküdar (20 mins), or ride the Marmaray commuter train in a tunnel beneath the Bosphorus Strait."
+    },
+    {
+      "q": "What is the Grand Bazaar and when is it open?",
+      "a": "The Grand Bazaar is one of the world's largest covered markets, housing over 4,000 shops selling rugs, ceramics, leather, and jewelry. It is open Monday through Saturday and closed on Sundays."
+    },
+    {
+      "q": "What is a Turkish Hamam experience?",
+      "a": "A traditional Hamam (Turkish bath) involves relaxing in a heated marble steam room, receiving a vigorous body scrub with a 'kese' mitt, and a soapy bubble massage, followed by relaxation."
+    },
+    {
+      "q": "Is the tap water safe to drink in Istanbul?",
+      "a": "While tap water in Istanbul is disinfected, it has a strong chlorine taste. Most locals and tourists drink bottled water, which is widely available and very inexpensive."
+    }
+  ],
+  "sources": []
+}

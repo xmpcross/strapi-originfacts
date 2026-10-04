@@ -1,0 +1,59 @@
+{
+  "slug": "san-francisco",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "San Francisco is the hilly peninsula city of Northern California, bounded by the Pacific Ocean and San Francisco Bay. Famous for its iconic Golden Gate Bridge, historic cable cars, Victorian 'Painted Ladies' houses, rolling fog ('Karl'), and proximity to Silicon Valley and Napa Valley wine country.\n\n## Where to stay in San Francisco\n\nUnion Square is the central hotel hub, ideal for first-time visitors seeking shopping, theater, and cable car lines. Fisherman's Wharf and Embarcadero appeal to families near bay cruises, Pier 39 sea lions, and waterfront seafood. Nob Hill offers luxury historic hotels with panoramic bay views. SoMa (South of Market) caters to business travelers near tech headquarters and SFMOMA. The Castro and Mission District offer rich cultural heritage and indie dining.\n\n## Things to do in San Francisco\n\nWalk or cycle across the iconic red span of the Golden Gate Bridge to Marin Headlands. Ride a historic wooden cable car up the steep hills of Powell Street. Take a ferry to explore the historic prison corridors of Alcatraz Island. Watch barking sea lions at Pier 39 on Fisherman's Wharf. Stroll past the Victorian 'Painted Ladies' houses at Alamo Square. Explore North America's oldest Chinatown.\n\n## Getting around San Francisco\n\nSan Francisco International Airport (SFO) is located 21 km south. BART (Bay Area Rapid Transit) trains connect SFO directly to downtown stations (Powell, Montgomery) in 30 minutes. Transit options include Muni buses, Muni Metro light rail, historic F-Market streetcars, and cable cars. Pay using a physical or digital Clipper card on your phone.\n\n## When to visit San Francisco\n\nSan Francisco experiences an unusual climate where September and October are the warmest, sunniest months ('Indian Summer') averaging 22°C. Summer (June to August) is famously cool, foggy, and windy with temperatures around 15°C. Spring (April to May) brings clear mild days, while Winter (November to March) brings rainy periods.\n\n## Practical tips for San Francisco\n\n- Pack layers including a windproof jacket even in summer, as microclimates cause rapid temperature drops.\n- The United States uses Type A and B power outlets operating at 120 V.\n- Use a digital Clipper Card on Apple Wallet or Google Wallet for all BART and Muni transit fares.\n- Book Alcatraz ferry tickets weeks in advance as official tours sell out early.\n- Never leave any belongings or bags visible inside parked cars due to auto break-ins.",
+  "tldr": "Stay near Union Square for transit or Embarcadero for bay views. BART trains reach downtown from SFO airport in 30 minutes. Visit in September or October for warm sunshine, Golden Gate views, and Alcatraz tours.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Major City in California, United States"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 810,000"
+    },
+    {
+      "label": "Main airport",
+      "value": "San Francisco International Airport (SFO), 21 km south"
+    },
+    {
+      "label": "Public transport",
+      "value": "BART, Muni Metro, Cable Cars, Historic Streetcars (Clipper Card)"
+    },
+    {
+      "label": "Time zone",
+      "value": "PST (UTC-8), PDT (UTC-7) in summer"
+    },
+    {
+      "label": "Power",
+      "value": "Type A & B plugs, 120 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from SFO Airport to downtown San Francisco?",
+      "a": "Take the BART train directly from SFO International Terminal to downtown stations like Powell Street or Montgomery Street in about 30 minutes."
+    },
+    {
+      "q": "How do I visit Alcatraz Island?",
+      "a": "Official ferry tours depart exclusively via Alcatraz City Cruises from Pier 33 along the Embarcadero. Tickets include the cellhouse audio tour and should be reserved weeks in advance."
+    },
+    {
+      "q": "How much does a historic Cable Car ride cost?",
+      "a": "You can tap your Clipper card or buy tickets via the MuniMobile app."
+    },
+    {
+      "q": "Why is summer foggy in San Francisco?",
+      "a": "Summer fog ('Karl the Fog') occurs when hot air in California's inland Central Valley pulls cool ocean air and moisture across the cold Pacific currents surrounding the San Francisco peninsula."
+    },
+    {
+      "q": "What are the 'Painted Ladies'?",
+      "a": "The Painted Ladies are a famous row of Victorian houses located along Steiner Street opposite Alamo Square Park, set against the backdrop of the modern downtown skyscraper skyline."
+    },
+    {
+      "q": "How far is Napa Valley from San Francisco?",
+      "a": "Napa Valley lies roughly 80 km north of San Francisco, taking about 60 to 70 minutes by car across the Golden Gate or Bay Bridge."
+    }
+  ],
+  "sources": []
+}

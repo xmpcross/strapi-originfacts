@@ -1,0 +1,55 @@
+{
+  "slug": "denpasar",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Denpasar is the sprawling provincial capital of Bali, serving as the island's administrative, economic, and cultural heart. While often bypassed by beachbound tourists, the city contains historic Hindu temples, traditional markets like Pasar Badung, royal palaces, and rich Balinese art collections at the Bali Museum.\n\n## Where to stay in Denpasar\n\nWhile central Denpasar offers budget commercial hotels near Puputan Square, most international travelers choose adjacent coastal districts. Sanur, located 20 minutes east of central Denpasar, is ideal for families and mature travelers with its calm beach, resort hotels, and paved beachfront promenade. Seminyak and Kuta to the west appeal to nightlife lovers, surfers, and beach club enthusiasts. Renon in central Denpasar caters to business travelers seeking upscale quiet stays near consulate offices and spacious parks.\n\n## Things to do in Denpasar\n\nDiscover ancient Balinese stone carvings and traditional textiles at the Bali Museum overlooking Puputan Square. Explore the monumental Bajra Sandhi Monument in Renon, showcasing diorama galleries depicting Balinese history. Experience local life at Pasar Badung, Bali's largest traditional 24-hour market situated along the Badung River. Visit the historic Jagatnatha Temple, dedicated to the supreme God Sang Hyang Widhi. Day trips from Denpasar easily connect to the cultural craft villages of Ubud.\n\n## Getting around Denpasar\n\nNgurah Rai International Airport (DPS) is located in Tuban, 13 km south of central Denpasar. Taxis, airport transfer counters, and rideshare apps like Grab and Gojek reach Sanur or central Denpasar in 30 to 45 minutes. Within Denpasar, public buses like Trans Sarbagita operate fixed routes, but motorbikes, private drivers, and rideshare apps are the primary mode of travel for tourists.\n\n## When to visit Denpasar\n\nDenpasar experiences a tropical climate with dry and wet seasons. The Dry Season (April to October) is the ideal time to visit, featuring sunshine, lower humidity, and pleasant sea breezes averaging 27°C to 30°C. The Wet Season (November to March) brings heavy tropical downpours, high humidity, and overcast skies, though rain usually occurs in short intense bursts during the afternoon.\n\n## Practical tips for Denpasar\n\n- Dress respectfully with covered shoulders and a sarong tied at the waist when entering Balinese Hindu temples.\n- Indonesia uses Type C and Type F European-style two-pin round electrical plugs at 230 V.\n- Drink bottled or filtered water exclusively; avoid drinking tap water in Bali.\n- Watch your step on footpaths to avoid stepping on 'canang sari' palm-leaf floral offerings.\n- Negotiate prices in advance when shopping at traditional markets like Pasar Badung.",
+  "tldr": "Base yourself in coastal Sanur for calm beach resorts or Seminyak for dining. Taxis reach central Denpasar from DPS airport in 35 minutes. Visit during the Dry Season (April to October) for warm sunshine, temple visits, and market shopping.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Capital of Bali Province, Indonesia"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 730,000"
+    },
+    {
+      "label": "Main airport",
+      "value": "Ngurah Rai International Airport (DPS), 13 km south"
+    },
+    {
+      "label": "Public transport",
+      "value": "Grab/Gojek rideshare, taxis, Trans Sarbagita bus"
+    },
+    {
+      "label": "Time zone",
+      "value": "WITA (UTC+8), no daylight saving"
+    },
+    {
+      "label": "Power",
+      "value": "Type C & F plugs, 230 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How far is Denpasar Airport from central Denpasar?",
+      "a": "Ngurah Rai International Airport (DPS) lies about 13 km south of central Denpasar. A taxi or Grab rideshare ride takes between 30 and 50 minutes depending on city traffic conditions."
+    },
+    {
+      "q": "What is the difference between Denpasar and tourist areas like Kuta or Seminyak?",
+      "a": "Denpasar is Bali's working capital city with government buildings and traditional markets. Kuta and Seminyak are coastal resort towns west of Denpasar known for beaches, surfing, and nightlife."
+    },
+    {
+      "q": "What is the best way to get around Denpasar?",
+      "a": "Rideshare apps like Grab and Gojek are the most convenient and affordable way to travel around Denpasar via car or motorbike taxi. Metered Bluebird Taxis are also reliable."
+    },
+    {
+      "q": "Can I visit the Bajra Sandhi Monument inside?",
+      "a": "Yes, visitors can explore the interior galleries of the Bajra Sandhi Monument in Renon, which house 33 detailed dioramas illustrating Balinese history, and climb to the top tower for panoramic city views."
+    },
+    {
+      "q": "Is Pasar Badung open 24 hours?",
+      "a": "Yes, Pasar Badung operates around the clock. Fresh produce and wholesale goods dominate the early morning hours, while textiles, souvenirs, and traditional street food stalls run throughout the afternoon and evening."
+    }
+  ],
+  "sources": []
+}

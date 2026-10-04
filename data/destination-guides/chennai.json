@@ -1,0 +1,59 @@
+{
+  "slug": "chennai",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Chennai is the capital of Tamil Nadu on the Coromandel Coast of the Bay of Bengal, celebrated as South India's cultural capital. Known for its Dravidian temple architecture, classical Bharatanatyam dance, vibrant Carnatic music season, and Marina Beach, it serves as a major gateway to historic South India.\n\n## Where to stay in Chennai\n\nMylapore is the historic cultural heart of Chennai, placing visitors within walking distance of Kapaleeshwarar Temple and traditional filter coffee houses. T. Nagar (Thyagaraya Nagar) is ideal for shoppers seeking silk sarees, gold jewelry, and bustling markets. Egmore and Nungambakkam offer central bases near major railway hubs, art galleries, and upscale international hotel towers. ECR (East Coast Road) appeals to beach lovers.\n\n## Things to do in Chennai\n\nMarvel at the towering, colorful gopuram tower of the 7th-century Kapaleeshwarar Temple in Mylapore. Stroll along Marina Beach, one of the world's longest natural urban beaches. Explore San Thome Cathedral, built over the tomb of Saint Thomas the Apostle. Discover South Indian heritage, crafts, and performing arts at Kalakshetra Foundation and DakshinaChitra heritage museum. Take a day trip to UNESCO-listed Mamallapuram.\n\n## Getting around Chennai\n\nChennai International Airport (MAA) is situated 15 km southwest of the city centre. The Chennai Metro Blue Line connects the airport terminals directly to Chennai Central and Egmore railway stations in 35 minutes. Public transit includes the Chennai Metro, suburban railway lines, and MTC buses. Rideshare apps like Ola, Uber, and Rapido auto-rickshaws are widely used.\n\n## When to visit Chennai\n\nWinter (November to February) is the best time to visit Chennai, featuring pleasant, sunny weather with temperatures averaging 22°C to 28°C. December and January host the famous Chennai Music Season (Margazhi Festival). Summer (March to June) is sweltering with temperatures topping 40°C, while the Northeast Monsoon (October to November) brings heavy downpours.\n\n## Practical tips for Chennai\n\n- Try traditional South Indian filter coffee served in a brass 'dabara' set at local breakfast joints.\n- India uses Type C, D, and M three-pin round power outlets operating at 230 V.\n- Remove shoes before stepping into Hindu temples; dress conservatively with shoulders and knees covered.\n- Use auto-rickshaws via Ola or Rapido apps to avoid negotiating inflated cash fares.\n- Drink bottled or purified water only; avoid tap water and unpeeled street fruits.",
+  "tldr": "Stay in Mylapore for historic temples or T. Nagar for silk markets. The Metro Blue Line reaches Chennai Central from MAA airport in 35 minutes. Visit between November and February for pleasant weather, classical music, and Marina Beach strolls.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Capital of Tamil Nadu, India"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 11.5 million"
+    },
+    {
+      "label": "Main airport",
+      "value": "Chennai International Airport (MAA), 15 km southwest"
+    },
+    {
+      "label": "Public transport",
+      "value": "Chennai Metro, Suburban Rail, MTC buses, Ola/Uber/Rapido"
+    },
+    {
+      "label": "Time zone",
+      "value": "IST (UTC+5:30), no daylight saving"
+    },
+    {
+      "label": "Power",
+      "value": "Type C, D & M plugs, 230 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Chennai Airport to central Chennai?",
+      "a": "Take the Chennai Metro Blue Line directly from Airport Metro Station to Chennai Central or Egmore stations in about 35 minutes. Taxis and Ola/Uber rideshares are also available at airport exits."
+    },
+    {
+      "q": "What is the Chennai Music Season?",
+      "a": "Held annually from mid-December to mid-January (the Tamil month of Margazhi), the Chennai Music Season is one of the world's largest cultural events, featuring thousands of Carnatic music and Bharatanatyam dance performances."
+    },
+    {
+      "q": "How far is Mamallapuram (Mahabalipuram) from Chennai?",
+      "a": "Mamallapuram lies 55 km south of Chennai along the East Coast Road (ECR), taking about 70 to 90 minutes by car or bus. It features 7th-century rock-cut Shore Temples and relief carvings."
+    },
+    {
+      "q": "What is traditional South Indian filter coffee?",
+      "a": "South Indian filter coffee is brewed by dripping dark roasted coffee beans and chicory through a stainless steel filter, then mixing the extract with boiled milk and sugar, poured back and forth to create frothy foam."
+    },
+    {
+      "q": "Can you swim at Marina Beach in Chennai?",
+      "a": "Swimming at Marina Beach is strictly prohibited due to dangerous undercurrents and strong rip tides. Visitors enjoy strolls along the wide sandy shore, beach snacks, and sunset views instead."
+    },
+    {
+      "q": "What should I wear when visiting temples in Chennai?",
+      "a": "Visitors should dress modestly. Men typically wear trousers or a dhoti/veshti, while women wear sarees, salwar kameez, or long skirts. Shorts, tank tops, and sleeveless shirts are discouraged."
+    }
+  ],
+  "sources": []
+}

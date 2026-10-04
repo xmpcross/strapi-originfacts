@@ -1,0 +1,59 @@
+{
+  "slug": "kuressaare",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Kuressaare is the charming coastal capital of Saaremaa, Estonia's largest island in the Baltic Sea. World-renowned for its remarkably preserved 14th-century bishopric Kuressaare Castle, serene seaside spa culture, wooden resort architecture, and pristine coastal nature reserves.\n\n## Where to stay in Kuressaare\n\nKuressaare Old Town places you within walking distance of historic stone lanes, central cafes, and traditional Estonian handicraft shops. The Spa & Park District along the castle moat offers waterfront wellness hotels, indoor warm pools, and sea views. Roomassaare harbor area provides quiet coastal stays near marina yacht clubs.\n\n## Things to do in Kuressaare\n\nExplore the medieval moat, stone towers, and museum galleries inside 14th-century Kuressaare Castle. Indulge in a relaxing mud treatment or wellness massage at a seaside spa hotel. Walk along the sandy shores of Kuressaare Beach and central park promenades. Visit the historic Kaali meteorite crater field nearby. Tour the wooden windmills at Angla Windmill Park.\n\n## Getting around Kuressaare\n\nKuressaare Airport (URE) lies 3 km southeast, offering regional flights to Tallinn. Express buses connect Tallinn to Kuressaare via the Virtsu-Kuivastu car ferry in 4 hours. Kuressaare is highly walkable, with bicycles being popular for exploring coastal parks. Renting a car is best for touring Saaremaa island.\n\n## When to visit Kuressaare\n\nSummer (June to August) is peak season, bringing long daylight hours, warm beach weather averaging 22°C to 25°C, outdoor spa terraces, and midsummer festivals. Spring and autumn bring peaceful wellness retreats, while winter offers quiet snowy island charm.\n\n## Practical tips for Kuressaare\n\n- Estonia uses Type C and Type F European two-pin electrical sockets operating at 230 V.\n- Currency is the Euro (€); credit cards are accepted practically everywhere across Estonia.\n- Experience an authentic Saaremaa mud bath spa treatment at a local wellness hotel.\n- Rent a bicycle to cycle along the flat coastal paths surrounding the castle moat.\n- Cross to Saaremaa via the comfortable TS Laevad ferry if driving from mainland Estonia.",
+  "tldr": "Stay in the Spa District for wellness hotels or Old Town near Kuressaare Castle. Express buses connect Tallinn to Kuressaare via ferry in 4 hours. Visit in summer for beach walks, castle tours, and Estonian spa retreats.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Capital of Saaremaa Island, Estonia"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 13,000"
+    },
+    {
+      "label": "Main airport",
+      "value": "Kuressaare Airport (URE), 3 km southeast"
+    },
+    {
+      "label": "Public transport",
+      "value": "Island bus network, Tallinn-Kuressaare express buses / Car rental recommended"
+    },
+    {
+      "label": "Time zone",
+      "value": "EET (UTC+2), EEST (UTC+3) in summer"
+    },
+    {
+      "label": "Power",
+      "value": "Type C & F plugs, 230 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Tallinn to Kuressaare?",
+      "a": "Lux Express buses run daily from Tallinn Central Bus Station directly to Kuressaare in 4 hours, driving onto the Virtsu-Kuivastu car ferry. Regional flights from Tallinn Airport take 40 minutes."
+    },
+    {
+      "q": "What is unique about Kuressaare Castle?",
+      "a": "Kuressaare Castle (Kuressaare Piiskopilinnus) is the only medieval stone fortress in the Baltic states that has survived entirely intact without significant structural destruction since the 14th century."
+    },
+    {
+      "q": "Why is Kuressaare famous for spas?",
+      "a": "Kuressaare's spa tradition dates back to 1840 when the first therapeutic sea mud baths opened. Today, it boasts one of the highest spa densities per capita in Europe."
+    },
+    {
+      "q": "What is the Kaali Meteorite Crater?",
+      "a": "Located 18 km cluster from Kuressaare, Kaali is a group of nine ancient meteorite impact craters formed roughly 3,500 years ago, featuring a circular green lake in the main 110-meter crater."
+    },
+    {
+      "q": "What are Angla Windmills?",
+      "a": "Angla Windmill Park features four historic wooden trestle windmills and one Dutch-style windmill preserved on a hill in northern Saaremaa, showcasing traditional island grain milling."
+    },
+    {
+      "q": "Can I rent a car on Saaremaa island?",
+      "a": "Yes, car rental desks are available in Kuressaare, making it easy to drive across Saaremaa to explore the dramatic limestone cliffs of Panga and Sõrve lighthouse peninsula."
+    }
+  ],
+  "sources": []
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "interlaken",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Interlaken is Switzerland's world-renowned adventure sports capital, nestled in the Bernese Oberland between the emerald waters of Lake Thun and Lake Brienz. Flanked by the towering snow-capped peaks of the Eiger, Mönch, and Jungfrau, it serves as the ultimate gateway to alpine hiking, skiing, and mountain railways.\n\n## Where to stay in Interlaken\n\nCentral Interlaken between Interlaken Ost and Interlaken West train stations places you within walking distance of shops, mountain railway terminals, and riverfront parks. Unterseen offers a historic medieval wooden square atmosphere across the Aare River. For a tranquil mountain village setting, nearby Lauterbrunnen, Grindelwald, or Wengen offer scenic wooden chalets.\n\n## Things to do in Interlaken\n\nRide the historic cogwheel railway to Jungfraujoch ('Top of Europe'), Europe's highest railway station at 3,454 meters. Take a cable car to Schilthorn - Piz Gloria for panoramic views over the Bernese Alps. Hike through the stunning valley of 72 waterfalls in Lauterbrunnen. Cruise aboard historic steamships across Lake Thun or Lake Brienz. Experience tandem paragliding over Interlaken.\n\n## Getting around Interlaken\n\nInterlaken is served by Zurich Airport (ZRH, 130 km) and EuroAirport Basel (BSL, 150 km). SBB Swiss Federal Railways trains link Zurich Airport to Interlaken Ost in 2 hours. Transit across the region includes trains, funiculars, cable cars, and post buses. Travelers use the Swiss Travel Pass for unlimited transit.\n\n## When to visit Interlaken\n\nSummer (June to September) is peak season for alpine hiking, lake cruises, and outdoor adventure sports with pleasant temperatures averaging 20°C to 24°C. Winter (December to March) transforms the region into a world-class ski resort hub. Spring and autumn offer peaceful mountain views.\n\n## Practical tips for Interlaken\n\n- Purchase a Swiss Travel Pass or Jungfrau Travel Pass for unlimited train, cable car, and lake boat rides.\n- Switzerland uses Type J electrical plugs (Type C two-pin also fits) operating at 230 V.\n- Currency is the Swiss Franc (CHF); credit cards are universally accepted.\n- Pack warm thermal layers and waterproof jackets even in summer when ascending Jungfraujoch.\n- Tap water from any public fountain across Switzerland is pure and safe to drink.",
+  "tldr": "Stay near Interlaken Ost station for mountain train links or Lauterbrunnen for waterfall views. SBB trains reach Interlaken from Zurich Airport in 2 hours. Visit in summer for alpine hikes and Jungfraujoch or winter for ski slopes.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Resort Town in Bernese Oberland, Switzerland"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 6,000"
+    },
+    {
+      "label": "Main airport",
+      "value": "Zurich Airport (ZRH) & EuroAirport Basel (BSL)"
+    },
+    {
+      "label": "Public transport",
+      "value": "SBB Swiss Federal Railways, Cable cars, Funiculars, Lake Steamers (Swiss Travel Pass)"
+    },
+    {
+      "label": "Time zone",
+      "value": "CET (UTC+1), CEST (UTC+2) in summer"
+    },
+    {
+      "label": "Power",
+      "value": "Type J plugs (Type C fits), 230 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Zurich Airport to Interlaken?",
+      "a": "SBB Swiss Federal Railways trains run directly from Zurich Airport station to Interlaken Ost in about two hours, requiring a quick cross-platform transfer at Bern or Zurich HB."
+    },
+    {
+      "q": "What is Jungfraujoch - Top of Europe?",
+      "a": "Jungfraujoch is Europe's highest railway station at 3,454 meters, featuring an Ice Palace, Sphinx observation terrace overlooking the Aletsch Glacier, and snow sports year-round."
+    },
+    {
+      "q": "What is the difference between Interlaken Ost and Interlaken West stations?",
+      "a": "Interlaken Ost is the primary hub for mountain trains heading up to Grindelwald, Lauterbrunnen, and Jungfraujoch, while Interlaken West serves downtown shops and Lake Thun boat piers."
+    },
+    {
+      "q": "How do I get to Lauterbrunnen from Interlaken?",
+      "a": "Ride the Berner Oberland Bahn (BOB) train from Interlaken Ost directly to Lauterbrunnen station in just 20 minutes, departing every 30 minutes."
+    },
+    {
+      "q": "Is the Swiss Travel Pass valid in Interlaken?",
+      "a": "Yes, the Swiss Travel Pass covers all SBB trains, lake steamers on Thun and Brienz, local buses, and offers discounts on mountain cable cars and the Jungfraujoch railway."
+    },
+    {
+      "q": "Where is the best view over Interlaken?",
+      "a": "Ride the Harderbahn funicular railway up to Harder Kulm (1,322m) in 10 minutes for a glass-floored viewing platform overlooking Lakes Thun and Brienz and the Eiger, Mönch, and Jungfrau peaks."
+    }
+  ],
+  "sources": []
+}

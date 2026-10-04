@@ -1,0 +1,59 @@
+{
+  "slug": "guangzhou",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Guangzhou is the sprawling commercial metropolis of southern China and the capital of Guangdong Province. Situated on the Pearl River, the city blends Cantonese culinary traditions—famous for dim sum—with modern architectural wonders like the Canton Tower and historic colonial architecture on Shamian Island.\n\n## Where to stay in Guangzhou\n\nZhujiang New Town in Tianhe District is the city's modern central business district, home to luxury hotels, the Canton Tower view, and Guangzhou Opera House. Yuexiu District offers historic charm near Beijing Road Pedestrian Street, Sun Yat-sen Memorial Hall, and traditional local eateries. Shamian Island appeals to travelers seeking quiet, tree-lined streets with European colonial architecture along the riverfront.\n\n## Things to do in Guangzhou\n\nAscend the 600-meter Canton Tower for sweeping views over the Pearl River skyline. Enjoy an authentic Cantonese Dim Sum brunch with yum cha tea. Walk across Shamian Island to admire restored 19th-century French and British mansions. Explore the ornate wood carvings at the Ancestral Temple of the Chen Family (Chen Clan Academy). Take an evening Pearl River night cruise to view illuminated bridges.\n\n## Getting around Guangzhou\n\nGuangzhou Baiyun International Airport (CAN) lies 28 km north of the city. Guangzhou Metro Line 3 connects airport terminals directly to Zhujiang New Town in 45 minutes. Guangzhou Metro is extensive, affordable, and easy to navigate using English signage, with payments accepted via Alipay, WeChat Pay, or Yang Cheng Tong transit cards.\n\n## When to visit Guangzhou\n\nAutumn (October to December) is the finest season to visit, featuring dry, pleasant, and sunny weather with temperatures averaging 20°C to 25°C. Spring (March to May) is warm but humid and overcast. Summer (June to September) is hot, tropical, and prone to typhoons.\n\n## Practical tips for Guangzhou\n\n- Experience traditional Cantonese 'Yum Cha' dim sum between 8:00 AM and 11:30 AM at classic tea houses.\n- China uses Type A, C, and I electrical sockets supplying 220 V power.\n- Set up Alipay or WeChat Pay before arrival for hassle-free metro riding and merchant payments.\n- The biannual Canton Fair takes place in April and October; hotel rates surge during these weeks.\n- Rinse your teacup and chopsticks with hot tea before eating, following local Cantonese custom.",
+  "tldr": "Stay in Zhujiang New Town for Canton Tower views or Yuexiu for historic streets. Metro Line 3 links Baiyun Airport to town in 45 minutes. Visit between October and December for pleasant weather, dim sum, and Pearl River cruises.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Capital of Guangdong Province, China"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 18.7 million"
+    },
+    {
+      "label": "Main airport",
+      "value": "Guangzhou Baiyun International Airport (CAN), 28 km north"
+    },
+    {
+      "label": "Public transport",
+      "value": "Guangzhou Metro network (Alipay/WeChat Pay/Yang Cheng Tong)"
+    },
+    {
+      "label": "Time zone",
+      "value": "CST (UTC+8), no daylight saving"
+    },
+    {
+      "label": "Power",
+      "value": "Type A, C & I plugs, 220 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Guangzhou Baiyun Airport to central Guangzhou?",
+      "a": "Guangzhou Metro Line 3 runs directly from Airport North and Airport South stations to Tiyu Xilu and Zhujiang New Town in about 45 minutes."
+    },
+    {
+      "q": "What is Yum Cha and where should I try it in Guangzhou?",
+      "a": "Yum Cha is the Cantonese tradition of drinking tea accompanied by dim sum dishes like shrimp dumplings (har gow) and bbq pork buns. Top historic tea houses include Pan Xi Restaurant and Tao Tao Ju."
+    },
+    {
+      "q": "When does the Canton Fair take place?",
+      "a": "The China Import and Export Fair (Canton Fair) takes place biannually at the Pazhou Complex in Guangzhou during Spring (mid-April to early May) and Autumn (mid-October to early November)."
+    },
+    {
+      "q": "What is special about Shamian Island?",
+      "a": "Shamian Island is a peaceful pedestrian island on the Pearl River featuring tree-lined avenues and over 50 preserved 19th-century European colonial buildings from its time as a British and French concession."
+    },
+    {
+      "q": "How do I take a Pearl River Night Cruise?",
+      "a": "Cruises depart every evening from Dashatou Pier and Tianzi Pier, taking about 60 to 90 minutes to sail past the illuminated skyscrapers of Zhujiang New Town and Canton Tower."
+    },
+    {
+      "q": "How far is Guangzhou from Hong Kong?",
+      "a": "High-speed trains depart from Guangzhou South Railway Station to Hong Kong West Kowloon Station in just 48 minutes, making quick travel between the two cities seamless."
+    }
+  ],
+  "sources": []
+}

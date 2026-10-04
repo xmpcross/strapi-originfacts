@@ -1,0 +1,59 @@
+{
+  "slug": "rome",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Rome is the eternal capital of Italy, sprawling across seven historic hills along the Tiber River. Boasting nearly three millennia of globally influential art, architecture, and culture, the city weaves ancient Roman ruins like the Colosseum seamlessly into vibrant modern piazzas and Vatican sacred sites.\n\n## Where to stay in Rome\n\nHistoric Centre (Centro Storico) around Piazza Navona, the Pantheon, and Campo de' Fiori is ideal for first-time visitors, placing you within walking distance of major monuments and trattorias. Monti offers a trendy, historic neighborhood vibe near the Colosseum. Trastevere across the river appeals to foodies and nightlife lovers with cobblestone lanes and outdoor dining. Prati provides upscale quiet stays near Vatican City.\n\n## Things to do in Rome\n\nStep inside the ancient amphitheater of the Colosseum and explore the Roman Forum and Palatine Hill. Toss a coin into the majestic Trevi Fountain. Marvel at the unreinforced concrete dome of the ancient Pantheon. Tour the Vatican Museums, Sistine Chapel, and St. Peter's Basilica. Enjoy gelato on the Spanish Steps. Dine on authentic Carbonara in Trastevere.\n\n## Getting around Rome\n\nRome is served by Leonardo da Vinci-Fiumicino Airport (FCO, 30 km southwest) and Ciampino Airport (CIA). The non-stop Leonardo Express train connects FCO directly to Roma Termini station in 32 minutes. ATAC operates Rome's subways (Metro Lines A and B), buses, and trams. Riders tap contactless credit cards at turnstiles.\n\n## When to visit Rome\n\nSpring (April to May) and Autumn (September to October) bring ideal sightseeing conditions with warm sunshine averaging 20°C to 25°C. Summer (July to August) is sweltering, crowded, and humid with temperatures topping 35°C. Winter (December to February) is mild, crisp, and quiet.\n\n## Practical tips for Rome\n\n- Tap your contactless credit card at Metro turnstiles and bus readers via the Tap&Go payment system.\n- Italy uses Type C, F, and L electrical sockets operating at 230 V.\n- Fill water bottles for free at historical street fountains ('nasoni') across Rome; the water is clean and fresh.\n- Dress respectfully when entering churches; shoulders and knees must be covered.\n- Book Colosseum and Vatican Museum entry tickets months in advance online.",
+  "tldr": "Stay in Centro Storico for romantic piazzas or Monti near the Colosseum. The Leonardo Express train connects FCO airport to Roma Termini in 32 minutes. Visit in spring or autumn for pleasant weather, ancient ruins, and pasta.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Capital of Italy"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 2.8 million"
+    },
+    {
+      "label": "Main airport",
+      "value": "Fiumicino Airport (FCO) & Ciampino Airport (CIA)"
+    },
+    {
+      "label": "Public transport",
+      "value": "ATAC Metro (Lines A & B), Buses, Trams (Contactless / Tap&Go)"
+    },
+    {
+      "label": "Time zone",
+      "value": "CET (UTC+1), CEST (UTC+2) in summer"
+    },
+    {
+      "label": "Power",
+      "value": "Type C, F & L plugs, 230 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Fiumicino Airport (FCO) to central Rome?",
+      "a": "Take the non-stop Leonardo Express train directly from FCO Airport station to Roma Termini central station in 32 minutes. Trains depart every 15 minutes."
+    },
+    {
+      "q": "How far in advance should I book Vatican Museums tickets?",
+      "a": "Book Vatican Museums and Sistine Chapel tickets on the official website at least 1 to 2 months in advance, as timed entry slots sell out rapidly year-round."
+    },
+    {
+      "q": "What is the coin tossing tradition at the Trevi Fountain?",
+      "a": "Legend holds that tossing a coin with your right hand over your left shoulder into the Trevi Fountain ensures you will return to Rome in the future."
+    },
+    {
+      "q": "What are Rome's four classic pasta dishes?",
+      "a": "Rome's famous four pastas are Cacio e Pepe (pecorino and black pepper), Carbonara (egg, guanciale, pecorino), Amatriciana (guanciale, tomato, pecorino), and Gricia (guanciale and pecorino)."
+    },
+    {
+      "q": "Is public transit easy to use in Rome?",
+      "a": "Yes, ATAC Metro Lines A and B intersect at Roma Termini station, providing fast transport to major sights. You can tap contactless credit cards directly at entrance gates."
+    },
+    {
+      "q": "How do I visit the Colosseum Underground?",
+      "a": "Visiting the subterranean tunnels beneath the Colosseum floor requires a special full-experience guided tour ticket reserved weeks ahead via the official Parco Archeologico del Colosseo site."
+    }
+  ],
+  "sources": []
+}

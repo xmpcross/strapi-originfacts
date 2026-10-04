@@ -1,0 +1,59 @@
+{
+  "slug": "fukuoka",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Fukuoka is the vibrant capital of Fukuoka Prefecture on Japan's southern island of Kyushu. Celebrated as Japan's culinary gateway to Asia, the city combines modern canalfront shopping malls, ancient Zen temples, sandy beaches, and famous open-air Yatai food stalls along the Naka River.\n\n## Where to stay in Fukuoka\n\nHakata is the primary transportation and commercial hub, ideal for travelers wanting direct access to the Shinkansen bullet train station, subway lines, and subterranean shopping complexes. Tenjin is Fukuoka's bustling downtown fashion and entertainment district, filled with department stores, trendy cafes, and numerous evening Yatai stalls. Nakasu, situated on a narrow island between the Naka and Hakata rivers, appeals to nightlife seekers and foodies with its riverfront street food stalls.\n\n## Things to do in Fukuoka\n\nSample authentic Hakata Tonkotsu ramen at an open-air Yatai food stall along Nakasu Island. Visit Tochoji Temple to admire its magnificent 10.8-meter wooden Great Buddha statue. Stroll through the tranquil gardens of Ohori Park and explore the stone ruins of Fukuoka Castle. Experience shopping and entertainment at Canal City Hakata, a striking multi-story complex featuring a central water fountain show. Take a short train ride to Dazaifu Tenmangu Shrine.\n\n## Getting around Fukuoka\n\nFukuoka Airport (FUK) is famously located just 3 km from the city centre. The Fukuoka City Subway connects the Domestic Terminal directly to Hakata Station in 5 minutes and Tenjin Station in 11 minutes. Transport across Fukuoka includes subways, Nishitetsu buses, and JR train lines. Passengers can tap any major Japanese IC card like Suica, Pasmo, or Nimoca, or use contactless credit cards on the subway.\n\n## When to visit Fukuoka\n\nFukuoka features a humid subtropical climate. Spring (March to May) is a peak season with comfortable temperatures averaging 20°C and cherry blossoms blooming in Ohori Park. Autumn (September to November) brings mild, clear weather. Summer (June to August) is hot, humid, and rainy, but features the dramatic Hakata Gion Yamakasa festival in July. Winter (December to February) is cool with temperatures around 8°C.\n\n## Practical tips for Fukuoka\n\n- Yatai food stalls open around 6:00 PM; seat availability is limited so arrive early and order promptly.\n- Japan uses Type A two-prong ungrounded electrical plugs operating at 100 V.\n- Tipping is not practiced anywhere in Japan and can cause confusion.\n- Tap IC cards like Suica, Pasmo, or Nimoca on buses and subways for seamless travel.\n- Carry cash in Japanese Yen (JPY), as small Yatai stalls and ramen shops may not take cards.",
+  "tldr": "Stay in Hakata for Shinkansen trains or Tenjin for shopping and nightlife. The subway reaches Hakata Station from FUK airport in 5 minutes. Visit during spring or autumn for pleasant weather, Tonkotsu ramen, and historic Zen temples.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Capital of Fukuoka Prefecture, Japan"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 1.6 million"
+    },
+    {
+      "label": "Main airport",
+      "value": "Fukuoka Airport (FUK), 3 km east of city centre"
+    },
+    {
+      "label": "Public transport",
+      "value": "Fukuoka City Subway, Nishitetsu buses, JR Lines (Suica/Pasmo/IC Cards)"
+    },
+    {
+      "label": "Time zone",
+      "value": "JST (UTC+9), no daylight saving"
+    },
+    {
+      "label": "Power",
+      "value": "Type A plugs, 100 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Fukuoka Airport to Hakata Station?",
+      "a": "Fukuoka Airport is connected directly to the city by the Fukuoka City Subway Kuko Line. The subway ride from the Domestic Terminal to Hakata Station takes only 5 minutes."
+    },
+    {
+      "q": "What is a Yatai and where can I find them in Fukuoka?",
+      "a": "Yatai are open-air mobile food stalls that set up around 6:00 PM. The largest concentration of Yatai stalls sits along the riverfront promenade of Nakasu Island and in the Tenjin area."
+    },
+    {
+      "q": "What is Hakata ramen?",
+      "a": "Hakata ramen is Fukuoka's signature dish, featuring thin, firm wheat noodles served in a rich, creamy pork bone broth (Tonkotsu) topped with sliced chashu pork, green onions, and pickled ginger."
+    },
+    {
+      "q": "How do I travel from Fukuoka to Dazaifu Tenmangu Shrine?",
+      "a": "Take the Nishitetsu Tenjin-Omuta Line train from Nishitetsu Fukuoka (Tenjin) Station to Futsukaichi Station, then transfer to the Nishitetsu Dazaifu Line to Dazaifu Station in about 30 minutes."
+    },
+    {
+      "q": "Can I use Suica or Pasmo cards in Fukuoka?",
+      "a": "Yes, major Japanese IC cards like Suica, Pasmo, Icoca, and local Nimoca/Hayakaken cards are fully interchangeable across Fukuoka's subway lines, buses, and convenience stores."
+    },
+    {
+      "q": "What is the Hakata Gion Yamakasa festival?",
+      "a": "Hakata Gion Yamakasa is a 700-year-old festival held annually from July 1 to 15, culminating in an early morning race where teams sprint through the streets carrying 1-ton decorated float structures."
+    }
+  ],
+  "sources": []
+}

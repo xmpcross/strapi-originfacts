@@ -1,0 +1,55 @@
+{
+  "slug": "shenzhen",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Shenzhen is China's high-tech innovation capital, located in Guangdong Province directly adjacent to Hong Kong. Transformed from a fishing village into a global technology megacity in just four decades, it features futuristic skyscrapers, massive electronics markets, lush eco-parks, and coastal beaches.\n\n## Where to stay in Shenzhen\n\nFutian District is the modern civic and financial centre, placing visitors near high-speed railway stations, city parks, and major shopping malls. Luohu District near the Hong Kong border border crossing offers budget shopping, historic markets, and traditional dining. Nanshan District is Shenzhen's tech hub, popular for modern hotel towers, coastal parks like Shenzhen Bay, and theme parks like Window of the World.\n\n## Things to do in Shenzhen\n\nAscend the Ping An Finance Centre (599m) for panoramic views extending to Hong Kong's New Territories. Explore Huaqiangbei, the world's largest consumer electronics market. Stroll along the coastal promenade at Shenzhen Bay Park overlooking Shenzhen Bay Bridge. Visit Sea World in Shekou for international dining around a converted cruise ship. Relax at Dameisha or Xiaomeisha beaches along the eastern coast.\n\n## Getting around Shenzhen\n\nShenzhen Bao'an International Airport (SZX) lies 32 km northwest. Metro Line 11 (Airport Line) connects the terminal directly to Futian Station in 30 minutes. Shenzhen Metro is exceptionally fast, clean, and modern. High-speed rail connects Futian and Shenzhen North stations directly to Hong Kong West Kowloon in 15 to 20 minutes.\n\n## When to visit Shenzhen\n\nAutumn and winter (October to March) offer the most comfortable weather in Shenzhen, featuring sunny, mild conditions averaging 20°C to 24°C and low humidity. Summer (May to September) is hot, sticky, and rainy with occasional tropical typhoons.\n\n## Practical tips for Shenzhen\n\n- Use the Hong Kong-Shenzhen high-speed train for the fastest transit between Futian and Hong Kong.\n- China uses Type A, C, and I electrical outlets operating at 220 V.\n- Set up Alipay or WeChat Pay before arrival to pay for metro rides and purchases instantly.\n- Carry your passport at all times for border checks and high-speed train station entry.\n- Avoid electronics shopping scams at Huaqiangbei by testing products before payment.",
+  "tldr": "Stay in Futian for tech hubs and high-speed trains or Nanshan for coastal parks. Metro Line 11 reaches Futian from SZX airport in 30 minutes. Visit between October and March for pleasant sunshine and electronics market tours.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Special Economic Zone, Guangdong, China"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 17.6 million"
+    },
+    {
+      "label": "Main airport",
+      "value": "Shenzhen Bao'an International Airport (SZX), 32 km northwest"
+    },
+    {
+      "label": "Public transport",
+      "value": "Shenzhen Metro network (Alipay/WeChat Pay/Shenzhen Tong)"
+    },
+    {
+      "label": "Time zone",
+      "value": "CST (UTC+8), no daylight saving"
+    },
+    {
+      "label": "Power",
+      "value": "Type A, C & I plugs, 220 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I travel between Shenzhen and Hong Kong?",
+      "a": "The fastest method is the high-speed rail from Futian or Shenzhen North station directly to Hong Kong West Kowloon in 15 to 20 minutes. Alternatively, cross via land checkpoints like Luohu or Lok Ma Chau."
+    },
+    {
+      "q": "What is Huaqiangbei famous for?",
+      "a": "Huaqiangbei is the world's largest electronics market district, featuring multi-story shopping malls packed with thousands of stalls selling components, smartphones, drones, microchips, and gadgets."
+    },
+    {
+      "q": "How do I get from Shenzhen Airport to Futian CBD?",
+      "a": "Shenzhen Metro Line 11 (Airport Line) runs directly from Airport Station to Futian Station in approximately 30 minutes, featuring both standard and business class train carriages."
+    },
+    {
+      "q": "How high is the Ping An Finance Centre observation deck?",
+      "a": "The Free Sky Observation Deck on the 116th floor of the Ping An Finance Centre sits at 541 meters, offering 360-degree views across Shenzhen and Hong Kong's green hills."
+    },
+    {
+      "q": "What is Sea World in Shekou?",
+      "a": "Sea World in Shekou, Nanshan is an international waterfront entertainment complex built around the Minghua, a grounded 1960s French cruise ship, offering open-air dining, music bars, and water shows."
+    }
+  ],
+  "sources": []
+}

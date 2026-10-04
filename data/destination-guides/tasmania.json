@@ -1,0 +1,59 @@
+{
+  "slug": "tasmania",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Tasmania is Australia's island state, situated across Bass Strait south of the mainland. World-renowned for its pristine wilderness, cool-climate food and wine, convict heritage, and cutting-edge contemporary art, the island offers dramatic coastal landscapes and rugged alpine national parks.\n\n## Where to stay in Tasmania\n\nHobart, the island's capital, is the primary base, with historic sandstone hotels along Salamanca Place and Sullivan's Cove harbor. Launceston in the north provides a charming riverfront setting near Cataract Gorge and the Tamar Valley wine region. For wilderness travelers, staying near Cradle Mountain-Lake St Clair National Park or Freycinet Peninsula puts you steps from world-class hiking trails, pink granite peaks, and secluded bays like Wineglass Bay.\n\n## Things to do in Tasmania\n\nVisit the Museum of Old and New Art (MONA) in Hobart, reached via a themed ferry up the River Derwent. Wander through the vibrant Salamanca Market on Saturday mornings. Take a guided tour of the World Heritage-listed Port Arthur Historic Site on the Tasman Peninsula. Hike around Dove Lake beneath Cradle Mountain's jagged peaks, or climb the lookout over Wineglass Bay in Freycinet National Park. Sample fresh Pacific oysters, artisanal cheeses, and local pinot noir.\n\n## Getting around Tasmania\n\nHobart Airport (HBA) and Launceston Airport (LST) are the primary air gateways. The SkyBus Hobart City Express connects HBA to downtown Hobart in 20 minutes. Public transit within Hobart and Launceston is operated by Metro Tasmania buses using a GreenCard or cash. However, because regional train lines do not carry passengers, renting a car or campervan is essential for exploring national parks and scenic coastal drives across Tasmania.\n\n## When to visit Tasmania\n\nSummer (December to February) is the peak season, offering long sunny days, temperatures around 22°C, and lavender fields in bloom. Autumn (March to May) features crisp days, stunning autumn foliage, and harvest food festivals. Winter (June to August) brings snow to alpine peaks, crisp air, and the Dark Mofo winter festival. Spring (September to November) brings blooming gardens and rushing waterfalls.\n\n## Practical tips for Tasmania\n\n- Rent a car upon arrival as public buses between regional Tasmanian towns are infrequent.\n- Purchase a Tasmanian National Parks Pass if you plan to visit Cradle Mountain or Freycinet.\n- Australia uses Type I electrical plugs supplying 230 V.\n- Pack thermal layers and waterproof jackets regardless of the season, as alpine weather changes rapidly.\n- Observe strict biosecurity rules; fresh fruit and vegetables cannot be brought onto the island.",
+  "tldr": "Stay along Hobart's waterfront or in Launceston near Cataract Gorge. SkyBus reaches downtown Hobart from HBA in 20 minutes. Visit in summer for hiking and beach walks, or June for the Dark Mofo winter arts festival.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Island State of Australia"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 570,000"
+    },
+    {
+      "label": "Main airport",
+      "value": "Hobart Airport (HBA) & Launceston Airport (LST)"
+    },
+    {
+      "label": "Public transport",
+      "value": "Metro Tasmania bus network (GreenCard/Cash) / Car rental recommended"
+    },
+    {
+      "label": "Time zone",
+      "value": "AEST (UTC+10), AEDT (UTC+11) in summer"
+    },
+    {
+      "label": "Power",
+      "value": "Type I plugs, 230 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Hobart Airport to downtown Hobart?",
+      "a": "The SkyBus Hobart City Express operates frequently between Hobart Airport and major CBD hotels, taking about 20 minutes. Taxis and rental car desks are also available inside the terminal."
+    },
+    {
+      "q": "How do I travel to the MONA museum in Hobart?",
+      "a": "The most scenic way to reach MONA is aboard the official MONA Roma Ferry departing from Brooke Street Pier on Hobart's waterfront, taking roughly 25 minutes up the River Derwent."
+    },
+    {
+      "q": "Do I need a car to travel around Tasmania?",
+      "a": "Yes, renting a car is strongly recommended. While public buses serve Hobart and Launceston, reaching iconic natural sights like Cradle Mountain, Freycinet, and Port Arthur requires private transport."
+    },
+    {
+      "q": "What is the Tasmanian National Parks Pass?",
+      "a": "The National Parks Pass grants entry to all Tasmanian national parks. You can buy a daily or 8-week holiday pass online, at visitor centres, or at park entry booths."
+    },
+    {
+      "q": "How far is Port Arthur from Hobart?",
+      "a": "Port Arthur Historic Site lies 100 km southeast of Hobart on the Tasman Peninsula, taking about 90 minutes by car or on organized day tour buses."
+    },
+    {
+      "q": "What is Dark Mofo and when is it held?",
+      "a": "Dark Mofo is MONA's famous winter festival held annually in Hobart during mid-June, featuring large-scale public art, fire installations, music performances, and the Winter Solstice Nude Dip."
+    }
+  ],
+  "sources": []
+}

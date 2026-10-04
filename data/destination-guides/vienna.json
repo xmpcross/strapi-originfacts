@@ -1,0 +1,55 @@
+{
+  "slug": "vienna",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Vienna is the grand imperial capital of Austria, set along the Danube River in Central Europe. Famed for its Habsburg royal heritage, opulent palaces, classical music legacy of Mozart and Beethoven, traditional coffeehouse culture, and architectural grandeur along the Ringstraße boulevard.\n\n## Where to stay in Vienna\n\nInnere Stadt (1st District) is Vienna's historic center, putting you within walking distance of St. Stephen's Cathedral, the Hofburg Palace, and luxury shopping. Neubau (7th District) near the Museumsquartier offers trendy boutique hotels, contemporary dining, and indie shops. Leopoldstadt across the Danube canal appeals to travelers near the Prater park and giant Ferris wheel.\n\n## Things to do in Vienna\n\nTour the opulent summer palace and gardens of Schönbrunn Palace. Admire Gustav Klimt's masterpiece 'The Kiss' inside Belvedere Palace. Walk through the vast Imperial Hofburg Palace complex. Attend a classical opera performance at the Vienna State Opera. Savor a slice of Sachertorte chocolate cake at a traditional Viennese coffeehouse. Ride the Riesenrad Ferris wheel.\n\n## Getting around Vienna\n\nVienna International Airport (VIE) is situated 18 km southeast. The City Airport Train (CAT) connects VIE to Wien Mitte station in 16 minutes, while S-Bahn line S7 offers a cheap 25-minute route. Wiener Linien operates subways (U-Bahn), trams, and buses. Passengers use contactless tickets or 24/48/72-hour transit passes.\n\n## When to visit Vienna\n\nSpring (May to June) and Autumn (September to October) bring ideal sightseeing weather averaging 18°C to 22°C and blooming parks. Summer (July to August) is warm and cultural, while December is world-famous for enchanting Christmas Markets filling Rathausplatz and Schönbrunn.\n\n## Practical tips for Vienna\n\n- Buy a Wiener Linien 24-hour or 48-hour pass for unlimited rides on subways, trams, and buses.\n- Austria uses Type C and Type F European two-pin electrical sockets operating at 230 V.\n- Viennese coffeehouse culture is relaxed; take your time enjoying a Melange coffee without being rushed.\n- Dress formally if attending evening performances at the Vienna State Opera or Musikverein.\n- Tap water across Vienna comes straight from alpine springs and tastes exceptionally clean.",
+  "tldr": "Stay in Innere Stadt for historic sights or Neubau for museum districts. CAT trains reach Wien Mitte from VIE airport in 16 minutes. Visit in spring or autumn for classical concerts, Schönbrunn Palace, and coffeehouses.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Capital of Austria"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 2 million"
+    },
+    {
+      "label": "Main airport",
+      "value": "Vienna International Airport (VIE), 18 km southeast"
+    },
+    {
+      "label": "Public transport",
+      "value": "Wiener Linien U-Bahn, Trams, Buses, S-Bahn (Contactless / Transit Passes)"
+    },
+    {
+      "label": "Time zone",
+      "value": "CET (UTC+1), CEST (UTC+2) in summer"
+    },
+    {
+      "label": "Power",
+      "value": "Type C & F plugs, 230 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Vienna Airport to central Vienna?",
+      "a": "Take the City Airport Train (CAT) to Wien Mitte station in 16 minutes, or ride the S-Bahn line S7 train in 25 minutes for a lower fare."
+    },
+    {
+      "q": "What is a Wiener Melange?",
+      "a": "A Wiener Melange is Vienna's classic coffeehouse drink, consisting of a single shot of espresso served in a large cup, topped with steamed milk and milk foam."
+    },
+    {
+      "q": "How do I get to Schönbrunn Palace from central Vienna?",
+      "a": "Take Metro Line U4 directly from Karlsplatz or Schwedenplatz to the Schönbrunn station (15 minutes), then walk 5 minutes to the palace gates."
+    },
+    {
+      "q": "What is the Sachertorte and where can I try it?",
+      "a": "Sachertorte is Vienna's iconic dense chocolate cake layered with apricot jam and dark chocolate icing, created in 1832. Try it at Hotel Sacher or Café Demel."
+    },
+    {
+      "q": "What is the Ringstraße?",
+      "a": "The Ringstraße is a grand circular boulevard encircling Vienna's Innere Stadt, constructed in the 19th century on the site of old city walls, housing the Parliament, City Hall, and State Opera."
+    }
+  ],
+  "sources": []
+}

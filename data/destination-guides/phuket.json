@@ -1,0 +1,59 @@
+{
+  "slug": "phuket",
+  "source": "content tracker CSV (v3), imported by ops/import-city-guides-csv.py",
+  "description": "Phuket is Thailand's largest island, set in the Andaman Sea. World-famed for its palm-fringed white beaches, luxury resorts, vibrant nightlife along Patong's Bangla Road, Sino-Portuguese heritage architecture in Phuket Old Town, and island-hopping cruises to Phi Phi and Phang Nga Bay.\n\n## Where to stay in Phuket\n\nPatong Beach is the main resort and nightlife hub, offering endless restaurants, shopping malls, and party bars. Kata and Karon beaches to the south offer wider sands, great surf, and family-friendly resorts. Phuket Old Town in the interior appeals to culture lovers with Sino-Portuguese heritage hotels, cafes, and night markets. Bang Tao and Surin offer luxury beachfront villas.\n\n## Things to do in Phuket\n\nRelax on the golden sands of Kata, Karon, or Freedom Beach. Admire the Sino-Portuguese shopfront architecture and weekend Walking Street market in Phuket Old Town. Ascend Nakkerd Hill to stand beneath the massive 45-meter marble Big Buddha. Take a speedboat cruise through the towering karst islands of Phang Nga Bay and James Bond Island.\n\n## Getting around Phuket\n\nPhuket International Airport (HKT) lies 32 km north. Airport Smart Buses run along the west coast connecting HKT to Patong, Kata, and Karon beaches in 90 minutes. Taxis, minivans, and Grab cars are widely available. Longtail boats handle offshore beach transfers.\n\n## When to visit Phuket\n\nThe High Season (November to April) is peak time, bringing sunny skies, calm turquoise seas, and pleasant temperatures averaging 28°C to 32°C. The Monsoon Season (May to October) brings heavy tropical rain, high ocean swells, and dangerous rip currents.\n\n## Practical tips for Phuket\n\n- Pay attention to beach flags; red flags mean ocean swimming is strictly forbidden due to dangerous rip tides.\n- Thailand uses Type A, B, and C electrical sockets operating at 220 V.\n- Use the Phuket Smart Bus for budget coast-to-coast transit between the airport and major beaches.\n- Book Phi Phi or Phang Nga Bay speedboat tours via certified counters.\n- Dress respectfully when entering the Big Buddha temple complex.",
+  "tldr": "Stay in Patong for nightlife or Kata for family beaches and surf. Phuket Smart Bus connects HKT airport to west coast beaches in 90 minutes. Visit between November and April for calm emerald seas, Big Buddha views, and island cruises.",
+  "keyFacts": [
+    {
+      "label": "Status",
+      "value": "Island Province in Southern Thailand"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 420,000"
+    },
+    {
+      "label": "Main airport",
+      "value": "Phuket International Airport (HKT), 32 km north"
+    },
+    {
+      "label": "Public transport",
+      "value": "Phuket Smart Bus, Songthaews, Grab, Taxis, Speedboats"
+    },
+    {
+      "label": "Time zone",
+      "value": "ICT (UTC+7), no daylight saving"
+    },
+    {
+      "label": "Power",
+      "value": "Type A, B & C plugs, 220 V"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Phuket Airport to Patong, Kata, or Karon Beach?",
+      "a": "Shared minivans and private taxis are also available."
+    },
+    {
+      "q": "What is the best time of year to visit Phuket?",
+      "a": "The best time to visit is during the dry season from November to April, when the weather is sunny and the Andaman Sea is calm and clear for swimming and boat tours."
+    },
+    {
+      "q": "What is James Bond Island and how do I visit?",
+      "a": "James Bond Island (Khao Phing Kan) is a famous needle-like limestone karst featured in 'The Man with the Golden Gun', visited via Phang Nga Bay day cruises from Phuket piers."
+    },
+    {
+      "q": "What is there to do in Phuket Old Town?",
+      "a": "Phuket Old Town features preserved 19th-century Sino-Portuguese architecture, colorful boutique cafes, street art murals, and the Sunday Lard Yai Walking Street night market."
+    },
+    {
+      "q": "How far is the Big Buddha from Patong Beach?",
+      "a": "The Big Buddha on Nakkerd Hill lies about 20 km from Patong Beach, taking roughly 45 minutes by taxi, tuk-tuk, or motorbike up the mountain road."
+    },
+    {
+      "q": "Can I swim in the sea during the monsoon season in Phuket?",
+      "a": "Swimming during the monsoon season (May to October) can be very dangerous due to heavy rip currents. Stick to hotel pools when red warning flags are posted on beaches."
+    }
+  ],
+  "sources": []
+}

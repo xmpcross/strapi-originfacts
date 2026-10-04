@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';
 import path from 'node:path';
-import { bookingSearchLink } from '@/lib/partner-links';
+import { takeadsDeepLink } from '@/lib/takeads';
 
 const DATAFORSEO_URL = 'https://api.dataforseo.com/v3/business_data/google/hotel_searches/live';
 const DATAFORSEO_LOGIN = process.env.DATAFORSEO_LOGIN;
@@ -78,18 +78,24 @@ function isLodging(hotel: Pick<HotelResult, 'name'>): boolean {
   return !NON_LODGING_NAME.test(hotel.name);
 }
 
-/* Booking.com search for the hotel by name, through Takeads (/go). */
+/* Booking.com search for the hotel by name, as a Takeads tracking link
+   (https://tatrck.com/h/…?url=<search>&model=cpc&s=<sub id>). */
 function hotelBookingHref(hotelName: string, city?: string) {
-  return bookingSearchLink([hotelName, city].filter(Boolean).join(', '), 'originfacts_city_hotel_card');
+  // Some Google Hotels names carry zero-width characters, which derail the Booking.com search.
+  const query = [hotelName, city].filter(Boolean).join(', ').replace(/[\u200B-\u200D\u2060\uFEFF]/g, '');
+  return takeadsDeepLink(
+    'https://www.booking.com/',
+    `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(query)}`,
+    'originfacts_city_hotel_card',
+  );
 }
 
-function withAffiliateHotelLinks<T extends HotelApiPayload>(payload: T): T {
+async function withAffiliateHotelLinks<T extends HotelApiPayload>(payload: T): Promise<T> {
+  const hotels = payload.hotels.filter(isLodging);
+  const hrefs = await Promise.all(hotels.map((hotel) => hotelBookingHref(hotel.name, payload.city)));
   return {
     ...payload,
-    hotels: payload.hotels.filter(isLodging).map((hotel) => ({
-      ...hotel,
-      href: hotelBookingHref(hotel.name, payload.city),
-    })),
+    hotels: hotels.map((hotel, index) => ({ ...hotel, href: hrefs[index] })),
   };
 }
 
@@ -240,7 +246,7 @@ export async function GET(request: Request) {
   if (!forceRefresh && cached && cached.hotels.length > 0) {
     const age = Date.now() - Date.parse(cached.cachedAt);
     if (Number.isFinite(age) && age < HOTEL_CACHE_TTL_MS) {
-      const normalizedCached = withAffiliateHotelLinks(cached);
+      const normalizedCached = await withAffiliateHotelLinks(cached);
       return NextResponse.json(
         { ...normalizedCached, cached: true },
         { headers: { 'Cache-Control': 'public, max-age=300, s-maxage=3600' } },
@@ -306,10 +312,10 @@ export async function GET(request: Request) {
         price: item.prices?.price ?? null,
         currency: item.prices?.currency ?? currency,
         discount: item.prices?.discount_text ?? null,
-        href: hotelBookingHref(item.title, city),
+        href: '', // filled in by withAffiliateHotelLinks below
       }));
 
-    const payload: HotelApiPayload & { cachedAt: string } = {
+    const unlinked: HotelApiPayload & { cachedAt: string } = {
       city,
       country,
       scope,
@@ -320,6 +326,7 @@ export async function GET(request: Request) {
       cached: false,
       cachedAt: new Date().toISOString(),
     };
+    const payload = await withAffiliateHotelLinks(unlinked);
     if (hotels.length > 0) {
       await saveHotelCacheEntry(key, payload);
     }
@@ -330,7 +337,7 @@ export async function GET(request: Request) {
     );
   } catch {
     if (cached) {
-      const normalizedCached = withAffiliateHotelLinks(cached);
+      const normalizedCached = await withAffiliateHotelLinks(cached);
       return NextResponse.json(
         { ...normalizedCached, cached: true, stale: true },
         { headers: { 'Cache-Control': 'public, max-age=300, s-maxage=3600' } },

@@ -166,6 +166,27 @@ export async function resolveTakeadsLink(url: string): Promise<string | null> {
 }
 
 /**
+ * Takeads link for a page deep inside a merchant (a Booking.com search for one
+ * hotel, say). Takeads' link for any page of a merchant is the merchant's base
+ * link with `url=` set to that page (checked against the API: identical,
+ * character for character), so this needs one cached lookup per merchant
+ * rather than one per hotel. Falls back to /go if Takeads cannot be reached.
+ */
+export async function takeadsDeepLink(merchantHome: string, deepUrl: string, subId: string): Promise<string> {
+  const base = await resolveTakeadsLink(merchantHome);
+  if (base && isTakeadsMerchant(deepUrl)) {
+    try {
+      const link = new URL(base);
+      link.searchParams.set('url', deepUrl);
+      return addTrackingParameters(link.toString(), subId);
+    } catch {
+      /* fall through to /go */
+    }
+  }
+  return partnerLink(deepUrl, subId);
+}
+
+/**
  * The link to put in a server-rendered page: the Takeads tracking link itself
  * (https://tatrck.com/h/…?url=…&model=cpc&s=<subId>), resolved on the server.
  * Falls back to the /go redirect if Takeads cannot be reached, so the link is

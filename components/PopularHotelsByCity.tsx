@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { bookingSearchLink } from '@/lib/partner-links';
 
 type HotelScope = (typeof HOTEL_SCOPES)[number]['value'];
 
@@ -49,7 +48,7 @@ const HOTEL_SCOPES = [
 
 // v4: results are now anchored by coordinates; v3 entries could hold hotels
 // from the wrong country and are no longer read.
-const HOTEL_BROWSER_CACHE_PREFIX = 'originfacts:hotels-near-you:v4';
+const HOTEL_BROWSER_CACHE_PREFIX = 'originfacts:hotels-near-you:v5';
 const HOTEL_BROWSER_CACHE_TTL_MS = 1000 * 60 * 60 * 24 * 7;
 
 function hotelBrowserCacheKey({
@@ -89,15 +88,10 @@ function readHotelBrowserCache(key: string): HotelResponse | null {
       return null;
     }
 
-    return {
-      ...parsed,
-      cached: true,
-      // Rebuilt on read, so entries stored under an older link scheme are never served.
-      hotels: parsed.hotels?.map((hotel) => ({
-        ...hotel,
-        href: bookingSearchLink([hotel.name, parsed.city].filter(Boolean).join(', '), 'originfacts_city_hotel_card'),
-      })),
-    };
+    // Links come from the API (Takeads tracking URLs, built on the server). The key
+    // version above is bumped whenever the link scheme changes, so entries saved
+    // under an older scheme are never read.
+    return { ...parsed, cached: true };
   } catch {
     return null;
   }

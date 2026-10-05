@@ -8,8 +8,8 @@ export type Currency = (typeof CURRENCIES)[number];
 export const DEFAULT_CURRENCY: Currency = 'USD';
 
 export const CURRENCY_LABELS: Record<Currency, string> = {
-  AUD: 'A$ AUD',
-  USD: 'US$ USD',
+  AUD: '$ AUD',
+  USD: '$ USD',
   GBP: '£ GBP',
   EUR: '€ EUR',
 };

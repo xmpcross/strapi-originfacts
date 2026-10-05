@@ -1,0 +1,245 @@
+{
+  "iata": "PTY",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals",
+      "paragraphs": [
+        {
+          "text": "Tocumen has two terminals, Terminal 1 and Terminal 2, and the airport says its services are available at both. Its website offers an interactive map for locating shops, restaurants, services and boarding gates.",
+          "sources": [
+            "info"
+          ]
+        },
+        {
+          "text": "A free shuttle bus connects Terminal 1 with Terminal 2 and back. At Terminal 1 the stop is between gates 104 and 105; at Terminal 2 it is down the stairs in front of gate 209. The airport lists it as running every day from 5:00 a.m. to 11:00 p.m.",
+          "sources": [
+            "shuttle"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Getting to the city",
+      "paragraphs": [
+        {
+          "text": "The airport lists Panama Metro as a connection to the city via Line 2 from the airport station. Its Metro page says the airport's external shuttle takes you to the nearest Metro stop, available from both terminals; the external shuttle is reached at Level 100 through gate 2 at Terminal 1 and through gate 18 at Terminal 2. Metro accepts Visa and MasterCard.",
+          "sources": [
+            "transport",
+            "metro",
+            "shuttle"
+          ]
+        },
+        {
+          "text": "The airport gives approximate Metro travel times from the airport of 30 min to Metro Mall, 35 min to Mega Mall, 60 min to Andes Mall and 80 min to Albrook Mall. The Metro operator's own website could not be read, so check current Metro information before you travel.",
+          "sources": [
+            "metro"
+          ]
+        },
+        {
+          "text": "MetroBus boarding cards are sold in both terminals. The airport's page gives an approximate fare of B/.0.25 – 1.25 per trip depending on the route, 2 free transfers, and operating hours of 5:00 – 23:00 every day of the week. MiBus customer support has a free call line, 311.",
+          "sources": [
+            "metrobus"
+          ]
+        },
+        {
+          "text": "Official taxis are described by the airport as a 24/7 service with regulated fares. The stands are at the exit of the arrivals area at Terminal 1 and at the main arrivals exit of Terminal 2, and a taxi can be requested in advance on +507 238-2700.",
+          "sources": [
+            "transport",
+            "taxi"
+          ]
+        },
+        {
+          "text": "The airport's taxi page lists reference fares in USD per trip, including up to 2 passengers. On 5 October 2026 the page showed $7 to Crown Plaza, $15 to Metromall, $30 to Panama City, $35 to Albrook and $85 to Colon. The page shows no validity date, so check the current fare for your destination; for additional passengers, tours or hourly transfers, contact the taxi cooperative.",
+          "sources": [
+            "taxi"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parking",
+      "heading": "Parking",
+      "paragraphs": [
+        {
+          "text": "The airport's parking page, as read on 5 October 2026 with no validity date shown, lists the same rates for Terminal 1 and Terminal 2: B/. 0.03 per minute for the first 2 hours (0 - 120 min), B/. 0.04 per minute from 121 to 360 min (up to 6 hours), and B/. 0.01 per minute from 361 min onwards, up to a maximum of $24.00 per day. The lost-ticket fee is $24.00 and the page should be checked before you travel.",
+          "sources": [
+            "parking"
+          ]
+        },
+        {
+          "text": "Payment at the booth or cashier is by debit card, credit card or cash. After paying, customers have 15 minutes to exit the car park; if that time is exceeded, payment must be made again.",
+          "sources": [
+            "parking"
+          ]
+        },
+        {
+          "text": "The parking page also lists the service as available 24/7, with covered parking and 24-hour security.",
+          "sources": [
+            "parking"
+          ]
+        },
+        {
+          "text": "When the airport announced charging at Terminal 2 on 15 July 2025, it said there were 1,209 spaces at Terminal 2 and 2,464 user spaces in total across the two terminals, plus a free short-stay area called Cellphone Parking for 118 vehicles. These counts are from that announcement and may have changed.",
+          "sources": [
+            "parking-news"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assistance",
+      "heading": "Special assistance and the sensory room",
+      "paragraphs": [
+        {
+          "text": "The airport's passenger services page offers a form to request personalised assistance for people with reduced mobility, seniors, or special needs. The page does not state a notice period.",
+          "sources": [
+            "pasajeros"
+          ]
+        },
+        {
+          "text": "The same page offers a sensory room, described as a quiet and conditioned space for people with sensory sensitivity, and says to reserve your room in advance.",
+          "sources": [
+            "pasajeros"
+          ]
+        },
+        {
+          "text": "The airport announced the sensory room on 3 September 2025, saying it is in the building that connects Terminals 1 and 2. The announcement also lists accessible signage, adapted toilets, ramps and priority assistance during boarding among its inclusion measures.",
+          "sources": [
+            "sensory-news"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Is there a free shuttle between Terminal 1 and Terminal 2 at Tocumen?",
+      "a": "Yes. The airport lists a free shuttle bus between the two terminals, running every day from 5:00 a.m. to 11:00 p.m. At Terminal 1 the stop is between gates 104 and 105; at Terminal 2 it is down the stairs in front of gate 209.",
+      "sources": [
+        "shuttle"
+      ]
+    },
+    {
+      "q": "How much does parking at Tocumen cost?",
+      "a": "On 5 October 2026 the airport's parking page listed B/. 0.03 per minute for the first 2 hours, B/. 0.04 per minute from 121 to 360 minutes and B/. 0.01 per minute after that, up to a maximum of $24.00 per day. Check the page for current rates.",
+      "sources": [
+        "parking"
+      ]
+    },
+    {
+      "q": "How much is a taxi from Tocumen to Panama City?",
+      "a": "The airport's taxi page showed a reference fare of $30 to Panama City on 5 October 2026, including up to 2 passengers. Check the page for the current fare to your destination.",
+      "sources": [
+        "taxi"
+      ]
+    },
+    {
+      "q": "How do I reach the Metro from Tocumen?",
+      "a": "The airport says its external shuttle takes you to the nearest Metro stop from both terminals. It is reached at Level 100 through gate 2 at Terminal 1 and through gate 18 at Terminal 2.",
+      "sources": [
+        "metro",
+        "shuttle"
+      ]
+    },
+    {
+      "q": "Does Tocumen have a sensory room?",
+      "a": "Yes. The airport's passenger services page offers a sensory room for people with sensory sensitivity and says to reserve it in advance. The airport says it is in the building that connects Terminals 1 and 2.",
+      "sources": [
+        "pasajeros",
+        "sensory-news"
+      ]
+    },
+    {
+      "q": "How long does MetroBus run from the airport?",
+      "a": "The airport's MetroBus page gives operating hours of 5:00 – 23:00 every day of the week, with an approximate fare of B/.0.25 – 1.25 per trip depending on the route.",
+      "sources": [
+        "metrobus"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "shuttle",
+      "title": "Aeropuerto Internacional de Tocumen",
+      "publisher": "Tocumen S.A. (airport operator)",
+      "url": "https://www.tocumenaero.com/en/transporte/shuttlebus",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "info",
+      "title": "Aeropuerto Internacional de Tocumen",
+      "publisher": "Tocumen S.A. (airport operator)",
+      "url": "https://www.tocumenaero.com/en/informacion",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "transport",
+      "title": "Aeropuerto Internacional de Tocumen",
+      "publisher": "Tocumen S.A. (airport operator)",
+      "url": "https://www.tocumenaero.com/en/transporte",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "metro",
+      "title": "Aeropuerto Internacional de Tocumen",
+      "publisher": "Tocumen S.A. (airport operator)",
+      "url": "https://www.tocumenaero.com/en/transporte/metro",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "metrobus",
+      "title": "Aeropuerto Internacional de Tocumen",
+      "publisher": "Tocumen S.A. (airport operator)",
+      "url": "https://www.tocumenaero.com/en/transporte/metrobus",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "taxi",
+      "title": "Aeropuerto Internacional de Tocumen",
+      "publisher": "Tocumen S.A. (airport operator)",
+      "url": "https://www.tocumenaero.com/en/transporte/taxi",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "parking",
+      "title": "Aeropuerto Internacional de Tocumen",
+      "publisher": "Tocumen S.A. (airport operator)",
+      "url": "https://www.tocumenaero.com/en/transporte/estacionamientos",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "parking-news",
+      "title": "Aeropuerto Internacional de Tocumen",
+      "publisher": "Tocumen S.A. (airport operator)",
+      "url": "https://www.tocumenaero.com/en/corporativo/noticias/aeropuerto-internacional-de-tocumen-implementara-cobro-por-uso-de-estacionamientos-en-terminal-2-a-partir-del-4-de-agosto",
+      "published": "2025-07-15",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "pasajeros",
+      "title": "Aeropuerto Internacional de Tocumen",
+      "publisher": "Tocumen S.A. (airport operator)",
+      "url": "https://www.tocumenaero.com/en/pasajeros",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "sensory-news",
+      "title": "Aeropuerto Internacional de Tocumen",
+      "publisher": "Tocumen S.A. (airport operator)",
+      "url": "https://www.tocumenaero.com/en/corporativo/noticias/el-aeropuerto-internacional-de-tocumen-inaugura-primera-sala-sensorial-de-centroamerica-y-el-caribe",
+      "published": "2025-09-03",
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

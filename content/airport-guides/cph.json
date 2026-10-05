@@ -1,0 +1,319 @@
+{
+  "iata": "CPH",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals",
+      "paragraphs": [
+        {
+          "text": "Copenhagen Airport check-in is in Terminal 2 or Terminal 3, depending on the airline. A copy of the airport's page archived on 26 August 2026 tells passengers to find their airline in either Terminal 2 or Terminal 3 if they are checking in with staff at the check-in desks.",
+          "sources": [
+            "cph-checkin"
+          ]
+        },
+        {
+          "text": "Terminal 3 is the rail and Metro terminal. The Copenhagen Metro says its airport station is part of Terminal 3, which houses the arrival hall and check-in area, and that you can check in at the Metro station, where there are also self-service check-in kiosks. A copy of the airport's page archived on 21 September 2025 says the train station is in Terminal 3.",
+          "sources": [
+            "m-station",
+            "cph-tog"
+          ]
+        },
+        {
+          "text": "A copy of the airport's Metro page archived on 17 March 2025 says that, if you travel with hand luggage only, you can walk from the Metro to security control and SAS Fast Track over a 100-metre footbridge that runs through Terminal 3 at first-floor level.",
+          "sources": [
+            "cph-metro"
+          ]
+        },
+        {
+          "text": "For taxis, a copy of the airport's page archived on 21 September 2025 says passengers are set down directly outside Terminal 2 and Terminal 3, and that taxis are boarded directly in front of Terminal 3.",
+          "sources": [
+            "cph-taxi"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Getting into Copenhagen",
+      "paragraphs": [
+        {
+          "text": "The Metro line M2 runs between Vanløse and Copenhagen Airport and has 16 stations in total. The Metro operator says it takes 14 minutes to reach the centre of Copenhagen from the airport. You can change to S-trains at Vanløse, Flintholm and Nørreport, and to regional trains at Copenhagen Airport.",
+          "sources": [
+            "m-m2",
+            "m-station"
+          ]
+        },
+        {
+          "text": "The Metro operator's timetable gives approximately every 2 minutes in the rush hour (07-09 and 14-18) and approximately every 3 minutes at other daytime and evening times and at weekends. Between 01 and 07 it runs approximately every 8 minutes after Friday and Saturday and approximately every 20 minutes after Sunday to Thursday.",
+          "sources": [
+            "m-m2"
+          ]
+        },
+        {
+          "text": "The M2 runs in zones 1-4, but because of a rule about ring zones you pay for a maximum of three zones on the Metro. Tickets can be bought from the ticket machines at all Metro stations.",
+          "sources": [
+            "m-m2",
+            "m-tickets"
+          ]
+        },
+        {
+          "text": "DSB, the national rail operator, says the quickest way to or from the airport from further afield is an InterCity or InterCityLyn train, while local trains within Zealand are Regionaltog services that typically stop at every station. The airport station is self-service, with ticket machines at DSB Salg & Service in Terminal 3, and DSB warns that you cannot buy a ticket on the train.",
+          "sources": [
+            "dsb-station"
+          ]
+        },
+        {
+          "text": "A copy of the airport's page archived on 21 September 2025 says intercity trains run between Copenhagen Airport and central Copenhagen, and that trains also run between the airport and Malmö in Sweden.",
+          "sources": [
+            "cph-tog"
+          ]
+        },
+        {
+          "text": "A copy of the airport's page archived on 21 September 2025 says bus line 5C runs between the airport and central Copenhagen, where you can change to other bus and train connections, and that lines 5C, 35 and 36 stop in front of Terminal 3 on Ellehammersvej. Bus routes change, so check the current route in a journey planner before you rely on it.",
+          "sources": [
+            "cph-bus"
+          ]
+        },
+        {
+          "text": "Taxis can be pre-booked in the TAXA 4x35 app, where you choose Terminal 2, Terminal 3 or pick-up as the destination. For a ride from the airport, TAXA says a car arrives in just 3-5 minutes and advises choosing the pick-up address Terminal 3, Lufthavn Afhentning in the app. TAXA also says a pre-booking is not the same as a guaranteed car, and a minibus for lots of luggage can be ordered on 35 39 35 35.",
+          "sources": [
+            "taxa-air"
+          ]
+        },
+        {
+          "text": "A copy of the airport's page archived on 21 September 2025 adds that some taxi companies may charge an extra fee for journeys from the airport, and that a taxi rank is reserved for taxis to Sweden directly outside Terminal 3. Danish taxis also accept trips to Sweden.",
+          "sources": [
+            "cph-taxi"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parking",
+      "heading": "Parking",
+      "paragraphs": [
+        {
+          "text": "A copy of the airport's car park map archived on 23 September 2026 groups the car parks by product: Direct parking in P4, P6, P7 and P8, Standard parking in P11 and P12 (and P1 in some periods), and Budget parking in P15, P17 and P19. It says Budget parking customers can use free terminal buses that run directly to Terminals 2 and 3, and that We Park You Fly is directly beneath Terminal 3. Prices vary by product and dates, so use the booking page on cph.dk for current prices.",
+          "sources": [
+            "cph-pmap"
+          ]
+        },
+        {
+          "text": "A copy of the airport's page archived on 3 April 2026 says BroBizz can no longer be used at the airport's car parks. It describes number-plate recognition, which lets the barrier open automatically when you drive in and out of the multi-storey car parks, and says electric-car charging is available in a limited number of spaces spread over three areas.",
+          "sources": [
+            "cph-park"
+          ]
+        },
+        {
+          "text": "A copy of the airport's page archived on 16 March 2025 says you need a disabled parking card to use the disabled bays, and that the bays are in all of the airport's multi-storey car parks apart from the surface car parks P15 and P17.",
+          "sources": [
+            "cph-hcpark"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assistance",
+      "heading": "Assistance for reduced mobility",
+      "paragraphs": [
+        {
+          "text": "A copy of the airport's page archived on 23 September 2026 says assistance in Copenhagen Airport is available whichever airline you fly with, and that Falck escorts passengers and provides the service. The page recommends booking assistance with your airline or travel agent when you book the trip.",
+          "sources": [
+            "cph-prm"
+          ]
+        },
+        {
+          "text": "A copy of the airport's page archived on 23 September 2026 says that if you bring an electric wheelchair or an assistance dog, you must book assistance no later than 48 hours before departure.",
+          "sources": [
+            "cph-prm"
+          ]
+        },
+        {
+          "text": "For rail travel to or from the airport, the archived page tells passengers to contact their train company directly, with separate booking links for DSB and Arriva. It also says passengers with an invisible disability can wear the Sunflower lanyard (Solsikkesnoren).",
+          "sources": [
+            "cph-prm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lounges",
+      "heading": "Lounges",
+      "paragraphs": [
+        {
+          "text": "Regus Express is a business lounge in Terminal 3. A copy of its page on cph.dk archived on 10 June 2026 places it in the arrivals hall of Terminal 3 on the 4th floor, and says access can be bought through the Regus Express website. It also lists an arrivals lounge with space for about 60 guests and 5 meeting rooms for 2 to 25 people. Opening hours and prices are not given here, so check the Regus Express page.",
+          "sources": [
+            "cph-regus"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How long does the Metro take from Copenhagen Airport to the city centre?",
+      "a": "The Metro operator says it takes 14 minutes by Metro to reach the centre of Copenhagen from the airport. The line is M2.",
+      "sources": [
+        "m-station"
+      ]
+    },
+    {
+      "q": "Can I buy a train ticket on the train at Copenhagen Airport?",
+      "a": "No. DSB says it is not possible to buy a ticket on the train, and that the airport station is self-service, with ticket machines at DSB Salg & Service in Terminal 3.",
+      "sources": [
+        "dsb-station"
+      ]
+    },
+    {
+      "q": "How do I book assistance for reduced mobility at Copenhagen Airport?",
+      "a": "The airport's page, archived on 23 September 2026, recommends booking assistance with your airline or travel agent when you book your trip. If you bring an electric wheelchair or an assistance dog, book no later than 48 hours before departure.",
+      "sources": [
+        "cph-prm"
+      ]
+    },
+    {
+      "q": "Is there a lounge at Copenhagen Airport that I can pay to enter?",
+      "a": "The airport lists the Regus Express business lounge in Terminal 3. A copy of the page archived on 10 June 2026 says access can be bought through the Regus Express website. Check that site for prices and opening hours.",
+      "sources": [
+        "cph-regus"
+      ]
+    },
+    {
+      "q": "Can I still pay for airport parking with BroBizz?",
+      "a": "No. A copy of the airport's page archived on 3 April 2026 says BroBizz can no longer be used at the airport.",
+      "sources": [
+        "cph-park"
+      ]
+    },
+    {
+      "q": "Where do I find a pre-booked taxi at Copenhagen Airport?",
+      "a": "TAXA advises choosing the pick-up address Terminal 3, Lufthavn Afhentning in its app, and says the car arrives in 3-5 minutes.",
+      "sources": [
+        "taxa-air"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "m-station",
+      "title": "Københavns Lufthavn Metro Station | The Copenhagen Metro",
+      "publisher": "Metroselskabet (Copenhagen Metro)",
+      "url": "https://m.dk/en/plan-your-trip/koebenhavns-lufthavn/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "m-m2",
+      "title": "Vanløse–Copenhagen Airport Metro Route - Timetables | Metroen",
+      "publisher": "Metroselskabet (Copenhagen Metro)",
+      "url": "https://m.dk/en/routes-and-timetables/vanloese-koebenhavns-lufthavn/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "m-tickets",
+      "title": "Copenhagen Metro Tickets – Travel | The Metro",
+      "publisher": "Metroselskabet (Copenhagen Metro)",
+      "url": "https://m.dk/en/travel-with-the-metro/tickets/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "dsb-station",
+      "title": "Københavns Lufthavn | Tag med DSB til/fra din rejse →",
+      "publisher": "DSB",
+      "url": "https://www.dsb.dk/trafikinformation/stationer/kobenhavns-lufthavn-kastrup/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "taxa-air",
+      "title": "Lufthavnstaxa | Bestil en taxi til & fra Kastrup lufthavn | 4x35",
+      "publisher": "TAXA 4x35",
+      "url": "https://taxa.dk/bestil/lufthavnstaxa/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "cph-checkin",
+      "title": "Check-in",
+      "publisher": "Copenhagen Airports A/S (cph.dk, archived copy)",
+      "url": "https://web.archive.org/web/20260826185604/https://www.cph.dk/praktisk/check-in",
+      "published": "2026-08-26",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "cph-tog",
+      "title": "Tog til og fra Københavns Lufthavne - Find info her | CPH",
+      "publisher": "Copenhagen Airports A/S (cph.dk, archived copy)",
+      "url": "https://web.archive.org/web/20250921055221/https://www.cph.dk/parkering-transport/bus-tog-metro-taxi/tog",
+      "published": "2025-09-21",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "cph-bus",
+      "title": "Bus",
+      "publisher": "Copenhagen Airports A/S (cph.dk, archived copy)",
+      "url": "https://web.archive.org/web/20250921060154/https://www.cph.dk/parkering-transport/bus-tog-metro-taxi/bus",
+      "published": "2025-09-21",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "cph-metro",
+      "title": "Metro til og fra Københavns Lufthavne - Find vej her | CPH",
+      "publisher": "Copenhagen Airports A/S (cph.dk, archived copy)",
+      "url": "https://web.archive.org/web/20250317135145/https://www.cph.dk/parkering-transport/bus-tog-metro-taxi/metro",
+      "published": "2025-03-17",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "cph-taxi",
+      "title": "Taxa til Københavns Lufthavne - Bliv sat af lige ved døren | CPH",
+      "publisher": "Copenhagen Airports A/S (cph.dk, archived copy)",
+      "url": "https://web.archive.org/web/20250921055319/https://www.cph.dk/parkering-transport/bus-tog-metro-taxi/taxi",
+      "published": "2025-09-21",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "cph-prm",
+      "title": "Rejsende med handicap",
+      "publisher": "Copenhagen Airports A/S (cph.dk, archived copy)",
+      "url": "https://web.archive.org/web/20260923192038/https://www.cph.dk/praktisk/rejsende-med-handicap",
+      "published": "2026-09-23",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "cph-hcpark",
+      "title": "Handicapparkering",
+      "publisher": "Copenhagen Airports A/S (cph.dk, archived copy)",
+      "url": "https://web.archive.org/web/20250316123414/https://www.cph.dk/parkering-transport/handicapparkering",
+      "published": "2025-03-16",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "cph-regus",
+      "title": "Regus Express",
+      "publisher": "Copenhagen Airports A/S (cph.dk, archived copy)",
+      "url": "https://web.archive.org/web/20260610031050/https://www.cph.dk/praktisk/workspaces-og-lounges/regus-express",
+      "published": "2026-06-10",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "cph-pmap",
+      "title": "CPH Parkeringskort – Få overblik over Københavns Lufthavn – Se kort",
+      "publisher": "Copenhagen Airports A/S (cph.dk, archived copy)",
+      "url": "https://web.archive.org/web/20260923175947/https://www.cph.dk/parkering-transport/parkeringskort",
+      "published": "2026-09-23",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "cph-park",
+      "title": "Sådan parkerer du",
+      "publisher": "Copenhagen Airports A/S (cph.dk, archived copy)",
+      "url": "https://web.archive.org/web/20260403094807/https://www.cph.dk/parkering-transport/saadan-parkerer-du",
+      "published": "2026-04-03",
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

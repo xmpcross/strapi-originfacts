@@ -1,0 +1,280 @@
+{
+  "iata": "ATL",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals",
+      "paragraphs": [
+        {
+          "text": "Atlanta has two terminals, the Domestic Terminal at 6000 North Terminal Parkway and the International Terminal at 2600 Maynard H. Jackson Jr. Blvd. According to a copy of the airport’s Maps page archived on 10 September 2026, the International Terminal has its own entrance, separate from the domestic terminal, reached from Interstate 75 at Exit 239.",
+          "sources": [
+            "atl-maps"
+          ]
+        },
+        {
+          "text": "The same archived copy says passengers travelling outside the United States should check in at the International Terminal, and passengers flying within the United States at the Domestic Terminal, and tells passengers to contact their airline for specific check-in requirements.",
+          "sources": [
+            "atl-maps"
+          ]
+        },
+        {
+          "text": "Gates are grouped into concourses lettered T, A, B, C, D, E and F: the airport’s amenities page lists service animal relief areas near gates T7, A10, B33, C17, E15 and F7, plus D-Centerpoint. MARTA’s page places Concourse F at the International Terminal.",
+          "sources": [
+            "atl-amenities",
+            "marta-airport"
+          ]
+        },
+        {
+          "text": "Between the terminals, the archived Maps page says a free shuttle leaves from the curb outside the International Terminal and drops passengers at the west end of the Domestic Terminal, and that passengers can also take the Plane Train. In the other direction, MARTA says there is a free shuttle at the arrivals level of the International Terminal that goes to the Domestic Terminal’s baggage claim, and that the International Terminal shuttles operate 24/7 with 15 minutes travel time between terminals.",
+          "sources": [
+            "atl-maps",
+            "marta-airport"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Getting into Atlanta",
+      "paragraphs": [
+        {
+          "text": "MARTA’s Red and Gold lines run directly to and from the Airport Station inside the Domestic Terminal, between the North and South baggage claims. The Airport Station has a full-service RideStore with trained staff to assist you.",
+          "sources": [
+            "marta-airport",
+            "marta-stations"
+          ]
+        },
+        {
+          "text": "MARTA’s station list gives these average travel times to the airport: 16 minutes from Five Points, 20 minutes from Midtown and 32 minutes from Buckhead.",
+          "sources": [
+            "marta-stations"
+          ]
+        },
+        {
+          "text": "MARTA’s airport page warns that if you are travelling from the airport to Buckhead, Medical Center, Dunwoody, Sandy Springs or North Springs stations after 8:30 pm, you may need to change to the Red Line at Lindbergh Center. That page does not carry a date, so check MARTA’s current service information before relying on it.",
+          "sources": [
+            "marta-airport"
+          ]
+        },
+        {
+          "text": "On MARTA’s fares page on 5 October 2026, the standard fare on rail, bus, Rapid and MARTA Reach was $2.50 and came with up to 4 free transfers in 3 hours. The reduced fare was $1.00 for seniors over 65, people on Medicare and people with disabilities. The page shows no date from which these fares apply, so check before you travel.",
+          "sources": [
+            "marta-fares"
+          ]
+        },
+        {
+          "text": "MARTA runs special rail schedules for track work, holidays and special events. Its special schedules page on 5 October 2026 lists a changed Gold Line service of 10-24 minutes between Doraville and Airport on 7 and 8 October 2026. Check MARTA’s page for the date you travel.",
+          "sources": [
+            "marta-special"
+          ]
+        },
+        {
+          "text": "Road transport leaves from the Domestic Terminal’s Ground Transportation Center on the west side. According to a copy of the airport’s Ground Transportation page archived on 24 September 2026, taxis load in Aisle A (stalls A3 to A10), hotel shuttles in Aisle C, and off-airport parking shuttles in Aisle D. At the International Terminal, taxis are on the arrivals level outside door A-1. The page gave no taxi fares that can be used here, so check the airport’s current page.",
+          "sources": [
+            "atl-ground"
+          ]
+        },
+        {
+          "text": "A copy of the airport's page archived on 24 September 2026 says rideshare pick-ups at the Domestic Terminal occur in the North Economy lot. Because the airport was moving services into the new Ground Transportation Center when that copy was taken, check the airport’s current page for the rideshare pick-up point.",
+          "sources": [
+            "atl-ground"
+          ]
+        },
+        {
+          "text": "The Rental Car Center is reached by the SkyTrain, an automated people mover that the archived page describes as complimentary. The airport also runs a free terminal-to-terminal shuttle connector between the International Terminal and the Rental Car Center, and between the Domestic and International terminals. From the International Terminal’s arrivals level, designated shuttles also serve the Domestic Terminal ground transportation centre, which includes the MARTA station.",
+          "sources": [
+            "atl-ground",
+            "atl-maps"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parking",
+      "heading": "Parking",
+      "paragraphs": [
+        {
+          "text": "The airport publishes separate printable parking maps for the Domestic Terminal and for the Maynard H. Jackson Jr. International Terminal. It does not show a price that can be used here: prices on the archived parking page are not reproduced, so check the airport’s current parking page for rates.",
+          "sources": [
+            "atl-maps",
+            "atl-parking"
+          ]
+        },
+        {
+          "text": "According to a copy of the airport’s parking page archived on 10 September 2026, ATL West Deck is described as the newest airport parking, with the SkyTrain located on level 4 of the parking deck. International hourly parking is described as located directly in front of the international terminal.",
+          "sources": [
+            "atl-parking"
+          ]
+        },
+        {
+          "text": "For passengers with disabilities, the airport’s accessibility page says a free, wheelchair-accessible shuttle bus from the Airport Park-Ride facility will pick up passengers in their vehicle and take them to curbside check-in.",
+          "sources": [
+            "atl-ada"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assistance",
+      "heading": "Assistance for reduced mobility",
+      "paragraphs": [
+        {
+          "text": "A copy of the airport’s accessibility page archived on 6 July 2026 says that airline representatives provide wheelchair assistance and that to reserve a wheelchair you should contact the airline directly, or go to the ticketing counter, before your scheduled flight. It adds that airlines provide special assistance for their ticketed passengers.",
+          "sources": [
+            "atl-ada"
+          ]
+        },
+        {
+          "text": "The same page says the airport offers Hidden Disabilities Sunflower items, a lanyard and an ID card or pin, at information desks for passengers who need additional support or simply a little more time.",
+          "sources": [
+            "atl-ada"
+          ]
+        },
+        {
+          "text": "For the journey to the airport, the page says to contact the ground transportation companies to request special assistance, a wheelchair lift, or ramp-equipped transportation.",
+          "sources": [
+            "atl-ada"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lounges",
+      "heading": "Lounges",
+      "paragraphs": [
+        {
+          "text": "A copy of the airport’s amenities page archived on 1 May 2026 lists an American Airlines Admiral Club in Concourse T across from gate T10, a United Club at T11, and Delta Sky Clubs in Concourses A, B, C, D, E, F and T. Parts of that page look dated, so confirm locations and access with the lounge operator.",
+          "sources": [
+            "atl-amenities"
+          ]
+        },
+        {
+          "text": "The same page lists The Club at ATL, which it calls Hartsfield-Jackson’s first common-use lounge, on the mezzanine level of Concourse F. It says the lounge provides services to British Airways, Lufthansa, Priority Pass, Lounge Club and Diners Club International. Opening hours and day-pass prices are not given here because they cannot be taken from an archived copy.",
+          "sources": [
+            "atl-amenities"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get between the Domestic and International terminals at Atlanta airport?",
+      "a": "A copy of the airport’s Maps page archived on 10 September 2026 says a free shuttle leaves from the curb outside the International Terminal and drops passengers at the west end of the Domestic Terminal, and that passengers can also take the Plane Train. MARTA says the International Terminal shuttles operate 24/7 with 15 minutes travel time between terminals.",
+      "sources": [
+        "atl-maps",
+        "marta-airport"
+      ]
+    },
+    {
+      "q": "Which terminal should I check in at for an international flight from Atlanta?",
+      "a": "The archived Maps page says passengers travelling outside the United States should check in at the International Terminal, and to contact your airline for specific check-in requirements.",
+      "sources": [
+        "atl-maps"
+      ]
+    },
+    {
+      "q": "Is there a train from Atlanta airport into the city?",
+      "a": "Yes. MARTA’s Red and Gold lines run directly to and from the Airport Station, which is inside the Domestic Terminal between the North and South baggage claims.",
+      "sources": [
+        "marta-airport"
+      ]
+    },
+    {
+      "q": "How long does MARTA take from the airport to Five Points?",
+      "a": "MARTA’s station list gives an average travel time to the airport of 16 minutes from Five Points, 20 minutes from Midtown and 32 minutes from Buckhead.",
+      "sources": [
+        "marta-stations"
+      ]
+    },
+    {
+      "q": "How do I get to the Rental Car Center at Atlanta airport?",
+      "a": "The Rental Car Center is reached by the SkyTrain, which the airport’s archived Ground Transportation page describes as complimentary. A free terminal-to-terminal shuttle connector also runs between the International Terminal and the Rental Car Center.",
+      "sources": [
+        "atl-ground"
+      ]
+    },
+    {
+      "q": "How do I request wheelchair assistance at Atlanta airport?",
+      "a": "The airport’s archived accessibility page says to contact your airline directly, or go to the ticketing counter, before your scheduled flight to reserve a wheelchair.",
+      "sources": [
+        "atl-ada"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "marta-airport",
+      "title": "MARTA",
+      "publisher": "MARTA (Metropolitan Atlanta Rapid Transit Authority)",
+      "url": "https://itsmarta.com/getting-to-airport.aspx",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "marta-stations",
+      "title": "MARTA",
+      "publisher": "MARTA (Metropolitan Atlanta Rapid Transit Authority)",
+      "url": "https://itsmarta.com/train-stations-and-schedules.aspx",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "marta-fares",
+      "title": "Fares & transfers",
+      "publisher": "MARTA (Metropolitan Atlanta Rapid Transit Authority)",
+      "url": "https://itsmarta.com/ride/how-to-pay/fares-and-transfers",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "marta-special",
+      "title": "MARTA",
+      "publisher": "MARTA (Metropolitan Atlanta Rapid Transit Authority)",
+      "url": "https://itsmarta.com/special-rail-schedules.aspx",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "atl-ground",
+      "title": "Ground Transportation - The official website of Hartsfield-Jackson Atlanta International Airport",
+      "publisher": "City of Atlanta Department of Aviation (Hartsfield-Jackson Atlanta International Airport), via Internet Archive",
+      "url": "https://web.archive.org/web/20260924011914/https://www.atl.com/ground-transportation/",
+      "published": "2026-09-24",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "atl-maps",
+      "title": "Maps - The official website of Hartsfield-Jackson Atlanta International Airport",
+      "publisher": "City of Atlanta Department of Aviation (Hartsfield-Jackson Atlanta International Airport), via Internet Archive",
+      "url": "https://web.archive.org/web/20260910100108/https://www.atl.com/maps/",
+      "published": "2026-09-10",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "atl-amenities",
+      "title": "Airport Amenities - The official website of Hartsfield-Jackson Atlanta International Airport",
+      "publisher": "City of Atlanta Department of Aviation (Hartsfield-Jackson Atlanta International Airport), via Internet Archive",
+      "url": "https://web.archive.org/web/20260501140859/https://www.atl.com/about-atl/airport-amenities/",
+      "published": "2026-05-01",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "atl-ada",
+      "title": "Civil Rights (ADA & amp; Title VI) - The official website of Hartsfield-Jackson Atlanta International Airport",
+      "publisher": "City of Atlanta Department of Aviation (Hartsfield-Jackson Atlanta International Airport), via Internet Archive",
+      "url": "https://web.archive.org/web/20260706122827/https://www.atl.com/civil-rights/",
+      "published": "2026-07-06",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "atl-parking",
+      "title": "Parking - The official website of Hartsfield-Jackson Atlanta International Airport",
+      "publisher": "City of Atlanta Department of Aviation (Hartsfield-Jackson Atlanta International Airport), via Internet Archive",
+      "url": "https://web.archive.org/web/20260910100106/https://www.atl.com/parking/",
+      "published": "2026-09-10",
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

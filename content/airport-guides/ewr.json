@@ -1,0 +1,354 @@
+{
+  "iata": "EWR",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals",
+      "paragraphs": [
+        {
+          "text": "Newark Liberty has three terminals, A, B and C. The airport says each offers a unique experience, and that the AirTrain links the terminals with central parking, the on-airport bus, hotel shuttles, the rental car centre and public transport.",
+          "sources": [
+            "terminals"
+          ]
+        },
+        {
+          "text": "Terminal A serves Air Canada, American Airlines, Delta, JetBlue and United Airlines. The airport’s airline list shows JetBlue departures at Terminal A and its international arrivals at Terminal B. United is listed at Terminal A for domestic departures and arrivals, at Terminal B for international arrivals, and at Terminal C for domestic and international departures and arrivals.",
+          "sources": [
+            "terminals",
+            "airlines"
+          ]
+        },
+        {
+          "text": "Terminal B is home to international and domestic airlines including Alaska, Lufthansa, Frontier and SAS. Terminal C is operated by United.",
+          "sources": [
+            "terminals"
+          ]
+        },
+        {
+          "text": "United flies from both Terminal C and Terminal A. The airport describes an airside shuttle bus between Gates C71 and A28 for connecting passengers, so they do not need to go through security twice. The airport asks passengers to check with their airline before travelling, as arrivals and departures may vary.",
+          "sources": [
+            "tc",
+            "ta",
+            "airlines"
+          ]
+        },
+        {
+          "text": "The airport’s own walk times from security to gates are 2-10 minutes in Terminal A, 2-4 minutes in Terminal B and 1-10 minutes in Terminal C.",
+          "sources": [
+            "ta",
+            "tb",
+            "tc"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Getting to and from the airport",
+      "paragraphs": [
+        {
+          "text": "The AirTrain does not connect directly to Terminal A. The airport describes it as a 15 minute walk on a covered pathway or a 5 minute shuttle ride. It is free between terminals, hotel shuttles, rental cars and parking areas.",
+          "sources": [
+            "airtrain"
+          ]
+        },
+        {
+          "text": "The airport says it is modernising the AirTrain, that temporary service disruptions are possible during construction, and that shuttle buses will be available whenever service is unavailable. The Port Authority’s redevelopment page says construction of a new AirTrain began in October 2025, with passenger service expected to begin in 2030, and that the current AirTrain keeps operating until then.",
+          "sources": [
+            "airtrain",
+            "airtrain-new"
+          ]
+        },
+        {
+          "text": "For NJ Transit and Amtrak trains, take the AirTrain to the Newark Liberty International Airport Train Station. The airport lists estimated AirTrain times from the station to Terminal C of 7 minutes, Terminal B of 11 minutes and Terminal A of 20 minutes. The airport states the AirTrain fare to or from the station as $8.75 per person in addition to the transit fare; this is the price on the airport’s page on 5 October 2026, so check it before you travel.",
+          "sources": [
+            "airtrain",
+            "transit"
+          ]
+        },
+        {
+          "text": "The airport’s rail table lists NJ Transit to Newark Penn Station at 5 minutes ($12.05) and NJ Transit to Midtown Manhattan (NEC or NJCL line) at 30 minutes ($17.25). These are the figures on the airport’s page on 5 October 2026; check current fares with NJ Transit.",
+          "sources": [
+            "transit"
+          ]
+        },
+        {
+          "text": "CoachUSA runs an express bus that stops at every terminal and serves Grand Central Terminal, Bryant Park and the Port Authority Bus Terminal in Midtown Manhattan. The airport gives the journey as about 50 minutes, with tickets at $23.50 one way or $39.50 roundtrip, as listed on 5 October 2026.",
+          "sources": [
+            "transit"
+          ]
+        },
+        {
+          "text": "NJ Transit Go Bus routes serving the airport include 28, 37, 62, 67 and 107.",
+          "sources": [
+            "transit"
+          ]
+        },
+        {
+          "text": "Taxis are regulated by the airport. Its estimated fares, which exclude tips, tolls and congestion pricing, run from $60 to $80 to Manhattan depending on zone, $30–$40 to the City of Newark, $110 to LaGuardia and $160 to JFK, as listed on 5 October 2026. The airport also lists a $2.00 airport access fee on all trips and $1 for each bag, including carry-ons.",
+          "sources": [
+            "taxi"
+          ]
+        },
+        {
+          "text": "The airport says to go to the Port Authority Welcome Center in the arrivals area (Level 1) of each terminal or to an official taxi stand for official help. Cabs carry a maximum of 4 passengers, or 5 in minivans.",
+          "sources": [
+            "taxi"
+          ]
+        },
+        {
+          "text": "Ride-app pick-up points are at Terminal A on the arrivals level directly across the street from the terminal, at Terminal B on the arrivals level on the terminal frontage, and at Terminal C on floor 3 of the Terminal C Garage. The airport also lists an Uber Shuttle with two routes between EWR and Grand Central and Times Square/West Side.",
+          "sources": [
+            "rideshare"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parking",
+      "heading": "Parking",
+      "paragraphs": [
+        {
+          "text": "The airport lists four on-airport parking options: Terminal A Short-Term Parking, Terminals B & C Short-Term Parking, P4 Daily Parking and P6 Economy Parking. P4 is reached by AirTrain, and a free shuttle bus runs between P6 and terminals A, B and C about every 10 minutes.",
+          "sources": [
+            "parking",
+            "airtrain"
+          ]
+        },
+        {
+          "text": "The airport says booking at least 3 hours in advance saves money and guarantees a spot. Anyone parking for more than 30 days in any lot should call ABM on +1 (973) 961-6421 or +1 (973) 961-6422 on arrival to register the vehicle; unregistered vehicles parked for more than 30 days will be towed at the owner’s expense.",
+          "sources": [
+            "parking"
+          ]
+        },
+        {
+          "text": "Drivers can pay with E-ZPass Plus. The airport lists electric vehicle charging at the P4 Daily Parking Garage (13 ports) and on level 5 of the Terminal A Short-Term Parking Garage (162 ports).",
+          "sources": [
+            "parking"
+          ]
+        },
+        {
+          "text": "The airport lists a free Cell Phone Lot with more than 100 spaces for drivers waiting to collect passengers. Parking is not permitted in front of or alongside any terminal.",
+          "sources": [
+            "pickup"
+          ]
+        },
+        {
+          "text": "Travellers with disabilities who hold an official state-issued ADA plate, placard or permit can get a courtesy discount, which applies only after a minimum parking duration of 4.5 hours. The airport’s listed 24-hour maximum for restricted-mobility parking is $35 per 24 hours, as shown on 5 October 2026.",
+          "sources": [
+            "parking"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assistance",
+      "heading": "Assistance for disabled and reduced-mobility passengers",
+      "paragraphs": [
+        {
+          "text": "For services such as wheelchair assistance, guided assistance or oxygen requirements, the airport says you must contact your airline, travel agent or TSA Cares in advance.",
+          "sources": [
+            "access"
+          ]
+        },
+        {
+          "text": "Airport Customer Experience Specialists, in red uniforms, can be found at the airport’s Information Centers. The airport lists phone assistance on +1 (973) 961-6000, available 24 hours a day, 7 days a week.",
+          "sources": [
+            "access"
+          ]
+        },
+        {
+          "text": "For help with TSA screening from a Passenger Support Specialist, the airport says to submit a TSA Cares request at least 72 hours before your flight. The TSA Cares number it gives is +1 (855) 787-2227.",
+          "sources": [
+            "access"
+          ]
+        },
+        {
+          "text": "All AirTrain trains and stations are ADA-compliant and each train has two designated wheelchair locations. All terminals offer Service Animal Relief Areas.",
+          "sources": [
+            "airtrain",
+            "access"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lounges",
+      "heading": "Lounges",
+      "paragraphs": [
+        {
+          "text": "Terminal A has an American Airlines Admirals Club, a Delta Sky Club and a United Club. The airport says Air Canada passengers are welcome in the United Club and asks passengers to check eligibility and access with their airline.",
+          "sources": [
+            "ta"
+          ]
+        },
+        {
+          "text": "Terminal C has United Clubs at C74 and C123. The airport also lists a United Polaris Lounge for long-haul international business class passengers, and a new United Club near gate A26 in Terminal A.",
+          "sources": [
+            "tc"
+          ]
+        },
+        {
+          "text": "The USO lounge in Terminal B, on Level 2 near Door 9, is open to active-duty, Reserve and National Guard service members and their families. The airport lists its hours as Thursday to Monday, 10:00 a.m. to 6:00 p.m., and closed on Tuesday and Wednesday.",
+          "sources": [
+            "tb"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Does the Newark AirTrain go to Terminal A?",
+      "a": "Not directly. The airport says the AirTrain does not connect directly to Terminal A, and describes it as a 15 minute walk on a covered pathway or a 5 minute shuttle ride.",
+      "sources": [
+        "airtrain"
+      ]
+    },
+    {
+      "q": "How much is the AirTrain at Newark?",
+      "a": "The airport says the AirTrain is free between terminals, hotel shuttles, rental cars and parking areas. Its page on 5 October 2026 gives $8.75 per person for the trip to or from the NJ Transit/Amtrak station, in addition to the transit fare.",
+      "sources": [
+        "airtrain",
+        "transit"
+      ]
+    },
+    {
+      "q": "Which airlines use Terminal A at Newark?",
+      "a": "Air Canada, American Airlines, Delta, JetBlue and United Airlines. United also uses Terminals B and C, with an airside shuttle bus between Gates C71 and A28.",
+      "sources": [
+        "terminals",
+        "airlines",
+        "tc"
+      ]
+    },
+    {
+      "q": "Is there an express bus from Newark Airport to Manhattan?",
+      "a": "Yes. The airport lists a CoachUSA express bus that stops at every terminal and serves Grand Central Terminal, Bryant Park and the Port Authority Bus Terminal, taking about 50 minutes. Its page on 5 October 2026 gives $23.50 one way or $39.50 roundtrip.",
+      "sources": [
+        "transit"
+      ]
+    },
+    {
+      "q": "Is there a free place to wait when collecting a passenger at Newark?",
+      "a": "Yes. The airport lists a free Cell Phone Lot with more than 100 spaces and portable restrooms. Parking is not permitted in front of or alongside any terminal.",
+      "sources": [
+        "pickup"
+      ]
+    },
+    {
+      "q": "How do I arrange wheelchair assistance at Newark?",
+      "a": "The airport says you must contact your airline, travel agent or TSA Cares in advance to arrange services such as wheelchair assistance. For help with screening it asks for a TSA Cares request at least 72 hours before your flight.",
+      "sources": [
+        "access"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "terminals",
+      "title": "Explore All Terminals - EWR Newark Airport",
+      "publisher": "Port Authority of New York and New Jersey (Newark Liberty International Airport)",
+      "url": "https://www.newarkairport.com/explore-ewr/terminals",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "ta",
+      "title": "EWR Terminal A - EWR Newark Airport",
+      "publisher": "Port Authority of New York and New Jersey (Newark Liberty International Airport)",
+      "url": "https://www.newarkairport.com/explore-ewr/terminals/terminal-a",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "tb",
+      "title": "EWR Terminal B - EWR Newark Airport",
+      "publisher": "Port Authority of New York and New Jersey (Newark Liberty International Airport)",
+      "url": "https://www.newarkairport.com/explore-ewr/terminals/terminal-b",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "tc",
+      "title": "EWR Terminal C - EWR Newark Airport",
+      "publisher": "Port Authority of New York and New Jersey (Newark Liberty International Airport)",
+      "url": "https://www.newarkairport.com/explore-ewr/terminals/terminal-c",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "airlines",
+      "title": "All Airlines - EWR Newark Airport",
+      "publisher": "Port Authority of New York and New Jersey (Newark Liberty International Airport)",
+      "url": "https://www.newarkairport.com/flights/airlines",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "airtrain",
+      "title": "Newark AirTrain - EWR Newark Airport",
+      "publisher": "Port Authority of New York and New Jersey (Newark Liberty International Airport)",
+      "url": "https://www.newarkairport.com/transportation/airtrain",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "airtrain-new",
+      "title": "AirTrain Newark: New EWR Automated Train System",
+      "publisher": "Port Authority of New York and New Jersey (EWR Rebuild programme)",
+      "url": "https://www.portauthoritybuilds.com/redevelopment/us/en/ewr/projects/AirTrain.html",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "transit",
+      "title": "EWR Public Transportation - EWR Newark Airport",
+      "publisher": "Port Authority of New York and New Jersey (Newark Liberty International Airport)",
+      "url": "https://www.newarkairport.com/transportation/public-transport",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "taxi",
+      "title": "Newark Taxi Service - EWR Newark Airport",
+      "publisher": "Port Authority of New York and New Jersey (Newark Liberty International Airport)",
+      "url": "https://www.newarkairport.com/transportation/taxi-service",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "rideshare",
+      "title": "Ride Share Information - EWR Newark Airport",
+      "publisher": "Port Authority of New York and New Jersey (Newark Liberty International Airport)",
+      "url": "https://www.newarkairport.com/transportation/ride-share-services",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "parking",
+      "title": "Airport Parking - EWR Newark Airport",
+      "publisher": "Port Authority of New York and New Jersey (Newark Liberty International Airport)",
+      "url": "https://www.newarkairport.com/transportation/airport-parking",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "pickup",
+      "title": "Pick-up and Drop-off Areas - EWR Newark Airport",
+      "publisher": "Port Authority of New York and New Jersey (Newark Liberty International Airport)",
+      "url": "https://www.newarkairport.com/transportation/pick-up-drop-off",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "access",
+      "title": "Accessibility Services - EWR Newark Airport",
+      "publisher": "Port Authority of New York and New Jersey (Newark Liberty International Airport)",
+      "url": "https://www.newarkairport.com/explore-ewr/accessibility-services",
+      "published": null,
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

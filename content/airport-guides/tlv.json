@@ -1,0 +1,193 @@
+{
+  "iata": "TLV",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals",
+      "paragraphs": [
+        {
+          "text": "According to a copy of the airport's page archived on 15 September 2026, Ben Gurion has two main terminals: Terminal 3 for international flights, and Terminal 1 for both domestic and low-cost international flights.",
+          "sources": [
+            "iaa-about"
+          ]
+        },
+        {
+          "text": "A free shuttle bus links the two terminals. According to a copy of the airport's page archived on 8 February 2026, the stop for Terminal 1 is on Level G of Terminal 3, near Gate 01, and the stop for Terminal 3 is in front of Terminal 1, opposite Gate 4.",
+          "sources": [
+            "iaa-directions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Getting to and from the city",
+      "paragraphs": [
+        {
+          "text": "A copy of the airport's page archived on 8 February 2026 lists intercity bus services from Terminal 3, Level 2: Kavim bus 445 to Tel Aviv, Afikim bus 485 to Jerusalem and a Metropoline service to Be'er Sheva. It gives bus 445 and bus 485 as leaving from Exit 21. Timetables and any current changes to services are not covered here, so check the operators before you travel.",
+          "sources": [
+            "iaa-directions"
+          ]
+        },
+        {
+          "text": "A copy of the airport's page archived on 8 February 2026 says that passengers who arrive by train at Terminal 3 but depart from Terminal 1 can reach Terminal 1 on the free internal shuttle.",
+          "sources": [
+            "iaa-directions"
+          ]
+        },
+        {
+          "text": "Licensed taxis wait at Terminal 3 on the ground floor at the exit from Gate 03, and at Terminal 1 at the exit from the domestic flights' welcomers hall. The archived page says the fare is paid by meter only.",
+          "sources": [
+            "iaa-directions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parking",
+      "heading": "Parking",
+      "paragraphs": [
+        {
+          "text": "According to a copy of the airport's page archived on 7 January 2026, the short-term car park at Terminal 3 is split into two complexes, the Orchard car park in the eastern building and the Vineyard car park in the western building.",
+          "sources": [
+            "iaa-parking"
+          ]
+        },
+        {
+          "text": "A copy of the airport's page archived on 7 January 2026 describes lot 15 as the main long-term car park, and lots 21 and 22 as alternative long-term car parks for passengers flying from Terminal 1. Terminal 1 has its own car park for short-term and long-term parking. Rates change, so check the airport's current price list.",
+          "sources": [
+            "iaa-parking"
+          ]
+        },
+        {
+          "text": "The archived page says that you can leave the car parks only with the paid parking ticket.",
+          "sources": [
+            "iaa-parking"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assistance",
+      "heading": "Assistance for passengers with reduced mobility",
+      "paragraphs": [
+        {
+          "text": "According to a copy of the airport's page archived on 17 August 2026, the airlines are responsible for attending to passengers requiring assistance and their luggage, from the moment they enter the terminal building or disembark from the aircraft.",
+          "sources": [
+            "iaa-access"
+          ]
+        },
+        {
+          "text": "To receive the service, passengers should tell their airline in advance and, on arriving at the terminal, contact the ground handling company that serves their airline. The page names Laufer Aviation, GHI, QAS and Aero Handling, and says El Al provides the service on its own flights.",
+          "sources": [
+            "iaa-access"
+          ]
+        },
+        {
+          "text": "The page also says that some service desks have induction loop systems for people with hearing impairments.",
+          "sources": [
+            "iaa-access"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lounges",
+      "heading": "Lounges",
+      "paragraphs": [
+        {
+          "text": "A copy of the airport's lounges page archived on 10 January 2026 lists the Arbel Lounge in Terminal 3, Level 1, Eastern Gallery, and the El Al King David Lounge in the Terminal 3 departure hall, Concourse D, for El Al first and business class passengers and club members.",
+          "sources": [
+            "iaa-lounges"
+          ]
+        },
+        {
+          "text": "The same page lists a lounge in the departures hall at Concourse C and says economy class passengers may use lounge services for an additional fee. It also lists the Fattal Terminal, a private airport experience in Terminal 1. Opening hours and prices are not repeated here.",
+          "sources": [
+            "iaa-lounges"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Which terminal at Ben Gurion handles low-cost international flights?",
+      "a": "Terminal 1, according to a copy of the airport's page archived on 15 September 2026. It handles domestic and low-cost international flights, while Terminal 3 handles international flights.",
+      "sources": [
+        "iaa-about"
+      ]
+    },
+    {
+      "q": "Is there a free shuttle between the two terminals?",
+      "a": "Yes. A copy of the airport's page archived on 8 February 2026 describes a free internal shuttle between Terminal 3 and Terminal 1. The Terminal 3 stop is on Level G near Gate 01.",
+      "sources": [
+        "iaa-directions"
+      ]
+    },
+    {
+      "q": "How do I request assistance at Ben Gurion?",
+      "a": "Tell your airline in advance. On arrival at the terminal, contact the ground handling company that serves your airline, according to a copy of the airport's page archived on 17 August 2026.",
+      "sources": [
+        "iaa-access"
+      ]
+    },
+    {
+      "q": "Where do taxis wait at Ben Gurion?",
+      "a": "At Terminal 3, taxis are on the ground floor at the exit from Gate 03. At Terminal 1, they are at the exit from the domestic flights' welcomers hall. The fare is paid by meter only, according to a copy of the airport's page archived on 8 February 2026.",
+      "sources": [
+        "iaa-directions"
+      ]
+    },
+    {
+      "q": "Which car park is the main long-term one?",
+      "a": "Lot 15, according to a copy of the airport's page archived on 7 January 2026. Lots 21 and 22 are alternative long-term car parks for passengers flying from Terminal 1.",
+      "sources": [
+        "iaa-parking"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "iaa-about",
+      "title": "Ben Gurion Airport - About",
+      "publisher": "Israel Airports Authority (archived copy)",
+      "url": "https://web.archive.org/web/20260915175157/https://www.iaa.gov.il/en/airports/ben-gurion/about/",
+      "published": "2026-09-15",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "iaa-directions",
+      "title": "Directions List",
+      "publisher": "Israel Airports Authority (archived copy)",
+      "url": "https://web.archive.org/web/20260208161756/https://www.iaa.gov.il/en/airports/ben-gurion/directions/directions-list/?categoryId=10040",
+      "published": "2026-02-08",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "iaa-parking",
+      "title": "Parking at Ben Gurion Airport",
+      "publisher": "Israel Airports Authority (archived copy)",
+      "url": "https://web.archive.org/web/20260107174855/https://www.iaa.gov.il/en/airports/ben-gurion/parking-at-ben-gurion-airport/",
+      "published": "2026-01-07",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "iaa-access",
+      "title": "Accessibility Information for Passengers Requiring Assistance - Terminal 3",
+      "publisher": "Israel Airports Authority (archived copy)",
+      "url": "https://web.archive.org/web/20260817202408/https://www.iaa.gov.il/en/airports/ben-gurion/accessibility/",
+      "published": "2026-08-17",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "iaa-lounges",
+      "title": "Ben Gurion Airport Lounges",
+      "publisher": "Israel Airports Authority (archived copy)",
+      "url": "https://web.archive.org/web/20260110214835/https://www.iaa.gov.il/en/airports/ben-gurion/lounges/",
+      "published": "2026-01-10",
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

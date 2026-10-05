@@ -1,0 +1,92 @@
+{
+  "iata": "TSA",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals & Airport Overview",
+      "paragraphs": [
+        {
+          "text": "Taipei Songshan International Airport (TSA/RCSS) serves as a key air gateway for Taipei (Songshan), TW, handling passenger arrivals, departures, and regional transit connectivity.",
+          "sources": [
+            "src-tsa-official"
+          ]
+        },
+        {
+          "text": "The airport infrastructure is managed to support scheduled airline operations, passenger check-in halls, security screening, and departure concourses.",
+          "sources": [
+            "src-tsa-official"
+          ]
+        },
+        {
+          "text": "Field runway dimensions and surface specifications: 10/28: 2605 m (8547 ft) asphalt.",
+          "sources": [
+            "src-tsa-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Ground Transport & Transfer Options",
+      "paragraphs": [
+        {
+          "text": "Ground transportation options connecting Taipei Songshan International Airport with central Taipei (Songshan) include official airport taxi stands, rideshare services, and local municipal transit links.",
+          "sources": [
+            "src-tsa-official"
+          ]
+        },
+        {
+          "text": "Arriving passengers are encouraged to arrange transfers via designated airport transport desks or pre-booked taxi services to ensure transparent fares and reliable service into town.",
+          "sources": [
+            "src-tsa-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "planning",
+      "heading": "Travel & Check-in Recommendations",
+      "paragraphs": [
+        {
+          "text": "Travelers departing from TSA should arrive at the airport at least two hours prior to domestic flights and three hours before international departures.",
+          "sources": [
+            "src-tsa-official"
+          ]
+        },
+        {
+          "text": "Always verify terminal departure assignments, luggage size limits, and check-in cutoff times directly with your airline prior to departure.",
+          "sources": [
+            "src-tsa-official"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What is the airport code for Taipei Songshan International Airport?",
+      "a": "The IATA code for Taipei Songshan International Airport is TSA and the ICAO code is RCSS.",
+      "sources": [
+        "src-tsa-official"
+      ]
+    },
+    {
+      "q": "Which city does TSA airport serve?",
+      "a": "Taipei Songshan International Airport (TSA) serves Taipei (Songshan), TW.",
+      "sources": [
+        "src-tsa-official"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-tsa-official",
+      "title": "Taipei Songshan International Airport (TSA) Sourced Airport Data & Information",
+      "publisher": "Official Aviation Data & OurAirports",
+      "url": "https://www.tsa.gov.tw/",
+      "published": "2026-10-05",
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

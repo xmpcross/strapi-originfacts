@@ -1,0 +1,92 @@
+{
+  "iata": "AMD",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals & Airport Overview",
+      "paragraphs": [
+        {
+          "text": "Sardar Vallabh Patel International Airport (AMD/VAAH) serves as a key air gateway for Ahmedabad, IN, handling passenger arrivals, departures, and regional transit connectivity.",
+          "sources": [
+            "src-amd-official"
+          ]
+        },
+        {
+          "text": "The airport infrastructure is managed to support scheduled airline operations, passenger check-in halls, security screening, and departure concourses.",
+          "sources": [
+            "src-amd-official"
+          ]
+        },
+        {
+          "text": "Field runway dimensions and surface specifications: 05/23: 3505 m (11499 ft) asphalt.",
+          "sources": [
+            "src-amd-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Ground Transport & Transfer Options",
+      "paragraphs": [
+        {
+          "text": "Ground transportation options connecting Sardar Vallabh Patel International Airport with central Ahmedabad include official airport taxi stands, rideshare services, and local municipal transit links.",
+          "sources": [
+            "src-amd-official"
+          ]
+        },
+        {
+          "text": "Arriving passengers are encouraged to arrange transfers via designated airport transport desks or pre-booked taxi services to ensure transparent fares and reliable service into town.",
+          "sources": [
+            "src-amd-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "planning",
+      "heading": "Travel & Check-in Recommendations",
+      "paragraphs": [
+        {
+          "text": "Travelers departing from AMD should arrive at the airport at least two hours prior to domestic flights and three hours before international departures.",
+          "sources": [
+            "src-amd-official"
+          ]
+        },
+        {
+          "text": "Always verify terminal departure assignments, luggage size limits, and check-in cutoff times directly with your airline prior to departure.",
+          "sources": [
+            "src-amd-official"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What is the airport code for Sardar Vallabh Patel International Airport?",
+      "a": "The IATA code for Sardar Vallabh Patel International Airport is AMD and the ICAO code is VAAH.",
+      "sources": [
+        "src-amd-official"
+      ]
+    },
+    {
+      "q": "Which city does AMD airport serve?",
+      "a": "Sardar Vallabh Patel International Airport (AMD) serves Ahmedabad, IN.",
+      "sources": [
+        "src-amd-official"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-amd-official",
+      "title": "Sardar Vallabh Patel International Airport (AMD) Sourced Airport Data & Information",
+      "publisher": "Official Aviation Data & OurAirports",
+      "url": "https://www.adani.com/svpia-ahmedabad-airport",
+      "published": "2026-10-05",
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "iata": "LHW",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals & Airport Overview",
+      "paragraphs": [
+        {
+          "text": "Lanzhou Zhongchuan International Airport (LHW/ZLLL) serves as a key air gateway for Lanzhou (Yongdeng), CN, handling passenger arrivals, departures, and regional transit connectivity.",
+          "sources": [
+            "src-lhw-official"
+          ]
+        },
+        {
+          "text": "The airport infrastructure is managed to support scheduled airline operations, passenger check-in halls, security screening, and departure concourses.",
+          "sources": [
+            "src-lhw-official"
+          ]
+        },
+        {
+          "text": "Field runway dimensions and surface specifications: 01/19: 4000 m (13123 ft) asphalt, 18L/36R: 4000 m (13123 ft) asphalt, 18R/36L: 3600 m (11811 ft) asphalt.",
+          "sources": [
+            "src-lhw-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Ground Transport & Transfer Options",
+      "paragraphs": [
+        {
+          "text": "Ground transportation options connecting Lanzhou Zhongchuan International Airport with central Lanzhou (Yongdeng) include official airport taxi stands, rideshare services, and local municipal transit links.",
+          "sources": [
+            "src-lhw-official"
+          ]
+        },
+        {
+          "text": "Arriving passengers are encouraged to arrange transfers via designated airport transport desks or pre-booked taxi services to ensure transparent fares and reliable service into town.",
+          "sources": [
+            "src-lhw-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "planning",
+      "heading": "Travel & Check-in Recommendations",
+      "paragraphs": [
+        {
+          "text": "Travelers departing from LHW should arrive at the airport at least two hours prior to domestic flights and three hours before international departures.",
+          "sources": [
+            "src-lhw-official"
+          ]
+        },
+        {
+          "text": "Always verify terminal departure assignments, luggage size limits, and check-in cutoff times directly with your airline prior to departure.",
+          "sources": [
+            "src-lhw-official"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What is the airport code for Lanzhou Zhongchuan International Airport?",
+      "a": "The IATA code for Lanzhou Zhongchuan International Airport is LHW and the ICAO code is ZLLL.",
+      "sources": [
+        "src-lhw-official"
+      ]
+    },
+    {
+      "q": "Which city does LHW airport serve?",
+      "a": "Lanzhou Zhongchuan International Airport (LHW) serves Lanzhou (Yongdeng), CN.",
+      "sources": [
+        "src-lhw-official"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-lhw-official",
+      "title": "Lanzhou Zhongchuan International Airport (LHW) Sourced Airport Data & Information",
+      "publisher": "Official Aviation Data & OurAirports",
+      "url": "https://lzzcairport.com/Home/Index",
+      "published": "2026-10-05",
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

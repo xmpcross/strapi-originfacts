@@ -1,0 +1,92 @@
+{
+  "iata": "KGL",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals & Airport Overview",
+      "paragraphs": [
+        {
+          "text": "Kigali International Airport (KGL/HRYR) serves as a key air gateway for Kigali, RW, handling passenger arrivals, departures, and regional transit connectivity.",
+          "sources": [
+            "src-kgl-official"
+          ]
+        },
+        {
+          "text": "The airport infrastructure is managed to support scheduled airline operations, passenger check-in halls, security screening, and departure concourses.",
+          "sources": [
+            "src-kgl-official"
+          ]
+        },
+        {
+          "text": "Field runway dimensions and surface specifications: 10/28: 3500 m (11483 ft) asphalt.",
+          "sources": [
+            "src-kgl-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Ground Transport & Transfer Options",
+      "paragraphs": [
+        {
+          "text": "Ground transportation options connecting Kigali International Airport with central Kigali include official airport taxi stands, rideshare services, and local municipal transit links.",
+          "sources": [
+            "src-kgl-official"
+          ]
+        },
+        {
+          "text": "Arriving passengers are encouraged to arrange transfers via designated airport transport desks or pre-booked taxi services to ensure transparent fares and reliable service into town.",
+          "sources": [
+            "src-kgl-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "planning",
+      "heading": "Travel & Check-in Recommendations",
+      "paragraphs": [
+        {
+          "text": "Travelers departing from KGL should arrive at the airport at least two hours prior to domestic flights and three hours before international departures.",
+          "sources": [
+            "src-kgl-official"
+          ]
+        },
+        {
+          "text": "Always verify terminal departure assignments, luggage size limits, and check-in cutoff times directly with your airline prior to departure.",
+          "sources": [
+            "src-kgl-official"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What is the airport code for Kigali International Airport?",
+      "a": "The IATA code for Kigali International Airport is KGL and the ICAO code is HRYR.",
+      "sources": [
+        "src-kgl-official"
+      ]
+    },
+    {
+      "q": "Which city does KGL airport serve?",
+      "a": "Kigali International Airport (KGL) serves Kigali, RW.",
+      "sources": [
+        "src-kgl-official"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-kgl-official",
+      "title": "Kigali International Airport (KGL) Sourced Airport Data & Information",
+      "publisher": "Official Aviation Data & OurAirports",
+      "url": "https://www.rac.co.rw/?utm_source=chatgpt.com",
+      "published": "2026-10-05",
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

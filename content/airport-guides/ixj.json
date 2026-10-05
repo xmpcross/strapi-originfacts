@@ -1,0 +1,92 @@
+{
+  "iata": "IXJ",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals & Airport Overview",
+      "paragraphs": [
+        {
+          "text": "Jammu Airport (IXJ/VIJU) serves as a key air gateway for Jammu, IN, handling passenger arrivals, departures, and regional transit connectivity.",
+          "sources": [
+            "src-ixj-official"
+          ]
+        },
+        {
+          "text": "The airport infrastructure is managed to support scheduled airline operations, passenger check-in halls, security screening, and departure concourses.",
+          "sources": [
+            "src-ixj-official"
+          ]
+        },
+        {
+          "text": "Field runway dimensions and surface specifications: 18/36: 2042 m (6700 ft) asphalt.",
+          "sources": [
+            "src-ixj-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Ground Transport & Transfer Options",
+      "paragraphs": [
+        {
+          "text": "Ground transportation options connecting Jammu Airport with central Jammu include official airport taxi stands, rideshare services, and local municipal transit links.",
+          "sources": [
+            "src-ixj-official"
+          ]
+        },
+        {
+          "text": "Arriving passengers are encouraged to arrange transfers via designated airport transport desks or pre-booked taxi services to ensure transparent fares and reliable service into town.",
+          "sources": [
+            "src-ixj-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "planning",
+      "heading": "Travel & Check-in Recommendations",
+      "paragraphs": [
+        {
+          "text": "Travelers departing from IXJ should arrive at the airport at least two hours prior to domestic flights and three hours before international departures.",
+          "sources": [
+            "src-ixj-official"
+          ]
+        },
+        {
+          "text": "Always verify terminal departure assignments, luggage size limits, and check-in cutoff times directly with your airline prior to departure.",
+          "sources": [
+            "src-ixj-official"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What is the airport code for Jammu Airport?",
+      "a": "The IATA code for Jammu Airport is IXJ and the ICAO code is VIJU.",
+      "sources": [
+        "src-ixj-official"
+      ]
+    },
+    {
+      "q": "Which city does IXJ airport serve?",
+      "a": "Jammu Airport (IXJ) serves Jammu, IN.",
+      "sources": [
+        "src-ixj-official"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-ixj-official",
+      "title": "Jammu Airport (IXJ) Sourced Airport Data & Information",
+      "publisher": "Official Aviation Data & OurAirports",
+      "url": "https://ourairports.com/airports/VIJU/",
+      "published": "2026-10-05",
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

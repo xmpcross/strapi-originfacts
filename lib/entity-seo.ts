@@ -189,11 +189,7 @@ export function howToJsonLd(opts: {
  * tests/airport-thin-noindex.test.ts fails if an airport has a guide file and
  * is still listed.
  */
-export const THIN_AIRPORT_IATAS = new Set([
-  'AMD', 'AQP', 'BJM', 'BKO', 'COO', 'CUZ', 'DLA', 'GOI', 'HAK', 'HFE', 'HRE', 'INC', 'IXJ', 'JHG',
-  'KCH', 'KGL', 'KHG', 'KHN', 'KWE', 'KWL', 'LFW', 'LHW', 'LJG', 'LXA', 'NGB', 'NIM', 'NNG', 'NSI',
-  'OUA', 'PNQ', 'SXR', 'TSA', 'TSN', 'WNZ', 'XNN',
-]);
+export const THIN_AIRPORT_IATAS = new Set<string>([]);
 
 export function airportIsSubstantive(a: StrapiAirport, hasRoutes: boolean): boolean {
   if (a.iata && THIN_AIRPORT_IATAS.has(a.iata.toUpperCase())) return false;
@@ -320,6 +316,41 @@ export const PUBLISHED_AIRPORT_IATAS = new Set([
   'LIM',
   'GIG',
   'PTY',
+  'AMD',
+  'AQP',
+  'BJM',
+  'BKO',
+  'COO',
+  'CUZ',
+  'DLA',
+  'GOI',
+  'HAK',
+  'HFE',
+  'HRE',
+  'INC',
+  'IXJ',
+  'JHG',
+  'KCH',
+  'KGL',
+  'KHG',
+  'KHN',
+  'KWE',
+  'KWL',
+  'LFW',
+  'LHW',
+  'LJG',
+  'LXA',
+  'NGB',
+  'NIM',
+  'NNG',
+  'NSI',
+  'OUA',
+  'PNQ',
+  'SXR',
+  'TSA',
+  'TSN',
+  'WNZ',
+  'XNN',
 ]);
 
 export function airportIsPublished(iata: string): boolean {

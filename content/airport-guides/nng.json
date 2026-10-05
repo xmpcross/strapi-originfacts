@@ -1,0 +1,92 @@
+{
+  "iata": "NNG",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals & Airport Overview",
+      "paragraphs": [
+        {
+          "text": "Nanning Wuxu International Airport (NNG/ZGNN) serves as a key air gateway for Nanning (Jiangnan), CN, handling passenger arrivals, departures, and regional transit connectivity.",
+          "sources": [
+            "src-nng-official"
+          ]
+        },
+        {
+          "text": "The airport infrastructure is managed to support scheduled airline operations, passenger check-in halls, security screening, and departure concourses.",
+          "sources": [
+            "src-nng-official"
+          ]
+        },
+        {
+          "text": "Field runway dimensions and surface specifications: 05/23: 3200 m (10499 ft) concrete.",
+          "sources": [
+            "src-nng-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Ground Transport & Transfer Options",
+      "paragraphs": [
+        {
+          "text": "Ground transportation options connecting Nanning Wuxu International Airport with central Nanning (Jiangnan) include official airport taxi stands, rideshare services, and local municipal transit links.",
+          "sources": [
+            "src-nng-official"
+          ]
+        },
+        {
+          "text": "Arriving passengers are encouraged to arrange transfers via designated airport transport desks or pre-booked taxi services to ensure transparent fares and reliable service into town.",
+          "sources": [
+            "src-nng-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "planning",
+      "heading": "Travel & Check-in Recommendations",
+      "paragraphs": [
+        {
+          "text": "Travelers departing from NNG should arrive at the airport at least two hours prior to domestic flights and three hours before international departures.",
+          "sources": [
+            "src-nng-official"
+          ]
+        },
+        {
+          "text": "Always verify terminal departure assignments, luggage size limits, and check-in cutoff times directly with your airline prior to departure.",
+          "sources": [
+            "src-nng-official"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What is the airport code for Nanning Wuxu International Airport?",
+      "a": "The IATA code for Nanning Wuxu International Airport is NNG and the ICAO code is ZGNN.",
+      "sources": [
+        "src-nng-official"
+      ]
+    },
+    {
+      "q": "Which city does NNG airport serve?",
+      "a": "Nanning Wuxu International Airport (NNG) serves Nanning (Jiangnan), CN.",
+      "sources": [
+        "src-nng-official"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-nng-official",
+      "title": "Nanning Wuxu International Airport (NNG) Sourced Airport Data & Information",
+      "publisher": "Official Aviation Data & OurAirports",
+      "url": "https://www.nnairport.com/",
+      "published": "2026-10-05",
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

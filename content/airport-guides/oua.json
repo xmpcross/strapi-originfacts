@@ -1,0 +1,92 @@
+{
+  "iata": "OUA",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals & Airport Overview",
+      "paragraphs": [
+        {
+          "text": "Ouagadougou Thomas Sankara International Airport (OUA/DFFD) serves as a key air gateway for Ouagadougou, BF, handling passenger arrivals, departures, and regional transit connectivity.",
+          "sources": [
+            "src-oua-official"
+          ]
+        },
+        {
+          "text": "The airport infrastructure is managed to support scheduled airline operations, passenger check-in halls, security screening, and departure concourses.",
+          "sources": [
+            "src-oua-official"
+          ]
+        },
+        {
+          "text": "Field runway dimensions and surface specifications: 04/22: 3000 m (9843 ft) asphalt.",
+          "sources": [
+            "src-oua-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Ground Transport & Transfer Options",
+      "paragraphs": [
+        {
+          "text": "Ground transportation options connecting Ouagadougou Thomas Sankara International Airport with central Ouagadougou include official airport taxi stands, rideshare services, and local municipal transit links.",
+          "sources": [
+            "src-oua-official"
+          ]
+        },
+        {
+          "text": "Arriving passengers are encouraged to arrange transfers via designated airport transport desks or pre-booked taxi services to ensure transparent fares and reliable service into town.",
+          "sources": [
+            "src-oua-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "planning",
+      "heading": "Travel & Check-in Recommendations",
+      "paragraphs": [
+        {
+          "text": "Travelers departing from OUA should arrive at the airport at least two hours prior to domestic flights and three hours before international departures.",
+          "sources": [
+            "src-oua-official"
+          ]
+        },
+        {
+          "text": "Always verify terminal departure assignments, luggage size limits, and check-in cutoff times directly with your airline prior to departure.",
+          "sources": [
+            "src-oua-official"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What is the airport code for Ouagadougou Thomas Sankara International Airport?",
+      "a": "The IATA code for Ouagadougou Thomas Sankara International Airport is OUA and the ICAO code is DFFD.",
+      "sources": [
+        "src-oua-official"
+      ]
+    },
+    {
+      "q": "Which city does OUA airport serve?",
+      "a": "Ouagadougou Thomas Sankara International Airport (OUA) serves Ouagadougou, BF.",
+      "sources": [
+        "src-oua-official"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-oua-official",
+      "title": "Ouagadougou Thomas Sankara International Airport (OUA) Sourced Airport Data & Information",
+      "publisher": "Official Aviation Data & OurAirports",
+      "url": "https://ourairports.com/airports/DFFD/",
+      "published": "2026-10-05",
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

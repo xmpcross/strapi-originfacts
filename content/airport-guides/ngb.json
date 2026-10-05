@@ -1,0 +1,92 @@
+{
+  "iata": "NGB",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals & Airport Overview",
+      "paragraphs": [
+        {
+          "text": "Ningbo Lishe International Airport (NGB/ZSNB) serves as a key air gateway for Ningbo, CN, handling passenger arrivals, departures, and regional transit connectivity.",
+          "sources": [
+            "src-ngb-official"
+          ]
+        },
+        {
+          "text": "The airport infrastructure is managed to support scheduled airline operations, passenger check-in halls, security screening, and departure concourses.",
+          "sources": [
+            "src-ngb-official"
+          ]
+        },
+        {
+          "text": "Field runway dimensions and surface specifications: 13/31: 3200 m (10499 ft) concrete.",
+          "sources": [
+            "src-ngb-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Ground Transport & Transfer Options",
+      "paragraphs": [
+        {
+          "text": "Ground transportation options connecting Ningbo Lishe International Airport with central Ningbo include official airport taxi stands, rideshare services, and local municipal transit links.",
+          "sources": [
+            "src-ngb-official"
+          ]
+        },
+        {
+          "text": "Arriving passengers are encouraged to arrange transfers via designated airport transport desks or pre-booked taxi services to ensure transparent fares and reliable service into town.",
+          "sources": [
+            "src-ngb-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "planning",
+      "heading": "Travel & Check-in Recommendations",
+      "paragraphs": [
+        {
+          "text": "Travelers departing from NGB should arrive at the airport at least two hours prior to domestic flights and three hours before international departures.",
+          "sources": [
+            "src-ngb-official"
+          ]
+        },
+        {
+          "text": "Always verify terminal departure assignments, luggage size limits, and check-in cutoff times directly with your airline prior to departure.",
+          "sources": [
+            "src-ngb-official"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What is the airport code for Ningbo Lishe International Airport?",
+      "a": "The IATA code for Ningbo Lishe International Airport is NGB and the ICAO code is ZSNB.",
+      "sources": [
+        "src-ngb-official"
+      ]
+    },
+    {
+      "q": "Which city does NGB airport serve?",
+      "a": "Ningbo Lishe International Airport (NGB) serves Ningbo, CN.",
+      "sources": [
+        "src-ngb-official"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-ngb-official",
+      "title": "Ningbo Lishe International Airport (NGB) Sourced Airport Data & Information",
+      "publisher": "Official Aviation Data & OurAirports",
+      "url": "https://www.nbairport.com/",
+      "published": "2026-10-05",
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

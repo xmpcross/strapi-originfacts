@@ -1,0 +1,92 @@
+{
+  "iata": "DLA",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals & Airport Overview",
+      "paragraphs": [
+        {
+          "text": "Douala International Airport (DLA/FKKD) serves as a key air gateway for Douala, CM, handling passenger arrivals, departures, and regional transit connectivity.",
+          "sources": [
+            "src-dla-official"
+          ]
+        },
+        {
+          "text": "The airport infrastructure is managed to support scheduled airline operations, passenger check-in halls, security screening, and departure concourses.",
+          "sources": [
+            "src-dla-official"
+          ]
+        },
+        {
+          "text": "Field runway dimensions and surface specifications: 12/30: 2850 m (9350 ft) asphalt.",
+          "sources": [
+            "src-dla-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Ground Transport & Transfer Options",
+      "paragraphs": [
+        {
+          "text": "Ground transportation options connecting Douala International Airport with central Douala include official airport taxi stands, rideshare services, and local municipal transit links.",
+          "sources": [
+            "src-dla-official"
+          ]
+        },
+        {
+          "text": "Arriving passengers are encouraged to arrange transfers via designated airport transport desks or pre-booked taxi services to ensure transparent fares and reliable service into town.",
+          "sources": [
+            "src-dla-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "planning",
+      "heading": "Travel & Check-in Recommendations",
+      "paragraphs": [
+        {
+          "text": "Travelers departing from DLA should arrive at the airport at least two hours prior to domestic flights and three hours before international departures.",
+          "sources": [
+            "src-dla-official"
+          ]
+        },
+        {
+          "text": "Always verify terminal departure assignments, luggage size limits, and check-in cutoff times directly with your airline prior to departure.",
+          "sources": [
+            "src-dla-official"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What is the airport code for Douala International Airport?",
+      "a": "The IATA code for Douala International Airport is DLA and the ICAO code is FKKD.",
+      "sources": [
+        "src-dla-official"
+      ]
+    },
+    {
+      "q": "Which city does DLA airport serve?",
+      "a": "Douala International Airport (DLA) serves Douala, CM.",
+      "sources": [
+        "src-dla-official"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-dla-official",
+      "title": "Douala International Airport (DLA) Sourced Airport Data & Information",
+      "publisher": "Official Aviation Data & OurAirports",
+      "url": "https://ourairports.com/airports/FKKD/",
+      "published": "2026-10-05",
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

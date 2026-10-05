@@ -3,6 +3,7 @@
 // + airports/airlines filters more horizontal room; the rest are listing,
 // directory and editorial/legal pages the owner wanted kept clean.
 const HIDE_PATTERNS: RegExp[] = [
+  /^\/$/,
   /^\/destinations(\/[^/]+)?$/,
   /^\/category\/[^/]+$/,
   /^\/airports\/top-100-airports$/,

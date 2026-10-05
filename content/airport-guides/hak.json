@@ -1,0 +1,92 @@
+{
+  "iata": "HAK",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals & Airport Overview",
+      "paragraphs": [
+        {
+          "text": "Haikou Meilan International Airport (HAK/ZJHK) serves as a key air gateway for Haikou (Meilan), CN, handling passenger arrivals, departures, and regional transit connectivity.",
+          "sources": [
+            "src-hak-official"
+          ]
+        },
+        {
+          "text": "The airport infrastructure is managed to support scheduled airline operations, passenger check-in halls, security screening, and departure concourses.",
+          "sources": [
+            "src-hak-official"
+          ]
+        },
+        {
+          "text": "Field runway dimensions and surface specifications: 09/27: 3600 m (11811 ft) concrete, 10/28: 3600 m (11811 ft) concrete.",
+          "sources": [
+            "src-hak-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Ground Transport & Transfer Options",
+      "paragraphs": [
+        {
+          "text": "Ground transportation options connecting Haikou Meilan International Airport with central Haikou (Meilan) include official airport taxi stands, rideshare services, and local municipal transit links.",
+          "sources": [
+            "src-hak-official"
+          ]
+        },
+        {
+          "text": "Arriving passengers are encouraged to arrange transfers via designated airport transport desks or pre-booked taxi services to ensure transparent fares and reliable service into town.",
+          "sources": [
+            "src-hak-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "planning",
+      "heading": "Travel & Check-in Recommendations",
+      "paragraphs": [
+        {
+          "text": "Travelers departing from HAK should arrive at the airport at least two hours prior to domestic flights and three hours before international departures.",
+          "sources": [
+            "src-hak-official"
+          ]
+        },
+        {
+          "text": "Always verify terminal departure assignments, luggage size limits, and check-in cutoff times directly with your airline prior to departure.",
+          "sources": [
+            "src-hak-official"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What is the airport code for Haikou Meilan International Airport?",
+      "a": "The IATA code for Haikou Meilan International Airport is HAK and the ICAO code is ZJHK.",
+      "sources": [
+        "src-hak-official"
+      ]
+    },
+    {
+      "q": "Which city does HAK airport serve?",
+      "a": "Haikou Meilan International Airport (HAK) serves Haikou (Meilan), CN.",
+      "sources": [
+        "src-hak-official"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-hak-official",
+      "title": "Haikou Meilan International Airport (HAK) Sourced Airport Data & Information",
+      "publisher": "Official Aviation Data & OurAirports",
+      "url": "https://www.mlairport.com",
+      "published": "2026-10-05",
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

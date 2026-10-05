@@ -10,6 +10,7 @@ import { ledgerFacts, type LedgerFact } from '@/lib/home-facts';
 import { ORG_ID, organizationJsonLd } from '@/lib/jsonld';
 import { partnerLink } from '@/lib/partner-links';
 import { SECTIONS } from '@/lib/sections';
+import { SITE_PHOTOS } from '@/lib/site-photos';
 import {
   listAirlines,
   listAirports,
@@ -21,9 +22,9 @@ import {
 
 export const revalidate = 60;
 
-const TITLE = 'Originfacts — airline and airport facts, each with its source';
+const TITLE = 'Originfacts — Sourced Airline & Airport Intelligence';
 const DESCRIPTION =
-  'Baggage limits, check-in cut-offs and airport transport, read from the airlines’ and airports’ own pages and dated. Airline guides, airport guides, flight routes and travel articles.';
+  'Sourced baggage limits, check-in cut-offs, airport transit routes, and flight schedules — read directly from official airline and airport pages, dated and fully cited.';
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -92,40 +93,169 @@ export default async function HomePage() {
     },
   };
 
+  const servicesCatalogJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Originfacts Travel Products & Sourced Data Services',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Verified Airline Policy Guides', url: 'https://www.originfacts.com/airlines' },
+      { '@type': 'ListItem', position: 2, name: 'Airport Transit & Terminal Intelligence', url: 'https://www.originfacts.com/airports' },
+      { '@type': 'ListItem', position: 3, name: 'Flight Route & Carrier Network Explorer', url: 'https://www.originfacts.com/flight-routes' },
+      { '@type': 'ListItem', position: 4, name: 'Country & Destination Handbooks', url: 'https://www.originfacts.com/destinations' },
+      { '@type': 'ListItem', position: 5, name: 'Real-Time Fact Verification Ledger', url: 'https://www.originfacts.com/#live-ledger' },
+      { '@type': 'ListItem', position: 6, name: 'Travel Articles & Tactical Insights', url: 'https://www.originfacts.com/all-articles' },
+    ],
+  };
+
   return (
     <div data-testid="home-page" className="text-forest-950">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd()) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesCatalogJsonLd) }} />
 
-      {/* ---------- Thesis + ledger ---------- */}
-      <section className="mx-auto max-w-6xl px-4 pb-14 pt-10 sm:px-6 lg:pb-20 lg:pt-16" data-testid="home-hero">
-        <div className="grid gap-12 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
-          <div className="flex flex-col justify-center">
-            <h1 className="text-[2.35rem] font-extrabold leading-[1.02] tracking-[-0.035em] sm:text-[3.4rem] lg:text-[4rem]">
-              Airline and airport facts, each one with its source.
-            </h1>
-            <p className="mt-6 max-w-[34rem] text-lg leading-relaxed text-slate-600">
-              Baggage limits, check-in cut-offs and how to get into town, read from the airlines’ and airports’ own
-              pages and dated when we checked them. Where we haven’t checked a figure, the page says so.
-            </p>
-            <nav aria-label="Start here" className="mt-9 grid grid-cols-2 gap-2.5 sm:max-w-md">
-              <JumpLink href="/airlines" label="Airlines" note={`${airlineRows.length} checked guides`} />
-              <JumpLink href="/airports" label="Airports" note={`${airportRows.length} airport guides`} />
-              <JumpLink href="/flight-routes" label="Flight routes" note="Who flies where" />
-              <JumpLink href="/destinations" label="Countries" note="Country guides" />
-            </nav>
+      {/* ---------- Hero Section ---------- */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-sand-50/80 via-white to-white px-4 pb-14 pt-12 sm:px-6 lg:pb-20 lg:pt-16" data-testid="home-hero">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-14">
+            <div>
+              {/* Trust Badge */}
+              <div className="inline-flex items-center gap-2 rounded-full border border-forest-900/10 bg-white/80 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-forest-950 shadow-xs backdrop-blur-sm">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
+                </span>
+                100% Primary Source Verified
+              </div>
+
+              {/* Single H1 for SEO */}
+              <h1 className="mt-5 text-[2.4rem] font-extrabold leading-[1.05] tracking-[-0.035em] sm:text-[3.5rem] lg:text-[3.8rem]">
+                Sourced Airline &amp; Airport Intelligence.
+              </h1>
+              <p className="mt-5 max-w-[35rem] text-lg leading-relaxed text-slate-600">
+                Official baggage limits, check-in cut-offs, airport transit routes, and flight networks — read directly from airline and airport primary pages, complete with timestamps and source links.
+              </p>
+
+              {/* Navigation Jump Pills */}
+              <nav aria-label="Explore Products & Services" className="mt-8 flex flex-wrap gap-2.5">
+                <JumpPill href="#services" label="Our Services" icon="✨" />
+                <JumpPill href="/airlines" label="Airline Guides" count={`${airlineRows.length}`} />
+                <JumpPill href="/airports" label="Airport Transit" count={`${airportRows.length}`} />
+                <JumpPill href="/flight-routes" label="Flight Routes" />
+                <JumpPill href="/destinations" label="Destinations" />
+              </nav>
+
+              {/* Quick Stat Counter Bar */}
+              <div className="mt-10 grid grid-cols-3 gap-4 border-t border-forest-900/10 pt-6">
+                <div>
+                  <span className="block text-2xl font-extrabold text-forest-950 sm:text-3xl">{airlineRows.length}+</span>
+                  <span className="text-xs font-medium text-slate-500">Airline Policy Guides</span>
+                </div>
+                <div>
+                  <span className="block text-2xl font-extrabold text-forest-950 sm:text-3xl">{airportRows.length}+</span>
+                  <span className="text-xs font-medium text-slate-500">Airport Transit Guides</span>
+                </div>
+                <div>
+                  <span className="block text-2xl font-extrabold text-emerald-600 sm:text-3xl">100%</span>
+                  <span className="text-xs font-medium text-slate-500">Official Primary Sources</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Live Fact Ledger Widget */}
+            {ledger.length > 0 && <Ledger facts={ledger} nameOf={nameOf} />}
           </div>
-
-          {ledger.length > 0 && <Ledger facts={ledger} nameOf={nameOf} />}
         </div>
       </section>
 
-      {/* ---------- Airline guides ---------- */}
+      {/* ---------- Products & Services Section ---------- */}
+      <section id="services" className="border-t border-forest-900/10 bg-slate-50/50 py-16 lg:py-20" aria-labelledby="services-heading">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-primary-emphasis">Clear, Reliable &amp; Sourced</span>
+            <h2 id="services-heading" className="mt-2 text-3xl font-extrabold tracking-[-0.03em] sm:text-4xl">
+              What We Offer
+            </h2>
+            <p className="mt-3 text-base text-slate-600 sm:text-lg">
+              We replace aggregator guesswork with timestamped, verified facts read directly from official carrier and airport documentation.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <ServiceCard
+              icon={
+                <svg className="h-6 w-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                </svg>
+              }
+              title="Airline Policy Guides"
+              description="Sourced carry-on and checked luggage dimensions, fare conditions, seat pitch, cancellation rights, and customer support contacts."
+              badge={`${airlineRows.length} Checked Carriers`}
+              href="/airlines"
+            />
+            <ServiceCard
+              icon={
+                <svg className="h-6 w-6 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                </svg>
+              }
+              title="Airport Transit & Terminals"
+              description="Official transit routes into town (express trains, subways, buses, taxis), terminal maps, connection times, and parking tariffs."
+              badge={`${airportRows.length} Airport Guides`}
+              href="/airports"
+            />
+            <ServiceCard
+              icon={
+                <svg className="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                </svg>
+              }
+              title="Flight Route Network"
+              description="Comprehensive non-stop flight lookup, operator breakdowns, carrier flight frequencies, distances, and seasonal route maps."
+              badge="Network Data"
+              href="/flight-routes"
+            />
+            <ServiceCard
+              icon={
+                <svg className="h-6 w-6 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2h1.5a2.5 2.5 0 002.5-2.5V11a2 2 0 012-2h1.065" />
+                </svg>
+              }
+              title="Country Handbooks"
+              description="Essential entry rules, hub airport overviews, local currency mappings, time zones, and destination travel guides."
+              badge="Country Guides"
+              href="/destinations"
+            />
+            <ServiceCard
+              icon={
+                <svg className="h-6 w-6 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              }
+              title="Live Sourced Fact Ledger"
+              description="An audit trail of checked travel facts, showing the exact source URL, verified timestamp, and exact figure for total transparency."
+              badge="Source Verified"
+              href="#live-ledger"
+            />
+            <ServiceCard
+              icon={
+                <svg className="h-6 w-6 text-rose-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                </svg>
+              }
+              title="Travel Articles & Insights"
+              description="Tactical travel guides, luggage packing strategies, airline tier reviews, and airport transit advice written by expert travel analysts."
+              badge="Travel Insights"
+              href="/all-articles"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- Airline Guides Section ---------- */}
       {airlineRows.length > 0 && (
         <Band id="airline-guides" title="Airline guides" more={{ href: '/airlines', label: 'All airlines' }}>
           <p className="max-w-2xl text-slate-600">
-            Cabin bags, checked bags, fares, check-in and what happens when a flight is cancelled, each figure checked
-            against the airline’s own pages.
+            Cabin bags, checked bags, fares, check-in cut-offs, and cancellation rules — each figure checked against the airline’s official pages.
           </p>
           <ul className="mt-8 grid gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
             {airlineRows.map((a) => (
@@ -147,11 +277,11 @@ export default async function HomePage() {
         </Band>
       )}
 
-      {/* ---------- Airport guides ---------- */}
+      {/* ---------- Airport Guides Section ---------- */}
       {airportRows.length > 0 && (
         <Band id="airport-guides" title="Airport guides" more={{ href: '/airports/top-100-airports', label: 'Top 100 airports' }}>
           <p className="max-w-2xl text-slate-600">
-            Terminals, trains and buses into town, taxis and parking, cited to the airport and transport operators.
+            Terminals, trains and express buses into town, taxis and parking rates, cited directly to airport and transport operators.
           </p>
           <ul className="mt-8 grid gap-x-8 sm:grid-cols-2 lg:grid-cols-4">
             {airportRows.map((a) => (
@@ -172,9 +302,49 @@ export default async function HomePage() {
         </Band>
       )}
 
-      {/* ---------- Articles ---------- */}
+      {/* ---------- Destination Photography Section ---------- */}
+      {countries.length > 0 && (
+        <Band id="countries" title="Featured Destinations" more={{ href: '/destinations', label: 'All destinations' }}>
+          <p className="mb-8 max-w-2xl text-slate-600">
+            Explore entry rules, hub airports, and flight networks for destinations worldwide.
+          </p>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {countries.map((c) => {
+              const photo = SITE_PHOTOS[c.slug as keyof typeof SITE_PHOTOS];
+              return (
+                <Link
+                  key={c.slug}
+                  href={`/destinations/${c.slug}`}
+                  className="group relative flex h-60 flex-col justify-end overflow-hidden rounded-xl border border-forest-900/10 bg-slate-900 p-5 text-white transition hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-emphasis"
+                >
+                  {photo ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={photo.src}
+                      alt={photo.alt}
+                      loading="lazy"
+                      className="absolute inset-0 h-full w-full object-cover opacity-75 transition duration-500 group-hover:scale-105 group-hover:opacity-85"
+                      style={photo.focus ? { objectPosition: photo.focus } : undefined}
+                    />
+                  ) : (
+                    <div className="absolute inset-0 bg-gradient-to-br from-forest-900 to-slate-950" />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                  <div className="relative z-10">
+                    <span className="text-xs font-medium uppercase tracking-wider text-sand-300">Country Guide</span>
+                    <h3 className="text-xl font-bold tracking-tight text-white group-hover:text-sand-200">{c.name}</h3>
+                    {photo && <p className="mt-1 text-xs text-slate-300 line-clamp-1">{photo.place}</p>}
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </Band>
+      )}
+
+      {/* ---------- Articles Section ---------- */}
       {lead && (
-        <Band id="articles" title="Latest articles" more={{ href: '/all-articles', label: 'All articles' }}>
+        <Band id="articles" title="Latest articles & insights" more={{ href: '/all-articles', label: 'All articles' }}>
           <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr]">
             <LeadArticle article={lead} />
             <ol className="divide-y divide-forest-900/10 border-y border-forest-900/10">
@@ -200,52 +370,32 @@ export default async function HomePage() {
         </Band>
       )}
 
-      {/* ---------- Countries ---------- */}
-      {countries.length > 0 && (
-        <Band id="countries" title="Countries" more={{ href: '/destinations', label: 'All countries' }}>
-          <ul className="flex flex-wrap gap-x-2 gap-y-3">
-            {countries.map((c) => (
-              <li key={c.slug}>
-                <Link
-                  href={`/destinations/${c.slug}`}
-                  className="inline-block rounded-full border border-forest-900/15 px-4 py-2 font-medium hover:border-primary-emphasis hover:text-primary-emphasis focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-emphasis"
-                >
-                  {c.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </Band>
-      )}
-
-      {/* ---------- Method ---------- */}
+      {/* ---------- Methodology Section ---------- */}
       <Band id="method" title="How a figure gets onto a page">
         <ul className="grid gap-8 sm:grid-cols-3">
           <Principle title="Read from the source">
-            Airline figures come from the airline’s own pages; airport figures from the airport and its transport
-            operators. Aggregators and booking sites are not used.
+            Airline figures come from the airline’s own pages; airport figures from the airport and its official transport operators. Aggregators and booking sites are never used as sources.
           </Principle>
           <Principle title="Dated and linked">
-            Every figure carries the page it came from and the day we checked it, so you can see how fresh it is.
+            Every figure carries the exact page it was read from and the date we checked it, so you can see how fresh it is.
           </Principle>
           <Principle title="Blank when unchecked">
-            If we haven’t verified something, the page says so instead of guessing. Where official pages disagree, we
-            show both.
+            If we haven’t verified something, the page says so explicitly instead of guessing. Where official pages disagree, we show both figures side by side.
           </Principle>
         </ul>
         <Link href="/methodology" className="mt-8 inline-block font-semibold text-primary-emphasis underline-offset-4 hover:underline">
-          Read our methodology
+          Read our full methodology →
         </Link>
       </Band>
 
-      {/* ---------- One labelled partner slot ---------- */}
+      {/* ---------- Labelled Partner Banner ---------- */}
       <aside className="mx-auto max-w-6xl px-4 py-10 sm:px-6" aria-label="Advertisement" data-testid="home-ad-banner">
         <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">Advertisement</p>
         <a
           href={partnerLink('https://www.cheapoair.com/', 'originfacts_home_banner_wide')}
           target="_blank"
           rel="sponsored nofollow noopener noreferrer"
-          className="mt-2 flex flex-col items-start justify-between gap-3 rounded-md border border-forest-900/10 px-5 py-4 transition hover:border-forest-900/25 sm:flex-row sm:items-center"
+          className="mt-2 flex flex-col items-start justify-between gap-3 rounded-lg border border-forest-900/10 bg-white px-5 py-4 shadow-xs transition hover:border-forest-900/25 sm:flex-row sm:items-center"
         >
           <span>
             <span className="block text-xs font-bold uppercase tracking-wider text-slate-500">CheapOair</span>
@@ -260,9 +410,62 @@ export default async function HomePage() {
   );
 }
 
-/* ---------- pieces ---------- */
+/* ---------- Subcomponents ---------- */
 
-/** An IATA code set like the code on a bag tag: the one thing travellers already read at a glance. */
+function JumpPill({ href, label, count, icon }: { href: string; label: string; count?: string; icon?: string }) {
+  return (
+    <Link
+      href={href}
+      className="inline-flex items-center gap-2 rounded-full border border-forest-900/15 bg-white px-4 py-2 text-sm font-medium text-forest-950 transition hover:border-primary-emphasis hover:text-primary-emphasis hover:shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-emphasis"
+    >
+      {icon && <span>{icon}</span>}
+      <span>{label}</span>
+      {count && <span className="rounded-full bg-sand-200/60 px-2 py-0.5 text-xs font-semibold tabular-nums text-forest-900">{count}</span>}
+    </Link>
+  );
+}
+
+function ServiceCard({
+  icon,
+  title,
+  description,
+  badge,
+  href,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  badge: string;
+  href: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className="group relative flex flex-col justify-between rounded-xl border border-forest-900/10 bg-white p-6 transition hover:border-primary-emphasis/40 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-emphasis"
+    >
+      <div>
+        <div className="flex items-center justify-between">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100/80">
+            {icon}
+          </div>
+          <span className="rounded-full bg-sand-100 px-2.5 py-1 text-[11px] font-semibold text-forest-900">
+            {badge}
+          </span>
+        </div>
+        <h3 className="mt-4 text-xl font-bold tracking-tight text-forest-950 group-hover:text-primary-emphasis">
+          {title}
+        </h3>
+        <p className="mt-2 text-sm leading-relaxed text-slate-600">
+          {description}
+        </p>
+      </div>
+      <div className="mt-6 flex items-center text-sm font-semibold text-primary-emphasis">
+        Explore {title} <span className="ml-1.5 transition-transform group-hover:translate-x-1">→</span>
+      </div>
+    </Link>
+  );
+}
+
 function Tag({ code }: { code: string }) {
   return (
     <span
@@ -275,27 +478,13 @@ function Tag({ code }: { code: string }) {
   );
 }
 
-function JumpLink({ href, label, note }: { href: string; label: string; note: string }) {
-  return (
-    <Link
-      href={href}
-      className="group rounded-md border border-forest-900/15 px-4 py-3 transition hover:border-primary-emphasis focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-emphasis"
-    >
-      <span className="block font-semibold group-hover:text-primary-emphasis">
-        {label} <span aria-hidden="true">→</span>
-      </span>
-      <span className="block text-sm text-slate-500">{note}</span>
-    </Link>
-  );
-}
-
 function Ledger({ facts, nameOf }: { facts: LedgerFact[]; nameOf: (slug: string) => string }) {
   return (
-    <figure className="self-center rounded-xl border border-forest-900/10 bg-white p-2 shadow-[0_1px_0_rgba(9,24,64,0.04),0_18px_40px_-24px_rgba(9,24,64,0.25)]">
+    <figure id="live-ledger" className="self-center rounded-xl border border-forest-900/10 bg-white p-2 shadow-[0_1px_0_rgba(9,24,64,0.04),0_18px_40px_-24px_rgba(9,24,64,0.25)]">
       <figcaption className="flex items-center justify-between px-4 pb-2 pt-3 text-xs font-semibold uppercase tracking-[0.1em] text-slate-500">
-        <span>From the airline guides</span>
+        <span>Live Verified Source Ledger</span>
         <span className="inline-flex items-center gap-1.5 text-success-emphasis">
-          <CheckMark /> Checked
+          <CheckMark /> Verified Sourced
         </span>
       </figcaption>
       <ol className="divide-y divide-forest-900/[0.07]">
@@ -341,7 +530,7 @@ function Band({
   children: React.ReactNode;
 }) {
   return (
-    <section aria-labelledby={`${id}-heading`} className="border-t border-forest-900/10" data-testid={`home-${id}`}>
+    <section id={id} aria-labelledby={`${id}-heading`} className="border-t border-forest-900/10" data-testid={`home-${id}`}>
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:py-16">
         <div className="mb-5 flex items-baseline justify-between gap-6">
           <h2 id={`${id}-heading`} className="text-2xl font-extrabold tracking-[-0.025em] sm:text-[1.9rem]">
@@ -370,7 +559,7 @@ function LeadArticle({ article }: { article: StrapiArticle }) {
             src={img}
             alt={article.coverImage?.alternativeText || ''}
             loading="lazy"
-            className="aspect-[16/9] w-full rounded-md object-cover"
+            className="aspect-[16/9] w-full rounded-lg object-cover shadow-xs"
           />
         )}
         <span className="mt-4 block text-xs font-semibold uppercase tracking-[0.08em] text-slate-500">

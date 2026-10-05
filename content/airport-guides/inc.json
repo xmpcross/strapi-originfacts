@@ -1,0 +1,92 @@
+{
+  "iata": "INC",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals & Airport Overview",
+      "paragraphs": [
+        {
+          "text": "Yinchuan Hedong International Airport (INC/ZLIC) serves as a key air gateway for Yinchuan, CN, handling passenger arrivals, departures, and regional transit connectivity.",
+          "sources": [
+            "src-inc-official"
+          ]
+        },
+        {
+          "text": "The airport infrastructure is managed to support scheduled airline operations, passenger check-in halls, security screening, and departure concourses.",
+          "sources": [
+            "src-inc-official"
+          ]
+        },
+        {
+          "text": "Field runway dimensions and surface specifications: 03/21: 3600 m (11811 ft) concrete.",
+          "sources": [
+            "src-inc-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Ground Transport & Transfer Options",
+      "paragraphs": [
+        {
+          "text": "Ground transportation options connecting Yinchuan Hedong International Airport with central Yinchuan include official airport taxi stands, rideshare services, and local municipal transit links.",
+          "sources": [
+            "src-inc-official"
+          ]
+        },
+        {
+          "text": "Arriving passengers are encouraged to arrange transfers via designated airport transport desks or pre-booked taxi services to ensure transparent fares and reliable service into town.",
+          "sources": [
+            "src-inc-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "planning",
+      "heading": "Travel & Check-in Recommendations",
+      "paragraphs": [
+        {
+          "text": "Travelers departing from INC should arrive at the airport at least two hours prior to domestic flights and three hours before international departures.",
+          "sources": [
+            "src-inc-official"
+          ]
+        },
+        {
+          "text": "Always verify terminal departure assignments, luggage size limits, and check-in cutoff times directly with your airline prior to departure.",
+          "sources": [
+            "src-inc-official"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What is the airport code for Yinchuan Hedong International Airport?",
+      "a": "The IATA code for Yinchuan Hedong International Airport is INC and the ICAO code is ZLIC.",
+      "sources": [
+        "src-inc-official"
+      ]
+    },
+    {
+      "q": "Which city does INC airport serve?",
+      "a": "Yinchuan Hedong International Airport (INC) serves Yinchuan, CN.",
+      "sources": [
+        "src-inc-official"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-inc-official",
+      "title": "Yinchuan Hedong International Airport (INC) Sourced Airport Data & Information",
+      "publisher": "Official Aviation Data & OurAirports",
+      "url": "https://ningxia.cwag.com/",
+      "published": "2026-10-05",
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "iata": "KWL",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals & Airport Overview",
+      "paragraphs": [
+        {
+          "text": "Guilin Liangjiang International Airport (KWL/ZGKL) serves as a key air gateway for Guilin (Lingui), CN, handling passenger arrivals, departures, and regional transit connectivity.",
+          "sources": [
+            "src-kwl-official"
+          ]
+        },
+        {
+          "text": "The airport infrastructure is managed to support scheduled airline operations, passenger check-in halls, security screening, and departure concourses.",
+          "sources": [
+            "src-kwl-official"
+          ]
+        },
+        {
+          "text": "Field runway dimensions and surface specifications: 01/19: 3200 m (10499 ft) concrete.",
+          "sources": [
+            "src-kwl-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Ground Transport & Transfer Options",
+      "paragraphs": [
+        {
+          "text": "Ground transportation options connecting Guilin Liangjiang International Airport with central Guilin (Lingui) include official airport taxi stands, rideshare services, and local municipal transit links.",
+          "sources": [
+            "src-kwl-official"
+          ]
+        },
+        {
+          "text": "Arriving passengers are encouraged to arrange transfers via designated airport transport desks or pre-booked taxi services to ensure transparent fares and reliable service into town.",
+          "sources": [
+            "src-kwl-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "planning",
+      "heading": "Travel & Check-in Recommendations",
+      "paragraphs": [
+        {
+          "text": "Travelers departing from KWL should arrive at the airport at least two hours prior to domestic flights and three hours before international departures.",
+          "sources": [
+            "src-kwl-official"
+          ]
+        },
+        {
+          "text": "Always verify terminal departure assignments, luggage size limits, and check-in cutoff times directly with your airline prior to departure.",
+          "sources": [
+            "src-kwl-official"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What is the airport code for Guilin Liangjiang International Airport?",
+      "a": "The IATA code for Guilin Liangjiang International Airport is KWL and the ICAO code is ZGKL.",
+      "sources": [
+        "src-kwl-official"
+      ]
+    },
+    {
+      "q": "Which city does KWL airport serve?",
+      "a": "Guilin Liangjiang International Airport (KWL) serves Guilin (Lingui), CN.",
+      "sources": [
+        "src-kwl-official"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-kwl-official",
+      "title": "Guilin Liangjiang International Airport (KWL) Sourced Airport Data & Information",
+      "publisher": "Official Aviation Data & OurAirports",
+      "url": "https://www.airport-gl.com.cn/",
+      "published": "2026-10-05",
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

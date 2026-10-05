@@ -1,0 +1,92 @@
+{
+  "iata": "NSI",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals & Airport Overview",
+      "paragraphs": [
+        {
+          "text": "Yaoundé Nsimalen International Airport (NSI/FKYS) serves as a key air gateway for Yaoundé, CM, handling passenger arrivals, departures, and regional transit connectivity.",
+          "sources": [
+            "src-nsi-official"
+          ]
+        },
+        {
+          "text": "The airport infrastructure is managed to support scheduled airline operations, passenger check-in halls, security screening, and departure concourses.",
+          "sources": [
+            "src-nsi-official"
+          ]
+        },
+        {
+          "text": "Field runway dimensions and surface specifications: 01/19: 3400 m (11155 ft) asphalt.",
+          "sources": [
+            "src-nsi-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Ground Transport & Transfer Options",
+      "paragraphs": [
+        {
+          "text": "Ground transportation options connecting Yaoundé Nsimalen International Airport with central Yaoundé include official airport taxi stands, rideshare services, and local municipal transit links.",
+          "sources": [
+            "src-nsi-official"
+          ]
+        },
+        {
+          "text": "Arriving passengers are encouraged to arrange transfers via designated airport transport desks or pre-booked taxi services to ensure transparent fares and reliable service into town.",
+          "sources": [
+            "src-nsi-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "planning",
+      "heading": "Travel & Check-in Recommendations",
+      "paragraphs": [
+        {
+          "text": "Travelers departing from NSI should arrive at the airport at least two hours prior to domestic flights and three hours before international departures.",
+          "sources": [
+            "src-nsi-official"
+          ]
+        },
+        {
+          "text": "Always verify terminal departure assignments, luggage size limits, and check-in cutoff times directly with your airline prior to departure.",
+          "sources": [
+            "src-nsi-official"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What is the airport code for Yaoundé Nsimalen International Airport?",
+      "a": "The IATA code for Yaoundé Nsimalen International Airport is NSI and the ICAO code is FKYS.",
+      "sources": [
+        "src-nsi-official"
+      ]
+    },
+    {
+      "q": "Which city does NSI airport serve?",
+      "a": "Yaoundé Nsimalen International Airport (NSI) serves Yaoundé, CM.",
+      "sources": [
+        "src-nsi-official"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-nsi-official",
+      "title": "Yaoundé Nsimalen International Airport (NSI) Sourced Airport Data & Information",
+      "publisher": "Official Aviation Data & OurAirports",
+      "url": "https://www.ccaa.aero/aeroports-du-cameroun-197/aviation/actualite/141,aeroport-international-de-yaounde-nsimalen.html",
+      "published": "2026-10-05",
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

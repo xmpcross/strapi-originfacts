@@ -1,0 +1,92 @@
+{
+  "iata": "XNN",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals & Airport Overview",
+      "paragraphs": [
+        {
+          "text": "Xining Caojiabao International Airport (XNN/ZLXN) serves as a key air gateway for Haidong (Huzhu Tu Autonomous County), CN, handling passenger arrivals, departures, and regional transit connectivity.",
+          "sources": [
+            "src-xnn-official"
+          ]
+        },
+        {
+          "text": "The airport infrastructure is managed to support scheduled airline operations, passenger check-in halls, security screening, and departure concourses.",
+          "sources": [
+            "src-xnn-official"
+          ]
+        },
+        {
+          "text": "Field runway dimensions and surface specifications: 11/29: 3800 m (12467 ft) asphalt.",
+          "sources": [
+            "src-xnn-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Ground Transport & Transfer Options",
+      "paragraphs": [
+        {
+          "text": "Ground transportation options connecting Xining Caojiabao International Airport with central Haidong (Huzhu Tu Autonomous County) include official airport taxi stands, rideshare services, and local municipal transit links.",
+          "sources": [
+            "src-xnn-official"
+          ]
+        },
+        {
+          "text": "Arriving passengers are encouraged to arrange transfers via designated airport transport desks or pre-booked taxi services to ensure transparent fares and reliable service into town.",
+          "sources": [
+            "src-xnn-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "planning",
+      "heading": "Travel & Check-in Recommendations",
+      "paragraphs": [
+        {
+          "text": "Travelers departing from XNN should arrive at the airport at least two hours prior to domestic flights and three hours before international departures.",
+          "sources": [
+            "src-xnn-official"
+          ]
+        },
+        {
+          "text": "Always verify terminal departure assignments, luggage size limits, and check-in cutoff times directly with your airline prior to departure.",
+          "sources": [
+            "src-xnn-official"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What is the airport code for Xining Caojiabao International Airport?",
+      "a": "The IATA code for Xining Caojiabao International Airport is XNN and the ICAO code is ZLXN.",
+      "sources": [
+        "src-xnn-official"
+      ]
+    },
+    {
+      "q": "Which city does XNN airport serve?",
+      "a": "Xining Caojiabao International Airport (XNN) serves Haidong (Huzhu Tu Autonomous County), CN.",
+      "sources": [
+        "src-xnn-official"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-xnn-official",
+      "title": "Xining Caojiabao International Airport (XNN) Sourced Airport Data & Information",
+      "publisher": "Official Aviation Data & OurAirports",
+      "url": "https://qhaport.cwag.com/",
+      "published": "2026-10-05",
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

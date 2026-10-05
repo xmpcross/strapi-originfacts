@@ -1,0 +1,92 @@
+{
+  "iata": "GOI",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals & Airport Overview",
+      "paragraphs": [
+        {
+          "text": "Goa Dabolim International Airport (GOI/VOGO) serves as a key air gateway for Vasco da Gama, IN, handling passenger arrivals, departures, and regional transit connectivity.",
+          "sources": [
+            "src-goi-official"
+          ]
+        },
+        {
+          "text": "The airport infrastructure is managed to support scheduled airline operations, passenger check-in halls, security screening, and departure concourses.",
+          "sources": [
+            "src-goi-official"
+          ]
+        },
+        {
+          "text": "Field runway dimensions and surface specifications: 08/26: 3458 m (11345 ft) asphalt.",
+          "sources": [
+            "src-goi-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Ground Transport & Transfer Options",
+      "paragraphs": [
+        {
+          "text": "Ground transportation options connecting Goa Dabolim International Airport with central Vasco da Gama include official airport taxi stands, rideshare services, and local municipal transit links.",
+          "sources": [
+            "src-goi-official"
+          ]
+        },
+        {
+          "text": "Arriving passengers are encouraged to arrange transfers via designated airport transport desks or pre-booked taxi services to ensure transparent fares and reliable service into town.",
+          "sources": [
+            "src-goi-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "planning",
+      "heading": "Travel & Check-in Recommendations",
+      "paragraphs": [
+        {
+          "text": "Travelers departing from GOI should arrive at the airport at least two hours prior to domestic flights and three hours before international departures.",
+          "sources": [
+            "src-goi-official"
+          ]
+        },
+        {
+          "text": "Always verify terminal departure assignments, luggage size limits, and check-in cutoff times directly with your airline prior to departure.",
+          "sources": [
+            "src-goi-official"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What is the airport code for Goa Dabolim International Airport?",
+      "a": "The IATA code for Goa Dabolim International Airport is GOI and the ICAO code is VOGO.",
+      "sources": [
+        "src-goi-official"
+      ]
+    },
+    {
+      "q": "Which city does GOI airport serve?",
+      "a": "Goa Dabolim International Airport (GOI) serves Vasco da Gama, IN.",
+      "sources": [
+        "src-goi-official"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-goi-official",
+      "title": "Goa Dabolim International Airport (GOI) Sourced Airport Data & Information",
+      "publisher": "Official Aviation Data & OurAirports",
+      "url": "https://ourairports.com/airports/VOGO/",
+      "published": "2026-10-05",
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

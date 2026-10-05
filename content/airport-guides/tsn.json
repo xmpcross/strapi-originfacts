@@ -1,0 +1,92 @@
+{
+  "iata": "TSN",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals & Airport Overview",
+      "paragraphs": [
+        {
+          "text": "Tianjin Binhai International Airport (TSN/ZBTJ) serves as a key air gateway for Tianjin, CN, handling passenger arrivals, departures, and regional transit connectivity.",
+          "sources": [
+            "src-tsn-official"
+          ]
+        },
+        {
+          "text": "The airport infrastructure is managed to support scheduled airline operations, passenger check-in halls, security screening, and departure concourses.",
+          "sources": [
+            "src-tsn-official"
+          ]
+        },
+        {
+          "text": "Field runway dimensions and surface specifications: 16R/34L: 3600 m (11811 ft) concrete, 16L/34R: 3200 m (10499 ft) concrete.",
+          "sources": [
+            "src-tsn-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Ground Transport & Transfer Options",
+      "paragraphs": [
+        {
+          "text": "Ground transportation options connecting Tianjin Binhai International Airport with central Tianjin include official airport taxi stands, rideshare services, and local municipal transit links.",
+          "sources": [
+            "src-tsn-official"
+          ]
+        },
+        {
+          "text": "Arriving passengers are encouraged to arrange transfers via designated airport transport desks or pre-booked taxi services to ensure transparent fares and reliable service into town.",
+          "sources": [
+            "src-tsn-official"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "planning",
+      "heading": "Travel & Check-in Recommendations",
+      "paragraphs": [
+        {
+          "text": "Travelers departing from TSN should arrive at the airport at least two hours prior to domestic flights and three hours before international departures.",
+          "sources": [
+            "src-tsn-official"
+          ]
+        },
+        {
+          "text": "Always verify terminal departure assignments, luggage size limits, and check-in cutoff times directly with your airline prior to departure.",
+          "sources": [
+            "src-tsn-official"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What is the airport code for Tianjin Binhai International Airport?",
+      "a": "The IATA code for Tianjin Binhai International Airport is TSN and the ICAO code is ZBTJ.",
+      "sources": [
+        "src-tsn-official"
+      ]
+    },
+    {
+      "q": "Which city does TSN airport serve?",
+      "a": "Tianjin Binhai International Airport (TSN) serves Tianjin, CN.",
+      "sources": [
+        "src-tsn-official"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-tsn-official",
+      "title": "Tianjin Binhai International Airport (TSN) Sourced Airport Data & Information",
+      "publisher": "Official Aviation Data & OurAirports",
+      "url": "https://www.tbia.cn/cn/index.do",
+      "published": "2026-10-05",
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

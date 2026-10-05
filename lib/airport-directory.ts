@@ -75,3 +75,58 @@ export function letterOf(s: string): string {
   const first = foldText(s.trim()).charAt(0).toUpperCase();
   return /[A-Z]/.test(first) ? first : '#';
 }
+
+/**
+ * How many airport cards "Browse all airports" shows at first, and how many
+ * more each "Show more" adds. Search and filters still cover every airport.
+ */
+export const AIRPORTS_BROWSE_LIMIT = 60;
+
+/**
+ * The order cards are shown in when no letter is picked: reviewed guides
+ * first, then the most route records, then A–Z.
+ */
+export function rankAirports(a: DirectoryAirport, b: DirectoryAirport): number {
+  return (
+    Number(Boolean(b.reviewed)) - Number(Boolean(a.reviewed)) ||
+    (b.routes ?? 0) - (a.routes ?? 0) ||
+    compareAirports(a, b)
+  );
+}
+
+/**
+ * The search index is sent to the browser as compact tuples rather than
+ * objects (3,600 rows; field names would roughly double it):
+ * [iata, icao, name, city, country, region index, slug, reviewed (0|1), route records].
+ * Empty strings stand for missing values; region index -1 means none.
+ */
+export type AirportRow = [string, string, string, string, string, number, string, 0 | 1, number];
+
+export function toRow(a: DirectoryAirport): AirportRow {
+  return [
+    a.iata,
+    a.icao ?? '',
+    a.name,
+    a.city ?? '',
+    a.country ?? '',
+    a.region ? DIRECTORY_REGIONS.indexOf(a.region) : -1,
+    a.slug,
+    a.reviewed ? 1 : 0,
+    a.routes ?? 0,
+  ];
+}
+
+export function fromRow(r: AirportRow): DirectoryAirport {
+  const [iata, icao, name, city, country, region, slug, reviewed, routes] = r;
+  return {
+    iata,
+    ...(icao ? { icao } : {}),
+    name,
+    ...(city ? { city } : {}),
+    ...(country ? { country } : {}),
+    ...(region >= 0 ? { region: DIRECTORY_REGIONS[region] } : {}),
+    slug,
+    ...(reviewed ? { reviewed: true } : {}),
+    ...(routes ? { routes } : {}),
+  };
+}

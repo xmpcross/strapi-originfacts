@@ -40,3 +40,14 @@ test('airports sort by city, then airport name', () => {
   const c = { iata: 'AMS', name: 'Schiphol', city: 'Amsterdam', slug: 'z' };
   assert.deepEqual([b, a, c].sort(compareAirports).map((x) => x.iata), ['AMS', 'LGW', 'LHR']);
 });
+
+test('rows round-trip and ranking puts reviewed, then route records, then A–Z first', async () => {
+  const { toRow, fromRow, rankAirports } = await import('../lib/airport-directory');
+  const full = { iata: 'PER', icao: 'YPPH', name: 'Perth Airport', city: 'Perth', country: 'Australia', region: 'Oceania' as const, slug: 'perth', reviewed: true, routes: 7 };
+  const bare = { iata: 'ZZZ', name: 'Somewhere', slug: 'somewhere' };
+  assert.deepEqual(fromRow(toRow(full)), full);
+  assert.deepEqual(fromRow(toRow(bare)), bare);
+  const routed = { iata: 'AAA', name: 'Zed', city: 'Zed', slug: 'zed', routes: 9 };
+  const plain = { iata: 'BBB', name: 'Alpha', city: 'Alpha', slug: 'alpha' };
+  assert.deepEqual([plain, routed, bare, full].sort(rankAirports).map((x) => x.iata), ['PER', 'AAA', 'BBB', 'ZZZ']);
+});

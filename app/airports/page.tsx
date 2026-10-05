@@ -9,9 +9,12 @@ import { HUB_INTROS, HUB_PATHS } from '@/lib/hub-intros';
 import { airportSlug } from '@/lib/airport-slugs';
 import { airportIsPublished } from '@/lib/entity-seo';
 import {
+  AIRPORTS_BROWSE_LIMIT,
   DIRECTORY_REGIONS,
   airportCountryIndex,
   compareAirports,
+  rankAirports,
+  toRow,
   type DirectoryAirport,
 } from '@/lib/airport-directory';
 import { SECTIONS } from '@/lib/sections';
@@ -65,7 +68,8 @@ export default async function AirportsPage() {
         ...(routes > 0 ? { routes } : {}),
       };
     })
-    .sort(compareAirports);
+    // The order "Browse all airports" opens in (rankAirports).
+    .sort(rankAirports);
 
   const countryCount = new Set(directory.map((a) => a.country).filter(Boolean)).size;
   const reviewedCount = directory.filter((a) => a.reviewed).length;
@@ -79,13 +83,19 @@ export default async function AirportsPage() {
       .slice(0, FEATURED_PER_REGION),
   );
 
-  // The ItemList follows the visible A–Z order of the directory below.
+  // Every indexable airport page (a reviewed guide or route records, the
+  // airportIsSubstantive gate) stays linked from this page as a plain A–Z
+  // list under the featured grid: the directory below renders only the first
+  // AIRPORTS_BROWSE_LIMIT cards.
+  const guideIndex = directory.filter((a) => a.reviewed || a.routes).sort(compareAirports);
+
+  // The ItemList is the cards the directory shows on load, in that order.
   const collectionJsonLd = collectionPageJsonLd({
     name: HUB.name,
     description: HUB.description,
     url: PATH,
     itemListName: 'Airports',
-    max: 50,
+    max: AIRPORTS_BROWSE_LIMIT,
     items: directory.map((a) => ({
       name: a.city ? `${a.name} (${a.iata}) — ${a.city}` : `${a.name} (${a.iata})`,
       url: `/airports/${a.slug}`,
@@ -167,9 +177,9 @@ export default async function AirportsPage() {
         </nav>
       </header>
 
-      <FeaturedAirportGuides airports={featured} reviewedCount={reviewedCount} />
+      <FeaturedAirportGuides airports={featured} reviewedCount={reviewedCount} guideIndex={guideIndex} />
 
-      <AirportDirectory airports={directory} />
+      <AirportDirectory rows={directory.map(toRow)} />
 
       <section
         className="mt-20 border-t border-forest-900/15 pt-12"

@@ -10,9 +10,12 @@ import { CheckIcon } from '@/components/FeaturedAirlineGuides';
 export default function FeaturedAirportGuides({
   airports,
   reviewedCount,
+  guideIndex,
 }: {
   airports: DirectoryAirport[];
   reviewedCount: number;
+  /** Airports with a reviewed guide or route records, A–Z — plain links under the cards. */
+  guideIndex: DirectoryAirport[];
 }) {
   if (airports.length === 0) return null;
 
@@ -28,8 +31,8 @@ export default function FeaturedAirportGuides({
             Start with a reviewed guide
           </h2>
           <p className="mt-2 max-w-3xl text-sm leading-relaxed text-forest-900/70 sm:text-base">
-            Two per region: the reviewed guides with the most routes in our route records. All {reviewedCount} are in the
-            directory below — use the &ldquo;Reviewed guides&rdquo; filter.
+            Two per region: the reviewed guides with the most routes in our route records. All {reviewedCount}, and
+            every airport with route records, are listed below the cards.
           </p>
         </div>
         <Link
@@ -48,6 +51,24 @@ export default function FeaturedAirportGuides({
           </li>
         ))}
       </ul>
+
+      <details className="group mt-6 rounded-[0.3rem] border border-forest-900/10 bg-white" data-testid="reviewed-airport-index">
+        <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 text-sm font-semibold text-forest-950 hover:text-primary-emphasis [&::-webkit-details-marker]:hidden">
+          All {guideIndex.length} airports with a reviewed guide (✓) or route records, A–Z
+          <span aria-hidden className="text-forest-900/50 transition group-open:rotate-180">
+            ▾
+          </span>
+        </summary>
+        {/* Styled from the list down: 178 entries, so no per-item class strings. */}
+        <ul className="grid grid-cols-1 gap-x-6 gap-y-1.5 border-t border-forest-900/10 px-4 py-4 text-sm sm:grid-cols-2 lg:grid-cols-4 [&>li]:min-w-0 [&>li]:truncate [&_a]:text-forest-900/80 [&_a:hover]:text-primary-emphasis [&_a:hover]:underline [&_small]:font-mono [&_small]:text-xs [&_small]:text-forest-900/50">
+          {guideIndex.map((a) => (
+            <li key={a.iata}>
+              <a href={`/airports/${a.slug}`}>{a.city || a.name}</a> <small>{a.iata}</small>
+              {a.reviewed ? ' ✓' : ''}
+            </li>
+          ))}
+        </ul>
+      </details>
     </section>
   );
 }

@@ -16,7 +16,7 @@ const HUB = HUB_INTROS.destinations;
 const PATH = HUB_PATHS.destinations;
 
 export const metadata: Metadata = {
-  title: 'Destinations',
+  title: 'Travel Guides to Countries & Cities',
   description: HUB.description,
   alternates: { canonical: PATH },
   robots: { index: true, follow: true },

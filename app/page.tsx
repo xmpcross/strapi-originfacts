@@ -83,6 +83,8 @@ export default async function HomePage() {
     '@type': 'WebSite',
     '@id': 'https://www.originfacts.com/#website',
     name: 'Originfacts',
+    // Lets Google tie the domain and the two-word spelling to the site name.
+    alternateName: ['Originfacts.com', 'Origin Facts'],
     url: 'https://www.originfacts.com',
     inLanguage: 'en',
     publisher: { '@id': ORG_ID },

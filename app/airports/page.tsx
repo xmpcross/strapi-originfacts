@@ -17,7 +17,7 @@ const HUB = HUB_INTROS.airports;
 const PATH = HUB_PATHS.airports;
 
 export const metadata = {
-  title: 'Airport Directory',
+  title: 'Airport Guides & Directory',
   description: HUB.description,
   alternates: { canonical: PATH },
 };

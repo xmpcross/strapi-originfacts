@@ -17,7 +17,7 @@ type Props = { searchParams: Promise<{ page?: string; q?: string }> };
 export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
   const page = Math.max(1, Number((await searchParams).page) || 1);
   return {
-    title: page > 1 ? `All stories — page ${page}` : 'All stories',
+    title: page > 1 ? `Travel Articles & Tips — page ${page}` : 'Travel Articles & Tips',
     description: page > 1 ? `${DESCRIPTION} (Page ${page})` : DESCRIPTION,
     alternates: { canonical: page > 1 ? `/all-articles?page=${page}` : '/all-articles' },
   };

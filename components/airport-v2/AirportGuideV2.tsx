@@ -206,26 +206,26 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
   return (
     <div className="bg-forest-50" data-testid={`airport-v2-page-${code}`} data-template="v2">
       {/* ---------------------------------------------------------- header */}
-      <header className="relative overflow-hidden bg-forest-950 text-white">
+      <header className="relative overflow-hidden border-b border-forest-900/10 bg-gradient-to-br from-white via-forest-50 to-sand-100">
         {/* decorative flight-path arcs */}
-        <svg aria-hidden className="pointer-events-none absolute inset-0 h-full w-full text-white/[0.07]" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice" fill="none" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 8">
+        <svg aria-hidden className="pointer-events-none absolute inset-0 h-full w-full text-forest-900/10" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice" fill="none" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 8">
           <path d="M-50 360 C 250 40, 650 20, 1250 300" />
           <path d="M-50 260 C 300 -40, 800 60, 1250 120" />
           <path d="M200 420 C 500 160, 900 140, 1250 220" />
         </svg>
-        <div aria-hidden className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-sand-300/10 blur-3xl" />
+        <div aria-hidden className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-sand-300/30 blur-3xl" />
         <div className={`${WRAP} relative pb-8 pt-6 lg:pb-10`}>
-          <nav aria-label="Breadcrumb" className="text-sm text-white/75">
+          <nav aria-label="Breadcrumb" className="text-sm text-forest-900/75">
             <ol className="flex flex-wrap items-center gap-1.5">
               {p.breadcrumb.map((b) => (
                 <li key={b.href} className="flex items-center gap-1.5">
-                  <Link href={b.href} className="hover:text-sand-300 hover:underline">
+                  <Link href={b.href} className="hover:text-primary-emphasis hover:underline">
                     {b.name}
                   </Link>
                   <span aria-hidden>/</span>
                 </li>
               ))}
-              <li aria-current="page" className="font-medium text-white">
+              <li aria-current="page" className="font-medium text-forest-950">
                 {name}
               </li>
             </ol>
@@ -247,19 +247,19 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                   <Plane className="h-8 w-8 -rotate-45 sm:h-12 sm:w-12" strokeWidth={2.2} />
                 </div>
                 <div className="min-w-0">
-                  <p className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-sand-300">
+                  <p className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-primary-emphasis">
                     <PlaneTakeoff aria-hidden className="h-3.5 w-3.5" />
                     Airport guide
                   </p>
                   <h1 className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-3xl leading-tight sm:text-4xl">
-                    <span className="!text-white">{name}</span>
-                    <span className="rounded-[0.3rem] bg-sand-300 px-2.5 py-0.5 font-mono text-sm font-bold tracking-wider text-forest-950">
+                    <span>{name}</span>
+                    <span className="rounded-[0.3rem] bg-forest-950 px-2.5 py-0.5 font-mono text-sm font-bold tracking-wider text-white">
                       <span className="sr-only">IATA code </span>
                       {code}
                     </span>
                   </h1>
                   {shortSummary && (
-                    <p className="mt-2.5 text-sm leading-relaxed text-white/85 sm:text-base">
+                    <p className="mt-2.5 text-sm leading-relaxed text-forest-900/80 sm:text-base">
                       {shortSummary}
                     </p>
                   )}
@@ -272,7 +272,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                     href={officialSite.url}
                     target="_blank"
                     rel="noopener noreferrer nofollow"
-                    className="inline-flex items-center justify-center gap-2 rounded-[0.3rem] bg-white px-4 py-2.5 text-sm font-semibold text-forest-950 transition hover:bg-sand-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sand-300"
+                    className="inline-flex items-center justify-center gap-2 rounded-[0.3rem] border border-forest-900/15 bg-white px-4 py-2.5 text-sm font-semibold text-forest-950 transition hover:border-primary-emphasis hover:text-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-emphasis"
                   >
                     <Globe aria-hidden className="h-4 w-4" />
                     {officialHost}
@@ -285,7 +285,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                     href={p.mapHref}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-[0.3rem] border border-white/30 bg-white/10 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sand-300"
+                    className="inline-flex items-center justify-center gap-2 rounded-[0.3rem] border border-forest-900/15 bg-white px-4 py-2.5 text-sm font-semibold text-forest-950 transition hover:border-primary-emphasis hover:text-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-emphasis"
                   >
                     <MapPin aria-hidden className="h-4 w-4" />
                     View map
@@ -298,7 +298,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
 
             {photo && (
               <figure className="min-w-0" data-testid="airport-v2-city-photo">
-                <div className="relative aspect-[16/10] overflow-hidden rounded-[0.5rem] bg-white/10 ring-1 ring-white/20">
+                <div className="relative aspect-[16/10] overflow-hidden rounded-[0.5rem] bg-forest-900/5 ring-1 ring-forest-900/10">
                   <Image
                     src={photo.src}
                     alt={photo.alt}
@@ -308,9 +308,9 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                     className="object-cover"
                   />
                 </div>
-                <figcaption className="mt-2 text-xs leading-5 text-white/75">
+                <figcaption className="mt-2 text-xs leading-5 text-forest-900/75">
                   {photo.city}, the city the airport serves — not a photo of {name}. From our{' '}
-                  <Link href={photo.guideHref} className="text-sand-300 underline-offset-2 hover:underline">
+                  <Link href={photo.guideHref} className="text-primary-emphasis underline-offset-2 hover:underline">
                     {photo.city} travel guide
                   </Link>
                   .
@@ -327,23 +327,23 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
             {headerFacts.map((f) => {
               const Icon = f.icon;
               return (
-                <div key={f.label} className="flex items-start gap-3 rounded-[0.4rem] border border-white/15 bg-white/[0.07] px-4 py-3 backdrop-blur-sm">
-                  <span aria-hidden className="mt-0.5 flex h-8 w-8 flex-none items-center justify-center rounded-full bg-sand-300/20 text-sand-300">
+                <div key={f.label} className="flex items-start gap-3 rounded-[0.4rem] border border-forest-900/10 bg-white px-4 py-3 shadow-[0_1px_2px_rgba(15,39,102,0.04)]">
+                  <span aria-hidden className="mt-0.5 flex h-8 w-8 flex-none items-center justify-center rounded-full bg-forest-950 text-sand-300">
                     <Icon className="h-4 w-4" />
                   </span>
                   <div className="min-w-0">
-                    <dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-white/70">{f.label}</dt>
-                    <dd className="mt-0.5 text-[15px] font-semibold text-white [overflow-wrap:anywhere]">{f.value}</dd>
-                    {f.hint && <dd className="mt-0.5 text-xs text-white/70">{f.hint}</dd>}
+                    <dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-forest-900/70">{f.label}</dt>
+                    <dd className="mt-0.5 text-[15px] font-semibold text-forest-950 [overflow-wrap:anywhere]">{f.value}</dd>
+                    {f.hint && <dd className="mt-0.5 text-xs text-forest-900/70">{f.hint}</dd>}
                   </div>
                 </div>
               );
             })}
           </dl>
 
-          <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-white/75" data-testid="airport-v2-ledger">
+          <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-forest-900/75" data-testid="airport-v2-ledger">
             <span className="inline-flex items-center gap-1.5">
-              <span aria-hidden className="h-2 w-2 rounded-full bg-sand-300" />
+              <span aria-hidden className="h-2 w-2 rounded-full bg-primary-emphasis" />
               Airport record{recordDate ? `, updated ${recordDate}` : ''}
             </span>
             {hasRoutes && <span>Route records{routesDate ? `, updated ${routesDate}` : ''}</span>}
@@ -352,7 +352,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
             {hasFares && faresDate && <span>Travelpayouts fares, {faresDate}</span>}
             {e.climate && <span>NASA POWER climate, {e.climate.period}</span>}
             <span>{guide ? `Terminals and transport checked${guideDate ? ` ${guideDate}` : ''}` : 'Terminals and transport not yet verified'}</span>
-            <a href="#sources" className="text-sand-300 underline-offset-2 hover:underline">
+            <a href="#sources" className="text-primary-emphasis underline-offset-2 hover:underline">
               Where this comes from
             </a>
           </div>

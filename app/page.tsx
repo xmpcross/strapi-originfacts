@@ -1,89 +1,86 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
-import { formatDistanceToNowStrict } from 'date-fns';
+
+import SubscribeBlock from '@/components/SubscribeBlock';
+import { listAirportGuideIatas } from '@/lib/airport-guide';
+import { airportSlug } from '@/lib/airport-slugs';
+import { PUBLISHED_AIRLINE_GUIDES } from '@/lib/airline-tier';
+import { getAirlineFacts } from '@/lib/airline-facts';
+import { ledgerFacts, type LedgerFact } from '@/lib/home-facts';
+import { ORG_ID, organizationJsonLd } from '@/lib/jsonld';
+import { partnerLink } from '@/lib/partner-links';
+import { SECTIONS } from '@/lib/sections';
 import {
+  listAirlines,
+  listAirports,
   listArticles,
   listCountriesBySlugs,
-  listDestinationArticles,
-  listSidebarArticles,
-  listSidebarCategoryTiles,
   mediaUrl,
   type StrapiArticle,
 } from '@/lib/strapi';
-import { ORG_ID, organizationJsonLd } from '@/lib/jsonld';
-
-const FEATURED_COUNTRY_SLUGS = [
-  'japan',
-  'singapore',
-  'germany',
-  'south-korea',
-  'thailand',
-  'australia',
-  'united-states',
-  'united-kingdom',
-];
-import { SECTIONS } from '@/lib/sections';
-import FeaturedCountries from '@/components/FeaturedCountries';
-import SectionDescription from '@/components/SectionDescription';
-import BlogSidebar from '@/components/BlogSidebar';
-import SubscribeBlock from '@/components/SubscribeBlock';
-import { partnerLink } from '@/lib/partner-links';
 
 export const revalidate = 60;
 
-export const metadata = {
+const TITLE = 'Originfacts — airline and airport facts, each with its source';
+const DESCRIPTION =
+  'Baggage limits, check-in cut-offs and airport transport, read from the airlines’ and airports’ own pages and dated. Airline guides, airport guides, flight routes and travel articles.';
+
+export const metadata: Metadata = {
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
   alternates: {
     canonical: '/',
-    types: {
-      'application/rss+xml': [{ url: '/feed.xml', title: 'Originfacts RSS' }],
-    },
+    types: { 'application/rss+xml': [{ url: '/feed.xml', title: 'Originfacts RSS' }] },
   },
+  openGraph: { title: TITLE, description: DESCRIPTION, url: '/', type: 'website' },
 };
 
-export default async function HomePage() {
-  const [perSection, countries, sidebar, categoryTiles] = await Promise.all([
-    Promise.all(
-      SECTIONS.map((s) => {
-        const pageSize = s.slug === 'travel-tips' ? 8 : s.slug === 'flights' ? 6 : 5;
-        const articles =
-          s.slug === 'destinations'
-            ? listDestinationArticles({ pageSize })
-            : listArticles({ category: s.slug, pageSize });
+const FEATURED_COUNTRY_SLUGS = [
+  'japan', 'singapore', 'germany', 'south-korea', 'thailand', 'australia', 'united-states', 'united-kingdom',
+];
 
-        return articles.then((r) => r.data).catch(() => []);
-      }),
-    ),
+const ARTICLE_SECTIONS = SECTIONS.filter((s) => s.slug !== 'destinations');
+
+type AirlineRow = { slug: string; name: string; iata: string; country: string; checked: number };
+type AirportRow = { iata: string; slug: string; city: string; name: string };
+
+export default async function HomePage() {
+  const [airlines, airports, articles, countries] = await Promise.all([
+    listAirlines().catch(() => []),
+    listAirports().catch(() => []),
+    listArticles({ pageSize: 7 }).then((r) => r.data).catch(() => [] as StrapiArticle[]),
     listCountriesBySlugs(FEATURED_COUNTRY_SLUGS).catch(() => []),
-    listSidebarArticles(5).catch(() => ({ recent: [], popular: [] })),
-    listSidebarCategoryTiles(
-      SECTIONS.filter((s) => s.slug !== 'destinations').map((s) => s.slug),
-    ).catch(() => []),
   ]);
 
-  const bySection = Object.fromEntries(SECTIONS.map((s, i) => [s.slug, perSection[i] as StrapiArticle[]]));
+  const airlineBySlug = new Map(airlines.map((a) => [a.slug, a]));
+  const airlineRows: AirlineRow[] = [...PUBLISHED_AIRLINE_GUIDES]
+    .map((slug) => {
+      const a = airlineBySlug.get(slug);
+      if (!a) return null;
+      const checked = (getAirlineFacts(slug)?.modules ?? []).reduce(
+        (n, m) => n + Object.values(m.fields ?? {}).filter((f) => f.status === 'official').length,
+        0,
+      );
+      return { slug, name: a.name, iata: a.iataCode ?? '', country: a.country ?? '', checked };
+    })
+    .filter((r): r is AirlineRow => r !== null)
+    .sort((a, b) => a.name.localeCompare(b.name));
 
-  // Latest across all categories, de-duped (same article can live in multiple sections)
-  const latest: StrapiArticle[] = [];
-  const seenIds = new Set<number>();
-  for (const a of perSection.flat().sort(
-    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
-  )) {
-    if (seenIds.has(a.id)) continue;
-    seenIds.add(a.id);
-    latest.push(a);
-  }
-  const hero = latest[0];
-  const side = latest.slice(1, 13);
+  const guideIatas = new Set(listAirportGuideIatas());
+  const airportRows: AirportRow[] = airports
+    .filter((a) => a.iata && guideIatas.has(a.iata.toUpperCase()))
+    .map((a) => ({ iata: a.iata.toUpperCase(), slug: airportSlug(a, airports), city: a.city || a.name, name: a.name }))
+    .sort((a, b) => a.city.localeCompare(b.city));
 
-  // Shared Organization node (lib/jsonld.ts) — same @id everywhere the brand
-  // entity appears (home, about, contact) so engines see one consistent org.
-  const orgJsonLd = organizationJsonLd();
+  const nameOf = (slug: string) => airlineBySlug.get(slug)?.name ?? slug;
+  const ledger = ledgerFacts(5);
+  const [lead, ...recent] = articles;
 
   const websiteJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     '@id': 'https://www.originfacts.com/#website',
     name: 'Originfacts',
-    // Lets Google tie the domain and the two-word spelling to the site name.
     alternateName: ['Originfacts.com', 'Origin Facts'],
     url: 'https://www.originfacts.com',
     inLanguage: 'en',
@@ -96,731 +93,320 @@ export default async function HomePage() {
   };
 
   return (
-    <div data-testid="home-page">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
-      />
+    <div data-testid="home-page" className="text-forest-950">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd()) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
 
-      {/* The page's own H1; the hero card titles below are h2s, so the H1 no
-          longer changes with whichever article is featured. */}
-      <h1 className="sr-only">Originfacts — travel facts, flights, airports and hotels for every place worth visiting</h1>
+      {/* ---------- Thesis + ledger ---------- */}
+      <section className="mx-auto max-w-6xl px-4 pb-14 pt-10 sm:px-6 lg:pb-20 lg:pt-16" data-testid="home-hero">
+        <div className="grid gap-12 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
+          <div className="flex flex-col justify-center">
+            <h1 className="text-[2.35rem] font-extrabold leading-[1.02] tracking-[-0.035em] sm:text-[3.4rem] lg:text-[4rem]">
+              Airline and airport facts, each one with its source.
+            </h1>
+            <p className="mt-6 max-w-[34rem] text-lg leading-relaxed text-slate-600">
+              Baggage limits, check-in cut-offs and how to get into town, read from the airlines’ and airports’ own
+              pages and dated when we checked them. Where we haven’t checked a figure, the page says so.
+            </p>
+            <nav aria-label="Start here" className="mt-9 grid grid-cols-2 gap-2.5 sm:max-w-md">
+              <JumpLink href="/airlines" label="Airlines" note={`${airlineRows.length} checked guides`} />
+              <JumpLink href="/airports" label="Airports" note={`${airportRows.length} airport guides`} />
+              <JumpLink href="/flight-routes" label="Flight routes" note="Who flies where" />
+              <JumpLink href="/destinations" label="Countries" note="Country guides" />
+            </nav>
+          </div>
 
-      <Hero hero={hero} side={side} />
+          {ledger.length > 0 && <Ledger facts={ledger} nameOf={nameOf} />}
+        </div>
+      </section>
+
+      {/* ---------- Airline guides ---------- */}
+      {airlineRows.length > 0 && (
+        <Band id="airline-guides" title="Airline guides" more={{ href: '/airlines', label: 'All airlines' }}>
+          <p className="max-w-2xl text-slate-600">
+            Cabin bags, checked bags, fares, check-in and what happens when a flight is cancelled, each figure checked
+            against the airline’s own pages.
+          </p>
+          <ul className="mt-8 grid gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
+            {airlineRows.map((a) => (
+              <li key={a.slug} className="border-t border-forest-900/10">
+                <Link
+                  href={`/airlines/${a.slug}`}
+                  className="group flex items-center gap-3 py-3.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-emphasis"
+                >
+                  {a.iata && <Tag code={a.iata} />}
+                  <span className="min-w-0 flex-1">
+                    <span className="block truncate font-semibold group-hover:text-primary-emphasis">{a.name}</span>
+                    <span className="block text-sm text-slate-500">{a.country}</span>
+                  </span>
+                  <span className="shrink-0 text-sm tabular-nums text-success-emphasis">{a.checked} checked</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Band>
+      )}
+
+      {/* ---------- Airport guides ---------- */}
+      {airportRows.length > 0 && (
+        <Band id="airport-guides" title="Airport guides" more={{ href: '/airports/top-100-airports', label: 'Top 100 airports' }}>
+          <p className="max-w-2xl text-slate-600">
+            Terminals, trains and buses into town, taxis and parking, cited to the airport and transport operators.
+          </p>
+          <ul className="mt-8 grid gap-x-8 sm:grid-cols-2 lg:grid-cols-4">
+            {airportRows.map((a) => (
+              <li key={a.iata} className="border-t border-forest-900/10">
+                <Link
+                  href={`/airports/${a.slug}`}
+                  className="group flex items-center gap-3 py-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-emphasis"
+                >
+                  <Tag code={a.iata} />
+                  <span className="min-w-0">
+                    <span className="block truncate font-semibold group-hover:text-primary-emphasis">{a.city}</span>
+                    <span className="block truncate text-sm text-slate-500">{a.name}</span>
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Band>
+      )}
+
+      {/* ---------- Articles ---------- */}
+      {lead && (
+        <Band id="articles" title="Latest articles" more={{ href: '/all-articles', label: 'All articles' }}>
+          <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr]">
+            <LeadArticle article={lead} />
+            <ol className="divide-y divide-forest-900/10 border-y border-forest-900/10">
+              {recent.slice(0, 6).map((a) => (
+                <li key={a.id}>
+                  <Link href={`/articles/${a.slug}`} className="group block py-4">
+                    <span className="text-xs font-semibold uppercase tracking-[0.08em] text-slate-500">
+                      {a.category?.name ?? 'Article'} · <time dateTime={a.publishedAt}>{shortDate(a.publishedAt)}</time>
+                    </span>
+                    <span className="mt-1 block font-semibold leading-snug group-hover:text-primary-emphasis">{a.title}</span>
+                  </Link>
+                </li>
+              ))}
+            </ol>
+          </div>
+          <nav aria-label="Article topics" className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            {ARTICLE_SECTIONS.map((s) => (
+              <Link key={s.slug} href={`/category/${s.slug}`} className="font-semibold text-primary-emphasis underline-offset-4 hover:underline">
+                {s.title}
+              </Link>
+            ))}
+          </nav>
+        </Band>
+      )}
+
+      {/* ---------- Countries ---------- */}
+      {countries.length > 0 && (
+        <Band id="countries" title="Countries" more={{ href: '/destinations', label: 'All countries' }}>
+          <ul className="flex flex-wrap gap-x-2 gap-y-3">
+            {countries.map((c) => (
+              <li key={c.slug}>
+                <Link
+                  href={`/destinations/${c.slug}`}
+                  className="inline-block rounded-full border border-forest-900/15 px-4 py-2 font-medium hover:border-primary-emphasis hover:text-primary-emphasis focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-emphasis"
+                >
+                  {c.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Band>
+      )}
+
+      {/* ---------- Method ---------- */}
+      <Band id="method" title="How a figure gets onto a page">
+        <ul className="grid gap-8 sm:grid-cols-3">
+          <Principle title="Read from the source">
+            Airline figures come from the airline’s own pages; airport figures from the airport and its transport
+            operators. Aggregators and booking sites are not used.
+          </Principle>
+          <Principle title="Dated and linked">
+            Every figure carries the page it came from and the day we checked it, so you can see how fresh it is.
+          </Principle>
+          <Principle title="Blank when unchecked">
+            If we haven’t verified something, the page says so instead of guessing. Where official pages disagree, we
+            show both.
+          </Principle>
+        </ul>
+        <Link href="/methodology" className="mt-8 inline-block font-semibold text-primary-emphasis underline-offset-4 hover:underline">
+          Read our methodology
+        </Link>
+      </Band>
+
+      {/* ---------- One labelled partner slot ---------- */}
+      <aside className="mx-auto max-w-6xl px-4 py-10 sm:px-6" aria-label="Advertisement" data-testid="home-ad-banner">
+        <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">Advertisement</p>
+        <a
+          href={partnerLink('https://www.cheapoair.com/', 'originfacts_home_banner_wide')}
+          target="_blank"
+          rel="sponsored nofollow noopener noreferrer"
+          className="mt-2 flex flex-col items-start justify-between gap-3 rounded-md border border-forest-900/10 px-5 py-4 transition hover:border-forest-900/25 sm:flex-row sm:items-center"
+        >
+          <span>
+            <span className="block text-xs font-bold uppercase tracking-wider text-slate-500">CheapOair</span>
+            <span className="mt-0.5 block font-semibold">Compare flights and book online</span>
+          </span>
+          <span className="text-sm font-semibold text-primary-emphasis">Search CheapOair →</span>
+        </a>
+      </aside>
 
       <SubscribeBlock />
-
-      <FeaturedCountries countries={countries} />
-
-      {SECTIONS.filter((s) => s.slug !== 'destinations').flatMap((s) => {
-        const posts = bySection[s.slug] ?? [];
-        const sectionEl = posts.length === 0
-          ? <EmptySection key={s.slug} section={s} />
-          : (
-              <EditorialSection
-                key={s.slug}
-                section={s}
-                posts={posts}
-                sidebarRecent={sidebar.recent}
-                sidebarPopular={sidebar.popular}
-                sidebarCategoryTiles={categoryTiles}
-              />
-            );
-        return s.slug === 'flights'
-          ? [
-              sectionEl,
-              // CheapOair (Takeads) banner — sits between Flights and Hotels.
-              <section key="ad-after-flights" className="py-10" data-testid="home-ad-banner">
-                <div className="mx-auto max-w-7xl px-6">
-                  <p className="text-center text-[10px] font-bold uppercase tracking-[0.3em] text-forest-900/50">
-                    Advertisement
-                  </p>
-                  <a
-                    href={partnerLink('https://www.cheapoair.com/', 'originfacts_home_banner_wide')}
-                    target="_blank"
-                    rel="sponsored nofollow noopener noreferrer"
-                    className="mx-auto mt-3 flex max-w-[728px] flex-col items-start justify-between gap-4 rounded-[0.4rem] border border-forest-900/10 bg-gradient-to-r from-[#eef6ff] to-white px-6 py-5 transition hover:shadow-md sm:flex-row sm:items-center"
-                  >
-                    <span>
-                      <span className="block text-xs font-bold uppercase tracking-wider text-primary-emphasis">CheapOair</span>
-                      <span className="mt-1 block text-lg font-bold leading-snug text-forest-900">Compare flights and book online</span>
-                    </span>
-                    <span className="inline-flex shrink-0 items-center rounded-[0.3rem] bg-primary-emphasis px-4 py-2 text-sm font-semibold text-white">
-                      Search CheapOair →
-                    </span>
-                  </a>
-                </div>
-              </section>,
-            ]
-          : [sectionEl];
-      })}
     </div>
   );
 }
 
-/* ---------- HERO ---------- */
+/* ---------- pieces ---------- */
 
-function Hero({ hero, side }: { hero?: StrapiArticle; side: StrapiArticle[] }) {
-  if (!hero) return null;
-
-  const [leftTop, leftBottom, centerWide, rightTop, rightBottom, summaryOne, summaryTwo, ...miniList] = side;
-
+/** An IATA code set like the code on a bag tag: the one thing travellers already read at a glance. */
+function Tag({ code }: { code: string }) {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-8" data-testid="home-hero">
-      <div className="grid gap-5 lg:grid-cols-[minmax(210px,0.78fr)_minmax(360px,1.55fr)_minmax(240px,0.82fr)]">
-        <div
-          className="grid gap-5 sm:grid-cols-2 lg:grid-cols-1"
-          data-testid="home-hero-col-1"
-        >
-          {leftTop && <HeroCompactStory article={leftTop} />}
-          {leftBottom && <HeroCompactStory article={leftBottom} />}
-          <div
-            className="hidden overflow-hidden rounded-[0.3rem] bg-white p-2 lg:block"
-            data-testid="home-hero-left-ad"
-          >
-            <p className="pt-1 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-forest-900/45">
-              Advertisement
-            </p>
-            {/* CheapOair (Takeads) */}
-            <a
-              href={partnerLink('https://www.cheapoair.com/', 'originfacts_home_banner_side')}
-              target="_blank"
-              rel="sponsored nofollow noopener noreferrer"
-              className="mt-2 block rounded-[0.3rem] border border-forest-900/10 bg-gradient-to-b from-[#eef6ff] to-white p-5 transition hover:shadow-md"
-              data-testid="home-hero-left-ad-banner"
-            >
-              <span className="block text-xs font-bold uppercase tracking-wider text-primary-emphasis">CheapOair</span>
-              <span className="mt-2 block text-lg font-bold leading-snug text-forest-900">Compare flights and book online</span>
-              <span className="mt-4 inline-flex items-center rounded-[0.3rem] bg-primary-emphasis px-4 py-2 text-sm font-semibold text-white">
-                Search CheapOair →
-              </span>
-            </a>
-          </div>
-        </div>
-
-        <div className="grid gap-4" data-testid="home-hero-col-2">
-          <HeroOverlayStory article={hero} priority size="large" />
-          {centerWide && <HeroOverlayStory article={centerWide} size="wide" />}
-          {(summaryOne || summaryTwo) && (
-            <div className="grid gap-4 sm:grid-cols-2">
-              {summaryOne && <HeroTextStory article={summaryOne} />}
-              {summaryTwo && <HeroTextStory article={summaryTwo} />}
-            </div>
-          )}
-        </div>
-
-        <div
-          className="grid gap-4 self-start sm:grid-cols-2 lg:grid-cols-1"
-          data-testid="home-hero-col-3"
-        >
-          {rightTop && <HeroOverlayStory article={rightTop} size="small" />}
-          {rightBottom && <HeroOverlayStory article={rightBottom} size="small" />}
-          {miniList.length > 0 && (
-            <div className="divide-y divide-forest-900/15 sm:col-span-2 lg:col-span-1">
-              {miniList.slice(0, 5).map((article) => (
-                <HeroMiniStory key={article.id} article={article} />
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
-    </section>
+    <span
+      aria-hidden="true"
+      className="relative inline-flex h-8 w-[3.6rem] shrink-0 items-center justify-center rounded-[4px] bg-sand-100 pl-2 text-[0.8rem] font-extrabold tabular-nums tracking-[0.12em] text-forest-950 ring-1 ring-inset ring-sand-400/60"
+    >
+      <span className="absolute left-1.5 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-white ring-1 ring-sand-400/70" />
+      {code}
+    </span>
   );
 }
 
-function CategoryLabel({ article, light = false }: { article: StrapiArticle; light?: boolean }) {
-  const chips: string[] = [];
-  if (article.category) chips.push(article.category.name);
-  (article.destinations ?? []).forEach((d) => {
-    if (!chips.includes(d.name)) chips.push(d.name);
-  });
-  if (chips.length === 0) return null;
-  return (
-    <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-      {chips.slice(0, 4).map((name) => (
-        <span
-          key={name}
-          className={`inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider ${light ? 'text-white' : 'text-primary-emphasis'}`}
-        >
-          <span className="inline-block h-1.5 w-1.5 rounded-full bg-secondary-emphasis" />
-          {name}
-        </span>
-      ))}
-    </div>
-  );
-}
-
-function HeroMeta({ article, hideReadingTime = false }: { article: StrapiArticle; hideReadingTime?: boolean }) {
-  return (
-    <div className="mt-3 flex items-center gap-3 text-sm">
-      {article.author?.name && (
-        <span className="font-medium text-forest-900">{article.author.name}</span>
-      )}
-      {!hideReadingTime && (
-        <>
-          <span className="inline-block h-1.5 w-1.5 rounded-full bg-secondary-emphasis" />
-          <span className="text-forest-900/70">{article.readingTimeMinutes ?? 5} min</span>
-        </>
-      )}
-    </div>
-  );
-}
-
-function HeroCompactStory({ article }: { article: StrapiArticle }) {
-  const img = mediaUrl(article.coverImage ?? null);
-  return (
-    <article className="group" data-testid={`hero-compact-${article.slug}`}>
-      <Link href={`/articles/${article.slug}`} className="block overflow-hidden rounded-[0.3rem] bg-forest-900/5">
-        {img ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={img}
-            alt={article.coverImage?.alternativeText || article.title}
-            className="aspect-[1.5/1] w-full object-cover transition duration-500 group-hover:scale-[1.03]"
-          />
-        ) : (
-          <div className="aspect-[1.5/1] w-full bg-gradient-to-br from-primary-hover to-primary-pressed" />
-        )}
-      </Link>
-      <div className="mt-3">
-        <HeroStoryMeta article={article} />
-        <Link href={`/articles/${article.slug}`}>
-          <h2 className="mt-1 text-base font-extrabold leading-tight text-forest-950 transition group-hover:text-primary-highlight">
-            {article.title}
-          </h2>
-        </Link>
-      </div>
-    </article>
-  );
-}
-
-function HeroOverlayStory({
-  article,
-  priority = false,
-  size,
-}: {
-  article: StrapiArticle;
-  priority?: boolean;
-  size: 'large' | 'wide' | 'small';
-}) {
-  const img = mediaUrl(article.coverImage ?? null);
-  const aspect = size === 'large' ? 'aspect-[1/1.04]' : size === 'wide' ? 'aspect-[1.82/1]' : 'aspect-[1.23/1]';
-  const titleSize = size === 'large' ? 'text-2xl sm:text-3xl' : 'text-base sm:text-lg';
-
-  return (
-    <article className="group" data-testid={`hero-overlay-${article.slug}`}>
-      <Link href={`/articles/${article.slug}`} className={`relative block overflow-hidden rounded-[0.3rem] bg-forest-900 ${aspect}`}>
-        {img ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={img}
-            alt={article.coverImage?.alternativeText || article.title}
-            className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
-            fetchPriority={priority ? 'high' : undefined}
-          />
-        ) : (
-          <div className="absolute inset-0 bg-gradient-to-br from-primary-hover to-primary-pressed" />
-        )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-black/5" />
-        <div className="absolute inset-x-4 bottom-4 text-white sm:inset-x-5 sm:bottom-5">
-          <HeroStoryMeta article={article} light />
-          <h2 className={`mt-2 font-extrabold leading-[1.05] text-white ${titleSize}`}>
-            {article.title}
-          </h2>
-        </div>
-      </Link>
-    </article>
-  );
-}
-
-function HeroTextStory({ article }: { article: StrapiArticle }) {
-  return (
-    <article className="group" data-testid={`hero-text-${article.slug}`}>
-      <HeroStoryMeta article={article} />
-      <Link href={`/articles/${article.slug}`}>
-        <h2 className="mt-1 text-base font-extrabold leading-tight text-forest-950 transition group-hover:text-primary-highlight">
-          {article.title}
-        </h2>
-      </Link>
-      {article.excerpt && (
-        <p className="mt-2 line-clamp-3 text-sm leading-5 text-ink/65">
-          {article.excerpt}
-        </p>
-      )}
-    </article>
-  );
-}
-
-function HeroMiniStory({ article }: { article: StrapiArticle }) {
-  const img = mediaUrl(article.coverImage ?? null);
+function JumpLink({ href, label, note }: { href: string; label: string; note: string }) {
   return (
     <Link
-      href={`/articles/${article.slug}`}
-      className="group grid grid-cols-[80px_minmax(0,1fr)] items-center gap-3 py-3 first:pt-0 last:pb-0"
-      data-testid={`hero-mini-${article.slug}`}
+      href={href}
+      className="group rounded-md border border-forest-900/15 px-4 py-3 transition hover:border-primary-emphasis focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-emphasis"
     >
-      <div className="overflow-hidden rounded-[0.3rem] bg-forest-900/5">
-        {img ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={img}
-            alt={article.coverImage?.alternativeText || article.title}
-            className="aspect-square h-full w-full object-cover transition duration-500 group-hover:scale-105"
-          />
-        ) : (
-          <div className="aspect-square bg-gradient-to-br from-primary-hover to-primary-pressed" />
-        )}
-      </div>
-      <div className="min-w-0">
-        <HeroStoryMeta article={article} />
-        <h2 className="mt-1 line-clamp-2 text-sm font-bold leading-snug text-forest-950 transition group-hover:text-primary-highlight">
-          {article.title}
-        </h2>
-      </div>
-    </Link>
-  );
-}
-
-function HeroStoryMeta({ article, light = false }: { article: StrapiArticle; light?: boolean }) {
-  const category = article.category?.name ?? 'Travel';
-  const relative = article.publishedAt
-    ? formatDistanceToNowStrict(new Date(article.publishedAt), { addSuffix: true })
-    : null;
-  return (
-    <div className={`text-[10px] font-extrabold uppercase tracking-wide ${light ? 'text-white/85' : 'text-primary-emphasis'}`}>
-      <span>{category}</span>
-      {relative && (
-        <>
-          <span
-            aria-hidden
-            className={`mx-1.5 inline-block translate-y-[-1px] ${light ? 'text-white/55' : 'text-forest-900/40'}`}
-          >
-            ✱
-          </span>
-          <span className={light ? 'text-white/80' : 'text-forest-900/55'}>{relative}</span>
-        </>
-      )}
-    </div>
-  );
-}
-
-type Section = (typeof SECTIONS)[number];
-
-function EmptySection({ section }: { section: Section }) {
-  return (
-    <section className="mx-auto max-w-7xl px-6 py-16" data-testid={`section-${section.slug}-empty`}>
-      <EditorialSectionHeader section={section} />
-      <div className="mt-8 rounded-3xl border border-dashed border-forest-900/15 p-12 text-center">
-        <p className="font-light text-forest-900/60">No stories in {section.title} yet — publish your first one in the CMS.</p>
-      </div>
-    </section>
-  );
-}
-
-/* ---------- Editorial section — feature + stacked list ---------- */
-
-function EditorialSection({
-  section,
-  posts,
-  sidebarRecent = [],
-  sidebarPopular = [],
-  sidebarCategoryTiles = [],
-}: {
-  section: Section;
-  posts: StrapiArticle[];
-  sidebarRecent?: StrapiArticle[];
-  sidebarPopular?: StrapiArticle[];
-  sidebarCategoryTiles?: { slug: string; name: string; count: number; image: string | null }[];
-}) {
-  if (section.slug === 'flights') {
-    return <FlightsSection section={section} posts={posts} />;
-  }
-  if (section.slug === 'travel-tips') {
-    return (
-      <TravelTipsSection
-        section={section}
-        posts={posts}
-        sidebarRecent={sidebarRecent}
-        sidebarPopular={sidebarPopular}
-        sidebarCategoryTiles={sidebarCategoryTiles}
-      />
-    );
-  }
-
-  const [feature, ...rest] = posts;
-  const list = rest.slice(0, 4);
-  // Hotels section flips the layout: compact list on the LEFT, feature image on the RIGHT.
-  const reverse = section.slug === 'hotels';
-  const gridCols = reverse
-    ? 'lg:grid-cols-[minmax(360px,0.9fr)_minmax(0,1fr)]'
-    : 'lg:grid-cols-[minmax(0,1fr)_minmax(360px,0.9fr)]';
-
-  const featureEl = <FeatureArticle article={feature} />;
-  const listEl = (
-    <div className="divide-y divide-forest-900/12 border-y border-forest-900/12">
-      {list.map((post) => (
-        <CompactArticleRow key={post.id} article={post} />
-      ))}
-    </div>
-  );
-
-  return (
-    <section className="py-20" data-testid={`section-${section.slug}`}>
-      <div className="mx-auto max-w-7xl px-6">
-        <EditorialSectionHeader section={section} />
-        <div className={`mt-10 grid gap-[15px] ${gridCols}`}>
-          {reverse ? listEl : featureEl}
-          {reverse ? featureEl : listEl}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function FlightsSection({ section, posts }: { section: Section; posts: StrapiArticle[] }) {
-  const [feature, firstSide, secondSide, ...rest] = posts;
-  const list = rest.slice(0, 3);
-
-  return (
-    <section className="py-20" data-testid={`section-${section.slug}`}>
-      <div className="mx-auto max-w-7xl px-6">
-        <EditorialSectionHeader section={section} />
-        <div className="mt-10 grid gap-[15px] lg:grid-cols-[minmax(0,1.05fr)_minmax(460px,1fr)]">
-          <FlightFeatureArticle article={feature} />
-          <div className="divide-y divide-forest-900/15 border-y border-forest-900/15 lg:border-t-0">
-            {firstSide && <FlightSideArticle article={firstSide} />}
-            {secondSide && <FlightSideArticle article={secondSide} reverse />}
-            {list.map((post) => (
-              <FlightListArticle key={post.id} article={post} />
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function FlightFeatureArticle({ article }: { article: StrapiArticle }) {
-  const img = mediaUrl(article.coverImage ?? null);
-  const [highlight, rest] = splitTitleLead(article.title);
-
-  return (
-    <article className="group" data-testid={`flights-feature-${article.slug}`}>
-      <Link href={`/articles/${article.slug}`} className="block overflow-hidden rounded-[0.3rem] bg-forest-900/5">
-        {img ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={img}
-            alt={article.coverImage?.alternativeText || article.title}
-            className="aspect-[1.08/1] w-full object-cover transition duration-500 group-hover:scale-[1.02]"
-          />
-        ) : (
-          <div className="aspect-[1.08/1] w-full bg-gradient-to-br from-primary-hover to-primary-pressed" />
-        )}
-      </Link>
-      <div className="mt-4">
-        <FlightMetaLine article={article} />
-        <Link href={`/articles/${article.slug}`}>
-          <h3 className="mt-2 text-2xl font-extrabold leading-[1.08] text-forest-950 transition group-hover:text-primary-highlight sm:text-3xl">
-            <span className="mr-2 inline-block -skew-x-6 bg-[#ffd21e] px-2 py-0.5 italic text-black">
-              {highlight}
-            </span>
-            {rest}
-          </h3>
-        </Link>
-        {article.excerpt && (
-          <p className="mt-4 max-w-2xl text-sm leading-6 text-ink/65 sm:text-base">
-            {article.excerpt}
-          </p>
-        )}
-      </div>
-    </article>
-  );
-}
-
-function FlightSideArticle({ article, reverse = false }: { article: StrapiArticle; reverse?: boolean }) {
-  const img = mediaUrl(article.coverImage ?? null);
-  const imageEl = (
-    <Link href={`/articles/${article.slug}`} className="block overflow-hidden rounded-[0.3rem] bg-forest-900/5">
-      {img ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={img}
-          alt={article.coverImage?.alternativeText || article.title}
-          className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.03]"
-        />
-      ) : (
-        <div className="aspect-[4/3] w-full bg-gradient-to-br from-primary-hover to-primary-pressed" />
-      )}
-    </Link>
-  );
-  const textEl = (
-    <div className={reverse ? 'text-left sm:text-right' : 'text-left'}>
-      <FlightMetaLine article={article} />
-      <Link href={`/articles/${article.slug}`}>
-        <h3 className="mt-2 text-lg font-extrabold leading-tight text-forest-950 transition group-hover:text-primary-highlight sm:text-xl">
-          {article.title}
-        </h3>
-      </Link>
-    </div>
-  );
-
-  return (
-    <article className="group grid gap-5 py-6 sm:grid-cols-2 sm:items-center" data-testid={`flights-side-${article.slug}`}>
-      {reverse ? textEl : imageEl}
-      {reverse ? imageEl : textEl}
-    </article>
-  );
-}
-
-function FlightListArticle({ article }: { article: StrapiArticle }) {
-  return (
-    <article className="group py-6" data-testid={`flights-list-${article.slug}`}>
-      <FlightMetaLine article={article} />
-      <Link href={`/articles/${article.slug}`}>
-        <h3 className="mt-2 text-lg font-extrabold leading-tight text-forest-950 transition group-hover:text-primary-highlight sm:text-xl">
-          {article.title}
-        </h3>
-      </Link>
-    </article>
-  );
-}
-
-function FlightMetaLine({ article }: { article: StrapiArticle }) {
-  const category = article.category?.name ?? 'Flights';
-  return (
-    <div className="text-[11px] font-extrabold uppercase tracking-wide text-forest-900/60">
-      {category}
-      <span className="mx-1.5 text-forest-900/35">~</span>
-      <span>{article.readingTimeMinutes ?? 5} min read</span>
-    </div>
-  );
-}
-
-/* ---------- Travel Tips section — 2-column masonry à la frenify/mow ---------- */
-
-function TravelTipsSection({
-  section,
-  posts,
-  sidebarRecent = [],
-  sidebarPopular = [],
-  sidebarCategoryTiles = [],
-}: {
-  section: Section;
-  posts: StrapiArticle[];
-  sidebarRecent?: StrapiArticle[];
-  sidebarPopular?: StrapiArticle[];
-  sidebarCategoryTiles?: { slug: string; name: string; count: number; image: string | null }[];
-}) {
-  return (
-    <section className="py-20" data-testid={`section-${section.slug}`}>
-      <div className="mx-auto max-w-7xl px-6">
-        <EditorialSectionHeader section={section} />
-        <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_280px] lg:gap-14">
-          <div className="grid items-start gap-[15px] sm:grid-cols-2">
-            {posts.map((post, i) => (
-              <TravelTipCard
-                key={post.id}
-                article={post}
-                imageAspect={i % 2 === 0 ? 'aspect-[16/9]' : 'aspect-[40/27]'}
-              />
-            ))}
-          </div>
-          <BlogSidebar
-            popularPosts={sidebarPopular}
-            recentPosts={sidebarRecent}
-            categoryTiles={sidebarCategoryTiles}
-          />
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function TravelTipCard({
-  article,
-  imageAspect = 'aspect-[3/2]',
-}: {
-  article: StrapiArticle;
-  imageAspect?: string;
-}) {
-  const img = mediaUrl(article.coverImage ?? null);
-  const category = article.category?.name;
-  const relative = article.publishedAt
-    ? formatDistanceToNowStrict(new Date(article.publishedAt), { addSuffix: true })
-    : null;
-
-  return (
-    <article className="group flex flex-col" data-testid={`travel-tips-card-${article.slug}`}>
-      <Link
-        href={`/articles/${article.slug}`}
-        className="block overflow-hidden rounded-[0.3rem] bg-forest-900/5"
-        aria-label={article.title}
-      >
-        {img ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={img}
-            alt={article.coverImage?.alternativeText || article.title}
-            className={`${imageAspect} w-full object-cover transition duration-500 group-hover:scale-[1.02]`}
-            loading="lazy"
-          />
-        ) : (
-          <div className={`${imageAspect} w-full bg-gradient-to-br from-primary-hover to-primary-pressed`} />
-        )}
-      </Link>
-      <div className="mt-5 flex flex-1 flex-col">
-        <div className="text-[11px] font-bold uppercase tracking-wider text-primary-emphasis">
-          {category && <span>{category}</span>}
-          {category && relative && (
-            <span aria-hidden className="mx-2 text-forest-900/40">✱</span>
-          )}
-          {relative && <span className="text-forest-900/55">{relative}</span>}
-        </div>
-        <Link href={`/articles/${article.slug}`}>
-          <h3 className="mt-2 text-xl font-bold leading-snug text-forest-950 transition group-hover:text-primary-highlight">
-            {article.title}
-          </h3>
-        </Link>
-        {article.excerpt && (
-          <p className="mt-3 line-clamp-2 text-sm leading-6 text-ink/70 sm:text-base">
-            {article.excerpt}
-          </p>
-        )}
-        <div className="mt-5">
-          <Link
-            href={`/articles/${article.slug}`}
-            className="inline-flex items-center gap-2 rounded-full border border-forest-900/15 bg-white px-4 py-2 text-[11px] font-bold uppercase tracking-widest text-forest-900 transition hover:border-primary-emphasis hover:text-primary-emphasis"
-          >
-            Read More
-            <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-forest-900 text-white transition group-hover:bg-primary-emphasis">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2.5}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-3 w-3"
-                aria-hidden
-              >
-                <line x1="7" y1="17" x2="17" y2="7" />
-                <polyline points="7 7 17 7 17 17" />
-              </svg>
-            </span>
-          </Link>
-        </div>
-      </div>
-    </article>
-  );
-}
-
-function splitTitleLead(title: string) {
-  const words = title.trim().split(/\s+/);
-  if (words.length <= 2) return [title, ''];
-  return [words.slice(0, 2).join(' '), words.slice(2).join(' ')];
-}
-
-function EditorialSectionHeader({ section }: { section: Section }) {
-  return (
-    <div>
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-        <h2 className="text-2xl font-bold leading-tight text-forest-900 sm:text-3xl">
-          {section.title}
-        </h2>
-        <Link
-          href={`/category/${section.slug}`}
-          className="inline-flex w-fit items-center justify-center rounded-[0.3rem] border border-forest-900 px-4 py-2 text-xs font-bold uppercase tracking-wider text-forest-900 transition hover:bg-primary-emphasis hover:text-white"
-          data-testid={`section-all-${section.slug}`}
-        >
-          See all
-        </Link>
-      </div>
-      <SectionDescription
-        text={section.description}
-        testId={`section-readmore-${section.slug}`}
-      />
-    </div>
-  );
-}
-
-function FeatureArticle({ article }: { article: StrapiArticle }) {
-  const img = mediaUrl(article.coverImage ?? null);
-  return (
-    <article className="group" data-testid={`feature-article-${article.slug}`}>
-      <Link href={`/articles/${article.slug}`} className="block overflow-hidden rounded-[0.3rem] bg-forest-900/5">
-      {img ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={img}
-          alt={article.coverImage?.alternativeText || article.title}
-          className="aspect-[16/11] w-full object-cover transition duration-500 group-hover:scale-[1.02]"
-        />
-      ) : (
-        <div className="aspect-[16/11] w-full bg-gradient-to-br from-primary-hover to-primary-pressed" />
-      )}
-      </Link>
-      <div className="mt-5">
-        <CategoryLabel article={article} />
-        <Link href={`/articles/${article.slug}`}>
-          <h3 className="mt-3 text-xl font-bold leading-tight text-forest-900 transition group-hover:text-primary-highlight sm:text-2xl">
-            {article.title}
-          </h3>
-        </Link>
-        {article.excerpt && (
-          <p className="mt-3 line-clamp-2 max-w-2xl text-sm leading-6 text-ink/75 sm:text-base">
-            {article.excerpt}
-          </p>
-        )}
-        <ArticleMeta article={article} />
-      </div>
-    </article>
-  );
-}
-
-function CompactArticleRow({ article }: { article: StrapiArticle }) {
-  const img = mediaUrl(article.coverImage ?? null);
-  return (
-    <article className="group py-6" data-testid={`compact-article-${article.slug}`}>
-      <Link href={`/articles/${article.slug}`} className="grid grid-cols-[92px_minmax(0,1fr)] gap-5 sm:grid-cols-[112px_minmax(0,1fr)]">
-        <div className="overflow-hidden rounded-[0.3rem] bg-forest-900/5">
-          {img ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={img}
-              alt={article.coverImage?.alternativeText || article.title}
-              className="aspect-square h-full w-full object-cover transition duration-500 group-hover:scale-105"
-            />
-          ) : (
-            <div className="aspect-square bg-gradient-to-br from-primary-hover to-primary-pressed" />
-          )}
-        </div>
-        <div className="min-w-0">
-          <CategoryLabel article={article} />
-          <h3 className="mt-2 line-clamp-2 text-base font-bold leading-snug text-forest-900 transition group-hover:text-primary-highlight sm:text-lg">
-            {article.title}
-          </h3>
-          <ArticleMeta article={article} compact />
-        </div>
-      </Link>
-    </article>
-  );
-}
-
-function ArticleMeta({ article, compact = false }: { article: StrapiArticle; compact?: boolean }) {
-  return (
-    <div className={`flex flex-wrap items-center gap-2 text-sm text-forest-900/75 ${compact ? 'mt-3' : 'mt-4'}`}>
-      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary-emphasis text-sm font-bold text-primary-emphasis">
-        {(article.author?.name || 'O').slice(0, 1).toUpperCase()}
+      <span className="block font-semibold group-hover:text-primary-emphasis">
+        {label} <span aria-hidden="true">→</span>
       </span>
-      {article.author?.name && <span>{article.author.name}</span>}
-      {article.author?.name && <span className="text-forest-900/35">|</span>}
-      <span>{article.readingTimeMinutes ?? 5} min read</span>
-    </div>
+      <span className="block text-sm text-slate-500">{note}</span>
+    </Link>
   );
+}
+
+function Ledger({ facts, nameOf }: { facts: LedgerFact[]; nameOf: (slug: string) => string }) {
+  return (
+    <figure className="self-center rounded-xl border border-forest-900/10 bg-white p-2 shadow-[0_1px_0_rgba(9,24,64,0.04),0_18px_40px_-24px_rgba(9,24,64,0.25)]">
+      <figcaption className="flex items-center justify-between px-4 pb-2 pt-3 text-xs font-semibold uppercase tracking-[0.1em] text-slate-500">
+        <span>From the airline guides</span>
+        <span className="inline-flex items-center gap-1.5 text-success-emphasis">
+          <CheckMark /> Checked
+        </span>
+      </figcaption>
+      <ol className="divide-y divide-forest-900/[0.07]">
+        {facts.map((f) => (
+          <li key={f.slug + f.label} className="px-4 py-4">
+            <Link href={`/airlines/${f.slug}`} className="group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-emphasis">
+              <span className="block text-sm text-slate-500">
+                <span className="font-semibold text-forest-950 group-hover:text-primary-emphasis">{nameOf(f.slug)}</span>
+                {' · '}
+                {f.label}
+              </span>
+              <span className="mt-1 block text-xl font-bold leading-snug tracking-[-0.015em]">{f.value}</span>
+            </Link>
+            <a
+              href={f.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-1.5 inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-primary-emphasis"
+            >
+              <span className="font-medium">{f.sourceHost}</span>
+              <span aria-hidden="true">·</span>
+              <span>
+                checked <time dateTime={f.verifiedAt}>{shortDate(f.verifiedAt)}</time>
+              </span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </figure>
+  );
+}
+
+function Band({
+  id,
+  title,
+  more,
+  children,
+}: {
+  id: string;
+  title: string;
+  more?: { href: string; label: string };
+  children: React.ReactNode;
+}) {
+  return (
+    <section aria-labelledby={`${id}-heading`} className="border-t border-forest-900/10" data-testid={`home-${id}`}>
+      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:py-16">
+        <div className="mb-5 flex items-baseline justify-between gap-6">
+          <h2 id={`${id}-heading`} className="text-2xl font-extrabold tracking-[-0.025em] sm:text-[1.9rem]">
+            {title}
+          </h2>
+          {more && (
+            <Link href={more.href} className="shrink-0 text-sm font-semibold text-primary-emphasis underline-offset-4 hover:underline">
+              {more.label} <span aria-hidden="true">→</span>
+            </Link>
+          )}
+        </div>
+        {children}
+      </div>
+    </section>
+  );
+}
+
+function LeadArticle({ article }: { article: StrapiArticle }) {
+  const img = mediaUrl(article.coverImage ?? null);
+  return (
+    <article className="group">
+      <Link href={`/articles/${article.slug}`} className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-emphasis">
+        {img && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={img}
+            alt={article.coverImage?.alternativeText || ''}
+            loading="lazy"
+            className="aspect-[16/9] w-full rounded-md object-cover"
+          />
+        )}
+        <span className="mt-4 block text-xs font-semibold uppercase tracking-[0.08em] text-slate-500">
+          {article.category?.name ?? 'Article'} · <time dateTime={article.publishedAt}>{shortDate(article.publishedAt)}</time>
+        </span>
+        <h3 className="mt-1.5 text-2xl font-extrabold leading-tight tracking-[-0.02em] group-hover:text-primary-emphasis">
+          {article.title}
+        </h3>
+        {article.excerpt && <p className="mt-2 line-clamp-3 leading-relaxed text-slate-600">{article.excerpt}</p>}
+      </Link>
+    </article>
+  );
+}
+
+function Principle({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <li>
+      <p className="flex items-center gap-2 font-bold">
+        <CheckMark className="text-success-emphasis" />
+        {title}
+      </p>
+      <p className="mt-2 leading-relaxed text-slate-600">{children}</p>
+    </li>
+  );
+}
+
+function CheckMark({ className = '' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 16 16" aria-hidden="true" className={`h-3.5 w-3.5 ${className}`} fill="none" stroke="currentColor" strokeWidth="2.2">
+      <path d="M3 8.5l3.2 3L13 4.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function shortDate(iso: string): string {
+  const d = new Date(iso.length === 10 ? `${iso}T00:00:00Z` : iso);
+  if (Number.isNaN(d.getTime())) return iso;
+  return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
 }

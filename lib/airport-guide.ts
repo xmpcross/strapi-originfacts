@@ -61,6 +61,20 @@ export function getAirportGuide(iata: string | null | undefined): AirportGuide |
   return cache.get(key) ?? null;
 }
 
+/** IATA codes (upper case) of every airport with a guide that loads. */
+export function listAirportGuideIatas(): string[] {
+  let files: string[];
+  try {
+    files = fs.readdirSync(DIR).filter((f) => /^[a-z]{3}\.json$/.test(f));
+  } catch {
+    return [];
+  }
+  return files
+    .map((f) => f.slice(0, 3))
+    .filter((iata) => getAirportGuide(iata))
+    .map((iata) => iata.toUpperCase());
+}
+
 /** Sources numbered in the order the section first cites them. */
 export function airportCitationOrder(guide: AirportGuide): Map<string, number> {
   const order = new Map<string, number>();

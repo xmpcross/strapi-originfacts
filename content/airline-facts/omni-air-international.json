@@ -42,6 +42,38 @@
           "verified_by": "manual_official_source"
         }
       }
+    },
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "required": [
+        "carryon_bag_dimensions",
+        "weight_economy",
+        "weight_business_first"
+      ],
+      "fields": {
+        "carryon_bag_dimensions": {
+          "value": "55 x 35 x 23 cm",
+          "status": "official",
+          "source_url": "https://www.oai.aero/passengers",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "weight_economy": {
+          "value": "7 kg (15 lbs)",
+          "status": "official",
+          "source_url": "https://www.oai.aero/passengers",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "weight_business_first": {
+          "value": "10 kg (22 lbs)",
+          "status": "official",
+          "source_url": "https://www.oai.aero/passengers",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

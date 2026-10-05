@@ -49,6 +49,38 @@
           "verified_by": "manual_official_source"
         }
       }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "required": [
+        "piece_weight_economy",
+        "piece_weight_business",
+        "piece_weight_first"
+      ],
+      "fields": {
+        "piece_weight_economy": {
+          "value": "1 piece up to 20 kg or 30 kg",
+          "status": "official",
+          "source_url": "https://www.himalaya-airlines.com/travel-info/baggage-allowance",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "piece_weight_business": {
+          "value": "1 piece up to 30 kg or 40 kg",
+          "status": "official",
+          "source_url": "https://www.himalaya-airlines.com/travel-info/baggage-allowance",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "piece_weight_first": {
+          "value": "1 piece up to 40 kg",
+          "status": "official",
+          "source_url": "https://www.himalaya-airlines.com/travel-info/baggage-allowance",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

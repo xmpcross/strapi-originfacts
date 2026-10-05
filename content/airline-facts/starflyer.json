@@ -43,6 +43,38 @@
           "verified_by": "manual_official_source"
         }
       }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "required": [
+        "piece_weight_economy",
+        "piece_weight_business",
+        "piece_weight_first"
+      ],
+      "fields": {
+        "piece_weight_economy": {
+          "value": "Up to 20 kg free allowance",
+          "status": "official",
+          "source_url": "https://www.starflyer.jp/checkin/baggage/checked/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "piece_weight_business": {
+          "value": "Up to 30 kg free allowance",
+          "status": "official",
+          "source_url": "https://www.starflyer.jp/checkin/baggage/checked/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "piece_weight_first": {
+          "value": "Up to 30 kg free allowance",
+          "status": "official",
+          "source_url": "https://www.starflyer.jp/checkin/baggage/checked/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

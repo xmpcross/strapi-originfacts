@@ -31,7 +31,7 @@ import { CitedParagraph } from '@/components/route-guide/RouteGuideBlocks';
 import type { StrapiAirport, StrapiRoute } from '@/lib/strapi';
 import type { AirportWeather } from '@/lib/met-weather';
 import { formatLocalTime, MET_ATTRIBUTION, weatherLabel } from '@/lib/met-symbols';
-import SectionNav, { type NavItem } from './SectionNav';
+import SectionNav, { SECTION_ICONS, type NavItem } from './SectionNav';
 import { displayUrl, type Faq } from './faqs';
 import { routeCoverage, type AirportCityPhoto } from '@/lib/airport-v2';
 import { formatCeasedOn } from '@/lib/airline-status';
@@ -533,6 +533,10 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                     href={`#${item.id}`}
                     className="inline-flex items-center gap-1.5 rounded-full border border-forest-900/15 bg-white px-3 py-1.5 text-sm text-forest-950 hover:border-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-emphasis"
                   >
+                    {(() => {
+                      const Icon = SECTION_ICONS[item.id] ?? Info;
+                      return <Icon aria-hidden className="h-4 w-4 flex-none text-primary-emphasis" />;
+                    })()}
                     {item.label}
                   </a>
                 </li>

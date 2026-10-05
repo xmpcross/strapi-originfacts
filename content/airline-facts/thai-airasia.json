@@ -1,39 +1,39 @@
 {
   "slug": "thai-airasia",
-  "official_website": "http://www.airasia.com",
+  "official_website": "https://www.airasia.com",
   "modules": [
     {
       "id": "carryon",
       "title": "Carry-on",
       "required": [
+        "carryon_allowance",
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_weight"
       ],
       "fields": {
+        "carryon_allowance": {
+          "value": "2 pieces per passenger (infants excluded): one cabin bag, laptop bag, handbag or small bag, in any combination of two",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-fd.html",
+          "notes": "Terms and conditions of carriage for FD flights (last update 8 Jun 2026), Article 8.6.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "https://support.airasia.com/s/article/Cabin-baggage-en",
-          "notes": "Thai AirAsia cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "Cabin bag up to 56 x 36 x 23 cm (must fit the overhead bin); second bag up to 40 x 30 x 10 cm (must fit under the seat)",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-fd.html",
+          "notes": "Terms and conditions of carriage for FD flights (last update 8 Jun 2026), Article 8.6.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "https://support.airasia.com/s/article/Cabin-baggage-en",
-          "notes": "Thai AirAsia Economy Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
-        },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "https://support.airasia.com/s/article/Cabin-baggage-en",
-          "notes": "Thai AirAsia Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "carryon_weight": {
+          "value": "7 kg total for both pieces",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-fd.html",
+          "notes": "Terms and conditions of carriage for FD flights (last update 8 Jun 2026), Article 8.6: \"The total permitted weight for the two (2) pieces must not exceed 7kg.\"",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -41,34 +41,136 @@
       "id": "baggage",
       "title": "Checked baggage",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "allowance",
+        "max_piece"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "https://support.airasia.com/s/article/Checked-baggage-en",
-          "notes": "Thai AirAsia Economy Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "allowance": {
+          "value": "Not included in the fare: checked baggage is bought as an add-on, at a discounted rate when booking or up to 4 hours before departure, and at the full rate at the airport counter",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-fd.html",
+          "notes": "Terms and conditions of carriage for FD flights (last update 8 Jun 2026), Article 8.5. Weight steps and rates are in AirAsia's Fee Schedule and are not recorded here.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://support.airasia.com/s/article/Checked-baggage-en",
-          "notes": "Thai AirAsia Business Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "excess_baggage": {
+          "value": "Baggage over the weight bought in advance is charged per kg at the airport check-in counter; the fee is non-refundable",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-fd.html",
+          "notes": "Terms and conditions of carriage for FD flights (last update 8 Jun 2026), Article 8.5.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
+        "max_piece": {
+          "value": "No single item over 32 kg, or over 81 cm high, 119 cm wide and 119 cm deep, is accepted",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-fd.html",
+          "notes": "Terms and conditions of carriage for FD flights (last update 8 Jun 2026), Article 8.5 (mobility equipment excepted).",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "required": [
+        "fare_name",
+        "seat_selection_included",
+        "change_cancellation_policy"
+      ],
+      "fields": {
+        "fare_name": {
+          "value": null,
           "status": "pending",
-          "source_url": "https://support.airasia.com/s/article/Checked-baggage-en",
-          "notes": "Thai AirAsia First Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "notes": "The FD conditions of carriage do not name the entry fare. Needs a reading of AirAsia's own fare-type page."
+        },
+        "seat_selection_included": {
+          "value": "No particular seat is guaranteed; a seat is allocated at check-in unless an advance seat is bought",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-fd.html",
+          "notes": "Terms and conditions of carriage for FD flights (last update 8 Jun 2026), Articles 5.8 and 5.8.1.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "change_cancellation_policy": {
+          "value": "Bookings cannot be cancelled or refunded once confirmed. Flight changes are allowed only more than 48 hours before departure, for a fee plus any fare difference; route changes are not allowed",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-fd.html",
+          "notes": "Terms and conditions of carriage for FD flights (last update 8 Jun 2026), Articles 5.1 and 5.3. Article 5.4 says the change rules do not apply to certain promotional fares.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "domestic_cutoff",
+        "international_cutoff",
+        "boarding_close"
+      ],
+      "fields": {
+        "online_checkin": {
+          "value": null,
+          "status": "pending",
+          "notes": "The FD conditions (Article 6.1.2) refer to the website for self check-in and give no window."
+        },
+        "domestic_cutoff": {
+          "value": "45 minutes before departure (60 minutes at KLIA2)",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-fd.html",
+          "notes": "Terms and conditions of carriage for FD flights (last update 8 Jun 2026), Article 6.1.1; counters open 2 hours before domestic flights.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "international_cutoff": {
+          "value": "60 minutes before departure",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-fd.html",
+          "notes": "Terms and conditions of carriage for FD flights (last update 8 Jun 2026), Article 6.1.1; counters open 3 hours before international flights.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "boarding_close": {
+          "value": "Be at the gate 30 minutes before departure; boarding closes 20 minutes before, and this may vary by country or airport",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-fd.html",
+          "notes": "Terms and conditions of carriage for FD flights (last update 8 Jun 2026), Article 6.2.1.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "required": [
+        "rebooking_refund",
+        "delay_refund_threshold"
+      ],
+      "fields": {
+        "rebooking_refund": {
+          "value": "On international routes, when Thai AirAsia cancels or reschedules a flight it offers, at its discretion, a free move to the next flight with space, the fare held as credit for 90 days, or a refund",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-fd.html",
+          "notes": "Terms and conditions of carriage for FD flights (last update 8 Jun 2026), Article 9.2.1. Domestic routes follow Thailand's Ministry of Transport passenger-rights announcement (B.E. 2553) and CAB Regulation No. 101 (Article 9.2.2).",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "delay_refund_threshold": {
+          "value": "On international routes, a refund applies when the cancellation or reschedule is 3 hours or more from the original departure time; not for changes made at the airport on the day of departure",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-fd.html",
+          "notes": "Terms and conditions of carriage for FD flights (last update 8 Jun 2026), Article 9.2.1.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "duty_of_care_policy": {
+          "value": null,
+          "status": "pending",
+          "notes": "The FD conditions defer to Thai regulations for care during delays and state no figures. Do not infer from the regulation text."
         }
       }
     },
@@ -76,16 +178,35 @@
       "id": "contact",
       "title": "Contact and customer support",
       "required": [
-        "phone_home_market"
+        "conditions_of_carriage_url",
+        "official_website_url"
       ],
       "fields": {
+        "customer_service": {
+          "value": null,
+          "status": "pending",
+          "notes": "The FD conditions of carriage name no customer-service channel."
+        },
         "phone_home_market": {
           "value": null,
           "status": "pending",
-          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-carriage.html",
-          "notes": "No verified phone yet.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "notes": "No phone number is published in the FD conditions of carriage. Do not add a number from any other site."
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-fd.html",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-fd.html",
+          "notes": "Terms and conditions of carriage for FD flights (last update 8 Jun 2026).",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "official_website_url": {
+          "value": "https://www.airasia.com",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-fd.html",
+          "notes": "AirAsia passenger website, which sells FD flights.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

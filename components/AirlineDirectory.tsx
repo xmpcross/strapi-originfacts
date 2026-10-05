@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { mediaUrl, type AirlineRegion, type AirlineType } from '@/lib/strapi';
-import { DIRECTORY_REGIONS, type DirectoryAirline } from '@/lib/airline-directory';
+import { DIRECTORY_REGIONS, NARROW_LOGO_SLUGS, type DirectoryAirline } from '@/lib/airline-directory';
 
 // Short, factual intros shown above each region's airline list when the
 // directory is grouped by region.
@@ -415,7 +415,13 @@ function AirlineCard({ airline, hasCeased }: { airline: DirectoryAirline; hasCea
         {logo ? (
           // Logos are trimmed to the artwork: full width, height follows the aspect ratio.
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={logo} alt="" className="h-auto max-h-full w-full object-contain" loading="lazy" decoding="async" />
+          <img
+            src={logo}
+            alt=""
+            className={`h-auto max-h-full w-full object-contain ${NARROW_LOGO_SLUGS.has(airline.slug) ? 'max-w-[70%]' : ''}`}
+            loading="lazy"
+            decoding="async"
+          />
         ) : (
           <span
             className="flex h-10 w-10 items-center justify-center rounded-full bg-forest-900/5 text-xs font-bold text-forest-900/55"

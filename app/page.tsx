@@ -1,30 +1,47 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 
+import FeaturedAirlineGuides, { type FeaturedGuide } from '@/components/FeaturedAirlineGuides';
 import SubscribeBlock from '@/components/SubscribeBlock';
+import { JsonLd } from '@/components/SeoBlocks';
+import {
+  Kicker,
+  LeadStory,
+  MosaicStory,
+  StoryCard,
+  StoryRow,
+  WideStoryCard,
+  shortDate,
+} from '@/components/home/Stories';
 import { listAirportGuideIatas } from '@/lib/airport-guide';
 import { airportSlug } from '@/lib/airport-slugs';
 import { PUBLISHED_AIRLINE_GUIDES } from '@/lib/airline-tier';
 import { getAirlineFacts } from '@/lib/airline-facts';
+import { faqJsonLd } from '@/lib/entity-seo';
 import { ledgerFacts, type LedgerFact } from '@/lib/home-facts';
-import { ORG_ID, organizationJsonLd } from '@/lib/jsonld';
+import { categoryCounts, homeFaqs, selectHomeStories, type CategoryBand } from '@/lib/home-page';
+import { ORG_ID, collectionPageJsonLd, organizationJsonLd } from '@/lib/jsonld';
 import { partnerLink } from '@/lib/partner-links';
-import { SECTIONS } from '@/lib/sections';
-import { SITE_PHOTOS } from '@/lib/site-photos';
+import { getRouteFacts } from '@/lib/route-facts';
+import { clampDescription } from '@/lib/seo';
 import {
   listAirlines,
   listAirports,
+  listArticleIndex,
   listArticles,
   listCountriesBySlugs,
   mediaUrl,
   type StrapiArticle,
+  type StrapiDestination,
 } from '@/lib/strapi';
 
 export const revalidate = 60;
 
-const TITLE = 'Originfacts — Sourced Airline & Airport Intelligence';
-const DESCRIPTION =
-  'Sourced baggage limits, check-in cut-offs, airport transit routes, and flight schedules — read directly from official airline and airport pages, dated and fully cited.';
+const TITLE = 'Originfacts — Travel Guides, Flight Tips & Airline Facts';
+const DESCRIPTION = clampDescription(
+  'Travel guides, flight and hotel advice, and airline and airport guides with facts checked against official sources. Read the latest travel stories.',
+);
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -40,32 +57,62 @@ const FEATURED_COUNTRY_SLUGS = [
   'japan', 'singapore', 'germany', 'south-korea', 'thailand', 'australia', 'united-states', 'united-kingdom',
 ];
 
-const ARTICLE_SECTIONS = SECTIONS.filter((s) => s.slug !== 'destinations');
+/** Airline guides shown on the home page; the rest are one click away on /airlines. */
+const HOME_AIRLINE_GUIDES = 8;
 
-type AirlineRow = { slug: string; name: string; iata: string; country: string; checked: number };
 type AirportRow = { iata: string; slug: string; city: string; name: string };
 
+/**
+ * The slim article index (no body text) is all the page needs. If it fails,
+ * fall back to one page of full articles so the stories still render.
+ */
+async function loadArticles(): Promise<{ rows: StrapiArticle[]; total: number }> {
+  try {
+    const res = await listArticleIndex();
+    return { rows: res.data, total: res.meta?.pagination?.total ?? res.data.length };
+  } catch (err) {
+    console.error('[home] article index unavailable, falling back to latest articles:', err);
+    try {
+      const res = await listArticles({ pageSize: 30 });
+      return { rows: res.data, total: res.meta?.pagination?.total ?? res.data.length };
+    } catch {
+      return { rows: [], total: 0 };
+    }
+  }
+}
+
 export default async function HomePage() {
-  const [airlines, airports, articles, countries] = await Promise.all([
+  const [airlines, airports, articleData, countries] = await Promise.all([
     listAirlines().catch(() => []),
     listAirports().catch(() => []),
-    listArticles({ pageSize: 7 }).then((r) => r.data).catch(() => [] as StrapiArticle[]),
-    listCountriesBySlugs(FEATURED_COUNTRY_SLUGS).catch(() => []),
+    loadArticles(),
+    listCountriesBySlugs(FEATURED_COUNTRY_SLUGS).catch(() => [] as StrapiDestination[]),
   ]);
 
+  const { rows: index, total: articleTotal } = articleData;
+  const indexComplete = index.length > 0 && index.length >= articleTotal;
+  const { lead, secondary, latest, bands, recentList } = selectHomeStories(index);
+  const topics = categoryCounts(index);
+
+  /* ---------- Airline and airport guides (unchanged sources) ---------- */
   const airlineBySlug = new Map(airlines.map((a) => [a.slug, a]));
-  const airlineRows: AirlineRow[] = [...PUBLISHED_AIRLINE_GUIDES]
-    .map((slug) => {
+  const airlineGuides: FeaturedGuide[] = [...PUBLISHED_AIRLINE_GUIDES]
+    .map((slug): FeaturedGuide | null => {
       const a = airlineBySlug.get(slug);
       if (!a) return null;
-      const checked = (getAirlineFacts(slug)?.modules ?? []).reduce(
+      const verifiedFields = (getAirlineFacts(slug)?.modules ?? []).reduce(
         (n, m) => n + Object.values(m.fields ?? {}).filter((f) => f.status === 'official').length,
         0,
       );
-      return { slug, name: a.name, iata: a.iataCode ?? '', country: a.country ?? '', checked };
+      return {
+        airline: { name: a.name, slug: a.slug, iataCode: a.iataCode, type: a.type, logo: a.logo ?? null },
+        verifiedFields,
+        destinations: getRouteFacts(a.iataCode)?.destinationCount ?? 0,
+        homeCountry: a.country || 'International',
+      };
     })
-    .filter((r): r is AirlineRow => r !== null)
-    .sort((a, b) => a.name.localeCompare(b.name));
+    .filter((g): g is FeaturedGuide => g !== null)
+    .sort((a, b) => b.verifiedFields - a.verifiedFields || a.airline.name.localeCompare(b.airline.name));
 
   const guideIatas = new Set(listAirportGuideIatas());
   const airportRows: AirportRow[] = airports
@@ -75,8 +122,27 @@ export default async function HomePage() {
 
   const nameOf = (slug: string) => airlineBySlug.get(slug)?.name ?? slug;
   const ledger = ledgerFacts(5);
-  const [lead, ...recent] = articles;
 
+  /* ---------- Copy that depends on data ---------- */
+  const faqs = homeFaqs({
+    topics: topics.map((t) => t.name.toLowerCase()),
+    airlineGuides: airlineGuides.length,
+    airportGuides: airportRows.length,
+  });
+
+  // Every number in this band is counted at render time; a stat with no data is dropped.
+  const stats = [
+    articleTotal > 0 ? { value: articleTotal.toLocaleString('en-GB'), label: 'published articles' } : null,
+    indexComplete && topics.length > 0 ? { value: String(topics.length), label: 'travel topics' } : null,
+    airlineGuides.length > 0 ? { value: String(airlineGuides.length), label: 'verified airline guides' } : null,
+    airportRows.length > 0 ? { value: String(airportRows.length), label: 'airport guides' } : null,
+  ].filter((s): s is { value: string; label: string } => s !== null);
+
+  // Chapters are numbered in page order, so the count follows however many bands render.
+  let chapter = 0;
+  const nextChapter = () => String(++chapter).padStart(2, '0');
+
+  /* ---------- Structured data ---------- */
   const websiteJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
@@ -88,7 +154,7 @@ export default async function HomePage() {
     publisher: { '@id': ORG_ID },
     potentialAction: {
       '@type': 'SearchAction',
-      target: 'https://www.originfacts.com/all-articles?q={search_term_string}',
+      target: 'https://www.originfacts.com/search?q={search_term_string}',
       'query-input': 'required name=search_term_string',
     },
   };
@@ -96,413 +162,655 @@ export default async function HomePage() {
   const servicesCatalogJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'Originfacts Travel Products & Sourced Data Services',
+    name: 'Originfacts Travel Guides & Sourced Travel Data',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Verified Airline Policy Guides', url: 'https://www.originfacts.com/airlines' },
-      { '@type': 'ListItem', position: 2, name: 'Airport Transit & Terminal Intelligence', url: 'https://www.originfacts.com/airports' },
-      { '@type': 'ListItem', position: 3, name: 'Flight Route & Carrier Network Explorer', url: 'https://www.originfacts.com/flight-routes' },
-      { '@type': 'ListItem', position: 4, name: 'Country & Destination Handbooks', url: 'https://www.originfacts.com/destinations' },
-      { '@type': 'ListItem', position: 5, name: 'Real-Time Fact Verification Ledger', url: 'https://www.originfacts.com/#live-ledger' },
-      { '@type': 'ListItem', position: 6, name: 'Travel Articles & Tactical Insights', url: 'https://www.originfacts.com/all-articles' },
+      { '@type': 'ListItem', position: 1, name: 'Travel Articles & Guides', url: 'https://www.originfacts.com/all-articles' },
+      { '@type': 'ListItem', position: 2, name: 'Verified Airline Policy Guides', url: 'https://www.originfacts.com/airlines' },
+      { '@type': 'ListItem', position: 3, name: 'Airport Transit & Terminal Guides', url: 'https://www.originfacts.com/airports' },
+      { '@type': 'ListItem', position: 4, name: 'Flight Route & Carrier Network Explorer', url: 'https://www.originfacts.com/flight-routes' },
+      { '@type': 'ListItem', position: 5, name: 'Country & Destination Handbooks', url: 'https://www.originfacts.com/destinations' },
+      { '@type': 'ListItem', position: 6, name: 'Checked Airline Facts Ledger', url: 'https://www.originfacts.com/#live-ledger' },
     ],
   };
 
+  const shownStories = [lead, ...secondary, ...latest, ...bands.flatMap((b) => b.stories), ...recentList].filter(
+    (a): a is StrapiArticle => Boolean(a),
+  );
+  const collectionJsonLd = collectionPageJsonLd({
+    name: 'Latest travel stories on Originfacts',
+    description: DESCRIPTION,
+    url: '/',
+    itemListName: 'Latest travel stories',
+    items: shownStories.map((a) => ({ name: a.title, url: `/articles/${a.slug}`, image: mediaUrl(a.coverImage ?? null) })),
+  });
+
+  const lastPublished = lead ? shortDate(lead.publishedAt) : '';
+
   return (
-    <div data-testid="home-page" className="text-forest-950">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd()) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesCatalogJsonLd) }} />
+    <div data-testid="home-page" className="overflow-x-clip text-forest-950">
+      <JsonLd data={organizationJsonLd()} />
+      <JsonLd data={websiteJsonLd} />
+      <JsonLd data={servicesCatalogJsonLd} />
+      <JsonLd data={collectionJsonLd} />
+      <JsonLd data={faqJsonLd(faqs)} />
 
-      {/* ---------- Hero Section ---------- */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-sand-50/80 via-white to-white px-4 pb-14 pt-12 sm:px-6 lg:pb-20 lg:pt-16" data-testid="home-hero">
-        <div className="mx-auto max-w-6xl">
-          <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-14">
-            <div>
-              {/* Trust Badge */}
-              <div className="inline-flex items-center gap-2 rounded-full border border-forest-900/10 bg-white/80 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-forest-950 shadow-xs backdrop-blur-sm">
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
-                </span>
-                100% Primary Source Verified
-              </div>
-
-              {/* Single H1 for SEO */}
-              <h1 className="mt-5 text-[2.4rem] font-extrabold leading-[1.05] tracking-[-0.035em] sm:text-[3.5rem] lg:text-[3.8rem]">
-                Sourced Airline &amp; Airport Intelligence.
-              </h1>
-              <p className="mt-5 max-w-[35rem] text-lg leading-relaxed text-slate-600">
-                Official baggage limits, check-in cut-offs, airport transit routes, and flight networks — read directly from airline and airport primary pages, complete with timestamps and source links.
-              </p>
-
-              {/* Navigation Jump Pills */}
-              <nav aria-label="Explore Products & Services" className="mt-8 flex flex-wrap gap-2.5">
-                <JumpPill href="#services" label="Our Services" icon="✨" />
-                <JumpPill href="/airlines" label="Airline Guides" count={`${airlineRows.length}`} />
-                <JumpPill href="/airports" label="Airport Transit" count={`${airportRows.length}`} />
-                <JumpPill href="/flight-routes" label="Flight Routes" />
-                <JumpPill href="/destinations" label="Destinations" />
-              </nav>
-
-              {/* Quick Stat Counter Bar */}
-              <div className="mt-10 grid grid-cols-3 gap-4 border-t border-forest-900/10 pt-6">
-                <div>
-                  <span className="block text-2xl font-extrabold text-forest-950 sm:text-3xl">{airlineRows.length}+</span>
-                  <span className="text-xs font-medium text-slate-500">Airline Policy Guides</span>
-                </div>
-                <div>
-                  <span className="block text-2xl font-extrabold text-forest-950 sm:text-3xl">{airportRows.length}+</span>
-                  <span className="text-xs font-medium text-slate-500">Airport Transit Guides</span>
-                </div>
-                <div>
-                  <span className="block text-2xl font-extrabold text-emerald-600 sm:text-3xl">100%</span>
-                  <span className="text-xs font-medium text-slate-500">Official Primary Sources</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Live Fact Ledger Widget */}
-            {ledger.length > 0 && <Ledger facts={ledger} nameOf={nameOf} />}
+      {/* ================= Hero ================= */}
+      <header className="mx-auto max-w-7xl px-4 pb-14 pt-10 sm:px-6 sm:pt-14" data-testid="home-hero">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
+          <div className="min-w-0 max-w-4xl">
+            <p className="eyebrow-tag">Originfacts travel journal</p>
+            <h1 className="mt-5 text-[2.1rem] font-bold leading-[1.08] tracking-tight text-forest-950 sm:text-5xl lg:text-[3.4rem]">
+              Travel guides and the facts behind every place worth visiting
+            </h1>
           </div>
+          {lastPublished && (
+            <p className="shrink-0 text-sm text-forest-900/65 lg:pb-2 lg:text-right">
+              Latest story <time dateTime={lead?.publishedAt}>{lastPublished}</time>
+              {articleTotal > 0 && (
+                <>
+                  <span aria-hidden="true"> · </span>
+                  <Link href="/all-articles" className="font-semibold text-primary-emphasis underline-offset-2 hover:underline">
+                    {articleTotal.toLocaleString('en-GB')} articles
+                  </Link>
+                </>
+              )}
+            </p>
+          )}
         </div>
-      </section>
 
-      {/* ---------- Products & Services Section ---------- */}
-      <section id="services" className="border-t border-forest-900/10 bg-slate-50/50 py-16 lg:py-20" aria-labelledby="services-heading">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="mx-auto max-w-2xl text-center">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-primary-emphasis">Clear, Reliable &amp; Sourced</span>
-            <h2 id="services-heading" className="mt-2 text-3xl font-extrabold tracking-[-0.03em] sm:text-4xl">
-              What We Offer
+        <nav aria-label="Browse by topic" className="mt-7 border-y border-forest-900/10 py-3" data-testid="home-topic-nav">
+          <ul className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0">
+            {topics.map((t) => (
+              <li key={t.slug} className="shrink-0">
+                <TopicPill href={`/category/${t.slug}`} label={t.name} count={indexComplete ? t.count : undefined} />
+              </li>
+            ))}
+            <li className="shrink-0">
+              <TopicPill href="/destinations" label="Countries" />
+            </li>
+            <li className="shrink-0">
+              <TopicPill href="/airlines" label="Airline guides" count={airlineGuides.length || undefined} />
+            </li>
+            <li className="shrink-0">
+              <TopicPill href="/airports" label="Airport guides" count={airportRows.length || undefined} />
+            </li>
+            <li className="shrink-0">
+              <TopicPill href="/flight-routes" label="Flight routes" />
+            </li>
+          </ul>
+        </nav>
+
+        {lead ? (
+          <div className="mt-8 grid gap-10 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-12">
+            <LeadStory article={lead} />
+            {secondary.length > 0 && (
+              <section aria-label="More top stories" className="min-w-0" data-testid="home-hero-mosaic">
+                <div className="grid gap-5 sm:grid-cols-2 sm:gap-x-5 sm:gap-y-7">
+                  {secondary.map((a) => (
+                    <MosaicStory key={a.slug} article={a} />
+                  ))}
+                </div>
+              </section>
+            )}
+          </div>
+        ) : (
+          <EmptyStories />
+        )}
+      </header>
+
+      {/* ================= Intro + numbers ================= */}
+      <section aria-labelledby="home-intro-heading" className="border-y border-forest-900/15 bg-paper" data-testid="home-intro">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-16 lg:py-16">
+          <div className="min-w-0">
+            <h2 id="home-intro-heading" className="text-2xl font-bold leading-tight text-forest-950 sm:text-3xl">
+              A travel blog that starts with the place itself
             </h2>
-            <p className="mt-3 text-base text-slate-600 sm:text-lg">
-              We replace aggregator guesswork with timestamped, verified facts read directly from official carrier and airport documentation.
+            <div className="mt-5 space-y-4 text-base leading-relaxed text-forest-900/80 sm:text-lg">
+              <p>
+                Originfacts is an independent travel website, published in English for readers around the world. We
+                write destination guides, flight and hotel advice, car rental explainers and practical travel tips, and
+                pair them with reference guides to airlines and airports, so you can understand a place and plan the trip
+                to it in one place.
+              </p>
+              <p>
+                It is written for independent travellers who plan their own trips: people comparing routes and fares,
+                choosing a neighbourhood to stay in, working out how many days a city needs, or checking a baggage
+                allowance before they pack. Prices, schedules and entry rules change often, so confirm the final details
+                with the airline, hotel or official source before you book.
+              </p>
+            </div>
+            <p className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold">
+              <Link href="/about" className="text-primary-emphasis underline-offset-2 hover:underline">
+                About Originfacts →
+              </Link>
+              <Link href="/methodology" className="text-forest-950 underline-offset-2 hover:underline">
+                How we research and write →
+              </Link>
             </p>
           </div>
-
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <ServiceCard
-              icon={
-                <svg className="h-6 w-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                </svg>
-              }
-              title="Airline Policy Guides"
-              description="Sourced carry-on and checked luggage dimensions, fare conditions, seat pitch, cancellation rights, and customer support contacts."
-              badge={`${airlineRows.length} Checked Carriers`}
-              href="/airlines"
-            />
-            <ServiceCard
-              icon={
-                <svg className="h-6 w-6 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-                </svg>
-              }
-              title="Airport Transit & Terminals"
-              description="Official transit routes into town (express trains, subways, buses, taxis), terminal maps, connection times, and parking tariffs."
-              badge={`${airportRows.length} Airport Guides`}
-              href="/airports"
-            />
-            <ServiceCard
-              icon={
-                <svg className="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                </svg>
-              }
-              title="Flight Route Network"
-              description="Comprehensive non-stop flight lookup, operator breakdowns, carrier flight frequencies, distances, and seasonal route maps."
-              badge="Network Data"
-              href="/flight-routes"
-            />
-            <ServiceCard
-              icon={
-                <svg className="h-6 w-6 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2h1.5a2.5 2.5 0 002.5-2.5V11a2 2 0 012-2h1.065" />
-                </svg>
-              }
-              title="Country Handbooks"
-              description="Essential entry rules, hub airport overviews, local currency mappings, time zones, and destination travel guides."
-              badge="Country Guides"
-              href="/destinations"
-            />
-            <ServiceCard
-              icon={
-                <svg className="h-6 w-6 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              }
-              title="Live Sourced Fact Ledger"
-              description="An audit trail of checked travel facts, showing the exact source URL, verified timestamp, and exact figure for total transparency."
-              badge="Source Verified"
-              href="#live-ledger"
-            />
-            <ServiceCard
-              icon={
-                <svg className="h-6 w-6 text-rose-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-                </svg>
-              }
-              title="Travel Articles & Insights"
-              description="Tactical travel guides, luggage packing strategies, airline tier reviews, and airport transit advice written by expert travel analysts."
-              badge="Travel Insights"
-              href="/all-articles"
-            />
-          </div>
+          {stats.length > 0 && (
+            <dl className="grid min-w-0 grid-cols-2 gap-x-4 gap-y-8 self-center" data-testid="home-stats">
+              {stats.map((s) => (
+                <div key={s.label} className="flex min-w-0 flex-col-reverse border-l-2 border-primary-emphasis pl-4">
+                  <dt className="mt-2 text-xs font-bold uppercase tracking-widest text-forest-900/60">{s.label}</dt>
+                  <dd className="text-4xl font-bold leading-none text-forest-950 sm:text-5xl">{s.value}</dd>
+                </div>
+              ))}
+            </dl>
+          )}
         </div>
       </section>
 
-      {/* ---------- Airline Guides Section ---------- */}
-      {airlineRows.length > 0 && (
-        <Band id="airline-guides" title="Airline guides" more={{ href: '/airlines', label: 'All airlines' }}>
-          <p className="max-w-2xl text-slate-600">
-            Cabin bags, checked bags, fares, check-in cut-offs, and cancellation rules — each figure checked against the airline’s official pages.
-          </p>
-          <ul className="mt-8 grid gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
-            {airlineRows.map((a) => (
-              <li key={a.slug} className="border-t border-forest-900/10">
-                <Link
-                  href={`/airlines/${a.slug}`}
-                  className="group flex items-center gap-3 py-3.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-emphasis"
-                >
-                  {a.iata && <Tag code={a.iata} />}
-                  <span className="min-w-0 flex-1">
-                    <span className="block truncate font-semibold group-hover:text-primary-emphasis">{a.name}</span>
-                    <span className="block text-sm text-slate-500">{a.country}</span>
-                  </span>
-                  <span className="shrink-0 text-sm tabular-nums text-success-emphasis">{a.checked} checked</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </Band>
-      )}
-
-      {/* ---------- Airport Guides Section ---------- */}
-      {airportRows.length > 0 && (
-        <Band id="airport-guides" title="Airport guides" more={{ href: '/airports/top-100-airports', label: 'Top 100 airports' }}>
-          <p className="max-w-2xl text-slate-600">
-            Terminals, trains and express buses into town, taxis and parking rates, cited directly to airport and transport operators.
-          </p>
-          <ul className="mt-8 grid gap-x-8 sm:grid-cols-2 lg:grid-cols-4">
-            {airportRows.map((a) => (
-              <li key={a.iata} className="border-t border-forest-900/10">
-                <Link
-                  href={`/airports/${a.slug}`}
-                  className="group flex items-center gap-3 py-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-emphasis"
-                >
-                  <Tag code={a.iata} />
-                  <span className="min-w-0">
-                    <span className="block truncate font-semibold group-hover:text-primary-emphasis">{a.city}</span>
-                    <span className="block truncate text-sm text-slate-500">{a.name}</span>
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </Band>
-      )}
-
-      {/* ---------- Destination Photography Section ---------- */}
-      {countries.length > 0 && (
-        <Band id="countries" title="Featured Destinations" more={{ href: '/destinations', label: 'All destinations' }}>
-          <p className="mb-8 max-w-2xl text-slate-600">
-            Explore entry rules, hub airports, and flight networks for destinations worldwide.
-          </p>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {countries.map((c) => {
-              const photo = SITE_PHOTOS[c.slug as keyof typeof SITE_PHOTOS];
-              return (
-                <Link
-                  key={c.slug}
-                  href={`/destinations/${c.slug}`}
-                  className="group relative flex h-60 flex-col justify-end overflow-hidden rounded-xl border border-forest-900/10 bg-slate-900 p-5 text-white transition hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-emphasis"
-                >
-                  {photo ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      src={photo.src}
-                      alt={photo.alt}
-                      loading="lazy"
-                      className="absolute inset-0 h-full w-full object-cover opacity-75 transition duration-500 group-hover:scale-105 group-hover:opacity-85"
-                      style={photo.focus ? { objectPosition: photo.focus } : undefined}
-                    />
-                  ) : (
-                    <div className="absolute inset-0 bg-gradient-to-br from-forest-900 to-slate-950" />
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                  <div className="relative z-10">
-                    <span className="text-xs font-medium uppercase tracking-wider text-sand-300">Country Guide</span>
-                    <h3 className="text-xl font-bold tracking-tight text-white group-hover:text-sand-200">{c.name}</h3>
-                    {photo && <p className="mt-1 text-xs text-slate-300 line-clamp-1">{photo.place}</p>}
-                  </div>
-                </Link>
-              );
-            })}
+      {/* ================= Latest stories ================= */}
+      {latest.length > 0 && (
+        <section aria-labelledby="home-latest-heading" className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20" data-testid="home-latest">
+          <ChapterHeading
+            id="home-latest-heading"
+            n={nextChapter()}
+            kicker="Latest"
+            title="Latest travel stories"
+            intro="New guides and advice from across the site, newest first."
+            more={{ href: '/all-articles', label: 'All articles' }}
+          />
+          <div className="mt-10 grid gap-x-6 gap-y-7 sm:grid-cols-2 sm:gap-y-12 lg:grid-cols-3">
+            {latest.map((a, i) =>
+              i === 0 ? (
+                <div key={a.slug} className="min-w-0 sm:col-span-2">
+                  <WideStoryCard article={a} />
+                </div>
+              ) : (
+                <StoryCard key={a.slug} article={a} />
+              ),
+            )}
           </div>
-        </Band>
+        </section>
       )}
 
-      {/* ---------- Articles Section ---------- */}
-      {lead && (
-        <Band id="articles" title="Latest articles & insights" more={{ href: '/all-articles', label: 'All articles' }}>
-          <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr]">
-            <LeadArticle article={lead} />
-            <ol className="divide-y divide-forest-900/10 border-y border-forest-900/10">
-              {recent.slice(0, 6).map((a) => (
-                <li key={a.id}>
-                  <Link href={`/articles/${a.slug}`} className="group block py-4">
-                    <span className="text-xs font-semibold uppercase tracking-[0.08em] text-slate-500">
-                      {a.category?.name ?? 'Article'} · <time dateTime={a.publishedAt}>{shortDate(a.publishedAt)}</time>
-                    </span>
-                    <span className="mt-1 block font-semibold leading-snug group-hover:text-primary-emphasis">{a.title}</span>
-                  </Link>
+      {/* ================= Category bands (first two) ================= */}
+      {bands.slice(0, 2).map((band, i) => (
+        <CategorySection key={band.slug} band={band} n={nextChapter()} flip={i % 2 === 1} />
+      ))}
+
+      {/* ================= Recently published (text list) ================= */}
+      {recentList.length > 0 && (
+        <section
+          aria-labelledby="home-recent-heading"
+          className="border-t border-forest-900/15"
+          data-testid="home-recent"
+        >
+          <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-16">
+            <div className="min-w-0">
+              <Kicker n={nextChapter()} label="Just in" />
+              <h2 id="home-recent-heading" className="mt-3 text-3xl font-bold leading-tight text-forest-950 sm:text-4xl">
+                Recently published
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-forest-900/75">
+                More of the newest articles, in the order they went up. Every article is listed, newest first, on the
+                all-articles page, and the RSS feed carries the most recent ones.
+              </p>
+              <p className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold">
+                <Link href="/all-articles" className="text-primary-emphasis underline-offset-2 hover:underline">
+                  Browse all articles →
+                </Link>
+                <a href="/feed.xml" className="text-forest-950 underline-offset-2 hover:underline">
+                  RSS feed
+                </a>
+              </p>
+            </div>
+            <ol className="grid min-w-0 gap-x-10 sm:grid-cols-2" data-testid="home-recent-list">
+              {recentList.map((a, i) => (
+                <li key={a.slug} className="flex min-w-0 gap-4 border-t border-forest-900/10 py-5">
+                  <span aria-hidden="true" className="w-8 shrink-0 font-mono text-2xl font-bold leading-none text-primary-emphasis/35">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <div className="min-w-0">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-forest-900/60">
+                      {a.category && (
+                        <>
+                          <Link href={`/category/${a.category.slug}`} className="font-bold text-primary-emphasis underline-offset-2 hover:underline">
+                            {a.category.name}
+                          </Link>
+                          <span aria-hidden="true"> · </span>
+                        </>
+                      )}
+                      <time dateTime={a.publishedAt}>{shortDate(a.publishedAt)}</time>
+                    </p>
+                    <h3 className="mt-1.5 text-base leading-snug">
+                      <Link
+                        href={`/articles/${a.slug}`}
+                        className="text-forest-950 underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-emphasis"
+                      >
+                        {a.title}
+                      </Link>
+                    </h3>
+                  </div>
                 </li>
               ))}
             </ol>
           </div>
-          <nav aria-label="Article topics" className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
-            {ARTICLE_SECTIONS.map((s) => (
-              <Link key={s.slug} href={`/category/${s.slug}`} className="font-semibold text-primary-emphasis underline-offset-4 hover:underline">
-                {s.title}
-              </Link>
-            ))}
-          </nav>
-        </Band>
+        </section>
       )}
 
-      {/* ---------- Methodology Section ---------- */}
-      <Band id="method" title="How a figure gets onto a page">
-        <ul className="grid gap-8 sm:grid-cols-3">
-          <Principle title="Read from the source">
-            Airline figures come from the airline’s own pages; airport figures from the airport and its official transport operators. Aggregators and booking sites are never used as sources.
-          </Principle>
-          <Principle title="Dated and linked">
-            Every figure carries the exact page it was read from and the date we checked it, so you can see how fresh it is.
-          </Principle>
-          <Principle title="Blank when unchecked">
-            If we haven’t verified something, the page says so explicitly instead of guessing. Where official pages disagree, we show both figures side by side.
-          </Principle>
-        </ul>
-        <Link href="/methodology" className="mt-8 inline-block font-semibold text-primary-emphasis underline-offset-4 hover:underline">
-          Read our full methodology →
-        </Link>
-      </Band>
+      {/* ================= Category bands (rest; the first of these is the dark band) ================= */}
+      {bands.slice(2).map((band, i) => (
+        <CategorySection key={band.slug} band={band} n={nextChapter()} flip={i % 2 === 1} dark={i === 0} />
+      ))}
 
-      {/* ---------- Labelled Partner Banner ---------- */}
-      <aside className="mx-auto max-w-6xl px-4 py-10 sm:px-6" aria-label="Advertisement" data-testid="home-ad-banner">
-        <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">Advertisement</p>
+      {/* ================= Destinations ================= */}
+      {countries.length > 0 && (
+        <section aria-labelledby="home-countries-heading" className="border-t border-forest-900/15" data-testid="home-countries">
+          <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
+            <ChapterHeading
+              id="home-countries-heading"
+              n={nextChapter()}
+              kicker="Destinations"
+              title="Explore by country"
+              intro="Country guides bring together the background on a place, its main airports, the airlines that serve it and the articles we have written about it."
+              more={{ href: '/destinations', label: 'All countries' }}
+            />
+            <ul className="mt-10 grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-5 lg:grid-cols-4">
+              {countries.map((c) => (
+                <li key={c.slug} className="min-w-0">
+                  <CountryTile country={c} />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      {/* ================= Airline and airport guides ================= */}
+      {(airlineGuides.length > 0 || airportRows.length > 0) && (
+        <section className="border-t border-forest-900/15 bg-paper" aria-label="Airline and airport guides" data-testid="home-guides">
+          <div className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 sm:pb-20">
+            {airlineGuides.length > 0 && (
+              <>
+                <FeaturedAirlineGuides guides={airlineGuides.slice(0, HOME_AIRLINE_GUIDES)} />
+                <p className="mt-5 text-sm font-semibold">
+                  <Link href="/airlines" className="text-primary-emphasis underline-offset-2 hover:underline">
+                    All {airlineGuides.length} verified airline guides and the airline directory →
+                  </Link>
+                </p>
+              </>
+            )}
+
+            {airportRows.length > 0 && (
+              <div className="mt-14" data-testid="home-airport-guides">
+                <div className="flex flex-col gap-2 border-b border-forest-900/10 pb-4 sm:flex-row sm:items-end sm:justify-between sm:gap-6">
+                  <div className="min-w-0">
+                    <h2 id="home-airports-heading" className="text-2xl font-bold leading-tight sm:text-3xl">
+                      Airport guides: from the gate into town
+                    </h2>
+                    <p className="mt-2 max-w-3xl text-sm leading-relaxed text-forest-900/70 sm:text-base">
+                      Terminals, trains and express buses into the city, taxis and parking, cited to the airport and its
+                      official transport operators.
+                    </p>
+                  </div>
+                  <Link
+                    href="/airports/top-100-airports"
+                    className="shrink-0 text-sm font-semibold text-primary-emphasis underline-offset-2 hover:underline"
+                  >
+                    Top 100 airports →
+                  </Link>
+                </div>
+                <ul className="mt-6 flex flex-wrap gap-2.5">
+                  {airportRows.map((a) => (
+                    <li key={a.iata}>
+                      <Link
+                        href={`/airports/${a.slug}`}
+                        title={a.name}
+                        className="group inline-flex items-center gap-2 rounded-full border border-forest-900/15 bg-white py-1 pl-1 pr-3.5 text-sm font-semibold text-forest-950 transition hover:border-primary-emphasis hover:text-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-emphasis"
+                      >
+                        <span className="rounded-full bg-forest-950 px-2 py-0.5 font-mono text-[11px] font-bold tracking-wider text-white">
+                          <span className="sr-only">IATA code </span>
+                          {a.iata}
+                        </span>
+                        {a.city}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
+      {/* ================= How we choose and check ================= */}
+      <section aria-labelledby="home-method-heading" className="border-t border-forest-900/15" data-testid="home-method">
+        <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-16">
+          <div className="min-w-0">
+            <Kicker n={nextChapter()} label="Our standards" />
+            <h2 id="home-method-heading" className="mt-3 text-3xl font-bold leading-tight text-forest-950 sm:text-4xl">
+              How we choose and check what we publish
+            </h2>
+            <ol className="mt-8 grid gap-8 sm:grid-cols-2">
+              {METHOD.map((m, i) => (
+                <li key={m.title} className="min-w-0 border-t-2 border-forest-950 pt-4">
+                  <p className="font-mono text-xs font-bold text-forest-900/50">{String(i + 1).padStart(2, '0')}</p>
+                  <h3 className="mt-2 text-lg font-bold leading-snug text-forest-950">{m.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-forest-900/75">{m.text}</p>
+                </li>
+              ))}
+            </ol>
+            <blockquote className="mt-10 border-l-4 border-primary-emphasis pl-5">
+              <p className="text-xl font-bold leading-snug text-forest-950 sm:text-2xl">
+                “We use AI as a tool to research and structure content faster, not as a way to publish without human
+                judgement.”
+              </p>
+            </blockquote>
+            <p className="mt-6 text-sm font-semibold">
+              <Link href="/methodology" className="text-primary-emphasis underline-offset-2 hover:underline">
+                Read the full methodology →
+              </Link>
+            </p>
+          </div>
+          {ledger.length > 0 && <Ledger facts={ledger} nameOf={nameOf} />}
+        </div>
+      </section>
+
+      {/* ================= Labelled partner slot ================= */}
+      <aside className="mx-auto max-w-7xl px-4 pb-6 sm:px-6" aria-label="Advertisement" data-testid="home-ad-banner">
+        <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-forest-900/60">Advertisement</p>
         <a
           href={partnerLink('https://www.cheapoair.com/', 'originfacts_home_banner_wide')}
           target="_blank"
           rel="sponsored nofollow noopener noreferrer"
-          className="mt-2 flex flex-col items-start justify-between gap-3 rounded-lg border border-forest-900/10 bg-white px-5 py-4 shadow-xs transition hover:border-forest-900/25 sm:flex-row sm:items-center"
+          className="mt-2 flex flex-col items-start justify-between gap-3 rounded-[0.3rem] border border-forest-900/10 bg-white px-5 py-4 shadow-xs transition hover:border-forest-900/25 sm:flex-row sm:items-center"
         >
           <span>
-            <span className="block text-xs font-bold uppercase tracking-wider text-slate-500">CheapOair</span>
+            <span className="block text-xs font-bold uppercase tracking-wider text-forest-900/60">CheapOair</span>
             <span className="mt-0.5 block font-semibold">Compare flights and book online</span>
           </span>
           <span className="text-sm font-semibold text-primary-emphasis">Search CheapOair →</span>
         </a>
       </aside>
 
+      {/* ================= FAQ ================= */}
+      <section aria-labelledby="home-faq-heading" className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20" data-testid="home-faq">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-16">
+          <div className="min-w-0">
+            <Kicker n={nextChapter()} label="FAQ" />
+            <h2 id="home-faq-heading" className="mt-3 text-3xl font-bold leading-tight text-forest-950 sm:text-4xl">
+              Questions about Originfacts
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-forest-900/75">
+              Who runs the site, how it is written and how it makes money. Anything else, ask at{' '}
+              <a href="mailto:contact@originfacts.com" className="break-words font-semibold text-primary-emphasis underline-offset-2 hover:underline">
+                contact@originfacts.com
+              </a>
+              .
+            </p>
+          </div>
+          <div className="min-w-0 divide-y divide-forest-900/10 border-y border-forest-900/15">
+            {faqs.map((f, i) => (
+              <details key={f.q} className="group" open={i === 0}>
+                <summary className="flex cursor-pointer list-none items-start justify-between gap-4 py-5 text-base font-bold leading-snug text-forest-950 marker:content-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-emphasis sm:text-lg [&::-webkit-details-marker]:hidden">
+                  <h3 className="text-base leading-snug sm:text-lg">{f.q}</h3>
+                  <span aria-hidden="true" className="mt-0.5 text-xl font-light leading-none text-forest-900/50 transition group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+                <p className="pb-6 pr-8 text-base leading-relaxed text-forest-900/80">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <SubscribeBlock />
     </div>
   );
 }
 
-/* ---------- Subcomponents ---------- */
+/* ------------------------------------------------------------------ */
+/* Copy                                                                */
+/* ------------------------------------------------------------------ */
 
-function JumpPill({ href, label, count, icon }: { href: string; label: string; count?: string; icon?: string }) {
+/** Restates /about and /methodology; keep in step with those pages. */
+const METHOD = [
+  {
+    title: 'Topics travellers actually plan around',
+    text: 'Topics come from a planned list, based on what travellers search for, current routes, seasonal demand and destinations we want to cover in depth.',
+  },
+  {
+    title: 'AI-assisted, and said so',
+    text: 'Many articles are researched and drafted with a large language model (currently Anthropic’s Claude) working from an editorial brief and guidelines. Many cover images are AI-generated illustrations, not photographs of a specific hotel, aircraft or person.',
+  },
+  {
+    title: 'Airline and airport facts from the source',
+    text: 'Airline figures are read from the airline’s own pages, and airport figures from the airport and its official transport operators. Each checked figure carries its source link and the date it was checked; unchecked fields are left blank.',
+  },
+  {
+    title: 'Corrected when we are wrong',
+    text: 'Prices, routes, visa rules and fees are the details most likely to go out of date. Report an error to contact@originfacts.com and it is corrected or removed.',
+  },
+];
+
+/* ------------------------------------------------------------------ */
+/* Subcomponents                                                       */
+/* ------------------------------------------------------------------ */
+
+function TopicPill({ href, label, count }: { href: string; label: string; count?: number }) {
   return (
     <Link
       href={href}
-      className="inline-flex items-center gap-2 rounded-full border border-forest-900/15 bg-white px-4 py-2 text-sm font-medium text-forest-950 transition hover:border-primary-emphasis hover:text-primary-emphasis hover:shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-emphasis"
+      className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-forest-900/15 bg-white px-3.5 py-1.5 text-sm font-semibold text-forest-950 transition hover:border-primary-emphasis hover:bg-primary-hover hover:text-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-emphasis"
     >
-      {icon && <span>{icon}</span>}
-      <span>{label}</span>
-      {count && <span className="rounded-full bg-sand-200/60 px-2 py-0.5 text-xs font-semibold tabular-nums text-forest-900">{count}</span>}
+      {label}
+      {count !== undefined && (
+        <span className="rounded-full bg-sand-100 px-1.5 py-0.5 text-[11px] font-bold tabular-nums text-forest-900">{count}</span>
+      )}
     </Link>
   );
 }
 
-function ServiceCard({
-  icon,
+function ChapterHeading({
+  id,
+  n,
+  kicker,
   title,
-  description,
-  badge,
-  href,
+  intro,
+  more,
+  tone = 'light',
 }: {
-  icon: React.ReactNode;
+  id: string;
+  n: string;
+  kicker: string;
   title: string;
-  description: string;
-  badge: string;
-  href: string;
+  intro?: string;
+  more?: { href: string; label: string };
+  tone?: 'light' | 'dark';
 }) {
+  const dark = tone === 'dark';
+  return (
+    <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between md:gap-10">
+      <div className="min-w-0 max-w-3xl">
+        <Kicker n={n} label={kicker} tone={tone} />
+        <h2 id={id} className={`mt-3 text-3xl font-bold leading-tight sm:text-4xl ${dark ? '!text-white' : 'text-forest-950'}`}>
+          {title}
+        </h2>
+        {intro && (
+          <p className={`mt-4 text-base leading-relaxed sm:text-lg ${dark ? 'text-white/80' : 'text-forest-900/75'}`}>{intro}</p>
+        )}
+      </div>
+      {more && (
+        <Link
+          href={more.href}
+          className={`inline-flex w-fit shrink-0 items-center gap-1.5 rounded-[0.3rem] border px-4 py-2 text-xs font-bold uppercase tracking-wider transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${
+            dark
+              ? 'border-white/40 text-white hover:bg-white hover:text-forest-950 focus-visible:outline-sand-300'
+              : 'border-forest-900 text-forest-900 hover:bg-primary-emphasis hover:text-white focus-visible:outline-primary-emphasis'
+          }`}
+        >
+          {more.label} <span aria-hidden="true">→</span>
+        </Link>
+      )}
+    </div>
+  );
+}
+
+/**
+ * One category: heading and intro, a feature story with a large cover, and
+ * three more as compact rows. `flip` mirrors the columns so consecutive bands
+ * alternate image-left / image-right; `dark` sets the band on the navy panel.
+ */
+function CategorySection({ band, n, flip = false, dark = false }: { band: CategoryBand; n: string; flip?: boolean; dark?: boolean }) {
+  const [feature, ...rest] = band.stories;
+  if (!feature) return null;
+  const headingId = `home-cat-${band.slug}-heading`;
+  return (
+    <section
+      aria-labelledby={headingId}
+      className={dark ? 'bg-forest-950 text-white' : 'border-t border-forest-900/15'}
+      data-testid={`home-category-${band.slug}`}
+    >
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
+        <ChapterHeading
+          id={headingId}
+          n={n}
+          kicker={band.tagline ?? band.name}
+          title={band.name}
+          intro={band.intro}
+          more={{ href: `/category/${band.slug}`, label: `All ${band.name.toLowerCase()}` }}
+          tone={dark ? 'dark' : 'light'}
+        />
+        <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-14">
+          <article className={`min-w-0 ${flip ? 'lg:order-2' : ''}`}>
+            <FeatureCover article={feature} />
+            <FeatureMeta article={feature} dark={dark} />
+          </article>
+          <ul className={`min-w-0 space-y-6 self-center ${flip ? 'lg:order-1' : ''}`}>
+            {rest.map((a) => (
+              <li key={a.slug} className={`border-t pt-6 first:border-t-0 first:pt-0 ${dark ? 'border-white/15' : 'border-forest-900/10'}`}>
+                <StoryRow article={a} tone={dark ? 'dark' : 'light'} />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FeatureCover({ article }: { article: StrapiArticle }) {
+  const src = mediaUrl(article.coverImage ?? null);
   return (
     <Link
-      href={href}
-      className="group relative flex flex-col justify-between rounded-xl border border-forest-900/10 bg-white p-6 transition hover:border-primary-emphasis/40 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-emphasis"
+      href={`/articles/${article.slug}`}
+      tabIndex={-1}
+      aria-hidden="true"
+      className="group/cover relative block aspect-[16/9] overflow-hidden rounded-[0.3rem] bg-forest-900"
     >
-      <div>
-        <div className="flex items-center justify-between">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100/80">
-            {icon}
-          </div>
-          <span className="rounded-full bg-sand-100 px-2.5 py-1 text-[11px] font-semibold text-forest-900">
-            {badge}
-          </span>
-        </div>
-        <h3 className="mt-4 text-xl font-bold tracking-tight text-forest-950 group-hover:text-primary-emphasis">
-          {title}
-        </h3>
-        <p className="mt-2 text-sm leading-relaxed text-slate-600">
-          {description}
-        </p>
-      </div>
-      <div className="mt-6 flex items-center text-sm font-semibold text-primary-emphasis">
-        Explore {title} <span className="ml-1.5 transition-transform group-hover:translate-x-1">→</span>
-      </div>
+      {src ? (
+        <Image
+          src={src}
+          alt={article.coverImage?.alternativeText?.trim() || `Cover image: ${article.title}`}
+          fill
+          sizes="(min-width: 1420px) 790px, (min-width: 1024px) 56vw, 100vw"
+          className="object-cover transition-transform duration-500 ease-out group-hover/cover:scale-[1.03] motion-reduce:transition-none"
+        />
+      ) : (
+        <span className="absolute inset-0 bg-gradient-to-br from-forest-800 to-forest-950" />
+      )}
     </Link>
   );
 }
 
-function Tag({ code }: { code: string }) {
+function FeatureMeta({ article, dark }: { article: StrapiArticle; dark: boolean }) {
   return (
-    <span
-      aria-hidden="true"
-      className="relative inline-flex h-8 w-[3.6rem] shrink-0 items-center justify-center rounded-[4px] bg-sand-100 pl-2 text-[0.8rem] font-extrabold tabular-nums tracking-[0.12em] text-forest-950 ring-1 ring-inset ring-sand-400/60"
-    >
-      <span className="absolute left-1.5 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-white ring-1 ring-sand-400/70" />
-      {code}
-    </span>
+    <div className="mt-5">
+      <p className={`flex flex-wrap gap-x-2 text-xs font-semibold uppercase tracking-wider ${dark ? 'text-white/70' : 'text-forest-900/60'}`}>
+        <time dateTime={article.publishedAt}>{shortDate(article.publishedAt)}</time>
+        {article.readingTimeMinutes ? (
+          <>
+            <span aria-hidden="true">·</span>
+            <span>{article.readingTimeMinutes} min read</span>
+          </>
+        ) : null}
+      </p>
+      <h3 className={`mt-2 text-2xl leading-tight sm:text-[1.9rem] ${dark ? '!text-white' : ''}`}>
+        <Link
+          href={`/articles/${article.slug}`}
+          className={`underline-offset-4 decoration-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${
+            dark ? 'text-white focus-visible:outline-sand-300' : 'text-forest-950 focus-visible:outline-primary-emphasis'
+          }`}
+        >
+          {article.title}
+        </Link>
+      </h3>
+      {article.excerpt && (
+        <p className={`mt-3 max-w-2xl text-base leading-relaxed ${dark ? 'text-white/80' : 'text-forest-900/75'}`}>{article.excerpt}</p>
+      )}
+    </div>
+  );
+}
+
+function CountryTile({ country }: { country: StrapiDestination }) {
+  const src = mediaUrl(country.heroImage ?? null);
+  return (
+    <div className="group min-w-0">
+      <Link
+        href={`/destinations/${country.slug}`}
+        tabIndex={-1}
+        aria-hidden="true"
+        className="relative block aspect-[4/3] overflow-hidden rounded-[0.3rem] bg-forest-900"
+      >
+        {src ? (
+          <Image
+            src={src}
+            alt={country.heroImage?.alternativeText?.trim() || `${country.name}`}
+            fill
+            sizes="(min-width: 1420px) 340px, (min-width: 1024px) 24vw, 50vw"
+            className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04] motion-reduce:transition-none"
+          />
+        ) : (
+          <span className="absolute inset-0 bg-gradient-to-br from-forest-800 to-forest-950" />
+        )}
+      </Link>
+      <h3 className="mt-3 text-lg leading-snug sm:text-xl">
+        <Link
+          href={`/destinations/${country.slug}`}
+          className="text-forest-950 underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-emphasis"
+        >
+          {country.name}
+        </Link>
+      </h3>
+      <p className="mt-0.5 text-sm text-forest-900/65">Country guide</p>
+    </div>
   );
 }
 
 function Ledger({ facts, nameOf }: { facts: LedgerFact[]; nameOf: (slug: string) => string }) {
   return (
-    <figure id="live-ledger" className="self-center rounded-xl border border-forest-900/10 bg-white p-2 shadow-[0_1px_0_rgba(9,24,64,0.04),0_18px_40px_-24px_rgba(9,24,64,0.25)]">
-      <figcaption className="flex items-center justify-between px-4 pb-2 pt-3 text-xs font-semibold uppercase tracking-[0.1em] text-slate-500">
-        <span>Live Verified Source Ledger</span>
-        <span className="inline-flex items-center gap-1.5 text-success-emphasis">
-          <CheckMark /> Verified Sourced
-        </span>
+    <figure
+      id="live-ledger"
+      className="min-w-0 self-start rounded-[0.3rem] bg-forest-950 p-6 text-white sm:p-8"
+      data-testid="home-ledger"
+    >
+      <figcaption>
+        <p className="text-xs font-bold uppercase tracking-widest text-sand-300">From the airline guides</p>
+        <p className="mt-2 text-xl font-bold leading-snug text-white">Recently checked figures, with their sources</p>
       </figcaption>
-      <ol className="divide-y divide-forest-900/[0.07]">
+      <ol className="mt-5 divide-y divide-white/10">
         {facts.map((f) => (
-          <li key={f.slug + f.label} className="px-4 py-4">
-            <Link href={`/airlines/${f.slug}`} className="group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-emphasis">
-              <span className="block text-sm text-slate-500">
-                <span className="font-semibold text-forest-950 group-hover:text-primary-emphasis">{nameOf(f.slug)}</span>
+          <li key={f.slug + f.label} className="py-4">
+            <Link
+              href={`/airlines/${f.slug}`}
+              className="group block rounded-[0.2rem] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sand-300"
+            >
+              <span className="block text-sm text-white/70">
+                <span className="font-semibold text-white group-hover:underline">{nameOf(f.slug)}</span>
                 {' · '}
                 {f.label}
               </span>
-              <span className="mt-1 block text-xl font-bold leading-snug tracking-[-0.015em]">{f.value}</span>
+              <span className="mt-1 block text-lg font-bold leading-snug text-white">{f.value}</span>
             </Link>
             <a
               href={f.sourceUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-1.5 inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-primary-emphasis"
+              className="mt-1.5 inline-flex flex-wrap items-center gap-x-1.5 text-xs text-white/65 underline-offset-2 hover:text-white hover:underline"
             >
               <span className="font-medium">{f.sourceHost}</span>
               <span aria-hidden="true">·</span>
@@ -518,84 +826,25 @@ function Ledger({ facts, nameOf }: { facts: LedgerFact[]; nameOf: (slug: string)
   );
 }
 
-function Band({
-  id,
-  title,
-  more,
-  children,
-}: {
-  id: string;
-  title: string;
-  more?: { href: string; label: string };
-  children: React.ReactNode;
-}) {
+function EmptyStories() {
   return (
-    <section id={id} aria-labelledby={`${id}-heading`} className="border-t border-forest-900/10" data-testid={`home-${id}`}>
-      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:py-16">
-        <div className="mb-5 flex items-baseline justify-between gap-6">
-          <h2 id={`${id}-heading`} className="text-2xl font-extrabold tracking-[-0.025em] sm:text-[1.9rem]">
-            {title}
-          </h2>
-          {more && (
-            <Link href={more.href} className="shrink-0 text-sm font-semibold text-primary-emphasis underline-offset-4 hover:underline">
-              {more.label} <span aria-hidden="true">→</span>
-            </Link>
-          )}
-        </div>
-        {children}
-      </div>
-    </section>
-  );
-}
-
-function LeadArticle({ article }: { article: StrapiArticle }) {
-  const img = mediaUrl(article.coverImage ?? null);
-  return (
-    <article className="group">
-      <Link href={`/articles/${article.slug}`} className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-emphasis">
-        {img && (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={img}
-            alt={article.coverImage?.alternativeText || ''}
-            loading="lazy"
-            className="aspect-[16/9] w-full rounded-lg object-cover shadow-xs"
-          />
-        )}
-        <span className="mt-4 block text-xs font-semibold uppercase tracking-[0.08em] text-slate-500">
-          {article.category?.name ?? 'Article'} · <time dateTime={article.publishedAt}>{shortDate(article.publishedAt)}</time>
-        </span>
-        <h3 className="mt-1.5 text-2xl font-extrabold leading-tight tracking-[-0.02em] group-hover:text-primary-emphasis">
-          {article.title}
-        </h3>
-        {article.excerpt && <p className="mt-2 line-clamp-3 leading-relaxed text-slate-600">{article.excerpt}</p>}
-      </Link>
-    </article>
-  );
-}
-
-function Principle({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <li>
-      <p className="flex items-center gap-2 font-bold">
-        <CheckMark className="text-success-emphasis" />
-        {title}
+    <div className="mt-8 rounded-[0.3rem] border border-forest-900/15 bg-paper p-8" data-testid="home-empty">
+      <p className="text-lg font-semibold text-forest-950">The latest stories are not available right now.</p>
+      <p className="mt-2 text-forest-900/75">
+        Browse{' '}
+        <Link href="/all-articles" className="font-semibold text-primary-emphasis underline-offset-2 hover:underline">
+          all articles
+        </Link>
+        , the{' '}
+        <Link href="/airlines" className="font-semibold text-primary-emphasis underline-offset-2 hover:underline">
+          airline guides
+        </Link>{' '}
+        or the{' '}
+        <Link href="/destinations" className="font-semibold text-primary-emphasis underline-offset-2 hover:underline">
+          country guides
+        </Link>{' '}
+        instead.
       </p>
-      <p className="mt-2 leading-relaxed text-slate-600">{children}</p>
-    </li>
+    </div>
   );
-}
-
-function CheckMark({ className = '' }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 16 16" aria-hidden="true" className={`h-3.5 w-3.5 ${className}`} fill="none" stroke="currentColor" strokeWidth="2.2">
-      <path d="M3 8.5l3.2 3L13 4.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function shortDate(iso: string): string {
-  const d = new Date(iso.length === 10 ? `${iso}T00:00:00Z` : iso);
-  if (Number.isNaN(d.getTime())) return iso;
-  return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
 }

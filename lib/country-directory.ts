@@ -79,6 +79,21 @@ const AIRLINE_COUNTRY_ALIASES: Record<string, string> = {
   'Moldova (Republic of Moldova)': 'Moldova',
 };
 
+/**
+ * ISO alpha-2 code for an airline record's home-country text, via the country
+ * collection (same spelling aliases as the directory). Undefined when the
+ * collection has no matching country.
+ */
+export function airlineCountryCode(
+  countries: Pick<StrapiCountry, 'code' | 'name'>[],
+  airlineCountry: string | null | undefined,
+): string | undefined {
+  const raw = airlineCountry?.trim();
+  if (!raw) return undefined;
+  const name = (AIRLINE_COUNTRY_ALIASES[raw] ?? raw).toLowerCase();
+  return countries.find((c) => c.name.toLowerCase() === name)?.code;
+}
+
 export type CountryDirectoryInput = {
   countries: Pick<StrapiCountry, 'code' | 'name' | 'region'>[];
   /** Every airport record; only those with an IATA code are counted, as /airports lists. */

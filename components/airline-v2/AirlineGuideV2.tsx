@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 import type { StrapiAirline } from '@/lib/strapi';
 import { mediaUrl } from '@/lib/strapi';
+import { flagEmoji } from '@/lib/country-directory';
 import type { RouteFacts } from '@/lib/route-facts';
 import type { AirlineFactsFile, FactField, ResolvedField, ResolvedModule } from '@/lib/airline-facts';
 import type { AirlineRef } from '@/lib/airline-refs';
@@ -69,6 +70,8 @@ export type AirlineGuideV2Props = {
   airlineRef: AirlineRef | null;
   /** Same list the page marks up as FAQPage — built by guideFaqs(). */
   faqs: { q: string; a: string }[];
+  /** ISO alpha-2 of the home country, when the country collection has it; drives the flag. */
+  countryCode?: string;
 };
 
 /** FAQ for the v2 page: verbatim answers from published facts, then the dataset FAQs. */
@@ -105,7 +108,7 @@ const PENDING_EXTRA: Record<string, string> = {
   contact: 'Customer service numbers and contact routes have not been verified against the airline’s own contact pages yet.',
 };
 
-export default function AirlineGuideV2({ airline, routeFacts: rf, facts, alliance, airlineRef, faqs }: AirlineGuideV2Props) {
+export default function AirlineGuideV2({ airline, routeFacts: rf, facts, alliance, airlineRef, faqs, countryCode }: AirlineGuideV2Props) {
   const name = airline.name;
   const modules = loadModules(facts);
   const logo = mediaUrl(airline.logo ?? null);
@@ -221,7 +224,7 @@ export default function AirlineGuideV2({ airline, routeFacts: rf, facts, allianc
           </p>
 
           <dl className={`mt-10 grid grid-cols-2 gap-x-6 gap-y-8 max-sm:[&>div:last-child:nth-child(odd)]:col-span-2 ${FACT_COLS[headerFactCount] ?? 'sm:grid-cols-4'}`}>
-            <HeaderFact icon={Flag} label="Home country" value={airline.country} />
+            <HeaderFact icon={Flag} flag={countryCode ? flagEmoji(countryCode) : undefined} label="Home country" value={airline.country} />
             <HeaderFact icon={Handshake} label="Alliance" value={alliance} />
             <HeaderFact
               icon={MapPin}
@@ -388,11 +391,30 @@ export default function AirlineGuideV2({ airline, routeFacts: rf, facts, allianc
  * Header bits
  * ================================================================== */
 
-function HeaderFact({ icon: Icon, label, value, hint }: { icon: LucideIcon; label: string; value: ReactNode; hint?: string }) {
+function HeaderFact({
+  icon: Icon,
+  flag,
+  label,
+  value,
+  hint,
+}: {
+  icon: LucideIcon;
+  /** Replaces the icon when set (the country's flag emoji). */
+  flag?: string;
+  label: string;
+  value: ReactNode;
+  hint?: string;
+}) {
   if (value === null || value === undefined || value === '') return null;
   return (
     <div className="flex items-start gap-3">
-      <Icon aria-hidden className="mt-0.5 h-6 w-6 flex-none text-primary-emphasis" />
+      {flag ? (
+        <span aria-hidden className="flex h-6 w-6 flex-none items-center justify-center text-2xl leading-none">
+          {flag}
+        </span>
+      ) : (
+        <Icon aria-hidden className="mt-0.5 h-6 w-6 flex-none text-primary-emphasis" />
+      )}
       <div className="min-w-0">
         <dt className="text-[11px] font-bold uppercase tracking-widest text-forest-900/70">{label}</dt>
         <dd className="mt-1 text-base font-semibold text-forest-950">{value}</dd>

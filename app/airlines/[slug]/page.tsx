@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { getAirline, listAirlinesByCountry, listRoutesByCarrier, mediaUrl } from '@/lib/strapi';
+import { getAirline, listAirlinesByCountry, listCountries, listRoutesByCarrier, mediaUrl } from '@/lib/strapi';
+import { airlineCountryCode } from '@/lib/country-directory';
 import { carrierCodeMismatch, carrierOperatesRoute } from '@/lib/route-carriers';
 import RouteNetwork from '@/components/RouteNetwork';
 import { getRouteFacts } from '@/lib/route-facts';
@@ -239,6 +240,9 @@ export default async function AirlinePage({ params }: Props) {
   if (airlineUsesTemplateV2(airline.slug)) {
     const facts = getAirlineFacts(airline.slug);
     const v2Faqs = guideFaqs(airline, routeFacts, alliance, facts);
+    const countryCode = airline.country
+      ? airlineCountryCode(await listCountries().catch(() => []), airline.country)
+      : undefined;
     return (
       <>
         <JsonLd data={articleSchema} />
@@ -258,6 +262,7 @@ export default async function AirlinePage({ params }: Props) {
           alliance={alliance}
           airlineRef={getAirlineRef(airline.iataCode)}
           faqs={v2Faqs}
+          countryCode={countryCode}
         />
       </>
     );

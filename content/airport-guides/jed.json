@@ -1,0 +1,102 @@
+{
+  "iata": "JED",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals",
+      "paragraphs": [
+        {
+          "text": "Terminal 1, the airport's main terminal, was officially inaugurated by King Salman on 24 September 2019. Arab News, citing the airport's website, gives it 46 boarding gates, a total area of 810,000 square metres and room for around 30 million passengers a year.",
+          "sources": ["an-t1-inauguration", "an-a380"]
+        },
+        {
+          "text": "Terminal 4, the redeveloped former South Terminal, began phased operations on 27 September 2026, adding capacity for up to 15 million passengers a year. The airport also has the North Terminal and the Hajj and Umrah Terminals. King Abdulaziz International handled a record 53.4 million passengers in 2025.",
+          "sources": ["an-t4"]
+        }
+      ]
+    },
+    {
+      "id": "terminal-4-move",
+      "heading": "Airlines moving to Terminal 4",
+      "paragraphs": [
+        {
+          "text": "The airport operator, Jeddah Airports Co. (JEDCO), plans to move all foreign airlines now at the North Terminal, and selected foreign airlines at Terminal 1 and the Hajj and Umrah Terminals, to Terminal 4. The first phase, from 27 September 2026, moved Wizz Air, AJet and SalamAir.",
+          "sources": ["an-t4"]
+        },
+        {
+          "text": "JEDCO's schedule for the following week: Fly Jinnah from the Hajj and Umrah Terminals' B3 facility and Nesma Airlines from the North Terminal on 28 September; Akasa Air from B3 on 29 September; SyrianAir and Pegasus from the North Terminal on 1 October; and Azerbaijan Airlines and Tunisair two days later. More airlines are to follow, so check the terminal on your booking before you travel.",
+          "sources": ["an-t4"]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Getting to and from the city",
+      "paragraphs": [
+        {
+          "text": "The airport has a station on the Haramain High Speed Railway, connected to Terminal 1. Saudi Gazette described it in December 2019 as a six-storey, 99,000-square-metre station with ticket vending machines and electronic gates, linking the airport with the Haramain train network to Madinah.",
+          "sources": ["sg-rail"]
+        },
+        {
+          "text": "An express bus, run by the Jeddah Transport Company with Jeddah Airports Company and SAPTCO since April 2022, links Terminal 1 and the North Terminal with the SAPTCO station in Al-Balad. Stops on the way are near Flamingo Mall on Prince Majed Street, near Al-Andalus Mall, and Baghdadiya 7 on Madinah Road. In February 2023 the fare was SR20; tickets are sold at points inside the airport and in the SAPTCO app.",
+          "sources": ["sg-bus"]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Which terminal is my flight at Jeddah airport?",
+      "a": "It depends on the airline, and it is changing: since 27 September 2026 foreign airlines have been moving to the new Terminal 4 in phases, from the North Terminal and some from Terminal 1 and the Hajj and Umrah Terminals. Check the terminal on your booking.",
+      "sources": ["an-t4"]
+    },
+    {
+      "q": "Is there a train from Jeddah airport?",
+      "a": "Yes. The airport has a Haramain High Speed Railway station connected to Terminal 1.",
+      "sources": ["sg-rail"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "an-t1-inauguration",
+      "title": "Jeddah’s new airport terminal: Saudi Arabia’s latest landmark",
+      "publisher": "Arab News (arabnews.com)",
+      "url": "https://www.arabnews.com/saudi-arabia/jeddahs-new-airport-terminal-saudi-arabias-latest-landmark-1559406",
+      "published": "2019-09-24",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "an-a380",
+      "title": "Dubai’s Emirates becomes first airline to operate A380 to new Jeddah airport terminal",
+      "publisher": "Arab News (arabnews.com)",
+      "url": "https://www.arabnews.com/business/dubais-emirates-becomes-first-airline-to-operate-a380-to-new-jeddah-airport-terminal-1834406",
+      "published": "2021-03-30",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "an-t4",
+      "title": "Jeddah airport’s Terminal 4 begins phased operations, adding 15m passenger capacity",
+      "publisher": "Arab News (arabnews.com)",
+      "url": "https://www.arabnews.com/tourism-transport/jeddah-airports-terminal-4-begins-phased-operations-adding-15m-passenger-capacity-3003380",
+      "published": "2026-09-27",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "sg-rail",
+      "title": "Haramain train starts service from Jeddah airport station",
+      "publisher": "Saudi Gazette (saudigazette.com.sa)",
+      "url": "https://saudigazette.com.sa/article/584763",
+      "published": "2019-12-11",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "sg-bus",
+      "title": "Jeddah public bus service extends to airport north terminal",
+      "publisher": "Saudi Gazette (saudigazette.com.sa)",
+      "url": "https://saudigazette.com.sa/article/630071/SAUDI-ARABIA/Jeddah-public-bus-service-extends-to-airport-north-terminal",
+      "published": "2023-02-22",
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

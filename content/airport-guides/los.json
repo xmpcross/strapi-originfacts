@@ -1,0 +1,113 @@
+{
+  "iata": "LOS",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals and who runs them",
+      "paragraphs": [
+        {
+          "text": "Lagos has terminals under two different operators. The international terminal and the other domestic terminals at Murtala Muhammed International Airport (MMIA) are managed by the Federal Airports Authority of Nigeria (FAAN). Murtala Muhammed Airport Terminal 2 (MMA2), a domestic terminal, is operated entirely by Bi-Courtney Aviation Services Limited under a concession agreement, and all commercial decisions there are the concessionaire's responsibility.",
+          "sources": ["businessday-parking"]
+        },
+        {
+          "text": "Terminal 1 has been fully closed for reconstruction since work began in March 2026, a project expected to take 22 months, barring delays. In the meantime a temporary departure hall of 8,000 m² handles operations, supporting up to 1,500 passengers in the peak hour (Punch, 23 September 2026).",
+          "sources": ["punch-t1"]
+        },
+        {
+          "text": "When FAAN announced the temporary terminal in January 2026, it said the building would initially serve between five and six airlines on departure-only operations, with check-in counters, security screening points and three boarding gates. FAAN said it was built to prevent disruption to international travel while Terminal 1 is shut.",
+          "sources": ["fmino-temporary"]
+        }
+      ]
+    },
+    {
+      "id": "rebuild",
+      "heading": "The Terminal 1 rebuild",
+      "paragraphs": [
+        {
+          "text": "Punch reports the project cost as N712 billion, funded through Nigeria's Renewed Hope Infrastructure Development Fund as part of a larger N919 billion aviation upgrade covering Terminal 1 rehabilitation, Terminal 2 expansion, roads, aprons and bridges.",
+          "sources": ["punch-t1"]
+        },
+        {
+          "text": "Planned additions include a skywalk from the multi-level car park, a connection building joining Terminals 1 and 2, a dedicated transit area, automated e-passport gates and upgraded lounges. Punch gives the planned passenger capacity as 17.6 million a year. These are plans, not facilities open today.",
+          "sources": ["punch-t1"]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Getting to and from the city",
+      "paragraphs": [
+        {
+          "text": "In a statement on 20 August 2026, FAAN said it was in discussions with e-hailing operators, including Uber and Bolt, about how they work at its airports. It said its aim is not to limit passengers' transport options, but to make sure everyone providing transport inside the airport is identifiable, accountable and part of the airport's security framework. Check the current position before relying on an app pick-up.",
+          "sources": ["faan-mobility"]
+        },
+        {
+          "text": "FAAN's Airport Car Hire Rank Management System (ACHRAMS) is not an e-hailing app, the authority says. It is used to track commercial vehicles operating at the airport and to manage the concession and airport charges that apply to them.",
+          "sources": ["faan-mobility"]
+        }
+      ]
+    },
+    {
+      "id": "parking",
+      "heading": "Parking",
+      "paragraphs": [
+        {
+          "text": "Parking charges at MMA2 (Terminal 2) are set by its concessionaire, Bi-Courtney Aviation Services, not by FAAN, so they differ from the rest of the airport. FAAN made the point in April 2026 after a report on MMA2 parking rates was illustrated with pictures of the FAAN-run international airport.",
+          "sources": ["businessday-parking"]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Is Terminal 1 at Lagos airport open?",
+      "a": "No. Terminal 1 has been fully closed for reconstruction since March 2026, with the work expected to last 22 months; a temporary departure hall handles operations meanwhile.",
+      "sources": ["punch-t1"]
+    },
+    {
+      "q": "Who runs MMA2 at Lagos airport?",
+      "a": "Bi-Courtney Aviation Services Limited, under a concession agreement. FAAN manages the international terminal and the other domestic terminals.",
+      "sources": ["businessday-parking"]
+    },
+    {
+      "q": "Can I use Uber or Bolt at Lagos airport?",
+      "a": "In August 2026 FAAN said it was in discussions with e-hailing operators, including Uber and Bolt, about operating at its airports and that it did not aim to limit passengers' options. Check the current arrangement before you travel.",
+      "sources": ["faan-mobility"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "businessday-parking",
+      "title": "Setting the record straight on Lagos airport parking and protecting public trust in aviation",
+      "publisher": "BusinessDay (businessday.ng)",
+      "url": "https://businessday.ng/bd-weekender/article/setting-the-record-straight-on-lagos-airport-parking-and-protecting-public-trust-in-aviation/",
+      "published": "2026-04-18",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "punch-t1",
+      "title": "Reconstruction of Terminal 1, Murtala Muhammed International Airport, Lagos",
+      "publisher": "The Punch (punchng.com)",
+      "url": "https://punchng.com/reconstruction-of-terminal-1-murtala-muhammed-international-airport-lagos/",
+      "published": "2026-09-23",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "fmino-temporary",
+      "title": "FAAN Announces The Near Completion Of The Lagos Airport Temporary Terminal",
+      "publisher": "Federal Ministry of Information and National Orientation (fmino.gov.ng)",
+      "url": "https://fmino.gov.ng/faan-announces-the-near-completion-of-the-lagos-airport-temporary-terminal/",
+      "published": "2026-01-29",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "faan-mobility",
+      "title": "FAAN: Passenger safety and seamless airport mobility remain our priority",
+      "publisher": "Federal Airports Authority of Nigeria (faan.gov.ng)",
+      "url": "https://faan.gov.ng/events/faan-passenger-safety-and-seamless-airport-mobility-remain-our-priority/",
+      "published": "2026-08-20",
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

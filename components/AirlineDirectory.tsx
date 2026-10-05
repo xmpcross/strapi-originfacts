@@ -411,14 +411,14 @@ function AirlineCard({ airline, hasCeased }: { airline: DirectoryAirline; hasCea
       className="group flex h-full flex-col rounded-[0.3rem] border border-forest-900/10 bg-white p-3 transition hover:border-primary-emphasis/50 hover:shadow-[0_6px_16px_-6px_rgba(15,39,102,0.25)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-emphasis"
       data-testid={`airline-card-${airline.slug}`}
     >
-      <span className="flex h-16 w-full items-center justify-center">
+      <span className="flex h-16 w-full items-center justify-start">
         {logo ? (
           // Logos are trimmed to the artwork: full width, height follows the aspect ratio.
           // eslint-disable-next-line @next/next/no-img-element
           <img
             src={logo}
             alt=""
-            className={`h-auto max-h-full w-full object-contain ${NARROW_LOGO_SLUGS.has(airline.slug) ? 'max-w-[70%]' : ''}`}
+            className={`h-auto max-h-full w-full object-contain ${NARROW_LOGO_SLUGS.has(airline.slug) ? 'max-w-[70%]' : 'max-w-[80%]'}`}
             loading="lazy"
             decoding="async"
           />

@@ -116,7 +116,7 @@ export default async function SitemapPage() {
             <li><Link href="/countries" className={linkClass}>Countries</Link></li>
             <li><Link href="/airlines" className={linkClass}>Airlines</Link></li>
             <li><Link href="/airports" className={linkClass}>Airports</Link></li>
-            <li><Link href="/airports/hubs" className={linkClass}>International hubs</Link></li>
+            <li><Link href="/airports/top-100-airports" className={linkClass}>Top 100 airports</Link></li>
           </ul>
         </section>
 

@@ -33,7 +33,7 @@ export default function FeaturedAirportGuides({
           </p>
         </div>
         <Link
-          href="/airports/hubs"
+          href="/airports/top-100-airports"
           className="flex-none text-sm font-semibold text-primary-emphasis underline-offset-2 hover:underline"
         >
           All {reviewedCount} reviewed guides →

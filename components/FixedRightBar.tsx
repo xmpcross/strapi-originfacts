@@ -50,7 +50,7 @@ const NAV_TREE: NavItem[] = [
       {
         label: 'Airports',
         href: '/airports',
-        children: [{ label: 'Top 100 Airports', href: '/airports/hubs' }],
+        children: [{ label: 'Top 100 Airports', href: '/airports/top-100-airports' }],
       },
     ],
   },

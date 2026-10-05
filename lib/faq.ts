@@ -250,8 +250,8 @@ export function buildFaqGroups(c: FaqCounts): FaqGroup[] {
           a: [
             'The ',
             { text: 'airport directory', href: '/airports' },
-            ` lists ${c.airports > 0 ? `${plural(c.airports, 'airport')}` : 'airports'} with their IATA and ICAO codes, city and country. For the major connecting airports, see `,
-            { text: 'international airport hubs', href: '/airports/hubs' },
+            ` lists ${c.airports > 0 ? `${plural(c.airports, 'airport')}` : 'airports'} with their IATA and ICAO codes, city and country. For the airports with a reviewed guide, see the `,
+            { text: 'top 100 airports', href: '/airports/top-100-airports' },
             '.',
           ],
         },

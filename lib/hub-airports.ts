@@ -6,8 +6,8 @@
  * deliberate fill-in for regional anchors so every continent has representation.
  *
  * Used by:
- *   - `/airports/hubs` (dedicated page listing all 100 with filters)
- *   - `/airports` (top-of-page "Top international hubs" callout)
+ *   - nothing at present: /airports/top-100-airports lists the same 100 codes
+ *     from PUBLISHED_AIRPORT_IATAS (lib/entity-seo.ts).
  *
  * To add or remove an airport, edit this file. No schema change needed —
  * membership is determined by IATA code presence in this set.

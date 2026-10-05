@@ -21,7 +21,7 @@ for indexable pages.
 | `/airlines` | 1 | default | y | y |
 | `/airlines/[slug]` | 1,097 | `index,follow` when substantive (about text, ≥8 editor FAQs, or tracked routes), else `noindex,follow` (~669 index / ~428 noindex) | y | y — quality gate |
 | `/airports` | 1 | default *(was `noindex,follow` — removed in this PR)* | y | was AdSense gate, now lifted |
-| `/airports/hubs` | 1 | default *(was `noindex,follow` — removed in this PR)* | n | was AdSense gate, now lifted |
+| `/airports/top-100-airports` (was `/airports/hubs`, 308s here since 5 Oct 2026) | 1 | default *(was `noindex,follow` — removed in this PR)* | y | was AdSense gate, now lifted |
 | `/airports/[iata]` | ~3,604 | `index,follow` when substantive (about text or tracked routes), else `noindex,follow` — same gate as airlines *(was unconditionally noindex via `AIRPORTS_INDEXABLE=false` — flag flipped in this PR)* | y | was AdSense gate, now lifted |
 | `/countries` | 1 | default | y | y |
 | `/countries/[code]` | ~235 codes | default — but codes with a CMS destination `permanentRedirect` (308) to `/destinations/[slug]`; only residual codes render | y (self) | y |

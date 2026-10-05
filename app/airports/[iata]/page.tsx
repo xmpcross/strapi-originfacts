@@ -402,7 +402,7 @@ export default async function AirportPage({ params }: Props) {
             ...(cityDestination ? [{ label: `${cityDestination.name} travel guide`, href: `/destinations/${cityDestination.slug}` }] : []),
             ...(countryDestination ? [{ label: `${countryDestination.name} travel guide`, href: `/destinations/${countryDestination.slug}` }] : []),
             { label: 'Airport directory', href: '/airports' },
-            { label: 'Hub airports', href: '/airports/hubs' },
+            { label: 'Top 100 airports', href: '/airports/top-100-airports' },
             { label: 'Flight routes', href: '/flight-routes' },
           ]}
         />

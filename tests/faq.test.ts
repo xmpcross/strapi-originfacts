@@ -37,7 +37,7 @@ test('faq: counts appear only when known', () => {
 test('faq: internal links point at known routes', () => {
   const known = new Set([
     '/about', '/methodology', '/contact', '/authors', '/search', '/sitemap', '/feed.xml', '/all-articles',
-    '/destinations', '/countries', '/airlines', '/airports', '/airports/hubs', '/flight-routes', '/flight-search',
+    '/destinations', '/countries', '/airlines', '/airports', '/airports/top-100-airports', '/flight-routes', '/flight-search',
     '/legal/contact', '/legal/disclaimer', '/legal/affiliate-disclosure', '/legal/privacy', '/legal/cookies',
     '/legal/accessibility',
   ]);

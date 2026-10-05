@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { mediaUrl, type StrapiAirline } from '@/lib/strapi';
+import { isTrimmedLogo, mediaUrl, type StrapiAirline } from '@/lib/strapi';
 
 export type FeaturedGuide = {
   airline: Pick<StrapiAirline, 'name' | 'slug' | 'iataCode' | 'type' | 'logo'>;
@@ -69,9 +69,15 @@ function GuideCard({ guide }: { guide: FeaturedGuide }) {
           {logo ? (
             // Logo files are 400x200 canvases with the artwork centred at half the width.
             // Drawing the canvas at twice the box width and clipping the empty sides shows
-            // the artwork at the full box width instead of half of it.
+            // the artwork at the full box width instead of half of it. Trimmed 200x100 logos fill the box as-is.
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={logo} alt="" className="absolute left-1/2 top-1/2 h-32 w-64 max-w-none -translate-x-1/2 -translate-y-1/2" loading="lazy" decoding="async" />
+            <img
+              src={logo}
+              alt=""
+              className={isTrimmedLogo(logo) ? 'h-full w-full object-fill' : 'absolute left-1/2 top-1/2 h-32 w-64 max-w-none -translate-x-1/2 -translate-y-1/2'}
+              loading="lazy"
+              decoding="async"
+            />
           ) : (
             <span className="text-lg font-bold text-forest-900/50">{(airline.iataCode || airline.name).slice(0, 3)}</span>
           )}

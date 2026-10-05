@@ -39,7 +39,7 @@ const today = new Date().toISOString().slice(0, 10);
 
 const RULES = `
 Rules:
-- Use Google Search. Only include a claim if a page you found states it. No claim from memory.
+- You MUST run Google Search before answering; do not answer from memory. Every source_url must be a page your searches returned. Only include a claim if a page you found states it. No claim from memory.
 - "quote" must be copied VERBATIM (character for character, one or two consecutive sentences, no ellipsis, no paraphrase) from the page in "source_url". It must contain every number, date and airline name used in "text".
 - "text" is one plain factual sentence in British English, no marketing language, no superlatives unless the quote states them.
 - Prefer airline and airport press releases or official pages, government sources and established news or aviation-trade outlets. Do NOT use Wikipedia, forums, Reddit, Quora, Tripadvisor, social media, flight-search / booking / route-map sites (Skyscanner, Kayak, Expedia, Google Flights, FlightConnections, Trip.com, Wego, etc.) or AI-generated content farms.
@@ -51,7 +51,7 @@ function prompts(r) {
   const L = routeLabel(r);
   const pair = `${L.o} and ${L.d}`;
   return {
-    operators: `Today is ${today}. Which airlines currently operate scheduled nonstop passenger flights between ${pair}, with their own aircraft (the operating carrier, not airlines that only sell codeshare seats)? For each airline give one claim (category "operator") that names the airline and says it flies between the two cities/airports nonstop or directly. Add claims (category "seasonal") for any service a source says is seasonal, newly launched in 2025–2026, or announced to start or end.
+    operators: `Today is ${today}. Which airlines currently operate scheduled nonstop passenger flights between ${pair}, with their own aircraft (the operating carrier, not airlines that only sell codeshare seats)? List EVERY airline that does, one claim each (category "operator"), naming the airline and saying it flies between these two airports nonstop or directly. Each operator claim needs a page dated 2025 or 2026 (news article, airline or airport media release) whose quote names the airline and both cities or airports; undated booking or marketing pages are not acceptable for operator claims. If a city has several airports, only flights to/from the airports named above count. Add claims (category "seasonal") for any service a source says is seasonal, newly launched in 2025–2026, or announced to start or end.
 ${RULES}`,
     history: `Today is ${today}. Find notable, dated history of nonstop air service between ${pair}: when particular airlines launched, suspended, resumed or dropped the route, and any notable milestones a source records for this specific city pair. Category "history". Each claim needs a date.
 ${RULES}`,
@@ -113,14 +113,16 @@ async function main() {
     const P = prompts(r);
     for (const kind of KINDS) {
       const raw = path.join(dir, `${kind}.json`);
-      let saved = !FORCE && fs.existsSync(raw) ? readJson(raw) : null;
+      const retryRaw = raw.replace(/\.json$/, '-retry.json');
+      let saved = null;
+      if (!FORCE) for (const f of [raw, retryRaw]) if (!saved?.parsed && fs.existsSync(f)) saved = readJson(f);
       let parsed = saved?.parsed ?? null;
       let attempts = 0;
       while (!parsed && attempts < 2) {
         const used = readUsage().filter((u) => u.grounded).length;
         if (used >= MAX_GROUNDED) throw new GeminiStop(`grounded-request budget reached (${used}/${MAX_GROUNDED})`);
         attempts++;
-        const rawFile = attempts > 1 ? raw.replace(/\.json$/, '-retry.json') : raw;
+        const rawFile = attempts > 1 ? retryRaw : raw;
         const { text, grounding, usage } = await gemini({
           model: MODEL, prompt: P[kind], grounded: true, slug, kind: attempts > 1 ? `${kind}-retry` : kind, rawPath: rawFile,
         });
@@ -145,8 +147,7 @@ async function main() {
             grounding_urls: c.grounding_chunks.map((i) => chunks[i]?.url).filter(Boolean),
           })),
         };
-        saved = readJson(rawFile);
-        writeJson(raw, { ...saved, parsed });
+        writeJson(rawFile, { ...readJson(rawFile), parsed });
       }
       if (!parsed) {
         console.error(`${slug} ${kind}: no parseable reply after ${attempts} attempts`);

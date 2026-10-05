@@ -12,8 +12,10 @@ import {
   placeNames,
   parseRobots,
   rejectedHost,
+  operatorQuoteProblem,
+  otherAirportCodes,
 } from '../ops/route-research/match.mjs';
-import { resolveAirline, formatPublished, buildGuide } from '../ops/route-research/build-guides';
+import { resolveAirline, formatPublished, buildGuide, operatorIata } from '../ops/route-research/build-guides';
 
 const PAGE = htmlToText(`<html><head><title>Gulf Air returns</title>
 <meta property="og:site_name" content="Gulf Daily News"><meta property="article:published_time" content="2023-05-25T08:00:00Z"></head>
@@ -140,7 +142,7 @@ test('buildGuide: only verified claims, every paragraph and FAQ cites a listed s
     { category: 'history' as const, text: 'Dropped claim 2017.', status: 'dropped', reasons: ['quote not on page'] },
     { category: 'airport' as const, text: 'Needs judge 2014.', status: 'needs-judge', verified_quote: 'q', source: src('https://d.example/4') },
   ];
-  const { guide } = buildGuide(route, claims, AIRLINES, { minClaims: 3, today: '2026-10-05' });
+  const { guide } = buildGuide(route, claims, AIRLINES, { minClaims: 3, today: '2026-10-05', fareAirlines: ['QR'] });
   assert.ok(guide);
   const ids = new Set(guide.sources.map((s) => s.id));
   const cited = [guide.intro.sources, ...guide.operating_airlines.map((a) => a.sources), ...guide.sections.flatMap((s) => s.paragraphs.map((p) => p.sources)), ...guide.faqs.map((f) => f.sources)];
@@ -155,4 +157,67 @@ test('buildGuide: only verified claims, every paragraph and FAQ cites a listed s
   assert.equal(none.guide, null);
   const thin = buildGuide(route, claims.slice(0, 1), AIRLINES, { minClaims: 3, today: '2026-10-05' });
   assert.equal(thin.guide, null);
+});
+
+test('operatorQuoteProblem: codeshare and non-service quotes are refused', () => {
+  assert.equal(operatorQuoteProblem('Qantas flies daily between Sydney and Singapore.'), null);
+  assert.match(String(operatorQuoteProblem('Qantas sells codeshare seats on flights operated by Emirates.')), /codeshare/);
+  assert.match(String(operatorQuoteProblem('Qantas and Singapore Airlines are partners in Sydney.')), /flight or service/);
+});
+
+test('operatorIata: ceased carriers and foreign carriers off the route record are dropped', () => {
+  const route = {
+    slug: 'kul-to-sin',
+    origin: { iata: 'KUL', name: 'Kuala Lumpur International Airport', city: 'Kuala Lumpur', country: 'Malaysia' },
+    destination: { iata: 'SIN', name: 'Singapore Changi Airport', city: 'Singapore', country: 'Singapore' },
+    carriers: [],
+  };
+  const airlines = [
+    { slug: 'silkair', name: 'SilkAir', iataCode: 'MI', country: 'Singapore' },
+    { slug: 'ethiopian-airlines', name: 'Ethiopian Airlines', iataCode: 'ET', country: 'Ethiopia' },
+  ];
+  assert.match(String((operatorIata('SilkAir', route, airlines) as { reason: string }).reason), /ceased/);
+  assert.match(String((operatorIata('Ethiopian Airlines', route, airlines) as { reason: string }).reason), /fifth-freedom/);
+});
+
+test('buildGuide: operator claims from undated or stale sources are dropped', () => {
+  const route = {
+    slug: 'bah-to-doh',
+    origin: { iata: 'BAH', name: 'Bahrain International Airport', city: 'Bahrain', country: 'Bahrain' },
+    destination: { iata: 'DOH', name: 'Hamad International Airport', city: 'Doha', country: 'Qatar' },
+    carriers: [{ slug: 'qatar-airways', name: 'Qatar Airways', iataCode: 'QR', country: 'Qatar' }],
+  };
+  const op = (published: string | null) => ({
+    category: 'operator' as const, text: 'Qatar Airways flies to Bahrain.', airlines: ['Qatar Airways'], status: 'verified', verified_quote: 'q',
+    source: { url: `https://a.example/${published}`, title: 'T', site_name: 'P', published, fetched_at: '2026-10-05T00:00:00Z' },
+  });
+  assert.equal(buildGuide(route, [op('2023-01-01')], AIRLINES, { minClaims: 1, today: '2026-10-05' }).guide, null);
+  assert.equal(buildGuide(route, [op(null)], AIRLINES, { minClaims: 1, today: '2026-10-05' }).guide, null);
+  assert.ok(buildGuide(route, [op('2026-03-01')], AIRLINES, { minClaims: 1, today: '2026-10-05' }).guide);
+});
+
+test('buildGuide: a partial operator list (fare data shows another carrier) is not published as the list', () => {
+  const route = {
+    slug: 'bah-to-doh',
+    origin: { iata: 'BAH', name: 'Bahrain International Airport', city: 'Bahrain', country: 'Bahrain' },
+    destination: { iata: 'DOH', name: 'Hamad International Airport', city: 'Doha', country: 'Qatar' },
+    carriers: [{ slug: 'qatar-airways', name: 'Qatar Airways', iataCode: 'QR', country: 'Qatar' }],
+  };
+  const claims = [{
+    category: 'operator' as const, text: 'Qatar Airways flies to Bahrain.', airlines: ['Qatar Airways'], status: 'verified', verified_quote: 'q',
+    source: { url: 'https://a.example/1', title: 'T', site_name: 'P', published: '2026-03-01', fetched_at: '2026-10-05T00:00:00Z' },
+  }];
+  const partial = buildGuide(route, claims, AIRLINES, { minClaims: 1, today: '2026-10-05', fareAirlines: ['GF', 'QR'] });
+  assert.deepEqual(partial.guide?.operating_airlines, []);
+  assert.match(String(partial.guide?.intro.text), /include Qatar Airways/);
+  assert.doesNotMatch(String(partial.guide?.intro.text), /nonstop/);
+  assert.equal(partial.guide?.faqs.length, 0);
+  assert.deepEqual(partial.missingOperators, ['GF']);
+  const full = buildGuide(route, claims, AIRLINES, { minClaims: 1, today: '2026-10-05', fareAirlines: ['QR'] });
+  assert.deepEqual(full.guide?.operating_airlines.map((a) => a.iata), ['QR']);
+});
+
+test('otherAirportCodes: a claim about Western Sydney (WSI) is not about SYD', () => {
+  assert.deepEqual(otherAirportCodes('Air New Zealand flies between Auckland and WSI.', ['AKL', 'SYD']), ['WSI']);
+  assert.deepEqual(otherAirportCodes('Flights between AKL and SYD in NSW.', ['AKL', 'SYD']), []);
 });

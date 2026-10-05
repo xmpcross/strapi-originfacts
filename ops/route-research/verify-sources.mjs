@@ -29,7 +29,7 @@ import path from 'node:path';
 
 import { arg, DATA, gemini, GeminiStop, loadAirlines, loadRoutes, parseJsonReply, readJson, sleep, USER_AGENT, writeJson } from './lib.mjs';
 import {
-  extractMeta, htmlToText, keyTokens, locateQuote, mentionsPlace, missingTokens, parseRobots, placeNames, quoteOnPage, rejectedHost, tokenCount,
+  extractMeta, htmlToText, keyTokens, operatorQuoteProblem, otherAirportCodes, locateQuote, mentionsPlace, missingTokens, parseRobots, placeNames, quoteOnPage, rejectedHost, tokenCount,
 } from './match.mjs';
 
 const HOST_GAP_MS = 4000;
@@ -160,6 +160,9 @@ export async function verifyClaim(c, ctx, fetcher = fetchPage) {
   const ends = isRoute ? ctx.ends : null;
   const place = !isRoute && c.airport ? ctx.ends.find((e) => e.iata === String(c.airport).toUpperCase()) : null;
   if (!isRoute && !place) return { ...c, status: 'dropped', reasons: ['airport claim not about either end of the route'] };
+  if (!(c.airlines ?? []).length && /\b(the airline|the carrier)('s)?\b/i.test(c.text)) return { ...c, status: 'dropped', reasons: ['claim refers to "the airline" without naming it'] };
+  const stray = otherAirportCodes(c.text, ctx.ends.map((e) => e.iata));
+  if (stray.length) return { ...c, status: 'dropped', reasons: [`claim is about another airport (${stray.join(', ')})`] };
   if (c.category === 'history' && !/\b(19|20)\d{2}\b/.test(c.text)) return { ...c, status: 'dropped', reasons: ['history claim has no year in its text'] };
   if (c.category === 'operator' && !(c.airlines ?? []).length) return { ...c, status: 'dropped', reasons: ['operator claim names no airline'] };
   const list = candidates(c);
@@ -181,6 +184,7 @@ export async function verifyClaim(c, ctx, fetcher = fetchPage) {
     }
     const title = page.meta?.title ?? '';
     const placeOk = (q) =>
+      (c.category !== 'operator' || !operatorQuoteProblem(q)) &&
       isRoute
         ? (mentionsPlace(q, ends[0]) || mentionsPlace(title, ends[0])) && (mentionsPlace(q, ends[1]) || mentionsPlace(title, ends[1]))
         : mentionsPlace(q, place) || mentionsPlace(title, place) || mentionsPlace(page.text.slice(0, 3000), place);
@@ -189,6 +193,7 @@ export async function verifyClaim(c, ctx, fetcher = fetchPage) {
     if (c.quote && quoteOnPage(page.text, c.quote)) {
       const miss = missingTokens(k, c.quote);
       if (miss.length) reasons.push(`${cand.url}: quote on page but missing ${miss.join(', ')}`);
+      else if (c.category === 'operator' && operatorQuoteProblem(c.quote)) reasons.push(`${cand.url}: ${operatorQuoteProblem(c.quote)}`);
       else if (!placeOk(c.quote)) reasons.push(`${cand.url}: quote on page but does not name the route ends`);
       else {
         quote = c.quote;
@@ -248,6 +253,20 @@ async function main() {
       continue;
     }
     const research = readJson(src);
+    // Gemini 3 can return grounding redirect URLs inside its JSON instead of in
+    // groundingMetadata. Resolve them now (they expire); the target is not fetched here.
+    for (const c of research.claims) {
+      if (/vertexaisearch\.cloud\.google\.com/.test(c.source_url ?? '')) {
+        try {
+          const res = await fetch(c.source_url, { redirect: 'manual', headers: { 'User-Agent': USER_AGENT } });
+          c.source_url_redirect = c.source_url;
+          c.source_url = res.headers.get('location') || null;
+        } catch {
+          c.source_url = null;
+        }
+        await sleep(150);
+      }
+    }
     const ctx = { ends: [placeNames(r.origin), placeNames(r.destination)], knownAirlines };
     const out = [];
     for (const c of research.claims) {

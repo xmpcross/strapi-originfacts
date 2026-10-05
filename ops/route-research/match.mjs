@@ -276,3 +276,33 @@ export function rejectedHost(url) {
   const hit = REJECTED_HOSTS.find((r) => (r.endsWith('.') ? h.includes(r) : h === r || h.endsWith(`.${r}`)));
   return hit ? `rejected source host (${hit})` : null;
 }
+
+/* ------------------------------------------------------- operator quotes */
+
+const SERVICE_WORDS = /\b(non-?stop|direct|flights?|fl(y|ies|ew|own)|services?|operat(e|es|ed|ing)|route|launch(es|ed)?|resum(e|es|ed))\b/i;
+const CODESHARE = /\b(code-?share|code share|operated by|interline|partner airline)\b/i;
+
+/**
+ * An operator claim says an airline flies the route with its own aircraft, so
+ * its quote must itself describe a flight/service, and must not be about a
+ * codeshare or a flight "operated by" someone else. Returns why not, or null.
+ */
+export function operatorQuoteProblem(quote) {
+  if (CODESHARE.test(quote)) return 'quote describes a codeshare / operated-by flight';
+  if (!SERVICE_WORDS.test(quote)) return 'quote does not describe a flight or service';
+  return null;
+}
+
+/* --------------------------------------------------------- other airports */
+
+const NOT_AIRPORTS = new Set(['USA', 'UAE', 'NSW', 'CBD', 'LCC', 'FAA', 'CAA', 'EU', 'UK', 'IATA', 'ICAO', 'GDP', 'CEO', 'CFO', 'COO', 'VIP', 'ATR', 'SAR', 'PRC', 'ROC', 'NZD', 'AUD', 'USD', 'GBP', 'EUR', 'INR', 'SGD', 'MYR', 'JPY', 'CNY', 'HKD', 'QLD', 'ACT', 'WA', 'TAS', 'GST', 'VAT', 'APEC']);
+
+/**
+ * Three-letter codes in a claim that are not the route's own airports. A
+ * claim about Western Sydney (WSI) is not a claim about Sydney (SYD), even
+ * though the page says "Sydney". Returns the stray codes.
+ */
+export function otherAirportCodes(text, endIatas) {
+  const ends = new Set(endIatas.map((c) => String(c).toUpperCase()));
+  return [...new Set(String(text).match(/\b[A-Z]{3}\b/g) ?? [])].filter((c) => !ends.has(c) && !NOT_AIRPORTS.has(c));
+}

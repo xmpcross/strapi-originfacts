@@ -21,7 +21,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { carrierCodeMismatch, judgeRouteCarrier, type RouteCarrier } from '../../lib/route-carriers';
+import { carrierCodeMismatch, judgeRouteCarrier, normCountry, type RouteCarrier } from '../../lib/route-carriers';
+import { getCeasedAirline, isNonAirline } from '../../lib/airline-status';
+import airlineStatus from '../../data/airline-status/wikidata.json';
 import type { RouteGuide, GuideSource, GuideParagraph, GuideSection, GuideFaq } from '../../lib/route-guide';
 
 type Airport = { iata: string; name: string; city?: string | null; country?: string; countryCode?: string };
@@ -93,10 +95,18 @@ export function operatorIata(name: string, route: Route, airlines: Airline[]): {
   if (!code) return { reason: `${a.name} has no IATA code on the site` };
   const mismatch = carrierCodeMismatch(a);
   if (mismatch) return { reason: `${a.name} (${code}): ${mismatch}` };
+  if (isNonAirline(a.slug)) return { reason: `${a.name} is not an airline (NON_AIRLINE_SLUGS)` };
+  const ceased = getCeasedAirline(a.slug) ?? (airlineStatus.ceased as Record<string, { ceasedOn: string }>)[a.slug] ?? null;
+  if (ceased) return { reason: `${a.name} ceased ${ceased.ceasedOn} per data/airline-status (held entries included)` };
   const onRecord = (route.carriers ?? []).find((c) => c.slug === a.slug);
   if (onRecord) {
     const v = judgeRouteCarrier(route, onRecord);
     if (!v.keep) return { reason: `${a.name} (${code}) on the route record but dropped by route-carriers: ${v.reason}` };
+  } else {
+    const home = normCountry(a.country);
+    if (home && home !== normCountry(route.origin.country) && home !== normCountry(route.destination.country)) {
+      return { reason: `${a.name} is from neither end and not on the route record (possible fifth-freedom/tag leg): manual review` };
+    }
   }
   return { iata: code, name: a.name, onRecord: !!onRecord };
 }
@@ -136,8 +146,8 @@ export function buildGuide(
   route: Route,
   claims: Claim[],
   airlines: Airline[],
-  opts: { minClaims: number; today: string },
-): { guide: RouteGuide | null; ledger: unknown; why?: string } {
+  opts: { minClaims: number; today: string; fareAirlines?: string[] | null; editorDrops?: { prefix: string; why: string }[] },
+): { guide: RouteGuide | null; ledger: unknown; why?: string; missingOperators?: string[] } {
   const verified = claims.filter((c) => c.status === 'verified' && c.source && c.verified_quote);
   const dropped: { text: string; category: string; reasons: string[] }[] = claims
     .filter((c) => c.status !== 'verified')
@@ -146,10 +156,16 @@ export function buildGuide(
   // One source entry per final URL.
   const taken = new Set<string>();
   const byUrl = new Map<string, GuideSource>();
+  // The same page reached as www./non-www., with or without a trailing slash, is one source.
+  const urlKey = (u: string) => {
+    const x = new URL(u);
+    return `${x.hostname.replace(/^www\./, '')}${x.pathname.replace(/\/+$/, '')}`;
+  };
   const sid = (c: Claim) => {
     const s = c.source!;
-    if (!byUrl.has(s.url)) {
-      byUrl.set(s.url, {
+    const key = urlKey(s.url);
+    if (!byUrl.has(key)) {
+      byUrl.set(key, {
         id: sourceId(s, taken),
         title: (s.title ?? publisherOf(s)).replace(/\s+/g, ' ').trim(),
         publisher: publisherOf(s),
@@ -158,8 +174,17 @@ export function buildGuide(
         verified_at: s.fetched_at.slice(0, 10),
       });
     }
-    return byUrl.get(s.url)!.id;
+    return byUrl.get(key)!.id;
   };
+
+  // Editor drops: verified claims a reviewer removed (e.g. conflicts with another sourced field on the page).
+  for (let i = verified.length - 1; i >= 0; i--) {
+    const hit = (opts.editorDrops ?? []).find((d) => verified[i].text.startsWith(d.prefix));
+    if (hit) {
+      dropped.push({ text: verified[i].text, category: verified[i].category, reasons: [`editor: ${hit.why}`] });
+      verified.splice(i, 1);
+    }
+  }
 
   // De-duplicate claims with the same text.
   const seen = new Set<string>();
@@ -169,6 +194,23 @@ export function buildGuide(
     if (seen.has(k)) continue;
     seen.add(k);
     kept.push(c);
+  }
+
+  // Current-service claims need a dated source from the last 18 months:
+  // an old or undated page can describe a carrier that has since stopped
+  // flying (Jetstar Asia, July 2025).
+  const cutoff = new Date(`${opts.today}T00:00:00Z`);
+  cutoff.setUTCMonth(cutoff.getUTCMonth() - 18);
+  const fresh = (c: Claim) => {
+    const p = c.source?.published ? new Date(c.source.published) : null;
+    return !!p && !Number.isNaN(p.getTime()) && p >= cutoff;
+  };
+  for (let i = kept.length - 1; i >= 0; i--) {
+    const c = kept[i];
+    if ((c.category === 'operator' || c.category === 'seasonal') && !fresh(c)) {
+      dropped.push({ text: c.text, category: c.category, reasons: [c.source?.published ? `current-service claim from a source dated ${c.source.published} (older than 18 months)` : 'current-service claim from an undated source'] });
+      kept.splice(i, 1);
+    }
   }
 
   // Operators: identity-checked.
@@ -215,22 +257,35 @@ export function buildGuide(
   const ground = final.filter((c) => c.category === 'ground');
   if (ground.length) sections.push({ id: 'getting-there', heading: 'How do you get to and from the airports?', paragraphs: ground.map(para) });
 
-  const faqs: GuideFaq[] = [
-    { q: `Which airlines fly nonstop from ${from} to ${to}?`, a: `${joinNames(opList.map((x) => x.name))}.`, sources: opSources },
-  ];
+  // Is the sourced operator list complete? Live fare data (the same
+  // Travelpayouts call the page makes) shows who sells nonstop seats; if it
+  // has a carrier we could not source, the list is partial. Then the page
+  // keeps the fare-data list (operating_airlines left empty), and the text
+  // says "include" instead of naming the operators as the full set.
+  const saysNonstop = final.filter((c) => c.category === 'operator').every((c) => /non-?stop|direct/i.test(c.verified_quote ?? ''));
+  const missingOperators = (opts.fareAirlines ?? []).filter((c) => !ops.has(c));
+  const complete = opts.fareAirlines != null && missingOperators.length === 0;
+  const faqs: GuideFaq[] = complete
+    ? [{ q: `Which airlines fly${saysNonstop ? ' nonstop' : ''} from ${from} to ${to}?`, a: `${joinNames(opList.map((x) => x.name))}.`, sources: opSources }]
+    : [];
   for (const ap of [o, d]) {
     const g = ground.filter((c) => String(c.airport ?? '').toUpperCase() === ap.iata.toUpperCase());
-    if (g.length) faqs.push({ q: `How do I get from ${ap.name} into ${ap.city || 'the city'}?`, a: g.map((c) => sentence(c.text)).join(' '), sources: [...new Set(g.map(sid))] });
+    if (g.length) faqs.push({ q: `How do I get to and from ${ap.name} by public transport?`, a: g.map((c) => sentence(c.text)).join(' '), sources: [...new Set(g.map(sid))] });
   }
 
   const guide: RouteGuide = {
     slug: route.slug,
     verified_at: opts.today,
     intro: {
-      text: `${from} to ${to} is a nonstop route from ${o.name} (${o.iata}) to ${d.name} (${d.iata}). ${joinNames(opList.map((x) => x.name))} ${opList.length === 1 ? 'flies' : 'fly'} it nonstop.`,
+      // "Nonstop" only when every operator quote says nonstop/direct itself.
+      text: `Flights from ${from} to ${to} run from ${o.name} (${o.iata}) to ${d.name} (${d.iata}). ${
+        complete
+          ? `${joinNames(opList.map((x) => x.name))} ${opList.length === 1 ? 'flies' : 'fly'} the route${saysNonstop ? ' nonstop' : ''}.`
+          : `Airlines flying the route${saysNonstop ? ' nonstop' : ''} include ${joinNames(opList.map((x) => x.name))}.`
+      }`,
       sources: opSources,
     },
-    operating_airlines: opList.map((x) => ({ iata: x.iata, sources: [...x.sources] })),
+    operating_airlines: complete ? opList.map((x) => ({ iata: x.iata, sources: [...x.sources] })) : [],
     sections,
     faqs,
     sources: [...byUrl.values()],
@@ -238,10 +293,33 @@ export function buildGuide(
   const ledger = {
     slug: route.slug,
     verified_at: opts.today,
+    operators: { sourced: opList.map((x) => x.iata), fare_data: opts.fareAirlines ?? null, missing_from_sources: missingOperators, list_published: complete },
     kept: final.map((c) => ({ category: c.category, text: c.text, date: c.date ?? null, airlines: c.airlines ?? [], source_id: sid(c), url: c.source!.url, quote: c.verified_quote, quote_origin: c.quote_origin })),
     dropped,
   };
-  return { guide, ledger };
+  return { guide, ledger, missingOperators };
+}
+
+/** IATA codes with nonstop fares in Travelpayouts data (the page's own fallback list), or null if unavailable. */
+async function fareAirlines(o: string, d: string): Promise<string[] | null> {
+  let token = process.env.TRAVELPAYOUTS_API_TOKEN;
+  if (!token) {
+    try {
+      token = fs.readFileSync(path.join(REPO, '.env.local'), 'utf8').match(/^TRAVELPAYOUTS_API_TOKEN=(.*)$/m)?.[1]?.trim();
+    } catch {
+      /* none */
+    }
+  }
+  if (!token) return null;
+  const qs = new URLSearchParams({ origin: o, destination: d, currency: 'usd', direct: 'true', one_way: 'true', sorting: 'price', limit: '1000' });
+  try {
+    const res = await fetch(`https://api.travelpayouts.com/aviasales/v3/prices_for_dates?${qs}`, { headers: { 'X-Access-Token': token } });
+    if (!res.ok) return null;
+    const j = (await res.json()) as { data?: { airline: string; transfers?: number }[] };
+    return [...new Set((j.data ?? []).filter((f) => !f.transfers).map((f) => f.airline))].sort();
+  } catch {
+    return null;
+  }
 }
 
 async function main() {
@@ -259,7 +337,12 @@ async function main() {
       continue;
     }
     const { claims } = JSON.parse(fs.readFileSync(vf, 'utf8')) as { claims: Claim[] };
-    const { guide, ledger, why } = buildGuide(route, claims, airlines, { minClaims, today });
+    const fares = await fareAirlines(route.origin.iata, route.destination.iata);
+    // ops/route-research/editor-drops.json: { "<slug>": [{ "prefix": "<claim text start>", "why": "..." }] }
+    const dropsFile = path.join(HERE, 'editor-drops.json');
+    const editorDrops = fs.existsSync(dropsFile) ? (JSON.parse(fs.readFileSync(dropsFile, 'utf8'))[slug] ?? []) : [];
+    const { guide, ledger, why, missingOperators } = buildGuide(route, claims, airlines, { minClaims, today, fareAirlines: fares, editorDrops });
+    if (missingOperators?.length) console.log(`${slug}: fare data also shows ${missingOperators.join(', ')} — operator list not published (page keeps fare-data airlines)`);
     if (!guide) {
       console.log(`${slug}: NO GUIDE — ${why}`);
       if (!dry) fs.mkdirSync(path.join(HERE, 'claims'), { recursive: true });

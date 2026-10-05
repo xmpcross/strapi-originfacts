@@ -22,6 +22,7 @@ import {
   factFaqs,
   fieldLabel,
   glanceGap,
+  glanceHasValues,
   glanceValues,
   loadModules,
   publishedField,
@@ -150,6 +151,7 @@ export default function AirlineGuideV2({ airline, routeFacts: rf, facts, allianc
     verifiedSections.flatMap((x) => (x.state.kind === 'sourced' ? shownFields(x.state.module).map((f) => f.verified_at) : [])),
   );
 
+  const showGlance = glanceHasValues(modules);
   const hubs = (rf?.topHubs ?? []).slice(0, 3);
   const dataVintage = rf ? formatDate(`${rf.updated}-01`) : null;
   const headerFactCount = [airline.country, alliance, hubs.length, rf?.destinationCount].filter(Boolean).length;
@@ -262,16 +264,20 @@ export default function AirlineGuideV2({ airline, routeFacts: rf, facts, allianc
       </header>
 
       {/* ---------------------------------------------------------- at a glance */}
-      <section aria-labelledby="glance-title" className={`${WRAP} pt-8`} data-testid="v2-glance">
-        <h2 id="glance-title" className="text-xl sm:text-2xl">
-          {name} at a glance
-        </h2>
-        <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {GLANCE_TILES.map((tile) => (
-            <GlanceTileView key={tile.id} tile={tile} modules={modules} />
-          ))}
-        </ul>
-      </section>
+      {/* Left out when no tile has an official value: six "not yet verified"
+          tiles would only repeat what the section cards below already say. */}
+      {showGlance && (
+        <section aria-labelledby="glance-title" className={`${WRAP} pt-8`} data-testid="v2-glance">
+          <h2 id="glance-title" className="text-xl sm:text-2xl">
+            {name} at a glance
+          </h2>
+          <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {GLANCE_TILES.map((tile) => (
+              <GlanceTileView key={tile.id} tile={tile} modules={modules} />
+            ))}
+          </ul>
+        </section>
+      )}
 
       {/* ---------------------------------------------------------- body */}
       <div className={`${WRAP} pb-16 pt-8 lg:grid lg:grid-cols-[13.5rem_minmax(0,1fr)] lg:gap-10`}>

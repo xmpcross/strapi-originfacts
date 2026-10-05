@@ -246,6 +246,16 @@ export function glanceValues(modules: Map<string, ModuleEntry>, tile: GlanceTile
 }
 
 /**
+ * Whether the at-a-glance grid has anything to summarise: true when at least
+ * one tile has an official value. When none does, every tile would only say
+ * "not yet verified", which the section cards below already say, so the page
+ * leaves the grid out.
+ */
+export function glanceHasValues(modules: Map<string, ModuleEntry>): boolean {
+  return GLANCE_TILES.some((tile) => glanceValues(modules, tile).length > 0);
+}
+
+/**
  * Why a tile has no value to show, in the reader's terms:
  *   disputed — a candidate field is recorded as disputed (both readings are in the section);
  *   in-section — the module published, but not as a short figure this tile can hold;

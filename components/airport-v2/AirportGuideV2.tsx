@@ -31,6 +31,7 @@ import { CitedParagraph } from '@/components/route-guide/RouteGuideBlocks';
 import type { StrapiAirport, StrapiRoute } from '@/lib/strapi';
 import type { AirportWeather } from '@/lib/met-weather';
 import { formatLocalTime, MET_ATTRIBUTION, weatherLabel } from '@/lib/met-symbols';
+import WeatherCard from './WeatherCard';
 import SectionNav, { SECTION_ICONS, type NavItem } from './SectionNav';
 import { displayUrl, type Faq } from './faqs';
 import { routeCoverage, type AirportCityPhoto } from '@/lib/airport-v2';
@@ -362,12 +363,9 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
       {/* ---------------------------------------------------------- description */}
       {heroSummary && (
         <section aria-label="Airport description" className={`${WRAP} pt-8`} data-testid="airport-v2-description">
-          <div className="flex gap-4 rounded-[0.5rem] border border-forest-900/10 border-l-4 border-l-sand-400 bg-white p-5 sm:p-6">
-            <Info aria-hidden className="mt-1 hidden h-6 w-6 flex-none text-primary-emphasis sm:block" />
-            <p className="text-base leading-7 text-forest-900/85 sm:text-lg sm:leading-8">
-              {heroSummary}
-            </p>
-          </div>
+          <p className="text-base font-bold leading-7 text-forest-950 sm:text-lg sm:leading-8">
+            {heroSummary}
+          </p>
         </section>
       )}
 
@@ -472,32 +470,15 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
           )}
 
           {weather?.current && typeof weather.current.airTemperature === 'number' && (
-            <Tile
-              icon={CloudSun}
-              title="Weather now"
+            <WeatherCard
+              weather={weather}
               source={
                 <>
                   <ExternalLink href={MET_ATTRIBUTION.url}>{MET_ATTRIBUTION.name}</ExternalLink>
                   {weatherAt ? ` · ${weatherAt}` : ''}
                 </>
               }
-            >
-              <p className="flex items-baseline gap-2 text-[15px] font-semibold text-forest-950">
-                <span className="text-2xl font-bold">{Math.round(weather.current.airTemperature)}°C</span>
-                <span>{weatherLabel(weather.current.symbolCode)}</span>
-              </p>
-              <p className="text-sm text-forest-900/75">
-                {[
-                  typeof weather.current.relativeHumidity === 'number' ? `Humidity ${Math.round(weather.current.relativeHumidity)}%` : null,
-                  typeof weather.current.windSpeedKmh === 'number' ? `wind ${Math.round(weather.current.windSpeedKmh)} km/h` : null,
-                  typeof weather.next24h?.min === 'number' && typeof weather.next24h?.max === 'number'
-                    ? `next 24 h ${Math.round(weather.next24h.min)}° to ${Math.round(weather.next24h.max)}°`
-                    : null,
-                ]
-                  .filter(Boolean)
-                  .join(' · ')}
-              </p>
-            </Tile>
+            />
           )}
 
           <li className="flex flex-col rounded-[0.5rem] border border-dashed border-forest-900/20 bg-white/60 p-4">

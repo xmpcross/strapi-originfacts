@@ -1,39 +1,39 @@
 {
   "slug": "airasia",
-  "official_website": "http://www.airasia.com",
+  "official_website": "https://www.airasia.com",
   "modules": [
     {
       "id": "carryon",
       "title": "Carry-on",
       "required": [
+        "carryon_allowance",
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_weight"
       ],
       "fields": {
+        "carryon_allowance": {
+          "value": "2 pieces per passenger (infants excluded): any two of a cabin bag, laptop bag, handbag or small bag",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-ak.html",
+          "notes": "Terms and Conditions of Carriage for AK Flights (as of 31 Aug 2026), Article 9.6.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "https://support.airasia.com/s/article/Cabin-baggage-en",
-          "notes": "AirAsia cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "Cabin bag up to 56 x 36 x 23 cm; second bag up to 40 x 30 x 10 cm",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-ak.html",
+          "notes": "Article 9.6: 'shall not exceed the dimensions of 56cm X 36cm X 23cm and 30cm x 40cm x 10cm respectively'. The cabin bag must fit under the seat or in an overhead compartment.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "https://support.airasia.com/s/article/Cabin-baggage-en",
-          "notes": "AirAsia Economy Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
-        },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "https://support.airasia.com/s/article/Cabin-baggage-en",
-          "notes": "AirAsia Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "carryon_weight": {
+          "value": "7 kg total for both pieces",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-ak.html",
+          "notes": "Article 9.6: 'The two pieces ... must weigh no more than 7kg in total.' Oversized or overweight cabin bags may be checked at the gate for a fee.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -41,34 +41,148 @@
       "id": "baggage",
       "title": "Checked baggage",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "allowance",
+        "max_piece"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "https://support.airasia.com/s/article/Checked-baggage-en",
-          "notes": "AirAsia Economy Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "allowance": {
+          "value": "Not included in the fare: checked baggage is bought as an add-on (20 kg), at a discounted rate when booking or up to 4 hours before departure, and at the full rate after that, including at the airport counter",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-ak.html",
+          "notes": "Article 9.5: 'A Baggage fee applies for checked Baggage' ... 'may purchase twenty (20) kgs at an applicable rate'. Rates are in AirAsia's Fee Schedule and are not recorded here.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://support.airasia.com/s/article/Checked-baggage-en",
-          "notes": "AirAsia Business Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "excess_baggage": {
+          "value": "More than 2 pieces, or any piece over 20 kg, is charged as excess baggage at the airport on the day of departure; the charge is non-refundable",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-ak.html",
+          "notes": "Article 9.5.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
+        "max_piece": {
+          "value": "No single bag over 32 kg, or over 81 cm high, 119 cm wide and 119 cm deep, is accepted",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-ak.html",
+          "notes": "Article 9.5.3: 'For health and safety reasons the Carrier will not accept any individual Baggage exceeding 32 kg'.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "required": [
+        "fare_name",
+        "seat_selection_included",
+        "change_cancellation_policy"
+      ],
+      "fields": {
+        "fare_name": {
+          "value": null,
           "status": "pending",
-          "source_url": "https://support.airasia.com/s/article/Checked-baggage-en",
-          "notes": "AirAsia First Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "notes": "The AK conditions of carriage do not name AirAsia's entry fare or bundles. Needs a reading of AirAsia's own fare-type page."
+        },
+        "seat_selection_included": {
+          "value": "No particular seat is guaranteed; a seat is allocated at check-in unless an advance seat is bought",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-ak.html",
+          "notes": "Article 5.8 (Seating) and 5.8.1 (Advance seat request).",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "change_cancellation_policy": {
+          "value": "Bookings cannot be cancelled or refunded once confirmed. Flight changes cost a fee plus any fare difference, and are allowed only more than 48 hours before departure; route changes are not allowed",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-ak.html",
+          "notes": "Articles 5.1 and 5.3.1. Article 5.5 says the change rules do not apply to certain promotional fares; Articles 5.1.1 and 5.1.2 set separate refund terms for Korea and Mainland China flights.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "online_checkin",
+        "domestic_cutoff",
+        "international_cutoff",
+        "boarding_close"
+      ],
+      "fields": {
+        "online_checkin": {
+          "value": "Opens 14 days before departure in the airasia MOVE app and closes 60 minutes before departure",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-ak.html",
+          "notes": "Articles 7.2.2 and 7.2.3.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "domestic_cutoff": {
+          "value": "45 minutes before departure (60 minutes at KLIA2)",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-ak.html",
+          "notes": "Article 7.2.1, counter closing times. KLIA2 closes counters 60 minutes before departure for all flights.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "international_cutoff": {
+          "value": "60 minutes before departure",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-ak.html",
+          "notes": "Article 7.2.1, short-haul and long-haul international flights.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "boarding_close": {
+          "value": "Boarding gates close 20 minutes before departure; this may vary by airport",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-ak.html",
+          "notes": "Article 7.4. Missing it means denied boarding and a non-refundable booking.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "counter_checkin_malaysia": {
+          "value": "At airports in Malaysia, counter check-in is only for exempted passengers (for example seniors aged 70+, OKU card holders, unaccompanied 12-16 year olds, groups of 10+); everyone else must check in through airasia MOVE",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-ak.html",
+          "notes": "Article 7.1.1 lists the full set of exempted passengers. The counter cannot be used for a fee by anyone else.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "required": [
+        "rebooking_refund",
+        "delay_refund_threshold"
+      ],
+      "fields": {
+        "rebooking_refund": {
+          "value": "When AirAsia cancels, reschedules or delays a flight, it offers, at its discretion, a free move to the next flight with space, the fare held as credit, or a refund to the original payment method",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-ak.html",
+          "notes": "Article 10.2, options (a) to (c).",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "delay_refund_threshold": {
+          "value": "A refund applies when the change is 3 hours or more from the original departure time (5 hours or more for domestic flights within Malaysia); not for changes made at the airport on the day of departure",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-ak.html",
+          "notes": "Article 10.2(c). Fly-Thru itineraries with international sectors use the 3-hour threshold.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "duty_of_care_policy": {
+          "value": null,
+          "status": "pending",
+          "notes": "The AK conditions of carriage do not commit to meals or accommodation during delays. Needs a reading of AirAsia's own disruption or passenger-rights page; do not infer from MAVCOM rules."
         }
       }
     },
@@ -76,16 +190,38 @@
       "id": "contact",
       "title": "Contact and customer support",
       "required": [
-        "phone_home_market"
+        "customer_service",
+        "conditions_of_carriage_url"
       ],
       "fields": {
+        "customer_service": {
+          "value": "AskBo chat, 24 hours a day, on airasia.com and the airasia MOVE app",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-ak.html",
+          "notes": "Customer Service section: 'For an instant response twenty-four (24) hours a day and urgent assistance, please Chat with AskBo.'",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
         "phone_home_market": {
           "value": null,
           "status": "pending",
-          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-carriage.html",
-          "notes": "No verified phone yet.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "notes": "The AK conditions of carriage list no general phone line; the only number given (+86 20 6661 8855) is for passengers in Mainland China who cannot reach AskBo. Do not add a number from any other site."
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-ak.html",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-ak.html",
+          "notes": "Terms and Conditions of Carriage for AK Flights, as of 31 Aug 2026.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "official_website_url": {
+          "value": "https://www.airasia.com",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-ak.html",
+          "notes": "AirAsia passenger website.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

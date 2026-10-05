@@ -302,6 +302,15 @@ export const REJECTED_HOSTS = [
   'travelstart.', 'gotogate.', 'mytrip.', 'traveloka.com', 'tiket.com', 'easemytrip.com', 'yatra.com', 'webjet.', 'flightcentre.',
   'studentuniverse.', 'cheaptickets.', 'lastminute.', 'skiplagged.com', 'hotwire.com', 'justfly.com', 'airfarewatchdog.com',
   'flighthub.com', 'travelup.', 'onetravel.com', 'fareportal', 'alternativeairlines.com', 'airwander.com', 'pinterest.', 'scribd.com',
+  // Airport research, 5 Oct 2026: transfer and taxi sellers, travel agents and guides, and
+  // unofficial look-alike airport sites that the first airport pass cited.
+  'blacklane.com', 'asocialnomad.com', 'airportinformation.com', 'cuninternationalairport.com', 'hochiminhcityairport.com',
+  'saigonshuttle.com', 'airporttransfers.vn', 'taxisanbayre.com', 'vietnamparadisetravel.com', 'worldtravelguide.net',
+  'travelchinaguide.com', 'kupi.com', 'nigeriatransporthub.com.ng', 'lonelyplanet.com', 'getyourguide.', 'viator.com',
+  'almosafer.com', 'etransfers.com', 'sacbetransfers.com', 'mexicodestinos.com', 'cancunairport.com', 'airportcun.com',
+  'cancunairportshoppingmall.com', 'izitour.com', 'easia-travel.com', 'destination-asia.com', 'airmundo.com', 'vietnamprivatetours.com',
+  'escapewithannualleave.com', 'friendstravelvietnam.com', 'bestpricetravel.com', 'aviontourism.com', 'vietnamspot.ru', 'hotelsinmakkah.com',
+  'nemafx.com', 'nepaltraveller.com', 'aeroport-alger.com',
 ];
 
 export function rejectedHost(url) {

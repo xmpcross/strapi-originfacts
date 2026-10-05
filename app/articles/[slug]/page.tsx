@@ -376,6 +376,7 @@ export default async function ArticlePage({ params }: Props) {
             popularPosts={sidebar.popular}
             recentPosts={sidebar.recent}
             categoryTiles={categoryTiles}
+            showJoinUs={false}
           />
         </div>
       </div>

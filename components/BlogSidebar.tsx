@@ -19,11 +19,14 @@ export default function BlogSidebar({
   recentPosts = [],
   categoryTiles = [],
   backToTopHref,
+  showJoinUs = true,
 }: {
   popularPosts?: StrapiArticle[];
   recentPosts?: StrapiArticle[];
   categoryTiles?: SidebarCategoryTile[];
   backToTopHref?: string;
+  /** The social "Join Us" block. Off on single article pages. */
+  showJoinUs?: boolean;
 }) {
   const [tab, setTab] = useState<'popular' | 'recent'>('popular');
   const activePosts = (tab === 'popular' ? popularPosts : recentPosts).slice(0, 5);
@@ -71,7 +74,8 @@ export default function BlogSidebar({
         </div>
       )}
 
-      <div>
+      {showJoinUs && (
+      <div data-testid="blog-sidebar-join-us">
         <h3 className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-widest text-forest-900">
           Join Us
           <span aria-hidden className="h-px w-10 bg-forest-900/20" />
@@ -157,6 +161,7 @@ export default function BlogSidebar({
           </li>
         </ul>
       </div>
+      )}
 
       <div>
         <div className="inline-flex border border-forest-900/10 bg-white p-1 shadow-sm">

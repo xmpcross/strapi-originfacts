@@ -381,10 +381,10 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                         href={`/airlines/${a.slug}`}
                         className="group flex h-full items-center gap-4 rounded-[0.3rem] border border-forest-900/10 bg-[#fbfcff] px-4 py-3 transition hover:border-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-emphasis"
                       >
-                        <span className="flex h-10 w-20 flex-none items-center justify-center">
+                        <span className="flex h-16 w-32 flex-none items-center justify-center">
                           {a.logoUrl ? (
                             // eslint-disable-next-line @next/next/no-img-element
-                            <img src={a.logoUrl} alt="" className="max-h-10 max-w-full object-contain" loading="lazy" />
+                            <img src={a.logoUrl} alt="" className="max-h-16 max-w-full object-contain" loading="lazy" />
                           ) : (
                             <span className="font-mono text-sm font-bold text-forest-900/70">{a.iataCode || a.name.slice(0, 3).toUpperCase()}</span>
                           )}

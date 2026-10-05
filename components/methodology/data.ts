@@ -15,7 +15,7 @@ import path from 'node:path';
 import { listAirlines, listArticles, type StrapiAirline } from '@/lib/strapi';
 import { getAirlineFacts, resolveModule, type FactField } from '@/lib/airline-facts';
 import { PUBLISHED_AIRLINE_GUIDES, airlineGuideIsPublished, airlineTier } from '@/lib/airline-tier';
-import { isCargoOnlyAirline, isNonAirline } from '@/lib/airline-exclusions';
+import { isNonPassengerAirline, isNonAirline } from '@/lib/airline-exclusions';
 import { getRouteFacts } from '@/lib/route-facts';
 import { dateRange, fieldLabel, sourceHost } from '@/components/airline-v2/facts-view';
 
@@ -70,7 +70,7 @@ export async function loadMethodologyData(): Promise<MethodologyData> {
 
   // Same filter as the /airlines directory and the FAQ, so all three quote one number.
   const listed = allAirlines.filter((a) => {
-    if (isCargoOnlyAirline(a)) return false;
+    if (isNonPassengerAirline(a)) return false;
     const dests = getRouteFacts(a.iataCode)?.destinationCount ?? 0;
     return airlineGuideIsPublished(a.slug) || airlineTier(a, dests > 0) <= 2;
   });

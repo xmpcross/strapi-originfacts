@@ -9,7 +9,7 @@ import { buildFaqGroups, faqsForSchema, type FaqCounts } from '@/lib/faq';
 import { listAirlines, listAirports, listArticles } from '@/lib/strapi';
 import { airlineGuideIsPublished, airlineTier } from '@/lib/airline-tier';
 import { getRouteFacts } from '@/lib/route-facts';
-import { isCargoOnlyAirline } from '@/lib/airline-exclusions';
+import { isNonPassengerAirline } from '@/lib/airline-exclusions';
 
 // Counts in the answers come from Strapi, so re-render hourly rather than
 // freezing whatever the CMS returned at build time.
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 async function airlineCounts() {
   const all = await listAirlines().catch(() => []);
   const listed = all.filter((a) => {
-    if (isCargoOnlyAirline(a)) return false;
+    if (isNonPassengerAirline(a)) return false;
     const dests = getRouteFacts(a.iataCode)?.destinationCount ?? 0;
     return airlineGuideIsPublished(a.slug) || airlineTier(a, dests > 0) <= 2;
   });

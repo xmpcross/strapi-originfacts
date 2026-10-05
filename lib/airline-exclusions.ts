@@ -129,9 +129,11 @@ export const CARGO_AIRLINE_SLUGS: ReadonlySet<string> = new Set([
   'sky-gates-airlines',
   'sky-lease-i-inc',
   'southern-air',
+  'stabo-air-limited',
   'suparna-airlines',
   'swiftair',
   'tampa-cargo',
+  'tashkent-air',
   'texel-air-ltd',
   'uls-airlines-cargo',
   'uni-top-airlines',
@@ -140,4 +142,30 @@ export const CARGO_AIRLINE_SLUGS: ReadonlySet<string> = new Set([
 
 export function isCargoOnlyAirline(a: { slug: string; type?: string }): boolean {
   return a.type === 'Cargo' || CARGO_AIRLINE_SLUGS.has(a.slug);
+}
+
+/**
+ * Passenger operators with no scheduled service of their own: ACMI (wet-lease)
+ * and charter-only carriers whose seats are sold under another airline's
+ * flight number, so a traveller cannot book them directly. Like cargo
+ * carriers, they keep their pages but are not listed in the /airlines
+ * directory. Reviewed against the Strapi directory on 2026-10-05; the slug is
+ * the Strapi slug.
+ */
+export const NON_SCHEDULED_PASSENGER_SLUGS: ReadonlySet<string> = new Set([
+  'luxwing', // Malta: ACMI and charter only
+]);
+
+export function isNonScheduledPassengerAirline(a: { slug: string }): boolean {
+  return NON_SCHEDULED_PASSENGER_SLUGS.has(a.slug);
+}
+
+/**
+ * True for carriers the passenger directory leaves out: cargo-only operators
+ * and passenger operators with no scheduled service. Use this, not
+ * isCargoOnlyAirline, wherever the /airlines count is computed, so /airlines,
+ * /countries, the FAQ and the methodology page quote one number.
+ */
+export function isNonPassengerAirline(a: { slug: string; type?: string }): boolean {
+  return isCargoOnlyAirline(a) || isNonScheduledPassengerAirline(a);
 }

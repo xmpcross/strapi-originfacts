@@ -55,14 +55,24 @@ export const TIER2_MIN_DESTINATIONS = 5;
  * 1,619-word page differed from another carrier's by twelve word types — the
  * scaled-content shape AdSense rejected the site for.
  *
- * The bar to be on this list: at least one fact field carrying
- * `verified_by: manual_official_source` or `manual_review`. That is 8 carriers.
- * The remaining 428 keep Tier 3 — live, linked from /airlines, `noindex,
- * follow`, out of the sitemap — until a carrier is actually verified.
+ * The bar to be on this list: at least PUBLISHED_AIRLINE_MIN_MANUAL_FACTS fact
+ * fields carrying `verified_by: manual_official_source` or `manual_review`, a
+ * facts file, and no sourced cessation. tests/airline-published.test.ts fails
+ * if a listed carrier does not meet it, so the list cannot silently drift to
+ * the whole store again (the ops/autogen-*.mjs scripts rewrite this Set).
+ * Every other carrier keeps Tier 3 — live, linked from /airlines, `noindex,
+ * follow`, out of the sitemap — until it is actually verified.
+ *
+ * Batches: the first 8 carriers (from the original bar of one manual field);
+ * batch 1, 5 Oct 2026: 8 more with 10+ manual facts, each with its facts
+ * re-read against the carrier's own pages (figures all found; see the PR).
  *
  * Ingested reviews deliberately do NOT qualify a carrier: REVIEWS_MODULE_ENABLED
  * is false, so that store renders nothing (see components/airline-tier1).
  */
+/** Manually verified facts a carrier needs before it can be listed below. */
+export const PUBLISHED_AIRLINE_MIN_MANUAL_FACTS = 8;
+
 export const PUBLISHED_AIRLINE_GUIDES = new Set([
   'aeroflot',
   'alaska-airlines',
@@ -72,6 +82,15 @@ export const PUBLISHED_AIRLINE_GUIDES = new Set([
   'qatar-airways',
   'ryanair',
   'singapore-airlines',
+  // Batch 1 (5 Oct 2026)
+  'air-canada',
+  'air-corsica',
+  'airnorth',
+  'american-airlines',
+  'frontier-airlines',
+  'rex-regional-express',
+  'srilankan-airlines',
+  'westjet',
 ]);
 
 export function airlineGuideIsPublished(slug: string): boolean {

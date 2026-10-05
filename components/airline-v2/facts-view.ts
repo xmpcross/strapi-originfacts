@@ -49,6 +49,7 @@ const LABELS: Record<string, string> = {
   premium_cabin_allowance: 'Premium cabin allowance',
   free_first_bag_routes: 'Routes with a free first bag',
   infant_allowance: 'Infant allowance',
+  us_canada_pieces: 'Flights to and from the USA or Canada',
   excess_baggage: 'Excess baggage',
   max_piece: 'Maximum weight per bag',
   weight_economy: 'Economy carry-on weight',

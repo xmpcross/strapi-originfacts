@@ -1,0 +1,228 @@
+{
+  "iata": "AMS",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminal layout and departure halls",
+      "paragraphs": [
+        {
+          "text": "A copy of the airport's page archived on 23 March 2025 describes Schiphol as having two parts. The first is Schiphol Plaza, which is publicly accessible and is where you find the train station, bus depot, taxi ranks and many shops. The second is the area after security, which has more shops, lounges and gates.",
+          "sources": [
+            "arc-lounges"
+          ]
+        },
+        {
+          "text": "A copy of the airport's page archived on 23 March 2025 says that once you have passed through security you automatically enter Lounge 1, 2, 3 or 4, and that they are organised by destination: European flights use Departure Lounge 1, intercontinental flights use Lounge 2 and 3, and low-cost airlines use Lounge 4. Lounge 2 and 3 are connected by Holland Boulevard.",
+          "sources": [
+            "arc-lounges"
+          ]
+        },
+        {
+          "text": "Check-in is in the departure halls. A copy of the airport's page archived on 24 March 2025 says you can check yourself in at a self-service kiosk in the departure halls. A copy archived on 2 May 2026 says that from the station you take the stairs or lift up to Schiphol Plaza and follow the signs to the right departure hall.",
+          "sources": [
+            "arc-checkin",
+            "arc-train"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Getting into Amsterdam and beyond",
+      "paragraphs": [
+        {
+          "text": "The NS station is beneath the airport. NS says eight Sprinters run each hour between Schiphol and Amsterdam Central via Sloterdijk and Lelylaan, with a travel time of 17 minutes. Its page gives a single ticket as €5.20 (full fare 2025), so check the current fare before you travel. Trains depart from platform 3 at Schiphol, but NS says to check the boards for the latest information.",
+          "sources": [
+            "ns-airport"
+          ]
+        },
+        {
+          "text": "A copy of the airport's page archived on 2 May 2026 says the NS train station is located directly below the terminal building and that you can travel to Schiphol from Amsterdam, Utrecht, Leiden, The Hague, Delft and Rotterdam 24/7, often without changing trains. At Schiphol Plaza there are monitors showing when and from which platform your train leaves.",
+          "sources": [
+            "arc-train"
+          ]
+        },
+        {
+          "text": "NS's Intercity direct runs between Schiphol Airport and Rotterdam Central in 26 minutes and to Breda in 39 minutes. Between Schiphol Airport and Rotterdam Central you need an Intercity direct Surcharge in addition to your NS ticket. Luggage trolleys are available at Schiphol Airport station.",
+          "sources": [
+            "ns-icd",
+            "ns-airport"
+          ]
+        },
+        {
+          "text": "A copy of the airport's page archived on 2 May 2026 says the NS International counter at Schiphol Plaza sells train tickets for, among others, ICE International and Eurostar.",
+          "sources": [
+            "arc-train"
+          ]
+        },
+        {
+          "text": "According to a copy of the airport's page archived on 2 May 2026, an Amsterdam Travel Ticket includes unlimited travel on the Amsterdam Express bus (line 397 or Niteliner N97) from Schiphol to every train station in Amsterdam.",
+          "sources": [
+            "arc-train"
+          ]
+        },
+        {
+          "text": "Schiphol Travel Taxi is an initiative of Amsterdam Airport Schiphol, the Dutch federation of taxi operators (NST) and Connexxion Taxi Services. It picks you up at home and drops you off in front of the departure hall, 24 hours a day, 7 days a week.",
+          "sources": [
+            "stt"
+          ]
+        },
+        {
+          "text": "NS notes that regular engineering work takes place around Schiphol and suggests checking whether it affects your journey before you travel.",
+          "sources": [
+            "ns-airport"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parking",
+      "heading": "Parking",
+      "paragraphs": [
+        {
+          "text": "A copy of the airport's parking page archived on 6 July 2026 lists the official car parks as P1 Short-Term Parking, P3 Long Term Unsheltered, P3 Long Term Sheltered, P12 Parking, P6 Valet Unsheltered, P6 Valet Sheltered and three Privium car parks, including Privium Excellence. It says all parking locations are managed by Schiphol.",
+          "sources": [
+            "arc-parking"
+          ]
+        },
+        {
+          "text": "The archived page lists P3 at Holiday Avenue 1 and P6 Valet at Schiphol Boulevard 177. It says you can reach the terminal within 10 minutes, on foot or with one of the free shuttle buses. It marks a reservation as required for P12 and for both P6 Valet options. Prices are not given here because the airport's own current price pages could not be read.",
+          "sources": [
+            "arc-parking"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assistance",
+      "heading": "Assistance for reduced mobility",
+      "paragraphs": [
+        {
+          "text": "A copy of the airport's page archived on 26 January 2025 says Schiphol can assist you right up to your seat in the aircraft, and that you request assistance through the airline you booked with.",
+          "sources": [
+            "arc-assist"
+          ]
+        },
+        {
+          "text": "A copy of the airport's request page archived on 8 February 2025 says to make sure your airline knows of the request at least 48 hours before departure, otherwise you may wait longer. At Schiphol you first report to your flight's check-in desk or a call point, and if you did not ask in advance you can still arrange assistance at the check-in desk. It adds that assistance can pick you up from the train station, the bus stop, the taxi stand or a car park, if you report to the nearest call point.",
+          "sources": [
+            "arc-request"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Where do I find the train station at Schiphol?",
+      "a": "A copy of the airport's page archived on 2 May 2026 says the NS train station is directly below the terminal building. From the station you go up the stairs or lift to Schiphol Plaza.",
+      "sources": [
+        "arc-train"
+      ]
+    },
+    {
+      "q": "Is there a direct train from Schiphol to Rotterdam?",
+      "a": "NS runs the Intercity direct between Schiphol Airport and Rotterdam Central in 26 minutes and to Breda in 39 minutes, with an Intercity direct Surcharge on top of your NS ticket between Schiphol and Rotterdam.",
+      "sources": [
+        "ns-icd",
+        "ns-airport"
+      ]
+    },
+    {
+      "q": "Which departure lounge do low-cost airlines use at Schiphol?",
+      "a": "A copy of the airport's page archived on 23 March 2025 says low-cost airlines use Lounge 4, European flights Departure Lounge 1, and intercontinental flights Lounge 2 and 3.",
+      "sources": [
+        "arc-lounges"
+      ]
+    },
+    {
+      "q": "How far ahead should I request assistance at Schiphol?",
+      "a": "The airport's request page, archived on 8 February 2025, says to make sure your airline knows of your request at least 48 hours before departure, otherwise you may need to wait longer.",
+      "sources": [
+        "arc-request"
+      ]
+    },
+    {
+      "q": "Do I need to reserve a space at Schiphol's P6 Valet or P12 car parks?",
+      "a": "A copy of the airport's parking page archived on 6 July 2026 marks a reservation as required for P12 and for both P6 Valet options.",
+      "sources": [
+        "arc-parking"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "ns-airport",
+      "title": "Travel to the airport by train | Travel | NS",
+      "publisher": "Nederlandse Spoorwegen (NS)",
+      "url": "https://www.ns.nl/en/travel/destinations/taking-the-train-to-the-airport",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "ns-icd",
+      "title": "Intercity direct | Travel | NS",
+      "publisher": "Nederlandse Spoorwegen (NS)",
+      "url": "https://www.ns.nl/en/travel/trains/intercity-direct",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "stt",
+      "title": "Schiphol Travel Taxi | Schiphol Travel Taxi - Schiphol Travel Taxi",
+      "publisher": "Schiphol Travel Taxi (Amsterdam Airport Schiphol, NST and Connexxion Taxi Services)",
+      "url": "https://schipholtraveltaxi.nl/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "arc-parking",
+      "title": "Parking at Amsterdam Airport | View all official locations",
+      "publisher": "Royal Schiphol Group (Amsterdam Airport Schiphol), Internet Archive copy",
+      "url": "https://web.archive.org/web/20260706182519/https://www.schiphol.nl/en/parking/",
+      "published": "2026-07-06",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "arc-train",
+      "title": "Travelling from or to Amsterdam Schiphol airport by train",
+      "publisher": "Royal Schiphol Group (Amsterdam Airport Schiphol), Internet Archive copy",
+      "url": "https://web.archive.org/web/20260502162525/https://www.schiphol.nl/en/from-to-schiphol/by-public-transport/train/",
+      "published": "2026-05-02",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "arc-lounges",
+      "title": "Schiphol | Lounge 1-4 at the airport",
+      "publisher": "Royal Schiphol Group (Amsterdam Airport Schiphol), Internet Archive copy",
+      "url": "https://web.archive.org/web/20250323114911/https://www.schiphol.nl/en/at-schiphol/schiphol-s-lounges-and-piers/",
+      "published": "2025-03-23",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "arc-assist",
+      "title": "Schiphol | Assistance",
+      "publisher": "Royal Schiphol Group (Amsterdam Airport Schiphol), Internet Archive copy",
+      "url": "https://web.archive.org/web/20250126151306/https://www.schiphol.nl/en/assistance/",
+      "published": "2025-01-26",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "arc-request",
+      "title": "Schiphol | Requesting assistance",
+      "publisher": "Royal Schiphol Group (Amsterdam Airport Schiphol), Internet Archive copy",
+      "url": "https://web.archive.org/web/20250208155935/https://www.schiphol.nl/en/assistance/request/",
+      "published": "2025-02-08",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "arc-checkin",
+      "title": "Schiphol | Pets at Schiphol and on-board",
+      "publisher": "Royal Schiphol Group (Amsterdam Airport Schiphol), Internet Archive copy",
+      "url": "https://web.archive.org/web/20250324105255/https://www.schiphol.nl/en/prepare-for-your-flight-at-schiphol/check-in/",
+      "published": "2025-03-24",
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

@@ -1,0 +1,263 @@
+{
+  "iata": "ATH",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals",
+      "paragraphs": [
+        {
+          "text": "Athens airport has a Main Terminal Building and a Satellite Terminal Building. A copy of the airport's page archived on 19 January 2025 places gates A1-A23 and B1-B31 in the Main Terminal Building and gates C15-40 in the Satellite Terminal Building.",
+          "sources": [
+            "aia-terminals"
+          ]
+        },
+        {
+          "text": "The Satellite Terminal Building can be reached only through the Main Terminal Building, by an underground link. According to the same archived copy, you follow the signs for gates C15-40 from the corridor next to check-in counter 70 to the escalators or lift that lead to the link.",
+          "sources": [
+            "aia-terminals"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Getting into Athens",
+      "paragraphs": [
+        {
+          "text": "Eleftherios Venizelos is served by four 24-hour OASA Airport Express bus lines: the X95 to Syntagma Square (connecting to metro lines 2 and 3), the X96 to the port of Piraeus along Posidonos Avenue (connecting to metro line 1), the X93 to the Kifissos and Liossia intercity bus stations, and the X97 to Elliniko metro station. Night routes of the X97 (00:00 – 04:55) start from Dafni station.",
+          "sources": [
+            "oasa-24h",
+            "oasa-express"
+          ]
+        },
+        {
+          "text": "OASA gives estimated journey times that depend on traffic and time of day: about 65 minutes for the X93, about 60 minutes for the X95, about 90 minutes for the X96 and about 45 minutes for the X97. On these lines, disembarking is restricted on the way to the airport and boarding is restricted on the way from it, at all hours.",
+          "sources": [
+            "oasa-24h"
+          ]
+        },
+        {
+          "text": "Airport Express buses need their own ticket, valid for one journey from or to the airport. OASA's price page on 5 October 2026 listed it at 5,50 € full price and 2,70 € discounted, so check the current price before you travel.",
+          "sources": [
+            "oasa-prices",
+            "oasa-express"
+          ]
+        },
+        {
+          "text": "Metro line 3 runs from and to the airport every 30 minutes throughout the week, according to OASA. The metro airport ticket was listed on OASA's page on 5 October 2026 at 9,00 € full price, 4,50 € discounted, or 16,00 € for a two-way ticket; check the price before you travel. It is valid for 90 minutes from first validation on OASA modes other than the Airport Express and X80 buses.",
+          "sources": [
+            "oasa-24h",
+            "oasa-prices"
+          ]
+        },
+        {
+          "text": "Hellenic Train's suburban railway links the airport with the city centre of Athens and the Port of Piraeus, with additional services between the airport and Ano Liosia in both directions. At Ano Liosia you can transfer to services to Kiato. The metro airport ticket is also valid on the suburban railway between Magoula, Piraeus and the airport.",
+          "sources": [
+            "hellenic",
+            "oasa-prices"
+          ]
+        },
+        {
+          "text": "Regional Attica KTEL buses to Rafina and to Markopoulo (for the connection to Lavrion) serve the airport. A copy of the airport's page archived on 16 January 2025 says they start from the Arrivals level, between Exits 2 and 3, in the outer lane opposite the Sofitel hotel. Intercity buses to other major Greek cities depart from Kifissos KTEL Station or Liosion Bus Station.",
+          "sources": [
+            "aia-public"
+          ]
+        },
+        {
+          "text": "For taxis, a copy of the airport's page archived on 21 April 2026 places the designated taxi waiting area at Exit 3 of the Arrivals level. Uber riders use a controlled pick-up zone at the Arrivals level opposite exit 4, and the limousine service is in the inner lane of the Arrivals level, between Exits 3 and 4.",
+          "sources": [
+            "aia-private"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parking",
+      "heading": "Parking",
+      "paragraphs": [
+        {
+          "text": "The airport's parking page, as archived on 23 January 2025, lists Short Term 1, Short Term 2, Long Term, Economy and Valet parking. Short Term 1 and Short Term 2 are at the Arrivals level, with easy access to the Main Terminal Building; Short Term 1 is described as better suited to non-Schengen flights and Short Term 2 to Schengen flights.",
+          "sources": [
+            "aia-parking"
+          ]
+        },
+        {
+          "text": "A copy of the airport's page archived on 23 January 2025 says Long Term parking is five minutes on foot from the Main Terminal Building through the pedestrian bridge, and that Valet parking is at the Departures level, Entrance 4. It gives no prices that can be relied on here, so check the current tariffs on the airport's parking page before you book.",
+          "sources": [
+            "aia-parking"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assistance",
+      "heading": "Reduced-mobility assistance",
+      "paragraphs": [
+        {
+          "text": "The airport's page, archived on 23 January 2025, advises passengers to notify their airline, agent or tour operator of the need for assistance at least 48 hours before the published departure time. If the airline has not given you a time to present yourself, the page says to arrive at least 2 hours before departure, whatever your destination.",
+          "sources": [
+            "aia-assist"
+          ]
+        },
+        {
+          "text": "Passengers can report to a designated point or to the check-in counter. The points listed in the archived copy include Entrance 2 and the check-in area (inner part of Entrance 2) at Departures, and Entrance 4, Short Term Parking 1 and Short Term Parking 2 at Arrivals. The Assistance Services Coordination Office is in the Main Terminal Building at Departures, next to Entrance 1.",
+          "sources": [
+            "aia-assist"
+          ]
+        },
+        {
+          "text": "Assistance is split between the airport (on the ground) and the airline (on board), under Regulation (EC) No. 1107/2006. If you do not want to hand over your wheelchair at check-in, tell your airline and be at the control gate at least 45 minutes before departure. Lifts at all levels of the Main and Satellite Terminal Buildings are large enough to manoeuvre wheelchairs.",
+          "sources": [
+            "aia-assist"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lounges",
+      "heading": "Lounges",
+      "paragraphs": [
+        {
+          "text": "A copy of the airport's lounge page archived on 15 January 2025 says various business lounges, operated by airlines or handlers, are available in the departures areas of the Main Terminal Building and the Satellite Terminal Building. It lists an Aegean Business Lounge, a Lufthansa Business Lounge and a Swissport Lounge among them.",
+          "sources": [
+            "aia-lounges"
+          ]
+        },
+        {
+          "text": "The airport refers passengers to their airline for operating hours, access, pricing policies and associated airlines.",
+          "sources": [
+            "aia-lounges"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Which Athens airport bus goes to Syntagma Square?",
+      "a": "The X95 Airport Express bus connects the airport to Syntagma Square, where you can change to metro lines 2 and 3. OASA estimates about 60 minutes, depending on traffic.",
+      "sources": [
+        "oasa-24h"
+      ]
+    },
+    {
+      "q": "Do the Athens Airport Express buses run at night?",
+      "a": "Yes. OASA says the Airport Express bus lines operate on a 24-hour basis. Night routes of the X97 (00:00 – 04:55) start from Dafni station.",
+      "sources": [
+        "oasa-24h",
+        "oasa-express"
+      ]
+    },
+    {
+      "q": "How do I get to the Satellite Terminal at Athens airport?",
+      "a": "Only through the Main Terminal Building, by an underground link. A copy of the airport's page archived on 19 January 2025 says to follow the signs for gates C15-40 from the corridor next to check-in counter 70.",
+      "sources": [
+        "aia-terminals"
+      ]
+    },
+    {
+      "q": "How far ahead should I ask for assistance at Athens airport?",
+      "a": "The airport's page, archived on 23 January 2025, says to tell your airline, agent or tour operator at least 48 hours before the published departure time.",
+      "sources": [
+        "aia-assist"
+      ]
+    },
+    {
+      "q": "Where do I find a taxi or Uber at Athens airport?",
+      "a": "A copy of the airport's page archived on 21 April 2026 puts the taxi waiting area at Exit 3 of the Arrivals level and the Uber pick-up point at the Arrivals level opposite exit 4.",
+      "sources": [
+        "aia-private"
+      ]
+    },
+    {
+      "q": "Where do the buses to Rafina and Markopoulo leave from at Athens airport?",
+      "a": "According to a copy of the airport's page archived on 16 January 2025, they start from the Arrivals level, between Exits 2 and 3, in the outer lane opposite the Sofitel hotel.",
+      "sources": [
+        "aia-public"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "oasa-express",
+      "title": "Express Bus Lines – OASA",
+      "publisher": "OASA (Athens Urban Transport Organisation)",
+      "url": "https://www.oasa.gr/en/routes/special-bus-lines/express-bus-lines/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "oasa-24h",
+      "title": "24-hour Service Bus Lines – OASA",
+      "publisher": "OASA (Athens Urban Transport Organisation)",
+      "url": "https://www.oasa.gr/en/routes/special-bus-lines/24-hour-service-bus-lines/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "oasa-prices",
+      "title": "Prices of Products – OASA",
+      "publisher": "OASA (Athens Urban Transport Organisation)",
+      "url": "https://www.oasa.gr/en/tickets/prices-of-products/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "hellenic",
+      "title": "Athens Suburban and Regional Rail Lines - Hellenic Train",
+      "publisher": "Hellenic Train",
+      "url": "https://www.hellenictrain.gr/en/athens-suburban-railway/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "aia-terminals",
+      "title": "General instructions | AIA",
+      "publisher": "Athens International Airport (archived copy, Wayback Machine, 19 January 2025)",
+      "url": "https://web.archive.org/web/20250119172127/https://www.aia.gr/en/traveller/procedures/general-instructions",
+      "published": "2025-01-19",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "aia-assist",
+      "title": "Special assistance at Airport | AIA",
+      "publisher": "Athens International Airport (archived copy, Wayback Machine, 23 January 2025)",
+      "url": "https://web.archive.org/web/20250123111247/https://www.aia.gr/en/traveller/special-assistance-at-airport",
+      "published": "2025-01-23",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "aia-public",
+      "title": "Public transportation - Airport | AIA",
+      "publisher": "Athens International Airport (archived copy, Wayback Machine, 16 January 2025)",
+      "url": "https://web.archive.org/web/20250116193028/https://www.aia.gr/en/traveller/transportation-airport/public-transportation-airport",
+      "published": "2025-01-16",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "aia-private",
+      "title": "Private Transportation | AIA",
+      "publisher": "Athens International Airport (archived copy, Wayback Machine, 21 April 2026)",
+      "url": "https://web.archive.org/web/20260421215728/https://www.aia.gr/en/traveller/transportation-airport/private-transportation",
+      "published": "2026-04-21",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "aia-parking",
+      "title": "Parking Airport Athens - Greece | AIA",
+      "publisher": "Athens International Airport (archived copy, Wayback Machine, 23 January 2025)",
+      "url": "https://web.archive.org/web/20250123101342/https://www.aia.gr/en/traveller/airport-parking-athens",
+      "published": "2025-01-23",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "aia-lounges",
+      "title": "Business lounges - Airport | AIA",
+      "publisher": "Athens International Airport (archived copy, Wayback Machine, 15 January 2025)",
+      "url": "https://web.archive.org/web/20250115084200/https://www.aia.gr/en/traveller/services-facilities-airport/business-lounges-airport",
+      "published": "2025-01-15",
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

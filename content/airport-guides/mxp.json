@@ -1,0 +1,235 @@
+{
+  "iata": "MXP",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals",
+      "paragraphs": [
+        {
+          "text": "Milan Malpensa has two passenger terminals. SEA, the airport operator, describes Terminal 1 as the intercontinental airport of Milan and Terminal 2 as the international airport of Milan dedicated to easyJet.",
+          "sources": [
+            "sea"
+          ]
+        },
+        {
+          "text": "Malpensa Express trains call at both terminals. Terminal 1 station has four platforms on floor -1 of the airport. Terminal 2 station is underground and connects to the airport by an external walkway opposite Arrivals.",
+          "sources": [
+            "t1",
+            "t2"
+          ]
+        },
+        {
+          "text": "A Malpensa Express ticket between the two terminals costs €2 for adults and €1 for under-14s, according to Trenord’s page on 5 October 2026; check the current price before travelling.",
+          "sources": [
+            "t2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Getting into Milan",
+      "paragraphs": [
+        {
+          "text": "Malpensa Express, run by Trenord, serves the airport from Milano Centrale and Milano Cadorna. Trenord states that trains leave every 30 minutes from both stations and take about 51 minutes from Milano Centrale to Terminal 1.",
+          "sources": [
+            "t1"
+          ]
+        },
+        {
+          "text": "From Milano Cadorna, which Trenord says is in the historic centre, trains leave from platform 1 and take about 37 minutes to Terminal 1 and about 43 minutes to Terminal 2. Trenord gives 04:57 as the first departure from Cadorna and 23:27 as the last, and 05:20 and 00:20 as the first and last from Terminal 2.",
+          "sources": [
+            "t1",
+            "t2"
+          ]
+        },
+        {
+          "text": "From Terminal 1, Trenord says four trains an hour run without changes to the two Milan stations. It says the last run is operated by a bus from floor -1, going to Milano Cadorna.",
+          "sources": [
+            "t1"
+          ]
+        },
+        {
+          "text": "Trenord lists a single ticket from Milan at €15 (page read on 5 October 2026; check before travelling). It is valid for the day from the train chosen at purchase and needs no validation. The two Trenord ticket offices in Terminal 1 are open from 7.00 to 21.00.",
+          "sources": [
+            "t1",
+            "t2"
+          ]
+        },
+        {
+          "text": "Malpensa Shuttle (AirPullman) runs coaches between the airport and Milan. Its routes page lists a Milan stop at Central Station on Via Sammartini, a Malpensa T1 stop on floor -1 of Terminal 1 opposite the Sheraton Hotel, and a Malpensa T2 stop. Check the operator’s site for timetables and fares.",
+          "sources": [
+            "shuttle"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parking",
+      "heading": "Parking",
+      "paragraphs": [
+        {
+          "text": "SEA says it has around 10,000 covered or uncovered parking spaces a few minutes from the air terminal, with the possibility of booking. SEA’s shop says its Milan Airports Parking car parks are the only ones inside the airport and are open 24 hours a day, 7 days a week.",
+          "sources": [
+            "sea",
+            "park"
+          ]
+        },
+        {
+          "text": "At Terminal 1, the shop lists P2 Executive (covered, direct access to Terminal 1 by lift), P3 Express (uncovered, 3 minutes from Terminal 1) and P1 Long Term (uncovered, a 4 minute walk from Terminal 1 or one shuttle stop). At Terminal 2 it lists P5 Easy (uncovered, 3 minutes’ walk from Terminal 2).",
+          "sources": [
+            "park"
+          ]
+        },
+        {
+          "text": "The P6 Smart car parks have a free shuttle to T1 and T2, approximately every 15 minutes by day and every 30 minutes at night. Booking changes are free up to 3 hours before the parking entry time. Prices are not shown without a booking search, so none are given here.",
+          "sources": [
+            "park"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assistance",
+      "heading": "Assistance for reduced mobility",
+      "paragraphs": [
+        {
+          "text": "Sala Amica is the support service of SEA at Terminals 1 and 2. Trenord says you can request assistance with luggage or a wheelchair through its call centre at +39 (0)2 232323, active every day from 8.00 to 21.00, or from the call points on the railway ticket office floor on arrival at either terminal.",
+          "sources": [
+            "assist"
+          ]
+        },
+        {
+          "text": "Trenord says you can also ask its disability assistance office at least 24 hours in advance on the toll-free number +39 800 210 955, and that Sala Amica only guarantees assistance to passengers with an airline ticket.",
+          "sources": [
+            "assist"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lounges",
+      "heading": "Lounges",
+      "paragraphs": [
+        {
+          "text": "SEA’s shop sells entry to pay lounges at Malpensa, and says entry is allowed only with a boarding pass. Gae Aulenti Premium Lounge in Terminal 1 serves non-Schengen flights in Boarding Area B (Gates B50-B59) and is listed as open 05.30 - 22.00. Monteverdi Classic Lounge in Terminal 1 serves Schengen flights in Boarding Area A (Gate A1-A10) and is listed as open 06.00 - 21.30.",
+          "sources": [
+            "lounge"
+          ]
+        },
+        {
+          "text": "In Terminal 2, Alda Merini Classic Lounge serves Schengen and non-Schengen flights (Gate D20 – D22) and is listed as open 05.00 - 22.00. The shop says children aged 0 to under 2 enter free. Hours are as listed on 5 October 2026.",
+          "sources": [
+            "lounge"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Which terminal does easyJet use at Milan Malpensa?",
+      "a": "SEA describes Terminal 2 as dedicated to easyJet, and Trenord’s Terminal 2 page says the same.",
+      "sources": [
+        "sea",
+        "t2"
+      ]
+    },
+    {
+      "q": "How long does the Malpensa Express take from Milano Centrale?",
+      "a": "Trenord gives about 51 minutes from Milano Centrale to Terminal 1, with departures every 30 minutes. From Milano Cadorna it gives about 37 minutes to Terminal 1 and about 43 minutes to Terminal 2.",
+      "sources": [
+        "t1",
+        "t2"
+      ]
+    },
+    {
+      "q": "How much is a Malpensa Express single ticket?",
+      "a": "Trenord lists €15 for a single from Milan on its pages read on 5 October 2026. Check the current price before you travel.",
+      "sources": [
+        "t1",
+        "t2"
+      ]
+    },
+    {
+      "q": "Can I travel between Terminal 1 and Terminal 2 by train?",
+      "a": "Yes. Trenord lists a Malpensa Express ticket between the two terminals at €2 for adults and €1 for under-14s (page read on 5 October 2026).",
+      "sources": [
+        "t2"
+      ]
+    },
+    {
+      "q": "How do I request wheelchair help at Malpensa?",
+      "a": "Trenord says to call Sala Amica, SEA’s support service, on +39 (0)2 232323 every day from 8.00 to 21.00, or use the call points at the station ticket office floor. You can also ask Trenord at least 24 hours in advance on +39 800 210 955.",
+      "sources": [
+        "assist"
+      ]
+    },
+    {
+      "q": "Are the Malpensa car parks open at night?",
+      "a": "SEA’s shop says its Milan Airports Parking car parks are open 24 hours a day, 7 days a week.",
+      "sources": [
+        "park"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "sea",
+      "title": "Milano Malpensa | SEA Corporate",
+      "publisher": "SEA Milan Airports",
+      "url": "https://milanairports.com/en/our-airports/milano-malpensa",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "t1",
+      "title": "Malpensa Express, come arrivare al Terminal 1 di Malpensa",
+      "publisher": "Trenord (Malpensa Express)",
+      "url": "https://www.malpensaexpress.it/linee-e-orari/raggiungere-malpensa/come-arrivare-a-malpensa-terminal-1/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "t2",
+      "title": "Malpensa Express, come arrivare al terminal 2 di Malpensa",
+      "publisher": "Trenord (Malpensa Express)",
+      "url": "https://www.malpensaexpress.it/linee-e-orari/raggiungere-malpensa/come-arrivare-a-malpensa-terminal-2/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "assist",
+      "title": "Travellers with disabilities",
+      "publisher": "Trenord (Malpensa Express)",
+      "url": "https://www.malpensaexpress.it/en/tickets/discounts-and-extras/travellers-with-disabilities/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "park",
+      "title": "Book Milan Malpensa Airport Parking | Milan Airports Shop",
+      "publisher": "SEA Milan Airports (official shop)",
+      "url": "https://www.milanairports-shop.com/en/parking/malpensa-parking",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "lounge",
+      "title": "Buy access to the VIP Lounges | Milan Airports Shop",
+      "publisher": "SEA Milan Airports (official shop)",
+      "url": "https://www.milanairports-shop.com/en/vip-lounge",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "shuttle",
+      "title": "Milan–Malpensa Airport Shuttle Routes & Stops | Malpensa Shuttle",
+      "publisher": "Malpensa Shuttle (AirPullman)",
+      "url": "https://www.malpensashuttle.com/en/routes",
+      "published": null,
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

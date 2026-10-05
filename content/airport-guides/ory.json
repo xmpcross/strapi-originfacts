@@ -1,0 +1,192 @@
+{
+  "iata": "ORY",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals",
+      "paragraphs": [
+        {
+          "text": "Paris Orly has four terminals: Orly 1, Orly 2, Orly 3 and Orly 4. According to a copy of the airport’s page archived on 10 September 2026, free shuttles run between the terminals. Orlyval, the automatic metro, also gives free travel between Orly 1-2-3 and Orly 4, and the free shuttle buses are accessible to passengers with reduced mobility.",
+          "sources": [
+            "ory-home",
+            "rer",
+            "prm"
+          ]
+        },
+        {
+          "text": "Each terminal has its own official taxi rank at its exit, and assistance help points and designated meeting points are located in every terminal.",
+          "sources": [
+            "taxi",
+            "prm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Getting into Paris",
+      "paragraphs": [
+        {
+          "text": "Metro line 14 stops at Aéroport d’Orly, near Terminal 3, and the airport describes it as the fastest connection from central Paris. It gives a journey time of twenty three minutes between Orly and Paris-Gare de Lyon and twenty six minutes to Paris-Châtelet. You reach Orly 1, 2 and 4 on foot or by free shuttle bus. Access to Aéroport d’Orly is included in the Navigo pass (all zones) and the Paris Visite travel pass; otherwise the page says only the “Ticket Paris Région <> Aéroports” can be used to access or leave the airports.",
+          "sources": [
+            "m14",
+            "public"
+          ]
+        },
+        {
+          "text": "The alternative is the RER B to Antony station, then the Orlyval shuttle, an automatic metro, to the airport. The airport gives about 35 minutes for the whole journey from the airport to Paris. Navigo passes are not valid on Orlyval.",
+          "sources": [
+            "rer",
+            "public"
+          ]
+        },
+        {
+          "text": "Tramway T7 runs from Villejuif–Louis Aragon metro station, where it connects with metro line 7, to Orly in about 45 minutes. The airport also lists bus 183 and bus 5154 as links between Orly and the suburbs, and four Noctilien night bus lines (N22, N31, N131 and N139) to Châtelet or Gare de Lyon.",
+          "sources": [
+            "public"
+          ]
+        },
+        {
+          "text": "Official taxi ranks are at the exit of each terminal, and official taxis carry an illuminated ‘TAXI’ sign. The airport gives a journey time of between 25 and 45 minutes to central Paris, depending on traffic.",
+          "sources": [
+            "taxi"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parking",
+      "heading": "Parking and drop-off",
+      "paragraphs": [
+        {
+          "text": "The airport says short- and long-term parking is located near the terminals, with shuttles connecting the car parks and the terminals. There are also drop-off zones near the entrance to each terminal where you can leave passengers. For current parking prices, use the airport’s own booking and rates pages, as prices are not given here.",
+          "sources": [
+            "ory-home",
+            "prm"
+          ]
+        },
+        {
+          "text": "For passengers with reduced mobility, the airport says several disabled parking spaces give direct access to the terminals via lifts.",
+          "sources": [
+            "prm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assistance",
+      "heading": "Reduced-mobility assistance",
+      "paragraphs": [
+        {
+          "text": "The airport says assistance for passengers with reduced mobility is free, from arrival at the airport to boarding. To guarantee it, tell your airline or travel agent at least 48 hours before your flight.",
+          "sources": [
+            "prm"
+          ]
+        },
+        {
+          "text": "Any disabled person can use priority passage before security checks and border police controls.",
+          "sources": [
+            "prm"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Which metro line serves Orly Airport?",
+      "a": "Metro line 14 stops at Aéroport d’Orly, near Terminal 3. You reach Orly 1, 2 and 4 on foot or by free shuttle bus, according to a copy of the airport’s page archived on 1 September 2026.",
+      "sources": [
+        "m14"
+      ]
+    },
+    {
+      "q": "Does a Navigo pass work on Orlyval?",
+      "a": "No. The airport’s page says Navigo passes are not valid on Orlyval, whereas access to Aéroport d’Orly on metro line 14 is included in the Navigo pass (all zones).",
+      "sources": [
+        "rer",
+        "m14"
+      ]
+    },
+    {
+      "q": "How do I get from Orly to Paris by tram?",
+      "a": "Tramway T7 runs from Villejuif–Louis Aragon metro station, which connects with metro line 7, to Orly in about 45 minutes.",
+      "sources": [
+        "public"
+      ]
+    },
+    {
+      "q": "How long is free drop-off at Orly?",
+      "a": "The airport says there are drop-off points near the entrance to each terminal with 10 minutes free.",
+      "sources": [
+        "prm"
+      ]
+    },
+    {
+      "q": "How far ahead should I book assistance at Orly?",
+      "a": "The airport says to notify your airline or travel agent at least 48 hours before your flight to guarantee assistance, which is free.",
+      "sources": [
+        "prm"
+      ]
+    },
+    {
+      "q": "Are there free transfers between the Orly terminals?",
+      "a": "Yes. Free shuttles run between the terminals, and Orlyval gives free travel between Orly 1-2-3 and Orly 4.",
+      "sources": [
+        "ory-home",
+        "rer"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "ory-home",
+      "title": "Aéroport Paris-Orly - Paris Aéroport",
+      "publisher": "Paris Aéroport (Groupe ADP), archived copy",
+      "url": "https://web.archive.org/web/20260910184411/https://www.parisaeroport.fr/en/passengers/orly-airport",
+      "published": "2026-09-10",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "public",
+      "title": "Shuttles, Buses, and RER from Ile-de-France to Orly Airport – Paris Aéroport",
+      "publisher": "Paris Aéroport (Groupe ADP), archived copy",
+      "url": "https://web.archive.org/web/20260916230528/https://www.parisaeroport.fr/en/passengers/transport-parking/public-transport-paris/ory",
+      "published": "2026-09-16",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "m14",
+      "title": "To Charles de Gaulle Airport with line 14 - Paris Airport",
+      "publisher": "Paris Aéroport (Groupe ADP), archived copy",
+      "url": "https://web.archive.org/web/20260901034722/https://www.parisaeroport.fr/en/passengers/transport-parking/public-transport-paris/metro-line-14/ory",
+      "published": "2026-09-01",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "rer",
+      "title": "Getting to Orly Airport by RER B Orlyval – Paris Aéroport",
+      "publisher": "Paris Aéroport (Groupe ADP), archived copy",
+      "url": "https://web.archive.org/web/20260307192121/https://www.parisaeroport.fr/en/passengers/transport-parking/public-transport-paris/rer-b-orlyval/ory",
+      "published": "2026-03-07",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "taxi",
+      "title": "Taxis and Private Hire Vehicles at Orly Airport – Paris Aéroport",
+      "publisher": "Paris Aéroport (Groupe ADP), archived copy",
+      "url": "https://web.archive.org/web/20260106065021/https://www.parisaeroport.fr/en/passengers/transport-parking/taxi/ory",
+      "published": "2026-01-06",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "prm",
+      "title": "Airport Assistance for PRM Travelers – Paris Aéroport",
+      "publisher": "Paris Aéroport (Groupe ADP), archived copy",
+      "url": "https://web.archive.org/web/20260811130708/https://www.parisaeroport.fr/en/passengers/flight-preparation/prm-assistance",
+      "published": "2026-08-11",
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

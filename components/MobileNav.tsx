@@ -1,8 +1,15 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { createPortal } from 'react-dom';
+import { useState } from 'react';
 import Link from 'next/link';
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet';
 
 type NavItem = { label: string; href?: string; children?: NavItem[] };
 
@@ -31,36 +38,16 @@ const NAV_TREE: NavItem[] = [
   { label: 'Contact', href: '/contact' },
 ];
 
+// Full-screen menu on a shadcn Sheet (Radix Dialog): Esc, scroll lock, focus
+// trap and focus return to the hamburger come from Radix.
 export default function MobileNav() {
   const [open, setOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  // Portal target only available client-side after hydration.
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setOpen(false);
-    };
-    document.addEventListener('keydown', onKey);
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.removeEventListener('keydown', onKey);
-      document.body.style.overflow = prev;
-    };
-  }, [open]);
+  const onClose = () => setOpen(false);
 
   return (
-    <>
-      <button
-        type="button"
-        onClick={() => setOpen(true)}
+    <Sheet open={open} onOpenChange={setOpen}>
+      <SheetTrigger
         aria-label="Open menu"
-        aria-expanded={open}
         data-testid="mobile-nav-trigger"
         className="ml-2 inline-flex h-10 w-10 items-center justify-center text-forest-950 lg:hidden"
       >
@@ -78,37 +65,25 @@ export default function MobileNav() {
           <line x1="3" y1="12" x2="21" y2="12" />
           <line x1="3" y1="18" x2="21" y2="18" />
         </svg>
-      </button>
+      </SheetTrigger>
 
-      {open && mounted &&
-        createPortal(
-          <MobileNavDrawer onClose={() => setOpen(false)} />,
-          document.body,
-        )}
-    </>
-  );
-}
-
-function MobileNavDrawer({ onClose }: { onClose: () => void }) {
-  return (
-    <div
-      className="fixed inset-0 z-[100] flex flex-col bg-[#ffffff] lg:hidden"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Mobile navigation"
-      data-testid="mobile-nav-drawer"
-    >
-      <div className="flex items-center justify-between border-b border-forest-900/10 px-6 py-3">
-        <span className="text-base font-bold uppercase tracking-wider text-forest-950">
-          Menu
-        </span>
-        <button
-          type="button"
-          onClick={onClose}
-          aria-label="Close menu"
-          className="flex h-10 w-10 items-center justify-center rounded-full text-forest-900 transition hover:bg-forest-900/5"
-          data-testid="mobile-nav-close"
-        >
+      <SheetContent
+        side="right"
+        hideClose
+        overlayClassName="z-[100] lg:hidden"
+        className="z-[100] flex h-full w-full flex-col gap-0 border-0 bg-[#ffffff] p-0 sm:max-w-none lg:hidden"
+        data-testid="mobile-nav-drawer"
+      >
+        <SheetDescription className="sr-only">Site sections and pages</SheetDescription>
+        <div className="flex items-center justify-between border-b border-forest-900/10 px-6 py-3">
+          <SheetTitle className="text-base font-bold uppercase tracking-wider text-forest-950">
+            Menu
+          </SheetTitle>
+          <SheetClose
+            aria-label="Close menu"
+            className="flex h-10 w-10 items-center justify-center rounded-full text-forest-900 transition hover:bg-forest-900/5"
+            data-testid="mobile-nav-close"
+          >
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -122,21 +97,22 @@ function MobileNavDrawer({ onClose }: { onClose: () => void }) {
             <line x1="18" y1="6" x2="6" y2="18" />
             <line x1="6" y1="6" x2="18" y2="18" />
           </svg>
-        </button>
-      </div>
+          </SheetClose>
+        </div>
 
-      <nav
-        aria-label="Mobile menu"
-        className="flex-1 overflow-y-auto px-6 py-6"
-        data-testid="mobile-nav-list"
-      >
-        <ul className="flex flex-col gap-1">
-          {NAV_TREE.map((item) => (
-            <MobileNavItem key={item.label} item={item} onClose={onClose} />
-          ))}
-        </ul>
-      </nav>
-    </div>
+        <nav
+          aria-label="Mobile menu"
+          className="flex-1 overflow-y-auto px-6 py-6"
+          data-testid="mobile-nav-list"
+        >
+          <ul className="flex flex-col gap-1">
+            {NAV_TREE.map((item) => (
+              <MobileNavItem key={item.label} item={item} onClose={onClose} />
+            ))}
+          </ul>
+        </nav>
+      </SheetContent>
+    </Sheet>
   );
 }
 

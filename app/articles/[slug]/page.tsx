@@ -26,6 +26,11 @@ import TableOfContents from '@/components/TableOfContents';
 import { injectHeadingIdsAndExtractToc } from '@/lib/toc';
 import type { Metadata } from 'next';
 import { takeadsHref } from '@/lib/takeads';
+import { Button } from '@/components/ui/button';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
 
 export const revalidate = 60;
 
@@ -532,89 +537,92 @@ function CommentsSection({ slug }: { slug: string }) {
         data-testid="comments-form"
       >
         <div className="grid gap-2">
-          <label
+          <Label
             htmlFor="comment-body"
-            className="text-[11px] font-bold uppercase tracking-widest text-forest-900"
+            className="text-[11px] font-bold uppercase leading-normal tracking-widest text-forest-900"
           >
             Comment <span className="text-primary-emphasis">*</span>
-          </label>
-          <textarea
+          </Label>
+          <Textarea
             id="comment-body"
             name="comment"
             rows={6}
             required
-            className="w-full rounded-[0.3rem] border border-forest-900/15 bg-white px-4 py-3 text-sm text-forest-950 placeholder:text-forest-900/45 focus:border-primary-emphasis focus:outline-none focus:ring-2 focus:ring-primary-emphasis/20"
+            className="min-h-0 w-full rounded-[0.3rem] border border-forest-900/15 bg-white px-4 py-3 text-sm shadow-none md:text-sm text-forest-950 placeholder:text-forest-900/45 focus:border-primary-emphasis focus:outline-none focus:ring-2 focus:ring-primary-emphasis/20"
             placeholder="Share your thoughts on this story…"
           />
         </div>
 
         <div className="grid gap-5 sm:grid-cols-3">
           <div className="grid gap-2">
-            <label
+            <Label
               htmlFor="comment-name"
-              className="text-[11px] font-bold uppercase tracking-widest text-forest-900"
+              className="text-[11px] font-bold uppercase leading-normal tracking-widest text-forest-900"
             >
               Name <span className="text-primary-emphasis">*</span>
-            </label>
-            <input
+            </Label>
+            <Input
               id="comment-name"
               name="name"
               type="text"
               required
               autoComplete="name"
-              className="h-11 w-full rounded-[0.3rem] border border-forest-900/15 bg-white px-3 text-sm text-forest-950 focus:border-primary-emphasis focus:outline-none focus:ring-2 focus:ring-primary-emphasis/20"
+              className="h-11 w-full rounded-[0.3rem] border border-forest-900/15 bg-white px-3 py-0 text-sm shadow-none md:text-sm text-forest-950 focus:border-primary-emphasis focus:outline-none focus:ring-2 focus:ring-primary-emphasis/20"
             />
           </div>
           <div className="grid gap-2">
-            <label
+            <Label
               htmlFor="comment-email"
-              className="text-[11px] font-bold uppercase tracking-widest text-forest-900"
+              className="text-[11px] font-bold uppercase leading-normal tracking-widest text-forest-900"
             >
               Email <span className="text-primary-emphasis">*</span>
-            </label>
-            <input
+            </Label>
+            <Input
               id="comment-email"
               name="email"
               type="email"
               required
               autoComplete="email"
-              className="h-11 w-full rounded-[0.3rem] border border-forest-900/15 bg-white px-3 text-sm text-forest-950 focus:border-primary-emphasis focus:outline-none focus:ring-2 focus:ring-primary-emphasis/20"
+              className="h-11 w-full rounded-[0.3rem] border border-forest-900/15 bg-white px-3 py-0 text-sm shadow-none md:text-sm text-forest-950 focus:border-primary-emphasis focus:outline-none focus:ring-2 focus:ring-primary-emphasis/20"
             />
           </div>
           <div className="grid gap-2">
-            <label
+            <Label
               htmlFor="comment-website"
-              className="text-[11px] font-bold uppercase tracking-widest text-forest-900"
+              className="text-[11px] font-bold uppercase leading-normal tracking-widest text-forest-900"
             >
               Website
-            </label>
-            <input
+            </Label>
+            <Input
               id="comment-website"
               name="website"
               type="url"
               autoComplete="url"
-              className="h-11 w-full rounded-[0.3rem] border border-forest-900/15 bg-white px-3 text-sm text-forest-950 focus:border-primary-emphasis focus:outline-none focus:ring-2 focus:ring-primary-emphasis/20"
+              className="h-11 w-full rounded-[0.3rem] border border-forest-900/15 bg-white px-3 py-0 text-sm shadow-none md:text-sm text-forest-950 focus:border-primary-emphasis focus:outline-none focus:ring-2 focus:ring-primary-emphasis/20"
             />
           </div>
         </div>
 
-        <label className="flex items-start gap-2 text-sm text-ink/75">
-          <input
-            type="checkbox"
+        <div className="flex items-start gap-2 text-sm text-ink/75">
+          {/* Radix Checkbox posts as a hidden input named "remember" ("on"), like the native one. */}
+          <Checkbox
+            id="comment-remember"
             name="remember"
             defaultChecked
-            className="mt-1 h-4 w-4 rounded border-forest-900/30 text-primary-emphasis focus:ring-primary-emphasis"
+            className="mt-0.5 h-4 w-4 rounded-[0.2rem] border-forest-900/30 data-[state=checked]:bg-primary-emphasis data-[state=checked]:text-white"
           />
-          <span>Save my name, email, and website in this browser for the next time I comment.</span>
-        </label>
+          <Label htmlFor="comment-remember" className="font-normal leading-normal">
+            Save my name, email, and website in this browser for the next time I comment.
+          </Label>
+        </div>
 
         <div>
-          <button
+          <Button
             type="submit"
-            className="inline-flex h-11 items-center justify-center rounded-[0.3rem] bg-forest-900 px-6 text-sm font-bold uppercase tracking-wider text-white transition hover:bg-primary-emphasis"
+            className="h-11 rounded-[0.3rem] bg-forest-900 px-6 text-sm font-bold uppercase tracking-wider text-white shadow-none hover:bg-primary-emphasis"
           >
             Post Comment
-          </button>
+          </Button>
         </div>
       </form>
     </section>

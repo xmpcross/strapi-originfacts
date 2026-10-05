@@ -2,40 +2,32 @@
 
 import { CURRENCIES, CURRENCY_LABELS, type Currency } from '@/lib/currency';
 import { setCurrency, useCurrency } from './useCurrency';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { cn } from '@/lib/utils';
 
 /** Site-wide display currency for flight and hotel prices. */
 export default function CurrencyPicker({ className = '' }: { className?: string }) {
   const { currency } = useCurrency();
   return (
-    <label className={`relative inline-flex items-center ${className}`}>
-      <span className="sr-only">Currency</span>
-      {/* appearance-none + our own chevron: the native arrow keeps a wide fixed
-          gap after the text, which can't be narrowed. */}
-      <select
-        value={currency}
-        onChange={(event) => setCurrency(event.target.value as Currency)}
-        className="cursor-pointer appearance-none rounded-[0.3rem] border-0 bg-transparent py-1.5 pl-1 pr-4 text-sm font-semibold text-forest-900 hover:text-primary-emphasis focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-emphasis/30"
-        data-testid="currency-picker"
+    <Select value={currency} onValueChange={(value) => setCurrency(value as Currency)}>
+      <SelectTrigger
         aria-label="Currency for prices"
+        data-testid="currency-picker"
+        className={cn(
+          // Borderless, with the chevron right after the label (owner's request).
+          'h-auto w-auto gap-1 border-0 bg-transparent py-1.5 pl-1 pr-0 text-sm font-semibold text-forest-900 shadow-none hover:text-primary-emphasis focus:ring-0 focus-visible:ring-2 focus-visible:ring-primary-emphasis/30 [&>svg]:opacity-100',
+          className,
+        )}
       >
+        <SelectValue />
+      </SelectTrigger>
+      <SelectContent align="end" className="min-w-[7.5rem]" data-testid="currency-picker-menu">
         {CURRENCIES.map((code) => (
-          <option key={code} value={code}>
+          <SelectItem key={code} value={code} className="text-sm font-semibold text-forest-900">
             {CURRENCY_LABELS[code]}
-          </option>
+          </SelectItem>
         ))}
-      </select>
-      <svg
-        aria-hidden="true"
-        viewBox="0 0 20 20"
-        fill="currentColor"
-        className="pointer-events-none absolute right-0 h-3.5 w-3.5 text-forest-900"
-      >
-        <path
-          fillRule="evenodd"
-          d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"
-          clipRule="evenodd"
-        />
-      </svg>
-    </label>
+      </SelectContent>
+    </Select>
   );
 }

@@ -1,0 +1,201 @@
+{
+  "iata": "DUS",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals",
+      "paragraphs": [
+        {
+          "text": "Düsseldorf Airport’s SkyTrain stops at Terminal A/B and Terminal C. The airport lists Lufthansa’s Business and Senator lounges and the Emirates Lounge on its lounge page as being in Pier A (Lufthansa) and Pier C (Emirates).",
+          "sources": [
+            "train",
+            "lounges"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Getting into the city",
+      "paragraphs": [
+        {
+          "text": "The U80 light rail line runs from Düsseldorf Central Station to the Flughafen Terminal stop at Terminal C, with no need to change trains. The airport gives the journey time from the central station as around 18 minutes, with a train generally every 20 minutes, or every 30 minutes off-peak and on Sundays. The first arrival at the airport is shortly after 4 a.m. daily and the last departure from the airport is around 1 a.m.",
+          "sources": [
+            "train"
+          ]
+        },
+        {
+          "text": "Long-distance and regional trains, including ICE services, stop at the separate Düsseldorf Flughafen station at the eastern end of the airport grounds. From there the SkyTrain connects to the terminals, as the airport describes it, within seven minutes. It serves Düsseldorf Flughafen station, car park P4/P5, Terminal A/B and Terminal C, daily from 3:45 a.m. to 0:45 a.m., every 5 to 7 minutes. There is no SkyTrain service from 0:45 a.m. to 3:45 a.m., but an additional shuttle bus runs from 2:15 a.m. to 3:30 a.m. up to 01.11.2026. Luggage carts cannot be taken onto the SkyTrain.",
+          "sources": [
+            "train"
+          ]
+        },
+        {
+          "text": "Taxis are available day and night at the ranks on the Departures and Arrivals levels. On the airport’s page on 5 October 2026 the guideline rate to Düsseldorf central station was approx. 34.00 Euro and approx. 20 minutes; the airport says its rates are guidelines, so check before you travel.",
+          "sources": [
+            "taxi"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parking",
+      "heading": "Parking",
+      "paragraphs": [
+        {
+          "text": "The airport’s car parks are P1, P2, P3, P4, P5, P7, P8, P10, P11, P12, P23 and P25. Since summer 2025 automatic licence plate recognition has been in use in all its parking facilities, so a parking ticket is no longer required and the licence plate is the sole means of identification. Garages P4 and P5 are linked to the terminal by the SkyTrain.",
+          "sources": [
+            "pgar",
+            "pinfo"
+          ]
+        },
+        {
+          "text": "The airport says P1, P2 and P3 offer particularly short walks to the terminal, while P12 is ideal for quickly picking up and dropping off passengers. The pick-up and drop-off ticket gives a special rate of 6 euros for up to 90 minutes on P12. In the Kiss & Fly zone at the departure level you have up to 7 minutes free of charge per entry, limited to two entries per calendar day.",
+          "sources": [
+            "arriving",
+            "pinfo"
+          ]
+        },
+        {
+          "text": "Entry height limits are 1.90 m at P2, P3 and P8, 2.00 m at P1 and P7, and 2.10 m at P4 and P5. A service fee of 3 euros applies to online reservations made at least 24 hours before arrival and 10 euros for those made between 1 and 24 hours before. The airport’s on-site tariff PDF is dated 22.09.2026 and subject to alteration, so check it for current prices.",
+          "sources": [
+            "pinfo"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assistance",
+      "heading": "Reduced-mobility assistance",
+      "paragraphs": [
+        {
+          "text": "The airport asks passengers to inform their airline, tour operator or travel agency at least 48 hours in advance about the level of support they need. Assistance at Düsseldorf Airport is handled by the staff of Company Klüh, and the service is free of charge.",
+          "sources": [
+            "access"
+          ]
+        },
+        {
+          "text": "On the day, the airport asks you to arrive at least two hours before departure and to report to the check-in counter, the PRM Service Team in the departure hall or one of the call boxes, where you will be asked for your flight number and the type of impairment. For train travel, the airport gives the registration number of the Deutsche Bahn 3-S Centre as +49 (0)211 1792460.",
+          "sources": [
+            "access"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lounges",
+      "heading": "Lounges",
+      "paragraphs": [
+        {
+          "text": "The airport operates two pay-in lounges: the DUS Rhein Lounge in Pier B and the DUS Sky Lounge in Pier C. Both are listed as booking from 49,00 € and as open Monday to Sunday, 5:00am-9:00pm. Airline lounges listed are the Lufthansa Business and Senator lounges in Pier A and the Emirates Lounge in Pier C.",
+          "sources": [
+            "lounges"
+          ]
+        },
+        {
+          "text": "The airport also lists a family special for 99,00€ for 2 adults and 1 child aged 2-11 in one of its lounges.",
+          "sources": [
+            "lounges"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How long does the U80 take from Düsseldorf Central Station to the airport?",
+      "a": "The airport gives around 18 minutes, with a train generally every 20 minutes, or every 30 minutes off-peak and on Sundays.",
+      "sources": [
+        "train"
+      ]
+    },
+    {
+      "q": "Does the SkyTrain run through the night?",
+      "a": "No. It runs daily from 3:45 a.m. to 0:45 a.m. and there is no service from 0:45 a.m. to 3:45 a.m. The airport lists an additional shuttle bus from 2:15 a.m. to 3:30 a.m. up to 01.11.2026.",
+      "sources": [
+        "train"
+      ]
+    },
+    {
+      "q": "Is there a cheap short stay for picking someone up?",
+      "a": "The pick-up and drop-off ticket gives a special rate of 6 euros for up to 90 minutes on P12. In the Kiss & Fly zone you have up to 7 minutes free per entry, limited to two entries per calendar day.",
+      "sources": [
+        "pinfo",
+        "arriving"
+      ]
+    },
+    {
+      "q": "How do I request wheelchair or mobility assistance?",
+      "a": "Inform your airline, tour operator or travel agency at least 48 hours in advance about the level of support you need. The airport says the service is free of charge.",
+      "sources": [
+        "access"
+      ]
+    },
+    {
+      "q": "What do the airport lounges cost?",
+      "a": "The airport lists the DUS Rhein Lounge (Pier B) and DUS Sky Lounge (Pier C) as booking from 49,00 €, open Monday to Sunday 5:00am-9:00pm. Check the airport’s page for the current price.",
+      "sources": [
+        "lounges"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "train",
+      "title": "Bus and Train",
+      "publisher": "Flughafen Düsseldorf GmbH (Düsseldorf Airport)",
+      "url": "https://www.dus.com/en/to-and-from/bus-and-train",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "taxi",
+      "title": "Taxi",
+      "publisher": "Flughafen Düsseldorf GmbH (Düsseldorf Airport)",
+      "url": "https://www.dus.com/en/to-and-from/taxi",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "pinfo",
+      "title": "Information on parking at Düsseldorf Airport",
+      "publisher": "Flughafen Düsseldorf GmbH (Düsseldorf Airport)",
+      "url": "https://www.dus.com/en/parking/information",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "pgar",
+      "title": "All official parking garages at Düsseldorf Airport at a glance",
+      "publisher": "Flughafen Düsseldorf GmbH (Düsseldorf Airport)",
+      "url": "https://www.dus.com/en/parking/parking-garages",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "arriving",
+      "title": "Arriving",
+      "publisher": "Flughafen Düsseldorf GmbH (Düsseldorf Airport)",
+      "url": "https://www.dus.com/en/to-and-from/arriving",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "access",
+      "title": "Accessible travel",
+      "publisher": "Flughafen Düsseldorf GmbH (Düsseldorf Airport)",
+      "url": "https://www.dus.com/en/inform/accessible-travel",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "lounges",
+      "title": "Lounges",
+      "publisher": "Flughafen Düsseldorf GmbH (Düsseldorf Airport)",
+      "url": "https://www.dus.com/en/inform/lounges",
+      "published": null,
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

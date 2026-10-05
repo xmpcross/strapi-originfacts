@@ -1,0 +1,225 @@
+{
+  "iata": "MUC",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals",
+      "paragraphs": [
+        {
+          "text": "Munich Airport has Terminal 1 and Terminal 2. The Terminal 2 system is used exclusively by the Lufthansa Group and Star Alliance airlines. After security in Terminal 2, passengers can reach the Satellite in about one minute by the airport’s own automated metro system.",
+          "sources": [
+            "sat"
+          ]
+        },
+        {
+          "text": "A new pier in Terminal 1, for non-Schengen traffic, has been in operation since 21 April 2026. The airport says it is home to approximately 40 international airlines and can handle up to twelve short- and medium-haul aircraft or six wide-body jets simultaneously.",
+          "sources": [
+            "pier"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Getting into Munich",
+      "paragraphs": [
+        {
+          "text": "The S1 and S8 S-Bahn lines connect the airport with Munich city centre. The airport lists the S8 (via Ostbahnhof) as a nonstop service, 24/7: every 20 minutes, except roughly 1 a.m. to 4 a.m., when it runs every 40 minutes. The S1 (via Moosach) runs every 20 minutes daily from approximately 3 a.m. to midnight. The S-Bahn stops at Flughafen München station, for Terminal 1 and 2.",
+          "sources": [
+            "pt"
+          ]
+        },
+        {
+          "text": "The airport warns that travel times may change at short notice because of construction work or disruptions, and asks passengers to check their connection before travelling. Its S-Bahn page links to the S-Bahn operating-situation page and the MVV journey planner.",
+          "sources": [
+            "pt"
+          ]
+        },
+        {
+          "text": "The Lufthansa Express Bus runs every 20 minutes between Munich Central Station, Munich North (Schwabing) and the airport. The airport gives the journey time as 45 minutes from Central Station and 25 minutes from Munich North (Schwabing). At the airport its stops include Terminal 2 Bus stop 1 and Terminal 1 Arrivals B.",
+          "sources": [
+            "pt"
+          ]
+        },
+        {
+          "text": "Flixbus long-distance coaches use bus stops 21 and 22, which the airport says are just a few steps from Terminal 2. The airport express train ÜFEX stops at the Flughafen München station, between Terminal 1 and Terminal 2, and links the airport directly with Freising, Moosburg, Landshut, Regensburg and Nürnberg.",
+          "sources": [
+            "pt"
+          ]
+        },
+        {
+          "text": "Taxi ranks are in the departure and arrival areas of Terminal 1 and 2, and the airport’s taxi service point is on level 03 in Terminal 2.",
+          "sources": [
+            "taxi"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parking",
+      "heading": "Parking",
+      "paragraphs": [
+        {
+          "text": "Terminal parking garage P8, between Terminal 1 and Terminal 2, became available on 1 September 2026. The airport lists P1, P2, P3 and P7 as best placed for Terminal 1, P8 for both terminals, and P20 and P26 for Terminal 2. Maximum vehicle height in all these car parks is 2 metres; higher vehicles should use the open spaces in P50. Terminal car parks can be booked online for a maximum of 62 days.",
+          "sources": [
+            "park"
+          ]
+        },
+        {
+          "text": "Economy car parks on the airport site connect to the terminals every 10 minutes by bus line 635 or the S1/S8 S-Bahn. Transfers to the central area (T1 and T2) are free on presenting your parking ticket.",
+          "sources": [
+            "eco"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assistance",
+      "heading": "Reduced-mobility assistance",
+      "paragraphs": [
+        {
+          "text": "The Mobility Service at Munich Airport is free of charge but cannot be booked directly. Tell your airline or travel provider when booking, and no later than 48 hours before departure, what level of assistance you need.",
+          "sources": [
+            "mob"
+          ]
+        },
+        {
+          "text": "Mobility Service Points, with a waiting area, are near the check-in counters at Terminal 1, Module B, Level 04 and Terminal 2, Departure Area, Level 04.",
+          "sources": [
+            "mob"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lounges",
+      "heading": "Lounges",
+      "paragraphs": [
+        {
+          "text": "Airport Lounge World is in Terminal 1, Gates A, Level 04, behind security, and is open daily from 5:00 a.m. to 10:15 p.m. Access is permitted up to 3 hours before departure. The airport’s page on 5 October 2026 showed tickets online from €72 per person; check the current price before booking.",
+          "sources": [
+            "lounge"
+          ]
+        },
+        {
+          "text": "The airport also says the Emirates Lounge is in the new pier, Terminal 1 A, Level 4, for eligible Emirates customers, and that the Terminal 2 Satellite has five lounges covering over 4,000 square metres.",
+          "sources": [
+            "pier",
+            "sat"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Which airlines use Terminal 2 at Munich?",
+      "a": "The airport says the Terminal 2 system is used exclusively by the Lufthansa Group and Star Alliance airlines.",
+      "sources": [
+        "sat"
+      ]
+    },
+    {
+      "q": "How often do the S-Bahn trains from Munich Airport run?",
+      "a": "The airport lists the S8 every 20 minutes (every 40 minutes from roughly 1 a.m. to 4 a.m.) and the S1 every 20 minutes from approximately 3 a.m. to midnight.",
+      "sources": [
+        "pt"
+      ]
+    },
+    {
+      "q": "How do I book assistance at Munich Airport?",
+      "a": "You cannot book the Mobility Service directly. Tell your airline or travel provider when booking, and no later than 48 hours before departure.",
+      "sources": [
+        "mob"
+      ]
+    },
+    {
+      "q": "Where is the taxi service point at Munich Airport?",
+      "a": "On level 03 in Terminal 2. Taxi ranks are in the departure and arrival areas of Terminals 1 and 2.",
+      "sources": [
+        "taxi"
+      ]
+    },
+    {
+      "q": "What is the Lufthansa Express Bus journey time from Munich Central Station?",
+      "a": "The airport gives 45 minutes, with departures every 20 minutes.",
+      "sources": [
+        "pt"
+      ]
+    },
+    {
+      "q": "How long can I book terminal parking for at Munich Airport?",
+      "a": "The airport says terminal car parks can be booked online for a maximum of 62 days.",
+      "sources": [
+        "park"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "pt",
+      "title": "Bus and train connections | Public transport - Munich Airport",
+      "publisher": "Flughafen München GmbH (Munich Airport)",
+      "url": "https://www.munich-airport.com/public-transport-260822",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "taxi",
+      "title": "Taxi service point - Munich Airport",
+      "publisher": "Flughafen München GmbH (Munich Airport)",
+      "url": "https://www.munich-airport.com/taxi-service-point-807041",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "park",
+      "title": "Terminal parking: for quick and convenient access to your gate - Munich Airport",
+      "publisher": "Flughafen München GmbH (Munich Airport)",
+      "url": "https://www.munich-airport.com/terminal-parking-261312",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "eco",
+      "title": "Economy parking: from EUR 39 per week - Munich Airport",
+      "publisher": "Flughafen München GmbH (Munich Airport)",
+      "url": "https://www.munich-airport.com/economy-parking-261282",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "mob",
+      "title": "Mobility Service - Munich Airport",
+      "publisher": "Flughafen München GmbH (Munich Airport)",
+      "url": "https://www.munich-airport.com/mobility-service-905792",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "lounge",
+      "title": "Airport Lounge World - Munich Airport",
+      "publisher": "Flughafen München GmbH (Munich Airport)",
+      "url": "https://www.munich-airport.com/airport-lounge-world-35487554",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "pier",
+      "title": "Press: Grand Opening of Terminal 1 Pier at Munich Airport - Munich Airport",
+      "publisher": "Flughafen München GmbH (Munich Airport)",
+      "url": "https://www.munich-airport.com/press-grand-opening-of-terminal-1-pier-at-munich-airport-39737178",
+      "published": "2026-04-13",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "sat",
+      "title": "Press: Satellite building has been in successful operation for ten years - Munich Airport",
+      "publisher": "Flughafen München GmbH (Munich Airport)",
+      "url": "https://www.munich-airport.com/press-satellite-building-has-been-in-successful-operation-for-ten...-40158433",
+      "published": "2026-04-27",
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

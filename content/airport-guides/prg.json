@@ -1,0 +1,237 @@
+{
+  "iata": "PRG",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals",
+      "paragraphs": [
+        {
+          "text": "Prague Airport has Terminal 1, Terminal 2 and Terminal 3. The airport's public transport page describes Terminal 1 as the terminal for flights outside the Schengen Area and Terminal 2 as the terminal for flights within the Schengen Area.",
+          "sources": [
+            "map",
+            "buses"
+          ]
+        },
+        {
+          "text": "Terminal 3 is designed for handling private flights and foreign delegations, according to the airport's parking page.",
+          "sources": [
+            "parking"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Getting into Prague",
+      "paragraphs": [
+        {
+          "text": "Public transport buses connect the airport with Prague city centre, and the airport says they run at regular few-minute intervals. Its recommended fastest option is line 59 (Terminal 1/Terminal 2 to Veleslavín train station, approx. 15 minutes) with a change to metro Line A. Line 100 runs to Zličín (approx. 18 minutes) for metro Line B, and line 191 runs via Petřiny to Anděl (approx. 50 minutes). Night lines 910 and 907 also serve the airport.",
+          "sources": [
+            "buses"
+          ]
+        },
+        {
+          "text": "Public transport bus rides are charged at regular Prague public transport fares, and you must buy a ticket before boarding. Tickets are sold from machines at the arrival halls of both terminals and at the stops. The Prague Public Transit Company counter in the Terminal 1 arrival hall is shown as open 7:00 - 21:00 and the one in the Terminal 2 arrival hall 9:00 - 21:00. The airport lists both Visitor Centres as temporarily closed on 5 October 2026.",
+          "sources": [
+            "buses"
+          ]
+        },
+        {
+          "text": "Airport Express buses run between the airport and Prague Main Railway Station and stop directly outside the main station building; the airport gives the travel time as approximately 40 minutes, depending on traffic. At the airport they leave from directly in front of Terminal 1, and in the city from Wilson Street in front of the Fanta Building.",
+          "sources": [
+            "express"
+          ]
+        },
+        {
+          "text": "Regular public transport tickets are not valid on the Airport Express. When travelling from the airport you can buy the ticket in the Visitor Centre at Arrival Hall or directly from the driver. The fare is not stated on the airport's page, so check it with the operator.",
+          "sources": [
+            "express"
+          ]
+        },
+        {
+          "text": "RegioJet, FlixBus and Gepard Express coaches also serve the airport. RegioJet and FlixBus coaches stop in front of Terminal 1, under the elevated road to Terminal 2.",
+          "sources": [
+            "coach"
+          ]
+        },
+        {
+          "text": "The airport's official taxi service is Uber Airport. You can book through the Uber app, self-service kiosks or a service counter, and the counter's opening hours are daily 7:00 a.m. - 9:00 p.m. Pick-up points are directly in front of the arrival halls of Terminals 1 and 2, and cars are available non-stop there.",
+          "sources": [
+            "taxi"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parking",
+      "heading": "Parking",
+      "paragraphs": [
+        {
+          "text": "The airport's official parking page lists PA SMART (a 3-minute walk from Terminal 2), PD HOLIDAY (a parking building a 10-minute walk from both terminals) and PB ECONOMY (outdoor parking directly in front of Terminal 2 arrivals).",
+          "sources": [
+            "parking"
+          ]
+        },
+        {
+          "text": "For dropping off or collecting passengers, the express car parks P1 EXPRESS (in front of Terminal 1) and PB ECONOMY allow 10 minutes free once per 24-hour interval. Parking for up to 15 minutes costs CZK 50. These are the prices on the airport's page on 5 October 2026, so check before you travel.",
+          "sources": [
+            "parking"
+          ]
+        },
+        {
+          "text": "The Cell Phone Waiting Lot at the Šestka Shopping Centre has 1,030 parking spaces and the first 3 hours of parking are free. Short-term parking in front of Terminal 3 is charged at CZK 80/hour, as listed on 5 October 2026.",
+          "sources": [
+            "parking"
+          ]
+        },
+        {
+          "text": "The airport says free parking at all car parks is available to holders of the ZTP/P card (severe health disability requiring special assistance) twice a day at maximum.",
+          "sources": [
+            "prm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assistance",
+      "heading": "Reduced-mobility assistance",
+      "paragraphs": [
+        {
+          "text": "Book assistance directly with the airline operating your flight, preferably when buying your ticket. The airport recommends booking at least 36 hours before your flight's scheduled arrival or departure, and says immediate assistance cannot be guaranteed if you have not booked in advance. Assistance is free of charge.",
+          "sources": [
+            "prm"
+          ]
+        },
+        {
+          "text": "The Prague Airport Assistance Service can be reached on +420 220 111 220 or +420 220 111 221, or at prm@prg.aero. The airport has 20 contact points in total from which disabled passengers can call for assistance.",
+          "sources": [
+            "prm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lounges",
+      "heading": "Lounges",
+      "paragraphs": [
+        {
+          "text": "The airport's lounge page lists the VISA Lounge (formerly FastTrack Lounge) and an Erste Premier Lounge in Terminal 2, an Erste Premier Lounge (formerly Mastercard Lounge) in Terminal 1, and VIP Service Club CONTINENTAL, which covers all terminal buildings.",
+          "sources": [
+            "lounges"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Which Prague Airport terminal is for flights outside the Schengen Area?",
+      "a": "The airport's public transport page lists Terminal 1 for flights outside the Schengen Area and Terminal 2 for flights within the Schengen Area.",
+      "sources": [
+        "buses"
+      ]
+    },
+    {
+      "q": "How long does the Airport Express to Prague Main Railway Station take?",
+      "a": "The airport gives approximately 40 minutes, depending on traffic. Regular public transport tickets are not valid on it.",
+      "sources": [
+        "express"
+      ]
+    },
+    {
+      "q": "What is the fastest public transport route from Prague Airport to the metro?",
+      "a": "The airport recommends line 59 from Terminal 1/Terminal 2 to Veleslavín train station (approx. 15 minutes), changing to metro Line A. Line 100 to Zličín takes approx. 18 minutes and connects to metro Line B.",
+      "sources": [
+        "buses"
+      ]
+    },
+    {
+      "q": "Is there free parking when dropping someone off at Prague Airport?",
+      "a": "The express car parks P1 EXPRESS and PB ECONOMY give 10 minutes free once per 24-hour interval. Up to 15 minutes costs CZK 50, as listed on 5 October 2026.",
+      "sources": [
+        "parking"
+      ]
+    },
+    {
+      "q": "How do I book assistance at Prague Airport?",
+      "a": "Book through your airline, ideally when buying your ticket and at least 36 hours before the flight. Assistance is free of charge.",
+      "sources": [
+        "prm"
+      ]
+    },
+    {
+      "q": "Where does the Uber Airport taxi pick up at Prague Airport?",
+      "a": "Pick-up points are directly in front of the arrival halls of Terminals 1 and 2, and the service counter is open daily 7:00 a.m. - 9:00 p.m.",
+      "sources": [
+        "taxi"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "map",
+      "title": "Map of Airport | Vaclav Havel Airport Prague, Ruzyne",
+      "publisher": "Letiště Praha, a. s. (Prague Airport)",
+      "url": "https://www.prg.aero/en/map-airport",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "buses",
+      "title": "Public Transport Buses | Vaclav Havel Airport Prague, Ruzyne",
+      "publisher": "Letiště Praha, a. s. (Prague Airport)",
+      "url": "https://www.prg.aero/en/public-transport-buses",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "express",
+      "title": "Airport Express | Vaclav Havel Airport Prague, Ruzyne",
+      "publisher": "Letiště Praha, a. s. (Prague Airport)",
+      "url": "https://www.prg.aero/en/airport-express",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "coach",
+      "title": "Intercity Coach Transport | Vaclav Havel Airport Prague, Ruzyne",
+      "publisher": "Letiště Praha, a. s. (Prague Airport)",
+      "url": "https://www.prg.aero/en/intercity-coach-transport",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "taxi",
+      "title": "Taxi (Uber Airport) | Vaclav Havel Airport Prague, Ruzyne",
+      "publisher": "Letiště Praha, a. s. (Prague Airport)",
+      "url": "https://www.prg.aero/en/taxi",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "parking",
+      "title": "AeroParking: Official Official Prague Airport Parking | Vaclav Havel Airport Prague, Ruzyne",
+      "publisher": "Letiště Praha, a. s. (Prague Airport)",
+      "url": "https://www.prg.aero/en/airport-parking",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "prm",
+      "title": "Special Assistance | Vaclav Havel Airport Prague, Ruzyne",
+      "publisher": "Letiště Praha, a. s. (Prague Airport)",
+      "url": "https://www.prg.aero/en/persons-reduced-mobility-and-orientation",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "lounges",
+      "title": "Lounges and VIP Service | Vaclav Havel Airport Prague, Ruzyne",
+      "publisher": "Letiště Praha, a. s. (Prague Airport)",
+      "url": "https://www.prg.aero/en/lounges-and-vip-service",
+      "published": null,
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

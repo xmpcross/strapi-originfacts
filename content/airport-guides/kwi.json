@@ -1,0 +1,182 @@
+{
+  "iata": "KWI",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals",
+      "paragraphs": [
+        {
+          "text": "The airport operator publishes direction maps for Terminal 1, Terminal 2, Terminal 3, Terminal 4 and Terminal 5, and floor plans for Terminal 1 (ground and first floor). Its website does not say which airlines use which terminal, so check your airline or the flight display before you travel.",
+          "sources": [
+            "directions",
+            "terminal-maps"
+          ]
+        },
+        {
+          "text": "The airport’s car services directory can be filtered by Terminal 1 to Terminal 4. Its entries show, for example, a Behbehani Group desk at Terminal 1 and a Budget desk at Terminal 4, public area, landside (arrivals).",
+          "sources": [
+            "car-services"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Taxis and buses to and from the airport",
+      "paragraphs": [
+        {
+          "text": "The airport publishes a taxi fare list by destination area, in Kuwaiti dinars. It starts at 4KD for Aldajeej and Air Cargo, includes 8KD for an area covering Kuwait City and Salmiya, and reaches 20KD for Alabdelli, Alsalmi, Alnuwaseeb and Alsabeya. The page shows no date for these fares, so they are the fares on the airport’s page on 5 October 2026; check before you travel.",
+          "sources": [
+            "taxis-buses"
+          ]
+        },
+        {
+          "text": "Kuwait Public Transport Company buses serve the airport on three lines, 13, 99 and 501. The airport’s page says the buses run from 04:30 to 23:45 and lists a fare of 250 fils for lines 13 and 501.",
+          "sources": [
+            "taxis-buses"
+          ]
+        },
+        {
+          "text": "The airport also has an Airport Limousine service, with a counter service for arrivals.",
+          "sources": [
+            "limousine"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assistance",
+      "heading": "Meet and assist services",
+      "paragraphs": [
+        {
+          "text": "The Maraheb meet and assist service is available in the arrival and departure halls. The airport page lists a charge of 7.000 KD for one passenger for either a meet and assist from the arrival gate to the arrival hall or a check-in escort to the gate, with no date shown, so this is the price on the page on 5 October 2026. Reservations can be made online or by calling 24718000.",
+          "sources": [
+            "maraheb"
+          ]
+        },
+        {
+          "text": "A separate Hala Kuwait meet and assist service lists wheelchair assistance among its other services. Bookings are made at www.pearlassist.com or by email to Kuwait@pearlassist.com.",
+          "sources": [
+            "hospitality"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lounges",
+      "heading": "Lounges",
+      "paragraphs": [
+        {
+          "text": "The Pearl Lounge is open to First and Business class travellers and to other passengers who wish to pay to use it, and the airport says it is serviced round the clock. It has a children’s play area and restrooms with showers and amenities.",
+          "sources": [
+            "hospitality"
+          ]
+        },
+        {
+          "text": "The airport describes the Dasman Lounge as reserved for first- and business class travellers. The Maraheb price list nonetheless lists Dasman Lounge usage at 9.000 KD for one passenger (price on the page on 5 October 2026), so confirm eligibility when you book.",
+          "sources": [
+            "hospitality",
+            "maraheb"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How much is a taxi from Kuwait airport?",
+      "a": "The airport lists fares by destination area, from 4KD for Aldajeej and Air Cargo to 20KD for Alabdelli, Alsalmi, Alnuwaseeb and Alsabeya. The area including Kuwait City and Salmiya is listed at 8KD. The page shows no date, so check before you travel.",
+      "sources": [
+        "taxis-buses"
+      ]
+    },
+    {
+      "q": "Which buses go to Kuwait airport?",
+      "a": "Kuwait Public Transport Company lines 13, 99 and 501 serve the airport, running from 04:30 to 23:45 according to the airport’s page. Lines 13 and 501 are listed at 250 fils.",
+      "sources": [
+        "taxis-buses"
+      ]
+    },
+    {
+      "q": "Can I pay to use a lounge at Kuwait airport?",
+      "a": "Yes. The Pearl Lounge is open to other passengers who wish to pay, and it is serviced round the clock according to the airport.",
+      "sources": [
+        "hospitality"
+      ]
+    },
+    {
+      "q": "How do I book meet and assist at Kuwait airport?",
+      "a": "For Maraheb services, book online or call 24718000. For Hala Kuwait meet and assist, book at www.pearlassist.com or email Kuwait@pearlassist.com.",
+      "sources": [
+        "maraheb",
+        "hospitality"
+      ]
+    },
+    {
+      "q": "How many terminals does Kuwait airport list?",
+      "a": "The airport publishes direction maps for Terminals 1 to 5, but its website does not say which airlines use each one.",
+      "sources": [
+        "directions"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "taxis-buses",
+      "title": "Kuwait International Airport: Airport Taxies & Buses",
+      "publisher": "Kuwait International Airport (Directorate General of Civil Aviation)",
+      "url": "https://www.kuwaitairport.gov.kw/en/from-and-to-the-airport/transport/airport-taxies-and-buses/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "car-services",
+      "title": "Kuwait International Airport: Cars Services (Rental & Parking)",
+      "publisher": "Kuwait International Airport (Directorate General of Civil Aviation)",
+      "url": "https://www.kuwaitairport.gov.kw/en/from-and-to-the-airport/transport/car-services/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "limousine",
+      "title": "Kuwait International Airport: Airport Limousine",
+      "publisher": "Kuwait International Airport (Directorate General of Civil Aviation)",
+      "url": "https://www.kuwaitairport.gov.kw/en/from-and-to-the-airport/transport/airport-limousine/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "directions",
+      "title": "Kuwait International Airport: Airport Directions",
+      "publisher": "Kuwait International Airport (Directorate General of Civil Aviation)",
+      "url": "https://www.kuwaitairport.gov.kw/en/from-and-to-the-airport/directions/airport-directions/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "terminal-maps",
+      "title": "Kuwait International Airport: Terminal Maps",
+      "publisher": "Kuwait International Airport (Directorate General of Civil Aviation)",
+      "url": "https://www.kuwaitairport.gov.kw/en/from-and-to-the-airport/directions/terminal-maps/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "maraheb",
+      "title": "Kuwait International Airport: Maraheb Services",
+      "publisher": "Kuwait International Airport (Directorate General of Civil Aviation)",
+      "url": "https://www.kuwaitairport.gov.kw/en/from-and-to-the-airport/directions/maraheb-services/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "hospitality",
+      "title": "Kuwait International Airport: Hospitality Services",
+      "publisher": "Kuwait International Airport (Directorate General of Civil Aviation)",
+      "url": "https://www.kuwaitairport.gov.kw/en/traveller-info/departure-procedures/hospitality-services/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

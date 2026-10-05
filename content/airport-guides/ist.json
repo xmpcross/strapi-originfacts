@@ -1,0 +1,226 @@
+{
+  "iata": "IST",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals",
+      "paragraphs": [
+        {
+          "text": "Istanbul Airport is described by its operator, İGA, as serving passengers within a terminal building of 1.4 million square metres under a single roof, rather than as a set of numbered terminals.",
+          "sources": [
+            "about"
+          ]
+        },
+        {
+          "text": "A separate JETEX-İGA Terminal offers a premium service for departure, arrival and connection.",
+          "sources": [
+            "jetex"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Getting into Istanbul",
+      "paragraphs": [
+        {
+          "text": "The airport lists three public options: Havaist airport buses, İETT city buses and the M11 metro. Havaist and İETT buses board on transportation floor -2, and the airport says Havaist offers 11 routes and İETT 5 routes between the airport and the city centre. Check the operators’ timetables for frequencies and fares, which the airport page does not state.",
+          "sources": [
+            "transport"
+          ]
+        },
+        {
+          "text": "Havaist buses drop passengers at Entrance Gates 1-2-3-4 on the departures level.",
+          "sources": [
+            "transport"
+          ]
+        },
+        {
+          "text": "The M11 Gayrettepe–Istanbul Airport metro started operating between Kağıthane and Istanbul Airport on 22 January 2023. The Gayrettepe connection was added on 29 January 2024, and the Taşoluk and Arnavutköy stops on 19 March 2024. The airport says the Halkalı–Arnavutköy extension opened on 20 June 2026.",
+          "sources": [
+            "transport"
+          ]
+        },
+        {
+          "text": "At the airport’s metro station there is a baby care room, a health room, male and female prayer rooms, free toilets, a lost and found office and a money exchange office.",
+          "sources": [
+            "transport"
+          ]
+        },
+        {
+          "text": "For taxis, the airport says a luxury intercity taxi service and the airport taxi cooperative serve the airport. Accessible black taxis for wheelchair users can be requested at the taxi desk in the greeting area on the arrivals floor. All car rental offices are on the landside of the arrivals floor and operate 24/7.",
+          "sources": [
+            "taxi",
+            "acc-transport"
+          ]
+        },
+        {
+          "text": "Wheelchair users travelling from the airport to the city centre by Havaist are advised to ask at the Havaist counters on the transportation floor at least 1 hour in advance. From the city centre to the airport they should ask through Havaist’s communication channels at least 6 hours in advance. İETT buses at the airport are wheelchair accessible.",
+          "sources": [
+            "acc-transport",
+            "transport"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parking",
+      "heading": "Parking",
+      "paragraphs": [
+        {
+          "text": "The airport says its car park is the world’s largest multi-level parking facility under a single roof. It is split into Blue, Red, Purple, Turquoise and Yellow zones; vehicles enter on level P1 and leave from level P2. Level R is reserved for rental car services.",
+          "sources": [
+            "parking"
+          ]
+        },
+        {
+          "text": "In the multi-level car park the tariff for a car is TRY 250 for 0–1 hours, TRY 300 for 1–3 hours, TRY 450 for 3–6 hours, TRY 550 for 6–12 hours and TRY 740 for 12–24 hours. The open car park charges TRY 190, TRY 220, TRY 330, TRY 370 and TRY 520 for the same bands, and access there is free for the first 15 minutes. These are the prices on the airport’s page on 5 October 2026, which shows no start date for them, so check before you travel.",
+          "sources": [
+            "parking"
+          ]
+        },
+        {
+          "text": "Valet service is provided at the CIP terminal entrance.",
+          "sources": [
+            "parking"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assistance",
+      "heading": "Reduced-mobility assistance",
+      "paragraphs": [
+        {
+          "text": "The airport says assistance services are provided by the respective airlines. Guests who notify the need when buying a ticket, or who reserve at least 48 hours before the flight, can use the service within 15 minutes of calling the provider on arrival at the airport. Guests who arrive without a reservation may have to wait for up to 45 minutes.",
+          "sources": [
+            "assist"
+          ]
+        },
+        {
+          "text": "Assistance call phones are near the main entrance gate. Visitors seeing off or meeting a passenger who have mobility difficulties can request a wheelchair at the Information Desks. The airport says 906 accessible parking spots are close to the elevators and terminal entrances and cannot be reserved.",
+          "sources": [
+            "assist",
+            "acc-transport"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lounges",
+      "heading": "Lounges",
+      "paragraphs": [
+        {
+          "text": "The airport-operated iGA Lounge serves domestic and international departures; the airport says there is no lounge service on the arrivals floor. Entry is for 6 hours from first entry. On the airport’s page on 5 October 2026, which shows no start date, the international departures adult price was 95.83 EUR + VAT (child 47.92 EUR + VAT) and the domestic adult price 2500.00 TRY + VAT (child 1250.00 TRY + VAT). Check the page before you pay.",
+          "sources": [
+            "lounge"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Which Istanbul Airport buses and metro serve the city?",
+      "a": "The airport lists Havaist buses, İETT buses and the M11 metro. Havaist and İETT buses board on transportation floor -2.",
+      "sources": [
+        "transport"
+      ]
+    },
+    {
+      "q": "How do wheelchair users book Havaist from Istanbul Airport?",
+      "a": "The airport advises asking at the Havaist counters on the transportation floor at least 1 hour in advance for trips to the city, and at least 6 hours in advance through Havaist’s communication channels for trips to the airport.",
+      "sources": [
+        "acc-transport"
+      ]
+    },
+    {
+      "q": "How long might I wait for wheelchair assistance at Istanbul Airport?",
+      "a": "The airport says guests who book at least 48 hours ahead can use the service within 15 minutes, while those without a reservation may wait up to 45 minutes.",
+      "sources": [
+        "assist"
+      ]
+    },
+    {
+      "q": "Is parking free at Istanbul Airport?",
+      "a": "Access to the open car park is free for the first 15 minutes. After that the airport’s tariff applies; for a car in the open car park it was TRY 190 for 0–1 hours on the airport’s page on 5 October 2026.",
+      "sources": [
+        "parking"
+      ]
+    },
+    {
+      "q": "Is there an airport lounge on the arrivals floor?",
+      "a": "No. The airport says it does not have lounge service on the arrivals floor; the iGA Lounge serves departures.",
+      "sources": [
+        "lounge"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "about",
+      "title": "About Us",
+      "publisher": "İGA Istanbul Airport (istairport.com)",
+      "url": "https://www.istairport.com/en/corporate/about-us",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "jetex",
+      "title": "JETEX-iGA Terminal",
+      "publisher": "İGA Istanbul Airport (istairport.com)",
+      "url": "https://www.istairport.com/en/services/discover/jetex-iga-terminal",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "transport",
+      "title": "Public Transportation",
+      "publisher": "İGA Istanbul Airport (istairport.com)",
+      "url": "https://www.istairport.com/en/airport/airport-transportation/urban-transportation/public-transportation",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "taxi",
+      "title": "Airport Transportation",
+      "publisher": "İGA Istanbul Airport (istairport.com)",
+      "url": "https://www.istairport.com/en/flights/airport-guides/departing-passenger-guide/services/complimentary-services/airport-transportation",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "acc-transport",
+      "title": "Accessible Transportation | Istanbul Airport",
+      "publisher": "İGA Istanbul Airport (istairport.com)",
+      "url": "https://www.istairport.com/en/flights/airport-guides/iga-cares-accessibility/accessibility/accessible-transportation",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "parking",
+      "title": "Parking and Valet Service",
+      "publisher": "İGA Istanbul Airport (istairport.com)",
+      "url": "https://www.istairport.com/en/airport/airport-transportation/airport-carpark",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "assist",
+      "title": "Assistance Services | Istanbul Airport",
+      "publisher": "İGA Istanbul Airport (istairport.com)",
+      "url": "https://www.istairport.com/en/flights/airport-guides/iga-cares-accessibility/accessibility/assistance-service",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "lounge",
+      "title": "iGA Lounge | İstairport",
+      "publisher": "İGA Istanbul Airport (istairport.com)",
+      "url": "https://www.istairport.com/en/services/discover/iga-pass-experiences/iga-pass-premium-services/iga-lounge",
+      "published": null,
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

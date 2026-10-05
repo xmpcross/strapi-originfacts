@@ -1,0 +1,262 @@
+{
+  "iata": "GVA",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals",
+      "paragraphs": [
+        {
+          "text": "Geneva Airport’s main terminal is Terminal 1. The airport also has Terminal 2, a small secondary terminal that is open only on weekends in the winter period. It handles selected charter and scheduled flights arriving from abroad, mainly linked to the ski season in the Swiss, French and Italian Alps, and is closed to the public outside the winter season.",
+          "sources": [
+            "t2"
+          ]
+        },
+        {
+          "text": "To walk to Terminal 2 from Terminal 1 or the train station, go down to the Arrivals level, follow the signs to “car rental”, exit and continue along the pedestrian area (approximately 300 m). The airport says you arrive directly opposite parking P51, where Terminal 2 is located. tpg bus lines 10, 23, 28, 56 and 57 stop at “Tour-de-Contrôle”, just nearby.",
+          "sources": [
+            "t2"
+          ]
+        },
+        {
+          "text": "The airport publishes a Terminal 1 map as a PDF on its Terminal 1 information page.",
+          "sources": [
+            "t1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Getting into Geneva",
+      "paragraphs": [
+        {
+          "text": "The Genève Aéroport railway station is directly beneath the terminal. The airport says it gives a direct connection to the city centre in just 7 minutes, with up to seven trains per hour during peak times. All trains to and from the airport stop at Genève-Cornavin, the main station, and a unireso zone 10 ticket (3 CHF) covers that journey, according to the airport’s page on 5 October 2026.",
+          "sources": [
+            "trains"
+          ]
+        },
+        {
+          "text": "Tickets can be bought at the ticket machine in the baggage reclaim area, or through the SBB Mobile app or the Swiss Federal Railways website. Real-time timetables are on the SBB website.",
+          "sources": [
+            "trains"
+          ]
+        },
+        {
+          "text": "Twelve tpg bus lines serve the airport directly. The airport gives frequencies of 8 to 15 minutes during peak hours for urban lines and 20 to 30 minutes during peak hours for regional lines. Bus stops are at the Check-in level, just in front of or next to the railway station. Tickets are sold at machines at bus stops (CHF or EUR, credit cards), and an information desk is in the Arrivals hall, opposite the customs exit.",
+          "sources": [
+            "tpg"
+          ]
+        },
+        {
+          "text": "Guests staying in a hotel, youth hostel or campsite in Geneva may be eligible for a Geneva Transport Card, which allows free use of public transport (Zone 10), including the journey between the airport and Geneva-Cornavin.",
+          "sources": [
+            "tpg"
+          ]
+        },
+        {
+          "text": "tpgAérobus is a free early morning shuttle, free on presentation of your flight ticket, for arrival at the airport between 03:30 and 06:00. It has 6 routes (A1 to A6) from Geneva and neighbouring France. The airport notes that free access and conditions may be modified at any time.",
+          "sources": [
+            "tpg"
+          ]
+        },
+        {
+          "text": "Regional coaches to ski resorts, Alpine towns and cities including Annecy, Chambéry, Grenoble and Lyon leave from the coach station outside the terminal on the Arrivals level; follow the “Coach Station” signs from the Arrivals hall.",
+          "sources": [
+            "coaches"
+          ]
+        },
+        {
+          "text": "Official taxis wait at the designated rank outside the Arrivals level. The airport lists flat fares from Genève Aéroport on its taxi page on 5 October 2026: 25 CHF for the area close to the airport, 35 CHF to the international organizations, 50 CHF to the city centre (right bank) and 60 CHF to the city centre (left bank). For other destinations the fare is based on the regulated price per kilometre. Check the airport’s page for current fares.",
+          "sources": [
+            "taxis"
+          ]
+        },
+        {
+          "text": "Ride-hailing (VTC) services are available at the airport. The airport says fares are set by each booking platform.",
+          "sources": [
+            "taxis"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parking",
+      "heading": "Parking",
+      "paragraphs": [
+        {
+          "text": "The airport says all its official car parks are available without a reservation, subject to availability on arrival. Advance booking through ResaPark is possible only at P1, P26 and P51.",
+          "sources": [
+            "pacc"
+          ]
+        },
+        {
+          "text": "The prices below are those shown on the airport’s parking page on 5 October 2026, which gives no validity date, so check before you travel. P1 is the closest car park, with direct access to Departures and Arrivals and 2,600 spaces: 1 day costs 38 CHF and 1 week 197 CHF. P26 and P51, both an 8–10-minute walk from the terminal, are described as among the cheapest: 1 day costs 30 CHF, 1 week 132 CHF and 2 weeks 237 CHF.",
+          "sources": [
+            "pacc"
+          ]
+        },
+        {
+          "text": "P20 serves the France Sector via the Ferney-Voltaire customs road, a 5-minute walk from the terminal: 1 day costs 38 CHF and 1 week 197 CHF. P2 is the short-term car park, a 3-minute walk from the terminal: up to 5 minutes is free and 60 minutes costs 5 CHF.",
+          "sources": [
+            "pacc"
+          ]
+        },
+        {
+          "text": "The Kiss & Fly drop-off area is on the Departures level, a few steps from the entrance to Terminal 1. It is free of charge and accessible 24/7, but parking, even for a short time, is not permitted, and passenger pick-up is not permitted there either.",
+          "sources": [
+            "kiss"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assistance",
+      "heading": "Reduced-mobility assistance",
+      "paragraphs": [
+        {
+          "text": "Geneva Airport offers free assistance services for passengers with mobility needs, provided by GVAssistance. The airport says it is available to all passengers, regardless of airline or travel class.",
+          "sources": [
+            "prm"
+          ]
+        },
+        {
+          "text": "To request it, inform your airline when booking your ticket, or at least 48 hours before your flight. A later request may mean delayed assistance, as priority is given to requests submitted on time, and your airline confirms the booking. The airport asks you to arrive as early as possible, at least 2 hours before departure.",
+          "sources": [
+            "prm"
+          ]
+        },
+        {
+          "text": "Car park P1 has 30 PRM spaces about 50 m from Terminal 1 (level -1), reserved for disability card holders, with a GVAssistance call point. If you arrive by bus or train and cannot reach the terminal on your own, a call point just outside the station entrance connects you to a GVAssistance agent.",
+          "sources": [
+            "prm"
+          ]
+        },
+        {
+          "text": "For rail help, the airport says to contact the SBB Handicap Call Center at least 1 hour before departure.",
+          "sources": [
+            "prm"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How long does the train from Geneva Airport to the city centre take?",
+      "a": "The airport says the direct train to the city centre takes just 7 minutes, with up to seven trains per hour during peak times. All trains stop at Genève-Cornavin, and a unireso zone 10 ticket (3 CHF) covers that journey, according to the airport’s page on 5 October 2026.",
+      "sources": [
+        "trains"
+      ]
+    },
+    {
+      "q": "How much is a taxi from Geneva Airport?",
+      "a": "On 5 October 2026 the airport listed flat fares of 25 CHF for the area close to the airport, 35 CHF to the international organizations, 50 CHF to the city centre (right bank) and 60 CHF to the city centre (left bank).",
+      "sources": [
+        "taxis"
+      ]
+    },
+    {
+      "q": "What is Terminal 2 at Geneva Airport?",
+      "a": "Terminal 2 is a seasonal terminal, open exclusively on weekends during the winter period, handling selected charter and scheduled flights arriving from abroad, mainly linked to the ski season. It is closed to the public outside the winter season.",
+      "sources": [
+        "t2"
+      ]
+    },
+    {
+      "q": "Is there a free shuttle to Geneva Airport early in the morning?",
+      "a": "tpgAérobus is free on presentation of your flight ticket, for arrival at the airport between 03:30 and 06:00, with 6 routes (A1 to A6) from Geneva and neighbouring France. The airport notes free access and conditions may be modified at any time.",
+      "sources": [
+        "tpg"
+      ]
+    },
+    {
+      "q": "How do I request assistance at Geneva Airport?",
+      "a": "Inform your airline of your needs when booking your ticket, or at least 48 hours before your flight. The airport’s assistance service, provided by GVAssistance, is free and available to all passengers.",
+      "sources": [
+        "prm"
+      ]
+    },
+    {
+      "q": "Can I park at the Kiss & Fly drop-off area?",
+      "a": "No. The Kiss & Fly area is free and accessible 24/7 for quick drop-offs on the Departures level, but parking, even for a short time, is not permitted, and passenger pick-up is not permitted there.",
+      "sources": [
+        "kiss"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "t2",
+      "title": "Terminal 2 Info",
+      "publisher": "Genève Aéroport",
+      "url": "https://www.gva.ch/en/passengers/travel-preparation/general-information/info-t2",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "t1",
+      "title": "Terminal 1 Info",
+      "publisher": "Genève Aéroport",
+      "url": "https://www.gva.ch/en/passengers/travel-preparation/general-information/info-t1",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "trains",
+      "title": "Train access",
+      "publisher": "Genève Aéroport",
+      "url": "https://www.gva.ch/en/passengers/access-and-transport/trains/train-access",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "tpg",
+      "title": "Geneva public transport",
+      "publisher": "Genève Aéroport",
+      "url": "https://www.gva.ch/en/passengers/access-and-transport/buses-coaches-and-shuttles/geneva-public-transport",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "coaches",
+      "title": "Regional coaches",
+      "publisher": "Genève Aéroport",
+      "url": "https://www.gva.ch/en/passengers/access-and-transport/buses-coaches-and-shuttles/regional-coaches",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "taxis",
+      "title": "Taxis",
+      "publisher": "Genève Aéroport",
+      "url": "https://www.gva.ch/en/passengers/access-and-transport/taxis",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "pacc",
+      "title": "Parking access",
+      "publisher": "Genève Aéroport",
+      "url": "https://www.gva.ch/en/passengers/access-and-transport/parkings/Acces-aux-parkings",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "kiss",
+      "title": "Drop-off area",
+      "publisher": "Genève Aéroport",
+      "url": "https://www.gva.ch/en/passengers/access-and-transport/parkings/kiss-and-fly",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "prm",
+      "title": "Preparing your journey",
+      "publisher": "Genève Aéroport",
+      "url": "https://www.gva.ch/en/passengers/travel-preparation/prm/preparing-your-journey",
+      "published": null,
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

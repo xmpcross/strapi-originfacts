@@ -1,0 +1,186 @@
+{
+  "iata": "OSL",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "city-transport",
+      "heading": "Getting into Oslo",
+      "paragraphs": [
+        {
+          "text": "Avinor says the train journey from the airport to the city centre takes about 20 minutes. The Airport Express Train stops at Drammen, Asker, Sandvika, Stabekk, Lysaker, Skøyen, Nationaltheatret, Oslo Central Station (Oslo S) and Lillestrøm. Flytoget itself states a departure every 10 minutes from Oslo Airport and a 19 minute travel time from the airport to the city centre, and says children under 16 travel free when accompanied by an adult over 16.",
+          "sources": [
+            "transport",
+            "flytoget"
+          ]
+        },
+        {
+          "text": "Avinor lists Vy Regional trains on the route Skien - Oslo - Lillehammer - Trondheim and Vy Local trains on the route Kongsberg - Eidsvoll as also passing through Oslo Airport.",
+          "sources": [
+            "transport"
+          ]
+        },
+        {
+          "text": "The Airport Express Coach (Flybussen) runs between Oslo city centre and the airport every 20 minutes every day, according to Avinor.",
+          "sources": [
+            "transport"
+          ]
+        },
+        {
+          "text": "Avinor says it takes about 40 minutes to drive from Oslo S to the airport. The taxi stand is right outside the international arrivals hall. The airport recommends booking a taxi at the booking machine outside the terminal or through the taxi companies’ own apps, and advises against getting into a taxi without a prior reservation or agreeing a fare directly with a driver.",
+          "sources": [
+            "taxi"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parking",
+      "heading": "Parking",
+      "paragraphs": [
+        {
+          "text": "Avinor says Oslo Airport has approximately 20,000 parking spaces, spread across two parking garages and eight outdoor car parks. Licence plate recognition and autopay are available at all parking areas, including short-term parking and the garages.",
+          "sources": [
+            "parking"
+          ]
+        },
+        {
+          "text": "The airport says it has 93 parking spaces dedicated to people with reduced mobility, and that regular fees apply in them. Prices are not shown on the parking-areas page, so check the airport’s booking page for current rates.",
+          "sources": [
+            "parking"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assistance",
+      "heading": "Assistance for passengers with reduced mobility",
+      "paragraphs": [
+        {
+          "text": "Avinor says passengers with a disability or reduced mobility can get assistance at the airport, and should book it through their airline or travel agent at least 48 hours before departure. If you forget, you can request assistance on arrival, but immediate help is not guaranteed.",
+          "sources": [
+            "assist"
+          ]
+        },
+        {
+          "text": "The Oslo Airport assistance point is open Monday to Sunday, 5:00 AM to 8:00 PM, according to Avinor. Wheelchairs are available to borrow for use within the airport area.",
+          "sources": [
+            "assist"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lounges",
+      "heading": "Lounges",
+      "paragraphs": [
+        {
+          "text": "Avinor says Oslo Airport has six lounges, divided between domestic and international. The OSL Lounge International is on the floor up by E2, open 5:15 AM to 08:30 PM, and all travellers can use it for NOK 445, paid by card at a payment terminal; a valid boarding pass for an international flight that day is required.",
+          "sources": [
+            "lounge"
+          ]
+        },
+        {
+          "text": "The OSL Lounge Innland is up the stairs by gate A15. Its listed hours are Monday to Friday 07:00 AM - 08:00 PM, Saturday 07:00 AM - 02:30 PM and Sunday 09:00 AM - 10:00 PM. Entry costs 400,- up to 3 hours before departure, 700,- from 3 to 5 hours before and 850,- more than 5 hours before, as listed on the airport’s page on 5 October 2026; check before you go.",
+          "sources": [
+            "lounge"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How long does the Flytoget train from Oslo Airport to the city centre take?",
+      "a": "Flytoget states a 19 minute travel time from the airport to the city centre, with a departure every 10 minutes from Oslo Airport. Avinor’s own page says the train journey takes about 20 minutes.",
+      "sources": [
+        "flytoget",
+        "transport"
+      ]
+    },
+    {
+      "q": "Do children need a ticket on the Airport Express Train?",
+      "a": "Flytoget says children under 16 travel free, provided they are accompanied by an adult over 16, and need no ticket.",
+      "sources": [
+        "flytoget"
+      ]
+    },
+    {
+      "q": "Can I get a taxi at Oslo Airport without booking?",
+      "a": "Avinor advises against it: a taxi should be booked at the booking machine outside the terminal or via the taxi companies’ own apps, and the airport advises against agreeing a fare directly with a driver. The taxi stand is right outside the international arrivals hall.",
+      "sources": [
+        "taxi"
+      ]
+    },
+    {
+      "q": "How far ahead should I book assistance at Oslo Airport?",
+      "a": "Avinor says to book through your airline or travel agent at least 48 hours before departure. Its assistance point at Oslo is open Monday to Sunday, 5:00 AM to 8:00 PM.",
+      "sources": [
+        "assist"
+      ]
+    },
+    {
+      "q": "How much does it cost to use a lounge at Oslo Airport?",
+      "a": "On the airport’s page on 5 October 2026, the OSL Lounge International was NOK 445 for all travellers with an international boarding pass, and the domestic OSL Lounge Innland was 400,- up to 3 hours before departure, 700,- from 3 to 5 hours and 850,- beyond 5 hours. Check before you go.",
+      "sources": [
+        "lounge"
+      ]
+    },
+    {
+      "q": "How many parking spaces does Oslo Airport have?",
+      "a": "Avinor says approximately 20,000, across two parking garages and eight outdoor car parks, with 93 spaces dedicated to people with reduced mobility.",
+      "sources": [
+        "parking"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "transport",
+      "title": "Public transportation to/from Oslo Airport: The trains and buses",
+      "publisher": "Avinor (Oslo Airport)",
+      "url": "https://www.avinor.no/en/airport/oslo/info/public-transportation/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "taxi",
+      "title": "Taxi to Oslo Airport: Practical Guide and Tips",
+      "publisher": "Avinor (Oslo Airport)",
+      "url": "https://www.avinor.no/en/airport/oslo/info/Taxi/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "flytoget",
+      "title": "flytoget.no - The Airport Express - the fastest way to Oslo",
+      "publisher": "Flytoget AS",
+      "url": "https://flytoget.no/en/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "parking",
+      "title": "Parking options at Oslo Airport Gardermoen.",
+      "publisher": "Avinor (Oslo Airport)",
+      "url": "https://www.avinor.no/en/airport/oslo/info/parking/p-areas/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "assist",
+      "title": "Assistance at Norwegian airports: contact information and opening hours",
+      "publisher": "Avinor",
+      "url": "https://www.avinor.no/en/practical-info/assistance/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "lounge",
+      "title": "Lounge at Oslo Airport",
+      "publisher": "Avinor (Oslo Airport)",
+      "url": "https://www.avinor.no/en/airport/oslo/info/lounge/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

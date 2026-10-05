@@ -361,7 +361,7 @@ export default function AirlineDirectory({
                 {REGION_INTROS[g.key as AirlineRegion]}
               </p>
             )}
-            <ul className="mt-3 grid gap-2 sm:mt-4 sm:grid-cols-2 sm:gap-2.5 lg:grid-cols-3 xl:grid-cols-4">
+            <ul className="mt-3 grid grid-cols-1 gap-2 sm:mt-4 sm:grid-cols-2 sm:gap-2.5 lg:grid-cols-3 xl:grid-cols-4">
               {g.airlines.map((a) => (
                 <li key={a.slug}>
                   <AirlineCard airline={a} isVerified={publishedSet.has(a.slug)} hasCeased={ceasedSet.has(a.slug)} />
@@ -432,7 +432,7 @@ function AirlineCard({
       className="group flex h-full items-center gap-3 rounded-[0.3rem] border border-forest-900/10 bg-white px-3 py-2.5 transition sm:py-3 hover:border-primary-emphasis/50 hover:bg-primary-hover/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-emphasis"
       data-testid={`airline-card-${airline.slug}`}
     >
-      <span className="flex h-10 w-14 flex-none items-center justify-center overflow-hidden sm:h-12 sm:w-16">
+      <span className="flex h-12 w-20 flex-none items-center justify-center overflow-hidden sm:h-16 sm:w-28">
         {logo ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img src={logo} alt="" className="max-h-full max-w-full object-contain" loading="lazy" decoding="async" />

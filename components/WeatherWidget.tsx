@@ -1,40 +1,38 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { describeWeather, MET_ATTRIBUTION } from '@/lib/met-symbols';
 import { placeFromBrowserTimeZone, type TimeZonePlace } from '@/lib/timezone-geo';
 
 type Weather = {
   city: string;
   tempC: number;
-  code: number;
+  /** MET Norway symbol_code, e.g. "partlycloudy_day". */
+  symbol: string | null;
   fetchedAt: number;
 };
 
-type GeocodeHit = {
+type PlaceHit = {
   name: string;
-  country?: string;
-  admin1?: string;
-  latitude: number;
-  longitude: number;
+  /** ISO 3166-1 alpha-2. */
+  country: string;
+  iata: string;
+  lat: number;
+  lon: number;
 };
 
-const WEATHER_CACHE_KEY = 'originfacts.weather.v1';
+const WEATHER_CACHE_KEY = 'originfacts.weather.v2';
 const UNIT_KEY = 'originfacts.weather.unit.v1';
 const CACHE_TTL_MS = 30 * 60 * 1000;
 /** Used when the browser's time zone is not one we map. */
 const DEFAULT_PLACE: TimeZonePlace = { iata: 'LON', city: 'London', lat: 51.507, lon: -0.128, country: 'GB' };
 
-function describe(code: number): { label: string; icon: string } {
-  if (code === 0) return { label: 'Clear', icon: '☀️' };
-  if (code <= 3) return { label: 'Partly cloudy', icon: '⛅' };
-  if (code <= 48) return { label: 'Foggy', icon: '🌫️' };
-  if (code <= 57) return { label: 'Drizzle', icon: '🌦️' };
-  if (code <= 67) return { label: 'Rain', icon: '🌧️' };
-  if (code <= 77) return { label: 'Snow', icon: '🌨️' };
-  if (code <= 82) return { label: 'Rain showers', icon: '🌧️' };
-  if (code <= 86) return { label: 'Snow showers', icon: '🌨️' };
-  if (code <= 99) return { label: 'Thunderstorm', icon: '⛈️' };
-  return { label: 'Weather', icon: '🌍' };
+function countryName(code: string): string {
+  try {
+    return new Intl.DisplayNames(['en'], { type: 'region' }).of(code) ?? code;
+  } catch {
+    return code;
+  }
 }
 
 function readCache(): Weather | null {
@@ -78,21 +76,21 @@ function writeUnit(u: 'C' | 'F') {
   }
 }
 
-/** Fetch current weather for the given coords + label and cache. */
+/**
+ * Current weather for the given coords + label, via our own /api/weather
+ * (MET Norway, fetched server-side), and cache it for the session.
+ */
 async function fetchWeather(lat: number, lon: number, city: string): Promise<Weather | null> {
   try {
-    const res = await fetch(
-      `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,weather_code&temperature_unit=celsius`,
-    );
+    const qs = new URLSearchParams({ lat: lat.toFixed(2), lon: lon.toFixed(2) });
+    const res = await fetch(`/api/weather?${qs}`);
     if (!res.ok) return null;
-    const json = (await res.json()) as {
-      current?: { temperature_2m?: number; weather_code?: number };
-    };
-    if (typeof json.current?.temperature_2m !== 'number') return null;
+    const json = (await res.json()) as { tempC?: number; symbolCode?: string | null };
+    if (typeof json.tempC !== 'number') return null;
     const next: Weather = {
       city: city || 'Your area',
-      tempC: Math.round(json.current.temperature_2m),
-      code: json.current.weather_code ?? 0,
+      tempC: Math.round(json.tempC),
+      symbol: typeof json.symbolCode === 'string' ? json.symbolCode : null,
       fetchedAt: Date.now(),
     };
     writeCache(next);
@@ -109,7 +107,7 @@ export default function WeatherWidget() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [searching, setSearching] = useState(false);
-  const [results, setResults] = useState<GeocodeHit[]>([]);
+  const [results, setResults] = useState<PlaceHit[]>([]);
   const [locating, setLocating] = useState(false);
   const [locateError, setLocateError] = useState<string | null>(null);
 
@@ -140,7 +138,7 @@ export default function WeatherWidget() {
     };
   }, []);
 
-  // Debounced city search via Open-Meteo's geocoding API
+  // Debounced city search over the site's own airport/city data (no geocoder)
   useEffect(() => {
     if (!searchOpen) return;
     const trimmed = query.trim();
@@ -152,14 +150,12 @@ export default function WeatherWidget() {
     setSearching(true);
     const id = window.setTimeout(async () => {
       try {
-        const res = await fetch(
-          `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(trimmed)}&count=5&language=en&format=json`,
-        );
+        const res = await fetch(`/api/weather/places?q=${encodeURIComponent(trimmed)}`);
         if (!res.ok) {
           setResults([]);
           return;
         }
-        const json = (await res.json()) as { results?: GeocodeHit[] };
+        const json = (await res.json()) as { results?: PlaceHit[] };
         setResults(Array.isArray(json.results) ? json.results : []);
       } catch {
         setResults([]);
@@ -170,12 +166,12 @@ export default function WeatherWidget() {
     return () => window.clearTimeout(id);
   }, [query, searchOpen]);
 
-  const onPick = async (hit: GeocodeHit) => {
+  const onPick = async (hit: PlaceHit) => {
     setSearchOpen(false);
     setQuery('');
     setResults([]);
     setLoading(true);
-    const w = await fetchWeather(hit.latitude, hit.longitude, hit.name);
+    const w = await fetchWeather(hit.lat, hit.lon, hit.name);
     if (w) setWeather(w);
     setLoading(false);
   };
@@ -222,7 +218,7 @@ export default function WeatherWidget() {
 
   if (!weather) return null;
 
-  const { label, icon } = describe(weather.code);
+  const { label, icon } = describeWeather(weather.symbol);
   const displayTemp =
     unit === 'C' ? weather.tempC : Math.round(weather.tempC * (9 / 5) + 32);
 
@@ -331,18 +327,16 @@ export default function WeatherWidget() {
               )}
               {!searching &&
                 results.map((r, i) => (
-                  <li key={`${r.name}-${i}`}>
+                  <li key={`${r.name}-${r.country}-${i}`}>
                     <button
                       type="button"
                       onClick={() => onPick(r)}
                       className="block w-full px-3 py-2 text-left text-sm text-forest-950 transition hover:bg-forest-900/5"
                     >
                       <span className="font-medium">{r.name}</span>
-                      {(r.admin1 || r.country) && (
-                        <span className="ml-2 text-xs text-forest-900/55">
-                          {[r.admin1, r.country].filter(Boolean).join(', ')}
-                        </span>
-                      )}
+                      <span className="ml-2 text-xs text-forest-900/55">
+                        {countryName(r.country)} · {r.iata}
+                      </span>
                     </button>
                   </li>
                 ))}
@@ -353,6 +347,18 @@ export default function WeatherWidget() {
           )}
         </div>
       )}
+
+      <p className="mt-3 text-[11px] leading-snug text-forest-900/55" data-testid="weather-attribution">
+        Weather data from{' '}
+        <a href={MET_ATTRIBUTION.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-forest-900">
+          {MET_ATTRIBUTION.name}
+        </a>{' '}
+        (
+        <a href={MET_ATTRIBUTION.licenceUrl} target="_blank" rel="noopener noreferrer license" className="underline hover:text-forest-900">
+          {MET_ATTRIBUTION.licence}
+        </a>
+        )
+      </p>
     </div>
   );
 }

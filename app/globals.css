@@ -113,7 +113,11 @@
   body:has([data-testid^="country-page-"]) [data-testid="fixed-popular-now"],
   body:has([data-testid^="country-page-"]) [data-testid="fixed-right-bar"],
   body:has([data-testid^="route-page-"]) [data-testid="fixed-popular-now"],
-  body:has([data-testid^="route-page-"]) [data-testid="fixed-right-bar"] {
+  body:has([data-testid^="route-page-"]) [data-testid="fixed-right-bar"],
+  /* v2 airport template (lib/airport-template-v2.ts) — its own testid prefix
+     so the legacy airport typography overrides above don't apply to it. */
+  body:has([data-testid^="airport-v2-page-"]) [data-testid="fixed-popular-now"],
+  body:has([data-testid^="airport-v2-page-"]) [data-testid="fixed-right-bar"] {
     display: none !important;
   }
 

@@ -14,14 +14,14 @@
         "standard_cabin_bag": {
           "value": "One cabin bag up to 10 kg, measuring no more than 55 x 40 x 25 cm.",
           "status": "official",
-          "source_url": "https://t.me/s/aeroflot_official/4175",
+          "source_url": "https://www.aeroflot.ru/ru-ru/about/news/aeroflot_official/4175",
           "verified_at": "2026-09-05",
           "verified_by": "manual_official_source"
         },
         "additional_bag": {
           "value": "The same guidance permits an additional bag or backpack up to 5 kg, with combined dimensions no more than 80 cm.",
           "status": "official",
-          "source_url": "https://t.me/s/aeroflot_official/4175",
+          "source_url": "https://www.aeroflot.ru/ru-ru/about/news/aeroflot_official/4175",
           "verified_at": "2026-09-05",
           "verified_by": "manual_official_source"
         }
@@ -38,7 +38,7 @@
         "fare_specific_allowance": {
           "value": "Aeroflot directs passengers to the checked-baggage allowance for their selected fare. Confirm the piece count and weight on your ticket before adding a bag.",
           "status": "official",
-          "source_url": "https://t.me/s/aeroflot_official/4175",
+          "source_url": "https://www.aeroflot.ru/ru-ru/about/news/aeroflot_official/4175",
           "verified_at": "2026-09-05",
           "verified_by": "manual_official_source"
         }
@@ -55,7 +55,7 @@
         "fare_and_baggage": {
           "value": "The checked-baggage entitlement follows the selected fare; the cabin-bag allowance is a separate limit.",
           "status": "official",
-          "source_url": "https://t.me/s/aeroflot_official/4175",
+          "source_url": "https://www.aeroflot.ru/ru-ru/about/news/aeroflot_official/4175",
           "verified_at": "2026-09-05",
           "verified_by": "manual_official_source"
         }
@@ -74,21 +74,21 @@
         "flight_updates": {
           "value": "Aeroflot sends schedule updates using the booking's contact details and asks passengers to check the flight board and Manage Booking before leaving for the airport.",
           "status": "official",
-          "source_url": "https://t.me/s/aeroflot_official/4218",
+          "source_url": "https://www.aeroflot.ru/ru-ru/about/news/aeroflot_official/4218",
           "verified_at": "2026-09-05",
           "verified_by": "manual_official_source"
         },
         "cancelled_flight_next_step": {
           "value": "Its current disruption notice directs passengers with cancelled flights to the airline's rebooking and refund instructions and advises them not to travel to the airport.",
           "status": "official",
-          "source_url": "https://t.me/s/aeroflot_official/4218",
+          "source_url": "https://www.aeroflot.ru/ru-ru/about/news/aeroflot_official/4218",
           "verified_at": "2026-09-05",
           "verified_by": "manual_official_source"
         },
         "airport_assistance": {
           "value": "Aeroflot says assistance is provided under Russian Federal Aviation Rules. Ask the airline which services apply to your wait; this does not establish a universal cash-compensation entitlement.",
           "status": "official",
-          "source_url": "https://t.me/s/aeroflot_official/4218",
+          "source_url": "https://www.aeroflot.ru/ru-ru/about/news/aeroflot_official/4218",
           "verified_at": "2026-09-05",
           "verified_by": "manual_official_source"
         }
@@ -105,7 +105,7 @@
         "online_checkin_opens": {
           "value": "Aeroflot's official notice states that online check-in opens 24 hours before departure.",
           "status": "official",
-          "source_url": "https://t.me/s/aeroflot_official/2979",
+          "source_url": "https://www.aeroflot.ru/ru-ru/about/news/aeroflot_official/2979",
           "verified_at": "2026-09-05",
           "verified_by": "manual_official_source"
         }
@@ -122,7 +122,7 @@
         "official_website_url": {
           "value": "https://www.aeroflot.ru",
           "status": "official",
-          "source_url": "https://t.me/s/aeroflot_official/4218",
+          "source_url": "https://www.aeroflot.ru/ru-ru/about/news/aeroflot_official/4218",
           "verified_at": "2026-09-05",
           "verified_by": "manual_official_source"
         },

@@ -167,21 +167,21 @@
         "fare_name": {
           "value": "Economy Light: 1 cabin bag and 1 personal accessory up to 12 kg total; checked bag available for a fee",
           "status": "official",
-          "source_url": "https://wwws.airfrance.us/information/passagers/tarifs-subventions",
+          "source_url": "https://www.airfrance.com/information/passagers/tarifs-subventions",
           "verified_at": "2026-10-05",
           "verified_by": "manual_official_source"
         },
         "seat_selection_included": {
           "value": "Free seat selection opens 30 hours before flight departure during check-in",
           "status": "official",
-          "source_url": "https://wwws.airfrance.us/information/passagers/tarifs-subventions",
+          "source_url": "https://www.airfrance.com/information/passagers/tarifs-subventions",
           "verified_at": "2026-10-05",
           "verified_by": "manual_official_source"
         },
         "change_cancellation_policy": {
           "value": "Modifications allowed for a fee plus fare difference; non-refundable ticket",
           "status": "official",
-          "source_url": "https://wwws.airfrance.us/information/passagers/tarifs-subventions",
+          "source_url": "https://www.airfrance.com/information/passagers/tarifs-subventions",
           "verified_at": "2026-10-05",
           "verified_by": "manual_official_source"
         }

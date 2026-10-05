@@ -1,0 +1,81 @@
+{
+  "slug": "akl-to-syd",
+  "verified_at": "2026-10-05",
+  "intro": {
+    "text": "Flights from Auckland to Sydney run from Auckland Airport (AKL) to Sydney (Kingsford Smith) Airport (SYD). Airlines flying the route include Jetstar and Qantas.",
+    "sources": [
+      "australianaviation-com-2026",
+      "australianaviation-com-2026-2"
+    ]
+  },
+  "operating_airlines": [],
+  "sections": [
+    {
+      "id": "nonstop-service",
+      "heading": "What should you know about nonstop Auckland–Sydney service?",
+      "paragraphs": [
+        {
+          "text": "LATAM announced the termination of its direct service between Sydney and Santiago via Auckland.",
+          "sources": [
+            "australianaviation-com-2025"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "getting-there",
+      "heading": "How do you get to and from the airports?",
+      "paragraphs": [
+        {
+          "text": "The orange AirportLink bus service carries passengers between Auckland Airport, Puhinui Station and Manukau Bus Station.",
+          "sources": [
+            "at-govt"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get to and from Auckland Airport by public transport?",
+      "a": "The orange AirportLink bus service carries passengers between Auckland Airport, Puhinui Station and Manukau Bus Station.",
+      "sources": [
+        "at-govt"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "australianaviation-com-2026",
+      "title": "Jetstar cuts New Zealand flights amid fuel crisis",
+      "publisher": "Australian Aviation",
+      "url": "https://www.australianaviation.com.au/2026/03/jetstar-cuts-new-zealand-flights-amid-fuel-crisis/",
+      "published": "26 March 2026",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "australianaviation-com-2026-2",
+      "title": "Jetstar reshuffles trans-Tasman services as costs bite",
+      "publisher": "Australian Aviation",
+      "url": "https://australianaviation.com.au/2026/06/jetstar-reshuffles-trans-tasman-services-as-costs-bite/",
+      "published": "25 June 2026",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "australianaviation-com-2025",
+      "title": "LATAM to end trans-Tasman flights in October",
+      "publisher": "Australian Aviation",
+      "url": "https://australianaviation.com.au/2025/06/latam-to-end-trans-tasman-flights-in-october/",
+      "published": "27 June 2025",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "at-govt",
+      "title": "Airport services",
+      "publisher": "Auckland Transport",
+      "url": "https://at.govt.nz/bus-train-ferry/bus-services/airport-services",
+      "published": null,
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

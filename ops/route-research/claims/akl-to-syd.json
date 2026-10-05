@@ -1,0 +1,159 @@
+{
+  "slug": "akl-to-syd",
+  "verified_at": "2026-10-05",
+  "operators": {
+    "sourced": [
+      "JQ",
+      "QF"
+    ],
+    "fare_data": [
+      "JQ",
+      "NZ",
+      "QF"
+    ],
+    "missing_from_sources": [
+      "NZ"
+    ],
+    "list_published": false
+  },
+  "kept": [
+    {
+      "category": "operator",
+      "text": "Jetstar operates trans-Tasman flights on routes including services from Auckland to Sydney and Brisbane.",
+      "date": "2026-03-26",
+      "airlines": [
+        "Jetstar"
+      ],
+      "source_id": "australianaviation-com-2026",
+      "url": "https://www.australianaviation.com.au/2026/03/jetstar-cuts-new-zealand-flights-amid-fuel-crisis/",
+      "quote": "Around 12 per cent of trans-Tasman Jetstar flights for May, including services from Auckland to Sydney and Brisbane, as well as domestic Jetstar NZ flights on routes such as Auckland–Christchurch and Auckland–Wellington, have been impacted by the changes.",
+      "quote_origin": "model"
+    },
+    {
+      "category": "operator",
+      "text": "Jetstar operates non-stop passenger flights between Auckland and Sydney.",
+      "date": "2026-03-26",
+      "airlines": [
+        "Jetstar"
+      ],
+      "source_id": "australianaviation-com-2026",
+      "url": "https://australianaviation.com.au/2026/03/jetstar-cuts-new-zealand-flights-amid-fuel-crisis/",
+      "quote": "Around 12 per cent of trans-Tasman Jetstar flights for May, including services from Auckland to Sydney and Brisbane, as well as domestic Jetstar NZ flights on routes such as Auckland–Christchurch and Auckland–Wellington, have been impacted by the changes.",
+      "quote_origin": "model"
+    },
+    {
+      "category": "operator",
+      "text": "Qantas operates direct flights between Sydney and Auckland.",
+      "date": "2026-06-25",
+      "airlines": [
+        "Qantas"
+      ],
+      "source_id": "australianaviation-com-2026-2",
+      "url": "https://australianaviation.com.au/2026/06/jetstar-reshuffles-trans-tasman-services-as-costs-bite/",
+      "quote": "Additionally, sister airline Qantas will increase capacity with additional flights and larger aircraft, adding 15,000 seats from Sydney, Melbourne, and Brisbane to Queenstown between October and March, and up to 10 per cent on Sydney-Auckland over the same period.",
+      "quote_origin": "model"
+    },
+    {
+      "category": "seasonal",
+      "text": "LATAM announced the termination of its direct service between Sydney and Santiago via Auckland.",
+      "date": "2025-06-27",
+      "airlines": [
+        "LATAM"
+      ],
+      "source_id": "australianaviation-com-2025",
+      "url": "https://australianaviation.com.au/2025/06/latam-to-end-trans-tasman-flights-in-october/",
+      "quote": "LATAM will drop its service from Sydney to Santiago via Auckland later this year. From October, the Chilean carrier will axe the Sydney–Auckland fifth-freedom leg of its Sydney–Santiago service, leaving the non-stop Sydney–Santiago and Auckland–Santiago services in place.",
+      "quote_origin": "model"
+    },
+    {
+      "category": "ground",
+      "text": "The orange AirportLink bus service carries passengers between Auckland Airport, Puhinui Station and Manukau Bus Station.",
+      "date": null,
+      "airlines": [],
+      "source_id": "at-govt",
+      "url": "https://at.govt.nz/bus-train-ferry/bus-services/airport-services",
+      "quote": "The orange AirportLink bus service carries passengers between Auckland Airport, Puhinui Station and Manukau Bus Station.",
+      "quote_origin": "model"
+    }
+  ],
+  "dropped": [
+    {
+      "text": "Air New Zealand operates non-stop flights to Auckland from two Sydney airports, Sydney Kingsford Smith Airport (SYD) and Western Sydney International Airport (WSI).",
+      "category": "operator",
+      "reasons": [
+        "claim is about another airport (WSI)"
+      ]
+    },
+    {
+      "text": "Qantas flies directly to Auckland from Sydney, Brisbane and Melbourne with a trip duration of between three and three-and-a-half hours.",
+      "category": "operator",
+      "reasons": [
+        "https://www.qantas.com/au/en/travel-info/travel-insider/read-before-you-leave-auckland.html: robots.txt unavailable (www.qantas.com)"
+      ]
+    },
+    {
+      "text": "Air New Zealand will operate three return services per week between Auckland and WSI using A320 and A321 aircraft.",
+      "category": "seasonal",
+      "reasons": [
+        "claim is about another airport (WSI)"
+      ]
+    },
+    {
+      "text": "Starting on June 16, Qantas extended its Sydney Kingsford Smith Airport (SYD) to Auckland Airport (AKL) trunk route to Faleolo International Airport (APW) with three weekly flights.",
+      "category": "seasonal",
+      "reasons": [
+        "claim is about another airport (APW)"
+      ]
+    },
+    {
+      "text": "Air New Zealand operates scheduled flights between Auckland Airport and Sydney Kingsford Smith Airport.",
+      "category": "operator",
+      "reasons": [
+        "https://aviationweek.com/air-transport/airports-networks/50-new-routes-launching-october-2026: HTTP 404"
+      ]
+    },
+    {
+      "text": "The airline's first flight from Auckland to Sydney was in April 1940.",
+      "category": "history",
+      "reasons": [
+        "claim refers to \"the airline\" without naming it"
+      ]
+    },
+    {
+      "text": "From 13 July 2017, Emirates suspended its daily EK418 and EK419 A380 flights between Sydney and Auckland, with those flights replaced by Qantas A330 services.",
+      "category": "history",
+      "reasons": [
+        "https://www.qantasnewsroom.com.au/media-releases/qantas-and-emirates-changes-to-sydney-auckland-route: robots.txt unavailable (www.qantasnewsroom.com.au)"
+      ]
+    },
+    {
+      "text": "Following the pandemic, LATAM resumed operations from Sydney to Santiago via Auckland in March 2022 with three weekly services and quickly scaled up to daily flights by December 2022.",
+      "category": "history",
+      "reasons": [
+        "https://austmine.com.au/Public/Public/News/Articles/2024/April/LATAM_Airlines.aspx: quote not on page"
+      ]
+    },
+    {
+      "text": "Auckland International Airport was officially opened on 29 January 1966.",
+      "category": "airport",
+      "reasons": [
+        "https://corporate.aucklandairport.co.nz/news/latest-media/2016/auckland-airport-celebrates-50-years: blocked (HTTP 403)"
+      ]
+    },
+    {
+      "text": "The T8 Airport & South Line is a suburban rail service operated by Sydney Trains, connecting the Sydney central business district with the southwestern suburbs via Sydney Airport.",
+      "category": "ground",
+      "reasons": [
+        "https://en.wikipedia.org/wiki/Airport_%26_South_Line: rejected source host (wikipedia.org)"
+      ]
+    },
+    {
+      "text": "Sydney Kingsford Smith Airport first opened on 9 January 1920.",
+      "category": "airport",
+      "reasons": [
+        "editor: verified (The Independent), but the page's airport card shows 'Opened 1933' from Wikidata; two different opening dates on one page would confuse readers until the airport data is reconciled"
+      ]
+    }
+  ],
+  "guide_written": true
+}

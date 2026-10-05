@@ -24,7 +24,6 @@ import { enrichmentFaqs, type EnrichmentFaqInput } from '@/components/airport-v2
 import {
   DEFAULT_OG_IMAGE,
   SITE_URL,
-  airportIsSubstantive,
   airportIsPublished,
   airportIntro,
   airportFaqs,
@@ -48,6 +47,7 @@ import { airportUsesTemplateV2 } from '@/lib/airport-template-v2';
 import AirportGuideV2, { formatCoordinates, formatDate, routeVintage } from '@/components/airport-v2/AirportGuideV2';
 import { airportGuideV2Faqs } from '@/components/airport-v2/faqs';
 import { getAirportGuide } from '@/lib/airport-guide';
+import { airportIsIndexable } from '@/lib/airport-index-gate';
 import { airportCityPhoto, airportV2MetaDescription, splitCeasedAirlines } from '@/lib/airport-v2';
 
 export const revalidate = 60;
@@ -156,7 +156,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: 'summary_large_image',
       images: [hero ? absoluteUrl(hero) : DEFAULT_OG_IMAGE],
     },
-    robots: robotsFor((AIRPORTS_INDEXABLE || airportIsPublished(a.iata)) && airportIsSubstantive(a, routes.length > 0)),
+    robots: robotsFor((AIRPORTS_INDEXABLE || airportIsPublished(a.iata)) && airportIsIndexable(a, routes.length > 0)),
   };
 }
 

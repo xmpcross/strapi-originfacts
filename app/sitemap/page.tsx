@@ -10,7 +10,8 @@ import {
 import { carrierOperatesRoute } from '@/lib/route-carriers';
 import { SECTIONS } from '@/lib/sections';
 import { LEGAL_DOCS } from '@/lib/legal';
-import { AIRLINES_INDEXABLE, AIRPORTS_INDEXABLE, airportIsPublished, airportIsSubstantive } from '@/lib/entity-seo';
+import { AIRLINES_INDEXABLE, AIRPORTS_INDEXABLE, airportIsPublished } from '@/lib/entity-seo';
+import { airportIsIndexable } from '@/lib/airport-index-gate';
 import { airlineGuideIsPublished, airlineIsIndexable } from '@/lib/airline-tier';
 import { airportPath } from '@/lib/airport-slugs';
 import { breadcrumbJsonLd } from '@/lib/jsonld';
@@ -59,7 +60,7 @@ export default async function SitemapPage() {
     .sort((a, b) => a.name.localeCompare(b.name));
 
   const airports = allAirports
-    .filter((a) => a.iata && (AIRPORTS_INDEXABLE || airportIsPublished(a.iata)) && airportIsSubstantive(a, coverage.originIatas.has(a.iata.toLowerCase())))
+    .filter((a) => a.iata && (AIRPORTS_INDEXABLE || airportIsPublished(a.iata)) && airportIsIndexable(a, coverage.originIatas.has(a.iata.toLowerCase())))
     .sort((a, b) => a.iata.localeCompare(b.iata));
 
   const linkClass = 'text-primary-emphasis hover:text-primary-highlight hover:underline';

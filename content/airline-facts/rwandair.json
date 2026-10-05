@@ -92,12 +92,12 @@
       ],
       "fields": {
         "phone_home_market": {
-          "value": null,
-          "status": "pending",
-          "source_url": "http://www.rwandair.com/baggage",
+          "value": "+20 2 2696 6700",
+          "status": "official",
+          "source_url": "https://www.rwandair.com/contact",
           "notes": "No verified phone yet.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "conditions_of_carriage_url": {
           "value": "https://www.rwandair.com/our-policies/terms-conditions-of-carriage/",

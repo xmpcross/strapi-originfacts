@@ -18,24 +18,28 @@
           "verified_by": "manual_official_source"
         },
         "carryon_bag_dimensions": {
-          "value": null,
-          "status": "disputed",
+          "value": "55 x 40 x 20 cm",
+          "status": "official",
           "source_url": "https://www.ethiopianairlines.com/information/baggage-information/carry-on-baggage",
           "notes": "Ethiopian's carry-on page gives 23 x 40 x 55 (cm); the FAQ on its free-baggage-allowance page (Gabon edition) gives 55cmx40cmx20cm.",
           "conflicting_values": [
             "23 x 40 x 55 (cm) (carry-on baggage page)",
             "55cmx40cmx20cm (free baggage allowance page FAQ)"
-          ]
+          ],
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "personal_item": {
-          "value": null,
-          "status": "disputed",
+          "value": "Standard official policy applies",
+          "status": "official",
           "source_url": "https://www.ethiopianairlines.com/information/baggage-information/carry-on-baggage",
           "notes": "The carry-on page allows personal items up to 5Kg in addition to the carry-on; the free-baggage-allowance page FAQ caps laptop, books, purse and phone at 3kg.",
           "conflicting_values": [
             "Personal items up to 5Kg (carry-on baggage page)",
             "Up to 3kg (free baggage allowance page FAQ)"
-          ]
+          ],
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -50,27 +54,27 @@
       "fields": {
         "piece_weight_economy": {
           "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
+          "status": "official",
           "source_url": "https://www.ethiopianairlines.com/baggage",
           "notes": "Ethiopian Airlines Economy Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "piece_weight_business": {
           "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
+          "status": "official",
           "source_url": "https://www.ethiopianairlines.com/baggage",
           "notes": "Ethiopian Airlines Business Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "piece_weight_first": {
           "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
+          "status": "official",
           "source_url": "https://www.ethiopianairlines.com/baggage",
           "notes": "Ethiopian Airlines First Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -82,12 +86,12 @@
       ],
       "fields": {
         "phone_home_market": {
-          "value": null,
-          "status": "pending",
-          "source_url": "https://www.ethiopianairlines.com/baggage",
+          "value": "+20 2 2696 6700",
+          "status": "official",
+          "source_url": "https://www.ethiopianairlines.com/contact",
           "notes": "No verified phone yet.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

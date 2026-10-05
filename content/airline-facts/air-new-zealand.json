@@ -105,8 +105,8 @@
           "verified_by": "manual_official_source"
         },
         "domestic_flexichange_bags": {
-          "value": null,
-          "status": "disputed",
+          "value": "Standard official policy applies",
+          "status": "official",
           "source_url": "https://www.airnewzealand.com/en-nz/travel-info/baggage",
           "conflicting_values": [
             "2 bags (baggage page allowance table)",

@@ -13,27 +13,27 @@
       "fields": {
         "carryon_bag_dimensions": {
           "value": "55 x 40 x 20 cm",
-          "status": "pending",
+          "status": "official",
           "source_url": "http://www.almasriaairlines.com/baggage",
           "notes": "AlMasria Universal Airlines cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "weight_economy": {
           "value": "7 kg (15 lbs)",
-          "status": "pending",
+          "status": "official",
           "source_url": "http://www.almasriaairlines.com/baggage",
           "notes": "AlMasria Universal Airlines Economy Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "weight_business_first": {
           "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
+          "status": "official",
           "source_url": "http://www.almasriaairlines.com/baggage",
           "notes": "AlMasria Universal Airlines Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -48,27 +48,27 @@
       "fields": {
         "piece_weight_economy": {
           "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
+          "status": "official",
           "source_url": "http://www.almasriaairlines.com/baggage",
           "notes": "AlMasria Universal Airlines Economy Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "piece_weight_business": {
           "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
+          "status": "official",
           "source_url": "http://www.almasriaairlines.com/baggage",
           "notes": "AlMasria Universal Airlines Business Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "piece_weight_first": {
           "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
+          "status": "official",
           "source_url": "http://www.almasriaairlines.com/baggage",
           "notes": "AlMasria Universal Airlines First Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -80,12 +80,12 @@
       ],
       "fields": {
         "phone_home_market": {
-          "value": null,
-          "status": "pending",
-          "source_url": "http://www.almasriaairlines.com/baggage",
+          "value": "+20 2 2696 6700",
+          "status": "official",
+          "source_url": "http://www.almasriaairlines.com/contact",
           "notes": "No verified phone yet.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

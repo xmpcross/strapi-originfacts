@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { CloudSun, Droplets, Thermometer, Wind } from 'lucide-react';
+import { CloudSun, Droplets, Wind } from 'lucide-react';
 import { baseSymbol, weatherKind, weatherLabel, type WeatherKind } from '@/lib/met-symbols';
 import type { AirportWeather } from '@/lib/met-weather';
 import s from './WeatherCard.module.css';
@@ -132,11 +132,6 @@ export default function WeatherCard({
   const temp = Math.round(cur.airTemperature);
   const rh = typeof cur.relativeHumidity === 'number' ? Math.round(cur.relativeHumidity) : null;
   const wind = typeof cur.windSpeedKmh === 'number' ? Math.round(cur.windSpeedKmh) : null;
-  const lo = weather.next24h?.min;
-  const hi = weather.next24h?.max;
-  const hasRange = typeof lo === 'number' && typeof hi === 'number';
-  const span = hasRange ? Math.max(hi - lo, 1) : 1;
-  const pos = hasRange ? Math.min(100, Math.max(0, ((cur.airTemperature - lo) / span) * 100)) : 0;
   // Faster fan for stronger wind: 6 s a turn at calm, 0.6 s in a gale.
   const fanSeconds = wind === null ? 3 : Math.max(0.6, 6 - wind / 8);
 
@@ -198,28 +193,6 @@ export default function WeatherCard({
             </div>
           )}
         </div>
-
-        {hasRange && (
-          <div>
-            <dt className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-white/80">
-              <Thermometer aria-hidden className="h-3.5 w-3.5" />
-              Next 24 h
-            </dt>
-            <dd className="mt-1 flex items-center gap-2.5 font-semibold">
-              <span>{Math.round(lo)}°</span>
-              <span aria-hidden className="relative h-2 flex-1 rounded-full bg-gradient-to-r from-sky-200 via-sand-300 to-orange-400">
-                <span
-                  className={`absolute top-1/2 h-3.5 w-3.5 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-white bg-forest-950 ${s.marker}`}
-                  style={{ left: `${pos}%` }}
-                />
-              </span>
-              <span>
-                <span className="sr-only">to </span>
-                {Math.round(hi)}°
-              </span>
-            </dd>
-          </div>
-        )}
 
         <p className="text-xs leading-5 text-white/80 [&_a]:text-white [&_a]:underline">{source}</p>
       </dl>

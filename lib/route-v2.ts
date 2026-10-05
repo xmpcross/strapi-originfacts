@@ -10,7 +10,11 @@
  *   - the distance is the route record's, checked against the great-circle
  *     distance between the two airports' coordinates;
  *   - the FAQ for routes without a sourced guide restates only the figures the
- *     page shows.
+ *     page shows;
+ *   - airport facts (size class, runways, opened, operator, passengers) and
+ *     the destination's monthly climate come from the free, open snapshots in
+ *     data/airport-enrichment (OurAirports, Wikidata, NASA POWER) via
+ *     lib/airport-enrichment.ts, each with its source and retrieval date.
  *
  * Server-only: reads the fact files from disk.
  */
@@ -18,6 +22,16 @@ import { getAirlineFacts, resolveModule, type FactField } from '@/lib/airline-fa
 import { formatUtcOffset, greatCircleKm, utcOffsetMinutes } from '@/lib/route-geo';
 import type { Faq } from '@/lib/entity-seo';
 import type { RouteGuide } from '@/lib/route-guide';
+import {
+  ENRICHMENT_SOURCES,
+  MONTH_SHORT,
+  airportTypeLabel,
+  climatePeriod,
+  formatOpened,
+  formatPassengers,
+  getAirportEnrichment,
+  metres,
+} from '@/lib/airport-enrichment';
 
 /* ------------------------------------------------------------------ *
  * Airline highlights
@@ -259,4 +273,80 @@ export function routeV2CitationOrder(guide: RouteGuide): Map<string, number> {
     .forEach((s) => s.paragraphs.forEach((p) => visit(p.sources)));
   guide.faqs.forEach((f) => visit(f.sources));
   return order;
+}
+
+/* ------------------------------------------------------------------ *
+ * Airport enrichment: key facts and destination climate
+ * ------------------------------------------------------------------ */
+
+export type RouteAirportFacts = {
+  /** OurAirports' own size class ("Large airport"), not an official category. */
+  typeLabel: string | null;
+  runwayCount: number;
+  longestRunway: { ident: string | null; metres: number; ft: number; surface: string | null } | null;
+  /** Wikidata date of official opening (P1619), or inception (P571) labelled as such. */
+  opened: { text: string; official: boolean } | null;
+  operators: string[];
+  passengers: { text: string; year: number; refUrl: string | null } | null;
+  /** Wikidata item, for the source link. */
+  qid: string | null;
+  /** Retrieval dates of the snapshots the values came from (YYYY-MM-DD). */
+  ourairportsRetrieved: string | null;
+  wikidataRetrieved: string | null;
+};
+
+/** Key facts for one end of the route, or null when neither snapshot has the airport. */
+export function routeAirportFacts(iata: string): RouteAirportFacts | null {
+  const e = getAirportEnrichment(iata);
+  const runways = e.oa?.runways ?? [];
+  const r = runways[0]; // the snapshot lists open runways longest first
+  const facts: RouteAirportFacts = {
+    typeLabel: airportTypeLabel(e.oa?.type),
+    runwayCount: runways.length,
+    longestRunway: r ? { ident: r.ident, metres: metres(r.lengthFt), ft: r.lengthFt, surface: r.surface } : null,
+    opened: e.wd?.opened ? { text: formatOpened(e.wd.opened), official: e.wd.opened.prop === 'P1619' } : null,
+    operators: (e.wd?.operators ?? []).map((o) => o.label).filter(Boolean),
+    passengers: e.wd?.patronage
+      ? { text: formatPassengers(e.wd.patronage.value), year: e.wd.patronage.year, refUrl: e.wd.patronage.refUrl }
+      : null,
+    qid: e.wd?.qid ?? null,
+    ourairportsRetrieved: e.oa ? ENRICHMENT_SOURCES.ourairports?.retrieved ?? null : null,
+    wikidataRetrieved: e.wd ? ENRICHMENT_SOURCES.wikidata?.retrieved ?? null : null,
+  };
+  const any = facts.typeLabel || facts.runwayCount || facts.opened || facts.operators.length || facts.passengers;
+  return any ? facts : null;
+}
+
+export type RouteClimate = {
+  /** "2016–2025" */
+  period: string;
+  lat: number;
+  lon: number;
+  retrieved: string | null;
+  months: { month: string; hi: number; lo: number; mm: number | null }[];
+  /** Index (0–11) of the month to call out: the current month when the page was rendered. */
+  current: number;
+};
+
+/** The destination's NASA POWER monthly normals (modelled), or null when the snapshot lacks the airport. */
+export function routeClimate(iata: string, at: Date = new Date()): RouteClimate | null {
+  const c = getAirportEnrichment(iata).climate;
+  if (!c || c.months.length !== 12) return null;
+  return {
+    period: climatePeriod(c),
+    lat: c.lat,
+    lon: c.lon,
+    retrieved: ENRICHMENT_SOURCES.climate?.retrieved ?? null,
+    months: c.months.map(([hi, lo, mm], i) => ({ month: MONTH_SHORT[i], hi, lo, mm })),
+    current: at.getUTCMonth(),
+  };
+}
+
+/**
+ * FAQ answer for the cheapest month in the fare data. It names the month and
+ * flight but no price: the page prints prices in the visitor's header currency
+ * on the client, and the FAQ (and its FAQPage JSON-LD) is static HTML.
+ */
+export function cheapestMonthAnswer(x: { monthLabel: string; fetched: string; flight: string }): string {
+  return `In fares found in recent Aviasales searches (fetched ${x.fetched}), the lowest one-way nonstop fare was in ${x.monthLabel}, on ${x.flight}. The table of lowest fares by month shows that fare in the currency chosen in the site header. Cached search fares change often; check the live price before booking.`;
 }

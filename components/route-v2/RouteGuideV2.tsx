@@ -5,16 +5,18 @@ import ScheduleWidget from '@/components/ScheduleWidget';
 import TpConsentGate from '@/components/TpConsentGate';
 import { Cite, MonthFaresTable, SeenFlightsTable, formatFetched } from '@/components/route-guide/RouteGuideBlocks';
 import type { GuideParagraph, GuideSection, GuideSource } from '@/lib/route-guide';
-import type { MonthFare, RouteFares } from '@/lib/route-fares';
-import type { AirlineHighlight, TimeDifference, ZoneInfo } from '@/lib/route-v2';
+import type { MonthFare, RouteFarePrices, RouteFares } from '@/lib/route-fares';
+import type { AirlineHighlight, RouteAirportFacts, RouteClimate, TimeDifference, ZoneInfo } from '@/lib/route-v2';
 import { formatMinutes, joinNames } from '@/lib/route-v2';
 import type { Faq } from '@/lib/entity-seo';
 import SectionNav, { type NavItem, type NavStatus } from './SectionNav';
+import { FarePrice, FarePriceProvider } from './FarePrices';
+import SourcesDisclosure from './SourcesDisclosure';
 
 /**
  * Flight-route page, v2 layout — a sibling of the airline and airport v2 pages
- * (components/airline-v2, components/airport-v2). Rendered only for slugs in
- * lib/route-template-v2.ts; every other route keeps the existing layout.
+ * (components/airline-v2, components/airport-v2). The default for every route
+ * (lib/route-template-v2.ts, which also holds the rollback switch).
  *
  * Data is not fetched here. The page route computes everything once (route
  * record, credible carriers, airline fact-file highlights, the sourced route
@@ -27,6 +29,14 @@ import SectionNav, { type NavItem, type NavStatus } from './SectionNav';
  *     the airlines a cited source confirms when the route has a guide;
  *   - airline baggage and check-in highlights are `official` fact-file fields
  *     only, each with its source page and date — otherwise "not yet verified";
+ *   - airport facts and the destination climate come from the open-data
+ *     snapshots in data/airport-enrichment, named with their retrieval date;
+ *     the climate is labelled as modelled (NASA POWER reanalysis);
+ *   - prices print in the visitor's header currency, client-side
+ *     (FarePrices.tsx); the server HTML holds a neutral placeholder, never a
+ *     currency symbol;
+ *   - cited prose carries footnote numbers into the Sources block; sections
+ *     with footnotes carry no extra "cited sources" pill;
  *   - derived values (time difference, distance check) say how they were
  *     derived; the flight time says whether it is fare data or an estimate;
  *   - the CMS `about` prose and CMS images are not shown: unsourced, generated;
@@ -47,6 +57,8 @@ export type RouteV2Airport = {
   /** Official website from the Wikidata-sourced links file, if listed. */
   officialSite: string | null;
   recordDate: string | null;
+  /** Key facts from OurAirports / Wikidata, when the snapshots have the airport. */
+  facts: RouteAirportFacts | null;
 };
 
 export type RouteV2Airline = {
@@ -92,6 +104,10 @@ export type RouteGuideV2Props = {
   flightTime: { text: string; basis: 'fares' | 'estimate' } | null;
   timeDiff: TimeDifference | null;
   fares: RouteFares | null;
+  /** The USD prices from `fares`, for the client price cells (other currencies are fetched). */
+  usdPrices: RouteFarePrices | null;
+  /** Destination monthly climate (NASA POWER, modelled), when the snapshot has it. */
+  climate: RouteClimate | null;
   carrierNames: Record<string, string>;
   cheapestMonth: MonthFare | null;
   routeRecordDate: string | null;
@@ -145,6 +161,7 @@ export default function RouteGuideV2(p: RouteGuideV2Props) {
     ...(hasMonths ? [{ id: 'fares-by-month', label: 'Lowest fares by month', status: 'live' as const }] : []),
     { id: 'prices', label: 'Fare calendar & schedule', status: 'live' },
     { id: 'airports', label: `The airports: ${o} & ${d}`, status: airportsSection ? 'sourced' : 'data' },
+    ...(p.climate ? [{ id: 'climate', label: `Weather in ${p.toName}`, status: 'data' as const }] : []),
     { id: 'getting-there', label: 'Getting to & from the airports', status: gettingThere ? 'sourced' : 'pending' },
     ...otherSections.map((s) => ({ id: s.id, label: navLabel(s.id, s.heading), status: 'sourced' as const })),
     ...(hasRelated ? [{ id: 'related-routes', label: 'Return & related routes', status: 'data' as const }] : []),
@@ -153,6 +170,7 @@ export default function RouteGuideV2(p: RouteGuideV2Props) {
   ];
 
   return (
+    <FarePriceProvider slug={p.slug} usd={p.usdPrices}>
     <div className="bg-[#fbfcff]" data-testid={`route-v2-page-${p.slug}`} data-template="v2">
       {/* ---------------------------------------------------------- header */}
       <header className="border-b border-forest-900/10 bg-white">
@@ -338,9 +356,12 @@ export default function RouteGuideV2(p: RouteGuideV2Props) {
 
           {p.cheapestMonth && (
             <Tile title="Lowest fare in recent searches" source={`Aviasales fare data · ${fetched}`} section="fares-by-month" linkText="By month">
-              <Big>US${Math.round(p.cheapestMonth.price).toLocaleString('en-US')}</Big>
+              <Big>
+                <FarePrice kind="month" k={p.cheapestMonth.month} />
+              </Big>
               <Sub>
-                One way, nonstop, {formatMonth(p.cheapestMonth.month)}. A cached search result, not a quote: check the live price.
+                One way, nonstop, {formatMonth(p.cheapestMonth.month)}, in the currency chosen in the site header. A cached search
+                result, not a quote: check the live price.
               </Sub>
             </Tile>
           )}
@@ -390,9 +411,7 @@ export default function RouteGuideV2(p: RouteGuideV2Props) {
                 id="airlines"
                 title={p.airlinesBasis === 'records' ? `Airlines on the ${o}–${d} route` : `Airlines flying ${o} → ${d} nonstop`}
                 badge={
-                  p.airlinesBasis === 'sourced' ? (
-                    <Badge tone="sourced">Cited sources</Badge>
-                  ) : p.airlinesBasis === 'fares' ? (
+                  p.airlinesBasis === 'sourced' ? undefined : p.airlinesBasis === 'fares' ? (
                     <Badge tone="live">Fare data · {fetched}</Badge>
                   ) : (
                     <Badge tone="data">Route record{p.routeRecordDate ? ` · ${p.routeRecordDate}` : ''}</Badge>
@@ -512,7 +531,7 @@ export default function RouteGuideV2(p: RouteGuideV2Props) {
             <Shell
               id="airports"
               title={`The airports: ${origin.name} and ${destination.name}`}
-              badge={<Badge tone="data">Airport records</Badge>}
+              badge={<Badge tone="data">{origin.facts || destination.facts ? 'Airport records · OurAirports · Wikidata' : 'Airport records'}</Badge>}
             >
               <ul className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <AirportCard airport={origin} role="Departure" />
@@ -534,9 +553,12 @@ export default function RouteGuideV2(p: RouteGuideV2Props) {
               </p>
             </Shell>
 
+            {/* ------------------------------------------------ destination climate */}
+            {p.climate && <ClimateSection climate={p.climate} toName={p.toName} airport={destination} />}
+
             {/* ------------------------------------------------ getting there */}
             {gettingThere ? (
-              <Shell id="getting-there" title={gettingThere.heading} badge={<Badge tone="sourced">Cited sources</Badge>}>
+              <Shell id="getting-there" title={gettingThere.heading}>
                 <CitedParagraphs paragraphs={gettingThere.paragraphs} order={order} />
               </Shell>
             ) : (
@@ -562,7 +584,7 @@ export default function RouteGuideV2(p: RouteGuideV2Props) {
 
             {/* ------------------------------------------------ other cited sections (route history…) */}
             {otherSections.map((s) => (
-              <Shell key={s.id} id={s.id} title={s.heading} badge={<Badge tone="sourced">Cited sources</Badge>}>
+              <Shell key={s.id} id={s.id} title={s.heading}>
                 <CitedParagraphs paragraphs={s.paragraphs} order={order} />
               </Shell>
             ))}
@@ -609,6 +631,13 @@ export default function RouteGuideV2(p: RouteGuideV2Props) {
 
             {/* ------------------------------------------------ sources */}
             <Shell id="sources" title="Sources">
+              <SourcesDisclosure
+                summary={
+                  guide && guide.sources.length > 0
+                    ? `Where each part of this page comes from, and the ${guide.sources.filter((s) => order.has(s.id)).length} numbered sources`
+                    : 'Where each part of this page comes from'
+                }
+              >
               <ul className="divide-y divide-forest-900/10 rounded-[0.3rem] border border-forest-900/10" aria-label="Where each part of this page comes from" data-testid="route-sources">
                 <li aria-hidden className="hidden bg-forest-50/60 px-4 py-2.5 text-xs font-semibold uppercase tracking-wider text-forest-900/75 sm:grid sm:grid-cols-[11rem_minmax(0,1fr)_10rem] sm:gap-4">
                   <span>What</span>
@@ -646,6 +675,30 @@ export default function RouteGuideV2(p: RouteGuideV2Props) {
                     Wikidata (official website property)
                   </SourceRow>
                 )}
+                {(origin.facts?.ourairportsRetrieved || destination.facts?.ourairportsRetrieved) && (
+                  <SourceRow what="Airport size class, runways" date={formatDay((origin.facts?.ourairportsRetrieved || destination.facts?.ourairportsRetrieved) as string)}>
+                    <ExternalLink href="https://ourairports.com/data/">OurAirports</ExternalLink> open data (public domain); the size
+                    class is OurAirports’ own, not an official category
+                  </SourceRow>
+                )}
+                {(origin.facts?.wikidataRetrieved || destination.facts?.wikidataRetrieved) && (
+                  <SourceRow what="Airport opened, operator, passengers" date={formatDay((origin.facts?.wikidataRetrieved || destination.facts?.wikidataRetrieved) as string)}>
+                    Wikidata (CC0), each airport’s own item; passenger figures are the latest year recorded there, with its reference
+                    where Wikidata gives one
+                  </SourceRow>
+                )}
+                {p.climate && (
+                  <SourceRow what={`Weather in ${p.toName}`} date={p.climate.period}>
+                    <ExternalLink href="https://power.larc.nasa.gov/">NASA POWER</ExternalLink> daily data (MERRA-2 reanalysis),
+                    averaged by month by Originfacts. Modelled, not weather-station readings
+                  </SourceRow>
+                )}
+                {fares && (
+                  <SourceRow what="Fare prices" date={fetched}>
+                    Travelpayouts Data API, asked in the currency chosen in the site header (Travelpayouts converts); shown after the
+                    page loads
+                  </SourceRow>
+                )}
                 <SourceRow what="Fare calendar, schedule" date="Live">
                   Aviasales widgets, loaded with advertising consent
                 </SourceRow>
@@ -678,6 +731,7 @@ export default function RouteGuideV2(p: RouteGuideV2Props) {
                   </ol>
                 </div>
               )}
+              </SourcesDisclosure>
               <p className="text-sm leading-6 text-forest-900/75">
                 Schedules, fares and airline rules change. Confirm with the airline before you travel.
               </p>
@@ -686,6 +740,7 @@ export default function RouteGuideV2(p: RouteGuideV2Props) {
         </div>
       </div>
     </div>
+    </FarePriceProvider>
   );
 }
 
@@ -736,6 +791,30 @@ function AirportEnd({ airport, role }: { airport: RouteV2Airport; role: 'From' |
 }
 
 function AirportCard({ airport, role }: { airport: RouteV2Airport; role: string }) {
+  const f = airport.facts;
+  const factRows: { label: string; value: ReactNode }[] = f
+    ? [
+        { label: 'Size class', value: f.typeLabel },
+        {
+          label: 'Runways',
+          value: f.runwayCount
+            ? `${f.runwayCount}${f.longestRunway ? `${f.runwayCount === 1 ? ': ' : ', longest '}${f.longestRunway.metres.toLocaleString('en-US')} m${f.longestRunway.ident ? ` (${f.longestRunway.ident})` : ''}` : ''}`
+            : null,
+        },
+        { label: f.opened?.official === false ? 'Inception' : 'Opened', value: f.opened?.text ?? null },
+        { label: 'Operator', value: f.operators.length ? f.operators.join(', ') : null },
+        {
+          label: 'Passengers',
+          value: f.passengers ? (
+            <>
+              {f.passengers.text} <span className="font-normal text-forest-900/75">in {f.passengers.year}</span>
+            </>
+          ) : null,
+        },
+      ].filter((r) => r.value)
+    : [];
+  const wdFacts = !!f && !!(f.opened || f.operators.length || f.passengers);
+  const oaFacts = !!f && !!(f.typeLabel || f.runwayCount);
   const rows: { label: string; value: ReactNode }[] = [
     { label: 'Codes', value: airport.icao ? `${airport.iata} · ${airport.icao} (IATA · ICAO)` : `${airport.iata} (IATA)` },
     { label: 'Serves', value: [...new Set([airport.city, airport.country].filter(Boolean))].join(', ') || null },
@@ -761,12 +840,100 @@ function AirportCard({ airport, role }: { airport: RouteV2Airport; role: string 
           </div>
         ))}
       </dl>
+      {factRows.length > 0 && f && (
+        <div className="mt-3 border-t border-forest-900/10 pt-3" data-testid={`route-v2-airport-facts-${airport.iata.toLowerCase()}`}>
+          <dl className="space-y-2 text-sm">
+            {factRows.map((r) => (
+              <div key={r.label} className="grid grid-cols-[6.5rem_minmax(0,1fr)] gap-2">
+                <dt className="text-forest-900/70">{r.label}</dt>
+                <dd className="font-medium text-forest-950 [overflow-wrap:anywhere]">{r.value}</dd>
+              </div>
+            ))}
+          </dl>
+          <p className="mt-2 text-xs leading-5 text-forest-900/70">
+            {oaFacts && <>Size class, runways: OurAirports{f.ourairportsRetrieved ? `, ${formatDay(f.ourairportsRetrieved)}` : ''}. </>}
+            {wdFacts && (
+              <>
+                {[f.opened ? (f.opened.official ? 'Opened' : 'Inception') : null, f.operators.length ? 'operator' : null, f.passengers ? 'passengers' : null]
+                  .filter(Boolean)
+                  .join(', ')
+                  .replace(/^./, (c) => c.toUpperCase())}
+                : {f.qid ? <ExternalLink href={`https://www.wikidata.org/wiki/${f.qid}`}>Wikidata</ExternalLink> : 'Wikidata'}
+                {f.wikidataRetrieved ? `, ${formatDay(f.wikidataRetrieved)}` : ''}
+                {f.passengers?.refUrl ? (
+                  <>
+                    {' '}(passengers citing <ExternalLink href={f.passengers.refUrl}>{host(f.passengers.refUrl)}</ExternalLink>)
+                  </>
+                ) : null}
+                .
+              </>
+            )}
+          </p>
+        </div>
+      )}
       <div className="mt-auto pt-4">
         <Link href={airport.href} className="text-sm font-semibold text-primary-emphasis underline-offset-2 hover:underline">
           {airport.city || airport.iata} airport guide <span aria-hidden>→</span>
         </Link>
       </div>
     </li>
+  );
+}
+
+function ClimateSection({ climate, toName, airport }: { climate: RouteClimate; toName: string; airport: RouteV2Airport }) {
+  const now = climate.months[climate.current];
+  const longMonth = new Date(Date.UTC(2000, climate.current, 1)).toLocaleDateString('en-GB', { month: 'long', timeZone: 'UTC' });
+  return (
+    <Shell
+      id="climate"
+      title={`Weather in ${toName}: average high, low and rain by month`}
+      badge={<Badge tone="data">NASA POWER · modelled · {climate.period}</Badge>}
+      source={
+        <p className="text-sm text-forest-900/75">
+          Averages of <ExternalLink href="https://power.larc.nasa.gov/">NASA POWER</ExternalLink> daily values for {climate.period} at{' '}
+          {climate.lat.toFixed(2)}°, {climate.lon.toFixed(2)}° near {airport.iata} (MERRA-2 reanalysis grid, about 50 km cells), worked out by
+          Originfacts. Modelled, not weather-station readings or a forecast.
+        </p>
+      }
+    >
+      <p className="text-[15px] leading-7 text-forest-900/85" data-testid="route-v2-climate-now">
+        In {longMonth}, {toName} averages a daily high of {Math.round(now.hi)}°C and a low of {Math.round(now.lo)}°C
+        {now.mm != null ? `, with about ${Math.round(now.mm)} mm of rain over the month` : ''}.
+      </p>
+      <div className="overflow-hidden rounded-[0.3rem] border border-forest-900/10">
+        <table className="w-full text-left text-sm" data-testid="route-v2-climate">
+          <caption className="sr-only">
+            Average daily high and low temperature and average monthly rain near {airport.iata}, {climate.period}
+          </caption>
+          <thead className="bg-forest-50/60 text-xs uppercase tracking-wider text-forest-900/75">
+            <tr>
+              <th scope="col" className="px-3 py-2 font-semibold">Month</th>
+              <th scope="col" className="px-3 py-2 font-semibold">High</th>
+              <th scope="col" className="px-3 py-2 font-semibold">Low</th>
+              <th scope="col" className="px-3 py-2 font-semibold">Rain</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-forest-900/10">
+            {climate.months.map((m, i) => (
+              <tr key={m.month} className={i === climate.current ? 'bg-sky-50' : undefined}>
+                <th scope="row" className="px-3 py-1.5 font-medium text-forest-950">
+                  {m.month}
+                  {i === climate.current && <span className="ml-2 text-xs font-normal text-sky-900">this month</span>}
+                </th>
+                <td className="px-3 py-1.5 font-semibold tabular-nums text-forest-950">{Math.round(m.hi)}°C</td>
+                <td className="px-3 py-1.5 tabular-nums text-forest-900/85">{Math.round(m.lo)}°C</td>
+                <td className="px-3 py-1.5 tabular-nums text-forest-900/85">{m.mm == null ? '—' : `${Math.round(m.mm)} mm`}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="text-sm leading-6 text-forest-900/75">
+        <Link href={airport.href} className="font-semibold text-primary-emphasis underline-offset-2 hover:underline">
+          {airport.city || airport.iata} airport guide <span aria-hidden>→</span>
+        </Link>
+      </p>
+    </Shell>
   );
 }
 

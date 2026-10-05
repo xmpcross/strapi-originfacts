@@ -12,28 +12,36 @@
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "http://www.siacargo.com/baggage",
-          "notes": "Singapore Airlines cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "Sum of length, width and height of each piece must not exceed 115 cm",
+          "status": "official",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/baggage/cabin-baggage/",
+          "notes": "Cabin baggage page: size limit for each piece, all classes.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "http://www.siacargo.com/baggage",
-          "notes": "Singapore Airlines Economy Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "1 piece, up to 7 kg (Premium Economy and Economy)",
+          "status": "official",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/baggage/cabin-baggage/",
+          "notes": "Cabin baggage page: Premium Economy and Economy allowance.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "http://www.siacargo.com/baggage",
-          "notes": "Singapore Airlines Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "2 pieces, up to 7 kg each (Suites, First and Business)",
+          "status": "official",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/baggage/cabin-baggage/",
+          "notes": "Cabin baggage page: Suites, First Class and Business Class allowance.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "personal_item": {
+          "value": "One extra item free of charge, such as a handbag, camera bag, document bag or laptop in a bag, up to 40 x 30 x 10 cm (80 cm combined); larger items count toward the cabin allowance",
+          "status": "official",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/baggage/cabin-baggage/",
+          "notes": "Cabin baggage page, additional items allowed on board.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -42,33 +50,101 @@
       "title": "Checked baggage",
       "required": [
         "piece_weight_economy",
+        "piece_weight_premium_economy",
         "piece_weight_business",
         "piece_weight_first"
       ],
       "fields": {
         "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "http://www.siacargo.com/baggage",
-          "notes": "Singapore Airlines Economy Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "30 kg total on Flexi and Standard fares; 25 kg total on Value and Lite fares",
+          "status": "official",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/baggage/checked-baggage/",
+          "notes": "Checked baggage page, weight concept (all destinations except Canada and the USA).",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "piece_weight_premium_economy": {
+          "value": "35 kg total",
+          "status": "official",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/baggage/checked-baggage/",
+          "notes": "Checked baggage page, weight concept.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.siacargo.com/baggage",
-          "notes": "Singapore Airlines Business Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "40 kg total",
+          "status": "official",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/baggage/checked-baggage/",
+          "notes": "Checked baggage page, weight concept.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.siacargo.com/baggage",
-          "notes": "Singapore Airlines First Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "50 kg total (Suites and First)",
+          "status": "official",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/baggage/checked-baggage/",
+          "notes": "Checked baggage page, weight concept.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "us_canada_pieces": {
+          "value": "Flights to and from Canada or the USA use pieces: 2 pieces up to 32 kg each in Suites, First and Business; 2 pieces up to 23 kg each in Premium Economy and Economy. Each bag's length, width and height must total no more than 158 cm",
+          "status": "official",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/baggage/checked-baggage/",
+          "notes": "Checked baggage page, piece concept.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "max_piece": {
+          "value": "No single checked bag may exceed 32 kg; heavier bags may have to be re-packed",
+          "status": "official",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/baggage/checked-baggage/",
+          "notes": "Checked baggage page, weight limitation.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "infant_allowance": {
+          "value": "Up to 10 kg on weight-concept routes (one piece of 23 kg or 32 kg, depending on cabin, to and from Canada or the USA)",
+          "status": "official",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/baggage/checked-baggage/",
+          "notes": "Checked baggage page, infant entitlement.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "required": [
+        "fare_name",
+        "seat_selection_included",
+        "change_cancellation_policy"
+      ],
+      "fields": {
+        "fare_name": {
+          "value": "Economy Lite (booking classes V and K)",
+          "status": "official",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/flying-withus/fare-types/",
+          "notes": "Fare types page: the entry Economy fare type, listed first of Lite, Value, Standard and Flexi.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "seat_selection_included": {
+          "value": "Advance seat selection is chargeable; seats can be chosen free when online check-in opens 48 hours before departure",
+          "status": "official",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/flying-withus/fare-types/",
+          "notes": "Fare types page, Economy Lite column, plus the seat-selection note.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "change_cancellation_policy": {
+          "value": "Cancellation, change and no-show are not allowed on Economy Lite",
+          "status": "official",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/flying-withus/fare-types/",
+          "notes": "Fare types page, Economy Lite column: cancellation, change and no-show marked 'Not allowed'.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },

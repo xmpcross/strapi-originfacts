@@ -66,7 +66,9 @@
      Pattern: clamp(min, calc(base-rem + vw), max).
      The middle calc() makes the size scale linearly with the viewport
      width; the clamp() caps it on phones and ultra-wide screens. */
-  h1 { font-size: clamp(1.75rem, calc(1.375rem + 1.5vw), 4rem); }
+  /* Page titles are 3rem everywhere. !important so per-page Tailwind sizes
+     (text-5xl, sm:text-6xl, ...) cannot reintroduce a different scale. */
+  h1 { font-size: 3rem !important; }
   h2 { font-size: clamp(1.5rem,  calc(1.325rem + 0.9vw), 2.8rem); }
   h3 { font-size: clamp(1.35rem, calc(1.3rem   + 0.6vw), 2rem); }
   h4 { font-size: clamp(1.2rem,  calc(1.275rem + 0.3vw), 1.5rem); }
@@ -162,7 +164,7 @@
 
 
   [data-testid^="airport-page-"] h1 {
-    font-size: clamp(2rem, 3.5vw, 3.25rem) !important;
+    font-size: 3rem !important;
     font-weight: 800 !important;
     line-height: 1.15 !important;
     letter-spacing: -0.025em !important;

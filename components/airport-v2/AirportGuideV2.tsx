@@ -202,7 +202,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
   ].filter((f) => f.value);
 
   return (
-    <div className="bg-forest-50" data-testid={`airport-v2-page-${code}`} data-template="v2">
+    <div className="bg-[#ffffff]" data-testid={`airport-v2-page-${code}`} data-template="v2">
       {/* ---------------------------------------------------------- header */}
       <header className="relative overflow-hidden border-b border-forest-900/10 bg-gradient-to-br from-white via-forest-50 to-sand-100">
         {/* decorative flight-path arcs */}

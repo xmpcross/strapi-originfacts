@@ -159,7 +159,7 @@ export default function AirlineGuideV2({ airline, routeFacts: rf, facts, allianc
   const headerFactCount = [airline.country, alliance, hubs.length, rf?.destinationCount].filter(Boolean).length;
 
   return (
-    <div className={`${s.root} bg-forest-50`} data-testid={`airline-page-${airline.slug}`} data-template="v2">
+    <div className={`${s.root} bg-[#ffffff]`} data-testid={`airline-page-${airline.slug}`} data-template="v2">
       {/* ---------------------------------------------------------- header */}
       <header className="relative overflow-hidden border-b border-forest-900/10 bg-gradient-to-br from-white via-forest-50 to-sand-100">
         {/* decorative flight-path arcs */}

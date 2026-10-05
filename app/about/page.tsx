@@ -4,10 +4,11 @@ import Link from 'next/link';
 import { clampDescription } from '@/lib/seo';
 import { JsonLd } from '@/components/SeoBlocks';
 import { ORG_ID, organizationJsonLd, absoluteUrl, breadcrumbJsonLd } from '@/lib/jsonld';
-import { listArticles, listCountriesBySlugs, mediaUrl, type StrapiArticle, type StrapiDestination } from '@/lib/strapi';
+import { listArticles, mediaUrl, type StrapiArticle } from '@/lib/strapi';
+import { SITE_PHOTOS, type SitePhoto } from '@/lib/site-photos';
 import { LEGAL_DOCS } from '@/lib/legal';
 
-// The page pulls destination imagery and article counts from Strapi, so it
+// The page pulls article counts and latest-article covers from Strapi, so it
 // re-renders hourly instead of freezing whatever the CMS returned at build.
 export const revalidate = 3600;
 
@@ -31,48 +32,11 @@ const aboutPageJsonLd = {
 };
 
 /* ------------------------------------------------------------------ */
-/* Imagery: country hero images already published on /destinations.   */
+/* Imagery: real, credited Unsplash photographs (lib/site-photos.ts).  */
+/* These replaced the AI-generated CMS destination heroes.            */
 /* ------------------------------------------------------------------ */
 
-const PHOTO_SLUGS = [
-  'japan',
-  'thailand',
-  'united-kingdom',
-  'germany',
-  'singapore',
-  'united-states',
-  'south-korea',
-  'australia',
-] as const;
-type PhotoSlug = (typeof PHOTO_SLUGS)[number];
-
-// Describes what each country's hero image shows. Falls back to the country
-// name for any slug not listed here.
-const PHOTO_ALT: Record<PhotoSlug, string> = {
-  japan: 'Mount Fuji reflected in a still lake, framed by cherry blossom',
-  thailand: 'Limestone cliffs and a white-sand cove on the Thai coast',
-  'united-kingdom': 'A floodlit castle on a rock above a city at dusk',
-  germany: 'A fairytale castle rising out of morning mist and autumn forest',
-  singapore: 'The Singapore waterfront skyline lit up at blue hour',
-  'united-states': 'Sunset over a deep canyon and winding river',
-  'south-korea': 'Traditional tiled rooftops in front of a modern skyline at sunrise',
-  australia: 'A red sandstone monolith rising from the desert at dusk',
-};
-
-type Photo = { slug: string; name: string; src: string; alt: string };
-
-function toPhoto(d: StrapiDestination | undefined): Photo | null {
-  if (!d) return null;
-  const src = mediaUrl(d.heroImage ?? null);
-  if (!src) return null;
-  const desc = PHOTO_ALT[d.slug as PhotoSlug];
-  return {
-    slug: d.slug,
-    name: d.name,
-    src,
-    alt: desc ? `${desc} — from our ${d.name} destination guide` : `${d.name} destination guide image`,
-  };
-}
+type Photo = SitePhoto;
 
 /* ------------------------------------------------------------------ */
 /* Copy (from the previous content/pages/about.md, restructured).     */
@@ -225,26 +189,23 @@ async function categorySnapshot(category: string) {
 }
 
 export default async function AboutPage() {
-  const [countries, articleTotal, snapshots] = await Promise.all([
-    listCountriesBySlugs([...PHOTO_SLUGS]).catch(() => [] as StrapiDestination[]),
+  const [articleTotal, snapshots] = await Promise.all([
     listArticles({ pageSize: 1 })
       .then((r) => r.meta?.pagination?.total ?? 0)
       .catch(() => 0),
     Promise.all(COVERAGE.map((c) => (c.category ? categorySnapshot(c.category) : Promise.resolve(null)))),
   ]);
 
-  const bySlug = new Map(countries.map((d) => [d.slug, d]));
-  const photo = (slug: PhotoSlug) => toPhoto(bySlug.get(slug));
   const legalLinks = LEGAL_DOCS.filter((d) => LEGAL_LINK_SLUGS.includes(d.slug));
 
-  const heroMain = photo('japan');
-  const heroSideA = photo('thailand');
-  const heroSideB = photo('united-kingdom');
-  const storyPhoto = photo('germany');
-  const bandPhoto = photo('singapore');
-  const howPhoto = photo('united-states');
-  const approachA = photo('south-korea');
-  const approachB = photo('australia');
+  const heroMain = SITE_PHOTOS['japan'];
+  const heroSideA = SITE_PHOTOS['thailand'];
+  const heroSideB = SITE_PHOTOS['united-kingdom'];
+  const storyPhoto = SITE_PHOTOS['germany'];
+  const bandPhoto = SITE_PHOTOS['singapore'];
+  const howPhoto = SITE_PHOTOS['united-states'];
+  const approachA = SITE_PHOTOS['south-korea'];
+  const approachB = SITE_PHOTOS['australia'];
 
   // Every number here is counted, not typed: articles from Strapi, the rest
   // from the lists this page renders.
@@ -494,6 +455,7 @@ export default async function AboutPage() {
             >
               Pictured: {bandPhoto.name} →
             </Link>
+            <PhotoCredit photo={bandPhoto} className="mt-2 block text-xs text-white/60" linkClassName="hover:text-white" />
           </div>
         </section>
       )}
@@ -746,6 +708,7 @@ export default async function AboutPage() {
           </div>
         </section>
       </div>
+      <PhotoCredits photos={[heroMain, heroSideA, heroSideB, storyPhoto, bandPhoto, howPhoto, approachA, approachB]} />
     </article>
   );
 }
@@ -803,6 +766,51 @@ function Caption({ photo }: { photo: Photo }) {
       <Link href={`/destinations/${photo.slug}`} className="hover:text-primary-emphasis">
         {photo.name} guide →
       </Link>
+      <PhotoCredit
+        photo={photo}
+        className="mt-1 block text-[0.7rem] font-normal normal-case tracking-normal text-forest-900/55"
+        linkClassName="underline-offset-2 hover:text-primary-emphasis hover:underline"
+      />
     </figcaption>
+  );
+}
+
+/** "Photo: Name / Unsplash", linked to the photographer and the photo page. */
+function PhotoCredit({ photo, className, linkClassName }: { photo: Photo; className: string; linkClassName: string }) {
+  return (
+    <span className={className}>
+      Photo:{' '}
+      <a href={photo.photographerUrl} rel="noopener" className={linkClassName}>
+        {photo.photographer}
+      </a>{' '}
+      /{' '}
+      <a href={photo.sourceUrl} rel="noopener" className={linkClassName}>
+        Unsplash
+      </a>
+    </span>
+  );
+}
+
+/** One discreet line crediting every photograph on the page, including the uncaptioned hero tiles. */
+function PhotoCredits({ photos }: { photos: Photo[] }) {
+  return (
+    <aside aria-label="Photo credits" className="mx-auto max-w-7xl px-4 pb-10 sm:px-6" data-testid="about-photo-credits">
+      <p className="border-t border-forest-900/15 pt-5 text-xs leading-relaxed text-forest-900/55">
+        <span className="font-semibold">Photo credits</span> (real photographs, Unsplash License):{' '}
+        {photos.map((p, i) => (
+          <span key={p.slug}>
+            {i > 0 && ' · '}
+            {p.place} by{' '}
+            <a href={p.photographerUrl} rel="noopener" className="underline-offset-2 hover:text-primary-emphasis hover:underline">
+              {p.photographer}
+            </a>{' '}
+            on{' '}
+            <a href={p.sourceUrl} rel="noopener" className="underline-offset-2 hover:text-primary-emphasis hover:underline">
+              Unsplash
+            </a>
+          </span>
+        ))}
+      </p>
+    </aside>
   );
 }

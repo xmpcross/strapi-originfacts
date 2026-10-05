@@ -1,0 +1,625 @@
+route_slug,carrier_slug,iata,reason,carrier_name,carrier_country,route_countries,explanation
+lhr-to-bkk,qantas,QF,codeshare-only,Qantas,Australia,United Kingdom -> Thailand,source lists the carrier only as a codeshare and neither end is in its home country
+kgl-to-ebb,air-canada,AC,codeshare-only,Air Canada,Canada,Rwanda -> Uganda,source lists the carrier only as a codeshare and neither end is in its home country
+kgl-to-ebb,air-france,AF,codeshare-only,Air France,France,Rwanda -> Uganda,source lists the carrier only as a codeshare and neither end is in its home country
+kgl-to-ebb,delta-air-lines,DL,codeshare-only,Delta Air Lines,United States,Rwanda -> Uganda,source lists the carrier only as a codeshare and neither end is in its home country
+kgl-to-ebb,lufthansa,LH,codeshare-only,Lufthansa,Germany,Rwanda -> Uganda,source lists the carrier only as a codeshare and neither end is in its home country
+kgl-to-ebb,egyptair,MS,codeshare-only,Egyptair,Egypt,Rwanda -> Uganda,source lists the carrier only as a codeshare and neither end is in its home country
+kgl-to-ebb,united-airlines,UA,codeshare-only,United Airlines,United States,Rwanda -> Uganda,source lists the carrier only as a codeshare and neither end is in its home country
+kgl-to-ebb,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,Rwanda -> Uganda,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+lax-to-nrt,air-india,AI,codeshare-only,Air India,India,United States -> Japan,source lists the carrier only as a codeshare and neither end is in its home country
+lax-to-nrt,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> Japan,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+nrt-to-lax,air-india,AI,codeshare-only,Air India,India,Japan -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+nrt-to-lax,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,Japan -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+cgk-to-sin,qantas,QF,codeshare-only,Qantas,Australia,Indonesia -> Singapore,source lists the carrier only as a codeshare and neither end is in its home country
+cgk-to-sin,ajet,VF,network-elsewhere,Ajet,Cyprus,Indonesia -> Singapore,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+cgk-to-sin,vietnam-airlines,VN,codeshare-only,Vietnam Airlines,Vietnam,Indonesia -> Singapore,source lists the carrier only as a codeshare and neither end is in its home country
+sin-to-cgk,qantas,QF,codeshare-only,Qantas,Australia,Singapore -> Indonesia,source lists the carrier only as a codeshare and neither end is in its home country
+sin-to-cgk,ajet,VF,network-elsewhere,Ajet,Cyprus,Singapore -> Indonesia,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+sin-to-cgk,vietnam-airlines,VN,codeshare-only,Vietnam Airlines,Vietnam,Singapore -> Indonesia,source lists the carrier only as a codeshare and neither end is in its home country
+icn-to-bkk,transnusa,8B,network-elsewhere,Transnusa,Indonesia,South Korea -> Thailand,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+icn-to-bkk,air-canada,AC,codeshare-only,Air Canada,Canada,South Korea -> Thailand,source lists the carrier only as a codeshare and neither end is in its home country
+icn-to-bkk,kenya-airways,KQ,codeshare-only,Kenya Airways,Kenya,South Korea -> Thailand,source lists the carrier only as a codeshare and neither end is in its home country
+bkk-to-icn,transnusa,8B,network-elsewhere,Transnusa,Indonesia,Thailand -> South Korea,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+bkk-to-icn,air-canada,AC,codeshare-only,Air Canada,Canada,Thailand -> South Korea,source lists the carrier only as a codeshare and neither end is in its home country
+bkk-to-icn,kenya-airways,KQ,codeshare-only,Kenya Airways,Kenya,Thailand -> South Korea,source lists the carrier only as a codeshare and neither end is in its home country
+bah-to-doh,american-airlines,AA,codeshare-only,American Airlines,United States,Bahrain -> Qatar,source lists the carrier only as a codeshare and neither end is in its home country
+bah-to-doh,air-canada,AC,codeshare-only,Air Canada,Canada,Bahrain -> Qatar,source lists the carrier only as a codeshare and neither end is in its home country
+bah-to-doh,luxwing,BN,network-elsewhere,Luxwing,Malta,Bahrain -> Qatar,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+bah-to-doh,iberia,IB,codeshare-only,Iberia,Spain,Bahrain -> Qatar,source lists the carrier only as a codeshare and neither end is in its home country
+bah-to-doh,united-airlines,UA,codeshare-only,United Airlines,United States,Bahrain -> Qatar,source lists the carrier only as a codeshare and neither end is in its home country
+bos-to-lhr,cyprus-airways,CY,code-reassigned,Cyprus Airways,Cyprus,United States -> United Kingdom,IATA code held by a different carrier per Duffel
+bos-to-lhr,gulf-air,GF,codeshare-only,Gulf Air,Bahrain,United States -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+bos-to-lhr,iberia,IB,codeshare-only,Iberia,Spain,United States -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+bos-to-lhr,klm-royal-dutch-airlines,KL,codeshare-only,KLM Royal Dutch Airlines,Netherlands,United States -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+bos-to-lhr,singapore-airlines,SQ,codeshare-only,Singapore Airlines,Singapore,United States -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+bos-to-lhr,united-nigeria-airlines,UN,network-elsewhere,United Nigeria Airlines,Nigeria,United States -> United Kingdom,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+lax-to-lhr,cyprus-airways,CY,code-reassigned,Cyprus Airways,Cyprus,United States -> United Kingdom,IATA code held by a different carrier per Duffel
+lax-to-lhr,iberia,IB,codeshare-only,Iberia,Spain,United States -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+lax-to-lhr,lufthansa,LH,codeshare-only,Lufthansa,Germany,United States -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+lax-to-lhr,united-nigeria-airlines,UN,network-elsewhere,United Nigeria Airlines,Nigeria,United States -> United Kingdom,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+lhr-to-bos,cyprus-airways,CY,code-reassigned,Cyprus Airways,Cyprus,United Kingdom -> United States,IATA code held by a different carrier per Duffel
+lhr-to-bos,gulf-air,GF,codeshare-only,Gulf Air,Bahrain,United Kingdom -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+lhr-to-bos,iberia,IB,codeshare-only,Iberia,Spain,United Kingdom -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+lhr-to-bos,klm-royal-dutch-airlines,KL,codeshare-only,KLM Royal Dutch Airlines,Netherlands,United Kingdom -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+lhr-to-bos,singapore-airlines,SQ,codeshare-only,Singapore Airlines,Singapore,United Kingdom -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+lhr-to-bos,united-nigeria-airlines,UN,network-elsewhere,United Nigeria Airlines,Nigeria,United Kingdom -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+lhr-to-jfk,air-india,AI,codeshare-only,Air India,India,United Kingdom -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+lhr-to-jfk,cyprus-airways,CY,code-reassigned,Cyprus Airways,Cyprus,United Kingdom -> United States,IATA code held by a different carrier per Duffel
+lhr-to-jfk,iberia,IB,codeshare-only,Iberia,Spain,United Kingdom -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+lhr-to-jfk,klm-royal-dutch-airlines,KL,codeshare-only,KLM Royal Dutch Airlines,Netherlands,United Kingdom -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+lhr-to-jfk,singapore-airlines,SQ,codeshare-only,Singapore Airlines,Singapore,United Kingdom -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+lhr-to-lax,cyprus-airways,CY,code-reassigned,Cyprus Airways,Cyprus,United Kingdom -> United States,IATA code held by a different carrier per Duffel
+lhr-to-lax,iberia,IB,codeshare-only,Iberia,Spain,United Kingdom -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+lhr-to-lax,lufthansa,LH,codeshare-only,Lufthansa,Germany,United Kingdom -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+lhr-to-lax,united-nigeria-airlines,UN,network-elsewhere,United Nigeria Airlines,Nigeria,United Kingdom -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+xiy-to-hgh,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+uio-to-gye,american-airlines,AA,foreign-domestic,American Airlines,United States,Ecuador -> Ecuador,domestic route outside the carrier's home country
+uio-to-gye,air-france,AF,foreign-domestic,Air France,France,Ecuador -> Ecuador,domestic route outside the carrier's home country
+uio-to-gye,avianca,AV,foreign-domestic,Avianca,Colombia,Ecuador -> Ecuador,domestic route outside the carrier's home country
+uio-to-gye,tame,EQ,ceased,TAME,Ecuador,Ecuador -> Ecuador,sourced cessation date before the route record
+uio-to-gye,iberia,IB,foreign-domestic,Iberia,Spain,Ecuador -> Ecuador,domestic route outside the carrier's home country
+uio-to-gye,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,Ecuador -> Ecuador,domestic route outside the carrier's home country
+kul-to-sin,air-india,AI,codeshare-only,Air India,India,Malaysia -> Singapore,source lists the carrier only as a codeshare and neither end is in its home country
+kul-to-sin,silkair,MI,ceased,SilkAir,Singapore,Malaysia -> Singapore,sourced cessation date before the route record
+sin-to-kul,air-india,AI,codeshare-only,Air India,India,Singapore -> Malaysia,source lists the carrier only as a codeshare and neither end is in its home country
+sin-to-kul,silkair,MI,ceased,SilkAir,Singapore,Singapore -> Malaysia,sourced cessation date before the route record
+sin-to-kul,myway-airlines,MJ,codeshare-only,Myway Airlines,Georgia,Singapore -> Malaysia,source lists the carrier only as a codeshare and neither end is in its home country
+urc-to-xiy,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+akl-to-syd,american-airlines,AA,codeshare-only,American Airlines,United States,New Zealand -> Australia,source lists the carrier only as a codeshare and neither end is in its home country
+akl-to-syd,air-djibouti,DJ,network-elsewhere,Air Djibouti,Djibouti,New Zealand -> Australia,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+akl-to-syd,singapore-airlines,SQ,codeshare-only,Singapore Airlines,Singapore,New Zealand -> Australia,source lists the carrier only as a codeshare and neither end is in its home country
+akl-to-syd,air-tahiti-nui,TN,codeshare-only,Air Tahiti Nui,France,New Zealand -> Australia,source lists the carrier only as a codeshare and neither end is in its home country
+jfk-to-lhr,air-india,AI,codeshare-only,Air India,India,United States -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+jfk-to-lhr,cyprus-airways,CY,code-reassigned,Cyprus Airways,Cyprus,United States -> United Kingdom,IATA code held by a different carrier per Duffel
+jfk-to-lhr,iberia,IB,codeshare-only,Iberia,Spain,United States -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+jfk-to-lhr,klm-royal-dutch-airlines,KL,codeshare-only,KLM Royal Dutch Airlines,Netherlands,United States -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+add-to-krt,air-canada,AC,codeshare-only,Air Canada,Canada,Ethiopia -> Sudan,source lists the carrier only as a codeshare and neither end is in its home country
+add-to-krt,air-france,AF,codeshare-only,Air France,France,Ethiopia -> Sudan,source lists the carrier only as a codeshare and neither end is in its home country
+add-to-krt,delta-air-lines,DL,codeshare-only,Delta Air Lines,United States,Ethiopia -> Sudan,source lists the carrier only as a codeshare and neither end is in its home country
+add-to-krt,austrian-airlines,OS,codeshare-only,Austrian Airlines,Austria,Ethiopia -> Sudan,source lists the carrier only as a codeshare and neither end is in its home country
+add-to-krt,sas-scandinavian,SK,codeshare-only,SAS Scandinavian,Sweden,Ethiopia -> Sudan,source lists the carrier only as a codeshare and neither end is in its home country
+add-to-krt,united-airlines,UA,codeshare-only,United Airlines,United States,Ethiopia -> Sudan,source lists the carrier only as a codeshare and neither end is in its home country
+syd-to-akl,american-airlines,AA,codeshare-only,American Airlines,United States,Australia -> New Zealand,source lists the carrier only as a codeshare and neither end is in its home country
+syd-to-akl,air-djibouti,DJ,network-elsewhere,Air Djibouti,Djibouti,Australia -> New Zealand,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+syd-to-akl,singapore-airlines,SQ,codeshare-only,Singapore Airlines,Singapore,Australia -> New Zealand,source lists the carrier only as a codeshare and neither end is in its home country
+syd-to-akl,air-tahiti-nui,TN,codeshare-only,Air Tahiti Nui,France,Australia -> New Zealand,source lists the carrier only as a codeshare and neither end is in its home country
+krt-to-add,air-canada,AC,codeshare-only,Air Canada,Canada,Sudan -> Ethiopia,source lists the carrier only as a codeshare and neither end is in its home country
+krt-to-add,air-france,AF,codeshare-only,Air France,France,Sudan -> Ethiopia,source lists the carrier only as a codeshare and neither end is in its home country
+krt-to-add,delta-air-lines,DL,codeshare-only,Delta Air Lines,United States,Sudan -> Ethiopia,source lists the carrier only as a codeshare and neither end is in its home country
+krt-to-add,austrian-airlines,OS,codeshare-only,Austrian Airlines,Austria,Sudan -> Ethiopia,source lists the carrier only as a codeshare and neither end is in its home country
+krt-to-add,sas-scandinavian,SK,codeshare-only,SAS Scandinavian,Sweden,Sudan -> Ethiopia,source lists the carrier only as a codeshare and neither end is in its home country
+krt-to-add,united-airlines,UA,codeshare-only,United Airlines,United States,Sudan -> Ethiopia,source lists the carrier only as a codeshare and neither end is in its home country
+kul-to-cgk,air-france,AF,codeshare-only,Air France,France,Malaysia -> Indonesia,source lists the carrier only as a codeshare and neither end is in its home country
+kul-to-cgk,srilankan-airlines,UL,codeshare-only,SriLankan Airlines,Sri Lanka,Malaysia -> Indonesia,source lists the carrier only as a codeshare and neither end is in its home country
+pvg-to-tpe,lift-airline,GE,network-elsewhere,LIFT Airline,South Africa,China -> Taiwan,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+sha-to-tsa,lift-airline,GE,network-elsewhere,LIFT Airline,South Africa,China -> Taiwan,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+tpe-to-pvg,lift-airline,GE,network-elsewhere,LIFT Airline,South Africa,Taiwan -> China,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+hgh-to-szx,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+tsa-to-sha,lift-airline,GE,network-elsewhere,LIFT Airline,South Africa,Taiwan -> China,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+bkk-to-hkg,air-madagascar,MD,codeshare-only,Air Madagascar,Madagascar,Thailand -> Hong Kong,source lists the carrier only as a codeshare and neither end is in its home country
+hkg-to-bkk,air-madagascar,MD,codeshare-only,Air Madagascar,Madagascar,Hong Kong -> Thailand,source lists the carrier only as a codeshare and neither end is in its home country
+bkk-to-kul,gulf-air,GF,codeshare-only,Gulf Air,Bahrain,Thailand -> Malaysia,source lists the carrier only as a codeshare and neither end is in its home country
+bkk-to-kul,air-madagascar,MD,codeshare-only,Air Madagascar,Madagascar,Thailand -> Malaysia,source lists the carrier only as a codeshare and neither end is in its home country
+kul-to-bkk,gulf-air,GF,codeshare-only,Gulf Air,Bahrain,Malaysia -> Thailand,source lists the carrier only as a codeshare and neither end is in its home country
+kul-to-bkk,air-madagascar,MD,codeshare-only,Air Madagascar,Madagascar,Malaysia -> Thailand,source lists the carrier only as a codeshare and neither end is in its home country
+can-to-ckg,air-france,AF,foreign-domestic,Air France,France,China -> China,domestic route outside the carrier's home country
+can-to-ckg,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+ckg-to-can,air-france,AF,foreign-domestic,Air France,France,China -> China,domestic route outside the carrier's home country
+ckg-to-can,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+auh-to-mct,american-airlines,AA,codeshare-only,American Airlines,United States,United Arab Emirates -> Oman,source lists the carrier only as a codeshare and neither end is in its home country
+auh-to-mct,iberia,IB,codeshare-only,Iberia,Spain,United Arab Emirates -> Oman,source lists the carrier only as a codeshare and neither end is in its home country
+doh-to-bah,american-airlines,AA,codeshare-only,American Airlines,United States,Qatar -> Bahrain,source lists the carrier only as a codeshare and neither end is in its home country
+doh-to-bah,air-canada,AC,codeshare-only,Air Canada,Canada,Qatar -> Bahrain,source lists the carrier only as a codeshare and neither end is in its home country
+doh-to-bah,luxwing,BN,network-elsewhere,Luxwing,Malta,Qatar -> Bahrain,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+doh-to-bah,iberia,IB,codeshare-only,Iberia,Spain,Qatar -> Bahrain,source lists the carrier only as a codeshare and neither end is in its home country
+doh-to-bah,united-airlines,UA,codeshare-only,United Airlines,United States,Qatar -> Bahrain,source lists the carrier only as a codeshare and neither end is in its home country
+jfk-to-mad,air-france,AF,codeshare-only,Air France,France,United States -> Spain,source lists the carrier only as a codeshare and neither end is in its home country
+las-to-lax,fiji-airways,FJ,foreign-domestic,Fiji Airways,Fiji,United States -> United States,domestic route outside the carrier's home country
+las-to-lax,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+las-to-lax,westjet,WS,foreign-domestic,WestJet,Canada,United States -> United States,domestic route outside the carrier's home country
+lax-to-sfo,gulf-air,GF,foreign-domestic,Gulf Air,Bahrain,United States -> United States,domestic route outside the carrier's home country
+lax-to-sfo,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+lax-to-sfo,virgin-america,VX,ceased,Virgin America,United States,United States -> United States,sourced cessation date before the route record
+lax-to-sfo,westjet,WS,foreign-domestic,WestJet,Canada,United States -> United States,domestic route outside the carrier's home country
+mad-to-jfk,air-france,AF,codeshare-only,Air France,France,Spain -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+lax-to-syd,lufthansa,LH,codeshare-only,Lufthansa,Germany,United States -> Australia,source lists the carrier only as a codeshare and neither end is in its home country
+lax-to-syd,air-new-zealand,NZ,codeshare-only,Air New Zealand,New Zealand,United States -> Australia,source lists the carrier only as a codeshare and neither end is in its home country
+lax-to-syd,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> Australia,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+mel-to-syd,american-airlines,AA,foreign-domestic,American Airlines,United States,Australia -> Australia,domestic route outside the carrier's home country
+mel-to-syd,air-djibouti,DJ,network-elsewhere,Air Djibouti,Djibouti,Australia -> Australia,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+mel-to-syd,lufthansa,LH,foreign-domestic,Lufthansa,Germany,Australia -> Australia,domestic route outside the carrier's home country
+mel-to-syd,philippine-airlines,PR,foreign-domestic,Philippine Airlines,Philippines,Australia -> Australia,domestic route outside the carrier's home country
+mel-to-syd,united-airlines,UA,foreign-domestic,United Airlines,United States,Australia -> Australia,domestic route outside the carrier's home country
+mel-to-syd,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,Australia -> Australia,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+ord-to-msp,gulf-air,GF,foreign-domestic,Gulf Air,Bahrain,United States -> United States,domestic route outside the carrier's home country
+ord-to-msp,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+scl-to-lim,american-airlines,AA,codeshare-only,American Airlines,United States,Chile -> Peru,source lists the carrier only as a codeshare and neither end is in its home country
+scl-to-lim,korean-air,KE,codeshare-only,Korean Air,Republic of Korea,Chile -> Peru,source lists the carrier only as a codeshare and neither end is in its home country
+scl-to-lim,united-airlines,UA,codeshare-only,United Airlines,United States,Chile -> Peru,source lists the carrier only as a codeshare and neither end is in its home country
+syd-to-lax,lufthansa,LH,codeshare-only,Lufthansa,Germany,Australia -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+syd-to-lax,air-new-zealand,NZ,codeshare-only,Air New Zealand,New Zealand,Australia -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+syd-to-lax,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,Australia -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+syd-to-mel,american-airlines,AA,foreign-domestic,American Airlines,United States,Australia -> Australia,domestic route outside the carrier's home country
+syd-to-mel,air-djibouti,DJ,network-elsewhere,Air Djibouti,Djibouti,Australia -> Australia,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+syd-to-mel,lufthansa,LH,foreign-domestic,Lufthansa,Germany,Australia -> Australia,domestic route outside the carrier's home country
+syd-to-mel,philippine-airlines,PR,foreign-domestic,Philippine Airlines,Philippines,Australia -> Australia,domestic route outside the carrier's home country
+syd-to-mel,united-airlines,UA,foreign-domestic,United Airlines,United States,Australia -> Australia,domestic route outside the carrier's home country
+syd-to-mel,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,Australia -> Australia,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+cgk-to-kul,air-france,AF,codeshare-only,Air France,France,Indonesia -> Malaysia,source lists the carrier only as a codeshare and neither end is in its home country
+cgk-to-kul,srilankan-airlines,UL,codeshare-only,SriLankan Airlines,Sri Lanka,Indonesia -> Malaysia,source lists the carrier only as a codeshare and neither end is in its home country
+ngo-to-pvg,klm-royal-dutch-airlines,KL,codeshare-only,KLM Royal Dutch Airlines,Netherlands,Japan -> China,source lists the carrier only as a codeshare and neither end is in its home country
+dps-to-sin,qantas,QF,codeshare-only,Qantas,Australia,Indonesia -> Singapore,source lists the carrier only as a codeshare and neither end is in its home country
+dps-to-sin,ajet,VF,network-elsewhere,Ajet,Cyprus,Indonesia -> Singapore,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+bkk-to-sin,air-india,AI,codeshare-only,Air India,India,Thailand -> Singapore,source lists the carrier only as a codeshare and neither end is in its home country
+bkk-to-sin,air-madagascar,MD,codeshare-only,Air Madagascar,Madagascar,Thailand -> Singapore,source lists the carrier only as a codeshare and neither end is in its home country
+bkk-to-sin,sas-scandinavian,SK,codeshare-only,SAS Scandinavian,Sweden,Thailand -> Singapore,source lists the carrier only as a codeshare and neither end is in its home country
+sin-to-dps,qantas,QF,codeshare-only,Qantas,Australia,Singapore -> Indonesia,source lists the carrier only as a codeshare and neither end is in its home country
+sin-to-dps,ajet,VF,network-elsewhere,Ajet,Cyprus,Singapore -> Indonesia,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+kix-to-tpe,lift-airline,GE,network-elsewhere,LIFT Airline,South Africa,Japan -> Taiwan,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+sin-to-bkk,air-india,AI,codeshare-only,Air India,India,Singapore -> Thailand,source lists the carrier only as a codeshare and neither end is in its home country
+sin-to-bkk,air-madagascar,MD,codeshare-only,Air Madagascar,Madagascar,Singapore -> Thailand,source lists the carrier only as a codeshare and neither end is in its home country
+sin-to-bkk,sas-scandinavian,SK,codeshare-only,SAS Scandinavian,Sweden,Singapore -> Thailand,source lists the carrier only as a codeshare and neither end is in its home country
+tpe-to-kix,lift-airline,GE,network-elsewhere,LIFT Airline,South Africa,Taiwan -> Japan,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+ctu-to-kmg,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+ctu-to-xiy,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+xiy-to-ctu,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+blr-to-maa,air-mauritius,MK,foreign-domestic,Air Mauritius,Mauritius,India -> India,domestic route outside the carrier's home country
+blr-to-maa,jetlite,S2,ceased,JetLite,India,India -> India,sourced cessation date before the route record
+bom-to-maa,guyane-express-fly,G8,code-reassigned,Guyane Express Fly,French Guiana,India -> India,IATA code held by a different carrier per Duffel
+bom-to-maa,jetlite,S2,ceased,JetLite,India,India -> India,sourced cessation date before the route record
+maa-to-bom,guyane-express-fly,G8,code-reassigned,Guyane Express Fly,French Guiana,India -> India,IATA code held by a different carrier per Duffel
+maa-to-bom,jetlite,S2,ceased,JetLite,India,India -> India,sourced cessation date before the route record
+pvg-to-tao,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+szx-to-pvg,all-nippon-airways,NH,foreign-domestic,All Nippon Airways,Japan,China -> China,domestic route outside the carrier's home country
+tao-to-pvg,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+cdg-to-jfk,iberia,IB,codeshare-only,Iberia,Spain,France -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+chc-to-syd,american-airlines,AA,codeshare-only,American Airlines,United States,New Zealand -> Australia,source lists the carrier only as a codeshare and neither end is in its home country
+chc-to-syd,air-djibouti,DJ,network-elsewhere,Air Djibouti,Djibouti,New Zealand -> Australia,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+chc-to-syd,asiana-airlines,OZ,codeshare-only,Asiana Airlines,South Korea,New Zealand -> Australia,source lists the carrier only as a codeshare and neither end is in its home country
+den-to-dfw,gulf-air,GF,foreign-domestic,Gulf Air,Bahrain,United States -> United States,domestic route outside the carrier's home country
+den-to-dfw,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+hnl-to-nrt,thai-airways,TG,codeshare-only,THAI Airways,Thailand,United States -> Japan,source lists the carrier only as a codeshare and neither end is in its home country
+hnl-to-nrt,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> Japan,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+jfk-to-cdg,iberia,IB,codeshare-only,Iberia,Spain,United States -> France,source lists the carrier only as a codeshare and neither end is in its home country
+jfk-to-lax,qantas,QF,foreign-domestic,Qantas,Australia,United States -> United States,domestic route outside the carrier's home country
+jfk-to-lax,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+jfk-to-lax,virgin-america,VX,ceased,Virgin America,United States,United States -> United States,sourced cessation date before the route record
+lax-to-jfk,qantas,QF,foreign-domestic,Qantas,Australia,United States -> United States,domestic route outside the carrier's home country
+lax-to-jfk,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+lax-to-jfk,virgin-america,VX,ceased,Virgin America,United States,United States -> United States,sourced cessation date before the route record
+lax-to-las,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+lax-to-las,westjet,WS,foreign-domestic,WestJet,Canada,United States -> United States,domestic route outside the carrier's home country
+lax-to-mex,air-new-zealand,NZ,codeshare-only,Air New Zealand,New Zealand,United States -> Mexico,source lists the carrier only as a codeshare and neither end is in its home country
+lax-to-mex,qantas,QF,codeshare-only,Qantas,Australia,United States -> Mexico,source lists the carrier only as a codeshare and neither end is in its home country
+lim-to-scl,american-airlines,AA,codeshare-only,American Airlines,United States,Peru -> Chile,source lists the carrier only as a codeshare and neither end is in its home country
+lim-to-scl,korean-air,KE,codeshare-only,Korean Air,Republic of Korea,Peru -> Chile,source lists the carrier only as a codeshare and neither end is in its home country
+mex-to-lax,air-new-zealand,NZ,codeshare-only,Air New Zealand,New Zealand,Mexico -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+mex-to-lax,qantas,QF,codeshare-only,Qantas,Australia,Mexico -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+nrt-to-ord,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,Japan -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+nrt-to-hnl,thai-airways,TG,codeshare-only,THAI Airways,Thailand,Japan -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+nrt-to-hnl,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,Japan -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+ord-to-nrt,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> Japan,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+syd-to-chc,american-airlines,AA,codeshare-only,American Airlines,United States,Australia -> New Zealand,source lists the carrier only as a codeshare and neither end is in its home country
+syd-to-chc,air-djibouti,DJ,network-elsewhere,Air Djibouti,Djibouti,Australia -> New Zealand,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+syd-to-chc,asiana-airlines,OZ,codeshare-only,Asiana Airlines,South Korea,Australia -> New Zealand,source lists the carrier only as a codeshare and neither end is in its home country
+sfo-to-lax,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+sfo-to-lax,virgin-america,VX,ceased,Virgin America,United States,United States -> United States,sourced cessation date before the route record
+sfo-to-lax,westjet,WS,foreign-domestic,WestJet,Canada,United States -> United States,domestic route outside the carrier's home country
+sin-to-bne,bonza,AB,network-elsewhere,Bonza,Australia,Singapore -> Australia,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+sin-to-bne,air-new-zealand,NZ,codeshare-only,Air New Zealand,New Zealand,Singapore -> Australia,source lists the carrier only as a codeshare and neither end is in its home country
+bne-to-sin,bonza,AB,network-elsewhere,Bonza,Australia,Australia -> Singapore,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+bne-to-sin,air-new-zealand,NZ,codeshare-only,Air New Zealand,New Zealand,Australia -> Singapore,source lists the carrier only as a codeshare and neither end is in its home country
+bjm-to-nbo,air-canada,AC,codeshare-only,Air Canada,Canada,Burundi -> Kenya,source lists the carrier only as a codeshare and neither end is in its home country
+bjm-to-nbo,air-france,AF,codeshare-only,Air France,France,Burundi -> Kenya,source lists the carrier only as a codeshare and neither end is in its home country
+bjm-to-nbo,klm-royal-dutch-airlines,KL,codeshare-only,KLM Royal Dutch Airlines,Netherlands,Burundi -> Kenya,source lists the carrier only as a codeshare and neither end is in its home country
+bjm-to-nbo,lufthansa,LH,codeshare-only,Lufthansa,Germany,Burundi -> Kenya,source lists the carrier only as a codeshare and neither end is in its home country
+bjm-to-nbo,united-airlines,UA,codeshare-only,United Airlines,United States,Burundi -> Kenya,source lists the carrier only as a codeshare and neither end is in its home country
+bjm-to-nbo,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,Burundi -> Kenya,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+icn-to-sfo,air-india,AI,codeshare-only,Air India,India,South Korea -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+icn-to-sfo,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,South Korea -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+nrt-to-sin,air-india,AI,codeshare-only,Air India,India,Japan -> Singapore,source lists the carrier only as a codeshare and neither end is in its home country
+nrt-to-sin,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,Japan -> Singapore,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+sfo-to-icn,air-india,AI,codeshare-only,Air India,India,United States -> South Korea,source lists the carrier only as a codeshare and neither end is in its home country
+sfo-to-icn,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> South Korea,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+sin-to-nrt,air-india,AI,codeshare-only,Air India,India,Singapore -> Japan,source lists the carrier only as a codeshare and neither end is in its home country
+sin-to-nrt,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,Singapore -> Japan,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+fco-to-mxp,toki-air,BV,code-reassigned,Toki Air,Italy,Italy -> Italy,IATA code held by a different carrier per Duffel
+fco-to-mxp,cyprus-airways,CY,code-reassigned,Cyprus Airways,Cyprus,Italy -> Italy,IATA code held by a different carrier per Duffel
+fco-to-mxp,central-airlines,I9,network-elsewhere,Central Airlines,China,Italy -> Italy,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+fco-to-mxp,global-aviation-gea,IG,network-elsewhere,Global Aviation (GEA),South Africa,Italy -> Italy,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+mxp-to-fco,toki-air,BV,code-reassigned,Toki Air,Italy,Italy -> Italy,IATA code held by a different carrier per Duffel
+mxp-to-fco,central-airlines,I9,network-elsewhere,Central Airlines,China,Italy -> Italy,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+mxp-to-fco,global-aviation-gea,IG,network-elsewhere,Global Aviation (GEA),South Africa,Italy -> Italy,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+mxp-to-fco,korean-air,KE,foreign-domestic,Korean Air,Republic of Korea,Italy -> Italy,domestic route outside the carrier's home country
+akl-to-mel,air-djibouti,DJ,network-elsewhere,Air Djibouti,Djibouti,New Zealand -> Australia,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+akl-to-mel,air-tahiti-nui,TN,codeshare-only,Air Tahiti Nui,France,New Zealand -> Australia,source lists the carrier only as a codeshare and neither end is in its home country
+mel-to-akl,air-djibouti,DJ,network-elsewhere,Air Djibouti,Djibouti,Australia -> New Zealand,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+mel-to-akl,air-tahiti-nui,TN,codeshare-only,Air Tahiti Nui,France,Australia -> New Zealand,source lists the carrier only as a codeshare and neither end is in its home country
+sin-to-syd,iberia,IB,codeshare-only,Iberia,Spain,Singapore -> Australia,source lists the carrier only as a codeshare and neither end is in its home country
+syd-to-sin,iberia,IB,codeshare-only,Iberia,Spain,Australia -> Singapore,source lists the carrier only as a codeshare and neither end is in its home country
+can-to-wuh,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+wuh-to-can,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+ogg-to-koa,malta-air,MW,network-elsewhere,Malta Air,Malta,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+ogg-to-koa,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+lim-to-cuz,iberia,IB,foreign-domestic,Iberia,Spain,Peru -> Peru,domestic route outside the carrier's home country
+lim-to-cuz,apa-guam,P9,network-elsewhere,APA Guam,Guam,Peru -> Peru,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+lim-to-cuz,wizz-air-malta,W4,foreign-domestic,Wizz Air Malta,Malta,Peru -> Peru,domestic route outside the carrier's home country
+sin-to-tpe,garuda-indonesia,GA,codeshare-only,Garuda Indonesia,Indonesia,Singapore -> Taiwan,source lists the carrier only as a codeshare and neither end is in its home country
+sin-to-tpe,lift-airline,GE,network-elsewhere,LIFT Airline,South Africa,Singapore -> Taiwan,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+tpe-to-sin,garuda-indonesia,GA,codeshare-only,Garuda Indonesia,Indonesia,Taiwan -> Singapore,source lists the carrier only as a codeshare and neither end is in its home country
+tpe-to-sin,lift-airline,GE,network-elsewhere,LIFT Airline,South Africa,Taiwan -> Singapore,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+ckg-to-pvg,all-nippon-airways,NH,foreign-domestic,All Nippon Airways,Japan,China -> China,domestic route outside the carrier's home country
+dlc-to-hgh,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+lxa-to-ckg,air-france,AF,foreign-domestic,Air France,France,China -> China,domestic route outside the carrier's home country
+lxa-to-ckg,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+pvg-to-ckg,all-nippon-airways,NH,foreign-domestic,All Nippon Airways,Japan,China -> China,domestic route outside the carrier's home country
+blr-to-bom,guyane-express-fly,G8,code-reassigned,Guyane Express Fly,French Guiana,India -> India,IATA code held by a different carrier per Duffel
+blr-to-bom,jetlite,S2,ceased,JetLite,India,India -> India,sourced cessation date before the route record
+blr-to-del,guyane-express-fly,G8,code-reassigned,Guyane Express Fly,French Guiana,India -> India,IATA code held by a different carrier per Duffel
+blr-to-del,jetlite,S2,ceased,JetLite,India,India -> India,sourced cessation date before the route record
+bom-to-blr,guyane-express-fly,G8,code-reassigned,Guyane Express Fly,French Guiana,India -> India,IATA code held by a different carrier per Duffel
+bom-to-blr,jetlite,S2,ceased,JetLite,India,India -> India,sourced cessation date before the route record
+bom-to-del,guyane-express-fly,G8,code-reassigned,Guyane Express Fly,French Guiana,India -> India,IATA code held by a different carrier per Duffel
+bom-to-del,jetlite,S2,ceased,JetLite,India,India -> India,sourced cessation date before the route record
+bom-to-goi,guyane-express-fly,G8,code-reassigned,Guyane Express Fly,French Guiana,India -> India,IATA code held by a different carrier per Duffel
+bom-to-goi,jetlite,S2,ceased,JetLite,India,India -> India,sourced cessation date before the route record
+cok-to-bom,guyane-express-fly,G8,code-reassigned,Guyane Express Fly,French Guiana,India -> India,IATA code held by a different carrier per Duffel
+cok-to-bom,jetlite,S2,ceased,JetLite,India,India -> India,sourced cessation date before the route record
+del-to-blr,guyane-express-fly,G8,code-reassigned,Guyane Express Fly,French Guiana,India -> India,IATA code held by a different carrier per Duffel
+del-to-blr,jetlite,S2,ceased,JetLite,India,India -> India,sourced cessation date before the route record
+del-to-pnq,guyane-express-fly,G8,code-reassigned,Guyane Express Fly,French Guiana,India -> India,IATA code held by a different carrier per Duffel
+del-to-pnq,jetlite,S2,ceased,JetLite,India,India -> India,sourced cessation date before the route record
+del-to-bom,guyane-express-fly,G8,code-reassigned,Guyane Express Fly,French Guiana,India -> India,IATA code held by a different carrier per Duffel
+del-to-bom,jetlite,S2,ceased,JetLite,India,India -> India,sourced cessation date before the route record
+del-to-sxr,guyane-express-fly,G8,code-reassigned,Guyane Express Fly,French Guiana,India -> India,IATA code held by a different carrier per Duffel
+del-to-sxr,jetlite,S2,ceased,JetLite,India,India -> India,sourced cessation date before the route record
+goi-to-bom,guyane-express-fly,G8,code-reassigned,Guyane Express Fly,French Guiana,India -> India,IATA code held by a different carrier per Duffel
+goi-to-bom,jetlite,S2,ceased,JetLite,India,India -> India,sourced cessation date before the route record
+pnq-to-del,guyane-express-fly,G8,code-reassigned,Guyane Express Fly,French Guiana,India -> India,IATA code held by a different carrier per Duffel
+pnq-to-del,jetlite,S2,ceased,JetLite,India,India -> India,sourced cessation date before the route record
+sxr-to-del,guyane-express-fly,G8,code-reassigned,Guyane Express Fly,French Guiana,India -> India,IATA code held by a different carrier per Duffel
+sxr-to-del,jetlite,S2,ceased,JetLite,India,India -> India,sourced cessation date before the route record
+lhw-to-urc,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+ljg-to-kmg,air-france,AF,foreign-domestic,Air France,France,China -> China,domestic route outside the carrier's home country
+mad-to-lis,air-moldova,9U,ceased,Air Moldova,Moldova,Spain -> Portugal,sourced cessation date before the route record
+mad-to-lis,aeromexico,AM,codeshare-only,Aeroméxico,Mexico,Spain -> Portugal,source lists the carrier only as a codeshare and neither end is in its home country
+akl-to-bne,american-airlines,AA,codeshare-only,American Airlines,United States,New Zealand -> Australia,source lists the carrier only as a codeshare and neither end is in its home country
+akl-to-bne,air-djibouti,DJ,network-elsewhere,Air Djibouti,Djibouti,New Zealand -> Australia,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+akl-to-bne,air-tahiti-nui,TN,codeshare-only,Air Tahiti Nui,France,New Zealand -> Australia,source lists the carrier only as a codeshare and neither end is in its home country
+bne-to-akl,american-airlines,AA,codeshare-only,American Airlines,United States,Australia -> New Zealand,source lists the carrier only as a codeshare and neither end is in its home country
+bne-to-akl,air-djibouti,DJ,network-elsewhere,Air Djibouti,Djibouti,Australia -> New Zealand,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+bne-to-akl,air-tahiti-nui,TN,codeshare-only,Air Tahiti Nui,France,Australia -> New Zealand,source lists the carrier only as a codeshare and neither end is in its home country
+cdg-to-ord,iberia,IB,codeshare-only,Iberia,Spain,France -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+cdg-to-ord,lufthansa,LH,codeshare-only,Lufthansa,Germany,France -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+cdg-to-ord,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,France -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+dfw-to-den,gulf-air,GF,foreign-domestic,Gulf Air,Bahrain,United States -> United States,domestic route outside the carrier's home country
+dfw-to-den,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+ewr-to-lhr,cyprus-airways,CY,code-reassigned,Cyprus Airways,Cyprus,United States -> United Kingdom,IATA code held by a different carrier per Duffel
+ewr-to-lhr,iberia,IB,codeshare-only,Iberia,Spain,United States -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+ewr-to-lhr,lufthansa,LH,codeshare-only,Lufthansa,Germany,United States -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+ewr-to-lhr,singapore-airlines,SQ,codeshare-only,Singapore Airlines,Singapore,United States -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+hnl-to-lax,air-france,AF,foreign-domestic,Air France,France,United States -> United States,domestic route outside the carrier's home country
+hnl-to-lax,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,United States -> United States,domestic route outside the carrier's home country
+hnl-to-lax,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+lhr-to-sfo,iberia,IB,codeshare-only,Iberia,Spain,United Kingdom -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+lhr-to-sfo,lufthansa,LH,codeshare-only,Lufthansa,Germany,United Kingdom -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+lhr-to-sfo,air-new-zealand,NZ,codeshare-only,Air New Zealand,New Zealand,United Kingdom -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+lhr-to-sfo,united-nigeria-airlines,UN,network-elsewhere,United Nigeria Airlines,Nigeria,United Kingdom -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+lhr-to-yvr,american-airlines,AA,codeshare-only,American Airlines,United States,United Kingdom -> Canada,source lists the carrier only as a codeshare and neither end is in its home country
+lhr-to-yvr,iberia,IB,codeshare-only,Iberia,Spain,United Kingdom -> Canada,source lists the carrier only as a codeshare and neither end is in its home country
+lhr-to-yvr,lufthansa,LH,codeshare-only,Lufthansa,Germany,United Kingdom -> Canada,source lists the carrier only as a codeshare and neither end is in its home country
+lhr-to-yvr,srilankan-airlines,UL,codeshare-only,SriLankan Airlines,Sri Lanka,United Kingdom -> Canada,source lists the carrier only as a codeshare and neither end is in its home country
+mct-to-auh,american-airlines,AA,codeshare-only,American Airlines,United States,Oman -> United Arab Emirates,source lists the carrier only as a codeshare and neither end is in its home country
+mct-to-auh,iberia,IB,codeshare-only,Iberia,Spain,Oman -> United Arab Emirates,source lists the carrier only as a codeshare and neither end is in its home country
+msp-to-ord,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+ord-to-cdg,iberia,IB,codeshare-only,Iberia,Spain,United States -> France,source lists the carrier only as a codeshare and neither end is in its home country
+ord-to-cdg,lufthansa,LH,codeshare-only,Lufthansa,Germany,United States -> France,source lists the carrier only as a codeshare and neither end is in its home country
+ord-to-cdg,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> France,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+ord-to-yyz,etihad-airways,EY,codeshare-only,Etihad Airways,United Arab Emirates,United States -> Canada,source lists the carrier only as a codeshare and neither end is in its home country
+ord-to-yyz,iberia,IB,codeshare-only,Iberia,Spain,United States -> Canada,source lists the carrier only as a codeshare and neither end is in its home country
+ord-to-lga,etihad-airways,EY,foreign-domestic,Etihad Airways,United Arab Emirates,United States -> United States,domestic route outside the carrier's home country
+ord-to-lga,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+pdx-to-sfo,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+pdx-to-sfo,virgin-america,VX,ceased,Virgin America,United States,United States -> United States,sourced cessation date before the route record
+sea-to-ord,etihad-airways,EY,foreign-domestic,Etihad Airways,United Arab Emirates,United States -> United States,domestic route outside the carrier's home country
+sea-to-ord,gulf-air,GF,foreign-domestic,Gulf Air,Bahrain,United States -> United States,domestic route outside the carrier's home country
+sea-to-ord,royal-jordanian,RJ,foreign-domestic,Royal Jordanian,Jordan,United States -> United States,domestic route outside the carrier's home country
+sea-to-ord,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+sfo-to-lhr,iberia,IB,codeshare-only,Iberia,Spain,United States -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+sfo-to-lhr,lufthansa,LH,codeshare-only,Lufthansa,Germany,United States -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+sfo-to-lhr,air-new-zealand,NZ,codeshare-only,Air New Zealand,New Zealand,United States -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+sfo-to-lhr,united-nigeria-airlines,UN,network-elsewhere,United Nigeria Airlines,Nigeria,United States -> United Kingdom,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+sea-to-sfo,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,United States -> United States,domestic route outside the carrier's home country
+sea-to-sfo,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+sea-to-sfo,virgin-america,VX,ceased,Virgin America,United States,United States -> United States,sourced cessation date before the route record
+sfo-to-pdx,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+sfo-to-pdx,virgin-america,VX,ceased,Virgin America,United States,United States -> United States,sourced cessation date before the route record
+yvr-to-lhr,american-airlines,AA,codeshare-only,American Airlines,United States,Canada -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+yvr-to-lhr,iberia,IB,codeshare-only,Iberia,Spain,Canada -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+yvr-to-lhr,lufthansa,LH,codeshare-only,Lufthansa,Germany,Canada -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+yvr-to-lhr,srilankan-airlines,UL,codeshare-only,SriLankan Airlines,Sri Lanka,Canada -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+sfo-to-sea,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,United States -> United States,domestic route outside the carrier's home country
+sfo-to-sea,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+sfo-to-sea,virgin-america,VX,ceased,Virgin America,United States,United States -> United States,sourced cessation date before the route record
+yyz-to-ord,etihad-airways,EY,codeshare-only,Etihad Airways,United Arab Emirates,Canada -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+yyz-to-ord,iberia,IB,codeshare-only,Iberia,Spain,Canada -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+abj-to-bko,air-canada,AC,codeshare-only,Air Canada,Canada,Ivory Coast -> Mali,source lists the carrier only as a codeshare and neither end is in its home country
+abj-to-bko,dan-air,DN,network-elsewhere,Dan Air,India,Ivory Coast -> Mali,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+abj-to-bko,aix-connect,I5,network-elsewhere,AIX Connect,India,Ivory Coast -> Mali,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+abj-to-bko,lufthansa,LH,codeshare-only,Lufthansa,Germany,Ivory Coast -> Mali,source lists the carrier only as a codeshare and neither end is in its home country
+abj-to-bko,united-airlines,UA,codeshare-only,United Airlines,United States,Ivory Coast -> Mali,source lists the carrier only as a codeshare and neither end is in its home country
+abj-to-bko,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,Ivory Coast -> Mali,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+bko-to-abj,air-canada,AC,codeshare-only,Air Canada,Canada,Mali -> Ivory Coast,source lists the carrier only as a codeshare and neither end is in its home country
+bko-to-abj,dan-air,DN,network-elsewhere,Dan Air,India,Mali -> Ivory Coast,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+bko-to-abj,aix-connect,I5,network-elsewhere,AIX Connect,India,Mali -> Ivory Coast,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+bko-to-abj,lufthansa,LH,codeshare-only,Lufthansa,Germany,Mali -> Ivory Coast,source lists the carrier only as a codeshare and neither end is in its home country
+bko-to-abj,united-airlines,UA,codeshare-only,United Airlines,United States,Mali -> Ivory Coast,source lists the carrier only as a codeshare and neither end is in its home country
+bko-to-abj,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,Mali -> Ivory Coast,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+cdg-to-yul,delta-air-lines,DL,codeshare-only,Delta Air Lines,United States,France -> Canada,source lists the carrier only as a codeshare and neither end is in its home country
+cdg-to-yul,lufthansa,LH,codeshare-only,Lufthansa,Germany,France -> Canada,source lists the carrier only as a codeshare and neither end is in its home country
+cdg-to-yul,united-airlines,UA,codeshare-only,United Airlines,United States,France -> Canada,source lists the carrier only as a codeshare and neither end is in its home country
+hre-to-lun,air-france,AF,codeshare-only,Air France,France,Zimbabwe -> Zambia,source lists the carrier only as a codeshare and neither end is in its home country
+hre-to-lun,klm-royal-dutch-airlines,KL,codeshare-only,KLM Royal Dutch Airlines,Netherlands,Zimbabwe -> Zambia,source lists the carrier only as a codeshare and neither end is in its home country
+hre-to-lun,lufthansa,LH,codeshare-only,Lufthansa,Germany,Zimbabwe -> Zambia,source lists the carrier only as a codeshare and neither end is in its home country
+coo-to-abj,air-canada,AC,codeshare-only,Air Canada,Canada,Benin -> Ivory Coast,source lists the carrier only as a codeshare and neither end is in its home country
+coo-to-abj,dan-air,DN,network-elsewhere,Dan Air,India,Benin -> Ivory Coast,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+coo-to-abj,lufthansa,LH,codeshare-only,Lufthansa,Germany,Benin -> Ivory Coast,source lists the carrier only as a codeshare and neither end is in its home country
+coo-to-abj,united-airlines,UA,codeshare-only,United Airlines,United States,Benin -> Ivory Coast,source lists the carrier only as a codeshare and neither end is in its home country
+coo-to-abj,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,Benin -> Ivory Coast,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+eze-to-gru,latam-airlines,LA,codeshare-only,LATAM Airlines,Chile,Argentina -> Brazil,source lists the carrier only as a codeshare and neither end is in its home country
+eze-to-gru,tap-air-portugal,TP,codeshare-only,TAP Air Portugal,Portugal,Argentina -> Brazil,source lists the carrier only as a codeshare and neither end is in its home country
+cpt-to-jnb,mango,JE,code-reassigned,Mango,South Africa,South Africa -> South Africa,IATA code held by a different carrier per Duffel
+cpt-to-jnb,asman-airlines,MN,code-reassigned,Asman Airlines,Kyrgyzstan,South Africa -> South Africa,IATA code held by a different carrier per Duffel
+cpt-to-jnb,qatar-airways,QR,foreign-domestic,Qatar Airways,Qatar,South Africa -> South Africa,domestic route outside the carrier's home country
+cpt-to-jnb,singapore-airlines,SQ,foreign-domestic,Singapore Airlines,Singapore,South Africa -> South Africa,domestic route outside the carrier's home country
+cpt-to-jnb,virgin-australia,VA,foreign-domestic,Virgin Australia,Australia,South Africa -> South Africa,domestic route outside the carrier's home country
+fra-to-sin,iberia,IB,codeshare-only,Iberia,Spain,Germany -> Singapore,source lists the carrier only as a codeshare and neither end is in its home country
+fra-to-sin,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,Germany -> Singapore,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+jnb-to-cpt,mango,JE,code-reassigned,Mango,South Africa,South Africa -> South Africa,IATA code held by a different carrier per Duffel
+jnb-to-cpt,asman-airlines,MN,code-reassigned,Asman Airlines,Kyrgyzstan,South Africa -> South Africa,IATA code held by a different carrier per Duffel
+jnb-to-cpt,qatar-airways,QR,foreign-domestic,Qatar Airways,Qatar,South Africa -> South Africa,domestic route outside the carrier's home country
+jnb-to-cpt,singapore-airlines,SQ,foreign-domestic,Singapore Airlines,Singapore,South Africa -> South Africa,domestic route outside the carrier's home country
+jnb-to-cpt,virgin-australia,VA,foreign-domestic,Virgin Australia,Australia,South Africa -> South Africa,domestic route outside the carrier's home country
+sin-to-fra,iberia,IB,codeshare-only,Iberia,Spain,Singapore -> Germany,source lists the carrier only as a codeshare and neither end is in its home country
+sin-to-fra,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,Singapore -> Germany,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+csx-to-pek,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+dlc-to-xiy,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+hfe-to-xmn,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+hgh-to-syx,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+pek-to-dlc,all-nippon-airways,NH,foreign-domestic,All Nippon Airways,Japan,China -> China,domestic route outside the carrier's home country
+pek-to-pvg,all-nippon-airways,NH,foreign-domestic,All Nippon Airways,Japan,China -> China,domestic route outside the carrier's home country
+pek-to-pvg,air-new-zealand,NZ,foreign-domestic,Air New Zealand,New Zealand,China -> China,domestic route outside the carrier's home country
+pek-to-pvg,united-airlines,UA,foreign-domestic,United Airlines,United States,China -> China,domestic route outside the carrier's home country
+pek-to-pvg,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,China -> China,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+pvg-to-szx,all-nippon-airways,NH,foreign-domestic,All Nippon Airways,Japan,China -> China,domestic route outside the carrier's home country
+she-to-tao,lufthansa,LH,foreign-domestic,Lufthansa,Germany,China -> China,domestic route outside the carrier's home country
+syx-to-hgh,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+tao-to-hgh,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+tao-to-she,lufthansa,LH,foreign-domestic,Lufthansa,Germany,China -> China,domestic route outside the carrier's home country
+xiy-to-dlc,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+xmn-to-hfe,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+xiy-to-wuh,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+gig-to-gru,delta-air-lines,DL,foreign-domestic,Delta Air Lines,United States,Brazil -> Brazil,domestic route outside the carrier's home country
+gig-to-gru,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,Brazil -> Brazil,domestic route outside the carrier's home country
+gig-to-gru,united-airlines,UA,foreign-domestic,United Airlines,United States,Brazil -> Brazil,domestic route outside the carrier's home country
+gig-to-gru,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,Brazil -> Brazil,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+gru-to-gig,delta-air-lines,DL,foreign-domestic,Delta Air Lines,United States,Brazil -> Brazil,domestic route outside the carrier's home country
+gru-to-gig,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,Brazil -> Brazil,domestic route outside the carrier's home country
+gru-to-gig,united-airlines,UA,foreign-domestic,United Airlines,United States,Brazil -> Brazil,domestic route outside the carrier's home country
+gru-to-gig,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,Brazil -> Brazil,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+koa-to-ogg,malta-air,MW,network-elsewhere,Malta Air,Malta,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+koa-to-ogg,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+cuz-to-lim,aeromexico,AM,foreign-domestic,Aeroméxico,Mexico,Peru -> Peru,domestic route outside the carrier's home country
+cuz-to-lim,apa-guam,P9,network-elsewhere,APA Guam,Guam,Peru -> Peru,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+cuz-to-lim,wizz-air-malta,W4,foreign-domestic,Wizz Air Malta,Malta,Peru -> Peru,domestic route outside the carrier's home country
+lfw-to-oua,air-canada,AC,codeshare-only,Air Canada,Canada,Togo -> Burkina Faso,source lists the carrier only as a codeshare and neither end is in its home country
+lfw-to-oua,lufthansa,LH,codeshare-only,Lufthansa,Germany,Togo -> Burkina Faso,source lists the carrier only as a codeshare and neither end is in its home country
+lfw-to-oua,united-airlines,UA,codeshare-only,United Airlines,United States,Togo -> Burkina Faso,source lists the carrier only as a codeshare and neither end is in its home country
+lfw-to-oua,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,Togo -> Burkina Faso,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+nim-to-oua,delta-air-lines,DL,codeshare-only,Delta Air Lines,United States,Niger -> Burkina Faso,source lists the carrier only as a codeshare and neither end is in its home country
+nim-to-oua,dan-air,DN,network-elsewhere,Dan Air,India,Niger -> Burkina Faso,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+nim-to-oua,klm-royal-dutch-airlines,KL,codeshare-only,KLM Royal Dutch Airlines,Netherlands,Niger -> Burkina Faso,source lists the carrier only as a codeshare and neither end is in its home country
+oua-to-lfw,air-canada,AC,codeshare-only,Air Canada,Canada,Burkina Faso -> Togo,source lists the carrier only as a codeshare and neither end is in its home country
+oua-to-lfw,lufthansa,LH,codeshare-only,Lufthansa,Germany,Burkina Faso -> Togo,source lists the carrier only as a codeshare and neither end is in its home country
+oua-to-lfw,united-airlines,UA,codeshare-only,United Airlines,United States,Burkina Faso -> Togo,source lists the carrier only as a codeshare and neither end is in its home country
+oua-to-lfw,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,Burkina Faso -> Togo,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+mnl-to-sin,garuda-indonesia,GA,codeshare-only,Garuda Indonesia,Indonesia,Philippines -> Singapore,source lists the carrier only as a codeshare and neither end is in its home country
+sin-to-mnl,garuda-indonesia,GA,codeshare-only,Garuda Indonesia,Indonesia,Singapore -> Philippines,source lists the carrier only as a codeshare and neither end is in its home country
+han-to-sin,silkair,MI,ceased,SilkAir,Singapore,Vietnam -> Singapore,sourced cessation date before the route record
+hkg-to-sin,air-india,AI,codeshare-only,Air India,India,Hong Kong -> Singapore,source lists the carrier only as a codeshare and neither end is in its home country
+hkg-to-sin,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,Hong Kong -> Singapore,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+sin-to-han,silkair,MI,ceased,SilkAir,Singapore,Singapore -> Vietnam,sourced cessation date before the route record
+sin-to-hkg,air-india,AI,codeshare-only,Air India,India,Singapore -> Hong Kong,source lists the carrier only as a codeshare and neither end is in its home country
+sin-to-hkg,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,Singapore -> Hong Kong,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+ckg-to-jzh,air-france,AF,foreign-domestic,Air France,France,China -> China,domestic route outside the carrier's home country
+ckg-to-lxa,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+ckg-to-pek,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+ctu-to-csx,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+ctu-to-pek,all-nippon-airways,NH,foreign-domestic,All Nippon Airways,Japan,China -> China,domestic route outside the carrier's home country
+ctu-to-pvg,all-nippon-airways,NH,foreign-domestic,All Nippon Airways,Japan,China -> China,domestic route outside the carrier's home country
+pek-to-ckg,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+pek-to-ctu,all-nippon-airways,NH,foreign-domestic,All Nippon Airways,Japan,China -> China,domestic route outside the carrier's home country
+pvg-to-ctu,all-nippon-airways,NH,foreign-domestic,All Nippon Airways,Japan,China -> China,domestic route outside the carrier's home country
+mex-to-mty,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,Mexico -> Mexico,domestic route outside the carrier's home country
+mex-to-mty,latam-airlines,LA,foreign-domestic,LATAM Airlines,Chile,Mexico -> Mexico,domestic route outside the carrier's home country
+nbo-to-dar,asl-airlines-ireland,5H,code-reassigned,ASL Airlines Ireland,Ireland,Kenya -> Tanzania,IATA code held by a different carrier per Duffel
+nbo-to-dar,lufthansa,LH,codeshare-only,Lufthansa,Germany,Kenya -> Tanzania,source lists the carrier only as a codeshare and neither end is in its home country
+dar-to-znz,asl-airlines-ireland,5H,code-reassigned,ASL Airlines Ireland,Ireland,Tanzania -> Tanzania,IATA code held by a different carrier per Duffel
+dar-to-znz,kenya-airways,KQ,foreign-domestic,Kenya Airways,Kenya,Tanzania -> Tanzania,domestic route outside the carrier's home country
+dar-to-znz,lufthansa,LH,foreign-domestic,Lufthansa,Germany,Tanzania -> Tanzania,domestic route outside the carrier's home country
+amd-to-bom,guyane-express-fly,G8,code-reassigned,Guyane Express Fly,French Guiana,India -> India,IATA code held by a different carrier per Duffel
+amd-to-bom,jetlite,S2,ceased,JetLite,India,India -> India,sourced cessation date before the route record
+blr-to-pnq,guyane-express-fly,G8,code-reassigned,Guyane Express Fly,French Guiana,India -> India,IATA code held by a different carrier per Duffel
+blr-to-pnq,jetlite,S2,ceased,JetLite,India,India -> India,sourced cessation date before the route record
+bom-to-amd,guyane-express-fly,G8,code-reassigned,Guyane Express Fly,French Guiana,India -> India,IATA code held by a different carrier per Duffel
+bom-to-amd,jetlite,S2,ceased,JetLite,India,India -> India,sourced cessation date before the route record
+bom-to-cok,guyane-express-fly,G8,code-reassigned,Guyane Express Fly,French Guiana,India -> India,IATA code held by a different carrier per Duffel
+bom-to-cok,jetlite,S2,ceased,JetLite,India,India -> India,sourced cessation date before the route record
+ccu-to-del,guyane-express-fly,G8,code-reassigned,Guyane Express Fly,French Guiana,India -> India,IATA code held by a different carrier per Duffel
+ccu-to-del,jetlite,S2,ceased,JetLite,India,India -> India,sourced cessation date before the route record
+del-to-gau,guyane-express-fly,G8,code-reassigned,Guyane Express Fly,French Guiana,India -> India,IATA code held by a different carrier per Duffel
+del-to-gau,jetlite,S2,ceased,JetLite,India,India -> India,sourced cessation date before the route record
+del-to-ccu,guyane-express-fly,G8,code-reassigned,Guyane Express Fly,French Guiana,India -> India,IATA code held by a different carrier per Duffel
+del-to-ccu,jetlite,S2,ceased,JetLite,India,India -> India,sourced cessation date before the route record
+del-to-ixj,guyane-express-fly,G8,code-reassigned,Guyane Express Fly,French Guiana,India -> India,IATA code held by a different carrier per Duffel
+del-to-ixj,jetlite,S2,ceased,JetLite,India,India -> India,sourced cessation date before the route record
+gau-to-del,guyane-express-fly,G8,code-reassigned,Guyane Express Fly,French Guiana,India -> India,IATA code held by a different carrier per Duffel
+gau-to-del,jetlite,S2,ceased,JetLite,India,India -> India,sourced cessation date before the route record
+ixj-to-del,guyane-express-fly,G8,code-reassigned,Guyane Express Fly,French Guiana,India -> India,IATA code held by a different carrier per Duffel
+ixj-to-del,jetlite,S2,ceased,JetLite,India,India -> India,sourced cessation date before the route record
+maa-to-blr,jetlite,S2,ceased,JetLite,India,India -> India,sourced cessation date before the route record
+pnq-to-blr,guyane-express-fly,G8,code-reassigned,Guyane Express Fly,French Guiana,India -> India,IATA code held by a different carrier per Duffel
+pnq-to-blr,jetlite,S2,ceased,JetLite,India,India -> India,sourced cessation date before the route record
+pvg-to-cgq,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+she-to-xiy,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+lca-to-ath,air-moldova,9U,ceased,Air Moldova,Moldova,Cyprus -> Greece,sourced cessation date before the route record
+lca-to-ath,cyprus-airways,CY,code-reassigned,Cyprus Airways,Cyprus,Cyprus -> Greece,IATA code held by a different carrier per Duffel
+lca-to-ath,gulf-air,GF,codeshare-only,Gulf Air,Bahrain,Cyprus -> Greece,source lists the carrier only as a codeshare and neither end is in its home country
+maa-to-sin,silkair,MI,ceased,SilkAir,Singapore,India -> Singapore,sourced cessation date before the route record
+sin-to-maa,silkair,MI,ceased,SilkAir,Singapore,Singapore -> India,sourced cessation date before the route record
+aqp-to-lim,american-airlines,AA,foreign-domestic,American Airlines,United States,Peru -> Peru,domestic route outside the carrier's home country
+aqp-to-lim,iberia,IB,foreign-domestic,Iberia,Spain,Peru -> Peru,domestic route outside the carrier's home country
+aqp-to-lim,apa-guam,P9,network-elsewhere,APA Guam,Guam,Peru -> Peru,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+bos-to-ord,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+bru-to-jfk,iberia,IB,codeshare-only,Iberia,Spain,Belgium -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+bru-to-jfk,klm-royal-dutch-airlines,KL,codeshare-only,KLM Royal Dutch Airlines,Netherlands,Belgium -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+den-to-lax,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+dfw-to-lax,gulf-air,GF,foreign-domestic,Gulf Air,Bahrain,United States -> United States,domestic route outside the carrier's home country
+dfw-to-lax,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+dfw-to-lax,virgin-america,VX,ceased,Virgin America,United States,United States -> United States,sourced cessation date before the route record
+dfw-to-lax,westjet,WS,foreign-domestic,WestJet,Canada,United States -> United States,domestic route outside the carrier's home country
+gdl-to-lax,air-new-zealand,NZ,codeshare-only,Air New Zealand,New Zealand,Mexico -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+iad-to-lhr,iberia,IB,codeshare-only,Iberia,Spain,United States -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+iad-to-lhr,lufthansa,LH,codeshare-only,Lufthansa,Germany,United States -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+iad-to-lhr,singapore-airlines,SQ,codeshare-only,Singapore Airlines,Singapore,United States -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+jfk-to-bru,iberia,IB,codeshare-only,Iberia,Spain,United States -> Belgium,source lists the carrier only as a codeshare and neither end is in its home country
+jfk-to-bru,klm-royal-dutch-airlines,KL,codeshare-only,KLM Royal Dutch Airlines,Netherlands,United States -> Belgium,source lists the carrier only as a codeshare and neither end is in its home country
+jfk-to-mxp,iberia,IB,codeshare-only,Iberia,Spain,United States -> Italy,source lists the carrier only as a codeshare and neither end is in its home country
+jfk-to-sfo,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+jfk-to-sfo,virgin-america,VX,ceased,Virgin America,United States,United States -> United States,sourced cessation date before the route record
+lax-to-den,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+lax-to-gdl,air-new-zealand,NZ,codeshare-only,Air New Zealand,New Zealand,United States -> Mexico,source lists the carrier only as a codeshare and neither end is in its home country
+lax-to-ogg,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,United States -> United States,domestic route outside the carrier's home country
+lax-to-ogg,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+lax-to-ppt,air-new-zealand,NZ,codeshare-only,Air New Zealand,New Zealand,United States -> French Polynesia,source lists the carrier only as a codeshare and neither end is in its home country
+lax-to-ppt,qantas,QF,codeshare-only,Qantas,Australia,United States -> French Polynesia,source lists the carrier only as a codeshare and neither end is in its home country
+lax-to-sea,qantas,QF,foreign-domestic,Qantas,Australia,United States -> United States,domestic route outside the carrier's home country
+lax-to-sea,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+lax-to-sea,virgin-america,VX,ceased,Virgin America,United States,United States -> United States,sourced cessation date before the route record
+lga-to-ord,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+lhr-to-ord,iberia,IB,codeshare-only,Iberia,Spain,United Kingdom -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+lhr-to-ord,lufthansa,LH,codeshare-only,Lufthansa,Germany,United Kingdom -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+lhr-to-ewr,cyprus-airways,CY,code-reassigned,Cyprus Airways,Cyprus,United Kingdom -> United States,IATA code held by a different carrier per Duffel
+lhr-to-ewr,iberia,IB,codeshare-only,Iberia,Spain,United Kingdom -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+lhr-to-ewr,lufthansa,LH,codeshare-only,Lufthansa,Germany,United Kingdom -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+lhr-to-yul,american-airlines,AA,codeshare-only,American Airlines,United States,United Kingdom -> Canada,source lists the carrier only as a codeshare and neither end is in its home country
+lhr-to-yul,iberia,IB,codeshare-only,Iberia,Spain,United Kingdom -> Canada,source lists the carrier only as a codeshare and neither end is in its home country
+lhr-to-yul,lufthansa,LH,codeshare-only,Lufthansa,Germany,United Kingdom -> Canada,source lists the carrier only as a codeshare and neither end is in its home country
+lhr-to-yul,srilankan-airlines,UL,codeshare-only,SriLankan Airlines,Sri Lanka,United Kingdom -> Canada,source lists the carrier only as a codeshare and neither end is in its home country
+lhr-to-yyc,american-airlines,AA,codeshare-only,American Airlines,United States,United Kingdom -> Canada,source lists the carrier only as a codeshare and neither end is in its home country
+lhr-to-yyc,iberia,IB,codeshare-only,Iberia,Spain,United Kingdom -> Canada,source lists the carrier only as a codeshare and neither end is in its home country
+lhr-to-yyc,lufthansa,LH,codeshare-only,Lufthansa,Germany,United Kingdom -> Canada,source lists the carrier only as a codeshare and neither end is in its home country
+lhr-to-yyc,srilankan-airlines,UL,codeshare-only,SriLankan Airlines,Sri Lanka,United Kingdom -> Canada,source lists the carrier only as a codeshare and neither end is in its home country
+lhr-to-yyz,american-airlines,AA,codeshare-only,American Airlines,United States,United Kingdom -> Canada,source lists the carrier only as a codeshare and neither end is in its home country
+lhr-to-yyz,iberia,IB,codeshare-only,Iberia,Spain,United Kingdom -> Canada,source lists the carrier only as a codeshare and neither end is in its home country
+lhr-to-yyz,lufthansa,LH,codeshare-only,Lufthansa,Germany,United Kingdom -> Canada,source lists the carrier only as a codeshare and neither end is in its home country
+lhr-to-yyz,srilankan-airlines,UL,codeshare-only,SriLankan Airlines,Sri Lanka,United Kingdom -> Canada,source lists the carrier only as a codeshare and neither end is in its home country
+mxp-to-jfk,iberia,IB,codeshare-only,Iberia,Spain,Italy -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+ord-to-bos,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+ogg-to-lax,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,United States -> United States,domestic route outside the carrier's home country
+ogg-to-lax,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+ord-to-lhr,iberia,IB,codeshare-only,Iberia,Spain,United States -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+ord-to-lhr,lufthansa,LH,codeshare-only,Lufthansa,Germany,United States -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+ord-to-lax,etihad-airways,EY,foreign-domestic,Etihad Airways,United Arab Emirates,United States -> United States,domestic route outside the carrier's home country
+ord-to-lax,gulf-air,GF,foreign-domestic,Gulf Air,Bahrain,United States -> United States,domestic route outside the carrier's home country
+ord-to-lax,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+ord-to-lax,virgin-america,VX,ceased,Virgin America,United States,United States -> United States,sourced cessation date before the route record
+ord-to-sfo,etihad-airways,EY,foreign-domestic,Etihad Airways,United Arab Emirates,United States -> United States,domestic route outside the carrier's home country
+ord-to-sfo,gulf-air,GF,foreign-domestic,Gulf Air,Bahrain,United States -> United States,domestic route outside the carrier's home country
+ord-to-sfo,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+ord-to-sfo,virgin-america,VX,ceased,Virgin America,United States,United States -> United States,sourced cessation date before the route record
+ord-to-tpa,etihad-airways,EY,foreign-domestic,Etihad Airways,United Arab Emirates,United States -> United States,domestic route outside the carrier's home country
+ord-to-tpa,gulf-air,GF,foreign-domestic,Gulf Air,Bahrain,United States -> United States,domestic route outside the carrier's home country
+ord-to-tpa,royal-jordanian,RJ,foreign-domestic,Royal Jordanian,Jordan,United States -> United States,domestic route outside the carrier's home country
+ord-to-tpa,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+sea-to-lax,qantas,QF,foreign-domestic,Qantas,Australia,United States -> United States,domestic route outside the carrier's home country
+sea-to-lax,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+sea-to-lax,virgin-america,VX,ceased,Virgin America,United States,United States -> United States,sourced cessation date before the route record
+ppt-to-lax,air-new-zealand,NZ,codeshare-only,Air New Zealand,New Zealand,French Polynesia -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+ppt-to-lax,qantas,QF,codeshare-only,Qantas,Australia,French Polynesia -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+sfo-to-jfk,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+sfo-to-jfk,virgin-america,VX,ceased,Virgin America,United States,United States -> United States,sourced cessation date before the route record
+slc-to-lax,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,United States -> United States,domestic route outside the carrier's home country
+syd-to-cbr,american-airlines,AA,foreign-domestic,American Airlines,United States,Australia -> Australia,domestic route outside the carrier's home country
+syd-to-cbr,air-djibouti,DJ,network-elsewhere,Air Djibouti,Djibouti,Australia -> Australia,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+syd-to-cbr,singapore-airlines,SQ,foreign-domestic,Singapore Airlines,Singapore,Australia -> Australia,domestic route outside the carrier's home country
+yul-to-lhr,american-airlines,AA,codeshare-only,American Airlines,United States,Canada -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+yul-to-lhr,iberia,IB,codeshare-only,Iberia,Spain,Canada -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+yul-to-lhr,lufthansa,LH,codeshare-only,Lufthansa,Germany,Canada -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+yul-to-lhr,srilankan-airlines,UL,codeshare-only,SriLankan Airlines,Sri Lanka,Canada -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+yyc-to-lhr,american-airlines,AA,codeshare-only,American Airlines,United States,Canada -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+yyc-to-lhr,iberia,IB,codeshare-only,Iberia,Spain,Canada -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+yyc-to-lhr,lufthansa,LH,codeshare-only,Lufthansa,Germany,Canada -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+yyc-to-lhr,srilankan-airlines,UL,codeshare-only,SriLankan Airlines,Sri Lanka,Canada -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+yyz-to-lhr,american-airlines,AA,codeshare-only,American Airlines,United States,Canada -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+yyz-to-lhr,iberia,IB,codeshare-only,Iberia,Spain,Canada -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+yyz-to-lhr,lufthansa,LH,codeshare-only,Lufthansa,Germany,Canada -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+yyz-to-lhr,srilankan-airlines,UL,codeshare-only,SriLankan Airlines,Sri Lanka,Canada -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+yyz-to-yul,lufthansa,LH,foreign-domestic,Lufthansa,Germany,Canada -> Canada,domestic route outside the carrier's home country
+yyz-to-yul,united-airlines,UA,foreign-domestic,United Airlines,United States,Canada -> Canada,domestic route outside the carrier's home country
+yul-to-yyz,lufthansa,LH,foreign-domestic,Lufthansa,Germany,Canada -> Canada,domestic route outside the carrier's home country
+yul-to-yyz,united-airlines,UA,foreign-domestic,United Airlines,United States,Canada -> Canada,domestic route outside the carrier's home country
+fra-to-jfk,air-france,AF,codeshare-only,Air France,France,Germany -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+fra-to-jfk,klm-royal-dutch-airlines,KL,codeshare-only,KLM Royal Dutch Airlines,Netherlands,Germany -> United States,source lists the carrier only as a codeshare and neither end is in its home country
+fra-to-jfk,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,Germany -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+bah-to-auh,air-france,AF,codeshare-only,Air France,France,Bahrain -> United Arab Emirates,source lists the carrier only as a codeshare and neither end is in its home country
+bah-to-auh,delta-air-lines,DL,codeshare-only,Delta Air Lines,United States,Bahrain -> United Arab Emirates,source lists the carrier only as a codeshare and neither end is in its home country
+gru-to-cnf,air-france,AF,foreign-domestic,Air France,France,Brazil -> Brazil,domestic route outside the carrier's home country
+gru-to-cnf,delta-air-lines,DL,foreign-domestic,Delta Air Lines,United States,Brazil -> Brazil,domestic route outside the carrier's home country
+gru-to-cnf,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,Brazil -> Brazil,domestic route outside the carrier's home country
+gru-to-cnf,trip-linhas-aereas,T4,ceased,TRIP Linhas Aéreas,Brazil,Brazil -> Brazil,sourced cessation date before the route record
+gru-to-cnf,tap-air-portugal,TP,foreign-domestic,TAP Air Portugal,Portugal,Brazil -> Brazil,domestic route outside the carrier's home country
+man-to-cdg,flybe,BE,ceased,Flybe,United Kingdom,United Kingdom -> France,sourced cessation date before the route record
+jfk-to-fra,air-france,AF,codeshare-only,Air France,France,United States -> Germany,source lists the carrier only as a codeshare and neither end is in its home country
+jfk-to-fra,klm-royal-dutch-airlines,KL,codeshare-only,KLM Royal Dutch Airlines,Netherlands,United States -> Germany,source lists the carrier only as a codeshare and neither end is in its home country
+jfk-to-fra,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> Germany,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+icn-to-sin,air-india,AI,codeshare-only,Air India,India,South Korea -> Singapore,source lists the carrier only as a codeshare and neither end is in its home country
+icn-to-sin,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,South Korea -> Singapore,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+sin-to-icn,air-india,AI,codeshare-only,Air India,India,Singapore -> South Korea,source lists the carrier only as a codeshare and neither end is in its home country
+sin-to-icn,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,Singapore -> South Korea,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+kch-to-sin,silkair,MI,ceased,SilkAir,Singapore,Malaysia -> Singapore,sourced cessation date before the route record
+sin-to-kch,silkair,MI,ceased,SilkAir,Singapore,Singapore -> Malaysia,sourced cessation date before the route record
+lis-to-mad,aeromexico,AM,codeshare-only,Aeroméxico,Mexico,Portugal -> Spain,source lists the carrier only as a codeshare and neither end is in its home country
+gru-to-eze,latam-airlines,LA,codeshare-only,LATAM Airlines,Chile,Brazil -> Argentina,source lists the carrier only as a codeshare and neither end is in its home country
+dla-to-nsi,royal-air-maroc,AT,foreign-domestic,Royal Air Maroc,Morocco,Cameroon -> Cameroon,domestic route outside the carrier's home country
+dla-to-nsi,lufthansa,LH,foreign-domestic,Lufthansa,Germany,Cameroon -> Cameroon,domestic route outside the carrier's home country
+dla-to-nsi,brussels-airlines,SN,foreign-domestic,Brussels Airlines,Belgium,Cameroon -> Cameroon,domestic route outside the carrier's home country
+dla-to-nsi,united-airlines,UA,foreign-domestic,United Airlines,United States,Cameroon -> Cameroon,domestic route outside the carrier's home country
+dla-to-nsi,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,Cameroon -> Cameroon,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+nsi-to-dla,royal-air-maroc,AT,foreign-domestic,Royal Air Maroc,Morocco,Cameroon -> Cameroon,domestic route outside the carrier's home country
+nsi-to-dla,lufthansa,LH,foreign-domestic,Lufthansa,Germany,Cameroon -> Cameroon,domestic route outside the carrier's home country
+nsi-to-dla,brussels-airlines,SN,foreign-domestic,Brussels Airlines,Belgium,Cameroon -> Cameroon,domestic route outside the carrier's home country
+nsi-to-dla,united-airlines,UA,foreign-domestic,United Airlines,United States,Cameroon -> Cameroon,domestic route outside the carrier's home country
+nsi-to-dla,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,Cameroon -> Cameroon,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+lhr-to-sin,iberia,IB,codeshare-only,Iberia,Spain,United Kingdom -> Singapore,source lists the carrier only as a codeshare and neither end is in its home country
+sin-to-lhr,iberia,IB,codeshare-only,Iberia,Spain,Singapore -> United Kingdom,source lists the carrier only as a codeshare and neither end is in its home country
+dlc-to-nkg,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+dlc-to-pek,all-nippon-airways,NH,foreign-domestic,All Nippon Airways,Japan,China -> China,domestic route outside the carrier's home country
+hgh-to-kwl,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+hgh-to-tao,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+kwl-to-hgh,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+nkg-to-dlc,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+nkg-to-xmn,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+pek-to-hrb,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+pek-to-xmn,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+pvg-to-pek,all-nippon-airways,NH,foreign-domestic,All Nippon Airways,Japan,China -> China,domestic route outside the carrier's home country
+pvg-to-pek,air-new-zealand,NZ,foreign-domestic,Air New Zealand,New Zealand,China -> China,domestic route outside the carrier's home country
+pvg-to-pek,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,China -> China,the code's source network never touches the carrier's home country; code not confirmed by Duffel
+tao-to-cgq,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+tao-to-hrb,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+xmn-to-nkg,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+xmn-to-pek,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+xmn-to-szx,klm-royal-dutch-airlines,KL,foreign-domestic,KLM Royal Dutch Airlines,Netherlands,China -> China,domestic route outside the carrier's home country
+las-to-den,copa-airlines,CM,foreign-domestic,Copa Airlines,Panama,United States -> United States,domestic route outside the carrier's home country
+las-to-den,silk-avia,US,network-elsewhere,Silk Avia,Uzbekistan,United States -> United States,the code's source network never touches the carrier's home country; code not confirmed by Duffel

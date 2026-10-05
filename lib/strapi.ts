@@ -865,7 +865,15 @@ export async function listRoutesByCarrier(airlineSlug: string, limit = 20) {
  * which airport/airline pages carry real network data (and so deserve
  * indexing). Pulls minimal fields only.
  */
-export async function fetchRouteCoverage(): Promise<{
+export async function fetchRouteCoverage(
+  /**
+   * Optional filter for carrierSlugs — the sitemap passes the route-carrier
+   * credibility rule (lib/route-carriers.ts, server-only, so not imported here)
+   * so an airline listed only through a recycled or codeshare code does not
+   * count as having routes.
+   */
+  keepCarrier?: (route: StrapiRoute, carrier: StrapiAirline) => boolean,
+): Promise<{
   originIatas: Set<string>;
   carrierSlugs: Set<string>;
   /** Route records per origin airport (lower-case IATA), from the same pass. */
@@ -881,7 +889,11 @@ export async function fetchRouteCoverage(): Promise<{
       'routes',
       {
         fields: ['id'],
-        populate: { origin: { fields: ['iata'] }, carriers: { fields: ['slug'] } },
+        populate: {
+          origin: { fields: ['iata', 'country', 'countryCode'] },
+          destination: { fields: ['iata', 'country', 'countryCode'] },
+          carriers: { fields: ['slug', 'name', 'iataCode', 'country'] },
+        },
         pagination: { page, pageSize },
       },
       3600,
@@ -893,7 +905,7 @@ export async function fetchRouteCoverage(): Promise<{
         originRouteCounts.set(o, (originRouteCounts.get(o) ?? 0) + 1);
       }
       for (const c of rt.carriers ?? []) {
-        if (c?.slug) carrierSlugs.add(c.slug);
+        if (c?.slug && (!keepCarrier || keepCarrier(rt, c))) carrierSlugs.add(c.slug);
       }
     }
     const pageCount = r.meta?.pagination?.pageCount ?? 1;

@@ -152,21 +152,21 @@
       "fields": {
         "seat_options": {
           "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
-          "status": "official",
+          "status": "pending",
           "source_url": "https://www.intercaribbean.com",
           "verified_at": "2026-10-05",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
           "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
-          "status": "official",
+          "status": "pending",
           "source_url": "https://www.intercaribbean.com",
           "verified_at": "2026-10-05",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
           "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
-          "status": "official",
+          "status": "pending",
           "source_url": "https://www.intercaribbean.com",
           "verified_at": "2026-10-05",
           "verified_by": "manual_official_source"

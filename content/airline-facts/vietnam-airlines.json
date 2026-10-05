@@ -1,6 +1,6 @@
 {
   "slug": "vietnam-airlines",
-  "official_website": "http://www.vietnamairlines.com",
+  "official_website": "https://www.vietnamairlines.com",
   "modules": [
     {
       "id": "carryon",
@@ -12,27 +12,24 @@
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
+          "value": "56 x 36 x 23 cm",
           "status": "official",
-          "source_url": "https://www.vietnamairlines.com/vn/en/travel-information/baggage/carry-on-baggage",
-          "notes": "Vietnam Airlines cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.vietnamairlines.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "weight_economy": {
-          "value": "7 kg (15 lbs)",
+          "value": "1 cabin bag + 1 personal accessory (total up to 12 kg / 26 lbs)",
           "status": "official",
-          "source_url": "https://www.vietnamairlines.com/vn/en/travel-information/baggage/carry-on-baggage",
-          "notes": "Vietnam Airlines Economy Class carry-on weight limit.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.vietnamairlines.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
+          "value": "2 cabin bags + 1 personal accessory (total up to 18 kg / 40 lbs)",
           "status": "official",
-          "source_url": "https://www.vietnamairlines.com/vn/en/travel-information/baggage/carry-on-baggage",
-          "notes": "Vietnam Airlines Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.vietnamairlines.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -49,25 +46,22 @@
         "piece_weight_economy": {
           "value": "1 piece up to 23 kg (50 lbs)",
           "status": "official",
-          "source_url": "https://www.vietnamairlines.com/vn/en/travel-information/baggage/checked-baggage",
-          "notes": "Vietnam Airlines Economy Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.vietnamairlines.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
+          "value": "1 piece up to 32 kg (70 lbs) or 2 pieces up to 32 kg each",
           "status": "official",
-          "source_url": "https://www.vietnamairlines.com/vn/en/travel-information/baggage/checked-baggage",
-          "notes": "Vietnam Airlines Business Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.vietnamairlines.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
+          "value": "1 piece up to 32 kg (70 lbs) or 2 pieces up to 32 kg each (Business Class is top cabin)",
           "status": "official",
-          "source_url": "https://www.vietnamairlines.com/vn/en/travel-information/baggage/checked-baggage",
-          "notes": "Vietnam Airlines First Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.vietnamairlines.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -99,31 +93,31 @@
       ],
       "fields": {
         "online_checkin_opens": {
-          "value": "24 hours before scheduled departure",
+          "value": "24 hours before departure",
           "status": "official",
-          "source_url": "http://www.vietnamairlines.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.vietnamairlines.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "domestic_cutoff": {
           "value": "45 minutes before departure",
           "status": "official",
-          "source_url": "http://www.vietnamairlines.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.vietnamairlines.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "international_cutoff": {
-          "value": "60 minutes before departure",
+          "value": "50–60 minutes before departure",
           "status": "official",
-          "source_url": "http://www.vietnamairlines.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.vietnamairlines.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "boarding_close": {
-          "value": "15 to 20 minutes before departure",
+          "value": "15–20 minutes before departure",
           "status": "official",
-          "source_url": "http://www.vietnamairlines.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.vietnamairlines.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -139,24 +133,24 @@
       ],
       "fields": {
         "care": {
-          "value": "When a flight is delayed or cancelled within carrier control, passengers are entitled to meals, refreshments, communication access, and hotel accommodation with transport for overnight delays.",
+          "value": "Food, refreshments, communication access, and hotel lodging for delays over 6 hours overnight under CAAV rules.",
           "status": "official",
-          "source_url": "http://www.vietnamairlines.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.vietnamairlines.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "rebooking_refund": {
-          "value": "For disruptions within carrier control, the airline rebooks passengers on the next available flight or provides a full refund for unused flight segments if delayed by 3 hours or more.",
+          "value": "Full ticket refund or free change of flight schedule if flight is cancelled or delayed >4 hours.",
           "status": "official",
-          "source_url": "http://www.vietnamairlines.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.vietnamairlines.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "compensation": {
-          "value": "Statutory or policy compensation applies for cancellations or long delays within carrier control according to applicable aviation passenger rights regulations.",
+          "value": "Statutory non-refundable compensation mandated by the Ministry of Transport of Vietnam for long delays or cancellations.",
           "status": "official",
-          "source_url": "http://www.vietnamairlines.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.vietnamairlines.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -171,24 +165,24 @@
       ],
       "fields": {
         "fare_name": {
-          "value": "Standard / Economy Light: includes 1 carry-on bag and 1 personal item; checked bag allowance depends on route and fare category",
+          "value": "Super Lite, Economy Lite, Classic, Flex, Premium Economy, Business",
           "status": "official",
-          "source_url": "http://www.vietnamairlines.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.vietnamairlines.com/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "seat_selection_included": {
-          "value": "Free seat assignment provided during online check-in; advance seat selection prior to check-in is available for a fee",
+          "value": "Included on Classic, Flex, Premium Economy, and Business; fee on Lite fares until check-in.",
           "status": "official",
-          "source_url": "http://www.vietnamairlines.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.vietnamairlines.com/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "change_cancellation_policy": {
-          "value": "Ticket modifications and cancellations are subject to carrier fare rules, change fees, and applicable fare difference",
+          "value": "Lite fares non-refundable; Flex/Business allow free rebooking or full refund.",
           "status": "official",
-          "source_url": "http://www.vietnamairlines.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.vietnamairlines.com/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -204,24 +198,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
+          "value": "Standard Economy, Premium Economy, and Business Class lie-flat seats.",
           "status": "official",
-          "source_url": "http://www.vietnamairlines.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.vietnamairlines.com/cabins",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
+          "value": "Free advance seat selection for Classic/Flex/Business fares; fee or check-in assignment for Lite fares.",
           "status": "official",
-          "source_url": "http://www.vietnamairlines.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.vietnamairlines.com/seat-selection",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
+          "value": "Vietnam Airlines automatically seats children under 12 next to accompanying adult passengers.",
           "status": "official",
-          "source_url": "http://www.vietnamairlines.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.vietnamairlines.com/family-travel",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

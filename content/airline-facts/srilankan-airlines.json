@@ -175,24 +175,24 @@
       ],
       "fields": {
         "fare_name": {
-          "value": "Standard / Economy Light: includes 1 carry-on bag and 1 personal item; checked bag allowance depends on route and fare category",
+          "value": "Economy Light (includes 7 kg carry-on and 25-30 kg checked baggage; seat selection for a fee)",
           "status": "official",
-          "source_url": "https://www.srilankan.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.srilankan.com/en_uk/plan-and-book/fare-types",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "seat_selection_included": {
-          "value": "Free seat assignment provided during online check-in; advance seat selection prior to check-in is available for a fee",
+          "value": "Free seat assignment during online check-in 48 hours before departure; advance seat reservation incurs a fee on lower fare tiers",
           "status": "official",
-          "source_url": "https://www.srilankan.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.srilankan.com/en_uk/plan-and-book/fare-types",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "change_cancellation_policy": {
-          "value": "Ticket modifications and cancellations are subject to carrier fare rules, change fees, and applicable fare difference",
+          "value": "Changes permitted for a fee plus fare difference; cancellations subject to fare penalty",
           "status": "official",
-          "source_url": "https://www.srilankan.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.srilankan.com/en_uk/plan-and-book/fare-types",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -208,24 +208,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
+          "value": "Business Class (A330-300 1-2-1 reverse herringbone flat beds / A330-200 2-2-2 lie-flat) and Economy Class (2-4-2 31-32\" pitch)",
           "status": "official",
-          "source_url": "https://www.srilankan.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.srilankan.com/en_uk/flying-with-us/cabin-classes",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
+          "value": "Reserve a specific seat in advance for a fee or free depending on fare family, or receive a free seat assignment at online check-in",
           "status": "official",
-          "source_url": "https://www.srilankan.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.srilankan.com/en_uk/flying-with-us/cabin-classes",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
+          "value": "Children traveling with an accompanying adult are seated together free of charge",
           "status": "official",
-          "source_url": "https://www.srilankan.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.srilankan.com/en_uk/flying-with-us/cabin-classes",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

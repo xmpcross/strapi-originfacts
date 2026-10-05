@@ -157,24 +157,24 @@
       ],
       "fields": {
         "care": {
-          "value": "When a flight is delayed or cancelled within carrier control, passengers are entitled to meals, refreshments, communication access, and hotel accommodation with transport for overnight delays.",
+          "value": "For disruptions within carrier control delayed 3+ hours, Frontier provides meal vouchers, communication access, and hotel accommodation with ground transport for overnight delays.",
           "status": "official",
-          "source_url": "https://www.flyfrontier.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.flyfrontier.com/legal/customer-service-plan",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "rebooking_refund": {
-          "value": "For disruptions within carrier control, the airline rebooks passengers on the next available flight or provides a full refund for unused flight segments if delayed by 3 hours or more.",
+          "value": "Full refund to original payment method or free rebooking on next available Frontier flight if delayed by 3 hours or more within carrier control.",
           "status": "official",
-          "source_url": "https://www.flyfrontier.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.flyfrontier.com/legal/customer-service-plan",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "compensation": {
-          "value": "Statutory or policy compensation applies for cancellations or long delays within carrier control according to applicable aviation passenger rights regulations.",
+          "value": "DOT air passenger consumer protection rules apply for involuntary denied boarding or cancellations within carrier control.",
           "status": "official",
-          "source_url": "https://www.flyfrontier.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.flyfrontier.com/legal/customer-service-plan",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -189,24 +189,24 @@
       ],
       "fields": {
         "fare_name": {
-          "value": "Standard / Economy Light: includes 1 carry-on bag and 1 personal item; checked bag allowance depends on route and fare category",
+          "value": "Basic Fare (includes 1 personal item under seat; carry-on bag, checked bag, and seat selection incur separate fees)",
           "status": "official",
-          "source_url": "https://www.flyfrontier.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.flyfrontier.com/travel/travel-info/bags-optional-services",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "seat_selection_included": {
-          "value": "Free seat assignment provided during online check-in; advance seat selection prior to check-in is available for a fee",
+          "value": "Paid advance seat selection for all fare bundles; free random seat allocated at online check-in 24h prior",
           "status": "official",
-          "source_url": "https://www.flyfrontier.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.flyfrontier.com/travel/travel-info/bags-optional-services",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "change_cancellation_policy": {
-          "value": "Ticket modifications and cancellations are subject to carrier fare rules, change fees, and applicable fare difference",
+          "value": "No change or cancellation fees on Business Bundle / Economy Bundle when changed 60+ days before departure; standard change fees apply within 59 days",
           "status": "official",
-          "source_url": "https://www.flyfrontier.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.flyfrontier.com/travel/travel-info/bags-optional-services",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -222,24 +222,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
+          "value": "Premium Seats (first rows with extra legroom & early boarding), Stretch Seats (up to 5-7 inches extra legroom), and Standard Seats",
           "status": "official",
-          "source_url": "https://www.flyfrontier.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.flyfrontier.com/travel/travel-info/seating",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
+          "value": "Reserve a specific seat in advance for a fee or as part of a fare bundle, or receive a free randomly assigned seat at online check-in",
           "status": "official",
-          "source_url": "https://www.flyfrontier.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.flyfrontier.com/travel/travel-info/seating",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
+          "value": "Children under 14 are seated next to at least one accompanying adult free of charge",
           "status": "official",
-          "source_url": "https://www.flyfrontier.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.flyfrontier.com/travel/travel-info/seating",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

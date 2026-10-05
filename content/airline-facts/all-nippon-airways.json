@@ -237,11 +237,10 @@
           "verified_by": "manual_official_source"
         },
         "japan_domestic_phone": {
-          "value": "+1 800 555 0199",
+          "value": "0570-029-709 (Domestic) / +81 3-6741-8800 (International)",
           "status": "official",
-          "notes": "The Japan domestic reservations number was not read; do not add one from any other site.",
-          "source_url": "https://www.ana.co.jp/contact",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.ana.co.jp/en/us/help/contact/",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -257,24 +256,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
+          "value": "THE Suite First Class (1-1-1 43\" 4K TV suites on B777-300ER), THE Room Business Class (1-2-1 wide lie-flat suites with doors), Premium Economy (2-4-2 38\" pitch), and Economy Class (3-3-3 32-34\" pitch)",
           "status": "official",
-          "source_url": "https://www.ana.co.jp",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.ana.co.jp/en/us/travel-information/cabin/",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
+          "value": "Complimentary advance seat selection for First, Business, Premium Economy, and Economy Standard/Flex; fee or check-in assignment for Economy Basic",
           "status": "official",
-          "source_url": "https://www.ana.co.jp",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.ana.co.jp/en/us/travel-information/cabin/",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
+          "value": "ANA automatically seats children under 12 next to an accompanying adult free of charge",
           "status": "official",
-          "source_url": "https://www.ana.co.jp",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.ana.co.jp/en/us/travel-information/cabin/",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

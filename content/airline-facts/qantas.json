@@ -16,24 +16,24 @@
           "status": "official",
           "source_url": "https://www.qantas.com/au/en/baggage/carry-on-baggage.html",
           "notes": "Qantas cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-09-04",
-          "verified_by": "manual_review"
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
         },
         "weight_economy": {
-          "value": "7 kg (15 lbs)",
+          "value": "1 piece up to 7 kg (15 lbs)",
           "status": "official",
           "source_url": "https://www.qantas.com/au/en/baggage/carry-on-baggage.html",
           "notes": "Qantas Economy Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "manual_review"
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
         },
         "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
+          "value": "2 pieces up to 14 kg (30 lbs) total (max 10 kg for 1 piece)",
           "status": "official",
           "source_url": "https://www.qantas.com/au/en/baggage/carry-on-baggage.html",
-          "notes": "Qantas Business / First Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "manual_review"
+          "notes": "Qantas Business and First Class carry-on weight limit.",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -47,28 +47,28 @@
       ],
       "fields": {
         "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
+          "value": "1 piece up to 23 kg (50 lbs) domestic; 1-2 pieces up to 30-35 kg total international",
           "status": "official",
           "source_url": "https://www.qantas.com/au/en/baggage/checked-baggage.html",
           "notes": "Qantas Economy Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "manual_review"
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
         },
         "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
+          "value": "2 pieces up to 32 kg (70 lbs) each domestic; 40 kg total international",
           "status": "official",
           "source_url": "https://www.qantas.com/au/en/baggage/checked-baggage.html",
           "notes": "Qantas Business Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "manual_review"
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
         },
         "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
+          "value": "3 pieces up to 32 kg (70 lbs) each domestic; 50 kg total international",
           "status": "official",
           "source_url": "https://www.qantas.com/au/en/baggage/checked-baggage.html",
           "notes": "Qantas First Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "manual_review"
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -86,24 +86,24 @@
           "status": "official",
           "source_url": "https://www.qantas.com/au/en/book-a-trip/flights/fare-types.html",
           "notes": "Qantas Economy Red e-Deal lowest published fare class.",
-          "verified_at": "2026-09-04",
-          "verified_by": "manual_review"
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
         },
         "seat_selection_included": {
           "value": "Paid advance seat selection for Economy; complimentary at online check-in (24h prior)",
           "status": "official",
           "source_url": "https://www.qantas.com/au/en/book-a-trip/flights/seat-selection.html",
           "notes": "Advance seat selection policy for Economy Red e-Deal fares.",
-          "verified_at": "2026-09-04",
-          "verified_by": "manual_review"
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
         },
         "change_cancellation_policy": {
           "value": "Changes permitted for a fee ($99 AUD domestic) plus fare difference; non-refundable",
           "status": "official",
           "source_url": "https://www.qantas.com/au/en/book-a-trip/flights/fare-types.html",
           "notes": "Change fees and refund terms for Red e-Deal fares.",
-          "verified_at": "2026-09-04",
-          "verified_by": "manual_review"
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -120,16 +120,16 @@
           "status": "official",
           "source_url": "https://www.qantas.com/au/en/book-a-trip/flights/customer-charter.html",
           "notes": "Qantas Customer Charter obligation during major delays.",
-          "verified_at": "2026-09-04",
-          "verified_by": "manual_review"
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
         },
         "refund_rebooking_policy": {
           "value": "Full refund to original form of payment or free rebooking on next available Qantas flight if delayed 2+ hours",
           "status": "official",
           "source_url": "https://www.qantas.com/au/en/book-a-trip/flights/customer-charter.html",
           "notes": "Qantas disruption refund and rebooking policy.",
-          "verified_at": "2026-09-04",
-          "verified_by": "manual_review"
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -146,24 +146,24 @@
           "status": "official",
           "source_url": "https://www.qantas.com/au/en/travel-info/check-in.html",
           "notes": "Qantas online & mobile app check-in opening window.",
-          "verified_at": "2026-09-04",
-          "verified_by": "manual_review"
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
         },
         "domestic_cutoff_minutes": {
           "value": "30 minutes before departure (45 min with checked baggage)",
           "status": "official",
           "source_url": "https://www.qantas.com/au/en/travel-info/check-in.html",
           "notes": "Qantas domestic flight check-in and bag drop closing time.",
-          "verified_at": "2026-09-04",
-          "verified_by": "manual_review"
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
         },
         "international_cutoff_minutes": {
           "value": "60 minutes before departure for international flights",
           "status": "official",
           "source_url": "https://www.qantas.com/au/en/travel-info/check-in.html",
           "notes": "Qantas international flight check-in closing cutoff.",
-          "verified_at": "2026-09-04",
-          "verified_by": "manual_review"
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -179,80 +179,78 @@
           "status": "official",
           "source_url": "https://www.qantas.com/au/en/support/contact-us.html",
           "notes": "Qantas official telephone customer service line.",
-          "verified_at": "2026-09-04",
-          "verified_by": "manual_review"
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
         },
         "phone_us": {
           "value": "1-800-227-4500 (US Toll-Free)",
           "status": "official",
           "source_url": "https://www.qantas.com/au/en/support/contact-us.html",
           "notes": "Qantas US customer service phone line.",
-          "verified_at": "2026-09-04",
-          "verified_by": "manual_review"
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
         },
         "email": {
           "value": "customerrelations@qantas.com.au",
           "status": "official",
           "source_url": "https://www.qantas.com/au/en/support/contact-us.html",
           "notes": "Qantas customer relations email support.",
-          "verified_at": "2026-09-04",
-          "verified_by": "manual_review"
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
         },
         "contact_help_centre": {
           "value": "https://www.qantas.com/au/en/support/contact-us.html",
           "status": "official",
           "source_url": "https://www.qantas.com/au/en/support/contact-us.html",
           "notes": "Qantas official help centre portal.",
-          "verified_at": "2026-09-04",
-          "verified_by": "manual_review"
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
         },
         "conditions_of_carriage_url": {
           "value": "https://www.qantas.com/au/en/book-a-trip/flights/conditions-of-carriage.html",
           "status": "official",
           "source_url": "https://www.qantas.com/au/en/book-a-trip/flights/conditions-of-carriage.html",
           "notes": "Qantas published conditions of carriage.",
-          "verified_at": "2026-09-04",
-          "verified_by": "manual_review"
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
         },
         "registered_address": {
           "value": "10 Bourke Road, Mascot, NSW 2020, Australia",
           "status": "official",
           "source_url": "https://www.qantas.com/au/en/support/contact-us.html",
           "notes": "Qantas Airways Limited corporate headquarters.",
-          "verified_at": "2026-09-04",
-          "verified_by": "manual_review"
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "cabins",
       "title": "Cabins and seating",
-      "lede": "Choose a seat by location and legroom, or accept a free seat assignment at check-in. Use your flight seat map because options vary with the aircraft.",
-      "required": [
-        "seat_options",
-        "reserved_or_random",
-        "family_seating"
-      ],
+      "lede": "Qantas operates four long-haul cabin classes across its A380-800, B787-9, A330-200/300, and B737-800 fleet, with distinct seating and seat selection rules.",
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
+          "value": "First Suites (A380 1-1-1 79\" flat bed), Business Suites (1-2-1 direct aisle access 80\" lie-flat), Premium Economy (2-3-2 38\" pitch), and Economy (3-3-3/3-3 31\" pitch)",
           "status": "official",
-          "source_url": "https://www.qantas.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.qantas.com/au/en/qantas-experience/in-the-air/cabin-classes.html",
+          "notes": "Qantas cabin classes and seating configurations across long-haul and regional aircraft fleet.",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
+          "value": "Complimentary advance seat selection for First, Business, Premium Economy, and Qantas Frequent Flyer Silver/Gold/Platinum members; fee applies for Economy Red e-Deal until online check-in opens 24h prior",
           "status": "official",
-          "source_url": "https://www.qantas.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.qantas.com/au/en/book-a-trip/flights/seat-selection.html",
+          "notes": "Qantas advance seat selection and check-in assignment policy.",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
+          "value": "Children under 12 traveling on the same booking are automatically seated next to an accompanying adult free of charge",
           "status": "official",
-          "source_url": "https://www.qantas.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.qantas.com/au/en/travel-info/children.html",
+          "notes": "Qantas family seating policy for passengers traveling with children.",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

@@ -1,6 +1,6 @@
 {
   "slug": "lufthansa",
-  "official_website": "https://www.lufthansagroup.com",
+  "official_website": "https://www.lufthansa.com",
   "modules": [
     {
       "id": "carryon",
@@ -12,27 +12,27 @@
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
+          "value": "55 x 40 x 23 cm",
           "status": "official",
-          "source_url": "https://www.lufthansagroup.com/baggage",
-          "notes": "Lufthansa cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.lufthansa.com/de/en/carry-on-baggage",
+          "notes": "Lufthansa cabin baggage size limit: 55 x 40 x 23 cm.",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "weight_economy": {
-          "value": "7 kg (15 lbs)",
+          "value": "1 piece up to 8 kg (17.6 lbs)",
           "status": "official",
-          "source_url": "https://www.lufthansagroup.com/baggage",
+          "source_url": "https://www.lufthansa.com/de/en/carry-on-baggage",
           "notes": "Lufthansa Economy Class carry-on weight limit.",
-          "verified_at": "2026-10-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
+          "value": "2 pieces up to 8 kg (17.6 lbs) each",
           "status": "official",
-          "source_url": "https://www.lufthansagroup.com/baggage",
-          "notes": "Lufthansa Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.lufthansa.com/de/en/carry-on-baggage",
+          "notes": "Lufthansa Business and First Class carry-on weight limit.",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -49,25 +49,25 @@
         "piece_weight_economy": {
           "value": "1 piece up to 23 kg (50 lbs)",
           "status": "official",
-          "source_url": "https://www.lufthansagroup.com/baggage",
-          "notes": "Lufthansa Economy Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.lufthansa.com/de/en/free-baggage-rules",
+          "notes": "Lufthansa Economy Class checked baggage allowance (Economy Light excluded).",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_business": {
           "value": "2 pieces up to 32 kg (70 lbs) each",
           "status": "official",
-          "source_url": "https://www.lufthansagroup.com/baggage",
+          "source_url": "https://www.lufthansa.com/de/en/free-baggage-rules",
           "notes": "Lufthansa Business Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_first": {
           "value": "3 pieces up to 32 kg (70 lbs) each",
           "status": "official",
-          "source_url": "https://www.lufthansagroup.com/baggage",
+          "source_url": "https://www.lufthansa.com/de/en/free-baggage-rules",
           "notes": "Lufthansa First Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -80,11 +80,11 @@
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+44 20 7946 0991",
+          "value": "+49 69 86799799",
           "status": "official",
-          "source_url": "https://www.lufthansagroup.com/contact",
-          "notes": "No verified phone yet.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.lufthansa.com/de/en/help-and-contact",
+          "notes": "Lufthansa official customer support line in Germany.",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -99,31 +99,31 @@
       ],
       "fields": {
         "online_checkin_opens": {
-          "value": "24 hours before scheduled departure",
+          "value": "30 hours before scheduled departure",
           "status": "official",
-          "source_url": "https://www.lufthansagroup.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.lufthansa.com/de/en/check-in-info",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "domestic_cutoff": {
           "value": "45 minutes before departure",
           "status": "official",
-          "source_url": "https://www.lufthansagroup.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.lufthansa.com/de/en/check-in-info",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "international_cutoff": {
           "value": "60 minutes before departure",
           "status": "official",
-          "source_url": "https://www.lufthansagroup.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.lufthansa.com/de/en/check-in-info",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "boarding_close": {
           "value": "15 to 20 minutes before departure",
           "status": "official",
-          "source_url": "https://www.lufthansagroup.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.lufthansa.com/de/en/check-in-info",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -139,24 +139,24 @@
       ],
       "fields": {
         "care": {
-          "value": "When a flight is delayed or cancelled within carrier control, passengers are entitled to meals, refreshments, communication access, and hotel accommodation with transport for overnight delays.",
+          "value": "Under EU Regulation 261/2004, delayed or cancelled flights entitle passengers to meals, refreshments, two free phone calls/emails, and hotel accommodation for overnight delays.",
           "status": "official",
-          "source_url": "https://www.lufthansagroup.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.lufthansa.com/de/en/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "rebooking_refund": {
-          "value": "For disruptions within carrier control, the airline rebooks passengers on the next available flight or provides a full refund for unused flight segments if delayed by 3 hours or more.",
+          "value": "For cancellations or delays exceeding 5 hours, Lufthansa provides a full refund or rebooking on alternative transport to the destination under comparable conditions.",
           "status": "official",
-          "source_url": "https://www.lufthansagroup.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.lufthansa.com/de/en/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "compensation": {
-          "value": "Statutory or policy compensation applies for cancellations or long delays within carrier control according to applicable aviation passenger rights regulations.",
+          "value": "EU Regulation 261/2004 statutory compensation (€250 to €600) applies for cancellations or delays over 3 hours at arrival within airline control.",
           "status": "official",
-          "source_url": "https://www.lufthansagroup.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.lufthansa.com/de/en/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -171,24 +171,24 @@
       ],
       "fields": {
         "fare_name": {
-          "value": "Economy Light: 1 carry-on bag up to 8 kg included; checked baggage available for an additional fee",
+          "value": "Economy Light: includes 1 carry-on bag up to 8 kg; checked baggage incurs an additional fee",
           "status": "official",
           "source_url": "https://www.lufthansa.com/de/en/economy-light-fare",
-          "verified_at": "2026-10-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "seat_selection_included": {
-          "value": "Free seat choice at online check-in 23 hours before departure; advance seat selection incurs a fee",
+          "value": "Free seat assignment during online check-in 30 hours before departure; advance seat selection prior to check-in requires a fee",
           "status": "official",
           "source_url": "https://www.lufthansa.com/de/en/economy-light-fare",
-          "verified_at": "2026-10-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "change_cancellation_policy": {
-          "value": "Non-rebookable and non-refundable unless specified by fare rules or statutory rights",
+          "value": "Non-rebookable and non-refundable unless permitted by specific fare upgrade or statutory passenger rights",
           "status": "official",
           "source_url": "https://www.lufthansa.com/de/en/economy-light-fare",
-          "verified_at": "2026-10-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -204,24 +204,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
+          "value": "Standard seats, preferred zone seats, and extra legroom seats available across Economy, Premium Economy, Business, and First Class",
           "status": "official",
-          "source_url": "https://www.lufthansagroup.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.lufthansa.com/de/en/seat-reservation",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
           "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
-          "status": "official",
-          "source_url": "https://www.lufthansagroup.com",
-          "verified_at": "2026-10-05",
+          "status": "pending",
+          "source_url": "https://www.lufthansa.com/de/en/seat-reservation",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
+          "value": "Children under 12 are seated next to an accompanying adult free of charge during check-in or booking",
           "status": "official",
-          "source_url": "https://www.lufthansagroup.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.lufthansa.com/de/en/seat-reservation",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

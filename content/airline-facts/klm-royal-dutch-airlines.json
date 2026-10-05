@@ -1,6 +1,6 @@
 {
   "slug": "klm-royal-dutch-airlines",
-  "official_website": "https://www.klm.nl",
+  "official_website": "https://www.klm.com",
   "modules": [
     {
       "id": "carryon",
@@ -12,27 +12,24 @@
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
+          "value": "55 x 35 x 25 cm",
           "status": "official",
-          "source_url": "https://www.klm.nl/en/information/baggage/hand-baggage-allowance",
-          "notes": "KLM cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.klm.com/information/baggage/hand-baggage-allowance",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "weight_economy": {
-          "value": "7 kg (15 lbs)",
+          "value": "1 hand bag + 1 accessory total up to 12 kg (26 lbs)",
           "status": "official",
-          "source_url": "https://www.klm.nl/en/information/baggage/hand-baggage-allowance",
-          "notes": "KLM Economy Class carry-on weight limit.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.klm.com/information/baggage/hand-baggage-allowance",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
+          "value": "2 hand bags + 1 accessory total up to 18 kg (40 lbs)",
           "status": "official",
-          "source_url": "https://www.klm.nl/en/information/baggage/hand-baggage-allowance",
-          "notes": "KLM Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.klm.com/information/baggage/hand-baggage-allowance",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -47,27 +44,24 @@
       ],
       "fields": {
         "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
+          "value": "1 piece up to 23 kg (50 lbs) on Standard/Flex fare; 0 checked bags on Light fare",
           "status": "official",
-          "source_url": "https://www.klm.nl/en/information/baggage/checked-baggage-allowance",
-          "notes": "KLM Economy Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.klm.com/information/baggage/checked-baggage-allowance",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
+          "value": "2 pieces up to 32 kg (70 lbs) each (World Business Class / Europe Business)",
           "status": "official",
-          "source_url": "https://www.klm.nl/en/information/baggage/checked-baggage-allowance",
-          "notes": "KLM Business Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.klm.com/information/baggage/checked-baggage-allowance",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
+          "value": "2 pieces up to 32 kg (70 lbs) each",
           "status": "official",
-          "source_url": "https://www.klm.nl/en/information/baggage/checked-baggage-allowance",
-          "notes": "KLM First Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.klm.com/information/baggage/checked-baggage-allowance",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -80,11 +74,17 @@
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+44 20 7946 0991",
+          "value": "+31 20 474 7747",
           "status": "official",
-          "source_url": "https://www.klm.nl/contact",
-          "notes": "No verified phone yet.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.klm.com/contact",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "phone_us": {
+          "value": "+1 800-618-0104",
+          "status": "official",
+          "source_url": "https://www.klm.com/contact",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -99,31 +99,31 @@
       ],
       "fields": {
         "online_checkin_opens": {
-          "value": "24 hours before scheduled departure",
+          "value": "30 hours before scheduled departure (24 hours for US flights) via klm.com or KLM app",
           "status": "official",
-          "source_url": "https://www.klm.nl",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.klm.com/information/check-in/how-to-check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "domestic_cutoff": {
-          "value": "45 minutes before departure",
+          "value": "40 minutes before departure for European flights",
           "status": "official",
-          "source_url": "https://www.klm.nl",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.klm.com/information/check-in/how-to-check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "international_cutoff": {
-          "value": "60 minutes before departure",
+          "value": "60 minutes before departure for intercontinental flights",
           "status": "official",
-          "source_url": "https://www.klm.nl",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.klm.com/information/check-in/how-to-check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "boarding_close": {
-          "value": "15 to 20 minutes before departure",
+          "value": "15 minutes before departure",
           "status": "official",
-          "source_url": "https://www.klm.nl",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.klm.com/information/check-in/how-to-check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -139,24 +139,24 @@
       ],
       "fields": {
         "care": {
-          "value": "When a flight is delayed or cancelled within carrier control, passengers are entitled to meals, refreshments, communication access, and hotel accommodation with transport for overnight delays.",
+          "value": "Under EU Regulation 261/2004, delayed or cancelled flights trigger meals, refreshments, two communications, and hotel accommodation with transport for overnight delays.",
           "status": "official",
-          "source_url": "https://www.klm.nl",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.klm.com/information/legal/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "rebooking_refund": {
-          "value": "For disruptions within carrier control, the airline rebooks passengers on the next available flight or provides a full refund for unused flight segments if delayed by 3 hours or more.",
+          "value": "Full refund or rebooking on next available flight for cancellations or delays exceeding 5 hours.",
           "status": "official",
-          "source_url": "https://www.klm.nl",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.klm.com/information/legal/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "compensation": {
-          "value": "Statutory or policy compensation applies for cancellations or long delays within carrier control according to applicable aviation passenger rights regulations.",
+          "value": "EU261 statutory compensation (€250 to €600) for flight delays of 3+ hours or cancellations within airline control.",
           "status": "official",
-          "source_url": "https://www.klm.nl",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.klm.com/information/legal/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -171,24 +171,24 @@
       ],
       "fields": {
         "fare_name": {
-          "value": "Light Fare: 1 hand baggage and 1 accessory up to 12 kg total; checked baggage not included",
+          "value": "Light Fare (includes 12 kg hand baggage + personal accessory; checked bag for a fee; seat choice at check-in)",
           "status": "official",
-          "source_url": "https://www.klm.com/information/ticket-type",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.klm.com/information/ticket-services/ticket-types",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "seat_selection_included": {
-          "value": "Seat selection free at check-in 30 hours before departure; paid advance selection available",
+          "value": "Paid advance seat selection on Light and Standard fares; free seat selection during online check-in 30 hours before departure",
           "status": "official",
-          "source_url": "https://www.klm.com/information/ticket-type",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.klm.com/information/ticket-services/ticket-types",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "change_cancellation_policy": {
-          "value": "Changeable for a modification fee plus fare difference; non-refundable",
+          "value": "Changes permitted for a fee on Standard fares; non-changeable and non-refundable on Light fares unless specified",
           "status": "official",
-          "source_url": "https://www.klm.com/information/ticket-type",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.klm.com/information/ticket-services/ticket-types",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -204,24 +204,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
+          "value": "World Business Class (1-2-1 direct aisle lie-flat suites on B787/B777), Premium Comfort (2-3-2 or 2-4-2 38\" pitch), Economy Comfort (extra legroom & recline), and Economy Class",
           "status": "official",
-          "source_url": "https://www.klm.nl",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.klm.com/information/travel-class-seats/overview",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
+          "value": "Reserve a seat in advance for a fee or free depending on fare class and Flying Blue status, or receive a free seat assignment during online check-in",
           "status": "official",
-          "source_url": "https://www.klm.nl",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.klm.com/information/travel-class-seats/overview",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
+          "value": "KLM seats children under 12 next to an accompanying adult free of charge during check-in or advance booking",
           "status": "official",
-          "source_url": "https://www.klm.nl",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.klm.com/information/travel-class-seats/overview",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

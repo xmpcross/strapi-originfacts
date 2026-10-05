@@ -165,24 +165,24 @@
       ],
       "fields": {
         "care": {
-          "value": "When a flight is delayed or cancelled within carrier control, passengers are entitled to meals, refreshments, communication access, and hotel accommodation with transport for overnight delays.",
+          "value": "Under APPR (Air Passenger Protection Regulations), WestJet provides meals, drinks, WiFi/phone access for 2+ hour delays, and hotel accommodation with transport for overnight delays within carrier control.",
           "status": "official",
-          "source_url": "https://www.westjet.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.westjet.com/en-ca/interruptions/rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "rebooking_refund": {
-          "value": "For disruptions within carrier control, the airline rebooks passengers on the next available flight or provides a full refund for unused flight segments if delayed by 3 hours or more.",
+          "value": "Rebooking on next available WestJet or partner flight, or full refund to original payment method if delayed 3+ hours within carrier control.",
           "status": "official",
-          "source_url": "https://www.westjet.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.westjet.com/en-ca/interruptions/rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "compensation": {
-          "value": "Statutory or policy compensation applies for cancellations or long delays within carrier control according to applicable aviation passenger rights regulations.",
+          "value": "APPR statutory compensation (up to $1,000 CAD) for flight delays of 3+ hours within carrier control.",
           "status": "official",
-          "source_url": "https://www.westjet.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.westjet.com/en-ca/interruptions/rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -197,24 +197,24 @@
       ],
       "fields": {
         "fare_name": {
-          "value": "Standard / Economy Light: includes 1 carry-on bag and 1 personal item; checked bag allowance depends on route and fare category",
+          "value": "UltraBasic (includes 1 personal item; no carry-on bag, no checked bag, no seat selection, non-refundable)",
           "status": "official",
-          "source_url": "https://www.westjet.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.westjet.com/en-ca/flights/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "seat_selection_included": {
-          "value": "Free seat assignment provided during online check-in; advance seat selection prior to check-in is available for a fee",
+          "value": "Paid advance seat selection for UltraBasic, Econo, and Member Exclusive; included in EconoFlex, Premium, and Business",
           "status": "official",
-          "source_url": "https://www.westjet.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.westjet.com/en-ca/flights/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "change_cancellation_policy": {
-          "value": "Ticket modifications and cancellations are subject to carrier fare rules, change fees, and applicable fare difference",
+          "value": "UltraBasic fares cannot be changed or cancelled; Econo and Premium fares allow changes for a fee",
           "status": "official",
-          "source_url": "https://www.westjet.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.westjet.com/en-ca/flights/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -230,24 +230,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
+          "value": "Business Class (787 Dreamliner 1-2-1 lie-flat suites), Premium (2-2 or 2-3-2 extra legroom with free dining), Extended Comfort (extra legroom & early boarding), and Economy",
           "status": "official",
-          "source_url": "https://www.westjet.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.westjet.com/en-ca/aircraft/seating",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
+          "value": "Select a seat in advance for a fee or free depending on fare tier, or receive a free seat assignment during online check-in",
           "status": "official",
-          "source_url": "https://www.westjet.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.westjet.com/en-ca/aircraft/seating",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
+          "value": "WestJet automatically seats children under 14 adjacent to an accompanying adult free of charge before check-in",
           "status": "official",
-          "source_url": "https://www.westjet.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.westjet.com/en-ca/aircraft/seating",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

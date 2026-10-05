@@ -107,6 +107,8 @@ export const CARGO_AIRLINE_SLUGS: ReadonlySet<string> = new Set([
   'asl-airlines-ireland',
   'asl-airways',
   'atlas-air',
+  'atran',
+  'aviastar-tu',
   'bringer-air-cargo',
   'cargojet-airways-ltd',
   'cargolux',
@@ -135,6 +137,7 @@ export const CARGO_AIRLINE_SLUGS: ReadonlySet<string> = new Set([
   'silk-way-west-airlines',
   'sky-gates-airlines',
   'sky-lease-i-inc',
+  'skytaxi',
   'southern-air',
   'stabo-air-limited',
   'suparna-airlines',
@@ -145,6 +148,7 @@ export const CARGO_AIRLINE_SLUGS: ReadonlySet<string> = new Set([
   'uls-airlines-cargo',
   'uni-top-airlines',
   'volga-dnepr-airlines',
+  'zimex-aviation',
 ]);
 
 export function isCargoOnlyAirline(a: { slug: string; type?: string }): boolean {

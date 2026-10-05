@@ -12,27 +12,24 @@
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
+          "value": "56 x 35 x 23 cm (22 x 14 x 9 in)",
           "status": "official",
-          "source_url": "https://www.united.com/baggage",
-          "notes": "United Airlines cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.united.com/en/us/fly/baggage/carry-on.html",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "weight_economy": {
-          "value": "7 kg (15 lbs)",
+          "value": "1 carry-on bag + 1 personal item included (except Basic Economy on domestic/short-haul which includes personal item only)",
           "status": "official",
-          "source_url": "https://www.united.com/baggage",
-          "notes": "United Airlines Economy Class carry-on weight limit.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.united.com/en/us/fly/baggage/carry-on.html",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
+          "value": "1 carry-on bag + 1 personal item included",
           "status": "official",
-          "source_url": "https://www.united.com/baggage",
-          "notes": "United Airlines Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.united.com/en/us/fly/baggage/carry-on.html",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -47,27 +44,24 @@
       ],
       "fields": {
         "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
+          "value": "1 piece up to 23 kg (50 lbs) on transpacific/transatlantic; $35-$40 for 1st bag on US domestic",
           "status": "official",
-          "source_url": "https://www.united.com/baggage",
-          "notes": "United Airlines Economy Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.united.com/en/us/baggage-calculator",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
+          "value": "2 pieces up to 32 kg (70 lbs) each (United Polaris / United First)",
           "status": "official",
-          "source_url": "https://www.united.com/baggage",
-          "notes": "United Airlines Business Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.united.com/en/us/baggage-calculator",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_first": {
           "value": "3 pieces up to 32 kg (70 lbs) each",
           "status": "official",
-          "source_url": "https://www.united.com/baggage",
-          "notes": "United Airlines First Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.united.com/en/us/baggage-calculator",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -80,11 +74,10 @@
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1-800-864-8331",
+          "value": "+1 800-864-8331",
           "status": "official",
-          "source_url": "https://www.united.com/contact",
-          "notes": "United Airlines official customer support line.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.united.com/en/us/fly/contact-united.html",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -99,31 +92,31 @@
       ],
       "fields": {
         "online_checkin_opens": {
-          "value": "24 hours before scheduled departure",
+          "value": "24 hours before scheduled departure via united.com or United app",
           "status": "official",
-          "source_url": "https://www.united.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.united.com/en/us/fly/travel/airport/airport-process.html",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "domestic_cutoff": {
-          "value": "45 minutes before departure",
+          "value": "45 minutes before departure with or without checked bags",
           "status": "official",
-          "source_url": "https://www.united.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.united.com/en/us/fly/travel/airport/airport-process.html",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "international_cutoff": {
-          "value": "60 minutes before departure",
+          "value": "60 minutes before departure for international flights",
           "status": "official",
-          "source_url": "https://www.united.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.united.com/en/us/fly/travel/airport/airport-process.html",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "boarding_close": {
-          "value": "15 to 20 minutes before departure",
+          "value": "15 minutes before departure for domestic; 30 minutes for international",
           "status": "official",
-          "source_url": "https://www.united.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.united.com/en/us/fly/travel/airport/airport-process.html",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -139,24 +132,24 @@
       ],
       "fields": {
         "care": {
-          "value": "When a flight is delayed or cancelled within carrier control, passengers are entitled to meals, refreshments, communication access, and hotel accommodation with transport for overnight delays.",
+          "value": "Meal vouchers for controllable delays of 3+ hours; hotel accommodation and transport for overnight delays within carrier control.",
           "status": "official",
-          "source_url": "https://www.united.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.united.com/en/us/fly/customer-commitment.html",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "rebooking_refund": {
-          "value": "For disruptions within carrier control, the airline rebooks passengers on the next available flight or provides a full refund for unused flight segments if delayed by 3 hours or more.",
+          "value": "Full refund to original form of payment or free rebooking on next United/partner flight for delays of 3+ hours.",
           "status": "official",
-          "source_url": "https://www.united.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.united.com/en/us/fly/customer-commitment.html",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "compensation": {
-          "value": "Statutory or policy compensation applies for cancellations or long delays within carrier control according to applicable aviation passenger rights regulations.",
+          "value": "DOT air passenger consumer protection regulations apply for denied boarding or cancellations within airline control.",
           "status": "official",
-          "source_url": "https://www.united.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.united.com/en/us/fly/customer-commitment.html",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -171,24 +164,24 @@
       ],
       "fields": {
         "fare_name": {
-          "value": "Basic Economy: 1 personal item included; full-size carry-on bag not permitted except on transatlantic/transpacific or for mileage members",
+          "value": "Basic Economy (includes 1 small personal item only on domestic; no full-sized carry-on bag; seat assigned at check-in)",
           "status": "official",
           "source_url": "https://www.united.com/en/us/fly/travel/inflight/basic-economy.html",
-          "verified_at": "2026-10-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "seat_selection_included": {
-          "value": "Seat assigned prior to boarding; advance seat selection available for purchase",
+          "value": "Advance seat selection available for purchase on Basic Economy; complimentary for Economy, Economy Plus, and Polaris",
           "status": "official",
           "source_url": "https://www.united.com/en/us/fly/travel/inflight/basic-economy.html",
-          "verified_at": "2026-10-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "change_cancellation_policy": {
-          "value": "Non-changeable. Cancellation within 24 hours of booking permitted for full refund",
+          "value": "Basic Economy subject to cancellation fee; $0 change fee on Economy and premium fares for US domestic and international flights",
           "status": "official",
           "source_url": "https://www.united.com/en/us/fly/travel/inflight/basic-economy.html",
-          "verified_at": "2026-10-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -204,24 +197,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
+          "value": "United Polaris (1-2-1 direct aisle lie-flat suites on 777/787/767), United Premium Plus (2-3-2 38\" pitch), Economy Plus (extra legroom), and Economy (3-3-3 / 3-3 31\" pitch)",
           "status": "official",
-          "source_url": "https://www.united.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.united.com/en/us/fly/travel/inflight/cabin-features.html",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
+          "value": "Reserve a seat in advance for free on Economy/Polaris or for a fee on Basic Economy; free random seat assigned at check-in",
           "status": "official",
-          "source_url": "https://www.united.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.united.com/en/us/fly/travel/inflight/cabin-features.html",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
+          "value": "United's dynamic seat map automatically seats children under 12 adjacent to an accompanying adult free of charge",
           "status": "official",
-          "source_url": "https://www.united.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.united.com/en/us/fly/travel/inflight/cabin-features.html",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

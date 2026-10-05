@@ -12,27 +12,24 @@
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
+          "value": "56 x 35 x 23 cm (22 x 14 x 9 in)",
           "status": "official",
-          "source_url": "https://www.delta.com/baggage",
-          "notes": "Delta Air Lines cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.delta.com/us/en/baggage/carry-on-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "weight_economy": {
-          "value": "7 kg (15 lbs)",
+          "value": "No weight limit on most routes (except Singapore max 7 kg, Beijing/Shanghai max 10 kg)",
           "status": "official",
-          "source_url": "https://www.delta.com/baggage",
-          "notes": "Delta Air Lines Economy Class carry-on weight limit.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.delta.com/us/en/baggage/carry-on-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
+          "value": "No weight limit on most routes (except Singapore max 7 kg, Beijing/Shanghai max 10 kg)",
           "status": "official",
-          "source_url": "https://www.delta.com/baggage",
-          "notes": "Delta Air Lines Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.delta.com/us/en/baggage/carry-on-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -47,27 +44,24 @@
       ],
       "fields": {
         "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
+          "value": "1 piece up to 23 kg (50 lbs) on transatlantic/transpacific; $35 for 1st bag on US domestic Basic/Main",
           "status": "official",
-          "source_url": "https://www.delta.com/baggage",
-          "notes": "Delta Air Lines Economy Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.delta.com/us/en/baggage/checked-baggage/first-checked-bag",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
+          "value": "2 pieces up to 32 kg (70 lbs) each (Delta One / First Class)",
           "status": "official",
-          "source_url": "https://www.delta.com/baggage",
-          "notes": "Delta Air Lines Business Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.delta.com/us/en/baggage/checked-baggage/first-checked-bag",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
+          "value": "3 pieces up to 32 kg (70 lbs) each (First Class / Delta One)",
           "status": "official",
-          "source_url": "https://www.delta.com/baggage",
-          "notes": "Delta Air Lines First Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.delta.com/us/en/baggage/checked-baggage/first-checked-bag",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -80,11 +74,10 @@
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800 221 1212",
+          "value": "+1 800-221-1212",
           "status": "official",
-          "source_url": "https://www.delta.com/contact",
-          "notes": "Delta Air Lines official customer support line.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.delta.com/us/en/need-help/overview",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -99,31 +92,31 @@
       ],
       "fields": {
         "online_checkin_opens": {
-          "value": "24 hours before scheduled departure",
+          "value": "24 hours before scheduled departure via delta.com or Fly Delta app",
           "status": "official",
-          "source_url": "https://www.delta.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.delta.com/us/en/check-in-security/check-in-requirements",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "domestic_cutoff": {
-          "value": "45 minutes before departure",
+          "value": "30 minutes before departure (45 min with checked bags at major US hubs)",
           "status": "official",
-          "source_url": "https://www.delta.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.delta.com/us/en/check-in-security/check-in-requirements",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "international_cutoff": {
-          "value": "60 minutes before departure",
+          "value": "60 minutes before departure for international flights",
           "status": "official",
-          "source_url": "https://www.delta.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.delta.com/us/en/check-in-security/check-in-requirements",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "boarding_close": {
-          "value": "15 to 20 minutes before departure",
+          "value": "15 minutes before departure for domestic; 30 minutes for international",
           "status": "official",
-          "source_url": "https://www.delta.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.delta.com/us/en/check-in-security/check-in-requirements",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -139,24 +132,24 @@
       ],
       "fields": {
         "care": {
-          "value": "When a flight is delayed or cancelled within carrier control, passengers are entitled to meals, refreshments, communication access, and hotel accommodation with transport for overnight delays.",
+          "value": "Meal vouchers for controllable delays over 3 hours; hotel accommodation and ground transport for overnight delays.",
           "status": "official",
-          "source_url": "https://www.delta.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.delta.com/us/en/legal/customer-commitment",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "rebooking_refund": {
-          "value": "For disruptions within carrier control, the airline rebooks passengers on the next available flight or provides a full refund for unused flight segments if delayed by 3 hours or more.",
+          "value": "Full refund to original payment method or free rebooking on next available flight for controllable delays of 3+ hours.",
           "status": "official",
-          "source_url": "https://www.delta.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.delta.com/us/en/legal/customer-commitment",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "compensation": {
-          "value": "Statutory or policy compensation applies for cancellations or long delays within carrier control according to applicable aviation passenger rights regulations.",
+          "value": "DOT consumer protection rules apply for involuntary denied boarding or cancellations within airline control.",
           "status": "official",
-          "source_url": "https://www.delta.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.delta.com/us/en/legal/customer-commitment",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -171,24 +164,24 @@
       ],
       "fields": {
         "fare_name": {
-          "value": "Basic Economy: 1 carry-on bag and 1 personal item included; no free checked bag on most routes",
+          "value": "Basic Economy (includes 1 carry-on bag & 1 personal item; seat assigned at check-in; non-changeable & non-refundable)",
           "status": "official",
-          "source_url": "https://www.delta.com/us/en/travel-planning-center/basic-economy",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.delta.com/us/en/travel-planning-center/change-or-cancel-your-flight/basic-economy-cancellation",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "seat_selection_included": {
-          "value": "Seat assigned at check-in or after check-in; advance seat selection not available for free",
+          "value": "Seat assigned for free at check-in or gate for Basic Economy; advance seat selection available for a fee or free on Main Cabin",
           "status": "official",
-          "source_url": "https://www.delta.com/us/en/travel-planning-center/basic-economy",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.delta.com/us/en/travel-planning-center/change-or-cancel-your-flight/basic-economy-cancellation",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "change_cancellation_policy": {
-          "value": "Non-changeable and non-refundable. Cancellations incur a cancellation fee deducted from eCredit value",
+          "value": "Basic Economy non-changeable; Main Cabin and above have $0 change fees on US domestic & international flights originating in North America",
           "status": "official",
-          "source_url": "https://www.delta.com/us/en/travel-planning-center/basic-economy",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.delta.com/us/en/travel-planning-center/change-or-cancel-your-flight/basic-economy-cancellation",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -204,24 +197,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
+          "value": "Delta One (1-2-1 lie-flat suites with sliding doors on A350/A330neo), Delta Premium Select (2-3-2 38\" pitch), Delta Comfort+ (extra legroom), and Main Cabin (3-3-3 / 3-3 31-32\" pitch)",
           "status": "official",
-          "source_url": "https://www.delta.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.delta.com/us/en/onboard/onboard-experience/overview",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
+          "value": "Reserve a seat in advance for free on Main Cabin/Premium/Delta One or for a fee on Basic Economy; seat assigned at check-in if unreserved",
           "status": "official",
-          "source_url": "https://www.delta.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.delta.com/us/en/onboard/onboard-experience/overview",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
+          "value": "Delta seats children under 13 next to an accompanying adult free of charge at booking or check-in",
           "status": "official",
-          "source_url": "https://www.delta.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.delta.com/us/en/onboard/onboard-experience/overview",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

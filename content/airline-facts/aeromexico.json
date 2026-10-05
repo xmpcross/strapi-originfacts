@@ -14,25 +14,22 @@
         "carryon_bag_dimensions": {
           "value": "55 x 40 x 25 cm",
           "status": "official",
-          "source_url": "https://aeromexico.com/es-mx/informacion-de-vuelos/equipaje/equipaje-de-mano",
-          "notes": "Aeroméxico cabin baggage size limit: 55 x 40 x 25 cm.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://aeromexico.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "weight_economy": {
-          "value": "10 kg (22 lbs)",
+          "value": "1 cabin bag + 1 personal item total up to 10 kg (22 lbs) for Basic/Classic, up to 15 kg for AM Plus",
           "status": "official",
-          "source_url": "https://aeromexico.com/es-mx/informacion-de-vuelos/equipaje/equipaje-de-mano",
-          "notes": "Aeroméxico Economy Class carry-on weight limit.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://aeromexico.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "weight_business_first": {
-          "value": "15 kg (33 lbs)",
+          "value": "2 cabin bags + 1 personal item total up to 15 kg (33 lbs) (Clase Premier)",
           "status": "official",
-          "source_url": "https://aeromexico.com/es-mx/informacion-de-vuelos/equipaje/equipaje-de-mano",
-          "notes": "Aeroméxico Premier Class carry-on weight limit.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://aeromexico.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -47,27 +44,24 @@
       ],
       "fields": {
         "piece_weight_economy": {
-          "value": "1 piece up to 25 kg (55 lbs)",
+          "value": "1 piece up to 23 kg (50 lbs) (Classic/AM Plus; Basic excludes checked bag)",
           "status": "official",
-          "source_url": "https://aeromexico.com/es-mx/informacion-de-vuelos/equipaje/equipaje-documentado",
-          "notes": "Aeroméxico Economy Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://aeromexico.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
+          "value": "2 pieces up to 32 kg (70 lbs) each (Clase Premier)",
           "status": "official",
-          "source_url": "https://aeromexico.com/es-mx/informacion-de-vuelos/equipaje/equipaje-documentado",
-          "notes": "Aeroméxico Premier Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://aeromexico.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
+          "value": "2 pieces up to 32 kg (70 lbs) each (Clase Premier is top cabin)",
           "status": "official",
-          "source_url": "https://aeromexico.com/es-mx/informacion-de-vuelos/equipaje/equipaje-documentado",
-          "notes": "Aeroméxico Premier Class elite checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://aeromexico.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -99,31 +93,31 @@
       ],
       "fields": {
         "online_checkin_opens": {
-          "value": "24 hours before scheduled departure",
+          "value": "24 hours before departure (48 hours for domestic Mexico flights)",
           "status": "official",
-          "source_url": "https://aeromexico.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://aeromexico.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "domestic_cutoff": {
           "value": "45 minutes before departure",
           "status": "official",
-          "source_url": "https://aeromexico.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://aeromexico.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "international_cutoff": {
           "value": "60 minutes before departure",
           "status": "official",
-          "source_url": "https://aeromexico.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://aeromexico.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "boarding_close": {
-          "value": "15 to 20 minutes before departure",
+          "value": "15–20 minutes before departure",
           "status": "official",
-          "source_url": "https://aeromexico.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://aeromexico.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -139,24 +133,24 @@
       ],
       "fields": {
         "care": {
-          "value": "When a flight is delayed or cancelled within carrier control, passengers are entitled to meals, refreshments, communication access, and hotel accommodation with transport for overnight delays.",
+          "value": "Food, drinks, phone/email access, and hotel accommodation with ground transport for delays >4 hours under AFAC Mexico rules.",
           "status": "official",
-          "source_url": "https://aeromexico.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://aeromexico.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "rebooking_refund": {
-          "value": "For disruptions within carrier control, the airline rebooks passengers on the next available flight or provides a full refund for unused flight segments if delayed by 3 hours or more.",
+          "value": "Choice of full ticket refund or rebooking to final destination without penalty if flight cancelled or delayed >4 hours.",
           "status": "official",
-          "source_url": "https://aeromexico.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://aeromexico.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "compensation": {
-          "value": "Statutory or policy compensation applies for cancellations or long delays within carrier control according to applicable aviation passenger rights regulations.",
+          "value": "Statutory compensation (up to 25% ticket price or AFAC mandate) for delay/cancellation attributable to airline.",
           "status": "official",
-          "source_url": "https://aeromexico.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://aeromexico.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -171,24 +165,24 @@
       ],
       "fields": {
         "fare_name": {
-          "value": "Standard / Economy Light: includes 1 carry-on bag and 1 personal item; checked bag allowance depends on route and fare category",
+          "value": "Basica, Clasica, AM Plus, Premier",
           "status": "official",
-          "source_url": "https://aeromexico.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://aeromexico.com/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "seat_selection_included": {
-          "value": "Free seat assignment provided during online check-in; advance seat selection prior to check-in is available for a fee",
+          "value": "Included on Clasica, AM Plus, Premier; fee applies on Basica until check-in.",
           "status": "official",
-          "source_url": "https://aeromexico.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://aeromexico.com/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "change_cancellation_policy": {
-          "value": "Ticket modifications and cancellations are subject to carrier fare rules, change fees, and applicable fare difference",
+          "value": "Basica non-refundable; Clasica and AM Plus allow changes/refunds with minimal fee.",
           "status": "official",
-          "source_url": "https://aeromexico.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://aeromexico.com/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -204,24 +198,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
+          "value": "Standard Economy, AM Plus (extra legroom and priority boarding), Clase Premier lie-flat suites.",
           "status": "official",
-          "source_url": "https://aeromexico.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://aeromexico.com/cabins",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
+          "value": "Free advance seat selection on Clasica and higher; fee or check-in assignment for Basica.",
           "status": "official",
-          "source_url": "https://aeromexico.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://aeromexico.com/seat-selection",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
+          "value": "Aeromexico automatically seats families with children under 12 together free of charge.",
           "status": "official",
-          "source_url": "https://aeromexico.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://aeromexico.com/family-travel",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

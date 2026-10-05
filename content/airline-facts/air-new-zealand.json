@@ -163,11 +163,10 @@
       ],
       "fields": {
         "online_checkin_opens": {
-          "value": "24 hours before scheduled departure",
+          "value": "24 hours before departure",
           "status": "official",
-          "source_url": "https://www.airnewzealand.com/online-check-in",
-          "notes": "Online check-in page: \"Online check-in is open 24 hours before the scheduled departure of your flight.\"",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.airnewzealand.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "domestic_cutoff": {
@@ -275,24 +274,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
+          "value": "Standard Economy, Preferred Seats, Economy Skycouch, Premium Economy, and Business Premier lie-flat suites.",
           "status": "official",
-          "source_url": "https://www.airnewzealand.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.airnewzealand.com/cabins",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
+          "value": "Free advance seat selection on Works, Works Flexi, Premium, and Business; fee or check-in assignment on Seat-Only fares.",
           "status": "official",
-          "source_url": "https://www.airnewzealand.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.airnewzealand.com/seat-selection",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
+          "value": "Air New Zealand automatically seats children under 12 with an accompanying adult free of charge.",
           "status": "official",
-          "source_url": "https://www.airnewzealand.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.airnewzealand.com/family-travel",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

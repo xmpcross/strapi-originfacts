@@ -52,27 +52,24 @@
       ],
       "fields": {
         "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
+          "value": "1 piece up to 23 kg (50 lbs) (Basic, Classic, Plus fares; Discount excludes checked bag)",
           "status": "official",
-          "source_url": "https://www.flytap.com/baggage",
-          "notes": "TAP Air Portugal Economy Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.flytap.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
+          "value": "2 pieces up to 32 kg (70 lbs) each (Executive, Top Executive)",
           "status": "official",
-          "source_url": "https://www.flytap.com/baggage",
-          "notes": "TAP Air Portugal Business Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.flytap.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
+          "value": "2 pieces up to 32 kg (70 lbs) each (Executive is top cabin)",
           "status": "official",
-          "source_url": "https://www.flytap.com/baggage",
-          "notes": "TAP Air Portugal First Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.flytap.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -130,24 +127,24 @@
       ],
       "fields": {
         "care": {
-          "value": "When a flight is delayed or cancelled within carrier control, passengers are entitled to meals, refreshments, communication access, and hotel accommodation with transport for overnight delays.",
+          "value": "Meals, drinks, 2 communications, and hotel accommodation with transport for overnight delays under EU 261/2004.",
           "status": "official",
-          "source_url": "https://www.flytap.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.flytap.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "rebooking_refund": {
-          "value": "For disruptions within carrier control, the airline rebooks passengers on the next available flight or provides a full refund for unused flight segments if delayed by 3 hours or more.",
+          "value": "Choice of full refund within 7 days or rebooking to final destination for delays >5 hours or cancellations.",
           "status": "official",
-          "source_url": "https://www.flytap.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.flytap.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "compensation": {
-          "value": "Statutory or policy compensation applies for cancellations or long delays within carrier control according to applicable aviation passenger rights regulations.",
+          "value": "EU 261 compensation (€250 to €600) for cancellations or delays >3 hours at final destination.",
           "status": "official",
-          "source_url": "https://www.flytap.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.flytap.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -195,24 +192,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
+          "value": "Standard Economy, Extra Legroom (Economy Xtra), and Executive Business lie-flat seats.",
           "status": "official",
-          "source_url": "https://www.flytap.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.flytap.com/cabins",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
+          "value": "Complimentary advance seat selection for Plus/Executive fares; fee or check-in assignment for Discount/Basic.",
           "status": "official",
-          "source_url": "https://www.flytap.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.flytap.com/seat-selection",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
+          "value": "TAP guarantees adjacent seating for adult passengers travelling with children under 12 free of charge.",
           "status": "official",
-          "source_url": "https://www.flytap.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.flytap.com/family-travel",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

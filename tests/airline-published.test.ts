@@ -35,3 +35,22 @@ test('published airline guides: each has a facts file with enough manually verif
 test('published airline guides: none has a sourced cessation date', () => {
   for (const slug of PUBLISHED_AIRLINE_GUIDES) assert.equal(airlineHasCeased(slug), false, `${slug} has ceased`);
 });
+
+test('cargo airlines: excluded from published guides and indexability', () => {
+  const { isNonPassengerAirline } = require('../lib/airline-exclusions');
+  const { airlineIsIndexable } = require('../lib/airline-tier');
+  
+  const cargoSlugs = [
+    'abx-air-inc', 'ahk-air-hong-kong-limited', 'air-cargo-carriers-llc', 'air-transport-international-llc',
+    'airbridgecargo', 'amerijet-international-inc', 'atlas-air', 'atran', 'aviastar-tu', 'china-cargo-airlines',
+    'dhl-air-limited', 'everts-air-cargo', 'fedex', 'kalitta-air', 'lan-chile-cargo', 'lynden-air-cargo-llc',
+    'martinair', 'mng-airlines', 'nippon-cargo-airlines', 'northern-air-cargo', 'polar-air-cargo-worldwide-inc',
+    'skytaxi', 'southern-air', 'suparna-airlines', 'uls-airlines-cargo', 'uni-top-airlines', 'volga-dnepr-airlines', 'zimex-aviation'
+  ];
+
+  for (const slug of cargoSlugs) {
+    assert.equal(PUBLISHED_AIRLINE_GUIDES.has(slug), false, `${slug} should not be in PUBLISHED_AIRLINE_GUIDES`);
+    assert.equal(isNonPassengerAirline({ slug }), true, `${slug} should be flagged as non-passenger/cargo`);
+    assert.equal(airlineIsIndexable({ slug, iataCode: null }, true), false, `${slug} should not be indexable`);
+  }
+});

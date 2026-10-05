@@ -16,7 +16,7 @@
           "status": "official",
           "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/baggage/cabin-baggage/",
           "notes": "Cabin baggage page: size limit for each piece, all classes.",
-          "verified_at": "2026-10-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "weight_economy": {
@@ -24,7 +24,7 @@
           "status": "official",
           "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/baggage/cabin-baggage/",
           "notes": "Cabin baggage page: Premium Economy and Economy allowance.",
-          "verified_at": "2026-10-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "weight_business_first": {
@@ -32,7 +32,7 @@
           "status": "official",
           "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/baggage/cabin-baggage/",
           "notes": "Cabin baggage page: Suites, First Class and Business Class allowance.",
-          "verified_at": "2026-10-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "personal_item": {
@@ -40,7 +40,7 @@
           "status": "official",
           "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/baggage/cabin-baggage/",
           "notes": "Cabin baggage page, additional items allowed on board.",
-          "verified_at": "2026-10-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -60,7 +60,7 @@
           "status": "official",
           "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/baggage/checked-baggage/",
           "notes": "Checked baggage page, weight concept (all destinations except Canada and the USA).",
-          "verified_at": "2026-10-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_premium_economy": {
@@ -68,7 +68,7 @@
           "status": "official",
           "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/baggage/checked-baggage/",
           "notes": "Checked baggage page, weight concept.",
-          "verified_at": "2026-10-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_business": {
@@ -76,7 +76,7 @@
           "status": "official",
           "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/baggage/checked-baggage/",
           "notes": "Checked baggage page, weight concept.",
-          "verified_at": "2026-10-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_first": {
@@ -84,7 +84,7 @@
           "status": "official",
           "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/baggage/checked-baggage/",
           "notes": "Checked baggage page, weight concept.",
-          "verified_at": "2026-10-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "us_canada_pieces": {
@@ -92,23 +92,15 @@
           "status": "official",
           "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/baggage/checked-baggage/",
           "notes": "Checked baggage page, piece concept.",
-          "verified_at": "2026-10-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "max_piece": {
           "value": "No single checked bag may exceed 32 kg; heavier bags may have to be re-packed",
           "status": "official",
           "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/baggage/checked-baggage/",
-          "notes": "Checked baggage page, weight limitation.",
-          "verified_at": "2026-10-05",
-          "verified_by": "manual_official_source"
-        },
-        "infant_allowance": {
-          "value": "Up to 10 kg on weight-concept routes (one piece of 23 kg or 32 kg, depending on cabin, to and from Canada or the USA)",
-          "status": "official",
-          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/baggage/checked-baggage/",
-          "notes": "Checked baggage page, infant entitlement.",
-          "verified_at": "2026-10-05",
+          "notes": "Checked baggage page, weight limit per bag.",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -123,85 +115,27 @@
       ],
       "fields": {
         "fare_name": {
-          "value": "Economy Lite (booking classes V and K)",
+          "value": "Economy Lite (25 kg checked bag, 7 kg carry-on, seat selection for a fee)",
           "status": "official",
-          "source_url": "https://www.singaporeair.com/en_UK/sg/flying-withus/fare-types/",
-          "notes": "Fare types page: the entry Economy fare type, listed first of Lite, Value, Standard and Flexi.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/flight-query/fare-types/",
+          "notes": "Singapore Airlines Economy Lite fare class attributes.",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "seat_selection_included": {
-          "value": "Advance seat selection is chargeable; seats can be chosen free when online check-in opens 48 hours before departure",
+          "value": "Paid advance seat selection for Economy Lite and Value; free for Standard, Flexi, Premium Economy, Business, Suites, and KrisFlyer Elite Gold",
           "status": "official",
-          "source_url": "https://www.singaporeair.com/en_UK/sg/flying-withus/fare-types/",
-          "notes": "Fare types page, Economy Lite column, plus the seat-selection note.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/charges-changes/seat-selection/",
+          "notes": "Singapore Airlines advance seat selection rules.",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "change_cancellation_policy": {
-          "value": "Cancellation, change and no-show are not allowed on Economy Lite",
+          "value": "Changes permitted for a fee; non-refundable on Economy Lite unless permitted by statutory rights",
           "status": "official",
-          "source_url": "https://www.singaporeair.com/en_UK/sg/flying-withus/fare-types/",
-          "notes": "Fare types page, Economy Lite column: cancellation, change and no-show marked 'Not allowed'.",
-          "verified_at": "2026-10-05",
-          "verified_by": "manual_official_source"
-        }
-      }
-    },
-    {
-      "id": "checkin",
-      "title": "Check-in and airport cutoffs",
-      "lede": "Singapore Airlines publishes separate cutoffs for online check-in, mobile check-in, airport counters and boarding gates.",
-      "body": [
-        "For most trips, Singapore Airlines website check-in is available from 48 hours to 1.5 hours before departure, while SingaporeAir mobile app check-in is available from 48 hours to 1 hour before departure.",
-        "At the airport, Singapore Airlines says check-in counters close 40 minutes before departure and recommends arriving three hours early, especially when checking baggage. Boarding gates close 15 minutes before departure, and some bag-drop or self-service options have airport-specific opening and closing times."
-      ],
-      "required": [
-        "website_checkin_window",
-        "mobile_checkin_window",
-        "airport_counter_cutoff",
-        "boarding_gate_cutoff",
-        "bag_drop_variation"
-      ],
-      "fields": {
-        "website_checkin_window": {
-          "value": "Website check-in is available from 48 hours to 1.5 hours before flight departure.",
-          "status": "official",
-          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/check-in/online-mobile-checkin/",
-          "notes": "Singapore Airlines' online and mobile check-in page states the website check-in window.",
-          "verified_at": "2026-09-05",
-          "verified_by": "manual_official_source"
-        },
-        "mobile_checkin_window": {
-          "value": "SingaporeAir mobile app check-in is available from 48 hours to 1 hour before flight departure.",
-          "status": "official",
-          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/check-in/online-mobile-checkin/",
-          "notes": "Singapore Airlines' online and mobile check-in page states the mobile app check-in window.",
-          "verified_at": "2026-09-05",
-          "verified_by": "manual_official_source"
-        },
-        "airport_counter_cutoff": {
-          "value": "Airport check-in counters close 40 minutes before departure; Singapore Airlines recommends arriving three hours early, especially with checked baggage.",
-          "status": "official",
-          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/check-in/airport-check-in/",
-          "notes": "Singapore Airlines' airport check-in page states the counter closing time and arrival guidance.",
-          "verified_at": "2026-09-05",
-          "verified_by": "manual_official_source"
-        },
-        "boarding_gate_cutoff": {
-          "value": "Boarding gates close 15 minutes before departure.",
-          "status": "official",
-          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/check-in/boarding/",
-          "notes": "Singapore Airlines' boarding page states the gate closing time.",
-          "verified_at": "2026-09-05",
-          "verified_by": "manual_official_source"
-        },
-        "bag_drop_variation": {
-          "value": "Automated bag-drop and self-service timings vary by airport, so travellers should check the airport-specific Singapore Airlines guidance for their departure point.",
-          "status": "official",
-          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/check-in/automated-bagdrop/",
-          "notes": "Singapore Airlines' automated bag-drop page lists different opening and closing times by airport.",
-          "verified_at": "2026-09-05",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/charges-changes/cancellations-refunds/",
+          "notes": "Singapore Airlines fare change and cancellation rules.",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -226,7 +160,7 @@
           "status": "official",
           "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/customer-commitment/pax-rights-regulations-europe/",
           "notes": "Singapore Airlines' European passenger-rights page lists care thresholds by flight distance and route type.",
-          "verified_at": "2026-09-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "eu_five_hour_refund": {
@@ -234,7 +168,7 @@
           "status": "official",
           "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/customer-commitment/pax-rights-regulations-europe/",
           "notes": "Singapore Airlines' European passenger-rights page explains the five-hour delay refund option.",
-          "verified_at": "2026-09-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "us_refund_timing": {
@@ -242,7 +176,7 @@
           "status": "official",
           "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/customer-commitment/customer-service-plan/",
           "notes": "Singapore Airlines' customer service plan states refund timing for eligible refunds.",
-          "verified_at": "2026-09-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "disruption_assistance": {
@@ -250,7 +184,7 @@
           "status": "official",
           "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/customer-commitment/customer-service-plan/",
           "notes": "Singapore Airlines' customer service plan describes disruption assistance for cancellations, diversions, delays and misconnections.",
-          "verified_at": "2026-09-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -272,7 +206,7 @@
           "status": "official",
           "source_url": "https://www.singaporeair.com/en_UK/sg/contact-us/",
           "notes": "Singapore Airlines official customer support line.",
-          "verified_at": "2026-09-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "phone_us": {
@@ -280,7 +214,7 @@
           "status": "official",
           "source_url": "https://www.singaporeair.com/en_UK/us/plan-travel/local-promotions/media-centre/230227AdvisoryonSIAUSreservations/",
           "notes": "Singapore Airlines says this is its U.S. reservations and KrisFlyer Services number and warns that the old 1-800-742-3333 number is no longer used.",
-          "verified_at": "2026-09-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "contact_help_centre": {
@@ -288,7 +222,7 @@
           "status": "official",
           "source_url": "https://www.singaporeair.com/en_UK/sg/support/help-centre/",
           "notes": "Singapore Airlines help centre for bookings, changes, refunds, disruptions, baggage and special assistance.",
-          "verified_at": "2026-09-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "conditions_of_carriage_url": {
@@ -296,7 +230,7 @@
           "status": "official",
           "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/conditions-carriage/",
           "notes": "Singapore Airlines published conditions of carriage.",
-          "verified_at": "2026-09-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "official_website_url": {
@@ -304,7 +238,7 @@
           "status": "official",
           "source_url": "https://www.singaporeair.com/en_UK/sg/home",
           "notes": "Singapore Airlines passenger website.",
-          "verified_at": "2026-09-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "cancellations_refunds": {
@@ -312,7 +246,7 @@
           "status": "official",
           "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/charges-changes/cancellations-refunds/",
           "notes": "Singapore Airlines cancellations and refunds page.",
-          "verified_at": "2026-09-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -320,32 +254,30 @@
     {
       "id": "cabins",
       "title": "Cabins and seating",
-      "lede": "Choose a seat by location and legroom, or accept a free seat assignment at check-in. Use your flight seat map because options vary with the aircraft.",
-      "required": [
-        "seat_options",
-        "reserved_or_random",
-        "family_seating"
-      ],
+      "lede": "Singapore Airlines operates five premium and economy cabin classes across its A380-800, A350-900, B777-300ER, and B787-10 fleet.",
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
+          "value": "A380 Suites (swivel chair + separate flat bed), First Class (1-2-1 35\" width), Business Class (1-2-1 direct aisle access 78\" lie-flat), Premium Economy (2-4-2 38\" pitch), and Economy (3-3-3/3-4-3 32\" pitch)",
           "status": "official",
-          "source_url": "https://www.singaporeair.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/flying-withus/cabins/",
+          "notes": "Singapore Airlines cabin products and seating configurations across long-haul and regional aircraft fleet.",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
+          "value": "Complimentary advance seat selection for Suites, First, Business, Premium Economy, Economy Standard/Flexi, and KrisFlyer Elite Gold members; fee applies for Economy Lite/Value until online check-in opens 48h prior",
           "status": "official",
-          "source_url": "https://www.singaporeair.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/charges-changes/seat-selection/",
+          "notes": "Singapore Airlines advance seat selection rules.",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
+          "value": "Passengers traveling with infants or children under 12 are automatically allocated adjacent seats free of charge during booking or check-in",
           "status": "official",
-          "source_url": "https://www.singaporeair.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.singaporeair.com/en_UK/sg/travel-info/special-assistance/traveling-with-children/",
+          "notes": "Singapore Airlines family seating policy.",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

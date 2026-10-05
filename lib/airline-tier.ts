@@ -23,6 +23,7 @@ import type { StrapiAirline } from '@/lib/strapi';
 import { getRouteFacts } from '@/lib/route-facts';
 import { hasAirlineReviews } from '@/lib/airline-reviews';
 import { airlineHasCeased } from '@/lib/airline-status';
+import { isNonPassengerAirline } from '@/lib/airline-exclusions';
 
 /** 1 = full treatment, 2 = data modules only, 3 = directory row only. */
 export type AirlineTier = 1 | 2 | 3;
@@ -91,6 +92,48 @@ export const PUBLISHED_AIRLINE_GUIDES = new Set([
   'rex-regional-express',
   'srilankan-airlines',
   'westjet',
+  // Batch 2 (6 Oct 2026)
+  'all-nippon-airways',
+  'british-airways',
+  'cathay-pacific',
+  'delta-air-lines',
+  'japan-airlines',
+  'klm-royal-dutch-airlines',
+  'lufthansa',
+  'united-airlines',
+  // Batch 3 (6 Oct 2026)
+  'air-france',
+  'air-new-zealand',
+  'etihad-airways',
+  'eva-air',
+  'finnair',
+  'iberia',
+  'korean-air',
+  'latam-airlines',
+  'turkish-airlines',
+  'virgin-atlantic',
+  // Batch 4 (6 Oct 2026)
+  'air-india',
+  'austrian-airlines',
+  'oman-air',
+  'royal-jordanian',
+  'sas-scandinavian',
+  'saudia',
+  'swiss',
+  'tap-air-portugal',
+  'thai-airways',
+  'vietnam-airlines',
+  // Batch 5 (6 Oct 2026)
+  'aeromexico',
+  'air-europa',
+  'airbaltic',
+  'asiana-airlines',
+  'copa-airlines',
+  'egyptair',
+  'ethiopian-airlines',
+  'hawaiian-airlines',
+  'icelandair',
+  'lot-polish',
 ]);
 
 export function airlineGuideIsPublished(slug: string): boolean {
@@ -128,5 +171,6 @@ export function airlineTier(a: AirlineTierInput, hasTrackedRoutes: boolean): Air
  */
 export function airlineIsIndexable(a: AirlineTierInput, hasTrackedRoutes: boolean): boolean {
   if (airlineHasCeased(a.slug)) return false;
+  if (isNonPassengerAirline(a)) return false;
   return airlineTier(a, hasTrackedRoutes) < 3;
 }

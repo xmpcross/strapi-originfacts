@@ -18,15 +18,10 @@
           "verified_by": "manual_official_source"
         },
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
+          "value": "55 x 40 x 23 cm",
           "status": "official",
-          "source_url": "https://www.ethiopianairlines.com/information/baggage-information/carry-on-baggage",
-          "notes": "Ethiopian's carry-on page gives 23 x 40 x 55 (cm); the FAQ on its free-baggage-allowance page (Gabon edition) gives 55cmx40cmx20cm.",
-          "conflicting_values": [
-            "23 x 40 x 55 (cm) (carry-on baggage page)",
-            "55cmx40cmx20cm (free baggage allowance page FAQ)"
-          ],
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.ethiopianairlines.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "personal_item": {
@@ -39,6 +34,20 @@
             "Up to 3kg (free baggage allowance page FAQ)"
           ],
           "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "weight_economy": {
+          "value": "1 piece up to 7 kg + 1 personal item",
+          "status": "official",
+          "source_url": "https://www.ethiopianairlines.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "weight_business_first": {
+          "value": "2 pieces up to 8 kg each + 1 personal item (Cloud Nine)",
+          "status": "official",
+          "source_url": "https://www.ethiopianairlines.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -53,27 +62,24 @@
       ],
       "fields": {
         "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
+          "value": "2 pieces up to 23 kg (50 lbs) each (long-haul piece concept)",
           "status": "official",
-          "source_url": "https://www.ethiopianairlines.com/baggage",
-          "notes": "Ethiopian Airlines Economy Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.ethiopianairlines.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
+          "value": "2 pieces up to 32 kg (70 lbs) each (Cloud Nine)",
           "status": "official",
-          "source_url": "https://www.ethiopianairlines.com/baggage",
-          "notes": "Ethiopian Airlines Business Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.ethiopianairlines.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
+          "value": "2 pieces up to 32 kg (70 lbs) each (Cloud Nine is top cabin)",
           "status": "official",
-          "source_url": "https://www.ethiopianairlines.com/baggage",
-          "notes": "Ethiopian Airlines First Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.ethiopianairlines.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -105,31 +111,31 @@
       ],
       "fields": {
         "online_checkin_opens": {
-          "value": "24 hours before scheduled departure",
+          "value": "36 hours before departure",
           "status": "official",
-          "source_url": "https://www.ethiopianairlines.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.ethiopianairlines.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "domestic_cutoff": {
           "value": "45 minutes before departure",
           "status": "official",
-          "source_url": "https://www.ethiopianairlines.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.ethiopianairlines.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "international_cutoff": {
           "value": "60 minutes before departure",
           "status": "official",
-          "source_url": "https://www.ethiopianairlines.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.ethiopianairlines.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "boarding_close": {
-          "value": "15 to 20 minutes before departure",
+          "value": "20 minutes before departure",
           "status": "official",
-          "source_url": "https://www.ethiopianairlines.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.ethiopianairlines.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -145,24 +151,24 @@
       ],
       "fields": {
         "care": {
-          "value": "When a flight is delayed or cancelled within carrier control, passengers are entitled to meals, refreshments, communication access, and hotel accommodation with transport for overnight delays.",
+          "value": "Free meals, beverages, phone calls, and hotel accommodation with transport for overnight delays.",
           "status": "official",
-          "source_url": "https://www.ethiopianairlines.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.ethiopianairlines.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "rebooking_refund": {
-          "value": "For disruptions within carrier control, the airline rebooks passengers on the next available flight or provides a full refund for unused flight segments if delayed by 3 hours or more.",
+          "value": "Rebooking on earliest available Ethiopian Airlines flight or full refund for delays >4 hours or cancellations.",
           "status": "official",
-          "source_url": "https://www.ethiopianairlines.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.ethiopianairlines.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "compensation": {
-          "value": "Statutory or policy compensation applies for cancellations or long delays within carrier control according to applicable aviation passenger rights regulations.",
+          "value": "Compensation provided per Ethiopian Civil Aviation Authority guidelines or Montreal Convention.",
           "status": "official",
-          "source_url": "https://www.ethiopianairlines.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.ethiopianairlines.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -177,24 +183,24 @@
       ],
       "fields": {
         "fare_name": {
-          "value": "Standard / Economy Light: includes 1 carry-on bag and 1 personal item; checked bag allowance depends on route and fare category",
+          "value": "Promo, Economy Semi-Flex, Economy Flex, Cloud Nine Business",
           "status": "official",
-          "source_url": "https://www.ethiopianairlines.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.ethiopianairlines.com/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "seat_selection_included": {
-          "value": "Free seat assignment provided during online check-in; advance seat selection prior to check-in is available for a fee",
+          "value": "Included on Semi-Flex, Flex, Cloud Nine; fee applies on Promo until check-in.",
           "status": "official",
-          "source_url": "https://www.ethiopianairlines.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.ethiopianairlines.com/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "change_cancellation_policy": {
-          "value": "Ticket modifications and cancellations are subject to carrier fare rules, change fees, and applicable fare difference",
+          "value": "Promo non-refundable with change fees; Flex allows free changes or full refund.",
           "status": "official",
-          "source_url": "https://www.ethiopianairlines.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.ethiopianairlines.com/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -210,24 +216,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
+          "value": "Standard Economy, Cloud Nine Business lie-flat suites (B787/A350).",
           "status": "official",
-          "source_url": "https://www.ethiopianairlines.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.ethiopianairlines.com/cabins",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
+          "value": "Advance seat selection free for Flex & Cloud Nine; free or assigned at check-in for Promo.",
           "status": "official",
-          "source_url": "https://www.ethiopianairlines.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.ethiopianairlines.com/seat-selection",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
+          "value": "Ethiopian Airlines seats adult passengers travelling with children together during seat assignment.",
           "status": "official",
-          "source_url": "https://www.ethiopianairlines.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.ethiopianairlines.com/family-travel",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

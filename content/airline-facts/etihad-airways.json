@@ -12,27 +12,24 @@
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
+          "value": "50 x 40 x 25 cm",
           "status": "official",
-          "source_url": "https://www.etihad.com/baggage",
-          "notes": "Etihad Airways cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.etihad.com/baggage/cabin-bags",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "weight_economy": {
-          "value": "7 kg (15 lbs)",
+          "value": "1 piece up to 7 kg + 1 personal item (up to 5 kg)",
           "status": "official",
-          "source_url": "https://www.etihad.com/baggage",
-          "notes": "Etihad Airways Economy Class carry-on weight limit.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.etihad.com/baggage/cabin-bags",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
+          "value": "2 pieces up to 12 kg total + 1 personal item (up to 5 kg)",
           "status": "official",
-          "source_url": "https://www.etihad.com/baggage",
-          "notes": "Etihad Airways Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.etihad.com/baggage/cabin-bags",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -47,27 +44,24 @@
       ],
       "fields": {
         "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
+          "value": "1 piece up to 23 kg (50 lbs) (Choice/Choice Plus fares; 2 pieces on US/Canada routes)",
           "status": "official",
-          "source_url": "https://www.etihad.com/baggage",
-          "notes": "Etihad Airways Economy Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.etihad.com/baggage/checked-bags",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_business": {
           "value": "2 pieces up to 32 kg (70 lbs) each",
           "status": "official",
-          "source_url": "https://www.etihad.com/baggage",
-          "notes": "Etihad Airways Business Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.etihad.com/baggage/checked-bags",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
+          "value": "2 pieces up to 32 kg (70 lbs) each (First Class Suites)",
           "status": "official",
-          "source_url": "https://www.etihad.com/baggage",
-          "notes": "Etihad Airways First Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.etihad.com/baggage/checked-bags",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -99,31 +93,31 @@
       ],
       "fields": {
         "online_checkin_opens": {
-          "value": "24 hours before scheduled departure",
+          "value": "30 hours before departure",
           "status": "official",
-          "source_url": "https://www.etihad.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.etihad.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "domestic_cutoff": {
           "value": "45 minutes before departure",
           "status": "official",
-          "source_url": "https://www.etihad.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.etihad.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "international_cutoff": {
           "value": "60 minutes before departure",
           "status": "official",
-          "source_url": "https://www.etihad.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.etihad.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "boarding_close": {
-          "value": "15 to 20 minutes before departure",
+          "value": "20 minutes before departure",
           "status": "official",
-          "source_url": "https://www.etihad.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.etihad.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -139,24 +133,24 @@
       ],
       "fields": {
         "care": {
-          "value": "When a flight is delayed or cancelled within carrier control, passengers are entitled to meals, refreshments, communication access, and hotel accommodation with transport for overnight delays.",
+          "value": "Meals, refreshments, communication access, and hotel accommodation for delays over 4 hours overnight under UAE GCAA guidelines.",
           "status": "official",
-          "source_url": "https://www.etihad.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.etihad.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "rebooking_refund": {
-          "value": "For disruptions within carrier control, the airline rebooks passengers on the next available flight or provides a full refund for unused flight segments if delayed by 3 hours or more.",
+          "value": "Rebooking on next available Etihad flight or full refund for unflown flight segments if cancelled or delayed >4 hours.",
           "status": "official",
-          "source_url": "https://www.etihad.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.etihad.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "compensation": {
-          "value": "Statutory or policy compensation applies for cancellations or long delays within carrier control according to applicable aviation passenger rights regulations.",
+          "value": "Compensation provided in accordance with Montreal Convention guidelines or local regulatory mandates.",
           "status": "official",
-          "source_url": "https://www.etihad.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.etihad.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -204,24 +198,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
+          "value": "Economy Standard, Economy Space (extra legroom), Business Studio lie-flat seats, and First Class Apartments/Suites.",
           "status": "official",
-          "source_url": "https://www.etihad.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.etihad.com/cabins",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
+          "value": "Free advance seat selection on Choice Plus and Premium fares; fee for Economy Basic until online check-in opens.",
           "status": "official",
-          "source_url": "https://www.etihad.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.etihad.com/seat-selection",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
+          "value": "Etihad automatically seats families travelling with children under 12 together during seat assignment.",
           "status": "official",
-          "source_url": "https://www.etihad.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.etihad.com/family-travel",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

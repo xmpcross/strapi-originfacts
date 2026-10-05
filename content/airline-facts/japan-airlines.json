@@ -12,27 +12,24 @@
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
+          "value": "55 x 40 x 25 cm (115 cm total)",
           "status": "official",
           "source_url": "https://www.jal.co.jp/jp/en/inter/baggage/inflight/",
-          "notes": "Japan Airlines cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-10-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "weight_economy": {
-          "value": "7 kg (15 lbs)",
+          "value": "1 carry-on bag + 1 personal item, total combined weight up to 10 kg (22 lbs)",
           "status": "official",
           "source_url": "https://www.jal.co.jp/jp/en/inter/baggage/inflight/",
-          "notes": "Japan Airlines Economy Class carry-on weight limit.",
-          "verified_at": "2026-10-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
+          "value": "1 carry-on bag + 1 personal item, total combined weight up to 10 kg (22 lbs)",
           "status": "official",
           "source_url": "https://www.jal.co.jp/jp/en/inter/baggage/inflight/",
-          "notes": "Japan Airlines Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-10-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -47,27 +44,24 @@
       ],
       "fields": {
         "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
+          "value": "2 pieces up to 23 kg (50 lbs) each",
           "status": "official",
           "source_url": "https://www.jal.co.jp/jp/en/inter/baggage/checked/",
-          "notes": "Japan Airlines Economy Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
+          "value": "3 pieces up to 32 kg (70 lbs) each",
           "status": "official",
           "source_url": "https://www.jal.co.jp/jp/en/inter/baggage/checked/",
-          "notes": "Japan Airlines Business Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_first": {
           "value": "3 pieces up to 32 kg (70 lbs) each",
           "status": "official",
           "source_url": "https://www.jal.co.jp/jp/en/inter/baggage/checked/",
-          "notes": "Japan Airlines First Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -80,11 +74,10 @@
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800 555 0199",
+          "value": "+81 3-5460-0511 (Japan) / +1 800-525-3663 (US)",
           "status": "official",
-          "source_url": "https://www.jal.co.jp/contact",
-          "notes": "No verified phone yet.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.jal.co.jp/jp/en/information/",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -99,31 +92,31 @@
       ],
       "fields": {
         "online_checkin_opens": {
-          "value": "24 hours before scheduled departure",
+          "value": "24 hours before scheduled departure via jal.co.jp or JAL app",
           "status": "official",
-          "source_url": "https://www.jal.co.jp",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.jal.co.jp/jp/en/inter/boarding/online-checkin/",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "domestic_cutoff": {
-          "value": "45 minutes before departure",
+          "value": "20 minutes before departure for Japan domestic flights",
           "status": "official",
-          "source_url": "https://www.jal.co.jp",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.jal.co.jp/jp/en/inter/boarding/online-checkin/",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "international_cutoff": {
-          "value": "60 minutes before departure",
+          "value": "60 minutes before departure for international flights",
           "status": "official",
-          "source_url": "https://www.jal.co.jp",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.jal.co.jp/jp/en/inter/boarding/online-checkin/",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "boarding_close": {
           "value": "15 to 20 minutes before departure",
           "status": "official",
-          "source_url": "https://www.jal.co.jp",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.jal.co.jp/jp/en/inter/boarding/online-checkin/",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -139,24 +132,24 @@
       ],
       "fields": {
         "care": {
-          "value": "When a flight is delayed or cancelled within carrier control, passengers are entitled to meals, refreshments, communication access, and hotel accommodation with transport for overnight delays.",
+          "value": "Meal vouchers and refreshment assistance for delays over 2 hours; hotel accommodation and ground transport for overnight delays within JAL control.",
           "status": "official",
-          "source_url": "https://www.jal.co.jp",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.jal.co.jp/jp/en/inter/support/rights/",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "rebooking_refund": {
-          "value": "For disruptions within carrier control, the airline rebooks passengers on the next available flight or provides a full refund for unused flight segments if delayed by 3 hours or more.",
+          "value": "Rebooking on next available flight or full refund to original payment method if flight is cancelled or delayed 2+ hours.",
           "status": "official",
-          "source_url": "https://www.jal.co.jp",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.jal.co.jp/jp/en/inter/support/rights/",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "compensation": {
-          "value": "Statutory or policy compensation applies for cancellations or long delays within carrier control according to applicable aviation passenger rights regulations.",
+          "value": "Statutory compensation applies under applicable consumer protection regulations (e.g. EU261 for flights originating in EU).",
           "status": "official",
-          "source_url": "https://www.jal.co.jp",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.jal.co.jp/jp/en/inter/support/rights/",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -171,24 +164,24 @@
       ],
       "fields": {
         "fare_name": {
-          "value": "Standard / Economy Light: includes 1 carry-on bag and 1 personal item; checked bag allowance depends on route and fare category",
+          "value": "Standard Economy (includes 2 checked bags up to 23 kg each, 10 kg carry-on, free seat selection)",
           "status": "official",
-          "source_url": "https://www.jal.co.jp",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.jal.co.jp/jp/en/inter/fare/",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "seat_selection_included": {
-          "value": "Free seat assignment provided during online check-in; advance seat selection prior to check-in is available for a fee",
+          "value": "Complimentary advance seat selection for all Economy fare families and premium cabins",
           "status": "official",
-          "source_url": "https://www.jal.co.jp",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.jal.co.jp/jp/en/inter/fare/",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "change_cancellation_policy": {
-          "value": "Ticket modifications and cancellations are subject to carrier fare rules, change fees, and applicable fare difference",
+          "value": "Changes permitted for a fee plus fare difference; non-refundable on Special Economy fares",
           "status": "official",
-          "source_url": "https://www.jal.co.jp",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.jal.co.jp/jp/en/inter/fare/",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -204,24 +197,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
+          "value": "JAL A350-1000 First Class (1-1-1 private suites with door), JAL SKY SUITE Business Class (1-2-1 lie-flat suites with door), JAL SKY PREMIUM (2-4-2 42\" pitch), and JAL SKY WIDER Economy (3-3-3 / 2-4-2 33-34\" pitch)",
           "status": "official",
-          "source_url": "https://www.jal.co.jp",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.jal.co.jp/jp/en/inter/service/seat/",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
+          "value": "Complimentary advance seat selection across all cabin classes during booking or online check-in",
           "status": "official",
-          "source_url": "https://www.jal.co.jp",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.jal.co.jp/jp/en/inter/service/seat/",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
+          "value": "Japan Airlines seats children under 12 next to an accompanying adult free of charge",
           "status": "official",
-          "source_url": "https://www.jal.co.jp",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.jal.co.jp/jp/en/inter/service/seat/",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

@@ -147,24 +147,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
+          "value": "Business Class (B777/A350 1-2-1 lie-flat suites), Comfort Class (2-4-2 Premium Economy), and Economy Class (3-3-3 / 3-3 30-32\" pitch)",
           "status": "official",
-          "source_url": "https://www.aeroflot.ru",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.aeroflot.ru/ru-en/information/onboard/cabins",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
+          "value": "Complimentary advance seat selection for Business, Comfort, and Economy Optimum/Maximum; fee for Economy Lite until online check-in opens 24h prior",
           "status": "official",
-          "source_url": "https://www.aeroflot.ru",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.aeroflot.ru/ru-en/information/onboard/cabins",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
+          "value": "Children under 12 and accompanying adults are seated together free of charge during check-in or booking",
           "status": "official",
-          "source_url": "https://www.aeroflot.ru",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.aeroflot.ru/ru-en/information/onboard/cabins",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

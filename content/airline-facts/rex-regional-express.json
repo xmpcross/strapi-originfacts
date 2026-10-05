@@ -148,24 +148,24 @@
       ],
       "fields": {
         "fare_name": {
-          "value": "Standard / Economy Light: includes 1 carry-on bag and 1 personal item; checked bag allowance depends on route and fare category",
+          "value": "Community / Promo Fare (includes 15 kg checked bag and 7 kg carry-on bag on regional routes; 23 kg checked bag on jet routes)",
           "status": "official",
-          "source_url": "https://www.rex.com.au",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.rex.com.au/FlightInfo/FareRules.aspx",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "seat_selection_included": {
-          "value": "Free seat assignment provided during online check-in; advance seat selection prior to check-in is available for a fee",
+          "value": "Paid advance seat selection for Promo/Community; free seat selection during online check-in 48h prior",
           "status": "official",
-          "source_url": "https://www.rex.com.au",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.rex.com.au/FlightInfo/FareRules.aspx",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "change_cancellation_policy": {
-          "value": "Ticket modifications and cancellations are subject to carrier fare rules, change fees, and applicable fare difference",
+          "value": "Changes permitted for a fee plus fare difference; non-refundable",
           "status": "official",
-          "source_url": "https://www.rex.com.au",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.rex.com.au/FlightInfo/FareRules.aspx",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -181,24 +181,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
+          "value": "Business Class (B737 2-2 recliner seats) and Economy Class (B737 3-3 / Saab 340 1-2 layout)",
           "status": "official",
-          "source_url": "https://www.rex.com.au",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.rex.com.au/FlightInfo/Seating.aspx",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
+          "value": "Reserve a specific seat in advance for a fee or complimentary for Business/Flex, or receive a free seat assignment at online check-in",
           "status": "official",
-          "source_url": "https://www.rex.com.au",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.rex.com.au/FlightInfo/Seating.aspx",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
+          "value": "Children under 12 are seated next to an accompanying adult free of charge during check-in or booking",
           "status": "official",
-          "source_url": "https://www.rex.com.au",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.rex.com.au/FlightInfo/Seating.aspx",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

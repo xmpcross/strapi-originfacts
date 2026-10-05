@@ -227,24 +227,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
+          "value": "First Class (2-2 41\" pitch recliner seats with footrests), Premium Class (3-3 35\" pitch with extra legroom & free drinks), and Main Cabin (3-3 31-32\" pitch with power & device holders)",
           "status": "official",
-          "source_url": "https://www.alaskaair.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.alaskaair.com/content/travel-info/flight-experience/seating",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
+          "value": "Complimentary advance seat selection for Main Cabin, Premium, and First Class; Saver fare passengers select seats during online check-in 24h prior",
           "status": "official",
-          "source_url": "https://www.alaskaair.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.alaskaair.com/content/travel-info/flight-experience/seating",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
+          "value": "Alaska Airlines automatically seats children under 13 with an accompanying adult at booking or check-in at no extra charge",
           "status": "official",
-          "source_url": "https://www.alaskaair.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.alaskaair.com/content/travel-info/flight-experience/seating",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

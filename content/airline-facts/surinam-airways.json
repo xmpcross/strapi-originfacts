@@ -13,7 +13,7 @@
       "fields": {
         "carryon_bag_dimensions": {
           "value": "55 x 40 x 20 cm",
-          "status": "official",
+          "status": "pending",
           "source_url": "https://www.flyslm.com/en/baggage-allowance/",
           "notes": "Surinam Airways cabin baggage size limit.",
           "verified_at": "2026-10-05",
@@ -48,7 +48,7 @@
       "fields": {
         "piece_weight_economy": {
           "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "official",
+          "status": "pending",
           "source_url": "https://www.flyslm.com/en/baggage-allowance/",
           "notes": "Surinam Airways Economy Class checked baggage allowance.",
           "verified_at": "2026-10-05",
@@ -56,7 +56,7 @@
         },
         "piece_weight_business": {
           "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "official",
+          "status": "pending",
           "source_url": "https://www.flyslm.com/en/baggage-allowance/",
           "notes": "Surinam Airways Business Class checked baggage allowance.",
           "verified_at": "2026-10-05",
@@ -64,7 +64,7 @@
         },
         "piece_weight_first": {
           "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "official",
+          "status": "pending",
           "source_url": "https://www.flyslm.com/en/baggage-allowance/",
           "notes": "Surinam Airways Business Class checked baggage allowance.",
           "verified_at": "2026-10-05",
@@ -99,28 +99,28 @@
       "fields": {
         "online_checkin_opens": {
           "value": "24 hours before scheduled departure",
-          "status": "official",
+          "status": "pending",
           "source_url": "https://www.flyslm.com",
           "verified_at": "2026-10-05",
           "verified_by": "manual_official_source"
         },
         "domestic_cutoff": {
           "value": "45 minutes before departure",
-          "status": "official",
+          "status": "pending",
           "source_url": "https://www.flyslm.com",
           "verified_at": "2026-10-05",
           "verified_by": "manual_official_source"
         },
         "international_cutoff": {
           "value": "60 minutes before departure",
-          "status": "official",
+          "status": "pending",
           "source_url": "https://www.flyslm.com",
           "verified_at": "2026-10-05",
           "verified_by": "manual_official_source"
         },
         "boarding_close": {
           "value": "15 to 20 minutes before departure",
-          "status": "official",
+          "status": "pending",
           "source_url": "https://www.flyslm.com",
           "verified_at": "2026-10-05",
           "verified_by": "manual_official_source"
@@ -139,21 +139,21 @@
       "fields": {
         "care": {
           "value": "When a flight is delayed or cancelled within carrier control, passengers are entitled to meals, refreshments, communication access, and hotel accommodation with transport for overnight delays.",
-          "status": "official",
+          "status": "pending",
           "source_url": "https://www.flyslm.com",
           "verified_at": "2026-10-05",
           "verified_by": "manual_official_source"
         },
         "rebooking_refund": {
           "value": "For disruptions within carrier control, the airline rebooks passengers on the next available flight or provides a full refund for unused flight segments if delayed by 3 hours or more.",
-          "status": "official",
+          "status": "pending",
           "source_url": "https://www.flyslm.com",
           "verified_at": "2026-10-05",
           "verified_by": "manual_official_source"
         },
         "compensation": {
           "value": "Statutory or policy compensation applies for cancellations or long delays within carrier control according to applicable aviation passenger rights regulations.",
-          "status": "official",
+          "status": "pending",
           "source_url": "https://www.flyslm.com",
           "verified_at": "2026-10-05",
           "verified_by": "manual_official_source"
@@ -171,21 +171,21 @@
       "fields": {
         "fare_name": {
           "value": "Standard / Economy Light: includes 1 carry-on bag and 1 personal item; checked bag allowance depends on route and fare category",
-          "status": "official",
+          "status": "pending",
           "source_url": "https://www.flyslm.com",
           "verified_at": "2026-10-05",
           "verified_by": "manual_official_source"
         },
         "seat_selection_included": {
           "value": "Free seat assignment provided during online check-in; advance seat selection prior to check-in is available for a fee",
-          "status": "official",
+          "status": "pending",
           "source_url": "https://www.flyslm.com",
           "verified_at": "2026-10-05",
           "verified_by": "manual_official_source"
         },
         "change_cancellation_policy": {
           "value": "Ticket modifications and cancellations are subject to carrier fare rules, change fees, and applicable fare difference",
-          "status": "official",
+          "status": "pending",
           "source_url": "https://www.flyslm.com",
           "verified_at": "2026-10-05",
           "verified_by": "manual_official_source"
@@ -204,21 +204,21 @@
       "fields": {
         "seat_options": {
           "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
-          "status": "official",
+          "status": "pending",
           "source_url": "https://www.flyslm.com",
           "verified_at": "2026-10-05",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
           "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
-          "status": "official",
+          "status": "pending",
           "source_url": "https://www.flyslm.com",
           "verified_at": "2026-10-05",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
           "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
-          "status": "official",
+          "status": "pending",
           "source_url": "https://www.flyslm.com",
           "verified_at": "2026-10-05",
           "verified_by": "manual_official_source"

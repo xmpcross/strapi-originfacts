@@ -111,31 +111,31 @@
       ],
       "fields": {
         "online_checkin_opens": {
-          "value": "24 hours before scheduled departure",
+          "value": "36 hours before departure (24 hours for US flights)",
           "status": "official",
-          "source_url": "https://www.finnair.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.finnair.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "domestic_cutoff": {
           "value": "45 minutes before departure",
           "status": "official",
-          "source_url": "https://www.finnair.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.finnair.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "international_cutoff": {
           "value": "60 minutes before departure",
           "status": "official",
-          "source_url": "https://www.finnair.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.finnair.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "boarding_close": {
-          "value": "15 to 20 minutes before departure",
+          "value": "15–20 minutes before departure",
           "status": "official",
-          "source_url": "https://www.finnair.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.finnair.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -151,24 +151,24 @@
       ],
       "fields": {
         "care": {
-          "value": "When a flight is delayed or cancelled within carrier control, passengers are entitled to meals, refreshments, communication access, and hotel accommodation with transport for overnight delays.",
+          "value": "Meals, drinks, 2 communications, and hotel accommodation with transport for overnight delays under EU 261/2004.",
           "status": "official",
-          "source_url": "https://www.finnair.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.finnair.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "rebooking_refund": {
-          "value": "For disruptions within carrier control, the airline rebooks passengers on the next available flight or provides a full refund for unused flight segments if delayed by 3 hours or more.",
+          "value": "Full refund within 7 days or rebooking to final destination for delays >5 hours or flight cancellations.",
           "status": "official",
-          "source_url": "https://www.finnair.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.finnair.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "compensation": {
-          "value": "Statutory or policy compensation applies for cancellations or long delays within carrier control according to applicable aviation passenger rights regulations.",
+          "value": "EU 261 compensation (€250 to €600) for cancellations or arrival delays over 3 hours unless extraordinary circumstances apply.",
           "status": "official",
-          "source_url": "https://www.finnair.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.finnair.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -216,24 +216,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
+          "value": "Standard Economy, Preferred Seats, Extra Legroom seats, Premium Economy, and AirLounge Business Class seats.",
           "status": "official",
-          "source_url": "https://www.finnair.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.finnair.com/cabins",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
+          "value": "Free seat selection for Flex fares and status members; fee for Light/Classic fares or complimentary random assignment at check-in.",
           "status": "official",
-          "source_url": "https://www.finnair.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.finnair.com/seat-selection",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
+          "value": "Finnair automatically allocates seats together for families travelling with children under 12.",
           "status": "official",
-          "source_url": "https://www.finnair.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.finnair.com/family-travel",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

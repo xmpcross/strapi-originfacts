@@ -12,27 +12,27 @@
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
+          "value": "50 x 37 x 25 cm",
           "status": "official",
           "source_url": "https://www.qatarairways.com/en/baggage/allowance.html",
-          "notes": "Qatar Airways cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-10-05",
+          "notes": "Qatar Airways cabin baggage size limit: 50 x 37 x 25 cm (20 x 15 x 10 inches).",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "weight_economy": {
-          "value": "7 kg (15 lbs)",
+          "value": "1 piece up to 7 kg (15 lbs)",
           "status": "official",
           "source_url": "https://www.qatarairways.com/en/baggage/allowance.html",
-          "notes": "Qatar Airways Economy Class carry-on weight limit.",
-          "verified_at": "2026-10-05",
+          "notes": "Qatar Airways Economy Class carry-on weight limit (10 kg on flights to/from Brazil).",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
+          "value": "2 pieces up to 15 kg (33 lbs) total",
           "status": "official",
           "source_url": "https://www.qatarairways.com/en/baggage/allowance.html",
-          "notes": "Qatar Airways Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-10-05",
+          "notes": "Qatar Airways Premium / Business / First Class carry-on weight limit.",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -47,27 +47,27 @@
       ],
       "fields": {
         "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
+          "value": "2 pieces up to 23 kg (50 lbs) each on piece concept routes; 25-35 kg total on weight concept",
           "status": "official",
           "source_url": "https://www.qatarairways.com/en/baggage/allowance.html",
-          "notes": "Qatar Airways Economy Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "notes": "Qatar Airways Economy Class checked baggage allowance varies by route concept and fare family.",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
+          "value": "2 pieces up to 32 kg (70 lbs) each on piece concept routes; 40 kg total on weight concept",
           "status": "official",
           "source_url": "https://www.qatarairways.com/en/baggage/allowance.html",
           "notes": "Qatar Airways Business Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
+          "value": "2 pieces up to 32 kg (70 lbs) each on piece concept routes; 50 kg total on weight concept",
           "status": "official",
           "source_url": "https://www.qatarairways.com/en/baggage/allowance.html",
           "notes": "Qatar Airways First Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -91,7 +91,7 @@
           "status": "official",
           "source_url": "https://www.qatarairways.com/tradeportal/en-bh/news-updates/2025/adjustments-to-fare-attributes.html",
           "notes": "Qatar Airways trade guidance lists Economy Lite separately from Classic, Convenience and Comfort and states that Lite has no changes or cancellations.",
-          "verified_at": "2026-09-04",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "change_rule": {
@@ -99,7 +99,7 @@
           "status": "official",
           "source_url": "https://www.qatarairways.com/tradeportal/en-bh/news-updates/2025/adjustments-to-fare-attributes.html",
           "notes": "Fare-family flexibility varies by ticket family and market; passengers should confirm the fare rules shown during booking.",
-          "verified_at": "2026-09-04",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "seat_selection": {
@@ -107,7 +107,7 @@
           "status": "official",
           "source_url": "https://www.qatarairways.com/en/optional-services-and-fees.html",
           "notes": "Qatar Airways optional-services page publishes seat-selection fee ranges by fare family and seat type.",
-          "verified_at": "2026-09-04",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -131,7 +131,7 @@
           "status": "official",
           "source_url": "https://www.qatarairways.com/en/legal/eu-air-passenger-rights.html",
           "notes": "Qatar Airways EU passenger-rights notice describes assistance for qualifying departure delays.",
-          "verified_at": "2026-09-04",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "eu_five_hour_refund": {
@@ -139,7 +139,7 @@
           "status": "official",
           "source_url": "https://www.qatarairways.com/en/legal/eu-air-passenger-rights.html",
           "notes": "Qatar Airways EU passenger-rights notice explains the five-hour refund threshold.",
-          "verified_at": "2026-09-04",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "us_refund_timing": {
@@ -147,7 +147,7 @@
           "status": "official",
           "source_url": "https://www.qatarairways.com/en-us/legal/customer-service-commitment.html",
           "notes": "Qatar Airways U.S. customer service commitment covers eligible ticket and ancillary-service fee refunds.",
-          "verified_at": "2026-09-04",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -171,7 +171,7 @@
           "status": "official",
           "source_url": "https://www.qatarairways.com/en-in/services-checking-in.html",
           "notes": "Qatar Airways check-in page states the U.S.-related online check-in timing.",
-          "verified_at": "2026-09-04",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "other_online_checkin": {
@@ -179,7 +179,7 @@
           "status": "official",
           "source_url": "https://www.qatarairways.com/en-in/services-checking-in.html",
           "notes": "Qatar Airways check-in page states the standard online check-in window.",
-          "verified_at": "2026-09-04",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "first_segment_rule": {
@@ -187,7 +187,7 @@
           "status": "official",
           "source_url": "https://www.qatarairways.com/en-in/services-checking-in.html",
           "notes": "Qatar Airways limits online check-in availability by operating carrier and first segment.",
-          "verified_at": "2026-09-04",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -200,11 +200,11 @@
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1-877-777-2827",
+          "value": "+974 4022 6000",
           "status": "official",
-          "source_url": "https://www.qatarairways.com/contact",
-          "notes": "Qatar Airways official customer support line.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.qatarairways.com/en/help.html",
+          "notes": "Qatar Airways official customer support line in Doha (+1-877-777-2827 in US).",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -220,24 +220,27 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
+          "value": "Standard seats, preferred location seats (front row/upper deck), and extra legroom seats available across Economy, Business Class (Qsuite / Lie-flat), and First Class",
           "status": "official",
-          "source_url": "https://www.qatarairways.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.qatarairways.com/en/optional-services-and-fees.html",
+          "notes": "Qatar Airways cabin products include Qsuite suites and standard/preferred Economy seating.",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
+          "value": "Reserve a specific seat in advance online (included in Convenience/Comfort and Premium fares; fee for Lite/Classic), or receive a free seat assignment during online check-in",
           "status": "official",
-          "source_url": "https://www.qatarairways.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.qatarairways.com/en/optional-services-and-fees.html",
+          "notes": "Qatar Airways seat reservation rules by fare family.",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
+          "value": "Children under 12 and accompanying adults are seated together free of charge during check-in or booking",
           "status": "official",
-          "source_url": "https://www.qatarairways.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.qatarairways.com/en/family.html",
+          "notes": "Qatar Airways family seating policy.",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

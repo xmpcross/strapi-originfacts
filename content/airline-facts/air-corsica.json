@@ -168,24 +168,24 @@
       ],
       "fields": {
         "fare_name": {
-          "value": "Standard / Economy Light: includes 1 carry-on bag and 1 personal item; checked bag allowance depends on route and fare category",
+          "value": "Tarif Abonnés / Standard (includes 1 carry-on bag up to 12 kg and 1 checked bag up to 23 kg)",
           "status": "official",
-          "source_url": "https://www.aircorsica.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.aircorsica.com/bagages-et-services",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "seat_selection_included": {
-          "value": "Free seat assignment provided during online check-in; advance seat selection prior to check-in is available for a fee",
+          "value": "Free seat selection during online check-in 30 hours before departure",
           "status": "official",
-          "source_url": "https://www.aircorsica.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.aircorsica.com/bagages-et-services",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "change_cancellation_policy": {
-          "value": "Ticket modifications and cancellations are subject to carrier fare rules, change fees, and applicable fare difference",
+          "value": "Changes permitted for a fee; ticket non-refundable on promotional fares",
           "status": "official",
-          "source_url": "https://www.aircorsica.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.aircorsica.com/bagages-et-services",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -201,24 +201,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
+          "value": "Single Economy cabin across A320neo (3-3 30\" pitch) and ATR 72-600 (2-2 29-30\" pitch) fleet",
           "status": "official",
-          "source_url": "https://www.aircorsica.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.aircorsica.com/bagages-et-services",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
+          "value": "Free seat selection during online check-in or seat allocation at airport counter",
           "status": "official",
-          "source_url": "https://www.aircorsica.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.aircorsica.com/bagages-et-services",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
+          "value": "Children under 12 are seated next to an accompanying parent/guardian free of charge",
           "status": "official",
-          "source_url": "https://www.aircorsica.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.aircorsica.com/bagages-et-services",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

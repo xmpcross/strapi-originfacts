@@ -229,24 +229,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
+          "value": "Flagship First/Business (1-2-1 direct aisle lie-flat suites), Premium Economy (2-3-2 38\" pitch), Main Cabin Extra (extra legroom), and Main Cabin (3-3-3 / 3-3 30-31\" pitch)",
           "status": "official",
-          "source_url": "https://www.aa.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.aa.com/i18n/travel-info/experience/seats/seat-options.jsp",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
+          "value": "Reserve a seat in advance for free (Main Cabin, Main Cabin Extra, and Premium cabins) or for a fee on Basic Economy; complimentary seat assigned at online check-in 24h prior",
           "status": "official",
-          "source_url": "https://www.aa.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.aa.com/i18n/travel-info/experience/seats/seat-options.jsp",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
+          "value": "Children under 15 traveling with an accompanying adult on the same reservation are seated together free of charge",
           "status": "official",
-          "source_url": "https://www.aa.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.aa.com/i18n/travel-info/experience/seats/seat-options.jsp",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

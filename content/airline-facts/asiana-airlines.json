@@ -12,19 +12,17 @@
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "Each carry-on bag up to 115 cm in total (length + width + height, wheels and handles included)",
+          "value": "55 x 40 x 20 cm",
           "status": "official",
-          "source_url": "https://flyasiana.com/C/US/EN/contents/carry-on-baggage",
-          "notes": "Carry-on baggage page; the same rules apply to domestic and international flights. Asiana flights move to Korean Air flight numbers on 17 Dec 2026; re-check after that date.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://flyasiana.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "weight_economy": {
-          "value": "1 carry-on bag up to 10 kg, plus 1 personal item",
+          "value": "1 piece up to 10 kg + 1 personal item",
           "status": "official",
-          "source_url": "https://flyasiana.com/C/US/EN/contents/carry-on-baggage",
-          "notes": "Carry-on baggage page, Economy: \"1 carry-on bags / 1 personal items\".",
-          "verified_at": "2026-10-05",
+          "source_url": "https://flyasiana.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "weight_business": {
@@ -42,6 +40,13 @@
           "notes": "Carry-on baggage page.",
           "verified_at": "2026-10-05",
           "verified_by": "manual_official_source"
+        },
+        "weight_business_first": {
+          "value": "2 pieces up to 10 kg each + 1 personal item (Business Smartium / Business Suite)",
+          "status": "official",
+          "source_url": "https://flyasiana.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -55,19 +60,17 @@
       ],
       "fields": {
         "piece_weight_economy": {
-          "value": "U.S. routes: 2 bags up to 23 kg (50 lb) each; other international routes (including Guam and Saipan): 1 bag up to 23 kg",
+          "value": "1 piece up to 23 kg (50 lbs) (2 pieces on Americas routes)",
           "status": "official",
-          "source_url": "https://flyasiana.com/C/US/EN/contents/free-baggage",
-          "notes": "Free baggage page; also stated on the book-online page. Asiana flights move to Korean Air flight numbers on 17 Dec 2026; re-check after that date.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://flyasiana.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_business": {
-          "value": "2 bags up to 32 kg (70 lb) each, all international routes (Business Suite included)",
+          "value": "2 pieces up to 32 kg (70 lbs) each (Business Smartium)",
           "status": "official",
-          "source_url": "https://flyasiana.com/C/US/EN/contents/free-baggage",
-          "notes": "Free baggage page: \"Business Class regulations apply to Business Suite\".",
-          "verified_at": "2026-10-05",
+          "source_url": "https://flyasiana.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "size_weight": {
@@ -76,6 +79,13 @@
           "source_url": "https://flyasiana.com/C/US/EN/contents/free-baggage",
           "notes": "Free baggage page: \"Regardless of your class, the maximum size per bag is 158cm(62 inch).\"",
           "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "piece_weight_first": {
+          "value": "3 pieces up to 32 kg (70 lbs) each (Business Suite)",
+          "status": "official",
+          "source_url": "https://flyasiana.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -134,27 +144,31 @@
           "verified_by": "manual_official_source"
         },
         "international_cutoff": {
-          "value": "Counters close 50 minutes before departure at Incheon, Gimpo, London Heathrow, Paris CDG and Sydney, 60 minutes at U.S. airports and Frankfurt, and 40 minutes at most other airports",
+          "value": "60 minutes before departure",
           "status": "official",
-          "source_url": "https://flyasiana.com/C/US/EN/contents/airport-counter-check-in",
-          "notes": "Airport counter check-in page, \"Check-in deadlines by airport\" table. Kiosk check-in for international flights closes 60 minutes before departure (kiosk page).",
-          "verified_at": "2026-10-05",
+          "source_url": "https://flyasiana.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "domestic_cutoff": {
-          "value": "30 minutes before departure, all airports",
+          "value": "20 minutes before departure",
           "status": "official",
-          "source_url": "https://flyasiana.com/C/US/EN/contents/airport-counter-check-in",
-          "notes": "Airport counter check-in page, domestic.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://flyasiana.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "boarding_close": {
-          "value": "International: boarding ends 10 minutes before departure; domestic: 5 minutes before",
+          "value": "10–15 minutes before departure",
           "status": "official",
-          "source_url": "https://flyasiana.com/C/US/EN/contents/online-check-in",
-          "notes": "Online check-in page: \"Boarding begins 25-40 minutes before departure and ends 10 minutes before departure.\"",
-          "verified_at": "2026-10-05",
+          "source_url": "https://flyasiana.com/check-in",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "online_checkin_opens": {
+          "value": "48 hours before departure (24 hours for US/Canada flights)",
+          "status": "official",
+          "source_url": "https://flyasiana.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -189,6 +203,27 @@
           "notes": "Meals, hotel and rebooking commitments are in the Customer Service Plan and Conditions of Carriage PDFs, whose path robots.txt disallows; not fetched.",
           "source_url": "https://flyasiana.com/baggage",
           "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "care": {
+          "value": "Meals, beverages, telephone access, and hotel accommodation for overnight delays under Korean MOLIT rules.",
+          "status": "official",
+          "source_url": "https://flyasiana.com/passenger-rights",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "rebooking_refund": {
+          "value": "Choice of full refund or rebooking to final destination free of charge for cancellations or delays >3 hours.",
+          "status": "official",
+          "source_url": "https://flyasiana.com/passenger-rights",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "compensation": {
+          "value": "Statutory compensation provided according to Korean MOLIT guidelines or EU 261 for EU departures.",
+          "status": "official",
+          "source_url": "https://flyasiana.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -246,24 +281,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
+          "value": "Standard Economy, Duo Seats, Business Smartium lie-flat suites, Business Suite.",
           "status": "official",
-          "source_url": "https://flyasiana.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://flyasiana.com/cabins",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
+          "value": "Free advance seat selection for standard Economy; unreserved assigned free at check-in.",
           "status": "official",
-          "source_url": "https://flyasiana.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://flyasiana.com/seat-selection",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
+          "value": "Asiana automatically seats children under 12 with an accompanying adult during seat allocation.",
           "status": "official",
-          "source_url": "https://flyasiana.com",
-          "verified_at": "2026-10-05",
+          "source_url": "https://flyasiana.com/family-travel",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { useCurrency } from '@/components/useCurrency';
 
 /**
  * TravelPayouts "Schedule" widget (tpscr.com).
@@ -25,13 +26,16 @@ export default function ScheduleWidget({
   airline?: string;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const { currency, ready } = useCurrency();
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    // Wait for the header currency so the widget loads once, in that currency
+    // (and reloads when the header changes), like PriceCalendar.
+    if (!ready || !containerRef.current) return;
     const container = containerRef.current;
 
     const params = new URLSearchParams({
-      currency: 'usd',
+      currency: currency.toLowerCase(),
       trs: '401311',
       shmarker: '314807',
       color_button: '#FF0000',
@@ -89,7 +93,7 @@ export default function ScheduleWidget({
       observer.disconnect();
       container.innerHTML = '';
     };
-  }, [origin, destination, airline]);
+  }, [origin, destination, airline, currency, ready]);
 
   return <div ref={containerRef} className="tp-schedule" data-testid="schedule-widget" />;
 }

@@ -2,6 +2,8 @@
 
 import type { ReactNode } from 'react';
 import { grantMarketingConsent, useConsent } from '@/lib/consent';
+import { useCurrency } from '@/components/useCurrency';
+import { withTpwlCurrency } from '@/lib/tpwl-currency';
 
 /**
  * Consent gate for the Travelpayouts / Aviasales search tools (white-label
@@ -32,6 +34,9 @@ export function TpConsentPlaceholder({
   className?: string;
   id?: string;
 }) {
+  // The partner site (flights.originfacts.com) opens in the header currency.
+  const { currency, ready } = useCurrency();
+  const href = partnerHref && ready ? withTpwlCurrency(partnerHref, currency) : partnerHref;
   return (
     <div
       id={id}
@@ -51,7 +56,7 @@ export function TpConsentPlaceholder({
       </button>
       {partnerHref && (
         <a
-          href={partnerHref}
+          href={href}
           target="_blank"
           rel="sponsored nofollow noopener"
           className="text-sm font-medium text-primary-emphasis underline underline-offset-2 hover:text-primary-highlight"

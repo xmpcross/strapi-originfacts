@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import { STORED_MARKETING_CONSENT_JS, useConsent } from '@/lib/consent';
 import { TpConsentPlaceholder } from '@/components/TpConsentGate';
+import { TPWL_CURRENCY_BOOT_JS, readSiteCurrencyCookie, writeTpwlCurrencyCookie } from '@/lib/tpwl-currency';
 
 export const TPWL_SRC = 'https://tpscr.com/wl_web/main.js?wl_id=16677';
 
@@ -32,11 +33,13 @@ export const TPWL_PLACEHOLDER_ID = 'tpwl-consent-placeholder';
  * if the stored choice already allows advertising, it starts the SDK without
  * waiting for React to hydrate (the speed the old unconditional module script
  * gave), hides the consent placeholder so it does not stack above the form, and
- * sets the marker that tells the client part the SDK is on its way. Without
+ * sets the marker that tells the client part the SDK is on its way. It also
+ * hands the header currency (of_currency) to the SDK through its tpwl_currency
+ * cookie, before the SDK reads it (see lib/tpwl-currency.ts). Without
  * consent it does nothing and no request reaches tpscr.com.
  */
 export function TpwlConsentedBoot() {
-  const js = `(function(){if(!${STORED_MARKETING_CONSENT_JS})return;window.__ofTpwlSsr=true;var p=document.getElementById(${JSON.stringify(
+  const js = `(function(){if(!${STORED_MARKETING_CONSENT_JS})return;${TPWL_CURRENCY_BOOT_JS}window.__ofTpwlSsr=true;var p=document.getElementById(${JSON.stringify(
     TPWL_PLACEHOLDER_ID,
   )});if(p)p.style.display='none';var s=document.createElement('script');s.type='module';s.src=${JSON.stringify(
     TPWL_SRC,
@@ -84,6 +87,9 @@ export default function TpwlLoader() {
 
     if (w.__ofTpwlSsr) return;
 
+    // Header currency → the SDK's own cookie, before it starts (consent is granted here).
+    const siteCurrency = readSiteCurrencyCookie();
+    if (siteCurrency) writeTpwlCurrencyCookie(siteCurrency);
     const script = document.createElement('script');
     script.type = 'module';
     script.src = TPWL_SRC;

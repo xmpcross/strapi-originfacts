@@ -58,7 +58,7 @@ export const ORG_SAME_AS = [
   'https://www.instagram.com/originfacts/',
   'https://www.reddit.com/r/Originfacts/',
   'https://pinterest.com/originfacts/',
-  'https://find-and-update.company-information.service.gov.uk/company/16134139',
+  'https://abr.business.gov.au/ABN/View?abn=53274423748',
   'https://www.crunchbase.com/organization/originfacts',
   'https://www.trustpilot.com/review/originfacts.com',
 ];
@@ -78,7 +78,7 @@ export function organizationJsonLd(opts: { withContactPoint?: boolean } = {}): R
     '@type': 'Organization',
     '@id': ORG_ID,
     name: 'Originfacts',
-    legalName: 'FXN HOLDINGS LIMITED',
+    legalName: 'FXN Holdings',
     url: SITE_URL,
     logo: {
       '@type': 'ImageObject',
@@ -92,16 +92,17 @@ export function organizationJsonLd(opts: { withContactPoint?: boolean } = {}): R
     identifier: [
       {
         '@type': 'PropertyValue',
-        propertyID: 'UK Companies House Registration Number',
-        value: '16134139',
+        propertyID: 'ABN',
+        value: '53 274 423 748',
       },
     ],
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '61 Bridge Street',
-      addressLocality: 'Kington',
-      postalCode: 'HR5 3DJ',
-      addressCountry: 'GB',
+      postOfficeBoxNumber: 'PO Box 500',
+      addressLocality: 'West Perth',
+      addressRegion: 'WA',
+      postalCode: '6872',
+      addressCountry: 'AU',
     },
     knowsAbout: [
       'Aviation',

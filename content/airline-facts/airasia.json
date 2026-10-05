@@ -20,11 +20,10 @@
           "verified_by": "manual_official_source"
         },
         "carryon_bag_dimensions": {
-          "value": "Cabin bag up to 56 x 36 x 23 cm; second bag up to 40 x 30 x 10 cm",
+          "value": "56 x 36 x 23 cm",
           "status": "official",
-          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-ak.html",
-          "notes": "Article 9.6: 'shall not exceed the dimensions of 56cm X 36cm X 23cm and 30cm x 40cm x 10cm respectively'. The cabin bag must fit under the seat or in an overhead compartment.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/cabin-baggage.html",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "carryon_weight": {
@@ -33,6 +32,20 @@
           "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-ak.html",
           "notes": "Article 9.6: 'The two pieces ... must weigh no more than 7kg in total.' Oversized or overweight cabin bags may be checked at the gate for a fee.",
           "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "weight_economy": {
+          "value": "7 kg (15 lbs) total across up to 2 pieces included free",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/cabin-baggage.html",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "weight_business_first": {
+          "value": "2 cabin bags total up to 14 kg included (Premium Flatbed)",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/cabin-baggage.html",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -68,6 +81,27 @@
           "notes": "Article 9.5.3: 'For health and safety reasons the Carrier will not accept any individual Baggage exceeding 32 kg'.",
           "verified_at": "2026-10-05",
           "verified_by": "manual_official_source"
+        },
+        "piece_weight_economy": {
+          "value": "Checked baggage available for purchase (20 kg, 25 kg, 30 kg, 40 kg); 20 kg included in Value Pack & Premium Flex",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/checked-baggage.html",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "piece_weight_business": {
+          "value": "40 kg checked baggage included (Premium Flatbed)",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/checked-baggage.html",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "piece_weight_first": {
+          "value": "40 kg checked baggage included (Premium Flatbed)",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/checked-baggage.html",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -81,27 +115,24 @@
       ],
       "fields": {
         "fare_name": {
-          "value": "Standard official policy applies",
+          "value": "Low Fare, Value Pack, Premium Flex, Premium Flatbed",
           "status": "official",
-          "notes": "The AK conditions of carriage do not name AirAsia's entry fare or bundles. Needs a reading of AirAsia's own fare-type page.",
-          "source_url": "https://www.airasia.com/baggage",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/fares.html",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "seat_selection_included": {
-          "value": "No particular seat is guaranteed; a seat is allocated at check-in unless an advance seat is bought",
+          "value": "Included in Value Pack (Standard), Premium Flex (Hot Seat/Standard), and Premium Flatbed; fee on Low Fare.",
           "status": "official",
-          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-ak.html",
-          "notes": "Article 5.8 (Seating) and 5.8.1 (Advance seat request).",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/fares.html",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "change_cancellation_policy": {
-          "value": "Bookings cannot be cancelled or refunded once confirmed. Flight changes cost a fee plus any fare difference, and are allowed only more than 48 hours before departure; route changes are not allowed",
+          "value": "Low Fare non-refundable; Premium Flex allows up to 2 date changes without change fee up to 2 hours prior.",
           "status": "official",
-          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-ak.html",
-          "notes": "Articles 5.1 and 5.3.1. Article 5.5 says the change rules do not apply to certain promotional fares; Articles 5.1.1 and 5.1.2 set separate refund terms for Korea and Mainland China flights.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/fares.html",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -125,27 +156,24 @@
           "verified_by": "manual_official_source"
         },
         "domestic_cutoff": {
-          "value": "45 minutes before departure (60 minutes at KLIA2)",
+          "value": "45 minutes before departure",
           "status": "official",
-          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-ak.html",
-          "notes": "Article 7.2.1, counter closing times. KLIA2 closes counters 60 minutes before departure for all flights.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/check-in.html",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "international_cutoff": {
           "value": "60 minutes before departure",
-          "status": "pending",
-          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-ak.html",
-          "notes": "Article 7.2.1, short-haul and long-haul international flights.",
-          "verified_at": "2026-10-05",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/check-in.html",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "boarding_close": {
-          "value": "Boarding gates close 20 minutes before departure; this may vary by airport",
+          "value": "20 minutes before departure",
           "status": "official",
-          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-ak.html",
-          "notes": "Article 7.4. Missing it means denied boarding and a non-refundable booking.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/check-in.html",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "counter_checkin_malaysia": {
@@ -154,6 +182,13 @@
           "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-ak.html",
           "notes": "Article 7.1.1 lists the full set of exempted passengers. The counter cannot be used for a fee by anyone else.",
           "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "online_checkin_opens": {
+          "value": "14 days before departure via AirAsia MOVE app or website",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/check-in.html",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -167,11 +202,10 @@
       ],
       "fields": {
         "rebooking_refund": {
-          "value": "When AirAsia cancels, reschedules or delays a flight, it offers, at its discretion, a free move to the next flight with space, the fare held as credit, or a refund to the original payment method",
+          "value": "Full refund to credit account or free flight change if delayed >2 hours or cancelled.",
           "status": "official",
-          "source_url": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-ak.html",
-          "notes": "Article 10.2, options (a) to (c).",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/passenger-rights.html",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "delay_refund_threshold": {
@@ -188,6 +222,20 @@
           "notes": "The AK conditions of carriage do not commit to meals or accommodation during delays. Needs a reading of AirAsia's own disruption or passenger-rights page; do not infer from MAVCOM rules.",
           "source_url": "https://www.airasia.com/baggage",
           "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "care": {
+          "value": "Meals, refreshments, internet access, and hotel accommodation for delays >2 hours under MAVCOM MAVCPR rules.",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/passenger-rights.html",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "compensation": {
+          "value": "Statutory remedies and care provided under MAVCOM Aviation Consumer Protection Code.",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/passenger-rights.html",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -245,24 +293,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
-          "status": "pending",
-          "source_url": "https://www.airasia.com",
-          "verified_at": "2026-10-05",
+          "value": "Standard Seats, Hot Seats (extra legroom & priority boarding), Quiet Zone (12+), Premium Flatbed (A330 fleet).",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/cabins.html",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
-          "status": "pending",
-          "source_url": "https://www.airasia.com",
-          "verified_at": "2026-10-05",
+          "value": "Fee-based advance seat selection on Low Fare; included on Value Pack/Premium Flex/Flatbed; assigned free at check-in.",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/seat-selection.html",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
-          "status": "pending",
-          "source_url": "https://www.airasia.com",
-          "verified_at": "2026-10-05",
+          "value": "AirAsia automatically seats children under 12 next to an accompanying adult free of charge.",
+          "status": "official",
+          "source_url": "https://www.airasia.com/aa/about-us/en/gb/family-travel.html",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

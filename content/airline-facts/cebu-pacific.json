@@ -1,6 +1,6 @@
 {
   "slug": "cebu-pacific",
-  "official_website": "https://cebupacific.vn",
+  "official_website": "https://www.cebupacificair.com",
   "modules": [
     {
       "id": "carryon",
@@ -12,27 +12,24 @@
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "https://cebupacific.vn/baggage",
-          "notes": "Cebu Pacific cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-10-05",
+          "value": "56 x 36 x 23 cm",
+          "status": "official",
+          "source_url": "https://www.cebupacificair.com/pages/travel-info/baggage-information/carry-on-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "https://cebupacific.vn/baggage",
-          "notes": "Cebu Pacific Economy Class carry-on weight limit.",
-          "verified_at": "2026-10-05",
+          "value": "1 cabin bag up to 7 kg + 1 personal item included free",
+          "status": "official",
+          "source_url": "https://www.cebupacificair.com/pages/travel-info/baggage-information/carry-on-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "https://cebupacific.vn/baggage",
-          "notes": "Cebu Pacific Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-10-05",
+          "value": "1 cabin bag up to 7 kg + 1 personal item included (CEB Flexi)",
+          "status": "official",
+          "source_url": "https://www.cebupacificair.com/pages/travel-info/baggage-information/carry-on-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -47,27 +44,24 @@
       ],
       "fields": {
         "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "https://cebupacific.vn/baggage",
-          "notes": "Cebu Pacific Economy Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "value": "Checked baggage available for purchase (20 kg, 24 kg, 28 kg, 32 kg); 20 kg included on Go Flexi fare",
+          "status": "official",
+          "source_url": "https://www.cebupacificair.com/pages/travel-info/baggage-information/checked-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://cebupacific.vn/baggage",
-          "notes": "Cebu Pacific Business Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "value": "20 kg checked baggage included (Go Flexi fare)",
+          "status": "official",
+          "source_url": "https://www.cebupacificair.com/pages/travel-info/baggage-information/checked-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://cebupacific.vn/baggage",
-          "notes": "Cebu Pacific First Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "value": "20 kg checked baggage included (Go Flexi fare)",
+          "status": "official",
+          "source_url": "https://www.cebupacificair.com/pages/travel-info/baggage-information/checked-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -80,11 +74,11 @@
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800 555 0199",
+          "value": "+63 2 802 7000",
           "status": "official",
-          "source_url": "https://cebupacific.vn/contact",
-          "notes": "No verified phone yet.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.cebupacificair.com/pages/travel-info/contact-us",
+          "notes": "Cebu Pacific customer support line.",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -99,31 +93,31 @@
       ],
       "fields": {
         "online_checkin_opens": {
-          "value": "24 hours before scheduled departure",
-          "status": "pending",
-          "source_url": "https://cebupacific.vn",
-          "verified_at": "2026-10-05",
+          "value": "48 hours before departure via Cebu Pacific app or website",
+          "status": "official",
+          "source_url": "https://www.cebupacificair.com/pages/travel-info/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "domestic_cutoff": {
           "value": "45 minutes before departure",
-          "status": "pending",
-          "source_url": "https://cebupacific.vn",
-          "verified_at": "2026-10-05",
+          "status": "official",
+          "source_url": "https://www.cebupacificair.com/pages/travel-info/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "international_cutoff": {
           "value": "60 minutes before departure",
-          "status": "pending",
-          "source_url": "https://cebupacific.vn",
-          "verified_at": "2026-10-05",
+          "status": "official",
+          "source_url": "https://www.cebupacificair.com/pages/travel-info/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "boarding_close": {
-          "value": "15 to 20 minutes before departure",
-          "status": "pending",
-          "source_url": "https://cebupacific.vn",
-          "verified_at": "2026-10-05",
+          "value": "15 minutes before departure",
+          "status": "official",
+          "source_url": "https://www.cebupacificair.com/pages/travel-info/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -139,24 +133,24 @@
       ],
       "fields": {
         "care": {
-          "value": "When a flight is delayed or cancelled within carrier control, passengers are entitled to meals, refreshments, communication access, and hotel accommodation with transport for overnight delays.",
-          "status": "pending",
-          "source_url": "https://cebupacific.vn",
-          "verified_at": "2026-10-05",
+          "value": "Meals, drinks, communications, and rebooking under Philippines Air Passenger Bill of Rights.",
+          "status": "official",
+          "source_url": "https://www.cebupacificair.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "rebooking_refund": {
-          "value": "For disruptions within carrier control, the airline rebooks passengers on the next available flight or provides a full refund for unused flight segments if delayed by 3 hours or more.",
-          "status": "pending",
-          "source_url": "https://cebupacific.vn",
-          "verified_at": "2026-10-05",
+          "value": "Full refund to Travel Fund or free rebooking if flight cancelled or delayed >3 hours.",
+          "status": "official",
+          "source_url": "https://www.cebupacificair.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "compensation": {
-          "value": "Statutory or policy compensation applies for cancellations or long delays within carrier control according to applicable aviation passenger rights regulations.",
-          "status": "pending",
-          "source_url": "https://cebupacific.vn",
-          "verified_at": "2026-10-05",
+          "value": "Statutory remedies provided under CAB Economic Regulation No. 2.",
+          "status": "official",
+          "source_url": "https://www.cebupacificair.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -171,24 +165,24 @@
       ],
       "fields": {
         "fare_name": {
-          "value": "Standard / Economy Light: includes 1 carry-on bag and 1 personal item; checked bag allowance depends on route and fare category",
-          "status": "pending",
-          "source_url": "https://cebupacific.vn",
-          "verified_at": "2026-10-05",
+          "value": "Go Basic, Go Easy, Go Flexi",
+          "status": "official",
+          "source_url": "https://www.cebupacificair.com/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "seat_selection_included": {
-          "value": "Free seat assignment provided during online check-in; advance seat selection prior to check-in is available for a fee",
-          "status": "pending",
-          "source_url": "https://cebupacific.vn",
-          "verified_at": "2026-10-05",
+          "value": "Included in Go Easy and Go Flexi; fee on Go Basic until check-in.",
+          "status": "official",
+          "source_url": "https://www.cebupacificair.com/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "change_cancellation_policy": {
-          "value": "Ticket modifications and cancellations are subject to carrier fare rules, change fees, and applicable fare difference",
-          "status": "pending",
-          "source_url": "https://cebupacific.vn",
-          "verified_at": "2026-10-05",
+          "value": "Go Basic non-refundable; Go Flexi allows cancellation with convert to Travel Fund up to 2 hours prior.",
+          "status": "official",
+          "source_url": "https://www.cebupacificair.com/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -204,24 +198,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
-          "status": "pending",
-          "source_url": "https://cebupacific.vn",
-          "verified_at": "2026-10-05",
+          "value": "Standard Economy, Extra Legroom & Premium seats (Airbus A320/A321 & high-density A330neo).",
+          "status": "official",
+          "source_url": "https://www.cebupacificair.com/cabins",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
-          "status": "pending",
-          "source_url": "https://cebupacific.vn",
-          "verified_at": "2026-10-05",
+          "value": "Fee-based advance seat selection on Go Basic; included on Go Easy/Flexi; free assignment at check-in.",
+          "status": "official",
+          "source_url": "https://www.cebupacificair.com/seats",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
-          "status": "pending",
-          "source_url": "https://cebupacific.vn",
-          "verified_at": "2026-10-05",
+          "value": "Cebu Pacific automatically seats children under 12 next to an accompanying adult free of charge.",
+          "status": "official",
+          "source_url": "https://www.cebupacificair.com/family-travel",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

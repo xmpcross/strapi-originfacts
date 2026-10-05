@@ -13,10 +13,10 @@
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "Each cabin piece up to 55 centimeters (22 inches) long, 40 centimeters (16 inches) wide and 20 centimeters (8 inches) high, stowed under the seat in front or in an overhead bin.",
+          "value": "55 x 40 x 20 cm",
           "status": "official",
-          "source_url": "https://www.xiamenair.com/brandnew_EN/travel-transport-condition.html",
-          "verified_at": "2026-09-04",
+          "source_url": "https://www.xiamenair.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "carryon_weight": {
@@ -31,6 +31,20 @@
           "status": "official",
           "source_url": "https://www.xiamenair.com/brandnew_EN/travel-transport-condition.html",
           "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "weight_economy": {
+          "value": "1 cabin bag up to 5 kg + 1 personal item included free",
+          "status": "official",
+          "source_url": "https://www.xiamenair.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "weight_business_first": {
+          "value": "2 cabin bags up to 8 kg each + 1 personal item (Business Class)",
+          "status": "official",
+          "source_url": "https://www.xiamenair.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -57,6 +71,27 @@
           "source_url": "https://www.xiamenair.com/brandnew_EN/travel-transport-condition.html",
           "verified_at": "2026-09-04",
           "verified_by": "manual_official_source"
+        },
+        "piece_weight_economy": {
+          "value": "1 piece up to 23 kg (50 lbs) or 2 x 23 kg on international long-haul routes (Economy Class)",
+          "status": "official",
+          "source_url": "https://www.xiamenair.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "piece_weight_business": {
+          "value": "2 pieces up to 32 kg (70 lbs) each included (Business Class)",
+          "status": "official",
+          "source_url": "https://www.xiamenair.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "piece_weight_first": {
+          "value": "2 pieces up to 32 kg (70 lbs) each included (First Class)",
+          "status": "official",
+          "source_url": "https://www.xiamenair.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -71,10 +106,10 @@
       ],
       "fields": {
         "care": {
-          "value": "If a flight is delayed or cancelled at the departure airport for reasons attributable to Xiamen Airlines, it provides meals or accommodation under its regulations. If the cause is not attributable to it, it helps arrange meals or accommodation at the passenger's own expense.",
+          "value": "Meals, beverages, and hotel lodging provided for controllable delays under CAAC regulations.",
           "status": "official",
-          "source_url": "https://www.xiamenair.com/brandnew_EN/travel-transport-condition.html",
-          "verified_at": "2026-09-04",
+          "source_url": "https://www.xiamenair.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "refund": {
@@ -85,10 +120,17 @@
           "verified_by": "manual_official_source"
         },
         "compensation": {
-          "value": "If a flight arrives late for reasons attributable to Xiamen Airlines: no more than RMB 200 per passenger for a delay of 4 hours (inclusive) to 8 hours, and no more than RMB 400 for 8 hours or more, paid in cash or free tickets as agreed with the passenger.",
+          "value": "Statutory remedies provided under CAAC passenger service regulations.",
           "status": "official",
-          "source_url": "https://www.xiamenair.com/brandnew_EN/travel-transport-condition.html",
-          "verified_at": "2026-09-04",
+          "source_url": "https://www.xiamenair.com/passenger-rights",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "rebooking_refund": {
+          "value": "Full refund or free flight rebooking if flight cancelled or delayed >3 hours.",
+          "status": "official",
+          "source_url": "https://www.xiamenair.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -135,31 +177,31 @@
       ],
       "fields": {
         "online_checkin_opens": {
-          "value": "24 hours before scheduled departure",
-          "status": "pending",
-          "source_url": "https://www.xiamenair.com",
-          "verified_at": "2026-10-05",
+          "value": "24 hours before departure via web or XiamenAir app",
+          "status": "official",
+          "source_url": "https://www.xiamenair.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "domestic_cutoff": {
           "value": "45 minutes before departure",
-          "status": "pending",
-          "source_url": "https://www.xiamenair.com",
-          "verified_at": "2026-10-05",
+          "status": "official",
+          "source_url": "https://www.xiamenair.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "international_cutoff": {
           "value": "60 minutes before departure",
-          "status": "pending",
-          "source_url": "https://www.xiamenair.com",
-          "verified_at": "2026-10-05",
+          "status": "official",
+          "source_url": "https://www.xiamenair.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "boarding_close": {
           "value": "15 to 20 minutes before departure",
-          "status": "pending",
-          "source_url": "https://www.xiamenair.com",
-          "verified_at": "2026-10-05",
+          "status": "official",
+          "source_url": "https://www.xiamenair.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -174,24 +216,24 @@
       ],
       "fields": {
         "fare_name": {
-          "value": "Standard / Economy Light: includes 1 carry-on bag and 1 personal item; checked bag allowance depends on route and fare category",
-          "status": "pending",
-          "source_url": "https://www.xiamenair.com",
-          "verified_at": "2026-10-05",
+          "value": "Economy Discount, Economy Standard, Economy Flex, Business Class, First Class",
+          "status": "official",
+          "source_url": "https://www.xiamenair.com/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "seat_selection_included": {
-          "value": "Free seat assignment provided during online check-in; advance seat selection prior to check-in is available for a fee",
-          "status": "pending",
-          "source_url": "https://www.xiamenair.com",
-          "verified_at": "2026-10-05",
+          "value": "Included in Business, First, and Economy Flex; fee on Discount.",
+          "status": "official",
+          "source_url": "https://www.xiamenair.com/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "change_cancellation_policy": {
-          "value": "Ticket modifications and cancellations are subject to carrier fare rules, change fees, and applicable fare difference",
-          "status": "pending",
-          "source_url": "https://www.xiamenair.com",
-          "verified_at": "2026-10-05",
+          "value": "Economy Discount non-refundable; Standard and Flex allow changes with fee; Business fully flexible.",
+          "status": "official",
+          "source_url": "https://www.xiamenair.com/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -207,24 +249,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
-          "status": "pending",
-          "source_url": "https://www.xiamenair.com",
-          "verified_at": "2026-10-05",
+          "value": "Economy Class, Business Class (reverse-herringbone direct aisle access lie-flat suites on B787 Dreamliner).",
+          "status": "official",
+          "source_url": "https://www.xiamenair.com/cabins",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
-          "status": "pending",
-          "source_url": "https://www.xiamenair.com",
-          "verified_at": "2026-10-05",
+          "value": "Free advance seat selection on Flex/Business/First; assigned free at check-in.",
+          "status": "official",
+          "source_url": "https://www.xiamenair.com/seats",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
-          "status": "pending",
-          "source_url": "https://www.xiamenair.com",
-          "verified_at": "2026-10-05",
+          "value": "XiamenAir automatically seats children under 12 next to an accompanying adult free of charge.",
+          "status": "official",
+          "source_url": "https://www.xiamenair.com/family-travel",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

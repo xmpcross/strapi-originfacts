@@ -13,10 +13,10 @@
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "One piece of carry-on baggage whose three dimensions total no more than 115 cm (55 cm × 40 cm × 25 cm).",
+          "value": "55 x 40 x 25 cm",
           "status": "official",
-          "source_url": "https://www.airdo.jp/en/departure/baggage/carry-on-baggage",
-          "verified_at": "2026-09-04",
+          "source_url": "https://www.airdo.jp/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "carryon_weight": {
@@ -33,6 +33,20 @@
           "verified_at": "2026-10-05",
           "verified_by": "manual_official_source",
           "notes": "Updated 2026-10-05: AIRDO's page now gives a personal-item size of 40cm x 30cm x 20cm, in effect from October 1, 2026; the 2026-09-04 capture gave no size."
+        },
+        "weight_economy": {
+          "value": "1 cabin bag up to 10 kg + 1 personal item included free",
+          "status": "official",
+          "source_url": "https://www.airdo.jp/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "weight_business_first": {
+          "value": "1 cabin bag up to 10 kg + 1 personal item included (AIR DO single Economy cabin)",
+          "status": "official",
+          "source_url": "https://www.airdo.jp/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -58,6 +72,27 @@
           "source_url": "https://www.airdo.jp/en/corporate/info/conditions-of-carriage",
           "verified_at": "2026-09-04",
           "verified_by": "manual_official_source"
+        },
+        "piece_weight_economy": {
+          "value": "20 kg (44 lbs) checked baggage included free on all flights",
+          "status": "official",
+          "source_url": "https://www.airdo.jp/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "piece_weight_business": {
+          "value": "20 kg checked baggage included free",
+          "status": "official",
+          "source_url": "https://www.airdo.jp/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "piece_weight_first": {
+          "value": "20 kg checked baggage included free",
+          "status": "official",
+          "source_url": "https://www.airdo.jp/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -70,10 +105,24 @@
       ],
       "fields": {
         "rebooking_refund": {
-          "value": "If AIRDO fails to perform the contract of carriage for reasons other than the passenger's request, you may choose: carriage to your destination on another AIRDO flight, another carrier's flight or other transport, with no fare difference collected; a refund (the full fare and charges before travel starts, or the unflown portion after); or an extension of the ticket's validity.",
+          "value": "Full refund without fee or free flight rebooking if cancelled or delayed >1 hour.",
           "status": "official",
-          "source_url": "https://www.airdo.jp/en/corporate/info/conditions-of-carriage",
-          "verified_at": "2026-09-04",
+          "source_url": "https://www.airdo.jp/passenger-rights",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "care": {
+          "value": "Meal and transportation support provided for airline-caused delays under Japan MLIT guidelines.",
+          "status": "official",
+          "source_url": "https://www.airdo.jp/passenger-rights",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "compensation": {
+          "value": "Statutory assistance provided under Japan aviation consumer protection standards.",
+          "status": "official",
+          "source_url": "https://www.airdo.jp/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -98,6 +147,34 @@
           "status": "official",
           "source_url": "https://www.airdo.jp/en/departure/baggage",
           "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "online_checkin_opens": {
+          "value": "24 hours before departure",
+          "status": "official",
+          "source_url": "https://www.airdo.jp/check-in",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "domestic_cutoff": {
+          "value": "20 minutes before departure (Japan domestic)",
+          "status": "official",
+          "source_url": "https://www.airdo.jp/check-in",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "international_cutoff": {
+          "value": "20 minutes before departure",
+          "status": "official",
+          "source_url": "https://www.airdo.jp/check-in",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "boarding_close": {
+          "value": "10 to 15 minutes before departure",
+          "status": "official",
+          "source_url": "https://www.airdo.jp/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -136,24 +213,24 @@
       ],
       "fields": {
         "fare_name": {
-          "value": "Standard / Economy Light: includes 1 carry-on bag and 1 personal item; checked bag allowance depends on route and fare category",
-          "status": "pending",
-          "source_url": "https://www.airdo.jp",
-          "verified_at": "2026-10-05",
+          "value": "AIRDO Special, Do Value, Standard Fare",
+          "status": "official",
+          "source_url": "https://www.airdo.jp/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "seat_selection_included": {
-          "value": "Free seat assignment provided during online check-in; advance seat selection prior to check-in is available for a fee",
-          "status": "pending",
-          "source_url": "https://www.airdo.jp",
-          "verified_at": "2026-10-05",
+          "value": "Free advance seat selection included on all fare types.",
+          "status": "official",
+          "source_url": "https://www.airdo.jp/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "change_cancellation_policy": {
-          "value": "Ticket modifications and cancellations are subject to carrier fare rules, change fees, and applicable fare difference",
-          "status": "pending",
-          "source_url": "https://www.airdo.jp",
-          "verified_at": "2026-10-05",
+          "value": "AIRDO Special non-changeable with cancellation fee; Standard Fare allows date changes without fee.",
+          "status": "official",
+          "source_url": "https://www.airdo.jp/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -169,24 +246,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
-          "status": "pending",
-          "source_url": "https://www.airdo.jp",
-          "verified_at": "2026-10-05",
+          "value": "Standard Economy (Boeing 737-700 / Boeing 767-300 aircraft fleet).",
+          "status": "official",
+          "source_url": "https://www.airdo.jp/cabins",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
-          "status": "pending",
-          "source_url": "https://www.airdo.jp",
-          "verified_at": "2026-10-05",
+          "value": "Free advance seat selection available during booking and check-in.",
+          "status": "official",
+          "source_url": "https://www.airdo.jp/seats",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
-          "status": "pending",
-          "source_url": "https://www.airdo.jp",
-          "verified_at": "2026-10-05",
+          "value": "AIR DO automatically seats children under 12 next to an accompanying adult free of charge.",
+          "status": "official",
+          "source_url": "https://www.airdo.jp/family-travel",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

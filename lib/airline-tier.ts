@@ -178,6 +178,17 @@ export const PUBLISHED_AIRLINE_GUIDES = new Set([
   'air-greenland',
   'air-transat',
   'scoot',
+  // Batch 10 (6 Oct 2026)
+  'air-do',
+  'air-macau',
+  'air-serbia',
+  'airasia',
+  'batik-air',
+  'cebu-pacific',
+  'garuda-indonesia',
+  'jeju-air',
+  'philippine-airlines',
+  'xiamen-airlines',
 ]);
 
 export function airlineGuideIsPublished(slug: string): boolean {

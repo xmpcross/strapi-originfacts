@@ -431,12 +431,12 @@ function AirlineCard({
       className="group flex h-full items-center gap-3.5 rounded-[0.6rem] border border-transparent px-3 py-3 transition hover:border-forest-900/10 hover:bg-white hover:shadow-[0_1px_2px_rgba(15,39,102,0.06)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-emphasis"
       data-testid={`airline-card-${airline.slug}`}
     >
-      <span className="relative flex h-12 w-16 flex-none items-center justify-center overflow-hidden">
+      <span className="relative flex h-16 w-24 flex-none items-center justify-center overflow-hidden">
         {logo ? (
           // 400x200 logo canvas with the artwork centred at half the width: draw it at twice
           // the box width and clip the empty sides so the artwork fills the box.
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={logo} alt="" className="absolute left-1/2 top-1/2 h-16 w-32 max-w-none -translate-x-1/2 -translate-y-1/2" loading="lazy" decoding="async" />
+          <img src={logo} alt="" className="absolute left-1/2 top-1/2 h-24 w-48 max-w-none -translate-x-1/2 -translate-y-1/2" loading="lazy" decoding="async" />
         ) : (
           <span
             className="flex h-9 w-9 items-center justify-center rounded-full bg-forest-900/5 text-[11px] font-bold text-forest-900/55"
@@ -448,7 +448,7 @@ function AirlineCard({
       </span>
       <span className="min-w-0 flex-1">
         <span className="flex items-center gap-1.5">
-          <span className="line-clamp-2 text-base leading-snug text-forest-950 group-hover:text-primary-emphasis">
+          <span className="line-clamp-2 text-sm leading-snug text-forest-950 group-hover:text-primary-emphasis">
             {airline.name}
           </span>
           {isVerified && (

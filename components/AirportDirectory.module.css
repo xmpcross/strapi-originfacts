@@ -1,0 +1,43 @@
+/*
+ * Airport cards are rendered 3,600+ times in the server HTML, so their styles
+ * live here as a few short class names instead of long Tailwind strings
+ * repeated on every card.
+ */
+
+.cardGrid {
+  @apply mt-3 grid grid-cols-1 gap-2 sm:mt-4 sm:grid-cols-2 sm:gap-2.5 lg:grid-cols-3 xl:grid-cols-4;
+}
+
+/* City + code on the first row; airport name and meta span both columns. */
+.card {
+  @apply grid h-full min-w-0 grid-cols-[minmax(0,1fr)_auto] content-start items-start gap-x-2 rounded-[0.3rem] border border-forest-900/10 bg-white px-3.5 py-3 transition;
+}
+.card:hover {
+  @apply border-primary-emphasis/50 bg-primary-hover/40;
+}
+.card:focus-visible {
+  @apply outline outline-2 outline-offset-2 outline-primary-emphasis;
+}
+
+.city {
+  @apply min-w-0 truncate text-[15px] font-semibold leading-snug text-forest-950;
+}
+.card:hover .city {
+  @apply text-primary-emphasis;
+}
+
+.code {
+  @apply flex-none rounded-[0.3rem] bg-forest-950 px-1.5 py-0.5 font-mono text-[11px] font-bold tracking-wider text-white;
+}
+
+.name {
+  @apply col-span-2 mt-0.5 min-w-0 truncate text-xs text-forest-900/70;
+}
+
+.meta {
+  @apply col-span-2 mt-1.5 flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1 text-xs text-forest-900/60;
+}
+
+.reviewed {
+  @apply inline-flex flex-none items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] font-semibold text-emerald-800 ring-1 ring-inset ring-emerald-600/20;
+}

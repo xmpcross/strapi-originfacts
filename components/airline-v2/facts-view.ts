@@ -382,25 +382,3 @@ export function factFaqs(name: string, modules: Map<string, ModuleEntry>): { q: 
   }
   return out;
 }
-
-const CM_TRIPLE =
-  /(\d{1,3}(?:\.\d+)?)\s*(?:cm|cms)?\s*[x×*]\s*(\d{1,3}(?:\.\d+)?)\s*(?:cm|cms)?\s*[x×*]\s*(\d{1,3}(?:\.\d+)?)\s*(?:cm|cms)\b/gi;
-
-/**
- * The three sides, in cm, largest first, when the airline's wording holds
- * exactly one plain "A x B x C cm" size. Anything else (several aircraft or
- * fare variants, inches only, labelled L/W/H, totals only) returns null so the
- * diagram is left out rather than guessed. Sorted because the wording does not
- * say reliably which side is which; the drawing labels sizes, not axes.
- */
-export function cabinBagSides(value: string): [number, number, number] | null {
-  const found = new Set<string>();
-  for (const m of value.matchAll(CM_TRIPLE)) {
-    const sides = [Number(m[1]), Number(m[2]), Number(m[3])].sort((a, b) => b - a);
-    found.add(sides.join('x'));
-  }
-  if (found.size !== 1) return null;
-  const [a, b, c] = [...found][0].split('x').map(Number);
-  if (a > 100 || c < 5) return null;
-  return [a, b, c];
-}

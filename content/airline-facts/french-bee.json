@@ -49,6 +49,23 @@
           "verified_by": "manual_official_source"
         }
       }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and customer support",
+      "required": [
+        "phone_home_market"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "+33 892 68 08 08",
+          "status": "official",
+          "source_url": "https://www.frenchbee.com/contact",
+          "notes": "french-bee official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

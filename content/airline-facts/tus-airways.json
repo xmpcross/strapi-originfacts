@@ -58,6 +58,23 @@
           "verified_by": "manual_official_source"
         }
       }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and customer support",
+      "required": [
+        "phone_home_market"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "+357 24 200 400",
+          "status": "official",
+          "source_url": "https://www.tusairways.com/contact",
+          "notes": "tus-airways official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

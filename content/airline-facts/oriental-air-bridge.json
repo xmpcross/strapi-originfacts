@@ -114,6 +114,14 @@
           "verified_at": "2026-10-05",
           "verified_by": "manual_official_source",
           "notes": "Japanese only."
+        },
+        "phone_home_market": {
+          "value": "+81 95 829 0100",
+          "status": "official",
+          "source_url": "https://www.orc-air.co.jp/contact",
+          "notes": "oriental-air-bridge official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

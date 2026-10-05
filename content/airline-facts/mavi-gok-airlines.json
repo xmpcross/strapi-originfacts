@@ -41,6 +41,23 @@
           "verified_by": "manual_official_source"
         }
       }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and customer support",
+      "required": [
+        "phone_home_market"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "+90 242 310 8500",
+          "status": "official",
+          "source_url": "https://www.mga.aero/contact",
+          "notes": "mavi-gok-airlines official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

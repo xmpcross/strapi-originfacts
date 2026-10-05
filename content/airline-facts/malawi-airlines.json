@@ -15,6 +15,14 @@
           "source_url": "https://www.malawian-airlines.com/aa/information/essential-information/conditions-of-carriage",
           "verified_at": "2026-09-04",
           "verified_by": "manual_official_source"
+        },
+        "phone_home_market": {
+          "value": "+265 1 774 600",
+          "status": "official",
+          "source_url": "https://www.malawian-airlines.com/contact",
+          "notes": "malawi-airlines official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

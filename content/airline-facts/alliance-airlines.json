@@ -106,6 +106,14 @@
           "source_url": "https://www.allianceairlines.com.au/terms-conditions",
           "verified_at": "2026-09-04",
           "verified_by": "manual_official_source"
+        },
+        "phone_home_market": {
+          "value": "+61 7 3212 1212",
+          "status": "official",
+          "source_url": "https://www.allianceairlines.com.au/contact",
+          "notes": "alliance-airlines official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

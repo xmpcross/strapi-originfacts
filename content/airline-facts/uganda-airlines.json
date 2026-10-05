@@ -16,6 +16,14 @@
           "source_url": "https://ugandairlines.com/conditions-of-carriage",
           "verified_at": "2026-10-05",
           "verified_by": "manual_official_source"
+        },
+        "phone_home_market": {
+          "value": "+256 200 406 400",
+          "status": "official",
+          "source_url": "https://ugandairlines.com/contact",
+          "notes": "uganda-airlines official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

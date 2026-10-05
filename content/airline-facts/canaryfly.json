@@ -95,6 +95,14 @@
           "source_url": "https://www.canaryfly.es/en/legal-information/general-conditions",
           "verified_at": "2026-09-04",
           "verified_by": "manual_official_source"
+        },
+        "phone_home_market": {
+          "value": "+34 928 01 85 00",
+          "status": "official",
+          "source_url": "https://www.canaryfly.es/contact",
+          "notes": "canaryfly official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

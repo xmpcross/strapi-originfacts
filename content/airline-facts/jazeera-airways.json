@@ -135,6 +135,14 @@
           "source_url": "https://www.jazeeraairways.com/en-kw/terms-and-conditions",
           "verified_at": "2026-09-03",
           "verified_by": "manual_official_source"
+        },
+        "phone_home_market": {
+          "value": "+965 2205 4944",
+          "status": "official",
+          "source_url": "https://www.jazeeraairways.com/contact",
+          "notes": "jazeera-airways official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

@@ -93,6 +93,14 @@
           "source_url": "https://www.royalairmaroc.com/uk-en/general-terms-and-conditions",
           "verified_at": "2026-09-04",
           "verified_by": "manual_official_source"
+        },
+        "phone_home_market": {
+          "value": "+212 522 489797",
+          "status": "official",
+          "source_url": "https://www.royalairmaroc.com/contact",
+          "notes": "royal-air-maroc official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

@@ -82,6 +82,14 @@
           "source_url": "https://www.uralairlines.ru/en/rules/dogovor-perevozki/",
           "verified_at": "2026-09-04",
           "verified_by": "manual_official_source"
+        },
+        "phone_home_market": {
+          "value": "+7 800 7700 262",
+          "status": "official",
+          "source_url": "https://www.uralairlines.ru/contact",
+          "notes": "ural-airlines official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

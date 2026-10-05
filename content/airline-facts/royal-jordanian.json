@@ -90,6 +90,14 @@
           "source_url": "https://www.rj.com/en/info-and-tips/conditions-of-carriage",
           "verified_at": "2026-09-04",
           "verified_by": "manual_official_source"
+        },
+        "phone_home_market": {
+          "value": "+962 6 510 0000",
+          "status": "official",
+          "source_url": "https://www.rj.com/contact",
+          "notes": "royal-jordanian official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

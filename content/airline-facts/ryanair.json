@@ -238,6 +238,14 @@
           "source_url": "https://help.ryanair.com/hc/en-ie/articles/12896766243857-Refund-Policy",
           "verified_at": "2026-09-05",
           "verified_by": "manual_official_source"
+        },
+        "phone_home_market": {
+          "value": "+44 1279 358438",
+          "status": "official",
+          "source_url": "https://www.ryanair.com/contact",
+          "notes": "ryanair official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

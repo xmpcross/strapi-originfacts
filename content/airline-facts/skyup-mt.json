@@ -53,6 +53,23 @@
           "notes": "From the SkyUp group's shared baggage page (skyup.aero), which lists SkyUp MT Limited alongside SkyUp Airlines LLC and Sky Up Nistru as operating entities."
         }
       }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and customer support",
+      "required": [
+        "phone_home_market"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "+356 2778 0000",
+          "status": "official",
+          "source_url": "https://skyup.aero/contact",
+          "notes": "skyup-mt official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

@@ -87,6 +87,14 @@
           "source_url": "https://www.seaborneairlines.com/contract-of-carriage/",
           "verified_at": "2026-09-04",
           "verified_by": "manual_official_source"
+        },
+        "phone_home_market": {
+          "value": "+1 787 946 8749",
+          "status": "official",
+          "source_url": "https://www.seaborneairlines.com/contact",
+          "notes": "seaborne-airlines official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

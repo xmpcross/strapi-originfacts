@@ -50,6 +50,23 @@
           "verified_by": "manual_official_source"
         }
       }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and customer support",
+      "required": [
+        "phone_home_market"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "+41 71 858 5160",
+          "status": "official",
+          "source_url": "https://www.peoples.ch/contact",
+          "notes": "peoples official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

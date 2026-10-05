@@ -51,6 +51,23 @@
           "verified_by": "manual_official_source"
         }
       }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and customer support",
+      "required": [
+        "phone_home_market"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "+86 21 95520",
+          "status": "official",
+          "source_url": "https://www.juneyaoair.com/contact",
+          "notes": "juneyao-airlines official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

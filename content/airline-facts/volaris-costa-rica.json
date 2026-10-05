@@ -71,6 +71,23 @@
           "notes": "Translated from the Spanish Volaris baggage policy page with Costa Rica selected; it is the Volaris brand's page, not one scoped to Volaris Costa Rica alone."
         }
       }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and customer support",
+      "required": [
+        "phone_home_market"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "+506 4001 7899",
+          "status": "official",
+          "source_url": "https://www.volaris.com/contact",
+          "notes": "volaris-costa-rica official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

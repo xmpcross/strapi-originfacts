@@ -125,6 +125,14 @@
           "source_url": "https://t.me/s/aeroflot_official/4218",
           "verified_at": "2026-09-05",
           "verified_by": "manual_official_source"
+        },
+        "phone_home_market": {
+          "value": "+7 495 223 5555",
+          "status": "official",
+          "source_url": "https://www.aeroflot.ru/contact",
+          "notes": "aeroflot official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

@@ -135,6 +135,14 @@
           "source_url": "https://www.nauruair.com/travel-info/conditions-of-carriage",
           "verified_at": "2026-09-04",
           "verified_by": "manual_official_source"
+        },
+        "phone_home_market": {
+          "value": "+674 557 7000",
+          "status": "official",
+          "source_url": "https://www.nauruair.com/contact",
+          "notes": "nauru-airlines official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

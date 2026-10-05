@@ -129,6 +129,14 @@
           "source_url": "https://www.intercaribbean.com/contract-of-carriage.html",
           "verified_at": "2026-10-05",
           "verified_by": "manual_official_source"
+        },
+        "phone_home_market": {
+          "value": "+1 649 946 0000",
+          "status": "official",
+          "source_url": "https://www.intercaribbean.com/contact",
+          "notes": "intercaribbean-airways official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

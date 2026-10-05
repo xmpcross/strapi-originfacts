@@ -205,6 +205,14 @@
           "source_url": "https://www.alaskaair.com/content/legal/contract-of-carriage",
           "verified_at": "2026-09-05",
           "verified_by": "manual_official_source"
+        },
+        "phone_home_market": {
+          "value": "+1 800 252 7522",
+          "status": "official",
+          "source_url": "https://www.alaskaair.com/contact",
+          "notes": "alaska-airlines official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

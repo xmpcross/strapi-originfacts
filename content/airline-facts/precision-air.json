@@ -35,6 +35,23 @@
           "notes": "The policy's allowance tables did not survive capture cleanly, so per-route allowances are left unpublished."
         }
       }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and customer support",
+      "required": [
+        "phone_home_market"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "+255 732 923 500",
+          "status": "official",
+          "source_url": "https://www.precisionairtz.com/contact",
+          "notes": "precision-air official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

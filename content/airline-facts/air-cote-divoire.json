@@ -134,6 +134,14 @@
           "source_url": "https://www.aircotedivoire.com/en/flight-booking/terms-and-conditions-of-carriage",
           "verified_at": "2026-09-04",
           "verified_by": "manual_official_source"
+        },
+        "phone_home_market": {
+          "value": "+225 27 21 21 81 81",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/contact",
+          "notes": "air-cote-divoire official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

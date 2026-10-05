@@ -63,6 +63,14 @@
           "source_url": "https://mywayairlines.com/en/381/General-Condition-of-Carriage",
           "verified_at": "2026-10-05",
           "verified_by": "manual_official_source"
+        },
+        "phone_home_market": {
+          "value": "+995 32 2400400",
+          "status": "official",
+          "source_url": "https://mywayairlines.com/contact",
+          "notes": "myway-airlines official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

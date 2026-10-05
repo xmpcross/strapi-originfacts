@@ -72,6 +72,23 @@
         }
       },
       "lede": "Your bags are weighed at check-in against your fare's maximum weight allowance."
+    },
+    {
+      "id": "contact",
+      "title": "Contact and customer support",
+      "required": [
+        "phone_home_market"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "+1 800 665 0212",
+          "status": "official",
+          "source_url": "https://www.harbourair.com/contact",
+          "notes": "harbour-air-seaplanes official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

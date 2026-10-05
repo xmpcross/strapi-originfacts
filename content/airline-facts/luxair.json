@@ -114,6 +114,14 @@
           "source_url": "https://www.luxair.lu/en/information/general-conditions-carriage",
           "verified_at": "2026-09-04",
           "verified_by": "manual_official_source"
+        },
+        "phone_home_market": {
+          "value": "+352 2456 1",
+          "status": "official",
+          "source_url": "https://www.luxair.lu/contact",
+          "notes": "luxair official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

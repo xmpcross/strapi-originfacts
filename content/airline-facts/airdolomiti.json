@@ -119,6 +119,14 @@
           "source_url": "https://www.airdolomiti.eu/legal-info/air-carrier-liability",
           "verified_at": "2026-09-04",
           "verified_by": "manual_official_source"
+        },
+        "phone_home_market": {
+          "value": "+39 045 2886140",
+          "status": "official",
+          "source_url": "https://www.airdolomiti.eu/contact",
+          "notes": "airdolomiti official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

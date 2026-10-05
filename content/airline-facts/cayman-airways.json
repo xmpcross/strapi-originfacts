@@ -94,6 +94,14 @@
           "source_url": "https://www.caymanairways.com/contract-of-carriage",
           "verified_at": "2026-09-04",
           "verified_by": "manual_official_source"
+        },
+        "phone_home_market": {
+          "value": "+1 345 949 2311",
+          "status": "official",
+          "source_url": "https://www.caymanairways.com/contact",
+          "notes": "cayman-airways official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

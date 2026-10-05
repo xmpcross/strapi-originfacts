@@ -262,6 +262,14 @@
           "source_url": "https://www.jetblue.com/help/delays-and-cancellations",
           "verified_at": "2026-09-05",
           "verified_by": "manual_official_source"
+        },
+        "phone_home_market": {
+          "value": "+1 800 538 2583",
+          "status": "official",
+          "source_url": "https://www.jetblue.com/contact",
+          "notes": "jetblue official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

@@ -16,6 +16,14 @@
           "source_url": "https://www.buzzair.com/en/terms-conditions-of-carriage/",
           "verified_at": "2026-09-04",
           "verified_by": "manual_official_source"
+        },
+        "phone_home_market": {
+          "value": "+48 22 101 0000",
+          "status": "official",
+          "source_url": "https://www.buzzair.com/contact",
+          "notes": "buzz official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

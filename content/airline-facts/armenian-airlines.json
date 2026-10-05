@@ -18,6 +18,23 @@
           "notes": "The free allowance itself is on a separate page that was not captured."
         }
       }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and customer support",
+      "required": [
+        "phone_home_market"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "+374 10 593 000",
+          "status": "official",
+          "source_url": "https://www.armenianairlines.am/contact",
+          "notes": "armenian-airlines official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

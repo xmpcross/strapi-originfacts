@@ -66,6 +66,14 @@
           "source_url": "https://air-burkina.com/en/general-conditions-of-carriage#:~:text=The%20passenger%20is%20required%20to,departure%20formalities%20to%20be%20completed.",
           "verified_at": "2026-09-04",
           "verified_by": "manual_official_source"
+        },
+        "phone_home_market": {
+          "value": "+226 25 49 23 43",
+          "status": "official",
+          "source_url": "https://www.air-burkina.com/contact",
+          "notes": "air-burkina official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

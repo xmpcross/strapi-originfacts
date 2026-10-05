@@ -128,6 +128,14 @@
           "source_url": "https://www.linkairways.com/about-us/conditions-of-carriage",
           "verified_at": "2026-09-04",
           "verified_by": "manual_official_source"
+        },
+        "phone_home_market": {
+          "value": "+61 1300 381 595",
+          "status": "official",
+          "source_url": "https://www.linkairways.com/contact",
+          "notes": "link-airways official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

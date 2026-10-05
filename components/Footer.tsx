@@ -13,7 +13,7 @@ export default function Footer() {
     .filter((d): d is NonNullable<typeof d> => Boolean(d));
 
   return (
-    <footer className="border-t-4 border-sand-300 bg-forest-50 text-forest-950" data-testid="site-footer">
+    <footer className="border-sand-300 text-forest-950" data-testid="site-footer">
       {/* Up to 1175px: brand on its own row, then the menus two per row. From 1176px:
           brand 2.3 shares, Company/Discover 1 share each, Topics only as wide as its
           longest link so it sits flush right, in line with the legal row below. */}

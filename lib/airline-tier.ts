@@ -156,6 +156,17 @@ export const PUBLISHED_AIRLINE_GUIDES = new Set([
   'indigo',
   'jetstar',
   'starlux-airlines',
+  // Batch 8 (6 Oct 2026)
+  'allegiant-air',
+  'bamboo-airways',
+  'condor',
+  'sky-airline',
+  'spirit-airlines',
+  'sunexpress',
+  'transavia',
+  'viva-aerobus',
+  'vueling',
+  'wizz-air',
 ]);
 
 export function airlineGuideIsPublished(slug: string): boolean {

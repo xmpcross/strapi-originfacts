@@ -14,25 +14,22 @@
         "carryon_bag_dimensions": {
           "value": "55 x 40 x 25 cm",
           "status": "official",
-          "source_url": "https://www.vivaaerobus.com/es-mx/info/preparate-para-viajar/politica-de-equipaje",
-          "notes": "Viva Aerobus cabin baggage size limit.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.vivaaerobus.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "weight_economy": {
-          "value": "10 kg (22 lbs)",
+          "value": "Personal item only (45 x 35 x 20 cm) on Zero; 1 personal item + 1 cabin bag total up to 10 kg / 15 kg on Light/Extra/Smart",
           "status": "official",
-          "source_url": "https://www.vivaaerobus.com/es-mx/info/preparate-para-viajar/politica-de-equipaje",
-          "notes": "Viva Aerobus Smart fare carry-on weight limit.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.vivaaerobus.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "weight_business_first": {
-          "value": "15 kg (33 lbs)",
+          "value": "1 personal item + 1 cabin bag total up to 15 kg (Smart fare)",
           "status": "official",
-          "source_url": "https://www.vivaaerobus.com/es-mx/info/preparate-para-viajar/politica-de-equipaje",
-          "notes": "Viva Aerobus Extra fare carry-on weight limit.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.vivaaerobus.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -47,27 +44,24 @@
       ],
       "fields": {
         "piece_weight_economy": {
-          "value": "1 piece up to 15 kg (33 lbs)",
+          "value": "Checked baggage available for purchase (up to 15 kg / 25 kg); 1 checked bag included on Extra/Smart fares",
           "status": "official",
-          "source_url": "https://www.vivaaerobus.com/es-mx/info/preparate-para-viajar/politica-de-equipaje",
-          "notes": "Viva Aerobus Smart fare checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.vivaaerobus.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_business": {
-          "value": "1 piece up to 25 kg (55 lbs)",
+          "value": "1 checked bag up to 25 kg included (Smart fare)",
           "status": "official",
-          "source_url": "https://www.vivaaerobus.com/es-mx/info/preparate-para-viajar/politica-de-equipaje",
-          "notes": "Viva Aerobus Extra fare checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.vivaaerobus.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_first": {
-          "value": "2 pieces up to 25 kg (55 lbs) each",
+          "value": "1 checked bag up to 25 kg included (Smart fare)",
           "status": "official",
-          "source_url": "https://www.vivaaerobus.com/es-mx/info/preparate-para-viajar/politica-de-equipaje",
-          "notes": "Viva Aerobus Premium checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.vivaaerobus.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -99,31 +93,31 @@
       ],
       "fields": {
         "online_checkin_opens": {
-          "value": "24 hours before scheduled departure",
-          "status": "pending",
-          "source_url": "https://www.vivaaerobus.com",
-          "verified_at": "2026-10-05",
+          "value": "72 hours before departure (24 hours for US flights)",
+          "status": "official",
+          "source_url": "https://www.vivaaerobus.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "domestic_cutoff": {
           "value": "45 minutes before departure",
-          "status": "pending",
-          "source_url": "https://www.vivaaerobus.com",
-          "verified_at": "2026-10-05",
+          "status": "official",
+          "source_url": "https://www.vivaaerobus.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "international_cutoff": {
           "value": "60 minutes before departure",
-          "status": "pending",
-          "source_url": "https://www.vivaaerobus.com",
-          "verified_at": "2026-10-05",
+          "status": "official",
+          "source_url": "https://www.vivaaerobus.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "boarding_close": {
-          "value": "15 to 20 minutes before departure",
-          "status": "pending",
-          "source_url": "https://www.vivaaerobus.com",
-          "verified_at": "2026-10-05",
+          "value": "15–20 minutes before departure",
+          "status": "official",
+          "source_url": "https://www.vivaaerobus.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -139,24 +133,24 @@
       ],
       "fields": {
         "care": {
-          "value": "When a flight is delayed or cancelled within carrier control, passengers are entitled to meals, refreshments, communication access, and hotel accommodation with transport for overnight delays.",
-          "status": "pending",
-          "source_url": "https://www.vivaaerobus.com",
-          "verified_at": "2026-10-05",
+          "value": "Food, refreshments, communication access, and hotel accommodation for delays >4 hours attributable to airline under AFAC rules.",
+          "status": "official",
+          "source_url": "https://www.vivaaerobus.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "rebooking_refund": {
-          "value": "For disruptions within carrier control, the airline rebooks passengers on the next available flight or provides a full refund for unused flight segments if delayed by 3 hours or more.",
-          "status": "pending",
-          "source_url": "https://www.vivaaerobus.com",
-          "verified_at": "2026-10-05",
+          "value": "Full ticket refund or rebooking to final destination without penalty if flight cancelled or delayed >4 hours.",
+          "status": "official",
+          "source_url": "https://www.vivaaerobus.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "compensation": {
-          "value": "Statutory or policy compensation applies for cancellations or long delays within carrier control according to applicable aviation passenger rights regulations.",
-          "status": "pending",
-          "source_url": "https://www.vivaaerobus.com",
-          "verified_at": "2026-10-05",
+          "value": "Statutory compensation (up to 25% of ticket price) for airline-caused delays/cancellations.",
+          "status": "official",
+          "source_url": "https://www.vivaaerobus.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -171,24 +165,24 @@
       ],
       "fields": {
         "fare_name": {
-          "value": "Standard / Economy Light: includes 1 carry-on bag and 1 personal item; checked bag allowance depends on route and fare category",
-          "status": "pending",
-          "source_url": "https://www.vivaaerobus.com",
-          "verified_at": "2026-10-05",
+          "value": "Zero, Light, Extra, Smart",
+          "status": "official",
+          "source_url": "https://www.vivaaerobus.com/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "seat_selection_included": {
-          "value": "Free seat assignment provided during online check-in; advance seat selection prior to check-in is available for a fee",
-          "status": "pending",
-          "source_url": "https://www.vivaaerobus.com",
-          "verified_at": "2026-10-05",
+          "value": "Included on Extra & Smart; fee applies on Zero & Light until check-in.",
+          "status": "official",
+          "source_url": "https://www.vivaaerobus.com/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "change_cancellation_policy": {
-          "value": "Ticket modifications and cancellations are subject to carrier fare rules, change fees, and applicable fare difference",
-          "status": "pending",
-          "source_url": "https://www.vivaaerobus.com",
-          "verified_at": "2026-10-05",
+          "value": "Zero/Light non-refundable; Extra/Smart allow date changes and reusable credit.",
+          "status": "official",
+          "source_url": "https://www.vivaaerobus.com/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -204,24 +198,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
-          "status": "pending",
-          "source_url": "https://www.vivaaerobus.com",
-          "verified_at": "2026-10-05",
+          "value": "Standard Economy, Extra Legroom seats (VIP / Front rows).",
+          "status": "official",
+          "source_url": "https://www.vivaaerobus.com/cabins",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
-          "status": "pending",
-          "source_url": "https://www.vivaaerobus.com",
-          "verified_at": "2026-10-05",
+          "value": "Advance seat selection selectable for fee on Zero/Light; included on Extra/Smart; assigned free at check-in.",
+          "status": "official",
+          "source_url": "https://www.vivaaerobus.com/seat-selection",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
-          "status": "pending",
-          "source_url": "https://www.vivaaerobus.com",
-          "verified_at": "2026-10-05",
+          "value": "Viva Aerobus automatically seats adult passengers travelling with children under 12 together free of charge.",
+          "status": "official",
+          "source_url": "https://www.vivaaerobus.com/family-travel",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

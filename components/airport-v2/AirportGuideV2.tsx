@@ -7,7 +7,6 @@ import {
   Building2,
   CloudSun,
   Compass,
-  Gauge,
   Globe,
   HelpCircle,
   Info,
@@ -31,7 +30,6 @@ import { CitedParagraph } from '@/components/route-guide/RouteGuideBlocks';
 import type { StrapiAirport, StrapiRoute } from '@/lib/strapi';
 import type { AirportWeather } from '@/lib/met-weather';
 import { formatLocalTime, MET_ATTRIBUTION, weatherLabel } from '@/lib/met-symbols';
-import WeatherCard from './WeatherCard';
 import SectionNav, { SECTION_ICONS, type NavItem } from './SectionNav';
 import { displayUrl, type Faq } from './faqs';
 import { routeCoverage, type AirportCityPhoto } from '@/lib/airport-v2';
@@ -160,7 +158,6 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
   const country = airport.country || info.country || null;
   const recordDate = formatDate((airport as StrapiAirport & { updatedAt?: string }).updatedAt);
   const routesDate = routeVintage(routes);
-  const destinations = uniqueDestinations(routes);
   const coordText = coordinates ? formatCoordinates(coordinates.lat, coordinates.lon) : null;
   const e = p.enrichment;
   const src = e.sources;
@@ -363,140 +360,11 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
       {/* ---------------------------------------------------------- description */}
       {heroSummary && (
         <section aria-label="Airport description" className={`${WRAP} pt-8`} data-testid="airport-v2-description">
-          <p className="text-base font-normal leading-7 text-forest-950 sm:text-lg sm:leading-8">
+          <p className="text-base leading-7 text-forest-950 sm:text-lg sm:leading-8">
             {heroSummary}
           </p>
         </section>
       )}
-
-      {/* ---------------------------------------------------------- at a glance */}
-      <section aria-labelledby="glance-title" className={`${WRAP} pt-8`} data-testid="airport-v2-glance">
-        <h2 id="glance-title" className="flex items-center gap-2.5 text-xl sm:text-2xl">
-          <Gauge aria-hidden className="h-6 w-6 text-primary-emphasis" />
-          {name} at a glance
-        </h2>
-        <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {coordText && (
-            <Tile icon={MapPin} title="Location" source={coordinates?.source === 'ourairports' ? 'OurAirports' : 'Originfacts airport record'} section="details">
-              <p className="text-[15px] font-semibold text-forest-950">{coordText}</p>
-              {e.cityCentre && (
-                <p className="text-sm text-forest-900/75">
-                  {formatKm(e.cityCentre.km)} {compassWords(e.cityCentre.compass)} of {e.cityCentre.name} centre (straight line)
-                </p>
-              )}
-              {p.mapHref && (
-                <ExternalLink href={p.mapHref} className="text-sm" follow>
-                  Open in Google Maps
-                </ExternalLink>
-              )}
-            </Tile>
-          )}
-
-          {officialSite && (
-            <Tile icon={Globe} title="Official website" source={officialSourceName} section="details">
-              <ExternalLink href={officialSite.url} className="block text-[15px] font-semibold [overflow-wrap:anywhere]">
-                {officialHost}
-              </ExternalLink>
-            </Tile>
-          )}
-
-          {e.runways.length > 0 && (
-            <Tile icon={Ruler} title="Runways" source={`OurAirports${oaDate ? ` · ${oaDate}` : ''}`} section="runways" linkText="See runways">
-              <p className="text-[15px] font-semibold leading-6 text-forest-950">
-                {e.runways.length === 1 ? '1 runway' : `${e.runways.length} runways`}
-              </p>
-              <p className="text-sm leading-6 text-forest-900/80">{runwayCaption(e.runways)}</p>
-            </Tile>
-          )}
-
-          {hasFares && e.fares && (
-            <Tile icon={PlaneTakeoff} title="Nonstop fares found" source={`Travelpayouts${faresDate ? ` · ${faresDate}` : ''}`} section="destinations" linkText="See destinations">
-              <p className="text-[15px] font-semibold leading-6 text-forest-950">
-                {e.fares.destinationCount} {e.fares.destinationCount === 1 ? 'destination' : 'destinations'}
-                {e.fares.countryCount > 1 ? ` in ${e.fares.countryCount} countries` : ''}
-              </p>
-              <p className="text-sm leading-6 text-forest-900/80">
-                {e.fares.airlines.length} {e.fares.airlines.length === 1 ? 'airline' : 'airlines'} named on the fares
-              </p>
-              <p className="text-xs leading-5 text-forest-900/70">Fares travellers found, not a schedule.</p>
-            </Tile>
-          )}
-
-          {e.climate && (
-            <Tile icon={Thermometer} title="Climate" source={`NASA POWER · ${e.climate.period}`} section="climate" linkText="See months">
-              <p className="text-[15px] font-semibold leading-6 text-forest-950">
-                {e.climate.summary.warmest.month}: avg high {Math.round(e.climate.summary.warmest.hi)}°C
-              </p>
-              <p className="text-sm leading-6 text-forest-900/80">
-                {e.climate.summary.coolest.month}: avg high {Math.round(e.climate.summary.coolest.hi)}°C, low{' '}
-                {Math.round(e.climate.summary.coolest.lo)}°C
-              </p>
-            </Tile>
-          )}
-
-          {airlines.length > 0 && (
-            <Tile icon={Plane} title="Airlines on tracked routes" source={`Route records${routesDate ? ` · ${routesDate}` : ''}`} section="airlines" linkText="See airlines">
-              <p className="text-[15px] font-semibold leading-6 text-forest-950">
-                {airlines.length} {airlines.length === 1 ? 'airline' : 'airlines'} on{' '}
-                {routes.length === 1 ? 'the 1 route' : `the ${routes.length} routes`} {coverage.shownNote ? 'shown' : 'tracked'}
-              </p>
-              <p className="text-sm leading-6 text-forest-900/80">{airlines.map((a) => a.name).join(', ')}</p>
-              <p className="text-xs leading-5 text-forest-900/70">Not a complete list of airlines at {code}.</p>
-            </Tile>
-          )}
-
-          {hasRoutes && (
-            <Tile icon={RouteIcon} title="Route records" source={`Route records${routesDate ? ` · ${routesDate}` : ''}`} section="routes" linkText="See routes">
-              <p className="text-[15px] font-semibold leading-6 text-forest-950">
-                {coverage.headline}
-                {coverage.shownNote ? ` · ${coverage.shownNote}` : ''}
-              </p>
-              <p className="text-sm leading-6 text-forest-900/80">
-                To {destinations.slice(0, 6).map((d) => d.name).join(', ')}
-                {destinations.length > 6 ? ' and more' : ''}
-              </p>
-              <p className="text-xs leading-5 text-forest-900/70" data-testid="airport-v2-route-caveat">
-                {coverage.sparse ? 'A small sample — not' : 'Not'} {code}’s full network.
-                {officialSite && (
-                  <>
-                    {' '}Full list:{' '}
-                    <ExternalLink href={officialSite.url} className="[overflow-wrap:anywhere]">
-                      {officialHost}
-                    </ExternalLink>
-                  </>
-                )}
-              </p>
-            </Tile>
-          )}
-
-          {weather?.current && typeof weather.current.airTemperature === 'number' && (
-            <WeatherCard
-              weather={weather}
-              source={
-                <>
-                  <ExternalLink href={MET_ATTRIBUTION.url}>{MET_ATTRIBUTION.name}</ExternalLink>
-                  {weatherAt ? ` · ${weatherAt}` : ''}
-                </>
-              }
-            />
-          )}
-
-          <li className="flex h-[200px] flex-col rounded-[0.5rem] border border-dashed border-forest-900/20 bg-white/60 p-4">
-            <h3 className="flex items-center gap-2.5 text-base leading-snug text-forest-950">
-              <span aria-hidden className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-forest-900/5 text-forest-900/60">
-                <Building2 className="h-4 w-4" />
-              </span>
-              Terminals &amp; getting into {city || 'town'}
-            </h3>
-            <p className="mt-2 text-sm text-forest-900/75">
-              Not yet verified.{' '}
-              <a href="#planning" className="font-medium text-primary-emphasis hover:underline">
-                Where to check<span className="sr-only"> terminal and transport details</span>
-              </a>
-            </p>
-          </li>
-        </ul>
-      </section>
 
       {/* ---------------------------------------------------------- body */}
       <div className={`${WRAP} pb-16 pt-8 lg:grid lg:grid-cols-[13.5rem_minmax(0,1fr)] lg:gap-10`}>
@@ -996,43 +864,6 @@ function Shell({
   );
 }
 
-function Tile({
-  icon: Icon,
-  title,
-  source,
-  section,
-  linkText = 'Details',
-  children,
-}: {
-  icon: LucideIcon;
-  title: string;
-  source: ReactNode;
-  section?: string;
-  linkText?: string;
-  children: ReactNode;
-}) {
-  return (
-    <li className="flex h-[200px] flex-col rounded-[0.5rem] border border-forest-900/10 bg-white p-4 shadow-[0_1px_2px_rgba(15,39,102,0.04)] transition hover:-translate-y-0.5 hover:border-forest-900/25 hover:shadow-md">
-      <h3 className="flex items-center gap-2.5 text-base leading-snug text-forest-950">
-        <span aria-hidden className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-forest-950 text-sand-300">
-          <Icon className="h-4 w-4" />
-        </span>
-        {title}
-      </h3>
-      <div className="mt-2 min-h-0 flex-1 space-y-1 overflow-y-auto">{children}</div>
-      <div className="mt-auto flex flex-none flex-wrap items-center justify-between gap-2 pt-3">
-        <span className="text-xs text-forest-900/70">{source}</span>
-        {section && (
-          <a href={`#${section}`} className="text-xs font-medium text-primary-emphasis hover:underline">
-            {linkText}
-            <span className="sr-only">: {title}</span> <span aria-hidden>↓</span>
-          </a>
-        )}
-      </div>
-    </li>
-  );
-}
-
 function Fact({
   icon: Icon,
   label,
@@ -1172,16 +1003,6 @@ function ExternalIcon() {
       <path d="M9 3h4v4M13 3 7.5 8.5M12 9.5V13H3V4h3.5" />
     </svg>
   );
-}
-
-function uniqueDestinations(routes: StrapiRoute[]): { iata: string; name: string }[] {
-  const seen = new Map<string, string>();
-  for (const r of routes) {
-    const d = r.destination;
-    const n = d?.city || d?.name;
-    if (d?.iata && n && !seen.has(d.iata)) seen.set(d.iata, n);
-  }
-  return [...seen.entries()].map(([iata, name]) => ({ iata, name }));
 }
 
 function formatDuration(minutes: number): string {

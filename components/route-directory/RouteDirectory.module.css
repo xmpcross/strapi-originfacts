@@ -10,7 +10,7 @@
 
 /* The route title's link covers the card; airport and airline links sit above it. */
 .card {
-  @apply relative flex h-full min-w-0 flex-col rounded-[0.3rem] border border-forest-900/10 bg-white px-3.5 py-3 transition;
+  @apply relative flex h-full min-w-0 flex-col rounded-[0.5rem] border border-forest-900/10 bg-white px-3.5 py-3 shadow-[0_1px_2px_rgba(15,39,102,0.04)] transition;
 }
 .card:hover {
   @apply border-primary-emphasis/50 bg-primary-hover/40;
@@ -42,7 +42,7 @@
 }
 .title a::after {
   content: '';
-  @apply absolute inset-0 rounded-[0.3rem];
+  @apply absolute inset-0 rounded-[0.5rem];
 }
 .card:hover .title {
   @apply text-primary-emphasis;

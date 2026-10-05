@@ -8,32 +8,49 @@
       "required": [
         "carryon_bag_dimensions",
         "weight_economy",
-        "weight_business_first"
+        "weight_premium_economy",
+        "weight_business"
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
+          "value": "Up to 55 x 40 x 23 cm (118 cm total); depth no more than 22 cm on Q300 aircraft",
+          "status": "official",
           "source_url": "https://www.airnewzealand.com/en-nz/travel-info/baggage",
-          "notes": "Air New Zealand cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "notes": "Baggage page, \"Carry-on allowances\": \"Maximum dimensions: 55 cm (L) x 40 cm (H) x 23cm (D)\".",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
+          "value": "1 carry-on bag up to 7 kg, plus 1 small personal item",
+          "status": "official",
           "source_url": "https://www.airnewzealand.com/en-nz/travel-info/baggage",
-          "notes": "Air New Zealand Economy Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "notes": "Baggage page: \"Economy gets: 1 carry-on bag (7kg), plus 1 small personal item.\"",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
+        "weight_premium_economy": {
+          "value": "2 carry-on bags, 14 kg combined (no single bag over 10 kg), plus 1 small personal item",
+          "status": "official",
           "source_url": "https://www.airnewzealand.com/en-nz/travel-info/baggage",
-          "notes": "Air New Zealand Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "notes": "Baggage page: allowance shared by Premium Economy, Business Premier and Business Premier Luxe.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "weight_business": {
+          "value": "2 carry-on bags, 14 kg combined (no single bag over 10 kg), plus 1 small personal item (Business Premier and Business Premier Luxe)",
+          "status": "official",
+          "source_url": "https://www.airnewzealand.com/en-nz/travel-info/baggage",
+          "notes": "Baggage page: allowance shared by Premium Economy, Business Premier and Business Premier Luxe.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "personal_item": {
+          "value": "A small item that fits under the seat in front, such as a handbag, a thin laptop or tablet, or duty free goods",
+          "status": "official",
+          "source_url": "https://www.airnewzealand.com/en-nz/travel-info/baggage",
+          "notes": "Baggage page, personal item guidance.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -42,33 +59,168 @@
       "title": "Checked baggage",
       "required": [
         "piece_weight_economy",
+        "piece_weight_premium_economy",
         "piece_weight_business",
-        "piece_weight_first"
+        "size_weight"
       ],
       "fields": {
         "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
+          "value": "International Economy: 1 bag; 2 bags between New Zealand or Australia and Shanghai or Singapore, New Zealand and Taipei, Australia and Canada or the USA (excluding New York), and Australia and Honolulu",
+          "status": "official",
           "source_url": "https://www.airnewzealand.com/en-nz/travel-info/baggage",
-          "notes": "Air New Zealand Economy Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "notes": "Baggage page, \"Checked-in baggage allowances by fare type\" and its footnote. The long-haul economy page lists the same two-bag routes except Honolulu, which it does not mention.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "piece_weight_premium_economy": {
+          "value": "2 bags",
+          "status": "official",
+          "source_url": "https://www.airnewzealand.com/en-nz/travel-info/baggage",
+          "notes": "Baggage page, allowance table, international Premium Economy.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
+          "value": "3 bags (Business Premier and Business Premier Luxe)",
+          "status": "official",
           "source_url": "https://www.airnewzealand.com/en-nz/travel-info/baggage",
-          "notes": "Air New Zealand Business Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "notes": "Baggage page, allowance table.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
+        "size_weight": {
+          "value": "Each bag up to 23 kg (50 lb) and 158 cm total before extra fees apply; overweight bags are accepted up to 32 kg (70 lb)",
+          "status": "official",
           "source_url": "https://www.airnewzealand.com/en-nz/travel-info/baggage",
-          "notes": "Air New Zealand First Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "notes": "Baggage page: \"Each checked bag can weigh up to 23 kg (50 lb) and measure up to 158 cm in total dimensions before additional fees apply.\" Overweight section: \"up to a maximum of 32 kg (70 lb)\".",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "domestic_allowance": {
+          "value": "Within New Zealand: seat fares carry-on only; seat+bag 1 bag; flexirefund 2 bags (23 kg each)",
+          "status": "official",
+          "source_url": "https://www.airnewzealand.com/en-nz/travel-info/baggage",
+          "notes": "Baggage page allowance table, plus the domestic fares page for weights. \"Seat-only fares include carry-on baggage only.\"",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "domestic_flexichange_bags": {
+          "value": null,
+          "status": "disputed",
+          "source_url": "https://www.airnewzealand.com/en-nz/travel-info/baggage",
+          "conflicting_values": [
+            "2 bags (baggage page allowance table)",
+            "One checked-in bag up to 23kg (domestic fares page)"
+          ],
+          "notes": "Two airnewzealand.com pages disagree on the domestic flexichange allowance, read 2026-10-05: https://www.airnewzealand.com/en-nz/travel-info/baggage and https://www.airnewzealand.com/domestic-fares. Neither is published.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "required": [
+        "fare_name",
+        "seat_selection_included",
+        "change_cancellation_policy"
+      ],
+      "fields": {
+        "fare_name": {
+          "value": "seat (within New Zealand): one carry-on bag up to 7 kg, no checked bag",
+          "status": "official",
+          "source_url": "https://www.airnewzealand.com/domestic-fares",
+          "notes": "Domestic fares page, seat fare.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "seat_selection_included": {
+          "value": "Standard seat select from NZD $5; free for Koru Gold, Platinum and Black, Koru Nominees and Koru Club members",
+          "status": "official",
+          "source_url": "https://www.airnewzealand.com/domestic-fares",
+          "notes": "Domestic fares page, seat fare.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "change_cancellation_policy": {
+          "value": "Date or time changes before departure cost NZD $60 per person (tickets issued from 10 Dec 2025), plus any fare difference; no refund on cancellation unless required by law",
+          "status": "official",
+          "source_url": "https://www.airnewzealand.com/domestic-fares",
+          "notes": "Domestic fares page, seat fare: NZD $50 for tickets issued before 10 Dec 2025. Tasman/Pacific seat fares carry a $100 change fee (tasman-pacific-fare-rules-seat).",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "online_checkin_opens",
+        "domestic_cutoff",
+        "international_cutoff"
+      ],
+      "fields": {
+        "online_checkin_opens": {
+          "value": "24 hours before scheduled departure",
+          "status": "official",
+          "source_url": "https://www.airnewzealand.com/online-check-in",
+          "notes": "Online check-in page: \"Online check-in is open 24 hours before the scheduled departure of your flight.\"",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "domestic_cutoff": {
+          "value": "30 minutes before departure; 60 minutes when connecting to an international flight or for a child travelling alone",
+          "status": "official",
+          "source_url": "https://www.airnewzealand.com/domestic-check-in",
+          "notes": "Domestic check-in page. Bag Drop also closes 30 minutes before domestic departures.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "international_cutoff": {
+          "value": "90 or 120 minutes before departure, depending on the flight",
+          "status": "official",
+          "source_url": "https://www.airnewzealand.com/international-check-in",
+          "notes": "International check-in page: \"Some flights close check-in 90 minutes before departure. Others can be 120 minutes beforehand.\"",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "boarding_close": {
+          "value": null,
+          "status": "pending",
+          "notes": "No gate-closing time is published on airnewzealand.com; Conditions of Carriage 9.2 says only to be at the gate \"at the time we have stated\"."
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "required": [
+        "rebooking_refund",
+        "compensation_law"
+      ],
+      "fields": {
+        "rebooking_refund": {
+          "value": "If Air New Zealand cancels or changes a flight, it may move you to another of its flights in the same class, another airline, or land or sea transport at no extra charge; if none of these works for you, you get a refund or a credit",
+          "status": "official",
+          "source_url": "https://www.airnewzealand.com/conditions-of-carriage",
+          "notes": "Conditions of Carriage (last updated 16 Mar 2026), section 8.2.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "compensation_law": {
+          "value": "Compensation is paid as required by applicable law, including New Zealand's Civil Aviation Act 2023 and EU Regulation 261/2004",
+          "status": "official",
+          "source_url": "https://www.airnewzealand.com/conditions-of-carriage",
+          "notes": "Conditions of Carriage (last updated 16 Mar 2026), section 8.3.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "duty_of_care_policy": {
+          "value": null,
+          "status": "pending",
+          "notes": "Overnight accommodation and meals are promised in the Customer Service & Tarmac Delay Plan, which says certain aspects apply only to US flights. Scope unclear; not published."
         }
       }
     },
@@ -76,16 +228,33 @@
       "id": "contact",
       "title": "Contact and customer support",
       "required": [
-        "phone_home_market"
+        "phone_home_market",
+        "conditions_of_carriage_url"
       ],
       "fields": {
         "phone_home_market": {
-          "value": null,
-          "status": "pending",
-          "source_url": "https://www.airnewzealand.com/en-nz/conditions-of-carriage",
-          "notes": "No verified phone yet.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "0800 737 000 (within New Zealand) or +64 9 357 3000 (overseas)",
+          "status": "official",
+          "source_url": "https://www.airnewzealand.com/phone-numbers",
+          "notes": "Phone numbers page, New Zealand section.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "contact_help_centre": {
+          "value": "https://www.airnewzealand.com/help-and-contact",
+          "status": "official",
+          "source_url": "https://www.airnewzealand.com/help-and-contact",
+          "notes": "Air New Zealand help and contact page.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://www.airnewzealand.com/conditions-of-carriage",
+          "status": "official",
+          "source_url": "https://www.airnewzealand.com/conditions-of-carriage",
+          "notes": "Conditions of Carriage (last updated 16 Mar 2026), linked from the legal terms page.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

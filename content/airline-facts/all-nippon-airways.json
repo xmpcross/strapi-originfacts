@@ -6,34 +6,42 @@
       "id": "carryon",
       "title": "Carry-on",
       "required": [
+        "carryon_allowance",
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_weight"
       ],
       "fields": {
+        "carryon_allowance": {
+          "value": "1 carry-on bag and 1 personal item per passenger, in every cabin",
+          "status": "official",
+          "source_url": "https://www.ana.co.jp/en/us/travel-information/baggage-information/carry-on/",
+          "notes": "Carry-on page: \"up to two items into the cabin: one carry-on bag and one personal item\". Star Alliance Gold members are still limited to one carry-on bag.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "https://www.ana.co.jp/baggage",
-          "notes": "All Nippon Airways cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "Up to 55 x 40 x 25 cm and 115 cm in total, wheels and handles included; on aircraft with fewer than 100 seats, 45 x 35 x 20 cm and 100 cm",
+          "status": "official",
+          "source_url": "https://www.ana.co.jp/en/us/travel-information/baggage-information/carry-on/",
+          "notes": "Carry-on page; smaller-aircraft limit from the Japan domestic carry-on page (https://www.ana.co.jp/en/jp/guide/boarding-procedures/baggage/domestic/carry-rule/).",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "https://www.ana.co.jp/baggage",
-          "notes": "All Nippon Airways Economy Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "carryon_weight": {
+          "value": "10 kg total for the carry-on bag and personal item together",
+          "status": "official",
+          "source_url": "https://www.ana.co.jp/en/us/travel-information/baggage-information/carry-on/",
+          "notes": "Carry-on page: \"with a total combined weight not exceeding 10 kg\".",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "https://www.ana.co.jp/baggage",
-          "notes": "All Nippon Airways Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "personal_item": {
+          "value": "Up to 40 x 30 x 20 cm",
+          "status": "official",
+          "source_url": "https://www.ana.co.jp/en/us/travel-information/baggage-information/carry-on/",
+          "notes": "Carry-on page.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -42,33 +50,156 @@
       "title": "Checked baggage",
       "required": [
         "piece_weight_economy",
+        "piece_weight_premium_economy",
         "piece_weight_business",
-        "piece_weight_first"
+        "piece_weight_first",
+        "size_weight"
       ],
       "fields": {
         "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "https://www.ana.co.jp/baggage",
-          "notes": "All Nippon Airways Economy Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "0 to 2 bags depending on the fare, up to 23 kg (50 lb) each",
+          "status": "official",
+          "source_url": "https://www.ana.co.jp/en/jp/guide/boarding-procedures/baggage/international/baggage-free/",
+          "notes": "International free baggage page: \"Economy Class Between 0-2 pieces\"; \"Free baggage allowance varies depending on fare rules.\" The allowance printed on the ticket applies.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "piece_weight_premium_economy": {
+          "value": "1 to 2 bags depending on the fare, up to 23 kg (50 lb) each",
+          "status": "official",
+          "source_url": "https://www.ana.co.jp/en/jp/guide/boarding-procedures/baggage/international/baggage-free/",
+          "notes": "International free baggage page.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.ana.co.jp/baggage",
-          "notes": "All Nippon Airways Business Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "1 to 2 bags depending on the fare, up to 32 kg (70 lb) each",
+          "status": "official",
+          "source_url": "https://www.ana.co.jp/en/jp/guide/boarding-procedures/baggage/international/baggage-free/",
+          "notes": "International free baggage page.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.ana.co.jp/baggage",
-          "notes": "All Nippon Airways First Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "Up to 3 bags, up to 32 kg (70 lb) each",
+          "status": "official",
+          "source_url": "https://www.ana.co.jp/en/jp/guide/boarding-procedures/baggage/international/baggage-free/",
+          "notes": "International free baggage page.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "size_weight": {
+          "value": "Each bag up to 158 cm in total, wheels and handles included",
+          "status": "official",
+          "source_url": "https://www.ana.co.jp/en/jp/guide/boarding-procedures/baggage/international/baggage-free/",
+          "notes": "International free baggage page.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "max_piece": {
+          "value": "No bag over 45 kg (99 lb) or 292 cm is accepted; flights to or from airports including London Heathrow, Paris, Frankfurt, Munich and Sydney are limited to 32 kg per bag",
+          "status": "official",
+          "source_url": "https://www.ana.co.jp/en/jp/guide/boarding-procedures/baggage/international/baggage-size/",
+          "notes": "International baggage size page, which lists every airport with the 32 kg limit.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "lede": "ANA has been replacing its international fare types since May 2026, at different times by route. These are the published rules for flights departing North America, Canada and Latin America.",
+      "required": [
+        "fare_name",
+        "seat_selection_included",
+        "change_cancellation_policy"
+      ],
+      "fields": {
+        "fare_name": {
+          "value": "Basic (economy, flights departing North America, Canada and Latin America): 1 checked bag, with rules that vary by route",
+          "status": "official",
+          "source_url": "https://www.ana.co.jp/en/us/plan-book/how-to-manage-your-booking/branded-fare/north-america/",
+          "notes": "North America branded-fare page, Economy Class table: \"Free Baggage Allowance | 1 piece*2\", *2 \"Applicable checked baggage rules differ depending on the route.\"",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "seat_selection_included": {
+          "value": "Seats cannot be reserved in advance, even by elite members; they can be chosen at online check-in",
+          "status": "official",
+          "source_url": "https://www.ana.co.jp/en/us/plan-book/how-to-manage-your-booking/branded-fare/north-america/",
+          "notes": "North America branded-fare page: \"Not Available*3 (Available at online check-in)\".",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "change_cancellation_policy": {
+          "value": "No changes and no refunds",
+          "status": "official",
+          "source_url": "https://www.ana.co.jp/en/us/plan-book/how-to-manage-your-booking/branded-fare/north-america/",
+          "notes": "North America branded-fare page, Basic: Change \"No\", Refund \"No\".",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "online_checkin_opens",
+        "international_cutoff",
+        "boarding_close"
+      ],
+      "fields": {
+        "online_checkin_opens": {
+          "value": "24 hours before departure; boarding passes until 60 minutes before international flights and 20 minutes before Japan domestic flights",
+          "status": "official",
+          "source_url": "https://www.ana.co.jp/en/us/guide/boarding-procedures/checkin/online-checkin/",
+          "notes": "Online check-in page.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "international_cutoff": {
+          "value": "60 minutes before departure for you and your bags (50 minutes at airports in Vietnam)",
+          "status": "official",
+          "source_url": "https://www.ana.co.jp/en/us/travel-information/check-in/",
+          "notes": "Airport check-in page: \"Please complete check-in for yourself and your bags by 60 minutes(*) before departure.\"",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "boarding_close": {
+          "value": "Be at the gate 30 minutes before departure; you may not be able to board later than 10 minutes before",
+          "status": "official",
+          "source_url": "https://www.ana.co.jp/en/us/travel-information/check-in/",
+          "notes": "Airport check-in page.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "required": [
+        "rebooking_refund",
+        "overnight_care"
+      ],
+      "fields": {
+        "rebooking_refund": {
+          "value": "If ANA cancels a flight, fails to operate it reasonably to schedule or causes a missed connection, you choose rerouting on an ANA flight, another airline or other transport with no fare difference, or a refund",
+          "status": "official",
+          "source_url": "https://www.ana.co.jp/en/us/siteinfo/conditions-of-carriage-passenger-baggage/",
+          "notes": "Conditions of Carriage (effective 19 May 2026), Article 14(C).",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "overnight_care": {
+          "value": "When a delay or cancellation caused by ANA stops you reaching your destination on the scheduled day, ANA reimburses accommodation or ground transport up to JPY 15,000 with a receipt, claimed within 30 days; for weather and other events outside its control, the passenger pays",
+          "status": "official",
+          "source_url": "https://www.ana.co.jp/en/us/plan-book/support/refunds-and-rebooking/expenses/",
+          "notes": "Expenses page. Meals are not mentioned on the pages read.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -76,16 +207,39 @@
       "id": "contact",
       "title": "Contact and customer support",
       "required": [
-        "phone_home_market"
+        "phone_home_market",
+        "phone_us",
+        "conditions_of_carriage_url"
       ],
       "fields": {
         "phone_home_market": {
+          "value": "International reservations in Japan: 0570-029-709 (choose 2) or 03-6741-1120, 24 hours",
+          "status": "official",
+          "source_url": "https://www.ana.co.jp/en/jp/guide/contact/international/international_top/",
+          "notes": "Japan international contact page, \"Reservations / ANA Mileage Club Service Center\".",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "phone_us": {
+          "value": "1-800-235-9262 (toll-free); +1 310 782 3011 from outside the U.S.",
+          "status": "official",
+          "source_url": "https://www.ana.co.jp/en/us/help/",
+          "notes": "U.S. help page, Reservation and Information. Hours differ between listings, so none are given.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://www.ana.co.jp/en/us/siteinfo/conditions-of-carriage-passenger-baggage/",
+          "status": "official",
+          "source_url": "https://www.ana.co.jp/en/us/siteinfo/conditions-of-carriage-passenger-baggage/",
+          "notes": "Conditions of Carriage (effective 19 May 2026), passenger and baggage.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "japan_domestic_phone": {
           "value": null,
           "status": "pending",
-          "source_url": "https://www.ana.co.jp/baggage",
-          "notes": "No verified phone yet.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "notes": "The Japan domestic reservations number was not read; do not add one from any other site."
         }
       }
     }

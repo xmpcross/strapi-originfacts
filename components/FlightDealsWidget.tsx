@@ -66,17 +66,7 @@ async function resolveOrigin(): Promise<Origin> {
   const cached = readOriginCache();
   if (cached) return cached;
   try {
-    const apiRes = await fetch('/api/nearest-city', { cache: 'no-store' });
-    if (apiRes.ok) {
-      const j = (await apiRes.json()) as { code?: string; name?: string };
-      if (j?.code && j?.name) {
-        const origin: Origin = { iata: j.code, city: j.name };
-        writeOriginCache(origin);
-        return origin;
-      }
-    }
-    // No IP lookup in the browser: use the browser's time zone instead (no
-    // network, nothing sent to a third party).
+    // The browser's time zone (no network, nothing sent to a third party).
     const place = placeFromBrowserTimeZone();
     if (!place) return FALLBACK_ORIGIN;
     const origin: Origin = { iata: place.iata, city: place.city };

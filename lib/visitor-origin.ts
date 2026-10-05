@@ -109,18 +109,8 @@ export function resolveVisitorOrigin(): Promise<Origin | null> {
 
   inflight = (async () => {
     try {
-      const apiRes = await fetch('/api/nearest-city', { cache: 'no-store' });
-      if (apiRes.ok) {
-        const j = (await apiRes.json()) as { code?: string; name?: string };
-        if (j?.code && j?.name) {
-          const origin: Origin = { iata: j.code, name: j.name };
-          writeCache(origin);
-          return origin;
-        }
-      }
-      // No IP lookup in the browser: fall back to the browser's time zone
-      // (no network, nothing sent to a third party). An unmapped zone leaves
-      // the caller on FALLBACK_ORIGIN.
+      // The browser's time zone (no network, nothing sent to a third party).
+      // An unmapped zone leaves the caller on FALLBACK_ORIGIN.
       const place = placeFromBrowserTimeZone();
       if (!place) return null;
       const origin: Origin = { iata: place.iata, name: place.city };

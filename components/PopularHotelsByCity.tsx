@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { formatPrice } from '@/lib/currency';
+import { countryName, placeFromBrowserTimeZone } from '@/lib/timezone-geo';
 import { useCurrency } from './useCurrency';
 
 type HotelScope = (typeof HOTEL_SCOPES)[number]['value'];
@@ -32,7 +33,7 @@ type HotelResponse = {
   cachedAt?: string;
 };
 
-type GeoResponse = {
+type CityContext = {
   name?: string;
   country?: string;
 };
@@ -141,7 +142,7 @@ export default function PopularHotelsByCity({
   const [scope, setScope] = useState<HotelScope>('popular');
   // Bumped when the already-selected tab is clicked, so an empty tab can be retried.
   const [retry, setRetry] = useState(0);
-  const [cityContext, setCityContext] = useState<GeoResponse | null>(null);
+  const [cityContext, setCityContext] = useState<CityContext | null>(null);
   const { currency, ready } = useCurrency();
   // Keyed by "<currency>|<tab>", so switching currency never shows another currency's prices.
   const responsesByScopeRef = useRef<Partial<Record<string, HotelResponse>>>({});
@@ -156,22 +157,14 @@ export default function PopularHotelsByCity({
       return;
     }
 
-    let active = true;
-
-    async function loadCity() {
-      try {
-        const geoRes = await fetch('/api/nearest-city', { cache: 'no-store' });
-        const geo = (await geoRes.json()) as GeoResponse;
-        if (active) setCityContext({ name: geo.name || 'New York', country: geo.country || 'United States' });
-      } catch {
-        if (active) setCityContext({ name: 'New York', country: 'United States' });
-      }
-    }
-
-    loadCity();
-    return () => {
-      active = false;
-    };
+    // No fixed city: the browser's time zone (no network, nothing sent to a
+    // third party), else New York.
+    const place = placeFromBrowserTimeZone();
+    setCityContext(
+      place
+        ? { name: place.city, country: countryName(place.country) || 'United States' }
+        : { name: 'New York', country: 'United States' },
+    );
   }, [city, country, hasFixedCity]);
 
   /*

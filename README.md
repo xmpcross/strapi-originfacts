@@ -187,8 +187,9 @@ Runtime configuration lives in `.env.local` on the VM. Important keys include:
   `outputFileTracingIncludes` in `next.config.mjs` bundles them explicitly.
   Without it the build stays green and the pages render empty.
 - API routes: `category-articles`, `contact`, `dataforseo-hotels`,
-  `flight-deals`, `google-flights`, `nearest-airport`, `nearest-city`,
-  `price-calendar`, `revalidate`.
+  `flight-deals`, `google-flights`, `nearest-airport`,
+  `price-calendar`, `revalidate`, `visitor-currency` (reads Cloudflare's
+  `CF-IPCountry` header only; no IP lookup).
 - `yarn lint` does not run — `next lint` is unconfigured and prompts
   interactively. Use `npx tsc --noEmit` and a build as the check.
 

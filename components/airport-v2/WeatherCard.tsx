@@ -142,7 +142,7 @@ export default function WeatherCard({
 
   return (
     <li
-      className="relative flex flex-col overflow-hidden rounded-[0.5rem] border border-forest-900/10 text-white shadow-[0_1px_2px_rgba(15,39,102,0.08)] sm:col-span-2 lg:col-span-1"
+      className="relative flex h-[240px] flex-col overflow-hidden rounded-[0.5rem] border border-forest-900/10 text-white shadow-[0_1px_2px_rgba(15,39,102,0.08)] sm:col-span-2 lg:col-span-1"
       style={{ backgroundImage: `linear-gradient(160deg, ${sky.from}, ${sky.to})` }}
       data-testid="airport-v2-weather"
       data-weather={baseSymbol(cur.symbolCode) || 'unknown'}
@@ -151,7 +151,7 @@ export default function WeatherCard({
         <Scene kind={kind} night={night} />
       </div>
 
-      <div className="relative p-4 pb-3">
+      <div className="relative flex-none px-4 pb-1.5 pt-3.5">
         <h3 className="flex items-center gap-2.5 text-base leading-snug !text-white">
           <span aria-hidden className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-white/20 text-sand-300">
             <CloudSun className="h-4 w-4" />
@@ -159,16 +159,18 @@ export default function WeatherCard({
           Weather now
         </h3>
 
-        <p className="mt-4 flex items-start leading-none">
-          <span className="text-6xl font-bold tracking-tight" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.25)' }}>
-            {temp}
-          </span>
-          <span className="mt-1 text-2xl font-semibold">°C</span>
-        </p>
-        <p className="mt-2 text-base font-semibold">{weatherLabel(cur.symbolCode)}</p>
+        <div className="mt-1.5 flex items-end gap-2.5">
+          <p className="flex items-start leading-none">
+            <span className="text-5xl font-bold tracking-tight" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.25)' }}>
+              {temp}
+            </span>
+            <span className="mt-0.5 text-xl font-semibold">°C</span>
+          </p>
+          <p className="pb-0.5 text-sm font-semibold leading-tight">{weatherLabel(cur.symbolCode)}</p>
+        </div>
       </div>
 
-      <dl className="relative mt-auto space-y-3 border-t border-white/20 bg-black/10 p-4 text-sm backdrop-blur-[2px]">
+      <dl className="relative mt-auto min-h-0 space-y-1.5 overflow-y-auto border-t border-white/20 bg-black/10 px-4 py-2 text-sm backdrop-blur-[2px]">
         <div className="grid grid-cols-2 gap-3">
           {rh !== null && (
             <div>
@@ -176,8 +178,8 @@ export default function WeatherCard({
                 <Droplets aria-hidden className={`h-3.5 w-3.5 ${s.tide}`} />
                 Humidity
               </dt>
-              <dd className="mt-1 font-semibold">{rh}%</dd>
-              <dd aria-hidden className="mt-1 h-1.5 overflow-hidden rounded-full bg-white/25">
+              <dd className="font-semibold leading-5">{rh}%</dd>
+              <dd aria-hidden className="mt-0.5 h-1 overflow-hidden rounded-full bg-white/25">
                 <span className={`block h-full rounded-full bg-sand-300 ${s.fill}`} style={{ width: `${rh}%` }} />
               </dd>
             </div>
@@ -188,7 +190,7 @@ export default function WeatherCard({
                 <Wind aria-hidden className="h-3.5 w-3.5" />
                 Wind
               </dt>
-              <dd className="mt-1 flex items-center gap-2 font-semibold">
+              <dd className="flex items-center gap-2 font-semibold leading-5">
                 {wind} km/h
                 <svg aria-hidden viewBox="0 0 24 24" className={`h-5 w-5 ${s.fan}`} style={{ animationDuration: `${fanSeconds}s` }} fill="#fff">
                   <path d="M12 11a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z" />
@@ -205,7 +207,7 @@ export default function WeatherCard({
               <Thermometer aria-hidden className="h-3.5 w-3.5" />
               Next 24 h
             </dt>
-            <dd className="mt-1 flex items-center gap-2.5 font-semibold">
+            <dd className="flex items-center gap-2.5 font-semibold leading-5">
               <span>{Math.round(lo)}°</span>
               <span aria-hidden className="relative h-2 flex-1 rounded-full bg-gradient-to-r from-sky-200 via-sand-300 to-orange-400">
                 <span
@@ -221,7 +223,7 @@ export default function WeatherCard({
           </div>
         )}
 
-        <p className="text-xs leading-5 text-white/80 [&_a]:text-white [&_a]:underline">{source}</p>
+        <p className="text-[11px] leading-4 text-white/80 [&_a]:text-white [&_a]:underline">{source}</p>
       </dl>
     </li>
   );

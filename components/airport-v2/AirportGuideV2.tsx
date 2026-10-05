@@ -205,7 +205,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
   ].filter((f) => f.value);
 
   return (
-    <div className="bg-forest-50" data-testid={`airport-v2-page-${code}`} data-template="v2">
+    <div className="bg-[#ffffff]" data-testid={`airport-v2-page-${code}`} data-template="v2">
       {/* ---------------------------------------------------------- header */}
       <header className="relative overflow-hidden border-b border-forest-900/10 bg-gradient-to-br from-white via-forest-50 to-sand-100">
         {/* decorative flight-path arcs */}
@@ -481,7 +481,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
             />
           )}
 
-          <li className="flex flex-col rounded-[0.5rem] border border-dashed border-forest-900/20 bg-white/60 p-4">
+          <li className="flex h-[240px] flex-col rounded-[0.5rem] border border-dashed border-forest-900/20 bg-white/60 p-4">
             <h3 className="flex items-center gap-2.5 text-base leading-snug text-forest-950">
               <span aria-hidden className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-forest-900/5 text-forest-900/60">
                 <Building2 className="h-4 w-4" />
@@ -1012,15 +1012,15 @@ function Tile({
   children: ReactNode;
 }) {
   return (
-    <li className="flex flex-col rounded-[0.5rem] border border-forest-900/10 bg-white p-4 shadow-[0_1px_2px_rgba(15,39,102,0.04)] transition hover:-translate-y-0.5 hover:border-forest-900/25 hover:shadow-md">
+    <li className="flex h-[240px] flex-col rounded-[0.5rem] border border-forest-900/10 bg-white p-4 shadow-[0_1px_2px_rgba(15,39,102,0.04)] transition hover:-translate-y-0.5 hover:border-forest-900/25 hover:shadow-md">
       <h3 className="flex items-center gap-2.5 text-base leading-snug text-forest-950">
         <span aria-hidden className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-forest-950 text-sand-300">
           <Icon className="h-4 w-4" />
         </span>
         {title}
       </h3>
-      <div className="mt-2 space-y-1">{children}</div>
-      <div className="mt-auto flex flex-wrap items-center justify-between gap-2 pt-3">
+      <div className="mt-2 min-h-0 flex-1 space-y-1 overflow-y-auto">{children}</div>
+      <div className="mt-auto flex flex-none flex-wrap items-center justify-between gap-2 pt-3">
         <span className="text-xs text-forest-900/70">{source}</span>
         {section && (
           <a href={`#${section}`} className="text-xs font-medium text-primary-emphasis hover:underline">

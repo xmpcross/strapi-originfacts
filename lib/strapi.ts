@@ -298,16 +298,6 @@ export function mediaUrl(img: StrapiImage): string | null {
 }
 
 /**
- * Logos re-saved by ops/resize-airline-logos.py are trimmed to the artwork and
- * scaled to fit 200x100 without stretching; the upload name carries `_logo_trim_`.
- * Older logos are 400x200 canvases with the artwork centred at half the width,
- * which cards have to draw at 2x and clip.
- */
-export function isTrimmedLogo(url: string | null | undefined): boolean {
-  return !!url && url.includes('_logo_trim_');
-}
-
-/**
  * Every visible article with only what listings need: no body text, tags or
  * destinations. listArticles({ pageSize: 200 }) returned ~2.5 MB, over the
  * 2 MB Next.js data-cache limit, so the sitemap, the HTML sitemap and author

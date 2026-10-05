@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
-import { isTrimmedLogo, mediaUrl, type AirlineRegion, type AirlineType } from '@/lib/strapi';
+import { mediaUrl, type AirlineRegion, type AirlineType } from '@/lib/strapi';
 import { DIRECTORY_REGIONS, type DirectoryAirline } from '@/lib/airline-directory';
 import { CheckIcon } from '@/components/FeaturedAirlineGuides';
 
@@ -433,13 +433,12 @@ function AirlineCard({
     >
       <span className="relative flex h-16 w-24 flex-none items-center justify-center overflow-hidden">
         {logo ? (
-          // 400x200 logo canvas with the artwork centred at half the width: draw it at twice
-          // the box width and clip the empty sides so the artwork fills the box.
+          // Logos are trimmed to the artwork: full box width, height follows the aspect ratio.
           // eslint-disable-next-line @next/next/no-img-element
           <img
             src={logo}
             alt=""
-            className={isTrimmedLogo(logo) ? 'h-full w-full object-contain' : 'absolute left-1/2 top-1/2 h-24 w-48 max-w-none -translate-x-1/2 -translate-y-1/2'}
+            className="h-auto max-h-full w-full object-contain"
             loading="lazy"
             decoding="async"
           />

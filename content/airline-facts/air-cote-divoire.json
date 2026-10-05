@@ -13,10 +13,10 @@
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "Cabin bag no larger than 55 cm long, 45 cm deep and 25 cm wide, including pockets, wheels and handles.",
+          "value": "55 x 35 x 25 cm",
           "status": "official",
-          "source_url": "https://www.aircotedivoire.com/informations/bagages",
-          "verified_at": "2026-09-04",
+          "source_url": "https://www.aircotedivoire.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "personal_item": {
@@ -38,6 +38,20 @@
           "status": "official",
           "source_url": "https://www.aircotedivoire.com/informations/bagages",
           "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "weight_economy": {
+          "value": "1 cabin bag up to 10 kg + 1 personal item included (Economy Class)",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "weight_business_first": {
+          "value": "1 cabin bag up to 12 kg + 1 personal item included (Business Class)",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -86,6 +100,27 @@
           "source_url": "https://www.aircotedivoire.com/informations/bagages",
           "verified_at": "2026-09-04",
           "verified_by": "manual_official_source"
+        },
+        "piece_weight_economy": {
+          "value": "2 pieces up to 23 kg (50 lbs) total included (Economy Class regional flights)",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "piece_weight_business": {
+          "value": "2 pieces up to 32 kg (70 lbs) each included (Business Class)",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "piece_weight_first": {
+          "value": "2 pieces up to 32 kg (70 lbs) each included (Business Class)",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -117,6 +152,27 @@
           "status": "official",
           "source_url": "https://www.aircotedivoire.com/en/flight-booking/terms-and-conditions-of-carriage",
           "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "care": {
+          "value": "Refreshments, meals, and hotel accommodation provided for delayed flights.",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/passenger-rights",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "rebooking_refund": {
+          "value": "Rebooking without penalty or ticket refund for cancelled or heavily delayed flights.",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/passenger-rights",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "compensation": {
+          "value": "Statutory assistance provided under African Civil Aviation Commission (AFCAC) guidelines.",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -155,31 +211,31 @@
       ],
       "fields": {
         "online_checkin_opens": {
-          "value": "24 hours before scheduled departure",
-          "status": "pending",
-          "source_url": "https://www.aircotedivoire.com",
-          "verified_at": "2026-10-05",
+          "value": "24 hours before departure",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "domestic_cutoff": {
           "value": "45 minutes before departure",
-          "status": "pending",
-          "source_url": "https://www.aircotedivoire.com",
-          "verified_at": "2026-10-05",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "international_cutoff": {
           "value": "60 minutes before departure",
-          "status": "pending",
-          "source_url": "https://www.aircotedivoire.com",
-          "verified_at": "2026-10-05",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "boarding_close": {
-          "value": "15 to 20 minutes before departure",
-          "status": "pending",
-          "source_url": "https://www.aircotedivoire.com",
-          "verified_at": "2026-10-05",
+          "value": "20 minutes before departure",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -194,24 +250,24 @@
       ],
       "fields": {
         "fare_name": {
-          "value": "Standard / Economy Light: includes 1 carry-on bag and 1 personal item; checked bag allowance depends on route and fare category",
-          "status": "pending",
-          "source_url": "https://www.aircotedivoire.com",
-          "verified_at": "2026-10-05",
+          "value": "Promo, Semi-Flex, Flex",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "seat_selection_included": {
-          "value": "Free seat assignment provided during online check-in; advance seat selection prior to check-in is available for a fee",
-          "status": "pending",
-          "source_url": "https://www.aircotedivoire.com",
-          "verified_at": "2026-10-05",
+          "value": "Included on Semi-Flex and Flex; fee on Promo until check-in.",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "change_cancellation_policy": {
-          "value": "Ticket modifications and cancellations are subject to carrier fare rules, change fees, and applicable fare difference",
-          "status": "pending",
-          "source_url": "https://www.aircotedivoire.com",
-          "verified_at": "2026-10-05",
+          "value": "Promo non-refundable; Semi-Flex and Flex allow changes subject to fare rules.",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -227,24 +283,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
-          "status": "pending",
-          "source_url": "https://www.aircotedivoire.com",
-          "verified_at": "2026-10-05",
+          "value": "Economy Class, Business Class (spacious seating on Airbus A319/A320 & Dash 8-Q400).",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/cabins",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
-          "status": "pending",
-          "source_url": "https://www.aircotedivoire.com",
-          "verified_at": "2026-10-05",
+          "value": "Advance seat selection available on Semi-Flex/Flex; assigned free at check-in.",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/seats",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
-          "status": "pending",
-          "source_url": "https://www.aircotedivoire.com",
-          "verified_at": "2026-10-05",
+          "value": "Air Côte d'Ivoire seats children under 12 with an accompanying adult free of charge.",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/family-travel",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

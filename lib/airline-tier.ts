@@ -167,6 +167,17 @@ export const PUBLISHED_AIRLINE_GUIDES = new Set([
   'viva-aerobus',
   'vueling',
   'wizz-air',
+  // Batch 9 (6 Oct 2026)
+  'aegean-airlines',
+  'aer-lingus',
+  'air-arabia',
+  'air-austral',
+  'air-busan',
+  'air-china',
+  'air-cote-divoire',
+  'air-greenland',
+  'air-transat',
+  'scoot',
 ]);
 
 export function airlineGuideIsPublished(slug: string): boolean {

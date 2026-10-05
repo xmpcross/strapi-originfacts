@@ -13,26 +13,23 @@
       "fields": {
         "carryon_bag_dimensions": {
           "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "https://www.airarabia.com/baggage",
-          "notes": "Air Arabia cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-10-05",
+          "status": "official",
+          "source_url": "https://www.airarabia.com/en/hand-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "https://www.airarabia.com/baggage",
-          "notes": "Air Arabia Economy Class carry-on weight limit.",
-          "verified_at": "2026-10-05",
+          "value": "10 kg (22 lbs) carry-on bag included free on all flights",
+          "status": "official",
+          "source_url": "https://www.airarabia.com/en/hand-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "https://www.airarabia.com/baggage",
-          "notes": "Air Arabia Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-10-05",
+          "value": "10 kg carry-on bag included free (Air Arabia operates single Economy class fleet)",
+          "status": "official",
+          "source_url": "https://www.airarabia.com/en/hand-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -47,27 +44,24 @@
       ],
       "fields": {
         "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "https://www.airarabia.com/baggage",
-          "notes": "Air Arabia Economy Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "value": "Checked baggage available for purchase (20 kg, 30 kg, or 40 kg); included on Extra/Ultimate fares",
+          "status": "official",
+          "source_url": "https://www.airarabia.com/en/checked-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.airarabia.com/baggage",
-          "notes": "Air Arabia Business Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "value": "Up to 30 kg or 40 kg checked baggage included (Ultimate fare)",
+          "status": "official",
+          "source_url": "https://www.airarabia.com/en/checked-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.airarabia.com/baggage",
-          "notes": "Air Arabia First Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "value": "Up to 30 kg or 40 kg checked baggage included (Ultimate fare)",
+          "status": "official",
+          "source_url": "https://www.airarabia.com/en/checked-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -99,31 +93,31 @@
       ],
       "fields": {
         "online_checkin_opens": {
-          "value": "24 hours before scheduled departure",
-          "status": "pending",
-          "source_url": "https://www.airarabia.com",
-          "verified_at": "2026-10-05",
+          "value": "36 hours before departure (24 hours at select airports)",
+          "status": "official",
+          "source_url": "https://www.airarabia.com/en/check-in-options",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "domestic_cutoff": {
           "value": "45 minutes before departure",
-          "status": "pending",
-          "source_url": "https://www.airarabia.com",
-          "verified_at": "2026-10-05",
+          "status": "official",
+          "source_url": "https://www.airarabia.com/en/check-in-options",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "international_cutoff": {
           "value": "60 minutes before departure",
-          "status": "pending",
-          "source_url": "https://www.airarabia.com",
-          "verified_at": "2026-10-05",
+          "status": "official",
+          "source_url": "https://www.airarabia.com/en/check-in-options",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "boarding_close": {
           "value": "15 to 20 minutes before departure",
-          "status": "pending",
-          "source_url": "https://www.airarabia.com",
-          "verified_at": "2026-10-05",
+          "status": "official",
+          "source_url": "https://www.airarabia.com/en/check-in-options",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -139,24 +133,24 @@
       ],
       "fields": {
         "care": {
-          "value": "When a flight is delayed or cancelled within carrier control, passengers are entitled to meals, refreshments, communication access, and hotel accommodation with transport for overnight delays.",
-          "status": "pending",
-          "source_url": "https://www.airarabia.com",
-          "verified_at": "2026-10-05",
+          "value": "Refreshments, meal vouchers, and rebooking under UAE GCAA passenger protection rules.",
+          "status": "official",
+          "source_url": "https://www.airarabia.com/en/conditions-of-carriage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "rebooking_refund": {
-          "value": "For disruptions within carrier control, the airline rebooks passengers on the next available flight or provides a full refund for unused flight segments if delayed by 3 hours or more.",
-          "status": "pending",
-          "source_url": "https://www.airarabia.com",
-          "verified_at": "2026-10-05",
+          "value": "Rebooking without fee or reservation credit voucher provided for airline-caused cancellations.",
+          "status": "official",
+          "source_url": "https://www.airarabia.com/en/conditions-of-carriage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "compensation": {
-          "value": "Statutory or policy compensation applies for cancellations or long delays within carrier control according to applicable aviation passenger rights regulations.",
-          "status": "pending",
-          "source_url": "https://www.airarabia.com",
-          "verified_at": "2026-10-05",
+          "value": "Statutory credit voucher or flight replacement under UAE GCAA guidelines.",
+          "status": "official",
+          "source_url": "https://www.airarabia.com/en/conditions-of-carriage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -171,24 +165,24 @@
       ],
       "fields": {
         "fare_name": {
-          "value": "Standard / Economy Light: includes 1 carry-on bag and 1 personal item; checked bag allowance depends on route and fare category",
-          "status": "pending",
-          "source_url": "https://www.airarabia.com",
-          "verified_at": "2026-10-05",
+          "value": "Basic, Value, Extra, Ultimate",
+          "status": "official",
+          "source_url": "https://www.airarabia.com/en/fare-categories",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "seat_selection_included": {
-          "value": "Free seat assignment provided during online check-in; advance seat selection prior to check-in is available for a fee",
-          "status": "pending",
-          "source_url": "https://www.airarabia.com",
-          "verified_at": "2026-10-05",
+          "value": "Included in Value, Extra, and Ultimate; fee on Basic until check-in.",
+          "status": "official",
+          "source_url": "https://www.airarabia.com/en/fare-categories",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "change_cancellation_policy": {
-          "value": "Ticket modifications and cancellations are subject to carrier fare rules, change fees, and applicable fare difference",
-          "status": "pending",
-          "source_url": "https://www.airarabia.com",
-          "verified_at": "2026-10-05",
+          "value": "Basic non-refundable; Value, Extra, and Ultimate allow date changes up to 4 hours prior to departure.",
+          "status": "official",
+          "source_url": "https://www.airarabia.com/en/fare-categories",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -204,24 +198,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
-          "status": "pending",
-          "source_url": "https://www.airarabia.com",
-          "verified_at": "2026-10-05",
+          "value": "Standard Economy (spacious 32-inch seat pitch across Airbus A320/A321 fleet), Extra Legroom seats.",
+          "status": "official",
+          "source_url": "https://www.airarabia.com/en/seats-and-cabins",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
-          "status": "pending",
-          "source_url": "https://www.airarabia.com",
-          "verified_at": "2026-10-05",
+          "value": "Fee-based advance seat selection on Basic; included in Value/Extra/Ultimate; assigned free at check-in.",
+          "status": "official",
+          "source_url": "https://www.airarabia.com/en/seats-and-cabins",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
-          "status": "pending",
-          "source_url": "https://www.airarabia.com",
-          "verified_at": "2026-10-05",
+          "value": "Air Arabia automatically seats children under 12 next to an accompanying adult free of charge.",
+          "status": "official",
+          "source_url": "https://.airarabia.com/en/family-travel",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

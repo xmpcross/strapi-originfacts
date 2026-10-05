@@ -398,6 +398,7 @@ export default async function AirportPage({ params }: Props) {
         <JsonLd data={breadcrumbJsonLd([...breadcrumbTrail, { name: `${airport.name} (${airport.iata})`, url: canonicalPath }])} />
         <AirportGuideV2
           airport={v2Airport}
+          heroSummary={heroSummary}
           breadcrumb={breadcrumbTrail.map((b) => ({ name: b.name, href: b.url }))}
           routes={routes}
           airlines={v2Airlines}

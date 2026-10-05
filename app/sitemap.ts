@@ -13,6 +13,7 @@ import { LEGAL_DOCS } from '@/lib/legal';
 import { AIRLINES_INDEXABLE, AIRPORTS_INDEXABLE, airportIsPublished, airportIsSubstantive } from '@/lib/entity-seo';
 import { airlineGuideIsPublished, airlineIsIndexable } from '@/lib/airline-tier';
 import { airportPath } from '@/lib/airport-slugs';
+import { getAirportGuide } from '@/lib/airport-guide';
 
 import { getAllAuthors } from '@/lib/authors';
 
@@ -24,6 +25,21 @@ export const revalidate = 3600;
 function lastModifiedOf(record: { updatedAt?: string | null; publishedAt?: string | null }) {
   const value = record.updatedAt || record.publishedAt;
   return value ? { lastModified: new Date(value) } : {};
+}
+
+/**
+ * lastmod for an airport page: the CMS record's update time, or the date its
+ * sourced guide (content/airport-guides) was verified, whichever is later. The
+ * guide lives in a file, not the CMS, so without this a page gains a whole
+ * section while its lastmod stays on the old date and crawlers have no cue.
+ */
+function airportLastModified(a: { iata: string; updatedAt?: string | null; publishedAt?: string | null }) {
+  const cms = a.updatedAt || a.publishedAt;
+  const guide = getAirportGuide(a.iata);
+  const guideDate = guide ? new Date(`${guide.verified_at}T00:00:00Z`) : null;
+  const cmsDate = cms ? new Date(cms) : null;
+  const latest = guideDate && (!cmsDate || guideDate > cmsDate) ? guideDate : cmsDate;
+  return latest && !Number.isNaN(latest.getTime()) ? { lastModified: latest } : {};
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -105,7 +121,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     .filter((a) => (AIRPORTS_INDEXABLE || airportIsPublished(a.iata)) && airportIsSubstantive(a, coverage.originIatas.has(a.iata.toLowerCase())))
     .map((a) => ({
       url: `${SITE_URL}${airportPath(a, airports)}`,
-      ...lastModifiedOf(a as { updatedAt?: string }),
+      ...airportLastModified(a as { iata: string; updatedAt?: string }),
       changeFrequency: 'monthly' as const,
       priority: 0.5,
     }));

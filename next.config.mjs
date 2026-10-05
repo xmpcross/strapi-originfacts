@@ -5,8 +5,9 @@ const strapiHost = new URL(
   process.env.NEXT_PUBLIC_STRAPI_URL || 'https://cms.fxnstudio.com'
 ).hostname;
 
-// Pages retired on 5 Oct 2026 (data/removed-pages.json): 51 thin airport pages
-// and the 84 route pages that used one of them as an endpoint. Their CMS
+// Pages retired on 5 Oct 2026 (data/removed-pages.json): 51 thin airport pages,
+// the 84 route pages that used one of them as an endpoint, and 72 more thin
+// route pages. Their CMS
 // records are deleted, so each URL gets a permanent (301) redirect to its
 // directory. The bare IATA form (/airports/ams) is covered too. These sit
 // before every dynamic route, so they still apply if a record is re-created.

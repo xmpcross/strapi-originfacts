@@ -91,7 +91,7 @@ type SectionDef = { id: string; nav: string; title: string; from: 'facts' | 'der
  * fixed "Scroll to top" (left) and "Follow" (right) widgets, which sit 50px in
  * from each edge and would otherwise overlap the nav and the section badges.
  */
-const WRAP = 'mx-auto max-w-7xl px-4 sm:px-6 lg:px-[6.5rem]';
+const WRAP = 'mx-auto max-w-7xl px-4 sm:px-6';
 
 /** Header facts fill the row whatever subset is present — no empty grey cell. */
 const FACT_COLS: Record<number, string> = { 1: 'sm:grid-cols-1', 2: 'sm:grid-cols-2', 3: 'sm:grid-cols-3', 4: 'sm:grid-cols-4' };

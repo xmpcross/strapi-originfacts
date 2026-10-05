@@ -337,7 +337,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
               title={/\bairport\b/i.test(name) ? `${name} details` : `${name} airport details`}
               badge={<Badge tone="data">Airport record{recordDate ? ` · ${recordDate}` : ''}</Badge>}
             >
-              <dl className="grid gap-3 sm:grid-cols-2">
+              <dl className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <Fact label="IATA code" value={code} />
                 <Fact label="ICAO code" value={icao} source={!airport.icao && info.icao ? 'airport-info' : undefined} />
                 <Fact label="City" value={city} source={!airport.city && info.city ? 'airport-info' : undefined} />
@@ -374,7 +374,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                   The airlines listed on the {routes.length === 1 ? 'route' : `${routes.length} routes`} Originfacts
                   tracks from {code}. This is not a complete list of airlines at {name}.
                 </p>
-                <ul className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+                <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
                   {airlines.map((a) => (
                     <li key={a.slug}>
                       <Link
@@ -412,7 +412,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                   {routes.length === 1 ? 'The route' : `The ${routes.length} routes`} Originfacts tracks from {code}, with
                   the distance and estimated flight time in each route record. Check live schedules with the airline.
                 </p>
-                <ul className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+                <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
                   {routes.map((r) => (
                     <li key={r.id}>
                       <Link
@@ -495,7 +495,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                   </p>
                 }
               >
-                <ul className="grid gap-2 sm:grid-cols-2 xl:grid-cols-3">
+                <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-3">
                   {nearby.map((a) => (
                     <li key={a.iata}>
                       <Link
@@ -728,7 +728,7 @@ function Fact({
 
 function SourceRow({ what, date, children }: { what: string; date: string | null; children: ReactNode }) {
   return (
-    <li className="grid gap-1 px-4 py-3 text-sm sm:grid-cols-[11rem_minmax(0,1fr)_9rem] sm:gap-4">
+    <li className="grid grid-cols-1 gap-1 px-4 py-3 text-sm sm:grid-cols-[11rem_minmax(0,1fr)_9rem] sm:gap-4">
       <span className="font-medium text-forest-950">{what}</span>
       <span className="min-w-0 text-forest-900/85 [overflow-wrap:anywhere]">{children}</span>
       <span className="text-forest-900/75">{date ?? '—'}</span>

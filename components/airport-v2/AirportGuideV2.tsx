@@ -481,7 +481,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
             />
           )}
 
-          <li className="flex h-[240px] flex-col rounded-[0.5rem] border border-dashed border-forest-900/20 bg-white/60 p-4">
+          <li className="flex h-[200px] flex-col rounded-[0.5rem] border border-dashed border-forest-900/20 bg-white/60 p-4">
             <h3 className="flex items-center gap-2.5 text-base leading-snug text-forest-950">
               <span aria-hidden className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-forest-900/5 text-forest-900/60">
                 <Building2 className="h-4 w-4" />
@@ -1012,7 +1012,7 @@ function Tile({
   children: ReactNode;
 }) {
   return (
-    <li className="flex h-[240px] flex-col rounded-[0.5rem] border border-forest-900/10 bg-white p-4 shadow-[0_1px_2px_rgba(15,39,102,0.04)] transition hover:-translate-y-0.5 hover:border-forest-900/25 hover:shadow-md">
+    <li className="flex h-[200px] flex-col rounded-[0.5rem] border border-forest-900/10 bg-white p-4 shadow-[0_1px_2px_rgba(15,39,102,0.04)] transition hover:-translate-y-0.5 hover:border-forest-900/25 hover:shadow-md">
       <h3 className="flex items-center gap-2.5 text-base leading-snug text-forest-950">
         <span aria-hidden className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-forest-950 text-sand-300">
           <Icon className="h-4 w-4" />

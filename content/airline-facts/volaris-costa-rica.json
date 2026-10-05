@@ -1,0 +1,82 @@
+{
+  "slug": "volaris-costa-rica",
+  "official_website": "https://cms.volaris.com",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "Volaris's own pages disagree on the cabin-bag allowance, so only the personal-item rule is published here.",
+      "required": [
+        "personal_item"
+      ],
+      "fields": {
+        "personal_item": {
+          "value": "1 personal item, such as a backpack, handbag, briefcase or laptop case, up to 35 × 45 × 20 cm, placed under the seat in front of you.",
+          "status": "official",
+          "source_url": "https://cms.volaris.com/es/informacion-util/politicas-de-equipaje/?countryflag=Costa+Rica+_+Espa%C3%B1ol",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Translated from the Spanish Volaris baggage policy page with Costa Rica selected; it is the Volaris brand's page, not one scoped to Volaris Costa Rica alone."
+        },
+        "carryon_bag_dimensions": {
+          "value": null,
+          "status": "disputed",
+          "source_url": "https://cms.volaris.com/es/informacion-util/politicas-de-equipaje/?countryflag=Costa+Rica+_+Espa%C3%B1ol",
+          "verified_at": "2026-10-05",
+          "notes": "The Costa Rica Spanish baggage-policy page and the English cabin-baggage page give different cabin-bag sizes.",
+          "conflicting_values": [
+            "1 cabin bag up to 55 × 40 × 25 cm (Costa Rica Spanish baggage policy page)",
+            "Up to 2 cabin bags of 22.4 x 15.7 x 12.9 inches each (English cabin-baggage page)"
+          ]
+        },
+        "carryon_weight": {
+          "value": null,
+          "status": "disputed",
+          "source_url": "https://cms.volaris.com/es/informacion-util/politicas-de-equipaje/?countryflag=Costa+Rica+_+Espa%C3%B1ol",
+          "verified_at": "2026-10-05",
+          "notes": "The two Volaris pages give different cabin weight limits.",
+          "conflicting_values": [
+            "Cabin bag up to 10 kg; cabin bag and personal item together up to 20 kg (Costa Rica Spanish baggage policy page)",
+            "2 cabin bags must not weigh over 22 lbs. in total, including handbags and backpacks (English cabin-baggage page)"
+          ]
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "Volaris sells three fare options, Zero, Básica and Plus; what is included depends on the option.",
+      "required": [
+        "included_allowance",
+        "size_weight",
+        "extra_bags"
+      ],
+      "fields": {
+        "included_allowance": {
+          "value": "Checked baggage included in the fare: up to 15 kg or 25 kg depending on the fare purchased. The lowest-price option includes no carry-on or checked bag.",
+          "status": "official",
+          "source_url": "https://cms.volaris.com/es/informacion-util/politicas-de-equipaje/?countryflag=Costa+Rica+_+Espa%C3%B1ol",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Translated from the Spanish Volaris baggage policy page with Costa Rica selected; it is the Volaris brand's page, not one scoped to Volaris Costa Rica alone."
+        },
+        "size_weight": {
+          "value": "Each checked bag up to 158 cm total (length + width + height). Bags bought separately: up to 25 kg each. With overweight charges, the maximum per bag is 45 kg.",
+          "status": "official",
+          "source_url": "https://cms.volaris.com/es/informacion-util/politicas-de-equipaje/?countryflag=Costa+Rica+_+Espa%C3%B1ol",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Translated from the Spanish Volaris baggage policy page with Costa Rica selected; it is the Volaris brand's page, not one scoped to Volaris Costa Rica alone."
+        },
+        "extra_bags": {
+          "value": "For an extra charge you can add up to 5 checked bags per passenger, each up to 25 kg and 158 cm.",
+          "status": "official",
+          "source_url": "https://cms.volaris.com/es/informacion-util/politicas-de-equipaje/?countryflag=Costa+Rica+_+Espa%C3%B1ol",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Translated from the Spanish Volaris baggage policy page with Costa Rica selected; it is the Volaris brand's page, not one scoped to Volaris Costa Rica alone."
+        }
+      }
+    }
+  ]
+}

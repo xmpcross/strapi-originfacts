@@ -47,7 +47,8 @@
       "title": "Checked baggage",
       "required": [
         "allowance",
-        "size_weight"
+        "size_weight",
+        "extra_bag_fees"
       ],
       "fields": {
         "allowance": {
@@ -69,6 +70,13 @@
           "status": "official",
           "source_url": "https://us.airtahitinui.com/baggage-allowances",
           "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "extra_bag_fees": {
+          "value": "Extra bag, between Australia and USA, Canada, New Zealand, French Polynesia, Japan or Asia: AUD 120; between Australia and other destinations: AUD 200. Between French Polynesia and AU, NZ, USA, Canada or New Caledonia: XPF 8 000; and France: XPF 10 000; and other destinations: XPF 12 000. Different fees apply to flights departing from the United States and Canada.",
+          "status": "official",
+          "source_url": "https://au.airtahitinui.com/excess-baggage",
+          "verified_at": "2026-10-05",
           "verified_by": "manual_official_source"
         }
       },

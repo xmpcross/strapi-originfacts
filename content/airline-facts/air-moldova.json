@@ -62,7 +62,9 @@
       "id": "rights",
       "title": "If your flight is delayed or cancelled",
       "required": [
-        "care"
+        "care",
+        "rebooking",
+        "refund"
       ],
       "fields": {
         "care": {
@@ -70,6 +72,20 @@
           "status": "official",
           "source_url": "https://www.airmoldova.md/terms-of-carriage-en/",
           "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "rebooking": {
+          "value": "If your flight is cancelled, you are entitled to rebooking, re-routing or a refund without any additional charge.",
+          "status": "official",
+          "source_url": "https://www.airmoldova.md/terms-of-carriage-en/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "refund": {
+          "value": "If Air Moldova cancels a flight, does not operate it to schedule or causes you to miss a connection: a wholly unused ticket is refunded at the fare paid plus all unused airport taxes; a partly used ticket gets back the unused part of the fare plus all unused airport fees and taxes.",
+          "status": "official",
+          "source_url": "https://www.airmoldova.md/terms-of-carriage-en/",
+          "verified_at": "2026-10-05",
           "verified_by": "manual_official_source"
         }
       }

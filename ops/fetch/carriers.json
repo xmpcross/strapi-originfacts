@@ -10203,5 +10203,833 @@
       }
     },
     "_status": "4/6 urls imported from all-airlines-filled-v3.csv"
+  },
+  {
+    "carrier_key": "aero-mongolia",
+    "name": "Aero Mongolia",
+    "iata": "M0",
+    "locale": "en",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://www.aeromongolia.com/en/baggage-dgr"
+      }
+    },
+    "_status": "pages discovered from the CMS website (homepage names the airline) on 2026-10-05"
+  },
+  {
+    "carrier_key": "african-express-airways",
+    "name": "African Express Airways",
+    "iata": "XU",
+    "locale": "site-default",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "conditions_of_carriage": {
+        "url": "https://www.africanexpress.net/conditions-of-carriage/"
+      }
+    },
+    "_status": "locale not asserted by URL; pages discovered from the CMS website (homepage names the airline) on 2026-10-05"
+  },
+  {
+    "carrier_key": "air-india-express",
+    "name": "Air India Express",
+    "iata": "IX",
+    "locale": "site-default",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://www.airindiaexpress.com/products-and-services?selectedtab=baggage"
+      },
+      "checkin": {
+        "url": "https://www.airindiaexpress.com/checkin-home"
+      },
+      "conditions_of_carriage": {
+        "url": "https://www.airindiaexpress.com/tnc"
+      }
+    },
+    "_status": "locale not asserted by URL; pages discovered from the CMS website (homepage names the airline) on 2026-10-05"
+  },
+  {
+    "carrier_key": "air-inuit",
+    "name": "Air Inuit",
+    "iata": "3H",
+    "locale": "en",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_carryon": {
+        "url": "https://www.airinuit.com/en/manage/baggage/carry-on-baggage"
+      },
+      "baggage_checked": {
+        "url": "https://www.airinuit.com/en/manage/baggage"
+      },
+      "checkin": {
+        "url": "https://www.airinuit.com/en/manage/before-boarding/check-in-times"
+      },
+      "conditions_of_carriage": {
+        "url": "https://www.airinuit.com/en/book/tariffs/conditions-of-carriage"
+      }
+    },
+    "_status": "pages discovered from the CMS website (homepage names the airline) on 2026-10-05"
+  },
+  {
+    "carrier_key": "air-koryo",
+    "name": "Air Koryo",
+    "iata": "JS",
+    "locale": "site-default",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "http://www.airkoryo.com.kp/service/baggage"
+      },
+      "checkin": {
+        "url": "http://www.airkoryo.com.kp/service/checkin"
+      },
+      "conditions_of_carriage": {
+        "url": "http://www.airkoryo.com.kp/regulations"
+      }
+    },
+    "_status": "locale not asserted by URL; pages discovered from the CMS website (homepage names the airline) on 2026-10-05"
+  },
+  {
+    "carrier_key": "amakusa-airlines",
+    "name": "Amakusa Airlines",
+    "iata": "MZ",
+    "locale": "site-default",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "checkin": {
+        "url": "https://www.amx.co.jp/web_rsv/checkin.php"
+      }
+    },
+    "_status": "locale not asserted by URL; pages discovered from the CMS website (homepage names the airline) on 2026-10-05"
+  },
+  {
+    "carrier_key": "arik-air",
+    "name": "Arik Air",
+    "iata": "W3",
+    "locale": "site-default",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://www.arikair.com/"
+      }
+    },
+    "_status": "locale not asserted by URL; pages discovered from the CMS website (homepage names the airline) on 2026-10-05"
+  },
+  {
+    "carrier_key": "ibex-airlines",
+    "name": "Ibex Airlines",
+    "iata": "FW",
+    "locale": "site-default",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://www.ibexair.co.jp/flight/checkin/baggage.html"
+      },
+      "checkin": {
+        "url": "https://spa.ibexair.co.jp/webapps/checkin/checkin-search?_gl=1*1sh7h1d*_gcl_au*MzQ2MzcxMDgzLjE3ODA5NjMxMTE.*_ga*MTE4OTI3MTA5MC4xNzYwNjU5MjQ1*_ga_HKWJSZRJ2Z*czE3ODExNjMxMTgkbzEyMzckZzEkdDE3ODExNjY1MjgkajYwJGwwJGgxMjg4MTc2OTY0&CONNECTION_KIND=aEOnpcyuZRMS4tqnHENJHA&LANG=wse4veoCqelWz3o6sadnEA"
+      }
+    },
+    "_status": "locale not asserted by URL; pages discovered from the CMS website (homepage names the airline) on 2026-10-05"
+  },
+  {
+    "carrier_key": "intercaribbean-airways",
+    "name": "InterCaribbean Airways",
+    "iata": "JY",
+    "locale": "site-default",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://www.intercaribbean.com/weather-alerts/dominica-checked-baggage-advisory.html"
+      },
+      "checkin": {
+        "url": "https://www.intercaribbean.com/travel-information/check-in.html"
+      },
+      "conditions_of_carriage": {
+        "url": "https://www.intercaribbean.com/contract-of-carriage.html"
+      },
+      "fare_conditions": {
+        "url": "https://www.intercaribbean.com/schedules-and-fares/fares.html"
+      }
+    },
+    "_status": "locale not asserted by URL; pages discovered from the CMS website (homepage names the airline) on 2026-10-05"
+  },
+  {
+    "carrier_key": "japan-transocean-air",
+    "name": "Japan Transocean Air",
+    "iata": "NU",
+    "locale": "site-default",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_carryon": {
+        "url": "https://en.jta-okinawa.com/news/85/"
+      }
+    },
+    "_status": "locale not asserted by URL; pages discovered from the CMS website (homepage names the airline) on 2026-10-05"
+  },
+  {
+    "carrier_key": "laser-airlines",
+    "name": "LASER Airlines",
+    "iata": "QL",
+    "locale": "site-default",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "checkin": {
+        "url": "https://laserairlines.com/check-in"
+      }
+    },
+    "_status": "locale not asserted by URL; pages discovered from the CMS website (homepage names the airline) on 2026-10-05"
+  },
+  {
+    "carrier_key": "pal-express",
+    "name": "PAL Express",
+    "iata": "2P",
+    "locale": "hk",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://www.philippineairlines.com/hk/en/mypal-travel-boost/mypal-baggage-plus.html"
+      },
+      "checkin": {
+        "url": "https://www.philippineairlines.com/hk/en/about-us/legal-notices/online-check-in-terms-and-conditions.html"
+      }
+    },
+    "_status": "pages discovered from the CMS website (homepage names the airline) on 2026-10-05"
+  },
+  {
+    "carrier_key": "pascan-aviation",
+    "name": "Pascan Aviation",
+    "iata": "P6",
+    "locale": "en",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://www.pascan.com/en/compensations-and-recourses/"
+      },
+      "checkin": {
+        "url": "https://res.pascan.com/check-in/search?language=en"
+      }
+    },
+    "_status": "pages discovered from the CMS website (homepage names the airline) on 2026-10-05"
+  },
+  {
+    "carrier_key": "severstal-air-company",
+    "name": "Severstal Air Company",
+    "iata": "D2",
+    "locale": "site-default",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "checkin": {
+        "url": "https://severstal-avia.ru/check-in/"
+      }
+    },
+    "_status": "locale not asserted by URL; pages discovered from the CMS website (homepage names the airline) on 2026-10-05"
+  },
+  {
+    "carrier_key": "skymark-airlines",
+    "name": "Skymark Airlines",
+    "iata": "BC",
+    "locale": "ja",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://www.skymark.co.jp/ja/baggage/"
+      },
+      "checkin": {
+        "url": "https://www.skymark.co.jp/ja/checkin/"
+      }
+    },
+    "_status": "pages discovered from the CMS website (homepage names the airline) on 2026-10-05"
+  },
+  {
+    "carrier_key": "solaseed-air",
+    "name": "Solaseed Air",
+    "iata": "6J",
+    "locale": "site-default",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://www.solaseedair.jp/baggage/"
+      },
+      "checkin": {
+        "url": "https://www.solaseedair.jp/service/checkin/"
+      }
+    },
+    "_status": "locale not asserted by URL; pages discovered from the CMS website (homepage names the airline) on 2026-10-05"
+  },
+  {
+    "carrier_key": "surinam-airways",
+    "name": "Surinam Airways",
+    "iata": "PY",
+    "locale": "site-default",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://www.flyslm.com/travel-information/pre-flight/baggage"
+      },
+      "checkin": {
+        "url": "https://www.flyslm.com/home"
+      }
+    },
+    "_status": "locale not asserted by URL; pages discovered from the CMS website (homepage names the airline) on 2026-10-05"
+  },
+  {
+    "carrier_key": "winair",
+    "name": "Winair",
+    "iata": "WM",
+    "locale": "site-default",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_carryon": {
+        "url": "https://www.winair.sx/info/cabin-luggage-1"
+      },
+      "baggage_checked": {
+        "url": "https://www.winair.sx/baggage"
+      },
+      "checkin": {
+        "url": "https://www.winair.sx/info/check-in-baggage-2"
+      },
+      "fare_conditions": {
+        "url": "https://www.winair.sx/fare-families"
+      }
+    },
+    "_status": "locale not asserted by URL; pages discovered from the CMS website (homepage names the airline) on 2026-10-05"
+  },
+  {
+    "carrier_key": "aerovias-dap",
+    "name": "Aerovias DAP",
+    "iata": "V5",
+    "locale": "en",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "conditions_of_carriage": {
+        "url": "https://dapairline.com/en/terms-and-conditions/"
+      }
+    },
+    "_status": "pages discovered from web search + homepage links on 2026-10-05"
+  },
+  {
+    "carrier_key": "alaska-seaplanes",
+    "name": "Alaska Seaplanes",
+    "iata": "J5",
+    "locale": "site-default",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://www.flyalaskaseaplanes.com/flight-info/baggage.html"
+      },
+      "conditions_of_carriage": {
+        "url": "https://www.flyalaskaseaplanes.com/flight-info/contract-of-carriage.html"
+      },
+      "baggage_carryon": {
+        "url": "https://www.flyalaskaseaplanes.com/flight-info/baggage.html"
+      }
+    },
+    "_status": "locale not asserted by URL; pages discovered from web search + homepage links on 2026-10-05"
+  },
+  {
+    "carrier_key": "asman-airlines",
+    "name": "Asman Airlines",
+    "iata": "MN",
+    "locale": "site-default",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://asmanairlines.kg/content/passenger-rules"
+      },
+      "fare_conditions": {
+        "url": "https://asmanairlines.kg/content/types-of-fares-for-your-flights"
+      },
+      "conditions_of_carriage": {
+        "url": "https://asmanairlines.kg/content/passenger-rules"
+      }
+    },
+    "_status": "locale not asserted by URL; pages discovered from web search + homepage links on 2026-10-05"
+  },
+  {
+    "carrier_key": "cinnamon-air",
+    "name": "Cinnamon Air",
+    "iata": "C7",
+    "locale": "site-default",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://www.cinnamonair.com/pre-flight/baggage"
+      },
+      "baggage_carryon": {
+        "url": "https://www.cinnamonair.com/pre-flight/baggage"
+      },
+      "conditions_of_carriage": {
+        "url": "https://www.cinnamonair.com/terms-conditions"
+      }
+    },
+    "_status": "locale not asserted by URL; pages discovered from web search + homepage links on 2026-10-05"
+  },
+  {
+    "carrier_key": "flexflight",
+    "name": "FlexFlight",
+    "iata": "W2",
+    "locale": "site-default",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "conditions_of_carriage": {
+        "url": "https://flexflight.dk/wp-content/uploads/2025/11/FXT-GTC-Charter-REV02-041125.pdf"
+      }
+    },
+    "_status": "locale not asserted by URL; pages discovered from web search + homepage links on 2026-10-05"
+  },
+  {
+    "carrier_key": "heli-securite-helicopter-airline",
+    "name": "Héli Sécurité Hélicopter Airline",
+    "iata": "HS",
+    "locale": "en",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "conditions_of_carriage": {
+        "url": "https://helisecurite.fr/en/terms-and-conditions/"
+      }
+    },
+    "_status": "pages discovered from web search + homepage links on 2026-10-05"
+  },
+  {
+    "carrier_key": "jetsmart",
+    "name": "JetSmart",
+    "iata": "JA",
+    "locale": "cl",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://jetsmart.com/cl/es/opcionales?dl=baggage"
+      },
+      "checkin": {
+        "url": "https://jetsmart.com/cl/es/PreguntasFrecuentes?dl=check_in"
+      },
+      "conditions_of_carriage": {
+        "url": "https://jetsmart.com/cl/es/tyc/condiciones-generales"
+      }
+    },
+    "_status": "pages discovered from web search + homepage links on 2026-10-05"
+  },
+  {
+    "carrier_key": "nordstar",
+    "name": "NordStar",
+    "iata": "Y7",
+    "locale": "site-default",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://www.nordstar.ru/services/extra-baggage/"
+      },
+      "checkin": {
+        "url": "https://www.nordstar.ru/services/check-in/"
+      },
+      "conditions_of_carriage": {
+        "url": "https://www.nordstar.ru/passengers/terms-of-carriage/"
+      },
+      "baggage_carryon": {
+        "url": "https://www.nordstar.ru/passengers/baggage/baggage-hand-luggage/"
+      },
+      "fare_conditions": {
+        "url": "https://www.nordstar.ru/passengers/conditions-fares/"
+      }
+    },
+    "_status": "locale not asserted by URL; pages discovered from web search + homepage links on 2026-10-05"
+  },
+  {
+    "carrier_key": "jin-air",
+    "name": "Jin Air",
+    "iata": "LJ",
+    "locale": "site-default",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://www.jinair.com/ready/carryBaggage?snsLang=en_US&ctrCd=GUM"
+      },
+      "baggage_carryon": {
+        "url": "https://www.jinair.com/ready/carryBaggage?snsLang=en_US&ctrCd=GUM"
+      },
+      "conditions_of_carriage": {
+        "url": "https://files.jinair.com/documents/%EA%B5%AD%EC%A0%9C%EC%97%AC%EA%B0%9D%EC%9A%B4%EC%86%A1%EC%95%BD%EA%B4%80_ENG.pdf"
+      }
+    },
+    "_status": "locale not asserted by URL; pages discovered from web search + homepage links on 2026-10-05"
+  },
+  {
+    "carrier_key": "oriental-air-bridge",
+    "name": "Oriental Air Bridge",
+    "iata": "OC",
+    "locale": "site-default",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://www.orc-air.co.jp/service/baggage/"
+      },
+      "baggage_carryon": {
+        "url": "https://www.orc-air.co.jp/en/service/baggage/"
+      },
+      "checkin": {
+        "url": "https://www.orc-air.co.jp/en/service/online-checkin/"
+      },
+      "conditions_of_carriage": {
+        "url": "https://www.orc-air.co.jp/transport/"
+      }
+    },
+    "_status": "locale not asserted by URL; pages discovered from web search + homepage links on 2026-10-05"
+  },
+  {
+    "carrier_key": "pelita-air",
+    "name": "Pelita Air",
+    "iata": "IP",
+    "locale": "site-default",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://www.pelita-air.com/content_travel/detail/ketentuan-bagasi-pelita-air"
+      },
+      "baggage_carryon": {
+        "url": "https://www.pelita-air.com/content_travel/detail/ketentuan-bagasi-pelita-air"
+      }
+    },
+    "_status": "locale not asserted by URL; pages discovered from web search + homepage links on 2026-10-05"
+  },
+  {
+    "carrier_key": "rise-air",
+    "name": "Rise Air",
+    "iata": "4T",
+    "locale": "site-default",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://riseair.ca/travel-information/baggage-information"
+      },
+      "baggage_carryon": {
+        "url": "https://riseair.ca/?p=2888"
+      }
+    },
+    "_status": "locale not asserted by URL; pages discovered from web search + homepage links on 2026-10-05"
+  },
+  {
+    "carrier_key": "st-barth-commuter",
+    "name": "St Barth Commuter",
+    "iata": "PV",
+    "locale": "en",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://www.stbarthcommuter.com/en/information.php"
+      },
+      "baggage_carryon": {
+        "url": "https://www.stbarthcommuter.com/en/information.php"
+      },
+      "conditions_of_carriage": {
+        "url": "https://www.stbarthcommuter.com/en/terms-policy.php"
+      }
+    },
+    "_status": "pages discovered from web search + homepage links on 2026-10-05"
+  },
+  {
+    "carrier_key": "star-air",
+    "name": "Star Air",
+    "iata": "S5",
+    "locale": "site-default",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://starair.in/FaresAndRules/LuggageInfo"
+      },
+      "checkin": {
+        "url": "https://starair.in/"
+      },
+      "baggage_carryon": {
+        "url": "https://www.starair.in/FaresAndRules/LuggageInfo"
+      },
+      "conditions_of_carriage": {
+        "url": "https://starair.in/home/conditionsofcarriage"
+      },
+      "fare_conditions": {
+        "url": "https://www.starair.in/FaresAndRules"
+      }
+    },
+    "_status": "locale not asserted by URL; pages discovered from web search + homepage links on 2026-10-05"
+  },
+  {
+    "carrier_key": "tar-aerolineas",
+    "name": "TAR Aerolíneas",
+    "iata": "YQ",
+    "locale": "site-default",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://tarmexico.com/baggage"
+      },
+      "baggage_carryon": {
+        "url": "https://tarmexico.com/baggage"
+      }
+    },
+    "_status": "locale not asserted by URL; pages discovered from web search + homepage links on 2026-10-05"
+  },
+  {
+    "carrier_key": "transnusa",
+    "name": "Transnusa",
+    "iata": "8B",
+    "locale": "en",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://transnusa.co.id/en/products/baggage"
+      },
+      "checkin": {
+        "url": "https://transnusa.co.id/en/terms-and-conditions/web-check-in"
+      },
+      "conditions_of_carriage": {
+        "url": "https://transnusa.co.id/en/terms-and-conditions/conditions-of-carriage"
+      },
+      "fare_conditions": {
+        "url": "https://transnusa.co.id/en/terms-and-conditions/general-fare"
+      }
+    },
+    "_status": "pages discovered from web search + homepage links on 2026-10-05"
+  },
+  {
+    "carrier_key": "volaris-costa-rica",
+    "name": "Volaris Costa Rica",
+    "iata": "Q6",
+    "locale": "es",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://cms.volaris.com/es/informacion-util/politicas-de-equipaje/?countryflag=Costa+Rica+_+Espa%C3%B1ol"
+      },
+      "baggage_carryon": {
+        "url": "https://cms.volaris.com/en/cabin-baggage"
+      },
+      "conditions_of_carriage": {
+        "url": "https://cms.volaris.com/globalassets/pdfs/esp/terminos_y_condiciones_de_transporte_aereo_n3.pdf"
+      }
+    },
+    "_status": "pages discovered from web search + homepage links on 2026-10-05"
+  },
+  {
+    "carrier_key": "western-air",
+    "name": "Western Air",
+    "iata": "WU",
+    "locale": "site-default",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "conditions_of_carriage": {
+        "url": "https://www.westernairbahamas.com/conditions-of-carriage/"
+      }
+    },
+    "_status": "locale not asserted by URL; pages discovered from web search + homepage links on 2026-10-05"
+  },
+  {
+    "carrier_key": "wizz-air-uk",
+    "name": "Wizz Air UK",
+    "iata": "W9",
+    "locale": "en-gb",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://www.wizzair.com/en-gb/help-centre/damaged-or-lost-bags-and-items"
+      },
+      "checkin": {
+        "url": "https://www.wizzair.com/en-gb/information-and-services/wizz-services/auto-check-in"
+      },
+      "conditions_of_carriage": {
+        "url": "https://www.wizzair.com/en-gb/legal/general-conditions-of-carriage-for-passengers-and-baggage"
+      },
+      "baggage_carryon": {
+        "url": "https://www.wizzair.com/en-gb/help-centre/booking-information-and-services/baggage/baggage-allowance"
+      }
+    },
+    "_status": "pages discovered from web search + homepage links on 2026-10-05"
+  },
+  {
+    "carrier_key": "wright-air-service",
+    "name": "Wright Air Service",
+    "iata": "8V",
+    "locale": "site-default",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://wrightairservice.com/passenger-information/"
+      },
+      "baggage_carryon": {
+        "url": "https://wrightairservice.com/passenger-information/"
+      },
+      "conditions_of_carriage": {
+        "url": "https://wrightairservice.com/terms-conditions/"
+      }
+    },
+    "_status": "locale not asserted by URL; pages discovered from web search + homepage links on 2026-10-05"
+  },
+  {
+    "carrier_key": "aero-nomad-airlines",
+    "name": "Aero Nomad Airlines",
+    "iata": "KA",
+    "locale": "ru",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://www.aeronomad.kg/ru/information/baggageandluggage"
+      }
+    },
+    "_status": "pages discovered from web search + homepage links on 2026-10-05"
+  },
+  {
+    "carrier_key": "airborneo",
+    "name": "AirBorneo",
+    "iata": "MY",
+    "locale": "en",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "checkin": {
+        "url": "https://airborneo.com/en/check-in"
+      },
+      "conditions_of_carriage": {
+        "url": "https://airborneo.com/en/condition-of-carriage"
+      }
+    },
+    "_status": "pages discovered from web search + homepage links on 2026-10-05"
+  },
+  {
+    "carrier_key": "amelia",
+    "name": "Amelia",
+    "iata": "8R",
+    "locale": "site-default",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "checkin": {
+        "url": "https://book.flyamelia.com/Zenith/FrontOffice/(S(f0727ce166d74ab495648ceab26e68b5))/aia/en-GB/Home/FindBooking?findbookingmode=WebCheckin"
+      }
+    },
+    "_status": "locale not asserted by URL; pages discovered from web search + homepage links on 2026-10-05"
+  },
+  {
+    "carrier_key": "animawings",
+    "name": "Animawings",
+    "iata": "A2",
+    "locale": "en",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://www.animawings.com/en/baggage"
+      },
+      "checkin": {
+        "url": "https://www.animawings.com/en/check-in"
+      },
+      "fare_conditions": {
+        "url": "https://www.animawings.com/en/fees-and-fare-rules"
+      },
+      "baggage_carryon": {
+        "url": "https://animawings.com/en/cabin-baggage"
+      }
+    },
+    "_status": "pages discovered from web search + homepage links on 2026-10-05"
+  },
+  {
+    "carrier_key": "flyarystan",
+    "name": "FlyArystan",
+    "iata": "FS",
+    "locale": "en",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://flyarystan.com/en/baggage"
+      },
+      "conditions_of_carriage": {
+        "url": "https://flyarystan.com/media/jxcb5jij/fa-rules-26feb26_eng.pdf"
+      }
+    },
+    "_status": "pages discovered from web search + homepage links on 2026-10-05"
+  },
+  {
+    "carrier_key": "lift-airline",
+    "name": "LIFT Airline",
+    "iata": "GE",
+    "locale": "site-default",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://lift.co.za/travel-info/baggage-policy"
+      },
+      "checkin": {
+        "url": "https://checkin.lift.co.za/"
+      },
+      "baggage_carryon": {
+        "url": "https://support.lift.co.za/en/support/solutions/articles/66000532802"
+      }
+    },
+    "_status": "locale not asserted by URL; pages discovered from web search + homepage links on 2026-10-05"
+  },
+  {
+    "carrier_key": "smartavia",
+    "name": "SmartAvia",
+    "iata": "5N",
+    "locale": "en",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_carryon": {
+        "url": "https://flysmartavia.com/en/info/passenger/services/hand-luggage-plus/"
+      },
+      "baggage_checked": {
+        "url": "https://flysmartavia.com/en/info/passenger/luggage/"
+      },
+      "checkin": {
+        "url": "https://check-in.flysmartavia.com/check-in/?lang=en"
+      }
+    },
+    "_status": "pages discovered from web search + homepage links on 2026-10-05"
+  },
+  {
+    "carrier_key": "united-nigeria-airlines",
+    "name": "United Nigeria Airlines",
+    "iata": "UN",
+    "locale": "site-default",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://flyunitednigeria.com/baggage-information/"
+      },
+      "conditions_of_carriage": {
+        "url": "https://flyunitednigeria.com/baggage-declaration/"
+      }
+    },
+    "_status": "locale not asserted by URL; pages discovered from web search + homepage links on 2026-10-05"
+  },
+  {
+    "carrier_key": "s7-airlines",
+    "name": "S7 Airlines",
+    "iata": "S7",
+    "locale": "en",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "baggage_checked": {
+        "url": "https://www.s7.ru/en/info/baggage.dot"
+      },
+      "baggage_carryon": {
+        "url": "https://www.s7.ru/en/airport/baggage.dot"
+      }
+    },
+    "_status": "pages discovered from web search + homepage links on 2026-10-05"
+  },
+  {
+    "carrier_key": "smartwings-czechia",
+    "name": "SmartWings Czechia",
+    "iata": "QS",
+    "locale": "en",
+    "band": "discovered-2026-10-05",
+    "pages": {
+      "conditions_of_carriage": {
+        "url": "https://www.smartwings.com/en/conditions-of-carriage"
+      },
+      "baggage_checked": {
+        "url": "https://www.smartwings.com/en/what-is-the-baggage-allowance"
+      },
+      "baggage_carryon": {
+        "url": "https://www.smartwings.com/en/what-is-the-baggage-allowance"
+      }
+    },
+    "_status": "pages discovered from web search + homepage links on 2026-10-05"
   }
 ]

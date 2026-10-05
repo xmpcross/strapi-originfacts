@@ -1,0 +1,78 @@
+{
+  "slug": "animawings",
+  "official_website": "https://animawings.com",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "AnimaWings allows each passenger two pieces of cabin baggage.",
+      "required": [
+        "carryon_bag_dimensions",
+        "carryon_weight",
+        "personal_item"
+      ],
+      "fields": {
+        "carryon_bag_dimensions": {
+          "value": "1 carry-on bag up to 56cm x 45cm x 25cm, stored in the overhead compartment.",
+          "status": "official",
+          "source_url": "https://animawings.com/en/cabin-baggage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "carryon_weight": {
+          "value": "8kg on the ONE, PLUS, PRIORITY ALL INCLUSIVE and PRIORITY ALL INCLUSIVE PLUS bundles; 12kg on BUSINESS and BUSINESS FLEX.",
+          "status": "official",
+          "source_url": "https://animawings.com/en/cabin-baggage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "personal_item": {
+          "value": "1 personal item of 4kg (20cm x 30cm x 40cm), placed under the seat in front.",
+          "status": "official",
+          "source_url": "https://animawings.com/en/cabin-baggage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "excess_fees": {
+          "value": "Cabin baggage over the allowed weight or dimensions is placed in the hold for 50 EUR/piece/segment.",
+          "status": "official",
+          "source_url": "https://www.animawings.com/en/fees-and-fare-rules",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "Fees are per piece, per flight segment.",
+      "required": [
+        "additional_bag_fee",
+        "max_weight"
+      ],
+      "fields": {
+        "additional_bag_fee": {
+          "value": "Additional checked bag (23 kg): 15 EUR/piece/segment on domestic routes and 50 EUR/piece/segment on international routes. At the airport the price is 50 EUR/piece/segment regardless of route. Maximum 5 bags per passenger.",
+          "status": "official",
+          "source_url": "https://www.animawings.com/en/fees-and-fare-rules",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "max_weight": {
+          "value": "No checked bag may exceed 32 kg. Overweight is charged 10 EUR/kg/segment; oversize 50 EUR/piece/segment.",
+          "status": "official",
+          "source_url": "https://www.animawings.com/en/fees-and-fare-rules",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "bundle_allowance": {
+          "value": "The PRIORITY ALL INCLUSIVE PLUS bundle (international routes only) includes one checked bag per segment per person of maximum 23kg and maximum 100x80x30 cm.",
+          "status": "official",
+          "source_url": "https://www.animawings.com/en/fees-and-fare-rules",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

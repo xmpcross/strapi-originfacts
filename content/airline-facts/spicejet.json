@@ -73,11 +73,12 @@
           "verified_by": "manual_official_source"
         },
         "prebook_domestic": {
-          "value": "Pre-booked extra baggage on domestic flights: 3 kg INR 1935 (USD 24), 5 kg INR 3225 (USD 39), 10 kg INR 6450 (USD 77), 15 kg INR 9675 (USD 115), 20 kg INR 12900 (USD 153), 30 kg INR 19350 (USD 228). Non-cancellable and non-refundable once bought.",
+          "value": "Pre-booked extra baggage on domestic flights: 3 kg INR 2085 (USD 24), 5 kg INR 3475 (USD 39), 10 kg INR 6950 (USD 77), 15 kg INR 10425 (USD 115), 20 kg INR 13900 (USD 153), 30 kg INR 20850 (USD 228). Non-cancellable and non-refundable once bought.",
           "status": "official",
           "source_url": "https://corporate.spicejet.com/ExcessBaggage.aspx",
-          "verified_at": "2026-09-04",
-          "verified_by": "manual_official_source"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "INR prices changed since the 2026-09-04 capture (was 3 kg INR 1935 ... 30 kg INR 19350); USD prices unchanged."
         }
       }
     },

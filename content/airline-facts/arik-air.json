@@ -1,6 +1,6 @@
 {
   "slug": "arik-air",
-  "official_website": "http://www.arikair.com",
+  "official_website": "https://www.arikair.com",
   "modules": [
     {
       "id": "carryon",
@@ -74,18 +74,18 @@
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
         "phone_home_market"
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "http://www.arikair.com/baggage",
-          "notes": "Arik Air official customer support line.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "Call Centre: 0700003592745 (FLYARIK) or +234 201 889 1728; email callcentre@arikair.com.",
+          "status": "official",
+          "source_url": "https://www.arikair.com/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "From Arik Air's homepage; the capture keyed as checked baggage was the homepage and carried no baggage rules."
         }
       }
     }

@@ -1,74 +1,55 @@
 {
   "slug": "winair",
-  "official_website": "http://www.fly-winair.sx",
+  "official_website": "https://www.winair.sx",
   "modules": [
     {
       "id": "carryon",
       "title": "Carry-on",
+      "lede": "Carry-on allowance varies with the fare purchased; some fares include no carry-on or checked baggage.",
       "required": [
-        "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "personal_item",
+        "carryon_weight"
       ],
       "fields": {
-        "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "http://www.fly-winair.sx/baggage",
-          "notes": "Winair cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "personal_item": {
+          "value": "Each adult or child passenger may bring one personal item weighing up to 3kg / 7lbs; it must fit under the seat in front of you.",
+          "status": "official",
+          "source_url": "https://www.winair.sx/info/cabin-luggage-1",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "http://www.fly-winair.sx/baggage",
-          "notes": "Winair Economy Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
-        },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "http://www.fly-winair.sx/baggage",
-          "notes": "Winair Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "carryon_weight": {
+          "value": "Where the fare includes a carry-on: one carry-on bag up to 6kg / 13lbs, in addition to the personal item. Where it does not, carry-on bags must be checked in at the airport and fees apply. An additional $50 fee applies if your allowance is exceeded.",
+          "status": "official",
+          "source_url": "https://www.winair.sx/info/cabin-luggage-1",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "The cabin-bag size figures on this page did not survive capture, so no dimensions are published."
         }
       }
     },
     {
       "id": "baggage",
       "title": "Checked baggage",
+      "lede": "All charges are one way. These rules apply to WINAIR-operated flights.",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "size_weight",
+        "fees_by_fare"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "http://www.fly-winair.sx/baggage",
-          "notes": "Winair Economy Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "size_weight": {
+          "value": "Max weight 50 lbs / 23 kg and max dimension (L+W+H) 62 inches / 157cm per bag. Infants are allowed one piece at 10 kg. Bags between 23 kg and 32 kg may be accepted on space availability only, for an overweight charge.",
+          "status": "official",
+          "source_url": "https://www.winair.sx/info/check-in-baggage-2",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.fly-winair.sx/baggage",
-          "notes": "Winair Business Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
-        },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.fly-winair.sx/baggage",
-          "notes": "Winair First Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "fees_by_fare": {
+          "value": "Saver or Lite fare families (bags of 23 kg or less), online / airport: flights to/from SAB/EUX and between AUA-CUR and BON-CUR, 1st bag $15 / $25, 2nd $45 / $55, 3rd $95 / $105; other flights, 1st bag $30 / $40, 2nd $60 / $70, 3rd $110 / $120. Prime or Value fare families include the 1st bag and pay the same 2nd- and 3rd-bag fees.",
+          "status": "official",
+          "source_url": "https://www.winair.sx/info/check-in-baggage-2",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },

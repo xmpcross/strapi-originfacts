@@ -27,11 +27,12 @@
           "verified_by": "manual_official_source"
         },
         "personal_item": {
-          "value": "One personal effect (handbag, camera, umbrella or similar) small enough to stow under the seat, in addition to the carry-on bag.",
+          "value": "One personal effect (such as a handbag, camera or umbrella) in addition to the carry-on bag, stowed under the seat in front of you. From October 1, 2026 the personal item's size is 40cm x 30cm x 20cm.",
           "status": "official",
           "source_url": "https://www.airdo.jp/en/departure/baggage/carry-on-baggage",
-          "verified_at": "2026-09-04",
-          "verified_by": "manual_official_source"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Updated 2026-10-05: AIRDO's page now gives a personal-item size of 40cm x 30cm x 20cm, in effect from October 1, 2026; the 2026-09-04 capture gave no size."
         }
       }
     },

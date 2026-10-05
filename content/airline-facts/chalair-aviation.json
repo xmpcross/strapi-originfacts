@@ -75,6 +75,31 @@
           "verified_by": "manual_official_source"
         }
       }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "phone_home_market",
+        "conditions_of_carriage_url"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "Booking service: 0 892 700 499 (charged at 0.40€/min plus the cost of the call).",
+          "status": "official",
+          "source_url": "https://en.chalair.fr/bagages",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://www.chalair.fr/conditions-generales-de-transport",
+          "status": "official",
+          "source_url": "https://en.chalair.fr/bagages",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Linked from Chalair's baggage page as the general conditions of carriage."
+        }
+      }
     }
   ]
 }

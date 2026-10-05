@@ -77,6 +77,47 @@
       }
     },
     {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "lede": "Air Corsica's conditions of carriage refer cancellations, long delays and denied boarding to EU Regulation 261/2004.",
+      "required": [
+        "cancellation",
+        "delay",
+        "refund"
+      ],
+      "fields": {
+        "cancellation": {
+          "value": "If your flight is cancelled, Air Corsica provides immediate assistance and compensation under Regulation (EC) No 261/2004, unless the cancellation is due to extraordinary circumstances.",
+          "status": "official",
+          "source_url": "https://www.aircorsica.com/flights/conditions-carriage-passengers.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "delay": {
+          "value": "For a significant delay against the departure time on your ticket, Air Corsica provides immediate assistance under Regulation (EC) No 261/2004, unless due to extraordinary circumstances. Its conditions state that no compensation is payable for a delay.",
+          "status": "official",
+          "source_url": "https://www.aircorsica.com/flights/conditions-carriage-passengers.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Quoted from Article 12.2(c) of the carrier's conditions of carriage; this is the carrier's own statement, not a statement of EU law."
+        },
+        "refund": {
+          "value": "After a cancellation, significant delay or denied boarding within the meaning of Regulation (EC) No 261/2004, the refund is made within seven days, at the ticket price, for the legs of the journey not flown.",
+          "status": "official",
+          "source_url": "https://www.aircorsica.com/flights/conditions-carriage-passengers.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "denied_boarding": {
+          "value": "If you are refused boarding against your will, Air Corsica compensates you under article 7 of Regulation No. 261/2004 and offers assistance under articles 8 and 9.",
+          "status": "official",
+          "source_url": "https://www.aircorsica.com/flights/conditions-carriage-passengers.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
       "id": "checkin",
       "title": "Check-in and airport cutoffs",
       "required": [

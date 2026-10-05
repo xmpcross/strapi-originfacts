@@ -7,33 +7,23 @@
       "title": "Carry-on",
       "required": [
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_weight"
       ],
+      "lede": "Each fare-paying customer may take one cabin bag unless the operator directs it to be stowed in the hold.",
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "https://www.intercaribbean.com/baggage",
-          "notes": "InterCaribbean Airways cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "One piece not exceeding a depth of 9 inches, height of 14 inches and length of 16 inches.",
+          "status": "official",
+          "source_url": "https://www.intercaribbean.com/contract-of-carriage.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "https://www.intercaribbean.com/baggage",
-          "notes": "InterCaribbean Airways Economy Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
-        },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "https://www.intercaribbean.com/baggage",
-          "notes": "InterCaribbean Airways Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "carryon_weight": {
+          "value": "Total weight not exceeding 10 pounds.",
+          "status": "official",
+          "source_url": "https://www.intercaribbean.com/contract-of-carriage.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -41,51 +31,104 @@
       "id": "baggage",
       "title": "Checked baggage",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "size_weight"
+      ],
+      "lede": "The free checked allowance is the one posted at intercaribbean.com; excess baggage travels subject to space and may not go on your flight.",
+      "fields": {
+        "size_weight": {
+          "value": "Any bag must not exceed 157 cm in total linear dimensions (length plus width plus height) or 70 pounds in weight; bags over either limit are not accepted at check-in.",
+          "status": "official",
+          "source_url": "https://www.intercaribbean.com/contract-of-carriage.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "excess_limit": {
+          "value": "Total baggage over 220 pounds is not accepted as excess baggage and must be sent as cargo.",
+          "status": "official",
+          "source_url": "https://www.intercaribbean.com/contract-of-carriage.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "required": [
+        "cheapest_fare"
+      ],
+      "lede": "interCaribbean sells Saver, Best and Flex fares; Saver is the lowest price.",
+      "fields": {
+        "cheapest_fare": {
+          "value": "Saver Fare: non-refundable and valid for 90 days. 7 day advance purchase and a round trip purchase are required. Changes cost $50 (international) or $20 (domestic) plus any fare difference. A no-show forfeits 100% of the fare, taxes and surcharges. Seat selection is free; the 2nd bag cannot be prepaid.",
+          "status": "official",
+          "source_url": "https://www.intercaribbean.com/schedules-and-fares/fares.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "required": [
+        "delays"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "https://www.intercaribbean.com/baggage",
-          "notes": "InterCaribbean Airways Economy Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "delays": {
+          "value": "interCaribbean's contract of carriage says it accepts no liability for costs or losses from flight delays but will use every effort to carry you and your allowed baggage on its next available flight. It is not liable for any costs or losses when flights are delayed, rescheduled or cancelled due to weather.",
+          "status": "official",
+          "source_url": "https://www.intercaribbean.com/contract-of-carriage.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "online_checkin",
+        "counters_open",
+        "checkin_close"
+      ],
+      "fields": {
+        "online_checkin": {
+          "value": "Online check-in opens 36 hours before scheduled departure (24 hours for flights departing San Juan, SJU).",
+          "status": "official",
+          "source_url": "https://www.intercaribbean.com/travel-information/check-in.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.intercaribbean.com/baggage",
-          "notes": "InterCaribbean Airways Business Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "counters_open": {
+          "value": "Airport check-in counters open 2.5 hours before scheduled departure.",
+          "status": "official",
+          "source_url": "https://www.intercaribbean.com/travel-information/check-in.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.intercaribbean.com/baggage",
-          "notes": "InterCaribbean Airways First Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "checkin_close": {
+          "value": "Check-in and baggage acceptance close 60 minutes before departure for international flights and 30 minutes before for domestic flights within the Turks and Caicos Islands. Customers arriving later may be unable to travel.",
+          "status": "official",
+          "source_url": "https://www.intercaribbean.com/travel-information/check-in.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
-        "phone_home_market"
+        "conditions_of_carriage_url"
       ],
       "fields": {
-        "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "https://www.intercaribbean.com/baggage",
-          "notes": "InterCaribbean Airways official customer support line.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "conditions_of_carriage_url": {
+          "value": "https://www.intercaribbean.com/contract-of-carriage.html",
+          "status": "official",
+          "source_url": "https://www.intercaribbean.com/contract-of-carriage.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

@@ -1,0 +1,23 @@
+{
+  "slug": "uganda-airlines",
+  "official_website": "https://ugandairlines.com",
+  "modules": [
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "lede": "All transportation of passengers and bags by Uganda Airlines is subject to its Conditions of Carriage, published fare rules and its filed tariffs.",
+      "required": [
+        "conditions_of_carriage_url"
+      ],
+      "fields": {
+        "conditions_of_carriage_url": {
+          "value": "https://ugandairlines.com/conditions-of-carriage",
+          "status": "official",
+          "source_url": "https://ugandairlines.com/conditions-of-carriage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

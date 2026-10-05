@@ -73,19 +73,51 @@
       }
     },
     {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "lede": "Amakusa Airlines has one self-service check-in kiosk each at Amakusa, Fukuoka and Kumamoto airports.",
+      "required": [
+        "counter_opens",
+        "kiosk_cutoff"
+      ],
+      "fields": {
+        "counter_opens": {
+          "value": "Staffed check-in counters accept check-in from 1 hour before departure.",
+          "status": "official",
+          "source_url": "https://www.amx.co.jp/web_rsv/checkin.php",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "kiosk_cutoff": {
+          "value": "Kiosk check-in closes 20 minutes before departure, and stays at 20 minutes before the scheduled time even when the flight is delayed.",
+          "status": "official",
+          "source_url": "https://www.amx.co.jp/web_rsv/checkin.php",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "kiosk_hours": {
+          "value": "Kiosks check in same-day flights departing that airport: 7am to 7pm at Amakusa and Fukuoka airports, 7am to 3pm at Kumamoto airport. If you are checking bags, take your boarding pass to the Amakusa Airlines counter.",
+          "status": "official",
+          "source_url": "https://www.amx.co.jp/web_rsv/checkin.php",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Japanese-language page (it carries an automatic-translation notice); translated here."
+        }
+      }
+    },
+    {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
         "phone_home_market"
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "https://www.amx.co.jp/baggage",
-          "notes": "Amakusa Airlines official customer support line.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "Amakusa Airlines Reservation Center: 0969-34-1515 (9:00 to 18:00).",
+          "status": "official",
+          "source_url": "https://www.amx.co.jp/web_rsv/checkin.php",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

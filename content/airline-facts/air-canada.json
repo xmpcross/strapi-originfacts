@@ -101,9 +101,9 @@
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
-        "phone_home_market"
+        "conditions_of_carriage_url"
       ],
       "fields": {
         "phone_home_market": {
@@ -113,6 +113,13 @@
           "notes": "Air Canada official customer support line.",
           "verified_at": "2026-09-04",
           "verified_by": "automated_provenance"
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://www.aircanada.com/ca/en/aco/home/legal/conditions-carriage-tariffs.html",
+          "status": "official",
+          "source_url": "https://www.aircanada.com/ca/en/aco/home/legal/conditions-carriage-tariffs.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

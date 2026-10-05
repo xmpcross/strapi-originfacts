@@ -35,6 +35,24 @@
       }
     },
     {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "Whether a checked bag is included depends on your fare; some fares include hand baggage only.",
+      "required": [
+        "included_allowance"
+      ],
+      "fields": {
+        "included_allowance": {
+          "value": "Fares that include checked baggage allow 1 checked bag of up to 23 kg or up to 32 kg, depending on the fare. Fares with hand baggage only include no checked bag.",
+          "status": "official",
+          "source_url": "https://www.airdolomiti.de/online-check-in-anleitung",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Translated from the German check-in guide; the page does not say which fares carry 23 kg and which 32 kg."
+        }
+      }
+    },
+    {
       "id": "rights",
       "title": "If your flight is delayed or cancelled",
       "required": [

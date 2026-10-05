@@ -1,0 +1,121 @@
+{
+  "slug": "cinnamon-air",
+  "official_website": "https://www.cinnamonair.com",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "Given the size of the aircraft, carry-on baggage is handed to the crew before or after boarding.",
+      "required": [
+        "carryon_weight"
+      ],
+      "fields": {
+        "carryon_weight": {
+          "value": "One carry-on bag with a maximum weight of 5kg.",
+          "status": "official",
+          "source_url": "https://www.cinnamonair.com/terms-conditions",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "No carry-on dimensions or personal-item allowance stated."
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "Because of weight restrictions on the aircraft, bags may be sent on a later flight or by secured ground transport.",
+      "required": [
+        "allowance",
+        "size_limit",
+        "excess_fee"
+      ],
+      "fields": {
+        "allowance": {
+          "value": "Scheduled flights: 23kg checked baggage per passenger; no single piece may exceed 23 kg.",
+          "status": "official",
+          "source_url": "https://www.cinnamonair.com/terms-conditions",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "size_limit": {
+          "value": "Bags must not exceed Length 120 cm, Width 68 cm, Height 36 cm.",
+          "status": "official",
+          "source_url": "https://www.cinnamonair.com/terms-conditions",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "excess_fee": {
+          "value": "Excess baggage is charged at US$ 15.00 per kg over the 23 kg allowance, subject to space.",
+          "status": "official",
+          "source_url": "https://www.cinnamonair.com/terms-conditions",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "required": [
+        "schedule_changes",
+        "refunds"
+      ],
+      "fields": {
+        "schedule_changes": {
+          "value": "Cinnamon Air makes no guarantee about published timings and says it is not liable for delays, schedule changes or flight cancellations, though it will make all endeavours to carry you as close as possible to the scheduled times.",
+          "status": "official",
+          "source_url": "https://www.cinnamonair.com/terms-conditions",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "refunds": {
+          "value": "All tickets are non-refundable. If you fail to check in on time or miss the departure, the fare is not refunded.",
+          "status": "official",
+          "source_url": "https://www.cinnamonair.com/terms-conditions",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "checkin_time"
+      ],
+      "fields": {
+        "checkin_time": {
+          "value": "Check-in is 45 minutes before scheduled departure; Cinnamon Air may refuse check-in when less than thirty (30) minutes remain before departure.",
+          "status": "official",
+          "source_url": "https://www.cinnamonair.com/terms-conditions",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "phone_home_market",
+        "conditions_of_carriage_url"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "+94 11 4 313 440 or +94 11 2 440 738; email sales@cinnamonair.com.",
+          "status": "official",
+          "source_url": "https://www.cinnamonair.com/terms-conditions",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://www.cinnamonair.com/terms-conditions",
+          "status": "official",
+          "source_url": "https://www.cinnamonair.com/terms-conditions",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

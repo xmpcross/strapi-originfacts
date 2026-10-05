@@ -6,7 +6,8 @@
       "id": "contact",
       "title": "Contact and the small print",
       "required": [
-        "conditions_of_carriage_url"
+        "conditions_of_carriage_url",
+        "phone_home_market"
       ],
       "fields": {
         "conditions_of_carriage_url": {
@@ -14,6 +15,13 @@
           "status": "official",
           "source_url": "https://www.aerolineas.com.ar/legales?tab=condicionestransporte",
           "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "phone_home_market": {
+          "value": "Contact Center +54 (11) 5199 3555, Monday to Friday 8 to 20 hs; Saturday, Sunday and holidays 8 to 14 hs.",
+          "status": "official",
+          "source_url": "https://www.aerolineas.com.ar/legales?tab=condicionestransporte",
+          "verified_at": "2026-10-05",
           "verified_by": "manual_official_source"
         }
       }

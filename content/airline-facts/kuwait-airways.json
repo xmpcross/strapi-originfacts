@@ -79,10 +79,42 @@
       }
     },
     {
-      "id": "contact",
-      "title": "Contact and customer support",
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "lede": "Kuwait Airways' conditions of carriage set out what it offers when it cancels or disrupts a flight, subject to mandatory applicable law.",
       "required": [
-        "phone_home_market"
+        "rebooking",
+        "refund"
+      ],
+      "fields": {
+        "rebooking": {
+          "value": "If Kuwait Airways cancels a flight, does not operate it reasonably to schedule or causes you to miss a confirmed connection, it may carry you without additional fare on another available Kuwait Airways service, or you can take an involuntary refund of the unused portion. Rerouting on another carrier is at its sole discretion and is not an automatic entitlement, except where mandatory law requires it.",
+          "status": "official",
+          "source_url": "https://www.kuwaitairways.com/en/terms/conditions-of-carriage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "refund": {
+          "value": "Involuntary refund: if no part of the ticket was used, the fare paid less any applicable service charges or cancellation fees; if part was used, the higher of the one-way fare from the point of interruption to the destination or next stopover, or the difference between the fare paid and the fare for the travel used.",
+          "status": "official",
+          "source_url": "https://www.kuwaitairways.com/en/terms/conditions-of-carriage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "us_flights": {
+          "value": "For flights to and from the United States, if Kuwait Airways cancels or significantly changes your flight and you do not accept an alternative, it provides automatic refunds as required under 14 CFR Part 260.",
+          "status": "official",
+          "source_url": "https://www.kuwaitairways.com/en/terms/conditions-of-carriage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "conditions_of_carriage_url"
       ],
       "fields": {
         "phone_home_market": {
@@ -92,6 +124,13 @@
           "notes": "Kuwait Airways official customer support line.",
           "verified_at": "2026-09-04",
           "verified_by": "automated_provenance"
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://www.kuwaitairways.com/en/terms/conditions-of-carriage",
+          "status": "official",
+          "source_url": "https://www.kuwaitairways.com/en/terms/conditions-of-carriage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

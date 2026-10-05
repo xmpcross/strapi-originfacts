@@ -5,6 +5,7 @@ import {
   listAirlines,
   listAirports,
   listDestinations,
+  listRoutes,
   fetchRouteCoverage,
 } from '@/lib/strapi';
 import { carrierOperatesRoute } from '@/lib/route-carriers';
@@ -14,6 +15,7 @@ import { AIRLINES_INDEXABLE, AIRPORTS_INDEXABLE, airportIsPublished } from '@/li
 import { airportIsIndexable } from '@/lib/airport-index-gate';
 import { airlineGuideIsPublished, airlineIsIndexable } from '@/lib/airline-tier';
 import { airportPath } from '@/lib/airport-slugs';
+import removedPages from '@/data/removed-pages.json';
 import { breadcrumbJsonLd } from '@/lib/jsonld';
 import { JsonLd } from '@/components/SeoBlocks';
 
@@ -37,11 +39,12 @@ export const metadata: Metadata = {
 };
 
 export default async function SitemapPage() {
-  const [articlesRes, destinations, allAirlines, allAirports, coverage] = await Promise.all([
+  const [articlesRes, destinations, allAirlines, allAirports, allRoutes, coverage] = await Promise.all([
     listArticleIndex().catch(() => ({ data: [], meta: null as never })),
     listDestinations().catch(() => []),
     listAirlines().catch(() => []),
     listAirports().catch(() => []),
+    listRoutes().catch(() => []),
     fetchRouteCoverage((r, c) => carrierOperatesRoute(r, c.slug)).catch(() => ({ originIatas: new Set<string>(), carrierSlugs: new Set<string>() })),
   ]);
 
@@ -62,6 +65,12 @@ export default async function SitemapPage() {
   const airports = allAirports
     .filter((a) => a.iata && (AIRPORTS_INDEXABLE || airportIsPublished(a.iata)) && airportIsIndexable(a, coverage.originIatas.has(a.iata.toLowerCase())))
     .sort((a, b) => a.iata.localeCompare(b.iata));
+
+  // Same set as app/sitemap.ts: every route in the CMS except retired ones.
+  const retiredRoutes = new Set(removedPages.routes);
+  const routes = allRoutes
+    .filter((r) => r.slug && r.origin?.iata && r.destination?.iata && !retiredRoutes.has(r.slug))
+    .sort((a, b) => a.slug.localeCompare(b.slug));
 
   const linkClass = 'text-primary-emphasis hover:text-primary-highlight hover:underline';
   const sectionTitle = 'editorial-h text-2xl font-bold text-forest-900';
@@ -201,6 +210,28 @@ export default async function SitemapPage() {
               <li key={a.id}>
                 <Link href={airportPath(a, allAirports)} className={linkClass}>
                   {a.iata.toUpperCase()} — {a.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {routes.length > 0 && (
+        <section className="mt-16">
+          <h2 className={sectionTitle}>
+            Flight routes <span className="text-base font-normal text-forest-900/60">({routes.length})</span>
+          </h2>
+          <p className="mt-2 max-w-3xl text-sm text-forest-900/65">
+            Every route page, with fares, flights and airport facts. Browse them by origin in the{' '}
+            <Link href="/flight-routes" className={linkClass}>flight routes directory</Link>.
+          </p>
+          <ul className="mt-4 grid gap-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
+            {routes.map((r) => (
+              <li key={r.slug}>
+                <Link href={`/flight-routes/${r.slug}`} className={linkClass}>
+                  {r.origin!.iata.toUpperCase()} → {r.destination!.iata.toUpperCase()} — {r.origin!.city || r.origin!.name} to{' '}
+                  {r.destination!.city || r.destination!.name}
                 </Link>
               </li>
             ))}

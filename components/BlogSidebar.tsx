@@ -238,7 +238,7 @@ function SidebarPostRow({ article }: { article: StrapiArticle }) {
         )}
       </div>
       <div className="min-w-0">
-        <h4 className="line-clamp-2 text-sm font-bold leading-snug text-forest-950 transition group-hover:text-primary-emphasis">
+        <h4 className="line-clamp-2 text-[14px] font-normal leading-snug text-forest-950 transition group-hover:text-primary-emphasis">
           {article.title}
         </h4>
         {dateStr && (

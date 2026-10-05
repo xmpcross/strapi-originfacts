@@ -192,6 +192,39 @@
           "verified_by": "manual_official_source"
         }
       }
+    },
+    {
+      "id": "cabins",
+      "title": "Cabins and seating",
+      "lede": "Choose a seat by location and legroom, or accept a free seat assignment at check-in. Use your flight seat map because options vary with the aircraft.",
+      "required": [
+        "seat_options",
+        "reserved_or_random",
+        "family_seating"
+      ],
+      "fields": {
+        "seat_options": {
+          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
+          "status": "official",
+          "source_url": "http://www.africanexpress.net",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "reserved_or_random": {
+          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
+          "status": "official",
+          "source_url": "http://www.africanexpress.net",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "family_seating": {
+          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
+          "status": "official",
+          "source_url": "http://www.africanexpress.net",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

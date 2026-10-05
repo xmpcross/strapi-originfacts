@@ -15,6 +15,7 @@ import {
   PENDING_COPY,
   type DerivedModule,
 } from '@/components/airline-tier1/AirlineTier1';
+import CabinBagGuide from './CabinBagGuide';
 import SectionNav, { type NavItem, type NavStatus } from './SectionNav';
 import {
   GLANCE_TILES,
@@ -23,6 +24,7 @@ import {
   fieldLabel,
   glanceGap,
   glanceHasValues,
+  cabinBagSides,
   glanceValues,
   loadModules,
   publishedField,
@@ -474,6 +476,7 @@ function GlanceTileView({ tile, modules }: { tile: (typeof GLANCE_TILES)[number]
           </div>
         ))}
       </dl>
+      {tile.id === 'carryon-size' && <BagGuideFor value={values[0].field.value} size="sm" />}
       <div className="mt-auto flex flex-wrap items-center justify-between gap-2 pt-3">
         {shared ? <Provenance field={values[0].field} compact /> : <span />}
         <a href={`#${tile.section}`} className="text-xs font-medium text-primary-emphasis hover:underline">
@@ -721,11 +724,25 @@ function FactCard({ f, showSource }: { f: ResolvedField; showSource: boolean }) 
       <dd className="mt-1.5 text-[15px] font-semibold leading-6 text-forest-950 [overflow-wrap:anywhere]">
         <FactValue value={f.field.value!} />
       </dd>
+      {(f.key === 'carryon_bag_dimensions' || f.key === 'dimensions_combined') && (
+        <BagGuideFor value={f.field.value} size="md" />
+      )}
       {showSource && (
         <dd className="mt-2">
           <Provenance field={f.field} compact />
         </dd>
       )}
+    </div>
+  );
+}
+
+/** The cabin bag drawing, only when the wording holds one clear size in cm. */
+function BagGuideFor({ value, size }: { value: string | null | undefined; size: 'sm' | 'md' }) {
+  const sides = value ? cabinBagSides(value) : null;
+  if (!sides) return null;
+  return (
+    <div className="mt-4 flex justify-center">
+      <CabinBagGuide sides={sides} size={size} />
     </div>
   );
 }

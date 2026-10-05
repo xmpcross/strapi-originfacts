@@ -8,6 +8,18 @@ import SectionNav, { type NavItem } from './SectionNav';
 import { displayUrl, type Faq } from './faqs';
 import { routeCoverage, type AirportCityPhoto } from '@/lib/airport-v2';
 import { formatCeasedOn } from '@/lib/airline-status';
+import {
+  compassWords,
+  formatElevation,
+  formatKm,
+  formatLength,
+  formatOpened,
+  formatPassengers,
+  hostOf,
+  metres,
+  wikidataUrl,
+  type AirportEnrichmentView,
+} from '@/lib/airport-enrichment';
 
 /**
  * Airport page, v2 layout — a sibling of the airline v2 page
@@ -15,9 +27,10 @@ import { formatCeasedOn } from '@/lib/airline-status';
  * lib/airport-template-v2.ts; every other airport keeps the existing layout.
  *
  * Data is not fetched or derived here. The page route computes everything once
- * (airport record, airport-info contact fields, route records, official links,
- * Open-Meteo weather, nearest airports) and passes it in; this component only
- * decides how to show it.
+ * (airport record, OurAirports/Wikidata/Travelpayouts/NASA POWER enrichment
+ * from data/airport-enrichment, route records, official links, Open-Meteo
+ * weather, nearest airports) and passes it in; this component only decides
+ * how to show it. Enrichment sections render only when their data exists.
  *
  * Rules the layout follows:
  *   - every figure names its source, and dataset figures carry their date;
@@ -61,20 +74,18 @@ export type AirportGuideV2Props = {
   routeCount: { tracked: number; shown: number };
   countryCount: number;
   cityPhoto: AirportCityPhoto | null;
-  /** Contact fields from the airport-info dataset. */
+  /** Fallback identity fields from OurAirports, used when the record lacks them. */
   info: {
     icao?: string | null;
     city?: string | null;
     country?: string | null;
-    address?: string | null;
-    phone?: string | null;
-    website?: string | null;
-    hasCoordinates?: boolean;
   };
-  officialSite: { url: string; source: 'wikidata' | 'airport-info' } | null;
+  officialSite: { url: string; source: 'wikidata' | 'ourairports' } | null;
   wikipediaUrl?: string | null;
   wikidataUrl?: string | null;
-  coordinates: { lat: number; lon: number; source: 'record' | 'airport-info' } | null;
+  coordinates: { lat: number; lon: number; source: 'record' | 'ourairports' } | null;
+  /** Dataset sections (lib/airport-enrichment.ts buildEnrichmentView). */
+  enrichment: AirportEnrichmentView;
   mapHref: string | null;
   weather: AirportWeather | null;
   nearby: AirportV2Nearby[];
@@ -118,7 +129,14 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
   const routesDate = routeVintage(routes);
   const destinations = uniqueDestinations(routes);
   const coordText = coordinates ? formatCoordinates(coordinates.lat, coordinates.lon) : null;
-  const hasContact = Boolean(info.phone || officialSite);
+  const e = p.enrichment;
+  const src = e.sources;
+  const oaDate = src.ourairports ? formatDate(src.ourairports.retrieved) : null;
+  const wdDate = src.wikidata ? formatDate(src.wikidata.retrieved) : null;
+  const faresDate = e.fares ? formatDate(e.fares.retrieved) : null;
+  const hasFacts = Boolean(e.typeLabel || e.elevationFt != null || e.opened || e.operators.length || e.owners.length || e.patronage || e.nearestScheduled.length);
+  const hasFares = Boolean(e.fares && e.fares.destinationCount > 0);
+  const officialSourceName = officialSite?.source === 'wikidata' ? 'Wikidata' : 'OurAirports';
   const hasRoutes = routes.length > 0;
   const officialHost = officialSite ? displayUrl(officialSite.url) : null;
   const coverage = routeCoverage({ name, code, tracked: p.routeCount.tracked, shown: routes.length });
@@ -126,9 +144,15 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
 
   const navItems: NavItem[] = [
     { id: 'details', label: 'Airport details', status: 'data' },
-    ...(airlines.length ? [{ id: 'airlines', label: 'Airlines', status: 'data' as const }] : []),
+    ...(hasFacts ? [{ id: 'facts', label: 'Airport facts', status: 'data' as const }] : []),
+    ...(e.runways.length ? [{ id: 'runways', label: 'Runways', status: 'data' as const }] : []),
+    ...(hasFares ? [{ id: 'destinations', label: 'Airlines & destinations', status: 'data' as const }] : []),
+    ...(airlines.length ? [{ id: 'airlines', label: 'Airlines (route records)', status: 'data' as const }] : []),
     { id: 'routes', label: 'Routes', status: hasRoutes ? ('data' as const) : ('pending' as const) },
+    ...(e.hubs.length ? [{ id: 'hubs', label: 'Hub airlines', status: 'data' as const }] : []),
+    ...(e.cityCentre ? [{ id: 'getting-there', label: 'Getting there', status: 'data' as const }] : []),
     { id: 'planning', label: 'Terminals & transport', status: 'pending' },
+    ...(e.climate ? [{ id: 'climate', label: 'Climate', status: 'data' as const }] : []),
     ...(nearby.length ? [{ id: 'nearby', label: 'Nearby airports', status: 'data' as const }] : []),
     ...(faqs.length ? [{ id: 'faq', label: 'FAQ', status: 'none' as const }] : []),
     { id: 'sources', label: 'Sources', status: 'none' },
@@ -187,9 +211,8 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                     </span>
                   </h1>
                   <p className="mt-3 max-w-2xl text-base leading-7 text-forest-900/80">
-                    Codes, location and contact details for {name}
-                    {hasRoutes ? ', the airlines and routes in Originfacts’ route records,' : ''} and where to check
-                    terminal and transport details. Each figure shows where it came from.
+                    {introTopics(e, hasRoutes, Boolean(officialSite))} for {name}, and where to check terminal and transport
+                    details. Each figure shows where it came from.
                   </p>
                 </div>
               </div>
@@ -265,6 +288,10 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
               Airport record{recordDate ? `, updated ${recordDate}` : ''}
             </span>
             {hasRoutes && <span>Route records{routesDate ? `, updated ${routesDate}` : ''}</span>}
+            {(e.runways.length > 0 || hasFacts) && oaDate && <span>OurAirports, {oaDate}</span>}
+            {e.qid && wdDate && <span>Wikidata, {wdDate}</span>}
+            {hasFares && faresDate && <span>Travelpayouts fares, {faresDate}</span>}
+            {e.climate && <span>NASA POWER climate, {e.climate.period}</span>}
             <span>Terminals and transport not yet verified</span>
             <a href="#sources" className="text-primary-emphasis underline-offset-2 hover:underline">
               Where this comes from
@@ -279,10 +306,14 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
           {name} at a glance
         </h2>
         <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {(info.address || coordText) && (
-            <Tile title="Location" source={info.address ? 'airport-info dataset' : 'Originfacts airport record'} section="details">
-              {info.address && <p className="text-[15px] font-semibold leading-6 text-forest-950">{info.address}</p>}
-              {coordText && <p className={info.address ? 'text-sm text-forest-900/75' : 'text-[15px] font-semibold text-forest-950'}>{coordText}</p>}
+          {coordText && (
+            <Tile title="Location" source={coordinates?.source === 'ourairports' ? 'OurAirports' : 'Originfacts airport record'} section="details">
+              <p className="text-[15px] font-semibold text-forest-950">{coordText}</p>
+              {e.cityCentre && (
+                <p className="text-sm text-forest-900/75">
+                  {formatKm(e.cityCentre.km)} {compassWords(e.cityCentre.compass)} of {e.cityCentre.name} centre (straight line)
+                </p>
+              )}
               {p.mapHref && (
                 <ExternalLink href={p.mapHref} className="text-sm" follow>
                   Open in Google Maps
@@ -291,18 +322,45 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
             </Tile>
           )}
 
-          {hasContact && (
-            <Tile title="Contact" source={contactSource(info.phone, officialSite?.source)} section="details">
-              {info.phone && (
-                <a href={telHref(info.phone)} className="block text-[15px] font-semibold text-primary-emphasis underline-offset-2 hover:underline">
-                  {info.phone}
-                </a>
-              )}
-              {officialSite && (
-                <ExternalLink href={officialSite.url} className="block text-[15px] font-semibold [overflow-wrap:anywhere]">
-                  {officialHost}
-                </ExternalLink>
-              )}
+          {officialSite && (
+            <Tile title="Official website" source={officialSourceName} section="details">
+              <ExternalLink href={officialSite.url} className="block text-[15px] font-semibold [overflow-wrap:anywhere]">
+                {officialHost}
+              </ExternalLink>
+            </Tile>
+          )}
+
+          {e.runways.length > 0 && (
+            <Tile title="Runways" source={`OurAirports${oaDate ? ` · ${oaDate}` : ''}`} section="runways" linkText="See runways">
+              <p className="text-[15px] font-semibold leading-6 text-forest-950">
+                {e.runways.length === 1 ? '1 runway' : `${e.runways.length} runways`}
+              </p>
+              <p className="text-sm leading-6 text-forest-900/80">{runwayCaption(e.runways)}</p>
+            </Tile>
+          )}
+
+          {hasFares && e.fares && (
+            <Tile title="Nonstop fares found" source={`Travelpayouts${faresDate ? ` · ${faresDate}` : ''}`} section="destinations" linkText="See destinations">
+              <p className="text-[15px] font-semibold leading-6 text-forest-950">
+                {e.fares.destinationCount} {e.fares.destinationCount === 1 ? 'destination' : 'destinations'}
+                {e.fares.countryCount > 1 ? ` in ${e.fares.countryCount} countries` : ''}
+              </p>
+              <p className="text-sm leading-6 text-forest-900/80">
+                {e.fares.airlines.length} {e.fares.airlines.length === 1 ? 'airline' : 'airlines'} named on the fares
+              </p>
+              <p className="text-xs leading-5 text-forest-900/70">Fares travellers found, not a schedule.</p>
+            </Tile>
+          )}
+
+          {e.climate && (
+            <Tile title="Climate" source={`NASA POWER · ${e.climate.period}`} section="climate" linkText="See months">
+              <p className="text-[15px] font-semibold leading-6 text-forest-950">
+                {e.climate.summary.warmest.month}: avg high {Math.round(e.climate.summary.warmest.hi)}°C
+              </p>
+              <p className="text-sm leading-6 text-forest-900/80">
+                {e.climate.summary.coolest.month}: avg high {Math.round(e.climate.summary.coolest.hi)}°C, low{' '}
+                {Math.round(e.climate.summary.coolest.lo)}°C
+              </p>
             </Tile>
           )}
 
@@ -405,28 +463,32 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
             >
               <dl className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <Fact label="IATA code" value={code} />
-                <Fact label="ICAO code" value={icao} source={!airport.icao && info.icao ? 'airport-info' : undefined} />
-                <Fact label="City" value={city} source={!airport.city && info.city ? 'airport-info' : undefined} />
-                <Fact label="Country" value={country} source={!airport.country && info.country ? 'airport-info' : undefined} />
+                <Fact label="ICAO code" value={icao} source={!airport.icao && info.icao ? 'OurAirports' : undefined} />
+                <Fact label="City" value={city} source={!airport.city && info.city ? 'OurAirports' : undefined} />
+                <Fact label="Country" value={country} source={!airport.country && info.country ? 'OurAirports' : undefined} />
                 <Fact label="Region" value={airport.region} />
                 <Fact label="Time zone" value={airport.timezone} />
-                <Fact label="Coordinates" value={coordText} source={coordinates?.source === 'airport-info' ? 'airport-info' : undefined} />
-                <Fact label="Address" value={info.address} source="airport-info" />
-                <Fact label="Phone" value={info.phone} source="airport-info" href={info.phone ? telHref(info.phone) : undefined} />
+                <Fact label="Coordinates" value={coordText} source={coordinates?.source === 'ourairports' ? 'OurAirports' : undefined} />
                 <Fact
                   label="Official website"
                   value={officialHost}
-                  source={officialSite?.source === 'wikidata' ? 'Wikidata' : officialSite ? 'airport-info' : undefined}
+                  source={officialSite ? officialSourceName : undefined}
                   href={officialSite?.url}
                   external
                 />
               </dl>
               <p className="text-sm text-forest-900/75">
-                Codes, location and time zone come from the Originfacts airport record
+                Codes, region and time zone come from the Originfacts airport record
                 {recordDate ? ` (last updated ${recordDate})` : ''}. Fields marked otherwise come from the dataset named
                 on them. None are verified by hand against {name}’s own pages.
               </p>
             </Shell>
+
+            {hasFacts && <FactsSection name={name} code={code} e={e} oaDate={oaDate} wdDate={wdDate} />}
+
+            {e.runways.length > 0 && <RunwaysSection code={code} e={e} oaDate={oaDate} />}
+
+            {hasFares && e.fares && <DestinationsSection code={code} name={name} fares={e.fares} date={faresDate} hasRoutes={hasRoutes} />}
 
             {/* ------------------------------------------------ airlines */}
             {airlines.length > 0 && (
@@ -523,11 +585,16 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
             ) : (
               <Shell id="routes" title={`Routes from ${code}`} tone="muted" badge={<Badge tone="pending">No route records yet</Badge>}>
                 <p className="text-[15px] leading-7 text-forest-900/80">
-                  Originfacts does not track any routes from {code} yet, so no airlines or destinations are listed here.
-                  Check current schedules with the airlines or {officialSite ? 'the airport’s own site' : 'the airport'}.
+                  Originfacts does not track any routes from {code} yet, so no route records are listed here.
+                  {hasFares ? ' Destinations with nonstop fares are listed under Airlines and destinations above.' : ''} Check
+                  current schedules with the airlines or {officialSite ? 'the airport’s own site' : 'the airport'}.
                 </p>
               </Shell>
             )}
+
+            {e.hubs.length > 0 && <HubsSection code={code} hubs={e.hubs} qid={e.qid} date={wdDate} />}
+
+            {e.cityCentre && <GettingThereSection name={name} code={code} city={e.cityCentre} coordSource={coordinates?.source ?? 'record'} />}
 
             {/* ------------------------------------------------ planning (pending) */}
             <Shell
@@ -561,6 +628,8 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                 </ul>
               </div>
             </Shell>
+
+            {e.climate && <ClimateSection code={code} climate={e.climate} />}
 
             {/* ------------------------------------------------ nearby */}
             {nearby.length > 0 && (
@@ -635,18 +704,45 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                 <SourceRow what="Codes, location, time zone" date={recordDate}>
                   Originfacts airport record
                 </SourceRow>
-                {(info.address || info.phone || officialSite?.source === 'airport-info') && (
-                  <SourceRow what={[info.address && 'Address', info.phone && 'phone'].filter(Boolean).join(' and ') || 'Contact'} date={null}>
-                    airport-info dataset (third-party API)
-                  </SourceRow>
-                )}
                 {officialSite && (
-                  <SourceRow what="Official website" date={null}>
+                  <SourceRow what="Official website" date={officialSite.source === 'wikidata' ? wdDate : oaDate}>
                     {officialSite.source === 'wikidata' && p.wikidataUrl ? (
                       <ExternalLink href={p.wikidataUrl}>Wikidata record (official website property)</ExternalLink>
                     ) : (
-                      'airport-info dataset (third-party API)'
+                      <ExternalLink href="https://ourairports.com/data/">OurAirports</ExternalLink>
                     )}
+                  </SourceRow>
+                )}
+                {(e.runways.length > 0 || e.typeLabel || e.elevationFt != null || coordinates?.source === 'ourairports') && src.ourairports && (
+                  <SourceRow what={['Coordinates', e.runways.length ? 'runways' : null, e.typeLabel ? 'type' : null, e.elevationFt != null ? 'elevation' : null].filter(Boolean).join(', ')} date={oaDate}>
+                    <ExternalLink href="https://ourairports.com/data/">OurAirports</ExternalLink> — public domain
+                  </SourceRow>
+                )}
+                {e.qid && src.wikidata && (e.opened || e.operators.length || e.owners.length || e.patronage || e.hubs.length) && (
+                  <SourceRow what="Opening, operator, passengers, hubs" date={wdDate}>
+                    <ExternalLink href={wikidataUrl(e.qid)}>Wikidata item {e.qid}</ExternalLink> — CC0
+                  </SourceRow>
+                )}
+                {hasFares && (
+                  <SourceRow what="Nonstop destinations, airlines on fares" date={faresDate}>
+                    Travelpayouts Data API (Aviasales fare cache) — fares found, not a complete or live schedule
+                  </SourceRow>
+                )}
+                {e.climate && (
+                  <SourceRow what="Climate" date={e.climate.period}>
+                    <ExternalLink href="https://power.larc.nasa.gov/">NASA POWER</ExternalLink> daily data (MERRA-2 reanalysis), averaged by
+                    Originfacts
+                  </SourceRow>
+                )}
+                {e.cityCentre && (
+                  <SourceRow what="Distance to city centre" date={null}>
+                    Calculated from airport coordinates and the{' '}
+                    {e.cityCentre.source === 'osm' ? (
+                      <ExternalLink href={`https://www.openstreetmap.org/${e.cityCentre.ref}`}>OpenStreetMap</ExternalLink>
+                    ) : (
+                      <ExternalLink href={wikidataUrl(e.cityCentre.ref)}>Wikidata</ExternalLink>
+                    )}{' '}
+                    city-centre point
                   </SourceRow>
                 )}
                 {hasRoutes && (
@@ -928,11 +1024,391 @@ function weatherTime(value: string): string {
   return match ? match[1] : value;
 }
 
-function contactSource(phone?: string | null, site?: 'wikidata' | 'airport-info'): string {
-  if (site === 'wikidata') return phone ? 'airport-info · website via Wikidata' : 'Wikidata';
-  return 'airport-info dataset';
+
+/* ================================================================== *
+ * Enrichment sections (data/airport-enrichment). Each renders only when
+ * its data exists, and every value names its dataset.
+ * ================================================================== */
+
+type View = AirportEnrichmentView;
+
+function listProse(items: string[]): string {
+  if (items.length <= 1) return items.join('');
+  return `${items.slice(0, -1).join(', ')} and ${items[items.length - 1]}`;
 }
 
-function telHref(phone: string): string {
-  return `tel:${phone.replace(/[^0-9+]/g, '')}`;
+function introTopics(e: View, hasRoutes: boolean, hasSite: boolean): string {
+  const t = [
+    'Codes',
+    'location',
+    e.runways.length ? 'runways' : null,
+    e.fares?.destinationCount ? 'nonstop destinations' : null,
+    e.climate ? 'climate' : null,
+    hasRoutes ? 'the airlines and routes in Originfacts’ route records' : null,
+    !hasRoutes && !e.runways.length && !e.fares && hasSite ? 'official website' : null,
+  ].filter(Boolean) as string[];
+  return listProse(t);
+}
+
+function runwayCaption(runways: View['runways']): string {
+  const r = runways[0];
+  if (!r) return '';
+  const what = runways.length === 1 ? 'The runway' : 'Longest';
+  return `${what}${r.ident ? ` ${r.ident}` : ''}: ${metres(r.lengthFt).toLocaleString('en-US')} m${r.surface ? `, ${r.surface}` : ''}`;
+}
+
+function SourceChip({ children }: { children: ReactNode }) {
+  return <dd className="mt-1 text-xs text-forest-900/70">{children}</dd>;
+}
+
+function DataFact({ label, value, source }: { label: string; value: ReactNode; source: ReactNode }) {
+  return (
+    <div className="rounded-[0.3rem] border border-forest-900/10 bg-[#fbfcff] p-4">
+      <dt className="text-xs font-semibold uppercase tracking-wider text-forest-900/75">{label}</dt>
+      <dd className="mt-1.5 text-[15px] font-semibold leading-6 text-forest-950 [overflow-wrap:anywhere]">{value}</dd>
+      <SourceChip>{source}</SourceChip>
+    </div>
+  );
+}
+
+function FactsSection({ name, code, e, oaDate, wdDate }: { name: string; code: string; e: View; oaDate: string | null; wdDate: string | null }) {
+  const wd = (extra?: ReactNode) => (
+    <>
+      Per{' '}
+      {e.qid ? <ExternalLink href={wikidataUrl(e.qid)}>Wikidata</ExternalLink> : 'Wikidata'}
+      {wdDate ? ` (retrieved ${wdDate})` : ''}
+      {extra}
+    </>
+  );
+  const oa = `From OurAirports${oaDate ? ` (${oaDate})` : ''}`;
+  const named = e.namedAfter.filter((n) => !n.label.toLowerCase().includes(name.toLowerCase()));
+  const nearest = e.nearestScheduled[0];
+  return (
+    <Shell id="facts" title={`${code} airport facts`} badge={<Badge tone="data">OurAirports · Wikidata</Badge>}>
+      <dl className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+        {e.typeLabel && <DataFact label="Size class" value={e.typeLabel} source={`${oa}; OurAirports’ own classification`} />}
+        {e.elevationFt != null && (
+          <DataFact
+            label="Elevation"
+            value={e.elevationFt < 0 ? `${formatElevation(Math.abs(e.elevationFt))} below sea level` : formatElevation(e.elevationFt)}
+            source={oa}
+          />
+        )}
+        {e.opened && (
+          <DataFact
+            label={e.opened.prop === 'P1619' ? 'Opened' : 'Inception'}
+            value={formatOpened(e.opened)}
+            source={wd(e.opened.prop === 'P1619' ? ' — date of official opening' : ' — inception date')}
+          />
+        )}
+        {e.operators.length > 0 && <DataFact label="Operator" value={e.operators.map((o) => o.label).join(', ')} source={wd()} />}
+        {e.owners.length > 0 && <DataFact label="Owner" value={e.owners.map((o) => o.label).join(', ')} source={wd()} />}
+        {e.patronage && (
+          <DataFact
+            label={`Passengers, ${e.patronage.year}`}
+            value={formatPassengers(e.patronage.value)}
+            source={wd(
+              e.patronage.refUrl ? (
+                <>
+                  , citing <ExternalLink href={e.patronage.refUrl}>{hostOf(e.patronage.refUrl)}</ExternalLink>
+                </>
+              ) : (
+                ' — no reference given there'
+              ),
+            )}
+          />
+        )}
+        {named.length > 0 && <DataFact label="Named after" value={named.map((n) => n.label).join(', ')} source={wd()} />}
+        {nearest && (
+          <DataFact
+            label="Nearest airport with scheduled flights"
+            value={
+              <>
+                {nearest.href ? (
+                  <Link href={nearest.href} className="text-primary-emphasis underline-offset-2 hover:underline">
+                    {nearest.name}
+                  </Link>
+                ) : (
+                  nearest.name
+                )}{' '}
+                <span className="font-mono text-sm text-forest-900/75">{nearest.iata}</span> · {nearest.km.toLocaleString('en-US')} km
+              </>
+            }
+            source="OurAirports scheduled-service flag; straight-line distance calculated"
+          />
+        )}
+      </dl>
+    </Shell>
+  );
+}
+
+function RunwaysSection({ code, e, oaDate }: { code: string; e: View; oaDate: string | null }) {
+  const lit = e.runways.filter((r) => r.lighted).length;
+  return (
+    <Shell
+      id="runways"
+      title={`Runways at ${code}`}
+      badge={<Badge tone="data">OurAirports{oaDate ? ` · ${oaDate}` : ''}</Badge>}
+      source={
+        <p className="text-sm text-forest-900/75">
+          Source: <ExternalLink href="https://ourairports.com/data/">OurAirports</ExternalLink> runways data (public domain)
+          {oaDate ? `, retrieved ${oaDate}` : ''}. Not an aeronautical source — not for navigation.
+        </p>
+      }
+    >
+      <p className="text-[15px] leading-7 text-forest-900/85">
+        {e.runways.length === 1 ? 'One open runway' : `${e.runways.length} open runways`}
+        {lit ? `, ${lit === e.runways.length ? (lit === 1 ? 'lit' : 'all lit') : `${lit} lit`}` : ''}. {runwayCaption(e.runways)}.
+        {e.closedRunways > 0 ? ` OurAirports also lists ${e.closedRunways} closed ${e.closedRunways === 1 ? 'runway' : 'runways'}, not shown.` : ''}
+      </p>
+      <div className="overflow-hidden rounded-[0.3rem] border border-forest-900/10">
+        <table className="w-full text-left text-sm">
+          <caption className="sr-only">Runways at {code}: length, width, surface and lighting</caption>
+          <thead className="bg-forest-50/60 text-xs uppercase tracking-wider text-forest-900/75">
+            <tr>
+              <th scope="col" className="px-3 py-2.5 font-semibold">Runway</th>
+              <th scope="col" className="px-3 py-2.5 font-semibold">Length</th>
+              <th scope="col" className="px-3 py-2.5 font-semibold">Width</th>
+              <th scope="col" className="px-3 py-2.5 font-semibold">Surface</th>
+              <th scope="col" className="hidden px-3 py-2.5 font-semibold sm:table-cell">Lighting</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-forest-900/10">
+            {e.runways.map((r, i) => (
+              <tr key={`${r.ident}-${i}`}>
+                <th scope="row" className="px-3 py-2.5 font-mono font-semibold text-forest-950">{r.ident ?? '—'}</th>
+                <td className="px-3 py-2.5 text-forest-950">
+                  <span className="block font-semibold">{metres(r.lengthFt).toLocaleString('en-US')} m</span>
+                  <span className="block text-xs text-forest-900/70">{r.lengthFt.toLocaleString('en-US')} ft</span>
+                </td>
+                <td className="px-3 py-2.5 text-forest-950">{r.widthFt ? `${metres(r.widthFt)} m` : '—'}</td>
+                <td className="px-3 py-2.5 text-forest-950">{r.surface ?? r.surfaceRaw ?? '—'}</td>
+                <td className="hidden px-3 py-2.5 text-forest-950 sm:table-cell">{r.lighted ? 'Lit' : 'Not listed as lit'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </Shell>
+  );
+}
+
+function DestinationsSection({
+  code,
+  name,
+  fares,
+  date,
+  hasRoutes,
+}: {
+  code: string;
+  name: string;
+  fares: NonNullable<View['fares']>;
+  date: string | null;
+  hasRoutes: boolean;
+}) {
+  const linked = fares.groups.some((g) => g.destinations.some((d) => d.routeHref));
+  return (
+    <Shell
+      id="destinations"
+      title={`Airlines and destinations from ${code}`}
+      badge={<Badge tone="data">Travelpayouts{date ? ` · ${date}` : ''}</Badge>}
+      source={
+        <p className="text-sm text-forest-900/75" data-testid="airport-v2-fares-caveat">
+          Source: Travelpayouts fare data{date ? `, ${date}` : ''} — destinations where travellers found a nonstop fare from {code}{' '}
+          in the days before that date. Not a complete or live schedule.
+        </p>
+      }
+    >
+      <p className="text-[15px] leading-7 text-forest-900/85">
+        Nonstop fares from {code} to {fares.destinationCount} {fares.destinationCount === 1 ? 'destination' : 'destinations'}
+        {fares.countryCount > 1 ? ` in ${fares.countryCount} countries` : ''}, on {fares.airlines.length}{' '}
+        {fares.airlines.length === 1 ? 'airline' : 'airlines'}.
+        {hasRoutes ? ' Originfacts’ own route records for ' + code + ' are listed separately below.' : ''}
+      </p>
+
+      <div>
+        <h3 className="text-base leading-snug text-forest-950">Airlines named on the fares</h3>
+        <ul className="mt-3 flex flex-wrap gap-2">
+          {fares.airlines.map((a) => (
+            <li key={a.code} className="inline-flex items-center gap-2 rounded-full border border-forest-900/15 bg-white px-3 py-1.5 text-sm">
+              <span className="font-mono text-xs font-semibold text-forest-900/70">{a.code}</span>
+              {a.href ? (
+                <Link href={a.href} className="font-medium text-primary-emphasis underline-offset-2 hover:underline">
+                  {a.name}
+                </Link>
+              ) : (
+                <span className="font-medium text-forest-950">{a.name}</span>
+              )}
+              <span className="text-xs text-forest-900/70">
+                {a.destinations} {a.destinations === 1 ? 'destination' : 'destinations'}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-2 text-xs leading-5 text-forest-900/70">
+          The airline on a fare can be the seller of a codeshare flown by a partner. Linked names are matched to Originfacts airline
+          pages by code and name; others are shown as the fare data names them.
+        </p>
+      </div>
+
+      <div>
+        <h3 className="text-base leading-snug text-forest-950">Destinations by country</h3>
+        <dl className="mt-3 grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2 xl:grid-cols-3">
+          {fares.groups.map((g) => (
+            <div key={g.country} className="min-w-0">
+              <dt className="text-sm font-semibold text-forest-950">
+                {g.country} <span className="font-normal text-forest-900/70">({g.destinations.length})</span>
+              </dt>
+              <dd className="text-sm leading-6 text-forest-900/85">
+                {g.destinations.map((d, i) => (
+                  <span key={d.code}>
+                    {i > 0 && ', '}
+                    {d.routeHref ? (
+                      <Link href={d.routeHref} className="text-primary-emphasis underline-offset-2 hover:underline">
+                        {d.name}
+                      </Link>
+                    ) : (
+                      d.name
+                    )}
+                  </span>
+                ))}
+              </dd>
+            </div>
+          ))}
+        </dl>
+        {linked && <p className="mt-3 text-xs leading-5 text-forest-900/70">Linked destinations also have an Originfacts route record from {code}.</p>}
+      </div>
+      <p className="text-sm text-forest-900/75">Check schedules with the airline or {name} before you book.</p>
+    </Shell>
+  );
+}
+
+function HubsSection({ code, hubs, qid, date }: { code: string; hubs: View['hubs']; qid: string | null; date: string | null }) {
+  return (
+    <Shell
+      id="hubs"
+      title={`Airlines with a hub at ${code}`}
+      badge={<Badge tone="data">Wikidata{date ? ` · ${date}` : ''}</Badge>}
+      source={
+        <p className="text-sm text-forest-900/75">
+          Per {qid ? <ExternalLink href={wikidataUrl(qid)}>Wikidata</ExternalLink> : 'Wikidata'}
+          {date ? ` (retrieved ${date})` : ''}: airlines whose “airline hub” property names {code}, with no end date and not recorded
+          as dissolved. Community-edited; hubs change.
+        </p>
+      }
+    >
+      <ul className="flex flex-wrap gap-2">
+        {hubs.map((h) => (
+          <li key={h.qid} className="inline-flex items-center gap-2 rounded-full border border-forest-900/15 bg-white px-3 py-1.5 text-sm">
+            {h.iata && <span className="font-mono text-xs font-semibold text-forest-900/70">{h.iata}</span>}
+            {h.href ? (
+              <Link href={h.href} className="font-medium text-primary-emphasis underline-offset-2 hover:underline">
+                {h.label}
+              </Link>
+            ) : (
+              <ExternalLink href={wikidataUrl(h.qid)} className="font-medium">
+                {h.label}
+              </ExternalLink>
+            )}
+          </li>
+        ))}
+      </ul>
+    </Shell>
+  );
+}
+
+function GettingThereSection({
+  name,
+  code,
+  city,
+  coordSource,
+}: {
+  name: string;
+  code: string;
+  city: NonNullable<View['cityCentre']>;
+  coordSource: 'record' | 'ourairports';
+}) {
+  return (
+    <Shell id="getting-there" title={`Where ${code} is`} badge={<Badge tone="data">Calculated</Badge>}>
+      <p className="text-2xl font-bold text-forest-950">
+        {formatKm(city.km)} <span className="text-lg font-semibold">{compassWords(city.compass)}</span>
+      </p>
+      <p className="text-[15px] leading-7 text-forest-900/85">
+        {name} lies {formatKm(city.km)} {compassWords(city.compass)} of {city.name} city centre in a straight line. Road distance is
+        longer; transport options are not yet verified (see terminals and transport below).
+      </p>
+      <p className="text-sm text-forest-900/75">
+        Calculated from the airport coordinates ({coordSource === 'ourairports' ? 'OurAirports' : 'Originfacts airport record'}) and the{' '}
+        {city.source === 'osm' ? (
+          <ExternalLink href={`https://www.openstreetmap.org/${city.ref}`}>OpenStreetMap</ExternalLink>
+        ) : (
+          <ExternalLink href={wikidataUrl(city.ref)}>Wikidata</ExternalLink>
+        )}{' '}
+        city-centre point.
+      </p>
+    </Shell>
+  );
+}
+
+function ClimateSection({ code, climate }: { code: string; climate: NonNullable<View['climate']> }) {
+  const lo = Math.min(...climate.months.map((m) => m.lo));
+  const hi = Math.max(...climate.months.map((m) => m.hi));
+  const span = Math.max(hi - lo, 1);
+  const s = climate.summary;
+  return (
+    <Shell
+      id="climate"
+      title={`Climate at ${code}, month by month`}
+      badge={<Badge tone="data">NASA POWER · {climate.period}</Badge>}
+      source={
+        <p className="text-sm text-forest-900/75">
+          Source: <ExternalLink href="https://power.larc.nasa.gov/">NASA POWER</ExternalLink> daily values for {climate.period} at{' '}
+          {climate.lat.toFixed(2)}°, {climate.lon.toFixed(2)}° (MERRA-2 reanalysis grid, about 50 km cells), averaged by Originfacts.
+          Modelled, not airport weather-station readings.
+        </p>
+      }
+    >
+      <p className="text-[15px] leading-7 text-forest-900/85">
+        Warmest: {s.warmest.month} (average high {Math.round(s.warmest.hi)}°C). Coolest: {s.coolest.month} ({Math.round(s.coolest.hi)}°C
+        high, {Math.round(s.coolest.lo)}°C low).
+        {s.wettest && s.driest ? ` Wettest: ${s.wettest.month} (${s.wettest.mm} mm); driest: ${s.driest.month} (${s.driest.mm} mm).` : ''}
+      </p>
+      <div className="overflow-hidden rounded-[0.3rem] border border-forest-900/10">
+        <table className="w-full text-left text-sm">
+          <caption className="sr-only">
+            Average daily high and low temperature and average monthly precipitation at {code}, {climate.period}
+          </caption>
+          <thead className="bg-forest-50/60 text-xs uppercase tracking-wider text-forest-900/75">
+            <tr>
+              <th scope="col" className="px-3 py-2 font-semibold">Month</th>
+              <th scope="col" className="px-3 py-2 font-semibold">High</th>
+              <th scope="col" className="px-3 py-2 font-semibold">Low</th>
+              <th scope="col" className="hidden w-2/5 px-3 py-2 font-semibold sm:table-cell">
+                <span className="sr-only">Temperature range</span>
+              </th>
+              <th scope="col" className="px-3 py-2 font-semibold">Rain</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-forest-900/10">
+            {climate.months.map((m) => (
+              <tr key={m.month}>
+                <th scope="row" className="px-3 py-1.5 font-medium text-forest-950">{m.month}</th>
+                <td className="px-3 py-1.5 font-semibold text-forest-950">{Math.round(m.hi)}°C</td>
+                <td className="px-3 py-1.5 text-forest-900/85">{Math.round(m.lo)}°C</td>
+                <td className="hidden px-3 py-1.5 sm:table-cell" aria-hidden>
+                  <span className="relative block h-2 rounded-full bg-forest-900/5">
+                    <span
+                      className="absolute inset-y-0 rounded-full bg-primary-emphasis/70"
+                      style={{ left: `${((m.lo - lo) / span) * 100}%`, width: `${Math.max(((m.hi - m.lo) / span) * 100, 2)}%` }}
+                    />
+                  </span>
+                </td>
+                <td className="px-3 py-1.5 text-forest-900/85">{m.mm == null ? '—' : `${m.mm} mm`}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </Shell>
+  );
 }

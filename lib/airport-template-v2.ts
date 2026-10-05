@@ -11,7 +11,7 @@
  * Codes such as 'per' redirect to that slug before the template is chosen, so
  * list the slug, not the IATA code.
  *
- * v2 prints only what the airport record, airport-info, the route records and
+ * v2 prints only what the airport record, the enrichment datasets, the route records and
  * the official links file hold, so a thin-data airport renders "not yet
  * verified" states rather than prose.
  *

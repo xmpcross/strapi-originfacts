@@ -88,8 +88,10 @@ export function routeCoverage(x: { name: string; code: string; tracked: number; 
 
 /**
  * Meta description (and WebPage JSON-LD description) for v2 airport pages.
- * Built from the same fields the v2 intro shows — codes, location and what the
- * page covers — instead of the unsourced CMS `about` text.
+ * Built from the same fields the page shows — codes, location, one or two
+ * distinctive dataset facts ("2 runways, opened 1940", from
+ * lib/airport-enrichment.ts enrichmentMetaFacts) and what the page covers —
+ * instead of the unsourced CMS `about` text.
  */
 export function airportV2MetaDescription(x: {
   name: string;
@@ -98,21 +100,53 @@ export function airportV2MetaDescription(x: {
   city?: string | null;
   country?: string | null;
   hasRoutes: boolean;
+  /** Short sourced facts, most distinctive first. */
+  facts?: string[];
+  /** Which dataset sections the page shows. */
+  covers?: { runways?: boolean; climate?: boolean; fares?: boolean };
 }): string {
   const codes = x.icao ? `${x.iata.toUpperCase()}/${x.icao.toUpperCase()}` : x.iata.toUpperCase();
   // "Singapore, Singapore" reads as a typo: name a city-state once.
   const place = [...new Set([x.city, x.country].filter(Boolean).map((v) => v!.trim()))].join(', ');
   const lead = `${x.name} (${codes})${place ? ` in ${place}` : ''}: `;
+  const facts = (x.facts ?? []).filter(Boolean);
+  const cov = x.covers ?? {};
+  const topics = [
+    'codes',
+    'location',
+    cov.runways ? 'runways' : null,
+    cov.climate ? 'climate' : null,
+    cov.fares ? 'nonstop destinations' : null,
+    x.hasRoutes ? 'the airlines and routes we track' : null,
+  ].filter(Boolean) as string[];
+  const shortTopics = topics.filter((t) => t !== 'codes' && t !== 'location');
+  const bodies: string[] = [];
+  for (const f of [facts.join(', '), facts[0]].filter(Boolean)) {
+    bodies.push(`${f}. ${capitalise(listProse(topics))}.`);
+    if (shortTopics.length) bodies.push(`${f}. ${capitalise(listProse(shortTopics))}.`);
+  }
+  for (const f of [facts.join(', '), facts[0]].filter(Boolean)) bodies.push(`${f}.`);
   // Longest first; the first that fits is used, so long airport names lose
   // the least important clause rather than being cut mid-sentence.
-  const options = x.hasRoutes
-    ? [
-        'codes, location, contact details, airlines and routes we track, and where to check terminals.',
-        'codes, location, contact details, and the airlines and routes we track.',
-        'codes, location and the airlines and routes we track.',
-      ]
-    : ['codes, location, contact details, and where to check terminals and transport.', 'codes, location and contact details.'];
-  return options.map((o) => lead + o).find((d) => d.length <= DESCRIPTION_MAX) ?? lead + options[options.length - 1];
+  bodies.push(
+    ...(x.hasRoutes
+      ? [
+          'codes, location, airlines and routes we track, and where to check terminals.',
+          'codes, location, and the airlines and routes we track.',
+          'codes, location and the airlines and routes we track.',
+        ]
+      : ['codes, location, and where to check terminals and transport.', 'codes and location.']),
+  );
+  return bodies.map((o) => lead + o).find((d) => d.length <= DESCRIPTION_MAX) ?? lead + bodies[bodies.length - 1];
+}
+
+function capitalise(s: string): string {
+  return s ? s[0].toUpperCase() + s.slice(1) : s;
+}
+
+function listProse(items: string[]): string {
+  if (items.length <= 1) return items.join('');
+  return `${items.slice(0, -1).join(', ')} and ${items[items.length - 1]}`;
 }
 
 /* ------------------------------------------------------------------ *

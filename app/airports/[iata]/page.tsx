@@ -7,12 +7,20 @@ import {
   countRoutesFromAirport,
   listAirports,
   listDestinations,
+  listAirlines,
   mediaUrl,
 } from '@/lib/strapi';
-import type { StrapiAirport } from '@/lib/strapi';
+import type { StrapiAirline, StrapiAirport, StrapiRoute } from '@/lib/strapi';
 import { operableCarriers } from '@/lib/route-carriers';
 import { airportPath, airportSlug, preferredAirportSlug, slugifyAirportPart } from '@/lib/airport-slugs';
-import { airportInfoAddress, getAirportInfoByCode } from '@/lib/airport-info';
+import {
+  buildEnrichmentView as buildEnrichmentViewFromData,
+  enrichmentMetaFacts,
+  getAirportEnrichment,
+  type AirportEnrichment,
+  type AirportEnrichmentView,
+} from '@/lib/airport-enrichment';
+import { enrichmentFaqs, type EnrichmentFaqInput } from '@/components/airport-v2/enrichment-faqs';
 import {
   DEFAULT_OG_IMAGE,
   SITE_URL,
@@ -36,7 +44,7 @@ import type { Metadata } from 'next';
 import topAirportSources from '@/data/airport-sources/top-100-official-links.json';
 import { buildMetaDescription, compactTitle } from '@/lib/seo';
 import { airportUsesTemplateV2 } from '@/lib/airport-template-v2';
-import AirportGuideV2, { formatCoordinates, routeVintage } from '@/components/airport-v2/AirportGuideV2';
+import AirportGuideV2, { formatCoordinates, formatDate, routeVintage } from '@/components/airport-v2/AirportGuideV2';
 import { airportGuideV2Faqs } from '@/components/airport-v2/faqs';
 import { airportCityPhoto, airportV2MetaDescription, splitCeasedAirlines } from '@/lib/airport-v2';
 
@@ -124,16 +132,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // text is unsourced and is not shown on them. The older layout keeps its
   // description unchanged.
   const description = airportUsesTemplateV2(airportSlug(a, allAirports))
-    ? buildMetaDescription([
-        airportV2MetaDescription({
-          name: a.name,
-          iata: a.iata,
-          icao: a.icao,
-          city: a.city,
-          country: a.country,
-          hasRoutes: routes.length > 0,
-        }),
-      ])
+    ? buildMetaDescription([airportV2MetaDescription(v2MetaInput(a, routes.length > 0, getAirportEnrichment(a.iata)))])
     : buildMetaDescription([
         a.about,
         `${a.name} (${a.iata})${a.city ? ` in ${a.city}` : ''}${a.country ? `, ${a.country}` : ''}: codes, location, airlines, top destinations, terminal notes and ground-transfer basics.`,
@@ -167,14 +166,32 @@ export default async function AirportPage({ params }: Props) {
   const canonicalPath = airportPath(airport, allAirports);
   if (iata.toLowerCase() !== airportSlug(airport, allAirports)) permanentRedirect(canonicalPath);
 
-  const [routes, everyAirport, destinations] = await Promise.all([
+  const [routes, everyAirport, destinations, siteAirlines] = await Promise.all([
     listRoutesFromAirport(airport.iata, 15).catch(() => []),
     listAirports().catch(() => []),
     listDestinations().catch(() => []),
+    listAirlines().catch(() => []),
   ]);
-  const airportInfo = await getAirportInfoByCode({ iata: airport.iata, icao: airport.icao });
-  const weatherLatitude = airport.latitude ?? airportInfo?.latitude;
-  const weatherLongitude = airport.longitude ?? airportInfo?.longitude;
+  // Fallback identity/location fields from OurAirports (public domain), joined
+  // by ICAO (lib/airport-enrichment-joins.mjs). Replaces the paid RapidAPI
+  // airport-info lookup; OurAirports has no street address or phone number.
+  const enrichment = getAirportEnrichment(airport.iata);
+  const oa = enrichment.oa;
+  const airportInfo = oa
+    ? {
+        icao: oa.icao,
+        city: oa.municipality,
+        country: undefined as string | undefined,
+        latitude: oa.lat,
+        longitude: oa.lon,
+        website: oa.homeLink,
+        phone: undefined as string | undefined,
+      }
+    : null;
+  // OurAirports coordinates are precise; the record's are rounded and in some
+  // cases point at the city or a predecessor site.
+  const weatherLatitude = oa?.lat ?? airport.latitude;
+  const weatherLongitude = oa?.lon ?? airport.longitude;
   const airportWeather = await getAirportWeather({
     latitude: weatherLatitude,
     longitude: weatherLongitude,
@@ -201,7 +218,7 @@ export default async function AirportPage({ params }: Props) {
     country: airportInfo?.country,
     phone: airportInfo?.phone,
     website: airportInfo?.website,
-    address: airportInfoAddress(airportInfo),
+    address: null,
     nearbyCount: nearby.length,
   });
 
@@ -227,7 +244,7 @@ export default async function AirportPage({ params }: Props) {
           : null,
     },
     { label: 'Time zone', value: airport.timezone },
-    { label: 'Address', value: airportInfoAddress(airportInfo) },
+    
     { label: 'Phone', value: airportInfo?.phone },
     { label: 'Website', value: airportInfo?.website },
   ];
@@ -249,7 +266,7 @@ export default async function AirportPage({ params }: Props) {
           ? `${(airport.latitude ?? airportInfo?.latitude)!.toFixed(3)}°, ${(airport.longitude ?? airportInfo?.longitude)!.toFixed(3)}°`
           : null,
     },
-    { label: 'Address', value: airportInfoAddress(airportInfo) },
+    
     { label: 'Phone', value: airportInfo?.phone },
     { label: 'Website', value: airportInfo?.website },
   ].filter((item) => item.value);
@@ -299,23 +316,27 @@ export default async function AirportPage({ params }: Props) {
   // facts the v2 page shows), WebPage description (no CMS `about`), the
   // airline list (ceased carriers left out) and the route-count framing.
   if (airportUsesTemplateV2(airportSlug(airport, allAirports))) {
-    const v2Lat = airport.latitude ?? airportInfo?.latitude;
-    const v2Lon = airport.longitude ?? airportInfo?.longitude;
+    // OurAirports coordinates first (precise, ICAO-joined), then the record's.
     const v2Coordinates =
-      typeof v2Lat === 'number' && typeof v2Lon === 'number'
-        ? { lat: v2Lat, lon: v2Lon, source: typeof airport.latitude === 'number' ? ('record' as const) : ('airport-info' as const) }
-        : null;
+      typeof oa?.lat === 'number' && typeof oa?.lon === 'number'
+        ? { lat: oa.lat, lon: oa.lon, source: 'ourairports' as const }
+        : typeof airport.latitude === 'number' && typeof airport.longitude === 'number'
+          ? { lat: airport.latitude, lon: airport.longitude, source: 'record' as const }
+          : null;
     const v2OfficialSite = discoveredSourceLinks?.officialWebsiteUrl
       ? { url: discoveredSourceLinks.officialWebsiteUrl, source: 'wikidata' as const }
-      : airportInfo?.website
-        ? { url: normaliseUrl(airportInfo.website), source: 'airport-info' as const }
-        : null;
+      : enrichment.wd?.website
+        ? { url: normaliseUrl(enrichment.wd.website), source: 'wikidata' as const }
+        : oa?.homeLink
+          ? { url: normaliseUrl(oa.homeLink), source: 'ourairports' as const }
+          : null;
+    // The record's ICAO is unknown to OurAirports (a superseded code): show
+    // OurAirports' current code instead, marked with its source.
+    const v2Airport = oa?.supersededIcao && oa.icao ? { ...airport, icao: undefined } : airport;
     const v2Info = {
       icao: airportInfo?.icao,
       city: airportInfo?.city,
       country: airportInfo?.country,
-      address: airportInfoAddress(airportInfo),
-      phone: airportInfo?.phone,
     };
     // Carriers Wikidata records as ceased are left out of the list, the counts,
     // the FAQ and its JSON-LD (joined on the route record's airline slug).
@@ -331,14 +352,8 @@ export default async function AirportPage({ params }: Props) {
       shown: routes.length,
     };
     const v2CityPhoto = airportCityPhoto(cityDestination, (path) => mediaUrl({ url: path }) ?? path);
-    const v2Description = airportV2MetaDescription({
-      name: airport.name,
-      iata: airport.iata,
-      icao: airport.icao,
-      city: airport.city,
-      country: airport.country,
-      hasRoutes: routes.length > 0,
-    });
+    const v2Description = airportV2MetaDescription(v2MetaInput(airport, routes.length > 0, enrichment));
+    const v2Enrichment = buildEnrichmentView(enrichment, routes, siteAirlines, allAirports);
     const v2WebPageSchema = entityWebPageJsonLd({
       name: `${airport.name} (${airport.iata}) Airport Guide`,
       description: v2Description,
@@ -352,13 +367,12 @@ export default async function AirportPage({ params }: Props) {
     const v2Faqs = airportGuideV2Faqs({
       name: airport.name,
       iata: airport.iata,
-      icao: airport.icao || v2Info.icao,
+      icao: v2Airport.icao || v2Info.icao,
       city: airport.city || v2Info.city,
       country: airport.country || v2Info.country,
       timezone: airport.timezone,
       coordinates: v2Coordinates ? formatCoordinates(v2Coordinates.lat, v2Coordinates.lon) : null,
-      address: v2Info.address,
-      phone: v2Info.phone,
+      coordinatesSource: v2Coordinates?.source,
       officialSite: v2OfficialSite?.url,
       airlines: v2Airlines.map((a) => a.name),
       ceasedAirlines: v2Ceased.map((a) => a.name),
@@ -366,7 +380,7 @@ export default async function AirportPage({ params }: Props) {
       destinations: summary.destinationNames,
       countryCount: summary.countryCount,
       routeVintage: routeVintage(routes),
-    });
+    }, enrichmentFaqs(enrichmentFaqInput(airport, enrichment, v2Enrichment)));
     return (
       <>
         <JsonLd data={v2WebPageSchema} />
@@ -374,7 +388,7 @@ export default async function AirportPage({ params }: Props) {
         <JsonLd data={faqJsonLd(v2Faqs)} />
         <JsonLd data={breadcrumbJsonLd([...breadcrumbTrail, { name: `${airport.name} (${airport.iata})`, url: canonicalPath }])} />
         <AirportGuideV2
-          airport={airport}
+          airport={v2Airport}
           breadcrumb={breadcrumbTrail.map((b) => ({ name: b.name, href: b.url }))}
           routes={routes}
           airlines={v2Airlines}
@@ -384,8 +398,9 @@ export default async function AirportPage({ params }: Props) {
           countryCount={summary.countryCount}
           info={v2Info}
           officialSite={v2OfficialSite}
-          wikipediaUrl={discoveredSourceLinks?.wikipediaUrl}
-          wikidataUrl={discoveredSourceLinks?.wikidataUrl}
+          wikipediaUrl={discoveredSourceLinks?.wikipediaUrl || enrichment.wd?.enwiki || oa?.wikipediaLink}
+          wikidataUrl={discoveredSourceLinks?.wikidataUrl || (enrichment.wd ? `https://www.wikidata.org/wiki/${enrichment.wd.qid}` : null)}
+          enrichment={v2Enrichment}
           coordinates={v2Coordinates}
           mapHref={mapHref}
           weather={airportWeather}
@@ -1595,4 +1610,61 @@ function nearestAirports(airport: StrapiAirport, all: StrapiAirport[], limit: nu
     .map((a) => ({ ...a, distanceKm: distanceKm(lat, lon, a.latitude!, a.longitude!) }))
     .sort((a, b) => a.distanceKm! - b.distanceKm!)
     .slice(0, limit);
+}
+
+/* ------------------------------------------------------------------ *
+ * Enrichment (data/airport-enrichment, lib/airport-enrichment.ts)
+ * ------------------------------------------------------------------ */
+
+function v2MetaInput(a: StrapiAirport, hasRoutes: boolean, e: AirportEnrichment) {
+  return {
+    name: a.name,
+    iata: a.iata,
+    icao: (!e.oa?.supersededIcao && a.icao) || e.oa?.icao || a.icao,
+    city: a.city || e.oa?.municipality,
+    country: a.country,
+    hasRoutes,
+    facts: enrichmentMetaFacts(e),
+    covers: { runways: Boolean(e.oa?.runways?.length), climate: Boolean(e.climate), fares: Boolean(e.fares?.destinations.length) },
+  };
+}
+
+function buildEnrichmentView(
+  e: AirportEnrichment,
+  routes: StrapiRoute[],
+  siteAirlines: StrapiAirline[],
+  allAirports: Pick<StrapiAirport, 'iata' | 'city' | 'name'>[],
+): AirportEnrichmentView {
+  const routeByDest = new Map<string, string>();
+  for (const r of routes) if (r.destination?.iata && r.slug) routeByDest.set(r.destination.iata.toUpperCase(), `/flight-routes/${r.slug}`);
+  return buildEnrichmentViewFromData(e, {
+    airlines: siteAirlines,
+    routeHref: (code) => routeByDest.get(code.toUpperCase()) ?? null,
+    // Only airports the site has a page for are linked.
+    airportHref: (iata) => {
+      const hit = allAirports.find((x) => x.iata?.toUpperCase() === iata.toUpperCase());
+      return hit ? airportPath(hit, allAirports) : null;
+    },
+  });
+}
+
+function enrichmentFaqInput(a: StrapiAirport, e: AirportEnrichment, v: AirportEnrichmentView): EnrichmentFaqInput {
+  const topCountries = (v.fares?.groups ?? []).map((g) => ({ country: g.country, count: g.destinations.length }));
+  return {
+    name: a.name,
+    iata: a.iata,
+    city: a.city,
+    runways: v.runways,
+    elevationFt: v.elevationFt,
+    opened: v.opened,
+    operators: v.operators.map((o) => o.label),
+    owners: v.owners.map((o) => o.label),
+    patronage: v.patronage,
+    hubAirlines: v.hubs.map((h) => h.label),
+    cityCentre: v.cityCentre,
+    climate: v.climate ? { ...v.climate.summary, period: v.climate.period } : null,
+    fares: v.fares
+      ? { destinations: v.fares.destinationCount, countries: v.fares.countryCount, topCountries, retrieved: formatDate(v.fares.retrieved) ?? v.fares.retrieved }
+      : null,
+  };
 }

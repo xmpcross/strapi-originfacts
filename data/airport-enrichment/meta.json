@@ -1,0 +1,31 @@
+{
+  "generatedBy": "ops/build-airport-enrichment.mjs",
+  "updated": "2026-10-05",
+  "files": {
+    "ourairports.json": {
+      "retrieved": "2026-10-05",
+      "airports": 3546,
+      "bytes": 1776133
+    },
+    "wikidata.json": {
+      "retrieved": "2026-10-05",
+      "airports": 3391,
+      "bytes": 1649237
+    },
+    "fares.json": {
+      "retrieved": "2026-10-05",
+      "airports": 185,
+      "bytes": 670786
+    },
+    "climate.json": {
+      "retrieved": "2026-10-05",
+      "airports": 189,
+      "bytes": 47308
+    },
+    "computed.json": {
+      "retrieved": "2026-10-05",
+      "airports": 3602,
+      "bytes": 613996
+    }
+  }
+}

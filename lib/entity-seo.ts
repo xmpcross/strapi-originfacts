@@ -500,7 +500,7 @@ export function airlineExpectations(a: StrapiAirline, alliance?: string | null):
 
 /**
  * Extra grounded context the airport page can pass in — contact details from
- * the airport-info dataset and the count of other tracked airports in the
+ * the contact fields passed in and the count of other tracked airports in the
  * same country. Everything is optional; absent fields simply skip their Q&A.
  */
 export type AirportFaqExtras = {
@@ -573,7 +573,7 @@ export function airportFaqs(a: StrapiAirport, s?: RouteSummary, extra?: AirportF
     });
   }
 
-  // --- Grounded in airport-info contact fields ----------------------------
+  // --- Grounded in contact fields passed in ----------------------------
   if (extra?.phone || extra?.website || extra?.address) {
     const parts: string[] = [];
     if (extra.address) parts.push(`its address is ${extra.address}`);

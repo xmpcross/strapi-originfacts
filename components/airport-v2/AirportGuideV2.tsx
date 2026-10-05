@@ -7,6 +7,7 @@ import type { StrapiAirport, StrapiRoute } from '@/lib/strapi';
 import type { AirportWeather } from '@/lib/met-weather';
 import { formatLocalTime, MET_ATTRIBUTION, weatherLabel } from '@/lib/met-symbols';
 import SectionNav, { type NavItem } from './SectionNav';
+import ExpandableAirportDescription from './ExpandableAirportDescription';
 import { displayUrl, type Faq } from './faqs';
 import { routeCoverage, type AirportCityPhoto } from '@/lib/airport-v2';
 import { formatCeasedOn } from '@/lib/airline-status';
@@ -219,19 +220,22 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                       {code}
                     </span>
                   </h1>
-                  <p className="mt-3 w-full max-w-none text-base leading-7 text-forest-900/80">
-                    {heroSummary || (guide ? (
-                      <>
-                        {introTopics(e, hasRoutes, Boolean(officialSite))} for {name}, plus its terminals, ground transport and
-                        parking checked against official sources. Each figure shows where it came from.
-                      </>
-                    ) : (
-                      <>
-                        {introTopics(e, hasRoutes, Boolean(officialSite))} for {name}, and where to check terminal and transport
-                        details. Each figure shows where it came from.
-                      </>
-                    ))}
-                  </p>
+                  <ExpandableAirportDescription
+                    text={heroSummary}
+                    fallback={
+                      guide ? (
+                        <>
+                          {introTopics(e, hasRoutes, Boolean(officialSite))} for {name}, plus its terminals, ground transport and
+                          parking checked against official sources. Each figure shows where it came from.
+                        </>
+                      ) : (
+                        <>
+                          {introTopics(e, hasRoutes, Boolean(officialSite))} for {name}, and where to check terminal and transport
+                          details. Each figure shows where it came from.
+                        </>
+                      )
+                    }
+                  />
                 </div>
               </div>
 

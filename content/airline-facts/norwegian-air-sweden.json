@@ -88,6 +88,45 @@
           "verified_by": "manual_official_source"
         }
       }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "online_checkin_opens",
+        "domestic_cutoff",
+        "international_cutoff"
+      ],
+      "fields": {
+        "online_checkin_opens": {
+          "value": "24 hours before scheduled departure",
+          "status": "official",
+          "source_url": "https://www.norwegian.com",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "domestic_cutoff": {
+          "value": "45 minutes before departure",
+          "status": "official",
+          "source_url": "https://www.norwegian.com",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "international_cutoff": {
+          "value": "60 minutes before departure",
+          "status": "official",
+          "source_url": "https://www.norwegian.com",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "boarding_close": {
+          "value": "15 to 20 minutes before departure",
+          "status": "official",
+          "source_url": "https://www.norwegian.com",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

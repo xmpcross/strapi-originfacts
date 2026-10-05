@@ -1,8 +1,49 @@
+'use client';
+
+import { useState, type FormEvent } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 
+type Status = 'idle' | 'submitting' | 'success' | 'error';
+
 export default function SubscribeBlock() {
+  const [status, setStatus] = useState<Status>('idle');
+  const [message, setMessage] = useState('');
+
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    setStatus('submitting');
+    setMessage('');
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: String(data.get('email') ?? ''),
+          website: String(data.get('website') ?? ''),
+        }),
+      });
+      const json = (await res.json().catch(() => null)) as { ok?: boolean; error?: string } | null;
+      // Success only on a 2xx that says ok — anything else is shown as an error.
+      if (res.ok && json?.ok) {
+        setStatus('success');
+        setMessage('Thanks, you’re signed up.');
+        form.reset();
+      } else {
+        setStatus('error');
+        setMessage(json?.error || 'Something went wrong. Please try again later.');
+      }
+    } catch {
+      setStatus('error');
+      setMessage('Could not reach the server. Please check your connection and try again.');
+    }
+  }
+
+  const submitting = status === 'submitting';
+
   return (
     <section className="py-14" data-testid="home-subscribe">
       <div className="mx-auto max-w-7xl px-6">
@@ -38,64 +79,58 @@ export default function SubscribeBlock() {
           </div>
 
           <div className="sb_right relative z-10 max-w-[500px] flex-1">
-            <form
-              id="mc4wp-form-1"
-              className="mc4wp-form mc4wp-form-314"
-              method="post"
-              action="/api/subscribe"
-              data-id="314"
-              data-name="Newspaper"
-              data-testid="home-subscribe-form"
-            >
-              <div className="mc4wp-form-fields">
-                <div className="subscribe_holder flex items-center justify-between gap-[10px] border-b border-black">
-                  <Label htmlFor="home-subscribe-email" className="sr-only">
-                    Email address
-                  </Label>
-                  <Input
-                    id="home-subscribe-email"
-                    type="email"
-                    name="EMAIL"
-                    placeholder="Your email address"
-                    required
-                    className="h-11 min-w-0 flex-auto rounded-none border-0 bg-transparent p-0 text-sm text-[#080808] shadow-none placeholder:text-[#333] focus-visible:ring-0 md:text-sm"
-                  />
-                  <Button
-                    type="submit"
-                    className="h-[30px] rounded-[15px] bg-[#080808] px-[18px] pt-[2px] text-sm font-bold uppercase tracking-wider text-white shadow-none hover:bg-primary-emphasis"
-                  >
-                    Subscribe
-                  </Button>
-                </div>
-                <p
-                  className="agree mt-3 block text-[#080808]"
-                  style={{ fontSize: '14px', lineHeight: '17px' }}
-                >
-                  <span>
-                    I consent to receive newsletter via email. For further information, please review our{' '}
-                    <a
-                      href="#"
-                      className="font-medium text-[#080808] no-underline"
-                      style={{ borderBottom: '1px solid #777' }}
-                    >
-                      Privacy Policy
-                    </a>
-                  </span>
-                </p>
-              </div>
-              <label style={{ display: 'none' }}>
-                Leave this field empty if you&rsquo;re human:{' '}
-                <input
-                  type="text"
-                  name="_mc4wp_honeypot"
-                  defaultValue=""
-                  tabIndex={-1}
-                  autoComplete="off"
+            <form onSubmit={onSubmit} data-testid="home-subscribe-form">
+              <div className="subscribe_holder flex items-center justify-between gap-[10px] border-b border-black">
+                <Label htmlFor="home-subscribe-email" className="sr-only">
+                  Email address
+                </Label>
+                <Input
+                  id="home-subscribe-email"
+                  type="email"
+                  name="email"
+                  autoComplete="email"
+                  placeholder="Your email address"
+                  required
+                  maxLength={254}
+                  disabled={submitting}
+                  className="h-11 min-w-0 flex-auto rounded-none border-0 bg-transparent p-0 text-sm text-[#080808] shadow-none placeholder:text-[#333] focus-visible:ring-0 md:text-sm"
                 />
+                <Button
+                  type="submit"
+                  disabled={submitting}
+                  className="h-[30px] rounded-[15px] bg-[#080808] px-[18px] pt-[2px] text-sm font-bold uppercase tracking-wider text-white shadow-none hover:bg-primary-emphasis"
+                >
+                  {submitting ? 'Sending…' : 'Subscribe'}
+                </Button>
+              </div>
+              <p
+                className="agree mt-3 block text-[#080808]"
+                style={{ fontSize: '14px', lineHeight: '17px' }}
+              >
+                We&rsquo;ll email you occasional travel updates. Unsubscribe any time. See our{' '}
+                <a
+                  href="/legal/privacy"
+                  className="font-medium text-[#080808] no-underline"
+                  style={{ borderBottom: '1px solid #777' }}
+                >
+                  Privacy Policy
+                </a>
+                .
+              </p>
+              {/* Honeypot — hidden from people, filled in by bots. */}
+              <label style={{ display: 'none' }} aria-hidden>
+                Leave this field empty if you&rsquo;re human:{' '}
+                <input type="text" name="website" defaultValue="" tabIndex={-1} autoComplete="off" />
               </label>
-              <input type="hidden" name="_mc4wp_form_id" value="314" />
-              <input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1" />
-              <div className="mc4wp-response" />
+              <p
+                role={status === 'error' ? 'alert' : 'status'}
+                aria-live="polite"
+                data-testid="home-subscribe-message"
+                data-status={status}
+                className={`mt-3 text-sm font-medium ${status === 'error' ? 'text-red-700' : 'text-[#080808]'}`}
+              >
+                {message}
+              </p>
             </form>
           </div>
         </div>

@@ -1,62 +1,18 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import {
+  CONTACT_FROM as FROM,
+  CONTACT_TO as TO,
+  createRateLimiter,
+  createSmtpTransporter,
+  EMAIL_RE,
+  escapeHtml,
+  ipFromRequest,
+} from '@/lib/mailer';
 
 export const runtime = 'nodejs';
 
-const FROM = process.env.CONTACT_FROM_EMAIL ?? 'Originfacts Contact <contact@originfacts.com>';
-const TO = process.env.CONTACT_TO_EMAIL ?? 'contact@originfacts.com';
-
 // Naive in-memory per-IP rate limit: max 5 submissions per 15 minutes.
-const RATE = { windowMs: 15 * 60 * 1000, max: 5 };
-const hits = new Map<string, number[]>();
-function rateLimited(ip: string): boolean {
-  const now = Date.now();
-  const arr = (hits.get(ip) ?? []).filter((t) => now - t < RATE.windowMs);
-  if (arr.length >= RATE.max) {
-    hits.set(ip, arr);
-    return true;
-  }
-  arr.push(now);
-  hits.set(ip, arr);
-  return false;
-}
-
-function escapeHtml(s: string): string {
-  return s
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
-}
-
-function ipFromRequest(req: Request): string {
-  const fwd = req.headers.get('x-forwarded-for');
-  if (fwd) return fwd.split(',')[0]!.trim();
-  const real = req.headers.get('x-real-ip');
-  if (real) return real.trim();
-  return 'unknown';
-}
-
-/* Form mail goes through the Google Workspace SMTP relay, which accepts this
-   host's IPs without a login and only sends From a Workspace domain. The local
-   Stalwart server this used to default to was removed on 4 Oct 2026. */
-function createSmtpTransporter() {
-  const host = process.env.SMTP_HOST || 'smtp-relay.gmail.com';
-  const port = parseInt(process.env.SMTP_PORT || '587', 10);
-  const user = process.env.SMTP_USER;
-  const pass = process.env.SMTP_PASS;
-  const secure = process.env.SMTP_SECURE === 'true' || port === 465;
-
-  return nodemailer.createTransport({
-    host,
-    port,
-    secure,
-    requireTLS: !secure, // never send form contents in clear text on 587
-    name: 'www.originfacts.com',
-    ...(user && pass ? { auth: { user, pass } } : {}),
-  });
-}
+const rateLimited = createRateLimiter({ windowMs: 15 * 60 * 1000, max: 5 });
 
 export async function POST(req: Request) {
   const ip = ipFromRequest(req);
@@ -91,7 +47,7 @@ export async function POST(req: Request) {
       { status: 400 },
     );
   }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+  if (!EMAIL_RE.test(email)) {
     return NextResponse.json({ ok: false, error: 'Please enter a valid email address.' }, { status: 400 });
   }
   if (name.length > 200 || subject.length > 200 || message.length > 5000 || pageUrl.length > 500) {

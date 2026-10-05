@@ -7,7 +7,7 @@ import { breadcrumbJsonLd } from '@/lib/jsonld';
 import { faqJsonLd } from '@/lib/entity-seo';
 import TpwlLoader, { TpwlConsentedBoot, TpwlSearchPlaceholder } from '@/components/TpwlLoader';
 import { tpwlPartnerUrl } from '@/lib/tpwl-link';
-import TpwlCurrencyCaret from '@/components/TpwlCurrencyCaret';
+import TpwlCurrencySync from '@/components/TpwlCurrencySync';
 import TpwlOriginSync from '@/components/TpwlOriginSync';
 import AirlineResultsFilter from '@/components/AirlineResultsFilter';
 
@@ -128,7 +128,7 @@ export default async function FlightsPage({
           FAQPage schema mirrors that exact Q&A set. */}
       <JsonLd data={faqJsonLd(BOOKING_FAQ)} />
       <TpwlLoader />
-      <TpwlCurrencyCaret />
+      <TpwlCurrencySync />
       <TpwlOriginSync />
 
       {/* TPWL renders the search form and result list in their containers below. */}

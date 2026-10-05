@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { FALLBACK_ORIGIN } from '@/lib/flights-data';
+import { placeFromBrowserTimeZone } from '@/lib/timezone-geo';
 
 export type Origin = { name: string; iata: string };
 
@@ -117,29 +118,12 @@ export function resolveVisitorOrigin(): Promise<Origin | null> {
           return origin;
         }
       }
-      const geoRes = await fetch('https://ipapi.co/json/', { cache: 'no-store' });
-      if (!geoRes.ok) return null;
-      const geo = (await geoRes.json()) as
-        | { latitude?: number; longitude?: number; city?: string; error?: boolean }
-        | null;
-      if (
-        !geo ||
-        geo.error ||
-        typeof geo.latitude !== 'number' ||
-        typeof geo.longitude !== 'number'
-      ) {
-        return null;
-      }
-      const airRes = await fetch(`/api/nearest-airport?lat=${geo.latitude}&lon=${geo.longitude}`);
-      if (!airRes.ok) return null;
-      const airport = (await airRes.json()) as
-        | { iata?: string; city?: string | null; name?: string }
-        | null;
-      if (!airport?.iata) return null;
-      const origin: Origin = {
-        iata: airport.iata,
-        name: airport.city || airport.name || geo.city || airport.iata,
-      };
+      // No IP lookup in the browser: fall back to the browser's time zone
+      // (no network, nothing sent to a third party). An unmapped zone leaves
+      // the caller on FALLBACK_ORIGIN.
+      const place = placeFromBrowserTimeZone();
+      if (!place) return null;
+      const origin: Origin = { iata: place.iata, name: place.city };
       writeCache(origin);
       return origin;
     } catch {

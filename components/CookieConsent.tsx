@@ -5,11 +5,13 @@ import Link from 'next/link';
 import {
   ALL_OFF,
   ALL_ON,
+  CONSENT_EVENT,
   CONSENT_REOPEN_EVENT,
   getConsent,
   reopenConsentSettings,
   saveConsent,
   type ConsentCategories,
+  type ConsentState,
   type ConsentCategory,
 } from '@/lib/consent';
 
@@ -36,8 +38,20 @@ export default function CookieConsent() {
       setView('settings');
       setOpen(true);
     };
+    // Any saved choice closes the banner, including one made outside it: the
+    // in-page "Load …" placeholders (GetYourGuide, Travelpayouts) grant their
+    // category through the store, and the visitor has then made a choice.
+    const onSaved = (e: Event) => {
+      const saved = (e as CustomEvent<ConsentState>).detail ?? getConsent();
+      if (saved) setCategories(saved.categories);
+      setOpen(false);
+    };
     window.addEventListener(CONSENT_REOPEN_EVENT, onReopen);
-    return () => window.removeEventListener(CONSENT_REOPEN_EVENT, onReopen);
+    window.addEventListener(CONSENT_EVENT, onSaved);
+    return () => {
+      window.removeEventListener(CONSENT_REOPEN_EVENT, onReopen);
+      window.removeEventListener(CONSENT_EVENT, onSaved);
+    };
   }, []);
 
   if (!open) return null;

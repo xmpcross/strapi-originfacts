@@ -1,14 +1,19 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { AIRPORT_TEMPLATE_V2_SLUGS, airportUsesTemplateV2 } from '../lib/airport-template-v2';
+import {
+  AIRPORT_TEMPLATE_V2_DEFAULT,
+  AIRPORT_TEMPLATE_V2_EXCLUDED,
+  airportUsesTemplateV2,
+} from '../lib/airport-template-v2';
 import { airportGuideV2Faqs } from '../components/airport-v2/faqs';
 
-test('airport v2: only allowlisted slugs use the new template', () => {
-  assert.deepEqual([...AIRPORT_TEMPLATE_V2_SLUGS], ['perth']);
+test('airport v2: the default for every airport unless excluded', () => {
+  assert.equal(AIRPORT_TEMPLATE_V2_DEFAULT, true);
+  assert.deepEqual([...AIRPORT_TEMPLATE_V2_EXCLUDED], []);
   assert.equal(airportUsesTemplateV2('perth'), true);
   assert.equal(airportUsesTemplateV2('PERTH'), true);
-  assert.equal(airportUsesTemplateV2('per'), false);
-  assert.equal(airportUsesTemplateV2('sydney'), false);
+  assert.equal(airportUsesTemplateV2('sydney'), true);
+  assert.equal(airportUsesTemplateV2('monkey-mia'), true);
 });
 
 test('airport v2 faq: answers restate only the facts passed in', () => {

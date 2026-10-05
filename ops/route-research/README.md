@@ -1,10 +1,8 @@
 # Route research: Gemini + Google Search grounding → verified route guides
 
 Writes `content/route-guides/<slug>.json` (the schema in `lib/route-guide.ts`,
-same as `bah-to-doh.json`) for flight routes. **Status: built and tested
-offline; not yet run against Gemini.** The first attempts on 5 Oct 2026
-returned HTTP 429 `RESOURCE_EXHAUSTED` (billing not active on the key's
-project), so no route content has been produced.
+same as `bah-to-doh.json`) for flight routes. **Status: piloted on akl-to-syd (5 Oct 2026).** Earlier 429
+`RESOURCE_EXHAUSTED` replies were billing not yet linked to the key's project.
 
 ## One command
 
@@ -151,6 +149,15 @@ Rates used by `usage.mjs` (Google's pricing page, 5 Oct 2026):
 | --- | --- | --- | --- | --- | --- |
 | 5 Oct 2026 | gemini-3.5-flash | 1 | 0 | 0 / 0 / 0 | 429 `RESOURCE_EXHAUSTED`, stopped |
 | 5 Oct 2026 | gemini-3.6-flash | 1 | 0 | 0 / 0 / 0 | 429 `RESOURCE_EXHAUSTED`, stopped |
+| 5 Oct 2026 | gemini-3.6-flash | 2 (lhr-to-jfk operators, one unparseable) | n/a | 3,703 / 819 / 8,724 | stopped for akl-to-syd first; not verified, not committed |
+| 5 Oct 2026 | gemini-3.6-flash | 4 + 2 judge (akl-to-syd) | n/a | 16,852 / 3,843 / 36,247 | $0.163 at 3.6-flash rates; 16 claims → 6 verified → 5 published |
+
+**Grounding metadata:** gemini-3.6-flash returned no `groundingMetadata`
+(so `webSearchQueries` = 0 in the log) even though its JSON cited
+`vertexaisearch` grounding redirect URLs, so it did search. The number of
+searches billed is therefore only visible in Google's console, not here.
+`verify-sources.mjs` resolves those redirect URLs itself. Thinking tokens
+are ~90 % of the token cost.
 
 **Pilot routes** (once billing is on):
 - Busy international: lhr-to-jfk, syd-to-sin, lax-to-nrt.
@@ -159,6 +166,20 @@ Rates used by `usage.mjs` (Google's pricing page, 5 Oct 2026):
 - Low popularity: lfw-to-oua, urc-to-htn.
 
 ## Known limits
+
+- **Partial operator lists are not published as the list.** `build-guides.ts`
+  compares sourced operators with the airlines in live Travelpayouts nonstop
+  fare data (the page's own fallback). If fare data has a carrier no source
+  confirmed, `operating_airlines` is left empty (the page keeps the
+  fare-data list) and the intro says "include".
+- **Current-service claims** (operator, seasonal) need a source dated within
+  18 months; ceased airlines (data/airline-status, held entries included),
+  non-airlines, foreign carriers off the route record (possible
+  fifth-freedom legs) and claims about another airport (e.g. WSI vs SYD)
+  are dropped.
+- **Editor drops** (`editor-drops.json`) remove a verified claim that
+  conflicts with another sourced field on the page, with the reason kept in
+  the ledger.
 
 - **Page text comes from the server-rendered HTML.** No JavaScript runs.
   Pages that load their content with JavaScript are dropped as "quote not

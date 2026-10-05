@@ -14,8 +14,11 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-forest-900 bg-forest-950 text-white" data-testid="site-footer">
-      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-[50fr_20fr_20fr_10fr]">
-        <div>
+      {/* Up to 1175px: brand on its own row, then the menus two per row. From 1176px:
+          brand 2.3 shares, Company/Discover 1 share each, Topics only as wide as its
+          longest link so it sits flush right, in line with the legal row below. */}
+      <div className="mx-auto grid max-w-[1400px] grid-cols-2 gap-8 px-4 py-12 min-[1176px]:grid-cols-[minmax(0,2.3fr)_minmax(0,1fr)_minmax(0,1fr)_max-content] min-[1176px]:gap-10 min-[1176px]:px-6 min-[1176px]:pb-16 min-[1176px]:pt-[72px]">
+        <div className="col-span-full min-[1176px]:col-span-1">
           <Link href="/" aria-label="Originfacts home" className="inline-block" data-testid="footer-logo-link">
             <Image
               src="/brand/logo/logo-footer.svg"
@@ -157,7 +160,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-6 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mx-auto flex max-w-[1400px] flex-col gap-3 px-4 py-6 text-xs text-slate-400 min-[1176px]:px-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
             © {year} Originfacts. All rights reserved.
           </div>

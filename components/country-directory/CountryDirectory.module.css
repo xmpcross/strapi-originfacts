@@ -1,0 +1,62 @@
+/*
+ * Country cards repeat in the server HTML (60 on load, up to 234 after
+ * "Show more"), so their styles live here as short class names instead of
+ * long Tailwind strings on every card.
+ */
+
+.cardGrid {
+  @apply mt-3 grid grid-cols-1 gap-2 sm:mt-4 sm:grid-cols-2 sm:gap-2.5 lg:grid-cols-3 xl:grid-cols-4;
+}
+
+/* The name link stretches over the whole card; the count links sit above it. */
+.card {
+  @apply relative grid h-full min-w-0 grid-cols-[auto_minmax(0,1fr)_auto] content-start items-start gap-x-3 rounded-[0.3rem] border border-forest-900/10 bg-white px-3.5 py-3 transition;
+}
+.card:hover {
+  @apply border-primary-emphasis/50 bg-primary-hover/40;
+}
+.card:focus-within {
+  @apply border-primary-emphasis/60;
+}
+
+.flag {
+  @apply row-span-2 flex h-8 w-8 items-center justify-center text-2xl leading-none;
+}
+
+.name {
+  @apply min-w-0 truncate text-[15px] font-semibold leading-snug text-forest-950;
+}
+.name::after {
+  content: '';
+  @apply absolute inset-0 rounded-[0.3rem];
+}
+.name:focus-visible {
+  @apply outline-none;
+}
+.name:focus-visible::after {
+  @apply outline outline-2 outline-offset-2 outline-primary-emphasis;
+}
+.card:hover .name {
+  @apply text-primary-emphasis;
+}
+
+.code {
+  @apply flex-none rounded-[0.3rem] bg-forest-950 px-1.5 py-0.5 font-mono text-[11px] font-bold tracking-wider text-white;
+}
+
+.region {
+  @apply col-span-2 min-w-0 truncate text-xs text-forest-900/60;
+}
+
+.meta {
+  @apply col-span-3 mt-2 flex min-w-0 flex-wrap gap-x-2.5 gap-y-1 border-t border-forest-900/10 pt-2 text-xs text-forest-900/70;
+}
+.meta a {
+  @apply relative z-10 font-semibold text-forest-950 underline decoration-forest-900/25 underline-offset-2 hover:text-primary-emphasis hover:decoration-primary-emphasis;
+}
+.meta a:focus-visible {
+  @apply rounded-[0.15rem] outline outline-2 outline-offset-1 outline-primary-emphasis;
+}
+.none {
+  @apply text-forest-900/45;
+}

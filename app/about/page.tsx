@@ -12,9 +12,10 @@ import { LEGAL_DOCS } from '@/lib/legal';
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: 'About Originfacts',
+  // Absolute: the layout template would append "· Originfacts" a second time.
+  title: { absolute: 'About Originfacts: Travel Facts, Guides & Flight Search' },
   description: clampDescription(
-    'Originfacts is a travel blog about the facts of origins — the cultures, histories, and stories behind destinations — alongside the latest travel info on flights, hotels, airlines, airports, and destinations.',
+    'Originfacts is an independent travel site with destination, airline and airport guides, flight search and hotels. Learn how Originfacts works.',
   ),
   alternates: { canonical: '/about' },
 };
@@ -134,13 +135,15 @@ const COVERAGE: Coverage[] = [
 ];
 
 const COMPARISON = [
-  { feature: 'Primary research', us: 'Grounded in official .gov/.edu & IATA data', them: 'Third-party marketing feeds' },
-  { feature: 'Entity authority', us: 'Named expert authors & transparent legal entity', them: 'Anonymous publishing / AI scrapers' },
+  { feature: 'Airline facts', us: "Linked to the airline's own published pages", them: 'Often unsourced' },
+  { feature: 'Transparency', us: 'Named legal entity, AI use disclosed', them: 'Anonymous publishing' },
   { feature: 'Origin context', us: 'Cultural, historical & local geographic facts', them: 'Pure booking CTA funnel' },
   { feature: 'Commercial disclosure', us: 'Explicit affiliate network & revenue transparency', them: 'Hidden or undisclosed sponsor tags' },
 ];
 
-const AFFILIATE_NETWORKS = ['Travelpayouts', 'Stay22'];
+// Travelpayouts: flight search. Takeads: Booking.com, Agoda, Trip.com, Kiwi.com,
+// CheapOair, Qatar Airways and others. GetYourGuide: direct partner.
+const AFFILIATE_NETWORKS = ['Travelpayouts', 'Takeads', 'GetYourGuide'];
 
 const NOT_A_PROVIDER = [
   'sell travel bookings',
@@ -187,7 +190,7 @@ const APPROACH = [
 const PROCESS = [
   {
     title: 'Topic selection',
-    text: 'A human editor decides what to cover — often based on traveller search behaviour, current routes, seasonal demand, or destinations we want to write about in depth.',
+    text: 'Topics come from a planned list, based on traveller search behaviour, current routes, seasonal demand and destinations we want to cover in depth.',
   },
   {
     title: 'Research and drafting',
@@ -195,11 +198,11 @@ const PROCESS = [
   },
   {
     title: 'Image generation',
-    text: 'Cover and gallery images are produced with generative image models (currently Fal.ai FLUX). Real photographs are used where licensing permits; AI-generated images are clearly stylised and used to illustrate concepts, not to misrepresent specific places, brands, prices, or people.',
+    text: 'Cover and gallery images are produced with generative image models (currently Fal.ai FLUX). Real photographs are used where licensing permits. AI-generated images illustrate an article; they are not meant to show a specific hotel, aircraft, price or person.',
   },
   {
-    title: 'Editorial review',
-    text: 'Drafts are reviewed by a human editor before publication. We check facts that are likely to change (prices, routes, visa rules, fees), tighten language, remove anything misleading, and confirm affiliate disclosures are correct.',
+    title: 'Corrections',
+    text: 'Facts that change often (prices, routes, visa rules, fees) are the most likely to go out of date, so check them with the provider before booking. Report an error to contact@originfacts.com and it is corrected or removed.',
   },
   {
     title: 'Updating',
@@ -249,7 +252,7 @@ export default async function AboutPage() {
     articleTotal > 0 ? { value: articleTotal.toLocaleString('en-GB'), label: 'published articles' } : null,
     { value: String(COVERAGE.length), label: 'areas of travel coverage' },
     { value: String(PROCESS.length), label: 'steps from topic to published article' },
-    { value: String(AFFILIATE_NETWORKS.length), label: 'affiliate networks, named below' },
+    { value: String(AFFILIATE_NETWORKS.length), label: 'affiliate partners, named below' },
   ].filter((s): s is { value: string; label: string } => s !== null);
 
   return (
@@ -271,10 +274,9 @@ export default async function AboutPage() {
               to — paired with the travel information you actually need to plan a trip.
             </p>
             <p className="mt-5 text-base leading-relaxed text-forest-900/75">
-              Originfacts combines primary aviation data with on-the-ground cultural research across global
-              destinations. Our independent editorial team analyses flight routes, airport logistics, airline fare
-              structures and regional travel histories, so travellers get transparent, factual guidance before booking
-              or planning an international itinerary.
+              Originfacts is an independent travel website that pairs the facts behind destinations with practical
+              guides to flights, airports, airlines and hotels, so you can understand a place and plan the trip in one
+              place.
             </p>
             <ul className="mt-7 flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold" data-testid="about-trust-links">
               <li>
@@ -546,7 +548,7 @@ export default async function AboutPage() {
                 booking or purchase through a third-party provider. This usually does not increase the price you pay.
               </p>
               <div className="mt-5 flex flex-wrap items-center gap-3">
-                <span className="text-xs font-bold uppercase tracking-widest text-forest-900/60">Our affiliate networks</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-forest-900/60">Our affiliate partners</span>
                 {AFFILIATE_NETWORKS.map((n) => (
                   <span key={n} className="rounded-[0.2rem] bg-forest-950 px-3 py-1 text-sm font-bold text-white">
                     {n}
@@ -660,8 +662,8 @@ export default async function AboutPage() {
               How is our content produced?
             </h2>
             <p className="mt-4 text-base leading-relaxed text-forest-900/75 sm:text-lg">
-              Originfacts uses AI-assisted research and drafting to produce articles at scale, and every published piece
-              passes through a human editorial layer before it goes live.
+              Originfacts uses AI-assisted research and drafting to produce many of its articles. Here is how a piece
+              comes together.
             </p>
           </div>
 

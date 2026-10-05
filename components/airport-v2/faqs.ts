@@ -7,6 +7,8 @@
  *
  * The page renders this list and marks up the same list as FAQPage.
  */
+import { routeCoverage } from '@/lib/airport-v2';
+
 export type AirportV2FaqInput = {
   name: string;
   iata: string;
@@ -18,8 +20,12 @@ export type AirportV2FaqInput = {
   address?: string | null;
   phone?: string | null;
   officialSite?: string | null;
-  /** Carrier names on the routes shown, in display order. */
+  /** Carrier names on the routes shown, in display order — ceased carriers already removed. */
   airlines: string[];
+  /** Carriers on the route records that Wikidata records as ceased (left out of `airlines`). */
+  ceasedAirlines?: string[];
+  /** All route records from this airport, and how many of them the page shows. */
+  routeCount?: { tracked: number; shown: number };
   /** Destination names on the routes shown, in display order. */
   destinations: string[];
   countryCount: number;
@@ -66,20 +72,33 @@ export function airportGuideV2Faqs(x: AirportV2FaqInput): Faq[] {
     });
   }
 
+  const officialRef = x.officialSite ? `the airport’s official website (${displayUrl(x.officialSite)})` : 'the airport';
+  const ceasedNote = x.ceasedAirlines?.length
+    ? ` ${listProse(x.ceasedAirlines)} ${x.ceasedAirlines.length === 1 ? 'is' : 'are'} left out: Wikidata records ${
+        x.ceasedAirlines.length === 1 ? 'it' : 'them'
+      } as having ceased operations.`
+    : '';
+
   if (x.airlines.length) {
     faqs.push({
       q: `Which airlines are listed on routes from ${x.iata}?`,
-      a: `${routesFrom} list ${listProse(x.airlines)} on routes from ${x.iata}. This is not a complete list of airlines at ${x.name}; check current schedules with the airline.`,
+      a: `${routesFrom} list ${listProse(x.airlines)} on routes from ${x.iata}.${ceasedNote} This is not a complete list of airlines at ${x.name}; check current schedules with the airline.`,
     });
   }
 
   if (x.destinations.length) {
     const n = x.destinations.length;
+    const shown = x.routeCount?.shown ?? n;
+    const cov = routeCoverage({ name: x.name, code: x.iata, tracked: x.routeCount?.tracked ?? shown, shown });
+    const dest = `${n} ${n === 1 ? 'destination' : 'destinations'}${x.countryCount > 1 ? ` in ${x.countryCount} countries` : ''}`;
+    const lead = cov.sparse
+      ? `${routesFrom} include only ${cov.tracked === 1 ? 'one route' : `${cov.tracked} routes`} from ${x.iata} so far, to ${listProse(x.destinations)}. That is a small sample, not ${x.name}’s full network.`
+      : cov.shownNote
+        ? `${routesFrom} include ${cov.tracked} routes from ${x.iata} so far; the ${shown} shown on this page go to ${dest}: ${listProse(x.destinations)}. These are the routes Originfacts tracks, not ${x.name}’s full network.`
+        : `${routesFrom} include ${cov.tracked} routes from ${x.iata} so far, to ${dest}: ${listProse(x.destinations)}. These are the routes Originfacts tracks, not ${x.name}’s full network.`;
     faqs.push({
       q: `Where can you fly from ${x.iata}?`,
-      a: `${routesFrom} include ${n} ${n === 1 ? 'destination' : 'destinations'} from ${x.iata}${
-        x.countryCount > 1 ? ` in ${x.countryCount} countries` : ''
-      }: ${listProse(x.destinations)}. These are the routes Originfacts tracks, not a full timetable.`,
+      a: `${lead} For the full list of destinations, check ${officialRef} or the airlines.`,
     });
   }
 

@@ -866,3 +866,16 @@ export async function listRoutesFromAirport(iata: string, limit = 20) {
   });
   return res.data;
 }
+
+/**
+ * How many route records start at this airport — all of them, not only the
+ * ones a page lists. Requests one row; the total comes from the pagination meta.
+ */
+export async function countRoutesFromAirport(iata: string): Promise<number> {
+  const res = await strapiFetch<ListResponse<Pick<StrapiRoute, 'id' | 'slug'>>>('routes', {
+    filters: { origin: { iata: { $eqi: iata } } },
+    fields: ['slug'],
+    pagination: { pageSize: 1 },
+  });
+  return res.meta?.pagination?.total ?? res.data.length;
+}

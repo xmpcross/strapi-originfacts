@@ -363,7 +363,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
       {/* ---------------------------------------------------------- description */}
       {heroSummary && (
         <section aria-label="Airport description" className={`${WRAP} pt-8`} data-testid="airport-v2-description">
-          <p className="text-base font-bold leading-7 text-forest-950 sm:text-lg sm:leading-8">
+          <p className="text-base leading-7 text-forest-950 sm:text-lg sm:leading-8">
             {heroSummary}
           </p>
         </section>

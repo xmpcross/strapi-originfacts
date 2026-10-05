@@ -11887,5 +11887,89 @@
     ],
     "cached": false,
     "cachedAt": "2026-10-04T23:16:07.768Z"
+  },
+  "v2__istanbul__turkey__popular__usd__6__41-01__28-98": {
+    "city": "Istanbul",
+    "country": "Turkey",
+    "scope": "popular",
+    "scopeLabel": "Popular hotels",
+    "checkIn": "2026-10-26",
+    "checkOut": "2026-10-27",
+    "hotels": [
+      {
+        "id": "ChkI3fPuqO-8-7NRGg0vZy8xMWd5NF9nNTVqEAE",
+        "name": "Bona Cafe Restaurant",
+        "stars": 0,
+        "image": "https://lh3.googleusercontent.com/grass-cs/AABkmLclTa5JOwuxTjz43cAtAbD-5iPJMiuILrXi2bUWcuvDfWs6wN6dC_M1l-HQT0fXAtzFW3pF9EAw2SAO1a7TIPqmS2V1HKhOTzcuOXQLwJblk15NOA71n2lvG6dnIP5nEIMJ3SeTaQ=s287-w287-h192-n-k-no-v1",
+        "rating": 4.9,
+        "reviews": 4018,
+        "price": 0,
+        "currency": "USD",
+        "discount": null,
+        "href": ""
+      },
+      {
+        "id": "ChgIr7SNzYutxqjSARoLL2cvMXR6MnZ4MzYQAQ",
+        "name": "Hotel Poem",
+        "stars": 0,
+        "image": "https://lh3.googleusercontent.com/grass-cs/AABkmLflkdZ3mIQlBZh19VOG0-FGDc0gP3G5iWY_um3wiAystnFYW0c4ZQtRT_Cffvy4VR2B56EpBKZrb-AG4JvgbxEBDLmtzmar6Ts50IGBZzfkhAQROoEa1cfb9WbZjfPQs2b8jmWJ7Sbj_avl=s287-w287-h192-n-k-no-v1",
+        "rating": 5,
+        "reviews": 449,
+        "price": 128,
+        "currency": "USD",
+        "discount": null,
+        "href": ""
+      },
+      {
+        "id": "ChoIwbnCwM71oYqvARoNL2cvMTFoX3RfejJuXxAB",
+        "name": "My Dream Istanbul Hotel",
+        "stars": 0,
+        "image": "https://lh3.googleusercontent.com/grass-cs/AABkmLcYaTX-1v72e3Y7sX3xg_HSqqzcwD2_WcLWLrkql5s9DgR8mcv3VQnJab6IdaX2X_vUntVoRwf4S9xWRMpRzPf7BOqcycFmOC2h2vCwawvw7T5SQaTBZ0mzNfBgN342mTGKfIqb=s287-w287-h192-n-k-no-v1",
+        "rating": 0,
+        "reviews": 0,
+        "price": 86,
+        "currency": "USD",
+        "discount": null,
+        "href": ""
+      },
+      {
+        "id": "ChoIuYu3tPTxv-HuARoNL2cvMTF5MzB6d2w5dhAB",
+        "name": "The Nirvanas Hotel",
+        "stars": 4,
+        "image": "https://lh3.googleusercontent.com/grass-cs/AABkmLe7VQxDMEvG_MSJXTh-KSLDw4i4P1bm7FQkgGwke9ebz9nzPXRflX4YTQD9A0UIdDgw-ZaUHhu2Rf2TW7dlf5Bs9zS0FQLkpcJcNZpdVyzQY0JVLgFieP1jq_pDyZIa1qYBgOw=s287-w287-h192-n-k-no-v1",
+        "rating": 4.9,
+        "reviews": 3331,
+        "price": 0,
+        "currency": "USD",
+        "discount": null,
+        "href": ""
+      },
+      {
+        "id": "ChkIrbPbg5ir1YpxGg0vZy8xMWR6ZGs4czR5EAE",
+        "name": "EHLİ KEYF CAFE",
+        "stars": 0,
+        "image": "https://lh3.googleusercontent.com/grass-cs/AABkmLeIotHXPw8OFNvZNSQP2McWrlskDwpjT83wbzVrgBuQGz0idh_RBRm8N7N_T4nvFQDf8ShN3pD6-Qd0FZVPm3CrDqmbtRyweKMWXPJz4SoBFg11x6YRSMKIsZdvk1brdMPGRWY=s287-w287-h192-n-k-no-v1",
+        "rating": 4.9,
+        "reviews": 2944,
+        "price": 0,
+        "currency": "USD",
+        "discount": null,
+        "href": ""
+      },
+      {
+        "id": "ChcI9sfJpM7J684PGgsvZy8xeGIwbjVjNBAB",
+        "name": "White House Hotel Istanbul",
+        "stars": 4,
+        "image": "https://lh3.googleusercontent.com/grass-proxy/AIM7gW0JajsDV1HLEIUfeSTvMDdNuLcfL_Sr1WmQqi4tbC7d9xwVk0C0oRQots3wvAN8HLO2hesI0MKdSSrbAlfyKG6XoIKADJ24-QaZ9AKPcymMhq_2nnJMaLGayXZTGkucMxg-_UjSKvgkEwQzNb5nWPXtb5UuAIdjDMiYJHQrKqk4NOuGUBn5spo=s287-w287-h192-n-k-no-v1",
+        "rating": 4.9,
+        "reviews": 1916,
+        "price": 260,
+        "currency": "USD",
+        "discount": null,
+        "href": ""
+      }
+    ],
+    "cached": false,
+    "cachedAt": "2026-10-05T15:38:03.628Z"
   }
 }

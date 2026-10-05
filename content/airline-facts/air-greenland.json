@@ -67,11 +67,11 @@
       "fields": {
         "phone_home_market": {
           "value": "+299 343434",
-          "status": "pending",
-          "source_url": "http://airgreenland.com/baggage",
+          "status": "official",
+          "source_url": "https://www.airgreenland.com/contact",
           "notes": "Air Greenland official customer support line.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

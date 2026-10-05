@@ -1,0 +1,205 @@
+{
+  "slug": "bah-to-doh",
+  "verified_at": "2026-10-05",
+  "intro": {
+    "text": "Bahrain to Doha is a short nonstop hop across the Gulf, from Bahrain International Airport (BAH) to Hamad International Airport (DOH). Gulf Air and Qatar Airways both fly it. Direct flights between the two countries restarted on 25 May 2023 after a gap of nearly six years, and after a regional airspace closure in 2026 both airlines announced the route would resume from 1 May 2026.",
+    "sources": ["aviationweek-2023", "zawya-gf-2026", "qatartribune-qr-2026"]
+  },
+  "operating_airlines": [
+    { "iata": "GF", "sources": ["zawya-gf-2026"] },
+    { "iata": "QR", "sources": ["qatartribune-qr-2026"] }
+  ],
+  "sections": [
+    {
+      "id": "route-history",
+      "heading": "Why were there no direct Bahrain–Doha flights from 2017 to 2023?",
+      "paragraphs": [
+        {
+          "text": "In June 2017 Bahrain joined Saudi Arabia, the United Arab Emirates and Egypt in a diplomatic blockade of Qatar, and flights between the two countries stopped. Gulf Air's last flights on the route left on 5 June 2017: GF530 from Bahrain at 20:55 and GF531 from Doha at 22:40.",
+          "sources": ["peninsula-2017", "aviationweek-2023"]
+        },
+        {
+          "text": "Direct flights resumed on 25 May 2023, ending a nearly six-year absence. Qatar Airways restarted with one daily flight and announced a second and third daily service from 15 June 2023; Gulf Air resumed its Doha flights the same day.",
+          "sources": ["gdn-2023", "aviationweek-2023"]
+        },
+        {
+          "text": "The route was interrupted again in 2026. Qatar closed its airspace on 28 February 2026, and Gulf Air suspended all inbound, outbound and transit flights while regional airspace stayed closed. Qatar Airways and Gulf Air then announced that Bahrain–Doha flights would resume from 1 May 2026.",
+          "sources": ["aljazeera-2026", "gulfnews-2026", "qatartribune-qr-2026", "zawya-gf-2026"]
+        },
+        {
+          "text": "There is still no direct road between Bahrain and Qatar. A 40 km causeway between the two countries, known as the Friendship Bridge, is at the planning stage: a contract for its feasibility studies was reported in January 2026.",
+          "sources": ["tradearabia-2026"]
+        }
+      ]
+    },
+    {
+      "id": "airports",
+      "heading": "What should you know about the airports at each end?",
+      "paragraphs": [
+        {
+          "text": "Bahrain International Airport's current passenger terminal opened on 28 January 2021.",
+          "sources": ["aviationweek-bah-2021"]
+        },
+        {
+          "text": "Hamad International Airport in Doha opened in 2014 and is the home base of Qatar Airways.",
+          "sources": ["hia-about"]
+        }
+      ]
+    },
+    {
+      "id": "getting-there",
+      "heading": "How do you get to and from the airports?",
+      "paragraphs": [
+        {
+          "text": "In Bahrain, public buses leave from zone 4A, outside exit 4 on the Arrivals level. Route A2 is the fastest bus from the airport to Manama; route A1 also runs via Manama Bus Terminal. Taxis are metered and wait around the clock at the inner curb of the Arrivals level, and Careem and Uber pick-ups are at the Arrivals curbside next to Gate 1.",
+          "sources": ["bah-bus", "bah-taxi"]
+        },
+        {
+          "text": "In Doha, Hamad International Airport has its own Doha Metro station, called HIA, on the Red Line.",
+          "sources": ["hia-metro", "peninsula-metro-2025"]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Which airlines fly nonstop from Bahrain to Doha?",
+      "a": "Gulf Air and Qatar Airways. Both announced they would resume Bahrain–Doha flights from 1 May 2026, after the route was suspended during a regional airspace closure.",
+      "sources": ["zawya-gf-2026", "qatartribune-qr-2026"]
+    },
+    {
+      "q": "When did direct flights between Bahrain and Qatar resume?",
+      "a": "On 25 May 2023, after almost six years without direct flights. Following a pause in 2026 during a regional airspace closure, Gulf Air and Qatar Airways announced the route would restart from 1 May 2026.",
+      "sources": ["aviationweek-2023", "gdn-2023", "zawya-gf-2026", "qatartribune-qr-2026"]
+    },
+    {
+      "q": "Can you drive from Bahrain to Qatar?",
+      "a": "Not directly: there is no road link between the two countries. A 40 km causeway, the Friendship Bridge, is at the feasibility-study stage (reported January 2026).",
+      "sources": ["tradearabia-2026"]
+    },
+    {
+      "q": "How do I get from Bahrain International Airport to Manama?",
+      "a": "Public bus A2 is the fastest bus to Manama, and A1 also stops at Manama Bus Terminal; both leave from zone 4A outside exit 4 on the Arrivals level. Metered taxis wait at the Arrivals inner curb, and Careem and Uber pick up next to Gate 1.",
+      "sources": ["bah-bus", "bah-taxi"]
+    },
+    {
+      "q": "How do I get from Hamad International Airport into Doha?",
+      "a": "By Doha Metro: the airport's HIA station is on the Red Line.",
+      "sources": ["hia-metro", "peninsula-metro-2025"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "aviationweek-2023",
+      "title": "Qatar Airways, Gulf Air Set Qatar-Bahrain Return",
+      "publisher": "Aviation Week",
+      "url": "https://aviationweek.com/air-transport/airports-networks/qatar-airways-gulf-air-set-qatar-bahrain-return",
+      "published": "23 May 2023",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "gdn-2023",
+      "title": "Qatar Airways resumes flights to Bahrain",
+      "publisher": "Gulf Daily News",
+      "url": "https://www.gdnonline.com/Details/1242650/Qatar-Airways-resumes-flights-to-Bahrain-",
+      "published": "25 May 2023",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "peninsula-2017",
+      "title": "Gulf Air suspends flights to and from Qatar",
+      "publisher": "The Peninsula",
+      "url": "https://thepeninsulaqatar.com/article/05/06/2017/Gulf-Air-suspends-flights-to-and-from-Qatar",
+      "published": "5 June 2017",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "aljazeera-2026",
+      "title": "Qatar partially reopens airspace as Iranian strikes continue to hit Gulf",
+      "publisher": "Al Jazeera",
+      "url": "https://www.aljazeera.com/news/2026/3/6/qatar-partially-reopens-airspace-as-iranian-strikes-continue-to-hit-gulf",
+      "published": "6 March 2026",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "gulfnews-2026",
+      "title": "Gulf Air: all inbound, outbound and overflight operations are suspended indefinitely",
+      "publisher": "Gulf News",
+      "url": "https://gulfnews.com/business/aviation/gulf-air-all-inbound-outbound-and-overflight-operations-are-suspended-indefinitely-1.500470734",
+      "published": "11 March 2026",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "qatartribune-qr-2026",
+      "title": "Qatar Airways restores more routes with daily flights to Bahrain and India's Kozhikode from May 1",
+      "publisher": "Qatar Tribune",
+      "url": "https://www.qatar-tribune.com/article/231143/latest-news/qatar-airways-restores-more-routes-with-daily-flights-to-bahrain-and-indias-kozhikode-from-may-1",
+      "published": "27 April 2026",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "zawya-gf-2026",
+      "title": "Gulf Air to reinstate full global network by June 2026",
+      "publisher": "Zawya (TradeArabia)",
+      "url": "https://www.zawya.com/en/business/aviation/gulf-air-to-reinstate-full-global-network-by-june-2026-q9152f2y",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "tradearabia-2026",
+      "title": "Dar Al-Handasah appointed for study on $4bn Qatar-Bahrain causeway",
+      "publisher": "TradeArabia",
+      "url": "https://tradearabia.com/News/332111/Dar-Al-Handasah-appointed-for-study-on-%244bn-Qatar-Bahrain-causeway",
+      "published": "8 January 2026",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "aviationweek-bah-2021",
+      "title": "New Bahrain Terminal Opens For Business",
+      "publisher": "Aviation Week",
+      "url": "https://aviationweek.com/air-transport/airports-networks/new-bahrain-terminal-opens-business",
+      "published": "29 January 2021",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "hia-about",
+      "title": "About us",
+      "publisher": "Hamad International Airport",
+      "url": "https://www.dohahamadairport.com/about-us",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "hia-metro",
+      "title": "Metro — to and from the airport",
+      "publisher": "Hamad International Airport",
+      "url": "https://www.dohahamadairport.com/airport-guide/to-from-the-airport/metro",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "peninsula-metro-2025",
+      "title": "Doha Metro announces HIA station operating hours for Eid Al Fitr",
+      "publisher": "The Peninsula",
+      "url": "https://thepeninsulaqatar.com/article/26/03/2025/doha-metro-announces-hia-station-operating-hours-for-eid-al-fitr",
+      "published": "26 March 2025",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "bah-bus",
+      "title": "Public Bus",
+      "publisher": "Bahrain Airport Company",
+      "url": "https://www.bahrainairport.bh/passenger/bus",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "bah-taxi",
+      "title": "Taxi Service",
+      "publisher": "Bahrain Airport Company",
+      "url": "https://www.bahrainairport.bh/passenger/taxi",
+      "published": null,
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

@@ -1,80 +1,151 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { JsonLd, FaqSection } from '@/components/SeoBlocks';
-import { faqJsonLd, type Faq } from '@/lib/entity-seo';
+import { JsonLd } from '@/components/SeoBlocks';
+import FaqExplorer from '@/components/FaqExplorer';
+import { faqJsonLd } from '@/lib/entity-seo';
 import { breadcrumbJsonLd } from '@/lib/jsonld';
+import { clampDescription } from '@/lib/seo';
+import { buildFaqGroups, faqsForSchema, type FaqCounts } from '@/lib/faq';
+import { listAirlines, listAirports, listArticles } from '@/lib/strapi';
+import { airlineGuideIsPublished, airlineTier } from '@/lib/airline-tier';
+import { getRouteFacts } from '@/lib/route-facts';
+import { isCargoOnlyAirline } from '@/lib/airline-exclusions';
+
+// Counts in the answers come from Strapi, so re-render hourly rather than
+// freezing whatever the CMS returned at build time.
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: 'Frequently Asked Questions (FAQ)',
-  description:
-    'Answers to common questions about Originfacts, flight search, live pricing, booking, editorial standards, and affiliate partnerships.',
+  description: clampDescription(
+    'Answers about Originfacts: how flight search and prices work, where airline facts come from, affiliate links, corrections, privacy and cookies.',
+  ),
   alternates: { canonical: '/faq' },
+  robots: { index: true, follow: true },
 };
 
-const SITE_FAQS: Faq[] = [
-  {
-    q: 'How do I find the cheapest flights with Originfacts?',
-    a: 'Start with your departure airport, destination, travel dates and passenger count in our Flight Search tool. Originfacts queries live airline and online travel agency fares so you can compare prices in one place. For the lowest total price, compare nearby dates, review one-stop options, and check baggage fees before booking.',
-  },
-  {
-    q: 'Does Originfacts handle bookings or payments?',
-    a: 'No. Originfacts is an independent travel information and aggregate research platform. We do not sell tickets, process payments, or manage bookings. When you select a flight or hotel, you are redirected to the operating airline, hotel, or booking provider to complete your reservation.',
-  },
-  {
-    q: 'Do you earn a commission when I book through Originfacts?',
-    a: 'Yes. Some links on Originfacts are affiliate links (such as Travelpayouts and Stay22). If you complete a booking after clicking one of these links, we may earn a commission at no additional cost to you.',
-  },
-  {
-    q: 'Are the prices shown guaranteed?',
-    a: 'Travel prices change rapidly based on seat availability, carrier yield management, taxes, and exchange rates. Before paying, always confirm the final fare, taxes, baggage rules, and cancellation terms directly on the provider booking page.',
-  },
-  {
-    q: 'When is the cheapest time to book a flight?',
-    a: 'For short-haul and domestic routes, optimal fares often appear 1 to 3 months before departure. For international long-haul flights, monitoring prices 2 to 6 months in advance provides the best coverage. Midweek departures (Tuesday and Wednesday) also tend to be cheaper than weekend peaks.',
-  },
-  {
-    q: 'What are popular flight destinations from Australia?',
-    a: 'Popular destinations for travellers departing Australia (including Perth, Sydney, and Melbourne) include Bali (DPS), Singapore (SIN), Bangkok (BKK), Tokyo (TYO), London (LHR), and Auckland (AKL).',
-  },
-  {
-    q: 'How can I submit content corrections or contact the editorial team?',
-    a: 'We welcome factual corrections from readers. Please visit our Contact page or email contact@originfacts.com with the article URL, specific text section, and verifiable source links.',
-  },
-];
+/**
+ * Same population as the /airlines directory (app/airlines/page.tsx): passenger
+ * carriers only, Tier 1-2 or with a published policy guide. Kept in step with
+ * that filter so the FAQ never quotes a different number from the directory.
+ */
+async function airlineCounts() {
+  const all = await listAirlines().catch(() => []);
+  const listed = all.filter((a) => {
+    if (isCargoOnlyAirline(a)) return false;
+    const dests = getRouteFacts(a.iataCode)?.destinationCount ?? 0;
+    return airlineGuideIsPublished(a.slug) || airlineTier(a, dests > 0) <= 2;
+  });
+  return {
+    airlines: listed.length,
+    airlineCountries: new Set(listed.map((a) => a.country).filter(Boolean)).size,
+    verifiedAirlineGuides: listed.filter((a) => airlineGuideIsPublished(a.slug)).length,
+  };
+}
 
-export default function FaqPage() {
+async function faqCounts(): Promise<FaqCounts> {
+  const [articles, airports, airlines] = await Promise.all([
+    listArticles({ pageSize: 1 })
+      .then((r) => r.meta?.pagination?.total ?? 0)
+      .catch(() => 0),
+    listAirports()
+      .then((a) => a.length)
+      .catch(() => 0),
+    airlineCounts(),
+  ]);
+  return { articles, airports, ...airlines };
+}
+
+export default async function FaqPage() {
+  const counts = await faqCounts();
+  const groups = buildFaqGroups(counts);
+  const questionCount = groups.reduce((n, g) => n + g.items.length, 0);
+
+  // Every figure is counted, not typed.
+  const stats = [
+    { value: questionCount, label: 'questions answered' },
+    { value: groups.length, label: 'topics' },
+    counts.airlines > 0 ? { value: counts.airlines, label: 'airlines in the directory' } : null,
+    counts.verifiedAirlineGuides > 0 ? { value: counts.verifiedAirlineGuides, label: 'verified airline guides' } : null,
+  ].filter((s): s is { value: number; label: string } => s !== null);
+
   return (
-    <article className="mx-auto max-w-7xl px-6 py-16" data-testid="faq-page">
-      <JsonLd data={faqJsonLd(SITE_FAQS)} />
+    <article className="overflow-x-clip" data-testid="faq-page">
+      <JsonLd data={faqJsonLd(faqsForSchema(groups))} />
       <JsonLd data={breadcrumbJsonLd([{ name: 'FAQ', url: '/faq' }])} />
 
-      <header className="max-w-3xl">
-        <p className="chip">Help &amp; FAQ</p>
-        <h1 className="editorial-h mt-5 text-3xl font-bold leading-tight text-forest-900 sm:text-4xl">
-          Frequently Asked Questions
-        </h1>
-        <p className="mt-3 text-lg font-light text-forest-900/75">
-          Originfacts clarifies modern air travel by providing immediate answers regarding flight comparison engines, direct booking redirects, affiliate disclosure policies, and data verification methods. This comprehensive resource explains how real-time fares are aggregated across carriers, how pricing updates occur, and how travelers can contact our human editorial staff for research inquiries or content corrections.
-        </p>
+      <header className="mx-auto max-w-7xl px-4 pb-12 pt-12 sm:px-6 sm:pt-16" data-testid="faq-hero">
+        <div className="max-w-3xl">
+          <p className="eyebrow-tag">Help &amp; FAQ</p>
+          <h1 className="mt-5 text-5xl font-bold leading-none tracking-tight text-forest-950 sm:text-6xl">
+            Frequently asked questions
+          </h1>
+          <p className="mt-6 text-lg leading-relaxed text-forest-900/80 sm:text-xl">
+            Straight answers about how Originfacts works: what our flight search and prices can and can&apos;t tell you,
+            where the airline facts come from, how we earn money, and how to reach us.
+          </p>
+          <ul className="mt-7 flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold" data-testid="faq-hero-links">
+            <li>
+              <Link href="/about" className="text-forest-950 underline-offset-2 hover:underline">
+                About Originfacts →
+              </Link>
+            </li>
+            <li>
+              <Link href="/methodology" className="text-forest-950 underline-offset-2 hover:underline">
+                Editorial methodology →
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="text-primary-emphasis underline-offset-2 hover:underline">
+                Contact us →
+              </Link>
+            </li>
+          </ul>
+        </div>
       </header>
 
-      <div className="mt-8 flex flex-wrap items-center gap-4 rounded-xl border border-forest-900/10 bg-forest-50/60 p-5 text-sm text-forest-900">
-        <span className="font-semibold">Quick Links:</span>
-        <Link href="/about" className="font-bold underline hover:text-forest-700">
-          About Originfacts
-        </Link>
-        <span className="text-forest-900/40">•</span>
-        <Link href="/methodology" className="underline hover:text-forest-700 font-semibold">
-          Editorial Methodology
-        </Link>
-        <span className="text-forest-900/40">•</span>
-        <Link href="/contact" className="underline hover:text-forest-700 font-semibold">
-          Contact Us
-        </Link>
+      <section aria-label="This FAQ in numbers" className="border-y border-forest-900/15 bg-paper" data-testid="faq-stats">
+        <dl className="mx-auto grid max-w-7xl grid-cols-2 gap-x-4 gap-y-8 px-4 py-8 sm:px-6 lg:grid-cols-4">
+          {stats.map((s) => (
+            <div key={s.label} className="flex min-w-0 flex-col-reverse border-l-2 border-primary-emphasis pl-4">
+              <dt className="mt-2 text-xs font-bold uppercase tracking-widest text-forest-900/60">{s.label}</dt>
+              <dd className="text-3xl font-bold leading-none text-forest-950 sm:text-4xl">{s.value.toLocaleString('en-GB')}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
+        <FaqExplorer groups={groups} />
       </div>
 
-      <FaqSection faqs={SITE_FAQS} title="General &amp; Booking Questions" />
-
+      <section className="bg-forest-950" aria-labelledby="faq-still-stuck" data-testid="faq-cta">
+        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 sm:py-16 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:items-center">
+          <div className="min-w-0">
+            <h2 id="faq-still-stuck" className="text-3xl font-bold leading-tight !text-white sm:text-4xl">
+              Didn&apos;t find your answer?
+            </h2>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/80">
+              Send us the page URL and your question. For a problem with a booking, contact the provider you booked with
+              — Originfacts doesn&apos;t handle tickets, payments or refunds.
+            </p>
+          </div>
+          <div className="flex min-w-0 flex-wrap gap-3 lg:justify-end">
+            <Link
+              href="/contact"
+              className="inline-flex h-12 items-center rounded-full bg-white px-6 text-sm font-bold text-forest-950 transition hover:bg-sand-100"
+            >
+              Contact Originfacts
+            </Link>
+            <a
+              href="mailto:contact@originfacts.com"
+              className="inline-flex h-12 min-w-0 items-center break-all rounded-full border border-white/30 px-6 text-sm font-bold text-white transition hover:border-white"
+            >
+              contact@originfacts.com
+            </a>
+          </div>
+        </div>
+      </section>
     </article>
   );
 }

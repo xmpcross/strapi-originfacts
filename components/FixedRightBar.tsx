@@ -1,11 +1,13 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { format } from 'date-fns';
 import { mediaUrl, type StrapiArticle } from '@/lib/strapi';
 import { sideRailsHidden } from '@/lib/side-rails';
+import { Sheet, SheetClose, SheetContent, SheetDescription, SheetTitle } from '@/components/ui/sheet';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 // Hidden on the same pages as FixedPopularNow: lib/side-rails.ts.
 
@@ -69,21 +71,7 @@ export default function FixedRightBar({
   const [open, setOpen] = useState(false);
   const hidden = sideRailsHidden(pathname);
 
-  // Close on Esc + lock body scroll while open
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setOpen(false);
-    };
-    document.addEventListener('keydown', onKey);
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.removeEventListener('keydown', onKey);
-      document.body.style.overflow = prevOverflow;
-    };
-  }, [open]);
-
+  // Esc, scroll lock, focus trap and focus return come from the Sheet (Radix).
   const close = useCallback(() => setOpen(false), []);
 
   if (hidden) return null;
@@ -94,6 +82,7 @@ export default function FixedRightBar({
         className="pointer-events-none fixed right-[50px] top-[200px] z-40 hidden min-[1728px]:block"
         data-testid="fixed-right-bar"
       >
+        <TooltipProvider delayDuration={0}>
         <ul className="pointer-events-auto flex flex-col items-center gap-[10px]">
           {ITEMS.map((item) => {
             const inner = (
@@ -110,35 +99,44 @@ export default function FixedRightBar({
               </span>
             );
             return (
-              <li key={item.label} className="group relative">
-                {item.onClickKey === 'open-sidebar' ? (
-                  <button
-                    type="button"
-                    onClick={() => setOpen(true)}
-                    aria-label={item.label}
-                    aria-expanded={open}
-                    data-testid="fixed-right-bar-sidebar-trigger"
+              <li key={item.label}>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    {item.onClickKey === 'open-sidebar' ? (
+                      <button
+                        type="button"
+                        onClick={() => setOpen(true)}
+                        aria-label={item.label}
+                        aria-expanded={open}
+                        data-testid="fixed-right-bar-sidebar-trigger"
+                      >
+                        {inner}
+                      </button>
+                    ) : (
+                      <Link href={item.href ?? '#'} aria-label={item.label}>
+                        {inner}
+                      </Link>
+                    )}
+                  </TooltipTrigger>
+                  <TooltipContent
+                    side="left"
+                    sideOffset={20}
+                    aria-hidden
+                    className="rounded-full border-0 bg-white px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider text-forest-900 shadow-[0_1px_3px_rgba(0,0,0,0.15)]"
                   >
-                    {inner}
-                  </button>
-                ) : (
-                  <Link href={item.href ?? '#'} aria-label={item.label}>
-                    {inner}
-                  </Link>
-                )}
-                <span
-                  aria-hidden
-                  className="pointer-events-none absolute right-full top-1/2 mr-5 -translate-y-1/2 translate-x-2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider text-forest-900 opacity-0 shadow-[0_1px_3px_rgba(0,0,0,0.15)] transition group-hover:translate-x-0 group-hover:opacity-100"
-                >
-                  {item.label}
-                </span>
+                    {item.label}
+                  </TooltipContent>
+                </Tooltip>
               </li>
             );
           })}
         </ul>
+        </TooltipProvider>
       </div>
 
-      {open && <SidebarPanel popularPosts={popularPosts} onClose={close} />}
+      <Sheet open={open} onOpenChange={setOpen}>
+        <SidebarPanel popularPosts={popularPosts} onClose={close} />
+      </Sheet>
     </>
   );
 }
@@ -151,16 +149,16 @@ function SidebarPanel({
   onClose: () => void;
 }) {
   return (
-    <div
-      className="fixed inset-0 z-[100] flex bg-white"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Site navigation"
+    <SheetContent
+      side="right"
+      hideClose
+      overlayClassName="z-[100]"
+      className="z-[100] flex h-full w-full gap-0 border-0 bg-white p-0 sm:max-w-none"
       data-testid="fixed-right-bar-sidebar"
     >
-      <button
-        type="button"
-        onClick={onClose}
+      <SheetTitle className="sr-only">Site navigation</SheetTitle>
+      <SheetDescription className="sr-only">Site sections and popular posts</SheetDescription>
+      <SheetClose
         aria-label="Close menu"
         className="absolute right-8 top-8 flex h-11 w-11 items-center justify-center rounded-full text-forest-900 transition hover:bg-forest-900/5"
         data-testid="fixed-right-bar-sidebar-close"
@@ -178,7 +176,7 @@ function SidebarPanel({
           <line x1="18" y1="6" x2="6" y2="18" />
           <line x1="6" y1="6" x2="18" y2="18" />
         </svg>
-      </button>
+      </SheetClose>
 
       <div className="mx-auto flex w-full max-w-7xl items-center gap-12 px-12 py-16 lg:px-16">
         <nav
@@ -206,7 +204,7 @@ function SidebarPanel({
           </ul>
         </aside>
       </div>
-    </div>
+    </SheetContent>
   );
 }
 

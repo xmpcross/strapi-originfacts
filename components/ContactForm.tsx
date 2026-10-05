@@ -3,6 +3,11 @@
 import { Suspense, useEffect, useId, useRef, useState, type FormEvent } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { SUBJECTS, subjectFromParam, type Subject } from '@/lib/contact';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Textarea } from '@/components/ui/textarea';
 
 /*
  * The request is unchanged from the original form: same fields, same JSON
@@ -41,8 +46,10 @@ function validate(v: Record<FieldName, string>): Errors {
   return e;
 }
 
+// Applied on top of the shadcn Input/Textarea/SelectTrigger defaults (cn() lets
+// these win), so the fields keep the site's size and colours.
 const inputBase =
-  'block w-full rounded-[0.3rem] border bg-white px-4 py-3 text-base text-forest-950 placeholder:text-forest-900/40 transition focus:outline-none focus:ring-2';
+  'block h-auto w-full rounded-[0.3rem] border bg-white px-4 py-3 text-base text-forest-950 shadow-none placeholder:text-forest-900/40 transition focus:outline-none focus-visible:ring-2 focus:ring-2 md:text-base';
 const inputOk = 'border-forest-900/20 focus:border-primary-emphasis focus:ring-primary-emphasis/25';
 const inputBad = 'border-danger-emphasis focus:border-danger-emphasis focus:ring-danger-emphasis/25';
 
@@ -186,16 +193,16 @@ export default function ContactForm() {
             </a>
             .
           </p>
-          <button
+          <Button
             type="button"
             onClick={() => {
               focusAfterReset.current = true;
               setStatus({ type: 'idle' });
             }}
-            className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-forest-950 px-7 text-sm font-bold text-white transition hover:bg-forest-800 focus:outline-none focus-visible:ring-4 focus-visible:ring-primary-emphasis/40"
+            className="mt-8 h-12 rounded-full bg-forest-950 px-7 text-sm font-bold text-white shadow-none hover:bg-forest-800 focus-visible:ring-4 focus-visible:ring-primary-emphasis/40"
           >
             Send another message
-          </button>
+          </Button>
         </div>
       ) : (
         <form
@@ -253,7 +260,7 @@ export default function ContactForm() {
 
           <div className="mt-6 grid gap-5 sm:grid-cols-2">
             <Field id={FIELD_ID.name} label="Name" error={errors.name}>
-              <input
+              <Input
                 id={FIELD_ID.name}
                 name="name"
                 type="text"
@@ -268,7 +275,7 @@ export default function ContactForm() {
             </Field>
 
             <Field id={FIELD_ID.email} label="Email" hint="Replies go to this address." error={errors.email}>
-              <input
+              <Input
                 id={FIELD_ID.email}
                 name="email"
                 type="email"
@@ -294,29 +301,32 @@ export default function ContactForm() {
               error={errors.subject}
               className="sm:col-span-2"
             >
-              <select
-                id={FIELD_ID.subject}
+              <Select
                 name="subject"
                 required
                 value={subject}
-                onChange={(ev) => {
-                  setSubject(ev.target.value);
-                  if (attempted) setErrors((prev) => ({ ...prev, subject: ev.target.value ? undefined : 'Choose a subject.' }));
+                onValueChange={(value) => {
+                  setSubject(value);
+                  if (attempted) setErrors((prev) => ({ ...prev, subject: value ? undefined : 'Choose a subject.' }));
                 }}
-                aria-invalid={errors.subject ? true : undefined}
-                aria-describedby={describedBy(FIELD_ID.subject, true, !!errors.subject)}
-                className={`${inputBase} ${errors.subject ? inputBad : inputOk} pr-8`}
-                data-testid="contact-subject"
               >
-                <option value="" disabled>
-                  Select a topic…
-                </option>
-                {SUBJECTS.map((s) => (
-                  <option key={s} value={s}>
-                    {s}
-                  </option>
-                ))}
-              </select>
+                <SelectTrigger
+                  id={FIELD_ID.subject}
+                  aria-invalid={errors.subject ? true : undefined}
+                  aria-describedby={describedBy(FIELD_ID.subject, true, !!errors.subject)}
+                  className={`${inputBase} ${errors.subject ? inputBad : inputOk} flex items-center justify-between data-[placeholder]:text-forest-900/40`}
+                  data-testid="contact-subject"
+                >
+                  <SelectValue placeholder="Select a topic…" />
+                </SelectTrigger>
+                <SelectContent>
+                  {SUBJECTS.map((s) => (
+                    <SelectItem key={s} value={s} className="py-2 text-base">
+                      {s}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </Field>
 
             <Field
@@ -326,7 +336,7 @@ export default function ContactForm() {
               hint="If your message is about a specific page, paste its address."
               className="sm:col-span-2"
             >
-              <input
+              <Input
                 id="contact-url"
                 name="pageUrl"
                 type="url"
@@ -355,7 +365,7 @@ export default function ContactForm() {
                 </span>
               }
             >
-              <textarea
+              <Textarea
                 id={FIELD_ID.message}
                 name="message"
                 rows={7}
@@ -409,14 +419,14 @@ export default function ContactForm() {
               </a>
               .
             </p>
-            <button
+            <Button
               type="submit"
               disabled={sending}
-              className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-full bg-forest-950 px-8 text-sm font-bold text-white transition hover:bg-forest-800 focus:outline-none focus-visible:ring-4 focus-visible:ring-primary-emphasis/40 disabled:cursor-not-allowed disabled:opacity-60"
+              className="h-12 shrink-0 rounded-full bg-forest-950 px-8 text-sm font-bold text-white shadow-none hover:bg-forest-800 focus-visible:ring-4 focus-visible:ring-primary-emphasis/40 disabled:cursor-not-allowed disabled:opacity-60"
             >
               {sending ? 'Sending…' : 'Send message'}
               {!sending && <span aria-hidden>→</span>}
-            </button>
+            </Button>
           </div>
           <p className="sr-only" aria-live="polite">
             {sending ? 'Sending your message…' : ''}
@@ -469,10 +479,10 @@ function Field({
   return (
     <div className={`min-w-0 ${className ?? ''}`}>
       <div className="mb-1.5 flex items-baseline justify-between gap-3">
-        <label htmlFor={id} className="text-sm font-bold text-forest-950">
+        <Label htmlFor={id} className="text-sm font-bold leading-normal text-forest-950">
           {label}
           {optional && <span className="ml-1.5 font-normal text-forest-900/60">(optional)</span>}
-        </label>
+        </Label>
         {aside}
       </div>
       {hint && (

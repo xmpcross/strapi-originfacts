@@ -1,3 +1,7 @@
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+
 export default function SubscribeBlock() {
   return (
     <section className="py-14" data-testid="home-subscribe">
@@ -45,22 +49,23 @@ export default function SubscribeBlock() {
             >
               <div className="mc4wp-form-fields">
                 <div className="subscribe_holder flex items-center justify-between gap-[10px] border-b border-black">
-                  <label htmlFor="home-subscribe-email" className="sr-only">
+                  <Label htmlFor="home-subscribe-email" className="sr-only">
                     Email address
-                  </label>
-                  <input
+                  </Label>
+                  <Input
                     id="home-subscribe-email"
                     type="email"
                     name="EMAIL"
                     placeholder="Your email address"
                     required
-                    className="h-11 min-w-0 flex-auto border-0 bg-transparent p-0 text-sm text-[#080808] placeholder:text-[#333] focus:outline-none focus:ring-0"
+                    className="h-11 min-w-0 flex-auto rounded-none border-0 bg-transparent p-0 text-sm text-[#080808] shadow-none placeholder:text-[#333] focus-visible:ring-0 md:text-sm"
                   />
-                  <input
+                  <Button
                     type="submit"
-                    value="Subscribe"
-                    className="h-[30px] cursor-pointer rounded-[15px] border-0 bg-[#080808] px-[18px] pt-[2px] text-sm font-bold uppercase tracking-wider text-white outline-none transition hover:bg-primary-emphasis"
-                  />
+                    className="h-[30px] rounded-[15px] bg-[#080808] px-[18px] pt-[2px] text-sm font-bold uppercase tracking-wider text-white shadow-none hover:bg-primary-emphasis"
+                  >
+                    Subscribe
+                  </Button>
                 </div>
                 <p
                   className="agree mt-3 block text-[#080808]"

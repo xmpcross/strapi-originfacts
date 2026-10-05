@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Checkbox } from '@/components/ui/checkbox';
 import {
   ALL_OFF,
   ALL_ON,
@@ -16,6 +18,9 @@ import {
 } from '@/lib/consent';
 
 type View = 'banner' | 'settings';
+
+const CHECKBOX_CLASS =
+  'mt-1 h-4 w-4 shrink-0 rounded-[0.2rem] border-forest-900/40 data-[state=checked]:border-primary-emphasis data-[state=checked]:bg-primary-emphasis data-[state=checked]:text-white disabled:opacity-60';
 
 export default function CookieConsent() {
   const [open, setOpen] = useState(false);
@@ -95,30 +100,32 @@ export default function CookieConsent() {
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-2 sm:flex-nowrap">
-              <button
+              <Button
                 type="button"
                 onClick={() => setView('settings')}
-                className="inline-flex h-10 items-center rounded-full border border-forest-900/20 bg-white px-4 text-sm font-medium text-forest-900 transition hover:border-forest-900/40"
+                variant="outline"
+                className="h-10 rounded-full border-forest-900/20 bg-white px-4 text-sm font-medium text-forest-900 shadow-none hover:border-forest-900/40 hover:bg-white hover:text-forest-900"
                 data-testid="cookie-consent-settings"
               >
                 Settings
-              </button>
-              <button
+              </Button>
+              <Button
                 type="button"
                 onClick={rejectAll}
-                className="inline-flex h-10 items-center rounded-full border border-forest-900/20 bg-white px-4 text-sm font-medium text-forest-900 transition hover:border-forest-900/40"
+                variant="outline"
+                className="h-10 rounded-full border-forest-900/20 bg-white px-4 text-sm font-medium text-forest-900 shadow-none hover:border-forest-900/40 hover:bg-white hover:text-forest-900"
                 data-testid="cookie-consent-reject"
               >
                 Reject all
-              </button>
-              <button
+              </Button>
+              <Button
                 type="button"
                 onClick={acceptAll}
-                className="inline-flex h-10 items-center rounded-full bg-primary-emphasis px-4 text-sm font-semibold text-white transition hover:bg-primary-highlight"
+                className="h-10 rounded-full bg-primary-emphasis px-4 text-sm font-semibold text-white shadow-none hover:bg-primary-highlight"
                 data-testid="cookie-consent-accept"
               >
                 Accept all
-              </button>
+              </Button>
             </div>
           </div>
         ) : (
@@ -146,12 +153,11 @@ export default function CookieConsent() {
                   <p className="font-medium">Essential</p>
                   <p className="mt-1 text-forest-900/70">Required for the site to function (security, navigation, consent storage). Always on.</p>
                 </div>
-                <input
-                  type="checkbox"
+                <Checkbox
                   checked
                   disabled
                   aria-label="Essential cookies (required)"
-                  className="mt-1 h-4 w-4 accent-primary-emphasis"
+                  className={CHECKBOX_CLASS}
                 />
               </li>
               <li className="flex items-start justify-between gap-4 rounded-xl border border-forest-900/10 bg-white p-3">
@@ -159,12 +165,11 @@ export default function CookieConsent() {
                   <p className="font-medium">Analytics</p>
                   <p className="mt-1 text-forest-900/70">Help us understand how readers use the site so we can improve content and navigation.</p>
                 </div>
-                <input
-                  type="checkbox"
+                <Checkbox
                   checked={categories.analytics}
-                  onChange={() => toggle('analytics')}
+                  onCheckedChange={() => toggle('analytics')}
                   aria-label="Analytics cookies"
-                  className="mt-1 h-4 w-4 accent-primary-emphasis"
+                  className={CHECKBOX_CLASS}
                   data-testid="cookie-consent-analytics"
                 />
               </li>
@@ -173,40 +178,40 @@ export default function CookieConsent() {
                   <p className="font-medium">Advertising / Personalisation</p>
                   <p className="mt-1 text-forest-900/70">Used by advertising and affiliate partners (Travelpayouts, Takeads, GetYourGuide) to attribute bookings, show more relevant offers and measure performance. Also needed for the GetYourGuide activity widgets.</p>
                 </div>
-                <input
-                  type="checkbox"
+                <Checkbox
                   checked={categories.marketing}
-                  onChange={() => toggle('marketing')}
+                  onCheckedChange={() => toggle('marketing')}
                   aria-label="Advertising cookies"
-                  className="mt-1 h-4 w-4 accent-primary-emphasis"
+                  className={CHECKBOX_CLASS}
                   data-testid="cookie-consent-marketing"
                 />
               </li>
             </ul>
 
             <div className="mt-5 flex flex-wrap items-center justify-end gap-2">
-              <button
+              <Button
                 type="button"
                 onClick={rejectAll}
-                className="inline-flex h-10 items-center rounded-full border border-forest-900/20 bg-white px-4 text-sm font-medium text-forest-900 transition hover:border-forest-900/40"
+                variant="outline"
+                className="h-10 rounded-full border-forest-900/20 bg-white px-4 text-sm font-medium text-forest-900 shadow-none hover:border-forest-900/40 hover:bg-white hover:text-forest-900"
               >
                 Reject all
-              </button>
-              <button
+              </Button>
+              <Button
                 type="button"
                 onClick={saveChoices}
-                className="inline-flex h-10 items-center rounded-full bg-primary-emphasis px-4 text-sm font-semibold text-white transition hover:bg-primary-highlight"
+                className="h-10 rounded-full bg-primary-emphasis px-4 text-sm font-semibold text-white shadow-none hover:bg-primary-highlight"
                 data-testid="cookie-consent-save"
               >
                 Save choices
-              </button>
-              <button
+              </Button>
+              <Button
                 type="button"
                 onClick={acceptAll}
-                className="inline-flex h-10 items-center rounded-full bg-forest-900 px-4 text-sm font-semibold text-white transition hover:bg-forest-700"
+                className="h-10 rounded-full bg-forest-900 px-4 text-sm font-semibold text-white shadow-none hover:bg-forest-700"
               >
                 Accept all
-              </button>
+              </Button>
             </div>
           </div>
         )}

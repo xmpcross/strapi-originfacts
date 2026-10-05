@@ -23,7 +23,7 @@ const STATUS_TEXT: Record<NavStatus, string> = {
 const DOT: Record<NavStatus, string> = {
   sourced: 'bg-emerald-600',
   data: 'bg-primary-emphasis',
-  live: 'bg-sky-500',
+  live: 'bg-forest-600',
   pending: 'border border-slate-400 bg-white',
   none: 'bg-transparent',
 };

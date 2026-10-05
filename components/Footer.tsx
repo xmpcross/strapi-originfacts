@@ -13,7 +13,7 @@ export default function Footer() {
     .filter((d): d is NonNullable<typeof d> => Boolean(d));
 
   return (
-    <footer className="border-t border-forest-900 bg-forest-950 text-white" data-testid="site-footer">
+    <footer className="border-t-4 border-sand-300 bg-forest-50 text-forest-950" data-testid="site-footer">
       {/* Up to 1175px: brand on its own row, then the menus two per row. From 1176px:
           brand 2.3 shares, Company/Discover 1 share each, Topics only as wide as its
           longest link so it sits flush right, in line with the legal row below. */}
@@ -21,14 +21,14 @@ export default function Footer() {
         <div className="col-span-full min-[1176px]:col-span-1">
           <Link href="/" aria-label="Originfacts home" className="inline-block" data-testid="footer-logo-link">
             <Image
-              src="/brand/logo/logo-footer.svg"
+              src="/brand/logo/logo.svg"
               alt="Originfacts"
-              width={300}
-              height={167}
+              width={342}
+              height={188}
               className="h-10 w-auto !rounded-none"
             />
           </Link>
-          <p className="mt-3 max-w-sm text-slate-300">
+          <p className="mt-3 max-w-sm text-slate-600">
             The facts behind every place worth visiting — plus the latest on flights, hotels, airlines, airports and destinations.
           </p>
           <ul className="mt-5 flex items-center gap-3" data-testid="footer-social">
@@ -38,7 +38,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Originfacts on X"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-slate-200 transition hover:border-sky-400 hover:bg-white/10 hover:text-sky-400"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-forest-900/15 bg-white text-forest-900 transition hover:border-forest-700 hover:text-forest-700"
                 data-testid="footer-social-x"
               >
                 <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden>
@@ -52,7 +52,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Originfacts on Facebook"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-slate-200 transition hover:border-sky-400 hover:bg-white/10 hover:text-sky-400"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-forest-900/15 bg-white text-forest-900 transition hover:border-forest-700 hover:text-forest-700"
                 data-testid="footer-social-facebook"
               >
                 <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden>
@@ -66,7 +66,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Originfacts on LinkedIn"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-slate-200 transition hover:border-sky-400 hover:bg-white/10 hover:text-sky-400"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-forest-900/15 bg-white text-forest-900 transition hover:border-forest-700 hover:text-forest-700"
                 data-testid="footer-social-linkedin"
               >
                 <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden>
@@ -80,7 +80,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Originfacts on Instagram"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-slate-200 transition hover:border-sky-400 hover:bg-white/10 hover:text-sky-400"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-forest-900/15 bg-white text-forest-900 transition hover:border-forest-700 hover:text-forest-700"
                 data-testid="footer-social-instagram"
               >
                 <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden>
@@ -94,7 +94,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Originfacts on Reddit"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-slate-200 transition hover:border-sky-400 hover:bg-white/10 hover:text-sky-400"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-forest-900/15 bg-white text-forest-900 transition hover:border-forest-700 hover:text-forest-700"
                 data-testid="footer-social-reddit"
               >
                 <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden>
@@ -107,7 +107,7 @@ export default function Footer() {
                 href="/feed.xml"
                 aria-label="Originfacts RSS feed"
                 title="RSS feed"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-slate-200 transition hover:border-sky-400 hover:bg-white/10 hover:text-sky-400"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-forest-900/15 bg-white text-forest-900 transition hover:border-forest-700 hover:text-forest-700"
                 data-testid="footer-social-rss"
               >
                 <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden>
@@ -118,49 +118,49 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <h4 className="editorial-h text-lg font-bold capitalize tracking-normal text-white">Company</h4>
-          <ul className="mt-3 space-y-2 text-sm text-slate-300" data-testid="footer-company">
-            <li><Link href="/" className="transition-colors hover:text-sky-300">Home</Link></li>
-            <li><Link href="/about" className="transition-colors hover:text-sky-300">About</Link></li>
-            <li><Link href="/faq" className="transition-colors hover:text-sky-300">FAQ</Link></li>
-            <li><Link href="/authors" className="transition-colors hover:text-sky-300">Authors</Link></li>
-            <li><Link href="/methodology" className="transition-colors hover:text-sky-300">Methodology</Link></li>
-            <li><Link href="/all-articles" className="transition-colors hover:text-sky-300">Topics</Link></li>
-            <li><Link href="/sitemap" className="transition-colors hover:text-sky-300">Site Map</Link></li>
-            <li><Link href="/contact" className="transition-colors hover:text-sky-300">Contact</Link></li>
+          <h4 className="editorial-h text-lg font-bold capitalize tracking-normal text-forest-950">Company</h4>
+          <ul className="mt-3 space-y-2 text-sm text-forest-900/80" data-testid="footer-company">
+            <li><Link href="/" className="transition-colors hover:text-forest-700">Home</Link></li>
+            <li><Link href="/about" className="transition-colors hover:text-forest-700">About</Link></li>
+            <li><Link href="/faq" className="transition-colors hover:text-forest-700">FAQ</Link></li>
+            <li><Link href="/authors" className="transition-colors hover:text-forest-700">Authors</Link></li>
+            <li><Link href="/methodology" className="transition-colors hover:text-forest-700">Methodology</Link></li>
+            <li><Link href="/all-articles" className="transition-colors hover:text-forest-700">Topics</Link></li>
+            <li><Link href="/sitemap" className="transition-colors hover:text-forest-700">Site Map</Link></li>
+            <li><Link href="/contact" className="transition-colors hover:text-forest-700">Contact</Link></li>
           </ul>
         </div>
         <div>
-          <h4 className="editorial-h text-lg font-bold capitalize tracking-normal text-white">Discover</h4>
-          <ul className="mt-3 space-y-2 text-sm text-slate-300" data-testid="footer-travel-index">
-            <li><Link href="/flight-search" className="transition-colors hover:text-sky-300">Flight Search</Link></li>
-            <li><Link href="/category/hotels" className="transition-colors hover:text-sky-300">Hotels</Link></li>
-            <li><Link href="/countries" className="transition-colors hover:text-sky-300">Countries</Link></li>
-            <li><Link href="/airlines" className="transition-colors hover:text-sky-300">Airlines</Link></li>
-            <li><Link href="/airports" className="transition-colors hover:text-sky-300">Airports</Link></li>
-            <li><Link href="/flight-routes" className="transition-colors hover:text-sky-300">Flight Routes</Link></li>
+          <h4 className="editorial-h text-lg font-bold capitalize tracking-normal text-forest-950">Discover</h4>
+          <ul className="mt-3 space-y-2 text-sm text-forest-900/80" data-testid="footer-travel-index">
+            <li><Link href="/flight-search" className="transition-colors hover:text-forest-700">Flight Search</Link></li>
+            <li><Link href="/category/hotels" className="transition-colors hover:text-forest-700">Hotels</Link></li>
+            <li><Link href="/countries" className="transition-colors hover:text-forest-700">Countries</Link></li>
+            <li><Link href="/airlines" className="transition-colors hover:text-forest-700">Airlines</Link></li>
+            <li><Link href="/airports" className="transition-colors hover:text-forest-700">Airports</Link></li>
+            <li><Link href="/flight-routes" className="transition-colors hover:text-forest-700">Flight Routes</Link></li>
           </ul>
         </div>
         <div>
-          <h4 className="editorial-h text-lg font-bold capitalize tracking-normal text-white">Topics</h4>
-          <ul className="mt-3 space-y-2 text-sm text-slate-300" data-testid="footer-topics">
+          <h4 className="editorial-h text-lg font-bold capitalize tracking-normal text-forest-950">Topics</h4>
+          <ul className="mt-3 space-y-2 text-sm text-forest-900/80" data-testid="footer-topics">
             {SECTIONS.map((section) => (
               <li key={section.slug}>
-                <Link href={`/category/${section.slug}`} className="transition-colors hover:text-sky-300">
+                <Link href={`/category/${section.slug}`} className="transition-colors hover:text-forest-700">
                   {section.title}
                 </Link>
               </li>
             ))}
             <li>
-              <Link href="/hot-posts" className="transition-colors hover:text-sky-300">
+              <Link href="/hot-posts" className="transition-colors hover:text-forest-700">
                 Trending
               </Link>
             </li>
           </ul>
         </div>
       </div>
-      <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-[1400px] flex-col gap-3 px-4 py-6 text-xs text-slate-400 min-[1176px]:px-6 sm:flex-row sm:items-center sm:justify-between">
+      <div className="border-t border-forest-900/10">
+        <div className="mx-auto flex max-w-[1400px] flex-col gap-3 px-4 py-6 text-xs text-slate-500 min-[1176px]:px-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
             © {year} Originfacts. All rights reserved.
           </div>
@@ -168,13 +168,13 @@ export default function Footer() {
             <ul className="flex flex-wrap items-center gap-x-6 gap-y-2">
               {bottomLegal.map((doc) => (
                 <li key={doc.slug}>
-                  <Link href={`/legal/${doc.slug}`} className="transition-colors hover:text-white">
+                  <Link href={`/legal/${doc.slug}`} className="transition-colors hover:text-forest-700">
                     {doc.title}
                   </Link>
                 </li>
               ))}
               <li>
-                <CookieSettingsButton className="transition-colors hover:text-white" />
+                <CookieSettingsButton className="transition-colors hover:text-forest-700" />
               </li>
             </ul>
           </nav>

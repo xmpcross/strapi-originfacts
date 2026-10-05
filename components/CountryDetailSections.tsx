@@ -74,7 +74,7 @@ export default function CountryDetailSections({
     <>
       {/* Airports */}
       <section
-        className="mx-auto mt-16 max-w-7xl overflow-hidden rounded-[0.3rem] border border-forest-900/10 bg-gradient-to-br from-white via-[#f7fbff] to-[#fff8e6] px-6 py-8 sm:px-8"
+        className="mx-auto mt-16 max-w-7xl overflow-hidden rounded-[0.3rem] border border-forest-900/10 bg-gradient-to-br from-white via-forest-50 to-sand-50 px-6 py-8 sm:px-8"
         data-testid="country-airports"
       >
         <header className="grid gap-6 border-b border-forest-900/10 pb-6 lg:grid-cols-[minmax(0,1fr)_180px] lg:items-end">

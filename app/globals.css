@@ -10,23 +10,23 @@
 @layer base {
   :root {
     --background: 0 0% 100%; /* #ffffff */
-    --foreground: 222 47% 11%; /* #0f172a ink */
+    --foreground: 221 84% 15%; /* #061b46 logo navy */
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 221 84% 15%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-    --primary: 213 98% 40%; /* #025ccc primary-emphasis */
+    --popover-foreground: 221 84% 15%;
+    --primary: 218 100% 37%; /* #0046be logo blue */
     --primary-foreground: 0 0% 100%;
-    --secondary-foreground: 223 74% 23%; /* #0f2766 forest-900 */
-    --muted: 210 40% 96%; /* #f1f5f9 */
+    --secondary-foreground: 219 83% 23%; /* #0a2a6b forest-900 */
+    --muted: 222 69% 97%; /* #f3f6fd forest-50 */
     --muted-foreground: 215 16% 47%; /* #64748b */
-    --accent: 211 100% 95%; /* #e6f2ff primary-hover */
-    --accent-foreground: 223 74% 23%;
+    --accent: 219 77% 95%; /* #e8effc primary-hover */
+    --accent-foreground: 219 83% 23%;
     --destructive: 0 72% 51%; /* #dc2626 danger-emphasis */
     --destructive-foreground: 0 0% 100%;
     --border: 220 13% 91%; /* #e5e7eb */
     --input: 220 13% 91%;
-    --ring: 213 98% 40%;
+    --ring: 218 100% 37%;
     --radius: 0.3rem;
   }
 }
@@ -34,7 +34,7 @@
 @layer base {
   html {
     background: #ffffff;
-    color: #334155;
+    color: #26334f;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -53,14 +53,14 @@
     font-family: var(--font-inter), 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight: 400;
     letter-spacing: -0.011em;
-    color: #334155;
+    color: #26334f;
   }
   /* All headings */
   h1, h2, h3, h4, h5, h6 {
     font-weight: 700 !important;
     letter-spacing: -0.02em !important;
     line-height: 1.25;
-    color: #0f172a !important;
+    color: #061b46 !important;
   }
   /* Pixelbin-style fluid heading scale.
      Pattern: clamp(min, calc(base-rem + vw), max).
@@ -174,7 +174,7 @@
     font-weight: 700 !important;
     line-height: 1.25 !important;
     letter-spacing: -0.02em !important;
-    color: #0f172a !important;
+    color: #061b46 !important;
   }
 
   [data-testid^="airport-page-"] h3 {
@@ -182,7 +182,7 @@
     font-weight: 600 !important;
     line-height: 1.3 !important;
     letter-spacing: -0.015em !important;
-    color: #0f172a !important;
+    color: #061b46 !important;
   }
 
   [data-testid^="airport-page-"] h4 {
@@ -190,7 +190,7 @@
     font-weight: 600 !important;
     line-height: 1.35 !important;
     letter-spacing: -0.01em !important;
-    color: #0f172a !important;
+    color: #061b46 !important;
   }
 
   [data-testid^="airport-page-"] p,
@@ -198,7 +198,7 @@
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.65;
-    color: #334155;
+    color: #26334f;
     letter-spacing: -0.011em;
   }
 
@@ -217,19 +217,19 @@
     font-size: clamp(1.1rem, 0.8vw + 0.85rem, 1.4rem) !important;
   }
 
-  /* Footer headings sit on a dark navy bg. */
+  /* Footer headings sit on the light footer (logo navy). */
   [data-testid="site-footer"] h1,
   [data-testid="site-footer"] h2,
   [data-testid="site-footer"] h3,
   [data-testid="site-footer"] h4,
   [data-testid="site-footer"] h5,
   [data-testid="site-footer"] h6 {
-    color: #ffffff !important;
+    color: #061b46 !important;
   }
 
   /* Hero overlay tiles (homepage top section) — titles sit on top of an
      image with a dark gradient, so force them white over the global
-     #030303 heading default. */
+     #061b46 heading default. */
   [data-testid="home-hero"] [data-testid^="hero-overlay-"] h1,
   [data-testid="home-hero"] [data-testid^="hero-overlay-"] h2,
   [data-testid="home-hero"] [data-testid^="hero-overlay-"] h3,
@@ -383,8 +383,8 @@ html.flight-search-active [data-testid="fs-search-section"] {
 
 /* /flight-search top band — the search page and the results view share it. */
 .fs-hero-bg {
-  background-color: #eef6ff;
-  background-image: linear-gradient(to bottom right, #f8fbff, #eef6ff, #d9eaff);
+  background-color: #eef3fc;
+  background-image: linear-gradient(to bottom right, #f6f8fe, #eef3fc, #d6e3f8);
 }
 
 /* ---------- /flights: hide browse sections once search results render ----------
@@ -479,18 +479,18 @@ html.flight-search-active #tpwl-tickets {
   gap: 6px;
   padding: 8px 14px;
   background: #ffffff;
-  border: 1px solid rgba(7, 20, 43, 0.15);
+  border: 1px solid rgba(6, 27, 70, 0.15);
   border-radius: 9999px;
   font-size: 14px;
   font-weight: 500;
-  color: #07142b;
+  color: #061b46;
   cursor: pointer;
   transition: border-color 0.15s ease, color 0.15s ease;
 }
 [data-testid="localization-button-languages"]:hover,
 [data-testid="localization-button-currencies"]:hover {
-  border-color: #014fd3;
-  color: #014fd3;
+  border-color: #0046be;
+  color: #0046be;
 }
 [data-testid="localization-button-languages"]::after,
 [data-testid="localization-button-currencies"]::after {
@@ -518,9 +518,9 @@ html.flight-search-active #tpwl-tickets {
   margin: 0;
   padding: 6px;
   background: #ffffff;
-  border: 1px solid rgba(7, 20, 43, 0.10);
+  border: 1px solid rgba(6, 27, 70, 0.10);
   border-radius: 8px;
-  box-shadow: 0 8px 24px rgba(7, 20, 43, 0.10);
+  box-shadow: 0 8px 24px rgba(6, 27, 70, 0.10);
 }
 
 [class*="SearchEdit-module__localization"]:has([data-testid="localization-button-languages"]:hover) [data-testid="localization-list-languages"],
@@ -551,15 +551,15 @@ html.flight-search-active #tpwl-tickets {
   border-radius: 4px;
   background: transparent;
   font-size: 14px;
-  color: #07142b;
+  color: #061b46;
   text-align: left;
   cursor: pointer;
   transition: background 0.15s ease, color 0.15s ease;
 }
 [data-testid="localization-list-languages"] > *:hover,
 [data-testid="localization-list-currencies"] > *:hover {
-  background: rgba(7, 20, 43, 0.05);
-  color: #014fd3;
+  background: rgba(6, 27, 70, 0.05);
+  color: #0046be;
 }
 
 /* Article body — 18px / 300 body text, keep headings bold */
@@ -582,7 +582,7 @@ html.flight-search-active #tpwl-tickets {
   /* 1rem (16px) body throughout, weight 400 (matches html body weight). */
   font-size: 1rem;
   font-weight: 400;
-  color: #334155;
+  color: #26334f;
   line-height: 1.7;
   letter-spacing: 0;
 }
@@ -633,7 +633,7 @@ html.flight-search-active #tpwl-tickets {
   line-height: 1.5;
   border-radius: 0.4rem;
   overflow: hidden;
-  border: 1px solid rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(6, 27, 70, 0.12);
   background-color: #ffffff;
 }
 
@@ -644,10 +644,10 @@ html.flight-search-active #tpwl-tickets {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #0f172a;
+  color: #061b46;
   padding: 0.75rem 1.25rem;
-  background-color: rgba(15, 23, 42, 0.03);
-  border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+  background-color: rgba(6, 27, 70, 0.03);
+  border-bottom: 1px solid rgba(6, 27, 70, 0.1);
 }
 
 .prose-article table th {
@@ -655,17 +655,17 @@ html.flight-search-active #tpwl-tickets {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #0f172a;
-  background-color: rgba(15, 23, 42, 0.06);
+  color: #061b46;
+  background-color: rgba(6, 27, 70, 0.06);
   padding: 0.75rem 1.25rem;
-  border-bottom: 1px solid rgba(15, 23, 42, 0.15);
+  border-bottom: 1px solid rgba(6, 27, 70, 0.15);
   text-align: left;
 }
 
 .prose-article table td {
   padding: 0.75rem 1.25rem;
-  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-  color: #334155;
+  border-bottom: 1px solid rgba(6, 27, 70, 0.08);
+  color: #26334f;
   font-weight: 400;
 }
 
@@ -674,7 +674,7 @@ html.flight-search-active #tpwl-tickets {
 }
 
 .prose-article table tr:hover {
-  background-color: rgba(15, 23, 42, 0.02);
+  background-color: rgba(6, 27, 70, 0.02);
 }
 
 /* /flight-search results view before advertising consent: the consent

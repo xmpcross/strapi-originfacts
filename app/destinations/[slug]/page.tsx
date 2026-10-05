@@ -500,7 +500,7 @@ function CityDestinationPage({
           title={`${destination.name} at a glance`}
         />
         <div className="mt-8 grid gap-8 lg:grid-cols-[360px_minmax(0,1fr)]">
-          <aside className="rounded-[0.3rem] border border-forest-900/10 bg-gradient-to-br from-[#f7fbff] via-white to-[#fff8e6] p-6">
+          <aside className="rounded-[0.3rem] border border-forest-900/10 bg-gradient-to-br from-forest-50 via-white to-sand-50 p-6">
             <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary-emphasis">
               Planning snapshot
             </p>
@@ -782,7 +782,7 @@ function CitySeoGuide({
 
   return (
     <section className="mx-auto mt-12 max-w-7xl px-6" data-testid="city-seo-guide">
-      <div className="rounded-[0.3rem] border border-forest-900/10 bg-gradient-to-br from-white via-[#f7fbff] to-[#fff8e6] p-6 sm:p-8">
+      <div className="rounded-[0.3rem] border border-forest-900/10 bg-gradient-to-br from-white via-forest-50 to-sand-50 p-6 sm:p-8">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_300px]">
           <div>
             <p className="section-eyebrow">

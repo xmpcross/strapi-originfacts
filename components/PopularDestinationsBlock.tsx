@@ -202,7 +202,7 @@ function RouteCard({ route, originIata }: { route: PopularRoute; originIata: str
       target="_blank"
       rel="noopener noreferrer sponsored"
       data-testid="popular-route-card"
-      className="group relative aspect-[4/3] overflow-hidden rounded bg-gradient-to-br from-[#0b2a5b] via-[#14408f] to-[#1d4ed8]"
+      className="group relative aspect-[4/3] overflow-hidden rounded bg-gradient-to-br from-forest-900 via-forest-900 to-forest-700"
     >
       {route.imageUrl && (
         // eslint-disable-next-line @next/next/no-img-element

@@ -56,7 +56,7 @@ export default function Header() {
               <li data-testid="nav-item-destinations">
                 <Link
                   href="/destinations"
-                  className="inline-flex items-center gap-1.5 px-3 py-2 text-[#000000] transition-colors hover:text-[rgb(1,79,211)]"
+                  className="inline-flex items-center gap-1.5 px-3 py-2 text-forest-950 transition-colors hover:text-forest-700"
                   data-testid="nav-destinations"
                 >
                   Destinations
@@ -65,7 +65,7 @@ export default function Header() {
               <li data-testid="nav-item-flight-search">
                 <Link
                   href="/flight-search"
-                  className="inline-flex items-center gap-1.5 px-3 py-2 text-[#000000] transition-colors hover:text-[rgb(1,79,211)]"
+                  className="inline-flex items-center gap-1.5 px-3 py-2 text-forest-950 transition-colors hover:text-forest-700"
                   data-testid="nav-resources-flight-search"
                 >
                   Flight Search
@@ -74,7 +74,7 @@ export default function Header() {
               <li data-testid="nav-item-airlines">
                 <Link
                   href="/airlines"
-                  className="inline-flex items-center gap-1.5 px-3 py-2 text-[#000000] transition-colors hover:text-[rgb(1,79,211)]"
+                  className="inline-flex items-center gap-1.5 px-3 py-2 text-forest-950 transition-colors hover:text-forest-700"
                   data-testid="nav-airlines"
                 >
                   Airlines
@@ -83,7 +83,7 @@ export default function Header() {
               <li className="group/airports relative" data-testid="nav-item-airports">
                 <Link
                   href="/airports"
-                  className="inline-flex items-center gap-1.5 px-3 py-2 text-[#000000] transition-colors hover:text-[rgb(1,79,211)]"
+                  className="inline-flex items-center gap-1.5 px-3 py-2 text-forest-950 transition-colors hover:text-forest-700"
                   data-testid="nav-airports-all"
                   aria-haspopup="true"
                 >
@@ -112,7 +112,7 @@ export default function Header() {
                   >
                     <Link
                       href="/airports/top-100-airports"
-                      className="block rounded px-3 py-2 text-base text-[#000000] transition-colors hover:bg-forest-900/5 hover:text-[rgb(1,79,211)]"
+                      className="block rounded px-3 py-2 text-base text-forest-950 transition-colors hover:bg-forest-900/5 hover:text-forest-700"
                       role="menuitem"
                       data-testid="nav-airports-top-100"
                     >
@@ -127,7 +127,7 @@ export default function Header() {
               >
                 <Link
                   href="/all-articles"
-                  className="inline-flex items-center gap-1.5 px-3 py-2 text-[#000000] transition-colors hover:text-[rgb(1,79,211)]"
+                  className="inline-flex items-center gap-1.5 px-3 py-2 text-forest-950 transition-colors hover:text-forest-700"
                   data-testid="nav-articles"
                   aria-haspopup="true"
                 >
@@ -156,7 +156,7 @@ export default function Header() {
                   >
                     <Link
                       href="/category/flights"
-                      className="block rounded px-3 py-2 text-base text-[#000000] transition-colors hover:bg-forest-900/5 hover:text-[rgb(1,79,211)]"
+                      className="block rounded px-3 py-2 text-base text-forest-950 transition-colors hover:bg-forest-900/5 hover:text-forest-700"
                       role="menuitem"
                       data-testid="nav-flights"
                     >
@@ -164,7 +164,7 @@ export default function Header() {
                     </Link>
                     <Link
                       href="/category/hotels"
-                      className="block rounded px-3 py-2 text-base text-[#000000] transition-colors hover:bg-forest-900/5 hover:text-[rgb(1,79,211)]"
+                      className="block rounded px-3 py-2 text-base text-forest-950 transition-colors hover:bg-forest-900/5 hover:text-forest-700"
                       role="menuitem"
                       data-testid="nav-hotels"
                     >
@@ -172,7 +172,7 @@ export default function Header() {
                     </Link>
                     <Link
                       href="/category/car-rentals"
-                      className="block rounded px-3 py-2 text-base text-[#000000] transition-colors hover:bg-forest-900/5 hover:text-[rgb(1,79,211)]"
+                      className="block rounded px-3 py-2 text-base text-forest-950 transition-colors hover:bg-forest-900/5 hover:text-forest-700"
                       role="menuitem"
                       data-testid="nav-articles-car-rentals"
                     >
@@ -180,7 +180,7 @@ export default function Header() {
                     </Link>
                     <Link
                       href="/category/travel-tips"
-                      className="block rounded px-3 py-2 text-base text-[#000000] transition-colors hover:bg-forest-900/5 hover:text-[rgb(1,79,211)]"
+                      className="block rounded px-3 py-2 text-base text-forest-950 transition-colors hover:bg-forest-900/5 hover:text-forest-700"
                       role="menuitem"
                       data-testid="nav-articles-travel-tips"
                     >
@@ -195,7 +195,7 @@ export default function Header() {
             href="/search"
             aria-label="Search"
             title="Search"
-            className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-[0.3rem] text-[#000000] transition-colors hover:text-[rgb(1,79,211)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-emphasis"
+            className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-[0.3rem] text-forest-950 transition-colors hover:text-forest-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-emphasis"
             data-testid="nav-search"
           >
             <svg

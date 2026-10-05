@@ -48,7 +48,7 @@ export default function SubscribeBlock() {
     <section className="py-14" data-testid="home-subscribe">
       <div className="mx-auto max-w-7xl px-6">
         <div
-          className="fn__subscribe_block relative z-0 flex flex-col items-stretch gap-[50px] overflow-hidden rounded-[5px] bg-[#f5f5f5] px-10 py-14 shadow-[0_1px_3px_rgba(0,0,0,0.15)] sm:flex-row sm:items-center"
+          className="fn__subscribe_block relative z-0 flex flex-col items-stretch gap-[50px] overflow-hidden rounded-[5px] bg-forest-50 px-10 py-14 shadow-[0_1px_3px_rgba(0,0,0,0.15)] sm:flex-row sm:items-center"
         >
           {/* Decorative paperplane — pale gray, behind content */}
           <span
@@ -71,7 +71,7 @@ export default function SubscribeBlock() {
 
           <div className="sb_left relative z-10 max-w-[500px] flex-1">
             <h3
-              className="!font-bold !text-[#080808]"
+              className="!font-bold !text-forest-950"
               style={{ fontSize: '30px', lineHeight: 1.2, fontWeight: 700 }}
             >
               Stay Informed With the Latest &amp; Most Important News
@@ -93,24 +93,24 @@ export default function SubscribeBlock() {
                   required
                   maxLength={254}
                   disabled={submitting}
-                  className="h-11 min-w-0 flex-auto rounded-none border-0 bg-transparent p-0 text-sm text-[#080808] shadow-none placeholder:text-[#333] focus-visible:ring-0 md:text-sm"
+                  className="h-11 min-w-0 flex-auto rounded-none border-0 bg-transparent p-0 text-sm text-forest-950 shadow-none placeholder:text-forest-950 focus-visible:ring-0 md:text-sm"
                 />
                 <Button
                   type="submit"
                   disabled={submitting}
-                  className="h-[30px] rounded-[15px] bg-[#080808] px-[18px] pt-[2px] text-sm font-bold uppercase tracking-wider text-white shadow-none hover:bg-primary-emphasis"
+                  className="h-[30px] rounded-[15px] bg-forest-950 px-[18px] pt-[2px] text-sm font-bold uppercase tracking-wider text-white shadow-none hover:bg-primary-emphasis"
                 >
                   {submitting ? 'Sending…' : 'Subscribe'}
                 </Button>
               </div>
               <p
-                className="agree mt-3 block text-[#080808]"
+                className="agree mt-3 block text-forest-950"
                 style={{ fontSize: '14px', lineHeight: '17px' }}
               >
                 We&rsquo;ll email you occasional travel updates. Unsubscribe any time. See our{' '}
                 <a
                   href="/legal/privacy"
-                  className="font-medium text-[#080808] no-underline"
+                  className="font-medium text-forest-950 no-underline"
                   style={{ borderBottom: '1px solid #777' }}
                 >
                   Privacy Policy
@@ -127,7 +127,7 @@ export default function SubscribeBlock() {
                 aria-live="polite"
                 data-testid="home-subscribe-message"
                 data-status={status}
-                className={`mt-3 text-sm font-medium ${status === 'error' ? 'text-red-700' : 'text-[#080808]'}`}
+                className={`mt-3 text-sm font-medium ${status === 'error' ? 'text-red-700' : 'text-forest-950'}`}
               >
                 {message}
               </p>

@@ -292,7 +292,7 @@ export default function PopularHotelsByCity({
       data-hotels-count={hotels.length}
       aria-labelledby="popular-hotels-by-city-heading"
     >
-      <div className="rounded-[0.5rem] bg-gradient-to-br from-[#f8fbff] via-white to-[#eef7f2]">
+      <div className="rounded-[0.5rem] bg-gradient-to-br from-forest-50 via-white to-sand-50">
         <header className="border-b border-forest-900/10 pb-6">
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_280px] lg:items-end">
             <div>
@@ -407,7 +407,7 @@ function HotelFeatureCard({ hotel }: { hotel: Hotel }) {
           loading="lazy"
         />
       ) : (
-        <div className="absolute inset-0 bg-gradient-to-br from-[#dbeafe] to-[#dcfce7]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-forest-100 to-[#dcfce7]" />
       )}
       <div className="absolute inset-0 bg-gradient-to-t from-forest-950 via-forest-950/35 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-6">
@@ -450,7 +450,7 @@ function HotelCompactCard({ hotel, rank }: { hotel: Hotel; rank: number }) {
             loading="lazy"
           />
         ) : (
-          <div className="h-full bg-gradient-to-br from-[#dbeafe] to-[#dcfce7]" />
+          <div className="h-full bg-gradient-to-br from-forest-100 to-[#dcfce7]" />
         )}
         <span className="absolute left-2 top-2 rounded-full bg-white/95 px-2 py-0.5 text-[10px] font-bold text-forest-950">
           #{rank}

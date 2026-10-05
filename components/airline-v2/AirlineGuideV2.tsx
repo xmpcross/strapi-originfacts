@@ -159,7 +159,7 @@ export default function AirlineGuideV2({ airline, routeFacts: rf, facts, allianc
   const headerFactCount = [airline.country, alliance, hubs.length, rf?.destinationCount].filter(Boolean).length;
 
   return (
-    <div className={`${s.root} bg-[#fbfcff]`} data-testid={`airline-page-${airline.slug}`} data-template="v2">
+    <div className={`${s.root} bg-forest-50`} data-testid={`airline-page-${airline.slug}`} data-template="v2">
       {/* ---------------------------------------------------------- header */}
       <header className="relative overflow-hidden border-b border-forest-900/10 bg-gradient-to-b from-primary-hover/70 via-white to-white">
         <div aria-hidden className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-primary-emphasis/5 blur-2xl" />
@@ -746,7 +746,7 @@ function FactFileTable({
 
 function FactCard({ f, showSource }: { f: ResolvedField; showSource: boolean }) {
   return (
-    <div className="rounded-xl border border-forest-900/10 bg-[#fbfcff] p-4 transition hover:border-primary-emphasis/30">
+    <div className="rounded-xl border border-forest-900/10 bg-forest-50 p-4 transition hover:border-primary-emphasis/30">
       <dt className="text-xs font-semibold uppercase tracking-wider text-forest-900/75">{fieldLabel(f.key)}</dt>
       <dd className="mt-1.5 text-[15px] font-semibold leading-6 text-forest-950 [overflow-wrap:anywhere]">
         <FactValue value={f.field.value!} />
@@ -852,7 +852,7 @@ function CabinsDerivedSection({
       </p>
       <ul className="flex flex-wrap gap-2" aria-label="Aircraft types recorded on tracked routes">
         {fleet.map((ac) => (
-          <li key={ac} className="rounded-full border border-forest-900/15 bg-[#fbfcff] px-3 py-1 text-sm text-forest-950">
+          <li key={ac} className="rounded-full border border-forest-900/15 bg-forest-50 px-3 py-1 text-sm text-forest-950">
             {ac}
           </li>
         ))}
@@ -893,7 +893,7 @@ function NetworkSection({ airline, rf, module: m }: { airline: StrapiAirline; rf
           <h3 className={`${s.h3} text-forest-950`}>Busiest markets by route count</h3>
           <ol className="mt-2 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
             {rf.topHubs.map((h) => (
-              <li key={h.city} className="relative overflow-hidden rounded-xl border border-forest-900/10 bg-[#fbfcff] px-3.5 py-2.5 text-[15px]">
+              <li key={h.city} className="relative overflow-hidden rounded-xl border border-forest-900/10 bg-forest-50 px-3.5 py-2.5 text-[15px]">
                 <span
                   aria-hidden
                   className="absolute inset-y-0 left-0 bg-primary-emphasis/10"
@@ -913,7 +913,7 @@ function NetworkSection({ airline, rf, module: m }: { airline: StrapiAirline; rf
       )}
 
       {rf.longestRoute && (
-        <div className="rounded-xl border border-forest-900/10 bg-[#fbfcff] p-4">
+        <div className="rounded-xl border border-forest-900/10 bg-forest-50 p-4">
           <h3 className={`${s.h3} text-forest-950`}>Longest route in the dataset</h3>
           <p className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-[15px] font-semibold text-forest-950">
             <AirportCode code={rf.longestRoute.fromIata} city={rf.longestRoute.from} />
@@ -947,7 +947,7 @@ function NetworkSection({ airline, rf, module: m }: { airline: StrapiAirline; rf
                       {city}
                     </Link>
                   ) : (
-                    <span className="inline-block rounded-full border border-forest-900/10 bg-[#fbfcff] px-3 py-1 text-sm text-forest-900/85">
+                    <span className="inline-block rounded-full border border-forest-900/10 bg-forest-50 px-3 py-1 text-sm text-forest-900/85">
                       {city}
                     </span>
                   )}
@@ -972,7 +972,7 @@ function AirportCode({ code, city }: { code: string; city: string }) {
 
 function Stat({ icon: Icon, label, value }: { icon: LucideIcon; label: string; value: string }) {
   return (
-    <div className="rounded-xl border border-forest-900/10 bg-[#fbfcff] px-4 py-3.5">
+    <div className="rounded-xl border border-forest-900/10 bg-forest-50 px-4 py-3.5">
       <dt className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-forest-900/70">
         <Icon aria-hidden className="h-3.5 w-3.5 text-primary-emphasis" />
         {label}

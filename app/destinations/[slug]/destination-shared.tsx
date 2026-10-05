@@ -106,7 +106,7 @@ export function GetYourGuideActivityWidget({
 
   return (
     <section
-      className="my-12 overflow-hidden rounded-2xl border border-forest-900/10 bg-gradient-to-br from-white via-sand-50 to-sky-50 p-6 shadow-sm sm:p-8"
+      className="my-12 overflow-hidden rounded-2xl border border-forest-900/10 bg-gradient-to-br from-white via-sand-50 to-forest-50 p-6 shadow-sm sm:p-8"
       data-nosnippet
       data-testid="destination-activity-widget"
     >

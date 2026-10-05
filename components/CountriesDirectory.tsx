@@ -298,7 +298,7 @@ function CountryCard({ country }: { country: CountryRow }) {
   return (
     <Link
       href={country.href ?? `/countries/${country.code.toLowerCase()}`}
-      className="group flex items-center gap-3 rounded-[0.3rem] border border-forest-900/10 bg-[#f7f8fa] px-4 py-3 transition hover:-translate-y-0.5 hover:border-forest-900/30"
+      className="group flex items-center gap-3 rounded-[0.3rem] border border-forest-900/10 bg-forest-50 px-4 py-3 transition hover:-translate-y-0.5 hover:border-forest-900/30"
       data-testid={`country-card-${country.code}`}
     >
       <span className="flex h-10 w-10 flex-none items-center justify-center text-2xl" aria-hidden>

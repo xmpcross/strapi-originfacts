@@ -174,7 +174,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
   ].filter((f) => f.value);
 
   return (
-    <div className="bg-[#fbfcff]" data-testid={`airport-v2-page-${code}`} data-template="v2">
+    <div className="bg-forest-50" data-testid={`airport-v2-page-${code}`} data-template="v2">
       {/* ---------------------------------------------------------- header */}
       <header className="border-b border-forest-900/10 bg-white">
         <div className={`${WRAP} pb-8 pt-6 lg:pb-10`}>
@@ -533,7 +533,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                     <li key={a.slug}>
                       <Link
                         href={`/airlines/${a.slug}`}
-                        className="group flex h-full items-center gap-4 rounded-[0.3rem] border border-forest-900/10 bg-[#fbfcff] px-4 py-3 transition hover:border-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-emphasis"
+                        className="group flex h-full items-center gap-4 rounded-[0.3rem] border border-forest-900/10 bg-forest-50 px-4 py-3 transition hover:border-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-emphasis"
                       >
                         <span className="flex h-16 w-32 flex-none items-center justify-center">
                           {a.logoUrl ? (
@@ -584,7 +584,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                     <li key={r.id}>
                       <Link
                         href={`/flight-routes/${r.slug}`}
-                        className="group flex h-full items-center justify-between gap-4 rounded-[0.3rem] border border-forest-900/10 bg-[#fbfcff] px-4 py-3.5 transition hover:border-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-emphasis"
+                        className="group flex h-full items-center justify-between gap-4 rounded-[0.3rem] border border-forest-900/10 bg-forest-50 px-4 py-3.5 transition hover:border-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-emphasis"
                       >
                         <span className="min-w-0">
                           <span className="block font-mono text-xs font-semibold tracking-wider text-forest-900/70">
@@ -698,7 +698,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                     <li key={a.iata}>
                       <Link
                         href={a.href}
-                        className="group flex h-full items-center justify-between gap-3 rounded-[0.3rem] border border-forest-900/10 bg-[#fbfcff] px-3.5 py-2.5 transition hover:border-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-emphasis"
+                        className="group flex h-full items-center justify-between gap-3 rounded-[0.3rem] border border-forest-900/10 bg-forest-50 px-3.5 py-2.5 transition hover:border-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-emphasis"
                       >
                         <span className="min-w-0">
                           <span className="block truncate font-medium text-forest-950 group-hover:text-primary-emphasis">{a.city || a.name}</span>
@@ -967,7 +967,7 @@ function Fact({
 }) {
   if (!value) return null;
   return (
-    <div className="rounded-[0.3rem] border border-forest-900/10 bg-[#fbfcff] p-4">
+    <div className="rounded-[0.3rem] border border-forest-900/10 bg-forest-50 p-4">
       <dt className="text-xs font-semibold uppercase tracking-wider text-forest-900/75">{label}</dt>
       <dd className="mt-1.5 text-[15px] font-semibold leading-6 text-forest-950 [overflow-wrap:anywhere]">
         {href && external ? (
@@ -1136,7 +1136,7 @@ function SourceChip({ children }: { children: ReactNode }) {
 
 function DataFact({ label, value, source }: { label: string; value: ReactNode; source: ReactNode }) {
   return (
-    <div className="rounded-[0.3rem] border border-forest-900/10 bg-[#fbfcff] p-4">
+    <div className="rounded-[0.3rem] border border-forest-900/10 bg-forest-50 p-4">
       <dt className="text-xs font-semibold uppercase tracking-wider text-forest-900/75">{label}</dt>
       <dd className="mt-1.5 text-[15px] font-semibold leading-6 text-forest-950 [overflow-wrap:anywhere]">{value}</dd>
       <SourceChip>{source}</SourceChip>

@@ -171,7 +171,7 @@ export default function RouteGuideV2(p: RouteGuideV2Props) {
 
   return (
     <FarePriceProvider slug={p.slug} usd={p.usdPrices}>
-    <div className="bg-[#fbfcff]" data-testid={`route-v2-page-${p.slug}`} data-template="v2">
+    <div className="bg-forest-50" data-testid={`route-v2-page-${p.slug}`} data-template="v2">
       {/* ---------------------------------------------------------- header */}
       <header className="border-b border-forest-900/10 bg-white">
         <div className={`${WRAP} pb-8 pt-6 lg:pb-10`}>
@@ -266,7 +266,7 @@ export default function RouteGuideV2(p: RouteGuideV2Props) {
             )}
             {fetched && (
               <span className="inline-flex items-center gap-1.5">
-                <span aria-hidden className="h-2 w-2 rounded-full bg-sky-500" />
+                <span aria-hidden className="h-2 w-2 rounded-full bg-forest-600" />
                 Fare data fetched {fetched}
               </span>
             )}
@@ -770,7 +770,7 @@ function AirportEnd({ airport, role }: { airport: RouteV2Airport; role: 'From' |
   return (
     <Link
       href={airport.href}
-      className="group flex min-w-0 items-center gap-4 rounded-[0.3rem] border border-forest-900/10 bg-[#fbfcff] p-4 transition hover:border-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-emphasis"
+      className="group flex min-w-0 items-center gap-4 rounded-[0.3rem] border border-forest-900/10 bg-forest-50 p-4 transition hover:border-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-emphasis"
     >
       <span className="flex h-14 w-14 flex-none items-center justify-center rounded-[0.3rem] bg-forest-950 font-mono text-lg font-bold tracking-wider text-white">
         <span className="sr-only">IATA code </span>
@@ -826,7 +826,7 @@ function AirportCard({ airport, role }: { airport: RouteV2Airport; role: string 
     },
   ].filter((r) => r.value);
   return (
-    <li className="flex flex-col rounded-[0.3rem] border border-forest-900/10 bg-[#fbfcff] p-4">
+    <li className="flex flex-col rounded-[0.3rem] border border-forest-900/10 bg-forest-50 p-4">
       <p className="text-xs font-semibold uppercase tracking-[0.14em] text-forest-900/70">{role}</p>
       <h3 className="mt-1 flex flex-wrap items-center gap-2 text-lg leading-snug text-forest-950">
         {airport.name}
@@ -915,10 +915,10 @@ function ClimateSection({ climate, toName, airport }: { climate: RouteClimate; t
           </thead>
           <tbody className="divide-y divide-forest-900/10">
             {climate.months.map((m, i) => (
-              <tr key={m.month} className={i === climate.current ? 'bg-sky-50' : undefined}>
+              <tr key={m.month} className={i === climate.current ? 'bg-forest-50' : undefined}>
                 <th scope="row" className="px-3 py-1.5 font-medium text-forest-950">
                   {m.month}
-                  {i === climate.current && <span className="ml-2 text-xs font-normal text-sky-900">this month</span>}
+                  {i === climate.current && <span className="ml-2 text-xs font-normal text-forest-900">this month</span>}
                 </th>
                 <td className="px-3 py-1.5 font-semibold tabular-nums text-forest-950">{Math.round(m.hi)}°C</td>
                 <td className="px-3 py-1.5 tabular-nums text-forest-900/85">{Math.round(m.lo)}°C</td>
@@ -940,7 +940,7 @@ function ClimateSection({ climate, toName, airport }: { climate: RouteClimate; t
 function AirlineCard({ airline: a }: { airline: RouteV2Airline }) {
   const checked = a.highlights.filter((h) => h.values.length > 0);
   return (
-    <li className="flex flex-col rounded-[0.3rem] border border-forest-900/10 bg-[#fbfcff] p-4" data-testid={`route-v2-airline-${a.slug}`}>
+    <li className="flex flex-col rounded-[0.3rem] border border-forest-900/10 bg-forest-50 p-4" data-testid={`route-v2-airline-${a.slug}`}>
       <div className="flex items-center gap-4">
         <span className="flex h-12 w-24 flex-none items-center justify-center rounded-[0.3rem] bg-white">
           <LogoMark airline={a} size="lg" />
@@ -1031,7 +1031,7 @@ function RouteGroup({ title, routes, testid }: { title: string; routes: RouteV2L
           <li key={r.slug}>
             <Link
               href={`/flight-routes/${r.slug}`}
-              className="group flex h-full items-center justify-between gap-4 rounded-[0.3rem] border border-forest-900/10 bg-[#fbfcff] px-4 py-3.5 transition hover:border-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-emphasis"
+              className="group flex h-full items-center justify-between gap-4 rounded-[0.3rem] border border-forest-900/10 bg-forest-50 px-4 py-3.5 transition hover:border-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-emphasis"
             >
               <span className="min-w-0">
                 <span className="block font-mono text-xs font-semibold tracking-wider text-forest-900/70">
@@ -1167,15 +1167,15 @@ function Badge({ tone, children }: { tone: BadgeTone; children: ReactNode }) {
   const cls: Record<BadgeTone, string> = {
     sourced: 'border-emerald-200 bg-emerald-50 text-emerald-800',
     data: 'border-forest-200 bg-forest-50 text-forest-800',
-    live: 'border-sky-200 bg-sky-50 text-sky-900',
-    partner: 'border-sky-200 bg-white text-sky-900',
+    live: 'border-forest-200 bg-forest-50 text-forest-900',
+    partner: 'border-forest-200 bg-white text-forest-900',
     pending: 'border-slate-300 bg-white text-slate-700',
   };
   const dot: Record<BadgeTone, string> = {
     sourced: 'bg-emerald-600',
     data: 'bg-primary-emphasis',
-    live: 'bg-sky-500',
-    partner: 'bg-sky-500',
+    live: 'bg-forest-600',
+    partner: 'bg-forest-600',
     pending: 'border border-slate-500',
   };
   return (

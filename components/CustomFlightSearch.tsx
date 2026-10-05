@@ -74,7 +74,7 @@ const KNOWN_PLACES: Record<string, Place> = {
   LAX: { code: 'LAX', label: 'Los Angeles', sub: 'United States' },
 };
 
-function UserIcon({ className = 'size-4 flex-none text-[#001e73]' }: { className?: string }) {
+function UserIcon({ className = 'size-4 flex-none text-forest-900' }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
       <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
@@ -83,7 +83,7 @@ function UserIcon({ className = 'size-4 flex-none text-[#001e73]' }: { className
   );
 }
 
-function MapPinIcon({ className = 'size-4 flex-none text-[#001e73]' }: { className?: string }) {
+function MapPinIcon({ className = 'size-4 flex-none text-forest-900' }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
       <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
@@ -129,8 +129,8 @@ function PlaceSegment({
     <div className={`relative min-w-[150px] flex-1 ${hero ? 'lg:min-w-[210px]' : ''}`} ref={boxRef}>
       {value ? (
         <div className="flex h-full items-center px-3 py-2">
-          <MapPinIcon className="mr-2 size-4 flex-none text-[#001e73]" />
-          <span className="min-w-0 truncate text-[15px] font-bold text-[#001e73]">
+          <MapPinIcon className="mr-2 size-4 flex-none text-forest-900" />
+          <span className="min-w-0 truncate text-[15px] font-bold text-forest-900">
             {value.code} <span className="font-normal text-forest-900">- {value.label}</span>
             <button
               type="button"
@@ -147,7 +147,7 @@ function PlaceSegment({
         </div>
       ) : (
         <div className="flex h-full items-center px-3">
-          <MapPinIcon className="mr-2 size-4 flex-none text-[#001e73]" />
+          <MapPinIcon className="mr-2 size-4 flex-none text-forest-900" />
           <input
             type="text"
             value={query}
@@ -158,7 +158,7 @@ function PlaceSegment({
               setOpen(true);
             }}
             onFocus={() => setOpen(true)}
-            className={`h-full w-full bg-transparent py-2.5 text-sm text-forest-900 placeholder:text-forest-900/45 focus:outline-none ${hero ? 'rounded-none focus:bg-blue-50/40' : 'rounded-md focus:ring-2 focus:ring-forest-900/70'}`}
+            className={`h-full w-full bg-transparent py-2.5 text-sm text-forest-900 placeholder:text-forest-900/45 focus:outline-none ${hero ? 'rounded-none focus:bg-forest-50/40' : 'rounded-md focus:ring-2 focus:ring-forest-900/70'}`}
           />
         </div>
       )}
@@ -439,25 +439,25 @@ export default function CustomFlightSearch({
       >
       <div
         data-testid="custom-flight-options-row"
-        className={`mb-3 items-center gap-x-6 gap-y-2 text-sm font-bold text-[#001e73] ${
+        className={`mb-3 items-center gap-x-6 gap-y-2 text-sm font-bold text-forest-900 ${
           showOptions ? 'is-expanded flex flex-wrap' : hero ? 'flex flex-wrap' : 'hidden'
         }`}
       >
         <select
           value={oneWay ? 'oneway' : 'return'}
           onChange={(e) => setOneWay(e.target.value === 'oneway')}
-          className="cursor-pointer bg-transparent py-1 font-bold text-[#001e73] focus:outline-none"
+          className="cursor-pointer bg-transparent py-1 font-bold text-forest-900 focus:outline-none"
         >
           <option value="return">Round-trip</option>
           <option value="oneway">One-way</option>
         </select>
 
-        <label className="inline-flex cursor-pointer items-center gap-1.5 font-bold text-[#001e73]">
-          <UserIcon className="size-4 text-[#001e73]" />
+        <label className="inline-flex cursor-pointer items-center gap-1.5 font-bold text-forest-900">
+          <UserIcon className="size-4 text-forest-900" />
           <select
             value={pax}
             onChange={(e) => setPax(Number(e.target.value))}
-            className="cursor-pointer bg-transparent py-1 font-bold text-[#001e73] focus:outline-none"
+            className="cursor-pointer bg-transparent py-1 font-bold text-forest-900 focus:outline-none"
             aria-label="Travelers"
           >
             {Array.from({ length: 9 }, (_, i) => i + 1).map((n) => (
@@ -471,7 +471,7 @@ export default function CustomFlightSearch({
         <select
           value={cabin}
           onChange={(e) => setCabin(e.target.value)}
-          className="cursor-pointer bg-transparent py-1 font-bold text-[#001e73] focus:outline-none"
+          className="cursor-pointer bg-transparent py-1 font-bold text-forest-900 focus:outline-none"
           aria-label="Cabin class"
         >
           <option value="Economy">Coach</option>
@@ -482,14 +482,14 @@ export default function CustomFlightSearch({
       </div>
 
       {/* Main bar */}
-      <div className={`flex flex-wrap items-stretch bg-white ${hero ? 'gap-0 rounded-[8px] border border-[#b8c9e2] p-2 shadow-[0_12px_28px_rgba(11,42,91,0.12)]' : 'gap-1 rounded-[8px] border border-forest-900/15 p-1.5 shadow-[0_1px_2px_rgba(0,0,0,0.04)]'}`}>
+      <div className={`flex flex-wrap items-stretch bg-white ${hero ? 'gap-0 rounded-[8px] border border-forest-200 p-2 shadow-[0_12px_28px_rgba(11,42,91,0.12)]' : 'gap-1 rounded-[8px] border border-forest-900/15 p-1.5 shadow-[0_1px_2px_rgba(0,0,0,0.04)]'}`}>
         <PlaceSegment placeholder="Where from?" value={origin} onSelect={setOrigin} hero={hero} />
 
         <button
           type="button"
           onClick={swap}
           aria-label="Swap origin and destination"
-          className={`${hero ? 'my-0 h-11 w-11 rounded-[8px] border border-[#c8d5e7] bg-white shadow-sm' : 'my-1 w-9 rounded-[8px]'} grid flex-none place-items-center text-forest-900/60 hover:bg-forest-50 hover:text-forest-900`}
+          className={`${hero ? 'my-0 h-11 w-11 rounded-[8px] border border-forest-200 bg-white shadow-sm' : 'my-1 w-9 rounded-[8px]'} grid flex-none place-items-center text-forest-900/60 hover:bg-forest-50 hover:text-forest-900`}
         >
           ⇄
         </button>

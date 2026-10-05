@@ -289,6 +289,16 @@ export default async function RoutePage({ params }: Props) {
           */}
         </section>
       )}
+      {carriers.length === 0 && (
+        <section id="airlines" className="mx-auto mt-16 max-w-7xl scroll-mt-28 px-6" data-testid="route-no-carriers">
+          <h2 id="airlines-heading" className="editorial-h border-b border-forest-900/10 pb-3 text-[1.5rem] font-bold text-forest-900">
+            Which airlines operate flights from {origin.iata} to {destination.iata}?
+          </h2>
+          <p className="mt-4 text-base text-forest-900/70">
+            No airlines in our record yet.
+          </p>
+        </section>
+      )}
 
       {/* Live schedule — TravelPayouts widget */}
       <section id="schedule" className="mx-auto mt-14 max-w-7xl scroll-mt-28 px-6" data-testid="route-schedule">

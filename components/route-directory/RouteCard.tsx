@@ -47,7 +47,7 @@ const RouteCard = memo(function RouteCard({
         {r.durationMinutes ? (
           <span>≈ {formatDuration(r.durationMinutes)} est.</span>
         ) : null}
-        {r.durationMinutes && named.length ? ' · ' : null}
+        {r.durationMinutes ? ' · ' : null}
         {named.map((c, i) => (
           <span key={c.slug}>
             {i > 0 && ', '}
@@ -57,7 +57,7 @@ const RouteCard = memo(function RouteCard({
           </span>
         ))}
         {more > 0 && ` +${more} more`}
-        {!r.durationMinutes && named.length === 0 && 'No airlines in our record yet'}
+        {named.length === 0 && 'No airlines in our record yet'}
       </p>
     </article>
   );

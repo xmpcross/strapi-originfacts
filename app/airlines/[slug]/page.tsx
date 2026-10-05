@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getAirline, listAirlinesByCountry, listRoutesByCarrier, mediaUrl } from '@/lib/strapi';
+import { carrierCodeMismatch, carrierOperatesRoute } from '@/lib/route-carriers';
 import RouteNetwork from '@/components/RouteNetwork';
 import { getRouteFacts } from '@/lib/route-facts';
 import {
@@ -48,11 +49,22 @@ export async function generateStaticParams() {
 
 type Props = { params: Promise<{ slug: string }> };
 
+/**
+ * Tracked routes this airline credibly flies. Route carriers were attached by
+ * IATA code, so a recycled or codeshare code can list an airline on routes it
+ * has never operated (lib/route-carriers.ts); those are left off its page.
+ * Same query in metadata and page, so it is fetched once.
+ */
+async function listCredibleRoutesByCarrier(slug: string) {
+  const routes = await listRoutesByCarrier(slug, 15).catch(() => []);
+  return routes.filter((r) => carrierOperatesRoute(r, slug));
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const a = await getAirline(slug);
   if (!a) return { title: 'Not found' };
-  const routes = await listRoutesByCarrier(slug, 1).catch(() => []);
+  const routes = await listCredibleRoutesByCarrier(slug);
   // A ceased carrier gets a historical description and title; live carriers
   // go through the shared builder with a keyword title and logo og:image.
   const ceased = getCeasedAirline(a.slug);
@@ -107,7 +119,7 @@ export default async function AirlinePage({ params }: Props) {
   if (!airline) notFound();
 
   const [routes, flySfoProfile, countryAirlines] = await Promise.all([
-    listRoutesByCarrier(slug, 15).catch(() => []),
+    listCredibleRoutesByCarrier(slug),
     getFlySfoAirlineProfile(airline).catch(() => null),
     airline.country ? listAirlinesByCountry(airline.country, 12).catch(() => []) : Promise.resolve([]),
   ]);
@@ -173,8 +185,10 @@ export default async function AirlinePage({ params }: Props) {
   const hubCity = airline.city || null;
   const hubLabel = airline.airport || airline.city || null;
   // Full route-network facts from TravelPayouts data (only populated airlines
-  // render the section; currently Qantas / QF).
-  const routeFacts = getRouteFacts(airline.iataCode);
+  // render the section; currently Qantas / QF). Keyed by IATA code, so they are
+  // withheld when the code demonstrably belongs to another carrier (Air
+  // Djibouti would otherwise show Virgin Blue's Australian network).
+  const routeFacts = carrierCodeMismatch(airline) ? null : getRouteFacts(airline.iataCode);
   const frequentFlyerProgram = airline.frequentFlyerProgram?.trim() || null;
   const goodToKnowCards = Array.isArray(airline.goodToKnow)
     ? airline.goodToKnow.filter((c): c is { title: string; body: string } => Boolean(c?.title && c?.body))

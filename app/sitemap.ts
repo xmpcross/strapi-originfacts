@@ -7,6 +7,7 @@ import {
   listDestinations,
   fetchRouteCoverage,
 } from '@/lib/strapi';
+import { carrierOperatesRoute } from '@/lib/route-carriers';
 import { SECTIONS } from '@/lib/sections';
 import { LEGAL_DOCS } from '@/lib/legal';
 import { AIRLINES_INDEXABLE, AIRPORTS_INDEXABLE, airportIsPublished, airportIsSubstantive } from '@/lib/entity-seo';
@@ -33,7 +34,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     listAirlines().catch(() => []),
     listAirports().catch(() => []),
     listCountries().catch(() => []),
-    fetchRouteCoverage().catch(() => ({ originIatas: new Set<string>(), carrierSlugs: new Set<string>() })),
+    fetchRouteCoverage((r, c) => carrierOperatesRoute(r, c.slug)).catch(() => ({ originIatas: new Set<string>(), carrierSlugs: new Set<string>() })),
   ]);
 
   const articles = articlesRes.data;

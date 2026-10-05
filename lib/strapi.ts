@@ -337,6 +337,30 @@ export async function listCategoryArticleIndex(category: string) {
   });
 }
 
+/**
+ * listCategoryArticleIndex() across every category: the slim index plus each
+ * article's destinations. Feeds the /all-articles filters (counts, facets and
+ * client-side search). Pages through the CMS so it never silently truncates.
+ */
+export async function listArticleIndexWithDestinations(): Promise<StrapiArticle[]> {
+  const params = {
+    sort: ['publishedAt:desc'],
+    fields: ARTICLE_INDEX_FIELDS,
+    populate: { ...ARTICLE_INDEX_POPULATE, destinations: { fields: ['name', 'slug', 'type'] } },
+    filters: visibleArticles(),
+  };
+  const rows: StrapiArticle[] = [];
+  for (let page = 1; page <= 20; page++) {
+    const res = await strapiFetch<ListResponse<StrapiArticle>>('articles', {
+      ...params,
+      pagination: { page, pageSize: 200 },
+    });
+    rows.push(...res.data);
+    if (page >= (res.meta?.pagination?.pageCount ?? 1)) break;
+  }
+  return rows;
+}
+
 export async function listArticles(opts: { page?: number; pageSize?: number; category?: string; destination?: string; destinations?: string[]; q?: string } = {}) {
   const filters: Record<string, unknown> = { ...visibleArticles() };
   if (opts.category) filters.category = { slug: { $eqi: opts.category } };

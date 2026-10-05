@@ -1,10 +1,12 @@
-import { redirect } from 'next/navigation';
-import { listArticles, mediaUrl } from '@/lib/strapi';
-import ArticleCard from '@/components/ArticleCard';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { listArticleIndexWithDestinations, listArticles, mediaUrl, type StrapiArticle } from '@/lib/strapi';
 import { JsonLd } from '@/components/SeoBlocks';
 import { breadcrumbJsonLd, collectionPageJsonLd } from '@/lib/jsonld';
+import { categoryStats } from '@/components/category-v2/view';
+import ArticleIndexBrowser from '@/components/article-index/ArticleIndexBrowser';
+import { toIndexCard } from '@/components/article-index/view';
+import { parseFilters } from '@/components/article-index/filters';
 
 export const revalidate = 60;
 
@@ -12,10 +14,21 @@ const PAGE_SIZE = 12;
 const DESCRIPTION =
   "Browse every Originfacts story, including travel guides, flight advice, hotel picks, airline explainers and destination planning notes.";
 
-type Props = { searchParams: Promise<{ page?: string; q?: string }> };
+type SearchParams = Record<string, string | string[] | undefined>;
+type Props = { searchParams: Promise<SearchParams> };
 
+function pageFrom(sp: SearchParams): number {
+  const raw = Array.isArray(sp.page) ? sp.page[0] : sp.page;
+  return Math.max(1, Number(raw) || 1);
+}
+
+/**
+ * Metadata, canonical and JSON-LD depend on ?page= only. Filter parameters
+ * (?category=, ?destination=, ?q=, …) are a client view of the same archive:
+ * their canonical is the unfiltered page, so they never compete with it.
+ */
 export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
-  const page = Math.max(1, Number((await searchParams).page) || 1);
+  const page = pageFrom(await searchParams);
   return {
     title: page > 1 ? `Travel Articles & Tips — page ${page}` : 'Travel Articles & Tips',
     description: page > 1 ? `${DESCRIPTION} (Page ${page})` : DESCRIPTION,
@@ -25,19 +38,31 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
 
 export default async function ArticlesPage({ searchParams }: Props) {
   const sp = await searchParams;
-  const page = Math.max(1, Number(sp.page) || 1);
-  const q = (sp.q || '').trim();
+  const page = pageFrom(sp);
+  const filters = parseFilters(sp);
 
-  // Search rendering lives on /search — redirect there when a query is present
-  // so both URLs share the same layout/UX.
-  if (q) {
-    const params = new URLSearchParams({ q });
-    if (page > 1) params.set('page', String(page));
-    redirect(`/search?${params.toString()}`);
-  }
-
-  const { data, meta } = await listArticles({ page, pageSize: PAGE_SIZE });
+  const [{ data, meta }, index] = await Promise.all([
+    listArticles({ page, pageSize: PAGE_SIZE }),
+    listArticleIndexWithDestinations().catch((err): StrapiArticle[] => {
+      console.error('[all-articles] article index unavailable, filters disabled:', err);
+      return [];
+    }),
+  ]);
+  const total = meta.pagination.total;
   const totalPages = meta.pagination.pageCount;
+
+  const pageCards = data.map(toIndexCard);
+  const indexCards = index.map(toIndexCard);
+  const stats = categoryStats(total, indexCards);
+
+  const categories = new Map<string, { slug: string; name: string; count: number }>();
+  for (const c of indexCards) {
+    if (!c.category) continue;
+    const entry = categories.get(c.category.slug) ?? { ...c.category, count: 0 };
+    entry.count += 1;
+    categories.set(c.category.slug, entry);
+  }
+  const categoryLinks = [...categories.values()].sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
 
   const collectionJsonLd = collectionPageJsonLd({
     name: 'All stories',
@@ -53,78 +78,78 @@ export default async function ArticlesPage({ searchParams }: Props) {
   });
 
   return (
-    <div className="mx-auto max-w-7xl px-6 py-16" data-testid="articles-page">
+    <div className="overflow-x-clip" data-testid="articles-page" data-template="article-index">
       <JsonLd data={breadcrumbJsonLd([{ name: 'All stories', url: '/all-articles' }])} />
       <JsonLd data={collectionJsonLd} />
 
-      <header className="max-w-3xl">
-        <p className="chip">Archive</p>
-        <h1 className="editorial-h mt-5 text-3xl font-bold text-forest-900">
+      {/* ---------------- Hero ---------------- */}
+      <header className="mx-auto max-w-7xl px-4 pb-10 pt-12 sm:px-6 sm:pt-16" data-testid="articles-header">
+        <p className="eyebrow-tag">Archive</p>
+        <h1 className="mt-5 max-w-4xl text-5xl font-bold leading-none tracking-tight text-forest-950 sm:text-7xl">
           Every story we&rsquo;ve written
         </h1>
+        {page > 1 && (
+          <p className="mt-3 text-lg font-semibold text-forest-900/55">
+            Page {page} of {totalPages}
+          </p>
+        )}
+        <p className="mt-6 max-w-2xl text-xl font-semibold leading-snug text-forest-900 sm:text-2xl">
+          Travel guides, flight advice, hotel round-ups, airline explainers and destination planning notes, newest first.
+        </p>
+        {total > 0 && (
+          <p className="mt-5 text-sm text-forest-900/65">
+            {total} {total === 1 ? 'article' : 'articles'}. Filter by category, destination or date.{' '}
+            <Link href="/methodology" className="font-semibold text-forest-950 underline-offset-2 hover:underline">
+              How we research and write →
+            </Link>
+          </p>
+        )}
+
+        {categoryLinks.length > 0 && (
+          <nav
+            className="no-scrollbar mt-10 flex gap-x-7 overflow-x-auto border-y border-forest-900/15 py-4 text-[13px] font-bold uppercase tracking-widest text-forest-950 sm:flex-wrap sm:overflow-visible"
+            aria-label="Categories"
+            data-testid="articles-category-nav"
+          >
+            {categoryLinks.map((c) => (
+              <Link key={c.slug} href={`/category/${c.slug}`} className="flex-none transition hover:text-primary-emphasis">
+                {c.name} <span className="font-semibold text-forest-900/45">{c.count}</span>
+              </Link>
+            ))}
+          </nav>
+        )}
       </header>
 
-      <form
-        action="/search"
-        method="get"
-        className="mt-8 flex max-w-3xl items-center gap-3 rounded-xl border border-primary-emphasis/20 bg-white px-4 py-3 shadow-sm"
-        data-testid="articles-search"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={2}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="h-5 w-5 shrink-0 text-primary-emphasis"
-          aria-hidden
-        >
-          <circle cx="11" cy="11" r="7" />
-          <path d="m21 21-4.3-4.3" />
-        </svg>
-        <input
-          type="search"
-          name="q"
-          placeholder="Search stories, places, flights, hotels..."
-          className="min-w-0 flex-1 bg-transparent text-base text-forest-900 outline-none placeholder:text-forest-900/45"
-          data-testid="articles-search-input"
+      {/* ---------------- Numbers ---------------- */}
+      {stats.length > 1 && (
+        <section aria-label="The archive in numbers" className="border-y border-forest-900/15 bg-paper" data-testid="articles-stats">
+          <dl className="mx-auto grid max-w-7xl grid-cols-2 gap-x-4 gap-y-8 px-4 py-10 sm:px-6 lg:grid-cols-4">
+            {stats.map((s) => (
+              <div key={s.label} className="flex min-w-0 flex-col-reverse border-l-2 border-primary-emphasis pl-4">
+                <dt className="mt-2 text-xs font-bold uppercase tracking-widest text-forest-900/60">{s.label}</dt>
+                <dd className="text-3xl font-bold leading-none text-forest-950 sm:text-4xl">{s.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      )}
+
+      {/* ---------------- Archive ---------------- */}
+      <section className="mx-auto max-w-7xl px-4 pb-20 pt-12 sm:px-6 sm:pt-14" aria-labelledby="articles-archive" data-testid="articles-archive">
+        <h2 id="articles-archive" className="sr-only">
+          All articles
+        </h2>
+        <ArticleIndexBrowser
+          total={total}
+          pageCards={pageCards}
+          indexCards={indexCards}
+          page={page}
+          pageCount={totalPages}
+          pageSize={PAGE_SIZE}
+          initialFilters={filters}
+          nowIso={new Date().toISOString()}
         />
-        <button
-          type="submit"
-          className="rounded-[0.3rem] bg-primary-emphasis px-4 py-2 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-primary-emphasis-hover"
-        >
-          Search
-        </button>
-      </form>
-
-      {data.length === 0 ? (
-        <p className="mt-20 text-center text-forest-900/60">No articles published yet.</p>
-      ) : (
-        <div className="mt-14 grid gap-12 md:grid-cols-2 lg:grid-cols-3">
-          {data.map((a) => <ArticleCard key={a.id} article={a} size="md" />)}
-        </div>
-      )}
-
-      {totalPages > 1 && (
-        <nav className="mt-16 flex justify-center gap-3" data-testid="pagination">
-          {Array.from({ length: totalPages }).map((_, i) => {
-            const n = i + 1;
-            const active = n === page;
-            return (
-              <Link
-                key={n}
-                href={`/all-articles?page=${n}`}
-                className={`rounded-full border px-4 py-2 text-sm ${active ? 'border-forest-900 bg-forest-900 text-sand-100' : 'border-forest-900/20 text-forest-900 hover:bg-forest-900/5'}`}
-                data-testid={`page-${n}`}
-              >
-                {n}
-              </Link>
-            );
-          })}
-        </nav>
-      )}
+      </section>
     </div>
   );
 }

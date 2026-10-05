@@ -11,6 +11,7 @@ import {
   dateFacet,
   facetOptions,
   filtersToHref,
+  fullTextSearchHref,
   isFiltering,
   type ArticleFilters,
   type FacetOption,
@@ -220,10 +221,11 @@ export default function ArticleIndexBrowser({
                   </button>
                   {filters.q.trim() && (
                     <Link
-                      href={`/search?q=${encodeURIComponent(filters.q.trim())}`}
+                      href={fullTextSearchHref(filters.q)}
                       className="rounded-[0.3rem] border border-forest-900/20 px-4 py-2.5 text-sm font-semibold text-forest-950 hover:border-primary-emphasis hover:text-primary-emphasis"
+                      data-testid="article-index-fulltext-empty"
                     >
-                      Search article text for “{filters.q.trim()}”
+                      Search full article text
                     </Link>
                   )}
                 </div>
@@ -382,6 +384,13 @@ function FilterPanel({
             </button>
           )}
         </div>
+        <Link
+          href={fullTextSearchHref(filters.q)}
+          className="mt-2 inline-block text-xs font-semibold text-primary-emphasis underline-offset-2 hover:underline"
+          data-testid="article-index-fulltext"
+        >
+          Search full article text →
+        </Link>
       </div>
 
       <fieldset>

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { redirect } from 'next/navigation';
 import type { Metadata } from 'next';
 import { listArticleIndexWithDestinations, listArticles, mediaUrl, type StrapiArticle } from '@/lib/strapi';
 import { JsonLd } from '@/components/SeoBlocks';
@@ -6,7 +7,7 @@ import { breadcrumbJsonLd, collectionPageJsonLd } from '@/lib/jsonld';
 import { categoryStats } from '@/components/category-v2/view';
 import ArticleIndexBrowser from '@/components/article-index/ArticleIndexBrowser';
 import { toIndexCard } from '@/components/article-index/view';
-import { parseFilters } from '@/components/article-index/filters';
+import { legacySearchRedirect, parseFilters } from '@/components/article-index/filters';
 
 export const revalidate = 60;
 
@@ -24,7 +25,7 @@ function pageFrom(sp: SearchParams): number {
 
 /**
  * Metadata, canonical and JSON-LD depend on ?page= only. Filter parameters
- * (?category=, ?destination=, ?q=, …) are a client view of the same archive:
+ * (?category=, ?destination=, ?s=, …) are a client view of the same archive:
  * their canonical is the unfiltered page, so they never compete with it.
  */
 export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
@@ -39,6 +40,12 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
 export default async function ArticlesPage({ searchParams }: Props) {
   const sp = await searchParams;
   const page = pageFrom(sp);
+
+  // ?q= has always meant full-text search: send it to /search exactly as
+  // before the redesign. The in-page filter uses ?s= instead.
+  const searchTarget = legacySearchRedirect(sp);
+  if (searchTarget) redirect(searchTarget);
+
   const filters = parseFilters(sp);
 
   const [{ data, meta }, index] = await Promise.all([

@@ -1,6 +1,6 @@
 {
   "slug": "asiana-airlines",
-  "official_website": "https://www.flyasiana.com",
+  "official_website": "https://flyasiana.com",
   "modules": [
     {
       "id": "carryon",
@@ -8,32 +8,40 @@
       "required": [
         "carryon_bag_dimensions",
         "weight_economy",
-        "weight_business_first"
+        "weight_business"
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "https://www.flyasiana.com/baggage",
-          "notes": "Asiana Airlines cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "Each carry-on bag up to 115 cm in total (length + width + height, wheels and handles included)",
+          "status": "official",
+          "source_url": "https://flyasiana.com/C/US/EN/contents/carry-on-baggage",
+          "notes": "Carry-on baggage page; the same rules apply to domestic and international flights. Asiana flights move to Korean Air flight numbers on 17 Dec 2026; re-check after that date.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "https://www.flyasiana.com/baggage",
-          "notes": "Asiana Airlines Economy Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "1 carry-on bag up to 10 kg, plus 1 personal item",
+          "status": "official",
+          "source_url": "https://flyasiana.com/C/US/EN/contents/carry-on-baggage",
+          "notes": "Carry-on baggage page, Economy: \"1 carry-on bags / 1 personal items\".",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "https://www.flyasiana.com/baggage",
-          "notes": "Asiana Airlines Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "weight_business": {
+          "value": "2 carry-on bags up to 10 kg each, plus 1 personal item",
+          "status": "official",
+          "source_url": "https://flyasiana.com/C/US/EN/contents/carry-on-baggage",
+          "notes": "Carry-on baggage page, Business: \"Not exceeding 10kg per carry-on bag\".",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "personal_item": {
+          "value": "Up to 40 x 30 x 20 cm, stowed under the seat in front: a handbag, briefcase or laptop bag",
+          "status": "official",
+          "source_url": "https://flyasiana.com/C/US/EN/contents/carry-on-baggage",
+          "notes": "Carry-on baggage page.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -43,32 +51,133 @@
       "required": [
         "piece_weight_economy",
         "piece_weight_business",
-        "piece_weight_first"
+        "size_weight"
       ],
       "fields": {
         "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "https://www.flyasiana.com/baggage",
-          "notes": "Asiana Airlines Economy Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "U.S. routes: 2 bags up to 23 kg (50 lb) each; other international routes (including Guam and Saipan): 1 bag up to 23 kg",
+          "status": "official",
+          "source_url": "https://flyasiana.com/C/US/EN/contents/free-baggage",
+          "notes": "Free baggage page; also stated on the book-online page. Asiana flights move to Korean Air flight numbers on 17 Dec 2026; re-check after that date.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.flyasiana.com/baggage",
-          "notes": "Asiana Airlines Business Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "2 bags up to 32 kg (70 lb) each, all international routes (Business Suite included)",
+          "status": "official",
+          "source_url": "https://flyasiana.com/C/US/EN/contents/free-baggage",
+          "notes": "Free baggage page: \"Business Class regulations apply to Business Suite\".",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
+        "size_weight": {
+          "value": "Each bag up to 158 cm (62 in) total, wheels and handles included, in every class",
+          "status": "official",
+          "source_url": "https://flyasiana.com/C/US/EN/contents/free-baggage",
+          "notes": "Free baggage page: \"Regardless of your class, the maximum size per bag is 158cm(62 inch).\"",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "required": [
+        "fare_name",
+        "seat_selection_included",
+        "change_cancellation_policy"
+      ],
+      "fields": {
+        "fare_name": {
+          "value": null,
           "status": "pending",
-          "source_url": "https://www.flyasiana.com/baggage",
-          "notes": "Asiana Airlines First Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "notes": "flyasiana.com English pages publish no named international economy fare family; refund and change rules are listed by booking class instead."
+        },
+        "seat_selection_included": {
+          "value": null,
+          "status": "pending",
+          "notes": "Not stated per fare on the pages read."
+        },
+        "change_cancellation_policy": {
+          "value": null,
+          "status": "pending",
+          "notes": "Refund penalties vary by booking class and haul (ticket-information page); no single cheapest-fare rule to publish."
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "online_checkin",
+        "international_cutoff",
+        "domestic_cutoff",
+        "boarding_close"
+      ],
+      "fields": {
+        "online_checkin": {
+          "value": "International: 48 hours to 1 hour before departure (U.S. routes, including Saipan, from 24 hours); domestic Korea: 24 hours to 30 minutes before",
+          "status": "official",
+          "source_url": "https://flyasiana.com/C/US/EN/contents/online-check-in",
+          "notes": "Online check-in page.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "international_cutoff": {
+          "value": "Counters close 50 minutes before departure at Incheon, Gimpo, London Heathrow, Paris CDG and Sydney, 60 minutes at U.S. airports and Frankfurt, and 40 minutes at most other airports",
+          "status": "official",
+          "source_url": "https://flyasiana.com/C/US/EN/contents/airport-counter-check-in",
+          "notes": "Airport counter check-in page, \"Check-in deadlines by airport\" table. Kiosk check-in for international flights closes 60 minutes before departure (kiosk page).",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "domestic_cutoff": {
+          "value": "30 minutes before departure, all airports",
+          "status": "official",
+          "source_url": "https://flyasiana.com/C/US/EN/contents/airport-counter-check-in",
+          "notes": "Airport counter check-in page, domestic.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "boarding_close": {
+          "value": "International: boarding ends 10 minutes before departure; domestic: 5 minutes before",
+          "status": "official",
+          "source_url": "https://flyasiana.com/C/US/EN/contents/online-check-in",
+          "notes": "Online check-in page: \"Boarding begins 25-40 minutes before departure and ends 10 minutes before departure.\"",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "required": [
+        "cancellation_refund",
+        "us_refund_timing"
+      ],
+      "fields": {
+        "cancellation_refund": {
+          "value": "Tickets unused because of a cancellation for weather or airline reasons are not refunded automatically; refund fees are waived, though online or mobile refunds may carry a processing fee",
+          "status": "official",
+          "source_url": "https://flyasiana.com/C/US/EN/contents/book-online",
+          "notes": "Book-online page.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "us_refund_timing": {
+          "value": "On flights to and from the U.S., cancellations and delays of 6 hours or more qualify for a refund within 7 business days (cards) or 20 days (other payment), or a credit valid 5 years",
+          "status": "official",
+          "source_url": "https://flyasiana.com/C/US/EN/contents/ticket-information",
+          "notes": "Ticket information page, U.S. irregular-operations refund notice, effective 28 Oct 2024.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "duty_of_care_policy": {
+          "value": null,
+          "status": "pending",
+          "notes": "Meals, hotel and rebooking commitments are in the Customer Service Plan and Conditions of Carriage PDFs, whose path robots.txt disallows; not fetched."
         }
       }
     },
@@ -76,16 +185,41 @@
       "id": "contact",
       "title": "Contact and customer support",
       "required": [
-        "phone_home_market"
+        "phone_home_market",
+        "korean_air_integration"
       ],
       "fields": {
+        "korean_air_integration": {
+          "value": "Asiana joins Korean Air on 17 December 2026: flights from that date use Korean Air flight numbers, and flyasiana.com redirects to Korean Air after 16 December 2026",
+          "status": "official",
+          "source_url": "https://flyasiana.com/C/US/EN/customer/mergerfaq",
+          "notes": "Integration FAQ: \"On December 17, 2026, Asiana Airlines and Korean Air unite\". Bookings move to Korean Air from 2 Nov 2026; Asiana handles changes and refunds until the integration date.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
         "phone_home_market": {
-          "value": null,
-          "status": "pending",
-          "source_url": "https://www.flyasiana.com/baggage",
-          "notes": "No verified phone yet.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "1588-8000 within Korea, or +82 2 2669 8000",
+          "status": "official",
+          "source_url": "https://flyasiana.com/C/US/EN/contents/book-online",
+          "notes": "Book-online page, Service Guide table. Asiana flights move to Korean Air flight numbers on 17 Dec 2026; re-check after that date.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "phone_us": {
+          "value": "+1 800 227 4262",
+          "status": "official",
+          "source_url": "https://flyasiana.com/C/US/EN/contents/book-online",
+          "notes": "Book-online page, Service Guide table. Opening hours differ between pages, so none are given.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://flyasiana.com/C/US/EN/contents/terms-of-transportation-and-notification",
+          "status": "official",
+          "source_url": "https://flyasiana.com/C/US/EN/contents/terms-of-transportation-and-notification",
+          "notes": "Contract of Carriage and Notifications page, which links the conditions-of-carriage PDFs.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

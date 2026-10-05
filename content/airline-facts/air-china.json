@@ -1,6 +1,6 @@
 {
   "slug": "air-china",
-  "official_website": "http://www.airchina.com.cn",
+  "official_website": "https://www.airchina.com.cn",
   "modules": [
     {
       "id": "carryon",
@@ -12,28 +12,36 @@
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "https://www.airchina.com.cn/en/info/travel-prep/baggage/carry-on-baggage.shtml",
-          "notes": "Air China cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "Each bag up to 55 x 40 x 20 cm (22 x 16 x 8 in), wheels and handles included",
+          "status": "official",
+          "source_url": "https://webresource.airchina.com.cn/en-US/content/travel_info/preparing/luggage/unchecked/baggage/",
+          "notes": "Carry-on page, section I; same figures in General Conditions of Carriage for Passengers and Baggage (revised July 2026, effective 1 Jul 2026), clause 6.3.1.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "https://www.airchina.com.cn/en/info/travel-prep/baggage/carry-on-baggage.shtml",
-          "notes": "Air China Economy Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "1 bag up to 5 kg (11 lb), Economy and Premium Economy",
+          "status": "official",
+          "source_url": "https://webresource.airchina.com.cn/en-US/content/travel_info/preparing/luggage/unchecked/baggage/",
+          "notes": "Carry-on page table (\"Super-Economy\" there; \"premium economy\" in General Conditions of Carriage for Passengers and Baggage (revised July 2026, effective 1 Jul 2026), clause 6.3.1.)",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "https://www.airchina.com.cn/en/info/travel-prep/baggage/carry-on-baggage.shtml",
-          "notes": "Air China Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "2 bags, up to 8 kg (17 lb) each",
+          "status": "official",
+          "source_url": "https://webresource.airchina.com.cn/en-US/content/travel_info/preparing/luggage/unchecked/baggage/",
+          "notes": "Carry-on page table; General Conditions of Carriage for Passengers and Baggage (revised July 2026, effective 1 Jul 2026), clause 6.3.1.: \"The weight of a single piece ... in first class and business class shall not exceed 8 kg\".",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "personal_item": {
+          "value": "1 personal item that fits under the seat in front, such as a handbag, briefcase, laptop bag or camera bag; no size is given",
+          "status": "official",
+          "source_url": "https://webresource.airchina.com.cn/en-US/content/travel_info/preparing/luggage/unchecked/baggage/",
+          "notes": "Carry-on page, section II.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -42,33 +50,192 @@
       "title": "Checked baggage",
       "required": [
         "piece_weight_economy",
+        "piece_weight_premium_economy",
         "piece_weight_business",
-        "piece_weight_first"
+        "size_weight"
       ],
       "fields": {
         "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "https://www.airchina.com.cn/en/info/travel-prep/baggage/checked-baggage.shtml",
-          "notes": "Air China Economy Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "International: depends on fare brand and route. Most routes, including the USA and Canada: 2 x 23 kg on Latitude, Selected and Flex, 1 x 23 kg on Standard. Europe (IATA zone 2.2, including the UK, Germany and France): 1 x 23 kg on every brand",
+          "status": "official",
+          "source_url": "https://webresource.airchina.com.cn/airchinacms/upload/materials/file/2026/07/13/dd55e90b1b26891256030da150d46082e38b2f88.pdf",
+          "notes": "Free baggage allowance PDF, piece-concept routes, \"Effective from July 10, 2026\". Flex also drops to 1 piece for Turkey/Georgia and IATA zone 3.2.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "piece_weight_premium_economy": {
+          "value": "2 x 23 kg on Latitude, Selected and Flex; 1 x 23 kg on Standard",
+          "status": "official",
+          "source_url": "https://webresource.airchina.com.cn/airchinacms/upload/materials/file/2026/07/13/dd55e90b1b26891256030da150d46082e38b2f88.pdf",
+          "notes": "Free baggage allowance PDF, piece-concept routes, \"Effective from July 10, 2026\".",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.airchina.com.cn/en/info/travel-prep/baggage/checked-baggage.shtml",
-          "notes": "Air China Business Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "2 x 32 kg (First and Business, all brands, routes to and from the Chinese Mainland)",
+          "status": "official",
+          "source_url": "https://webresource.airchina.com.cn/airchinacms/upload/materials/file/2026/07/13/dd55e90b1b26891256030da150d46082e38b2f88.pdf",
+          "notes": "Free baggage allowance PDF, piece-concept routes, \"Effective from July 10, 2026\".",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.airchina.com.cn/en/info/travel-prep/baggage/checked-baggage.shtml",
-          "notes": "Air China First Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "size_weight": {
+          "value": "International: each free bag up to 158 cm (62 in) total and 32 kg; domestic: each free bag up to 100 x 60 x 40 cm",
+          "status": "official",
+          "source_url": "https://webresource.airchina.com.cn/en-US/content/travel_info/preparing/luggage/check/tyxlgz/",
+          "notes": "Checked baggage page, section II.2 and II.3; international 32 kg also in the CoC and both allowance PDFs.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "domestic_allowance": {
+          "value": "Within the Chinese Mainland (weight concept): First 40 kg, Business 30 kg, Premium Economy and Economy 20 kg, infants 10 kg",
+          "status": "official",
+          "source_url": "https://webresource.airchina.com.cn/airchinacms/upload/materials/file/2026/07/13/ef4a2c3c0b2f7871f8897cdbf7028407d899f91f.pdf",
+          "notes": "Free baggage allowance PDF, weight-concept domestic routes. Routes to Hong Kong, Macao and Taiwan use the piece concept.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "domestic_max_piece": {
+          "value": null,
+          "status": "disputed",
+          "source_url": "https://webresource.airchina.com.cn/en-US/content/travel_info/preparing/luggage/check/tyxlgz/",
+          "conflicting_values": [
+            "45 kg per bag on domestic flights (checked baggage page, II.3)",
+            "32 kg per bag, no domestic exception (CoC 6.2 and both allowance PDFs)"
+          ],
+          "notes": "Air China pages disagree, read 2026-10-05: https://webresource.airchina.com.cn/en-US/content/travel_info/preparing/luggage/check/tyxlgz/ and https://webresource.airchina.com.cn/en-US/content/trans_conditions/dcpb/.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "standard_fare_checked_bag": {
+          "value": null,
+          "status": "disputed",
+          "source_url": "https://webresource.airchina.com.cn/en-US/content/c/2024-02-09/16521.shtml",
+          "conflicting_values": [
+            "Some Economy Standard routes include no free checked bag (2024 branded-fares announcement)",
+            "Economy Standard gets 1 x 23 kg on every listed route (July 2026 piece-concept allowance PDF)"
+          ],
+          "notes": "Air China pages disagree, read 2026-10-05: https://webresource.airchina.com.cn/en-US/content/c/2024-02-09/16521.shtml and https://webresource.airchina.com.cn/airchinacms/upload/materials/file/2026/07/13/dd55e90b1b26891256030da150d46082e38b2f88.pdf.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "required": [
+        "fare_name",
+        "seat_selection_included",
+        "change_cancellation_policy"
+      ],
+      "fields": {
+        "fare_name": {
+          "value": "Economy Standard (international and regional routes)",
+          "status": "official",
+          "source_url": "https://webresource.airchina.com.cn/en-US/content/c/2024-02-09/16521.shtml",
+          "notes": "Branded-fares announcement: \"four fare options: Economy Standard, Economy Flex, Economy Comfort, and Economy Latitude\". The July 2026 allowance PDF calls the third brand \"Selected\". Whether Standard includes a checked bag is disputed (see baggage).",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "seat_selection_included": {
+          "value": "Standard seats can be chosen free; paid and mileage seat selection are also offered",
+          "status": "official",
+          "source_url": "https://webresource.airchina.com.cn/en-US/content/trans_conditions/dcpb/",
+          "notes": "General Conditions of Carriage for Passengers and Baggage (revised July 2026, effective 1 Jul 2026), clause 9.4: \"you may select standard complimentary seats or opt for paid or mileage-redemption seat selection services\".",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "change_cancellation_policy": {
+          "value": "Not refundable; changes are allowed for a fee",
+          "status": "official",
+          "source_url": "https://webresource.airchina.com.cn/en-US/content/c/2024-02-09/16521.shtml",
+          "notes": "Branded-fares announcement: \"Economy Standard does not allow ticket refunds, and rebooking is subject to a fee.\"",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "lede": "Air China publishes fixed cutoffs only for flights departing Beijing; its conditions of carriage say deadlines differ by airport.",
+      "required": [
+        "domestic_cutoff",
+        "international_cutoff",
+        "boarding_close"
+      ],
+      "fields": {
+        "domestic_cutoff": {
+          "value": "30 minutes before departure (flights departing Beijing)",
+          "status": "official",
+          "source_url": "https://webresource.airchina.com.cn/en-US/content/travel_info/preparing/conditions/contact_us/check_in/",
+          "notes": "Check-in FAQ, Beijing departures. General Conditions of Carriage for Passengers and Baggage (revised July 2026, effective 1 Jul 2026), clause 4.2.3. says deadlines vary by airport.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "international_cutoff": {
+          "value": "60 minutes before departure for international and regional flights (departing Beijing)",
+          "status": "official",
+          "source_url": "https://webresource.airchina.com.cn/en-US/content/travel_info/preparing/conditions/contact_us/check_in/",
+          "notes": "Check-in FAQ, Beijing departures.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "boarding_close": {
+          "value": "Boarding gates close 10 minutes before departure (flights departing Beijing)",
+          "status": "official",
+          "source_url": "https://webresource.airchina.com.cn/en-US/content/travel_info/preparing/conditions/contact_us/check_in/",
+          "notes": "Check-in FAQ. General Conditions of Carriage for Passengers and Baggage (revised July 2026, effective 1 Jul 2026), clause 4.3.1.: gate closing times differ by airport.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "online_checkin": {
+          "value": null,
+          "status": "disputed",
+          "source_url": "https://webresource.airchina.com.cn/en-US/content/travel_info/preparing/conditions/contact_us/check_in/",
+          "conflicting_values": [
+            "Online check-in for all flights ends two hours before departure",
+            "Online check-in for all international flights ends three hours before departure"
+          ],
+          "notes": "Both sentences appear on the same check-in FAQ page; the page also says opening times differ by flight.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "required": [
+        "rebooking_refund",
+        "duty_of_care_policy",
+        "cash_compensation"
+      ],
+      "fields": {
+        "rebooking_refund": {
+          "value": "For a delay, cancellation or schedule change, one free change (Air China flights first, or another airline), or a refund of the unused fare and taxes with no refund fee",
+          "status": "official",
+          "source_url": "https://webresource.airchina.com.cn/en-US/content/trans_conditions/dcpb/",
+          "notes": "General Conditions of Carriage for Passengers and Baggage (revised July 2026, effective 1 Jul 2026), clauses 3.1.3.1, 3.1.3.3, 3.2.3.1 and 8.2.1.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "duty_of_care_policy": {
+          "value": "Meals and accommodation are provided when a delay or cancellation at the departure airport is Air China's fault, or at a stopover or diversion; for weather and other causes outside its control, Air China helps arrange them at the passenger's cost",
+          "status": "official",
+          "source_url": "https://webresource.airchina.com.cn/en-US/content/trans_conditions/dcpb/",
+          "notes": "General Conditions of Carriage for Passengers and Baggage (revised July 2026, effective 1 Jul 2026), clause 8.2.3.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "cash_compensation": {
+          "value": "For delays caused by Air China: RMB 200 per passenger for 4 to 8 hours, RMB 400 for 8 hours or more",
+          "status": "official",
+          "source_url": "https://webresource.airchina.com.cn/en-US/content/trans_conditions/dcpb/",
+          "notes": "General Conditions of Carriage for Passengers and Baggage (revised July 2026, effective 1 Jul 2026), clause 8.3.1.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -76,16 +243,41 @@
       "id": "contact",
       "title": "Contact and customer support",
       "required": [
-        "phone_home_market"
+        "phone_home_market",
+        "conditions_of_carriage_url"
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+86 10 61461049",
-          "status": "pending",
-          "source_url": "https://www.airchina.com.cn/en/info/travel-prep/conditions-of-carriage.shtml",
-          "notes": "Air China official customer support line.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "95583 (+86 10 95583), 24 hours a day",
+          "status": "official",
+          "source_url": "https://webresource.airchina.com.cn/en-US/content/contact_us/customer/service_hotline/hotline/",
+          "notes": "Air China hotline numbers page, China: \"0086-10-95583 | 24 hours a day, seven days a week\".",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "phone_us": {
+          "value": "+1 800 882 8122 (North America; 06:00-21:00 Pacific weekdays, 07:30-16:00 weekends and holidays)",
+          "status": "official",
+          "source_url": "https://webresource.airchina.com.cn/en-US/content/contact_us/customer/service_hotline/hotline/",
+          "notes": "Air China hotline numbers page, North America.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "email": {
+          "value": "customer_relations@airchina.com",
+          "status": "official",
+          "source_url": "https://webresource.airchina.com.cn/en-US/content/trans_conditions/dcpb/",
+          "notes": "General Conditions of Carriage for Passengers and Baggage (revised July 2026, effective 1 Jul 2026), Article 10, complaints.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://webresource.airchina.com.cn/en-US/content/trans_conditions/dcpb/",
+          "status": "official",
+          "source_url": "https://webresource.airchina.com.cn/en-US/content/trans_conditions/dcpb/",
+          "notes": "General Conditions of Carriage for Passengers and Baggage (revised July 2026, effective 1 Jul 2026), page header.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

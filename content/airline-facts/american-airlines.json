@@ -26,11 +26,12 @@
           "verified_by": "manual_official_source"
         },
         "regional_valet": {
-          "value": "On regional American Eagle flights, a carry-on larger than the personal-item size must be valet-checked at the gate at no charge.",
+          "value": "On regional American Eagle flights, a carry-on larger than the personal-item size must be valet-checked at the gate at no charge; Embraer ERJ-175 planes allow carry-on bags and have no valet service",
           "status": "official",
           "source_url": "https://www.aa.com/i18n/travel-info/baggage/carry-on-baggage.jsp",
-          "verified_at": "2026-09-03",
-          "verified_by": "manual_official_source"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Carry-on page, regional flights paragraph and its footnote: \"*Embraer ERJ-175 planes allow carry-on bags and don't offer valet service.\""
         }
       }
     },
@@ -48,9 +49,9 @@
           "value": "Within/between the U.S., Puerto Rico, U.S. Virgin Islands, Canada, Caribbean (except Cuba / Haiti), Mexico, Central America (except Panama) and Guyana: 1st checked bag $50 ($45 if you pay online), 2nd checked bag $60 ($55 if you pay online). Basic Economy pays $5 more for the 1st and 2nd bags.",
           "status": "official",
           "source_url": "https://www.aa.com/i18n/travel-info/baggage/checked-baggage-policy.jsp",
-          "verified_at": "2026-09-03",
+          "verified_at": "2026-10-05",
           "verified_by": "manual_official_source",
-          "notes": "Fees as updated by American on May 18, 2026."
+          "notes": "Checked bag policy page, re-read 2026-10-05. Main Cabin fees apply to tickets issued on or after April 9, 2026; the Basic Economy fees ($55 / $65, $50 / $60 online) to tickets issued on or after May 18, 2026."
         },
         "size_weight": {
           "value": "Each bag up to 62 in / 158 cm (length + width + height) and 50 lbs / 23 kgs. First / Business free bags may weigh up to 70 lbs / 32 kgs. On flights to / from Australia or New Zealand, free bags may weigh up to 70 lbs / 32 kgs.",
@@ -67,10 +68,54 @@
           "verified_by": "manual_official_source"
         },
         "free_first_bag_routes": {
-          "value": "The first checked bag is free on trips to destinations including Australia, New Zealand, Japan, China, India and Trans-Atlantic routes; Basic Economy is excluded on several of these.",
+          "value": "The first checked bag is free on trips to destinations including Australia, New Zealand, Japan, China, Hong Kong, India, Qatar, South Korea and Trans-Atlantic routes. Basic Economy is excluded on Trans-Atlantic and most Latin American routes; on Asia, India and Qatar routes it gets the free bag for tickets issued on or after April 23, 2026",
           "status": "official",
           "source_url": "https://www.aa.com/i18n/travel-info/baggage/checked-baggage-policy.jsp",
-          "verified_at": "2026-09-03",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Checked bag policy page, free-bag destination list: \"*Excluding Basic Economy\" and \"^Excluding Basic Economy for tickets issued on / before April 22, 2026\". Australia and New Zealand carry neither mark."
+        }
+      }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "required": [
+        "fare_name",
+        "seat_selection_included",
+        "change_cancellation_policy"
+      ],
+      "fields": {
+        "fare_name": {
+          "value": "Basic Economy: 1 carry-on bag and 1 personal item included; no free checked bag on most routes",
+          "status": "official",
+          "source_url": "https://www.aa.com/i18n/travel-info/experience/seats/basic-economy.jsp",
+          "notes": "Basic Economy page: \"Our lowest Main Cabin fare around the world\" and \"You can bring 1 carry-on bag and 1 personal item on board the plane.\" Free-bag exceptions are in the baggage section.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "seat_selection_included": {
+          "value": "Seat selection in advance costs a fee; otherwise a seat is assigned free at check-in, and companions on the same ticket may not sit together",
+          "status": "official",
+          "source_url": "https://www.aa.com/i18n/travel-info/experience/seats/basic-economy.jsp",
+          "notes": "Basic Economy page, seats. Status-based free seats apply only to Basic Economy fares bought before May 18, 2026.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "change_cancellation_policy": {
+          "value": "No changes. Changes or a refund are possible only within 24 hours of purchase when booked at least 7 days before departure; after that, AAdvantage members on eligible U.S.-originating trips may cancel for travel credit, for a fee",
+          "status": "official",
+          "source_url": "https://www.aa.com/i18n/travel-info/experience/seats/basic-economy.jsp",
+          "notes": "Basic Economy page: \"Basic Economy fare tickets cannot be changed,* but there are exceptions.\" Trips starting in Europe (except Finland, Estonia, Latvia and Lithuania) can be changed for a fee; the fee is not stated on the page.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "boarding_group": {
+          "value": "Boards last, typically in Group 9",
+          "status": "official",
+          "source_url": "https://www.aa.com/i18n/travel-info/experience/seats/basic-economy.jsp",
+          "notes": "Basic Economy page: \"Basic Economy passengers board last, typically in Group 9.\"",
+          "verified_at": "2026-10-05",
           "verified_by": "manual_official_source"
         }
       }

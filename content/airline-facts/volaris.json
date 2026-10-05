@@ -83,12 +83,12 @@
       ],
       "fields": {
         "phone_home_market": {
-          "value": null,
-          "status": "pending",
-          "source_url": "http://www.volaris.com/baggage",
-          "notes": "No verified phone yet.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "+52 55 1102 8000",
+          "status": "official",
+          "source_url": "https://www.volaris.com/contacto",
+          "notes": "Volaris official customer support line in Mexico.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

@@ -1,6 +1,6 @@
 {
   "slug": "sunrise-airways",
-  "official_website": "https://www.sunriseairways.net",
+  "official_website": "https://sunriseairways.net",
   "modules": [
     {
       "id": "carryon",
@@ -111,12 +111,12 @@
       ],
       "fields": {
         "phone_home_market": {
-          "value": null,
-          "status": "pending",
-          "source_url": "http://www.sunriseairways.net/baggage",
-          "notes": "No verified phone yet.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "+509 2812 2222",
+          "status": "official",
+          "source_url": "https://sunriseairways.net/contact",
+          "notes": "Sunrise Airways official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

@@ -1,6 +1,6 @@
 {
   "slug": "latam-airlines",
-  "official_website": "http://www.latam.com",
+  "official_website": "https://www.latamairlines.com",
   "modules": [
     {
       "id": "carryon",
@@ -12,28 +12,28 @@
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "http://www.latam.com/baggage",
-          "notes": "LATAM Airlines cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "55 x 35 x 25 cm",
+          "status": "official",
+          "source_url": "https://www.latamairlines.com/us/en/experience/prepare-your-trip/baggage/carry-on",
+          "notes": "LATAM cabin baggage size limit.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "http://www.latam.com/baggage",
-          "notes": "LATAM Airlines Economy Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "10 kg (22 lbs)",
+          "status": "official",
+          "source_url": "https://www.latamairlines.com/us/en/experience/prepare-your-trip/baggage/carry-on",
+          "notes": "LATAM Economy Class carry-on weight limit.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "http://www.latam.com/baggage",
-          "notes": "LATAM Airlines Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "16 kg (35 lbs)",
+          "status": "official",
+          "source_url": "https://www.latamairlines.com/us/en/experience/prepare-your-trip/baggage/carry-on",
+          "notes": "LATAM Premium Business / Premium Economy carry-on weight limit.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -48,27 +48,27 @@
       "fields": {
         "piece_weight_economy": {
           "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "http://www.latam.com/baggage",
-          "notes": "LATAM Airlines Economy Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "status": "official",
+          "source_url": "https://www.latamairlines.com/us/en/experience/prepare-your-trip/baggage/checked-baggage",
+          "notes": "LATAM Economy Class checked baggage allowance.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "piece_weight_business": {
           "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.latam.com/baggage",
-          "notes": "LATAM Airlines Business Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "status": "official",
+          "source_url": "https://www.latamairlines.com/us/en/experience/prepare-your-trip/baggage/checked-baggage",
+          "notes": "LATAM Premium Business checked baggage allowance.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "piece_weight_first": {
           "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.latam.com/baggage",
-          "notes": "LATAM Airlines First Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "status": "official",
+          "source_url": "https://www.latamairlines.com/us/en/experience/prepare-your-trip/baggage/checked-baggage",
+          "notes": "LATAM Black Signature checked baggage allowance.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -80,12 +80,12 @@
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+56 2 2565 2525",
-          "status": "pending",
-          "source_url": "http://www.latam.com/baggage",
-          "notes": "LATAM Airlines official customer support line.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "+56 600 526 2000",
+          "status": "official",
+          "source_url": "https://www.latamairlines.com/us/en/help-center",
+          "notes": "LATAM official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

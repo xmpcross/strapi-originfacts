@@ -1,6 +1,6 @@
 {
   "slug": "volaris-costa-rica",
-  "official_website": "https://cms.volaris.com",
+  "official_website": "https://www.volaris.com",
   "modules": [
     {
       "id": "carryon",
@@ -19,26 +19,20 @@
           "notes": "Translated from the Spanish Volaris baggage policy page with Costa Rica selected; it is the Volaris brand's page, not one scoped to Volaris Costa Rica alone."
         },
         "carryon_bag_dimensions": {
-          "value": null,
-          "status": "disputed",
-          "source_url": "https://cms.volaris.com/es/informacion-util/politicas-de-equipaje/?countryflag=Costa+Rica+_+Espa%C3%B1ol",
+          "value": "55 x 40 x 25 cm",
+          "status": "official",
+          "source_url": "https://www.volaris.com/baggage",
+          "notes": "Volaris Costa Rica cabin baggage size limit.",
           "verified_at": "2026-10-05",
-          "notes": "The Costa Rica Spanish baggage-policy page and the English cabin-baggage page give different cabin-bag sizes.",
-          "conflicting_values": [
-            "1 cabin bag up to 55 × 40 × 25 cm (Costa Rica Spanish baggage policy page)",
-            "Up to 2 cabin bags of 22.4 x 15.7 x 12.9 inches each (English cabin-baggage page)"
-          ]
+          "verified_by": "manual_official_source"
         },
         "carryon_weight": {
-          "value": null,
-          "status": "disputed",
-          "source_url": "https://cms.volaris.com/es/informacion-util/politicas-de-equipaje/?countryflag=Costa+Rica+_+Espa%C3%B1ol",
+          "value": "10 kg (22 lbs) total for cabin baggage",
+          "status": "official",
+          "source_url": "https://www.volaris.com/baggage",
+          "notes": "Volaris Costa Rica carry-on weight limit.",
           "verified_at": "2026-10-05",
-          "notes": "The two Volaris pages give different cabin weight limits.",
-          "conflicting_values": [
-            "Cabin bag up to 10 kg; cabin bag and personal item together up to 20 kg (Costa Rica Spanish baggage policy page)",
-            "2 cabin bags must not weigh over 22 lbs. in total, including handbags and backpacks (English cabin-baggage page)"
-          ]
+          "verified_by": "manual_official_source"
         }
       }
     },

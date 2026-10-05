@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Globe, Info, Map as MapIcon, Plane, PlaneTakeoff, Route as RouteIcon, Ruler, Search, Star } from 'lucide-react';
 import { listAirportSlugIndex, listCountries, listRoutes, type StrapiAirport } from '@/lib/strapi';
 import RouteDirectory from '@/components/route-directory/RouteDirectory';
 import FeaturedRoutes from '@/components/route-directory/FeaturedRoutes';
@@ -10,7 +11,6 @@ import { airportSlug } from '@/lib/airport-slugs';
 import { airportCountryIndex } from '@/lib/airport-directory';
 import { operableCarriers } from '@/lib/route-carriers';
 import { airlineHasCeased, isNonAirline } from '@/lib/airline-status';
-import { SECTIONS } from '@/lib/sections';
 import {
   FEATURED_ROUTES,
   ROUTES_BROWSE_LIMIT,
@@ -122,87 +122,108 @@ export default async function FlightsPage() {
     })),
   });
 
+  const WRAP = 'mx-auto max-w-7xl px-4 sm:px-6';
+  const stats = [
+    { label: 'Routes', value: directory.length, icon: RouteIcon },
+    { label: 'Departure airports', value: originCount, icon: PlaneTakeoff },
+    { label: 'Countries', value: countryCount, icon: Globe },
+    ...(airlineCount > 0 ? [{ label: 'Airlines', value: airlineCount, icon: Plane }] : []),
+  ];
+  const jumps = [
+    { href: '#featured-routes-heading', label: 'Popular', icon: Star },
+    { href: '#route-directory-heading', label: 'Search', icon: Search },
+    { href: '#routes-index', label: 'By airport', icon: MapIcon },
+    { href: '#routes-guide-heading', label: 'About', icon: RouteIcon },
+  ];
+
   return (
-    <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16" data-testid="flights-page">
+    <div className="bg-forest-50" data-testid="flights-page">
       <JsonLd data={breadcrumbJsonLd([{ name: HUB.name, url: PATH }])} />
       <JsonLd data={collectionJsonLd} />
 
-      <header data-testid="routes-header">
-        <div className="grid items-start gap-6 sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-12">
-          <div className="min-w-0">
-            <h1 className="text-5xl font-bold leading-none tracking-tight text-forest-950 sm:text-6xl">Flight routes</h1>
-            <p className="mt-6 max-w-3xl text-base font-medium leading-relaxed text-forest-900/70 sm:text-lg">
-              City pairs from our route records, each with its two airports, the distance, an estimated flight time
-              and the airlines we have on file for it. Open a route for its schedule and fare search.
-            </p>
-            <p className="mt-3 text-sm text-forest-900/60" data-testid="routes-coverage-note">
-              These are the routes we track — not every route flown.
-            </p>
-            <ul className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm text-forest-900/70" data-testid="routes-stats">
-              <li className="sm:hidden">
-                <strong className="font-semibold text-forest-950">{directory.length.toLocaleString()}</strong> routes
+      <header
+        className="relative overflow-hidden border-b border-forest-900/10 bg-gradient-to-br from-white via-forest-50 to-sand-100"
+        data-testid="routes-header"
+      >
+        <svg aria-hidden className="pointer-events-none absolute inset-0 h-full w-full text-forest-900/10" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice" fill="none" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 8">
+          <path d="M-50 360 C 250 40, 650 20, 1250 300" />
+          <path d="M-50 260 C 300 -40, 800 60, 1250 120" />
+          <path d="M200 420 C 500 160, 900 140, 1250 220" />
+        </svg>
+        <div aria-hidden className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-sand-300/30 blur-3xl" />
+        <div className={`${WRAP} relative pb-8 pt-6 lg:pb-10`}>
+          <nav aria-label="Breadcrumb" className="text-sm text-forest-900/75">
+            <ol className="flex flex-wrap items-center gap-1.5">
+              <li className="flex items-center gap-1.5">
+                <Link href="/" className="hover:text-primary-emphasis hover:underline">
+                  Home
+                </Link>
+                <span aria-hidden>/</span>
               </li>
-              <li>
-                <strong className="font-semibold text-forest-950">{originCount.toLocaleString()}</strong> departure
-                airports
+              <li aria-current="page" className="font-medium text-forest-950">
+                {HUB.name}
               </li>
-              <li>
-                <strong className="font-semibold text-forest-950">{destinationCount.toLocaleString()}</strong> arrival
-                airports
-              </li>
-              <li>
-                <strong className="font-semibold text-forest-950">{countryCount.toLocaleString()}</strong> countries
-              </li>
-              {airlineCount > 0 && (
-                <li>
-                  <strong className="font-semibold text-forest-950">{airlineCount.toLocaleString()}</strong> airlines
-                </li>
-              )}
-              <li>
-                <a
-                  href="#route-directory-heading"
-                  className="font-semibold text-primary-emphasis underline-offset-2 hover:underline"
-                >
-                  Search the routes ↓
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div
-            className="hidden h-32 w-32 flex-col items-center justify-center rounded-[0.3rem] bg-forest-50 text-forest-950 sm:flex"
-            data-testid="routes-count"
-          >
-            <span className="text-4xl font-bold leading-none">{directory.length.toLocaleString()}</span>
-            <span className="mt-2 text-[11px] font-bold uppercase tracking-widest text-forest-900/70">Routes</span>
-          </div>
-        </div>
+            </ol>
+          </nav>
 
-        <nav
-          className="no-scrollbar mt-10 flex items-center gap-x-8 overflow-x-auto whitespace-nowrap border-y border-forest-900/15 py-4 text-[14px] font-bold uppercase tracking-widest text-forest-950 sm:flex-wrap sm:gap-y-3"
-          aria-label="Categories"
-          data-testid="routes-subnav"
-        >
-          {[
-            ...SECTIONS.filter((s) => s.slug !== 'destinations').map((s) => ({
-              href: `/category/${s.slug}`,
-              slug: s.slug,
-              name: s.title,
-            })),
-            { href: '/airlines', slug: 'airlines', name: 'Airlines' },
-            { href: '/airports', slug: 'airports', name: 'Airports' },
-          ].map((item) => (
-            <Link key={item.slug} href={item.href} className="transition hover:text-primary-emphasis">
-              {item.name}
-            </Link>
-          ))}
-        </nav>
+          <div className="mt-6 flex min-w-0 items-start gap-4 sm:gap-6">
+            <div
+              aria-hidden
+              className="flex h-16 w-16 flex-none items-center justify-center rounded-[0.5rem] bg-sand-300 text-forest-950 shadow-lg shadow-black/20 sm:h-24 sm:w-24"
+            >
+              <RouteIcon className="h-8 w-8 sm:h-12 sm:w-12" strokeWidth={2.2} />
+            </div>
+            <div className="min-w-0">
+              <p className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-primary-emphasis">
+                <PlaneTakeoff aria-hidden className="h-3.5 w-3.5" />
+                Route directory
+              </p>
+              <h1 className="mt-1 text-3xl leading-tight sm:text-4xl">Flight routes</h1>
+              <p className="mt-2.5 max-w-3xl text-sm leading-relaxed text-forest-900/80 sm:text-base">
+                City pairs from our route records, each with its two airports, the distance, an estimated flight time
+                and the airlines we have on file. Open a route for its schedule and fare search.
+              </p>
+              <p className="mt-2 text-xs text-forest-900/65" data-testid="routes-coverage-note">
+                These are the routes we track — not every route flown.
+              </p>
+            </div>
+          </div>
+
+          <dl className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-4" data-testid="routes-stats">
+            {stats.map(({ label, value, icon: Icon }) => (
+              <div key={label} className="flex items-center gap-3 rounded-[0.4rem] border border-forest-900/10 bg-white px-4 py-3 shadow-[0_1px_2px_rgba(15,39,102,0.04)]">
+                <span aria-hidden className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-forest-950 text-sand-300">
+                  <Icon className="h-4 w-4" />
+                </span>
+                <div className="min-w-0">
+                  <dt className="text-xs font-semibold uppercase tracking-wider text-forest-900/70">{label}</dt>
+                  <dd className="text-lg font-bold leading-tight text-forest-950">{value.toLocaleString()}</dd>
+                </div>
+              </div>
+            ))}
+          </dl>
+
+          <nav aria-label="On this page" className="no-scrollbar mt-6 flex gap-2 overflow-x-auto" data-testid="routes-subnav">
+            {jumps.map(({ href, label, icon: Icon }) => (
+              <a
+                key={href}
+                href={href}
+                className="inline-flex flex-none items-center gap-2 rounded-full border border-forest-900/15 bg-white px-4 py-2 text-sm font-semibold text-forest-950 transition hover:border-primary-emphasis hover:text-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-emphasis"
+              >
+                <Icon aria-hidden className="h-4 w-4" />
+                {label}
+              </a>
+            ))}
+          </nav>
+        </div>
       </header>
 
+      <div className={`${WRAP} pb-16`}>
       <FeaturedRoutes routes={featured} carriers={carriers} />
 
       <RouteDirectory rows={directory.map(toRow)} carriers={carriers} />
 
-      <details className="group mt-10 rounded-[0.3rem] border border-forest-900/10 bg-white" data-testid="routes-index">
+      <details id="routes-index" className="group mt-10 scroll-mt-24 rounded-[0.5rem] border border-forest-900/10 bg-white" data-testid="routes-index">
         <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 text-sm font-semibold text-forest-950 hover:text-primary-emphasis [&::-webkit-details-marker]:hidden">
           All {directory.length.toLocaleString()} routes by departure airport, A–Z
           <span aria-hidden className="text-forest-900/50 transition group-open:rotate-180">
@@ -229,38 +250,42 @@ export default async function FlightsPage() {
         </dl>
       </details>
 
-      <section
-        className="mt-20 border-t border-forest-900/15 pt-12"
-        aria-labelledby="routes-guide-heading"
-        data-testid="routes-about"
-      >
-        <p className="text-xs font-bold uppercase tracking-widest text-forest-900/55">Using the directory</p>
-        <h2 id="routes-guide-heading" className="mt-2 text-2xl font-bold leading-tight sm:text-3xl">
+      <section className="mt-14 scroll-mt-24" aria-labelledby="routes-guide-heading" data-testid="routes-about">
+        <h2 id="routes-guide-heading" className="flex items-center gap-2.5 text-xl sm:text-2xl">
+          <Info aria-hidden className="h-6 w-6 text-primary-emphasis" />
           What the directory shows
         </h2>
-        <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-10">
+        <ul className="mt-4 grid gap-3 md:grid-cols-3">
           {[
             {
+              icon: RouteIcon,
               title: 'Our route records',
               text: `${directory.length.toLocaleString()} routes from ${originCount.toLocaleString()} departure airports, ${(directory.length - domesticCount).toLocaleString()} of them international. They are the routes we keep records for, not a full airline schedule: a city pair missing here may still be flown.`,
             },
             {
+              icon: Ruler,
               title: 'Distance and flight time',
               text: 'Distances are in kilometres between the two airports. Flight times are estimates of the nonstop time from our records; the schedule on each route page shows the actual flights.',
             },
             {
+              icon: Plane,
               title: 'Airlines on a route',
               text: 'Airlines are the carriers our route records link to the city pair. Airlines with a sourced end of operations are left off, as are foreign carriers listed on a domestic route.',
             },
-          ].map((item, i) => (
-            <article key={item.title} className="border-t-2 border-forest-950 pt-4">
-              <p className="font-mono text-xs font-bold text-forest-900/50">0{i + 1}</p>
-              <h3 className="mt-2 text-xl font-bold leading-snug">{item.title}</h3>
-              <p className="mt-3 text-base leading-relaxed text-forest-900/70">{item.text}</p>
-            </article>
+          ].map(({ icon: Icon, title, text }) => (
+            <li key={title} className="rounded-[0.5rem] border border-forest-900/10 bg-white p-4 shadow-[0_1px_2px_rgba(15,39,102,0.04)]">
+              <h3 className="flex items-center gap-2.5 text-base leading-snug text-forest-950">
+                <span aria-hidden className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-forest-950 text-sand-300">
+                  <Icon className="h-4 w-4" />
+                </span>
+                {title}
+              </h3>
+              <p className="mt-2 text-sm leading-6 text-forest-900/80">{text}</p>
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
+      </div>
     </div>
   );
 }

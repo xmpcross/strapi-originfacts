@@ -1,6 +1,7 @@
 'use client';
 
 import { useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
+import { Search } from 'lucide-react';
 import type { AirlineRegion } from '@/lib/strapi';
 import { foldText } from '@/lib/airport-directory';
 import {
@@ -165,8 +166,9 @@ export default function RouteDirectory({ rows, carriers }: { rows: RouteRow[]; c
   );
 
   return (
-    <section className="mt-14" aria-labelledby="route-directory-heading" data-testid="route-directory">
-      <h2 id="route-directory-heading" className="scroll-mt-24 text-2xl font-bold leading-tight sm:text-3xl">
+    <section className="mt-12" aria-labelledby="route-directory-heading" data-testid="route-directory">
+      <h2 id="route-directory-heading" className="flex scroll-mt-24 items-center gap-2.5 text-xl sm:text-2xl">
+        <Search aria-hidden className="h-6 w-6 text-primary-emphasis" />
         Browse all routes
       </h2>
       <p className="mt-2 text-sm text-forest-900/70 sm:text-base">
@@ -175,7 +177,7 @@ export default function RouteDirectory({ rows, carriers }: { rows: RouteRow[]; c
       </p>
 
       {/* Search + filters */}
-      <div className="mt-5 rounded-[0.3rem] border border-forest-900/10 bg-paper p-4 sm:p-5">
+      <div className="mt-4 rounded-[0.5rem] border border-forest-900/10 bg-white p-4 shadow-[0_1px_2px_rgba(15,39,102,0.04)] sm:p-5">
         <label htmlFor="route-search" className="mb-1.5 block text-xs font-bold uppercase tracking-widest text-forest-900/55">
           Search routes
         </label>
@@ -274,7 +276,7 @@ export default function RouteDirectory({ rows, carriers }: { rows: RouteRow[]; c
       {/* Sticky region bar + live count + sort. top = height of the fixed site header. */}
       <div
         ref={listTop}
-        className="sticky top-[75px] z-30 -mx-4 mt-6 scroll-mt-[75px] border-y border-forest-900/10 bg-white/95 px-4 backdrop-blur sm:mx-0 sm:rounded-[0.3rem] sm:border sm:px-2"
+        className="sticky top-[75px] z-30 -mx-4 mt-6 scroll-mt-[75px] border-y border-forest-900/10 bg-white/95 px-4 backdrop-blur sm:mx-0 sm:rounded-[0.5rem] sm:border sm:px-2"
         data-testid="route-jump-bar"
       >
         <div className="flex items-center gap-3 py-1.5">

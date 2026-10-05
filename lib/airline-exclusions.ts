@@ -57,6 +57,13 @@ export const NON_AIRLINE_SLUGS: ReadonlySet<string> = new Set([
   'french-armed-forces',
   // A power utility
   'hydro-quebec',
+  // Records whose entity is unresolved, hidden until reviewed. These are not
+  // non-airlines: 'dan-air' (DN) is filed under India but DN is Dan Air of
+  // Romania; 'volo' (DC) is filed under Sweden but DC is Volo Airways
+  // Dominicana. Their pages were showing another brand's logo. Hidden
+  // 2026-10-05; remove the slug once the CMS record is corrected.
+  'dan-air',
+  'volo',
 ]);
 
 export function isNonAirline(slug: string): boolean {

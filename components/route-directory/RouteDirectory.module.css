@@ -1,0 +1,60 @@
+/*
+ * Route cards repeat up to a few hundred times in the HTML, so their styles
+ * live here as short class names rather than long Tailwind strings per card.
+ * Text only: no photos or thumbnails.
+ */
+
+.cardGrid {
+  @apply mt-3 grid grid-cols-1 gap-2 sm:mt-4 sm:grid-cols-2 sm:gap-2.5 lg:grid-cols-3 xl:grid-cols-4;
+}
+
+/* The route title's link covers the card; airport and airline links sit above it. */
+.card {
+  @apply relative flex h-full min-w-0 flex-col rounded-[0.3rem] border border-forest-900/10 bg-white px-3.5 py-3 transition;
+}
+.card:hover {
+  @apply border-primary-emphasis/50 bg-primary-hover/40;
+}
+.card:focus-within {
+  @apply border-primary-emphasis/60;
+}
+
+.codes {
+  @apply flex min-w-0 items-center gap-1.5 text-forest-900/45;
+}
+.code {
+  @apply relative z-10 flex-none rounded-[0.3rem] bg-forest-950 px-1.5 py-0.5 font-mono text-[11px] font-bold tracking-wider text-white transition;
+}
+.code:hover {
+  @apply bg-primary-emphasis;
+}
+.code:focus-visible,
+.title a:focus-visible,
+.carrier:focus-visible {
+  @apply outline outline-2 outline-offset-2 outline-primary-emphasis;
+}
+.km {
+  @apply ml-auto flex-none text-xs tabular-nums text-forest-900/60;
+}
+
+.title {
+  @apply mt-2 min-w-0 truncate text-[15px] font-semibold leading-snug text-forest-950;
+}
+.title a::after {
+  content: '';
+  @apply absolute inset-0 rounded-[0.3rem];
+}
+.card:hover .title {
+  @apply text-primary-emphasis;
+}
+
+.sub {
+  @apply mt-0.5 min-w-0 truncate text-xs text-forest-900/70;
+}
+
+.meta {
+  @apply mt-2 min-w-0 truncate border-t border-forest-900/10 pt-2 text-xs text-forest-900/60;
+}
+.carrier {
+  @apply relative z-10 text-forest-900/85 underline decoration-forest-900/20 underline-offset-2 hover:text-primary-emphasis hover:decoration-primary-emphasis;
+}

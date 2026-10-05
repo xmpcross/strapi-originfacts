@@ -194,7 +194,9 @@ export default async function ContactPage() {
   const heroMain = SITE_PHOTOS['singapore'];
   const heroSideA = SITE_PHOTOS['south-korea'];
   const heroSideB = SITE_PHOTOS['australia'];
-  const bandPhoto = SITE_PHOTOS['thailand'];
+  // Wide band: the landscape Fuji panorama (the portrait Wat Arun shot showed
+  // only its spire here).
+  const bandPhoto = SITE_PHOTOS['japan'];
 
   // Question text comes from the same data as /faq, so these links cannot drift
   // from it. The counts only decide whether the "how many airlines" question
@@ -417,7 +419,7 @@ export default async function ContactPage() {
       {/* ---------------- Full-bleed image band ---------------- */}
       {bandPhoto && (
         <section className="relative isolate overflow-hidden bg-forest-950" aria-label="Your booking" data-testid="contact-band">
-          <Image src={bandPhoto.src} alt={bandPhoto.alt} fill sizes="100vw" className="-z-10 object-cover opacity-60" loading="lazy" />
+          <Image src={bandPhoto.src} alt={bandPhoto.alt} fill sizes="100vw" className="-z-10 object-cover opacity-60" style={{ objectPosition: bandPhoto.focus ?? 'center' }} loading="lazy" />
           <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-r from-forest-950/90 via-forest-950/60 to-forest-950/20" />
           <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24">
             <blockquote className="max-w-3xl">

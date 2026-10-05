@@ -198,11 +198,14 @@ export default async function AboutPage() {
 
   const legalLinks = LEGAL_DOCS.filter((d) => LEGAL_LINK_SLUGS.includes(d.slug));
 
-  const heroMain = SITE_PHOTOS['japan'];
-  const heroSideA = SITE_PHOTOS['thailand'];
+  // Each photo sits in a slot that matches its orientation: the portrait
+  // Wat Arun shot fills the tall hero tile, and the wide Fuji panorama gets
+  // the full-width band (in the tall tile it was mostly sky).
+  const heroMain = SITE_PHOTOS['thailand'];
+  const heroSideA = SITE_PHOTOS['germany'];
   const heroSideB = SITE_PHOTOS['united-kingdom'];
-  const storyPhoto = SITE_PHOTOS['germany'];
-  const bandPhoto = SITE_PHOTOS['singapore'];
+  const storyPhoto = SITE_PHOTOS['singapore'];
+  const bandPhoto = SITE_PHOTOS['japan'];
   const howPhoto = SITE_PHOTOS['united-states'];
   const approachA = SITE_PHOTOS['south-korea'];
   const approachB = SITE_PHOTOS['australia'];
@@ -440,7 +443,7 @@ export default async function AboutPage() {
       {/* ---------------- Full-bleed image band ---------------- */}
       {bandPhoto && (
         <section className="relative isolate overflow-hidden bg-forest-950" aria-label="Our editorial bias" data-testid="about-band">
-          <Image src={bandPhoto.src} alt={bandPhoto.alt} fill sizes="100vw" className="-z-10 object-cover opacity-60" loading="lazy" />
+          <Image src={bandPhoto.src} alt={bandPhoto.alt} fill sizes="100vw" className="-z-10 object-cover opacity-60" style={{ objectPosition: bandPhoto.focus ?? 'center' }} loading="lazy" />
           <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-r from-forest-950/90 via-forest-950/60 to-forest-950/20" />
           <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28">
             <blockquote className="max-w-3xl">

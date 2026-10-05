@@ -41,9 +41,14 @@ export const EMPTY_FILTERS: ArticleFilters = {
   sort: 'newest',
 };
 
-/** URL parameter for each filter. Multi-select values are comma-separated. */
+/**
+ * URL parameter for each filter. Multi-select values are comma-separated.
+ * The in-page text filter is `?s=`, not `?q=`: `?q=` keeps its original
+ * meaning on /all-articles, a redirect to the full-text /search (see
+ * legacySearchRedirect), which the homepage SearchAction targets.
+ */
 export const FILTER_PARAMS = {
-  q: 'q',
+  q: 's',
   categories: 'category',
   destinations: 'destination',
   authors: 'author',
@@ -121,6 +126,26 @@ export function filtersToHref(f: ArticleFilters, page = 1, path = '/all-articles
   }
   const qs = p.toString().replace(/%2C/g, ',');
   return qs ? `${path}?${qs}` : path;
+}
+
+/**
+ * /all-articles?q=… has always redirected to the full-text /search, carrying
+ * ?page= when it is above 1. Returns that target, or null when there is no q.
+ */
+export function legacySearchRedirect(src: Record<string, string | string[] | undefined>): string | null {
+  const first = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v);
+  const q = (first(src.q) || '').trim();
+  if (!q) return null;
+  const page = Math.max(1, Number(first(src.page)) || 1);
+  const params = new URLSearchParams({ q });
+  if (page > 1) params.set('page', String(page));
+  return `/search?${params.toString()}`;
+}
+
+/** Full-text /search for the in-page filter text (or /search itself when empty). */
+export function fullTextSearchHref(text: string): string {
+  const q = text.trim();
+  return q ? `/search?${new URLSearchParams({ q }).toString()}` : '/search';
 }
 
 function ageDays(card: IndexCard, now: number): number | null {

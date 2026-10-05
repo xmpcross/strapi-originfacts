@@ -7,6 +7,8 @@ import {
   dateFacet,
   facetOptions,
   filtersToHref,
+  fullTextSearchHref,
+  legacySearchRedirect,
   isFiltering,
   matchesDate,
   parseFilters,
@@ -47,7 +49,7 @@ const CARDS: IndexCard[] = [
 ];
 
 test('parseFilters: reads comma-separated and repeated params, drops junk', () => {
-  const f = parseFilters(new URLSearchParams('category=Hotels,flights&category=hotels&destination=japan&destination=bad%20slug&q=%20tokyo%20&published=90d&sort=oldest'));
+  const f = parseFilters(new URLSearchParams('category=Hotels,flights&category=hotels&destination=japan&destination=bad%20slug&s=%20tokyo%20&published=90d&sort=oldest'));
   assert.deepEqual(f.categories, ['hotels', 'flights']);
   assert.deepEqual(f.destinations, ['japan']);
   assert.equal(f.q, 'tokyo');
@@ -65,7 +67,7 @@ test('filtersToHref: round-trips, keeps ?page= only when unfiltered', () => {
   assert.equal(filtersToHref(EMPTY_FILTERS, 3), '/all-articles?page=3');
   const f = { ...EMPTY_FILTERS, categories: ['hotels', 'flights'], destinations: ['japan'], q: 'tokyo inn', date: '30d' as const };
   const href = filtersToHref(f, 3);
-  assert.equal(href, '/all-articles?q=tokyo+inn&category=hotels,flights&destination=japan&published=30d');
+  assert.equal(href, '/all-articles?s=tokyo+inn&category=hotels,flights&destination=japan&published=30d');
   assert.deepEqual(parseFilters(new URLSearchParams(href.split('?')[1])), f);
 });
 
@@ -133,4 +135,17 @@ test('activePills: one per value, each removes only itself', () => {
   let cleared: ArticleFilters = f;
   for (const p of activePills(f, {})) cleared = p.remove(cleared);
   assert.equal(isFiltering(cleared), false);
+});
+
+test('?q= on /all-articles still redirects to the full-text /search, as before the redesign', () => {
+  assert.equal(legacySearchRedirect({ q: 'foo' }), '/search?q=foo');
+  assert.equal(legacySearchRedirect({ q: ' foo bar ', page: '2' }), '/search?q=foo+bar&page=2');
+  assert.equal(legacySearchRedirect({ q: 'foo', page: '1' }), '/search?q=foo');
+  assert.equal(legacySearchRedirect({ q: '  ' }), null);
+  assert.equal(legacySearchRedirect({ s: 'foo', page: '3' }), null);
+  // The filter's own text lives in ?s=, never ?q=.
+  assert.equal(parseFilters({ q: 'foo' }).q, '');
+  assert.equal(parseFilters({ s: 'foo' }).q, 'foo');
+  assert.equal(fullTextSearchHref(' tokyo inn '), '/search?q=tokyo+inn');
+  assert.equal(fullTextSearchHref(''), '/search');
 });

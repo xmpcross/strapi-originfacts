@@ -175,7 +175,7 @@ export default function AirlineGuideV2({ airline, routeFacts: rf, facts, allianc
 
           <div className="mt-6 flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
             <div className="flex min-w-0 items-start gap-4 sm:gap-6">
-              <div className="flex h-12 w-16 flex-none items-center justify-center rounded-[0.3rem] border border-forest-900/10 bg-white p-1.5 sm:h-24 sm:w-36 sm:p-3">
+              <div className="flex h-16 w-24 flex-none items-center justify-center border-0 bg-transparent sm:h-32 sm:w-52">
                 {logo ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img src={logo} alt={`${name} logo`} className="max-h-full max-w-full object-contain" />

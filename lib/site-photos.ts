@@ -21,6 +21,11 @@ export type SitePhoto = {
   width: number;
   height: number;
   alt: string;
+  /**
+   * CSS object-position for crops that cut the photo hard (e.g. a wide band):
+   * where the subject sits in the frame. Defaults to centre.
+   */
+  focus?: string;
   /** What and where, per the photographer's own title and location tag. */
   place: string;
   photographer: string;
@@ -50,6 +55,8 @@ export const SITE_PHOTOS = {
     width: 1800,
     height: 1013,
     alt: 'Snow-capped Mount Fuji under orange-lit clouds',
+    // The peak sits in the lower third of the frame.
+    focus: '50% 78%',
     place: 'Mount Fuji, Shizuoka, Japan',
     photographer: 'Jayesh Patel',
     handle: 'jayescapes',

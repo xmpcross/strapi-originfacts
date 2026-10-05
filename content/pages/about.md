@@ -1,90 +1,57 @@
 # About Originfacts
 
-## What Is the Story Behind Originfacts?
+## What Is Originfacts?
 
-The name says it. **Originfacts** is a travel blog about the *facts of origins* — the stories, cultures, histories and quiet details behind the destinations people travel to — paired with the latest travel information you actually need to plan a trip.
+**Originfacts** is an independent travel website about the facts behind the places people travel to, and the practical information needed to get there. Each guide starts with the place itself: where a city came from, why a region eats the way it does, how a route grew into a flight you can book today. It then connects that background to the trip: the flights, airports, airlines and hotels that matter for it.
 
-Most travel sites stop at the booking funnel. We don't. We start with the place itself: how a city took shape, why a region cooks the way it does, what a route once was before it became a flight number. Then we connect that context to today — current flight options, hotels worth booking, airlines to know, airports to use, and destinations worth your time.
+The name says it: the site is about the *facts of origins*, kept useful for someone planning a trip right now.
 
-Originfacts is operated by **FXN HOLDINGS LIMITED** and is available to readers around the world.
+## What Can You Find on Originfacts?
 
-## What Will You Find on Originfacts?
+The site brings together travel writing, reference guides and search tools in one place:
 
-Originfacts publishes a mix of editorial travel writing and practical travel research, organised around the things travellers actually search for:
-
-- **Destinations** — origin stories, cultural facts, and on-the-ground travel guides for cities, regions, and countries.
-- **Flights** — cheap flight tactics, route comparisons, booking timing, and current fare information.
-- **Hotels** — neighbourhood-level guidance, value picks, boutique stays, and where to actually stay (not just the highest-bid ad).
-- **Airlines** — fleet, cabin, route, and reliability information for major carriers around the world.
-- **Airports** — practical guides to international hubs, transfer airports, and the airports you'll actually pass through.
-- **Travel tips** — visa basics, packing, connectivity, money, and the small operational details that make trips smoother.
-
-### Originfacts vs Typical Travel Aggregators Comparison
-
-| Feature / Standard | Originfacts Methodology | Typical Travel Aggregators |
-| :--- | :--- | :--- |
-| **Primary Research** | Grounded in official .gov/.edu & IATA data | Third-party marketing feeds |
-| **Entity Authority** | Named expert authors & transparent legal entity | Anonymous publishing / AI scrapers |
-| **Origin Context** | Cultural, historical & local geographic facts | Pure booking CTA funnel |
-| **Commercial Disclosure** | Explicit affiliate network & revenue transparency | Hidden or undisclosed sponsor tags |
-
-Across every category, our editorial bias is toward facts: where something comes from, why it works the way it does today, and what that means for someone planning a trip right now.
+- **[Destination guides](/destinations)**: country and city guides covering history, culture, when to go, getting around, the airports that serve each place, and where to stay.
+- **[Flight search](/flight-search)**: compare fares across airlines and booking sites, see popular routes and recent fares from your city, and open a prefilled search for real dates.
+- **[Airline guides](/airlines)**: baggage, check-in and disruption rules and other facts for airlines worldwide. Where a fact comes from the airline's own website, the guide links to that page, and modules not yet checked against the airline's published rules say so.
+- **[Airport guides](/airports)**: practical information on airports worldwide, with the routes and airlines that serve them.
+- **Hotels**: popular hotels for each city by area (city centre, airport, resort, budget and more), drawn from Google Hotels data.
+- **[Travel articles](/all-articles)**: cheap flight tactics, booking timing, neighbourhood guides, visa basics and the small details that make a trip smoother.
 
 ## How Does Originfacts Work?
 
-Originfacts is a travel information and affiliate aggregation website. We publish editorial content alongside live or recent data from third-party travel providers, including flight search partners, hotel inventory partners, and other affiliate networks.
+Originfacts publishes travel content next to live or recent data from travel partners. Flight fares come from our flight search partner, hotel listings from Google Hotels data, and activities from GetYourGuide.
 
-When you click a link on Originfacts, you may be taken to a third-party travel website — a booking platform, airline, hotel, car rental provider, or tour operator — to complete a booking or purchase.
+When you select a flight, hotel or activity, you continue to the partner's website to book. We do not sell travel, take payments, issue tickets, run hotels or airlines, or handle changes, refunds or cancellations. Your booking is made directly with the provider you choose, under their terms.
 
-We don't sell travel bookings, take payments, issue tickets, operate hotels or airlines, rent vehicles, provide tours, process refunds, or handle cancellations. Your booking is made directly with the third-party provider you choose.
+## How Does Originfacts Make Money?
 
-## How Does Originfacts Earn Revenue?
+Originfacts earns affiliate commission when a reader follows a link and then books or buys with a travel partner. This does not usually change the price you pay. We currently work with:
 
-Originfacts may earn an affiliate commission when readers click links on our website and later make a booking or purchase through a third-party provider. This usually does not increase the price you pay.
+- **Travelpayouts**, which powers our flight search and fare data;
+- **Takeads**, for links to travel brands including Booking.com, Agoda, Trip.com, Kiwi.com, CheapOair and Qatar Airways;
+- **GetYourGuide**, as a direct partner for tours and activities.
 
-We currently use **Travelpayouts** and **Stay22** as affiliate networks. Affiliate relationships may influence which travel links, offers, widgets, or providers appear in our content. We aim to keep these relationships clear and transparent.
+Affiliate links are marked as sponsored. Commercial relationships can influence which partners and offers appear on a page. The [Affiliate Disclosure](/legal/affiliate-disclosure) explains this in full.
 
-## How Are Flight Prices, Availability, and Rankings Determined?
+## How Are Prices and Rankings Shown?
 
-Travel prices and availability change quickly. Prices shown on Originfacts may be live, estimated, cached, promotional, currency-converted, or based on provider data at the time of search. Before booking, always check final prices, taxes, fees, cancellation rules, refund terms, baggage rules, deposit requirements, and other conditions on the third-party provider's website.
+Travel prices and availability change constantly. A fare or rate may be live, recently cached or estimated by a partner, and we note this beside the price where we can. Always check the final price, taxes, fees, baggage, cancellation and refund rules on the provider's website before you book.
 
-Words like *cheap*, *cheapest*, *best*, *popular*, or *recommended* are based on available data, user search criteria, provider information, affiliate feeds, editorial judgment, or commercial relationships where applicable. Originfacts may not compare every provider or every available travel option in the market.
+Words like *cheap*, *popular* or *best* reflect the data available to us, your search, partner information and editorial judgement. We do not compare every provider or every option on the market.
 
-## What Is Our Editorial Approach?
+## How Is Originfacts Content Produced?
 
-### Why Do We Prioritise Origin-First Flight Context?
+Originfacts uses AI to research and draft many of its articles. Drafts are written with Anthropic's Claude from a brief and our editorial guidelines, and many cover images are generated with Fal.ai FLUX. AI-generated images are meant to illustrate an article, not to show a specific hotel, aircraft, price or person.
 
-Every destination has a story. Before we write about how to get there or where to stay, we try to understand what the place actually is — geography, history, culture, the small facts that travellers remember long after the flight home.
+Facts that change often, such as fares, routes, visa rules and baggage allowances, are the details most likely to go out of date, so check them with the airline, hotel or official source before you travel. If you find something that is wrong, out of date or misleading, email **contact@originfacts.com** and it will be corrected or removed.
 
-### How Frequently Is Travel Information Updated?
+## Who Is Originfacts For?
 
-Travel content goes stale fast. We focus on current routes, current pricing patterns, current visa rules, and current travel realities — and we revisit content as conditions change.
+The site is written for independent travellers worldwide who want to understand a place and plan the trip in one sitting. Everything is published in English.
 
-### Who Reads Originfacts?
+## What Should You Check Before Booking?
 
-Originfacts is built for readers around the world. Our content is currently published in English.
-
-### How Do We Continuously Improve Our Content?
-
-Originfacts is a custom-built, independently operated website. We're continuously improving content quality, comparison features, accessibility, performance, and transparency.
-
-## How Is Our Content Produced?
-
-Originfacts uses AI-assisted research and drafting to produce articles at scale, and every published piece passes through a human editorial layer before it goes live.
-
-The process for each article looks like this:
-
-1. **Topic selection.** A human editor decides what to cover — often based on traveller search behaviour, current routes, seasonal demand, or destinations we want to write about in depth.
-2. **Research and drafting.** We use large language models (currently Anthropic's Claude) as a research and drafting assistant. The model is given a brief, a set of editorial guidelines, and structured prompts. It produces an initial draft.
-3. **Image generation.** Cover and gallery images are produced with generative image models (currently Fal.ai FLUX). Real photographs are used where licensing permits; AI-generated images are clearly stylised and used to illustrate concepts, not to misrepresent specific places, brands, prices, or people.
-4. **Editorial review.** Drafts are reviewed by a human editor before publication. We check facts that are likely to change (prices, routes, visa rules, fees), tighten language, remove anything misleading, and confirm affiliate disclosures are correct.
-5. **Updating.** Travel facts move quickly. We revisit and update articles as conditions, prices, routes, and policies change.
-
-We use AI as a tool to research and structure content faster, not as a way to publish without human judgement. If you ever spot something inaccurate, out of date, or misleading, please tell us at **contact@originfacts.com** and we'll fix or remove it.
-
-## What Should Readers Keep in Mind Before Booking?
-
-Originfacts provides travel information and affiliate links only. We are not a travel agent, airline, hotel, car rental company, tour operator, insurer, payment processor, or booking provider. Before booking or travelling, verify all important information with the relevant third-party provider and official sources.
+We provide travel information and links to travel partners, and we are not a travel agent, airline, hotel, insurer or booking provider. Before you book or travel, confirm prices, entry requirements, health advice and travel rules with the provider and the relevant official sources.
 
 ## Who Operates Originfacts?
 
@@ -97,4 +64,4 @@ Website: www.originfacts.com
 Originfacts email: contact@originfacts.com
 Company support email: support@fxnholdings.com
 
-For more information, please read our Terms of Use, Privacy Policy, Cookie Policy, Affiliate Disclosure, Disclaimer, and Legal Notice.
+More detail is in our [Terms of Use](/legal/terms), [Privacy Policy](/legal/privacy), [Cookie Policy](/legal/cookies), [Affiliate Disclosure](/legal/affiliate-disclosure) and [Disclaimer](/legal/disclaimer). To get in touch, use the [contact page](/contact).

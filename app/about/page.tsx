@@ -8,13 +8,13 @@ import { JsonLd } from '@/components/SeoBlocks';
 import { ORG_ID, organizationJsonLd, absoluteUrl, breadcrumbJsonLd } from '@/lib/jsonld';
 import { getAllAuthors, authorPersonJsonLd } from '@/lib/authors';
 import AuthorCard from '@/components/AuthorCard';
-import TableOfContents from '@/components/TableOfContents';
 import { injectHeadingIdsAndExtractToc } from '@/lib/toc';
 
 export const metadata: Metadata = {
-  title: 'About Originfacts',
+  // Absolute: the layout template would append "· Originfacts" a second time.
+  title: { absolute: 'About Originfacts: Travel Facts, Guides & Flight Search' },
   description: clampDescription(
-    'Originfacts is a travel blog about the facts of origins — the cultures, histories, and stories behind destinations — alongside the latest travel info on flights, hotels, airlines, airports, and destinations.',
+    'Originfacts is an independent travel site with destination, airline and airport guides, flight search and hotels. Learn how Originfacts works.',
   ),
   alternates: { canonical: '/about' },
 };
@@ -34,7 +34,8 @@ export default async function AboutPage() {
   if (!md) notFound();
 
   const rawHtml = await marked.parse(md, { async: true });
-  const { html: processedHtml, toc } = injectHeadingIdsAndExtractToc(rawHtml);
+  // Heading ids are kept for links to sections; the page shows no table of contents.
+  const { html: processedHtml } = injectHeadingIdsAndExtractToc(rawHtml);
   const authors = await getAllAuthors();
 
   return (
@@ -52,7 +53,8 @@ export default async function AboutPage() {
           About Originfacts
         </h1>
         <p className="mt-3 text-lg font-light text-forest-900/75">
-          Originfacts delivers verified travel intelligence by combining primary aviation data with on-the-ground cultural research across global destinations. Our independent editorial team analyzes real-time flight routes, airport logistics, airline fare structures, and regional travel histories to ensure travelers receive transparent, factual guidance before making booking decisions or planning international itineraries.
+          Originfacts is an independent travel website that pairs the facts behind destinations with practical guides to
+          flights, airports, airlines and hotels, so you can understand a place and plan the trip in one place.
         </p>
       </header>
 
@@ -71,8 +73,6 @@ export default async function AboutPage() {
         </Link>
       </div>
 
-      <TableOfContents items={toc} />
-
       <div
         className="prose-article mt-10 max-w-none"
         data-testid="about-body"
@@ -81,10 +81,11 @@ export default async function AboutPage() {
 
       <section className="mt-16 border-t border-forest-900/10 pt-12">
         <h2 className="editorial-h text-2xl font-bold text-forest-950 sm:text-3xl">
-          Who are the editorial authors behind Originfacts?
+          Who writes for Originfacts?
         </h2>
         <p className="mt-2 text-sm text-forest-900/70">
-          Every guide and route analysis on Originfacts is produced and verified by named domain specialists.
+          Originfacts articles are published under named bylines. Each author profile lists the author&apos;s role and
+          published articles.
         </p>
 
         <div className="mt-8 grid gap-6">

@@ -67,6 +67,7 @@ export type AirportV2Nearby = {
 export type AirportGuideV2Props = {
   airport: StrapiAirport;
   heroSummary?: string;
+  shortSummary?: string;
   breadcrumb: { name: string; href: string }[];
   routes: StrapiRoute[];
   /** Carriers on the route records that are still operating, as far as the site knows. */
@@ -124,7 +125,7 @@ export function formatCoordinates(lat: number, lon: number): string {
 }
 
 export default function AirportGuideV2(p: AirportGuideV2Props) {
-  const { airport, heroSummary, routes, airlines, info, officialSite, coordinates, weather, nearby, faqs } = p;
+  const { airport, heroSummary, shortSummary, routes, airlines, info, officialSite, coordinates, weather, nearby, faqs } = p;
   const weatherAt = weather?.current ? formatLocalTime(weather.current.time, weather.timeZone) : null;
   const name = airport.name;
   const code = airport.iata.toUpperCase();
@@ -219,6 +220,11 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                       {code}
                     </span>
                   </h1>
+                  {shortSummary && (
+                    <p className="mt-2.5 text-sm leading-relaxed text-forest-900/80 sm:text-base">
+                      {shortSummary}
+                    </p>
+                  )}
                 </div>
               </div>
 

@@ -443,6 +443,26 @@ export function airportIntro(a: StrapiAirport, s?: RouteSummary): string {
   return `${p1} ${p2}`;
 }
 
+export function airportShortIntro(a: StrapiAirport, s?: RouteSummary): string {
+  const iata = a.iata.toUpperCase();
+  const codeStr = a.icao ? `${iata}/${a.icao.toUpperCase()}` : iata;
+  const city = a.city ? a.city.trim() : null;
+  const country = a.country ? a.country.trim() : null;
+  const region = a.region ? a.region.trim() : null;
+  const place = [city, country].filter(Boolean).join(', ') || country || region || 'its home region';
+
+  const destCount = s?.destinationCount ?? 0;
+  const countryCount = s?.countryCount ?? 0;
+
+  const sentence1 = `${a.name} (${codeStr}) is the primary air passenger gateway serving ${place}${region && !place.includes(region) ? ` in ${region}` : ''}.`;
+  const sentence2 =
+    destCount > 0
+      ? `Originfacts tracks ${pluralise(destCount, 'direct destination')}${countryCount > 1 ? ` across ${pluralise(countryCount, 'country', 'countries')}` : ''} departing from ${iata}.`
+      : `The airfield connects travelers with essential regional transit routes and operating carrier options.`;
+
+  return `${sentence1} ${sentence2}`;
+}
+
 export function airlineIntro(a: StrapiAirline, s?: RouteSummary): string {
   const code = a.iataCode ? (a.icaoCode ? `${a.iataCode}/${a.icaoCode}` : a.iataCode) : a.icaoCode;
   const kind = a.type ? `${a.type.toLowerCase()} airline` : 'airline';

@@ -26,6 +26,7 @@ import {
   SITE_URL,
   airportIsPublished,
   airportIntro,
+  airportShortIntro,
   airportFaqs,
   airportJsonLd,
   entityWebPageJsonLd,
@@ -254,6 +255,7 @@ export default async function AirportPage({ params }: Props) {
   ];
 
   const heroSummary = airportIntro(airport, summary);
+  const heroShortSummary = airportShortIntro(airport, summary);
   const transportSection = proseSections.find((section) => /terminals|runways/i.test(section.heading || ''));
   const narrativeSections = buildAirportNarrativeSections(airport, summary, proseSections, transportSection);
   const airportGuide = buildAirportGuide(airport, summary, transportSection);
@@ -399,6 +401,7 @@ export default async function AirportPage({ params }: Props) {
         <AirportGuideV2
           airport={v2Airport}
           heroSummary={heroSummary}
+          shortSummary={heroShortSummary}
           breadcrumb={breadcrumbTrail.map((b) => ({ name: b.name, href: b.url }))}
           routes={routes}
           airlines={v2Airlines}

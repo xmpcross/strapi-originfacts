@@ -160,6 +160,38 @@
           "verified_by": "manual_official_source"
         }
       }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "required": [
+        "fare_name",
+        "seat_selection_included",
+        "change_cancellation_policy"
+      ],
+      "fields": {
+        "fare_name": {
+          "value": "Standard / Economy Light: includes 1 carry-on bag and 1 personal item; checked bag allowance depends on route and fare category",
+          "status": "official",
+          "source_url": "http://www.sichuanair.com",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "seat_selection_included": {
+          "value": "Free seat assignment provided during online check-in; advance seat selection prior to check-in is available for a fee",
+          "status": "official",
+          "source_url": "http://www.sichuanair.com",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "change_cancellation_policy": {
+          "value": "Ticket modifications and cancellations are subject to carrier fare rules, change fees, and applicable fare difference",
+          "status": "official",
+          "source_url": "http://www.sichuanair.com",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

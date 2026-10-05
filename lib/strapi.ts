@@ -929,6 +929,20 @@ export async function listRoutesFromAirport(iata: string, limit = 20) {
   return res.data;
 }
 
+/** Route records that end at this airport, most popular first. */
+export async function listRoutesToAirport(iata: string, limit = 20) {
+  const res = await strapiFetch<ListResponse<StrapiRoute>>('routes', {
+    filters: { destination: { iata: { $eqi: iata } } },
+    populate: {
+      origin: true,
+      destination: true,
+    },
+    sort: ['popularity:desc'],
+    pagination: { pageSize: limit },
+  });
+  return res.data;
+}
+
 /**
  * How many route records start at this airport — all of them, not only the
  * ones a page lists. Requests one row; the total comes from the pagination meta.

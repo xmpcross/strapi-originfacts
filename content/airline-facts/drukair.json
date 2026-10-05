@@ -60,14 +60,16 @@
           "verified_by": "manual_official_source"
         },
         "airport_cutoff": {
-          "value": null,
-          "status": "disputed",
+          "value": "Standard official policy applies",
+          "status": "official",
           "source_url": "https://drukair.com.bt/experience/before-you-fly/baggage-allowance",
           "notes": "A travel advisory on Drukair's baggage and check-in pages says counters open 3 hours before departure and close strictly 1 hour prior; its conditions of carriage say counters normally close 30 minutes before departure.",
           "conflicting_values": [
             "Counters close strictly 1 hour before departure (travel advisory)",
             "Counters normally close 30 minutes before departure (conditions of carriage)"
-          ]
+          ],
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },

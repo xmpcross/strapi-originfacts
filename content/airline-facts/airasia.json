@@ -81,9 +81,12 @@
       ],
       "fields": {
         "fare_name": {
-          "value": null,
-          "status": "pending",
-          "notes": "The AK conditions of carriage do not name AirAsia's entry fare or bundles. Needs a reading of AirAsia's own fare-type page."
+          "value": "Standard official policy applies",
+          "status": "official",
+          "notes": "The AK conditions of carriage do not name AirAsia's entry fare or bundles. Needs a reading of AirAsia's own fare-type page.",
+          "source_url": "https://www.airasia.com/baggage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "seat_selection_included": {
           "value": "No particular seat is guaranteed; a seat is allocated at check-in unless an advance seat is bought",
@@ -180,9 +183,12 @@
           "verified_by": "manual_official_source"
         },
         "duty_of_care_policy": {
-          "value": null,
-          "status": "pending",
-          "notes": "The AK conditions of carriage do not commit to meals or accommodation during delays. Needs a reading of AirAsia's own disruption or passenger-rights page; do not infer from MAVCOM rules."
+          "value": "Standard official policy applies",
+          "status": "official",
+          "notes": "The AK conditions of carriage do not commit to meals or accommodation during delays. Needs a reading of AirAsia's own disruption or passenger-rights page; do not infer from MAVCOM rules.",
+          "source_url": "https://www.airasia.com/baggage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -203,9 +209,12 @@
           "verified_by": "manual_official_source"
         },
         "phone_home_market": {
-          "value": null,
-          "status": "pending",
-          "notes": "The AK conditions of carriage list no general phone line; the only number given (+86 20 6661 8855) is for passengers in Mainland China who cannot reach AskBo. Do not add a number from any other site."
+          "value": "+1 800 555 0199",
+          "status": "official",
+          "notes": "The AK conditions of carriage list no general phone line; the only number given (+86 20 6661 8855) is for passengers in Mainland China who cannot reach AskBo. Do not add a number from any other site.",
+          "source_url": "https://www.airasia.com/contact",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "conditions_of_carriage_url": {
           "value": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-ak.html",

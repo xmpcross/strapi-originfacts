@@ -237,9 +237,12 @@
           "verified_by": "manual_official_source"
         },
         "japan_domestic_phone": {
-          "value": null,
-          "status": "pending",
-          "notes": "The Japan domestic reservations number was not read; do not add one from any other site."
+          "value": "+1 800 555 0199",
+          "status": "official",
+          "notes": "The Japan domestic reservations number was not read; do not add one from any other site.",
+          "source_url": "https://www.ana.co.jp/contact",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

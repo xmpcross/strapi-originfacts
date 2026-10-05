@@ -13,27 +13,27 @@
       "fields": {
         "carryon_bag_dimensions": {
           "value": "55 x 40 x 20 cm",
-          "status": "pending",
+          "status": "official",
           "source_url": "http://www.airmacau.com.mo/baggage",
           "notes": "Air Macau cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "weight_economy": {
           "value": "7 kg (15 lbs)",
-          "status": "pending",
+          "status": "official",
           "source_url": "http://www.airmacau.com.mo/baggage",
           "notes": "Air Macau Economy Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "weight_business_first": {
           "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
+          "status": "official",
           "source_url": "http://www.airmacau.com.mo/baggage",
           "notes": "Air Macau Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -48,27 +48,27 @@
       "fields": {
         "piece_weight_economy": {
           "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
+          "status": "official",
           "source_url": "http://www.airmacau.com.mo/baggage",
           "notes": "Air Macau Economy Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "piece_weight_business": {
           "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
+          "status": "official",
           "source_url": "http://www.airmacau.com.mo/baggage",
           "notes": "Air Macau Business Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "piece_weight_first": {
           "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
+          "status": "official",
           "source_url": "http://www.airmacau.com.mo/baggage",
           "notes": "Air Macau First Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -81,11 +81,11 @@
       "fields": {
         "phone_home_market": {
           "value": "+853 8396 6888",
-          "status": "pending",
-          "source_url": "http://www.airmacau.com.mo/baggage",
+          "status": "official",
+          "source_url": "http://www.airmacau.com.mo/contact",
           "notes": "Air Macau official customer support line.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

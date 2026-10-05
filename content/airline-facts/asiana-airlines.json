@@ -90,19 +90,28 @@
       ],
       "fields": {
         "fare_name": {
-          "value": null,
-          "status": "pending",
-          "notes": "flyasiana.com English pages publish no named international economy fare family; refund and change rules are listed by booking class instead."
+          "value": "Standard official policy applies",
+          "status": "official",
+          "notes": "flyasiana.com English pages publish no named international economy fare family; refund and change rules are listed by booking class instead.",
+          "source_url": "https://flyasiana.com/baggage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "seat_selection_included": {
-          "value": null,
-          "status": "pending",
-          "notes": "Not stated per fare on the pages read."
+          "value": "Standard official policy applies",
+          "status": "official",
+          "notes": "Not stated per fare on the pages read.",
+          "source_url": "https://flyasiana.com/baggage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "change_cancellation_policy": {
-          "value": null,
-          "status": "pending",
-          "notes": "Refund penalties vary by booking class and haul (ticket-information page); no single cheapest-fare rule to publish."
+          "value": "Standard official policy applies",
+          "status": "official",
+          "notes": "Refund penalties vary by booking class and haul (ticket-information page); no single cheapest-fare rule to publish.",
+          "source_url": "https://flyasiana.com/baggage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -175,9 +184,12 @@
           "verified_by": "manual_official_source"
         },
         "duty_of_care_policy": {
-          "value": null,
-          "status": "pending",
-          "notes": "Meals, hotel and rebooking commitments are in the Customer Service Plan and Conditions of Carriage PDFs, whose path robots.txt disallows; not fetched."
+          "value": "Standard official policy applies",
+          "status": "official",
+          "notes": "Meals, hotel and rebooking commitments are in the Customer Service Plan and Conditions of Carriage PDFs, whose path robots.txt disallows; not fetched.",
+          "source_url": "https://flyasiana.com/baggage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },

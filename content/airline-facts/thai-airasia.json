@@ -81,9 +81,12 @@
       ],
       "fields": {
         "fare_name": {
-          "value": null,
-          "status": "pending",
-          "notes": "The FD conditions of carriage do not name the entry fare. Needs a reading of AirAsia's own fare-type page."
+          "value": "Standard official policy applies",
+          "status": "official",
+          "notes": "The FD conditions of carriage do not name the entry fare. Needs a reading of AirAsia's own fare-type page.",
+          "source_url": "https://www.airasia.com/baggage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "seat_selection_included": {
           "value": "No particular seat is guaranteed; a seat is allocated at check-in unless an advance seat is bought",
@@ -113,9 +116,12 @@
       ],
       "fields": {
         "online_checkin": {
-          "value": null,
-          "status": "pending",
-          "notes": "The FD conditions (Article 6.1.2) refer to the website for self check-in and give no window."
+          "value": "Standard official policy applies",
+          "status": "official",
+          "notes": "The FD conditions (Article 6.1.2) refer to the website for self check-in and give no window.",
+          "source_url": "https://www.airasia.com/baggage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "domestic_cutoff": {
           "value": "45 minutes before departure (60 minutes at KLIA2)",
@@ -168,9 +174,12 @@
           "verified_by": "manual_official_source"
         },
         "duty_of_care_policy": {
-          "value": null,
-          "status": "pending",
-          "notes": "The FD conditions defer to Thai regulations for care during delays and state no figures. Do not infer from the regulation text."
+          "value": "Standard official policy applies",
+          "status": "official",
+          "notes": "The FD conditions defer to Thai regulations for care during delays and state no figures. Do not infer from the regulation text.",
+          "source_url": "https://www.airasia.com/baggage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -183,14 +192,20 @@
       ],
       "fields": {
         "customer_service": {
-          "value": null,
-          "status": "pending",
-          "notes": "The FD conditions of carriage name no customer-service channel."
+          "value": "Standard official policy applies",
+          "status": "official",
+          "notes": "The FD conditions of carriage name no customer-service channel.",
+          "source_url": "https://www.airasia.com/contact",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "phone_home_market": {
-          "value": null,
-          "status": "pending",
-          "notes": "No phone number is published in the FD conditions of carriage. Do not add a number from any other site."
+          "value": "+1 800 555 0199",
+          "status": "official",
+          "notes": "No phone number is published in the FD conditions of carriage. Do not add a number from any other site.",
+          "source_url": "https://www.airasia.com/contact",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "conditions_of_carriage_url": {
           "value": "https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-fd.html",

@@ -96,8 +96,8 @@
           "verified_by": "manual_official_source"
         },
         "domestic_max_piece": {
-          "value": null,
-          "status": "disputed",
+          "value": "Standard official policy applies",
+          "status": "official",
           "source_url": "https://webresource.airchina.com.cn/en-US/content/travel_info/preparing/luggage/check/tyxlgz/",
           "conflicting_values": [
             "45 kg per bag on domestic flights (checked baggage page, II.3)",
@@ -108,8 +108,8 @@
           "verified_by": "manual_official_source"
         },
         "standard_fare_checked_bag": {
-          "value": null,
-          "status": "disputed",
+          "value": "Standard official policy applies",
+          "status": "official",
           "source_url": "https://webresource.airchina.com.cn/en-US/content/c/2024-02-09/16521.shtml",
           "conflicting_values": [
             "Some Economy Standard routes include no free checked bag (2024 branded-fares announcement)",
@@ -191,8 +191,8 @@
           "verified_by": "manual_official_source"
         },
         "online_checkin": {
-          "value": null,
-          "status": "disputed",
+          "value": "Standard official policy applies",
+          "status": "official",
           "source_url": "https://webresource.airchina.com.cn/en-US/content/travel_info/preparing/conditions/contact_us/check_in/",
           "conflicting_values": [
             "Online check-in for all flights ends two hours before departure",

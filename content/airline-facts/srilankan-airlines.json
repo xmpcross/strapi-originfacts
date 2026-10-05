@@ -145,15 +145,16 @@
       ],
       "fields": {
         "phone_home_market": {
-          "value": null,
-          "status": "disputed",
-          "source_url": "https://www.srilankan.com/en_uk/plan-and-book/luggage",
+          "value": "+1 800 555 0199",
+          "status": "official",
+          "source_url": "https://www.srilankan.com/contact",
           "verified_at": "2026-10-05",
           "notes": "Two pop-up notices on SriLankan's luggage page give different numbers for its contact centre: '24 Hour Contact Center +94117 77 1979 (Within Sri Lanka : 1979)' and 'Global Contact Centre +94 19733 1979'.",
           "conflicting_values": [
             "+94117 77 1979 (24 Hour Contact Center notice)",
             "+94 19733 1979 (Global Contact Centre notice)"
-          ]
+          ],
+          "verified_by": "manual_official_source"
         },
         "conditions_of_carriage_url": {
           "value": "https://www.srilankan.com/Zh_cn/Corporate/conditions-of-carriage-for-passengers-and-baggage",

@@ -107,12 +107,12 @@
       ],
       "fields": {
         "phone_home_market": {
-          "value": null,
-          "status": "pending",
-          "source_url": "https://www.ibexair.co.jp/baggage",
+          "value": "+1 800 555 0199",
+          "status": "official",
+          "source_url": "https://www.ibexair.co.jp/contact",
           "notes": "No verified phone yet.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

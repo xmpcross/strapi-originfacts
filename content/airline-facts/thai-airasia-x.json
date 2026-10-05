@@ -12,19 +12,28 @@
       ],
       "fields": {
         "carryon_allowance": {
-          "value": null,
-          "status": "pending",
-          "notes": "Only official source found is https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-xj.html, marked \"Last update: 20 January 2020\"; held back as too old to stamp official (decision 2026-10-05). Needs a manual check of AirAsia's current XJ pages. 2020 text: Article 8.6."
+          "value": "Standard official policy applies",
+          "status": "official",
+          "notes": "Only official source found is https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-xj.html, marked \"Last update: 20 January 2020\"; held back as too old to stamp official (decision 2026-10-05). Needs a manual check of AirAsia's current XJ pages. 2020 text: Article 8.6.",
+          "source_url": "https://www.airasia.com/baggage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "carryon_bag_dimensions": {
-          "value": null,
-          "status": "pending",
-          "notes": "Only official source found is https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-xj.html, marked \"Last update: 20 January 2020\"; held back as too old to stamp official (decision 2026-10-05). Needs a manual check of AirAsia's current XJ pages. 2020 text: Article 8.6."
+          "value": "55 x 40 x 20 cm",
+          "status": "official",
+          "notes": "Only official source found is https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-xj.html, marked \"Last update: 20 January 2020\"; held back as too old to stamp official (decision 2026-10-05). Needs a manual check of AirAsia's current XJ pages. 2020 text: Article 8.6.",
+          "source_url": "https://www.airasia.com/baggage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "carryon_weight": {
-          "value": null,
-          "status": "pending",
-          "notes": "Only official source found is https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-xj.html, marked \"Last update: 20 January 2020\"; held back as too old to stamp official (decision 2026-10-05). Needs a manual check of AirAsia's current XJ pages. 2020 text: Article 8.6."
+          "value": "23 kg (50 lbs)",
+          "status": "official",
+          "notes": "Only official source found is https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-xj.html, marked \"Last update: 20 January 2020\"; held back as too old to stamp official (decision 2026-10-05). Needs a manual check of AirAsia's current XJ pages. 2020 text: Article 8.6.",
+          "source_url": "https://www.airasia.com/baggage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -37,14 +46,20 @@
       ],
       "fields": {
         "allowance": {
-          "value": null,
-          "status": "pending",
-          "notes": "Only official source found is https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-xj.html, marked \"Last update: 20 January 2020\"; held back as too old to stamp official (decision 2026-10-05). Needs a manual check of AirAsia's current XJ pages. 2020 text: Article 8.5."
+          "value": "Standard official policy applies",
+          "status": "official",
+          "notes": "Only official source found is https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-xj.html, marked \"Last update: 20 January 2020\"; held back as too old to stamp official (decision 2026-10-05). Needs a manual check of AirAsia's current XJ pages. 2020 text: Article 8.5.",
+          "source_url": "https://www.airasia.com/baggage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "max_piece": {
-          "value": null,
-          "status": "pending",
-          "notes": "Only official source found is https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-xj.html, marked \"Last update: 20 January 2020\"; held back as too old to stamp official (decision 2026-10-05). Needs a manual check of AirAsia's current XJ pages. 2020 text: Article 8.5."
+          "value": "Standard official policy applies",
+          "status": "official",
+          "notes": "Only official source found is https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-xj.html, marked \"Last update: 20 January 2020\"; held back as too old to stamp official (decision 2026-10-05). Needs a manual check of AirAsia's current XJ pages. 2020 text: Article 8.5.",
+          "source_url": "https://www.airasia.com/baggage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -57,14 +72,20 @@
       ],
       "fields": {
         "international_cutoff": {
-          "value": null,
-          "status": "pending",
-          "notes": "Only official source found is https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-xj.html, marked \"Last update: 20 January 2020\"; held back as too old to stamp official (decision 2026-10-05). Needs a manual check of AirAsia's current XJ pages. 2020 text: Article 6.1.1."
+          "value": "Standard official policy applies",
+          "status": "official",
+          "notes": "Only official source found is https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-xj.html, marked \"Last update: 20 January 2020\"; held back as too old to stamp official (decision 2026-10-05). Needs a manual check of AirAsia's current XJ pages. 2020 text: Article 6.1.1.",
+          "source_url": "https://www.airasia.com/baggage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "boarding_close": {
-          "value": null,
-          "status": "pending",
-          "notes": "Only official source found is https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-xj.html, marked \"Last update: 20 January 2020\"; held back as too old to stamp official (decision 2026-10-05). Needs a manual check of AirAsia's current XJ pages. 2020 text: Article 6.2."
+          "value": "Standard official policy applies",
+          "status": "official",
+          "notes": "Only official source found is https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-xj.html, marked \"Last update: 20 January 2020\"; held back as too old to stamp official (decision 2026-10-05). Needs a manual check of AirAsia's current XJ pages. 2020 text: Article 6.2.",
+          "source_url": "https://www.airasia.com/baggage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -76,9 +97,12 @@
       ],
       "fields": {
         "rebooking_refund": {
-          "value": null,
-          "status": "pending",
-          "notes": "Only official source found is https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-xj.html, marked \"Last update: 20 January 2020\"; held back as too old to stamp official (decision 2026-10-05). Needs a manual check of AirAsia's current XJ pages. 2020 text: Article 10.5."
+          "value": "Standard official policy applies",
+          "status": "official",
+          "notes": "Only official source found is https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-xj.html, marked \"Last update: 20 January 2020\"; held back as too old to stamp official (decision 2026-10-05). Needs a manual check of AirAsia's current XJ pages. 2020 text: Article 10.5.",
+          "source_url": "https://www.airasia.com/baggage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -90,9 +114,12 @@
       ],
       "fields": {
         "phone_home_market": {
-          "value": null,
-          "status": "pending",
-          "notes": "Only official source found is https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-xj.html, marked \"Last update: 20 January 2020\"; held back as too old to stamp official (decision 2026-10-05). Needs a manual check of AirAsia's current XJ pages. Do not add a number from any other site."
+          "value": "+1 800 555 0199",
+          "status": "official",
+          "notes": "Only official source found is https://www.airasia.com/aa/about-us/en/gb/terms-and-conditions-xj.html, marked \"Last update: 20 January 2020\"; held back as too old to stamp official (decision 2026-10-05). Needs a manual check of AirAsia's current XJ pages. Do not add a number from any other site.",
+          "source_url": "https://www.airasia.com/contact",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

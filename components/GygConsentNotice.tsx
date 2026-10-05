@@ -1,6 +1,6 @@
 'use client';
 
-import { getConsent, reopenConsentSettings, saveConsent, useConsent } from '@/lib/consent';
+import { grantMarketingConsent, reopenConsentSettings, useConsent } from '@/lib/consent';
 
 /**
  * Shown inside the GetYourGuide activity widget box until the visitor allows
@@ -13,11 +13,6 @@ export default function GygConsentNotice() {
   const consent = useConsent();
   if (consent?.categories.marketing) return null;
 
-  const allow = () => {
-    const current = getConsent()?.categories;
-    saveConsent({ essential: true, analytics: current?.analytics === true, marketing: true });
-  };
-
   return (
     <div className="mb-4 rounded-lg border border-forest-900/10 bg-white p-4 text-sm text-forest-900/75" data-testid="gyg-consent-notice">
       <p>
@@ -27,7 +22,7 @@ export default function GygConsentNotice() {
       <div className="mt-3 flex flex-wrap gap-2">
         <button
           type="button"
-          onClick={allow}
+          onClick={grantMarketingConsent}
           className="inline-flex h-9 items-center rounded-full bg-primary-emphasis px-4 text-sm font-semibold text-white transition hover:bg-primary-highlight"
           data-testid="gyg-consent-allow"
         >

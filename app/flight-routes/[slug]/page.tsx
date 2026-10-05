@@ -5,6 +5,8 @@ import { flightSearchUrl } from '@/lib/affiliate';
 import { absoluteUrl } from '@/lib/jsonld';
 import PriceCalendar from '@/components/PriceCalendar';
 import ScheduleWidget from '@/components/ScheduleWidget';
+import TpConsentGate from '@/components/TpConsentGate';
+import { tpwlPartnerUrl, tpwlSegment } from '@/lib/tpwl-link';
 import ExpandableDescription from '@/components/ExpandableDescription';
 import { airportPath } from '@/lib/airport-slugs';
 import { buildMetaDescription } from '@/lib/seo';
@@ -242,7 +244,14 @@ export default async function RoutePage({ params }: Props) {
           text={`The calendar below pulls live fares from our search partner for ${origin.city || origin.name} (${origin.iata}) → ${destination.city || destination.name} (${destination.iata}). Use the year view to spot the cheapest week to fly, the day-of-week patterns most travellers miss, and any shoulder-season dips worth shifting your trip around. Prices refresh every few hours, so what you see is what your booking page should look like a moment later — click any date to jump straight to the fare on Aviasales.`}
         />
         <div className="rounded-[0.3rem] border border-forest-900/10 bg-paper p-2">
-          <PriceCalendar origin={origin.iata} destination={destination.iata} />
+          {/* Min-heights = the widget's rendered height per width (Playwright, Oct 2026). */}
+          <TpConsentGate
+            tool="price calendar"
+            partnerHref={tpwlPartnerUrl(tpwlSegment(origin.iata, destination.iata))}
+            className="min-h-[400px] min-[440px]:min-h-[450px] sm:min-h-[560px] xl:min-h-[487px]"
+          >
+            <PriceCalendar origin={origin.iata} destination={destination.iata} />
+          </TpConsentGate>
         </div>
       </section>
 
@@ -297,7 +306,13 @@ export default async function RoutePage({ params }: Props) {
           text={`Below is the published weekly schedule for nonstop and one-stop services from ${origin.city || origin.name} to ${destination.city || destination.name} — the actual flight numbers, departure and arrival times your booking page will pull from. Use it to plan around departure preferences (early morning vs late evening), see which carriers fly on which weekdays, or pick a connection that lets you sleep in your own bed before a long-haul leg. Click any row to load it directly in the search.`}
         />
         <div className="rounded-[0.3rem] border border-forest-900/10 bg-white p-2">
-          <ScheduleWidget origin={origin.iata} destination={destination.iata} />
+          <TpConsentGate
+            tool="flight schedule"
+            partnerHref={tpwlPartnerUrl(tpwlSegment(origin.iata, destination.iata))}
+            className="min-h-[1079px] sm:min-h-[670px] min-[880px]:min-h-[710px]"
+          >
+            <ScheduleWidget origin={origin.iata} destination={destination.iata} />
+          </TpConsentGate>
         </div>
       </section>
 

@@ -5,7 +5,8 @@ import SearchByDestinationBlock from '@/components/SearchByDestinationBlock';
 import { JsonLd } from '@/components/SeoBlocks';
 import { breadcrumbJsonLd } from '@/lib/jsonld';
 import { faqJsonLd } from '@/lib/entity-seo';
-import TpwlLoader, { TpwlLoaderHead } from '@/components/TpwlLoader';
+import TpwlLoader, { TpwlConsentedBoot, TpwlSearchPlaceholder } from '@/components/TpwlLoader';
+import { tpwlPartnerUrl } from '@/lib/tpwl-link';
 import TpwlCurrencyCaret from '@/components/TpwlCurrencyCaret';
 import TpwlOriginSync from '@/components/TpwlOriginSync';
 import AirlineResultsFilter from '@/components/AirlineResultsFilter';
@@ -126,7 +127,6 @@ export default async function FlightsPage({
       {/* The booking FAQ below is rendered visibly further down the page —
           FAQPage schema mirrors that exact Q&A set. */}
       <JsonLd data={faqJsonLd(BOOKING_FAQ)} />
-      <TpwlLoaderHead />
       <TpwlLoader />
       <TpwlCurrencyCaret />
       <TpwlOriginSync />
@@ -158,6 +158,8 @@ export default async function FlightsPage({
             </header>
 
             <div className="tpwl-search-wrap mt-8 lg:mt-10">
+              {/* Until advertising consent: a placeholder here and no SDK (see TpwlLoader). */}
+              <TpwlSearchPlaceholder partnerHref={tpwlPartnerUrl(pick('flightSearch'))} />
               <div id="tpwl-search" />
             </div>
           </div>
@@ -167,6 +169,8 @@ export default async function FlightsPage({
         <div className="mt-12">
           <AirlineResultsFilter />
           <div id="tpwl-tickets" />
+          {/* After both containers: starts the SDK on a full load if consent is already stored. */}
+          <TpwlConsentedBoot />
         </div>
 
         <PopularDestinationsBlock />

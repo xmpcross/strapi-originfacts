@@ -825,8 +825,11 @@ export async function listRoutesByCarrier(airlineSlug: string, limit = 20) {
 export async function fetchRouteCoverage(): Promise<{
   originIatas: Set<string>;
   carrierSlugs: Set<string>;
+  /** Route records per origin airport (lower-case IATA), from the same pass. */
+  originRouteCounts: Map<string, number>;
 }> {
   const originIatas = new Set<string>();
+  const originRouteCounts = new Map<string, number>();
   const carrierSlugs = new Set<string>();
   let page = 1;
   const pageSize = 300;
@@ -841,7 +844,11 @@ export async function fetchRouteCoverage(): Promise<{
       3600,
     );
     for (const rt of r.data) {
-      if (rt.origin?.iata) originIatas.add(rt.origin.iata.toLowerCase());
+      if (rt.origin?.iata) {
+        const o = rt.origin.iata.toLowerCase();
+        originIatas.add(o);
+        originRouteCounts.set(o, (originRouteCounts.get(o) ?? 0) + 1);
+      }
       for (const c of rt.carriers ?? []) {
         if (c?.slug) carrierSlugs.add(c.slug);
       }
@@ -850,7 +857,7 @@ export async function fetchRouteCoverage(): Promise<{
     if (page >= pageCount) break;
     page++;
   }
-  return { originIatas, carrierSlugs };
+  return { originIatas, carrierSlugs, originRouteCounts };
 }
 
 export async function listRoutesFromAirport(iata: string, limit = 20) {

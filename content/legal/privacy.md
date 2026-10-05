@@ -150,6 +150,8 @@ You can opt out of Google Analytics by using our cookie controls where available
 
 We use Mailchimp to manage email newsletters and marketing communications.
 
+As of 5 October 2026, when you sign up through the newsletter form on the Website, your email address, the signup time and your IP address are sent to our team as an email through Google Workspace, our email provider, so that we can add you to our mailing list.
+
 If you subscribe, Mailchimp may process your email address, name if provided, subscription preferences, email engagement information, IP address, signup time, unsubscribe status, and related technical information.
 
 Mailchimp may process information in the United States and other countries. We rely on Mailchimp's data processing terms and transfer safeguards where required.

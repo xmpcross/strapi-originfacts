@@ -34,6 +34,7 @@ import { buildMetaDescription, compactTitle, programmaticTitle } from '@/lib/seo
 import AirlineReviews from '@/components/AirlineReviews';
 import AirlineStatusNotice from '@/components/AirlineStatusNotice';
 import { getCeasedAirline, ceasedOnPhrase } from '@/lib/airline-status';
+import { isNonPassengerAirline } from '@/lib/airline-exclusions';
 import AirlineShowcase from '@/components/AirlineShowcase';
 import AirlineFlightSearch from '@/components/AirlineFlightSearch';
 import AboutParagraphs from '@/components/AboutParagraphs';
@@ -64,7 +65,7 @@ async function listCredibleRoutesByCarrier(slug: string) {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const a = await getAirline(slug);
-  if (!a) return { title: 'Not found' };
+  if (!a || isNonPassengerAirline(a)) return { title: 'Not found' };
   const routes = await listCredibleRoutesByCarrier(slug);
   // A ceased carrier gets a historical description and title; live carriers
   // go through the shared builder with a keyword title and logo og:image.
@@ -117,7 +118,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function AirlinePage({ params }: Props) {
   const { slug } = await params;
   const airline = await getAirline(slug);
-  if (!airline) notFound();
+  if (!airline || isNonPassengerAirline(airline)) notFound();
 
   const [routes, flySfoProfile, countryAirlines] = await Promise.all([
     listCredibleRoutesByCarrier(slug),

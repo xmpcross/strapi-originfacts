@@ -14,6 +14,7 @@ import { LEGAL_DOCS } from '@/lib/legal';
 import { AIRLINES_INDEXABLE, AIRPORTS_INDEXABLE, airportIsPublished } from '@/lib/entity-seo';
 import { airportIsIndexable } from '@/lib/airport-index-gate';
 import { airlineGuideIsPublished, airlineIsIndexable } from '@/lib/airline-tier';
+import { isNonPassengerAirline } from '@/lib/airline-exclusions';
 import { airportPath } from '@/lib/airport-slugs';
 import { getAirportGuide } from '@/lib/airport-guide';
 import { getRouteGuide } from '@/lib/route-guide';
@@ -112,6 +113,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     .filter(
       (a) =>
         a.slug &&
+        !isNonPassengerAirline(a) &&
         (airlineGuideIsPublished(a.slug) ||
           (AIRLINES_INDEXABLE && airlineIsIndexable(a, coverage.carrierSlugs.has(a.slug)))),
     )

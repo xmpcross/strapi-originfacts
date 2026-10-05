@@ -25,6 +25,8 @@ import { getAirlineFacts } from '@/lib/airline-facts';
 import { getAirlineReviews } from '@/lib/airline-reviews';
 import { getAirlineRef } from '@/lib/airline-refs';
 import AirlineTier1, { derivedFaqs } from '@/components/airline-tier1/AirlineTier1';
+import AirlineGuideV2, { guideFaqs } from '@/components/airline-v2/AirlineGuideV2';
+import { airlineUsesTemplateV2 } from '@/lib/airline-template-v2';
 import { breadcrumbJsonLd, absoluteUrl } from '@/lib/jsonld';
 import { buildMetaDescription, compactTitle, programmaticTitle } from '@/lib/seo';
 import AirlineReviews from '@/components/AirlineReviews';
@@ -218,6 +220,38 @@ export default async function AirlinePage({ params }: Props) {
     if (airline.founded) tier1AirlineLd.foundingDate = String(airline.founded);
     if (ceased) tier1AirlineLd.dissolutionDate = ceased.ceasedOn;
     if (alliance) tier1AirlineLd.memberOf = { '@type': 'Organization', name: alliance };
+
+    // v2 reference template, rolled out one carrier at a time via
+    // lib/airline-template-v2.ts. Same metadata (generateMetadata is untouched)
+    // and the same four JSON-LD blocks; the FAQPage block is built from the
+    // exact list the page renders. Every other carrier falls through to the
+    // AirlineTier1 render below, unchanged.
+    if (airlineUsesTemplateV2(airline.slug)) {
+      const facts = getAirlineFacts(airline.slug);
+      const v2Faqs = guideFaqs(airline, routeFacts, alliance, facts);
+      return (
+        <>
+          <JsonLd data={articleSchema} />
+          <JsonLd data={tier1AirlineLd} />
+          {v2Faqs.length > 0 && <JsonLd data={faqJsonLd(v2Faqs)} />}
+          <JsonLd
+            data={breadcrumbJsonLd([
+              { name: 'Airlines', url: '/airlines' },
+              { name: airline.name, url: `/airlines/${airline.slug}` },
+            ])}
+          />
+          {ceased && <AirlineStatusNotice name={airline.name} ceased={ceased} />}
+          <AirlineGuideV2
+            airline={airline}
+            routeFacts={routeFacts}
+            facts={facts}
+            alliance={alliance}
+            airlineRef={getAirlineRef(airline.iataCode)}
+            faqs={v2Faqs}
+          />
+        </>
+      );
+    }
 
     return (
       <>

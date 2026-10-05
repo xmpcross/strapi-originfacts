@@ -7,6 +7,13 @@ import { mediaUrl, type StrapiArticle } from '@/lib/strapi';
 
 const COLLAPSED_COUNT = 4;
 
+// The floating rails only render where the viewport leaves a real gutter beside
+// the 1420px content column (max-w-7xl). The widest rail (this one: 50px offset
+// + 80px column) needs (vw - 1420) / 2 >= 130px + a gap + half a classic
+// scrollbar, i.e. vw >= ~1712px; 1728px (a common laptop width) gives ~16px of
+// clearance even with a 15px scrollbar. Keep `min-[1728px]` in sync across the
+// Fixed* components.
+
 // Pages where the fixed left/right rails should be hidden. Currently destination
 // detail pages (e.g. /destinations/united-kingdom) hide them to give the hero
 // + facts panel + airports/airlines filters more horizontal room.
@@ -22,7 +29,7 @@ export default function FixedPopularNow({ articles }: { articles: StrapiArticle[
 
   return (
     <aside
-      className="pointer-events-none fixed left-[50px] top-[200px] z-40 hidden lg:block"
+      className="pointer-events-none fixed left-[50px] top-[200px] z-40 hidden min-[1728px]:block"
       data-testid="fixed-popular-now"
     >
       <div className="pointer-events-auto flex flex-col items-center">

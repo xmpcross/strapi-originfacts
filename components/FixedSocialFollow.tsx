@@ -12,6 +12,8 @@ const SOCIALS: { label: string; href: string; icon: 'facebook' | 'x' | 'linkedin
   { label: 'Reddit', href: 'https://www.reddit.com/r/Originfacts/', icon: 'reddit' },
 ];
 
+// Shown only from 1728px, in the gutter beside the 1420px content column (see
+// FixedPopularNow). The footer carries the same social links at every width.
 export default function FixedSocialFollow() {
   const [visible, setVisible] = useState(false);
 
@@ -25,7 +27,7 @@ export default function FixedSocialFollow() {
   return (
     <aside
       data-testid="fixed-social-follow"
-      className={`fixed bottom-[30px] right-[50px] z-40 hidden flex-col items-center gap-2 transition-opacity duration-300 lg:flex ${
+      className={`fixed bottom-[30px] right-[50px] z-40 hidden flex-col items-center gap-2 transition-opacity duration-300 min-[1728px]:flex ${
         visible ? 'opacity-100' : 'pointer-events-none opacity-0'
       }`}
     >

@@ -10,6 +10,11 @@ import { mediaUrl, type StrapiArticle } from '@/lib/strapi';
 // hero + facts panel get full width.
 const HIDE_PATTERNS = [/^\/destinations\/[^/]+$/];
 
+// Shown only from 1728px, where it sits in the gutter beside the 1420px content
+// column (see FixedPopularNow). Below that every item is reachable elsewhere:
+// Contact, Trending and Blog (with its search form) in the footer, and the
+// sidebar menu mirrors the header nav.
+
 type BarItem = {
   label: string;
   href?: string;
@@ -87,7 +92,7 @@ export default function FixedRightBar({
   return (
     <>
       <div
-        className="pointer-events-none fixed right-[50px] top-[200px] z-40 hidden lg:block"
+        className="pointer-events-none fixed right-[50px] top-[200px] z-40 hidden min-[1728px]:block"
         data-testid="fixed-right-bar"
       >
         <ul className="pointer-events-auto flex flex-col items-center gap-[10px]">

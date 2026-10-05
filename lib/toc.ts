@@ -4,6 +4,38 @@ export interface TocItem {
   level?: number;
 }
 
+const NAMED_ENTITIES: Record<string, string> = {
+  amp: '&',
+  lt: '<',
+  gt: '>',
+  quot: '"',
+  apos: "'",
+  nbsp: ' ',
+  ndash: '–',
+  mdash: '—',
+  hellip: '…',
+  lsquo: '‘',
+  rsquo: '’',
+  ldquo: '“',
+  rdquo: '”',
+};
+
+/**
+ * Turn HTML character references back into text ("Don&#39;t" → "Don't").
+ * Headings come out of the Markdown renderer with apostrophes and ampersands
+ * escaped; the table of contents renders its text through React, which escapes
+ * again, so without this the reader saw the raw "&#39;".
+ */
+export function decodeHtmlEntities(text: string): string {
+  return text.replace(/&(#x[0-9a-f]+|#[0-9]+|[a-z]+);/gi, (match, ref: string) => {
+    if (ref[0] === '#') {
+      const code = ref[1] === 'x' || ref[1] === 'X' ? parseInt(ref.slice(2), 16) : parseInt(ref.slice(1), 10);
+      return Number.isFinite(code) && code > 0 && code <= 0x10ffff ? String.fromCodePoint(code) : match;
+    }
+    return NAMED_ENTITIES[ref.toLowerCase()] ?? match;
+  });
+}
+
 /**
  * Convert plain text into a clean URL anchor slug suitable for HTML element IDs.
  */
@@ -57,7 +89,9 @@ export function injectHeadingIdsAndExtractToc(html: string): {
     }
 
     const level = parseInt(tag.charAt(1), 10);
-    toc.push({ id: headingId, text: cleanText, level });
+    // The id keeps being built from the raw text above (e.g. "don39t-…"), so
+    // existing links to sections still work; only the visible label is decoded.
+    toc.push({ id: headingId, text: decodeHtmlEntities(cleanText), level });
 
     return `<${tag}${attrs}>${inner}</${tag}>`;
   });

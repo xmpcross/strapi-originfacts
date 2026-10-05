@@ -253,7 +253,7 @@ export default async function AirportPage({ params }: Props) {
     { label: 'Website', value: airportInfo?.website },
   ];
 
-  const heroSummary = firstBlurbFromSections(proseSections) || airportIntro(airport, summary);
+  const heroSummary = airportIntro(airport, summary);
   const transportSection = proseSections.find((section) => /terminals|runways/i.test(section.heading || ''));
   const narrativeSections = buildAirportNarrativeSections(airport, summary, proseSections, transportSection);
   const airportGuide = buildAirportGuide(airport, summary, transportSection);

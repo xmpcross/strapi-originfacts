@@ -160,6 +160,38 @@
           "verified_by": "manual_official_source"
         }
       }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "required": [
+        "fare_name",
+        "seat_selection_included",
+        "change_cancellation_policy"
+      ],
+      "fields": {
+        "fare_name": {
+          "value": "Economy Light: 1 hand luggage item up to 10 kg and 1 small handbag; checked baggage not included",
+          "status": "official",
+          "source_url": "https://flywith.virginatlantic.com/us/en/fly-economy/economy-light.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "seat_selection_included": {
+          "value": "Seat assigned at check-in 24 hours before departure",
+          "status": "official",
+          "source_url": "https://flywith.virginatlantic.com/us/en/fly-economy/economy-light.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "change_cancellation_policy": {
+          "value": "Changes allowed for a change fee plus fare difference; non-refundable",
+          "status": "official",
+          "source_url": "https://flywith.virginatlantic.com/us/en/fly-economy/economy-light.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

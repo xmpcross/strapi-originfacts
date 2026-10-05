@@ -160,6 +160,38 @@
           "verified_by": "manual_official_source"
         }
       }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "required": [
+        "fare_name",
+        "seat_selection_included",
+        "change_cancellation_policy"
+      ],
+      "fields": {
+        "fare_name": {
+          "value": "Light Fare: 1 hand baggage and 1 accessory up to 12 kg total; checked baggage not included",
+          "status": "official",
+          "source_url": "https://www.klm.com/information/ticket-type",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "seat_selection_included": {
+          "value": "Seat selection free at check-in 30 hours before departure; paid advance selection available",
+          "status": "official",
+          "source_url": "https://www.klm.com/information/ticket-type",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "change_cancellation_policy": {
+          "value": "Changeable for a modification fee plus fare difference; non-refundable",
+          "status": "official",
+          "source_url": "https://www.klm.com/information/ticket-type",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

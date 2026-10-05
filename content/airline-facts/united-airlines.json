@@ -160,6 +160,38 @@
           "verified_by": "manual_official_source"
         }
       }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "required": [
+        "fare_name",
+        "seat_selection_included",
+        "change_cancellation_policy"
+      ],
+      "fields": {
+        "fare_name": {
+          "value": "Basic Economy: 1 personal item included; full-size carry-on bag not permitted except on transatlantic/transpacific or for mileage members",
+          "status": "official",
+          "source_url": "https://www.united.com/en/us/fly/travel/inflight/basic-economy.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "seat_selection_included": {
+          "value": "Seat assigned prior to boarding; advance seat selection available for purchase",
+          "status": "official",
+          "source_url": "https://www.united.com/en/us/fly/travel/inflight/basic-economy.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "change_cancellation_policy": {
+          "value": "Non-changeable. Cancellation within 24 hours of booking permitted for full refund",
+          "status": "official",
+          "source_url": "https://www.united.com/en/us/fly/travel/inflight/basic-economy.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

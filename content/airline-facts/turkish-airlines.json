@@ -160,6 +160,38 @@
           "verified_by": "manual_official_source"
         }
       }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "required": [
+        "fare_name",
+        "seat_selection_included",
+        "change_cancellation_policy"
+      ],
+      "fields": {
+        "fare_name": {
+          "value": "EcoFly: 1 cabin bag up to 8 kg and 1 personal item; 15 kg to 23 kg checked baggage included depending on route",
+          "status": "official",
+          "source_url": "https://www.turkishairlines.com/en-int/flights/fly-different/fare-categories/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "seat_selection_included": {
+          "value": "Free random seat assignment at check-in; advance seat selection fee applies",
+          "status": "official",
+          "source_url": "https://www.turkishairlines.com/en-int/flights/fly-different/fare-categories/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "change_cancellation_policy": {
+          "value": "Non-changeable or fee applies depending on international fare class",
+          "status": "official",
+          "source_url": "https://www.turkishairlines.com/en-int/flights/fly-different/fare-categories/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

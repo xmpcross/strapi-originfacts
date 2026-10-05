@@ -160,6 +160,38 @@
           "verified_by": "manual_official_source"
         }
       }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "required": [
+        "fare_name",
+        "seat_selection_included",
+        "change_cancellation_policy"
+      ],
+      "fields": {
+        "fare_name": {
+          "value": "Basic Fare: 1 cabin bag and 1 personal item included; checked baggage available for purchase",
+          "status": "official",
+          "source_url": "https://www.iberia.com/us/fares-and-discounts/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "seat_selection_included": {
+          "value": "Seat selection assigned free at check-in 24 hours prior to flight; paid advance seat choice",
+          "status": "official",
+          "source_url": "https://www.iberia.com/us/fares-and-discounts/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "change_cancellation_policy": {
+          "value": "Non-changeable and non-refundable except where required by local consumer law",
+          "status": "official",
+          "source_url": "https://www.iberia.com/us/fares-and-discounts/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

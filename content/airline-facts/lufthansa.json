@@ -160,6 +160,38 @@
           "verified_by": "manual_official_source"
         }
       }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "required": [
+        "fare_name",
+        "seat_selection_included",
+        "change_cancellation_policy"
+      ],
+      "fields": {
+        "fare_name": {
+          "value": "Economy Light: 1 carry-on bag up to 8 kg included; checked baggage available for an additional fee",
+          "status": "official",
+          "source_url": "https://www.lufthansa.com/de/en/economy-light-fare",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "seat_selection_included": {
+          "value": "Free seat choice at online check-in 23 hours before departure; advance seat selection incurs a fee",
+          "status": "official",
+          "source_url": "https://www.lufthansa.com/de/en/economy-light-fare",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "change_cancellation_policy": {
+          "value": "Non-rebookable and non-refundable unless specified by fare rules or statutory rights",
+          "status": "official",
+          "source_url": "https://www.lufthansa.com/de/en/economy-light-fare",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

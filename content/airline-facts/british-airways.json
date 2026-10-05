@@ -160,6 +160,38 @@
           "verified_by": "manual_official_source"
         }
       }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "required": [
+        "fare_name",
+        "seat_selection_included",
+        "change_cancellation_policy"
+      ],
+      "fields": {
+        "fare_name": {
+          "value": "Economy Basic: 1 handbag and 1 cabin bag included; no free checked baggage allowance",
+          "status": "official",
+          "source_url": "https://www.britishairways.com/en-gb/information/about-ba/fare-types",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "seat_selection_included": {
+          "value": "Seat assigned at check-in or selected for a fee up to 24 hours prior to departure",
+          "status": "official",
+          "source_url": "https://www.britishairways.com/en-gb/information/about-ba/fare-types",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "change_cancellation_policy": {
+          "value": "Changes permitted for a change fee plus fare difference; non-refundable",
+          "status": "official",
+          "source_url": "https://www.britishairways.com/en-gb/information/about-ba/fare-types",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

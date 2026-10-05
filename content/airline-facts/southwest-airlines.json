@@ -153,6 +153,38 @@
           "verified_by": "manual_official_source"
         }
       }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "required": [
+        "fare_name",
+        "seat_selection_included",
+        "change_cancellation_policy"
+      ],
+      "fields": {
+        "fare_name": {
+          "value": "Wanna Get Away: 1 carry-on bag, 1 personal item, and 2 checked bags up to 50 lbs each INCLUDED",
+          "status": "official",
+          "source_url": "https://www.southwest.com/airline-fares/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "seat_selection_included": {
+          "value": "Open seating system based on boarding position group (A, B, C); no assigned seat numbers",
+          "status": "official",
+          "source_url": "https://www.southwest.com/airline-fares/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "change_cancellation_policy": {
+          "value": "No change fees; reusable flight credit for cancellations made at least 10 minutes prior to departure",
+          "status": "official",
+          "source_url": "https://www.southwest.com/airline-fares/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

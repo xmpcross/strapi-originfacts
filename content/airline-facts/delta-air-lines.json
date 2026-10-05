@@ -160,6 +160,38 @@
           "verified_by": "manual_official_source"
         }
       }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "required": [
+        "fare_name",
+        "seat_selection_included",
+        "change_cancellation_policy"
+      ],
+      "fields": {
+        "fare_name": {
+          "value": "Basic Economy: 1 carry-on bag and 1 personal item included; no free checked bag on most routes",
+          "status": "official",
+          "source_url": "https://www.delta.com/us/en/travel-planning-center/basic-economy",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "seat_selection_included": {
+          "value": "Seat assigned at check-in or after check-in; advance seat selection not available for free",
+          "status": "official",
+          "source_url": "https://www.delta.com/us/en/travel-planning-center/basic-economy",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "change_cancellation_policy": {
+          "value": "Non-changeable and non-refundable. Cancellations incur a cancellation fee deducted from eCredit value",
+          "status": "official",
+          "source_url": "https://www.delta.com/us/en/travel-planning-center/basic-economy",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

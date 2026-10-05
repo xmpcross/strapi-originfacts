@@ -160,6 +160,38 @@
           "verified_by": "manual_official_source"
         }
       }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "required": [
+        "fare_name",
+        "seat_selection_included",
+        "change_cancellation_policy"
+      ],
+      "fields": {
+        "fare_name": {
+          "value": "Economy Sale / Basic: 7 kg cabin bag and 1 personal item; checked bag allowance depends on route",
+          "status": "official",
+          "source_url": "https://www.etihad.com/en-us/fly-etihad/fare-choices",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "seat_selection_included": {
+          "value": "Free seat selection at check-in 30 hours before departure; advance seat choice for a fee",
+          "status": "official",
+          "source_url": "https://www.etihad.com/en-us/fly-etihad/fare-choices",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "change_cancellation_policy": {
+          "value": "Changeable for a fee; cancellation fee applies",
+          "status": "official",
+          "source_url": "https://www.etihad.com/en-us/fly-etihad/fare-choices",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

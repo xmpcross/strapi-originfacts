@@ -151,6 +151,38 @@
           "verified_by": "manual_official_source"
         }
       }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "required": [
+        "fare_name",
+        "seat_selection_included",
+        "change_cancellation_policy"
+      ],
+      "fields": {
+        "fare_name": {
+          "value": "Discount Fare: 1 hand luggage up to 8 kg and 1 personal item; checked baggage available for purchase",
+          "status": "official",
+          "source_url": "https://www.flytap.com/en-us/fare-products",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "seat_selection_included": {
+          "value": "Seat assigned at check-in; advance seat selection incurs a fee",
+          "status": "official",
+          "source_url": "https://www.flytap.com/en-us/fare-products",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "change_cancellation_policy": {
+          "value": "Changes not permitted; non-refundable ticket",
+          "status": "official",
+          "source_url": "https://www.flytap.com/en-us/fare-products",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

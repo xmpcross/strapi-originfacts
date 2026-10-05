@@ -160,6 +160,38 @@
           "verified_by": "manual_official_source"
         }
       }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "required": [
+        "fare_name",
+        "seat_selection_included",
+        "change_cancellation_policy"
+      ],
+      "fields": {
+        "fare_name": {
+          "value": "Light Fare: 1 cabin bag up to 7 kg and 1 small personal item included; 1 checked bag up to 23 kg included on long-haul routes",
+          "status": "official",
+          "source_url": "https://www.cathaypacific.com/cx/en_US/booking-payments/fare-types.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "seat_selection_included": {
+          "value": "Reserve seat for a fee or free selection during online check-in 48 hours prior to flight",
+          "status": "official",
+          "source_url": "https://www.cathaypacific.com/cx/en_US/booking-payments/fare-types.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "change_cancellation_policy": {
+          "value": "Rebooking allowed for a fee; non-refundable ticket",
+          "status": "official",
+          "source_url": "https://www.cathaypacific.com/cx/en_US/booking-payments/fare-types.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

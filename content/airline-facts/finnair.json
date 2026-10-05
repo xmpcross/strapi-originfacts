@@ -172,6 +172,38 @@
           "verified_by": "manual_official_source"
         }
       }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "required": [
+        "fare_name",
+        "seat_selection_included",
+        "change_cancellation_policy"
+      ],
+      "fields": {
+        "fare_name": {
+          "value": "Superlight / Light: 1 small underseat bag included on Superlight; 1 cabin bag on Light; checked bag extra fee",
+          "status": "official",
+          "source_url": "https://www.finnair.com/en/ticket-types",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "seat_selection_included": {
+          "value": "Free seat assigned at check-in 36 hours before departure; paid advance choice",
+          "status": "official",
+          "source_url": "https://www.finnair.com/en/ticket-types",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "change_cancellation_policy": {
+          "value": "Non-changeable fare class",
+          "status": "official",
+          "source_url": "https://www.finnair.com/en/ticket-types",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

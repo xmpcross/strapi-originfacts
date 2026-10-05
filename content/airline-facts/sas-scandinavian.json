@@ -160,6 +160,38 @@
           "verified_by": "manual_official_source"
         }
       }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "required": [
+        "fare_name",
+        "seat_selection_included",
+        "change_cancellation_policy"
+      ],
+      "fields": {
+        "fare_name": {
+          "value": "SAS Go Light: 1 underseat bag included; carry-on overhead bag and checked bag available for a fee",
+          "status": "official",
+          "source_url": "https://www.flysas.com/en/travel-info/baggage/ticket-types/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "seat_selection_included": {
+          "value": "Seat chosen free 30 hours prior during check-in; advance seat selection fee applies",
+          "status": "official",
+          "source_url": "https://www.flysas.com/en/travel-info/baggage/ticket-types/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "change_cancellation_policy": {
+          "value": "Non-rebookable and non-refundable",
+          "status": "official",
+          "source_url": "https://www.flysas.com/en/travel-info/baggage/ticket-types/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

@@ -1,0 +1,132 @@
+{
+  "iata": "SGN",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals",
+      "paragraphs": [
+        {
+          "text": "Tân Sơn Nhất has two separate terminal clusters. Terminal T1 (domestic) and Terminal T2 (international) stand together; the newer domestic Terminal T3 is separate from both, according to the Airports Corporation of Việt Nam, so the way in by road is different.",
+          "sources": ["vns-t3-access"]
+        },
+        {
+          "text": "Since 4am on 17 May 2025 all remaining Vietnam Airlines domestic routes have been handled at Terminal T3. Domestic flights by Vietjet Air, Pacific Airlines, Vasco, Vietravel Airlines and Bamboo Airways, and Vietnam Airlines ATR72 flights to Côn Đảo, Cà Mau and Rạch Giá, continued at Terminal T1, the airport said at the time. Check the terminal on your booking, as assignments can change.",
+          "sources": ["vns-vna-t3"]
+        }
+      ]
+    },
+    {
+      "id": "terminal-3",
+      "heading": "Terminal T3",
+      "paragraphs": [
+        {
+          "text": "Construction of Terminal T3, an investment of VND10.99 trillion, began in December 2022. The first flight from the terminal, a Vietnam Airlines departure at 5:55am on 17 April 2025, landed at Vân Đồn Airport in Quảng Ninh Province.",
+          "sources": ["tt-t3-construction", "sggp-first-flight"]
+        },
+        {
+          "text": "Terminal T3 is designed to handle 20 million passengers a year. On 19 April 2025 a pilot of electronic identification and biometric boarding was launched there.",
+          "sources": ["vns-t3-access", "vns-biometric"]
+        }
+      ]
+    },
+    {
+      "id": "between-terminals",
+      "heading": "Getting between terminals and into the city",
+      "paragraphs": [
+        {
+          "text": "To get from Terminals T1 and T2 to Terminal T3, passengers can take a taxi or the shuttle bus arranged by the airport, with an average of 20 minutes per trip between the two terminal clusters. Public buses are another way to reach T3.",
+          "sources": ["vns-t3-access"]
+        },
+        {
+          "text": "From the city centre, roads to Terminal T3 include Nam Kỳ Khởi Nghĩa Street, Nguyễn Văn Trỗi Street and the Hoàng Văn Thụ underpass to Trần Quốc Hoàn Street, or Phạm Văn Đồng Street, Trường Sơn and Trần Quốc Hoàn Street.",
+          "sources": ["vns-t3-access"]
+        },
+        {
+          "text": "In late August 2026 the airport opened a new internal road linking International Terminal T2 with Domestic Terminal T1, so vehicles leaving the international terminal can continue straight to T1 instead of exiting onto Trường Sơn Street. The connection is being widened from one lane to two.",
+          "sources": ["tt-new-exit"]
+        }
+      ]
+    },
+    {
+      "id": "lounges",
+      "heading": "Lounges",
+      "paragraphs": [
+        {
+          "text": "Since 15 October 2025 Vietnam Airlines has run a Check-in Lounge at Terminal T3: a private space for checking in, open to VIP and CIP passengers, Lotusmiles Million Milers, Business Class passengers and Platinum members.",
+          "sources": ["vna-checkin-lounge"]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Which terminal do Vietnam Airlines domestic flights use at Tan Son Nhat?",
+      "a": "Terminal T3, since 17 May 2025, except Vietnam Airlines ATR72 flights to Côn Đảo, Cà Mau and Rạch Giá, which stayed at Terminal T1. Check the terminal on your booking.",
+      "sources": ["vns-vna-t3"]
+    },
+    {
+      "q": "How do I get from the international terminal to Terminal T3?",
+      "a": "By taxi or the shuttle bus arranged by the airport; the airport puts the trip between the two terminal clusters at about 20 minutes on average.",
+      "sources": ["vns-t3-access"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "vns-t3-access",
+      "title": "How to get to Tân Sơn Nhất International Airport’s new domestic passenger terminal T3",
+      "publisher": "Việt Nam News (vietnamnews.vn)",
+      "url": "https://vietnamnews.vn/society/1716062/how-to-get-to-tan-son-nhat-international-airport-s-new-domestic-passenger-terminal-t3.html",
+      "published": "2025-04-17",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "vns-vna-t3",
+      "title": "Vietnam Airlines to relocate all domestic flights to Tân Sơn Nhất Airport’s new Terminal 3",
+      "publisher": "Việt Nam News (vietnamnews.vn)",
+      "url": "https://vietnamnews.vn/economy/1717665/vietnam-airlines-to-relocate-all-domestic-flights-to-tan-son-nhat-airport-s-new-terminal-3.html",
+      "published": "2025-05-14",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "tt-t3-construction",
+      "title": "Ho Chi Minh City City airport’s T3 terminal takes shape",
+      "publisher": "Tuoi Tre News (tuoitrenews.vn)",
+      "url": "https://news.tuoitre.vn/ho-chi-minh-city-city-airports-t3-terminal-takes-shape-10383637.htm",
+      "published": "2024-12-29",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "sggp-first-flight",
+      "title": "Tan Son Nhat International Airport's terminal T3 operates first flight",
+      "publisher": "SGGP News (en.sggp.org.vn)",
+      "url": "https://en.sggp.org.vn/tan-son-nhat-international-airports-terminal-t3-operates-first-flight-post117027.html",
+      "published": "2025-04-17",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "vns-biometric",
+      "title": "Việt Nam launches pilot biometric boarding at Tân Sơn Nhất Int’l Airport",
+      "publisher": "Việt Nam News (vietnamnews.vn)",
+      "url": "https://vietnamnews.vn/society/1716178/viet-nam-launches-pilot-biometric-boarding-at-tan-son-nhat-int-l-airport.html",
+      "published": "2025-04-19",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "tt-new-exit",
+      "title": "Tan Son Nhat Airport opens new exit linking international and domestic terminals",
+      "publisher": "Tuoi Tre News (tuoitrenews.vn)",
+      "url": "https://news.tuoitre.vn/tan-son-nhat-airport-opens-new-exit-linking-international-and-domestic-terminals-10326082911364742.htm",
+      "published": "2026-08-29",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "vna-checkin-lounge",
+      "title": "New Check-in Lounge Service at Tan Son Nhat Intl Airport – Terminal 3",
+      "publisher": "Vietnam Airlines (enews.vietnamairlines.com)",
+      "url": "https://enews.vietnamairlines.com/2025/10/launch-of-the-check-in-lounge-service-at-tan-son-nhat-airport/",
+      "published": "2025-10-15",
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

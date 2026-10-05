@@ -1,0 +1,108 @@
+{
+  "iata": "CMB",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals",
+      "paragraphs": [
+        {
+          "text": "Bandaranaike International Airport, the main of Sri Lanka's five international airports, has three passenger terminals. Terminal 1, opened in 1967, is the largest and oldest; all arrivals and departures take place through its gates, which are reached from a single passenger concourse.",
+          "sources": [
+            "dm-terminal-2"
+          ]
+        },
+        {
+          "text": "After the security checks, gates 6 to 14 are on the upper floor and the remaining gates on the lower floor. Terminal 3, opened in November 2012, serves domestic flights.",
+          "sources": [
+            "dm-terminal-2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "terminal-2",
+      "heading": "The delayed Terminal 2",
+      "paragraphs": [
+        {
+          "text": "Terminal 2 was scheduled to begin construction in April 2017 and be completed in 2020, with eight gates (two able to take the Airbus A380), five floors, a car park and a hotel. Plans were set back by the COVID-19 pandemic and the economic crisis; in May 2025 the airport's chairman told the Daily Mirror that bids had been invited from two Japanese companies.",
+          "sources": [
+            "dm-terminal-2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Getting to and from Colombo",
+      "paragraphs": [
+        {
+          "text": "Since June 2025 the Route 187 luxury air-conditioned bus has run between the airport and Colombo Fort on the Colombo–Katunayake Expressway, avoiding city traffic. It boards at the Departure Terminal Outer Porch and runs 24 hours a day.",
+          "sources": [
+            "dm-route-187"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lounges",
+      "heading": "Lounges",
+      "paragraphs": [
+        {
+          "text": "Terminal 1 has two main passenger lounges, Serendib and Palm Spirit.",
+          "sources": [
+            "dm-terminal-2"
+          ]
+        },
+        {
+          "text": "In August 2022 the airport opened the Golden Route arrival lounge for premium passengers, who can use it to complete immigration, emigration and customs checks without queuing.",
+          "sources": [
+            "dm-golden-route"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Is there a bus from Colombo airport to the city?",
+      "a": "Yes. Since June 2025 the Route 187 luxury air-conditioned bus has run 24 hours a day between the airport and Colombo Fort on the expressway, boarding at the Departure Terminal Outer Porch.",
+      "sources": [
+        "dm-route-187"
+      ]
+    },
+    {
+      "q": "Which terminal do international flights use at Colombo airport?",
+      "a": "Terminal 1. Terminal 3 serves domestic flights, and Terminal 2 had not yet been built as of May 2025.",
+      "sources": [
+        "dm-terminal-2"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "dm-terminal-2",
+      "title": "Will delays in completing Airport terminal 2 cause major losses?",
+      "publisher": "Daily Mirror (dailymirror.lk)",
+      "url": "https://www.dailymirror.lk/news-features/Will-delays-in-completing-Airport-terminal-2-cause-major-losses/131-310167",
+      "published": "2025-05-30",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "dm-route-187",
+      "title": "New airport–Colombo luxury bus service now in operation",
+      "publisher": "Daily Mirror (dailymirror.lk)",
+      "url": "https://www.dailymirror.lk/print/breaking-news/New-airportColombo-luxury-bus-service-now-in-operation/108-310654",
+      "published": "2025-06-04",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "dm-golden-route",
+      "title": "Premium experience for high-income airline passengers at BIA",
+      "publisher": "Daily Mirror (dailymirror.lk)",
+      "url": "https://www.dailymirror.lk/breaking-news/Premium-experience-for-high-income-airline-passengers-at-BIA/108-243355",
+      "published": "2022-08-19",
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

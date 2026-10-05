@@ -5,6 +5,7 @@ import {
   listAirports,
   listCountries,
   listDestinations,
+  listRoutes,
   fetchRouteCoverage,
 } from '@/lib/strapi';
 import { carrierOperatesRoute } from '@/lib/route-carriers';
@@ -15,6 +16,8 @@ import { airportIsIndexable } from '@/lib/airport-index-gate';
 import { airlineGuideIsPublished, airlineIsIndexable } from '@/lib/airline-tier';
 import { airportPath } from '@/lib/airport-slugs';
 import { getAirportGuide } from '@/lib/airport-guide';
+import { getRouteGuide } from '@/lib/route-guide';
+import removedPages from '@/data/removed-pages.json';
 
 import { getAllAuthors } from '@/lib/authors';
 
@@ -45,12 +48,13 @@ function airportLastModified(a: { iata: string; updatedAt?: string | null; publi
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
-  const [articlesRes, destinations, airlines, airports, countries, coverage] = await Promise.all([
+  const [articlesRes, destinations, airlines, airports, countries, routes, coverage] = await Promise.all([
     listArticleIndex().catch(() => ({ data: [], meta: null as never })),
     listDestinations().catch(() => []),
     listAirlines().catch(() => []),
     listAirports().catch(() => []),
     listCountries().catch(() => []),
+    listRoutes().catch(() => []),
     fetchRouteCoverage((r, c) => carrierOperatesRoute(r, c.slug)).catch(() => ({ originIatas: new Set<string>(), carrierSlugs: new Set<string>() })),
   ]);
 
@@ -129,6 +133,28 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.5,
     }));
 
+  // Every flight route page. They are indexable (no noindex) and each has live
+  // fares, flights and airport facts; routes with a sourced guide also carry its
+  // verified date in lastmod. Retired routes 301 and are never listed, even if a
+  // record is re-created in the CMS.
+  const retiredRoutes = new Set(removedPages.routes);
+  const routePaths: MetadataRoute.Sitemap = routes
+    .filter((r) => r.slug && !retiredRoutes.has(r.slug))
+    .map((r) => {
+      const guide = getRouteGuide(r.slug);
+      const dates = r as { updatedAt?: string | null; publishedAt?: string | null };
+      const cms = dates.updatedAt || dates.publishedAt;
+      const guideDate = guide ? new Date(`${guide.verified_at}T00:00:00Z`) : null;
+      const cmsDate = cms ? new Date(cms) : null;
+      const latest = guideDate && (!cmsDate || guideDate > cmsDate) ? guideDate : cmsDate;
+      return {
+        url: `${SITE_URL}/flight-routes/${r.slug}`,
+        ...(latest && !Number.isNaN(latest.getTime()) ? { lastModified: latest } : {}),
+        changeFrequency: 'weekly' as const,
+        priority: 0.5,
+      };
+    });
+
   // /countries/<code> permanently redirects to /destinations/<slug>; the
   // destination pages are already listed, so the redirecting URLs stay out
   // of the sitemap (Google flags sitemaps full of redirects).
@@ -157,6 +183,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...destinationPaths,
     ...airlinePaths,
     ...airportPaths,
+    ...routePaths,
     ...countryPaths,
     ...legalPaths,
   ];

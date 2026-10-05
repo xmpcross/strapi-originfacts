@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import type { StrapiAirport, StrapiRoute } from '@/lib/strapi';
@@ -5,6 +6,8 @@ import type { AirportWeather } from '@/lib/open-meteo';
 import { weatherLabel } from '@/lib/open-meteo';
 import SectionNav, { type NavItem } from './SectionNav';
 import { displayUrl, type Faq } from './faqs';
+import { routeCoverage, type AirportCityPhoto } from '@/lib/airport-v2';
+import { formatCeasedOn } from '@/lib/airline-status';
 
 /**
  * Airport page, v2 layout — a sibling of the airline v2 page
@@ -23,10 +26,19 @@ import { displayUrl, type Faq } from './faqs';
  *   - topics with no sourced data (terminals, ground transport, parking,
  *     lounges) render a "not yet verified" state that links to the airport's
  *     own site instead of generic prose;
- *   - the CMS `about` prose is not shown: it is unsourced generated text.
+ *   - the CMS `about` prose is not shown: it is unsourced generated text;
+ *   - carriers Wikidata records as ceased are left out of the airline list and
+ *     counts, and named in a footnote with their date;
+ *   - route counts always say the records are partial (lib/airport-v2.ts
+ *     routeCoverage), more strongly when only a few routes are tracked;
+ *   - the header photo is a reviewed real photograph of the city the airport
+ *     serves (lib/airport-v2.ts REVIEWED_CITY_PHOTOS), captioned as the city,
+ *     or nothing at all — never the airport record's generated hero image.
  */
 
 export type AirportV2Airline = { slug: string; name: string; iataCode?: string; logoUrl?: string | null };
+
+export type AirportV2CeasedAirline = { slug: string; name: string; ceasedOn: string; wikidata: string };
 
 export type AirportV2Nearby = {
   iata: string;
@@ -41,8 +53,14 @@ export type AirportGuideV2Props = {
   airport: StrapiAirport;
   breadcrumb: { name: string; href: string }[];
   routes: StrapiRoute[];
+  /** Carriers on the route records that are still operating, as far as the site knows. */
   airlines: AirportV2Airline[];
+  /** Carriers on the route records with a sourced cessation date — listed in a footnote only. */
+  ceasedAirlines: AirportV2CeasedAirline[];
+  /** All route records from this airport and how many `routes` holds. */
+  routeCount: { tracked: number; shown: number };
   countryCount: number;
+  cityPhoto: AirportCityPhoto | null;
   /** Contact fields from the airport-info dataset. */
   info: {
     icao?: string | null;
@@ -103,6 +121,8 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
   const hasContact = Boolean(info.phone || officialSite);
   const hasRoutes = routes.length > 0;
   const officialHost = officialSite ? displayUrl(officialSite.url) : null;
+  const coverage = routeCoverage({ name, code, tracked: p.routeCount.tracked, shown: routes.length });
+  const photo = p.cityPhoto;
 
   const navItems: NavItem[] = [
     { id: 'details', label: 'Airport details', status: 'data' },
@@ -142,57 +162,87 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
             </ol>
           </nav>
 
-          <div className="mt-6 flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
-            <div className="flex min-w-0 items-start gap-4 sm:gap-6">
-              <div
-                aria-hidden
-                className="flex h-16 w-16 flex-none items-center justify-center rounded-[0.3rem] bg-forest-950 sm:h-24 sm:w-24"
-              >
-                <PlaneIcon className="h-8 w-8 text-white sm:h-11 sm:w-11" />
+          <div
+            className={
+              photo
+                ? 'mt-6 grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] lg:items-start lg:gap-10'
+                : 'mt-6 flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between'
+            }
+          >
+            <div className={photo ? 'flex min-w-0 flex-col gap-6' : 'contents'}>
+              <div className="flex min-w-0 items-start gap-4 sm:gap-6">
+                <div
+                  aria-hidden
+                  className="flex h-16 w-16 flex-none items-center justify-center rounded-[0.3rem] bg-forest-950 sm:h-24 sm:w-24"
+                >
+                  <PlaneIcon className="h-8 w-8 text-white sm:h-11 sm:w-11" />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary-emphasis">Airport guide</p>
+                  <h1 className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-3xl leading-tight sm:text-4xl">
+                    {name}
+                    <span className="rounded-[0.3rem] bg-forest-950 px-2 py-0.5 font-mono text-sm font-bold tracking-wider text-white">
+                      <span className="sr-only">IATA code </span>
+                      {code}
+                    </span>
+                  </h1>
+                  <p className="mt-3 max-w-2xl text-base leading-7 text-forest-900/80">
+                    Codes, location and contact details for {name}
+                    {hasRoutes ? ', the airlines and routes in Originfacts’ route records,' : ''} and where to check
+                    terminal and transport details. Each figure shows where it came from.
+                  </p>
+                </div>
               </div>
-              <div className="min-w-0">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary-emphasis">Airport guide</p>
-                <h1 className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-3xl leading-tight sm:text-4xl">
-                  {name}
-                  <span className="rounded-[0.3rem] bg-forest-950 px-2 py-0.5 font-mono text-sm font-bold tracking-wider text-white">
-                    <span className="sr-only">IATA code </span>
-                    {code}
-                  </span>
-                </h1>
-                <p className="mt-3 max-w-2xl text-base leading-7 text-forest-900/80">
-                  Codes, location and contact details for {name}
-                  {hasRoutes ? ', the airlines and routes in Originfacts’ route records,' : ''} and where to check
-                  terminal and transport details. Each figure shows where it came from.
-                </p>
+
+              <div className="flex flex-none flex-wrap gap-2 self-start">
+                {officialSite && (
+                  <a
+                    href={officialSite.url}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="inline-flex items-center justify-center gap-2 rounded-[0.3rem] border border-forest-900/15 bg-white px-4 py-2.5 text-sm font-semibold text-forest-950 transition hover:border-primary-emphasis hover:text-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-emphasis"
+                  >
+                    {officialHost}
+                    <ExternalIcon />
+                    <span className="sr-only">(official website, opens in a new tab)</span>
+                  </a>
+                )}
+                {p.mapHref && (
+                  <a
+                    href={p.mapHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-[0.3rem] border border-forest-900/15 bg-white px-4 py-2.5 text-sm font-semibold text-forest-950 transition hover:border-primary-emphasis hover:text-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-emphasis"
+                  >
+                    View map
+                    <ExternalIcon />
+                    <span className="sr-only">(Google Maps, opens in a new tab)</span>
+                  </a>
+                )}
               </div>
             </div>
 
-            <div className="flex flex-none flex-wrap gap-2 self-start">
-              {officialSite && (
-                <a
-                  href={officialSite.url}
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                  className="inline-flex items-center justify-center gap-2 rounded-[0.3rem] border border-forest-900/15 bg-white px-4 py-2.5 text-sm font-semibold text-forest-950 transition hover:border-primary-emphasis hover:text-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-emphasis"
-                >
-                  {officialHost}
-                  <ExternalIcon />
-                  <span className="sr-only">(official website, opens in a new tab)</span>
-                </a>
-              )}
-              {p.mapHref && (
-                <a
-                  href={p.mapHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-[0.3rem] border border-forest-900/15 bg-white px-4 py-2.5 text-sm font-semibold text-forest-950 transition hover:border-primary-emphasis hover:text-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-emphasis"
-                >
-                  View map
-                  <ExternalIcon />
-                  <span className="sr-only">(Google Maps, opens in a new tab)</span>
-                </a>
-              )}
-            </div>
+            {photo && (
+              <figure className="min-w-0" data-testid="airport-v2-city-photo">
+                <div className="relative aspect-[16/10] overflow-hidden rounded-[0.3rem] bg-forest-900/5">
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    priority
+                    sizes="(min-width: 1024px) 26rem, calc(100vw - 2rem)"
+                    className="object-cover"
+                  />
+                </div>
+                <figcaption className="mt-2 text-xs leading-5 text-forest-900/75">
+                  {photo.city}, the city the airport serves — not a photo of {name}. From our{' '}
+                  <Link href={photo.guideHref} className="text-primary-emphasis underline-offset-2 hover:underline">
+                    {photo.city} travel guide
+                  </Link>
+                  .
+                </figcaption>
+              </figure>
+            )}
           </div>
 
           <dl
@@ -257,21 +307,37 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
           )}
 
           {airlines.length > 0 && (
-            <Tile title="Airlines in our route data" source={`Route records${routesDate ? ` · ${routesDate}` : ''}`} section="airlines" linkText="See airlines">
+            <Tile title="Airlines on tracked routes" source={`Route records${routesDate ? ` · ${routesDate}` : ''}`} section="airlines" linkText="See airlines">
               <p className="text-[15px] font-semibold leading-6 text-forest-950">
-                {airlines.length} {airlines.length === 1 ? 'airline' : 'airlines'}
+                {airlines.length} {airlines.length === 1 ? 'airline' : 'airlines'} on{' '}
+                {routes.length === 1 ? 'the 1 route' : `the ${routes.length} routes`} {coverage.shownNote ? 'shown' : 'tracked'}
               </p>
               <p className="text-sm leading-6 text-forest-900/80">{airlines.map((a) => a.name).join(', ')}</p>
+              <p className="text-xs leading-5 text-forest-900/70">Not a complete list of airlines at {code}.</p>
             </Tile>
           )}
 
           {hasRoutes && (
-            <Tile title="Routes in our route data" source={`Route records${routesDate ? ` · ${routesDate}` : ''}`} section="routes" linkText="See routes">
+            <Tile title="Route records" source={`Route records${routesDate ? ` · ${routesDate}` : ''}`} section="routes" linkText="See routes">
               <p className="text-[15px] font-semibold leading-6 text-forest-950">
-                {destinations.length} {destinations.length === 1 ? 'destination' : 'destinations'}
-                {p.countryCount > 0 && ` in ${p.countryCount} ${p.countryCount === 1 ? 'country' : 'countries'}`}
+                {coverage.headline}
+                {coverage.shownNote ? ` · ${coverage.shownNote}` : ''}
               </p>
-              <p className="text-sm leading-6 text-forest-900/80">{destinations.slice(0, 6).map((d) => d.name).join(', ')}{destinations.length > 6 ? ' and more' : ''}</p>
+              <p className="text-sm leading-6 text-forest-900/80">
+                To {destinations.slice(0, 6).map((d) => d.name).join(', ')}
+                {destinations.length > 6 ? ' and more' : ''}
+              </p>
+              <p className="text-xs leading-5 text-forest-900/70" data-testid="airport-v2-route-caveat">
+                {coverage.sparse ? 'A small sample — not' : 'Not'} {code}’s full network.
+                {officialSite && (
+                  <>
+                    {' '}Full list:{' '}
+                    <ExternalLink href={officialSite.url} className="[overflow-wrap:anywhere]">
+                      {officialHost}
+                    </ExternalLink>
+                  </>
+                )}
+              </p>
             </Tile>
           )}
 
@@ -372,7 +438,8 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
               >
                 <p className="text-[15px] leading-7 text-forest-900/85">
                   The airlines listed on the {routes.length === 1 ? 'route' : `${routes.length} routes`} Originfacts
-                  tracks from {code}. This is not a complete list of airlines at {name}.
+                  {coverage.shownNote ? ' shows' : ' tracks'} from {code}. {coverage.caveat} This is not a complete list
+                  of airlines at {name}.
                 </p>
                 <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
                   {airlines.map((a) => (
@@ -397,6 +464,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                     </li>
                   ))}
                 </ul>
+                <CeasedNote airlines={p.ceasedAirlines} />
               </Shell>
             )}
 
@@ -409,9 +477,21 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                 source={<DatasetNote date={routesDate} />}
               >
                 <p className="text-[15px] leading-7 text-forest-900/85">
-                  {routes.length === 1 ? 'The route' : `The ${routes.length} routes`} Originfacts tracks from {code}, with
-                  the distance and estimated flight time in each route record. Check live schedules with the airline.
+                  {coverage.shownNote
+                    ? `Originfacts tracks ${coverage.tracked} routes from ${code} so far; the ${routes.length} shown here are listed`
+                    : `${routes.length === 1 ? 'The route' : `The ${routes.length} routes`} Originfacts tracks from ${code} so far, listed`}{' '}
+                  with the distance and estimated flight time in each route record. {coverage.caveat} Check live schedules
+                  with the airline.
                 </p>
+                {officialSite && (
+                  <p className="text-sm text-forest-900/85" data-testid="airport-v2-full-network-link">
+                    <span className="font-semibold text-forest-950">Full list of destinations: </span>
+                    <ExternalLink href={officialSite.url} className="[overflow-wrap:anywhere]">
+                      {officialHost}
+                    </ExternalLink>{' '}
+                    <span className="text-forest-900/70">(the airport’s official site)</span>
+                  </p>
+                )}
                 <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
                   {routes.map((r) => (
                     <li key={r.id}>
@@ -438,6 +518,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                     </li>
                   ))}
                 </ul>
+                {airlines.length === 0 && <CeasedNote airlines={p.ceasedAirlines} />}
               </Shell>
             ) : (
               <Shell id="routes" title={`Routes from ${code}`} tone="muted" badge={<Badge tone="pending">No route records yet</Badge>}>
@@ -571,6 +652,11 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                 {hasRoutes && (
                   <SourceRow what="Airlines and routes" date={routesDate}>
                     Originfacts route records — the routes we track, not a full schedule
+                  </SourceRow>
+                )}
+                {p.ceasedAirlines.length > 0 && (
+                  <SourceRow what="Airlines left out" date={null}>
+                    Wikidata “dissolved, abolished or demolished date” (P576) for each carrier
                   </SourceRow>
                 )}
                 {nearby.length > 0 && (
@@ -723,6 +809,26 @@ function Fact({
       </dd>
       {source && <dd className="mt-1 text-xs text-forest-900/70">From {source}</dd>}
     </div>
+  );
+}
+
+function CeasedNote({ airlines }: { airlines: AirportV2CeasedAirline[] }) {
+  if (!airlines.length) return null;
+  return (
+    <p className="text-sm leading-6 text-forest-900/75" data-testid="airport-v2-ceased-note">
+      Left out because Wikidata records {airlines.length === 1 ? 'it' : 'them'} as no longer operating:{' '}
+      {airlines.map((a, i) => (
+        <span key={a.slug}>
+          {i > 0 && (i === airlines.length - 1 ? ' and ' : ', ')}
+          <Link href={`/airlines/${a.slug}`} className="text-primary-emphasis underline-offset-2 hover:underline">
+            {a.name}
+          </Link>{' '}
+          (ceased {formatCeasedOn(a.ceasedOn)},{' '}
+          <ExternalLink href={a.wikidata}>Wikidata</ExternalLink>)
+        </span>
+      ))}
+      .
+    </p>
   );
 }
 

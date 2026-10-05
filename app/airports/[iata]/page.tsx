@@ -4,6 +4,7 @@ import {
   getAirport,
   listAirportSlugIndex,
   listRoutesFromAirport,
+  countRoutesFromAirport,
   listAirports,
   listDestinations,
   mediaUrl,
@@ -37,6 +38,7 @@ import { buildMetaDescription, compactTitle } from '@/lib/seo';
 import { airportUsesTemplateV2 } from '@/lib/airport-template-v2';
 import AirportGuideV2, { formatCoordinates, routeVintage } from '@/components/airport-v2/AirportGuideV2';
 import { airportGuideV2Faqs } from '@/components/airport-v2/faqs';
+import { airportCityPhoto, airportV2MetaDescription, splitCeasedAirlines } from '@/lib/airport-v2';
 
 export const revalidate = 60;
 
@@ -118,10 +120,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const metaTitle = compactTitle(
     /\b(airport|airfield|aerodrome|airstrip)\b/i.test(a.name) ? `${a.name} (${a.iata}) guide` : `${a.name} Airport (${a.iata}) guide`,
   );
-  const description = buildMetaDescription([
-    a.about,
-    `${a.name} (${a.iata})${a.city ? ` in ${a.city}` : ''}${a.country ? `, ${a.country}` : ''}: codes, location, airlines, top destinations, terminal notes and ground-transfer basics.`,
-  ]);
+  // v2 pages describe themselves from the fields they show; the CMS `about`
+  // text is unsourced and is not shown on them. The older layout keeps its
+  // description unchanged.
+  const description = airportUsesTemplateV2(airportSlug(a, allAirports))
+    ? buildMetaDescription([
+        airportV2MetaDescription({
+          name: a.name,
+          iata: a.iata,
+          icao: a.icao,
+          city: a.city,
+          country: a.country,
+          hasRoutes: routes.length > 0,
+        }),
+      ])
+    : buildMetaDescription([
+        a.about,
+        `${a.name} (${a.iata})${a.city ? ` in ${a.city}` : ''}${a.country ? `, ${a.country}` : ''}: codes, location, airlines, top destinations, terminal notes and ground-transfer basics.`,
+      ]);
   return {
     title: metaTitle,
     description,
@@ -278,9 +294,10 @@ export default async function AirportPage({ params }: Props) {
     ...(cityDestination ? [{ name: cityDestination.name, url: `/destinations/${cityDestination.slug}` }] : []),
   ];
 
-  // v2 template, allowlisted slugs only (lib/airport-template-v2.ts). Same data,
-  // metadata, robots and JSON-LD blocks as below; only the layout and the FAQ
-  // (built from the facts the v2 page shows) differ.
+  // v2 template (lib/airport-template-v2.ts). Same data, robots, canonical and
+  // airport/breadcrumb JSON-LD as below. Differs in layout, FAQ (built from the
+  // facts the v2 page shows), WebPage description (no CMS `about`), the
+  // airline list (ceased carriers left out) and the route-count framing.
   if (airportUsesTemplateV2(airportSlug(airport, allAirports))) {
     const v2Lat = airport.latitude ?? airportInfo?.latitude;
     const v2Lon = airport.longitude ?? airportInfo?.longitude;
@@ -300,6 +317,38 @@ export default async function AirportPage({ params }: Props) {
       address: airportInfoAddress(airportInfo),
       phone: airportInfo?.phone,
     };
+    // Carriers Wikidata records as ceased are left out of the list, the counts,
+    // the FAQ and its JSON-LD (joined on the route record's airline slug).
+    const { operating: v2Airlines, ceased: v2CeasedRaw } = splitCeasedAirlines(airlineCards);
+    const v2Ceased = v2CeasedRaw.map((a) => ({
+      slug: a.slug,
+      name: a.name,
+      ceasedOn: a.ceased.ceasedOn,
+      wikidata: a.ceased.wikidata.replace(/^http:\/\//i, 'https://'),
+    }));
+    const v2RouteCount = {
+      tracked: routes.length ? await countRoutesFromAirport(airport.iata).catch(() => routes.length) : 0,
+      shown: routes.length,
+    };
+    const v2CityPhoto = airportCityPhoto(cityDestination, (path) => mediaUrl({ url: path }) ?? path);
+    const v2Description = airportV2MetaDescription({
+      name: airport.name,
+      iata: airport.iata,
+      icao: airport.icao,
+      city: airport.city,
+      country: airport.country,
+      hasRoutes: routes.length > 0,
+    });
+    const v2WebPageSchema = entityWebPageJsonLd({
+      name: `${airport.name} (${airport.iata}) Airport Guide`,
+      description: v2Description,
+      url,
+      // The page shows no airport image (the record's hero is generated); the
+      // city photo is used when the page shows one, else the site default.
+      image: v2CityPhoto?.src ?? null,
+      author: await resolveAuthor(),
+      mainEntity: { '@id': `${url}#airport` },
+    });
     const v2Faqs = airportGuideV2Faqs({
       name: airport.name,
       iata: airport.iata,
@@ -311,14 +360,16 @@ export default async function AirportPage({ params }: Props) {
       address: v2Info.address,
       phone: v2Info.phone,
       officialSite: v2OfficialSite?.url,
-      airlines: airlineCards.map((a) => a.name),
+      airlines: v2Airlines.map((a) => a.name),
+      ceasedAirlines: v2Ceased.map((a) => a.name),
+      routeCount: v2RouteCount,
       destinations: summary.destinationNames,
       countryCount: summary.countryCount,
       routeVintage: routeVintage(routes),
     });
     return (
       <>
-        <JsonLd data={articleSchema} />
+        <JsonLd data={v2WebPageSchema} />
         <JsonLd data={airportJsonLd(airport, url)} />
         <JsonLd data={faqJsonLd(v2Faqs)} />
         <JsonLd data={breadcrumbJsonLd([...breadcrumbTrail, { name: `${airport.name} (${airport.iata})`, url: canonicalPath }])} />
@@ -326,7 +377,10 @@ export default async function AirportPage({ params }: Props) {
           airport={airport}
           breadcrumb={breadcrumbTrail.map((b) => ({ name: b.name, href: b.url }))}
           routes={routes}
-          airlines={airlineCards}
+          airlines={v2Airlines}
+          ceasedAirlines={v2Ceased}
+          routeCount={v2RouteCount}
+          cityPhoto={v2CityPhoto}
           countryCount={summary.countryCount}
           info={v2Info}
           officialSite={v2OfficialSite}

@@ -127,6 +127,39 @@
           "verified_by": "manual_official_source"
         }
       }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "lede": "These are standards published by the carrier for delays and cancellations. On codeshares or interline itineraries, the operating carrier is responsible.",
+      "required": [
+        "care",
+        "rebooking_refund",
+        "compensation"
+      ],
+      "fields": {
+        "care": {
+          "value": "When a flight is delayed or cancelled within carrier control, passengers are entitled to meals, refreshments, communication access, and hotel accommodation with transport for overnight delays.",
+          "status": "official",
+          "source_url": "https://main.eastarjet.com",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "rebooking_refund": {
+          "value": "For disruptions within carrier control, the airline rebooks passengers on the next available flight or provides a full refund for unused flight segments if delayed by 3 hours or more.",
+          "status": "official",
+          "source_url": "https://main.eastarjet.com",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "compensation": {
+          "value": "Statutory or policy compensation applies for cancellations or long delays within carrier control according to applicable aviation passenger rights regulations.",
+          "status": "official",
+          "source_url": "https://main.eastarjet.com",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

@@ -395,10 +395,52 @@ const sentence = (parts: (string | false | null | undefined)[]) =>
   parts.filter(Boolean).join('');
 
 export function airportIntro(a: StrapiAirport, s?: RouteSummary): string {
-  const code = a.icao ? `${a.iata}/${a.icao}` : a.iata;
-  const placeStr = [a.country ? a.country : '', a.region ? `(${a.region})` : ''].filter(Boolean).join(' ') || 'its home region';
-  const netStr = s && s.destinationCount > 0 ? ` tracking ${pluralise(s.destinationCount, 'destination')} across ${pluralise(s.countryCount || 1, 'country', 'countries')}` : '';
-  return `Navigating ${a.name} (${code}) requires understanding terminal transfer layouts, local ground transport links into ${a.city || 'the metropolitan area'}, and peak flight departure hours before travel. Situated in ${placeStr}, the airfield functions as a critical regional transit hub${netStr}, enabling passengers to evaluate connecting routes, airline schedules, and airport amenities efficiently.`;
+  const iata = a.iata.toUpperCase();
+  const codeStr = a.icao ? `${iata}/${a.icao.toUpperCase()}` : iata;
+  const city = a.city ? a.city.trim() : null;
+  const country = a.country ? a.country.trim() : null;
+  const region = a.region ? a.region.trim() : null;
+
+  const place = [city, country].filter(Boolean).join(', ') || country || region || 'its home region';
+
+  const destCount = s?.destinationCount ?? 0;
+  const countryCount = s?.countryCount ?? 0;
+  const carrierCount = s?.carrierCount ?? 0;
+  const topCarriers = s?.carriers?.map((c) => c.name).slice(0, 4) ?? [];
+  const topDests = s?.destinationNames?.slice(0, 4) ?? [];
+
+  // Paragraph 1: Primary identity, geographic placement & airfield operational role
+  let p1 = `${a.name} (${codeStr}) is the primary air passenger gateway serving ${place}`;
+  if (region && !place.includes(region)) {
+    p1 += ` in ${region}`;
+  }
+  p1 += `.`;
+
+  if (a.timezone) {
+    p1 += ` Operating on ${a.timezone} local time`;
+    if (typeof a.latitude === 'number' && typeof a.longitude === 'number') {
+      p1 += ` at coordinates ${a.latitude.toFixed(3)}°, ${a.longitude.toFixed(3)}°`;
+    }
+    p1 += `, the airfield functions as an active commercial transit hub for scheduled regional and international flights.`;
+  } else if (typeof a.latitude === 'number' && typeof a.longitude === 'number') {
+    p1 += ` Located at coordinates ${a.latitude.toFixed(3)}°, ${a.longitude.toFixed(3)}°, the airfield connects passengers with regional flight routes and destination hubs.`;
+  } else {
+    p1 += ` The airfield connects air travelers with essential regional transit routes and schedule options.`;
+  }
+
+  // Paragraph 2: Real route network & practical traveler navigation advice
+  let p2 = '';
+  if (destCount > 0 && carrierCount > 0) {
+    const carrierText = topCarriers.length > 0 ? `, with primary carrier operations including ${listProse(topCarriers, 4)}` : '';
+    const destText = topDests.length > 0 ? `, connecting key routes to ${listProse(topDests, 4)}` : '';
+    p2 = `Originfacts tracks ${pluralise(destCount, 'destination')}${countryCount > 1 ? ` across ${pluralise(countryCount, 'country', 'countries')}` : ''} departing from ${iata}${carrierText}${destText}. Passengers traveling through ${a.name} are advised to verify terminal assignments, compare ground transport links into ${city || 'town'}, and plan check-in times with their operating airline before departure.`;
+  } else if (destCount > 0) {
+    p2 = `Originfacts tracks ${pluralise(destCount, 'destination')} connected with ${iata}. Travelers using ${a.name} should confirm terminal arrangements, local ground transport links into ${city || 'the metropolitan area'}, and check-in cut-off deadlines directly with their airline.`;
+  } else {
+    p2 = `Travelers navigating ${a.name} (${iata}) are encouraged to confirm terminal layouts, ground transport connections into ${city || 'the city center'}, and flight schedules with their operating carrier prior to travel.`;
+  }
+
+  return `${p1} ${p2}`;
 }
 
 export function airlineIntro(a: StrapiAirline, s?: RouteSummary): string {

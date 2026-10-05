@@ -1,7 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  CATEGORY_TEMPLATE_V2_SLUGS,
+  CATEGORY_TEMPLATE_V2_DEFAULT,
+  CATEGORY_TEMPLATE_V2_EXCLUDED,
   CATEGORY_V2_STANDFIRSTS,
   categoryUsesTemplateV2,
 } from '../lib/category-template-v2';
@@ -19,12 +20,19 @@ const article = (slug: string, over: Partial<StrapiArticle> = {}): StrapiArticle
   ...over,
 });
 
-test('category v2: only Hotels is allowlisted', () => {
-  assert.deepEqual([...CATEGORY_TEMPLATE_V2_SLUGS], ['hotels']);
-  assert.equal(categoryUsesTemplateV2('hotels'), true);
-  assert.equal(categoryUsesTemplateV2('HOTELS'), true);
-  assert.equal(categoryUsesTemplateV2('flights'), false);
+test('category v2: the default for every category except destinations', () => {
+  assert.equal(CATEGORY_TEMPLATE_V2_DEFAULT, true);
+  assert.deepEqual([...CATEGORY_TEMPLATE_V2_EXCLUDED], ['destinations']);
+  for (const slug of ['hotels', 'HOTELS', 'flights', 'travel-tips', 'car-rentals']) {
+    assert.equal(categoryUsesTemplateV2(slug), true, slug);
+  }
   assert.equal(categoryUsesTemplateV2('destinations'), false);
+});
+
+test('category v2: every v2 category in the nav has a standfirst', () => {
+  for (const slug of ['hotels', 'flights', 'travel-tips', 'car-rentals']) {
+    assert.ok(CATEGORY_V2_STANDFIRSTS[slug], slug);
+  }
 });
 
 test('category v2: standfirsts make no first-hand or ranking claims', () => {

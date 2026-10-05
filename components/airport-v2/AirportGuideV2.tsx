@@ -1,6 +1,31 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
+import {
+  ArrowRight,
+  BookOpenCheck,
+  Building2,
+  CloudSun,
+  Compass,
+  Gauge,
+  Globe,
+  HelpCircle,
+  Info,
+  Landmark,
+  MapPin,
+  Mountain,
+  Navigation,
+  Plane,
+  PlaneLanding,
+  PlaneTakeoff,
+  Route as RouteIcon,
+  Ruler,
+  Thermometer,
+  Ticket,
+  Users,
+  UserRound,
+  type LucideIcon,
+} from 'lucide-react';
 import { airportCitationOrder, type AirportGuide } from '@/lib/airport-guide';
 import { CitedParagraph } from '@/components/route-guide/RouteGuideBlocks';
 import type { StrapiAirport, StrapiRoute } from '@/lib/strapi';
@@ -152,6 +177,9 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
   const citeOrder = guide ? airportCitationOrder(guide) : new Map<string, number>();
   const guideDate = guide ? formatDate(guide.verified_at) : null;
 
+  const logoByCode = new Map<string, string>();
+  for (const a of airlines) if (a.iataCode && a.logoUrl) logoByCode.set(a.iataCode.toUpperCase(), a.logoUrl);
+
   const navItems: NavItem[] = [
     { id: 'details', label: 'Airport details', status: 'data' },
     ...(hasFacts ? [{ id: 'facts', label: 'Airport facts', status: 'data' as const }] : []),
@@ -169,28 +197,35 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
   ];
 
   const headerFacts = [
-    { label: 'Serves', value: [city, country].filter(Boolean).join(', ') || null },
-    { label: 'Codes', value: icao ? `${code} · ${icao}` : code, hint: icao ? 'IATA · ICAO' : 'IATA' },
-    { label: 'Time zone', value: airport.timezone || null },
-    { label: 'Region', value: airport.region || null },
+    { label: 'Serves', value: [city, country].filter(Boolean).join(', ') || null, icon: MapPin, hint: undefined as string | undefined },
+    { label: 'Codes', value: icao ? `${code} · ${icao}` : code, hint: icao ? 'IATA · ICAO' : 'IATA', icon: Ticket },
+    { label: 'Time zone', value: airport.timezone || null, icon: Compass, hint: undefined as string | undefined },
+    { label: 'Region', value: airport.region || null, icon: Globe, hint: undefined as string | undefined },
   ].filter((f) => f.value);
 
   return (
     <div className="bg-forest-50" data-testid={`airport-v2-page-${code}`} data-template="v2">
       {/* ---------------------------------------------------------- header */}
-      <header className="border-b border-forest-900/10 bg-white">
-        <div className={`${WRAP} pb-8 pt-6 lg:pb-10`}>
-          <nav aria-label="Breadcrumb" className="text-sm text-forest-900/75">
+      <header className="relative overflow-hidden bg-forest-950 text-white">
+        {/* decorative flight-path arcs */}
+        <svg aria-hidden className="pointer-events-none absolute inset-0 h-full w-full text-white/[0.07]" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice" fill="none" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 8">
+          <path d="M-50 360 C 250 40, 650 20, 1250 300" />
+          <path d="M-50 260 C 300 -40, 800 60, 1250 120" />
+          <path d="M200 420 C 500 160, 900 140, 1250 220" />
+        </svg>
+        <div aria-hidden className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-sand-300/10 blur-3xl" />
+        <div className={`${WRAP} relative pb-8 pt-6 lg:pb-10`}>
+          <nav aria-label="Breadcrumb" className="text-sm text-white/75">
             <ol className="flex flex-wrap items-center gap-1.5">
               {p.breadcrumb.map((b) => (
                 <li key={b.href} className="flex items-center gap-1.5">
-                  <Link href={b.href} className="hover:text-primary-emphasis hover:underline">
+                  <Link href={b.href} className="hover:text-sand-300 hover:underline">
                     {b.name}
                   </Link>
                   <span aria-hidden>/</span>
                 </li>
               ))}
-              <li aria-current="page" className="font-medium text-forest-950">
+              <li aria-current="page" className="font-medium text-white">
                 {name}
               </li>
             </ol>
@@ -207,21 +242,24 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
               <div className="flex min-w-0 items-start gap-4 sm:gap-6">
                 <div
                   aria-hidden
-                  className="flex h-16 w-16 flex-none items-center justify-center rounded-[0.3rem] bg-forest-950 sm:h-24 sm:w-24"
+                  className="relative flex h-16 w-16 flex-none items-center justify-center rounded-[0.5rem] bg-sand-300 text-forest-950 shadow-lg shadow-black/20 sm:h-24 sm:w-24"
                 >
-                  <PlaneIcon className="h-8 w-8 text-white sm:h-11 sm:w-11" />
+                  <Plane className="h-8 w-8 -rotate-45 sm:h-12 sm:w-12" strokeWidth={2.2} />
                 </div>
                 <div className="min-w-0">
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary-emphasis">Airport guide</p>
+                  <p className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-sand-300">
+                    <PlaneTakeoff aria-hidden className="h-3.5 w-3.5" />
+                    Airport guide
+                  </p>
                   <h1 className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-3xl leading-tight sm:text-4xl">
-                    {name}
-                    <span className="rounded-[0.3rem] bg-forest-950 px-2 py-0.5 font-mono text-sm font-bold tracking-wider text-white">
+                    <span className="!text-white">{name}</span>
+                    <span className="rounded-[0.3rem] bg-sand-300 px-2.5 py-0.5 font-mono text-sm font-bold tracking-wider text-forest-950">
                       <span className="sr-only">IATA code </span>
                       {code}
                     </span>
                   </h1>
                   {shortSummary && (
-                    <p className="mt-2.5 text-sm leading-relaxed text-forest-900/80 sm:text-base">
+                    <p className="mt-2.5 text-sm leading-relaxed text-white/85 sm:text-base">
                       {shortSummary}
                     </p>
                   )}
@@ -234,8 +272,9 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                     href={officialSite.url}
                     target="_blank"
                     rel="noopener noreferrer nofollow"
-                    className="inline-flex items-center justify-center gap-2 rounded-[0.3rem] border border-forest-900/15 bg-white px-4 py-2.5 text-sm font-semibold text-forest-950 transition hover:border-primary-emphasis hover:text-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-emphasis"
+                    className="inline-flex items-center justify-center gap-2 rounded-[0.3rem] bg-white px-4 py-2.5 text-sm font-semibold text-forest-950 transition hover:bg-sand-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sand-300"
                   >
+                    <Globe aria-hidden className="h-4 w-4" />
                     {officialHost}
                     <ExternalIcon />
                     <span className="sr-only">(official website, opens in a new tab)</span>
@@ -246,8 +285,9 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                     href={p.mapHref}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-[0.3rem] border border-forest-900/15 bg-white px-4 py-2.5 text-sm font-semibold text-forest-950 transition hover:border-primary-emphasis hover:text-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-emphasis"
+                    className="inline-flex items-center justify-center gap-2 rounded-[0.3rem] border border-white/30 bg-white/10 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sand-300"
                   >
+                    <MapPin aria-hidden className="h-4 w-4" />
                     View map
                     <ExternalIcon />
                     <span className="sr-only">(Google Maps, opens in a new tab)</span>
@@ -258,7 +298,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
 
             {photo && (
               <figure className="min-w-0" data-testid="airport-v2-city-photo">
-                <div className="relative aspect-[16/10] overflow-hidden rounded-[0.3rem] bg-forest-900/5">
+                <div className="relative aspect-[16/10] overflow-hidden rounded-[0.5rem] bg-white/10 ring-1 ring-white/20">
                   <Image
                     src={photo.src}
                     alt={photo.alt}
@@ -268,9 +308,9 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                     className="object-cover"
                   />
                 </div>
-                <figcaption className="mt-2 text-xs leading-5 text-forest-900/75">
+                <figcaption className="mt-2 text-xs leading-5 text-white/75">
                   {photo.city}, the city the airport serves — not a photo of {name}. From our{' '}
-                  <Link href={photo.guideHref} className="text-primary-emphasis underline-offset-2 hover:underline">
+                  <Link href={photo.guideHref} className="text-sand-300 underline-offset-2 hover:underline">
                     {photo.city} travel guide
                   </Link>
                   .
@@ -280,22 +320,30 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
           </div>
 
           <dl
-            className={`mt-7 grid grid-cols-2 gap-px overflow-hidden rounded-[0.3rem] border border-forest-900/10 bg-forest-900/10 max-sm:[&>div:last-child:nth-child(odd)]:col-span-2 ${
+            className={`mt-7 grid grid-cols-2 gap-3 max-sm:[&>div:last-child:nth-child(odd)]:col-span-2 ${
               { 1: 'sm:grid-cols-1', 2: 'sm:grid-cols-2', 3: 'sm:grid-cols-3' }[headerFacts.length] ?? 'sm:grid-cols-4'
             }`}
           >
-            {headerFacts.map((f) => (
-              <div key={f.label} className="bg-white px-4 py-3">
-                <dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-forest-900/70">{f.label}</dt>
-                <dd className="mt-1 text-[15px] font-semibold text-forest-950">{f.value}</dd>
-                {f.hint && <dd className="mt-0.5 text-xs text-forest-900/70">{f.hint}</dd>}
-              </div>
-            ))}
+            {headerFacts.map((f) => {
+              const Icon = f.icon;
+              return (
+                <div key={f.label} className="flex items-start gap-3 rounded-[0.4rem] border border-white/15 bg-white/[0.07] px-4 py-3 backdrop-blur-sm">
+                  <span aria-hidden className="mt-0.5 flex h-8 w-8 flex-none items-center justify-center rounded-full bg-sand-300/20 text-sand-300">
+                    <Icon className="h-4 w-4" />
+                  </span>
+                  <div className="min-w-0">
+                    <dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-white/70">{f.label}</dt>
+                    <dd className="mt-0.5 text-[15px] font-semibold text-white [overflow-wrap:anywhere]">{f.value}</dd>
+                    {f.hint && <dd className="mt-0.5 text-xs text-white/70">{f.hint}</dd>}
+                  </div>
+                </div>
+              );
+            })}
           </dl>
 
-          <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-forest-900/75" data-testid="airport-v2-ledger">
+          <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-white/75" data-testid="airport-v2-ledger">
             <span className="inline-flex items-center gap-1.5">
-              <span aria-hidden className="h-2 w-2 rounded-full bg-primary-emphasis" />
+              <span aria-hidden className="h-2 w-2 rounded-full bg-sand-300" />
               Airport record{recordDate ? `, updated ${recordDate}` : ''}
             </span>
             {hasRoutes && <span>Route records{routesDate ? `, updated ${routesDate}` : ''}</span>}
@@ -304,7 +352,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
             {hasFares && faresDate && <span>Travelpayouts fares, {faresDate}</span>}
             {e.climate && <span>NASA POWER climate, {e.climate.period}</span>}
             <span>{guide ? `Terminals and transport checked${guideDate ? ` ${guideDate}` : ''}` : 'Terminals and transport not yet verified'}</span>
-            <a href="#sources" className="text-primary-emphasis underline-offset-2 hover:underline">
+            <a href="#sources" className="text-sand-300 underline-offset-2 hover:underline">
               Where this comes from
             </a>
           </div>
@@ -314,20 +362,24 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
       {/* ---------------------------------------------------------- description */}
       {heroSummary && (
         <section aria-label="Airport description" className={`${WRAP} pt-8`} data-testid="airport-v2-description">
-          <p className="text-base leading-7 text-forest-900/85 sm:text-lg sm:leading-8">
-            {heroSummary}
-          </p>
+          <div className="flex gap-4 rounded-[0.5rem] border border-forest-900/10 border-l-4 border-l-sand-400 bg-white p-5 sm:p-6">
+            <Info aria-hidden className="mt-1 hidden h-6 w-6 flex-none text-primary-emphasis sm:block" />
+            <p className="text-base leading-7 text-forest-900/85 sm:text-lg sm:leading-8">
+              {heroSummary}
+            </p>
+          </div>
         </section>
       )}
 
       {/* ---------------------------------------------------------- at a glance */}
       <section aria-labelledby="glance-title" className={`${WRAP} pt-8`} data-testid="airport-v2-glance">
-        <h2 id="glance-title" className="text-xl sm:text-2xl">
+        <h2 id="glance-title" className="flex items-center gap-2.5 text-xl sm:text-2xl">
+          <Gauge aria-hidden className="h-6 w-6 text-primary-emphasis" />
           {name} at a glance
         </h2>
         <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {coordText && (
-            <Tile title="Location" source={coordinates?.source === 'ourairports' ? 'OurAirports' : 'Originfacts airport record'} section="details">
+            <Tile icon={MapPin} title="Location" source={coordinates?.source === 'ourairports' ? 'OurAirports' : 'Originfacts airport record'} section="details">
               <p className="text-[15px] font-semibold text-forest-950">{coordText}</p>
               {e.cityCentre && (
                 <p className="text-sm text-forest-900/75">
@@ -343,7 +395,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
           )}
 
           {officialSite && (
-            <Tile title="Official website" source={officialSourceName} section="details">
+            <Tile icon={Globe} title="Official website" source={officialSourceName} section="details">
               <ExternalLink href={officialSite.url} className="block text-[15px] font-semibold [overflow-wrap:anywhere]">
                 {officialHost}
               </ExternalLink>
@@ -351,7 +403,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
           )}
 
           {e.runways.length > 0 && (
-            <Tile title="Runways" source={`OurAirports${oaDate ? ` · ${oaDate}` : ''}`} section="runways" linkText="See runways">
+            <Tile icon={Ruler} title="Runways" source={`OurAirports${oaDate ? ` · ${oaDate}` : ''}`} section="runways" linkText="See runways">
               <p className="text-[15px] font-semibold leading-6 text-forest-950">
                 {e.runways.length === 1 ? '1 runway' : `${e.runways.length} runways`}
               </p>
@@ -360,7 +412,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
           )}
 
           {hasFares && e.fares && (
-            <Tile title="Nonstop fares found" source={`Travelpayouts${faresDate ? ` · ${faresDate}` : ''}`} section="destinations" linkText="See destinations">
+            <Tile icon={PlaneTakeoff} title="Nonstop fares found" source={`Travelpayouts${faresDate ? ` · ${faresDate}` : ''}`} section="destinations" linkText="See destinations">
               <p className="text-[15px] font-semibold leading-6 text-forest-950">
                 {e.fares.destinationCount} {e.fares.destinationCount === 1 ? 'destination' : 'destinations'}
                 {e.fares.countryCount > 1 ? ` in ${e.fares.countryCount} countries` : ''}
@@ -373,7 +425,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
           )}
 
           {e.climate && (
-            <Tile title="Climate" source={`NASA POWER · ${e.climate.period}`} section="climate" linkText="See months">
+            <Tile icon={Thermometer} title="Climate" source={`NASA POWER · ${e.climate.period}`} section="climate" linkText="See months">
               <p className="text-[15px] font-semibold leading-6 text-forest-950">
                 {e.climate.summary.warmest.month}: avg high {Math.round(e.climate.summary.warmest.hi)}°C
               </p>
@@ -385,7 +437,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
           )}
 
           {airlines.length > 0 && (
-            <Tile title="Airlines on tracked routes" source={`Route records${routesDate ? ` · ${routesDate}` : ''}`} section="airlines" linkText="See airlines">
+            <Tile icon={Plane} title="Airlines on tracked routes" source={`Route records${routesDate ? ` · ${routesDate}` : ''}`} section="airlines" linkText="See airlines">
               <p className="text-[15px] font-semibold leading-6 text-forest-950">
                 {airlines.length} {airlines.length === 1 ? 'airline' : 'airlines'} on{' '}
                 {routes.length === 1 ? 'the 1 route' : `the ${routes.length} routes`} {coverage.shownNote ? 'shown' : 'tracked'}
@@ -396,7 +448,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
           )}
 
           {hasRoutes && (
-            <Tile title="Route records" source={`Route records${routesDate ? ` · ${routesDate}` : ''}`} section="routes" linkText="See routes">
+            <Tile icon={RouteIcon} title="Route records" source={`Route records${routesDate ? ` · ${routesDate}` : ''}`} section="routes" linkText="See routes">
               <p className="text-[15px] font-semibold leading-6 text-forest-950">
                 {coverage.headline}
                 {coverage.shownNote ? ` · ${coverage.shownNote}` : ''}
@@ -421,6 +473,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
 
           {weather?.current && typeof weather.current.airTemperature === 'number' && (
             <Tile
+              icon={CloudSun}
               title="Weather now"
               source={
                 <>
@@ -447,8 +500,13 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
             </Tile>
           )}
 
-          <li className="flex flex-col rounded-[0.3rem] border border-dashed border-forest-900/20 bg-white/60 p-4">
-            <h3 className="text-base leading-snug text-forest-950">Terminals &amp; getting into {city || 'town'}</h3>
+          <li className="flex flex-col rounded-[0.5rem] border border-dashed border-forest-900/20 bg-white/60 p-4">
+            <h3 className="flex items-center gap-2.5 text-base leading-snug text-forest-950">
+              <span aria-hidden className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-forest-900/5 text-forest-900/60">
+                <Building2 className="h-4 w-4" />
+              </span>
+              Terminals &amp; getting into {city || 'town'}
+            </h3>
             <p className="mt-2 text-sm text-forest-900/75">
               Not yet verified.{' '}
               <a href="#planning" className="font-medium text-primary-emphasis hover:underline">
@@ -486,18 +544,20 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
             {/* ------------------------------------------------ details */}
             <Shell
               id="details"
+              icon={Info}
               title={/\bairport\b/i.test(name) ? `${name} details` : `${name} airport details`}
               badge={<Badge tone="data">Airport record{recordDate ? ` · ${recordDate}` : ''}</Badge>}
             >
               <dl className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                <Fact label="IATA code" value={code} />
-                <Fact label="ICAO code" value={icao} source={!airport.icao && info.icao ? 'OurAirports' : undefined} />
-                <Fact label="City" value={city} source={!airport.city && info.city ? 'OurAirports' : undefined} />
-                <Fact label="Country" value={country} source={!airport.country && info.country ? 'OurAirports' : undefined} />
-                <Fact label="Region" value={airport.region} />
-                <Fact label="Time zone" value={airport.timezone} />
-                <Fact label="Coordinates" value={coordText} source={coordinates?.source === 'ourairports' ? 'OurAirports' : undefined} />
+                <Fact icon={Ticket} label="IATA code" value={code} />
+                <Fact icon={Ticket} label="ICAO code" value={icao} source={!airport.icao && info.icao ? 'OurAirports' : undefined} />
+                <Fact icon={Building2} label="City" value={city} source={!airport.city && info.city ? 'OurAirports' : undefined} />
+                <Fact icon={Globe} label="Country" value={country} source={!airport.country && info.country ? 'OurAirports' : undefined} />
+                <Fact icon={Compass} label="Region" value={airport.region} />
+                <Fact icon={Compass} label="Time zone" value={airport.timezone} />
+                <Fact icon={MapPin} label="Coordinates" value={coordText} source={coordinates?.source === 'ourairports' ? 'OurAirports' : undefined} />
                 <Fact
+                  icon={Globe}
                   label="Official website"
                   value={officialHost}
                   source={officialSite ? officialSourceName : undefined}
@@ -516,12 +576,13 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
 
             {e.runways.length > 0 && <RunwaysSection code={code} e={e} oaDate={oaDate} />}
 
-            {hasFares && e.fares && <DestinationsSection code={code} name={name} fares={e.fares} date={faresDate} hasRoutes={hasRoutes} />}
+            {hasFares && e.fares && <DestinationsSection code={code} name={name} fares={e.fares} date={faresDate} hasRoutes={hasRoutes} logoByCode={logoByCode} />}
 
             {/* ------------------------------------------------ airlines */}
             {airlines.length > 0 && (
               <Shell
                 id="airlines"
+                icon={Plane}
                 title={`Airlines on routes from ${code}`}
                 badge={<Badge tone="data">Route records{routesDate ? ` · ${routesDate}` : ''}</Badge>}
                 source={<DatasetNote date={routesDate} />}
@@ -536,20 +597,24 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                     <li key={a.slug}>
                       <Link
                         href={`/airlines/${a.slug}`}
-                        className="group flex h-full items-center gap-4 rounded-[0.3rem] border border-forest-900/10 bg-forest-50 px-4 py-3 transition hover:border-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-emphasis"
+                        className="group flex h-full items-center gap-4 rounded-[0.5rem] border border-forest-900/10 bg-forest-50 p-3 transition hover:-translate-y-0.5 hover:border-primary-emphasis hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-emphasis"
                       >
-                        <span className="flex h-16 w-32 flex-none items-center justify-center">
+                        <span className="flex h-16 w-28 flex-none items-center justify-center rounded-[0.4rem] border border-forest-900/10 bg-white p-2">
                           {a.logoUrl ? (
                             // eslint-disable-next-line @next/next/no-img-element
-                            <img src={a.logoUrl} alt="" className="max-h-16 max-w-full object-contain" loading="lazy" />
+                            <img src={a.logoUrl} alt="" className="max-h-full max-w-full object-contain" loading="lazy" />
                           ) : (
-                            <span className="font-mono text-sm font-bold text-forest-900/70">{a.iataCode || a.name.slice(0, 3).toUpperCase()}</span>
+                            <span className="flex flex-col items-center gap-0.5 text-forest-900/60">
+                              <Plane aria-hidden className="h-5 w-5 -rotate-45" />
+                              <span className="font-mono text-sm font-bold">{a.iataCode || a.name.slice(0, 3).toUpperCase()}</span>
+                            </span>
                           )}
                         </span>
-                        <span className="min-w-0">
+                        <span className="min-w-0 flex-1">
                           <span className="block font-semibold leading-snug text-forest-950 group-hover:text-primary-emphasis">{a.name}</span>
                           {a.iataCode && <span className="mt-0.5 block font-mono text-xs text-forest-900/70">{a.iataCode}</span>}
                         </span>
+                        <ArrowRight aria-hidden className="h-4 w-4 flex-none text-forest-900/30 transition group-hover:translate-x-0.5 group-hover:text-primary-emphasis" />
                       </Link>
                     </li>
                   ))}
@@ -562,6 +627,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
             {hasRoutes ? (
               <Shell
                 id="routes"
+                icon={RouteIcon}
                 title={`Routes from ${code}`}
                 badge={<Badge tone="data">Route records{routesDate ? ` · ${routesDate}` : ''}</Badge>}
                 source={<DatasetNote date={routesDate} />}
@@ -587,11 +653,18 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                     <li key={r.id}>
                       <Link
                         href={`/flight-routes/${r.slug}`}
-                        className="group flex h-full items-center justify-between gap-4 rounded-[0.3rem] border border-forest-900/10 bg-forest-50 px-4 py-3.5 transition hover:border-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-emphasis"
+                        className="group flex h-full items-center justify-between gap-4 rounded-[0.5rem] border border-forest-900/10 bg-forest-50 px-4 py-3.5 transition hover:-translate-y-0.5 hover:border-primary-emphasis hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-emphasis"
                       >
                         <span className="min-w-0">
-                          <span className="block font-mono text-xs font-semibold tracking-wider text-forest-900/70">
-                            {r.origin?.iata ?? code} → {r.destination?.iata}
+                          <span className="flex items-center gap-2 font-mono text-xs font-semibold tracking-wider text-forest-900/70">
+                            <span className="rounded bg-forest-950 px-1.5 py-0.5 text-white">{r.origin?.iata ?? code}</span>
+                            <span aria-hidden className="flex items-center gap-0.5 text-forest-900/40">
+                              <span className="h-px w-4 border-t border-dashed border-current" />
+                              <Plane className="h-3.5 w-3.5 rotate-45 text-primary-emphasis" />
+                              <span className="h-px w-4 border-t border-dashed border-current" />
+                            </span>
+                            <span className="sr-only">to</span>
+                            <span className="rounded bg-sand-300 px-1.5 py-0.5 text-forest-950">{r.destination?.iata}</span>
                           </span>
                           <span className="mt-1 block font-semibold text-forest-950 group-hover:text-primary-emphasis">
                             {r.destination?.city || r.destination?.name}
@@ -611,7 +684,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                 {airlines.length === 0 && <CeasedNote airlines={p.ceasedAirlines} />}
               </Shell>
             ) : (
-              <Shell id="routes" title={`Routes from ${code}`} tone="muted" badge={<Badge tone="pending">No route records yet</Badge>}>
+              <Shell id="routes" icon={RouteIcon} title={`Routes from ${code}`} tone="muted" badge={<Badge tone="pending">No route records yet</Badge>}>
                 <p className="text-[15px] leading-7 text-forest-900/80">
                   Originfacts does not track any routes from {code} yet, so no route records are listed here.
                   {hasFares ? ' Destinations with nonstop fares are listed under Airlines and destinations above.' : ''} Check
@@ -620,7 +693,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
               </Shell>
             )}
 
-            {e.hubs.length > 0 && <HubsSection code={code} hubs={e.hubs} qid={e.qid} date={wdDate} />}
+            {e.hubs.length > 0 && <HubsSection code={code} hubs={e.hubs} qid={e.qid} date={wdDate} logoByCode={logoByCode} />}
 
             {e.cityCentre && <GettingThereSection name={name} code={code} city={e.cityCentre} coordSource={coordinates?.source ?? 'record'} />}
 
@@ -628,6 +701,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
             {guide ? (
               <Shell
                 id="planning"
+                icon={Building2}
                 title={`Terminals, transport and parking at ${code}`}
                 badge={<Badge tone="data">Checked {guideDate}</Badge>}
               >
@@ -649,6 +723,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
             ) : (
             <Shell
               id="planning"
+              icon={Building2}
               title={`Terminals, transport and parking at ${code}`}
               tone="muted"
               badge={<Badge tone="pending">Not yet verified</Badge>}
@@ -686,6 +761,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
             {nearby.length > 0 && (
               <Shell
                 id="nearby"
+                icon={Navigation}
                 title={`Airports near ${city || name}`}
                 badge={<Badge tone="data">Calculated</Badge>}
                 source={
@@ -701,9 +777,12 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                     <li key={a.iata}>
                       <Link
                         href={a.href}
-                        className="group flex h-full items-center justify-between gap-3 rounded-[0.3rem] border border-forest-900/10 bg-forest-50 px-3.5 py-2.5 transition hover:border-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-emphasis"
+                        className="group flex h-full items-center justify-between gap-3 rounded-[0.5rem] border border-forest-900/10 bg-forest-50 px-3.5 py-2.5 transition hover:-translate-y-0.5 hover:border-primary-emphasis hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-emphasis"
                       >
-                        <span className="min-w-0">
+                        <span aria-hidden className="flex h-9 w-9 flex-none items-center justify-center rounded-full bg-forest-950 text-sand-300">
+                          <PlaneLanding className="h-4 w-4" />
+                        </span>
+                        <span className="min-w-0 flex-1">
                           <span className="block truncate font-medium text-forest-950 group-hover:text-primary-emphasis">{a.city || a.name}</span>
                           <span className="block truncate text-xs text-forest-900/70">{a.name}</span>
                         </span>
@@ -722,7 +801,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
 
             {/* ------------------------------------------------ faq */}
             {faqs.length > 0 && (
-              <Shell id="faq" title={`${name}: common questions`}>
+              <Shell id="faq" icon={HelpCircle} title={`${name}: common questions`}>
                 <div className="divide-y divide-forest-900/10 rounded-[0.3rem] border border-forest-900/10">
                   {faqs.map((f, i) => (
                     <details key={f.q} open={i === 0} className="group">
@@ -740,7 +819,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
             )}
 
             {/* ------------------------------------------------ sources */}
-            <Shell id="sources" title="Sources">
+            <Shell id="sources" icon={BookOpenCheck} title="Sources">
               {guide ? (
                 <p className="text-[15px] leading-7 text-forest-900/85">
                   Terminals, transport and parking were checked by hand against the numbered sources below on {guideDate}.
@@ -892,6 +971,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
 function Shell({
   id,
   title,
+  icon: Icon,
   badge,
   source,
   children,
@@ -899,6 +979,7 @@ function Shell({
 }: {
   id: string;
   title: string;
+  icon?: LucideIcon;
   badge?: ReactNode;
   source?: ReactNode;
   children: ReactNode;
@@ -909,13 +990,18 @@ function Shell({
       id={id}
       aria-labelledby={`${id}-title`}
       data-testid={`airport-v2-section-${id}`}
-      className={`${SECTION} rounded-[0.3rem] border p-5 sm:p-7 ${
-        tone === 'muted' ? 'border-dashed border-forest-900/20 bg-white/60' : 'border-forest-900/10 bg-white'
+      className={`${SECTION} rounded-[0.5rem] border p-5 shadow-[0_1px_2px_rgba(15,39,102,0.04)] sm:p-7 ${
+        tone === 'muted' ? 'border-dashed border-forest-900/20 bg-white/60' : 'border-forest-900/10 border-t-4 border-t-forest-950 bg-white'
       }`}
     >
       <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
-        <h2 id={`${id}-title`} className="text-xl leading-snug sm:text-2xl">
-          {title}
+        <h2 id={`${id}-title`} className="flex items-center gap-3 text-xl leading-snug sm:text-2xl">
+          {Icon && (
+            <span aria-hidden className={`flex h-10 w-10 flex-none items-center justify-center rounded-full ${tone === 'muted' ? 'bg-forest-900/5 text-forest-900/60' : 'bg-forest-950 text-sand-300'}`}>
+              <Icon className="h-5 w-5" />
+            </span>
+          )}
+          <span>{title}</span>
         </h2>
         {badge && <div className="flex-none sm:pt-1">{badge}</div>}
       </div>
@@ -926,12 +1012,14 @@ function Shell({
 }
 
 function Tile({
+  icon: Icon,
   title,
   source,
   section,
   linkText = 'Details',
   children,
 }: {
+  icon: LucideIcon;
   title: string;
   source: ReactNode;
   section?: string;
@@ -939,8 +1027,13 @@ function Tile({
   children: ReactNode;
 }) {
   return (
-    <li className="flex flex-col rounded-[0.3rem] border border-forest-900/10 bg-white p-4 shadow-[0_1px_2px_rgba(15,39,102,0.04)]">
-      <h3 className="text-base leading-snug text-forest-950">{title}</h3>
+    <li className="flex flex-col rounded-[0.5rem] border border-forest-900/10 bg-white p-4 shadow-[0_1px_2px_rgba(15,39,102,0.04)] transition hover:-translate-y-0.5 hover:border-forest-900/25 hover:shadow-md">
+      <h3 className="flex items-center gap-2.5 text-base leading-snug text-forest-950">
+        <span aria-hidden className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-forest-950 text-sand-300">
+          <Icon className="h-4 w-4" />
+        </span>
+        {title}
+      </h3>
       <div className="mt-2 space-y-1">{children}</div>
       <div className="mt-auto flex flex-wrap items-center justify-between gap-2 pt-3">
         <span className="text-xs text-forest-900/70">{source}</span>
@@ -956,12 +1049,14 @@ function Tile({
 }
 
 function Fact({
+  icon: Icon,
   label,
   value,
   source,
   href,
   external = false,
 }: {
+  icon?: LucideIcon;
   label: string;
   value?: string | null;
   source?: string;
@@ -970,8 +1065,11 @@ function Fact({
 }) {
   if (!value) return null;
   return (
-    <div className="rounded-[0.3rem] border border-forest-900/10 bg-forest-50 p-4">
-      <dt className="text-xs font-semibold uppercase tracking-wider text-forest-900/75">{label}</dt>
+    <div className="rounded-[0.5rem] border border-forest-900/10 bg-forest-50 p-4">
+      <dt className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-forest-900/75">
+        {Icon && <Icon aria-hidden className="h-3.5 w-3.5 text-primary-emphasis" />}
+        {label}
+      </dt>
       <dd className="mt-1.5 text-[15px] font-semibold leading-6 text-forest-950 [overflow-wrap:anywhere]">
         {href && external ? (
           <ExternalLink href={href}>{value}</ExternalLink>
@@ -985,6 +1083,22 @@ function Fact({
       </dd>
       {source && <dd className="mt-1 text-xs text-forest-900/70">From {source}</dd>}
     </div>
+  );
+}
+
+/** Airline logo when the route records hold one for this code, else the code as a monospace tag. */
+function AirlineMark({ code, logoByCode }: { code: string; logoByCode: Map<string, string> }) {
+  const logo = logoByCode.get(code.toUpperCase());
+  return (
+    <span className="inline-flex items-center gap-1.5">
+      {logo && (
+        <span aria-hidden className="flex h-7 w-10 flex-none items-center justify-center rounded border border-forest-900/10 bg-white p-0.5">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={logo} alt="" className="max-h-full max-w-full object-contain" loading="lazy" />
+        </span>
+      )}
+      <span className="font-mono text-xs font-semibold text-forest-900/70">{code}</span>
+    </span>
   );
 }
 
@@ -1075,14 +1189,6 @@ function ExternalIcon() {
   );
 }
 
-function PlaneIcon({ className = '' }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-      <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5Z" />
-    </svg>
-  );
-}
-
 function uniqueDestinations(routes: StrapiRoute[]): { iata: string; name: string }[] {
   const seen = new Map<string, string>();
   for (const r of routes) {
@@ -1137,10 +1243,13 @@ function SourceChip({ children }: { children: ReactNode }) {
   return <dd className="mt-1 text-xs text-forest-900/70">{children}</dd>;
 }
 
-function DataFact({ label, value, source }: { label: string; value: ReactNode; source: ReactNode }) {
+function DataFact({ label, value, source, icon: Icon }: { label: string; value: ReactNode; source: ReactNode; icon?: LucideIcon }) {
   return (
-    <div className="rounded-[0.3rem] border border-forest-900/10 bg-forest-50 p-4">
-      <dt className="text-xs font-semibold uppercase tracking-wider text-forest-900/75">{label}</dt>
+    <div className="rounded-[0.5rem] border border-forest-900/10 bg-forest-50 p-4">
+      <dt className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-forest-900/75">
+        {Icon && <Icon aria-hidden className="h-3.5 w-3.5 text-primary-emphasis" />}
+        {label}
+      </dt>
       <dd className="mt-1.5 text-[15px] font-semibold leading-6 text-forest-950 [overflow-wrap:anywhere]">{value}</dd>
       <SourceChip>{source}</SourceChip>
     </div>
@@ -1160,11 +1269,12 @@ function FactsSection({ name, code, e, oaDate, wdDate }: { name: string; code: s
   const named = e.namedAfter.filter((n) => !n.label.toLowerCase().includes(name.toLowerCase()));
   const nearest = e.nearestScheduled[0];
   return (
-    <Shell id="facts" title={`${code} airport facts`} badge={<Badge tone="data">OurAirports · Wikidata</Badge>}>
+    <Shell id="facts" icon={Landmark} title={`${code} airport facts`} badge={<Badge tone="data">OurAirports · Wikidata</Badge>}>
       <dl className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-        {e.typeLabel && <DataFact label="Size class" value={e.typeLabel} source={`${oa}; OurAirports’ own classification`} />}
+        {e.typeLabel && <DataFact icon={Building2} label="Size class" value={e.typeLabel} source={`${oa}; OurAirports’ own classification`} />}
         {e.elevationFt != null && (
           <DataFact
+            icon={Mountain}
             label="Elevation"
             value={e.elevationFt < 0 ? `${formatElevation(Math.abs(e.elevationFt))} below sea level` : formatElevation(e.elevationFt)}
             source={oa}
@@ -1172,15 +1282,17 @@ function FactsSection({ name, code, e, oaDate, wdDate }: { name: string; code: s
         )}
         {e.opened && (
           <DataFact
+            icon={Ticket}
             label={e.opened.prop === 'P1619' ? 'Opened' : 'Inception'}
             value={formatOpened(e.opened)}
             source={wd(e.opened.prop === 'P1619' ? ' — date of official opening' : ' — inception date')}
           />
         )}
-        {e.operators.length > 0 && <DataFact label="Operator" value={e.operators.map((o) => o.label).join(', ')} source={wd()} />}
-        {e.owners.length > 0 && <DataFact label="Owner" value={e.owners.map((o) => o.label).join(', ')} source={wd()} />}
+        {e.operators.length > 0 && <DataFact icon={Building2} label="Operator" value={e.operators.map((o) => o.label).join(', ')} source={wd()} />}
+        {e.owners.length > 0 && <DataFact icon={Landmark} label="Owner" value={e.owners.map((o) => o.label).join(', ')} source={wd()} />}
         {e.patronage && (
           <DataFact
+            icon={Users}
             label={`Passengers, ${e.patronage.year}`}
             value={formatPassengers(e.patronage.value)}
             source={wd(
@@ -1194,9 +1306,10 @@ function FactsSection({ name, code, e, oaDate, wdDate }: { name: string; code: s
             )}
           />
         )}
-        {named.length > 0 && <DataFact label="Named after" value={named.map((n) => n.label).join(', ')} source={wd()} />}
+        {named.length > 0 && <DataFact icon={UserRound} label="Named after" value={named.map((n) => n.label).join(', ')} source={wd()} />}
         {nearest && (
           <DataFact
+            icon={PlaneLanding}
             label="Nearest airport with scheduled flights"
             value={
               <>
@@ -1223,6 +1336,7 @@ function RunwaysSection({ code, e, oaDate }: { code: string; e: View; oaDate: st
   return (
     <Shell
       id="runways"
+      icon={Ruler}
       title={`Runways at ${code}`}
       badge={<Badge tone="data">OurAirports{oaDate ? ` · ${oaDate}` : ''}</Badge>}
       source={
@@ -1275,17 +1389,20 @@ function DestinationsSection({
   fares,
   date,
   hasRoutes,
+  logoByCode,
 }: {
   code: string;
   name: string;
   fares: NonNullable<View['fares']>;
   date: string | null;
   hasRoutes: boolean;
+  logoByCode: Map<string, string>;
 }) {
   const linked = fares.groups.some((g) => g.destinations.some((d) => d.routeHref));
   return (
     <Shell
       id="destinations"
+      icon={PlaneTakeoff}
       title={`Airlines and destinations from ${code}`}
       badge={<Badge tone="data">Travelpayouts{date ? ` · ${date}` : ''}</Badge>}
       source={
@@ -1307,7 +1424,7 @@ function DestinationsSection({
         <ul className="mt-3 flex flex-wrap gap-2">
           {fares.airlines.map((a) => (
             <li key={a.code} className="inline-flex items-center gap-2 rounded-full border border-forest-900/15 bg-white px-3 py-1.5 text-sm">
-              <span className="font-mono text-xs font-semibold text-forest-900/70">{a.code}</span>
+              <AirlineMark code={a.code} logoByCode={logoByCode} />
               {a.href ? (
                 <Link href={a.href} className="font-medium text-primary-emphasis underline-offset-2 hover:underline">
                   {a.name}
@@ -1359,10 +1476,11 @@ function DestinationsSection({
   );
 }
 
-function HubsSection({ code, hubs, qid, date }: { code: string; hubs: View['hubs']; qid: string | null; date: string | null }) {
+function HubsSection({ code, hubs, qid, date, logoByCode }: { code: string; hubs: View['hubs']; qid: string | null; date: string | null; logoByCode: Map<string, string> }) {
   return (
     <Shell
       id="hubs"
+      icon={Building2}
       title={`Airlines with a hub at ${code}`}
       badge={<Badge tone="data">Wikidata{date ? ` · ${date}` : ''}</Badge>}
       source={
@@ -1376,7 +1494,7 @@ function HubsSection({ code, hubs, qid, date }: { code: string; hubs: View['hubs
       <ul className="flex flex-wrap gap-2">
         {hubs.map((h) => (
           <li key={h.qid} className="inline-flex items-center gap-2 rounded-full border border-forest-900/15 bg-white px-3 py-1.5 text-sm">
-            {h.iata && <span className="font-mono text-xs font-semibold text-forest-900/70">{h.iata}</span>}
+            {h.iata && <AirlineMark code={h.iata} logoByCode={logoByCode} />}
             {h.href ? (
               <Link href={h.href} className="font-medium text-primary-emphasis underline-offset-2 hover:underline">
                 {h.label}
@@ -1405,7 +1523,7 @@ function GettingThereSection({
   coordSource: 'record' | 'ourairports';
 }) {
   return (
-    <Shell id="getting-there" title={`Where ${code} is`} badge={<Badge tone="data">Calculated</Badge>}>
+    <Shell id="getting-there" icon={Navigation} title={`Where ${code} is`} badge={<Badge tone="data">Calculated</Badge>}>
       <p className="text-2xl font-bold text-forest-950">
         {formatKm(city.km)} <span className="text-lg font-semibold">{compassWords(city.compass)}</span>
       </p>
@@ -1434,6 +1552,7 @@ function ClimateSection({ code, climate }: { code: string; climate: NonNullable<
   return (
     <Shell
       id="climate"
+      icon={Thermometer}
       title={`Climate at ${code}, month by month`}
       badge={<Badge tone="data">NASA POWER · {climate.period}</Badge>}
       source={

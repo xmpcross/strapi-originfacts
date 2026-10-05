@@ -66,10 +66,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/flight-search`, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${SITE_URL}/flight-routes`, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${SITE_URL}/airlines`, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${SITE_URL}/airports`, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${SITE_URL}/airports/top-100-airports`, changeFrequency: 'weekly', priority: 0.6 },
     { url: `${SITE_URL}/faq`, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${SITE_URL}/hot-posts`, changeFrequency: 'daily', priority: 0.5 },
     { url: `${SITE_URL}/countries`, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${SITE_URL}/legal`, changeFrequency: 'yearly', priority: 0.3 },
     // /sitemap (the HTML index) is intentionally absent: it now carries
     // `noindex, follow`, and submitting a noindexed URL asks Google to crawl a
     // page it is told not to index. It stays linked from the footer for people.

@@ -80,10 +80,10 @@
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800 555 0199",
+          "value": null,
           "status": "pending",
           "source_url": "https://www.transavia.com/en-EU/terms-and-conditions/conditions-of-carriage/",
-          "notes": "Transavia official customer support line.",
+          "notes": "No verified phone yet.",
           "verified_at": "2026-09-04",
           "verified_by": "automated_provenance"
         }

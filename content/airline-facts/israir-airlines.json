@@ -119,10 +119,10 @@
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800 555 0199",
+          "value": null,
           "status": "pending",
           "source_url": "https://www.israir.co.il/baggage",
-          "notes": "Israir Airlines official customer support line.",
+          "notes": "No verified phone yet.",
           "verified_at": "2026-09-04",
           "verified_by": "automated_provenance"
         }

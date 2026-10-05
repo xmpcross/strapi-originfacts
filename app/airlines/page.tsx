@@ -4,7 +4,7 @@ import { PUBLISHED_AIRLINE_GUIDES, airlineGuideIsPublished, airlineTier } from '
 import { getRouteFacts } from '@/lib/route-facts';
 import { getAirlineFacts } from '@/lib/airline-facts';
 import { airlineHasCeased } from '@/lib/airline-status';
-import { isCargoOnlyAirline } from '@/lib/airline-exclusions';
+import { isNonPassengerAirline } from '@/lib/airline-exclusions';
 import { countryRegionIndex, type DirectoryAirline } from '@/lib/airline-directory';
 import AirlineDirectory from '@/components/AirlineDirectory';
 import FeaturedAirlineGuides, { type FeaturedGuide } from '@/components/FeaturedAirlineGuides';
@@ -68,9 +68,10 @@ export default async function AirlinesPage() {
     listCountries().catch(() => []),
   ]);
   // The directory lists commercial passenger airlines only; cargo and parcel
-  // carriers (DHL, FedEx, ...) keep their pages but are not listed here.
+  // carriers (DHL, FedEx, ...) and charter/ACMI-only operators keep their
+  // pages but are not listed here.
   const airlines = allAirlines.filter((a) => {
-    if (isCargoOnlyAirline(a)) return false;
+    if (isNonPassengerAirline(a)) return false;
     const dests = getRouteFacts(a.iataCode)?.destinationCount ?? 0;
     return airlineGuideIsPublished(a.slug) || airlineTier(a, dests > 0) <= 2;
   });

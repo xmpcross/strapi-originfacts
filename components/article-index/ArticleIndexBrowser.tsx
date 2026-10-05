@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import SharedPagination from '@/components/Pagination';
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
 import { GridCard } from '@/components/category-v2/Cards';
 import {
@@ -628,37 +629,17 @@ function FilterSheet({
 
 /** Same URLs as before the redesign: page 1 is /all-articles, then ?page=N. */
 function Pagination({ current, total }: { current: number; total: number }) {
-  const href = (p: number) => (p === 1 ? '/all-articles' : `/all-articles?page=${p}`);
   return (
-    <nav aria-label="Article pages" className="mt-14 flex flex-wrap items-center justify-center gap-2" data-testid="pagination">
-      {current > 1 && (
-        <Link href={href(current - 1)} rel="prev" className="inline-flex h-10 items-center rounded-[0.3rem] px-3 text-sm font-bold text-forest-900 hover:text-primary-emphasis">
-          ← Newer
-        </Link>
-      )}
-      {Array.from({ length: total }, (_, i) => i + 1).map((p) => {
-        const active = p === current;
-        return (
-          <Link
-            key={p}
-            href={href(p)}
-            aria-current={active ? 'page' : undefined}
-            className={`inline-flex h-10 min-w-[2.5rem] items-center justify-center rounded-[0.3rem] border px-3 text-sm font-bold transition ${
-              active
-                ? 'border-forest-950 bg-forest-950 text-white'
-                : 'border-forest-900/15 bg-white text-forest-900 hover:border-primary-emphasis hover:text-primary-emphasis'
-            }`}
-            data-testid={`page-${p}`}
-          >
-            {p}
-          </Link>
-        );
-      })}
-      {current < total && (
-        <Link href={href(current + 1)} rel="next" className="inline-flex h-10 items-center rounded-[0.3rem] px-3 text-sm font-bold text-forest-900 hover:text-primary-emphasis">
-          Older →
-        </Link>
-      )}
-    </nav>
+    <SharedPagination
+      current={current}
+      total={total}
+      hrefFor={(p) => (p === 1 ? '/all-articles' : `/all-articles?page=${p}`)}
+      label="Article pages"
+      testId="pagination"
+      pageTestId={(p) => `page-${p}`}
+      prevNext={{ prev: '← Newer', next: 'Older →' }}
+      activeTone="forest"
+      className="mt-14"
+    />
   );
 }

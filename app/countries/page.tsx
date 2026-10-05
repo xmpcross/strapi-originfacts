@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { fetchRouteCoverage, listAirlines, listAirports, listCountries, listDestinations } from '@/lib/strapi';
 import { airlineGuideIsPublished, airlineTier } from '@/lib/airline-tier';
 import { getRouteFacts } from '@/lib/route-facts';
-import { isCargoOnlyAirline } from '@/lib/airline-exclusions';
+import { isNonPassengerAirline } from '@/lib/airline-exclusions';
 import { fetchArticleCountsByCountry } from '@/lib/country-articles';
 import {
   COUNTRIES_BROWSE_LIMIT,
@@ -50,7 +50,7 @@ export default async function CountriesPage() {
   // published guide), so a country's airline count matches what
   // /airlines?country= shows.
   const airlines = allAirlines.filter((a) => {
-    if (isCargoOnlyAirline(a)) return false;
+    if (isNonPassengerAirline(a)) return false;
     const dests = getRouteFacts(a.iataCode)?.destinationCount ?? 0;
     return airlineGuideIsPublished(a.slug) || airlineTier(a, dests > 0) <= 2;
   });

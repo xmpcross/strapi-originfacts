@@ -1,0 +1,252 @@
+{
+  "iata": "HEL",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals",
+      "paragraphs": [
+        {
+          "text": "Finavia says the whole of Helsinki Airport is under one roof, so you can walk from one gate to the next. The gate area is split into one area for Schengen flights and one for flights to and from non-Schengen countries.",
+          "sources": [
+            "transfer"
+          ]
+        },
+        {
+          "text": "Domestic flights and flights to European Schengen countries use gates 5–36. Long-haul and European non-Schengen flights use gates 37–55.",
+          "sources": [
+            "transfer"
+          ]
+        },
+        {
+          "text": "Passengers continuing on a domestic connection who need a customs inspection should declare items at the Customs office opposite gate 29.",
+          "sources": [
+            "transfer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Getting into Helsinki",
+      "paragraphs": [
+        {
+          "text": "Helsinki Airport is 20 kilometres from the city centre. Finavia gives the journey as around 30 minutes by train or car and approximately 40–50 minutes by bus.",
+          "sources": [
+            "access"
+          ]
+        },
+        {
+          "text": "The train station is directly beneath the terminal, with lifts and escalators to both the arrivals and departures halls. The P and I trains run between the airport and Helsinki city centre, taking approximately 30 minutes. Tickets are sold in the HSL mobile app or from the ticket machine on the station platform. Finavia names Tikkurila and Pasila as the easiest stations for transferring to the I and P airport trains.",
+          "sources": [
+            "access"
+          ]
+        },
+        {
+          "text": "HSL trunk line 600 runs between the airport and Helsinki city centre, taking approximately 40 minutes. The bus station is in front of the terminal at the arrivals level. Finavia also lists long-distance buses serving the airport from places including Turku, Tampere and Lahti.",
+          "sources": [
+            "access"
+          ]
+        },
+        {
+          "text": "Arriving passengers are served by the taxi station on the arrivals level, which has four lanes and is open around the clock. The contract operators are FixuTaxi, Taksi Helsinki, Menevä Taxi and Lähitaksi, and taxi prices are displayed at the taxi station. App rides and pre-booked taxis pick up from a separate point at the P2 parking building.",
+          "sources": [
+            "access",
+            "taxi"
+          ]
+        },
+        {
+          "text": "Bicycle parking at the airport is covered and free of charge.",
+          "sources": [
+            "access"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parking",
+      "heading": "Parking",
+      "paragraphs": [
+        {
+          "text": "Finavia operates five parking areas: P1 Premium (a heated hall with direct lift access to the arrivals and departures hall), P2 Business (a short lift ride from the terminal), P3 Economy (within walking distance), P4 Budget (outdoors, about 400 metres from the terminal) and P5 Standard (a short covered walk). Short Term Parking A and B are for dropping off and picking up, and seasonal parking opens when needed during holiday periods.",
+          "sources": [
+            "areas"
+          ]
+        },
+        {
+          "text": "Parking without a pre-booking costs €2 per 15 minutes in every area until the area's daily maximum is reached; stays over 24 hours are charged in full days. The day rate covers 31 days, and each additional day costs €15 in P1. Finavia's drive-in price list did not show a date, so check the current prices on its parking pages.",
+          "sources": [
+            "pfaq",
+            "noprebook"
+          ]
+        },
+        {
+          "text": "Pre-booked spaces last a minimum of one day and a maximum of 45 days, and can be booked up to 6 months ahead and no later than 2 hours before the start. Free cancellation is available up to 1 hour before the reservation starts.",
+          "sources": [
+            "pfaq"
+          ]
+        },
+        {
+          "text": "Height limits are 2.1 m in P1, P2 and P5 and 1.9 m in P3; the outdoor P4 area has no height restriction. Parking with a trailer is not allowed in the airport's parking areas.",
+          "sources": [
+            "pfaq"
+          ]
+        },
+        {
+          "text": "The drop-off area is in front of the main doors at departure hall level, with a maximum stay of eight minutes. Beyond that the fee is €5 for every starting five-minute period.",
+          "sources": [
+            "dropoff"
+          ]
+        },
+        {
+          "text": "Helsinki Airport has over 300 electric vehicle charging points in P1 Premium, P2, P3 and P5, priced at €0.25/kWh on Finavia's page on 5 October 2026.",
+          "sources": [
+            "ev"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assistance",
+      "heading": "Reduced-mobility assistance",
+      "paragraphs": [
+        {
+          "text": "Finavia offers free assistance to passengers with an intellectual disability, a visual impairment, hearing loss or reduced mobility, and to elderly passengers, and says it is available around the clock. Book it through your travel agent or airline when you book your flight, at least 48 hours before departure.",
+          "sources": [
+            "prm"
+          ]
+        },
+        {
+          "text": "Assistance call points are located in the parking halls, in the outdoor parking area, in front of the terminal, in the check-in area and at the airport train station. Helsinki Airport has a dedicated security control line marked \"Assisted\", and wheelchairs and other mobility equipment are available for passengers who hand over their own device at check-in. General information is available on +358 800 120 700 (Helsinki Airport, 24 hours).",
+          "sources": [
+            "prm"
+          ]
+        },
+        {
+          "text": "Cars with a parking card for persons with reduced mobility can park at the airport free for a maximum of four hours.",
+          "sources": [
+            "prm"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Helsinki Airport to the city centre by train?",
+      "a": "The P and I trains run between the airport and Helsinki city centre in approximately 30 minutes. The station is directly beneath the terminal, and tickets are sold in the HSL mobile app or at the platform ticket machine.",
+      "sources": [
+        "access"
+      ]
+    },
+    {
+      "q": "Which bus goes from Helsinki Airport to the city centre?",
+      "a": "HSL trunk line 600 runs between the airport and Helsinki city centre in approximately 40 minutes, from the bus station in front of the terminal at arrivals level.",
+      "sources": [
+        "access"
+      ]
+    },
+    {
+      "q": "Which gates are used for non-Schengen flights at Helsinki Airport?",
+      "a": "Long-haul and European non-Schengen flights use gates 37–55. Domestic and Schengen flights use gates 5–36.",
+      "sources": [
+        "transfer"
+      ]
+    },
+    {
+      "q": "How much does short-term parking cost at Helsinki Airport?",
+      "a": "Finavia says parking without a pre-booking costs €2 per 15 minutes in all areas until the daily maximum is reached. Check its parking pages for current prices.",
+      "sources": [
+        "pfaq"
+      ]
+    },
+    {
+      "q": "How long can I stop in the drop-off area at Helsinki Airport?",
+      "a": "A maximum of eight minutes. After that the fee is €5 for every starting five-minute period.",
+      "sources": [
+        "dropoff"
+      ]
+    },
+    {
+      "q": "How do I book assistance at Helsinki Airport?",
+      "a": "Book through your travel agent or airline when you book your flight, at least 48 hours before departure. The service is free.",
+      "sources": [
+        "prm"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "access",
+      "title": "To and from Helsinki Airport by car or using public transportation | Finavia",
+      "publisher": "Finavia",
+      "url": "https://www.finavia.fi/en/airports/helsinki-airport/access",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "transfer",
+      "title": "Transferring at Helsinki Airport | Finavia",
+      "publisher": "Finavia",
+      "url": "https://www.finavia.fi/en/airports/helsinki-airport/airport/terminals",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "areas",
+      "title": "Parking areas at Helsinki Airport | Finavia",
+      "publisher": "Finavia",
+      "url": "https://www.finavia.fi/en/airports/helsinki-airport/parking/parking-areas",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "noprebook",
+      "title": "Parking without pre-booking | Finavia",
+      "publisher": "Finavia",
+      "url": "https://www.finavia.fi/en/airports/helsinki-airport/parking/without-prebooking",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "pfaq",
+      "title": "FAQ - Parking and Car Wash | Finavia",
+      "publisher": "Finavia",
+      "url": "https://www.finavia.fi/en/airports/helsinki-airport/parking/faq",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "dropoff",
+      "title": "Dropping off passengers | Finavia",
+      "publisher": "Finavia",
+      "url": "https://www.finavia.fi/en/airports/helsinki-airport/parking/dropping-off-passengers",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "ev",
+      "title": "Electric vehicle charging instructions | Finavia",
+      "publisher": "Finavia",
+      "url": "https://www.finavia.fi/en/airports/helsinki-airport/parking/electric-cars",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "taxi",
+      "title": "Taxi service at Helsinki Airport | Finavia",
+      "publisher": "Finavia",
+      "url": "https://www.finavia.fi/en/for-businesses/taxi-service-helsinki-airport",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "prm",
+      "title": "Services for persons with disabilities and reduced mobility | Finavia",
+      "publisher": "Finavia",
+      "url": "https://www.finavia.fi/en/airport/services-for-persons-with-disabilities-and-reduced-mobility",
+      "published": null,
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+{
+  "iata": "LGW",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals",
+      "paragraphs": [
+        {
+          "text": "London Gatwick has two terminals, the North Terminal and the South Terminal, and your airline decides which one you use. The airport links them with a free shuttle that it says takes two minutes.",
+          "sources": [
+            "terminals",
+            "train"
+          ]
+        },
+        {
+          "text": "The airport’s airlines and terminals page, checked on 5 October 2026, lists British Airways, Ryanair, Jet2 and Wizz Air at the South Terminal, and easyJet and Emirates at the North Terminal. TUI is split: flight numbers beginning with TOM operate from the North Terminal and those beginning with BY from the South Terminal. The airport advises checking with your airline if you are unsure where to go.",
+          "sources": [
+            "terminals"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Getting to and from Gatwick",
+      "paragraphs": [
+        {
+          "text": "The railway station is at the South Terminal, just a five minutes walk from both departures and arrivals. The airport says it is served by four train operators with direct services to over 120 stations.",
+          "sources": [
+            "train"
+          ]
+        },
+        {
+          "text": "Gatwick Express runs non-stop to London Victoria, departing twice an hour and taking 30 minutes. Thameslink connects the airport to Brighton and to central London stations including London Bridge, London Blackfriars, City Thameslink, Farringdon and St Pancras International. The airport gives London journeys by train as 30 to 45 minutes and Brighton as 30 minutes.",
+          "sources": [
+            "train"
+          ]
+        },
+        {
+          "text": "You can pay for trains to and from London by tapping a contactless card or Oyster card at the ticket barrier. The airport notes that this does not cover travel south of Gatwick or outside London.",
+          "sources": [
+            "train"
+          ]
+        },
+        {
+          "text": "National Express coaches use North Terminal bus stops 4 and 5, on the lower level outside International Arrivals, and the lower forecourt at the South Terminal. The airport gives the coach journey to London as 1 hour 45 minutes and to Heathrow Airport as 1 hour.",
+          "sources": [
+            "coach"
+          ]
+        },
+        {
+          "text": "Metrobus runs local services, and the airport says seven routes run 24/7 with single journeys capped at £3. Metrobus Fastway 10 runs between London Gatwick and Crawley, every six minutes at most times, 24 hours a day. Metrobus stops at the North Terminal are on Furlong Way (bus stops 9 and 9a).",
+          "sources": [
+            "coach"
+          ]
+        },
+        {
+          "text": "Airport Cars Gatwick is described on the airport’s taxi page as its official private hire operator. The airport gives taxi times from the North Terminal of 15 minutes to Crawley, 45 minutes to Brighton and 1 hour 45 minutes to London (Kings Cross). Other operators also serve the airport, and the airport says they add its drop-off charge to your fare.",
+          "sources": [
+            "taxi"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parking",
+      "heading": "Parking",
+      "paragraphs": [
+        {
+          "text": "Short Stay parking is in Car Parks 5 and 6 at the North Terminal and Car Parks 1, 2 and 3 at the South Terminal, about a four-minute walk from the terminal. Premium Short Stay areas with same-level access are on Level 3 of Car Park 5 (North) and Level 2 of Car Park 3 (South).",
+          "sources": [
+            "shortstay"
+          ]
+        },
+        {
+          "text": "Roll-up (walk-up) Short Stay prices on the airport’s page on 5 October 2026 were £8.00 for up to 30 minutes, £14.00 for 31 to 60 minutes, £18.00 for 1 to 2 hours and £21.50 for 2 to 3 hours. These prices are the same at both terminals; check the page before you travel.",
+          "sources": [
+            "rollup"
+          ]
+        },
+        {
+          "text": "Long Stay parking is free for the first two hours. On the airport’s page on 5 October 2026 it cost £38.00 for 2 to 24 hours and £32.00 for each subsequent day. A free shuttle bus runs every 10 to 12 minutes, day and night, and takes usually 10 to 12 minutes to reach the terminal buildings.",
+          "sources": [
+            "rollup",
+            "longstay"
+          ]
+        },
+        {
+          "text": "Mid Stay at the North Terminal can only be pre-booked, and the airport says not to arrive without a booking. Valet Parking is also pre-book only. A minimum £10 charge applies at the terminal drop-off zones.",
+          "sources": [
+            "rollup"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assistance",
+      "heading": "Reduced-mobility assistance",
+      "paragraphs": [
+        {
+          "text": "The airport says that if you need assistance at the airport or on the aircraft for any kind of disability, you can book it through your airline or travel agent. It recommends booking at least 48 hours before travel.",
+          "sources": [
+            "assist"
+          ]
+        },
+        {
+          "text": "Assisted Travel Receptions are at the drop-off points in each terminal and just before security in each terminal. If the desk is not staffed, there is a telephone to speak to a member of staff. Blue Badge holders may use the drop-off points for free if they register their or their taxi’s number plate in advance.",
+          "sources": [
+            "assist"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lounges",
+      "heading": "Lounges",
+      "paragraphs": [
+        {
+          "text": "Entry to a Gatwick departure lounge includes three hours before your flight departure time. On the airport’s lounge page on 5 October 2026, prices per adult started at £28 for Plaza Express (North Terminal), £34 for My Lounge, £36 for Club Aspire (South Terminal), £38 for No1 Lounges, £40 for Plaza Premium (North Terminal) and £44 for Clubrooms. My Lounge, No1 Lounges and Clubrooms are listed at both terminals.",
+          "sources": [
+            "lounges"
+          ]
+        },
+        {
+          "text": "For arriving passengers, Arrive & Refresh is in the North Terminal and listed from £109 per stay, with a private room, en-suite shower and breakfast.",
+          "sources": [
+            "lounges"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Which terminal does easyJet use at Gatwick?",
+      "a": "The airport’s airline list shows easyJet at the North Terminal. Ryanair, British Airways, Jet2 and Wizz Air are at the South Terminal.",
+      "sources": [
+        "terminals"
+      ]
+    },
+    {
+      "q": "How long does the Gatwick Express take to London Victoria?",
+      "a": "The airport says Gatwick Express is non-stop to London Victoria, departs twice an hour and takes 30 minutes.",
+      "sources": [
+        "train"
+      ]
+    },
+    {
+      "q": "How far is the Gatwick railway station from the South Terminal?",
+      "a": "The airport says the station is just a five minutes walk from both departures and arrivals.",
+      "sources": [
+        "train"
+      ]
+    },
+    {
+      "q": "How much is Long Stay parking at Gatwick if you turn up without booking?",
+      "a": "On the airport’s roll-up prices page on 5 October 2026, Long Stay was free for 0 to 2 hours, £38.00 for 2 to 24 hours and £32.00 for each subsequent day. Check the page for current prices.",
+      "sources": [
+        "rollup"
+      ]
+    },
+    {
+      "q": "How far ahead should I book assistance at Gatwick?",
+      "a": "The airport recommends booking assistance at least 48 hours before travel, through your airline or travel agent.",
+      "sources": [
+        "assist"
+      ]
+    },
+    {
+      "q": "How do I get between the Gatwick terminals?",
+      "a": "The airport says a free shuttle service takes two minutes between the terminals.",
+      "sources": [
+        "train"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "terminals",
+      "title": "Airlines and Terminals | London Gatwick Airport",
+      "publisher": "London Gatwick Airport",
+      "url": "https://www.gatwickairport.com/flights/which-terminal.html",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "train",
+      "title": "Train Travel and London Gatwick | London Gatwick Airport",
+      "publisher": "London Gatwick Airport",
+      "url": "https://www.gatwickairport.com/to-and-from/by-train.html",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "coach",
+      "title": "Travel by Coach and Bus | London Gatwick Airport",
+      "publisher": "London Gatwick Airport",
+      "url": "https://www.gatwickairport.com/transport-options/coach-bus.html",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "taxi",
+      "title": "Taxis and Transfers | London Gatwick Airport",
+      "publisher": "London Gatwick Airport",
+      "url": "https://www.gatwickairport.com/to-and-from/by-taxi.html",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "rollup",
+      "title": "Roll-Up Car Park Prices | Official London Gatwick™ Airport Parking",
+      "publisher": "London Gatwick Airport",
+      "url": "https://www.gatwickairport.com/parking/roll-up-car-park-prices.html",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "shortstay",
+      "title": "Gatwick™ Short Stay | Official London Gatwick™ Airport Parking",
+      "publisher": "London Gatwick Airport",
+      "url": "https://www.gatwickairport.com/parking/parking-short-stay.html",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "longstay",
+      "title": "Gatwick™ Long Stay | Official London Gatwick™ Airport Parking",
+      "publisher": "London Gatwick Airport",
+      "url": "https://www.gatwickairport.com/parking/parking-long-stay.html",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "assist",
+      "title": "Assisted Travel | London Gatwick Airport",
+      "publisher": "London Gatwick Airport",
+      "url": "https://www.gatwickairport.com/passenger-guides/assisted-travel.html",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "lounges",
+      "title": "London Gatwick Airport Lounges | London Gatwick Airport",
+      "publisher": "London Gatwick Airport",
+      "url": "https://www.gatwickairport.com/premium-services/lounge-airport.html",
+      "published": null,
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

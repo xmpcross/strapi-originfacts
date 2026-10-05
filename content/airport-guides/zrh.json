@@ -1,0 +1,193 @@
+{
+  "iata": "ZRH",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals",
+      "paragraphs": [
+        {
+          "text": "Zurich Airport describes itself as a one-terminal airport since the Airside Center opened. Passengers check in in halls called Check-in 1, 2 and 3, and the airport’s security check building, with 26 check lines over four floors, links check-in with the Airside Center.",
+          "sources": [
+            "hist"
+          ]
+        },
+        {
+          "text": "Dock E is reached from the Airside Center within a few minutes by the Skymetro aerial tramway. Dock B handles Schengen and non-Schengen flights flexibly.",
+          "sources": [
+            "hist",
+            "dockb"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Getting to and from the city",
+      "paragraphs": [
+        {
+          "text": "According to the airport, SBB trains depart for Zurich’s main station every 10 minutes and the journey takes 15 minutes. The airport’s page carries no fare or date for this, so check SBB’s timetable before you travel.",
+          "sources": [
+            "tt"
+          ]
+        },
+        {
+          "text": "Many airport hotels offer a free shuttle, with the buses found along the inner curbside lanes of Arrival 1. The paid CHECK-IN all-ways shuttle to city hotels departs every 30 minutes between 6.30 a.m. and 11 p.m.",
+          "sources": [
+            "hotelbus"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parking",
+      "heading": "Parking",
+      "paragraphs": [
+        {
+          "text": "Without booking you can use P1 (directly connected to Terminal 1), P2, P3, P4 and P6 on site. P3 XXL, P60 and P65 are available with online booking only; P60 is a 15-minute walk from the terminal and P65 has a free shuttle bus taking 5–7 minutes. The airport’s page, read on 5 October 2026, advertises online parking from CHF 94.– per week.",
+          "sources": [
+            "park"
+          ]
+        },
+        {
+          "text": "All car parks and fields other than P38, P4, P60 and P65 have a 2-metre height restriction.",
+          "sources": [
+            "park"
+          ]
+        },
+        {
+          "text": "Picking up passengers at the Arrival 1 and 2 kerbside is always charged; for more than two entries within two hours an additional fee of CHF 50.- plus CHF 1.-/min applies.",
+          "sources": [
+            "pick"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assistance",
+      "heading": "Reduced-mobility assistance",
+      "paragraphs": [
+        {
+          "text": "Special assistance requests can only be submitted through your airline or travel agency, not by email to the airport. The airport asks you to report to a pick-up point two hours before departure, and there are pick-up points at every Check-in.",
+          "sources": [
+            "prm"
+          ]
+        },
+        {
+          "text": "For assistance to the aircraft by train, report to the pick-up point in Check-in 3 directly above the airport railway station (callbox); the bus station is directly above Check-in 3.",
+          "sources": [
+            "prm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lounges",
+      "heading": "ZRH Comfort",
+      "paragraphs": [
+        {
+          "text": "ZRH Comfort costs CHF 39.– per person on the airport’s page and gives access to the Priority Lane at security plus a non-alcoholic drink and snack from selected partners. It can be booked from 90 days before the flight date up to the time of departure.",
+          "sources": [
+            "comfort"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How long does the train from Zurich Airport to Zurich main station take?",
+      "a": "The airport says SBB trains depart for Zurich’s main station every 10 minutes and the journey takes 15 minutes.",
+      "sources": [
+        "tt"
+      ]
+    },
+    {
+      "q": "Can I request wheelchair assistance directly from Zurich Airport?",
+      "a": "No. Special assistance requests can only be submitted through your airline or travel agency.",
+      "sources": [
+        "prm"
+      ]
+    },
+    {
+      "q": "What is the 2-metre rule for Zurich Airport car parks?",
+      "a": "All car parks other than P38, P4, P60 and P65 have a height restriction of 2 metres.",
+      "sources": [
+        "park"
+      ]
+    },
+    {
+      "q": "What does ZRH Comfort cost?",
+      "a": "The airport’s page lists CHF 39.– per person for the Priority Lane at security plus a non-alcoholic drink and snack.",
+      "sources": [
+        "comfort"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "tt",
+      "title": "Train, tram & bus – Flughafen Zuerich",
+      "publisher": "Flughafen Zürich AG (Zurich Airport)",
+      "url": "https://www.flughafen-zuerich.ch/en/passengers/practical/parking-and-transport/train-tram-and-bus",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "hotelbus",
+      "title": "Hotel buses and special buses – Flughafen Zuerich",
+      "publisher": "Flughafen Zürich AG (Zurich Airport)",
+      "url": "https://www.flughafen-zuerich.ch/en/passengers/practical/parking-and-transport/hotel-buses-and-special-buses",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "park",
+      "title": "Parking at the airport – your options – Flughafen Zuerich",
+      "publisher": "Flughafen Zürich AG (Zurich Airport)",
+      "url": "https://www.flughafen-zuerich.ch/en/passengers/practical/parking-and-transport/parking-for-passengers",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "pick",
+      "title": "Picking up passengers – Flughafen Zuerich",
+      "publisher": "Flughafen Zürich AG (Zurich Airport)",
+      "url": "https://www.flughafen-zuerich.ch/en/passengers/practical/parking-and-transport/picking-up",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "prm",
+      "title": "Travelling with reduced mobility – Flughafen Zuerich",
+      "publisher": "Flughafen Zürich AG (Zurich Airport)",
+      "url": "https://www.flughafen-zuerich.ch/en/passengers/fly/assistance/travelling-with-reduced-mobility",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "comfort",
+      "title": "ZRH Comfort – Your upgrade before departure – Flughafen Zuerich",
+      "publisher": "Flughafen Zürich AG (Zurich Airport)",
+      "url": "https://www.flughafen-zuerich.ch/en/passengers/fly/assistance/zrh-comfort",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "hist",
+      "title": "Airport History – Flughafen Zuerich",
+      "publisher": "Flughafen Zürich AG (Zurich Airport)",
+      "url": "https://www.flughafen-zuerich.ch/en/company/flughafen-zuerich/airport-development/airport-history",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "dockb",
+      "title": "Dock B – Flughafen Zuerich",
+      "publisher": "Flughafen Zürich AG (Zurich Airport)",
+      "url": "https://www.flughafen-zuerich.ch/en/company/flughafen-zuerich/airport-development/old-conctruction-projects/dock-b",
+      "published": null,
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

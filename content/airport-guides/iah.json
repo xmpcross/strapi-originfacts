@@ -1,0 +1,322 @@
+{
+  "iata": "IAH",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals",
+      "paragraphs": [
+        {
+          "text": "Houston Airports says all five terminals at IAH (A, B, C, D and E) are connected by an above-ground automated people-mover, the Skyway, and an underground train, the Subway.",
+          "sources": [
+            "connecting"
+          ]
+        },
+        {
+          "text": "The Skyway runs inside security and departs every two minutes from the stations in Terminals A, C and D/E. It is free, and the airport gives the total travel time from the Terminal A station to the Terminal D/E station as 4 minutes, 15 seconds.",
+          "sources": [
+            "connecting"
+          ]
+        },
+        {
+          "text": "The Subway runs outside security (before the checkpoints) and departs every three minutes from the stations in Terminals A, C, D/E and the Airport Marriott. It is free and runs from 3:15 a.m. to 12:15 a.m., and is closed between 12:15 a.m. and 3:15 a.m.",
+          "sources": [
+            "connecting"
+          ]
+        },
+        {
+          "text": "Terminal B notice on the airport's alerts page on 5 October 2026: United Airlines closed the Terminal B Ticketing Lobby from 21 January 2025 and it is due to stay closed until late 2026. During that time all Terminal B passengers check in, drop bags and clear TSA screening at Terminal C, then take the Skyway from Terminal C to Terminal B. Check the airport's alerts page for the current position.",
+          "sources": [
+            "alerts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Getting into Houston",
+      "paragraphs": [
+        {
+          "text": "METRO route 500 IAH Downtown Direct runs between Bush Airport and the George R. Brown Convention Center in downtown Houston. The airport lists the fare as $4.50 one way, with buses seven days a week from 5:30 a.m. to 8 p.m., departing every 30 minutes. It departs from Terminal E, Level 2, Door E201, near Ride App Pick-Up.",
+          "sources": [
+            "downtown-direct"
+          ]
+        },
+        {
+          "text": "METRO route 102 Bush IAH Express serves the airport from Terminal C. The airport's bus page lists a fare of $1.25 (cash only; the driver does not make change) and a transit time to downtown of 50 to 90 minutes, from the METRO bus stop on the Baggage Claim level, south side of Terminal C. These details were on the airport's page on 5 October 2026; check METRO for current fares and timetables.",
+          "sources": [
+            "downtown-direct",
+            "bus"
+          ]
+        },
+        {
+          "text": "The airport says taxi assistance is available 24/7. Taxis pick up outside Baggage Claim/Arrivals: Terminal A south side Door A-115, Terminal C south side Door C-105 and Terminal E west side Door E-103. A $2.75 departure-fee surcharge applies, plus $1.00 more for late-night trips between 8:00 p.m. and 6:00 a.m.",
+          "sources": [
+            "taxi"
+          ]
+        },
+        {
+          "text": "Ride-app pick-up is signed “Ride App”: Terminal C south side at Door C-103 and Door C-104, and Terminal E west side at Level 2, Zone 5.",
+          "sources": [
+            "taxi"
+          ]
+        },
+        {
+          "text": "The Rental Car Center, at 17330 Palmetto Pines, Houston, TX 77032, is open 24 hours a day, seven days a week and is approximately five minutes from the terminals by shuttle. Shuttles leave every five minutes between 7:00 am and 11:00 pm and every ten minutes between 11:00 pm and 7:00 am.",
+          "sources": [
+            "rental"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parking",
+      "heading": "Parking",
+      "paragraphs": [
+        {
+          "text": "IAH has terminal garages and ecopark lots. Prices below are the rates on the airport's parking-rates page on 5 October 2026, which showed no start date, so check them before you travel. ecopark uncovered parking is listed at $10.00 for 16 minutes to 24 hours, and covered parking at $12.00 for the same period, and ecopark 2 covered parking carries the same $12.00 listing.",
+          "sources": [
+            "rates"
+          ]
+        },
+        {
+          "text": "The A/B and C/D/E garages are each listed with a daily maximum rate of $25.00 including tax. Valet parking in both is $30.00 for 0 to 24 hours.",
+          "sources": [
+            "rates",
+            "valet"
+          ]
+        },
+        {
+          "text": "Since 1 June 2026 ecopark2 on Will Clayton Parkway has been reservation-only: drive-up parking is no longer accepted and a reservation is required for entry. The airport also says that once garage capacity reaches 85%, only pre-booked reservations will be allowed to park.",
+          "sources": [
+            "ecopark2",
+            "parking"
+          ]
+        },
+        {
+          "text": "Valet parking is inside the terminal garages: Terminal A street level, Terminal C level 4 Blue Garage and Terminal E Purple Garage.",
+          "sources": [
+            "valet"
+          ]
+        },
+        {
+          "text": "Cash is not accepted for parking; there is a cash-to-card machine on Level 2, across from the American Airlines check-in counter. Vehicles can stay in any terminal garage or ecopark area for up to 60 days without notifying parking staff.",
+          "sources": [
+            "pfaq"
+          ]
+        },
+        {
+          "text": "ecopark shuttle buses operate 24 hours a day, seven days a week, at approximately 10 minute intervals. Blink EV chargers at the A/B garage (Level 4, across from the Terminal A elevators) and the C/D/E garage (Level 4, across from Valet) are listed as free to use.",
+          "sources": [
+            "pfaq",
+            "ev"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assistance",
+      "heading": "Reduced mobility assistance",
+      "paragraphs": [
+        {
+          "text": "Houston Airports says wheelchairs are managed by the airlines, so contact your airline immediately for special assistance needs. It advises requesting a wheelchair or electric cart service from your airline in advance or at the ticket counter.",
+          "sources": [
+            "access",
+            "services"
+          ]
+        },
+        {
+          "text": "For help at security screening, the airport points to TSA Cares and says to contact it at least 72 hours before travel.",
+          "sources": [
+            "tsa"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lounges",
+      "heading": "Lounges and rest facilities",
+      "paragraphs": [
+        {
+          "text": "The airport's services page lists The Centurion Lounge by American Express in Terminal D, mezzanine level, with complimentary access for American Express Platinum Card and Centurion Members.",
+          "sources": [
+            "services"
+          ]
+        },
+        {
+          "text": "Minute Suites is at Terminal C, Gate C14, and is described by the airport as a private retreat after security to nap, relax, shower and work. The airport's page shows no prices.",
+          "sources": [
+            "services"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from IAH to downtown Houston by bus?",
+      "a": "METRO route 500 IAH Downtown Direct goes to the George R. Brown Convention Center from Terminal E, Level 2, Door E201. The airport lists $4.50 one way, every 30 minutes, 5:30 a.m. to 8 p.m., seven days a week. Check METRO for current details.",
+      "sources": [
+        "downtown-direct"
+      ]
+    },
+    {
+      "q": "Is there a cheaper bus from IAH?",
+      "a": "The airport lists METRO route 102 from the bus stop on the Baggage Claim level, south side of Terminal C, at $1.25 cash only, with a transit time to downtown of 50 to 90 minutes.",
+      "sources": [
+        "bus"
+      ]
+    },
+    {
+      "q": "Can I turn up and park at ecopark2?",
+      "a": "No. Since 1 June 2026 ecopark2 has been reservation-only and drive-up parking is no longer accepted.",
+      "sources": [
+        "ecopark2"
+      ]
+    },
+    {
+      "q": "Is there a free way to move between IAH terminals?",
+      "a": "Yes. The Skyway (inside security) and the Subway (outside security) are both free. The Skyway leaves every two minutes; the Subway every three minutes and is closed between 12:15 a.m. and 3:15 a.m.",
+      "sources": [
+        "connecting"
+      ]
+    },
+    {
+      "q": "How do I get a wheelchair at IAH?",
+      "a": "Wheelchair service is provided through your airline, so request it from the airline in advance or at the ticket counter.",
+      "sources": [
+        "services",
+        "access"
+      ]
+    },
+    {
+      "q": "Does the Rental Car Center run overnight?",
+      "a": "Yes. It is open 24 hours a day, seven days a week, and shuttles run every ten minutes between 11:00 pm and 7:00 am.",
+      "sources": [
+        "rental"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "connecting",
+      "title": "Connecting Passengers",
+      "publisher": "Houston Airports (Houston Airport System)",
+      "url": "https://www.fly2houston.com/iah/connecting-passengers/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "alerts",
+      "title": "Airport Alerts",
+      "publisher": "Houston Airports (Houston Airport System)",
+      "url": "https://www.fly2houston.com/iah/alerts/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "downtown-direct",
+      "title": "Downtown Direct",
+      "publisher": "Houston Airports (Houston Airport System)",
+      "url": "https://www.fly2houston.com/iah/ground-transportation/metro-downtown-direct/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "bus",
+      "title": "Public Bus Transportation",
+      "publisher": "Houston Airports (Houston Airport System)",
+      "url": "https://www.fly2houston.com/iah/ground-transportation/shuttles-and-buses/public-bus-transportation/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "taxi",
+      "title": "IAH Airport Taxi & Uber | Houston Airport Ride Apps",
+      "publisher": "Houston Airports (Houston Airport System)",
+      "url": "https://www.fly2houston.com/iah/ground-transportation/taxi-and-ride-apps/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "rental",
+      "title": "Rent Car Houston | IAH Airport Rental Car Center",
+      "publisher": "Houston Airports (Houston Airport System)",
+      "url": "https://www.fly2houston.com/iah/ground-transportation/rental-cars/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "rates",
+      "title": "IAH Parking Rates",
+      "publisher": "Houston Airports (Houston Airport System)",
+      "url": "https://fly2houston.com/parking/iah-parking-rates/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "ecopark2",
+      "title": "ecopark2",
+      "publisher": "Houston Airports (Houston Airport System)",
+      "url": "https://www.fly2houston.com/iah/parking/ecopark2/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "parking",
+      "title": "IAH Airport Parking Options | Fly2Houston Official Site",
+      "publisher": "Houston Airports (Houston Airport System)",
+      "url": "https://www.fly2houston.com/iah/parking/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "pfaq",
+      "title": "IAH Parking FAQ | Parking at IAH International Airport",
+      "publisher": "Houston Airports (Houston Airport System)",
+      "url": "https://www.fly2houston.com/iah/parking/faq/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "valet",
+      "title": "IAH Valet Parking Services | IAH International Airport Valet",
+      "publisher": "Houston Airports (Houston Airport System)",
+      "url": "https://www.fly2houston.com/iah/parking/iah-valet-parking/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "ev",
+      "title": "EV Charging Stations at IAH | Electric Vehicle Parking Info",
+      "publisher": "Houston Airports (Houston Airport System)",
+      "url": "https://www.fly2houston.com/iah/parking/ev-charging/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "access",
+      "title": "IAH Accessibility Services | ADA Accessible Travel at Houston Airport",
+      "publisher": "Houston Airports (Houston Airport System)",
+      "url": "https://www.fly2houston.com/iah/accessibility/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "services",
+      "title": "Services",
+      "publisher": "Houston Airports (Houston Airport System)",
+      "url": "https://www.fly2houston.com/iah/visitor-information/services/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "tsa",
+      "title": "IAH Accessible Security Screening | Assisted TSA Screening at George Bush Intercontinental Airport",
+      "publisher": "Houston Airports (Houston Airport System)",
+      "url": "https://www.fly2houston.com/iah/accessibility/accessible-security-screening/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

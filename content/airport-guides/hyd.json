@@ -1,0 +1,187 @@
+{
+  "iata": "HYD",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals",
+      "paragraphs": [
+        {
+          "text": "Hyderabad Airport has a single, integrated main terminal building that handles both domestic and international passengers, arriving and departing. The airport's FAQ gives its terminal count as one, effective 28th Nov’22.",
+          "sources": [
+            "faqs"
+          ]
+        },
+        {
+          "text": "Domestic and international departures are in the same building. Passengers arriving on an international flight who are connecting to a domestic departure collect their baggage, leave the arrivals hall and go one level up.",
+          "sources": [
+            "faqs"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Getting to and from the city",
+      "paragraphs": [
+        {
+          "text": "The airport lists these authorised ways to travel: car rentals, prepaid taxis and the Pushpak airport liner, alongside app-based cabs and radio taxis. It says its transport help desk is at the car park area near Aero Plaza.",
+          "sources": [
+            "home",
+            "transport"
+          ]
+        },
+        {
+          "text": "Prepaid taxis are booked at a kiosk only and board at Carpark Zone E; the fare is fixed by destination and set by Hyderabad Traffic Police. App-based cabs board in the car park zones: Uber at D1 and D2, Rapido at D3 and D4, and Ola at D6 and D7.",
+          "sources": [
+            "transport"
+          ]
+        },
+        {
+          "text": "The airport page for the radio taxi operator listed first shows a fare of up to 20 km Rs.895, then Rs.23 per additional km. Sky Cabs is listed at up to 28 km Rs.1000, then Rs.27 per additional km. These are the figures on the airport's page on 5 October 2026; check them at the counter.",
+          "sources": [
+            "transport"
+          ]
+        },
+        {
+          "text": "Airport Taxi, a service dedicated to airport passengers, boards on the arrival ramp near pillars 4 to 6, and can be booked with Uber and Mega Cabs at the arrivals counter.",
+          "sources": [
+            "transport"
+          ]
+        },
+        {
+          "text": "The Pushpak is an electric, air-conditioned airport liner bus running between the airport and various parts of the city.",
+          "sources": [
+            "transport"
+          ]
+        },
+        {
+          "text": "Live cab availability and Pushpak and TGSRTC/APSRTC district bus schedules are shown on screens at the baggage claim area.",
+          "sources": [
+            "transport"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parking",
+      "heading": "Parking",
+      "paragraphs": [
+        {
+          "text": "These are the tariffs on the airport's parking page on 5 October 2026, which shows no start date, so check them before you travel. Private four-wheelers pay ₹150 for up to 30 minutes, ₹250 for 30 to 60 minutes, ₹100 for every additional hour and ₹750 for 24 hours.",
+          "sources": [
+            "parking"
+          ]
+        },
+        {
+          "text": "Two-wheelers pay ₹40 for up to 1 hour, ₹30 for every additional hour and ₹250 for 24 hours. Valet parking starts at ₹300 for up to 30 minutes and ₹400 for 30 minutes to 1 hour.",
+          "sources": [
+            "parking"
+          ]
+        },
+        {
+          "text": "On the ramp for quick pick-up and drop-off the first 8 minutes are free, 8 to 10 minutes cost ₹250 and 10 to 15 minutes cost ₹500. Beyond 15 minutes the vehicle will be towed away. Two-wheelers and auto rickshaws are not permitted on ramps.",
+          "sources": [
+            "parking"
+          ]
+        },
+        {
+          "text": "Dedicated lanes are available for FASTag users. The car park office number is +91 40 6660 4210.",
+          "sources": [
+            "parking"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assistance",
+      "heading": "Reduced-mobility assistance",
+      "paragraphs": [
+        {
+          "text": "The airport says passengers who need wheelchair assistance should approach their airline in advance. It also lists an exclusive drop-off zone for passengers with reduced mobility, with a separate entry lane, a priority emigration counter and a separate security check lane.",
+          "sources": [
+            "faqs"
+          ]
+        },
+        {
+          "text": "Buggy services are available for passengers with reduced mobility after security. Buddy Mobility Care, an independent service for wheelchair users and senior citizens, is listed at Arrivals, opposite Café Niloufer.",
+          "sources": [
+            "faqs",
+            "transport"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How many terminals does Hyderabad Airport have?",
+      "a": "One. Domestic and international passengers use the same integrated main terminal building.",
+      "sources": [
+        "faqs"
+      ]
+    },
+    {
+      "q": "Where do Uber, Ola and Rapido pick up at Hyderabad Airport?",
+      "a": "The airport lists Uber at car park zones D1 and D2, Rapido at D3 and D4, and Ola at D6 and D7.",
+      "sources": [
+        "transport"
+      ]
+    },
+    {
+      "q": "How does the ramp pick-up and drop-off charge work?",
+      "a": "The first 8 minutes are free, 8 to 10 minutes cost ₹250 and 10 to 15 minutes cost ₹500. After 15 minutes the vehicle will be towed away. Check the airport's parking page for current prices.",
+      "sources": [
+        "parking"
+      ]
+    },
+    {
+      "q": "How do I get wheelchair assistance at Hyderabad Airport?",
+      "a": "The airport advises passengers who need wheelchair assistance to approach their airline in advance.",
+      "sources": [
+        "faqs"
+      ]
+    },
+    {
+      "q": "Are there FASTag lanes at the airport car parks?",
+      "a": "Yes. The airport says dedicated lanes are available for FASTag users.",
+      "sources": [
+        "parking"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "faqs",
+      "title": "Hyderabad Airport FAQ | Answers to RGIA Passenger Queries",
+      "publisher": "GMR Hyderabad International Airport Ltd (hyderabad.aero)",
+      "url": "https://www.hyderabad.aero/travellers/faqs",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "transport",
+      "title": "How to Reach RGIA | Official Hyderabad Airport Transport",
+      "publisher": "GMR Hyderabad International Airport Ltd (hyderabad.aero)",
+      "url": "https://www.hyderabad.aero/travellers/to-and-from-airport",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "parking",
+      "title": "Parking Information - HIAL",
+      "publisher": "GMR Hyderabad International Airport Ltd (hyderabad.aero)",
+      "url": "https://www.hyderabad.aero/rgia/airport-facilities/parking-information",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "home",
+      "title": "Rajiv Gandhi International Airport | Official Hyderabad Airport",
+      "publisher": "GMR Hyderabad International Airport Ltd (hyderabad.aero)",
+      "url": "https://www.hyderabad.aero/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

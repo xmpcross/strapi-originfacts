@@ -1,0 +1,317 @@
+{
+  "iata": "BCN",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals",
+      "paragraphs": [
+        {
+          "text": "Barcelona–El Prat has two terminals, T1 and T2, linked by a free shuttle that Aena says runs 24 hours a day, every day including public holidays. Aena gives the frequency as 7 minutes from 05:00 to 08:00, 5 minutes from 08:00 to 20:00, 7 minutes from 20:00 to 00:00 and 10 minutes from 00:00 to 05:00.",
+          "sources": [
+            "shuttle"
+          ]
+        },
+        {
+          "text": "Aena’s airline list shows Vueling, Iberia, British Airways and Lufthansa at T1, and Ryanair, easyJet, Volotea and Wizz Air Hungary at T2. T2 is divided into T2A, T2B and T2C, and the list is the airport’s own, so check your airline’s listing before you travel.",
+          "sources": [
+            "airlines",
+            "taxi"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Getting into Barcelona",
+      "paragraphs": [
+        {
+          "text": "Metro line L9 Sud connects the airport terminals T1 and T2 with the city of Barcelona every 7 minutes, according to TMB. Not every ticket or travel card is valid at the airport stations: if you arrive at Aeroport T1 or Aeroport T2 without a valid ticket, you must buy an airport ticket to get out of the station.",
+          "sources": [
+            "tmb-metro",
+            "metro-aena"
+          ]
+        },
+        {
+          "text": "The Aerobús runs 24 hours a day, every day of the year, from Plaça Catalunya, Sepúlveda – Urgell and Plaça d’Espanya. Its own site says the journey takes 35 minutes, with line A1 serving Terminal 1 every 5-10 minutes and line A2 serving Terminal 2 every 10 minutes. That page is dated 25 August 2024, so confirm times on the Aerobús site.",
+          "sources": [
+            "aerobus",
+            "bus"
+          ]
+        },
+        {
+          "text": "Aena also lists the metropolitan bus line 46 between the airport (terminals T1 and T2) and Plaça Espanya, stopping at El Prat de Llobregat and L’Hospitalet de Llobregat. Night buses N17 and N18 run between terminal T1 and Plaça Catalunya; the N18 stops at terminal T2 on the way to Barcelona.",
+          "sources": [
+            "bus"
+          ]
+        },
+        {
+          "text": "Aena lists Rodalies line R2 Nord (Airport – Maçanet-Massanes) as stopping at Terminal T2. Aena’s page gives no timetable or fare so check Rodalies de Catalunya for current running before relying on it.",
+          "sources": [
+            "trains"
+          ]
+        },
+        {
+          "text": "Taxi ranks are opposite the arrivals areas of terminal T1, the Barcelona-Madrid shuttle, and terminals T2A, T2B and T2C. At Terminal T1 the official taxi service is on the Ground Floor, and Aena says the only official taxi in Barcelona is black and yellow.",
+          "sources": [
+            "taxi"
+          ]
+        },
+        {
+          "text": "The Institut Metropolità del Taxi’s 2026 fare page lists a €4.60 surcharge when the airport is the origin or destination. A fixed fare of €46 applies, with all surcharges included, between the airport and the Moll Adossat cruise ship dock. These are the figures on the page on 5 October 2026; check them before you travel.",
+          "sources": [
+            "amb-taxi"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parking",
+      "heading": "Parking",
+      "paragraphs": [
+        {
+          "text": "Aena says access without prior booking is always guaranteed at the General, Express and Motorcycle car parks; for the others it recommends checking each car park’s page. Its car-access page also lists Priority, Long-stay, VIP and Low Cost car parks for T1, plus a T2 car park and a T2 express car park.",
+          "sources": [
+            "park-faq",
+            "car"
+          ]
+        },
+        {
+          "text": "You can book through the Aena app or parking.aena.es; bookings must be made at least 3 hours before entrance. Aena says pre-booked stays get 5% - 25% off on any car park for Aena Customer Club members, and that a booking does not give you a specific space. Aena’s pages show no tariff, so check the price when booking.",
+          "sources": [
+            "park-faq",
+            "park-t1"
+          ]
+        },
+        {
+          "text": "If you stay beyond your booked time, Aena says you have two courtesy hours to leave at no additional cost. If your stay exceeds €100, you have to go to the pay station to pay for security reasons.",
+          "sources": [
+            "park-faq",
+            "park-t1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assistance",
+      "heading": "Assistance for reduced mobility",
+      "paragraphs": [
+        {
+          "text": "Aena says you must request assistance at least 48 hours before the scheduled departure time. You can do so when you book through a travel agency or airline, through Aena’s website or app, or by calling (+34) 91 321 10 00; the phone line is open from 7:00 to 00:00.",
+          "sources": [
+            "assist"
+          ]
+        },
+        {
+          "text": "At the airport, report your arrival at your airline’s check-in desk or using the standing directory, where Aena staff will pick you up. The email address for the service is sinbarreras@aena.es, and Aena notes that the service is not a guard and custody service.",
+          "sources": [
+            "assist"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lounges",
+      "heading": "Lounges",
+      "paragraphs": [
+        {
+          "text": "Aena operates four pay-in VIP lounges. In T1, Pau Casals (boarding gates A, B and C, level 2, Schengen flights) is open from 04:30 to last flight, and Joan Miró (gate areas D and E, level 2, non-Schengen destinations) from 5:00 to last flight. Colomer, reserved for Barcelona-Madrid air shuttle passengers, is open from 6:00 to 21:00.",
+          "sources": [
+            "lg-casals",
+            "lg-miro",
+            "lg-colomer"
+          ]
+        },
+        {
+          "text": "In T2, the Canudas lounge is on the first floor boarding area, doors U, and is open from 06:00 to 23:00. Aena says the maximum scheduled stay in any of its VIP lounges is three hours immediately before departure. Aena’s lounge pages show no price, so check Aena’s lounge pass page.",
+          "sources": [
+            "lg-canudas",
+            "lg-colomer"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Is there a free shuttle between T1 and T2 at Barcelona airport?",
+      "a": "Yes. Aena says the free service connecting T1 and T2 runs 24 hours a day, every day including public holidays, every 5 minutes between 08:00 and 20:00.",
+      "sources": [
+        "shuttle"
+      ]
+    },
+    {
+      "q": "Does the Barcelona airport metro need a special ticket?",
+      "a": "Not every ticket or travel card is valid at the Aeroport T1 and Aeroport T2 stations. TMB says that if you arrive without a valid ticket you will have to buy an airport ticket to get out of the station.",
+      "sources": [
+        "tmb-metro"
+      ]
+    },
+    {
+      "q": "Does the Aerobús run at night?",
+      "a": "Yes. Aerobús says it operates 24 hours a day, every day of the year, and gives the journey time as 35 minutes.",
+      "sources": [
+        "aerobus"
+      ]
+    },
+    {
+      "q": "How far ahead must I request assistance at Barcelona airport?",
+      "a": "Aena says you must request assistance at least 48 hours before the scheduled departure time, through your airline or agency, Aena’s website or app, or by calling (+34) 91 321 10 00.",
+      "sources": [
+        "assist"
+      ]
+    },
+    {
+      "q": "What is the fixed taxi fare between Barcelona airport and the cruise port?",
+      "a": "The Institut Metropolità del Taxi lists a fixed €46 fare, all surcharges included, between the airport and the Moll Adossat cruise ship dock. This is the figure on its 2026 fare page on 5 October 2026.",
+      "sources": [
+        "amb-taxi"
+      ]
+    },
+    {
+      "q": "Can I park at Barcelona airport without booking?",
+      "a": "Aena says access without prior booking is always guaranteed at the General, Express and Motorcycle car parks; for the others, check each car park’s page.",
+      "sources": [
+        "park-faq"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "shuttle",
+      "title": "Free transport between terminals | JT Barcelona-El Prat Airport | Aena",
+      "publisher": "Aena (airport operator)",
+      "url": "https://www.aena.es/en/josep-tarradellas-barcelona-el-prat/airport-services/free-transport-between-terminals.html",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "airlines",
+      "title": "Airlines at Josep Tarradellas Barcelona-El Prat Airport | Aena",
+      "publisher": "Aena (airport operator)",
+      "url": "https://www.aena.es/en/josep-tarradellas-barcelona-el-prat/airlines-and-destinations/airlines.html",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "taxi",
+      "title": "How to get here by taxi | JT Barcelona-El Prat Airport | Aena",
+      "publisher": "Aena (airport operator)",
+      "url": "https://www.aena.es/en/josep-tarradellas-barcelona-el-prat/getting-there/taxi.html",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "amb-taxi",
+      "title": "Taxi fares | Taxi AMB",
+      "publisher": "Institut Metropolità del Taxi (AMB)",
+      "url": "https://taxi.amb.cat/en/usuaris/tarifes-del-taxi",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "bus",
+      "title": "How to get here by bus | JT Barcelona-El Prat Airport | Aena",
+      "publisher": "Aena (airport operator)",
+      "url": "https://www.aena.es/en/josep-tarradellas-barcelona-el-prat/getting-there/bus.html",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "aerobus",
+      "title": "All the information about lines, schedules and stops of the Aerobús service | Aerobús Barcelona",
+      "publisher": "Aerobús Barcelona (Monbus)",
+      "url": "https://aerobusbarcelona.es/en/guia-de-viaje/all-the-information-about-lines-schedules-and-stops-of-the-aerobus-service/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "metro-aena",
+      "title": "How to get here by metro | JT Barcelona-El Prat Airport | Aena",
+      "publisher": "Aena (airport operator)",
+      "url": "https://www.aena.es/en/josep-tarradellas-barcelona-el-prat/getting-there/underground.html",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "tmb-metro",
+      "title": "Accessing Barcelona from the airport by metro | Transports Metropolitans de Barcelona",
+      "publisher": "Transports Metropolitans de Barcelona (TMB)",
+      "url": "https://www.tmb.cat/en/visit-barcelona/public-transport/metro-airport",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "trains",
+      "title": "How to get here by train | JT Barcelona-El Prat Airport | Aena",
+      "publisher": "Aena (airport operator)",
+      "url": "https://www.aena.es/en/josep-tarradellas-barcelona-el-prat/getting-there/trains.html",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "assist",
+      "title": "Barrier Free assistance service | JT Barcelona-El Prat Airport | Aena",
+      "publisher": "Aena (airport operator)",
+      "url": "https://www.aena.es/en/josep-tarradellas-barcelona-el-prat/airport-services/barrier-free-assistance-service.html",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "lg-colomer",
+      "title": "Colomer VIP Lounge (T1) | JT Barcelona-El Prat Airport | Aena",
+      "publisher": "Aena (airport operator)",
+      "url": "https://www.aena.es/en/josep-tarradellas-barcelona-el-prat/vip-services/vip-lounges/colomer-vip-lounge.html",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "lg-miro",
+      "title": "Joan Miró VIP Lounge (T1) | JT Barcelona-El Prat Airport | Aena",
+      "publisher": "Aena (airport operator)",
+      "url": "https://www.aena.es/en/josep-tarradellas-barcelona-el-prat/vip-services/vip-lounges/joan-miro-vip-lounge.html",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "lg-casals",
+      "title": "Pau Casals VIP Lounge (T1) | JT Barcelona-El Prat Airport | Aena",
+      "publisher": "Aena (airport operator)",
+      "url": "https://www.aena.es/en/josep-tarradellas-barcelona-el-prat/vip-services/vip-lounges/pau-casals-vip-lounge.html",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "lg-canudas",
+      "title": "Canudas VIP Lounge (T2) | JT Barcelona-El Prat Airport | Aena",
+      "publisher": "Aena (airport operator)",
+      "url": "https://www.aena.es/en/josep-tarradellas-barcelona-el-prat/vip-services/vip-lounges/canudas-vip-lounge.html",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "park-t1",
+      "title": "JT Barcelona-El Prat Airport T1 Car Parks | Aena",
+      "publisher": "Aena (airport operator)",
+      "url": "https://www.aena.es/en/josep-tarradellas-barcelona-el-prat/parking/t1.html",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "park-faq",
+      "title": "JT Barcelona-El Prat Airport Car Parks Frequently Asked Questions | Aena",
+      "publisher": "Aena (airport operator)",
+      "url": "https://www.aena.es/en/josep-tarradellas-barcelona-el-prat/parking/parking-faq.html",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "car",
+      "title": "How to get here by car | JT Barcelona-El Prat Airport | Aena",
+      "publisher": "Aena (airport operator)",
+      "url": "https://www.aena.es/en/josep-tarradellas-barcelona-el-prat/getting-there/car.html",
+      "published": null,
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

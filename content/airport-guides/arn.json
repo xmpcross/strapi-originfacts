@@ -1,0 +1,180 @@
+{
+  "iata": "ARN",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals",
+      "paragraphs": [
+        {
+          "text": "Swedavia’s pages refer to Terminals 2, 4 and 5, and Terminal 3’s security control closed on 1 September 2026. Jonair, Populair and Västflyg flights depart from Terminal 2 until a new corridor links Terminal 3 with Terminal 2.",
+          "sources": [
+            "t3",
+            "trains"
+          ]
+        },
+        {
+          "text": "Swedavia plans to reopen the gate area of the former Terminal 3 at the end of 2026, as part of Terminal 2. The airport’s train page shows Arlanda South serving Terminals 2 and 4, Arlanda North serving Terminal 5, and Arlanda Central Station sitting in SkyCity between Terminals 4 and 5.",
+          "sources": [
+            "t3",
+            "trains"
+          ]
+        },
+        {
+          "text": "Between Terminal 2 and Terminal 5 before security, the Arlanda Express trip is free and takes a minute. After security, passengers travelling within the Schengen area can use a transfer bus, which is manned every day between 05.30 and 22.00 and arrives within 20 minutes of a request.",
+          "sources": [
+            "trains",
+            "transport"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Getting to and from Stockholm",
+      "paragraphs": [
+        {
+          "text": "Arlanda Express is a non-stop train between Stockholm Central Station and the airport and takes 18 minutes. It stops at Arlanda South (Terminals 2 and 4) and Arlanda North (Terminal 5).",
+          "sources": [
+            "trains"
+          ]
+        },
+        {
+          "text": "SL commuter trains stop at Arlanda Central Station in SkyCity, between Terminals 4 and 5. Swedavia gives the trip to Stockholm Central Station as 38 minutes and to Uppsala Central Station as 18 minutes. A station fee of SEK 157 applies to travellers who get on or off trains at Arlanda Central Station; if it is not included in your ticket you pay it at the ticket gates in SkyCity.",
+          "sources": [
+            "trains"
+          ]
+        },
+        {
+          "text": "Long-distance trains operated by SJ or Vy Tåg also use Arlanda Central Station; Swedavia says 60 of them arrive and depart every day.",
+          "sources": [
+            "trains"
+          ]
+        },
+        {
+          "text": "Vy Flygbussarna, Vy bus4you and FlixBus use the stop outside Terminal 5, while SL buses use SkyCity. Swedavia advises buying bus tickets online in advance, as onboard purchases are not always possible. Replacement buses for trains stop at SkyCity and depart from Pelargången.",
+          "sources": [
+            "buses"
+          ]
+        },
+        {
+          "text": "Taxis contracted with Swedavia wait directly outside the arrivals hall at Terminal 5 and outside Terminal 2. Only eco-friendly taxis may operate from Arlanda, and only drivers with a pre-booked car may meet passengers in the arrivals hall. Swedavia recommends pre-booking a taxi when travelling from the airport at night.",
+          "sources": [
+            "taxi"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assistance",
+      "heading": "Reduced-mobility assistance",
+      "paragraphs": [
+        {
+          "text": "Swedavia says assistance at Arlanda is a legal right, is free of charge, and is available around the clock every day of the year. It asks you to pre-book through your airline no later than 48 hours before departure.",
+          "sources": [
+            "assist"
+          ]
+        },
+        {
+          "text": "Register at your airline’s check-in counter no later than one hour before departure. If you want help when entering the terminal, press the button at the Help Point just outside the terminal entrance no later than two hours before departure.",
+          "sources": [
+            "assist"
+          ]
+        },
+        {
+          "text": "For pre-booked assistance when departing, Swedavia says it will meet you within 30 minutes or as agreed. On arrival, it says it will meet you within 5 minutes of the aircraft being at the gate, but never more than 20 minutes.",
+          "sources": [
+            "assist"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How long does Arlanda Express take?",
+      "a": "Swedavia states that Arlanda Express is a non-stop train between Stockholm Central Station and the airport and takes 18 minutes.",
+      "sources": [
+        "trains"
+      ]
+    },
+    {
+      "q": "Is there a station fee for trains at Arlanda?",
+      "a": "Swedavia says travellers who get on and off trains at Arlanda Central Station pay a station fee of SEK 157, payable at the ticket gates in SkyCity if it is not in your ticket price.",
+      "sources": [
+        "trains"
+      ]
+    },
+    {
+      "q": "Where do taxis wait at Arlanda?",
+      "a": "Swedavia says its contracted taxi companies are directly outside the arrivals hall at Terminal 5 and outside Terminal 2.",
+      "sources": [
+        "taxi"
+      ]
+    },
+    {
+      "q": "How early must I book assistance at Arlanda?",
+      "a": "Swedavia asks you to pre-book through your airline no later than 48 hours before departure; the service is free of charge.",
+      "sources": [
+        "assist"
+      ]
+    },
+    {
+      "q": "Is Terminal 3 at Arlanda open?",
+      "a": "No. Its security control closed on 1 September 2026, and Jonair, Populair and Västflyg flights depart from Terminal 2. Swedavia plans to reopen the gate area at the end of 2026.",
+      "sources": [
+        "t3"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "t3",
+      "title": "Terminal 3 closes on 1 September | Stockholm Arlanda Airport",
+      "publisher": "Swedavia",
+      "url": "https://www.swedavia.com/arlanda/news/den-1-september-stanger-terminal-3/",
+      "published": "2026-08-20",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "trains",
+      "title": "Trains | Stockholm Arlanda Airport",
+      "publisher": "Swedavia",
+      "url": "https://www.swedavia.com/arlanda/trains/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "buses",
+      "title": "Buses | Stockholm Arlanda Airport",
+      "publisher": "Swedavia",
+      "url": "https://www.swedavia.com/arlanda/buses/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "taxi",
+      "title": "Taxi | Stockholm Arlanda Airport",
+      "publisher": "Swedavia",
+      "url": "https://www.swedavia.com/arlanda/taxi/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "transport",
+      "title": "Transport at the airport | Stockholm Arlanda Airport",
+      "publisher": "Swedavia",
+      "url": "https://www.swedavia.com/arlanda/transport-at-the-airport/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "assist",
+      "title": "Special assistance | Stockholm Arlanda Airport",
+      "publisher": "Swedavia",
+      "url": "https://www.swedavia.com/arlanda/special-needs/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

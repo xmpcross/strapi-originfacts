@@ -1,0 +1,247 @@
+{
+  "iata": "BER",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals",
+      "paragraphs": [
+        {
+          "text": "BER has two passenger terminals. The airport states that all departures and arrivals take place in Terminals 1 and 2, and that both are within walking distance of each other.",
+          "sources": [
+            "ber-terminals"
+          ]
+        },
+        {
+          "text": "Terminal 1 is centrally located between the runways, with the Flughafen BER train station directly below it. It has ten check-in islands with a total of 118 counters.",
+          "sources": [
+            "ber-terminals"
+          ]
+        },
+        {
+          "text": "Terminal 2 has no driveway of its own for vehicles; the airport directs drivers to the short-term parking facilities of Terminal 1 on Departures Level E1 or Arrivals Level E0. From the station in Terminal 1 it is a few minutes on foot to Terminal 2, following the signs along the walkway on arrivals level E0.",
+          "sources": [
+            "ber-terminals"
+          ]
+        },
+        {
+          "text": "The airport does not publish an airline-to-terminal list on its terminals page; it says to find your terminal in your flight information or via your airline.",
+          "sources": [
+            "ber-terminals"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Getting to and from the city",
+      "paragraphs": [
+        {
+          "text": "The train station is in Terminal 1 on level U2, and the local bus stops A1–A8 are on the arrivals level of Terminal 1.",
+          "sources": [
+            "ber-public-transport"
+          ]
+        },
+        {
+          "text": "The Airport Express (FEX) runs from Berlin (Hauptbahnhof, Potsdamer Platz, Südkreuz) to BER. The airport gives the travel times as approx. 23 minutes from Hauptbahnhof, approx. 19 minutes from Potsdamer Platz and approx. 14 minutes from Südkreuz. The RE20, RB22, RB24 and RB32 regional trains also serve the airport station.",
+          "sources": [
+            "ber-public-transport"
+          ]
+        },
+        {
+          "text": "The S-Bahn lines S9 and S85 both run every 20 minutes to BER Airport via Schönefeld (bei Berlin) Bhf., according to the airport.",
+          "sources": [
+            "ber-public-transport"
+          ]
+        },
+        {
+          "text": "Express bus X7 runs from U Rudow to BER Airport (bus stops A 6-7) every 5-10 minutes. Express buses depart from stops A 2 and A 6-7 on the arrivals level (E0) directly in front of Terminal 1.",
+          "sources": [
+            "ber-public-transport"
+          ]
+        },
+        {
+          "text": "Disruption notice, updated 2 October 2026: the airport says that the Berlin Stadtbahn line between Charlottenburg and Ostbahnhof is completely closed to regional and long-distance trains from 14 June until 12 December 2026, and that until mid-October RB22 and RB32 services face partial cancellations during off-peak periods and diversions. Until December 2026 FEX and RE20 jointly operate four services per hour. The airport points travellers to VBB for up-to-date travel times and replacement services.",
+          "sources": [
+            "ber-disruption-news"
+          ]
+        },
+        {
+          "text": "Taxis: arriving passengers use the north and south taxi ranks in front of Terminal 1 on Level E0. Departing passengers get out on Level E1 and can check in there. The airport advises getting only into a vehicle marked as a taxi at the designated taxi stands.",
+          "sources": [
+            "ber-taxi"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parking",
+      "heading": "Parking",
+      "paragraphs": [
+        {
+          "text": "The prices below are those on the airport's page on 5 October 2026 for tickets bought at the barrier on site; the page shows no date they are valid from, so check before travelling. It also says that the airport's online tariff is more favourable, and that parking will become cashless only.",
+          "sources": [
+            "ber-parking-prices"
+          ]
+        },
+        {
+          "text": "Car park P3: up to 30 minutes 4 €, up to 1 hour 9 €, up to 24 hours 56 €, up to 1 week 199 €, then 40 € for each additional week. Car park P2: up to 30 minutes 5 €, up to 1 hour 10 €, a daily maximum of 70 € and 280 € up to 1 week.",
+          "sources": [
+            "ber-parking-prices"
+          ]
+        },
+        {
+          "text": "Short-term parking on the forecourt: it can be used 3 times every 8 hours for 10 minutes free of charge. After that, up to 15 minutes costs 5 €, up to 30 minutes 11 €, up to 45 minutes 17 € and up to 1 hour 23 €. The airport says barrier-free parking is possible in all multi-storey car parks.",
+          "sources": [
+            "ber-parking-prices"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assistance",
+      "heading": "Reduced-mobility assistance",
+      "paragraphs": [
+        {
+          "text": "BER offers a free Mobility Service. The airport asks you to inform your airline or travel organiser of your assistance requirements when booking, but no later than 48 hours before departure, and to register with one of its service points on the day of departure.",
+          "sources": [
+            "ber-assistance"
+          ]
+        },
+        {
+          "text": "Call boxes are located in front of each terminal for contacting the Mobility Service, and its service is available at three locations in Terminals 1 and 2. Lifts run from the train platform directly to arrivals (Level E0) and departures (Level E1) at Terminal 1.",
+          "sources": [
+            "ber-assistance"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lounges",
+      "heading": "Lounges",
+      "paragraphs": [
+        {
+          "text": "BER operates two pay-in lounges, Tempelhof at Gate A20 and Tegel at Gate B17, in the departure area after security, reachable from both Terminal 1 and Terminal 2.",
+          "sources": [
+            "ber-lounges"
+          ]
+        },
+        {
+          "text": "On the airport's page on 5 October 2026, access to the Tempelhof lounge cost EUR 48 and to the Tegel lounge EUR 36 (by EC or credit card), or access is possible via partner bonus programmes. Children up to 3 years are admitted free. Check the price before travelling.",
+          "sources": [
+            "ber-lounges"
+          ]
+        },
+        {
+          "text": "The maximum length of stay is 3 hours, and access is possible at the earliest 3.5 hours before the scheduled departure time.",
+          "sources": [
+            "ber-lounges"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get from Terminal 1 to Terminal 2 at BER?",
+      "a": "The airport says Terminal 2 is a few minutes on foot from the station in Terminal 1, following the signs along the walkway on arrivals level E0.",
+      "sources": [
+        "ber-terminals"
+      ]
+    },
+    {
+      "q": "How long does the Airport Express (FEX) take to BER?",
+      "a": "The airport gives approx. 23 minutes from Berlin Hauptbahnhof, approx. 19 minutes from Potsdamer Platz and approx. 14 minutes from Südkreuz. Check the current disruption notice, as FEX and RE20 jointly run four services per hour until December 2026.",
+      "sources": [
+        "ber-public-transport",
+        "ber-disruption-news"
+      ]
+    },
+    {
+      "q": "Is the Berlin Stadtbahn closed in 2026?",
+      "a": "The airport says the Stadtbahn line between Charlottenburg and Ostbahnhof is completely closed to regional and long-distance trains from 14 June until 12 December 2026.",
+      "sources": [
+        "ber-disruption-news"
+      ]
+    },
+    {
+      "q": "Where do I find taxis at BER?",
+      "a": "Arriving passengers use the north and south taxi ranks in front of Terminal 1 on Level E0. Departing passengers get out on Level E1.",
+      "sources": [
+        "ber-taxi"
+      ]
+    },
+    {
+      "q": "Can I use the BER lounges if I fly from Terminal 2?",
+      "a": "Yes. The airport says the lounges are in the departure area after security and can be reached via both Terminal 1 and Terminal 2. Stays are limited to 3 hours.",
+      "sources": [
+        "ber-lounges"
+      ]
+    },
+    {
+      "q": "How far ahead should I request mobility assistance at BER?",
+      "a": "The airport asks you to tell your airline or travel organiser when booking, but no later than 48 hours before departure, and to register with a service point on the day of departure.",
+      "sources": [
+        "ber-assistance"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "ber-terminals",
+      "title": "Terminals | BER Airport",
+      "publisher": "Flughafen Berlin Brandenburg GmbH (BER Airport)",
+      "url": "https://ber.berlin-airport.de/en/orientation/terminals.html",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "ber-public-transport",
+      "title": "Arrival and departure by Public transport | BER Airport",
+      "publisher": "Flughafen Berlin Brandenburg GmbH (BER Airport)",
+      "url": "https://ber.berlin-airport.de/en/orientation/getting-here/public-transport.html",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "ber-disruption-news",
+      "title": "Disruptions to travel to and from the airport by public transport | BER Airport",
+      "publisher": "Flughafen Berlin Brandenburg GmbH (BER Airport)",
+      "url": "https://ber.berlin-airport.de/en/news/2026-09-22-anreise-september.html",
+      "published": "2026-09-22",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "ber-taxi",
+      "title": "Arrival and departure by Taxi | BER Airport",
+      "publisher": "Flughafen Berlin Brandenburg GmbH (BER Airport)",
+      "url": "https://ber.berlin-airport.de/en/orientation/getting-here/taxi.html",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "ber-parking-prices",
+      "title": "BER Parking prices",
+      "publisher": "Flughafen Berlin Brandenburg GmbH (BER Airport)",
+      "url": "https://ber.berlin-airport.de/en/parking/preise.html",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "ber-lounges",
+      "title": "BER Lounges - Booking and information",
+      "publisher": "Flughafen Berlin Brandenburg GmbH (BER Airport)",
+      "url": "https://ber.berlin-airport.de/en/lounges-vip/lounges.html",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "ber-assistance",
+      "title": "Special assistance | BER Airport",
+      "publisher": "Flughafen Berlin Brandenburg GmbH (BER Airport)",
+      "url": "https://ber.berlin-airport.de/en/selected-for-you/accessible-travel.html",
+      "published": null,
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

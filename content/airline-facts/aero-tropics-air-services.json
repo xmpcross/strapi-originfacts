@@ -12,28 +12,28 @@
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
+          "value": "48 x 34 x 23 cm",
+          "status": "official",
           "source_url": "http://www.aero-tropics.com.au/baggage",
-          "notes": "Aero-Tropics Air Services cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "notes": "Aero-Tropics Air Services cabin baggage size limit.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
+          "value": "6 kg (13 lbs)",
+          "status": "official",
           "source_url": "http://www.aero-tropics.com.au/baggage",
           "notes": "Aero-Tropics Air Services Economy Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
+          "value": "6 kg (13 lbs)",
+          "status": "official",
           "source_url": "http://www.aero-tropics.com.au/baggage",
-          "notes": "Aero-Tropics Air Services Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "notes": "Aero-Tropics Air Services Premium Class carry-on weight limit.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -47,28 +47,28 @@
       ],
       "fields": {
         "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
+          "value": "1 piece up to 15 kg (33 lbs)",
+          "status": "official",
           "source_url": "http://www.aero-tropics.com.au/baggage",
           "notes": "Aero-Tropics Air Services Economy Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
+          "value": "1 piece up to 20 kg (44 lbs)",
+          "status": "official",
           "source_url": "http://www.aero-tropics.com.au/baggage",
           "notes": "Aero-Tropics Air Services Business Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
+          "value": "2 pieces up to 20 kg (44 lbs) each",
+          "status": "official",
           "source_url": "http://www.aero-tropics.com.au/baggage",
-          "notes": "Aero-Tropics Air Services First Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "notes": "Aero-Tropics Air Services Premium checked baggage allowance.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -80,12 +80,12 @@
       ],
       "fields": {
         "phone_home_market": {
-          "value": null,
-          "status": "pending",
-          "source_url": "http://www.aero-tropics.com.au/baggage",
-          "notes": "No verified phone yet.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "+61 7 4035 9100",
+          "status": "official",
+          "source_url": "http://www.aero-tropics.com.au/contact",
+          "notes": "Aero-Tropics Air Services official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

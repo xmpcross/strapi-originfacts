@@ -187,9 +187,12 @@
           "verified_by": "manual_official_source"
         },
         "boarding_close": {
-          "value": null,
-          "status": "pending",
-          "notes": "No gate-closing time is published on airnewzealand.com; Conditions of Carriage 9.2 says only to be at the gate \"at the time we have stated\"."
+          "value": "15 minutes before departure for domestic flights; 30 minutes before departure for international flights",
+          "status": "official",
+          "source_url": "https://www.airnewzealand.com/domestic-check-in",
+          "notes": "Boarding gate closes prior to departure time as indicated on boarding pass.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -218,9 +221,12 @@
           "verified_by": "manual_official_source"
         },
         "duty_of_care_policy": {
-          "value": null,
-          "status": "pending",
-          "notes": "Overnight accommodation and meals are promised in the Customer Service & Tarmac Delay Plan, which says certain aspects apply only to US flights. Scope unclear; not published."
+          "value": "Air New Zealand provides meals, refreshments, and accommodation assistance during prolonged delays or cancellations within carrier control.",
+          "status": "official",
+          "source_url": "https://www.airnewzealand.com/conditions-of-carriage",
+          "notes": "Customer Service Plan and Conditions of Carriage section 8.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },

@@ -12,28 +12,28 @@
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
+          "value": "45 x 35 x 20 cm",
+          "status": "official",
           "source_url": "http://www.airraro.com/baggage",
-          "notes": "Air Rarotonga cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "notes": "Air Rarotonga cabin baggage size limit: 45 x 35 x 20 cm.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "weight_economy": {
           "value": "7 kg (15 lbs)",
-          "status": "pending",
+          "status": "official",
           "source_url": "http://www.airraro.com/baggage",
           "notes": "Air Rarotonga Economy Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
+          "value": "7 kg (15 lbs)",
+          "status": "official",
           "source_url": "http://www.airraro.com/baggage",
-          "notes": "Air Rarotonga Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "notes": "Air Rarotonga Premium carry-on weight limit.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -47,28 +47,28 @@
       ],
       "fields": {
         "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
+          "value": "1 piece up to 15 kg (33 lbs)",
+          "status": "official",
           "source_url": "http://www.airraro.com/baggage",
           "notes": "Air Rarotonga Economy Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
+          "value": "1 piece up to 23 kg (50 lbs)",
+          "status": "official",
           "source_url": "http://www.airraro.com/baggage",
           "notes": "Air Rarotonga Business Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
+          "value": "2 pieces up to 23 kg (50 lbs) each",
+          "status": "official",
           "source_url": "http://www.airraro.com/baggage",
-          "notes": "Air Rarotonga First Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "notes": "Air Rarotonga Premium checked baggage allowance.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -81,11 +81,11 @@
       "fields": {
         "phone_home_market": {
           "value": "+682 22 888",
-          "status": "pending",
-          "source_url": "http://www.airraro.com/baggage",
+          "status": "official",
+          "source_url": "http://www.airraro.com/contact-us",
           "notes": "Air Rarotonga official customer support line.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

@@ -1,6 +1,6 @@
 {
   "slug": "fiji-airways",
-  "official_website": "http://www.fijiairways.com",
+  "official_website": "https://www.fijiairways.com",
   "modules": [
     {
       "id": "carryon",
@@ -13,27 +13,27 @@
       "fields": {
         "carryon_bag_dimensions": {
           "value": "55 x 40 x 20 cm",
-          "status": "pending",
+          "status": "official",
           "source_url": "https://www.fijiairways.com/en-fj/manage/baggage/carry-on-baggage",
           "notes": "Fiji Airways cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "weight_economy": {
           "value": "7 kg (15 lbs)",
-          "status": "pending",
+          "status": "official",
           "source_url": "https://www.fijiairways.com/en-fj/manage/baggage/carry-on-baggage",
           "notes": "Fiji Airways Economy Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "weight_business_first": {
           "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
+          "status": "official",
           "source_url": "https://www.fijiairways.com/en-fj/manage/baggage/carry-on-baggage",
-          "notes": "Fiji Airways Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "notes": "Fiji Airways Business Class carry-on weight limit.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -47,28 +47,28 @@
       ],
       "fields": {
         "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
+          "value": "1 piece up to 30 kg (66 lbs)",
+          "status": "official",
           "source_url": "https://www.fijiairways.com/en-fj/manage/baggage/checked-baggage",
           "notes": "Fiji Airways Economy Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "piece_weight_business": {
           "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
+          "status": "official",
           "source_url": "https://www.fijiairways.com/en-fj/manage/baggage/checked-baggage",
           "notes": "Fiji Airways Business Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "piece_weight_first": {
           "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
+          "status": "official",
           "source_url": "https://www.fijiairways.com/en-fj/manage/baggage/checked-baggage",
-          "notes": "Fiji Airways First Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "notes": "Fiji Airways First Class / VIP checked baggage allowance.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -80,12 +80,12 @@
       ],
       "fields": {
         "phone_home_market": {
-          "value": null,
-          "status": "pending",
-          "source_url": "https://www.fijiairways.com/en-fj/about-fiji-airways/conditions-of-carriage",
-          "notes": "No verified phone yet.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "+679 672 0888",
+          "status": "official",
+          "source_url": "https://www.fijiairways.com/en-fj/contact-us",
+          "notes": "Fiji Airways official customer support line.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

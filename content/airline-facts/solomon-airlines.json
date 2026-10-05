@@ -88,12 +88,12 @@
       ],
       "fields": {
         "phone_home_market": {
-          "value": null,
-          "status": "pending",
-          "source_url": "http://www.flysolomons.com/baggage",
-          "notes": "No verified phone yet.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "+677 20031",
+          "status": "official",
+          "source_url": "https://www.flysolomons.com/contact-us",
+          "notes": "Solomon Airlines official customer support line in Honiara.",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

@@ -1,6 +1,32 @@
-import ComparisonTable from '@/components/ComparisonTable';
 import { JsonLd } from '@/components/SeoBlocks';
 import { faqJsonLd } from '@/lib/entity-seo';
+
+const TYPES = [
+  {
+    type: 'Scheduled',
+    included: 'A cabin bag, and a checked bag on many long-haul fares',
+    extra: 'Seat selection and flexible fares on some tickets',
+    check: 'Bag allowance and change terms for your fare',
+  },
+  {
+    type: 'Low-cost',
+    included: 'A seat and a small personal item',
+    extra: 'Larger cabin bags, checked bags, seat selection and changes',
+    check: 'The total price once bags and seats are added',
+  },
+  {
+    type: 'Regional',
+    included: 'Varies by airline',
+    extra: 'Varies; some flights are sold under a partner’s code',
+    check: 'Who operates the flight, and any aircraft-related bag limits',
+  },
+  {
+    type: 'Charter',
+    included: 'Set by the operator or tour provider',
+    extra: 'Bags and transfers can be booking-specific',
+    check: 'Your booking conditions',
+  },
+];
 
 const CHECKS = [
   {
@@ -79,49 +105,71 @@ export default function AirlineCompareGuide({
   return (
     <section className="border-t border-forest-900/15 bg-paper" aria-labelledby="airlines-guide-heading" data-testid="airlines-about">
       <JsonLd data={faqJsonLd(faqs)} />
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16">
-        <div className="max-w-3xl">
-          <p className="text-xs font-bold uppercase tracking-widest text-forest-900/55">Before you book</p>
-          <h2 id="airlines-guide-heading" className="mt-2 text-2xl font-bold leading-tight sm:text-3xl">
-            How to compare airlines before you book
-          </h2>
-          <p className="mt-4 text-base leading-relaxed text-forest-900/75">
-            The fare on a results page is only part of the price. Bags, seats, changes and what happens when a flight
-            is delayed are set by the airline, and they differ a lot from one carrier to the next. Look up the airline
-            first, then check these six things. Each airline guide on Originfacts covers them in one place, and where a
-            guide shows a value it is sourced to the airline&rsquo;s own pages or a named regulator.
-          </p>
+      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20">
+        {/* Checklist: sticky heading on the left, six numbered checks on the right */}
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-16">
+          <div className="min-w-0 lg:sticky lg:top-28 lg:self-start">
+            <p className="text-xs font-bold uppercase tracking-widest text-primary-emphasis">Before you book</p>
+            <h2 id="airlines-guide-heading" className="mt-2 text-3xl font-bold leading-tight text-forest-950 sm:text-4xl">
+              How to compare airlines before you book
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-forest-900/75">
+              The fare on a results page is only part of the price. Bags, seats, changes and what happens when a flight
+              is delayed are set by the airline, and they differ a lot from one carrier to the next. Look up the
+              airline first, then check these six things.
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-forest-900/60">
+              Each airline guide on Originfacts covers them in one place. Where a guide shows a value, it is sourced to
+              the airline&rsquo;s own pages or a named regulator.
+            </p>
+          </div>
+
+          <ol className="min-w-0 divide-y divide-forest-900/10 border-y border-forest-900/15">
+            {CHECKS.map((c, i) => (
+              <li key={c.title} className="grid grid-cols-[3rem_minmax(0,1fr)] gap-x-4 py-5 sm:grid-cols-[4rem_minmax(0,1fr)] sm:py-6">
+                <span className="font-mono text-2xl font-bold leading-none text-primary-emphasis sm:text-3xl">0{i + 1}</span>
+                <div className="min-w-0">
+                  <h3 className="text-lg font-bold leading-snug text-forest-950">{c.title}</h3>
+                  <p className="mt-1.5 text-base leading-relaxed text-forest-900/70">{c.text}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
 
-        <ol className="mt-10 grid gap-x-10 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
-          {CHECKS.map((c, i) => (
-            <li key={c.title} className="border-t-2 border-forest-950 pt-4">
-              <p className="font-mono text-xs font-bold text-forest-900/50">0{i + 1}</p>
-              <h3 className="mt-2 text-lg font-bold leading-snug">{c.title}</h3>
-              <p className="mt-2 text-base leading-relaxed text-forest-900/70">{c.text}</p>
-            </li>
-          ))}
-        </ol>
+        {/* By airline type: dark panel of four cards */}
+        <div className="mt-16 rounded-[0.3rem] bg-forest-950 p-6 text-white sm:p-10" data-testid="airlines-types">
+          <h3 className="text-2xl font-bold leading-snug !text-white sm:text-3xl">What usually differs by type of airline</h3>
+          <p className="mt-2 max-w-3xl text-base leading-relaxed text-white/70">
+            A starting point, not a promise: policies vary by airline, route and fare, so confirm them for your booking.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {TYPES.map((t) => (
+              <article key={t.type} className="rounded-[0.3rem] border border-white/15 bg-white/[0.04] p-5">
+                <h4 className="text-lg font-bold !text-white">{t.type}</h4>
+                <dl className="mt-4 space-y-3 text-sm leading-relaxed">
+                  <div>
+                    <dt className="text-[11px] font-bold uppercase tracking-widest text-white/50">Often in the base fare</dt>
+                    <dd className="mt-0.5 text-white/90">{t.included}</dd>
+                  </div>
+                  <div>
+                    <dt className="text-[11px] font-bold uppercase tracking-widest text-white/50">Often priced separately</dt>
+                    <dd className="mt-0.5 text-white/90">{t.extra}</dd>
+                  </div>
+                  <div className="border-t border-white/15 pt-3">
+                    <dt className="text-[11px] font-bold uppercase tracking-widest text-white/50">Check before you book</dt>
+                    <dd className="mt-0.5 font-semibold text-white">{t.check}</dd>
+                  </div>
+                </dl>
+              </article>
+            ))}
+          </div>
+        </div>
 
-        <h3 className="mt-14 text-xl font-bold leading-snug sm:text-2xl">What usually differs by type of airline</h3>
-        <p className="mt-2 max-w-3xl text-base leading-relaxed text-forest-900/70">
-          A starting point, not a promise: policies vary by airline, route and fare, so confirm them for your booking.
-        </p>
-        <ComparisonTable
-          className="mb-0 mt-5"
-          caption="Typical differences by airline type"
-          head={['Airline type', 'Often included in the base fare', 'Often priced separately', 'Check before you book']}
-          rows={[
-            ['Scheduled', 'A cabin bag, and a checked bag on many long-haul fares', 'Seat selection and flexible fares on some tickets', 'Bag allowance and change terms for your fare'],
-            ['Low-cost', 'A seat and a small personal item', 'Larger cabin bags, checked bags, seat selection and changes', 'The total price once bags and seats are added'],
-            ['Regional', 'Varies by airline', 'Varies; some flights are sold under a partner’s code', 'Who operates the flight, and any aircraft-related bag limits'],
-            ['Charter', 'Set by the operator or tour provider', 'Bags and transfers can be booking-specific', 'Your booking conditions'],
-          ]}
-        />
-
-        <div className="mt-14 grid gap-10 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-16">
+        {/* FAQ */}
+        <div className="mt-16 grid gap-10 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-16">
           <div className="min-w-0">
-            <h3 className="text-xl font-bold leading-snug sm:text-2xl">Airline questions, answered</h3>
+            <h3 className="text-2xl font-bold leading-snug text-forest-950 sm:text-3xl">Airline questions, answered</h3>
             <p className="mt-3 text-base leading-relaxed text-forest-900/70">
               Quick answers on comparing carriers, codes and what to do when a trip changes.
             </p>

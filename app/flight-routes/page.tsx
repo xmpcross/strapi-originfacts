@@ -11,7 +11,7 @@ const HUB = HUB_INTROS['flight-routes'];
 const PATH = HUB_PATHS['flight-routes'];
 
 export const metadata = {
-  title: 'Flight Routes Directory',
+  title: 'Flight Routes & Airlines by City Pair',
   description: HUB.description,
   alternates: { canonical: PATH },
 };

@@ -22,7 +22,7 @@ type Props = {
 };
 
 export const metadata: Metadata = {
-  title: 'Trending',
+  title: 'Trending Travel Stories',
   description: 'The most-read travel stories on Originfacts right now — ranked by depth and engagement.',
   alternates: { canonical: '/hot-posts' },
 };

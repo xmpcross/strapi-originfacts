@@ -56,7 +56,7 @@ const TOP_PRIORITY_SLUGS = [
 ];
 
 export const metadata: Metadata = {
-  title: 'Airlines',
+  title: 'Airline Guides & Directory',
   description: HUB.description,
   alternates: { canonical: PATH },
   robots: { index: true, follow: true },

@@ -1,6 +1,8 @@
 'use client';
 
 import { useEffect } from 'react';
+import { STORED_MARKETING_CONSENT_JS, useConsent } from '@/lib/consent';
+import { TpConsentPlaceholder } from '@/components/TpConsentGate';
 
 export const TPWL_SRC = 'https://tpscr.com/wl_web/main.js?wl_id=16677';
 
@@ -13,35 +15,41 @@ type TpwlWindow = Window & {
   __ofTpwlMounted?: boolean;
 };
 
+/** id of the consent placeholder in the search box on /flight-search. */
+export const TPWL_PLACEHOLDER_ID = 'tpwl-consent-placeholder';
+
 /**
- * Server-rendered part of the Travelpayouts white-label loader.
+ * Server-rendered part of the Travelpayouts white-label loader. Render it after
+ * #tpwl-search and #tpwl-tickets.
  *
  * The SDK (main.js) scans the page for #tpwl-search / #tpwl-tickets once, when
  * it executes, and never again. So it has to run exactly once per document, after
- * those containers exist. Putting it in the server HTML as a module script does
- * that: the browser fetches it while the HTML is still arriving (with an early
- * connection to tpscr.com) and runs it once parsing is done, instead of waiting
- * for React to hydrate and inject it.
+ * those containers exist. The SDK sets cookies and sends identifiers to
+ * Travelpayouts (see TpConsentGate), so it may only start once the visitor has
+ * allowed "Advertising / Personalisation".
  *
- * The inline marker tells the client part that the SDK is already on its way.
- * Scripts that React inserts during client-side rendering do not execute, so on
- * an in-app navigation the marker stays unset and the client part takes over.
+ * This inline script runs while the HTML is parsed, right after the containers:
+ * if the stored choice already allows advertising, it starts the SDK without
+ * waiting for React to hydrate (the speed the old unconditional module script
+ * gave), hides the consent placeholder so it does not stack above the form, and
+ * sets the marker that tells the client part the SDK is on its way. Without
+ * consent it does nothing and no request reaches tpscr.com.
  */
-export function TpwlLoaderHead() {
-  return (
-    <>
-      <link rel="preconnect" href="https://tpscr.com" crossOrigin="anonymous" />
-      <script dangerouslySetInnerHTML={{ __html: 'window.__ofTpwlSsr=true;' }} />
-      {/* Module scripts are deferred: they run after the document is parsed. */}
-      {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-      <script type="module" src={TPWL_SRC} data-tpwl-loader="" />
-    </>
-  );
+export function TpwlConsentedBoot() {
+  const js = `(function(){if(!${STORED_MARKETING_CONSENT_JS})return;window.__ofTpwlSsr=true;var p=document.getElementById(${JSON.stringify(
+    TPWL_PLACEHOLDER_ID,
+  )});if(p)p.style.display='none';var s=document.createElement('script');s.type='module';s.src=${JSON.stringify(
+    TPWL_SRC,
+  )};s.setAttribute('data-tpwl-loader','');document.head.appendChild(s);})();`;
+  return <script dangerouslySetInnerHTML={{ __html: js }} />;
 }
 
 /**
- * Client part. Three cases:
- * - full load of /flight-search: the server-rendered script is running; nothing to do;
+ * Client part. Does nothing until advertising consent is given (granting it on
+ * the page's placeholder starts the SDK at once, the containers are already in
+ * the DOM). Then three cases:
+ * - full load of /flight-search with consent already stored: TpwlConsentedBoot
+ *   started the SDK; nothing to do;
  * - first visit through an in-app link in this document: inject the SDK once;
  * - the page mounting again in the same document (back to it through a link, or
  *   with the Back button): the SDK has already run and will not scan the new
@@ -52,7 +60,10 @@ export function TpwlLoaderHead() {
  * case is mostly the Back button.
  */
 export default function TpwlLoader() {
+  const allowed = useConsent()?.categories.marketing === true;
+
   useEffect(() => {
+    if (!allowed) return;
     const w = window as TpwlWindow;
     const container = document.getElementById('tpwl-search');
 
@@ -78,7 +89,26 @@ export default function TpwlLoader() {
     script.src = TPWL_SRC;
     script.setAttribute('data-tpwl-loader', '');
     document.head.appendChild(script);
-  }, []);
+  }, [allowed]);
 
   return null;
+}
+
+/**
+ * Consent placeholder for the search box on /flight-search, shown until
+ * advertising consent is given. Sits beside #tpwl-search (which stays in the
+ * DOM, empty, so the SDK finds it whenever it starts). Min-heights match the
+ * search form's rendered height per width (Playwright, Oct 2026).
+ */
+export function TpwlSearchPlaceholder({ partnerHref }: { partnerHref: string }) {
+  const allowed = useConsent()?.categories.marketing === true;
+  if (allowed) return null;
+  return (
+    <TpConsentPlaceholder
+      id={TPWL_PLACEHOLDER_ID}
+      tool="flight search"
+      partnerHref={partnerHref}
+      className="min-h-[405px] sm:min-h-[356px] xl:min-h-[146px]"
+    />
+  );
 }

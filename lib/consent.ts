@@ -97,7 +97,25 @@ export function getConsent(): ConsentState | null {
  * removed from here; the scripts are simply no longer loaded).
  */
 const ANALYTICS_COOKIE = /^(_ga|_ga_.*|_gid|_gat.*|_dc_gtm_.*)$/;
-const MARKETING_COOKIE = /^(_gcl_.*|_fbp|tp_.*|_tp.*|gyg.*|_gyg.*|ta_.*|cl_.*)$/i;
+// _sp_id.* / _sp_ses.* (Snowplow) and tpwl_* are set on .originfacts.com by the
+// Travelpayouts / Aviasales search widgets; session_id on www. by an advertising
+// script (measured Oct 2026, not used by our own code).
+const MARKETING_COOKIE = /^(_gcl_.*|_fbp|tp_.*|_tp.*|tpwl_.*|session_id|_sp_id\..*|_sp_ses\..*|gyg.*|_gyg.*|ta_.*|cl_.*)$/i;
+/** localStorage keys the same widgets (and Travelpayouts Drive) write on our origin. */
+const MARKETING_STORAGE_KEY = /^(snowplowOutQueue_.*|__wlcc|partner_id)$/;
+
+function deleteStorage(match: RegExp) {
+  try {
+    const keys: string[] = [];
+    for (let i = 0; i < window.localStorage.length; i++) {
+      const k = window.localStorage.key(i);
+      if (k && match.test(k)) keys.push(k);
+    }
+    keys.forEach((k) => window.localStorage.removeItem(k));
+  } catch {
+    /* storage unavailable */
+  }
+}
 
 function deleteCookies(match: RegExp) {
   const host = window.location.hostname;
@@ -133,7 +151,10 @@ export function saveConsent(categories: ConsentCategories) {
   const withdrewAnalytics = previous?.analytics === true && !next.analytics;
   const withdrewMarketing = previous?.marketing === true && !next.marketing;
   if (!next.analytics) deleteCookies(ANALYTICS_COOKIE);
-  if (!next.marketing) deleteCookies(MARKETING_COOKIE);
+  if (!next.marketing) {
+    deleteCookies(MARKETING_COOKIE);
+    deleteStorage(MARKETING_STORAGE_KEY);
+  }
 
   window.dispatchEvent(new CustomEvent(CONSENT_EVENT, { detail: payload }));
 
@@ -141,6 +162,19 @@ export function saveConsent(categories: ConsentCategories) {
   // only way to stop it. Reload so it is not present for the rest of the visit.
   if (withdrewAnalytics || withdrewMarketing) window.location.reload();
 }
+
+/** Grant "Advertising / Personalisation", keeping the visitor's analytics choice as it is. Used by the in-page "Load …" buttons. */
+export function grantMarketingConsent() {
+  const current = getConsent()?.categories;
+  saveConsent({ essential: true, analytics: current?.analytics === true, marketing: true });
+}
+
+/**
+ * Inline-script expression (plain ES5, no imports) that is true when the stored
+ * choice allows advertising. For code that must decide before React hydrates,
+ * e.g. starting the Travelpayouts flight search on a full page load.
+ */
+export const STORED_MARKETING_CONSENT_JS = `(function(){try{var c=JSON.parse(localStorage.getItem(${JSON.stringify(CONSENT_STORAGE_KEY)})||'null');return !!(c&&c.version===1&&c.categories&&c.categories.marketing===true);}catch(e){return false;}})()`;
 
 export function reopenConsentSettings() {
   if (typeof window !== 'undefined') window.dispatchEvent(new Event(CONSENT_REOPEN_EVENT));

@@ -95,9 +95,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           });
         `}</Script>
         {/* Travelpayouts white-label SDK is loaded by <TpwlLoader /> on the
-            flight-search page itself (the only page with tpwl containers) so
-            it re-initialises on client-side navigation — see
-            components/TpwlLoader.tsx. */}
+            flight-search page itself (the only page with tpwl containers),
+            only after advertising consent — see components/TpwlLoader.tsx. */}
         <Header />
         <main className="flex-1">{children}</main>
         <FixedPopularNow articles={sidebar.popular} />

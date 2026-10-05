@@ -648,3 +648,14 @@ html.flight-search-active #tpwl-tickets {
 .prose-article table tr:hover {
   background-color: rgba(15, 23, 42, 0.02);
 }
+
+/* /flight-search results view before advertising consent: the consent
+   placeholder (components/TpwlLoader.tsx) takes the search form's place; keep
+   it compact and out of the sticky bar so it does not cover the page. */
+html.flight-search-active #tpwl-consent-placeholder {
+  min-height: 0;
+}
+html.flight-search-active [data-testid="fs-search-section"]:has(#tpwl-consent-placeholder),
+html.flight-search-active .tpwl-search-wrap:has(#tpwl-consent-placeholder) {
+  position: static !important;
+}

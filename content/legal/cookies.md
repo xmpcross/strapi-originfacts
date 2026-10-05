@@ -51,7 +51,7 @@ Affiliate cookies and identifiers may help record that you clicked from Originfa
 
 These cookies may be set by us, Travelpayouts, travel brands, or other third parties. Cookie names, purposes, and durations may vary by provider and campaign.
 
-Affiliate and advertising scripts on the Website (Travelpayouts Drive, the Takeads link converter, and the GetYourGuide activity widget) load only after you allow the "Advertising / Personalisation" category in our cookie banner. Plain affiliate links work either way; if you click one, the provider you visit may set its own cookies (see section 8).
+Affiliate and advertising scripts on the Website (Travelpayouts Drive, the Takeads link converter, the GetYourGuide activity widget, and the Travelpayouts / Aviasales search widgets: the flight search on /flight-search and the price calendar and schedule on flight route pages) load only after you allow the "Advertising / Personalisation" category in our cookie banner. Until then, those widgets show a button that lets you allow that category and load them. Plain affiliate links work either way; if you click one, the provider you visit may set its own cookies (see section 8).
 
 ### 3.4 Preference cookies
 
@@ -71,7 +71,7 @@ The exact cookies used on the Website may change as we update the Website. Examp
 |---|---|---|
 | Originfacts / FXN | Website operation, security, cookie preferences, forms, account sessions | Essential cookies, local storage, server logs |
 | Google Analytics | Website analytics, performance measurement, visitor interaction statistics | Analytics cookies such as `_ga` and related identifiers |
-| Travelpayouts | Affiliate tracking, click attribution, commission reporting, travel widgets | Affiliate cookies, referral identifiers, link tracking |
+| Travelpayouts / Aviasales | Affiliate tracking, click attribution, commission reporting, flight search, price calendar and schedule widgets | Affiliate cookies, referral identifiers, link tracking; the search widgets set cookies such as `_sp_id`, `_sp_ses`, `tpwl_currency` and `tpwl_locale` on originfacts.com and `nuid` on avsplow.com, and use local storage |
 | Mailchimp | Newsletter signup forms, email subscription management, campaign analytics | Form cookies, tracking pixels in emails, subscription records |
 | Ahrefs Web Analytics | Website analytics | Analytics script |
 | Takeads | Affiliate link conversion, click attribution | Affiliate script, link tracking |

@@ -19,9 +19,12 @@ import { applyConsentMode, useConsent } from '@/lib/consent';
  *               Convertlink, GetYourGuide partner widget script
  *               (the banner's "Advertising / Personalisation" category)
  *
- * Not here, on purpose: the Travelpayouts white-label flight search
- * (components/TpwlLoader.tsx) is the search tool on /flight-search itself,
- * and plain affiliate links (/go redirects) are not scripts.
+ * Not here, on purpose: the Travelpayouts / Aviasales search tools (white-label
+ * flight search in components/TpwlLoader.tsx, price calendar, schedule and car
+ * widgets) are gated where they render, in the same "marketing" category, by
+ * components/TpConsentGate.tsx, which shows a "Load … (allows advertising
+ * cookies)" placeholder instead. Plain affiliate links (/go redirects) are not
+ * scripts.
  */
 export default function ConsentScripts({ takeadsPlatformId }: { takeadsPlatformId?: string }) {
   const consent = useConsent();

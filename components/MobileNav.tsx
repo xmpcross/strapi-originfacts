@@ -17,7 +17,7 @@ const NAV_TREE: NavItem[] = [
     children: [{ label: 'Top 100 Airports', href: '/airports/hubs' }],
   },
   {
-    label: 'Blog',
+    label: 'Topics',
     href: '/all-articles',
     children: [
       { label: 'Flights', href: '/category/flights' },

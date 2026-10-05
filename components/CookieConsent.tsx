@@ -2,106 +2,59 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-
-const STORAGE_KEY = 'originfacts.consent.v1';
-
-type ConsentCategory = 'essential' | 'analytics' | 'marketing';
-
-type ConsentState = {
-  version: 1;
-  decidedAt: string;
-  categories: Record<ConsentCategory, boolean>;
-};
+import {
+  ALL_OFF,
+  ALL_ON,
+  CONSENT_REOPEN_EVENT,
+  getConsent,
+  reopenConsentSettings,
+  saveConsent,
+  type ConsentCategories,
+  type ConsentCategory,
+} from '@/lib/consent';
 
 type View = 'banner' | 'settings';
-
-const ALL_OFF: ConsentState['categories'] = { essential: true, analytics: false, marketing: false };
-const ALL_ON: ConsentState['categories'] = { essential: true, analytics: true, marketing: true };
-
-type GtagFn = (...args: unknown[]) => void;
-
-function applyConsentMode(categories: ConsentState['categories']) {
-  if (typeof window === 'undefined') return;
-  const gtag = (window as unknown as { gtag?: GtagFn }).gtag;
-  if (typeof gtag !== 'function') return;
-  gtag('consent', 'update', {
-    ad_storage: categories.marketing ? 'granted' : 'denied',
-    ad_user_data: categories.marketing ? 'granted' : 'denied',
-    ad_personalization: categories.marketing ? 'granted' : 'denied',
-    analytics_storage: categories.analytics ? 'granted' : 'denied',
-  });
-}
-
-function readStoredConsent(): ConsentState | null {
-  if (typeof window === 'undefined') return null;
-  try {
-    const raw = window.localStorage.getItem(STORAGE_KEY);
-    if (!raw) return null;
-    const parsed = JSON.parse(raw) as ConsentState;
-    if (parsed?.version === 1) return parsed;
-    return null;
-  } catch {
-    return null;
-  }
-}
-
-function persistConsent(categories: ConsentState['categories']) {
-  const payload: ConsentState = {
-    version: 1,
-    decidedAt: new Date().toISOString(),
-    categories,
-  };
-  try {
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
-  } catch {
-    /* private mode / disabled storage — fall through silently */
-  }
-  applyConsentMode(categories);
-  if (typeof window !== 'undefined') {
-    window.dispatchEvent(new CustomEvent('originfacts:consent', { detail: payload }));
-  }
-}
 
 export default function CookieConsent() {
   const [open, setOpen] = useState(false);
   const [view, setView] = useState<View>('banner');
-  const [categories, setCategories] = useState<ConsentState['categories']>(ALL_OFF);
+  const [categories, setCategories] = useState<ConsentCategories>(ALL_OFF);
 
   useEffect(() => {
-    const existing = readStoredConsent();
+    // Consent Mode for a stored choice is applied by <ConsentScripts />.
+    const existing = getConsent();
     if (!existing) {
       setOpen(true);
       setView('banner');
     } else {
       setCategories(existing.categories);
-      applyConsentMode(existing.categories);
     }
 
     const onReopen = () => {
-      const cur = readStoredConsent();
+      const cur = getConsent();
       if (cur) setCategories(cur.categories);
       setView('settings');
       setOpen(true);
     };
-    window.addEventListener('originfacts:consent:reopen', onReopen);
-    return () => window.removeEventListener('originfacts:consent:reopen', onReopen);
+    window.addEventListener(CONSENT_REOPEN_EVENT, onReopen);
+    return () => window.removeEventListener(CONSENT_REOPEN_EVENT, onReopen);
   }, []);
 
   if (!open) return null;
 
   const acceptAll = () => {
-    persistConsent(ALL_ON);
+    saveConsent(ALL_ON);
     setCategories(ALL_ON);
     setOpen(false);
   };
   const rejectAll = () => {
-    persistConsent(ALL_OFF);
+    saveConsent(ALL_OFF);
     setCategories(ALL_OFF);
     setOpen(false);
   };
   const saveChoices = () => {
     const next = { ...categories, essential: true };
-    persistConsent(next);
+    saveConsent(next);
     setOpen(false);
   };
   const toggle = (key: ConsentCategory) => {
@@ -204,7 +157,7 @@ export default function CookieConsent() {
               <li className="flex items-start justify-between gap-4 rounded-xl border border-forest-900/10 bg-white p-3">
                 <div>
                   <p className="font-medium">Advertising / Personalisation</p>
-                  <p className="mt-1 text-forest-900/70">Used by ad partners to show more relevant advertising and measure performance.</p>
+                  <p className="mt-1 text-forest-900/70">Used by advertising and affiliate partners (Travelpayouts, Takeads, GetYourGuide) to attribute bookings, show more relevant offers and measure performance. Also needed for the GetYourGuide activity widgets.</p>
                 </div>
                 <input
                   type="checkbox"
@@ -254,11 +207,7 @@ export function CookieSettingsButton({ className }: { className?: string }) {
   return (
     <button
       type="button"
-      onClick={() => {
-        if (typeof window !== 'undefined') {
-          window.dispatchEvent(new Event('originfacts:consent:reopen'));
-        }
-      }}
+      onClick={reopenConsentSettings}
       className={cls}
       data-testid="cookie-consent-reopen"
     >

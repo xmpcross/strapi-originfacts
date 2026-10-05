@@ -1,6 +1,6 @@
 # Cookie Policy
 
-Last updated: 24 April 2026
+Last updated: 5 October 2026
 
 This Cookie Policy explains how FXN Holdings ("FXN", "we", "us", or "our") uses cookies and similar technologies on Originfacts at www.originfacts.com.
 
@@ -37,21 +37,21 @@ You cannot usually turn these off through our cookie banner because the Website 
 
 ### 3.2 Analytics cookies
 
-We use Google Analytics to understand how visitors use the Website, which pages are popular, how users move around the Website, and how we can improve our content and services.
+We use Google Analytics (loaded through Google Tag Manager) and Ahrefs Web Analytics to understand how visitors use the Website, which pages are popular, how users move around the Website, and how we can improve our content and services.
 
 Google Analytics may use cookies and similar technologies to collect information such as device information, browser information, approximate location, pages viewed, interactions, and cookie identifiers.
 
-In regions where consent is required, Google Analytics cookies should run only after you give consent.
+These analytics tools load only after you allow the "Analytics" category in our cookie banner.
 
 ### 3.3 Affiliate and performance cookies
 
-We use affiliate links and may use Travelpayouts tools, links, widgets, or tracking technologies.
+We use affiliate links and may use Travelpayouts, Takeads, and GetYourGuide tools, links, widgets, or tracking technologies.
 
 Affiliate cookies and identifiers may help record that you clicked from Originfacts to a travel provider and may help determine whether a commission is payable to us if you later make a booking or purchase.
 
 These cookies may be set by us, Travelpayouts, travel brands, or other third parties. Cookie names, purposes, and durations may vary by provider and campaign.
 
-In regions where consent is required, affiliate or performance tracking cookies should run only after you give consent, unless they are strictly necessary for a service you requested.
+Affiliate and advertising scripts on the Website (Travelpayouts Drive, the Takeads link converter, and the GetYourGuide activity widget) load only after you allow the "Advertising / Personalisation" category in our cookie banner. Plain affiliate links work either way; if you click one, the provider you visit may set its own cookies (see section 8).
 
 ### 3.4 Preference cookies
 
@@ -73,7 +73,10 @@ The exact cookies used on the Website may change as we update the Website. Examp
 | Google Analytics | Website analytics, performance measurement, visitor interaction statistics | Analytics cookies such as `_ga` and related identifiers |
 | Travelpayouts | Affiliate tracking, click attribution, commission reporting, travel widgets | Affiliate cookies, referral identifiers, link tracking |
 | Mailchimp | Newsletter signup forms, email subscription management, campaign analytics | Form cookies, tracking pixels in emails, subscription records |
-| Vercel / hosting infrastructure | Website delivery, security, diagnostics, logs | Server logs and technical identifiers |
+| Ahrefs Web Analytics | Website analytics | Analytics script |
+| Takeads | Affiliate link conversion, click attribution | Affiliate script, link tracking |
+| GetYourGuide | Activity widget, affiliate attribution | Embedded widget, affiliate identifiers |
+| Hosting infrastructure (our own server) | Website delivery, security, diagnostics, logs | Server logs and technical identifiers |
 
 We will aim to keep the cookie banner or preference centre updated with more specific cookie names and durations where technically available.
 
@@ -94,7 +97,7 @@ Withdrawing consent will not affect the lawfulness of processing that occurred b
 
 You can manage cookies by:
 
-1. using our cookie banner or cookie preference centre;
+1. using our cookie banner or cookie preference centre, which you can reopen at any time from the "Cookie settings" link in the footer;
 2. changing your browser settings to block or delete cookies;
 3. using privacy extensions or browser controls;
 4. using Google Analytics opt-out tools where available;

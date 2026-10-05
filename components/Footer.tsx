@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { SECTIONS } from '@/lib/sections';
 import { getLegalDoc } from '@/lib/legal';
+import { CookieSettingsButton } from '@/components/CookieConsent';
 
 const BOTTOM_BAR_SLUGS = ['privacy', 'terms', 'cookies', 'affiliate-disclosure'];
 
@@ -169,6 +170,9 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <CookieSettingsButton className="transition-colors hover:text-white" />
+              </li>
             </ul>
           </nav>
         </div>

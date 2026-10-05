@@ -5,6 +5,7 @@ import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CookieConsent from '@/components/CookieConsent';
+import ConsentScripts from '@/components/ConsentScripts';
 import FixedRightBar from '@/components/FixedRightBar';
 import FixedPopularNow from '@/components/FixedPopularNow';
 import FixedScrollToTop from '@/components/FixedScrollToTop';
@@ -64,7 +65,8 @@ export const metadata: Metadata = {
   },
 };
 
-// Takeads platform ID (public: it appears in the Convertlink script URL).
+// Takeads platform ID (public: it appears in the Convertlink script URL, which
+// <ConsentScripts /> loads after advertising consent).
 const TAKEADS_PLATFORM_ID = (process.env.TAKEADS_PLATFORM_ID ?? '').trim();
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
@@ -73,50 +75,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en" className={inter.variable}>
       <head>
-        {/* Google Tag Manager */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-T7MWHNST');`,
-          }}
-        />
-        {/* End Google Tag Manager */}
-        {/* Travelpayouts Drive (account 401311), as supplied. The attributes are
-            WordPress optimiser hints (no effect here) kept verbatim. Re-added on the
-            owner's request; it had been removed in #43 (5 Sep 2026). */}
-        <script
-          {...({
-            nowprocket: '',
-            'data-noptimize': '1',
-            'data-cfasync': 'false',
-            'data-wpfc-render': 'false',
-            'seraph-accel-crit': '1',
-            'data-no-defer': '1',
-            'data-cmp-ab': '2',
-          } as Record<string, string>)}
-          dangerouslySetInnerHTML={{
-            __html: `(function () {
-  var script = document.createElement("script");
-  script.async = 1;
-  script.setAttribute("data-cmp-ab","2");
-  script.src = 'https://tp-em.com/NDAxMzEx.js?t=401311';
-  document.head.appendChild(script);
-})();`,
-          }}
-        />
-        <script
-          async
-          defer
-          src="https://widget.getyourguide.com/dist/pa.umd.production.min.js"
-          data-gyg-partner-id="H8Y3KHZ"
-        />
-        {/* Ahrefs Web Analytics */}
-        <script src="https://analytics.ahrefs.com/analytics.js" data-key="KbPcf3YVlIhEJPDxFrNztQ" async />
+        {/* Optional third-party scripts (GTM, GA4, Ahrefs, Travelpayouts Drive,
+            GetYourGuide, Convertlink) load only after cookie consent: see
+            components/ConsentScripts.tsx. */}
       </head>
       <body className={`${inter.variable} min-h-screen flex flex-col font-sans font-normal grain`} data-testid="app-shell">
+        {/* Google Consent Mode v2 defaults. Loads nothing by itself; the Google
+            tags are only added by <ConsentScripts /> once analytics is granted. */}
         <Script id="consent-default" strategy="beforeInteractive">{`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -128,22 +93,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             analytics_storage: 'denied',
             wait_for_update: 500
           });
-        `}</Script>
-        {/* Google Analytics 4 — gtag.js loader + init for G-TY066MKR0Z. The
-            consent-default block above runs first and keeps analytics_storage
-            denied until the cookie banner grants consent, so this tag is
-            GDPR-friendly out of the box. */}
-        <Script
-          id="ga4-loader"
-          async
-          strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=G-TY066MKR0Z"
-        />
-        <Script id="ga4-init" strategy="afterInteractive">{`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-TY066MKR0Z');
         `}</Script>
         {/* Travelpayouts white-label SDK is loaded by <TpwlLoader /> on the
             flight-search page itself (the only page with tpwl containers) so
@@ -158,17 +107,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <FixedSocialFollow />
         <Footer />
         <CookieConsent />
-        {/* Takeads link converter (Convertlink), keyed by TAKEADS_PLATFORM_ID in
-            .env.local. Loaded after the page is idle — as a synchronous script it
-            was the largest main-thread cost on mobile (~2 s of scripting on the
-            homepage, SEO audit Oct 2026). */}
-        {TAKEADS_PLATFORM_ID && (
-          <Script
-            id="convertlink"
-            strategy="lazyOnload"
-            src={`https://convertlink.com/script/${TAKEADS_PLATFORM_ID}/bundle.js`}
-          />
-        )}
+        <ConsentScripts takeadsPlatformId={TAKEADS_PLATFORM_ID || undefined} />
       </body>
     </html>
   );

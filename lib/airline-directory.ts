@@ -16,6 +16,13 @@ export type DirectoryAirline = {
   logo?: string;
 };
 
+/**
+ * Airlines whose logo is drawn at 70% of the card width instead of 100% on the
+ * /airlines directory: their trimmed artwork is so wide and heavy that at full
+ * width it dwarfs the neighbouring cards.
+ */
+export const NARROW_LOGO_SLUGS: ReadonlySet<string> = new Set(['jetblue', 'alaska-airlines']);
+
 export const DIRECTORY_REGIONS: AirlineRegion[] = [
   'Africa',
   'Asia',

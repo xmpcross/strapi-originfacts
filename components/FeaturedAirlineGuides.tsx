@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { isTrimmedLogo, mediaUrl, type StrapiAirline } from '@/lib/strapi';
+import { mediaUrl, type StrapiAirline } from '@/lib/strapi';
 
 export type FeaturedGuide = {
   airline: Pick<StrapiAirline, 'name' | 'slug' | 'iataCode' | 'type' | 'logo'>;
@@ -65,16 +65,14 @@ function GuideCard({ guide }: { guide: FeaturedGuide }) {
       data-testid={`featured-guide-${airline.slug}`}
     >
       <div className="flex items-start justify-between gap-3">
-        <div className="relative h-14 w-32 flex-none overflow-hidden">
+        <div className="relative flex h-14 w-32 flex-none items-center overflow-hidden">
           {logo ? (
-            // Logo files are 400x200 canvases with the artwork centred at half the width.
-            // Drawing the canvas at twice the box width and clipping the empty sides shows
-            // the artwork at the full box width instead of half of it. Trimmed logos have no padding, so they are fitted into the box as-is.
+            // Logos are trimmed to the artwork: full box width, height follows the aspect ratio.
             // eslint-disable-next-line @next/next/no-img-element
             <img
               src={logo}
               alt=""
-              className={isTrimmedLogo(logo) ? 'h-full w-full object-contain' : 'absolute left-1/2 top-1/2 h-32 w-64 max-w-none -translate-x-1/2 -translate-y-1/2'}
+              className="h-auto max-h-full w-full object-contain"
               loading="lazy"
               decoding="async"
             />

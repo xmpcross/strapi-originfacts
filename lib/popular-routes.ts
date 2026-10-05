@@ -1,13 +1,14 @@
 import 'server-only';
 import { DESTINATION_CITIES, POPULAR_DESTINATIONS } from '@/lib/flights-data';
 import { listAirports, listDestinations, mediaUrl } from '@/lib/strapi';
+import { DEFAULT_CURRENCY, type Currency } from '@/lib/currency';
 
 /**
  * Popular routes from an origin, for "Popular flight searches" on /flight-search.
  *
  * Routes and fares come from Travelpayouts' city-directions feed: for an origin
  * it returns about 30 destinations travellers search and book from there, each
- * with the lowest fare found recently (USD), airline, dates and number of stops.
+ * with the lowest fare found recently (in the requested currency), airline, dates and stops.
  * Fares are cached by the partner, so they are shown as "from" prices and the
  * link opens the search for the very dates the fare was found for.
  *
@@ -21,7 +22,7 @@ export type PopularRoute = {
   country: string | null;
   imageUrl: string | null;
   price: number;
-  currency: 'USD';
+  currency: Currency;
   transfers: number;
   departISO: string;
   returnISO: string | null;
@@ -46,7 +47,7 @@ type DirectionRow = {
 const ROUTES_SHOWN = 6;
 const norm = (s: string) => s.toLowerCase().replace(/\s*\(.*?\)\s*/g, ' ').replace(/\s+/g, ' ').trim();
 
-export async function getPopularRoutes(origin: string): Promise<PopularRoutes> {
+export async function getPopularRoutes(origin: string, currency: Currency = DEFAULT_CURRENCY): Promise<PopularRoutes> {
   const empty: PopularRoutes = { origin, originCity: null, guideSlug: null, routes: [] };
   const token = process.env.TRAVELPAYOUTS_API_TOKEN;
   if (!token) return empty;
@@ -54,7 +55,7 @@ export async function getPopularRoutes(origin: string): Promise<PopularRoutes> {
   let rows: DirectionRow[] = [];
   try {
     const res = await fetch(
-      `https://api.travelpayouts.com/v1/city-directions?origin=${encodeURIComponent(origin)}&currency=USD&token=${token}`,
+      `https://api.travelpayouts.com/v1/city-directions?origin=${encodeURIComponent(origin)}&currency=${currency.toLowerCase()}&token=${token}`,
       { next: { revalidate: 1800 } },
     );
     if (!res.ok) return empty;
@@ -108,7 +109,7 @@ export async function getPopularRoutes(origin: string): Promise<PopularRoutes> {
       country: curated.get(iata)?.country ?? airportByIata.get(iata)?.country ?? null,
       imageUrl,
       price: Math.round(row.price),
-      currency: 'USD',
+      currency,
       transfers,
       departISO: (row.departure_at ?? '').slice(0, 10),
       returnISO: row.return_at ? row.return_at.slice(0, 10) : null,

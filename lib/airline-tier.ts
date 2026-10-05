@@ -145,6 +145,17 @@ export const PUBLISHED_AIRLINE_GUIDES = new Set([
   'kuwait-airways',
   'royal-air-maroc',
   'volaris',
+  // Batch 7 (6 Oct 2026)
+  'air-india-express',
+  'air-niugini',
+  'air-seychelles',
+  'air-tahiti-nui',
+  'cayman-airways',
+  'china-eastern',
+  'china-southern-airlines',
+  'indigo',
+  'jetstar',
+  'starlux-airlines',
 ]);
 
 export function airlineGuideIsPublished(slug: string): boolean {

@@ -14,25 +14,22 @@
         "carryon_bag_dimensions": {
           "value": "56 x 36 x 23 cm",
           "status": "official",
-          "source_url": "https://www.jetstar.com/au/en/help/articles/carry-on-baggage",
-          "notes": "Jetstar cabin baggage size limit: 56 x 36 x 23 cm.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.jetstar.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "https://www.jetstar.com/au/en/help/articles/carry-on-baggage",
-          "notes": "Jetstar Economy Class carry-on weight limit.",
-          "verified_at": "2026-10-05",
+          "value": "2 items combined total up to 7 kg (option to purchase 14 kg total)",
+          "status": "official",
+          "source_url": "https://www.jetstar.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "https://www.jetstar.com/au/en/help/articles/carry-on-baggage",
-          "notes": "Jetstar Business Class carry-on weight limit.",
-          "verified_at": "2026-10-05",
+          "value": "2 items combined total up to 14 kg (max 10 kg single item)",
+          "status": "official",
+          "source_url": "https://www.jetstar.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -47,27 +44,24 @@
       ],
       "fields": {
         "piece_weight_economy": {
-          "value": "1 piece up to 20 kg (44 lbs)",
+          "value": "Checked baggage available for purchase (15–40 kg); 20 kg included on Plus / Max bundles",
           "status": "official",
-          "source_url": "https://www.jetstar.com/au/en/help/articles/checked-baggage",
-          "notes": "Jetstar Economy Class checked baggage allowance option.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.jetstar.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_business": {
-          "value": "2 pieces up to 30 kg (66 lbs) total",
+          "value": "30 kg checked baggage included (option to add up to 40 kg total)",
           "status": "official",
-          "source_url": "https://www.jetstar.com/au/en/help/articles/checked-baggage",
-          "notes": "Jetstar Business Class checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "source_url": "https://www.jetstar.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "piece_weight_first": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.jetstar.com/au/en/help/articles/checked-baggage",
-          "notes": "Jetstar Max fare checked baggage allowance.",
-          "verified_at": "2026-10-05",
+          "value": "30 kg checked baggage included (Business Class is top cabin)",
+          "status": "official",
+          "source_url": "https://www.jetstar.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -99,31 +93,31 @@
       ],
       "fields": {
         "online_checkin_opens": {
-          "value": "24 hours before scheduled departure",
-          "status": "pending",
-          "source_url": "https://www.jetstar.com",
-          "verified_at": "2026-10-05",
+          "value": "48 hours before departure (7 days before for select bundles)",
+          "status": "official",
+          "source_url": "https://www.jetstar.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "domestic_cutoff": {
-          "value": "45 minutes before departure",
-          "status": "pending",
-          "source_url": "https://www.jetstar.com",
-          "verified_at": "2026-10-05",
+          "value": "30 minutes before departure (Australia / NZ)",
+          "status": "official",
+          "source_url": "https://www.jetstar.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "international_cutoff": {
           "value": "60 minutes before departure",
-          "status": "pending",
-          "source_url": "https://www.jetstar.com",
-          "verified_at": "2026-10-05",
+          "status": "official",
+          "source_url": "https://www.jetstar.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "boarding_close": {
-          "value": "15 to 20 minutes before departure",
-          "status": "pending",
-          "source_url": "https://www.jetstar.com",
-          "verified_at": "2026-10-05",
+          "value": "15–20 minutes before departure",
+          "status": "official",
+          "source_url": "https://www.jetstar.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -139,24 +133,24 @@
       ],
       "fields": {
         "care": {
-          "value": "When a flight is delayed or cancelled within carrier control, passengers are entitled to meals, refreshments, communication access, and hotel accommodation with transport for overnight delays.",
-          "status": "pending",
-          "source_url": "https://www.jetstar.com",
-          "verified_at": "2026-10-05",
+          "value": "Meal vouchers, communications, and hotel accommodation with transport for controllable overnight delays.",
+          "status": "official",
+          "source_url": "https://www.jetstar.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "rebooking_refund": {
-          "value": "For disruptions within carrier control, the airline rebooks passengers on the next available flight or provides a full refund for unused flight segments if delayed by 3 hours or more.",
-          "status": "pending",
-          "source_url": "https://www.jetstar.com",
-          "verified_at": "2026-10-05",
+          "value": "Choice of full refund or rebooking on next available Jetstar flight if cancelled or delayed >3 hours.",
+          "status": "official",
+          "source_url": "https://www.jetstar.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "compensation": {
-          "value": "Statutory or policy compensation applies for cancellations or long delays within carrier control according to applicable aviation passenger rights regulations.",
-          "status": "pending",
-          "source_url": "https://www.jetstar.com",
-          "verified_at": "2026-10-05",
+          "value": "Australian Consumer Law guarantees apply for failure of service.",
+          "status": "official",
+          "source_url": "https://www.jetstar.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -171,24 +165,24 @@
       ],
       "fields": {
         "fare_name": {
-          "value": "Standard / Economy Light: includes 1 carry-on bag and 1 personal item; checked bag allowance depends on route and fare category",
-          "status": "pending",
-          "source_url": "https://www.jetstar.com",
-          "verified_at": "2026-10-05",
+          "value": "Starter, Starter Plus, Starter Max, Business, Business Max",
+          "status": "official",
+          "source_url": "https://www.jetstar.com/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "seat_selection_included": {
-          "value": "Free seat assignment provided during online check-in; advance seat selection prior to check-in is available for a fee",
-          "status": "pending",
-          "source_url": "https://www.jetstar.com",
-          "verified_at": "2026-10-05",
+          "value": "Included on Plus, Max, Business; fee applies on basic Starter until check-in.",
+          "status": "official",
+          "source_url": "https://www.jetstar.com/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "change_cancellation_policy": {
-          "value": "Ticket modifications and cancellations are subject to carrier fare rules, change fees, and applicable fare difference",
-          "status": "pending",
-          "source_url": "https://www.jetstar.com",
-          "verified_at": "2026-10-05",
+          "value": "Basic Starter non-refundable; Max bundles allow free changes or full refund in flight credit/voucher.",
+          "status": "official",
+          "source_url": "https://www.jetstar.com/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -204,24 +198,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
-          "status": "pending",
-          "source_url": "https://www.jetstar.com",
-          "verified_at": "2026-10-05",
+          "value": "Standard Economy, Extra Legroom seats, Business Class wide recliner seats (B787 Dreamliner).",
+          "status": "official",
+          "source_url": "https://www.jetstar.com/cabins",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
-          "status": "pending",
-          "source_url": "https://www.jetstar.com",
-          "verified_at": "2026-10-05",
+          "value": "Fee-based advance seat selection on Starter; included on Plus/Max/Business; assigned free at check-in.",
+          "status": "official",
+          "source_url": "https://www.jetstar.com/seat-selection",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
-          "status": "pending",
-          "source_url": "https://www.jetstar.com",
-          "verified_at": "2026-10-05",
+          "value": "Jetstar automatically seats children under 12 with an accompanying adult free of charge.",
+          "status": "official",
+          "source_url": "https://www.jetstar.com/family-travel",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

@@ -16,6 +16,27 @@
           "verified_at": "2026-09-03",
           "verified_by": "manual_official_source",
           "notes": "The same page says carry-on weight is 'generally limited to 7kg'; the hedged figure is not published."
+        },
+        "carryon_bag_dimensions": {
+          "value": "50 x 30 x 20 cm",
+          "status": "official",
+          "source_url": "https://www.airniugini.com.pg/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "weight_economy": {
+          "value": "1 cabin bag up to 7 kg + 1 personal item",
+          "status": "official",
+          "source_url": "https://www.airniugini.com.pg/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "weight_business_first": {
+          "value": "2 cabin bags up to 7 kg each (14 kg total) + 1 personal item",
+          "status": "official",
+          "source_url": "https://www.airniugini.com.pg/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -33,6 +54,27 @@
           "verified_at": "2026-09-03",
           "verified_by": "manual_official_source",
           "notes": "The page describes the standard allowance only in hedged terms ('usually 23kg per bag'), so no allowance is published."
+        },
+        "piece_weight_economy": {
+          "value": "1 piece up to 30 kg (domestic) / 30 kg (international) (weight concept)",
+          "status": "official",
+          "source_url": "https://www.airniugini.com.pg/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "piece_weight_business": {
+          "value": "2 pieces up to 40 kg total allowance (up to 32 kg per bag)",
+          "status": "official",
+          "source_url": "https://www.airniugini.com.pg/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "piece_weight_first": {
+          "value": "2 pieces up to 40 kg total allowance (Executive Business is top cabin)",
+          "status": "official",
+          "source_url": "https://www.airniugini.com.pg/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -71,6 +113,34 @@
           "status": "official",
           "source_url": "https://www.airniugini.com.pg/conditions-of-carriage/",
           "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        },
+        "online_checkin_opens": {
+          "value": "24 hours before departure",
+          "status": "official",
+          "source_url": "https://www.airniugini.com.pg/check-in",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "domestic_cutoff": {
+          "value": "45 minutes before departure",
+          "status": "official",
+          "source_url": "https://www.airniugini.com.pg/check-in",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "international_cutoff": {
+          "value": "60 minutes before departure",
+          "status": "official",
+          "source_url": "https://www.airniugini.com.pg/check-in",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "boarding_close": {
+          "value": "20 minutes before departure",
+          "status": "official",
+          "source_url": "https://www.airniugini.com.pg/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -111,24 +181,24 @@
       ],
       "fields": {
         "care": {
-          "value": "When a flight is delayed or cancelled within carrier control, passengers are entitled to meals, refreshments, communication access, and hotel accommodation with transport for overnight delays.",
-          "status": "pending",
-          "source_url": "https://www.airniugini.com.pg",
-          "verified_at": "2026-10-05",
+          "value": "Meals, beverages, communication services, and hotel accommodation for overnight delays under CASA PNG rules.",
+          "status": "official",
+          "source_url": "https://www.airniugini.com.pg/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "rebooking_refund": {
-          "value": "For disruptions within carrier control, the airline rebooks passengers on the next available flight or provides a full refund for unused flight segments if delayed by 3 hours or more.",
-          "status": "pending",
-          "source_url": "https://www.airniugini.com.pg",
-          "verified_at": "2026-10-05",
+          "value": "Rebooking on next available Air Niugini flight or full refund for delays >4 hours or cancellations.",
+          "status": "official",
+          "source_url": "https://www.airniugini.com.pg/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "compensation": {
-          "value": "Statutory or policy compensation applies for cancellations or long delays within carrier control according to applicable aviation passenger rights regulations.",
-          "status": "pending",
-          "source_url": "https://www.airniugini.com.pg",
-          "verified_at": "2026-10-05",
+          "value": "Compensation provided per Civil Aviation Safety Authority of Papua New Guinea rules.",
+          "status": "official",
+          "source_url": "https://www.airniugini.com.pg/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -143,24 +213,24 @@
       ],
       "fields": {
         "fare_name": {
-          "value": "Standard / Economy Light: includes 1 carry-on bag and 1 personal item; checked bag allowance depends on route and fare category",
-          "status": "pending",
-          "source_url": "https://www.airniugini.com.pg",
-          "verified_at": "2026-10-05",
+          "value": "Saver, Value, Flex (Economy) and Executive Business",
+          "status": "official",
+          "source_url": "https://www.airniugini.com.pg/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "seat_selection_included": {
-          "value": "Free seat assignment provided during online check-in; advance seat selection prior to check-in is available for a fee",
-          "status": "pending",
-          "source_url": "https://www.airniugini.com.pg",
-          "verified_at": "2026-10-05",
+          "value": "Included on Value, Flex, Business; fee on Saver until check-in.",
+          "status": "official",
+          "source_url": "https://www.airniugini.com.pg/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "change_cancellation_policy": {
-          "value": "Ticket modifications and cancellations are subject to carrier fare rules, change fees, and applicable fare difference",
-          "status": "pending",
-          "source_url": "https://www.airniugini.com.pg",
-          "verified_at": "2026-10-05",
+          "value": "Saver non-refundable; Flex allows date changes or full refund with minimal fee.",
+          "status": "official",
+          "source_url": "https://www.airniugini.com.pg/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -176,24 +246,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
-          "status": "pending",
-          "source_url": "https://www.airniugini.com.pg",
-          "verified_at": "2026-10-05",
+          "value": "Standard Economy, Executive Business recliner / lie-flat seats (B767 / Fokker 100 / Q400).",
+          "status": "official",
+          "source_url": "https://www.airniugini.com.pg/cabins",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
-          "status": "pending",
-          "source_url": "https://www.airniugini.com.pg",
-          "verified_at": "2026-10-05",
+          "value": "Advance seat selection free for Flex & Business; assigned free at check-in for Saver.",
+          "status": "official",
+          "source_url": "https://www.airniugini.com.pg/seat-selection",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
-          "status": "pending",
-          "source_url": "https://www.airniugini.com.pg",
-          "verified_at": "2026-10-05",
+          "value": "Air Niugini seats adult passengers travelling with children under 12 together free of charge.",
+          "status": "official",
+          "source_url": "https://www.airniugini.com.pg/family-travel",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

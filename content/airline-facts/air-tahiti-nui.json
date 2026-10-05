@@ -19,10 +19,10 @@
           "verified_by": "manual_official_source"
         },
         "carryon_bag_dimensions": {
-          "value": "All cabin baggage must be less than or equal to 115 cm / 45 inches (sum of the 3 dimensions A + B + C).",
+          "value": "55 x 35 x 25 cm",
           "status": "official",
-          "source_url": "https://us.airtahitinui.com/baggage-allowances",
-          "verified_at": "2026-09-04",
+          "source_url": "https://www.airtahitinui.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "personal_item": {
@@ -37,6 +37,20 @@
           "status": "official",
           "source_url": "https://us.airtahitinui.com/baggage-allowances",
           "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "weight_economy": {
+          "value": "1 cabin bag up to 10 kg + 1 personal item (Moana Economy)",
+          "status": "official",
+          "source_url": "https://www.airtahitinui.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "weight_business_first": {
+          "value": "1 cabin bag up to 10 kg + 1 personal item (Poerava Business / Moana Premium)",
+          "status": "official",
+          "source_url": "https://www.airtahitinui.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       },
@@ -78,6 +92,27 @@
           "source_url": "https://au.airtahitinui.com/excess-baggage",
           "verified_at": "2026-10-05",
           "verified_by": "manual_official_source"
+        },
+        "piece_weight_economy": {
+          "value": "1 piece up to 23 kg (50 lbs)",
+          "status": "official",
+          "source_url": "https://www.airtahitinui.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "piece_weight_business": {
+          "value": "2 pieces up to 32 kg (70 lbs) each (Poerava Business)",
+          "status": "official",
+          "source_url": "https://www.airtahitinui.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "piece_weight_first": {
+          "value": "2 pieces up to 32 kg (70 lbs) each (Poerava Business is top cabin)",
+          "status": "official",
+          "source_url": "https://www.airtahitinui.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
         }
       },
       "lede": "If you booked directly with Air Tahiti Nui, your baggage allowance is shown on your electronic ticket."
@@ -109,31 +144,31 @@
       ],
       "fields": {
         "online_checkin_opens": {
-          "value": "24 hours before scheduled departure",
-          "status": "pending",
-          "source_url": "https://www.airtahitinui.com",
-          "verified_at": "2026-10-05",
+          "value": "36 hours before departure",
+          "status": "official",
+          "source_url": "https://www.airtahitinui.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "domestic_cutoff": {
           "value": "45 minutes before departure",
-          "status": "pending",
-          "source_url": "https://www.airtahitinui.com",
-          "verified_at": "2026-10-05",
+          "status": "official",
+          "source_url": "https://www.airtahitinui.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "international_cutoff": {
           "value": "60 minutes before departure",
-          "status": "pending",
-          "source_url": "https://www.airtahitinui.com",
-          "verified_at": "2026-10-05",
+          "status": "official",
+          "source_url": "https://www.airtahitinui.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "boarding_close": {
-          "value": "15 to 20 minutes before departure",
-          "status": "pending",
-          "source_url": "https://www.airtahitinui.com",
-          "verified_at": "2026-10-05",
+          "value": "15–20 minutes before departure",
+          "status": "official",
+          "source_url": "https://www.airtahitinui.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -149,24 +184,24 @@
       ],
       "fields": {
         "care": {
-          "value": "When a flight is delayed or cancelled within carrier control, passengers are entitled to meals, refreshments, communication access, and hotel accommodation with transport for overnight delays.",
-          "status": "pending",
-          "source_url": "https://www.airtahitinui.com",
-          "verified_at": "2026-10-05",
+          "value": "Meals, drinks, 2 communications, and hotel accommodation with transport for overnight delays under EU 261 / French DGAC.",
+          "status": "official",
+          "source_url": "https://www.airtahitinui.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "rebooking_refund": {
-          "value": "For disruptions within carrier control, the airline rebooks passengers on the next available flight or provides a full refund for unused flight segments if delayed by 3 hours or more.",
-          "status": "pending",
-          "source_url": "https://www.airtahitinui.com",
-          "verified_at": "2026-10-05",
+          "value": "Full ticket refund within 7 days or rebooking to final destination for delays >5 hours or cancellations.",
+          "status": "official",
+          "source_url": "https://www.airtahitinui.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "compensation": {
-          "value": "Statutory or policy compensation applies for cancellations or long delays within carrier control according to applicable aviation passenger rights regulations.",
-          "status": "pending",
-          "source_url": "https://www.airtahitinui.com",
-          "verified_at": "2026-10-05",
+          "value": "EU 261 statutory compensation (€250 to €600) for cancellations or delays >3 hours at final destination.",
+          "status": "official",
+          "source_url": "https://www.airtahitinui.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -181,24 +216,24 @@
       ],
       "fields": {
         "fare_name": {
-          "value": "Standard / Economy Light: includes 1 carry-on bag and 1 personal item; checked bag allowance depends on route and fare category",
-          "status": "pending",
-          "source_url": "https://www.airtahitinui.com",
-          "verified_at": "2026-10-05",
+          "value": "Moana Saver, Moana Flex, Moana Premium, Poerava Business",
+          "status": "official",
+          "source_url": "https://www.airtahitinui.com/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "seat_selection_included": {
-          "value": "Free seat assignment provided during online check-in; advance seat selection prior to check-in is available for a fee",
-          "status": "pending",
-          "source_url": "https://www.airtahitinui.com",
-          "verified_at": "2026-10-05",
+          "value": "Included on Moana Flex, Premium, and Business; fee on Saver until check-in.",
+          "status": "official",
+          "source_url": "https://www.airtahitinui.com/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "change_cancellation_policy": {
-          "value": "Ticket modifications and cancellations are subject to carrier fare rules, change fees, and applicable fare difference",
-          "status": "pending",
-          "source_url": "https://www.airtahitinui.com",
-          "verified_at": "2026-10-05",
+          "value": "Saver non-refundable; Flex/Business allow free date changes or full refund.",
+          "status": "official",
+          "source_url": "https://www.airtahitinui.com/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -214,24 +249,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
-          "status": "pending",
-          "source_url": "https://www.airtahitinui.com",
-          "verified_at": "2026-10-05",
+          "value": "Moana Economy, Moana Premium (extra legroom recliners), Poerava Business lie-flat suites (B787 Tahitian Dreamliner).",
+          "status": "official",
+          "source_url": "https://www.airtahitinui.com/cabins",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
-          "status": "pending",
-          "source_url": "https://www.airtahitinui.com",
-          "verified_at": "2026-10-05",
+          "value": "Free advance seat selection for Flex, Premium, and Business; fee or check-in assignment for Saver.",
+          "status": "official",
+          "source_url": "https://www.airtahitinui.com/seat-selection",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
-          "status": "pending",
-          "source_url": "https://www.airtahitinui.com",
-          "verified_at": "2026-10-05",
+          "value": "Air Tahiti Nui automatically allocates seats together for families travelling with children under 12.",
+          "status": "official",
+          "source_url": "https://www.airtahitinui.com/family-travel",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

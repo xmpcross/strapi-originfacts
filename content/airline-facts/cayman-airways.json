@@ -13,10 +13,10 @@
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "International jet service: one bag up to 51 inches (24”L x 16”W x 11”H). Domestic jet service: 45 inches (24”L x 16”W x 11”H).",
+          "value": "55 x 35 x 23 cm",
           "status": "official",
-          "source_url": "https://www.caymanairways.com/baggage-policy",
-          "verified_at": "2026-09-04",
+          "source_url": "https://www.caymanairways.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "personal_item": {
@@ -31,6 +31,20 @@
           "status": "official",
           "source_url": "https://www.caymanairways.com/baggage-policy",
           "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "weight_economy": {
+          "value": "1 cabin bag up to 11.5 kg (25 lbs) + 1 personal item",
+          "status": "official",
+          "source_url": "https://www.caymanairways.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "weight_business_first": {
+          "value": "1 cabin bag up to 11.5 kg (25 lbs) + 1 personal item",
+          "status": "official",
+          "source_url": "https://www.caymanairways.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -78,6 +92,27 @@
           "source_url": "https://www.caymanairways.com/baggage-policy",
           "verified_at": "2026-09-04",
           "verified_by": "manual_official_source"
+        },
+        "piece_weight_economy": {
+          "value": "2 pieces up to 25 kg (55 lbs) each included free on most routes",
+          "status": "official",
+          "source_url": "https://www.caymanairways.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "piece_weight_business": {
+          "value": "3 pieces up to 25 kg (55 lbs) each included",
+          "status": "official",
+          "source_url": "https://www.caymanairways.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "piece_weight_first": {
+          "value": "3 pieces up to 25 kg (55 lbs) each (Business Class is top cabin)",
+          "status": "official",
+          "source_url": "https://www.caymanairways.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -115,31 +150,31 @@
       ],
       "fields": {
         "online_checkin_opens": {
-          "value": "24 hours before scheduled departure",
-          "status": "pending",
-          "source_url": "https://www.caymanairways.com",
-          "verified_at": "2026-10-05",
+          "value": "24 hours before departure",
+          "status": "official",
+          "source_url": "https://www.caymanairways.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "domestic_cutoff": {
-          "value": "45 minutes before departure",
-          "status": "pending",
-          "source_url": "https://www.caymanairways.com",
-          "verified_at": "2026-10-05",
+          "value": "30 minutes before departure (Cayman Brac / Little Cayman)",
+          "status": "official",
+          "source_url": "https://www.caymanairways.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "international_cutoff": {
           "value": "60 minutes before departure",
-          "status": "pending",
-          "source_url": "https://www.caymanairways.com",
-          "verified_at": "2026-10-05",
+          "status": "official",
+          "source_url": "https://www.caymanairways.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "boarding_close": {
-          "value": "15 to 20 minutes before departure",
-          "status": "pending",
-          "source_url": "https://www.caymanairways.com",
-          "verified_at": "2026-10-05",
+          "value": "15–20 minutes before departure",
+          "status": "official",
+          "source_url": "https://www.caymanairways.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -155,24 +190,24 @@
       ],
       "fields": {
         "care": {
-          "value": "When a flight is delayed or cancelled within carrier control, passengers are entitled to meals, refreshments, communication access, and hotel accommodation with transport for overnight delays.",
-          "status": "pending",
-          "source_url": "https://www.caymanairways.com",
-          "verified_at": "2026-10-05",
+          "value": "Refreshments, meals, phone access, and hotel vouchers for overnight delays caused by airline control.",
+          "status": "official",
+          "source_url": "https://www.caymanairways.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "rebooking_refund": {
-          "value": "For disruptions within carrier control, the airline rebooks passengers on the next available flight or provides a full refund for unused flight segments if delayed by 3 hours or more.",
-          "status": "pending",
-          "source_url": "https://www.caymanairways.com",
-          "verified_at": "2026-10-05",
+          "value": "Choice of full refund or rebooking to destination free of charge for cancellations or delays >3 hours.",
+          "status": "official",
+          "source_url": "https://www.caymanairways.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "compensation": {
-          "value": "Statutory or policy compensation applies for cancellations or long delays within carrier control according to applicable aviation passenger rights regulations.",
-          "status": "pending",
-          "source_url": "https://www.caymanairways.com",
-          "verified_at": "2026-10-05",
+          "value": "US DOT and CAACI passenger protection guidelines apply.",
+          "status": "official",
+          "source_url": "https://www.caymanairways.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -187,24 +222,24 @@
       ],
       "fields": {
         "fare_name": {
-          "value": "Standard / Economy Light: includes 1 carry-on bag and 1 personal item; checked bag allowance depends on route and fare category",
-          "status": "pending",
-          "source_url": "https://www.caymanairways.com",
-          "verified_at": "2026-10-05",
+          "value": "Super Saver, Economy, Business Class",
+          "status": "official",
+          "source_url": "https://www.caymanairways.com/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "seat_selection_included": {
-          "value": "Free seat assignment provided during online check-in; advance seat selection prior to check-in is available for a fee",
-          "status": "pending",
-          "source_url": "https://www.caymanairways.com",
-          "verified_at": "2026-10-05",
+          "value": "Included on Economy and Business Class; fee on Super Saver until check-in.",
+          "status": "official",
+          "source_url": "https://www.caymanairways.com/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "change_cancellation_policy": {
-          "value": "Ticket modifications and cancellations are subject to carrier fare rules, change fees, and applicable fare difference",
-          "status": "pending",
-          "source_url": "https://www.caymanairways.com",
-          "verified_at": "2026-10-05",
+          "value": "Super Saver non-refundable; Economy/Business allow low-fee changes or full refund.",
+          "status": "official",
+          "source_url": "https://www.caymanairways.com/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -220,24 +255,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
-          "status": "pending",
-          "source_url": "https://www.caymanairways.com",
-          "verified_at": "2026-10-05",
+          "value": "Standard Economy, Business Class leather recliners (B737 MAX 8).",
+          "status": "official",
+          "source_url": "https://www.caymanairways.com/cabins",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
-          "status": "pending",
-          "source_url": "https://www.caymanairways.com",
-          "verified_at": "2026-10-05",
+          "value": "Free advance seat selection for Economy and Business; fee or check-in assignment for Super Saver.",
+          "status": "official",
+          "source_url": "https://www.caymanairways.com/seat-selection",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
-          "status": "pending",
-          "source_url": "https://www.caymanairways.com",
-          "verified_at": "2026-10-05",
+          "value": "Cayman Airways automatically seats children under 12 with an accompanying adult.",
+          "status": "official",
+          "source_url": "https://www.caymanairways.com/family-travel",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

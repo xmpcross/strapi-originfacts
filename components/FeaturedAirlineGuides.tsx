@@ -65,10 +65,13 @@ function GuideCard({ guide }: { guide: FeaturedGuide }) {
       data-testid={`featured-guide-${airline.slug}`}
     >
       <div className="flex items-start justify-between gap-3">
-        <div className="flex h-14 w-32 items-center">
+        <div className="relative h-[4.5rem] w-40 flex-none overflow-hidden">
           {logo ? (
+            // Logo files are 400x200 canvases with the artwork centred at half the width.
+            // Drawing the canvas at twice the box width and clipping the empty sides shows
+            // the artwork at the full box width instead of half of it.
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={logo} alt="" className="max-h-full max-w-full object-contain object-left" loading="lazy" decoding="async" />
+            <img src={logo} alt="" className="absolute left-1/2 top-1/2 h-40 w-80 max-w-none -translate-x-1/2 -translate-y-1/2" loading="lazy" decoding="async" />
           ) : (
             <span className="text-lg font-bold text-forest-900/50">{(airline.iataCode || airline.name).slice(0, 3)}</span>
           )}

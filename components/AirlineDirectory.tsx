@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { mediaUrl, type AirlineRegion, type AirlineType } from '@/lib/strapi';
 import { DIRECTORY_REGIONS, type DirectoryAirline } from '@/lib/airline-directory';
-import { CheckIcon, IataBadge } from '@/components/FeaturedAirlineGuides';
+import { CheckIcon } from '@/components/FeaturedAirlineGuides';
 
 // Short, factual intros shown above each region's airline list when the
 // directory is grouped by region.
@@ -361,7 +361,7 @@ export default function AirlineDirectory({
                 {REGION_INTROS[g.key as AirlineRegion]}
               </p>
             )}
-            <ul className="mt-3 grid grid-cols-1 gap-2 sm:mt-4 sm:grid-cols-2 sm:gap-2.5 lg:grid-cols-3 xl:grid-cols-4">
+            <ul className="mt-3 grid grid-cols-1 gap-x-4 gap-y-1 sm:mt-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {g.airlines.map((a) => (
                 <li key={a.slug}>
                   <AirlineCard airline={a} isVerified={publishedSet.has(a.slug)} hasCeased={ceasedSet.has(a.slug)} />
@@ -424,48 +424,46 @@ function AirlineCard({
   hasCeased: boolean;
 }) {
   const logo = airline.logo ? mediaUrl({ url: airline.logo }) : null;
-  const meta = [airline.country, airline.type].filter(Boolean).join(' · ');
 
   return (
     <Link
       href={`/airlines/${airline.slug}`}
-      className="group flex h-full items-center gap-3 rounded-[0.3rem] border border-forest-900/10 bg-white px-3 py-2.5 transition sm:py-3 hover:border-primary-emphasis/50 hover:bg-primary-hover/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-emphasis"
+      className="group flex h-full items-center gap-3.5 rounded-[0.6rem] border border-transparent px-3 py-3 transition hover:border-forest-900/10 hover:bg-white hover:shadow-[0_1px_2px_rgba(15,39,102,0.06)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-emphasis"
       data-testid={`airline-card-${airline.slug}`}
     >
-      <span className="flex h-12 w-20 flex-none items-center justify-center overflow-hidden sm:h-16 sm:w-28">
+      <span className="relative flex h-12 w-16 flex-none items-center justify-center overflow-hidden">
         {logo ? (
+          // 400x200 logo canvas with the artwork centred at half the width: draw it at twice
+          // the box width and clip the empty sides so the artwork fills the box.
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={logo} alt="" className="max-h-full max-w-full object-contain" loading="lazy" decoding="async" />
+          <img src={logo} alt="" className="absolute left-1/2 top-1/2 h-16 w-32 max-w-none -translate-x-1/2 -translate-y-1/2" loading="lazy" decoding="async" />
         ) : (
-          <span className="text-sm font-bold text-forest-900/45" aria-hidden>
+          <span
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-forest-900/5 text-[11px] font-bold text-forest-900/55"
+            aria-hidden
+          >
             {(airline.iataCode || airline.name).slice(0, 3).toUpperCase()}
           </span>
         )}
       </span>
       <span className="min-w-0 flex-1">
-        <span className="flex items-start justify-between gap-2">
-          <span className="line-clamp-2 text-[15px] font-semibold leading-snug text-forest-950 group-hover:text-primary-emphasis">
+        <span className="flex items-center gap-1.5">
+          <span className="line-clamp-2 text-base leading-snug text-forest-950 group-hover:text-primary-emphasis">
             {airline.name}
           </span>
-          {airline.iataCode && <IataBadge code={airline.iataCode} />}
+          {isVerified && (
+            <span className="flex-none text-emerald-700" title="Verified guide">
+              <CheckIcon className="h-3.5 w-3.5" />
+              <span className="sr-only">Verified guide</span>
+            </span>
+          )}
         </span>
-        {meta && <span className="mt-0.5 block truncate text-xs text-forest-900/60">{meta}</span>}
-        {(isVerified || hasCeased) && (
-          <span className="mt-1.5 flex flex-wrap gap-1">
-            {isVerified && (
-              <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] font-semibold text-emerald-800 ring-1 ring-inset ring-emerald-600/20">
-                <CheckIcon className="h-3 w-3" />
-                Verified guide
-              </span>
-            )}
-            {hasCeased && (
-              <span
-                className="inline-flex items-center rounded-full bg-amber-50 px-2 py-0.5 text-[11px] font-semibold text-amber-900 ring-1 ring-inset ring-amber-600/25"
-                data-testid={`airline-ceased-${airline.slug}`}
-              >
-                Ceased operations
-              </span>
-            )}
+        {hasCeased && (
+          <span
+            className="mt-1 inline-flex items-center rounded-full bg-amber-50 px-2 py-0.5 text-[11px] font-semibold text-amber-900 ring-1 ring-inset ring-amber-600/25"
+            data-testid={`airline-ceased-${airline.slug}`}
+          >
+            Ceased operations
           </span>
         )}
       </span>

@@ -3,7 +3,8 @@
 import { useEffect, useRef, useState } from 'react';
 import FareCalendar, { DepartureIcon, ArrivalIcon } from '@/components/FareCalendar';
 import TravelpayoutsCarSearch from '@/components/TravelpayoutsCarSearch';
-import { setVisitorOrigin } from '@/lib/visitor-origin';
+import { resolveVisitorOrigin, setVisitorOrigin } from '@/lib/visitor-origin';
+import { countryName, placeFromBrowserTimeZone } from '@/lib/timezone-geo';
 
 /**
  * Kayak-style flight-search bar (Option A). Fully custom UI — no Travelpayouts
@@ -334,14 +335,15 @@ export default function CustomFlightSearch({
     if (origParam) {
       fetchPlace(origParam).then((p) => setOrigin(p));
     } else {
-      fetch('/api/nearest-city')
-        .then((r) => r.json())
-        .then((j: { code?: string; name?: string; country?: string }) => {
-          if (j?.code && j?.name) {
-            setOrigin((prev) => prev ?? { code: j.code!, label: j.name!, sub: j.country || '' });
-          }
-        })
-        .catch(() => {});
+      // Default "From": the city remembered this session, else the browser's
+      // time zone city (lib/visitor-origin; no IP lookup). The visitor can
+      // change it, and a URL origin above always wins.
+      resolveVisitorOrigin().then((o) => {
+        if (!o?.iata) return;
+        const tzPlace = placeFromBrowserTimeZone();
+        const sub = KNOWN_PLACES[o.iata]?.sub || (tzPlace?.iata === o.iata ? countryName(tzPlace.country) : '');
+        setOrigin((prev) => prev ?? { code: o.iata, label: o.name, sub });
+      });
     }
 
     if (destParam) {

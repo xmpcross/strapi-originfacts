@@ -22,7 +22,7 @@ const WEATHER_CACHE_KEY = 'originfacts.weather.v1';
 const UNIT_KEY = 'originfacts.weather.unit.v1';
 const CACHE_TTL_MS = 30 * 60 * 1000;
 /** Used when the browser's time zone is not one we map. */
-const DEFAULT_PLACE: TimeZonePlace = { iata: 'LON', city: 'London', lat: 51.507, lon: -0.128 };
+const DEFAULT_PLACE: TimeZonePlace = { iata: 'LON', city: 'London', lat: 51.507, lon: -0.128, country: 'GB' };
 
 function describe(code: number): { label: string; icon: string } {
   if (code === 0) return { label: 'Clear', icon: '☀️' };

@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { DEFAULT_CURRENCY, isCurrency, toCurrency, type Currency } from '@/lib/currency';
+import { DEFAULT_CURRENCY, currencyForCountry, isCurrency, toCurrency, type Currency } from '@/lib/currency';
+import { countryFromBrowser } from '@/lib/timezone-geo';
 
 const COOKIE = 'of_currency';
 const EVENT = 'of-currency-change';
@@ -19,12 +20,17 @@ export function setCurrency(currency: Currency) {
 
 let suggested: Promise<Currency> | null = null;
 
-/** First visit: a default from the visitor's country (looked up once per page load). */
+/**
+ * First visit: a default from the visitor's country (worked out once per page
+ * load). Cloudflare's CF-IPCountry header, when our own API sees one, wins;
+ * otherwise the browser's time zone, then its language region. No IP lookup.
+ */
 function suggestCurrency(): Promise<Currency> {
+  const fromBrowser = () => currencyForCountry(countryFromBrowser());
   suggested ??= fetch('/api/visitor-currency', { cache: 'no-store' })
     .then((res) => (res.ok ? res.json() : null))
-    .then((data: { currency?: string } | null) => toCurrency(data?.currency))
-    .catch(() => DEFAULT_CURRENCY);
+    .then((data: { currency?: string | null } | null) => (isCurrency(data?.currency) ? toCurrency(data?.currency) : fromBrowser()))
+    .catch(() => fromBrowser());
   return suggested;
 }
 

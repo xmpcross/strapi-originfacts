@@ -4,6 +4,7 @@ import { format } from 'date-fns';
 import {
   getCategory,
   listArticles,
+  listCategoryArticleIndex,
   listDestinationArticles,
   listSidebarArticles,
   listSidebarCategoryTiles,
@@ -18,6 +19,8 @@ import { breadcrumbJsonLd, collectionPageJsonLd } from '@/lib/jsonld';
 import { clampDescription } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { partnerLink } from '@/lib/partner-links';
+import { CATEGORY_V2_STANDFIRSTS, categoryUsesTemplateV2 } from '@/lib/category-template-v2';
+import CategoryPageV2 from '@/components/category-v2/CategoryPageV2';
 
 export const revalidate = 60;
 
@@ -39,6 +42,7 @@ async function resolveCategory(slug: string) {
     return {
       name: strapi.name,
       description: strapi.description ?? findSection(slug)?.description,
+      cmsDescription: strapi.description?.trim() || null,
       tagline: findSection(slug)?.tagline,
       children: strapi.children ?? [],
       fromStrapi: true as const,
@@ -49,6 +53,7 @@ async function resolveCategory(slug: string) {
     return {
       name: section.title,
       description: section.description,
+      cmsDescription: null,
       tagline: section.tagline,
       children: [] as { id: number; name: string; slug: string }[],
       fromStrapi: false as const,
@@ -80,8 +85,11 @@ export default async function CategoryPage({ params, searchParams }: Props) {
   const category = await resolveCategory(slug);
   if (!category) notFound();
   const pageSize = slug === 'flights' ? FLIGHTS_PAGE_SIZE : PAGE_SIZE;
+  // v2 template allowlist (lib/category-template-v2.ts). Same page size, URLs,
+  // metadata and JSON-LD as below; it only adds a slim index of the category.
+  const useV2 = slug !== 'destinations' && categoryUsesTemplateV2(slug);
 
-  const [articlesRes, sidebar, categoryTiles] = await Promise.all([
+  const [articlesRes, sidebar, categoryTiles, categoryIndex] = await Promise.all([
     (slug === 'destinations'
       ? listDestinationArticles({ pageSize, page })
       : listArticles({ category: slug, pageSize, page })
@@ -93,6 +101,11 @@ export default async function CategoryPage({ params, searchParams }: Props) {
     listSidebarCategoryTiles(
       SECTIONS.filter((s) => s.slug !== 'destinations').map((s) => s.slug),
     ).catch(() => []),
+    useV2
+      ? listCategoryArticleIndex(slug)
+          .then((r) => r.data)
+          .catch(() => [] as StrapiArticle[])
+      : Promise.resolve([] as StrapiArticle[]),
   ]);
 
   const articles = articlesRes.data;
@@ -119,6 +132,46 @@ export default async function CategoryPage({ params, searchParams }: Props) {
       position: (page - 1) * pageSize + i + 1,
     })),
   });
+
+  const navItems = [
+    ...(category.children.length > 0
+      ? category.children.map((c) => ({
+          href: `/category/${c.slug}`,
+          slug: c.slug,
+          name: c.name,
+        }))
+      : SECTIONS.filter((s) => s.slug !== 'destinations').map((s) => ({
+          href: `/category/${s.slug}`,
+          slug: s.slug,
+          name: s.title,
+        }))),
+    { href: '/airlines', slug: 'airlines', name: 'Airlines' },
+    { href: '/airports', slug: 'airports', name: 'Airports' },
+  ];
+
+  if (useV2) {
+    return (
+      <>
+        <JsonLd data={breadcrumbJsonLd([{ name: category.name, url: `/category/${slug}` }])} />
+        <JsonLd data={collectionJsonLd} />
+        <CategoryPageV2
+          slug={slug}
+          name={category.name}
+          // A CMS description wins; otherwise the v2 standfirst. Never the
+          // lib/sections.ts fallback (see lib/category-template-v2.ts).
+          standfirst={category.cmsDescription || CATEGORY_V2_STANDFIRSTS[slug] || null}
+          page={page}
+          pageCount={pageCount}
+          total={total}
+          articles={articles}
+          index={categoryIndex}
+          navItems={navItems}
+          sidebar={sidebar}
+          categoryTiles={categoryTiles}
+        />
+      </>
+    );
+  }
 
   return (
     <div data-testid={`category-page-${slug}`}>
@@ -153,21 +206,7 @@ export default async function CategoryPage({ params, searchParams }: Props) {
             aria-label="Categories"
             data-testid="category-subnav"
           >
-            {[
-              ...(category.children.length > 0
-                ? category.children.map((c) => ({
-                    href: `/category/${c.slug}`,
-                    slug: c.slug,
-                    name: c.name,
-                  }))
-                : SECTIONS.filter((s) => s.slug !== 'destinations').map((s) => ({
-                    href: `/category/${s.slug}`,
-                    slug: s.slug,
-                    name: s.title,
-                  }))),
-              { href: '/airlines', slug: 'airlines', name: 'Airlines' },
-              { href: '/airports', slug: 'airports', name: 'Airports' },
-            ].map((item) => (
+            {navItems.map((item) => (
               <Link
                 key={item.slug}
                 href={item.href}

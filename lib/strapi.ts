@@ -304,17 +304,36 @@ export function mediaUrl(img: StrapiImage): string | null {
  * pages re-downloaded it from the CMS on every render ("items over 2MB can not
  * be cached" in the logs, ~270 times a day).
  */
+const ARTICLE_INDEX_FIELDS = ['title', 'slug', 'excerpt', 'publishedAt', 'updatedAt', 'readingTimeMinutes'];
+const ARTICLE_INDEX_POPULATE = {
+  coverImage: { fields: ['url', 'alternativeText', 'width', 'height', 'formats'] },
+  category: { fields: ['name', 'slug'] },
+  author: { fields: ['name', 'slug'] },
+};
+
 export async function listArticleIndex() {
   return strapiFetch<ListResponse<StrapiArticle>>('articles', {
     sort: ['publishedAt:desc'],
-    fields: ['title', 'slug', 'excerpt', 'publishedAt', 'updatedAt', 'readingTimeMinutes'],
-    populate: {
-      coverImage: { fields: ['url', 'alternativeText', 'width', 'height', 'formats'] },
-      category: { fields: ['name', 'slug'] },
-      author: { fields: ['name', 'slug'] },
-    },
+    fields: ARTICLE_INDEX_FIELDS,
+    populate: ARTICLE_INDEX_POPULATE,
     pagination: { pageSize: 200 },
     filters: visibleArticles(),
+  });
+}
+
+/**
+ * listArticleIndex() for one category, plus each article's destinations
+ * (name, slug, type). Used by the v2 category template for its counts,
+ * destination chips and client-side search; the paginated listing itself
+ * still comes from listArticles().
+ */
+export async function listCategoryArticleIndex(category: string) {
+  return strapiFetch<ListResponse<StrapiArticle>>('articles', {
+    sort: ['publishedAt:desc'],
+    fields: ARTICLE_INDEX_FIELDS,
+    populate: { ...ARTICLE_INDEX_POPULATE, destinations: { fields: ['name', 'slug', 'type'] } },
+    pagination: { pageSize: 200 },
+    filters: { ...visibleArticles(), category: { slug: { $eqi: category } } },
   });
 }
 

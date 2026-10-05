@@ -179,23 +179,25 @@ export default function AirlineGuideV2({ airline, routeFacts: rf, facts, allianc
 
           <div className="mt-8 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
             <div className="min-w-0">
-              {/* Logo at its own size: no frame, padding, background or shadow. */}
-              {logo ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src={logo} alt={`${name} logo`} className="block h-auto w-auto max-w-full" />
-              ) : (
-                <span className="block text-4xl font-bold text-forest-900/70">{(airline.iataCode || name).slice(0, 3)}</span>
-              )}
-              <p className="eyebrow-tag mt-8">Airline guide</p>
-              <h1 className="mt-5 flex flex-wrap items-baseline gap-x-4 gap-y-2 text-[2.1rem] font-bold leading-[1.08] tracking-tight text-forest-950 sm:text-5xl lg:text-[3.4rem]">
-                {name}
-                {airline.iataCode && (
-                  <span className="font-mono text-xl font-bold tracking-wider text-primary-emphasis sm:text-2xl">
-                    <span className="sr-only">IATA code </span>
-                    {airline.iataCode}
-                  </span>
+              <p className="eyebrow-tag">Airline guide</p>
+              {/* Logo sits in front of the title, at its own size: no frame, padding, background or shadow. */}
+              <div className="mt-5 flex flex-wrap items-center gap-x-8 gap-y-4">
+                {logo ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={logo} alt={`${name} logo`} className="block h-auto w-auto max-w-full flex-none" />
+                ) : (
+                  <span className="block flex-none text-4xl font-bold text-forest-900/70">{(airline.iataCode || name).slice(0, 3)}</span>
                 )}
-              </h1>
+                <h1 className="flex min-w-0 flex-wrap items-baseline gap-x-4 gap-y-2 text-[2.1rem] font-bold leading-[1.08] tracking-tight text-forest-950 sm:text-5xl lg:text-[3.4rem]">
+                  {name}
+                  {airline.iataCode && (
+                    <span className="font-mono text-xl font-bold tracking-wider text-primary-emphasis sm:text-2xl">
+                      <span className="sr-only">IATA code </span>
+                      {airline.iataCode}
+                    </span>
+                  )}
+                </h1>
+              </div>
             </div>
 
             {officialSite && (

@@ -12,12 +12,12 @@ const guided = new Set(
   fs.readdirSync(path.join(process.cwd(), 'content', 'airport-guides')).map((f) => f.replace('.json', '').toUpperCase()),
 );
 
-test('removed pages: 51 airports and 84 routes, unique', () => {
-  assert.equal(removed.airports.length, 51);
-  assert.equal(new Set(removed.airports.map((a) => a.iata)).size, 51);
-  assert.equal(new Set(removed.airports.map((a) => a.slug)).size, 51);
-  assert.equal(removed.routes.length, 84);
-  assert.equal(new Set(removed.routes).size, 84);
+test('removed pages: 35 airports and 76 routes, unique', () => {
+  assert.equal(removed.airports.length, 35);
+  assert.equal(new Set(removed.airports.map((a) => a.iata)).size, 35);
+  assert.equal(new Set(removed.airports.map((a) => a.slug)).size, 35);
+  assert.equal(removed.routes.length, 76);
+  assert.equal(new Set(removed.routes).size, 76);
 });
 
 test('removed pages: same airports as the noindex list, none with a sourced guide', () => {
@@ -28,4 +28,9 @@ test('removed pages: same airports as the noindex list, none with a sourced guid
 test('removed pages: every route has both ends as normal route slugs, and slugs are URL-safe', () => {
   for (const r of removed.routes) assert.match(r, /^[a-z]{3}-to-[a-z]{3}$/, r);
   for (const a of removed.airports) assert.match(a.slug, /^[a-z0-9-]+$/, a.slug);
+});
+
+test('removed pages: the Top 100 airports are never retired', () => {
+  const hubs = fs.readFileSync(path.join(process.cwd(), 'lib', 'hub-airports.ts'), 'utf8');
+  for (const a of removed.airports) assert.ok(!new RegExp(`'${a.iata}'`).test(hubs), `${a.iata} is on the Top 100 list`);
 });

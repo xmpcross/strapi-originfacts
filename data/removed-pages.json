@@ -1,29 +1,13 @@
 {
- "_comment": "Pages retired on 2026-10-05 and permanently redirected (301): 51 thin airport pages (under 200 words of their own, 0-2 tracked routes) and the 84 route pages whose origin or destination was one of them. Airport pages go to /airports, route pages to /flight-routes. Full records backed up in /opt/backups/originfacts-thin-airports-20261005/ on the server.",
+ "_comment": "Pages retired on 2026-10-05 and permanently redirected (301): 35 thin airport pages (under 200 words of their own, 0-2 tracked routes) and the route pages whose origin or destination was one of them. Airport pages go to /airports, route pages to /flight-routes. The 16 thin airports on the Top 100 list (lib/hub-airports.ts) are kept. Full records of all 51 airports and 84 routes are backed up in /opt/backups/originfacts-thin-airports-20261005/ on the server.",
  "airports": [
   {
    "iata": "AMD",
    "slug": "ahmedabad"
   },
   {
-   "iata": "ALG",
-   "slug": "algiers"
-  },
-  {
-   "iata": "AMS",
-   "slug": "amsterdam"
-  },
-  {
    "iata": "AQP",
    "slug": "arequipa"
-  },
-  {
-   "iata": "ATH",
-   "slug": "athens"
-  },
-  {
-   "iata": "ATL",
-   "slug": "atlanta-atl"
   },
   {
    "iata": "BKO",
@@ -32,18 +16,6 @@
   {
    "iata": "BJM",
    "slug": "bujumbura"
-  },
-  {
-   "iata": "CUN",
-   "slug": "cancun"
-  },
-  {
-   "iata": "CMB",
-   "slug": "colombo"
-  },
-  {
-   "iata": "CPH",
-   "slug": "copenhagen"
   },
   {
    "iata": "COO",
@@ -82,16 +54,8 @@
    "slug": "hefei"
   },
   {
-   "iata": "SGN",
-   "slug": "ho-chi-minh-city"
-  },
-  {
    "iata": "IXJ",
    "slug": "jammu"
-  },
-  {
-   "iata": "JED",
-   "slug": "jeddah"
   },
   {
    "iata": "JHG",
@@ -102,20 +66,12 @@
    "slug": "kashi"
   },
   {
-   "iata": "KTM",
-   "slug": "kathmandu"
-  },
-  {
    "iata": "KGL",
    "slug": "kigali"
   },
   {
    "iata": "KCH",
    "slug": "kuching"
-  },
-  {
-   "iata": "LOS",
-   "slug": "lagos"
   },
   {
    "iata": "LHW",
@@ -134,20 +90,12 @@
    "slug": "lome"
   },
   {
-   "iata": "MXP",
-   "slug": "milan-mxp"
-  },
-  {
    "iata": "KHN",
    "slug": "nanchang"
   },
   {
    "iata": "NNG",
    "slug": "nanning"
-  },
-  {
-   "iata": "EWR",
-   "slug": "new-york-ewr"
   },
   {
    "iata": "NIM",
@@ -162,14 +110,6 @@
    "slug": "ouagadougou"
   },
   {
-   "iata": "PTY",
-   "slug": "panama-city-pty"
-  },
-  {
-   "iata": "ORY",
-   "slug": "paris-ory"
-  },
-  {
    "iata": "PNQ",
    "slug": "pune"
   },
@@ -180,10 +120,6 @@
   {
    "iata": "TSA",
    "slug": "taipei-tsa"
-  },
-  {
-   "iata": "TLV",
-   "slug": "tel-aviv-yafo"
   },
   {
    "iata": "TSN",
@@ -226,9 +162,6 @@
   "del-to-pnq",
   "del-to-sxr",
   "dla-to-nsi",
-  "dxb-to-ams",
-  "ewr-to-lhr",
-  "fco-to-mxp",
   "goi-to-bom",
   "hak-to-pvg",
   "hfe-to-xmn",
@@ -238,7 +171,6 @@
   "inc-to-pek",
   "inc-to-xiy",
   "ixj-to-del",
-  "jfk-to-mxp",
   "jhg-to-kmg",
   "kch-to-sin",
   "kgl-to-ebb",
@@ -252,16 +184,12 @@
   "kwe-to-xiy",
   "kwl-to-ckg",
   "kwl-to-hgh",
-  "lca-to-ath",
   "lfw-to-oua",
-  "lhr-to-ewr",
   "lhw-to-urc",
   "lhw-to-xiy",
   "lim-to-cuz",
   "ljg-to-kmg",
   "lxa-to-ckg",
-  "mxp-to-fco",
-  "mxp-to-jfk",
   "ngb-to-tao",
   "nim-to-oua",
   "nng-to-kmg",

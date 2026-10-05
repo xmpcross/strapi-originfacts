@@ -177,22 +177,22 @@ export function howToJsonLd(opts: {
  * routes tracked" (SEO re-audit, 4 Oct 2026). Pages stay live, noindex/follow.
  */
 /**
- * Airports held out of the index although they have a tracked route or sit on
- * the reviewed list. Measured on the live site on 5 Oct 2026, each of these
- * pages has under 200 words of its own (the rest is shared template), no
- * terminal or transport facts, and 0-2 tracked routes: 51 of the 178 airport
- * pages then indexed. They stay live and linked, marked noindex/follow, and
- * out of the sitemap.
+ * Airports retired on 5 Oct 2026 (data/removed-pages.json): thin pages with
+ * under 200 words of their own, no terminal or transport facts and 0-2 tracked
+ * routes. Their CMS records are deleted and their URLs redirect to /airports.
+ * This list also keeps them out of the index and sitemap, so if the OurAirports
+ * ingest ever re-creates one it comes back noindex, not as thin indexable
+ * content. The 16 thin airports that are on the Top 100 list are not here.
  *
  * To bring one back: add content/airport-guides/<iata>.json (a sourced guide)
- * and remove its code here. tests/airport-thin-noindex.test.ts fails if an
- * airport has a guide file and is still listed.
+ * and remove its code here and from data/removed-pages.json.
+ * tests/airport-thin-noindex.test.ts fails if an airport has a guide file and
+ * is still listed.
  */
 export const THIN_AIRPORT_IATAS = new Set([
-  'INC', 'JHG', 'XNN', 'WNZ', 'KTM', 'PTY', 'TSN', 'SGN', 'TSA', 'SXR', 'IXJ', 'AQP', 'PNQ', 'ORY',
-  'OUA', 'NSI', 'NGB', 'NIM', 'EWR', 'NNG', 'KHN', 'LOS', 'MXP', 'LFW', 'LJG', 'LXA', 'LHW', 'KCH',
-  'JED', 'KGL', 'KHG', 'ALG', 'HFE', 'ATL', 'HRE', 'HAK', 'KWE', 'KWL', 'ATH', 'DLA', 'GOI', 'COO',
-  'CPH', 'CUN', 'BJM', 'TLV', 'CMB', 'BKO', 'AMS', 'CUZ', 'AMD',
+  'AMD', 'AQP', 'BJM', 'BKO', 'COO', 'CUZ', 'DLA', 'GOI', 'HAK', 'HFE', 'HRE', 'INC', 'IXJ', 'JHG',
+  'KCH', 'KGL', 'KHG', 'KHN', 'KWE', 'KWL', 'LFW', 'LHW', 'LJG', 'LXA', 'NGB', 'NIM', 'NNG', 'NSI',
+  'OUA', 'PNQ', 'SXR', 'TSA', 'TSN', 'WNZ', 'XNN',
 ]);
 
 export function airportIsSubstantive(a: StrapiAirport, hasRoutes: boolean): boolean {

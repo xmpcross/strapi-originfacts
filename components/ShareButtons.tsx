@@ -49,7 +49,7 @@ export default function ShareButtons({ title, slug }: Props) {
 
   return (
     <div
-      className="inline-flex items-center rounded-full bg-[#f1f5f9] py-1 pl-4 pr-2 shadow-[0_1px_3px_rgba(0,0,0,0.06)]"
+      className="inline-flex items-center rounded-full bg-forest-50 py-1 pl-4 pr-2 shadow-[0_1px_3px_rgba(0,0,0,0.06)]"
       data-testid="share-buttons"
     >
       <span className="text-[12px] font-bold uppercase tracking-widest text-forest-950">

@@ -32,7 +32,7 @@ function CarWidget() {
 /** Loaded only after advertising consent (see TpConsentGate). */
 export default function TravelpayoutsCarSearch() {
   return (
-    <section data-testid="travelpayouts-car-search" className="rounded-[18px] border border-[#b8c9e2] bg-white p-4 shadow-[0_12px_28px_rgba(11,42,91,0.12)] sm:p-6">
+    <section data-testid="travelpayouts-car-search" className="rounded-[18px] border border-forest-200 bg-white p-4 shadow-[0_12px_28px_rgba(11,42,91,0.12)] sm:p-6">
       <TpConsentGate tool="car rental search" className="min-h-[110px]">
         <CarWidget />
       </TpConsentGate>

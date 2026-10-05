@@ -192,7 +192,7 @@ export default async function CategoryPage({ params, searchParams }: Props) {
               )}
             </div>
             <div
-              className="flex h-32 w-32 flex-col items-center justify-center rounded-[0.3rem] bg-[#f1f5f9] text-forest-950"
+              className="flex h-32 w-32 flex-col items-center justify-center rounded-[0.3rem] bg-forest-50 text-forest-950"
               data-testid="category-article-count"
             >
               <span className="text-4xl font-bold leading-none">{total}</span>
@@ -300,10 +300,10 @@ function QatarAirwaysFeedBanner({ slotIndex }: { slotIndex: number }) {
         rel="sponsored nofollow noopener noreferrer"
         className="flex h-full flex-col"
       >
-        <div className="relative aspect-[16/9] overflow-hidden bg-gradient-to-br from-[#f4e8ee] via-[#fbf7f9] to-[#ffffff]">
+        <div className="relative aspect-[16/9] overflow-hidden bg-gradient-to-br from-forest-50 via-forest-50 to-[#ffffff]">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(122,31,69,0.1),transparent_30%),linear-gradient(135deg,rgba(255,255,255,0.35),rgba(122,31,69,0.04))]" />
           <div className="absolute inset-x-0 top-0 flex items-start justify-between gap-4 p-5 text-forest-950">
-            <span className="rounded-full bg-white px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-[#7a1f45]">
+            <span className="rounded-full bg-white px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-forest-700">
               Sponsored
             </span>
             <span className="inline-flex h-10 w-32 items-center justify-center rounded-full bg-white px-3">
@@ -317,7 +317,7 @@ function QatarAirwaysFeedBanner({ slotIndex }: { slotIndex: number }) {
             </span>
           </div>
           <div className="absolute bottom-5 left-5 right-5">
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#7a1f45]/75">
+            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-forest-700/75">
               Long-haul flight options
             </p>
             <p className="mt-2 max-w-sm text-3xl font-bold leading-[1.02] text-forest-950">
@@ -326,18 +326,18 @@ function QatarAirwaysFeedBanner({ slotIndex }: { slotIndex: number }) {
           </div>
         </div>
         <div className="flex flex-1 flex-col p-5">
-          <p className="w-fit rounded-full bg-[#7a1f45] px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-white">
+          <p className="w-fit rounded-full bg-forest-700 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-white">
             Qatar Airways
           </p>
-          <h2 className="mt-3 text-[clamp(1.1rem,1vw+0.85rem,1.4rem)] font-bold leading-snug text-forest-950 transition group-hover:text-[#7a1f45]">
+          <h2 className="mt-3 text-[clamp(1.1rem,1vw+0.85rem,1.4rem)] font-bold leading-snug text-forest-950 transition group-hover:text-forest-700">
             Search Qatar Airways fares and routes
           </h2>
           <p className="mt-5 text-sm leading-6 text-ink/70 sm:text-base">
             Compare Qatar Airways flight options for long-haul trips, premium cabins and one-stop connections through Doha.
           </p>
-          <span className="mt-5 inline-flex w-fit items-center gap-2 rounded-full border border-forest-900/15 bg-white px-4 py-2 text-[11px] font-bold uppercase tracking-widest text-forest-900 transition group-hover:border-[#7a1f45] group-hover:text-[#7a1f45]">
+          <span className="mt-5 inline-flex w-fit items-center gap-2 rounded-full border border-forest-900/15 bg-white px-4 py-2 text-[11px] font-bold uppercase tracking-widest text-forest-900 transition group-hover:border-forest-700 group-hover:text-forest-700">
             Search Qatar Airways
-            <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-forest-900 text-white transition group-hover:bg-[#7a1f45]">
+            <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-forest-900 text-white transition group-hover:bg-forest-700">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"

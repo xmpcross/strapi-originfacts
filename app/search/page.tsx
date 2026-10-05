@@ -108,7 +108,7 @@ export default async function SearchPage({ searchParams }: Props) {
 
             {q && (
               <div
-                className="flex h-32 w-32 flex-col items-center justify-center rounded-[0.3rem] bg-[#f1f5f9] text-forest-950"
+                className="flex h-32 w-32 flex-col items-center justify-center rounded-[0.3rem] bg-forest-50 text-forest-950"
                 data-testid="search-match-count"
               >
                 <span className="text-4xl font-bold leading-none">{total}</span>
@@ -205,7 +205,7 @@ function SearchResultRow({ article }: { article: StrapiArticle }) {
           </p>
         )}
         <div className="mt-4">
-          <span className="inline-flex items-center rounded-[0.3rem] bg-[#f1f5f9] px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-forest-900/70">
+          <span className="inline-flex items-center rounded-[0.3rem] bg-forest-50 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-forest-900/70">
             Post
           </span>
         </div>

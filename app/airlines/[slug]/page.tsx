@@ -325,7 +325,7 @@ export default async function AirlinePage({ params }: Props) {
   }
 
   return (
-    <article className="bg-[#fbfcff]" data-testid={`airline-page-${slug}`}>
+    <article className="bg-forest-50" data-testid={`airline-page-${slug}`}>
       <JsonLd data={articleSchema} />
       <JsonLd data={ceased ? { ...airlineJsonLd(airline, url), dissolutionDate: ceased.ceasedOn } : airlineJsonLd(airline, url)} />
       <JsonLd data={faqJsonLd(faqs)} />
@@ -347,7 +347,7 @@ export default async function AirlinePage({ params }: Props) {
       <header className="mx-auto mt-8 max-w-7xl px-6">
         <div className="overflow-hidden rounded-[0.3rem] border border-forest-900/10 bg-white">
           <div className="grid gap-0 lg:grid-cols-[minmax(0,1fr)_360px]">
-            <div className="bg-gradient-to-br from-[#f8fbff] via-white to-[#fff8e6] p-6 sm:p-8 lg:p-10">
+            <div className="bg-gradient-to-br from-forest-50 via-white to-sand-50 p-6 sm:p-8 lg:p-10">
               <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
                 {airline.type && (
                   <span className="inline-flex items-center rounded-[0.3rem] bg-primary-emphasis px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-white">
@@ -422,7 +422,7 @@ export default async function AirlinePage({ params }: Props) {
                   href={websiteHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center rounded-[0.3rem] bg-white px-5 py-3 text-sm font-bold uppercase tracking-wider text-forest-950 transition hover:bg-[#fff8e6]"
+                  className="mt-6 inline-flex items-center rounded-[0.3rem] bg-white px-5 py-3 text-sm font-bold uppercase tracking-wider text-forest-950 transition hover:bg-sand-50"
                 >
                   Official website
                 </a>
@@ -514,7 +514,7 @@ export default async function AirlinePage({ params }: Props) {
           expectations paragraphs. */}
       {(goodToKnowCards.length > 0 || expectations.length > 0) && (
         <section className="mx-auto max-w-7xl px-6 pb-20" data-testid="airline-expectations">
-          <div className="bg-gradient-to-br from-white via-[#f8fbff] to-[#fff8e6] p-6 ring-1 ring-forest-900/10 sm:p-8">
+          <div className="bg-gradient-to-br from-white via-forest-50 to-sand-50 p-6 ring-1 ring-forest-900/10 sm:p-8">
           <p className="section-eyebrow">
             <span className="inline-block h-px w-8 bg-primary-emphasis" />
             Good to know

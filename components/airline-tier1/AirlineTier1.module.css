@@ -7,11 +7,11 @@
  */
 .root {
   /* Official site color tokens (tailwind.config.ts / app/globals.css) */
-  --ink: #0f172a;          /* site colors.ink (slate-900) */
-  --ink-soft: #334155;     /* slate-700 body text */
+  --ink: #061b46;          /* site colors.ink (slate-900) */
+  --ink-soft: #26334f;     /* slate-700 body text */
   --slate: #64748b;        /* slate-500 secondary text */
   --slate-light: #94a3b8;  /* slate-400 labels */
-  --paper: #f8fafc;        /* slate-50 site ground */
+  --paper: #f5f8fd;        /* slate-50 site ground */
   --card: #ffffff;         /* pure white card background */
   --rule: #e2e8f0;         /* slate-200 card borders */
   --rule-soft: #f1f5f9;    /* slate-100 interior hairlines */
@@ -20,17 +20,17 @@
   --verified: #059669;     /* site success.emphasis emerald green */
   --verified-bg: #ecfdf5;  /* site success soft background */
   --check: #d97706;        /* site attention.emphasis amber */
-  --check-bg: #fffbeb;     /* site sand.100 soft background */
+  --check-bg: #fffcf0;     /* site sand.100 soft background */
 
-  --hero-bg: linear-gradient(135deg, #f5f9fe 0%, #ebf4fc 50%, #f7faff 100%);
-  --hero-rule: #c7ddfd;    /* forest.200 */
-  --hero-text: #0f172a;    /* slate-900 */
-  --hero-dim: #025ccc;     /* primary.emphasis blue */
+  --hero-bg: linear-gradient(135deg, #f3f6fd 0%, #eef3fc 50%, #f3f6fd 100%);
+  --hero-rule: #c9daf7;    /* forest.200 */
+  --hero-text: #061b46;    /* slate-900 */
+  --hero-dim: #0046be;     /* primary.emphasis blue */
 
-  --sector-from: #025ccc;  /* primary.emphasis blue */
-  --sector-to: #d95a14;    /* terracotta.500 */
+  --sector-from: #0046be;  /* primary.emphasis blue */
+  --sector-to: #e0b400;    /* terracotta.500 */
   --foot-bg: #ffffff;
-  --foot-text: #334155;
+  --foot-text: #26334f;
 
 
   background: var(--paper);
@@ -73,7 +73,7 @@
 
 /* ---------- hero: the data plate ---------- */
 .hero {
-  background: linear-gradient(135deg, #f5f9fe 0%, #ebf4fc 50%, #f7faff 100%);
+  background: linear-gradient(135deg, #f3f6fd 0%, #eef3fc 50%, #f3f6fd 100%);
   color: var(--ink);
   padding: 40px 0 0;
 }
@@ -445,7 +445,7 @@
 .fareFallback {
   background:
     linear-gradient(135deg, rgba(245, 249, 254, 0.96), rgba(255, 255, 255, 0.98) 58%, rgba(255, 251, 235, 0.72));
-  border-color: #cbd8ea;
+  border-color: #cdd9ee;
 }
 .fareChecklist {
   display: grid;
@@ -595,7 +595,7 @@
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
 }
-.cabinCard_blue { border-top: 4px solid #0072de; }
+.cabinCard_blue { border-top: 4px solid #0d52c9; }
 .cabinCard_purple { border-top: 4px solid #7c3aed; }
 .cabinCard_emerald { border-top: 4px solid #059669; }
 .cabinCard_amber { border-top: 4px solid #d97706; }
@@ -694,7 +694,7 @@
   border-radius: 4px;
   display: inline-block;
 }
-.typeWide { background: #e0f2fe; color: #0369a1; }
+.typeWide { background: #e8effc; color: #0046be; }
 .typeNarrow { background: #f1f5f9; color: #475569; }
 
 .amenitiesBox {
@@ -730,7 +730,7 @@
 
 /* ---------- Carry-on & Checked Baggage Redesign ---------- */
 .baggageHeroCard {
-  background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #f3f6fd 100%);
   border: 1px solid var(--hero-rule);
   border-radius: 8px;
   padding: 24px;
@@ -753,7 +753,7 @@
   margin-top: 4px;
 }
 .baggageTagBadge {
-  background: #0072de;
+  background: #0d52c9;
   color: #ffffff;
   font-size: 11px;
   font-weight: 600;
@@ -808,7 +808,7 @@
   font-size: 1rem !important;
   font-weight: 600 !important;
   letter-spacing: 0.3px !important;
-  color: #001e73 !important;
+  color: #0a2a6b !important;
   margin-bottom: 10px;
 }
 .bagNotesList {
@@ -823,7 +823,7 @@
 }
 
 .baggageRulesBox {
-  background: #f8fafc;
+  background: #f5f8fd;
   border: 1px solid var(--rule-soft);
   border-radius: 8px;
   padding: 18px 22px;
@@ -860,7 +860,7 @@
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 .contactCardRedesign:hover {
-  border-color: #025ccc;
+  border-color: #0046be;
   box-shadow: 0 4px 12px rgba(2, 92, 204, 0.08);
 }
 .contactCardHead {
@@ -873,8 +873,8 @@
   width: 42px;
   height: 42px;
   border-radius: 8px;
-  background: #f0f6fe;
-  color: #025ccc;
+  background: #f3f6fd;
+  color: #0046be;
   display: grid;
   place-items: center;
   flex-shrink: 0;
@@ -891,7 +891,7 @@
   word-break: break-word;
 }
 .contactBodyVal a {
-  color: #025ccc;
+  color: #0046be;
   font-weight: 600;
   text-decoration: none;
 }
@@ -920,7 +920,7 @@
 .netStatVal {
   font-size: 1.4rem;
   font-weight: 800;
-  color: #001e73;
+  color: #0a2a6b;
 }
 .netStatLbl {
   font-size: 12px;
@@ -950,7 +950,7 @@
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .netHubCard:hover {
-  border-color: #025ccc;
+  border-color: #0046be;
   box-shadow: 0 4px 12px rgba(2, 92, 204, 0.08);
 }
 .netHubMain {
@@ -962,25 +962,25 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  color: #025ccc;
+  color: #0046be;
   font-weight: 600;
   text-decoration: none;
   font-size: 14px;
 }
 .netHubLink:hover {
   text-decoration: underline;
-  color: #001e73;
+  color: #0a2a6b;
 }
 .netHubCity {
   color: var(--ink);
   font-weight: 600;
 }
 .netHubLink:hover .netHubCity {
-  color: #025ccc;
+  color: #0046be;
 }
 .netHubIata {
-  background: #f0f6fe;
-  color: #025ccc;
+  background: #f3f6fd;
+  color: #0046be;
   font-size: 11px;
   font-weight: 700;
   padding: 2px 6px;
@@ -1002,7 +1002,7 @@
   padding: 6px 12px;
   font-size: 13px;
   font-weight: 500;
-  color: #025ccc;
+  color: #0046be;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -1010,23 +1010,23 @@
   transition: all 0.2s ease;
 }
 .netDestPill:hover {
-  background: #f0f6fe;
-  border-color: #025ccc;
-  color: #001e73;
+  background: #f3f6fd;
+  border-color: #0046be;
+  color: #0a2a6b;
 }
 .netDestPillStatic {
   color: var(--ink-soft);
 }
 .netDot {
   font-size: 10px;
-  color: #025ccc;
+  color: #0046be;
 }
 .netPillIata {
   font-size: 11px;
   opacity: 0.8;
 }
 .netSectorCard {
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #f5f8fd 100%);
   border: 1px solid var(--rule);
   border-radius: 8px;
   padding: 20px 24px;
@@ -1052,13 +1052,13 @@
 .netSectorCityLink {
   font-size: 16px;
   font-weight: 700;
-  color: #025ccc;
+  color: #0046be;
   text-decoration: none;
   margin-top: 2px;
 }
 .netSectorCityLink:hover {
   text-decoration: underline;
-  color: #001e73;
+  color: #0a2a6b;
 }
 .netSectorCity {
   font-size: 16px;
@@ -1076,7 +1076,7 @@
 .netSectorKm {
   font-size: 14px;
   font-weight: 800;
-  color: #001e73;
+  color: #0a2a6b;
 }
 .netArcLine {
   width: 100%;
@@ -1093,7 +1093,7 @@
   background: #ffffff;
   padding: 0 4px;
   font-size: 12px;
-  color: #025ccc;
+  color: #0046be;
 }
 .netSectorSub {
   font-size: 11px;

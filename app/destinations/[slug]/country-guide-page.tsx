@@ -202,7 +202,7 @@ function CountryCitiesSection({
   return (
     <section
       id="cities"
-      className="mx-auto mt-16 max-w-7xl scroll-mt-28 overflow-hidden rounded-[0.3rem] border border-forest-900/10 bg-gradient-to-br from-white via-[#f7fbff] to-[#fff8e6] px-6 py-8 sm:px-8"
+      className="mx-auto mt-16 max-w-7xl scroll-mt-28 overflow-hidden rounded-[0.3rem] border border-forest-900/10 bg-gradient-to-br from-white via-forest-50 to-sand-50 px-6 py-8 sm:px-8"
       data-testid="country-cities"
     >
       <header className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_220px] lg:items-end">

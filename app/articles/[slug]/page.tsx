@@ -414,13 +414,13 @@ async function BookingHotelBanner({ articleSlug }: { articleSlug: string }) {
 
   return (
     <aside
-      className="mt-12 overflow-hidden rounded-[0.4rem] border border-[#003b95]/15 bg-gradient-to-r from-[#003b95] via-[#0057b8] to-[#febb02] p-[1px]"
+      className="mt-12 overflow-hidden rounded-[0.4rem] border border-forest-800/15 bg-gradient-to-r from-forest-800 via-forest-700 to-[#febb02] p-[1px]"
       data-testid="booking-hotel-banner"
       aria-label="Sponsored Booking.com hotel offer"
     >
       <div className="flex flex-col gap-4 rounded-[0.35rem] bg-white px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="min-w-0">
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#003b95]/70">
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-forest-800/70">
             Sponsored · Booking.com
           </p>
           <p className="mt-1 text-lg font-bold leading-snug text-forest-950">
@@ -434,7 +434,7 @@ async function BookingHotelBanner({ articleSlug }: { articleSlug: string }) {
           href={href}
           target="_blank"
           rel="sponsored nofollow noopener noreferrer"
-          className="inline-flex shrink-0 items-center justify-center rounded-[0.3rem] bg-[#003b95] px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-[#002f78]"
+          className="inline-flex shrink-0 items-center justify-center rounded-[0.3rem] bg-forest-800 px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-forest-900"
         >
           Search Booking.com <span aria-hidden className="ml-2">→</span>
         </a>
@@ -465,9 +465,9 @@ async function FlightBookingBanners({ articleSlug }: { articleSlug: string }) {
       title: 'Compare flights with global trip tools',
       description: 'Look across fares, baggage choices and travel extras before choosing the ticket.',
       cta: 'Search Trip.com',
-      theme: 'from-[#1d4ed8] via-[#2563eb] to-[#bcd7ff]',
-      button: 'bg-[#1d4ed8] hover:bg-[#1e40af]',
-      label: 'text-[#1d4ed8]/75',
+      theme: 'from-forest-700 via-forest-700 to-forest-200',
+      button: 'bg-forest-700 hover:bg-forest-800',
+      label: 'text-forest-700/75',
     },
   ];
 

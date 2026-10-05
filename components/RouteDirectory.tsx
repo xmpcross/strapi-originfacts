@@ -280,7 +280,7 @@ function RouteCard({ route }: { route: StrapiRoute }) {
   return (
     <Link
       href={`/flight-routes/${route.slug}`}
-      className="group flex flex-col gap-2 rounded-[0.3rem] border border-forest-900/10 bg-[#f7f8fa] px-4 py-3 transition hover:-translate-y-0.5 hover:border-forest-900/30"
+      className="group flex flex-col gap-2 rounded-[0.3rem] border border-forest-900/10 bg-forest-50 px-4 py-3 transition hover:-translate-y-0.5 hover:border-forest-900/30"
       data-testid={`route-card-${route.slug}`}
     >
       <div className="flex items-center gap-2">
@@ -373,7 +373,7 @@ function PopularRouteCard({ route }: { route: StrapiRoute }) {
   return (
     <Link
       href={`/flight-routes/${route.slug}`}
-      className="snap-start group flex h-[78px] w-[240px] shrink-0 flex-col justify-center gap-1.5 rounded-[4px] border border-forest-900/10 bg-[#f7f8fa] px-4 shadow-[0_1px_3px_rgba(0,0,0,0.04)] transition hover:border-forest-900/25 hover:shadow-[0_4px_12px_rgba(0,0,0,0.06)]"
+      className="snap-start group flex h-[78px] w-[240px] shrink-0 flex-col justify-center gap-1.5 rounded-[4px] border border-forest-900/10 bg-forest-50 px-4 shadow-[0_1px_3px_rgba(0,0,0,0.04)] transition hover:border-forest-900/25 hover:shadow-[0_4px_12px_rgba(0,0,0,0.06)]"
       data-testid={`popular-route-${route.slug}`}
     >
       <div className="flex items-center gap-2 text-[11px] font-bold tracking-wider">

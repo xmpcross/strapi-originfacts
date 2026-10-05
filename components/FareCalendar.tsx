@@ -36,7 +36,7 @@ const monthKey = (y: number, m: number) => `${y}-${pad(m + 1)}`;
 const DOW_SHORT = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const MONTH_SHORT = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-export function DepartureIcon({ className = 'size-4 flex-none text-[#001e73]' }: { className?: string }) {
+export function DepartureIcon({ className = 'size-4 flex-none text-forest-900' }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -50,7 +50,7 @@ export function DepartureIcon({ className = 'size-4 flex-none text-[#001e73]' }:
   );
 }
 
-export function ArrivalIcon({ className = 'size-4 flex-none text-[#001e73]' }: { className?: string }) {
+export function ArrivalIcon({ className = 'size-4 flex-none text-forest-900' }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -64,7 +64,7 @@ export function ArrivalIcon({ className = 'size-4 flex-none text-[#001e73]' }: {
   );
 }
 
-export function DateIcon({ className = 'size-4 flex-none text-[#001e73]' }: { className?: string }) {
+export function DateIcon({ className = 'size-4 flex-none text-forest-900' }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -238,7 +238,7 @@ export default function FareCalendar({
             'flex h-9 w-full items-center justify-center rounded-md text-sm font-medium transition';
           let cls: string;
           if (disabled) cls = 'text-forest-900/25';
-          else if (isEnd || range) cls = 'bg-[#2f3a44] text-white';
+          else if (isEnd || range) cls = 'bg-forest-950 text-white';
           else cls = priceClass(iso) || 'text-forest-900 hover:bg-forest-100';
           const weekendRing =
             tab === 'weekend' && isWeekendCol(i) && !isEnd && !range && !disabled
@@ -268,11 +268,11 @@ export default function FareCalendar({
       {/* Trigger — cheapOair style with date steppers (< >) */}
       <div className="flex h-full w-full items-center justify-between gap-3 px-3.5 py-2.5 text-left text-sm font-medium text-forest-900">
         <div className="flex items-center gap-2">
-          <DateIcon className="size-4 flex-none text-[#001e73]" />
+          <DateIcon className="size-4 flex-none text-forest-900" />
           <button
             type="button"
             onClick={() => setOpen((o) => !o)}
-            className={departFmt ? 'font-medium text-[#001e73] hover:underline' : 'text-forest-900/50'}
+            className={departFmt ? 'font-medium text-forest-900 hover:underline' : 'text-forest-900/50'}
           >
             {departFmt || 'Depart'}
           </button>
@@ -309,11 +309,11 @@ export default function FareCalendar({
             <span className="select-none font-light text-forest-900/40">—</span>
 
             <div className="flex items-center gap-2">
-              <DateIcon className="size-4 flex-none text-[#001e73]" />
+              <DateIcon className="size-4 flex-none text-forest-900" />
               <button
                 type="button"
                 onClick={() => setOpen((o) => !o)}
-                className={retFmt ? 'font-medium text-[#001e73] hover:underline' : 'text-forest-900/50'}
+                className={retFmt ? 'font-medium text-forest-900 hover:underline' : 'text-forest-900/50'}
               >
                 {retFmt || 'Return'}
               </button>
@@ -365,8 +365,8 @@ export default function FareCalendar({
               ))}
             </div>
             <div className="flex items-center gap-4 text-[13px] text-forest-900/60">
-              <span>Departure <span className="font-semibold text-[#3d6bc9]">exact ▾</span></span>
-              <span>Return <span className="font-semibold text-[#3d6bc9]">exact ▾</span></span>
+              <span>Departure <span className="font-semibold text-forest-600">exact ▾</span></span>
+              <span>Return <span className="font-semibold text-forest-600">exact ▾</span></span>
             </div>
           </div>
 

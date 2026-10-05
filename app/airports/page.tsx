@@ -143,7 +143,7 @@ export default async function AirportsPage() {
             </ul>
           </div>
           <div
-            className="hidden h-32 w-32 flex-col items-center justify-center rounded-[0.3rem] bg-[#f1f5f9] text-forest-950 sm:flex"
+            className="hidden h-32 w-32 flex-col items-center justify-center rounded-[0.3rem] bg-forest-50 text-forest-950 sm:flex"
             data-testid="airports-count"
           >
             <span className="text-4xl font-bold leading-none">{directory.length.toLocaleString()}</span>

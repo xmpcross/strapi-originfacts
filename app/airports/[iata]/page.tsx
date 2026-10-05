@@ -37,7 +37,8 @@ import {
 } from '@/lib/entity-seo';
 import type { RouteSummary } from '@/lib/entity-seo';
 import { resolveAuthor } from '@/lib/authors';
-import { getAirportWeather, weatherLabel } from '@/lib/open-meteo';
+import { getAirportWeather } from '@/lib/met-weather';
+import { formatLocalTime, MET_ATTRIBUTION, weatherLabel } from '@/lib/met-symbols';
 import { JsonLd, FaqSection } from '@/components/SeoBlocks';
 import { breadcrumbJsonLd } from '@/lib/jsonld';
 import type { Metadata } from 'next';
@@ -195,6 +196,8 @@ export default async function AirportPage({ params }: Props) {
   const airportWeather = await getAirportWeather({
     latitude: weatherLatitude,
     longitude: weatherLongitude,
+    elevationFt: oa?.elevationFt,
+    timeZone: airport.timezone,
   });
 
   const summary = summariseRoutes(routes, 'destination');
@@ -604,42 +607,54 @@ export default async function AirportPage({ params }: Props) {
                     </p>
                   </div>
                   <span className="rounded-full bg-paper/90 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-forest-900/60">
-                    {airportWeather.timezoneAbbreviation || 'Local'}
+                    {airportWeather.timeZone ? 'Local' : 'UTC'}
                   </span>
                 </div>
                 <div className="mt-5 flex items-end justify-between gap-4 border-b border-forest-900/10 pb-4">
                   <div>
                     <div className="text-4xl font-bold leading-none text-forest-900">
-                      {formatTemperature(airportWeather.current.temperature2m)}
+                      {formatTemperature(airportWeather.current.airTemperature)}
                     </div>
                     <div className="mt-2 text-sm font-semibold text-forest-900/80">
-                      {weatherLabel(airportWeather.current.weatherCode)}
+                      {weatherLabel(airportWeather.current.symbolCode)}
                     </div>
                   </div>
                   <div className="text-right text-xs uppercase tracking-[0.18em] text-forest-900/45">
                     <div>Updated</div>
                     <div className="mt-1 text-sm font-semibold normal-case tracking-normal text-forest-900/75">
-                      {formatWeatherTime(airportWeather.current.time)}
+                      {formatLocalTime(airportWeather.current.time, airportWeather.timeZone)?.replace(/ (local|UTC)$/, '') ?? 'Now'}
                     </div>
                   </div>
                 </div>
                 <div className="mt-4 grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
                   <WeatherMetric
-                    label="Feels like"
-                    value={formatTemperature(airportWeather.current.apparentTemperature)}
+                    label="Humidity"
+                    value={
+                      typeof airportWeather.current.relativeHumidity === 'number'
+                        ? `${Math.round(airportWeather.current.relativeHumidity)}%`
+                        : '—'
+                    }
                   />
                   <WeatherMetric
                     label="Wind"
-                    value={formatWindSpeed(airportWeather.current.windSpeed10m)}
+                    value={formatWindSpeed(airportWeather.current.windSpeedKmh)}
                   />
                   <WeatherMetric
-                    label="Today"
-                    value={formatDailyRange(
-                      airportWeather.daily?.temperature2mMin?.[0],
-                      airportWeather.daily?.temperature2mMax?.[0],
-                    )}
+                    label="Next 24 h"
+                    value={formatDailyRange(airportWeather.next24h?.min, airportWeather.next24h?.max)}
                   />
                 </div>
+                <p className="mt-4 text-xs text-forest-900/60">
+                  Weather data from{' '}
+                  <a href={MET_ATTRIBUTION.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-forest-900">
+                    {MET_ATTRIBUTION.name}
+                  </a>{' '}
+                  (
+                  <a href={MET_ATTRIBUTION.licenceUrl} target="_blank" rel="noopener noreferrer license" className="underline hover:text-forest-900">
+                    {MET_ATTRIBUTION.licence}
+                  </a>
+                  ), wind converted to km/h.
+                </p>
               </div>
             )}
           </aside>
@@ -1573,11 +1588,6 @@ function formatDailyRange(min?: number, max?: number): string {
   return `${Math.round(min)}° / ${Math.round(max)}°`;
 }
 
-function formatWeatherTime(value?: string): string {
-  if (!value) return 'Now';
-  const match = value.match(/T(\d{2}:\d{2})/);
-  return match ? match[1] : value;
-}
 
 type NearbyAirport = StrapiAirport & { distanceKm: number | null };
 

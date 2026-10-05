@@ -2,8 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import type { StrapiAirport, StrapiRoute } from '@/lib/strapi';
-import type { AirportWeather } from '@/lib/open-meteo';
-import { weatherLabel } from '@/lib/open-meteo';
+import type { AirportWeather } from '@/lib/met-weather';
+import { formatLocalTime, MET_ATTRIBUTION, weatherLabel } from '@/lib/met-symbols';
 import SectionNav, { type NavItem } from './SectionNav';
 import { displayUrl, type Faq } from './faqs';
 import { routeCoverage, type AirportCityPhoto } from '@/lib/airport-v2';
@@ -28,7 +28,7 @@ import {
  *
  * Data is not fetched or derived here. The page route computes everything once
  * (airport record, OurAirports/Wikidata/Travelpayouts/NASA POWER enrichment
- * from data/airport-enrichment, route records, official links, Open-Meteo
+ * from data/airport-enrichment, route records, official links, MET Norway
  * weather, nearest airports) and passes it in; this component only decides
  * how to show it. Enrichment sections render only when their data exists.
  *
@@ -120,6 +120,7 @@ export function formatCoordinates(lat: number, lon: number): string {
 
 export default function AirportGuideV2(p: AirportGuideV2Props) {
   const { airport, routes, airlines, info, officialSite, coordinates, weather, nearby, faqs } = p;
+  const weatherAt = weather?.current ? formatLocalTime(weather.current.time, weather.timeZone) : null;
   const name = airport.name;
   const code = airport.iata.toUpperCase();
   const icao = airport.icao || info.icao || null;
@@ -399,18 +400,26 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
             </Tile>
           )}
 
-          {weather?.current && typeof weather.current.temperature2m === 'number' && (
-            <Tile title="Weather now" source={`Open-Meteo${weather.current.time ? ` · ${weatherTime(weather.current.time)} local` : ''}`}>
+          {weather?.current && typeof weather.current.airTemperature === 'number' && (
+            <Tile
+              title="Weather now"
+              source={
+                <>
+                  <ExternalLink href={MET_ATTRIBUTION.url}>{MET_ATTRIBUTION.name}</ExternalLink>
+                  {weatherAt ? ` · ${weatherAt}` : ''}
+                </>
+              }
+            >
               <p className="flex items-baseline gap-2 text-[15px] font-semibold text-forest-950">
-                <span className="text-2xl font-bold">{Math.round(weather.current.temperature2m)}°C</span>
-                <span>{weatherLabel(weather.current.weatherCode)}</span>
+                <span className="text-2xl font-bold">{Math.round(weather.current.airTemperature)}°C</span>
+                <span>{weatherLabel(weather.current.symbolCode)}</span>
               </p>
               <p className="text-sm text-forest-900/75">
                 {[
-                  typeof weather.current.apparentTemperature === 'number' ? `Feels like ${Math.round(weather.current.apparentTemperature)}°C` : null,
-                  typeof weather.current.windSpeed10m === 'number' ? `wind ${Math.round(weather.current.windSpeed10m)} km/h` : null,
-                  typeof weather.daily?.temperature2mMin?.[0] === 'number' && typeof weather.daily?.temperature2mMax?.[0] === 'number'
-                    ? `today ${Math.round(weather.daily.temperature2mMin[0])}° to ${Math.round(weather.daily.temperature2mMax[0])}°`
+                  typeof weather.current.relativeHumidity === 'number' ? `Humidity ${Math.round(weather.current.relativeHumidity)}%` : null,
+                  typeof weather.current.windSpeedKmh === 'number' ? `wind ${Math.round(weather.current.windSpeedKmh)} km/h` : null,
+                  typeof weather.next24h?.min === 'number' && typeof weather.next24h?.max === 'number'
+                    ? `next 24 h ${Math.round(weather.next24h.min)}° to ${Math.round(weather.next24h.max)}°`
                     : null,
                 ]
                   .filter(Boolean)
@@ -761,8 +770,10 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                   </SourceRow>
                 )}
                 {weather?.current && (
-                  <SourceRow what="Weather now" date={weather.current.time ? `${weatherTime(weather.current.time)} local` : null}>
-                    <ExternalLink href="https://open-meteo.com/">Open-Meteo</ExternalLink> forecast API
+                  <SourceRow what="Weather now" date={weatherAt}>
+                    Weather data from <ExternalLink href={MET_ATTRIBUTION.url}>{MET_ATTRIBUTION.name}</ExternalLink> (Locationforecast
+                    2.0), licensed <ExternalLink href={MET_ATTRIBUTION.licenceUrl}>{MET_ATTRIBUTION.licence}</ExternalLink>. Wind
+                    converted from m/s to km/h; the 24-hour range is the low and high of MET&apos;s hourly forecast.
                   </SourceRow>
                 )}
                 <SourceRow what="Terminals and transport" date={null}>
@@ -853,7 +864,7 @@ function Tile({
   children,
 }: {
   title: string;
-  source: string;
+  source: ReactNode;
   section?: string;
   linkText?: string;
   children: ReactNode;
@@ -1019,10 +1030,6 @@ function formatDuration(minutes: number): string {
   return m === 0 ? `${h}h` : `${h}h ${m}m`;
 }
 
-function weatherTime(value: string): string {
-  const match = value.match(/T(\d{2}:\d{2})/);
-  return match ? match[1] : value;
-}
 
 
 /* ================================================================== *

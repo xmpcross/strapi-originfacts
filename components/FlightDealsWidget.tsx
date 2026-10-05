@@ -4,8 +4,9 @@ import { useEffect, useState } from 'react';
 import { flightSearchUrl } from '@/lib/affiliate';
 import { formatPrice } from '@/lib/currency';
 import { useCurrency } from './useCurrency';
+import { placeFromBrowserTimeZone } from '@/lib/timezone-geo';
 
-// If IP geo fails (adblocker / rate limit), use this airport as the seed so
+// If the visitor's city cannot be worked out (unknown time zone, API down), use this airport as the seed so
 // the widget still shows real deals instead of disappearing.
 const FALLBACK_ORIGIN: Origin = { iata: 'LHR', city: 'London' };
 
@@ -74,22 +75,11 @@ async function resolveOrigin(): Promise<Origin> {
         return origin;
       }
     }
-    const geoRes = await fetch('https://ipapi.co/json/', { cache: 'no-store' });
-    if (!geoRes.ok) {
-      console.warn('[FlightDealsWidget] ipapi.co failed, using fallback origin');
-      return FALLBACK_ORIGIN;
-    }
-    const geo = (await geoRes.json()) as {
-      latitude?: number; longitude?: number; city?: string; error?: boolean;
-    };
-    if (geo.error || typeof geo.latitude !== 'number' || typeof geo.longitude !== 'number') {
-      return FALLBACK_ORIGIN;
-    }
-    const airportRes = await fetch(`/api/nearest-airport?lat=${geo.latitude}&lon=${geo.longitude}`);
-    if (!airportRes.ok) return FALLBACK_ORIGIN;
-    const airport = (await airportRes.json()) as { iata?: string; city?: string };
-    if (!airport.iata) return FALLBACK_ORIGIN;
-    const origin: Origin = { iata: airport.iata, city: airport.city ?? geo.city ?? null };
+    // No IP lookup in the browser: use the browser's time zone instead (no
+    // network, nothing sent to a third party).
+    const place = placeFromBrowserTimeZone();
+    if (!place) return FALLBACK_ORIGIN;
+    const origin: Origin = { iata: place.iata, city: place.city };
     writeOriginCache(origin);
     return origin;
   } catch (err) {

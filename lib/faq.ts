@@ -314,7 +314,7 @@ export function buildFaqGroups(c: FaqCounts): FaqGroup[] {
           id: 'departure-airport-suggestion',
           q: 'Why does the site suggest a departure airport near me?',
           a: [
-            'Some flight widgets estimate the airport nearest to you from your approximate location, based on your IP address, and use a default airport if that fails. It is only a starting point — you can enter any departure airport in Flight Search.',
+            'Some flight widgets estimate the airport nearest to you from your approximate location, based on your IP address or, failing that, your device’s time zone, and use a default airport if neither works. It is only a starting point — you can enter any departure airport in Flight Search.',
           ],
         },
         {

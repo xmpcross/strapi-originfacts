@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { placeFromBrowserTimeZone, type TimeZonePlace } from '@/lib/timezone-geo';
 
 type Weather = {
   city: string;
@@ -20,6 +21,8 @@ type GeocodeHit = {
 const WEATHER_CACHE_KEY = 'originfacts.weather.v1';
 const UNIT_KEY = 'originfacts.weather.unit.v1';
 const CACHE_TTL_MS = 30 * 60 * 1000;
+/** Used when the browser's time zone is not one we map. */
+const DEFAULT_PLACE: TimeZonePlace = { iata: 'LON', city: 'London', lat: 51.507, lon: -0.128 };
 
 function describe(code: number): { label: string; icon: string } {
   if (code === 0) return { label: 'Clear', icon: '☀️' };
@@ -107,8 +110,10 @@ export default function WeatherWidget() {
   const [query, setQuery] = useState('');
   const [searching, setSearching] = useState(false);
   const [results, setResults] = useState<GeocodeHit[]>([]);
+  const [locating, setLocating] = useState(false);
+  const [locateError, setLocateError] = useState<string | null>(null);
 
-  // Initial load: cached weather or IP-based geo
+  // Initial load: cached weather, else the city for the browser's time zone
   useEffect(() => {
     setUnit(readUnit());
     let cancelled = false;
@@ -119,27 +124,13 @@ export default function WeatherWidget() {
       return;
     }
     (async () => {
+      // Default city from the browser's time zone: no IP lookup, no request to
+      // a geolocation service. "Use my location" (below) is the opt-in for a
+      // precise position.
+      const place = placeFromBrowserTimeZone() ?? DEFAULT_PLACE;
       try {
-        const geoRes = await fetch('https://ipapi.co/json/', { cache: 'no-store' });
-        if (!geoRes.ok) throw new Error('geo failed');
-        const geo = (await geoRes.json()) as {
-          latitude?: number;
-          longitude?: number;
-          city?: string;
-          error?: boolean;
-        };
-        if (
-          !geo ||
-          geo.error ||
-          typeof geo.latitude !== 'number' ||
-          typeof geo.longitude !== 'number'
-        ) {
-          throw new Error('geo invalid');
-        }
-        const w = await fetchWeather(geo.latitude, geo.longitude, geo.city || 'Your area');
+        const w = await fetchWeather(place.lat, place.lon, place.city);
         if (!cancelled && w) setWeather(w);
-      } catch {
-        /* silent */
       } finally {
         if (!cancelled) setLoading(false);
       }
@@ -187,6 +178,27 @@ export default function WeatherWidget() {
     const w = await fetchWeather(hit.latitude, hit.longitude, hit.name);
     if (w) setWeather(w);
     setLoading(false);
+  };
+
+  const locateMe = () => {
+    if (typeof navigator === 'undefined' || !navigator.geolocation) {
+      setLocateError('Location is not available in this browser.');
+      return;
+    }
+    setLocateError(null);
+    setLocating(true);
+    navigator.geolocation.getCurrentPosition(
+      async (pos) => {
+        const w = await fetchWeather(pos.coords.latitude, pos.coords.longitude, 'Your location');
+        if (w) setWeather(w);
+        setLocating(false);
+      },
+      () => {
+        setLocateError('Could not get your location.');
+        setLocating(false);
+      },
+      { maximumAge: 10 * 60 * 1000, timeout: 10000 },
+    );
   };
 
   const toggleUnit = () => {
@@ -261,30 +273,46 @@ export default function WeatherWidget() {
           </button>
         </div>
 
-        {/* Search city trigger */}
-        <button
-          type="button"
-          onClick={() => setSearchOpen((v) => !v)}
-          aria-expanded={searchOpen}
-          aria-label={searchOpen ? 'Close city search' : 'Change city'}
-          className="inline-flex h-7 w-7 items-center justify-center rounded-full text-forest-900/60 transition hover:bg-forest-900/5 hover:text-forest-900"
-          data-testid="weather-search-toggle"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="h-4 w-4"
-            aria-hidden
+        <div className="flex items-center gap-1">
+          {/* Precise location only on request (browser permission prompt) */}
+          <button
+            type="button"
+            onClick={locateMe}
+            disabled={locating}
+            className="rounded-full px-2 py-0.5 text-[11px] font-bold uppercase tracking-widest text-forest-900/60 transition hover:bg-forest-900/5 hover:text-forest-900 disabled:opacity-50"
+            data-testid="weather-use-location"
           >
-            <circle cx="11" cy="11" r="7" />
-            <path d="m21 21-4.3-4.3" />
-          </svg>
-        </button>
+            {locating ? 'Locating…' : 'Use my location'}
+          </button>
+          {/* Search city trigger */}
+          <button
+            type="button"
+            onClick={() => setSearchOpen((v) => !v)}
+            aria-expanded={searchOpen}
+            aria-label={searchOpen ? 'Close city search' : 'Change city'}
+            className="inline-flex h-7 w-7 items-center justify-center rounded-full text-forest-900/60 transition hover:bg-forest-900/5 hover:text-forest-900"
+            data-testid="weather-search-toggle"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-4 w-4"
+              aria-hidden
+            >
+              <circle cx="11" cy="11" r="7" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>
+          </button>
+        </div>
       </div>
+
+      {locateError && (
+        <p className="mt-2 text-xs text-forest-900/55" role="status">{locateError}</p>
+      )}
 
       {searchOpen && (
         <div className="mt-3" data-testid="weather-search">

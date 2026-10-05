@@ -1,6 +1,6 @@
 # Privacy Policy
 
-Last updated: 24 April 2026
+Last updated: 5 October 2026
 
 This Privacy Policy explains how FXN Holdings ("FXN", "we", "us", or "our") collects, uses, shares, stores, and protects personal information when you use Originfacts at www.originfacts.com and any related pages, features, newsletters, reviews, comments, ratings, photos, forums, travel tips, comparison tools, and affiliate links (the "Website").
 
@@ -63,7 +63,7 @@ We may receive limited information from:
 1. Travelpayouts and travel affiliate partners, such as click, referral, conversion, and commission information;
 2. Google Analytics, such as aggregated website analytics and event data;
 3. Mailchimp, such as newsletter subscription status, email engagement, unsubscribe status, and campaign analytics;
-4. hosting, security, and technical service providers, including Vercel; and
+4. hosting, security, and technical service providers; and
 5. users who report content, submit complaints, or contact us about your content.
 
 ### 3.4 Sensitive information
@@ -164,9 +164,9 @@ When you click affiliate links, use affiliate widgets, or interact with travel-p
 
 Travelpayouts and travel providers may act as independent controllers or processors depending on the context. Their own terms and privacy notices apply to their websites, tools, and tracking technologies.
 
-## 9. Vercel and hosting
+## 9. Hosting
 
-The Website is custom-coded and currently hosted using Vercel.
+The Website is custom-coded and self-hosted on server infrastructure that we manage.
 
 Hosting and infrastructure providers may process technical logs, IP addresses, device information, security events, and related data needed to deliver, secure, and maintain the Website.
 

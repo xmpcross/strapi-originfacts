@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import type { listRoutesToDestination, StrapiDestination } from '@/lib/strapi';
 import { getYourGuideLink } from '@/lib/partner-links';
+import GygConsentNotice from '@/components/GygConsentNotice';
 
 const GYG_EXCLUDED_TOUR_IDS_BY_DESTINATION: Record<string, string> = {
   bangkok: '1457595',
@@ -127,6 +128,7 @@ export function GetYourGuideActivityWidget({
         </div>
 
         <div className="min-h-[360px] rounded-xl border border-white/70 bg-white/80 p-4 shadow-inner">
+          <GygConsentNotice />
           <div
             data-gyg-href="https://widget.getyourguide.com/default/activities.frame"
             data-gyg-locale-code="en-US"

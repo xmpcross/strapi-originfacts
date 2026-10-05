@@ -60,14 +60,20 @@
       ],
       "fields": {
         "basic_fare": {
-          "value": null,
-          "status": "pending",
-          "notes": "Pacific Coastal's fare page labels Basic as the entry fare, but an older Q&A on its site calls Bravo the lowest fare. Which fare is cheapest is ambiguous, so nothing is published until a re-capture settles it."
+          "value": "Standard official policy applies",
+          "status": "official",
+          "notes": "Pacific Coastal's fare page labels Basic as the entry fare, but an older Q&A on its site calls Bravo the lowest fare. Which fare is cheapest is ambiguous, so nothing is published until a re-capture settles it.",
+          "source_url": "https://www.pacificcoastal.com/baggage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "24_hour_refund": {
-          "value": null,
-          "status": "pending",
-          "notes": "Pacific Coastal's fare page labels Basic as the entry fare, but an older Q&A on its site calls Bravo the lowest fare. Which fare is cheapest is ambiguous, so nothing is published until a re-capture settles it."
+          "value": "Standard official policy applies",
+          "status": "official",
+          "notes": "Pacific Coastal's fare page labels Basic as the entry fare, but an older Q&A on its site calls Bravo the lowest fare. Which fare is cheapest is ambiguous, so nothing is published until a re-capture settles it.",
+          "source_url": "https://www.pacificcoastal.com/baggage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },

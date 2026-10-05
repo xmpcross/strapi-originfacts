@@ -13,27 +13,27 @@
       "fields": {
         "carryon_bag_dimensions": {
           "value": "55 x 40 x 20 cm",
-          "status": "pending",
+          "status": "official",
           "source_url": "https://canadiannorth.com/baggage",
           "notes": "Canadian North cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "weight_economy": {
           "value": "7 kg (15 lbs)",
-          "status": "pending",
+          "status": "official",
           "source_url": "https://canadiannorth.com/baggage",
           "notes": "Canadian North Economy Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "weight_business_first": {
           "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
+          "status": "official",
           "source_url": "https://canadiannorth.com/baggage",
           "notes": "Canadian North Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },

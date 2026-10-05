@@ -131,11 +131,11 @@
       "fields": {
         "phone_home_market": {
           "value": "+1-801-401-9000",
-          "status": "pending",
-          "source_url": "https://www.flyfrontier.com/baggage",
+          "status": "official",
+          "source_url": "https://www.flyfrontier.com/contact",
           "notes": "Frontier Airlines official customer support line.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "conditions_of_carriage_url": {
           "value": "https://www.flyfrontier.com/legal/contract-of-carriage/",

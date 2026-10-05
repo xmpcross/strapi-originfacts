@@ -108,11 +108,11 @@
       "fields": {
         "phone_home_market": {
           "value": "+1-888-247-2262",
-          "status": "pending",
-          "source_url": "https://www.aircanada.com/ca/en/aco/home/legal/conditions-carriage-tariffs.html",
+          "status": "official",
+          "source_url": "https://www.aircanada.com/contact",
           "notes": "Air Canada official customer support line.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
         "conditions_of_carriage_url": {
           "value": "https://www.aircanada.com/ca/en/aco/home/legal/conditions-carriage-tariffs.html",

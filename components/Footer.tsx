@@ -122,7 +122,7 @@ export default function Footer() {
             <li><Link href="/faq" className="transition-colors hover:text-sky-300">FAQ</Link></li>
             <li><Link href="/authors" className="transition-colors hover:text-sky-300">Authors</Link></li>
             <li><Link href="/methodology" className="transition-colors hover:text-sky-300">Methodology</Link></li>
-            <li><Link href="/all-articles" className="transition-colors hover:text-sky-300">Blog</Link></li>
+            <li><Link href="/all-articles" className="transition-colors hover:text-sky-300">Topics</Link></li>
             <li><Link href="/sitemap" className="transition-colors hover:text-sky-300">Site Map</Link></li>
             <li><Link href="/contact" className="transition-colors hover:text-sky-300">Contact</Link></li>
           </ul>

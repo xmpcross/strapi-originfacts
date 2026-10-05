@@ -584,7 +584,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                         href={`/airlines/${a.slug}`}
                         className="group flex h-full items-center gap-4 rounded-[0.5rem] border border-forest-900/10 bg-forest-50 p-3 transition hover:-translate-y-0.5 hover:border-primary-emphasis hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-emphasis"
                       >
-                        <span className="flex h-16 w-28 flex-none items-center justify-center rounded-[0.4rem] border border-forest-900/10 bg-white p-2">
+                        <span className="flex h-24 w-40 flex-none items-center justify-center">
                           {a.logoUrl ? (
                             // eslint-disable-next-line @next/next/no-img-element
                             <img src={a.logoUrl} alt="" className="max-h-full max-w-full object-contain" loading="lazy" />

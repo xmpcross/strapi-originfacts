@@ -2,9 +2,9 @@
 
 Last updated: 24 April 2026
 
-This Privacy Policy explains how FXN HOLDINGS LIMITED ("FXN", "we", "us", or "our") collects, uses, shares, stores, and protects personal information when you use Originfacts at www.originfacts.com and any related pages, features, newsletters, reviews, comments, ratings, photos, forums, travel tips, comparison tools, and affiliate links (the "Website").
+This Privacy Policy explains how FXN Holdings ("FXN", "we", "us", or "our") collects, uses, shares, stores, and protects personal information when you use Originfacts at www.originfacts.com and any related pages, features, newsletters, reviews, comments, ratings, photos, forums, travel tips, comparison tools, and affiliate links (the "Website").
 
-This Website is operated by FXN HOLDINGS LIMITED, a private limited company registered in England and Wales under company number 16134139, with registered office at 61 Bridge Street, Kington, HR5 3DJ, United Kingdom.
+This Website is operated by FXN Holdings (ABN 53 274 423 748), an Australian business with its mailing address at PO Box 500, West Perth WA 6872, Australia.
 
 We are the controller of personal information we collect through the Website, except where another organisation explains that it is independently responsible for its own processing.
 
@@ -16,13 +16,12 @@ When you click an affiliate link, booking link, widget, advertisement, or compar
 
 ## 2. Contact details
 
-Controller: FXN HOLDINGS LIMITED
-Company number: 16134139
-Registered office: 61 Bridge Street, Kington, HR5 3DJ, United Kingdom
+Controller: FXN Holdings
+ABN: 53 274 423 748
+Mailing address: PO Box 500, WEST PERTH WA 6872, Australia
 Email: support@fxnholdings.com
 Phone: +44 7413 408585
 Website: www.originfacts.com
-ICO registration reference: ZB940664
 
 EU representative: We have not appointed an EU representative under Article 27 GDPR. EU data subjects can direct any privacy enquiry to the contact below and we will respond directly.
 
@@ -198,7 +197,7 @@ Some privacy laws define "sale", "sharing", or "targeted advertising" broadly. I
 
 ## 12. International transfers
 
-We are based in the United Kingdom and use service providers that may process information in the United Kingdom, European Economic Area, United States, Canada, Singapore, and other countries.
+We are based in Australia and use service providers that may process information in the United Kingdom, European Economic Area, United States, Canada, Singapore, and other countries.
 
 Where required, we use appropriate safeguards for international transfers, such as adequacy regulations, adequacy decisions, data processing agreements, standard contractual clauses, Data Privacy Framework certifications where applicable, or other lawful transfer mechanisms.
 
@@ -301,10 +300,10 @@ If changes are material, we may provide additional notice where required by law 
 
 For privacy questions, requests, or complaints, contact:
 
-FXN HOLDINGS LIMITED
-61 Bridge Street
-Kington, HR5 3DJ
-United Kingdom
+FXN Holdings
+PO Box 500
+WEST PERTH WA 6872
+Australia
 
 Email: support@fxnholdings.com
 Phone: +44 7413 408585

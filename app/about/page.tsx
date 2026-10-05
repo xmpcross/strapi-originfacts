@@ -348,7 +348,7 @@ export default async function AboutPage() {
                 options, hotels worth booking, airlines to know, airports to use, and destinations worth your time.
               </p>
               <p>
-                Originfacts is operated by <strong className="text-forest-950">FXN HOLDINGS LIMITED</strong> and is
+                Originfacts is operated by <strong className="text-forest-950">FXN Holdings</strong> and is
                 available to readers around the world.
               </p>
             </div>
@@ -715,11 +715,11 @@ export default async function AboutPage() {
           <div className="min-w-0 rounded-[0.3rem] bg-forest-950 p-6 text-white sm:p-8" data-testid="about-operator">
             <h2 className="text-2xl font-bold leading-tight !text-white">Who operates Originfacts?</h2>
             <dl className="mt-5 grid gap-x-6 gap-y-1 text-sm sm:grid-cols-[auto_minmax(0,1fr)] sm:gap-y-3">
-              <OperatorRow label="Company">
-                <span className="font-semibold">FXN HOLDINGS LIMITED</span>
+              <OperatorRow label="Business">
+                <span className="font-semibold">FXN Holdings</span>
               </OperatorRow>
-              <OperatorRow label="Company number">16134139</OperatorRow>
-              <OperatorRow label="Registered office">61 Bridge Street, Kington, HR5 3DJ, United Kingdom</OperatorRow>
+              <OperatorRow label="ABN">53 274 423 748</OperatorRow>
+              <OperatorRow label="Mailing address">PO Box 500, WEST PERTH WA 6872, Australia</OperatorRow>
               <OperatorRow label="Website">www.originfacts.com</OperatorRow>
               <OperatorRow label="Originfacts email">
                 <a href="mailto:contact@originfacts.com" className="underline-offset-2 hover:underline">

@@ -61,13 +61,13 @@ export default function ContactPage() {
               Where is our official mailing address?
             </h2>
             <address className="mt-2 text-base not-italic leading-relaxed text-forest-900">
-              FXN HOLDINGS LIMITED
+              FXN Holdings
               <br />
-              61 Bridge Street
+              PO Box 500
               <br />
-              Kington, HR5 3DJ
+              WEST PERTH WA 6872
               <br />
-              United Kingdom
+              Australia
             </address>
           </div>
 

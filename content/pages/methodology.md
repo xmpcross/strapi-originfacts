@@ -55,9 +55,9 @@ Originfacts uses advanced artificial intelligence tools to assist in data aggreg
 
 Originfacts is owned and operated by:
 
-**FXN HOLDINGS LIMITED**  
-Company Registration Number: `16134139`  
-Registered Address: 61 Bridge Street, Kington, HR5 3DJ, United Kingdom  
+**FXN Holdings**  
+ABN: `53 274 423 748`  
+Mailing Address: PO Box 500, WEST PERTH WA 6872, Australia  
 
 We operate strictly in compliance with applicable consumer protection, data protection (GDPR), and web transparency standards.
 

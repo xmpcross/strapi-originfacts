@@ -4,7 +4,7 @@ Last updated: 3 September 2026
 
 This Affiliate Disclosure applies to Originfacts at www.originfacts.com.
 
-This Website is operated by FXN HOLDINGS LIMITED, a private limited company registered in England and Wales under company number 16134139, with registered office at 61 Bridge Street, Kington, HR5 3DJ, United Kingdom.
+This Website is operated by FXN Holdings (ABN 53 274 423 748), an Australian business with its mailing address at PO Box 500, West Perth WA 6872, Australia.
 
 ## 1. We may earn affiliate commissions
 
@@ -28,7 +28,7 @@ Takeads and participating advertisers may use affiliate tracking technologies to
 
 ## 4. We are not the travel provider
 
-Affiliate links do not mean that FXN HOLDINGS LIMITED or Originfacts sells, supplies, operates, or controls the travel product or service.
+Affiliate links do not mean that FXN Holdings or Originfacts sells, supplies, operates, or controls the travel product or service.
 
 We do not directly sell travel bookings, take payment for bookings, issue tickets, operate hotels, operate airlines, rent vehicles, provide tours, process refunds, or handle provider cancellations.
 
@@ -72,6 +72,6 @@ A link to a third-party website does not mean that we guarantee, endorse, or acc
 
 For questions about affiliate links or commercial relationships, contact:
 
-FXN HOLDINGS LIMITED
+FXN Holdings
 Email: support@fxnholdings.com
 Website: www.originfacts.com

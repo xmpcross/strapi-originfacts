@@ -4,7 +4,7 @@ Last updated: 24 April 2026
 
 This Accessibility Statement applies to Originfacts at www.originfacts.com.
 
-This Website is operated by FXN HOLDINGS LIMITED, a private limited company registered in England and Wales under company number 16134139, with registered office at 61 Bridge Street, Kington, HR5 3DJ, United Kingdom.
+This Website is operated by FXN Holdings (ABN 53 274 423 748), an Australian business with its mailing address at PO Box 500, West Perth WA 6872, Australia.
 
 ## 1. Our commitment
 

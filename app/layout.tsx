@@ -84,6 +84,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
         {/* End Google Tag Manager */}
+        {/* Travelpayouts Drive (account 401311), as supplied. The attributes are
+            WordPress optimiser hints (no effect here) kept verbatim. Re-added on the
+            owner's request; it had been removed in #43 (5 Sep 2026). */}
+        <script
+          {...({
+            nowprocket: '',
+            'data-noptimize': '1',
+            'data-cfasync': 'false',
+            'data-wpfc-render': 'false',
+            'seraph-accel-crit': '1',
+            'data-no-defer': '1',
+            'data-cmp-ab': '2',
+          } as Record<string, string>)}
+          dangerouslySetInnerHTML={{
+            __html: `(function () {
+  var script = document.createElement("script");
+  script.async = 1;
+  script.setAttribute("data-cmp-ab","2");
+  script.src = 'https://tp-em.com/NDAxMzEx.js?t=401311';
+  document.head.appendChild(script);
+})();`,
+          }}
+        />
         <script
           async
           defer

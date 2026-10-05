@@ -12,8 +12,8 @@ const guided = new Set(
     .map((f) => f.replace('.json', '').toUpperCase()),
 );
 
-test('thin airports: codes are valid IATA', () => {
-  assert.equal(THIN_AIRPORT_IATAS.size, 0);
+test('thin airports: 35 codes, all valid IATA', () => {
+  assert.equal(THIN_AIRPORT_IATAS.size, 35);
   for (const c of THIN_AIRPORT_IATAS) assert.match(c, /^[A-Z]{3}$/);
 });
 

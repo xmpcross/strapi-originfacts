@@ -4,14 +4,10 @@ import Link from 'next/link';
 import ContactForm from '@/components/ContactForm';
 import { JsonLd } from '@/components/SeoBlocks';
 import { ORG_ID, organizationJsonLd, absoluteUrl, breadcrumbJsonLd } from '@/lib/jsonld';
-import { listCountriesBySlugs, mediaUrl, type StrapiDestination } from '@/lib/strapi';
+import { SITE_PHOTOS, type SitePhoto } from '@/lib/site-photos';
 import { LEGAL_DOCS } from '@/lib/legal';
 import { buildFaqGroups } from '@/lib/faq';
 import { SUBJECTS, contactHref } from '@/lib/contact';
-
-// Destination imagery comes from Strapi, so re-render hourly rather than
-// freezing whatever the CMS returned at build time.
-export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: 'Contact Originfacts',
@@ -45,34 +41,12 @@ const EMAILS = [
 ];
 
 /* ------------------------------------------------------------------ */
-/* Imagery: country hero images already published on /destinations    */
-/* (the same set the About page draws from).                          */
+/* Imagery: real, credited Unsplash photographs (lib/site-photos.ts),  */
+/* the same set the About page draws from. These replaced the         */
+/* AI-generated CMS destination heroes.                               */
 /* ------------------------------------------------------------------ */
 
-const PHOTO_SLUGS = ['singapore', 'south-korea', 'australia', 'thailand'] as const;
-type PhotoSlug = (typeof PHOTO_SLUGS)[number];
-
-const PHOTO_ALT: Record<PhotoSlug, string> = {
-  singapore: 'The Singapore waterfront skyline lit up at blue hour',
-  'south-korea': 'Traditional tiled rooftops in front of a modern skyline at sunrise',
-  australia: 'A red sandstone monolith rising from the desert at dusk',
-  thailand: 'Limestone cliffs and a white-sand cove on the Thai coast',
-};
-
-type Photo = { slug: string; name: string; src: string; alt: string };
-
-function toPhoto(d: StrapiDestination | undefined): Photo | null {
-  if (!d) return null;
-  const src = mediaUrl(d.heroImage ?? null);
-  if (!src) return null;
-  const desc = PHOTO_ALT[d.slug as PhotoSlug];
-  return {
-    slug: d.slug,
-    name: d.name,
-    src,
-    alt: desc ? `${desc} — from our ${d.name} destination guide` : `${d.name} destination guide image`,
-  };
-}
+type Photo = SitePhoto;
 
 /* ------------------------------------------------------------------ */
 /* Routing: who can actually help. Wording follows content/legal/      */
@@ -216,14 +190,11 @@ const FAQ_PICKS = [
 /* ------------------------------------------------------------------ */
 
 export default async function ContactPage() {
-  const countries = await listCountriesBySlugs([...PHOTO_SLUGS]).catch(() => [] as StrapiDestination[]);
-  const bySlug = new Map(countries.map((d) => [d.slug, d]));
-  const photo = (slug: PhotoSlug) => toPhoto(bySlug.get(slug));
 
-  const heroMain = photo('singapore');
-  const heroSideA = photo('south-korea');
-  const heroSideB = photo('australia');
-  const bandPhoto = photo('thailand');
+  const heroMain = SITE_PHOTOS['singapore'];
+  const heroSideA = SITE_PHOTOS['south-korea'];
+  const heroSideB = SITE_PHOTOS['australia'];
+  const bandPhoto = SITE_PHOTOS['thailand'];
 
   // Question text comes from the same data as /faq, so these links cannot drift
   // from it. The counts only decide whether the "how many airlines" question
@@ -467,6 +438,7 @@ export default async function ContactPage() {
             >
               Pictured: {bandPhoto.name} →
             </Link>
+            <PhotoCredit photo={bandPhoto} className="mt-2 block text-xs text-white/60" linkClassName="hover:text-white" />
           </div>
         </section>
       )}
@@ -653,6 +625,7 @@ export default async function ContactPage() {
           </div>
         </section>
       </div>
+      <PhotoCredits photos={[heroMain, heroSideA, heroSideB, bandPhoto]} />
     </article>
   );
 }
@@ -701,5 +674,45 @@ function PhotoTile({
     <div className={`relative min-w-0 overflow-hidden rounded-[0.3rem] bg-forest-100 ${className}`}>
       <Image src={photo.src} alt={photo.alt} fill sizes={sizes} priority={priority} className="object-cover" />
     </div>
+  );
+}
+
+/** "Photo: Name / Unsplash", linked to the photographer and the photo page. */
+function PhotoCredit({ photo, className, linkClassName }: { photo: Photo; className: string; linkClassName: string }) {
+  return (
+    <span className={className}>
+      Photo:{' '}
+      <a href={photo.photographerUrl} rel="noopener" className={linkClassName}>
+        {photo.photographer}
+      </a>{' '}
+      /{' '}
+      <a href={photo.sourceUrl} rel="noopener" className={linkClassName}>
+        Unsplash
+      </a>
+    </span>
+  );
+}
+
+/** One discreet line crediting every photograph on the page, including the uncaptioned hero tiles. */
+function PhotoCredits({ photos }: { photos: Photo[] }) {
+  return (
+    <aside aria-label="Photo credits" className="mx-auto max-w-7xl px-4 pb-10 sm:px-6" data-testid="contact-photo-credits">
+      <p className="border-t border-forest-900/15 pt-5 text-xs leading-relaxed text-forest-900/55">
+        <span className="font-semibold">Photo credits</span> (real photographs, Unsplash License):{' '}
+        {photos.map((p, i) => (
+          <span key={p.slug}>
+            {i > 0 && ' · '}
+            {p.place} by{' '}
+            <a href={p.photographerUrl} rel="noopener" className="underline-offset-2 hover:text-primary-emphasis hover:underline">
+              {p.photographer}
+            </a>{' '}
+            on{' '}
+            <a href={p.sourceUrl} rel="noopener" className="underline-offset-2 hover:text-primary-emphasis hover:underline">
+              Unsplash
+            </a>
+          </span>
+        ))}
+      </p>
+    </aside>
   );
 }

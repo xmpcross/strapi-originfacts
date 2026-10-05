@@ -176,7 +176,27 @@ export function howToJsonLd(opts: {
  * which opened the gate for 3,574 of 3,587 airports, 84% of them showing "No
  * routes tracked" (SEO re-audit, 4 Oct 2026). Pages stay live, noindex/follow.
  */
+/**
+ * Airports retired on 5 Oct 2026 (data/removed-pages.json): thin pages with
+ * under 200 words of their own, no terminal or transport facts and 0-2 tracked
+ * routes. Their CMS records are deleted and their URLs redirect to /airports.
+ * This list also keeps them out of the index and sitemap, so if the OurAirports
+ * ingest ever re-creates one it comes back noindex, not as thin indexable
+ * content. The 16 thin airports that are on the Top 100 list are not here.
+ *
+ * To bring one back: add content/airport-guides/<iata>.json (a sourced guide)
+ * and remove its code here and from data/removed-pages.json.
+ * tests/airport-thin-noindex.test.ts fails if an airport has a guide file and
+ * is still listed.
+ */
+export const THIN_AIRPORT_IATAS = new Set([
+  'AMD', 'AQP', 'BJM', 'BKO', 'COO', 'CUZ', 'DLA', 'GOI', 'HAK', 'HFE', 'HRE', 'INC', 'IXJ', 'JHG',
+  'KCH', 'KGL', 'KHG', 'KHN', 'KWE', 'KWL', 'LFW', 'LHW', 'LJG', 'LXA', 'NGB', 'NIM', 'NNG', 'NSI',
+  'OUA', 'PNQ', 'SXR', 'TSA', 'TSN', 'WNZ', 'XNN',
+]);
+
 export function airportIsSubstantive(a: StrapiAirport, hasRoutes: boolean): boolean {
+  if (a.iata && THIN_AIRPORT_IATAS.has(a.iata.toUpperCase())) return false;
   return hasRoutes || (Boolean(a.iata) && airportIsPublished(a.iata));
 }
 

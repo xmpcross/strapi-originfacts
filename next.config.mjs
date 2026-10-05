@@ -1,7 +1,23 @@
+import fs from 'node:fs';
+
 /** @type {import('next').NextConfig} */
 const strapiHost = new URL(
   process.env.NEXT_PUBLIC_STRAPI_URL || 'https://cms.fxnstudio.com'
 ).hostname;
+
+// Pages retired on 5 Oct 2026 (data/removed-pages.json): 51 thin airport pages
+// and the 84 route pages that used one of them as an endpoint. Their CMS
+// records are deleted, so each URL gets a permanent (301) redirect to its
+// directory. The bare IATA form (/airports/ams) is covered too. These sit
+// before every dynamic route, so they still apply if a record is re-created.
+const retired = JSON.parse(fs.readFileSync(new URL('./data/removed-pages.json', import.meta.url), 'utf8'));
+const retiredRedirects = [
+  ...retired.airports.flatMap(({ iata, slug }) => [
+    { source: `/airports/${slug}`, destination: '/airports', statusCode: 301 },
+    { source: `/airports/${iata.toLowerCase()}`, destination: '/airports', statusCode: 301 },
+  ]),
+  ...retired.routes.map((slug) => ({ source: `/flight-routes/${slug}`, destination: '/flight-routes', statusCode: 301 })),
+];
 
 const nextConfig = {
   reactStrictMode: true,
@@ -37,6 +53,7 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      ...retiredRedirects,
       // Canonical host: redirect bare domain (originfacts.com) to www.originfacts.com
       {
         source: '/:path*',

@@ -1,0 +1,55 @@
+{
+  "slug": "peoples",
+  "official_website": "https://www.peoples.ch",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "required": [
+        "carryon_allowance"
+      ],
+      "fields": {
+        "carryon_allowance": {
+          "value": "1 piece of hand baggage of 8 kg, format 55cm x 40cm x 23cm.",
+          "status": "official",
+          "source_url": "https://www.peoples.ch/peoples-airline/fluggast-informationen/gepaeck",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "These allowances apply on People's Altenrhein–Vienna route; holiday destinations from Altenrhein have their own rules.",
+      "required": [
+        "allowance_regular",
+        "allowance_premium",
+        "excess_fee"
+      ],
+      "fields": {
+        "allowance_regular": {
+          "value": "Altenrhein/Vienna, regular fare: 20 kg free baggage per person, including children from 2 years; babies 0–2 have no free baggage.",
+          "status": "official",
+          "source_url": "https://www.peoples.ch/peoples-airline/fluggast-informationen/gepaeck",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "allowance_premium": {
+          "value": "Altenrhein/Vienna, Premium fare (Flex or ticket block): 30 kg free baggage per person, including children from 2 years; babies 0–2 have no free baggage.",
+          "status": "official",
+          "source_url": "https://www.peoples.ch/peoples-airline/fluggast-informationen/gepaeck",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "excess_fee": {
+          "value": "Exceeding the allowance costs EUR/CHF 50.- for a further 20 kg. Maximum weight per piece is 32 kg. Babies and children may also bring a pram or buggy free.",
+          "status": "official",
+          "source_url": "https://www.peoples.ch/peoples-airline/fluggast-informationen/gepaeck",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

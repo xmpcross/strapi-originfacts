@@ -1,6 +1,6 @@
 {
   "slug": "miat-mongolian-airlines",
-  "official_website": "https://miat.com",
+  "official_website": "https://www.miat.com",
   "modules": [
     {
       "id": "carryon",
@@ -41,51 +41,53 @@
       "id": "baggage",
       "title": "Checked baggage",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "main_routes",
+        "size"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "https://miat.com/baggage",
-          "notes": "MIAT Mongolian Airlines Economy Class checked baggage allowance.",
+        "main_routes": {
+          "value": "On MIAT's main routes (Ulaanbaatar to and from Frankfurt, Moscow, Beijing, Seoul, Hong Kong and Tokyo): business class 2 pieces of up to 32 kg each; economy class 1 piece of up to 23 kg, free of charge.",
+          "status": "official",
+          "source_url": "https://miat.com/en/856/checked-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://miat.com/baggage",
-          "notes": "MIAT Mongolian Airlines Business Class checked baggage allowance.",
+        "size": {
+          "value": "Total dimensions (A+B+C) must not exceed 158 cm (62 inch). Infants: 1 piece of 10kg, up to 115 cm (45 inch).",
+          "status": "official",
+          "source_url": "https://miat.com/en/856/checked-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://miat.com/baggage",
-          "notes": "MIAT Mongolian Airlines First Class checked baggage allowance.",
+        "interline": {
+          "value": "Interline routes under IATA Resolution 302: to or from North and South America, business class 32 kg + 32 kg and economy class 23kg + 23 kg; to or from Europe (other than MIAT's own main-route cities), business class 32kg and economy class 23 kg.",
+          "status": "official",
+          "source_url": "https://miat.com/en/856/checked-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "stroller": {
+          "value": "All passengers may also carry one child stroller or car seat free of charge.",
+          "status": "official",
+          "source_url": "https://miat.com/en/856/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
         "phone_home_market"
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "https://miat.com/baggage",
-          "notes": "MIAT Mongolian Airlines official customer support line.",
+          "value": "+976-11-333999 (call center, available 24 hours)",
+          "status": "official",
+          "source_url": "https://miat.com/en/856/checked-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
       }
     }

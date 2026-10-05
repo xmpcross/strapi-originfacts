@@ -1,6 +1,6 @@
 {
   "slug": "rusline",
-  "official_website": "http://www.rusline.aero",
+  "official_website": "https://www.rusline.aero",
   "modules": [
     {
       "id": "carryon",
@@ -74,18 +74,18 @@
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
         "phone_home_market"
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "http://www.rusline.aero/baggage",
-          "notes": "RusLine official customer support line.",
+          "value": "8 809 505-46-69 (a paid line: 64-68 RUB/min incl. VAT, depending on the operator, including waiting time)",
+          "status": "official",
+          "source_url": "https://www.rusline.aero/en/read/faq/Bagazh_i_ruchnaya_klad",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source",
+          "notes": "Listed in the footer of Rusline's own FAQ page."
         }
       }
     }

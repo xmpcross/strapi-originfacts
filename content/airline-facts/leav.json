@@ -1,0 +1,81 @@
+{
+  "slug": "leav",
+  "official_website": "https://www.leav.com",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "A large cabin bag can be added online in 'Manage booking' or through the Service Centre up to 4 hours before departure.",
+      "required": [
+        "personal_item",
+        "carryon_bag_dimensions",
+        "carryon_weight"
+      ],
+      "fields": {
+        "personal_item": {
+          "value": "Small hand luggage (40x30x25 cm, 5 kg) is included for all LEAV guests.",
+          "status": "official",
+          "source_url": "https://www.leav.com/en/travel-information/luggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "carryon_bag_dimensions": {
+          "value": "Large hand luggage: 55x40x20 cm. Included depending on fare; otherwise 18€ online or 32€ at the Service Centre.",
+          "status": "official",
+          "source_url": "https://www.leav.com/en/travel-information/luggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "carryon_weight": {
+          "value": "Large hand luggage up to 8 kg; small hand luggage up to 5 kg.",
+          "status": "official",
+          "source_url": "https://www.leav.com/en/travel-information/luggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "Checked bags can be added online in 'Manage booking' or through the Service Centre up to 4 hours before departure.",
+      "required": [
+        "fees",
+        "size_weight"
+      ],
+      "fields": {
+        "fees": {
+          "value": "First checked bag (max. 20 kg): 25€ online, 39€ at the Service Centre. Second checked bag (max. 20 kg): 49€ online, 79€ at the Service Centre. Included depending on fare.",
+          "status": "official",
+          "source_url": "https://www.leav.com/en/travel-information/luggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "size_weight": {
+          "value": "Each bag up to 20 kg as booked; overweight is charged €12 per extra kilo at the airport (€15 on flights to and from Beirut, Damascus and Aleppo). No piece may exceed 32 kg.",
+          "status": "official",
+          "source_url": "https://www.leav.com/en/travel-information/luggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "phone_home_market"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "LEAV Service Centre: +49 221 5998 4000",
+          "status": "official",
+          "source_url": "https://www.leav.com/en/travel-information/luggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source",
+          "notes": "Given on LEAV's luggage page for booking an extra cabin seat for instruments."
+        }
+      }
+    }
+  ]
+}

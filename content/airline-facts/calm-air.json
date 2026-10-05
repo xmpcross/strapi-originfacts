@@ -5,35 +5,40 @@
     {
       "id": "carryon",
       "title": "Carry-on",
+      "lede": "Carry-on must fit under the seat in front of you or in the overhead bin.",
       "required": [
-        "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_allowance",
+        "weight_combined",
+        "dimensions_combined"
       ],
       "fields": {
-        "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "https://www.calmair.com/baggage",
-          "notes": "Calm Air cabin baggage size limit: 55 x 40 x 20 cm.",
+        "carryon_allowance": {
+          "value": "Each fare-paying passenger may bring 2 pieces of carry-on, such as briefcases, laptop computers, diaper bags or camera bags.",
+          "status": "official",
+          "source_url": "https://www.calmair.com/before-you-fly/baggage/carry-on",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "https://www.calmair.com/baggage",
-          "notes": "Calm Air Economy Class carry-on weight limit.",
+        "weight_combined": {
+          "value": "Maximum combined weight of 20 lbs.",
+          "status": "official",
+          "source_url": "https://www.calmair.com/before-you-fly/baggage/carry-on",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "https://www.calmair.com/baggage",
-          "notes": "Calm Air Premium / Business Class carry-on weight limit.",
+        "dimensions_combined": {
+          "value": "Maximum combined dimensions 10\" x 16\" x 12\" (25cm x 40cm x 30cm).",
+          "status": "official",
+          "source_url": "https://www.calmair.com/before-you-fly/baggage/carry-on",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "extra_items": {
+          "value": "Space permitting and if they can be stowed safely, small cameras, coats and purses, a medication bag, a cane, an urn or containers carrying life-sustaining items (such as CPAP) may also be allowed.",
+          "status": "official",
+          "source_url": "https://www.calmair.com/before-you-fly/baggage/carry-on",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -73,19 +78,35 @@
       }
     },
     {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "required": [
+        "appr"
+      ],
+      "fields": {
+        "appr": {
+          "value": "If you are denied boarding, your flight is cancelled or delayed for at least two hours, or your baggage is lost or damaged, you may be entitled to standards of treatment and compensation under Canada's Air Passenger Protection Regulations. Calm Air is classified as a small carrier under those regulations.",
+          "status": "official",
+          "source_url": "https://www.calmair.com/before-you-fly/passenger-rights",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
         "phone_home_market"
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "https://www.calmair.com/baggage",
-          "notes": "Calm Air official customer support line.",
+          "value": "Reservations: 1-800-839-2256 (or reservations@calmair.com)",
+          "status": "official",
+          "source_url": "https://www.calmair.com/before-you-fly/passenger-rights",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source",
+          "notes": "From Calm Air's passenger rights page."
         }
       }
     }

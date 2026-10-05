@@ -1,76 +1,78 @@
 {
   "slug": "air-tahiti-nui",
-  "official_website": "http://www.airtahitinui.com",
+  "official_website": "https://www.airtahitinui.com",
   "modules": [
     {
       "id": "carryon",
       "title": "Carry-on",
       "required": [
+        "carryon_allowance",
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "personal_item"
       ],
       "fields": {
+        "carryon_allowance": {
+          "value": "Moana Economy and Mānava Premium: 1 bag of 10 kg (22 pounds) + 1 personal item of 3 kg (6.6pounds). Poerava Business: 1 bag of 12 kg (26.6 pounds) + 1 personal item of 3 kg.",
+          "status": "official",
+          "source_url": "https://us.airtahitinui.com/baggage-allowances",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "http://www.airtahitinui.com/baggage",
-          "notes": "Air Tahiti Nui cabin baggage size limit: 55 x 40 x 20 cm.",
+          "value": "All cabin baggage must be less than or equal to 115 cm / 45 inches (sum of the 3 dimensions A + B + C).",
+          "status": "official",
+          "source_url": "https://us.airtahitinui.com/baggage-allowances",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "http://www.airtahitinui.com/baggage",
-          "notes": "Air Tahiti Nui Economy Class carry-on weight limit.",
+        "personal_item": {
+          "value": "One personal item per passenger (handbag, small backpack, laptop bag, briefcase and similar), maximum 3 kg, which must fit under the seat in front of you.",
+          "status": "official",
+          "source_url": "https://us.airtahitinui.com/baggage-allowances",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "http://www.airtahitinui.com/baggage",
-          "notes": "Air Tahiti Nui Premium / Business Class carry-on weight limit.",
+        "infant": {
+          "value": "Infants (0-23 months) without a seat: one personal item of 3kg (6.6pounds).",
+          "status": "official",
+          "source_url": "https://us.airtahitinui.com/baggage-allowances",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
-      }
+      },
+      "lede": "Cabin bags are examined before boarding; a non-compliant bag must be checked in and charges may apply."
     },
     {
       "id": "baggage",
       "title": "Checked baggage",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "allowance",
+        "size_weight"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "http://www.airtahitinui.com/baggage",
-          "notes": "Air Tahiti Nui Economy Class checked baggage allowance.",
+        "allowance": {
+          "value": "On flights operated by Air Tahiti Nui: Moana Economy 1 bag of 23 kg (50.7 pounds); Mānava Premium 2 bags of 23 kg; Poerava Business 2 bags of 32 kg (70.5 pounds). Club Tiare Silver and Gold members get 1 extra bag.",
+          "status": "official",
+          "source_url": "https://us.airtahitinui.com/baggage-allowances",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.airtahitinui.com/baggage",
-          "notes": "Air Tahiti Nui Business Class checked baggage allowance.",
+        "size_weight": {
+          "value": "Maximum 32 kg (about 70.5 pounds) per checked bag (heavier items go as cargo), and the sum of the 3 dimensions must be 158 cm / 62.2 inches or less, including pockets, wheels and handles.",
+          "status": "official",
+          "source_url": "https://us.airtahitinui.com/baggage-allowances",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.airtahitinui.com/baggage",
-          "notes": "Air Tahiti Nui First Class checked baggage allowance.",
+        "infant": {
+          "value": "Infants (0-23 months) without a seat, all classes: 1 bag of 10 kg (22 pounds) + 1 cane stroller, baby cot or car seat.",
+          "status": "official",
+          "source_url": "https://us.airtahitinui.com/baggage-allowances",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
-      }
+      },
+      "lede": "If you booked directly with Air Tahiti Nui, your baggage allowance is shown on your electronic ticket."
     },
     {
       "id": "contact",

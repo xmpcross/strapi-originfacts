@@ -1,6 +1,6 @@
 {
   "slug": "royal-air-maroc",
-  "official_website": "http://www.royalairmaroc.com",
+  "official_website": "https://www.royalairmaroc.com",
   "modules": [
     {
       "id": "carryon",
@@ -74,18 +74,25 @@
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
-        "phone_home_market"
+        "us_24h_refund",
+        "return_ticket_refund_rule"
       ],
       "fields": {
-        "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "http://www.royalairmaroc.com/baggage",
-          "notes": "Royal Air Maroc official customer support line.",
+        "us_24h_refund": {
+          "value": "Tickets bought from the United States can be refunded if requested within 24 hours, on all fares regardless of their cancellation policy, provided departure is more than 7 days away.",
+          "status": "official",
+          "source_url": "https://www.royalairmaroc.com/uk-en/general-terms-and-conditions",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "return_ticket_refund_rule": {
+          "value": "On a return ticket, the fare conditions of the most restrictive class apply to the whole itinerary when you request a refund.",
+          "status": "official",
+          "source_url": "https://www.royalairmaroc.com/uk-en/general-terms-and-conditions",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     }

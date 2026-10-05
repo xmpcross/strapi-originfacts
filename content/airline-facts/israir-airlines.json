@@ -6,69 +6,108 @@
       "id": "carryon",
       "title": "Carry-on",
       "required": [
+        "personal_item",
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_weight"
       ],
       "fields": {
+        "personal_item": {
+          "value": "One small personal bag up to 40 x 30 x 20 cm is included in the ticket price and goes under the seat in front of you. No additional bags or carrier bags are allowed on board.",
+          "status": "official",
+          "source_url": "https://www.israir.co.il/Info/Baggage_Policy.html",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "https://www.israir.co.il/baggage",
-          "notes": "Israir Airlines cabin baggage size limit: 55 x 40 x 20 cm.",
+          "value": "A trolley or large backpack is not included in the ticket price on international flights: up to 55 x 40 x 25 cm including wheels, handles and side pockets, for a fee.",
+          "status": "official",
+          "source_url": "https://www.israir.co.il/Info/Baggage_Policy.html",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "https://www.israir.co.il/baggage",
-          "notes": "Israir Airlines Economy Class carry-on weight limit.",
+        "carryon_weight": {
+          "value": "Trolley or large backpack: maximum 10 kg.",
+          "status": "official",
+          "source_url": "https://www.israir.co.il/Info/Baggage_Policy.html",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "https://www.israir.co.il/baggage",
-          "notes": "Israir Airlines Premium / Business Class carry-on weight limit.",
+        "carryon_fee": {
+          "value": "International Israir flights (3-digit flight numbers), bought in advance online: trolley/large backpack $30 per direction ($40 at Ben Gurion; 35 euro or 30 GBP at stations abroad). Domestic flights: the trolley is free of charge.",
+          "status": "official",
+          "source_url": "https://www.israir.co.il/Info/Baggage_Policy.html",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "new_york": {
+          "value": "On flights to New York, cabin baggage is included: one piece in economy and premium, 2 in business.",
+          "status": "official",
+          "source_url": "https://www.israir.co.il/Info/Baggage_Policy.html",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
-      }
+      },
+      "lede": "Israir's policy covers its own 3-digit flights only, not codeshares. Only around 50 trolleys fit in the overhead bins; once they are full, trolleys go in the hold, even paid ones."
     },
     {
       "id": "baggage",
       "title": "Checked baggage",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "included",
+        "size_weight",
+        "international_fees"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "https://www.israir.co.il/baggage",
-          "notes": "Israir Airlines Economy Class checked baggage allowance.",
+        "included": {
+          "value": "Checked baggage is not included in the ticket price, except on flights to New York: economy 1 bag of up to 23 kg, premium 2 bags of up to 23 kg each, business 2 bags of up to 32 kg each.",
+          "status": "official",
+          "source_url": "https://www.israir.co.il/Info/Baggage_Policy.html",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.israir.co.il/baggage",
-          "notes": "Israir Airlines Business Class checked baggage allowance.",
+        "size_weight": {
+          "value": "Maximum size 65 x 45 x 30 cm and maximum 23 kg per bag.",
+          "status": "official",
+          "source_url": "https://www.israir.co.il/Info/Baggage_Policy.html",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.israir.co.il/baggage",
-          "notes": "Israir Airlines First Class checked baggage allowance.",
+        "international_fees": {
+          "value": "International Israir flights, prepaid online or in My Israir up to 6 hours before take-off, per direction: first bag $65 ($100 at Ben Gurion; 85 euro or 75 GBP abroad); second bag $80 ($120 at Ben Gurion); third to fifth bags $120 each ($150 at Ben Gurion). Overweight from 24 to 30 kg (first bag only): $20 extra ($70 at Ben Gurion).",
+          "status": "official",
+          "source_url": "https://www.israir.co.il/Info/Baggage_Policy.html",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "domestic_fees": {
+          "value": "Domestic flights, prepaid up to 4 hours before take-off: first bag up to 23 kg 20 ILS per direction; overweight from 24 to 32 kg adds 10 ILS per extra 1 kg.",
+          "status": "official",
+          "source_url": "https://www.israir.co.il/Info/Baggage_Policy.html",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "online_checkin"
+      ],
+      "fields": {
+        "online_checkin": {
+          "value": "Digital check-in, in the Personal Zone on the Israir website, is only available for flights departing from Tel Aviv: international flights between 72 and 8 hours before departure; domestic flights between 72 and 4 hours before departure.",
+          "status": "official",
+          "source_url": "https://www.israir.co.il/Passengers_Info/Online_Check_In_Policy_English",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "eligibility": {
+          "value": "Available only on Israir's own (3-digit) flights to Eilat and selected destinations abroad, for bookings made on the Israir website or through travel agents/wholesalers via LDS distribution systems.",
+          "status": "official",
+          "source_url": "https://www.israir.co.il/Passengers_Info/Online_Check_In_Policy_English",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     },

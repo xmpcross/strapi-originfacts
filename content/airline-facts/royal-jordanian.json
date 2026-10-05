@@ -1,39 +1,44 @@
 {
   "slug": "royal-jordanian",
-  "official_website": "http://www.rj.com",
+  "official_website": "https://www.rj.com",
   "modules": [
     {
       "id": "carryon",
       "title": "Carry-on",
+      "lede": "Economy passengers may bring one piece of carry-on baggage; Crown Class passengers two, except on Embraers where only one is allowed.",
       "required": [
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_weight",
+        "personal_item"
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "http://www.rj.com/baggage",
-          "notes": "Royal Jordanian cabin baggage size limit: 55 x 40 x 20 cm.",
+          "value": "Up to 23X41X51cm (9X16X20in), with the three dimensions adding up to no more than 115 cm (45 inches), wheels, handles and side pockets included.",
+          "status": "official",
+          "source_url": "https://www.rj.com/en/info-and-tips/baggage-information/carry-on-pieces",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "http://www.rj.com/baggage",
-          "notes": "Royal Jordanian Economy Class carry-on weight limit.",
+        "carryon_weight": {
+          "value": "Each piece must not exceed 7 kg. Economy: 1 piece. Crown Class: 2 pieces (7 kg each), or 1 piece on Embraer aircraft.",
+          "status": "official",
+          "source_url": "https://www.rj.com/en/info-and-tips/baggage-information/carry-on-pieces",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "http://www.rj.com/baggage",
-          "notes": "Royal Jordanian Premium / Business Class carry-on weight limit.",
+        "personal_item": {
+          "value": "1 personal item of maximum 20x40x35cm and 5 kg, placed under the seat in front.",
+          "status": "official",
+          "source_url": "https://www.rj.com/en/info-and-tips/baggage-information/carry-on-pieces",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "infants": {
+          "value": "Passengers with infants may bring baby food and other necessities up to 7 kgs/15 lbs in addition to the adult's carry-on allowance.",
+          "status": "official",
+          "source_url": "https://www.rj.com/en/info-and-tips/baggage-information/carry-on-pieces",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -74,18 +79,17 @@
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
-        "phone_home_market"
+        "conditions_of_carriage_url"
       ],
       "fields": {
-        "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "http://www.rj.com/baggage",
-          "notes": "Royal Jordanian official customer support line.",
+        "conditions_of_carriage_url": {
+          "value": "https://www.rj.com/en/info-and-tips/conditions-of-carriage",
+          "status": "official",
+          "source_url": "https://www.rj.com/en/info-and-tips/conditions-of-carriage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
       }
     }

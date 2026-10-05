@@ -1,6 +1,6 @@
 {
   "slug": "ural-airlines",
-  "official_website": "http://www.uralairlines.ru",
+  "official_website": "https://www.uralairlines.ru",
   "modules": [
     {
       "id": "carryon",
@@ -40,52 +40,48 @@
     {
       "id": "baggage",
       "title": "Checked baggage",
+      "lede": "Excess baggage that is not booked in advance travels only if there is space, and you wait until the end of check-in to find out.",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "excess_fees_russia",
+        "size_limits"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "http://www.uralairlines.ru/baggage",
-          "notes": "Ural Airlines Economy Class checked baggage allowance.",
+        "excess_fees_russia": {
+          "value": "Departures from the Russian Federation: an additional piece up to 23 kg costs from 3500 RUB when bought with the ticket (2nd piece from 4000 RUB, 3rd and subsequent from 5000 RUB), rising the closer to departure you buy; a 10 kg bag costs from 2500 RUB with the ticket.",
+          "status": "official",
+          "source_url": "https://www.uralairlines.ru/en/rules/sverkhnormativnyy-bagazh",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.uralairlines.ru/baggage",
-          "notes": "Ural Airlines Business Class checked baggage allowance.",
+        "excess_fees_far_abroad": {
+          "value": "Departures from Turkey and the UAE: an additional piece up to 23 kg costs 45$ when bought with the ticket (2nd 50$, 3rd and subsequent 60$); a 10 kg bag costs 35$; carry-on checked at the gate costs 50$.",
+          "status": "official",
+          "source_url": "https://www.uralairlines.ru/en/rules/sverkhnormativnyy-bagazh",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.uralairlines.ru/baggage",
-          "notes": "Ural Airlines First Class checked baggage allowance.",
+        "size_limits": {
+          "value": "Items over 203 cm in the sum of three dimensions and 50 kg are carried as cargo. Bags over 203 cm but within 220x80x50 travel as baggage only on a special-service request made at least 48 hours before departure, and only if there is space.",
+          "status": "official",
+          "source_url": "https://www.uralairlines.ru/en/rules/sverkhnormativnyy-bagazh",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
-        "phone_home_market"
+        "conditions_of_carriage_url"
       ],
       "fields": {
-        "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "http://www.uralairlines.ru/baggage",
-          "notes": "Ural Airlines official customer support line.",
+        "conditions_of_carriage_url": {
+          "value": "https://www.uralairlines.ru/en/rules/dogovor-perevozki/",
+          "status": "official",
+          "source_url": "https://www.uralairlines.ru/en/rules/dogovor-perevozki/",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
       }
     }

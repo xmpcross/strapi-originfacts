@@ -1,0 +1,63 @@
+{
+  "slug": "tus-airways",
+  "official_website": "https://www.tusairways.com",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "Only a personal item is free of charge; a trolley bag for the cabin is paid.",
+      "required": [
+        "personal_item",
+        "carryon_bag_dimensions",
+        "carryon_weight"
+      ],
+      "fields": {
+        "personal_item": {
+          "value": "1 personal item free of charge, such as a laptop case or small handbag: max 4kg and 40 x 30 x 18 cm, fitting under the seat in front. Anything larger or heavier counts as a trolley and is charged.",
+          "status": "official",
+          "source_url": "https://www.tusairways.com/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "carryon_bag_dimensions": {
+          "value": "Trolley up to 55 x 40 x 23 cm, for a fee: EUR 25 regular fare, EUR 33 / ₪ 130 at the airport.",
+          "status": "official",
+          "source_url": "https://www.tusairways.com/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "carryon_weight": {
+          "value": "Trolley max 8 kg; personal item max 4kg.",
+          "status": "official",
+          "source_url": "https://www.tusairways.com/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "required": [
+        "checked_bag_fees",
+        "size_weight"
+      ],
+      "fields": {
+        "checked_bag_fees": {
+          "value": "Checked bag: EUR 52 at the regular fare, EUR 99 / ₪ 320 at the airport.",
+          "status": "official",
+          "source_url": "https://www.tusairways.com/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "size_weight": {
+          "value": "Max 20 kg and 80 x 50 x 28 cm; charges apply above the 20kg allowance and dimensions.",
+          "status": "official",
+          "source_url": "https://www.tusairways.com/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

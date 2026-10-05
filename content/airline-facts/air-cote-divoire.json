@@ -5,87 +5,135 @@
     {
       "id": "carryon",
       "title": "Carry-on",
+      "lede": "Whatever your class, you may take one cabin bag and one accessory on board.",
       "required": [
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "personal_item",
+        "weight_international"
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "https://www.aircotedivoire.com/baggage",
-          "notes": "Air Cote D'Ivoire cabin baggage size limit: 55 x 40 x 20 cm.",
+          "value": "Cabin bag no larger than 55 cm long, 45 cm deep and 25 cm wide, including pockets, wheels and handles.",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/informations/bagages",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "https://www.aircotedivoire.com/baggage",
-          "notes": "Air Cote D'Ivoire Economy Class carry-on weight limit.",
+        "personal_item": {
+          "value": "One accessory (a handbag, laptop bag, camera bag or other electronic device bag) no larger than 40 cm long, 30 cm deep and 15 cm wide.",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/informations/bagages",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "https://www.aircotedivoire.com/baggage",
-          "notes": "Air Cote D'Ivoire Premium / Business Class carry-on weight limit.",
+        "weight_international": {
+          "value": "International network: 1 bag and 1 accessory in Economy and Premium Economy (total weight 12 kg); 2 bags and 1 accessory in First and Business (total weight 18 kg).",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/informations/bagages",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "weight_regional": {
+          "value": "Regional network: 1 bag and 1 accessory in both Economy and Business, total weight 10 kg.",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/informations/bagages",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "baggage",
       "title": "Checked baggage",
+      "lede": "The checked allowance depends on your travel class and the network you fly.",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "allowance_domestic",
+        "allowance_regional",
+        "allowance_international"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "https://www.aircotedivoire.com/baggage",
-          "notes": "Air Cote D'Ivoire Economy Class checked baggage allowance.",
+        "allowance_domestic": {
+          "value": "Domestic network: one bag in Economy (max 23 kg per bag); one bag in Business (max 30 kg per bag).",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/informations/bagages",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.aircotedivoire.com/baggage",
-          "notes": "Air Cote D'Ivoire Business Class checked baggage allowance.",
+        "allowance_regional": {
+          "value": "Regional network: 40 kg in Economy and 50 kg in Business, with a maximum of 32 kg per bag.",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/informations/bagages",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.aircotedivoire.com/baggage",
-          "notes": "Air Cote D'Ivoire First Class checked baggage allowance.",
+        "allowance_international": {
+          "value": "Johannesburg, Casablanca and future international destinations: 2 bags in Economy and Premium Economy (max 23 kg each), 2 bags in Business (max 32 kg each), 3 bags in First (max 32 kg).",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/informations/bagages",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "infant_allowance": {
+          "value": "An infant under 2 gets a 10 kg allowance, plus a folding pushchair, carrycot or infant car seat.",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/informations/bagages",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "excess_baggage": {
+          "value": "Extra baggage can be bought from 24 hours before departure until check-in; the price depends on the destination.",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/informations/bagages",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "lede": "Air Côte d'Ivoire's conditions of carriage set out what it offers when it cancels or seriously delays a flight.",
+      "required": [
+        "rebooking",
+        "refund"
+      ],
+      "fields": {
+        "rebooking": {
+          "value": "If Air Côte d'Ivoire cancels a flight, operates it excessively late, skips your stop or makes you miss a connection on the same contract of carriage, it will, in agreement with you, carry you on another flight with a seat available at no extra cost, or reroute you on its own or another carrier's flights or by surface transport.",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/en/flight-booking/terms-and-conditions-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "refund": {
+          "value": "If you accept neither option, the ticket is refunded: the full fare paid if no part was used, or the difference between the fare paid and the fare for the unflown part if partly used.",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/en/flight-booking/terms-and-conditions-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "denied_boarding": {
+          "value": "If you are denied boarding because of overbooking after checking in on time, you are compensated in accordance with the applicable regulations.",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/en/flight-booking/terms-and-conditions-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
-        "phone_home_market"
+        "conditions_of_carriage_url"
       ],
       "fields": {
-        "phone_home_market": {
-          "value": "+225 27 21 75 23 31",
-          "status": "pending",
-          "source_url": "https://www.aircotedivoire.com/baggage",
-          "notes": "Air Cote D'Ivoire official customer support line.",
+        "conditions_of_carriage_url": {
+          "value": "https://www.aircotedivoire.com/en/flight-booking/terms-and-conditions-of-carriage",
+          "status": "official",
+          "source_url": "https://www.aircotedivoire.com/en/flight-booking/terms-and-conditions-of-carriage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
       }
     }

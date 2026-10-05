@@ -1,91 +1,91 @@
 {
   "slug": "bhutan-airlines",
-  "official_website": "http://www.bhutanairlines.bt",
+  "official_website": "https://www.bhutanairlines.bt",
   "modules": [
     {
       "id": "carryon",
       "title": "Carry-on",
       "required": [
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_weight",
+        "personal_item"
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "http://www.bhutanairlines.bt/baggage",
-          "notes": "Bhutan Airlines cabin baggage size limit: 55 x 40 x 20 cm.",
+          "value": "One piece of hand baggage, smaller than 55cms X 40cms X 20 cms, to fit in the overhead compartment or under your seat.",
+          "status": "official",
+          "source_url": "https://www.bhutanairlines.bt/services/in-flight-services/baggage-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "http://www.bhutanairlines.bt/baggage",
-          "notes": "Bhutan Airlines Economy Class carry-on weight limit.",
+        "carryon_weight": {
+          "value": "Hand baggage must not weigh more than 7 kg.",
+          "status": "official",
+          "source_url": "https://www.bhutanairlines.bt/services/in-flight-services/baggage-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "http://www.bhutanairlines.bt/baggage",
-          "notes": "Bhutan Airlines Premium / Business Class carry-on weight limit.",
+        "personal_item": {
+          "value": "In addition to the one piece of hand baggage, one of the following, subject to security regulations: a lady's hand bag, a gentleman's satchel, an overcoat or wrap, a rug or blanket, a camera or binoculars, reading material, a duty-free gift item, a walking stick, a folding umbrella, or a laptop, among others listed.",
+          "status": "official",
+          "source_url": "https://www.bhutanairlines.bt/services/in-flight-services/baggage-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "infant_bag": {
+          "value": "Travelling with an infant: one extra bag for clothes, nappies and baby food, smaller than 55cms X 40cms X 20 cms.",
+          "status": "official",
+          "source_url": "https://www.bhutanairlines.bt/services/in-flight-services/baggage-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
-      }
+      },
+      "lede": "Odd-sized cabin bags that do not conform to the dimensions are removed at the gate and loaded in the hold."
     },
     {
       "id": "baggage",
       "title": "Checked baggage",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "international_allowance"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "http://www.bhutanairlines.bt/baggage",
-          "notes": "Bhutan Airlines Economy Class checked baggage allowance.",
+        "international_allowance": {
+          "value": "International sectors (weight concept, maximum combined weight of all pieces): Business Class 40 KG, Economy Class 30 KG.",
+          "status": "official",
+          "source_url": "https://www.bhutanairlines.bt/travel-tools/baggage-and-cargo",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.bhutanairlines.bt/baggage",
-          "notes": "Bhutan Airlines Business Class checked baggage allowance.",
+        "gaya_paro": {
+          "value": "Gaya–Paro sector: Business Class 30 KG, Economy Class 20 KG.",
+          "status": "official",
+          "source_url": "https://www.bhutanairlines.bt/travel-tools/baggage-and-cargo",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.bhutanairlines.bt/baggage",
-          "notes": "Bhutan Airlines First Class checked baggage allowance.",
+        "route_exceptions": {
+          "value": "Allowances may vary on certain sectors and fare types, such as Kolkata–Bangkok, Bangkok–Kolkata, Kathmandu–Delhi and Delhi–Kathmandu; the allowance on your ticket is your confirmed entitlement.",
+          "status": "official",
+          "source_url": "https://www.bhutanairlines.bt/travel-tools/baggage-and-cargo",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
-      }
+      },
+      "lede": "The allowance shown is Bhutan Airlines' standard allowance; the allowance on your ticket is your confirmed entitlement."
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
         "phone_home_market"
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "http://www.bhutanairlines.bt/baggage",
-          "notes": "Bhutan Airlines official customer support line.",
+          "value": "+975-77106011 (customer care, 09am - 05pm)",
+          "status": "official",
+          "source_url": "https://www.bhutanairlines.bt/services/in-flight-services/baggage-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
       }
     }

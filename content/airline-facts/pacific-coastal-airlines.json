@@ -40,52 +40,88 @@
     {
       "id": "baggage",
       "title": "Checked baggage",
+      "lede": "Pre-paid fees apply up to 24 hours before departure; check-in fees apply when you pay within 24 hours of departure, online or at the airport.",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "size_weight",
+        "fees_by_fare"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
+        "size_weight": {
+          "value": "A checked bag is one item up to 50 pounds (23 kilograms) and 62 inches (158 cm) in linear dimensions, wheels and handles included. Single bags over 70lbs are not accepted; a maximum of three checked bags per passenger.",
+          "status": "official",
           "source_url": "https://www.pacificcoastal.com/baggage",
-          "notes": "Pacific Coastal Airlines Economy Class checked baggage allowance.",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
+        "fees_by_fare": {
+          "value": "Fees including GST: Basic and Bravo fares pay for the 1st bag (Pre-Paid $36.75, Check-In $47.25); Classic includes the 1st bag and the 2nd costs Pre-Paid $57.75 / Check-In $68.25; Encore includes 2 bags. A 3rd bag or an oversized/overweight bag costs Pre-Paid $105 / Check-In $115.50 on every fare.",
+          "status": "official",
           "source_url": "https://www.pacificcoastal.com/baggage",
-          "notes": "Pacific Coastal Airlines Business Class checked baggage allowance.",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
+        "military": {
+          "value": "Canadian Military personnel (former or current) can check two bags, up to 50lbs and/or 62” linear dimensions each, at no charge with valid military ID; not extended to family members.",
+          "status": "official",
           "source_url": "https://www.pacificcoastal.com/baggage",
-          "notes": "Pacific Coastal Airlines First Class checked baggage allowance.",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "lede": "For Basic fares, checking in late or making any change results in a no-show and forfeiture of the segment.",
+      "required": [
+        "basic_fare"
+      ],
+      "fields": {
+        "basic_fare": {
+          "value": null,
+          "status": "pending",
+          "notes": "The captured fare page lost its fare-name headings, so which fare this block describes cannot be confirmed from the capture. Re-capture before publishing."
+        },
+        "24_hour_refund": {
+          "value": "Reservations made and cancelled within 24 hours of original purchase get a full refund, as long as you cancel at least 2 hours before departure, by calling 1.800.663.2872.",
+          "status": "official",
+          "source_url": "https://www.pacificcoastal.com/fare-terms-conditions/",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "lede": "Payload limits mean checked baggage cannot always travel on the same flight.",
+      "required": [
+        "bag_drop_cutoff"
+      ],
+      "fields": {
+        "bag_drop_cutoff": {
+          "value": "Drop checked bags at the check-in counter 60 minutes before departure (recommended); bags dropped 40 minutes or less before departure are not accepted.",
+          "status": "official",
+          "source_url": "https://www.pacificcoastal.com/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
         "phone_home_market"
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "https://www.pacificcoastal.com/baggage",
-          "notes": "Pacific Coastal Airlines official customer support line.",
+          "value": "1-800-663-2872",
+          "status": "official",
+          "source_url": "https://www.pacificcoastal.com/fare-terms-conditions/",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source",
+          "notes": "Pacific Coastal's reservations and call centre number on its fare terms page."
         }
       }
     }

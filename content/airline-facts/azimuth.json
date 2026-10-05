@@ -1,0 +1,73 @@
+{
+  "slug": "azimuth",
+  "official_website": "https://www.azimuth.ru",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "The cabin allowance depends on the fare brand on Azimuth's own scheduled flights.",
+      "required": [
+        "carryon_bag_dimensions",
+        "carryon_weight"
+      ],
+      "fields": {
+        "carryon_bag_dimensions": {
+          "value": "One piece of carry-on luggage up to 55 cm long, 40 cm wide and 20 cm high.",
+          "status": "official",
+          "source_url": "https://azimuth.ru/en/passengers/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "carryon_weight": {
+          "value": "Light (LT) and Flex (FL) fares: 1 piece, 5 kg. Base (BS) and Leisure (FR) fares: 1 piece, 10 kg.",
+          "status": "official",
+          "source_url": "https://azimuth.ru/en/passengers/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "Extra bags can be bought during online check-in, through Orders Search, or at the departure airport.",
+      "required": [
+        "allowance_by_fare",
+        "size_weight"
+      ],
+      "fields": {
+        "allowance_by_fare": {
+          "value": "Azimuth scheduled flights by fare brand: Light (LT) no checked baggage; Flex (FL) 1 piece, 23 kg; Base (BS) and Leisure (FR) 2 pieces, 23 kg each.",
+          "status": "official",
+          "source_url": "https://azimuth.ru/en/passengers/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "size_weight": {
+          "value": "Each free checked piece no more than 203 cm in the sum of its three dimensions.",
+          "status": "official",
+          "source_url": "https://azimuth.ru/en/passengers/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "phone_home_market"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "Contact centre: 8 (863) 226-00-05",
+          "status": "official",
+          "source_url": "https://azimuth.ru/en/passengers/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source",
+          "notes": "Given on Azimuth's baggage page as the contact-centre number for passengers with disabilities to book tickets and services."
+        }
+      }
+    }
+  ]
+}

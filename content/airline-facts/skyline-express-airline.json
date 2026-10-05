@@ -1,0 +1,40 @@
+{
+  "slug": "skyline-express-airline",
+  "official_website": "https://www.skylineexpress.aero",
+  "modules": [
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "Your free baggage allowance is the weight shown on your ticket; anything above it is charged as excess.",
+      "required": [
+        "excess_fees"
+      ],
+      "fields": {
+        "excess_fees": {
+          "value": "Excess baggage: 5 €/1 KG on flights of 0 – 6 hours, 10 €/1 KG on flights of more than 6 hours. Oversize bags also pay a flat 10 Euro, regardless of weight.",
+          "status": "official",
+          "source_url": "https://skylineexpress.aero/en/baggage/free-baggage-rates-and-additional-fees",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "phone_home_market"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "Call Center 24/7: +38 (044) 33-99-008",
+          "status": "official",
+          "source_url": "https://skylineexpress.aero/en/baggage/free-baggage-rates-and-additional-fees",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source",
+          "notes": "Listed on Skyline Express's own baggage-fees page."
+        }
+      }
+    }
+  ]
+}

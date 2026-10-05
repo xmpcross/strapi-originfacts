@@ -74,18 +74,18 @@
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
         "phone_home_market"
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "https://www.georgian-airways.com/baggage",
-          "notes": "Georgian Airways official customer support line.",
+          "value": "+995 322 111 220 (or info@georgian-airways.com)",
+          "status": "official",
+          "source_url": "https://georgian-airways.com/en/information/baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source",
+          "notes": "Shown in the header of Georgian Airways' own site."
         }
       }
     }

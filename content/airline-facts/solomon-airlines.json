@@ -1,74 +1,82 @@
 {
   "slug": "solomon-airlines",
-  "official_website": "http://www.flysolomons.com",
+  "official_website": "https://www.flysolomons.com",
   "modules": [
     {
       "id": "carryon",
       "title": "Carry-on",
       "required": [
+        "carryon_weight",
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "personal_item"
       ],
       "fields": {
+        "carryon_weight": {
+          "value": "Domestic Economy 5kg; International Economy 7kg; International Business 10kg.",
+          "status": "official",
+          "source_url": "https://www.flysolomons.com/experience/baggage-information",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "http://www.flysolomons.com/baggage",
-          "notes": "Solomon Airlines cabin baggage size limit: 55 x 40 x 20 cm.",
+          "value": "Economy (domestic and international): max 105cm = 48(w) + 34(h) + 23cm(d). International Business: max 115cm = 56(w) + 36(h) + 23cm(d).",
+          "status": "official",
+          "source_url": "https://www.flysolomons.com/experience/baggage-information",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "http://www.flysolomons.com/baggage",
-          "notes": "Solomon Airlines Economy Class carry-on weight limit.",
+        "personal_item": {
+          "value": "In addition to the allowance: a laptop in a thin case, a handbag or purse, an overcoat or blanket, an umbrella or walking stick, a small camera or binoculars, reading matter and infant food for the flight.",
+          "status": "official",
+          "source_url": "https://www.flysolomons.com/experience/baggage-information",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "http://www.flysolomons.com/baggage",
-          "notes": "Solomon Airlines Premium / Business Class carry-on weight limit.",
+        "infant": {
+          "value": "Adults travelling with infants may take an additional 7kg of cabin baggage free of charge for essential baby products.",
+          "status": "official",
+          "source_url": "https://www.flysolomons.com/experience/baggage-information",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
-      }
+      },
+      "lede": "The cabin allowance can be two briefcases or small bags, or one small bag plus one suit pack, and must fit under the seat or in an overhead locker."
     },
     {
       "id": "baggage",
       "title": "Checked baggage",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "allowance",
+        "max_piece"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "http://www.flysolomons.com/baggage",
-          "notes": "Solomon Airlines Economy Class checked baggage allowance.",
+        "allowance": {
+          "value": "International Economy 30 kg (40 kg for Belama Plus / Flexible Economy); International Business 40 kg (50 kg); Domestic Economy 16 kg.",
+          "status": "official",
+          "source_url": "https://www.flysolomons.com/experience/baggage-information",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.flysolomons.com/baggage",
-          "notes": "Solomon Airlines Business Class checked baggage allowance.",
+        "max_piece": {
+          "value": "No single item of checked baggage can exceed 32kg.",
+          "status": "official",
+          "source_url": "https://www.flysolomons.com/experience/baggage-information",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.flysolomons.com/baggage",
-          "notes": "Solomon Airlines First Class checked baggage allowance.",
+        "oversize": {
+          "value": "Items over 158cm (length + width + height) up to 277cm are bulky items and pay a bulky item fee at the airport (for example SBD350 at Honiara, AUD75 at Brisbane) on top of any excess; pieces over 277cm must go as freight.",
+          "status": "official",
+          "source_url": "https://www.flysolomons.com/experience/baggage-information",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "connections": {
+          "value": "International allowances apply to a domestic connection on the same ticket when both flights are operated by Solomon Airlines.",
+          "status": "official",
+          "source_url": "https://www.flysolomons.com/experience/baggage-information",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     },

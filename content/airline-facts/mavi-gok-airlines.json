@@ -1,0 +1,46 @@
+{
+  "slug": "mavi-gok-airlines",
+  "official_website": "https://www.mga.aero",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "required": [
+        "carryon_weight",
+        "carryon_bag_dimensions"
+      ],
+      "fields": {
+        "carryon_weight": {
+          "value": "The cabin baggage allowance is 8 kg.",
+          "status": "official",
+          "source_url": "https://mga.aero/en/travel/baggage/standard-free-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "carryon_bag_dimensions": {
+          "value": "Cabin baggage must not exceed 55 x 40 x 20 cm, and must be shown to staff at check-in.",
+          "status": "official",
+          "source_url": "https://mga.aero/en/travel/baggage/standard-free-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "required": [
+        "included"
+      ],
+      "fields": {
+        "included": {
+          "value": "MGA tickets generally do not include a baggage allowance; it varies with the fare class and the bundle you choose (and may differ for tickets bought through tour operators). Your reservation on mga.aero shows your allowance.",
+          "status": "official",
+          "source_url": "https://mga.aero/en/travel/baggage/standard-free-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

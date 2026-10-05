@@ -73,19 +73,42 @@
       }
     },
     {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "lede": "From Air Transat's general terms and conditions for its UK website.",
+      "required": [
+        "airport_arrival"
+      ],
+      "fields": {
+        "airport_arrival": {
+          "value": "Air Transat recommends arriving at the airport check-in counter at least three (3) hours before departure; otherwise your reservation may be cancelled and your seats given to other customers.",
+          "status": "official",
+          "source_url": "https://www.airtransat.com/en-GB/legal-notice-uk/general-terms-and-conditions",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "seat_selection_hold": {
+          "value": "An advance seat selection is held until 75 minutes before departure; after that it can be cancelled without refund.",
+          "status": "official",
+          "source_url": "https://www.airtransat.com/en-GB/legal-notice-uk/general-terms-and-conditions",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
         "phone_home_market"
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "https://www.airtransat.com/baggage",
-          "notes": "Air Transat official customer support line.",
+          "value": "Customer Service: 00 800 87 26 72 83 (number given in the UK website terms)",
+          "status": "official",
+          "source_url": "https://www.airtransat.com/en-GB/legal-notice-uk/general-terms-and-conditions",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
       }
     }

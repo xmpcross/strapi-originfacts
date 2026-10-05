@@ -1,0 +1,22 @@
+{
+  "slug": "aerolineas-argentinas",
+  "official_website": "https://www.aerolineas.com.ar",
+  "modules": [
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "conditions_of_carriage_url"
+      ],
+      "fields": {
+        "conditions_of_carriage_url": {
+          "value": "https://www.aerolineas.com.ar/legales?tab=condicionestransporte",
+          "status": "official",
+          "source_url": "https://www.aerolineas.com.ar/legales?tab=condicionestransporte",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

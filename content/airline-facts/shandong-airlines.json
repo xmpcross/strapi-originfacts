@@ -1,91 +1,110 @@
 {
   "slug": "shandong-airlines",
-  "official_website": "http://www.shandongair.com.cn",
+  "official_website": "https://www.sda.cn",
   "modules": [
     {
       "id": "carryon",
       "title": "Carry-on",
+      "lede": "From Shandong Airlines' General Conditions of Carriage effective 1 July 2026.",
       "required": [
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_weight",
+        "personal_item"
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "http://www.shandongair.com.cn/baggage",
-          "notes": "Shandong Airlines cabin baggage size limit: 55 x 40 x 20 cm.",
+          "value": "Each piece up to 55 cm (22 inches) long, 40 cm (16 inches) wide and 20 cm (8 inches) high, wheels and handles included. First and business class: 2 pieces; premium economy and economy: 1 piece.",
+          "status": "official",
+          "source_url": "https://www.sda.cn/en/about/news/show/3195.html",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "http://www.shandongair.com.cn/baggage",
-          "notes": "Shandong Airlines Economy Class carry-on weight limit.",
+        "carryon_weight": {
+          "value": "First and business class: up to 8 kg or 17 lbs per piece. Premium economy and economy: up to 5 kg or 11 lbs.",
+          "status": "official",
+          "source_url": "https://www.sda.cn/en/about/news/show/3195.html",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "http://www.shandongair.com.cn/baggage",
-          "notes": "Shandong Airlines Premium / Business Class carry-on weight limit.",
+        "personal_item": {
+          "value": "1 personal item that fits under the seat in front, such as a handbag, briefcase, laptop bag or camera bag.",
+          "status": "official",
+          "source_url": "https://www.sda.cn/en/about/news/show/3195.html",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "baggage",
       "title": "Checked baggage",
+      "lede": "Free allowance calculation is set out in separate Shandong Airlines rules; the conditions of carriage set the per-piece limits.",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "size_weight"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "http://www.shandongair.com.cn/baggage",
-          "notes": "Shandong Airlines Economy Class checked baggage allowance.",
+        "size_weight": {
+          "value": "Each checked piece must weigh at least 2 kg (4 lbs) and no more than 45 kg (99 lbs) on domestic routes or 32 kg (70 lbs) on international routes. Weight-system routes: up to 100 cm x 60 cm x 40 cm. Piece-system routes: the three dimensions may total no more than 203 cm (80 inches), wheels and handles included.",
+          "status": "official",
+          "source_url": "https://www.sda.cn/en/about/news/show/3195.html",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "lede": "From Shandong Airlines' General Conditions of Carriage effective 1 July 2026; where a country's law sets its own requirements, Shandong Airlines follows them.",
+      "required": [
+        "care",
+        "refund",
+        "compensation"
+      ],
+      "fields": {
+        "care": {
+          "value": "For a delay or cancellation at the departure point caused by Shandong Airlines (mechanical failure, scheduling, crew and similar), it provides meals and accommodation. For causes outside its control (weather, air traffic control, security and similar) it helps arrange meals and accommodation at your cost. At an intermediate stop or on a diversion it provides meals and accommodation regardless of cause.",
+          "status": "official",
+          "source_url": "https://www.sda.cn/en/about/news/show/3195.html",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.shandongair.com.cn/baggage",
-          "notes": "Shandong Airlines Business Class checked baggage allowance.",
+        "refund": {
+          "value": "After a flight cancellation you may choose a refund even if your ticket's conditions restrict refunds, and the refund service charge is waived.",
+          "status": "official",
+          "source_url": "https://www.sda.cn/en/about/news/show/3195.html",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.shandongair.com.cn/baggage",
-          "notes": "Shandong Airlines First Class checked baggage allowance.",
+        "compensation": {
+          "value": "For a delay caused by Shandong Airlines that occurs within 3 days before scheduled departure, passengers who bought before the delay and took the flight are compensated RMB 200 for a delay of 4 hours to less than 8 hours, and RMB 400 for 8 hours or more.",
+          "status": "official",
+          "source_url": "https://www.sda.cn/en/about/news/show/3195.html",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
         "phone_home_market"
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "http://www.shandongair.com.cn/baggage",
-          "notes": "Shandong Airlines official customer support line.",
+          "value": "24-hour service hotline 95369; from abroad, Hong Kong, Macao and Taiwan dial +86(531)95369",
+          "status": "official",
+          "source_url": "https://www.sda.cn/en/about/news/show/3195.html",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://www.sda.cn/en/about/news/show/3195.html",
+          "status": "official",
+          "source_url": "https://www.sda.cn/en/about/news/show/3195.html",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     }

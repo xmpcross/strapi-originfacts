@@ -41,51 +41,103 @@
       "id": "baggage",
       "title": "Checked baggage",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "allowance",
+        "excess",
+        "oversize"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "https://www.rex.com.au/FlightInfo/BaggageAllowance.aspx",
-          "notes": "Rex (Regional Express) Economy Class checked baggage allowance.",
+        "allowance": {
+          "value": "All regional services operated by SAAB 340 Turboprop: Community, Promo and Saver fares 15kg; Flex 23kg.",
+          "status": "official",
+          "source_url": "https://rex.com.au/FlightInfo/BaggageAllowance.aspx",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.rex.com.au/FlightInfo/BaggageAllowance.aspx",
-          "notes": "Rex (Regional Express) Business Class checked baggage allowance.",
+        "excess": {
+          "value": "Excess baggage at the airport: $5.50 (incl. GST) for each additional kilogram. Additional Baggage bought at booking: $20 per 5kg (non-refundable).",
+          "status": "official",
+          "source_url": "https://rex.com.au/FlightInfo/BaggageAllowance.aspx",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.rex.com.au/FlightInfo/BaggageAllowance.aspx",
-          "notes": "Rex (Regional Express) First Class checked baggage allowance.",
+        "oversize": {
+          "value": "$16.50 (incl. GST) per piece if h + w + d exceeds 140cm. Maximum 32kg per piece at the airport (heavier items go as air freight), and maximum length 2 metres.",
+          "status": "official",
+          "source_url": "https://rex.com.au/FlightInfo/BaggageAllowance.aspx",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "rex_flyer": {
+          "value": "Rex Flyer Diamond members get 23kg on all fare classes; Opal, Sapphire and Emerald members get 15kg, or 23kg on Economy Flex.",
+          "status": "official",
+          "source_url": "https://rex.com.au/FlightInfo/BaggageAllowance.aspx",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "infant": {
+          "value": "Lap infants (under 2): 2 pieces with a total combined weight of up to 10kg, which can include a pram/stroller, portable cot, baby capsule or car seat.",
+          "status": "official",
+          "source_url": "https://rex.com.au/FlightInfo/BaggageAllowance.aspx",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      },
+      "lede": "Rex connecting passengers on one booking get the higher of the two checked allowances."
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "required": [
+        "refund"
+      ],
+      "fields": {
+        "refund": {
+          "value": "If Rex changes your flight schedule or cancels your flight, you may cancel the ticket and get a full refund, requested through the Rex Feedback Form or by calling 13 17 13.",
+          "status": "official",
+          "source_url": "https://www.rex.com.au/flightinfo/COC.aspx",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      },
+      "lede": "Rex's conditions of carriage state that departure and arrival times are not guaranteed and that it is not responsible for accommodation arrangements or payments."
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "airport_cutoff"
+      ],
+      "fields": {
+        "airport_cutoff": {
+          "value": "Be checked in and ready for boarding not less than 30 minutes before scheduled departure on all regional flights, except Burketown where it is 60 minutes. Missing it makes you a 'no show' and the booking is cancelled.",
+          "status": "official",
+          "source_url": "https://www.rex.com.au/flightinfo/COC.aspx",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
-        "phone_home_market"
+        "phone_home_market",
+        "conditions_of_carriage_url"
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "https://www.rex.com.au/FlightInfo/ConditionsOfCarriage.aspx",
-          "notes": "Rex (Regional Express) official customer support line.",
+          "value": "13 17 13 (Customer Contact Centre)",
+          "status": "official",
+          "source_url": "https://www.rex.com.au/flightinfo/COC.aspx",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://www.rex.com.au/flightinfo/COC.aspx",
+          "status": "official",
+          "source_url": "https://www.rex.com.au/flightinfo/COC.aspx",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     }

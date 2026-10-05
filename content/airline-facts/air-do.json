@@ -1,0 +1,121 @@
+{
+  "slug": "air-do",
+  "official_website": "https://www.airdo.jp",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "Bags over these limits must be checked in at the airport counter before security.",
+      "required": [
+        "carryon_bag_dimensions",
+        "carryon_weight",
+        "personal_item"
+      ],
+      "fields": {
+        "carryon_bag_dimensions": {
+          "value": "One piece of carry-on baggage whose three dimensions total no more than 115 cm (55 cm × 40 cm × 25 cm).",
+          "status": "official",
+          "source_url": "https://www.airdo.jp/en/departure/baggage/carry-on-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "carryon_weight": {
+          "value": "Up to 10 kg per person, including personal effects.",
+          "status": "official",
+          "source_url": "https://www.airdo.jp/en/departure/baggage/carry-on-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "personal_item": {
+          "value": "One personal effect (handbag, camera, umbrella or similar) small enough to stow under the seat, in addition to the carry-on bag.",
+          "status": "official",
+          "source_url": "https://www.airdo.jp/en/departure/baggage/carry-on-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "Baggage over the free allowance is charged at AIRDO's excess baggage rates.",
+      "required": [
+        "allowance",
+        "size_weight"
+      ],
+      "fields": {
+        "allowance": {
+          "value": "A passenger paying an economy class fare gets a free checked baggage allowance of 20 kilograms (domestic conditions of carriage). Infants without a seat get no allowance of their own.",
+          "status": "official",
+          "source_url": "https://www.airdo.jp/en/corporate/info/conditions-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "size_weight": {
+          "value": "Each checked piece up to 32 kilograms and 203 centimeters in total dimensions; total checked weight no more than 100 kilograms. Larger items need AIRDO's prior permission.",
+          "status": "official",
+          "source_url": "https://www.airdo.jp/en/corporate/info/conditions-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "lede": "These are AIRDO's terms in its conditions of carriage for passengers on domestic flights.",
+      "required": [
+        "rebooking_refund"
+      ],
+      "fields": {
+        "rebooking_refund": {
+          "value": "If AIRDO fails to perform the contract of carriage for reasons other than the passenger's request, you may choose: carriage to your destination on another AIRDO flight, another carrier's flight or other transport, with no fare difference collected; a refund (the full fare and charges before travel starts, or the unflown portion after); or an extension of the ticket's validity.",
+          "status": "official",
+          "source_url": "https://www.airdo.jp/en/corporate/info/conditions-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "online_checkin",
+        "bag_drop_cutoff"
+      ],
+      "fields": {
+        "online_checkin": {
+          "value": "Online check-in opens 24 hours before departure; passengers who have checked in online can go straight to security.",
+          "status": "official",
+          "source_url": "https://www.airdo.jp/en/departure/checkin",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "bag_drop_cutoff": {
+          "value": "From Sep 1, 2026, the baggage check-in deadline at Haneda Airport is 30 minutes before departure.",
+          "status": "official",
+          "source_url": "https://www.airdo.jp/en/departure/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "conditions_of_carriage_url"
+      ],
+      "fields": {
+        "conditions_of_carriage_url": {
+          "value": "https://www.airdo.jp/en/corporate/info/conditions-of-carriage",
+          "status": "official",
+          "source_url": "https://www.airdo.jp/en/corporate/info/conditions-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

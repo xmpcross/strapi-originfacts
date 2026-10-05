@@ -1,0 +1,79 @@
+{
+  "slug": "pal-airlines",
+  "official_website": "https://www.palairlines.ca",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "PAL Airlines allows each passenger one piece of carry-on luggage plus a small personal bag.",
+      "required": [
+        "carryon_bag_dimensions",
+        "personal_item"
+      ],
+      "fields": {
+        "carryon_bag_dimensions": {
+          "value": "1 carry-on per passenger, maximum 21” x 9” x 15”.",
+          "status": "official",
+          "source_url": "https://palairlines.ca/travel-hub/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "personal_item": {
+          "value": "A small purse, personal bag or diaper bag, maximum 16” x 6” x 13”, in addition to the carry-on.",
+          "status": "official",
+          "source_url": "https://palairlines.ca/travel-hub/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "air_borealis": {
+          "value": "Connecting Air Borealis Twin Otter flights do not allow carry-on baggage; one (1) free personal item (such as a purse up to 16” x 6” x 13”) is permitted.",
+          "status": "official",
+          "source_url": "https://palairlines.ca/travel-hub/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "Your checked allowance depends on your booked fare class; fees are in Canadian dollars.",
+      "required": [
+        "checked_bag_fees",
+        "size_weight"
+      ],
+      "fields": {
+        "checked_bag_fees": {
+          "value": "1st bag: Basic $40 – $46, Standard $20 – $23, Flexible and Freedom $0. 2nd bag: Basic $80- $92, Standard and Flexible $40 – $46, Freedom $0. 3rd bag: $100 – $115 on every fare. CDN dollars.",
+          "status": "official",
+          "source_url": "https://palairlines.ca/travel-hub/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "size_weight": {
+          "value": "Checked bags must not exceed 50 pounds and 62 linear inches. Bags between 50 lbs and 70 lbs are charged $100.00 – $115.00 as excess; anything over 70 lbs must go by PAL Airlines Cargo.",
+          "status": "official",
+          "source_url": "https://palairlines.ca/travel-hub/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "phone_home_market"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "1.800.563.2800",
+          "status": "official",
+          "source_url": "https://palairlines.ca/travel-hub/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

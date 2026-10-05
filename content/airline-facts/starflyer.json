@@ -1,0 +1,31 @@
+{
+  "slug": "starflyer",
+  "official_website": "https://www.starflyer.jp",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "On StarFlyer's Japan domestic flights you may carry on 1 personal item.",
+      "required": [
+        "carryon_bag_dimensions",
+        "carryon_weight"
+      ],
+      "fields": {
+        "carryon_bag_dimensions": {
+          "value": "Up to 1 item per person (such as a handbag, camera or umbrella), a total of 115 cm or less in 3 dimensions (55 cm × 40 cm × 25 cm). Japan domestic flights.",
+          "status": "official",
+          "source_url": "https://www.starflyer.jp/en/checkin/carry-on-luggage.html",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "carryon_weight": {
+          "value": "Up to 10 kg. Japan domestic flights.",
+          "status": "official",
+          "source_url": "https://www.starflyer.jp/en/checkin/carry-on-luggage.html",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

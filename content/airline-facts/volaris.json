@@ -1,39 +1,29 @@
 {
   "slug": "volaris",
-  "official_website": "http://www.volaris.com",
+  "official_website": "https://www.volaris.com",
   "modules": [
     {
       "id": "carryon",
       "title": "Carry-on",
+      "lede": "Every fare includes a personal item; a carry-on bag is included only with Plus and can be added to Zero or Basic.",
       "required": [
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "personal_item"
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "http://www.volaris.com/baggage",
-          "notes": "Volaris cabin baggage size limit: 55 x 40 x 20 cm.",
+          "value": "Carry-on bag up to 55 × 40 × 25 cm (22 x 16 x 10 in), included with the Plus fare; can be added for a fee to Zero or Basic.",
+          "status": "official",
+          "source_url": "https://cms.volaris.com/en/useful-information/baggage/checked-baggage/checked-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "http://www.volaris.com/baggage",
-          "notes": "Volaris Economy Class carry-on weight limit.",
+        "personal_item": {
+          "value": "1 personal item, such as a backpack, handbag, briefcase or laptop bag, up to 35 × 45 × 20 cm, that fits under the seat in front.",
+          "status": "official",
+          "source_url": "https://cms.volaris.com/en/useful-information/baggage/checked-baggage/checked-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
-        },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "http://www.volaris.com/baggage",
-          "notes": "Volaris Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -41,34 +31,47 @@
       "id": "baggage",
       "title": "Checked baggage",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "size_weight",
+        "included_by_fare"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "http://www.volaris.com/baggage",
-          "notes": "Volaris Economy Class checked baggage allowance.",
+        "included_by_fare": {
+          "value": "Zero: no checked bag. Basic: 1 checked bag up to 33lb and 62 total in. Plus: 1 checked bag up to 55 lb and 62 total in.",
+          "status": "official",
+          "source_url": "https://cms.volaris.com/en/useful-information/baggage/checked-baggage/checked-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.volaris.com/baggage",
-          "notes": "Volaris Business Class checked baggage allowance.",
+        "size_weight": {
+          "value": "Each checked bag up to 158 linear cm (length + width + height); bags bought separately up to 25 kg. The maximum per piece, including paid excess weight, is 45 kg.",
+          "status": "official",
+          "source_url": "https://cms.volaris.com/en/useful-information/baggage/checked-baggage/checked-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.volaris.com/baggage",
-          "notes": "Volaris First Class checked baggage allowance.",
+        "max_bags": {
+          "value": "Up to five checked bags can be added per passenger, for a fee.",
+          "status": "official",
+          "source_url": "https://cms.volaris.com/en/useful-information/baggage/checked-baggage/checked-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "lede": "Zero is Volaris's lowest-price option.",
+      "required": [
+        "cheapest_fare"
+      ],
+      "fields": {
+        "cheapest_fare": {
+          "value": "Zero includes 1 personal item that fits under the seat in front; carry-on and checked baggage are not included. Check-in opens 3 days before domestic flights and 24 hours before international flights.",
+          "status": "official",
+          "source_url": "https://cms.volaris.com/en/useful-information/baggage/checked-baggage/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     },

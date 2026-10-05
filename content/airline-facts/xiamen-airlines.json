@@ -5,87 +5,123 @@
     {
       "id": "carryon",
       "title": "Carry-on",
+      "lede": "Cabin baggage over these limits for pieces, weight or size must be checked.",
       "required": [
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_weight",
+        "pieces_by_cabin"
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "https://www.xiamenair.com/baggage",
-          "notes": "Xiamen Airlines cabin baggage size limit: 55 x 40 x 20 cm.",
+          "value": "Each cabin piece up to 55 centimeters (22 inches) long, 40 centimeters (16 inches) wide and 20 centimeters (8 inches) high, stowed under the seat in front or in an overhead bin.",
+          "status": "official",
+          "source_url": "https://www.xiamenair.com/brandnew_EN/travel-transport-condition.html",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "https://www.xiamenair.com/baggage",
-          "notes": "Xiamen Airlines Economy Class carry-on weight limit.",
+        "carryon_weight": {
+          "value": "Each cabin piece up to 8 kilograms (17 pounds).",
+          "status": "official",
+          "source_url": "https://www.xiamenair.com/brandnew_EN/travel-transport-condition.html",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "https://www.xiamenair.com/baggage",
-          "notes": "Xiamen Airlines Premium / Business Class carry-on weight limit.",
+        "pieces_by_cabin": {
+          "value": "First and Business Class: two pieces of cabin baggage. Economy Class: one piece.",
+          "status": "official",
+          "source_url": "https://www.xiamenair.com/brandnew_EN/travel-transport-condition.html",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "baggage",
       "title": "Checked baggage",
+      "lede": "International and regional flights use a piece allowance that Xiamen Airlines publishes and updates on its baggage pages.",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "allowance_domestic",
+        "size_weight"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "https://www.xiamenair.com/baggage",
-          "notes": "Xiamen Airlines Economy Class checked baggage allowance.",
+        "allowance_domestic": {
+          "value": "Domestic flights: 40 kilograms in First Class, 30 kilograms in Business Class, 20 kilograms in Economy Class. Children on child fares get the adult allowance; infants without a seat get none, but one stroller, bassinet or car seat travels free.",
+          "status": "official",
+          "source_url": "https://www.xiamenair.com/brandnew_EN/travel-transport-condition.html",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.xiamenair.com/baggage",
-          "notes": "Xiamen Airlines Business Class checked baggage allowance.",
+        "size_weight": {
+          "value": "Domestic flights: each piece up to 50 kilograms and 100 x 60 x 40 centimeters. International and regional flights: each piece up to 32 kilograms (45 kilograms to or from the United States) and 203cm in combined dimensions.",
+          "status": "official",
+          "source_url": "https://www.xiamenair.com/brandnew_EN/travel-transport-condition.html",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "lede": "These are Xiamen Airlines' own terms in its general conditions of carriage; a delay means more than 15 minutes late.",
+      "required": [
+        "care",
+        "refund",
+        "compensation"
+      ],
+      "fields": {
+        "care": {
+          "value": "If a flight is delayed or cancelled at the departure airport for reasons attributable to Xiamen Airlines, it provides meals or accommodation under its regulations. If the cause is not attributable to it, it helps arrange meals or accommodation at the passenger's own expense.",
+          "status": "official",
+          "source_url": "https://www.xiamenair.com/brandnew_EN/travel-transport-condition.html",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.xiamenair.com/baggage",
-          "notes": "Xiamen Airlines First Class checked baggage allowance.",
+        "refund": {
+          "value": "For an involuntary refund (flight cancelled, delayed, brought forward or rerouted), an unused ticket is refunded in full with refundable taxes and charges and no refund fee.",
+          "status": "official",
+          "source_url": "https://www.xiamenair.com/brandnew_EN/travel-transport-condition.html",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "compensation": {
+          "value": "If a flight arrives late for reasons attributable to Xiamen Airlines: no more than RMB 200 per passenger for a delay of 4 hours (inclusive) to 8 hours, and no more than RMB 400 for 8 hours or more, paid in cash or free tickets as agreed with the passenger.",
+          "status": "official",
+          "source_url": "https://www.xiamenair.com/brandnew_EN/travel-transport-condition.html",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
-        "phone_home_market"
+        "phone_home_market",
+        "conditions_of_carriage_url"
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+86 592 2226666",
-          "status": "pending",
-          "source_url": "https://www.xiamenair.com/baggage",
-          "notes": "Xiamen Airlines official customer support line.",
+          "value": "Service hotline: 95557",
+          "status": "official",
+          "source_url": "https://www.xiamenair.com/brandnew_EN/travel-ground-baggage.html",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source",
+          "notes": "Listed in the footer of Xiamen Airlines' own baggage page."
+        },
+        "phone_international": {
+          "value": "Overseas service hotline: +86-592-2226666",
+          "status": "official",
+          "source_url": "https://www.xiamenair.com/brandnew_EN/travel-ground-baggage.html",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://www.xiamenair.com/brandnew_EN/travel-transport-condition.html",
+          "status": "official",
+          "source_url": "https://www.xiamenair.com/brandnew_EN/travel-transport-condition.html",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     }

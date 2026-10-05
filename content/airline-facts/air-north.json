@@ -5,35 +5,33 @@
     {
       "id": "carryon",
       "title": "Carry-on",
+      "lede": "Every traveller can bring one (1) carry-on and one (1) personal item; the size limit depends on the aircraft.",
       "required": [
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "personal_item",
+        "carryon_weight"
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "https://www.flyairnorth.com/baggage",
-          "notes": "Air North cabin baggage size limit: 55 x 40 x 20 cm.",
+          "value": "Boeing routes: carry-on up to 38cm x 22cm x 54cm. ATR routes: combined dimensions cannot exceed 28cm x 22cm x 38cm.",
+          "status": "official",
+          "source_url": "https://flyairnorth.com/baggage-carry-on",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "https://www.flyairnorth.com/baggage",
-          "notes": "Air North Economy Class carry-on weight limit.",
+        "personal_item": {
+          "value": "One (1) personal item. On Boeing routes it cannot exceed 33cm x 41cm x 15cm.",
+          "status": "official",
+          "source_url": "https://flyairnorth.com/baggage-carry-on",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "https://www.flyairnorth.com/baggage",
-          "notes": "Air North Premium / Business Class carry-on weight limit.",
+        "carryon_weight": {
+          "value": "No set weight: the carry-on must be light enough to store in the overhead bin unassisted.",
+          "status": "official",
+          "source_url": "https://flyairnorth.com/baggage-carry-on",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -74,18 +72,24 @@
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
         "phone_home_market"
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "https://www.flyairnorth.com/baggage",
-          "notes": "Air North official customer support line.",
+          "value": "867.668.2228 ext. 1, option 1; toll-free in North America 1.800.661.0407 ext. 1, option 1",
+          "status": "official",
+          "source_url": "https://www.flyairnorth.com/support",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "customer_service": {
+          "value": "For concerns, compensation or APPR inquiries: customerservice@flyairnorth.com",
+          "status": "official",
+          "source_url": "https://www.flyairnorth.com/support",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     }

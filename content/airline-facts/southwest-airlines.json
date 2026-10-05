@@ -73,6 +73,38 @@
       }
     },
     {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "lede": "Southwest may begin boarding as early as 30 minutes before scheduled departure.",
+      "required": [
+        "gate_cutoff",
+        "no_show"
+      ],
+      "fields": {
+        "boarding_start": {
+          "value": "Boarding may begin as early as 30 minutes before scheduled departure; Southwest encourages passengers to be in the gate area by then.",
+          "status": "official",
+          "source_url": "https://www.southwest.com/air/check-in/",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "gate_cutoff": {
+          "value": "All passengers must have their boarding passes and be in the gate area at least 10 minutes before scheduled departure, or Southwest may cancel the reservation and you will not be eligible for denied boarding compensation.",
+          "status": "official",
+          "source_url": "https://www.southwest.com/air/check-in/",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "no_show": {
+          "value": "If you are not travelling, cancel at least 10 minutes before the original scheduled departure time; otherwise the reservation is cancelled and funds and points may be forfeited.",
+          "status": "official",
+          "source_url": "https://www.southwest.com/air/check-in/",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
       "id": "contact",
       "title": "Contact and customer support",
       "required": [

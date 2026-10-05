@@ -1,0 +1,78 @@
+{
+  "slug": "linear-air",
+  "official_website": "https://www.linearair.com",
+  "modules": [
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "required": [
+        "allowance"
+      ],
+      "fields": {
+        "allowance": {
+          "value": "Baggage up to a maximum total weight of 50 lbs per passenger. Bicycles, golf clubs and ski equipment are allowed, subject to operator-specific constraints; carry-on may not be allowed given the aircraft's interior stowage constraints.",
+          "status": "official",
+          "source_url": "https://www.linearair.com/terms/",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "required": [
+        "compensation"
+      ],
+      "fields": {
+        "compensation": {
+          "value": "No amenities or compensation are provided on a flight delayed or cancelled at the customer's origination point or destination, or delayed or cancelled due to a force majeure event.",
+          "status": "official",
+          "source_url": "https://www.linearair.com/terms/",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "boarding_cutoff"
+      ],
+      "fields": {
+        "boarding_cutoff": {
+          "value": "Passengers who have not checked in and are not at the boarding point ready to board at least fifteen (15) minutes before scheduled departure may have that reservation, and all others in their itinerary, cancelled.",
+          "status": "official",
+          "source_url": "https://www.linearair.com/terms/",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "phone_home_market",
+        "conditions_of_carriage_url"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "1-877-2-Linear",
+          "status": "official",
+          "source_url": "https://www.linearair.com/terms/",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://www.linearair.com/terms/",
+          "status": "official",
+          "source_url": "https://www.linearair.com/terms/",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

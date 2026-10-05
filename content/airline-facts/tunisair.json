@@ -1,74 +1,67 @@
 {
   "slug": "tunisair",
-  "official_website": "http://www.tunisair.com",
+  "official_website": "https://www.tunisair.com",
   "modules": [
     {
       "id": "carryon",
       "title": "Carry-on",
+      "lede": "Your hand baggage allowance depends on the cabin you travel in.",
       "required": [
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_weight"
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "http://www.tunisair.com/baggage",
-          "notes": "Tunisair cabin baggage size limit: 55 x 40 x 20 cm.",
+          "value": "Each piece must measure no more than 115 cm (length + width + height), including handles, side pockets and wheels.",
+          "status": "official",
+          "source_url": "https://www.tunisair.com/en/guide-utilisateur/prepare-your-luggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "http://www.tunisair.com/baggage",
-          "notes": "Tunisair Economy Class carry-on weight limit.",
+        "carryon_weight": {
+          "value": "Economy: 1 piece, 8 Kg. Business: 2 pieces, 10 kg overall weight.",
+          "status": "official",
+          "source_url": "https://www.tunisair.com/en/guide-utilisateur/prepare-your-luggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
-        },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "http://www.tunisair.com/baggage",
-          "notes": "Tunisair Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "baggage",
       "title": "Checked baggage",
+      "lede": "Tunisair uses a piece concept: the free allowance depends on destination and booking class.",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "size_weight"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "http://www.tunisair.com/baggage",
-          "notes": "Tunisair Economy Class checked baggage allowance.",
+        "size_weight": {
+          "value": "Each bag must not exceed 23kg /50 lb or 32kg/ 70.5 lb, depending on destination and cabin, and 158cm (height + length + width). Maximum 10 pieces of hold baggage per passenger; items over 32kg go via the Cargo Department.",
+          "status": "official",
+          "source_url": "https://www.tunisair.com/en/guide-utilisateur/prepare-your-luggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.tunisair.com/baggage",
-          "notes": "Tunisair Business Class checked baggage allowance.",
+        "connecting_economy": {
+          "value": "Two pieces travel free in economy class on all connecting Tunisair flights between Europe/Africa/Middle East/North America via Tunisia.",
+          "status": "official",
+          "source_url": "https://www.tunisair.com/en/guide-utilisateur/prepare-your-luggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.tunisair.com/baggage",
-          "notes": "Tunisair First Class checked baggage allowance.",
+        "infants": {
+          "value": "Infants without a seat get one piece of 10 kg (115 cm) plus one folding stroller or car seat; infants and children paying at least 50% of the adult fare get the adult allowance.",
+          "status": "official",
+          "source_url": "https://www.tunisair.com/en/guide-utilisateur/prepare-your-luggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "prepaid_extra_bag": {
+          "value": "One extra 23 Kg (50lb), 158 cm bag can be prepaid at least 24 hours before departure: from Tunisia 125 TND to Europe and North Africa, 150 TND to Egypt, Lebanon, Türkiye and Russia, 175 TND to the Middle East and Western Africa, 225 TND to North America; from Europe to Tunisia 45 €/£/CHF. Not refundable.",
+          "status": "official",
+          "source_url": "https://www.tunisair.com/en/guide-utilisateur/prepare-your-luggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     },

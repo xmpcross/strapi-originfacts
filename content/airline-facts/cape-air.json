@@ -1,0 +1,88 @@
+{
+  "slug": "cape-air",
+  "official_website": "https://www.capeair.com",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "Cape Air flies 9-passenger aircraft; on the Cessna 402 and Britten-Norman Islander there is no under-seat or overhead storage.",
+      "required": [
+        "personal_item",
+        "onboard_storage"
+      ],
+      "fields": {
+        "personal_item": {
+          "value": "One free Personal Item (e.g. small purse, briefcase, electronic device) per ticketed customer, not exceeding 36 linear inches (length + width + height = 36”).",
+          "status": "official",
+          "source_url": "https://www.capeair.com/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "onboard_storage": {
+          "value": "On the Cessna 402 and Britten-Norman Islander, all personal items and carry-on-size bags are checked planeside and returned planeside on arrival. On the Tecnam Traveller, personal items up to 12” x 6” x 8” may go under the seat in front (not all seats allow this).",
+          "status": "official",
+          "source_url": "https://www.capeair.com/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "Free allowances and fees depend on the route; these fees apply when the first flight on the ticket is a Cape Air (9K) flight.",
+      "required": [
+        "free_allowance",
+        "fees",
+        "size_weight"
+      ],
+      "fields": {
+        "free_allowance": {
+          "value": "Most routes (including all routes when connecting to another airline on the same ticket, and all Caribbean routes) include one free bag up to 45\" carried through security, checked at the gate and returned planeside. On some local routes (e.g. Billings, Hyannis, Nantucket, Martha’s Vineyard) you may instead check up to three small bags weighing not more than 50lbs together.",
+          "status": "official",
+          "source_url": "https://www.capeair.com/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "fees": {
+          "value": "For tickets issued on/after August 12, 2026: 1st bag up to 50LB costs 30 or 40, 2nd bag 40 or 50, 3rd bag 80 or 90, depending on the route (Any Routes Not Listed Above: 40 / 50 / 90). Bags of 51-70LB carry an additional fee of 80 or 90.",
+          "status": "official",
+          "source_url": "https://www.capeair.com/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source",
+          "notes": "Amounts in US dollars as listed in Cape Air's route table; the page gives two different cut-off dates (August 11 and August 4, 2026) for the older fee level, so that level is not published."
+        },
+        "size_weight": {
+          "value": "Chargeable bags may be up to 50 lbs and 62 inches (l+w+h); bags between 51 lbs and 70 lbs pay an extra fee and travel space permitting. No bag over 70lbs and/or 62 linear inches is carried.",
+          "status": "official",
+          "source_url": "https://www.capeair.com/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "military": {
+          "value": "Active Duty, Reserve and National Guard military personnel (including dependents and retirees) with a Military or Dependent ID are exempt from standard baggage fees.",
+          "status": "official",
+          "source_url": "https://www.capeair.com/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "phone_home_market"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "Reservations 800-CAPE-AIR (800-227-3247); 508-771-6944 from outside the US & USVI.",
+          "status": "official",
+          "source_url": "https://www.capeair.com/flying_with_us/carryons.html",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "slug": "sata",
+  "official_website": "https://www.azoresairlines.pt",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "All cabin bags must be tagged at check-in; if the cabin fills up, bags go in the hold free of charge. Charter flights may differ.",
+      "required": [
+        "carryon_bag_dimensions",
+        "personal_item",
+        "carryon_weight"
+      ],
+      "fields": {
+        "carryon_bag_dimensions": {
+          "value": "One cabin bag up to 55x40x20 cm, wheels and handles included, in Economy, Comfort Light and Comfort Plus.",
+          "status": "official",
+          "source_url": "https://www.azoresairlines.pt/en/information/baggage/carry-on-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "personal_item": {
+          "value": "One personal item up to 40×30×15 cm (laptop bag, small handbag, pouch with electronics or one duty-free bag), counted within the total cabin weight.",
+          "status": "official",
+          "source_url": "https://www.azoresairlines.pt/en/information/baggage/carry-on-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "carryon_weight": {
+          "value": "Total cabin weight: 8 Kg (17 lbs) in Economy and Comfort Light, 15 Kg (33 lbs) in Comfort Plus (13 kg on SATA Air Açores connections).",
+          "status": "official",
+          "source_url": "https://www.azoresairlines.pt/en/information/baggage/carry-on-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "Allowance depends on your fare; on trips combining SATA Air Açores and Azores Airlines flights, Azores Airlines rules apply.",
+      "required": [
+        "allowance_azores_airlines",
+        "allowance_inter_island"
+      ],
+      "fields": {
+        "allowance_azores_airlines": {
+          "value": "Azores Airlines (S4) by fare: Economy Simple, no checked bag; Basic and Flex, 1 piece of 23 kg (50 lb); Top, 2 pieces totalling 46 kg (100 lb), max 23 kg each. Comfort Light, 2 pieces totalling 46 kg; Comfort Plus, 2 pieces totalling 64 kg (141 lb), max 32 kg (70 lb) each.",
+          "status": "official",
+          "source_url": "https://www.azoresairlines.pt/en/information/baggage/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "allowance_inter_island": {
+          "value": "SATA Air Açores inter-island routes, Economy Class: 23 kg (50 lb).",
+          "status": "official",
+          "source_url": "https://www.azoresairlines.pt/en/information/baggage/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "max_weight": {
+          "value": "Bags over 32 kg (70 lbs) normally travel only as cargo; in listed cases up to 45 kg (100 lbs) is accepted at check-in with fees.",
+          "status": "official",
+          "source_url": "https://www.azoresairlines.pt/en/information/baggage/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "conditions_of_carriage_url"
+      ],
+      "fields": {
+        "conditions_of_carriage_url": {
+          "value": "https://www.azoresairlines.pt/en/information/customer-commitment/general-conditions-of-carriage",
+          "status": "official",
+          "source_url": "https://www.azoresairlines.pt/en/information/customer-commitment/general-conditions-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

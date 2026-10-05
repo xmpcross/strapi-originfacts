@@ -1,0 +1,63 @@
+{
+  "slug": "rutaca-airlines",
+  "official_website": "https://www.flyrutaca.com",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "Hand baggage is weighed, measured and tagged at the check-in counter.",
+      "required": [
+        "carryon_allowance"
+      ],
+      "fields": {
+        "carryon_allowance": {
+          "value": "01 piece of hand baggage per passenger, maximum 08 Kg; dimensions 40 - 55 cm high, 20 cm deep and 40 cm wide, as stated by Rutaca.",
+          "status": "official",
+          "source_url": "https://www.flyrutaca.com/guia-del-viajero/articulos/politicas-de-equipaje",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "required": [
+        "size_weight",
+        "excess_fees"
+      ],
+      "fields": {
+        "size_weight": {
+          "value": "Checked bags: up to 158 cm linear (50 cm high, 80 cm long, 28 cm wide) and a maximum weight of 23 kg per bag.",
+          "status": "official",
+          "source_url": "https://www.flyrutaca.com/guia-del-viajero/articulos/politicas-de-equipaje",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "excess_fees": {
+          "value": "Excess baggage on domestic flights costs 1% of the fare for the route plus IVA; on international flights 8,00 USD per additional kilo plus taxes.",
+          "status": "official",
+          "source_url": "https://www.flyrutaca.com/guia-del-viajero/articulos/politicas-de-equipaje",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "phone_home_market"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "0500-RUTACA1 / 0500-7882221 (callcenter@flyrutaca.com)",
+          "status": "official",
+          "source_url": "https://www.flyrutaca.com/guia-del-viajero/articulos/politicas-de-equipaje",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

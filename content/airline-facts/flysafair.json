@@ -1,0 +1,87 @@
+{
+  "slug": "flysafair",
+  "official_website": "https://www.flysafair.co.za",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "Every FlySafair fare includes one free carry-on bag.",
+      "required": [
+        "carryon_bag_dimensions",
+        "carryon_weight",
+        "personal_item"
+      ],
+      "fields": {
+        "carryon_bag_dimensions": {
+          "value": "Carry-on dimensions should not exceed 56cm x 36cm x 23cm and it must fit in the cabin storage compartment.",
+          "status": "official",
+          "source_url": "https://www.flysafair.co.za/travel-tools/extras/luggage-policy",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "carryon_weight": {
+          "value": "Carry-on weight up to 7kg; on the Lite Fare, a carry-on over 7kg is charged an extra R375 at the airport.",
+          "status": "official",
+          "source_url": "https://www.flysafair.co.za/travel-tools/extras/luggage-policy",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "personal_item": {
+          "value": "One personal item, either a slimline laptop bag or a handbag (not both), up to 40cm x 15cm x 20cm, which must fit under the seat in front.",
+          "status": "official",
+          "source_url": "https://www.flysafair.co.za/travel-tools/extras/luggage-policy",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "Checked luggage is bought separately and is cheaper online.",
+      "required": [
+        "first_bag_fee",
+        "size_weight"
+      ],
+      "fields": {
+        "first_bag_fee": {
+          "value": "A 20kg checked bag costs R185 online (at booking or via Manage Booking) or R375 through the call centre or at the airport.",
+          "status": "official",
+          "source_url": "https://www.flysafair.co.za/travel-tools/extras/luggage-policy",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "extra_bag_fee": {
+          "value": "An extra 20kg suitcase costs R250 online or at the airport, only if you already have checked luggage on the booking.",
+          "status": "official",
+          "source_url": "https://www.flysafair.co.za/travel-tools/extras/luggage-policy",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "size_weight": {
+          "value": "Checked bags: max 20kg and 90 x 75 x 43 cm. Bags over 20kgs pay a fixed heavy luggage fee of R250 per piece at the airport; any bag over 32kg must go as cargo.",
+          "status": "official",
+          "source_url": "https://www.flysafair.co.za/travel-tools/extras/luggage-policy",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "required": [
+        "lite_fare"
+      ],
+      "fields": {
+        "lite_fare": {
+          "value": "FlySafair's basic Lite Fare includes one free carry-on bag up to 7kg and no checked-in luggage.",
+          "status": "official",
+          "source_url": "https://www.flysafair.co.za/travel-tools/extras/luggage-policy",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

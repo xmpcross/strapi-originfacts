@@ -1,74 +1,60 @@
 {
   "slug": "air-greenland",
-  "official_website": "http://airgreenland.com",
+  "official_website": "https://www.airgreenland.com",
   "modules": [
     {
       "id": "carryon",
       "title": "Carry-on",
+      "lede": "Air Greenland's cabin allowance depends on the class you fly.",
       "required": [
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_weight"
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "http://airgreenland.com/baggage",
-          "notes": "Air Greenland cabin baggage size limit: 55 x 40 x 20 cm.",
+          "value": "Maximum dimensions 55x40x23cm per item.",
+          "status": "official",
+          "source_url": "https://agent.airgreenland.com/hc/en-us/articles/115005305567-Baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "http://airgreenland.com/baggage",
-          "notes": "Air Greenland Economy Class carry-on weight limit.",
+        "carryon_weight": {
+          "value": "Economy: 1 item of cabin baggage up to 8 kg (18 lbs). Business: 2 items of cabin baggage weighing a total of 8 kg (18 lbs).",
+          "status": "official",
+          "source_url": "https://agent.airgreenland.com/hc/en-us/articles/115005305567-Baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
-        },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "http://airgreenland.com/baggage",
-          "notes": "Air Greenland Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "baggage",
       "title": "Checked baggage",
+      "lede": "Air Greenland uses a weight concept: you can bring any number of checked bags, but are charged at check-in if the total weight exceeds your allowance.",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "allowance_by_cabin"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "http://airgreenland.com/baggage",
-          "notes": "Air Greenland Economy Class checked baggage allowance.",
+        "allowance_by_cabin": {
+          "value": "Economy class: 20kg (44 lbs) of checked baggage. Business class: up to 30 kg (66 lbs).",
+          "status": "official",
+          "source_url": "https://agent.airgreenland.com/hc/en-us/articles/115005305567-Baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://airgreenland.com/baggage",
-          "notes": "Air Greenland Business Class checked baggage allowance.",
+        "infant_allowance": {
+          "value": "Children below the age of 2 are entitled to 10 kg (22 lbs) of baggage and a collapsible pushchair (umbrella type). Children over 2 have the same allowance as adults.",
+          "status": "official",
+          "source_url": "https://agent.airgreenland.com/hc/en-us/articles/115005305567-Baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://airgreenland.com/baggage",
-          "notes": "Air Greenland First Class checked baggage allowance.",
+        "excess_baggage": {
+          "value": "Excess baggage of 75 kg and up must be requested and paid in advance, so the airline can check it can travel on the same flights as the passenger.",
+          "status": "official",
+          "source_url": "https://agent.airgreenland.com/hc/en-us/articles/115005305567-Baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
       }
     },

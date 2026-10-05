@@ -5,35 +5,25 @@
     {
       "id": "carryon",
       "title": "Carry-on",
+      "lede": "Air Albania includes 8 kg of hand luggage (23x40x55 cm) in the ticket price.",
       "required": [
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_weight"
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "https://www.airalbania.com.al/baggage",
-          "notes": "Air Albania cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "Hand baggage up to 23 x 40 x 55 cm (length + width + depth no more than 118 cm), for child and adult passengers.",
+          "status": "official",
+          "source_url": "https://www.airalbania.com.al/luggage",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "https://www.airalbania.com.al/baggage",
-          "notes": "Air Albania Economy Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
-        },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "https://www.airalbania.com.al/baggage",
-          "notes": "Air Albania Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "carryon_weight": {
+          "value": "8 kg of hand luggage is included in the ticket price.",
+          "status": "official",
+          "source_url": "https://www.airalbania.com.al/luggage",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -41,51 +31,84 @@
       "id": "baggage",
       "title": "Checked baggage",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "size_weight"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "https://www.airalbania.com.al/baggage",
-          "notes": "Air Albania Economy Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "size_weight": {
+          "value": "On all flights a single piece of checked baggage can weigh up to 32 kg; heavier pieces are not accepted and must be split into 2. Maximum checked bag dimensions (length + width + depth) are 158 cm.",
+          "status": "official",
+          "source_url": "https://www.airalbania.com.al/luggage",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.airalbania.com.al/baggage",
-          "notes": "Air Albania Business Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "infant_allowance": {
+          "value": "Infants are entitled to a piece of baggage weighing 10 kg, plus 1 foldable stroller up to 115 cm carried as checked baggage. Children get the same allowance as adults.",
+          "status": "official",
+          "source_url": "https://www.airalbania.com.al/luggage",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.airalbania.com.al/baggage",
-          "notes": "Air Albania First Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "excess_baggage_fees": {
+          "value": "Baggage over the free allowance is charged as extra baggage: 10 EUR per kg for Italy and Turkey (last minute) destinations; EUR 6 per kg for United Kingdom and Germany destinations.",
+          "status": "official",
+          "source_url": "https://www.airalbania.com.al/luggage",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "lede": "Air Albania's General Conditions of Carriage set out what it does when it cancels or delays a flight.",
+      "required": [
+        "rebooking",
+        "refund"
+      ],
+      "fields": {
+        "rebooking": {
+          "value": "If Air Albania cancels or delays a flight, cannot provide confirmed space or makes you miss a connection, it will either carry you on another of its flights with space, or reroute you to your ticketed destination on its own or another carrier's service or by ground transport, with no additional fare charged.",
+          "status": "official",
+          "source_url": "https://www.airalbania.com.al/conditions-of-carriage",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        },
+        "refund": {
+          "value": "Alternatively it refunds the ticket: the full fare paid if no portion has been used; if part has been used, the higher of the one-way fare from the point of interruption or the difference between the fare paid and the fare for the transportation used.",
+          "status": "official",
+          "source_url": "https://www.airalbania.com.al/conditions-of-carriage",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        },
+        "complaints": {
+          "value": "Complaints about flight delays, cancellations, denied boarding or baggage go to customer.care@airalbania.com.al; a reply is sent by e-mail within 6 weeks.",
+          "status": "official",
+          "source_url": "https://www.airalbania.com.al/conditions-of-carriage",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
         "phone_home_market"
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+355 4 224 60 00",
-          "status": "pending",
-          "source_url": "https://www.airalbania.com.al/baggage",
-          "notes": "Air Albania official customer support line.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "+355 4 224 60 00 (24/7 booking and customer services)",
+          "status": "official",
+          "source_url": "https://www.airalbania.com.al/conditions-of-carriage",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://www.airalbania.com.al/conditions-of-carriage",
+          "status": "official",
+          "source_url": "https://www.airalbania.com.al/conditions-of-carriage",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         }
       }
     }

@@ -1,0 +1,39 @@
+{
+  "slug": "air-premia",
+  "official_website": "https://www.airpremia.com",
+  "modules": [
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "required": [
+        "max_weight",
+        "prepaid_excess",
+        "limits"
+      ],
+      "fields": {
+        "max_weight": {
+          "value": "For safety and operational reasons the maximum weight per piece is 32 kg (71 lbs); heavier baggage may be rejected.",
+          "status": "official",
+          "source_url": "https://www.airpremia.com/a/en/support/ssr/pre-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "prepaid_excess": {
+          "value": "Extra baggage can be bought online, in the app or through the reservation center up to 48 hours before departure; airport baggage rates apply on the day. Example given by Air Premia: departing from Korea to Northeast Asia, an extra piece up to 23 kg costs KRW 60,000 prepaid, and a 26 kg extra piece costs KRW 60,000 plus KRW 25,000 overweight = KRW 85,000.",
+          "status": "official",
+          "source_url": "https://www.airpremia.com/a/en/support/ssr/pre-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "limits": {
+          "value": "Excess baggage is limited to a maximum of 2 pieces per person. Economy Lite and Wide Premium fares cannot prepay overweight baggage, only additional pieces. Codeshare and partner-operated flights are not eligible.",
+          "status": "official",
+          "source_url": "https://www.airpremia.com/a/en/support/ssr/pre-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      },
+      "lede": "Check your free baggage allowance on your booking before buying extra baggage."
+    }
+  ]
+}

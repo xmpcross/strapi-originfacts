@@ -1,6 +1,6 @@
 {
   "slug": "titan-airways-limited",
-  "official_website": "http://www.titan-airways.com",
+  "official_website": "https://www.titan-airways.com",
   "modules": [
     {
       "id": "carryon",
@@ -74,9 +74,9 @@
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
-        "phone_home_market"
+        "conditions_of_carriage_url"
       ],
       "fields": {
         "phone_home_market": {
@@ -86,6 +86,13 @@
           "notes": "Titan Airways Limited official customer support line.",
           "verified_at": "2026-09-04",
           "verified_by": "automated_provenance"
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://www.titan-airways.com/passenger/conditions-of-carriage",
+          "status": "official",
+          "source_url": "https://www.titan-airways.com/passenger/conditions-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     }

@@ -1,0 +1,64 @@
+{
+  "slug": "salamair",
+  "official_website": "https://www.salamair.com",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "SalamAir's included hand baggage is one under-seat piece; a trolley bag for the cabin is a paid service.",
+      "required": [
+        "personal_item",
+        "carryon_weight",
+        "carryon_bag_dimensions"
+      ],
+      "fields": {
+        "personal_item": {
+          "value": "1 piece under the seat in front, not exceeding 25cm x 33cm x 20cm, such as a small laptop bag, small plastic bag or small ladies' bag.",
+          "status": "official",
+          "source_url": "https://www.salamair.com/en/plan/baggage-information",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "carryon_weight": {
+          "value": "The included hand baggage allowance is 5KGs.",
+          "status": "official",
+          "source_url": "https://www.salamair.com/en/plan/baggage-information",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "carryon_bag_dimensions": {
+          "value": "A cabin trolley bag needs the paid “Trolley Bag” service, which adds 10 kg for a trolley bag not exceeding 56cm x 45cm x 25cm.",
+          "status": "official",
+          "source_url": "https://www.salamair.com/en/plan/baggage-information",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "Checked baggage depends on the allowance you book.",
+      "required": [
+        "pieces_by_allowance",
+        "size_weight"
+      ],
+      "fields": {
+        "pieces_by_allowance": {
+          "value": "1 piece if your booked allowance is 10kg, 20kg or 30kg; 2 pieces if it is 40kg.",
+          "status": "official",
+          "source_url": "https://www.salamair.com/en/plan/baggage-information",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "size_weight": {
+          "value": "Each piece up to 32kgs and 160cm (W+D+L).",
+          "status": "official",
+          "source_url": "https://www.salamair.com/en/plan/baggage-information",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

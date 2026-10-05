@@ -1,0 +1,54 @@
+{
+  "slug": "tuifly-nordis",
+  "official_website": "https://www.tuiflynordic.se",
+  "modules": [
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "TUIfly Nordic sells checked baggage as a total weight allowance that includes your hand baggage.",
+      "required": [
+        "allowance_options",
+        "fee",
+        "premium_class"
+      ],
+      "fields": {
+        "allowance_options": {
+          "value": "You may check any number of bags per person up to a total of 20 kg or 25 kg, depending on the baggage option chosen, including your hand baggage (e.g. with 20 kg and 16 kg checked, hand baggage may weigh at most 4 kg). A bag shared by two travellers may not weigh more than 25 kg.",
+          "status": "official",
+          "source_url": "https://www.tuiflynordic.se/bagage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "fee": {
+          "value": "Checked baggage costs 200–500 SEK; the exact price for your trip is shown in your booking.",
+          "status": "official",
+          "source_url": "https://www.tuiflynordic.se/bagage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source",
+          "notes": "The page prints '200–500:-' (kronor)."
+        },
+        "premium_class": {
+          "value": "Premium Class: 30 kg allowed including hand baggage; no checked bag may weigh more than 25 kg.",
+          "status": "official",
+          "source_url": "https://www.tuiflynordic.se/bagage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "infants": {
+          "value": "Children under 2 may bring a total of 10 kg baggage, excluding a pushchair, which travels free.",
+          "status": "official",
+          "source_url": "https://www.tuiflynordic.se/bagage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "extra_weight": {
+          "value": "Extra baggage weight can be pre-booked and must be paid up to 4 days before departure; prices depend on distance.",
+          "status": "official",
+          "source_url": "https://www.tuiflynordic.se/bagage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

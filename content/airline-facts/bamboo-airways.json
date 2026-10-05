@@ -1,0 +1,46 @@
+{
+  "slug": "bamboo-airways",
+  "official_website": "https://www.bambooairways.com",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "All carry-on baggage must be weighed and tagged; untagged bags are not allowed on board, except for passengers who check in online.",
+      "required": [
+        "carryon_bag_dimensions",
+        "carryon_weight",
+        "personal_item"
+      ],
+      "fields": {
+        "carryon_bag_dimensions": {
+          "value": "Each main piece up to 115cm (56 x 36 x 23cm). Economy: 01 main piece; Business: 02 main pieces.",
+          "status": "official",
+          "source_url": "https://www.bambooairways.com/gl/en/travel-info/baggage-info/carry-on-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "carryon_weight": {
+          "value": "Economy: total maximum 07kg including the personal item. Business: total maximum 14kg, with each main piece up to 07kg.",
+          "status": "official",
+          "source_url": "https://www.bambooairways.com/gl/en/travel-info/baggage-info/carry-on-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "personal_item": {
+          "value": "01 small handbag or personal item (no tag needed), such as a handbag up to 30cm x 20cm x 10cm or a laptop bag up to 40cm x 30cm x 10cm, counted within the total weight.",
+          "status": "official",
+          "source_url": "https://www.bambooairways.com/gl/en/travel-info/baggage-info/carry-on-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "infants": {
+          "value": "Infants under 2 get no standard carry-on allowance but may bring a baby bag of up to 3 kg and a foldable stroller that fits in the overhead bin.",
+          "status": "official",
+          "source_url": "https://www.bambooairways.com/gl/en/travel-info/baggage-info/carry-on-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

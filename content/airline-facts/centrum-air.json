@@ -1,0 +1,22 @@
+{
+  "slug": "centrum-air",
+  "official_website": "https://www.centrum-air.com",
+  "modules": [
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "phone_home_market"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "Support service: +998 55 518 88 88",
+          "status": "official",
+          "source_url": "https://centrum-air.com/en/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

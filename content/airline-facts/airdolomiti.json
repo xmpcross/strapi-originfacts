@@ -1,0 +1,108 @@
+{
+  "slug": "airdolomiti",
+  "official_website": "https://www.airdolomiti.eu",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "required": [
+        "carryon_bag_dimensions",
+        "weight_economy",
+        "weight_business_first"
+      ],
+      "fields": {
+        "carryon_bag_dimensions": {
+          "value": "Hand baggage must not exceed 55 x 40 x 23 cm.",
+          "status": "official",
+          "source_url": "https://www.airdolomiti.de/online-check-in-anleitung",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "weight_economy": {
+          "value": "Economy Class fares: 1 piece of hand baggage up to 8 kg.",
+          "status": "official",
+          "source_url": "https://www.airdolomiti.de/online-check-in-anleitung",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "weight_business_first": {
+          "value": "Business Class fares: 2 pieces of hand baggage, each up to 8 kg.",
+          "status": "official",
+          "source_url": "https://www.airdolomiti.de/online-check-in-anleitung",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "required": [
+        "eu261"
+      ],
+      "fields": {
+        "eu261": {
+          "value": "For delays, cancellations, denied boarding and downgrading, Air Dolomiti applies the international, EC and national rules in force, in particular Regulation (EC) No. 261/2004.",
+          "status": "official",
+          "source_url": "https://www.airdolomiti.eu/legal-info/air-carrier-liability",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "written_information": {
+          "value": "If you are denied boarding, or your flight is cancelled or delayed by more than two hours, you can ask at the service desk or gate for written information about your rights, in particular compensation and assistance.",
+          "status": "official",
+          "source_url": "https://www.airdolomiti.de/online-check-in-anleitung",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "complaints": {
+          "value": "Complaints go through the forms on Air Dolomiti's website and the carrier has 30 (thirty) days to respond; for Regulation 261/2004 cases, an attempt at reconciliation (ConciliaWeb or another ADR body) is mandatory before going to court.",
+          "status": "official",
+          "source_url": "https://www.airdolomiti.eu/legal-info/air-carrier-liability",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "online_checkin",
+        "bag_drop"
+      ],
+      "fields": {
+        "online_checkin": {
+          "value": "Online check-in opens 30 hours before departure and is available for all flights operated by Air Dolomiti.",
+          "status": "official",
+          "source_url": "https://www.airdolomiti.de/online-check-in-anleitung",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "bag_drop": {
+          "value": "If you checked in online and have a checked bag, be at the baggage drop-off counter at least 40 minutes before departure; with hand baggage only, go straight to security with your boarding pass.",
+          "status": "official",
+          "source_url": "https://www.airdolomiti.de/online-check-in-anleitung",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "conditions_of_carriage_url"
+      ],
+      "fields": {
+        "conditions_of_carriage_url": {
+          "value": "https://www.airdolomiti.eu/legal-info/air-carrier-liability",
+          "status": "official",
+          "source_url": "https://www.airdolomiti.eu/legal-info/air-carrier-liability",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

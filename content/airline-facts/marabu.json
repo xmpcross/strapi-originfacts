@@ -1,0 +1,41 @@
+{
+  "slug": "marabu",
+  "official_website": "https://www.flymarabu.com",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "How much cabin baggage you can bring depends on your fare; excess is charged at check-in or, at a higher rate, at the gate.",
+      "required": [
+        "carryon_weight"
+      ],
+      "fields": {
+        "carryon_weight": {
+          "value": "A single piece of cabin baggage must not weigh more than 10 kg. Small personal items (handbag, laptop bag) go under the seat in front.",
+          "status": "official",
+          "source_url": "https://flymarabu.com/en/cabin-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source",
+          "notes": "The per-fare allowance table did not survive capture; only the per-piece weight limit is published here."
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "The allowance is the total weight of checked baggage per passenger and depends on your fare.",
+      "required": [
+        "size_weight"
+      ],
+      "fields": {
+        "size_weight": {
+          "value": "Each checked bag up to 158 cm (length + width + height) and never more than 32 kg, whatever allowance you booked. Strollers, buggies, baby beds and car seats (up to two per child) travel free.",
+          "status": "official",
+          "source_url": "https://flymarabu.com/en/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

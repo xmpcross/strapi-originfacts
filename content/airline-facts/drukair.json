@@ -1,0 +1,100 @@
+{
+  "slug": "drukair",
+  "official_website": "https://www.drukair.com.bt",
+  "modules": [
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "Excess baggage is charged at the rates in Drukair's regulations.",
+      "required": [
+        "allowance",
+        "max_piece"
+      ],
+      "fields": {
+        "allowance": {
+          "value": "Free checked allowance for adults and children aged 2 years and above: Business Class 40 Kgs, Economy Class 30 Kgs.",
+          "status": "official",
+          "source_url": "https://drukair.com.bt/terms-and-conditions/conditions-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "max_piece": {
+          "value": "No checked bag may exceed 32kg per piece, in any travel class.",
+          "status": "official",
+          "source_url": "https://drukair.com.bt/experience/before-you-fly/baggage-allowance",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "lede": "These are Drukair's own conditions of carriage; for weather disruptions, extra charges for rerouting on another carrier are not absorbed.",
+      "required": [
+        "rebooking_refund"
+      ],
+      "fields": {
+        "rebooking_refund": {
+          "value": "If Drukair cancels, delays or diverts a flight and cannot provide your confirmed seat, it will, considering your reasonable interests, either carry you on another of its flights with space, reroute you to your destination, refund the unused ticket, or provide one night's hotel accommodation and meals so you can travel on the next available flight. For a technical disruption delaying you more than 24 hours, no extra fare is charged for the rerouting.",
+          "status": "official",
+          "source_url": "https://drukair.com.bt/terms-and-conditions/conditions-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "lede": "Your e-boarding pass shows the airport reporting time for your flight.",
+      "required": [
+        "online_checkin"
+      ],
+      "fields": {
+        "online_checkin": {
+          "value": "Online and app check-in is open from 72hrs to 4 hrs before departure (not for bookings made within 24 hours of departure). You then collect your boarding pass and bag tags at the online check-in/bag-drop counter, arriving at least 1 hour and 30 minutes before departure.",
+          "status": "official",
+          "source_url": "https://drukair.com.bt/experience/before-you-fly/web-check-in",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "airport_cutoff": {
+          "value": null,
+          "status": "disputed",
+          "source_url": "https://drukair.com.bt/experience/before-you-fly/baggage-allowance",
+          "notes": "A travel advisory on Drukair's baggage and check-in pages says counters open 3 hours before departure and close strictly 1 hour prior; its conditions of carriage say counters normally close 30 minutes before departure.",
+          "conflicting_values": [
+            "Counters close strictly 1 hour before departure (travel advisory)",
+            "Counters normally close 30 minutes before departure (conditions of carriage)"
+          ]
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "phone_home_market",
+        "conditions_of_carriage_url"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "In Bhutan: call 1300",
+          "status": "official",
+          "source_url": "https://drukair.com.bt/experience/before-you-fly/baggage-allowance",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source",
+          "notes": "Given on Drukair's baggage page for reconfirming bookings, alongside reservation@drukair.com.bt."
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://drukair.com.bt/terms-and-conditions/conditions-of-carriage",
+          "status": "official",
+          "source_url": "https://drukair.com.bt/terms-and-conditions/conditions-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "slug": "canaryfly",
+  "official_website": "https://www.canaryfly.es",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "required": [
+        "carryon_bag_dimensions",
+        "carryon_weight",
+        "oversize"
+      ],
+      "fields": {
+        "carryon_bag_dimensions": {
+          "value": "One piece of cabin baggage, up to 45 x 35 x 25 cm.",
+          "status": "official",
+          "source_url": "https://www.canaryfly.es/en/legal-information/general-conditions",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "carryon_weight": {
+          "value": "Up to 8 kg (17.6 lbs).",
+          "status": "official",
+          "source_url": "https://www.canaryfly.es/en/legal-information/general-conditions",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "oversize": {
+          "value": "Hand luggage over the permitted weight or size is checked in and may incur an additional charge; if there is not enough space on board, some cabin bags may be placed in the hold at no cost.",
+          "status": "official",
+          "source_url": "https://www.canaryfly.es/en/frequently-asked-questions/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "required": [
+        "allowance"
+      ],
+      "fields": {
+        "allowance": {
+          "value": "Checked baggage can weigh up to 20 kg at no extra cost, with the option to buy additional weight.",
+          "status": "official",
+          "source_url": "https://www.canaryfly.es/en/frequently-asked-questions/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "required": [
+        "eu261"
+      ],
+      "fields": {
+        "eu261": {
+          "value": "For denied boarding, cancellation or a long delay, the assistance and compensation rights in Articles 7, 8 and 9 of Regulation (EC) No. 261/2004 apply, under the terms of that Regulation.",
+          "status": "official",
+          "source_url": "https://www.canaryfly.es/en/legal-information/general-conditions",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "gate_close"
+      ],
+      "fields": {
+        "gate_close": {
+          "value": "The closing time for all canaryfly services is 30 minutes.",
+          "status": "official",
+          "source_url": "https://www.canaryfly.es/en/legal-information/general-conditions",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "conditions_of_carriage_url"
+      ],
+      "fields": {
+        "conditions_of_carriage_url": {
+          "value": "https://www.canaryfly.es/en/legal-information/general-conditions",
+          "status": "official",
+          "source_url": "https://www.canaryfly.es/en/legal-information/general-conditions",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

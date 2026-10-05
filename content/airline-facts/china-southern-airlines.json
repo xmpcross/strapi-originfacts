@@ -1,41 +1,47 @@
 {
   "slug": "china-southern-airlines",
-  "official_website": "http://www.csair.com",
+  "official_website": "https://www.csair.com",
   "modules": [
     {
       "id": "carryon",
       "title": "Carry-on",
       "required": [
+        "carryon_allowance",
+        "carryon_weight",
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "personal_item"
       ],
       "fields": {
+        "carryon_allowance": {
+          "value": "Domestic and international/regional flights: First and Business Class 2pc, Premium Economy and Economy Class 1pc.",
+          "status": "official",
+          "source_url": "https://csair.com/sg/en/tourguide/luggage_service/carryon_luggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "carryon_weight": {
+          "value": "Maximum 8kg per piece.",
+          "status": "official",
+          "source_url": "https://csair.com/sg/en/tourguide/luggage_service/carryon_luggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "http://www.csair.com/baggage",
-          "notes": "China Southern Airlines cabin baggage size limit: 55 x 40 x 20 cm.",
+          "value": "Each piece must not exceed 55 * 40 * 20 cm (or 22 * 16 * 8 inches).",
+          "status": "official",
+          "source_url": "https://csair.com/sg/en/tourguide/luggage_service/carryon_luggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "http://www.csair.com/baggage",
-          "notes": "China Southern Airlines Economy Class carry-on weight limit.",
+        "personal_item": {
+          "value": "In addition, a small computer bag, camera bag, briefcase or handbag, placed under the seat in front (all passengers except infants not occupying a seat).",
+          "status": "official",
+          "source_url": "https://csair.com/sg/en/tourguide/luggage_service/carryon_luggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
-        },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "http://www.csair.com/baggage",
-          "notes": "China Southern Airlines Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
-      }
+      },
+      "lede": "Carry-on items over the weight, piece or size limits must be checked and are charged under excess baggage rules."
     },
     {
       "id": "baggage",

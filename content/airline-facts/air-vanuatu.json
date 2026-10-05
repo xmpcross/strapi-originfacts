@@ -1,91 +1,80 @@
 {
   "slug": "air-vanuatu",
-  "official_website": "http://www.airvanuatu.com",
+  "official_website": "https://www.airvanuatu.com",
   "modules": [
     {
       "id": "carryon",
       "title": "Carry-on",
+      "lede": "Air Vanuatu's conditions of carriage list a cabin baggage allowance for domestic flights only.",
       "required": [
-        "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_weight"
       ],
       "fields": {
-        "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "http://www.airvanuatu.com/baggage",
-          "notes": "Air Vanuatu cabin baggage size limit: 55 x 40 x 20 cm.",
+        "carryon_weight": {
+          "value": "Vanuatu domestic flights, Economy: 5kg of cabin baggage. No size limit is stated in the conditions of carriage.",
+          "status": "official",
+          "source_url": "https://www.airvanuatu.com/travel-info/conditions-of-carriage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
-        },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "http://www.airvanuatu.com/baggage",
-          "notes": "Air Vanuatu Economy Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
-        },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "http://www.airvanuatu.com/baggage",
-          "notes": "Air Vanuatu Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "baggage",
       "title": "Checked baggage",
+      "lede": "Air Vanuatu's conditions of carriage list a checked allowance for domestic flights only; baggage fees are non-refundable.",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "allowance_domestic"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "http://www.airvanuatu.com/baggage",
-          "notes": "Air Vanuatu Economy Class checked baggage allowance.",
+        "allowance_domestic": {
+          "value": "Vanuatu domestic flights: 10kg for an adult, 10kg for a child, no allowance (0) for an infant.",
+          "status": "official",
+          "source_url": "https://www.airvanuatu.com/travel-info/conditions-of-carriage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
-        },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.airvanuatu.com/baggage",
-          "notes": "Air Vanuatu Business Class checked baggage allowance.",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "lede": "Missing the check-in close-off time means you are denied boarding and must buy a new ticket.",
+      "required": [
+        "domestic_cutoff"
+      ],
+      "fields": {
+        "domestic_cutoff": {
+          "value": "Vanuatu domestic flights: check-in opens 2 Hours before departure and closes 45 Minutes before.",
+          "status": "official",
+          "source_url": "https://www.airvanuatu.com/travel-info/conditions-of-carriage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
-        },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.airvanuatu.com/baggage",
-          "notes": "Air Vanuatu First Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
-        "phone_home_market"
+        "phone_home_market",
+        "conditions_of_carriage_url"
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "http://www.airvanuatu.com/baggage",
-          "notes": "Air Vanuatu official customer support line.",
+          "value": "+678 20200",
+          "status": "official",
+          "source_url": "https://www.airvanuatu.com/travel-info/conditions-of-carriage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source",
+          "notes": "Given as Air Vanuatu's phone number in Vanuatu in its conditions of carriage."
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://www.airvanuatu.com/travel-info/conditions-of-carriage",
+          "status": "official",
+          "source_url": "https://www.airvanuatu.com/travel-info/conditions-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     }

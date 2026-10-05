@@ -1,0 +1,61 @@
+{
+  "slug": "condor",
+  "official_website": "https://www.condor.com",
+  "modules": [
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "Condor's free allowance depends on the route type and the fare; the rules apply in both directions.",
+      "required": [
+        "allowance_short_medium",
+        "allowance_usa_canada",
+        "allowance_long_haul_other",
+        "size_weight"
+      ],
+      "fields": {
+        "allowance_short_medium": {
+          "value": "Short and medium-haul (within Germany and to/from Europe, Egypt, Israel, Morocco, Turkey and others listed): Economy Light and Economy Zero not included; Economy Classic, Green and Flex 20 kg (44.0 lb); Business Class 30 kg (66.1 lb).",
+          "status": "official",
+          "source_url": "https://www.condor.com/en-gb/information-services/baggage/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "allowance_usa_canada": {
+          "value": "To and from Canada or the USA: Economy Zero not included; Economy Classic, Green and Flex 1 x 23 kg (50.7 lb); Premium Class 1 x 32 kg (70.5 lb); Business Class 2 x 32 kg (70.5 lb).",
+          "status": "official",
+          "source_url": "https://www.condor.com/en-gb/information-services/baggage/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "allowance_long_haul_other": {
+          "value": "Other long-haul routes (e.g. Caribbean, Mexico, Thailand, South Africa, Tanzania, Kenya, Maldives, Mauritius): Economy Zero not included; Economy Classic, Green and Flex 20 kg (44.0 lb); Premium Class 25 kg (55.1 lb); Business Class 30 kg (66.1 lb).",
+          "status": "official",
+          "source_url": "https://www.condor.com/en-gb/information-services/baggage/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "size_weight": {
+          "value": "Max. 158 cm (62.2 in) (length + width + height) per piece, and no piece may weigh more than 32 kg (70.5 lb).",
+          "status": "official",
+          "source_url": "https://www.condor.com/en-gb/information-services/baggage/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "from_may_2027": {
+          "value": "From 1 May 2027, standard allowances apply on all Condor flights: Economy 1 × 23 kg (50.7 lb), Premium Economy 1 × 32 kg (70.5 lb), Business 2 × 32 kg (70.5 lb).",
+          "status": "official",
+          "source_url": "https://www.condor.com/en-gb/information-services/baggage/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "extra_bag": {
+          "value": "Extra baggage of + 5 kg (+11.0 lb) starts from £20.00 and can be booked up to 8 hours before departure.",
+          "status": "official",
+          "source_url": "https://www.condor.com/en-gb/information-services/baggage/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

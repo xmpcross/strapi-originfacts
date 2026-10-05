@@ -1,91 +1,71 @@
 {
   "slug": "air-burkina",
-  "official_website": "http://www.air-burkina.com",
+  "official_website": "https://www.air-burkina.com",
   "modules": [
     {
       "id": "carryon",
       "title": "Carry-on",
+      "lede": "Any cabin bag over one of these limits must be checked into the hold, and extra charges may then apply.",
       "required": [
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_weight"
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "http://www.air-burkina.com/baggage",
-          "notes": "Air Burkina cabin baggage size limit: 55 x 40 x 20 cm.",
+          "value": "One cabin bag only, up to 56 cm long and 25 cm wide, wheels and handles included, across the Air Burkina network.",
+          "status": "official",
+          "source_url": "https://air-burkina.com/preparer-son-voyage/bagages/franchise-bagages",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source",
+          "notes": "Page (French) gives length and width only; no height or personal-item allowance stated."
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "http://www.air-burkina.com/baggage",
-          "notes": "Air Burkina Economy Class carry-on weight limit.",
+        "carryon_weight": {
+          "value": "The cabin bag must not exceed 10 kg.",
+          "status": "official",
+          "source_url": "https://air-burkina.com/preparer-son-voyage/bagages/franchise-bagages",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
-        },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "http://www.air-burkina.com/baggage",
-          "notes": "Air Burkina Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "baggage",
       "title": "Checked baggage",
+      "lede": "Excess baggage is paid at an Air Burkina agency or airport counter; the rate depends on your destination.",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "allowance_network",
+        "allowance_selected_routes"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "http://www.air-burkina.com/baggage",
-          "notes": "Air Burkina Economy Class checked baggage allowance.",
+        "allowance_network": {
+          "value": "Across the Air Burkina network: 30 kg in Economy Class, 40 kg in Business Class, 10 kg for an infant.",
+          "status": "official",
+          "source_url": "https://air-burkina.com/preparer-son-voyage/bagages/franchise-bagages",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.air-burkina.com/baggage",
-          "notes": "Air Burkina Business Class checked baggage allowance.",
+        "allowance_selected_routes": {
+          "value": "Between Ouagadougou and Abidjan, Abidjan and Niamey, and Dakar and Niamey: 40 kg in Economy Class, 50 kg in Business Class.",
+          "status": "official",
+          "source_url": "https://air-burkina.com/preparer-son-voyage/bagages/franchise-bagages",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
-        },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.air-burkina.com/baggage",
-          "notes": "Air Burkina First Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
-        "phone_home_market"
+        "conditions_of_carriage_url"
       ],
       "fields": {
-        "phone_home_market": {
-          "value": "+226 50 49 23 23",
-          "status": "pending",
-          "source_url": "http://www.air-burkina.com/baggage",
-          "notes": "Air Burkina official customer support line.",
+        "conditions_of_carriage_url": {
+          "value": "https://air-burkina.com/en/general-conditions-of-carriage",
+          "status": "official",
+          "source_url": "https://air-burkina.com/en/general-conditions-of-carriage#:~:text=The%20passenger%20is%20required%20to,departure%20formalities%20to%20be%20completed.",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
       }
     }

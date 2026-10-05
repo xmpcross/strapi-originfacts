@@ -5,35 +5,37 @@
     {
       "id": "carryon",
       "title": "Carry-on",
+      "lede": "Baggage over the carry-on limits is not accepted in the cabin.",
       "required": [
-        "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_weight"
       ],
       "fields": {
+        "carryon_weight": {
+          "value": "Economy: 1 piece of hand luggage up to 7 kg. Business: 2 pieces, each up to 7 kg.",
+          "status": "official",
+          "source_url": "https://www.ethiopianairlines.com/information/baggage-information/carry-on-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "https://www.ethiopianairlines.com/baggage",
-          "notes": "Ethiopian Airlines cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": null,
+          "status": "disputed",
+          "source_url": "https://www.ethiopianairlines.com/information/baggage-information/carry-on-baggage",
+          "notes": "Ethiopian's carry-on page gives 23 x 40 x 55 (cm); the FAQ on its free-baggage-allowance page (Gabon edition) gives 55cmx40cmx20cm.",
+          "conflicting_values": [
+            "23 x 40 x 55 (cm) (carry-on baggage page)",
+            "55cmx40cmx20cm (free baggage allowance page FAQ)"
+          ]
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "https://www.ethiopianairlines.com/baggage",
-          "notes": "Ethiopian Airlines Economy Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
-        },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "https://www.ethiopianairlines.com/baggage",
-          "notes": "Ethiopian Airlines Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "personal_item": {
+          "value": null,
+          "status": "disputed",
+          "source_url": "https://www.ethiopianairlines.com/information/baggage-information/carry-on-baggage",
+          "notes": "The carry-on page allows personal items up to 5Kg in addition to the carry-on; the free-baggage-allowance page FAQ caps laptop, books, purse and phone at 3kg.",
+          "conflicting_values": [
+            "Personal items up to 5Kg (carry-on baggage page)",
+            "Up to 3kg (free baggage allowance page FAQ)"
+          ]
         }
       }
     },

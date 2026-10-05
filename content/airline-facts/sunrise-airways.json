@@ -1,74 +1,105 @@
 {
   "slug": "sunrise-airways",
-  "official_website": "http://www.sunriseairways.net",
+  "official_website": "https://www.sunriseairways.net",
   "modules": [
     {
       "id": "carryon",
       "title": "Carry-on",
+      "lede": "Carry-ons must fit in the overhead compartment or under the seat in front of you.",
       "required": [
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "weight_international",
+        "domestic_rule"
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "http://www.sunriseairways.net/baggage",
-          "notes": "Sunrise Airways cabin baggage size limit: 55 x 40 x 20 cm.",
+          "value": "Carry-on size limit: H 22 in x W 14 in x L 9 in. Oversized carry-ons are checked at the gate for a fee.",
+          "status": "official",
+          "source_url": "https://www.sunriseairways.net/kre/carry-on-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "http://www.sunriseairways.net/baggage",
-          "notes": "Sunrise Airways Economy Class carry-on weight limit.",
+        "weight_international": {
+          "value": "International flights: one cabin bag and one personal item per passenger; the cabin bag may weigh up to 5kg on itineraries with connecting flights and 10kg on direct flights. It is included at no extra fee.",
+          "status": "official",
+          "source_url": "https://www.sunriseairways.net/kre/carry-on-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "http://www.sunriseairways.net/baggage",
-          "notes": "Sunrise Airways Premium / Business Class carry-on weight limit.",
+        "domestic_rule": {
+          "value": "Domestic flights: only personal items are allowed in the cabin; carry-on bags are collected at boarding and stowed in the hold without charge.",
+          "status": "official",
+          "source_url": "https://www.sunriseairways.net/kre/carry-on-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "cuba": {
+          "value": "Cuba: 1 carry-on up to 5kg and 1 personal item; an additional carry-on up to 5kg can be bought for $80 USD.",
+          "status": "official",
+          "source_url": "https://www.sunriseairways.net/kre/carry-on-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "personal_item": {
+          "value": "A personal item (purse, laptop bag, backpack or camera case) must fit under the seat; the page gives its maximum size as normally 22cm x 25cm x 43cm (9in x 10in x 17in).",
+          "status": "official",
+          "source_url": "https://www.sunriseairways.net/kre/carry-on-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "baggage",
       "title": "Checked baggage",
+      "lede": "Some Sunrise fares include a free checked bag; others pay per bag, cheaper online than at the call centre or airport.",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "size_weight",
+        "fees_haiti_domestic",
+        "fees_international_haiti"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "http://www.sunriseairways.net/baggage",
-          "notes": "Sunrise Airways Economy Class checked baggage allowance.",
+        "size_weight": {
+          "value": "Max 62 inches (length + width + height). Weight limit per piece: 15kg on domestic flights and 23kg on international flights; 23kg is also allowed between Cap-Haïtien and Port-au-Prince.",
+          "status": "official",
+          "source_url": "https://www.sunriseairways.net/kre/checked-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.sunriseairways.net/baggage",
-          "notes": "Sunrise Airways Business Class checked baggage allowance.",
+        "fees_haiti_domestic": {
+          "value": "Domestic Haiti: Sun Promo K / Sun Plus V pay $40 online ($50 call center/airport) for the 1st bag; Sun Max N / Sun Risa B / Sun Flex Y get the 1st bag free. 2nd bag $75 online ($85 call center/airport).",
+          "status": "official",
+          "source_url": "https://www.sunriseairways.net/kre/checked-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.sunriseairways.net/baggage",
-          "notes": "Sunrise Airways First Class checked baggage allowance.",
+        "fees_international_haiti": {
+          "value": "International to and from Haiti: Sun Promo K / Sun Plus V pay $65 online ($75 call center/airport) for the 1st bag; Sun Max N / Sun Risa B / Sun Flex Y get it free. 2nd bag $105 online ($115 call center/airport).",
+          "status": "official",
+          "source_url": "https://www.sunriseairways.net/kre/checked-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "fees_eastern_caribbean": {
+          "value": "Eastern Caribbean: Sun Promo K / Sun Plus V pay $30 online ($40 call center/airport) for the 1st bag; Sun Max N / Sun Risa B / Sun Flex Y get it free. 2nd bag $50 online ($60 call center/airport).",
+          "status": "official",
+          "source_url": "https://www.sunriseairways.net/kre/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "cuba": {
+          "value": "All fares to Cuba include 30kg of checked baggage in 2 pieces; each piece over 23kg costs a $100 overweight fee.",
+          "status": "official",
+          "source_url": "https://www.sunriseairways.net/kre/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "overweight": {
+          "value": "Overweight fee (all fares): $40 for the 1st bag, $65 for the 2nd, $115 for the 3rd - 4th. Baggage fees are non-refundable unless the booking is cancelled within 24 hours of purchase or the bag is damaged or delayed.",
+          "status": "official",
+          "source_url": "https://www.sunriseairways.net/kre/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     },

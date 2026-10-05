@@ -1,0 +1,54 @@
+{
+  "slug": "french-bee",
+  "official_website": "https://www.frenchbee.com",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "required": [
+        "carryon_weight"
+      ],
+      "fields": {
+        "carryon_weight": {
+          "value": "A 26 lb (12 kg) carry-on bag is included in all fares. The captured page gives no cabin-bag dimensions.",
+          "status": "official",
+          "source_url": "https://ca.frenchbee.com/en/services-fares/our-services/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "A checked bag can be added when booking or up to 48 hours before departure; after that the price goes up, and it is non-refundable.",
+      "required": [
+        "included_fares",
+        "size_weight"
+      ],
+      "fields": {
+        "included_fares": {
+          "value": "A 50 lbs/23kg checked bag is included in the Bee Smart, Premium Smart and Premium Flex fares; on other fares it can be added for a fee.",
+          "status": "official",
+          "source_url": "https://ca.frenchbee.com/en/services-fares/our-services/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "size_weight": {
+          "value": "Each checked bag up to 23kg (50lbs), with no combining of weight across bags, and up to 158 cm in height + width + length.",
+          "status": "official",
+          "source_url": "https://ca.frenchbee.com/en/services-fares/our-services/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "max_weight": {
+          "value": "The maximum weight of any bag accepted is 32kg, subject to an excess baggage fee.",
+          "status": "official",
+          "source_url": "https://ca.frenchbee.com/en/organize-my-trip/at-the-airport/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

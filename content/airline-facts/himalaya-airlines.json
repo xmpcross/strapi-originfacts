@@ -1,0 +1,37 @@
+{
+  "slug": "himalaya-airlines",
+  "official_website": "https://www.himalaya-airlines.com",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "required": [
+        "carryon_bag_dimensions",
+        "carryon_weight"
+      ],
+      "fields": {
+        "carryon_bag_dimensions": {
+          "value": "Cabin bag up to 114cm (51+40+23 cm) or 45in (20+16+9 in) in total.",
+          "status": "official",
+          "source_url": "https://www.himalaya-airlines.com/services/baggage-information/747-hand-baggage",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        },
+        "carryon_weight": {
+          "value": "Only one piece (1pc) of cabin baggage, not exceeding seven (7) kgs.",
+          "status": "official",
+          "source_url": "https://www.himalaya-airlines.com/services/baggage-information/747-hand-baggage",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        },
+        "personal_item": {
+          "value": "In addition, passengers may carry personal items such as a portable PC, a small-sized purse, a mobile phone, an overcoat or thin blanket, a small camera or binoculars and reading matter.",
+          "status": "official",
+          "source_url": "https://www.himalaya-airlines.com/services/baggage-information/747-hand-baggage",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

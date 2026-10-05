@@ -1,0 +1,23 @@
+{
+  "slug": "armenian-airlines",
+  "official_website": "https://www.armenianairlines.am",
+  "modules": [
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "required": [
+        "max_piece_weight"
+      ],
+      "fields": {
+        "max_piece_weight": {
+          "value": "One piece of checked baggage must not exceed 50 kilograms (wheelchairs for passengers with disabilities excepted); heavier items go as cargo. Airports on international routes may impose other limits.",
+          "status": "official",
+          "source_url": "https://armenianairlines.am/en/baggage/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source",
+          "notes": "The free allowance itself is on a separate page that was not captured."
+        }
+      }
+    }
+  ]
+}

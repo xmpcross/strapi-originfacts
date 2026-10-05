@@ -40,52 +40,57 @@
     {
       "id": "baggage",
       "title": "Checked baggage",
+      "lede": "Air Tanzania's free checked allowance depends on the route and cabin.",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "allowance_domestic",
+        "allowance_africa",
+        "allowance_intercontinental"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "https://www.airtanzania.co.tz/baggage",
-          "notes": "Air Tanzania Economy Class checked baggage allowance.",
+        "allowance_domestic": {
+          "value": "Domestic routes: Economy 1 free bag of 23 KG; Business 1 free bag of 30KG.",
+          "status": "official",
+          "source_url": "https://airtanzania.co.tz/baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.airtanzania.co.tz/baggage",
-          "notes": "Air Tanzania Business Class checked baggage allowance.",
+        "allowance_africa": {
+          "value": "International within Africa: 2PC @ 23 KG in both Economy and Business. To/from the Comoro Islands: 2PC @ 15 KG in both cabins.",
+          "status": "official",
+          "source_url": "https://airtanzania.co.tz/baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.airtanzania.co.tz/baggage",
-          "notes": "Air Tanzania First Class checked baggage allowance.",
+        "allowance_intercontinental": {
+          "value": "Between Africa and other continents: Economy 2PC @ 23 KG; Business 3PC @ 23 KG.",
+          "status": "official",
+          "source_url": "https://airtanzania.co.tz/baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "excess_fees": {
+          "value": "Excess weight is charged per kilogram: USD 15.00 between Africa and Asia, USD 8.00 within Africa, and TZS 8,000 within Tanzania.",
+          "status": "official",
+          "source_url": "https://airtanzania.co.tz/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
         "phone_home_market"
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "https://www.airtanzania.co.tz/baggage",
-          "notes": "Air Tanzania official customer support line.",
+          "value": "+255 748 773 900 (ATC House, Dar es Salaam)",
+          "status": "official",
+          "source_url": "https://airtanzania.co.tz/baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source",
+          "notes": "Listed in the footer of Air Tanzania's baggage page."
         }
       }
     }

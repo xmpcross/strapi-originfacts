@@ -1,6 +1,6 @@
 {
   "slug": "ariana-afghan-airlines",
-  "official_website": "http://www.flyariana.com",
+  "official_website": "https://www.flyariana.com",
   "modules": [
     {
       "id": "carryon",
@@ -74,18 +74,18 @@
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
         "phone_home_market"
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "http://www.flyariana.com/baggage",
-          "notes": "Ariana Afghan Airlines official customer support line.",
+          "value": "Ariana Reservations: +93-75-2040913",
+          "status": "official",
+          "source_url": "https://www.flyariana.com/FooterLinks/Legal",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source",
+          "notes": "Given on Ariana's website legal-notices page for payment and AirMiles ticket queries. That page is the website terms of use, not the conditions of carriage."
         }
       }
     }

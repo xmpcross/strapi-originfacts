@@ -7,33 +7,30 @@
       "title": "Carry-on",
       "required": [
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_weight",
+        "personal_item"
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "https://www.airmoldova.md/baggage",
-          "notes": "Air Moldova cabin baggage size limit: 55 x 40 x 20 cm.",
+          "value": "Maximum dimensions for cabin baggage are 115 cm (50x40x25cm).",
+          "status": "official",
+          "source_url": "https://www.airmoldova.md/terms-of-carriage-en/",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "https://www.airmoldova.md/baggage",
-          "notes": "Air Moldova Economy Class carry-on weight limit.",
+        "carryon_weight": {
+          "value": "Economy class: one piece of up to 8 kg. Business class: two pieces, the first up to 8 kg and the second up to 4 kg.",
+          "status": "official",
+          "source_url": "https://www.airmoldova.md/terms-of-carriage-en/",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "https://www.airmoldova.md/baggage",
-          "notes": "Air Moldova Premium / Business Class carry-on weight limit.",
+        "personal_item": {
+          "value": "All passengers may also carry 1 personal item free of charge.",
+          "status": "official",
+          "source_url": "https://www.airmoldova.md/terms-of-carriage-en/",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -41,42 +38,71 @@
       "id": "baggage",
       "title": "Checked baggage",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "size_weight",
+        "max_piece"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "https://www.airmoldova.md/baggage",
-          "notes": "Air Moldova Economy Class checked baggage allowance.",
+        "size_weight": {
+          "value": "Standard baggage weight is 23 kg; summary dimensions are 158 cm.",
+          "status": "official",
+          "source_url": "https://www.airmoldova.md/terms-of-carriage-en/",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.airmoldova.md/baggage",
-          "notes": "Air Moldova Business Class checked baggage allowance.",
+        "max_piece": {
+          "value": "No article is accepted as baggage if it weighs more than 32 kg or measures more than 203 cm (length plus width plus height); heavier baggage must be repacked or sent as cargo.",
+          "status": "official",
+          "source_url": "https://www.airmoldova.md/terms-of-carriage-en/",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "required": [
+        "care"
+      ],
+      "fields": {
+        "care": {
+          "value": "Under the EU Regulation, when a flight is delayed beyond its scheduled departure by 2 hours (flights up to 1.500 km) or 3 hours (flights between 1.500 km and 3.500 km), passengers are entitled to care: meals and refreshments in reasonable relation to the wait, hotel accommodation with transfers if necessary, and two brief telephone calls, faxes or e-mails.",
+          "status": "official",
+          "source_url": "https://www.airmoldova.md/terms-of-carriage-en/",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "airport_cutoff",
+        "gate_close"
+      ],
+      "fields": {
+        "airport_cutoff": {
+          "value": "On all Air Moldova flights check-in opens 3 hours before departure and closes strictly 60 minutes before scheduled departure.",
+          "status": "official",
+          "source_url": "https://www.airmoldova.md/terms-of-carriage-en/",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.airmoldova.md/baggage",
-          "notes": "Air Moldova First Class checked baggage allowance.",
+        "gate_close": {
+          "value": "The gate closes 25 minutes prior to departure (30 minutes at Frankfurt airport).",
+          "status": "official",
+          "source_url": "https://www.airmoldova.md/terms-of-carriage-en/",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
-        "phone_home_market"
+        "conditions_of_carriage_url"
       ],
       "fields": {
         "phone_home_market": {
@@ -86,6 +112,13 @@
           "notes": "Air Moldova official customer support line.",
           "verified_at": "2026-09-04",
           "verified_by": "automated_provenance"
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://www.airmoldova.md/terms-of-carriage-en/",
+          "status": "official",
+          "source_url": "https://www.airmoldova.md/terms-of-carriage-en/",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     }

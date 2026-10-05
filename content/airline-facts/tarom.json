@@ -1,0 +1,45 @@
+{
+  "slug": "tarom",
+  "official_website": "https://www.tarom.ro",
+  "modules": [
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "The LIGHT fare does not include checked baggage in the ticket price.",
+      "required": [
+        "allowance",
+        "size_weight"
+      ],
+      "fields": {
+        "allowance": {
+          "value": "General rules, passengers occupying a seat: Business, max 2 standard pieces (max 32kg each); Economy, max 1 standard piece (max 23kg). LIGHT fares include no checked baggage.",
+          "status": "official",
+          "source_url": "https://www.tarom.ro/en/passenger-information/baggage/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "size_weight": {
+          "value": "Each piece is weighed individually and may measure at most 158 cm (height + length + width).",
+          "status": "official",
+          "source_url": "https://www.tarom.ro/en/passenger-information/baggage/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "infant": {
+          "value": "Infants not occupying a seat: 1 piece (max 10kg, max 115cm) plus one collapsible stroller, in both classes.",
+          "status": "official",
+          "source_url": "https://www.tarom.ro/en/passenger-information/baggage/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "skyteam_elite": {
+          "value": "SkyTeam Elite Plus/Elite members: + 1 standard piece (max 32kg in Business, max 23kg in Economy).",
+          "status": "official",
+          "source_url": "https://www.tarom.ro/en/passenger-information/baggage/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

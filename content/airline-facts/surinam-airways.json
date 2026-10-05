@@ -1,6 +1,6 @@
 {
   "slug": "surinam-airways",
-  "official_website": "http://www.flyslm.com",
+  "official_website": "https://www.flyslm.com",
   "modules": [
     {
       "id": "carryon",
@@ -74,18 +74,17 @@
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
         "phone_home_market"
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "http://www.flyslm.com/baggage",
-          "notes": "Surinam Airways official customer support line.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "Call Center: (597) 465700; after the language menu, select option 3.",
+          "status": "official",
+          "source_url": "https://www.flyslm.com/home",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     }

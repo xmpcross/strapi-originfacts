@@ -5,70 +5,97 @@
     {
       "id": "carryon",
       "title": "Carry-on",
+      "lede": "IBEX flies small aircraft, so a bag within the cabin limits may still be taken at the gate and carried in the hold.",
       "required": [
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_weight",
+        "personal_item"
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "https://www.ibexair.co.jp/baggage",
-          "notes": "Ibex Airlines cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "1 carry-on bag, total of three sides within 100cm (45cm x 35cm x 20cm), including handles and wheels. Applies to travel on or after 19 May 2026.",
+          "status": "official",
+          "source_url": "https://www.ibexair.co.jp/flight/checkin/baggage.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Translated from IBEX's Japanese baggage page; rules for travel on or after 19 May 2026 (the page keeps separate, older rules for travel up to 18 May 2026)."
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "https://www.ibexair.co.jp/baggage",
-          "notes": "Ibex Airlines Economy Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "carryon_weight": {
+          "value": "Personal item and carry-on bag together must weigh 10kg or less.",
+          "status": "official",
+          "source_url": "https://www.ibexair.co.jp/flight/checkin/baggage.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Translated from IBEX's Japanese baggage page; rules for travel on or after 19 May 2026 (the page keeps separate, older rules for travel up to 18 May 2026)."
         },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "https://www.ibexair.co.jp/baggage",
-          "notes": "Ibex Airlines Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "personal_item": {
+          "value": "A personal item is allowed in addition to the carry-on bag, within the combined 10kg limit.",
+          "status": "official",
+          "source_url": "https://www.ibexair.co.jp/flight/checkin/baggage.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Translated from IBEX's Japanese baggage page; rules for travel on or after 19 May 2026 (the page keeps separate, older rules for travel up to 18 May 2026)."
         }
       }
     },
     {
       "id": "baggage",
       "title": "Checked baggage",
+      "lede": "Rules for travel on or after 19 May 2026.",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "free_allowance",
+        "size_weight"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "https://www.ibexair.co.jp/baggage",
-          "notes": "Ibex Airlines Economy Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "free_allowance": {
+          "value": "Up to 2 bags free, each up to 23kg. More bags can be checked for an excess baggage charge, up to 20 per person.",
+          "status": "official",
+          "source_url": "https://www.ibexair.co.jp/flight/checkin/baggage.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Translated from IBEX's Japanese baggage page; rules for travel on or after 19 May 2026 (the page keeps separate, older rules for travel up to 18 May 2026)."
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.ibexair.co.jp/baggage",
-          "notes": "Ibex Airlines Business Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "size_weight": {
+          "value": "Free bags: total of three sides within 158cm (and within 75cm high and 105cm wide). For an excess charge, bags up to 45kg each, 100kg in total and 292cm total dimensions can be accepted; bags over 292cm or over 45kg each are not accepted.",
+          "status": "official",
+          "source_url": "https://www.ibexair.co.jp/flight/checkin/baggage.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Translated from IBEX's Japanese baggage page; rules for travel on or after 19 May 2026 (the page keeps separate, older rules for travel up to 18 May 2026)."
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.ibexair.co.jp/baggage",
-          "notes": "Ibex Airlines First Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "free_items": {
+          "value": "Mobility and medical aids used by the passenger, folding strollers, portable cribs and child seats are checked free of charge.",
+          "status": "official",
+          "source_url": "https://www.ibexair.co.jp/flight/checkin/baggage.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Translated from IBEX's Japanese baggage page; rules for travel on or after 19 May 2026 (the page keeps separate, older rules for travel up to 18 May 2026)."
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "online_checkin",
+        "bag_drop_cutoff"
+      ],
+      "fields": {
+        "online_checkin": {
+          "value": "Online check-in is available from 24 hours until 20 minutes before departure.",
+          "status": "official",
+          "source_url": "https://www.ibexair.co.jp/flight/checkin/baggage.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Translated from Japanese."
+        },
+        "bag_drop_cutoff": {
+          "value": "Check your bags at least 20 minutes before departure; after that you may not be able to board.",
+          "status": "official",
+          "source_url": "https://www.ibexair.co.jp/flight/checkin/baggage.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Translated from Japanese."
         }
       }
     },

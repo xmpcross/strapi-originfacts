@@ -73,6 +73,40 @@
       }
     },
     {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "lede": "Bags are checked at ANA BAGGAGE DROP machines or ANA baggage counters, not at Solaseed Air's own airport counters.",
+      "required": [
+        "online_checkin",
+        "haneda_bag_cutoff",
+        "gate_close"
+      ],
+      "fields": {
+        "online_checkin": {
+          "value": "Online check-in is available from 24 hours to 20 minutes before departure.",
+          "status": "official",
+          "source_url": "https://www.solaseedair.jp/service/checkin/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "haneda_bag_cutoff": {
+          "value": "From September 2026, on domestic flights departing Haneda Airport, baggage acceptance ends 30 minutes before departure.",
+          "status": "official",
+          "source_url": "https://www.solaseedair.jp/service/checkin/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Japanese-language page; translated. For other airports the page gives 30 minutes only as a guide, so it is not stated here."
+        },
+        "gate_close": {
+          "value": "Be at the boarding gate by 10 minutes before departure; after that you will, in principle, not be able to board.",
+          "status": "official",
+          "source_url": "https://www.solaseedair.jp/service/checkin/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
       "id": "contact",
       "title": "Contact and customer support",
       "required": [

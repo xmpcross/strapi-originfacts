@@ -60,6 +60,31 @@
       "lede": "Fees vary by the region you fly from; RwandAir publishes separate tables for East, Southern, Central and West Africa, the Middle East, Europe and Asia."
     },
     {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "lede": "RwandAir's conditions of carriage set out what it does when it cancels or delays a flight due to circumstances beyond its control.",
+      "required": [
+        "rebooking",
+        "refund"
+      ],
+      "fields": {
+        "rebooking": {
+          "value": "If RwandAir cancels or delays a flight due to circumstances beyond its control, cannot provide confirmed space, or causes you to miss a reserved connection, it will either carry you on another of its scheduled services with space available, or reroute you to your ticketed destination on its own services, another carrier's services or surface transport, at no additional fare or charge; or refund you.",
+          "status": "official",
+          "source_url": "https://www.rwandair.com/our-policies/terms-conditions-of-carriage/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "refund": {
+          "value": "Involuntary refund (RwandAir cancels, fails to operate reasonably to schedule, cannot provide confirmed space or causes a missed connection): if no part of the ticket has been used, the fare paid; if part has been used, the higher of the one-way fare from the point of interruption to the destination or next stopover, or the difference between the fare paid and the fare for the travel used.",
+          "status": "official",
+          "source_url": "https://www.rwandair.com/our-policies/terms-conditions-of-carriage/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
       "id": "contact",
       "title": "Contact and the small print",
       "required": [

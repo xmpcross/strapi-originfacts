@@ -1,0 +1,161 @@
+{
+  "slug": "star-air",
+  "official_website": "https://starair.in",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "Hand baggage goes in the overhead bin or under your seat, space permitting.",
+      "required": [
+        "carryon_weight"
+      ],
+      "fields": {
+        "carryon_weight": {
+          "value": "One hand bag of maximum 7 Kg, including a laptop. Overweight hand baggage found at the boarding gate is charged.",
+          "status": "official",
+          "source_url": "https://www.starair.in/FaresAndRules/LuggageInfo",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "No cabin-bag dimensions stated."
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "required": [
+        "allowance",
+        "excess_fees"
+      ],
+      "fields": {
+        "allowance": {
+          "value": "1 bag of 15 kilograms free checked baggage per passenger; the fare table lists 15 kg for the Economy Regular fare. Your allowance is as per the fare rules on your ticket.",
+          "status": "official",
+          "source_url": "https://www.starair.in/FaresAndRules/LuggageInfo",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "The fare table on starair.in/FaresAndRules lists 20 kg for other fares, but its columns cannot be matched to fares unambiguously, so only the Regular fare figure is given."
+        },
+        "excess_fees": {
+          "value": "At the check-in counter: INR 600 for every extra kilogram. Pre-booked online (non-refundable): 5 Kg Rs. 2750, 10 Kg Rs. 5500, 15 Kg Rs. 8250, 20 Kg Rs. 11000, 30 Kg Rs. 16500.",
+          "status": "official",
+          "source_url": "https://www.starair.in/FaresAndRules",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "fares",
+      "title": "What the cheapest fare includes",
+      "required": [
+        "cheapest_fare"
+      ],
+      "lede": "Star Air's fare rules under its policy effective from 16th SEP 26.",
+      "fields": {
+        "cheapest_fare": {
+          "value": "Economy Regular (base fare): 7 kg cabin baggage and 15 kg checked baggage. Changes cost ₹ 3000 beyond 72 hrs or ₹ 3500 between 2 hrs and 72 hrs before departure, plus fare difference; no changes within 2 hrs. Cancellation costs ₹ 3500 beyond 72 hrs or ₹ 4500 between 2 hrs and 72 hrs; non-refundable within 2 hrs. On a no-show only applicable taxes are refunded.",
+          "status": "official",
+          "source_url": "https://www.starair.in/FaresAndRules",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "free_cancellation": {
+          "value": "No cancellation fee if you cancel within 24 hours of booking for travel more than 7 days away.",
+          "status": "official",
+          "source_url": "https://www.starair.in/FaresAndRules",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "lede": "Star Air does not pay compensation or provide facilities for cancellations and delays caused by extraordinary circumstances beyond its control.",
+      "required": [
+        "rebooking_refund",
+        "compensation"
+      ],
+      "fields": {
+        "rebooking_refund": {
+          "value": "If a flight is cancelled or rescheduled by more than two and half hours (depending on the length of the journey), you can choose a refund or rebooking onto an alternative Star Air flight at no additional cost, subject to availability, as per DGCA CAR Section 3 Series M Part IV.",
+          "status": "official",
+          "source_url": "https://starair.in/home/conditionsofcarriage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "compensation": {
+          "value": "If you are eligible for compensation under DGCA CAR Section 3, Series M, Part IV, claim by emailing customercare@starair.in from the email address on the booking; it is paid after KYC document checks.",
+          "status": "official",
+          "source_url": "https://starair.in/home/conditionsofcarriage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "meals": {
+          "value": "If your flight is cancelled and you are already at the airport by the original flight time waiting for the alternate flight, Star Air provides free meals and beverages.",
+          "status": "official",
+          "source_url": "https://starair.in/home/conditionsofcarriage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "airport_checkin",
+        "gate_close"
+      ],
+      "fields": {
+        "online_checkin": {
+          "value": "Web check-in opens 72 hours before scheduled departure.",
+          "status": "official",
+          "source_url": "https://starair.in/home/conditionsofcarriage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "The conditions of carriage give two different closing times for web check-in (2 hours and 60 minutes before departure), so the closing time is not stated."
+        },
+        "airport_checkin": {
+          "value": "Airport check-in opens 2 hours before and closes 60 minutes before scheduled departure.",
+          "status": "official",
+          "source_url": "https://starair.in/home/conditionsofcarriage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "gate_close": {
+          "value": "Boarding gates close 25 minutes before scheduled departure. Not reaching the gate by then counts as a no-show: the fare is retained and only taxes and government or airport charges may be refunded.",
+          "status": "official",
+          "source_url": "https://starair.in/home/conditionsofcarriage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "phone_home_market",
+        "conditions_of_carriage_url"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "+91 22 50799555; email customercare@starair.in (refunds: refunds@starair.in).",
+          "status": "official",
+          "source_url": "https://www.starair.in/FaresAndRules/LuggageInfo",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://starair.in/home/conditionsofcarriage",
+          "status": "official",
+          "source_url": "https://starair.in/home/conditionsofcarriage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

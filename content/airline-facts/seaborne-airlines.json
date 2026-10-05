@@ -19,6 +19,38 @@
       }
     },
     {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "lede": "Seaborne's contract of carriage says schedules are not guaranteed and it accepts no liability for missed connections.",
+      "required": [
+        "rebooking",
+        "refund"
+      ],
+      "fields": {
+        "rebooking": {
+          "value": "Whenever Seaborne cancels or otherwise fails to operate a scheduled flight, at your request it will either carry you on another Seaborne flight with space available at no additional charge, or give you a full refund under its refund policies.",
+          "status": "official",
+          "source_url": "https://www.seaborneairlines.com/contract-of-carriage/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "refund": {
+          "value": "Involuntary refund (Seaborne fails to operate on schedule, including Force Majeure events, or refuses to transport you): if no part of the ticket has been used, the fare and charges you paid; if part has been used, the lowest applicable direct one-way fare (or 50% of the round-trip fare on discounted round/circle/open-jaw tickets) from the point of termination to your destination, less the same rate of discount applied to the original fare.",
+          "status": "official",
+          "source_url": "https://www.seaborneairlines.com/contract-of-carriage/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "onboard_delay_care": {
+          "value": "During extraordinary, very lengthy onboard delays, Seaborne will make every reasonable effort to meet essential needs such as snacks, water, restroom facilities and basic medical assistance.",
+          "status": "official",
+          "source_url": "https://www.seaborneairlines.com/contract-of-carriage/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
       "id": "checkin",
       "title": "Check-in and airport cutoffs",
       "required": [

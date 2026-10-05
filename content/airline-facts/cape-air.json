@@ -45,12 +45,12 @@
           "verified_by": "manual_official_source"
         },
         "fees": {
-          "value": "For tickets issued on/after August 12, 2026: 1st bag up to 50LB costs 30 or 40, 2nd bag 40 or 50, 3rd bag 80 or 90, depending on the route (Any Routes Not Listed Above: 40 / 50 / 90). Bags of 51-70LB carry an additional fee of 80 or 90.",
+          "value": "For tickets issued on/after August 12, 2026: 1st bag up to 50LB costs 30 or 40, 2nd bag 40 or 50, 3rd bag 80 or 90, depending on the route (Any Routes Not Listed Above: 40 / 50 / 90). Bags of 51-70LB carry an additional fee of 80 or 90. For Cape Air (9K) originating itineraries on tickets issued on/before August 11, 2026: 30 / 40 / 80, and 80 for 51-70LB.",
           "status": "official",
           "source_url": "https://www.capeair.com/baggage",
-          "verified_at": "2026-09-04",
+          "verified_at": "2026-10-05",
           "verified_by": "manual_official_source",
-          "notes": "Amounts in US dollars as listed in Cape Air's route table; the page gives two different cut-off dates (August 11 and August 4, 2026) for the older fee level, so that level is not published."
+          "notes": "Amounts in US dollars as listed in Cape Air's route table. Re-verified 2026-10-05: the September capture gave two different cut-off dates (August 11 and August 4, 2026) for the older fee level; the page now consistently says August 11, 2026, so the older level is published."
         },
         "size_weight": {
           "value": "Chargeable bags may be up to 50 lbs and 62 inches (l+w+h); bags between 51 lbs and 70 lbs pay an extra fee and travel space permitting. No bag over 70lbs and/or 62 linear inches is carried.",

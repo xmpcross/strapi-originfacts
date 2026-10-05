@@ -1,0 +1,128 @@
+{
+  "slug": "nordstar",
+  "official_website": "https://www.nordstar.ru",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "Your hand-luggage allowance depends on the fare your ticket was issued at.",
+      "required": [
+        "carryon_bag_dimensions",
+        "carryon_weight",
+        "personal_item"
+      ],
+      "fields": {
+        "carryon_bag_dimensions": {
+          "value": "1 piece of hand luggage, no larger than 55×40×23 cm. Hand luggage over this size must go in the hold as a paid oversize service (up to 10 kg and 138 cm in total dimensions).",
+          "status": "official",
+          "source_url": "https://www.nordstar.ru/passengers/baggage/baggage-hand-luggage/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Translated from NordStar's Russian page."
+        },
+        "carryon_weight": {
+          "value": "Up to 10 kg or up to 15 kg, depending on the fare.",
+          "status": "official",
+          "source_url": "https://www.nordstar.ru/passengers/baggage/baggage-hand-luggage/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Translated from NordStar's Russian page. The page lists the allowances without naming the fares they belong to."
+        },
+        "personal_item": {
+          "value": "In addition to the allowance: a handbag, briefcase or backpack of no more than 5 kg, plus a cane, crutches or wheelchair.",
+          "status": "official",
+          "source_url": "https://www.nordstar.ru/passengers/baggage/baggage-hand-luggage/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Translated from NordStar's Russian page."
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "Some fares include checked baggage; others include hand luggage only.",
+      "required": [
+        "allowance_by_fare",
+        "size"
+      ],
+      "fields": {
+        "allowance_by_fare": {
+          "value": "Depending on the fare, the free allowance is one of: 1 piece of hand luggage up to 10 kg (no checked bag); 1 piece of hand luggage up to 10 kg + 1 bag up to 23 kg; 1 piece of hand luggage up to 15 kg + 1 bag up to 30 kg; or 1 piece of hand luggage up to 15 kg + 2 bags of up to 30 kg each. The allowance may be reduced or increased on some routes and periods; on charter flights it is shown on the itinerary receipt.",
+          "status": "official",
+          "source_url": "https://www.nordstar.ru/passengers/baggage/baggage-hand-luggage/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Translated from NordStar's Russian page. The page does not label which fare carries which allowance."
+        },
+        "size": {
+          "value": "One checked bag must not exceed 203 cm in total of its three dimensions.",
+          "status": "official",
+          "source_url": "https://www.nordstar.ru/passengers/baggage/baggage-hand-luggage/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Translated from NordStar's Russian page."
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "online_checkin",
+        "airport_cutoff",
+        "boarding_close"
+      ],
+      "fields": {
+        "online_checkin": {
+          "value": "Online check-in opens 24 hours and closes 1 hour before departure.",
+          "status": "official",
+          "source_url": "https://www.nordstar.ru/services/check-in/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Translated from NordStar's Russian page."
+        },
+        "airport_cutoff": {
+          "value": "Airport check-in opens no less than 2 hours before the departure time on your ticket (it can differ by airport) and closes 40 minutes before departure; closing times at airports abroad may differ.",
+          "status": "official",
+          "source_url": "https://www.nordstar.ru/services/check-in/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Translated from NordStar's Russian page."
+        },
+        "boarding_close": {
+          "value": "Boarding ends 30 minutes before departure.",
+          "status": "official",
+          "source_url": "https://www.nordstar.ru/services/check-in/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Translated from NordStar's Russian page."
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "phone_home_market",
+        "conditions_of_carriage_url"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "8-800-700-8-007 (free within Russia); +7 (495) 967-80-07",
+          "status": "official",
+          "source_url": "https://www.nordstar.ru/services/check-in/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://www.nordstar.ru/passengers/terms-of-carriage/",
+          "status": "official",
+          "source_url": "https://www.nordstar.ru/passengers/terms-of-carriage/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

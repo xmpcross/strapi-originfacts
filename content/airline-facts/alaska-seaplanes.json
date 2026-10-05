@@ -1,0 +1,94 @@
+{
+  "slug": "alaska-seaplanes",
+  "official_website": "https://www.flyalaskaseaplanes.com",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "All baggage flown on Alaska Seaplanes is treated as checked baggage.",
+      "required": [
+        "carryon_allowance"
+      ],
+      "fields": {
+        "carryon_allowance": {
+          "value": "Carry-on baggage is not permitted aboard any Alaska Seaplanes aircraft; all baggage is checked.",
+          "status": "official",
+          "source_url": "https://www.flyalaskaseaplanes.com/flight-info/baggage.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "All baggage must be weighed.",
+      "required": [
+        "allowance",
+        "heavy_fee"
+      ],
+      "fields": {
+        "allowance": {
+          "value": "Each ticketed passenger is allowed 50 pounds of checked baggage on a scheduled flight. Baggage beyond 50 pounds per person is excess baggage: extra fees apply, charged per pound by route, and it may not travel on the same flight as you.",
+          "status": "official",
+          "source_url": "https://www.flyalaskaseaplanes.com/flight-info/baggage.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "heavy_fee": {
+          "value": "Single-piece heavy fee: $30 for 51-70 pounds, $40 for 71-100 pounds, $50 for 101-150 pounds. Unboxed bicycles and hazardous material are $50 each.",
+          "status": "official",
+          "source_url": "https://www.flyalaskaseaplanes.com/flight-info/baggage.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "max_piece": {
+          "value": "The single-piece maximum weight is 150 pounds; anything heavier needs approval from management.",
+          "status": "official",
+          "source_url": "https://www.flyalaskaseaplanes.com/flight-info/baggage.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "weather_refund": {
+          "value": "If your flight is cancelled due to weather, prepaid baggage fees are refundable; if you reschedule the flight, you still pay the baggage fees.",
+          "status": "official",
+          "source_url": "https://www.flyalaskaseaplanes.com/flight-info/baggage.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "bag_cutoff"
+      ],
+      "fields": {
+        "bag_cutoff": {
+          "value": "All baggage must be checked in at least 30 minutes before flight departure.",
+          "status": "official",
+          "source_url": "https://www.flyalaskaseaplanes.com/flight-info/baggage.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "phone_home_market"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "Reservations & general inquiries: +1 (907) 789-3331",
+          "status": "official",
+          "source_url": "https://www.flyalaskaseaplanes.com/flight-info/baggage.html",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

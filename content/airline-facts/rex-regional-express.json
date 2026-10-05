@@ -5,35 +5,32 @@
     {
       "id": "carryon",
       "title": "Carry-on",
+      "lede": "Carry-on that exceeds the limits at the boarding gate is offloaded and sent as checked baggage on the next available flight.",
       "required": [
-        "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_weight",
+        "carryon_bag_dimensions"
       ],
       "fields": {
+        "carryon_weight": {
+          "value": "7kg on all fares, on all regional services operated by SAAB 340 Turboprop.",
+          "status": "official",
+          "source_url": "https://rex.com.au/FlightInfo/BaggageAllowance.aspx",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "https://www.rex.com.au/FlightInfo/CabinBaggage.aspx",
-          "notes": "Rex (Regional Express) cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "Total linear dimensions must not exceed 105cm; on regional flights a bag must not exceed depth 23cm (9in), height 34cm (13in), length 48cm (19in).",
+          "status": "official",
+          "source_url": "https://www.rex.com.au/flightinfo/COC.aspx",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "https://www.rex.com.au/FlightInfo/CabinBaggage.aspx",
-          "notes": "Rex (Regional Express) Economy Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
-        },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "https://www.rex.com.au/FlightInfo/CabinBaggage.aspx",
-          "notes": "Rex (Regional Express) Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "personal_item": {
+          "value": "Where Rex has permitted a personal item (such as a handbag, purse or small backpack, a laptop, an overcoat or an umbrella), it counts within the 7 kg carry-on allowance and its dimensions.",
+          "status": "official",
+          "source_url": "https://www.rex.com.au/flightinfo/COC.aspx",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },

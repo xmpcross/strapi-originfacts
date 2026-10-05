@@ -1,0 +1,121 @@
+{
+  "slug": "oriental-air-bridge",
+  "official_website": "https://www.orc-air.co.jp",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "Oriental Air Bridge's domestic conditions of carriage allow 1 carry-on bag and 1 personal item per passenger.",
+      "required": [
+        "carryon_bag_dimensions",
+        "carryon_weight",
+        "personal_item"
+      ],
+      "fields": {
+        "carryon_bag_dimensions": {
+          "value": "1 carry-on bag, with length + height + width adding up to no more than 100 cm (39 in), that fits in the overhead bin or under the seat in front of you.",
+          "status": "official",
+          "source_url": "https://www.orc-air.co.jp/transport/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Translated from Oriental Air Bridge's Japanese-language domestic passenger conditions of carriage, version in force from 19 May 2026."
+        },
+        "carryon_weight": {
+          "value": "The carry-on bag and personal item together must not exceed 10 kg (22 lb).",
+          "status": "official",
+          "source_url": "https://www.orc-air.co.jp/transport/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Translated from Oriental Air Bridge's Japanese-language domestic passenger conditions of carriage, version in force from 19 May 2026."
+        },
+        "personal_item": {
+          "value": "1 personal item, as defined in the company's rules, in addition to the carry-on bag; it counts towards the combined 10 kg (22 lb) limit.",
+          "status": "official",
+          "source_url": "https://www.orc-air.co.jp/transport/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Translated from Oriental Air Bridge's Japanese-language domestic passenger conditions of carriage, version in force from 19 May 2026."
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "Each passenger's free checked baggage allowance depends on the fare rules and is shown on the e-ticket itinerary receipt.",
+      "required": [
+        "allowance",
+        "size_weight"
+      ],
+      "fields": {
+        "allowance": {
+          "value": "Set by the fare rules of your ticket and printed on your e-ticket itinerary receipt; no single figure is given in the conditions of carriage.",
+          "status": "official",
+          "source_url": "https://www.orc-air.co.jp/transport/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Translated from Oriental Air Bridge's Japanese-language domestic passenger conditions of carriage, version in force from 19 May 2026."
+        },
+        "size_weight": {
+          "value": "Bags over 203 cm (80 in) in length + height + width, over 32 kg (70 lb) per piece, or over 100 kg (220 lb) in total are carried only with advance notice and the airline's approval, for a charge. Items over 292 cm (115 in) or over 45 kg (100 lb) per piece are not accepted.",
+          "status": "official",
+          "source_url": "https://www.orc-air.co.jp/transport/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Translated from Oriental Air Bridge's Japanese-language domestic passenger conditions of carriage, version in force from 19 May 2026."
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "lede": "Oriental Air Bridge's conditions say timetable times are not guaranteed and set out rebooking or a refund, at the passenger's choice, when a flight is disrupted.",
+      "required": [
+        "rebooking",
+        "refund"
+      ],
+      "fields": {
+        "rebooking": {
+          "value": "If Oriental Air Bridge cancels a flight, cannot operate it reasonably to schedule, does not stop at your destination, cannot give you your booked seat, or causes you to miss a booked connection, you can choose to be rebooked. For causes within its control it carries you to your destination on its own flight with seats, another airline's flight with seats, or other transport, as it chooses. For causes beyond its control (such as weather) it carries you on its own flight with seats to your destination or a nearby airport it designates. Fare differences are not adjusted.",
+          "status": "official",
+          "source_url": "https://www.orc-air.co.jp/transport/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Translated from Oriental Air Bridge's Japanese-language domestic passenger conditions of carriage, version in force from 19 May 2026. Article 13 (B) and (C)."
+        },
+        "refund": {
+          "value": "Instead of rebooking you can choose a refund: the fare paid if none of the trip has been flown, or the difference between the fare paid and the fare for the sectors already flown.",
+          "status": "official",
+          "source_url": "https://www.orc-air.co.jp/transport/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Translated from Oriental Air Bridge's Japanese-language domestic passenger conditions of carriage, version in force from 19 May 2026. Article 13 (C) 4."
+        },
+        "overbooking": {
+          "value": "If a flight is oversold, the airline first asks for volunteers to give up their seats; if there are not enough, it may deny boarding by its priority order. Affected passengers get rebooking or a refund plus a fixed cooperation payment set by the airline.",
+          "status": "official",
+          "source_url": "https://www.orc-air.co.jp/transport/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Translated from Oriental Air Bridge's Japanese-language domestic passenger conditions of carriage, version in force from 19 May 2026. Article 13 (D); the payment amount is not stated."
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "conditions_of_carriage_url"
+      ],
+      "fields": {
+        "conditions_of_carriage_url": {
+          "value": "https://www.orc-air.co.jp/transport/",
+          "status": "official",
+          "source_url": "https://www.orc-air.co.jp/transport/",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "Japanese only."
+        }
+      }
+    }
+  ]
+}

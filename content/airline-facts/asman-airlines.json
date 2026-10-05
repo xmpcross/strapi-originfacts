@@ -1,0 +1,105 @@
+{
+  "slug": "asman-airlines",
+  "official_website": "https://asmanairlines.kg",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "Carry-on baggage must comply with aviation security requirements and fit in the cabin within the established limits.",
+      "required": [
+        "carryon_allowance",
+        "carryon_bag_dimensions"
+      ],
+      "fields": {
+        "carryon_allowance": {
+          "value": "1 piece of carry-on baggage up to 7 kg on the Flex Economy and Full Economy fares, including Full Economy on international flights.",
+          "status": "official",
+          "source_url": "https://asmanairlines.kg/content/passenger-rules",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "carryon_bag_dimensions": {
+          "value": "Carry-on baggage must not exceed 55 × 40 × 20 cm.",
+          "status": "official",
+          "source_url": "https://asmanairlines.kg/content/passenger-rules",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "The free checked baggage allowance may be combined for passengers travelling under the same booking.",
+      "required": [
+        "allowance",
+        "size",
+        "excess"
+      ],
+      "fields": {
+        "allowance": {
+          "value": "Flex Economy and Full Economy fares: checked baggage up to 15 kg per passenger. Full Economy on international flights: up to 20 kg per passenger.",
+          "status": "official",
+          "source_url": "https://asmanairlines.kg/content/passenger-rules",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "size": {
+          "value": "Each checked bag must not exceed 203 cm in the sum of its three dimensions.",
+          "status": "official",
+          "source_url": "https://asmanairlines.kg/content/passenger-rules",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "excess": {
+          "value": "Excess baggage is charged at the airline's current rates, listed as 1 kg — 100 som.",
+          "status": "official",
+          "source_url": "https://asmanairlines.kg/content/passenger-rules",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "lede": "A passenger who arrives late for check-in is treated as a no-show and may be denied carriage without a refund of the fare.",
+      "required": [
+        "domestic_checkin"
+      ],
+      "fields": {
+        "domestic_checkin": {
+          "value": "Check-in for domestic flights begins 1 hour and 30 minutes before departure and ends 40 minutes before departure.",
+          "status": "official",
+          "source_url": "https://asmanairlines.kg/content/passenger-rules",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "phone_home_market",
+        "conditions_of_carriage_url"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "+996 312 25 16 00; +996 999 25 16 00; +996 705 25 16 00. Complaints by email to sales@asmanairlines.kg.",
+          "status": "official",
+          "source_url": "https://asmanairlines.kg/content/types-of-fares-for-your-flights",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://asmanairlines.kg/content/passenger-rules",
+          "status": "official",
+          "source_url": "https://asmanairlines.kg/content/passenger-rules",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

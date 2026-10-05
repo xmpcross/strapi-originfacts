@@ -1,0 +1,70 @@
+{
+  "slug": "myway-airlines",
+  "official_website": "https://mywayairlines.com",
+  "modules": [
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "lede": "Myway's conditions of carriage say these options are your sole remedies, except as the Convention provides.",
+      "required": [
+        "rebooking_refund",
+        "refund_amount"
+      ],
+      "fields": {
+        "rebooking_refund": {
+          "value": "If Myway cancels a flight, fails to operate it reasonably according to schedule, fails to stop at your destination or stopover, or causes you to miss a confirmed connection, you choose between: carriage at the earliest opportunity on another Myway service with space, at no extra charge; re-routing within a reasonable time by Myway or another carrier at no extra charge; or a refund.",
+          "status": "official",
+          "source_url": "https://mywayairlines.com/en/381/General-Condition-of-Carriage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "refund_amount": {
+          "value": "In those cases the refund is the full fare paid if no part of the ticket has been used; if part has been used, not less than the difference between the fare paid and the fare for the sectors flown.",
+          "status": "official",
+          "source_url": "https://mywayairlines.com/en/381/General-Condition-of-Carriage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "schedule_change": {
+          "value": "If Myway makes a significant change to the scheduled flight time after you buy your ticket and it is not acceptable to you, you are entitled to a refund.",
+          "status": "official",
+          "source_url": "https://mywayairlines.com/en/381/General-Condition-of-Carriage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "checkin_deadline"
+      ],
+      "fields": {
+        "checkin_deadline": {
+          "value": "Check-in deadlines differ by airport; unless otherwise stated, the check-in deadline for Myway flights is 40 minutes before departure. Myway may cancel your reservation if you miss it.",
+          "status": "official",
+          "source_url": "https://mywayairlines.com/en/381/General-Condition-of-Carriage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "conditions_of_carriage_url"
+      ],
+      "fields": {
+        "conditions_of_carriage_url": {
+          "value": "https://mywayairlines.com/en/381/General-Condition-of-Carriage",
+          "status": "official",
+          "source_url": "https://mywayairlines.com/en/381/General-Condition-of-Carriage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

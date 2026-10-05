@@ -5,35 +5,53 @@
     {
       "id": "carryon",
       "title": "Carry-on",
+      "lede": "Items that do not fit the sizing device or exceed the carry-on allowance are treated as checked baggage and charged applicable baggage fees.",
       "required": [
+        "carryon_allowance",
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_weight",
+        "ultrabasic"
       ],
       "fields": {
+        "carryon_allowance": {
+          "value": "Econo, Member Exclusive, EconoFlex, Premium, PremiumFlex, Business and BusinessFlex guests may bring 1 carry-on bag and 1 personal item.",
+          "status": "official",
+          "source_url": "https://www.westjet.com/en-ca/baggage/carry-on",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
+          "value": "Carry-on bag: 56 cm x 23 cm x 36 cm (22 in. x 9 in. x 14 in.), wheels included; it must go in the overhead bin.",
+          "status": "official",
           "source_url": "https://www.westjet.com/en-ca/baggage/carry-on",
-          "notes": "WestJet cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
+        "carryon_weight": {
+          "value": "No weight figure is given: the carry-on must be light enough for you to place it in the overhead compartment unaided (assistance is available on request for guests with special needs or a disability).",
+          "status": "official",
           "source_url": "https://www.westjet.com/en-ca/baggage/carry-on",
-          "notes": "WestJet Economy Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
+        "personal_item": {
+          "value": null,
+          "status": "disputed",
           "source_url": "https://www.westjet.com/en-ca/baggage/carry-on",
-          "notes": "WestJet Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "WestJet's carry-on page shows the personal item as 41 cm x 15 cm x 33 cm (16 in. x 6 in. x 13 in.) in its size graphic, but its text says 41 centimeters or 16 inches by 33 centimeters or 13 inches by 14 centimeters or 6 inches.",
+          "conflicting_values": [
+            "41 cm x 15 cm x 33 cm (16 in. x 6 in. x 13 in.) (size graphic)",
+            "41 cm x 33 cm x 14 cm (16 in. x 13 in. x 6 in.) (page text)"
+          ]
+        },
+        "ultrabasic": {
+          "value": "UltraBasic guests may bring 1 personal item only and cannot bring or pay for a carry-on bag, except on travel to and from Europe and Asia, or when Extended Comfort has been bought for all flights in one direction. A carry-on brought to the gate otherwise must be checked, with a checked baggage fee and a service fee.",
+          "status": "official",
+          "source_url": "https://www.westjet.com/en-ca/baggage/carry-on",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
       }
     },

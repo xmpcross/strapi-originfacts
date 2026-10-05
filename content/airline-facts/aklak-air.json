@@ -6,9 +6,7 @@
       "id": "carryon",
       "title": "Carry-on",
       "required": [
-        "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "cabin_items"
       ],
       "fields": {
         "carryon_bag_dimensions": {
@@ -34,8 +32,16 @@
           "notes": "Aklak Air Premium / Business Class carry-on weight limit.",
           "verified_at": "2026-09-04",
           "verified_by": "automated_provenance"
+        },
+        "cabin_items": {
+          "value": "Books, magazines, binoculars, coats and ladies' purses are not counted as personal baggage for weight purposes and may be carried in the cabin, at your own risk, without additional charge. The policy page gives no cabin bag size or weight limit.",
+          "status": "official",
+          "source_url": "https://aklakair.ca/policies/baggage-policy",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
         }
-      }
+      },
+      "lede": "Aklak Air restricts the weight, size and character of baggage according to the capacity of the particular aircraft."
     },
     {
       "id": "baggage",

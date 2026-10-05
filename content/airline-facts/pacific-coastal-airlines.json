@@ -6,34 +6,16 @@
       "id": "carryon",
       "title": "Carry-on",
       "required": [
-        "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_allowance"
       ],
       "fields": {
-        "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "https://www.pacificcoastal.com/baggage",
-          "notes": "Pacific Coastal Airlines cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
-        },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "https://www.pacificcoastal.com/baggage",
-          "notes": "Pacific Coastal Airlines Economy Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
-        },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "https://www.pacificcoastal.com/baggage",
-          "notes": "Pacific Coastal Airlines Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "carryon_allowance": {
+          "value": "2 carry-on/valet articles, 1 standard article and 1 personal article, for a total maximum weight of 44 pounds (22 pounds each).",
+          "status": "official",
+          "source_url": "https://www.pacificcoastal.com/checked-baggage-qa",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source",
+          "notes": "From Pacific Coastal's Q&A on the checked-baggage policy effective May 1, 2017; the page gives no carry-on dimensions."
         }
       }
     },
@@ -80,14 +62,12 @@
         "basic_fare": {
           "value": null,
           "status": "pending",
-          "notes": "The captured fare page lost its fare-name headings, so which fare this block describes cannot be confirmed from the capture. Re-capture before publishing."
+          "notes": "Pacific Coastal's fare page labels Basic as the entry fare, but an older Q&A on its site calls Bravo the lowest fare. Which fare is cheapest is ambiguous, so nothing is published until a re-capture settles it."
         },
         "24_hour_refund": {
-          "value": "Reservations made and cancelled within 24 hours of original purchase get a full refund, as long as you cancel at least 2 hours before departure, by calling 1.800.663.2872.",
-          "status": "official",
-          "source_url": "https://www.pacificcoastal.com/fare-terms-conditions/",
-          "verified_at": "2026-09-04",
-          "verified_by": "manual_official_source"
+          "value": null,
+          "status": "pending",
+          "notes": "Pacific Coastal's fare page labels Basic as the entry fare, but an older Q&A on its site calls Bravo the lowest fare. Which fare is cheapest is ambiguous, so nothing is published until a re-capture settles it."
         }
       }
     },

@@ -90,6 +90,38 @@
       "lede": "Your allowance is shown on your e-ticket; SriLankan notes there can be exceptions based on specific periods, routings and fare types."
     },
     {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "lede": "SriLankan's conditions of carriage give you a choice of remedies when it cancels or disrupts your flight, except as otherwise provided by the Convention.",
+      "required": [
+        "rebooking",
+        "refund"
+      ],
+      "fields": {
+        "rebooking": {
+          "value": "If SriLankan cancels a flight, does not operate it reasonably to schedule, fails to stop at your destination or causes you to miss a reserved connection, you can choose to be carried at the earliest opportunity on another of its services with space, without additional charge, or re-routed within a reasonable time on its own services or another carrier's, without additional charge (with the difference refunded if the new routing costs less).",
+          "status": "official",
+          "source_url": "https://www.srilankan.com/Zh_cn/Corporate/conditions-of-carriage-for-passengers-and-baggage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "refund": {
+          "value": "Alternatively you can take an involuntary refund: the fare paid if no part of the ticket was used; if part was used, not less than the difference between the fare paid and the fare for the travel used; if your class was down-graded, the fare difference for that sector.",
+          "status": "official",
+          "source_url": "https://www.srilankan.com/Zh_cn/Corporate/conditions-of-carriage-for-passengers-and-baggage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "compensation": {
+          "value": "If you qualify, compensation is provided under applicable law and/or SriLankan's Denied Boarding Compensation Policy, a copy of which is available on request.",
+          "status": "official",
+          "source_url": "https://www.srilankan.com/Zh_cn/Corporate/conditions-of-carriage-for-passengers-and-baggage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
       "id": "checkin",
       "title": "Check-in and airport cutoffs",
       "required": [
@@ -113,12 +145,15 @@
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "http://www.srilankan.com/baggage",
-          "notes": "SriLankan Airlines official customer support line.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": null,
+          "status": "disputed",
+          "source_url": "https://www.srilankan.com/en_uk/plan-and-book/luggage",
+          "verified_at": "2026-10-05",
+          "notes": "Two pop-up notices on SriLankan's luggage page give different numbers for its contact centre: '24 Hour Contact Center +94117 77 1979 (Within Sri Lanka : 1979)' and 'Global Contact Centre +94 19733 1979'.",
+          "conflicting_values": [
+            "+94117 77 1979 (24 Hour Contact Center notice)",
+            "+94 19733 1979 (Global Contact Centre notice)"
+          ]
         },
         "conditions_of_carriage_url": {
           "value": "https://www.srilankan.com/Zh_cn/Corporate/conditions-of-carriage-for-passengers-and-baggage",

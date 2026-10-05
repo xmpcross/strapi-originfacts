@@ -6,7 +6,9 @@
       "id": "carryon",
       "title": "Carry-on",
       "required": [
-        "carryon_bag_dimensions"
+        "carryon_bag_dimensions",
+        "carryon_weight",
+        "personal_item"
       ],
       "fields": {
         "carryon_bag_dimensions": {
@@ -21,6 +23,20 @@
           "status": "official",
           "source_url": "https://us.aircalin.com/en/baggages/cabin-baggages",
           "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "carryon_weight": {
+          "value": "Economy on Aircalin-operated flights and Air France codeshares: 1 baggage + 1 accessory, 7kg maximum between Noumea and Auckland, Sydney, Brisbane, Nandi, Wallis and Port-Vila; 12kg maximum between Noumea and Bangkok, Singapore and Papeete, between Bangkok and Paris, and between Noumea and mainland France; 5kg maximum between Noumea and Île des Pins, Lifou, Maré and Ouvea. Business Hibiscus: 12kg maximum between Noumea and Sydney, 18kg maximum (2 baggages + 1 accessory) on the other listed routes. Other routes and partners: see your electronic ticket.",
+          "status": "official",
+          "source_url": "https://us.aircalin.com/en/baggages/cabin-baggages",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "personal_item": {
+          "value": "1 accessory per person (a laptop computer, one handbag or a duty-free bag), included in the maximum total weight.",
+          "status": "official",
+          "source_url": "https://us.aircalin.com/en/baggages/cabin-baggages",
+          "verified_at": "2026-10-05",
           "verified_by": "manual_official_source"
         }
       },

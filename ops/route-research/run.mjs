@@ -23,7 +23,8 @@ import path from 'node:path';
 
 import { arg, GUIDES_DIR, HERE, loadRoutes, readUsage, REPO } from './lib.mjs';
 
-const KINDS_PER_ROUTE = 3; // operators, history, airports
+const TOPICS = ['operators', 'history', 'origin_airport', 'destination_airport', 'transport', 'practical'];
+const KINDS_PER_ROUTE = TOPICS.length; // grounded prose calls; + 1 structuring call without search
 const MODEL = arg('model', 'gemini-3.6-flash');
 const MAX_GROUNDED = Number(arg('max-grounded', 40));
 const LIMIT = arg('limit') ? Number(arg('limit')) : Infinity;
@@ -56,13 +57,13 @@ const avgIn = ok.length ? ok.reduce((n, u) => n + u.prompt_tokens + u.tool_use_p
 const avgOut = ok.length ? ok.reduce((n, u) => n + u.candidates_tokens + u.thoughts_tokens, 0) / ok.length : null;
 const planned = slugs.length * KINDS_PER_ROUTE;
 const fresh = slugs.reduce(
-  (n, s) => n + ['operators', 'history', 'airports'].filter((k) => !fs.existsSync(path.join(HERE, 'data', 'research', s, `${k}.json`)) || !JSON.parse(fs.readFileSync(path.join(HERE, 'data', 'research', s, `${k}.json`), 'utf8')).parsed).length,
+  (n, s) => n + TOPICS.filter((k) => !fs.existsSync(path.join(HERE, 'data', 'research', s, `${k}.json`)) || !JSON.parse(fs.readFileSync(path.join(HERE, 'data', 'research', s, `${k}.json`), 'utf8')).parsed).length,
   0,
 );
 
 console.log(`Route research plan — model ${MODEL}${DRY ? ' (DRY RUN: no Gemini call, no fetch, no write)' : ''}`);
 console.log(`  routes (${slugs.length}): ${slugs.join(', ')}`);
-console.log(`  grounded requests: ${fresh} new (of ${planned}; saved responses are reused), up to ${fresh} more on unparseable replies`);
+console.log(`  grounded requests: ${fresh} new (of ${planned}; saved responses are reused)`);
 console.log(`  budget: ${usedGrounded} already logged, cap ${MAX_GROUNDED} → room for ${Math.max(0, MAX_GROUNDED - usedGrounded)}`);
 console.log(
   avgSearches === null
@@ -70,7 +71,7 @@ console.log(
     : `  searches: ~${Math.round(fresh * avgSearches)} (observed ${avgSearches.toFixed(1)} per request)`,
 );
 if (avgIn !== null) console.log(`  tokens: ~${Math.round(fresh * avgIn)} in / ~${Math.round(fresh * avgOut)} out incl. thinking (observed averages)`);
-console.log(`  semantic check: ${JUDGE ? `on — up to ${slugs.length} non-grounded calls` : 'off'}`);
+console.log(`  non-grounded calls: ${slugs.length} structuring${JUDGE ? ` + up to ${slugs.length} semantic checks` : ''}`);
 if (fresh > Math.max(0, MAX_GROUNDED - usedGrounded)) console.log('  WARNING: plan exceeds the grounded-request cap; the run will stop at the cap.');
 if (DRY) process.exit(0);
 

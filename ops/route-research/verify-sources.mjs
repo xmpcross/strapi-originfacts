@@ -29,7 +29,7 @@ import path from 'node:path';
 
 import { arg, DATA, gemini, GeminiStop, loadAirlines, loadRoutes, parseJsonReply, readJson, sleep, USER_AGENT, writeJson } from './lib.mjs';
 import {
-  extractMeta, htmlToText, keyTokens, operatorQuoteProblem, otherAirportCodes, locateQuote, mentionsPlace, missingTokens, parseRobots, placeNames, quoteOnPage, rejectedHost, tokenCount,
+  closestSentence, extractMeta, htmlToText, keyTokens, operatorQuoteProblem, otherAirportCodes, locateQuote, mentionsPlace, missingTokens, parseRobots, placeNames, quoteOnPage, rejectedHost, tokenCount,
 } from './match.mjs';
 
 const HOST_GAP_MS = 4000;
@@ -37,7 +37,7 @@ const MAX_CRAWL_DELAY_MS = 30_000;
 const TIMEOUT_MS = 20_000;
 const MAX_BYTES = 5_000_000;
 const ROUTE_CATEGORIES = new Set(['operator', 'seasonal', 'history']);
-const CATEGORIES = new Set([...ROUTE_CATEGORIES, 'airport', 'ground']);
+const CATEGORIES = new Set([...ROUTE_CATEGORIES, 'airport', 'ground', 'practical']);
 
 /* ------------------------------------------------------------- fetching */
 
@@ -155,11 +155,13 @@ function candidates(c) {
 export async function verifyClaim(c, ctx, fetcher = fetchPage) {
   const reasons = [];
   if (!CATEGORIES.has(c.category)) return { ...c, status: 'dropped', reasons: [`unknown category ${c.category}`] };
-  const k = keyTokens(c.text, c.airlines ?? [], ctx.knownAirlines);
+  const endNames = ctx.ends.flatMap((e) => [e.iata, ...e.names]);
+  const k = keyTokens(c.text, c.airlines ?? [], ctx.knownAirlines, endNames);
   const isRoute = ROUTE_CATEGORIES.has(c.category);
   const ends = isRoute ? ctx.ends : null;
   const place = !isRoute && c.airport ? ctx.ends.find((e) => e.iata === String(c.airport).toUpperCase()) : null;
-  if (!isRoute && !place) return { ...c, status: 'dropped', reasons: ['airport claim not about either end of the route'] };
+  const practical = c.category === 'practical';
+  if (!isRoute && !practical && !place) return { ...c, status: 'dropped', reasons: ['airport claim not about either end of the route'] };
   if (!(c.airlines ?? []).length && /\b(the airline|the carrier)('s)?\b/i.test(c.text)) return { ...c, status: 'dropped', reasons: ['claim refers to "the airline" without naming it'] };
   const stray = otherAirportCodes(c.text, ctx.ends.map((e) => e.iata));
   if (stray.length) return { ...c, status: 'dropped', reasons: [`claim is about another airport (${stray.join(', ')})`] };
@@ -185,9 +187,11 @@ export async function verifyClaim(c, ctx, fetcher = fetchPage) {
     const title = page.meta?.title ?? '';
     const placeOk = (q) =>
       (c.category !== 'operator' || !operatorQuoteProblem(q)) &&
-      isRoute
+      (isRoute
         ? (mentionsPlace(q, ends[0]) || mentionsPlace(title, ends[0])) && (mentionsPlace(q, ends[1]) || mentionsPlace(title, ends[1]))
-        : mentionsPlace(q, place) || mentionsPlace(title, place) || mentionsPlace(page.text.slice(0, 3000), place);
+        : practical
+          ? ctx.ends.some((e) => mentionsPlace(q, e) || mentionsPlace(title, e))
+          : mentionsPlace(q, place) || mentionsPlace(title, place) || mentionsPlace(page.text.slice(0, 3000), place));
     let quote = null;
     let origin = null;
     if (c.quote && quoteOnPage(page.text, c.quote)) {
@@ -199,14 +203,17 @@ export async function verifyClaim(c, ctx, fetcher = fetchPage) {
         quote = c.quote;
         origin = 'model';
       }
-    } else {
+    } else if (c.quote) {
       reasons.push(`${cand.url}: quote not on page`);
     }
     if (!quote) {
-      const located = locateQuote(page.text, k, ends);
+      const located = locateQuote(page.text, k, ends ?? (place ? [place] : null));
       if (located && placeOk(located)) {
         quote = located;
         origin = 'located';
+      } else {
+        const best = closestSentence(page.text, k);
+        reasons.push(`${cand.url}: no sentence on the page carries ${best ? `all of the claim's names/numbers (closest misses ${best.missing.join(', ')})` : 'the claim'}${located ? ' and names the place' : ''}`);
       }
     }
     if (quote) {
@@ -230,7 +237,7 @@ async function judge(slug, items, model) {
   const prompt = `For each numbered pair, answer whether the QUOTE, read on its own, states everything the CLAIM says (no extra facts in the claim, same meaning, same airline, same dates, same direction/route). Be strict. Reply with ONLY JSON: {"results":[{"n":1,"supported":true|false,"why":"short reason"}]}
 
 ${items.map((c, i) => `${i + 1}. CLAIM: ${c.text}\n   QUOTE: ${c.verified_quote}`).join('\n\n')}`;
-  const { text } = await gemini({ model, prompt, grounded: false, slug, kind: 'judge', rawPath: path.join(DATA, 'research', slug, 'judge.json') });
+  const { text } = await gemini({ model, prompt, grounded: false, thinkingLevel: arg('judge-thinking', 'low'), slug, kind: 'judge', rawPath: path.join(DATA, 'research', slug, 'judge.json') });
   return parseJsonReply(text)?.results ?? [];
 }
 

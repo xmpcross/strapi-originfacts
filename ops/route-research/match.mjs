@@ -91,6 +91,8 @@ const NUMBER_WORDS = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven
 /** Words that change what a sentence asserts; the quote must carry them too. */
 const STRONG = ['daily', 'weekly', 'seasonal', 'year-round', 'first', 'only', 'last', 'busiest', 'longest', 'shortest', 'largest', 'biggest', 'most', 'fastest', 'cheapest'];
 
+const MONTH_ABBR = new Set(['jan', 'feb', 'mar', 'apr', 'jun', 'jul', 'aug', 'sep', 'sept', 'oct', 'nov', 'dec']);
+
 function monthOf(tok) {
   return MONTHS.find((m) => m.startsWith(tok.slice(0, 3))) ?? null;
 }
@@ -114,7 +116,30 @@ export function monthsIn(s) {
  * site airline names, so an airline mentioned in the text but not listed in
  * `airlines` is still required.
  */
-export function keyTokens(claimText, airlines = [], knownAirlines = []) {
+const ENTITY_STOP = new Set(['the', 'a', 'an', 'in', 'on', 'at', 'from', 'to', 'for', 'and', 'of', 'by', 'with', 'it', 'its', 'this', 'there', 'both', 'each', 'all', 'travellers', 'passengers', 'flights', 'flight', 'airport', 'airports', 'international', 'domestic', 'terminal', 'terminals', 'station', 'city', 'centre', 'center', 'airline', 'airlines', 'airways', 'nonstop', 'non-stop', 'direct', 'services', 'service', 'route', 'routes', 'between', 'via', 'is', 'are', 'was', 'were', 'has', 'have', 'will', 'can', 'you', 'they', 'he', 'she']);
+
+/**
+ * Proper names in a claim (capitalised words after the first word, plus a
+ * capitalised first word that is not a common word), lower-cased. Words in
+ * `ignore` (airline names, the route ends' names — checked separately) and
+ * month names are left out.
+ */
+export function entitiesIn(claimText, ignore = []) {
+  const ign = new Set(ignore.flatMap((x) => norm(x).split(/[^a-z0-9]+/)).filter(Boolean));
+  const words = String(claimText).replace(/[’']s\b/g, '').split(/[^A-Za-z0-9\u00C0-\u024F-]+/).filter(Boolean);
+  const out = new Set();
+  for (const [i, w] of words.entries()) {
+    // A capitalised first word is usually just the start of the sentence, unless it is an acronym or starts a multi-word name.
+    if (i === 0 && !/^[A-Z0-9]{2,}$/.test(w) && !/^[A-Z]/.test(words[1] ?? '')) continue;
+    if (!/^[A-Z\u00C0-\u00DE]/.test(w) || w.length < 3) continue;
+    const l = norm(w);
+    if (ENTITY_STOP.has(l) || ign.has(l) || MONTHS.includes(l) || MONTH_ABBR.has(l) || l in NUMBER_WORDS || STRONG.includes(l)) continue;
+    out.add(l);
+  }
+  return [...out];
+}
+
+export function keyTokens(claimText, airlines = [], knownAirlines = [], ignore = []) {
   const t = norm(claimText);
   const names = new Set(airlines.map((a) => norm(a)).filter(Boolean));
   for (const k of knownAirlines) {
@@ -128,11 +153,17 @@ export function keyTokens(claimText, airlines = [], knownAirlines = []) {
     months: [...monthsIn(t)],
     airlines: airlineList,
     strong: STRONG.filter((w) => new RegExp(`\\b${w}\\b`).test(t)),
+    entities: entitiesIn(claimText, [...airlineList, ...ignore]),
   };
 }
 
+/** "latam airlines" → "latam", "starlux airlines" → "starlux": the name a news sentence often uses. */
+export function airlineCore(a) {
+  return norm(a).replace(/\b(airlines|airline|airways|air lines|aviation|limited|ltd|group)\b/g, '').replace(/\s+/g, ' ').trim();
+}
+
 export function tokenCount(k) {
-  return k.numbers.length + k.months.length + k.airlines.length + k.strong.length;
+  return k.numbers.length + k.months.length + k.airlines.length + k.strong.length + (k.entities?.length ?? 0);
 }
 
 /** Which key tokens are missing from the quote (empty = all present). */
@@ -143,8 +174,9 @@ export function missingTokens(k, quote) {
   const missing = [];
   for (const n of k.numbers) if (!qNums.has(n)) missing.push(`number:${n}`);
   for (const m of k.months) if (!qMonths.has(m)) missing.push(`month:${m}`);
-  for (const a of k.airlines) if (!q.includes(a)) missing.push(`airline:${a}`);
+  for (const a of k.airlines) if (!q.includes(a) && !(airlineCore(a).length >= 4 && new RegExp(`(^|[^a-z])${airlineCore(a)}([^a-z]|$)`).test(q))) missing.push(`airline:${a}`);
   for (const w of k.strong) if (!new RegExp(`\\b${w}\\b`).test(q)) missing.push(`word:${w}`);
+  for (const e of k.entities ?? []) if (!new RegExp(`(^|[^a-z0-9])${e.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`).test(q)) missing.push(`name:${e}`);
   return missing;
 }
 
@@ -188,14 +220,15 @@ export function sentences(text) {
  * @param {{ iata: string; names: string[] }[] | null} [ends]
  */
 export function locateQuote(pageText, k, ends = null) {
-  if (tokenCount(k) < 2) return null;
+  // Two checkable tokens, or one plus both route ends named in the same window.
+  if (tokenCount(k) < (ends ? 1 : 2)) return null;
   const ss = sentences(pageText);
   let best = null;
   for (let i = 0; i < ss.length; i++) {
     for (const w of [ss[i], i + 1 < ss.length ? `${ss[i]} ${ss[i + 1]}` : null]) {
       if (!w || w.length > 700) continue;
       if (missingTokens(k, w).length) continue;
-      if (ends && !(mentionsPlace(w, ends[0]) && mentionsPlace(w, ends[1]))) continue;
+      if (ends && !ends.every((e) => mentionsPlace(w, e))) continue;
       if (!best || w.length < best.length) best = w;
     }
   }
@@ -264,6 +297,11 @@ export const REJECTED_HOSTS = [
   'wego.', 'cheapflights.', 'momondo.', 'kiwi.com', 'flightsfrom.com', 'directflights.com', 'airportia.com', 'flightaware.com',
   'flightradar24.com', 'makemytrip.com', 'cleartrip.com', 'ixigo.com', 'goibibo.com', 'booking.com', 'agoda.com', 'edreams.', 'opodo.',
   'kiwi.', 'aviasales.', 'jetradar.', 'rome2rio.com', 'medium.com', 'quora.', 'originfacts.com',
+  'flyteam.jp', 'cheapoair.com', 'travelocity.', 'orbitz.com', 'priceline.com', 'hopper.com', 'kayak.', 'tripadvisor.', 'trivago.',
+  'airlines-inform.', 'airport-information.', 'flightsfinder.', 'flightmapper.', 'flightradar.', 'routesmap.', 'airlineroutemaps.',
+  'travelstart.', 'gotogate.', 'mytrip.', 'traveloka.com', 'tiket.com', 'easemytrip.com', 'yatra.com', 'webjet.', 'flightcentre.',
+  'studentuniverse.', 'cheaptickets.', 'lastminute.', 'skiplagged.com', 'hotwire.com', 'justfly.com', 'airfarewatchdog.com',
+  'flighthub.com', 'travelup.', 'onetravel.com', 'fareportal', 'alternativeairlines.com', 'airwander.com', 'pinterest.', 'scribd.com',
 ];
 
 export function rejectedHost(url) {
@@ -295,7 +333,7 @@ export function operatorQuoteProblem(quote) {
 
 /* --------------------------------------------------------- other airports */
 
-const NOT_AIRPORTS = new Set(['USA', 'UAE', 'NSW', 'CBD', 'LCC', 'FAA', 'CAA', 'EU', 'UK', 'IATA', 'ICAO', 'GDP', 'CEO', 'CFO', 'COO', 'VIP', 'ATR', 'SAR', 'PRC', 'ROC', 'NZD', 'AUD', 'USD', 'GBP', 'EUR', 'INR', 'SGD', 'MYR', 'JPY', 'CNY', 'HKD', 'QLD', 'ACT', 'WA', 'TAS', 'GST', 'VAT', 'APEC']);
+const NOT_AIRPORTS = new Set(['MRT', 'LRT', 'BRT', 'ERL', 'KTM', 'BUS', 'NZ$', 'USA', 'UAE', 'NSW', 'CBD', 'LCC', 'FAA', 'CAA', 'EU', 'UK', 'IATA', 'ICAO', 'GDP', 'CEO', 'CFO', 'COO', 'VIP', 'ATR', 'SAR', 'PRC', 'ROC', 'NZD', 'AUD', 'USD', 'GBP', 'EUR', 'INR', 'SGD', 'MYR', 'JPY', 'CNY', 'HKD', 'QLD', 'ACT', 'WA', 'TAS', 'GST', 'VAT', 'APEC']);
 
 /**
  * Three-letter codes in a claim that are not the route's own airports. A
@@ -305,4 +343,17 @@ const NOT_AIRPORTS = new Set(['USA', 'UAE', 'NSW', 'CBD', 'LCC', 'FAA', 'CAA', '
 export function otherAirportCodes(text, endIatas) {
   const ends = new Set(endIatas.map((c) => String(c).toUpperCase()));
   return [...new Set(String(text).match(/\b[A-Z]{3}\b/g) ?? [])].filter((c) => !ends.has(c) && !NOT_AIRPORTS.has(c));
+}
+
+/** For drop reasons: the 1–2 sentence window missing the fewest key tokens. */
+export function closestSentence(pageText, k) {
+  if (!tokenCount(k)) return null;
+  const ss = sentences(pageText);
+  let best = null;
+  for (let i = 0; i < ss.length; i++) {
+    const w = i + 1 < ss.length ? `${ss[i]} ${ss[i + 1]}` : ss[i];
+    const missing = missingTokens(k, w);
+    if (!best || missing.length < best.missing.length) best = { text: w, missing };
+  }
+  return best;
 }

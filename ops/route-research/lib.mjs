@@ -142,10 +142,12 @@ export class GeminiStop extends Error {}
  * how many web search queries Google ran, for every call, in data/usage.jsonl.
  * Billing / quota / auth errors throw GeminiStop: the run stops, it does not retry.
  */
-export async function gemini({ model, prompt, grounded, slug, kind, rawPath }) {
+export async function gemini({ model, prompt, grounded, slug, kind, rawPath, thinkingLevel = null }) {
   const body = {
     contents: [{ role: 'user', parts: [{ text: prompt }] }],
     ...(grounded ? { tools: [{ google_search: {} }] } : {}),
+    // Gemini 3.x: thinking_level minimal | low | medium | high (default medium-ish). ~90 % of pilot cost was thinking.
+    ...(thinkingLevel ? { generationConfig: { thinkingConfig: { thinkingLevel } } } : {}),
   };
   const started = Date.now();
   const res = await fetch(`${GEMINI}/${model}:generateContent`, {
@@ -164,6 +166,7 @@ export async function gemini({ model, prompt, grounded, slug, kind, rawPath }) {
     model,
     http: res.status,
     grounded: !!grounded,
+    thinking_level: thinkingLevel,
     web_search_queries: gm?.webSearchQueries?.length ?? 0,
     grounding_chunks: gm?.groundingChunks?.length ?? 0,
     prompt_tokens: um.promptTokenCount ?? 0,

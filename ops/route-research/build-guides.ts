@@ -30,7 +30,8 @@ type Airport = { iata: string; name: string; city?: string | null; country?: str
 type Airline = RouteCarrier & { iataCode?: string | null; country?: string | null };
 type Route = { slug: string; origin: Airport; destination: Airport; carriers?: Airline[]; createdAt?: string | null };
 type Claim = {
-  category: 'operator' | 'seasonal' | 'history' | 'airport' | 'ground';
+  category: 'operator' | 'seasonal' | 'history' | 'airport' | 'ground' | 'practical';
+  question?: string | null;
   text: string;
   date?: string | null;
   airlines?: string[];
@@ -247,6 +248,8 @@ export function buildGuide(
   const para = (c: Claim): GuideParagraph => ({ text: sentence(c.text), sources: [sid(c)] });
   const byDate = (a: Claim, b: Claim) => String(a.date ?? '9999').localeCompare(String(b.date ?? '9999'));
 
+  const dated = final.filter((c) => (c.category === 'history' || c.category === 'seasonal') && c.date).sort(byDate);
+  const keyEvent = dated.at(-1) ?? null;
   const sections: GuideSection[] = [];
   const seasonal = final.filter((c) => c.category === 'seasonal').sort(byDate);
   if (seasonal.length) sections.push({ id: 'nonstop-service', heading: `What should you know about nonstop ${from}–${to} service?`, paragraphs: seasonal.map(para) });
@@ -268,6 +271,17 @@ export function buildGuide(
   const faqs: GuideFaq[] = complete
     ? [{ q: `Which airlines fly${saysNonstop ? ' nonstop' : ''} from ${from} to ${to}?`, a: `${joinNames(opList.map((x) => x.name))}.`, sources: opSources }]
     : [];
+  if (history.length) {
+    const recent = [...history].reverse().slice(0, 3).reverse();
+    faqs.push({
+      q: `What are the key dates for nonstop ${from}–${to} flights?`,
+      a: recent.map((c) => sentence(c.text)).join(' '),
+      sources: [...new Set(recent.map(sid))],
+    });
+  }
+  for (const c of final.filter((x) => x.category === 'practical' && x.question)) {
+    faqs.push({ q: sentence(String(c.question)).replace(/\.$/, '?').replace(/\?\?$/, '?'), a: sentence(c.text), sources: [sid(c)] });
+  }
   for (const ap of [o, d]) {
     const g = ground.filter((c) => String(c.airport ?? '').toUpperCase() === ap.iata.toUpperCase());
     if (g.length) faqs.push({ q: `How do I get to and from ${ap.name} by public transport?`, a: g.map((c) => sentence(c.text)).join(' '), sources: [...new Set(g.map(sid))] });
@@ -282,8 +296,8 @@ export function buildGuide(
         complete
           ? `${joinNames(opList.map((x) => x.name))} ${opList.length === 1 ? 'flies' : 'fly'} the route${saysNonstop ? ' nonstop' : ''}.`
           : `Airlines flying the route${saysNonstop ? ' nonstop' : ''} include ${joinNames(opList.map((x) => x.name))}.`
-      }`,
-      sources: opSources,
+      }${keyEvent ? ` ${sentence(keyEvent.text)}` : ''}`,
+      sources: keyEvent ? [...new Set([...opSources, sid(keyEvent)])] : opSources,
     },
     operating_airlines: complete ? opList.map((x) => ({ iata: x.iata, sources: [...x.sources] })) : [],
     sections,

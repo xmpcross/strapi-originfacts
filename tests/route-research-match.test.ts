@@ -221,3 +221,11 @@ test('otherAirportCodes: a claim about Western Sydney (WSI) is not about SYD', (
   assert.deepEqual(otherAirportCodes('Air New Zealand flies between Auckland and WSI.', ['AKL', 'SYD']), ['WSI']);
   assert.deepEqual(otherAirportCodes('Flights between AKL and SYD in NSW.', ['AKL', 'SYD']), []);
 });
+
+test('entities: proper names in a claim must be in the quote; route-end names and airlines are checked elsewhere', () => {
+  const k = keyTokens('The AirportLink bus runs between Auckland Airport and Puhinui Station.', [], [], ['auckland', 'AKL']);
+  assert.deepEqual(new Set(k.entities), new Set(['airportlink', 'puhinui']));
+  assert.deepEqual(missingTokens(k, 'The orange AirportLink bus service carries passengers to Puhinui Station.'), []);
+  assert.deepEqual(missingTokens(k, 'The orange bus service carries passengers to Puhinui Station.'), ['name:airportlink']);
+  assert.deepEqual(keyTokens('Three daily flights in May.').entities, []);
+});

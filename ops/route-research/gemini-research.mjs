@@ -1,91 +1,62 @@
 #!/usr/bin/env node
 /**
- * Step 1 — grounded research. For each route, three Gemini calls with the
- * google_search tool (operators today, dated history, airport access). Each
- * asks for JSON claims with a verbatim quote and a source URL.
+ * Step 1 — grounded research, in two passes per route.
  *
- * Grounding metadata decides the sources: each claim is mapped to the
- * groundingChunks whose groundingSupports cover its text, and those
- * vertexaisearch redirect URLs are resolved (one GET to Google, not followed
- * to the target) to the real page URL. URLs the model wrote itself are kept
- * as a fallback candidate only. Nothing is published from this step;
- * verify-sources.mjs decides what survives.
+ * Pass A (grounded): six plain-prose questions with the google_search tool —
+ * operators, route history, origin airport, destination airport, transport at
+ * each end, and one route-specific practical angle (the depth of
+ * content/route-guides/bah-to-doh.json). No JSON is asked for: on
+ * gemini-3.6-flash a JSON-only instruction suppressed groundingMetadata and
+ * the model invented URLs. Sources come ONLY from groundingMetadata:
+ * groundingChunks[].web.uri (a vertexaisearch redirect) is resolved to the
+ * final URL (both recorded); aggregator / booking / UGC hosts are discarded
+ * (match.mjs REJECTED_HOSTS). URLs written in the model's prose are ignored.
  *
- *   node ops/route-research/gemini-research.mjs --routes syd-to-mel,kul-to-sin
- *     [--model gemini-3.6-flash] [--max-grounded 40] [--kinds operators,history,airports]
- *     [--force]   re-ask even when a saved response exists
+ * Pass B (no search): one structuring call turns the six answers plus the
+ * numbered grounded sources and their groundingSupports into JSON claims.
+ * Each claim cites source numbers from that list; it cannot add a URL.
  *
- * Raw requests/responses (no key) → data/research/<slug>/<kind>.json
+ *   node ops/route-research/gemini-research.mjs --routes akl-to-syd[,…]
+ *     [--model gemini-3.6-flash] [--thinking low] [--max-grounded N] [--force]
+ *
+ * Raw requests/responses (no key) → data/research/<slug>/<topic>.json, structure.json
  * Per-call usage → data/usage.jsonl     Claims → data/research/<slug>/claims.json
  */
 import fs from 'node:fs';
 import path from 'node:path';
 
 import {
-  arg, DATA, gemini, GeminiStop, loadRoutes, parseJsonReply, readJson, readUsage, routeLabel, sleep, writeJson, norm,
+  arg, DATA, gemini, GeminiStop, loadRoutes, parseJsonReply, readJson, readUsage, routeLabel, sleep, writeJson,
 } from './lib.mjs';
+import { rejectedHost } from './match.mjs';
 
 const MODEL = arg('model', 'gemini-3.6-flash');
 const MAX_GROUNDED = Number(arg('max-grounded', 40));
-const KINDS = String(arg('kinds', 'operators,history,airports')).split(',');
+// 'minimal' skipped the search entirely on the akl-to-syd test; 'low' searches.
+const THINKING = arg('thinking', 'low');
 const FORCE = !!arg('force');
 const slugs = String(arg('routes', '')).split(',').filter(Boolean);
 if (!slugs.length) {
   console.error('usage: --routes slug,slug');
   process.exit(1);
 }
-
 const today = new Date().toISOString().slice(0, 10);
 
-const RULES = `
-Rules:
-- You MUST run Google Search before answering; do not answer from memory. Every source_url must be a page your searches returned. Only include a claim if a page you found states it. No claim from memory.
-- "quote" must be copied VERBATIM (character for character, one or two consecutive sentences, no ellipsis, no paraphrase) from the page in "source_url". It must contain every number, date and airline name used in "text".
-- "text" is one plain factual sentence in British English, no marketing language, no superlatives unless the quote states them.
-- Prefer airline and airport press releases or official pages, government sources and established news or aviation-trade outlets. Do NOT use Wikipedia, forums, Reddit, Quora, Tripadvisor, social media, flight-search / booking / route-map sites (Skyscanner, Kayak, Expedia, Google Flights, FlightConnections, Trip.com, Wego, etc.) or AI-generated content farms.
-- If you find nothing reliable, return an empty claims array. Fewer, well-sourced claims are better than many.
-- Reply with ONLY a JSON object, no prose:
-{"claims":[{"category":"<category>","text":"...","date":"YYYY-MM-DD | YYYY-MM | YYYY | null","airlines":["airline names named in text"],"airport":"<IATA of the airport the claim is about, or null>","quote":"...","source_url":"https://..."}]}`;
+const STEER = `Use Google Search. Base the answer on news coverage (aviation trade press such as Australian Aviation, Executive Traveller, Aviation Week, Routesonline, CAPA, ch-aviation, AeroRoutes; national and regional newspapers), airline and airport press releases / newsrooms, and official airport, government and transport-authority pages. Booking and fare sites (Expedia, Skyscanner, Kayak, FlightsFrom, Trip.com, Google Flights, FlightConnections, Kiwi, Wego, Cheapflights, travel agents), Wikipedia, forums and social media are NOT acceptable sources. Give specific facts with exact dates (day, month, year) where sources give them, and name airlines exactly as the sources do. Say plainly if you could not find something.`;
 
-function prompts(r) {
+export function topics(r, day = today) {
   const L = routeLabel(r);
+  const o = r.origin;
+  const d = r.destination;
   const pair = `${L.o} and ${L.d}`;
   return {
-    operators: `Today is ${today}. Which airlines currently operate scheduled nonstop passenger flights between ${pair}, with their own aircraft (the operating carrier, not airlines that only sell codeshare seats)? List EVERY airline that does, one claim each (category "operator"), naming the airline and saying it flies between these two airports nonstop or directly. Each operator claim needs a page dated 2025 or 2026 (news article, airline or airport media release) whose quote names the airline and both cities or airports; undated booking or marketing pages are not acceptable for operator claims. If a city has several airports, only flights to/from the airports named above count. Add claims (category "seasonal") for any service a source says is seasonal, newly launched in 2025–2026, or announced to start or end.
-${RULES}`,
-    history: `Today is ${today}. Find notable, dated history of nonstop air service between ${pair}: when particular airlines launched, suspended, resumed or dropped the route, and any notable milestones a source records for this specific city pair. Category "history". Each claim needs a date.
-${RULES}`,
-    airports: `Today is ${today}. For a traveller flying between ${pair}: for EACH of the two airports, how do you get between the airport and the city centre by public transport (train, metro, airport bus — give the service name as the airport or operator states it)? Category "ground", with "airport" set to the IATA code. Also, if the airport's official site or an established outlet states it, when the airport or its main passenger terminal opened (category "airport").
-${RULES}`,
+    operators: `Today is ${day}. Which airlines currently operate scheduled nonstop passenger flights between ${pair} with their own aircraft (not codeshare-only)? For each, cite a recent (2025–2026) news report or press release that names the airline flying this route, and mention frequency or seasonality if reported. Note any airline that has recently started, ended or announced changes to the route. ${STEER}`,
+    history: `What are the notable dated events in the history of nonstop flights between ${pair}: launches, suspensions, resumptions, airlines entering or leaving the route, capacity changes, records? Give each event with its date. ${STEER}`,
+    origin_airport: `Facts a traveller should know about ${o.name} (${o.iata}) in ${o.city || ''}, ${o.country || ''}: which terminal(s) international/domestic flights use, when the airport or its current terminal opened, and other notable facts stated on the airport's own website or in news coverage. ${STEER}`,
+    destination_airport: `Facts a traveller should know about ${d.name} (${d.iata}) in ${d.city || ''}, ${d.country || ''}: which terminal(s) international/domestic flights use, when the airport or its current terminal opened, and other notable facts stated on the airport's own website or in news coverage. ${STEER}`,
+    transport: `How do you get between ${o.name} (${o.iata}) and central ${o.city || o.name}, and between ${d.name} (${d.iata}) and central ${d.city || d.name}, by public transport (train, metro, bus, airport express), taxi and rideshare? Give the service names and where they leave from, as stated by the airports or the transport authorities. ${STEER}`,
+    practical: `For travellers between ${L.from} and ${L.to}: what is one route-specific practical question a traveller would ask (for example entry/visa or arrival processing between these two places, alternative ways to travel between them, or which airport in each city is used), and what do official or news sources say? ${STEER}`,
   };
-}
-
-/** Map claims to the grounding chunks whose supports cover their text. */
-function mapClaimsToChunks(claims, gm) {
-  const supports = gm?.groundingSupports ?? [];
-  const tok = (s) => new Set(norm(s).replace(/[^a-z0-9 ]/g, ' ').split(' ').filter((t) => t.length > 2));
-  return claims.map((c) => {
-    const ct = norm(c.text);
-    const cq = norm(c.quote);
-    const ctok = tok(`${c.text}`);
-    const idx = new Set();
-    for (const s of supports) {
-      const seg = norm(s.segment?.text ?? '').replace(/\\"/g, '"');
-      if (seg.length < 12) continue;
-      const hit =
-        seg.includes(ct) ||
-        (cq && seg.includes(cq.slice(0, 80))) ||
-        (seg.length > 30 && (ct.includes(seg) || cq.includes(seg))) ||
-        (() => {
-          const st = tok(seg);
-          let n = 0;
-          for (const t of ctok) if (st.has(t)) n++;
-          return ctok.size > 0 && n / ctok.size >= 0.7;
-        })();
-      if (hit) for (const i of s.groundingChunkIndices ?? []) idx.add(i);
-    }
-    return { ...c, grounding_chunks: [...idx].sort((a, b) => a - b) };
-  });
 }
 
 /** vertexaisearch redirect → real URL, without fetching the target page. */
@@ -99,75 +70,110 @@ async function resolveRedirect(uri) {
   }
 }
 
+async function groundedTopic(slug, topic, prompt, dir) {
+  const raw = path.join(dir, `${topic}.json`);
+  if (!FORCE && fs.existsSync(raw) && readJson(raw).parsed) return readJson(raw).parsed;
+  const used = readUsage().filter((u) => u.grounded).length;
+  if (used >= MAX_GROUNDED) throw new GeminiStop(`grounded-request budget reached (${used}/${MAX_GROUNDED})`);
+  const { text, grounding, usage } = await gemini({ model: MODEL, prompt, grounded: true, thinkingLevel: THINKING, slug, kind: topic, rawPath: raw });
+  const chunks = [];
+  for (const [i, ch] of (grounding?.groundingChunks ?? []).entries()) {
+    const uri = ch.web?.uri ?? null;
+    const url = uri ? await resolveRedirect(uri) : null;
+    chunks.push({ index: i, title: ch.web?.title ?? null, redirect: uri, url, rejected: url ? rejectedHost(url) : 'unresolved' });
+    await sleep(150);
+  }
+  const supports = (grounding?.groundingSupports ?? []).map((s) => ({ text: s.segment?.text ?? '', chunks: s.groundingChunkIndices ?? [] }));
+  const parsed = { text, chunks, supports, web_search_queries: grounding?.webSearchQueries ?? [] };
+  writeJson(raw, { ...readJson(raw), parsed });
+  console.log(
+    `${slug} ${topic}: ${usage.prompt_tokens}+${usage.candidates_tokens}(+${usage.thoughts_tokens} thinking) tok, ${usage.web_search_queries} searches, ` +
+      `${chunks.length} sources (${chunks.filter((c) => !c.rejected).length} usable)`,
+  );
+  return parsed;
+}
+
+const CATEGORIES = 'operator | seasonal | history | airport | ground | practical';
+
+async function structure(slug, r, answers, dir) {
+  // Number the usable grounded sources across all topics (one number per final URL).
+  const sources = [];
+  const numOf = new Map();
+  const local = {};
+  for (const [topic, a] of Object.entries(answers)) {
+    local[topic] = a.chunks.map((c) => {
+      if (c.rejected || !c.url) return null;
+      if (!numOf.has(c.url)) {
+        sources.push({ n: sources.length + 1, url: c.url, redirect: c.redirect, title: c.title, topic });
+        numOf.set(c.url, sources.length);
+      }
+      return numOf.get(c.url);
+    });
+  }
+  const L = routeLabel(r);
+  const block = Object.entries(answers)
+    .map(([topic, a]) => {
+      const sup = a.supports
+        .map((s) => ({ text: s.text, ns: [...new Set(s.chunks.map((i) => local[topic][i]).filter(Boolean))] }))
+        .filter((s) => s.ns.length);
+      return `## ${topic}\n${a.text}\n\nSupported statements:\n${sup.map((s) => `- "${s.text}" → ${s.ns.map((n) => `S${n}`).join(', ')}`).join('\n') || '(none)'}`;
+    })
+    .join('\n\n');
+  const prompt = `You are turning researched notes about the flight route ${L.o} → ${L.d} into individual factual claims for a fact-checked web page.
+
+SOURCES (the only sources you may cite):
+${sources.map((s) => `S${s.n}: ${s.title ?? ''} — ${new URL(s.url).hostname}`).join('\n')}
+
+NOTES (with the statements Google tied to each source):
+${block}
+
+Rules:
+- Only use statements listed under "Supported statements"; cite the S-numbers given for that statement. Never cite a source that is not listed for it, never invent a URL or source.
+- One fact per claim, one short sentence, plain British English. Keep to the wording of the supported statement: every name, number and date in your claim must appear in that statement, and add nothing it does not say (no extra dates, frequencies, aircraft or details from elsewhere). Include the year in any dated claim only if the statement gives it.
+- State the fact itself; never frame a claim as "X reported" or "on <date> X announced" unless the announcement itself is the fact.
+- Categories: ${CATEGORIES}.
+  operator = an airline currently flies ${L.from}–${L.to} nonstop with its own aircraft (name the airline and both cities);
+  seasonal = a current or announced change to that service (frequency, new/ended service), with its date;
+  history = a dated past event on this route (name the airline(s) and both cities, include the year);
+  airport = a fact about one of the two airports (set "airport" to its IATA code);
+  ground = how to get between one airport and its city (set "airport");
+  practical = an answer to a route-specific traveller question: also give "question".
+- Skip anything about other airports or routes, codeshare-only arrangements, or carriers no longer flying.
+Reply with ONLY JSON: {"claims":[{"category":"...","text":"...","date":"YYYY-MM-DD|YYYY-MM|YYYY|null","airlines":["..."],"airport":"IATA|null","question":"...|null","sources":[1,2]}]}`;
+  const { text } = await gemini({ model: MODEL, prompt, grounded: false, thinkingLevel: THINKING, slug, kind: 'structure', rawPath: path.join(dir, 'structure.json') });
+  const reply = parseJsonReply(text);
+  if (!reply?.claims) throw new Error(`${slug}: structuring reply unparseable`);
+  const byN = new Map(sources.map((s) => [s.n, s]));
+  const claims = reply.claims.map((c) => {
+    const cited = (c.sources ?? []).map((n) => byN.get(Number(n))).filter(Boolean);
+    return {
+      ...c,
+      quote: null,
+      grounding_urls: cited.map((s) => s.url),
+      grounding_redirects: cited.map((s) => s.redirect),
+      cited_unknown_sources: (c.sources ?? []).filter((n) => !byN.has(Number(n))),
+      source_url: null,
+      same_host_chunk_urls: [],
+    };
+  });
+  return { sources, claims };
+}
+
 async function main() {
   const routes = await loadRoutes();
-  const bySlug = new Map(routes.map((r) => [r.slug, r]));
   for (const slug of slugs) {
-    const r = bySlug.get(slug);
+    const r = routes.find((x) => x.slug === slug);
     if (!r?.origin || !r?.destination) {
       console.error(`${slug}: not a route in Strapi — skipped`);
       continue;
     }
     const dir = path.join(DATA, 'research', slug);
-    const all = [];
-    const P = prompts(r);
-    for (const kind of KINDS) {
-      const raw = path.join(dir, `${kind}.json`);
-      const retryRaw = raw.replace(/\.json$/, '-retry.json');
-      let saved = null;
-      if (!FORCE) for (const f of [raw, retryRaw]) if (!saved?.parsed && fs.existsSync(f)) saved = readJson(f);
-      let parsed = saved?.parsed ?? null;
-      let attempts = 0;
-      while (!parsed && attempts < 2) {
-        const used = readUsage().filter((u) => u.grounded).length;
-        if (used >= MAX_GROUNDED) throw new GeminiStop(`grounded-request budget reached (${used}/${MAX_GROUNDED})`);
-        attempts++;
-        const rawFile = attempts > 1 ? retryRaw : raw;
-        const { text, grounding, usage } = await gemini({
-          model: MODEL, prompt: P[kind], grounded: true, slug, kind: attempts > 1 ? `${kind}-retry` : kind, rawPath: rawFile,
-        });
-        const reply = parseJsonReply(text);
-        console.log(
-          `${slug} ${kind}: ${usage.prompt_tokens}+${usage.candidates_tokens}(+${usage.thoughts_tokens} thinking) tok, ` +
-            `${usage.web_search_queries} searches, ${usage.grounding_chunks} chunks, ${reply?.claims?.length ?? 'unparseable'} claims`,
-        );
-        if (!reply || !Array.isArray(reply.claims)) continue;
-        const chunks = [];
-        for (const [i, ch] of (grounding?.groundingChunks ?? []).entries()) {
-          const uri = ch.web?.uri ?? null;
-          chunks.push({ index: i, title: ch.web?.title ?? null, redirect: uri, url: uri ? await resolveRedirect(uri) : null });
-          await sleep(150);
-        }
-        parsed = {
-          chunks,
-          web_search_queries: grounding?.webSearchQueries ?? [],
-          claims: mapClaimsToChunks(reply.claims, grounding).map((c) => ({
-            ...c,
-            kind,
-            grounding_urls: c.grounding_chunks.map((i) => chunks[i]?.url).filter(Boolean),
-          })),
-        };
-        writeJson(rawFile, { ...readJson(rawFile), parsed });
-      }
-      if (!parsed) {
-        console.error(`${slug} ${kind}: no parseable reply after ${attempts} attempts`);
-        continue;
-      }
-      // Chunks the claim did not map to are still candidates when they share the model URL's host.
-      for (const c of parsed.claims) {
-        let host = null;
-        try {
-          host = new URL(c.source_url).hostname.replace(/^www\./, '');
-        } catch {
-          /* model gave no usable URL */
-        }
-        c.same_host_chunk_urls = host
-          ? parsed.chunks.filter((ch) => ch.url && new URL(ch.url).hostname.replace(/^www\./, '') === host).map((ch) => ch.url)
-          : [];
-        all.push(c);
-      }
-    }
-    writeJson(path.join(dir, 'claims.json'), { slug, model: MODEL, researched_at: today, claims: all });
+    const answers = {};
+    for (const [topic, prompt] of Object.entries(topics(r))) answers[topic] = await groundedTopic(slug, topic, prompt, dir);
+    const { sources, claims } = await structure(slug, r, answers, dir);
+    const rejected = Object.values(answers).flatMap((a) => a.chunks.filter((c) => c.rejected).map((c) => `${c.url ?? c.redirect}: ${c.rejected}`));
+    writeJson(path.join(dir, 'claims.json'), { slug, model: MODEL, researched_at: today, sources, rejected_sources: rejected, claims });
+    console.log(`${slug}: ${sources.length} usable grounded sources (${rejected.length} rejected), ${claims.length} claims`);
   }
 }
 

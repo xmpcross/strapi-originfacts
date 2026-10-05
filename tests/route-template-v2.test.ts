@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { registerHooks } from 'node:module';
-import { ROUTE_TEMPLATE_V2_SLUGS, routeUsesTemplateV2 } from '../lib/route-template-v2';
+import { ROUTE_TEMPLATE_V2_DEFAULT, ROUTE_TEMPLATE_V2_EXCLUDED, routeUsesTemplateV2 } from '../lib/route-template-v2';
 
 // lib/route-v2 reaches facts-view, which reaches a React component importing a
 // CSS module; Node cannot load CSS, so stub it out (Next handles it in the build).
@@ -14,12 +14,12 @@ registerHooks({
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const v2 = require('../lib/route-v2') as typeof import('../lib/route-v2');
 
-test('route v2: piloted on bah-to-doh only', () => {
-  assert.deepEqual([...ROUTE_TEMPLATE_V2_SLUGS], ['bah-to-doh']);
-  assert.equal(routeUsesTemplateV2('bah-to-doh'), true);
-  assert.equal(routeUsesTemplateV2('BAH-TO-DOH'), true);
-  assert.equal(routeUsesTemplateV2('doh-to-bah'), false);
-  assert.equal(routeUsesTemplateV2('syd-to-mel'), false);
+test('route v2: default for every route, with an (empty) exclusion set for rollback', () => {
+  assert.equal(ROUTE_TEMPLATE_V2_DEFAULT, true);
+  assert.deepEqual([...ROUTE_TEMPLATE_V2_EXCLUDED], []);
+  for (const slug of ['bah-to-doh', 'BAH-TO-DOH', 'doh-to-bah', 'syd-to-mel', 'lhr-to-jfk']) {
+    assert.equal(routeUsesTemplateV2(slug), true, slug);
+  }
 });
 
 test('route v2 airline highlights: official fact-file fields only', () => {
@@ -117,4 +117,48 @@ test('route v2 highlight tiles stay in step with the airline v2 glance tiles', (
       if (expected.length) assert.deepEqual(h.values.map((v) => v.value), expected, `${slug} ${h.id}`);
     }
   }
+});
+
+test('route v2 airport facts: OurAirports and Wikidata values only, with their dates', () => {
+  const doh = v2.routeAirportFacts('DOH')!;
+  assert.ok(doh);
+  assert.equal(doh.typeLabel, 'Large airport');
+  assert.ok(doh.runwayCount >= 1 && doh.longestRunway && doh.longestRunway.metres > 3000);
+  assert.deepEqual(doh.opened, { text: '30 April 2014', official: true });
+  assert.ok(doh.operators.includes('Qatar Airways'));
+  assert.match(doh.ourairportsRetrieved ?? '', /^\d{4}-\d{2}-\d{2}$/);
+  assert.match(doh.wikidataRetrieved ?? '', /^\d{4}-\d{2}-\d{2}$/);
+  // Unknown airport: nothing, not an empty card.
+  assert.equal(v2.routeAirportFacts('ZZZ'), null);
+});
+
+test('route v2 climate: NASA POWER months, current month called out', () => {
+  const c = v2.routeClimate('DOH', new Date('2026-10-05T12:00:00Z'));
+  if (!c) return; // DOH lacks a climate snapshot: the section simply does not render
+  assert.equal(c.months.length, 12);
+  assert.equal(c.current, 9);
+  assert.equal(c.months[9].month, 'Oct');
+  assert.ok(c.months.every((m) => m.hi >= m.lo));
+  assert.equal(v2.routeClimate('ZZZ'), null);
+});
+
+test('route v2 cheapest-month FAQ answer names no price or currency', () => {
+  const a = v2.cheapestMonthAnswer({ monthLabel: 'November 2026', fetched: '5 Oct 2026, 12:00 UTC', flight: 'Qatar Airways QR 1103' });
+  assert.match(a, /November 2026, on Qatar Airways QR 1103/);
+  assert.doesNotMatch(a, /US\$|A\$|£|€|\d+ ?(USD|AUD|GBP|EUR)/);
+});
+
+test('route fares: price map keyed like the table rows', () => {
+  const { farePrices, flightKey } = require('../lib/route-fares') as typeof import('../lib/route-fares');
+  const prices = farePrices({
+    currency: 'AUD',
+    fetchedAt: '2026-10-05T00:00:00Z',
+    months: [{ month: '2026-11', price: 141, airline: 'QR', flightNumber: '1103', departureAt: '2026-11-02T10:00:00+03:00' }],
+    flights: [{ airline: 'QR', flightNumber: '1103', departs: '10:00', durationMinutes: 55, datesSeen: 3, lowestPrice: 141 }],
+    airlines: ['QR'],
+    duration: { min: 55, max: 55 },
+    fareCount: 3,
+  });
+  assert.deepEqual(prices, { currency: 'AUD', fetchedAt: '2026-10-05T00:00:00Z', months: { '2026-11': 141 }, flights: { QR1103: 141 } });
+  assert.equal(flightKey({ airline: 'GF', flightNumber: '526' }), 'GF526');
 });

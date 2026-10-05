@@ -14,11 +14,20 @@
  * function, so it is NOT cached and the next regeneration retries; the page
  * itself regenerates at most once a minute (revalidate = 60), which bounds it.
  *
+ * Currency: Travelpayouts converts on its side — `currency` is a documented
+ * parameter of both endpoints, on the same free partner token — so each
+ * display currency (lib/currency.ts) is fetched and cached on its own, never
+ * converted here. The page builds its tables from the USD answer (flight
+ * numbers, months, dates and times do not depend on currency) and prints the
+ * prices in the visitor's header currency on the client, from
+ * farePrices() — USD inline, the others via /api/route-fares.
+ *
  * Server-only: uses TRAVELPAYOUTS_API_TOKEN. No token, no data or a failed
  * request all return null, and the sections that need fares do not render.
  */
 
 import { unstable_cache } from 'next/cache';
+import { DEFAULT_CURRENCY, type Currency } from '@/lib/currency';
 
 const TP_BASE = 'https://api.travelpayouts.com/aviasales/v3';
 const REVALIDATE_SECONDS = 6 * 60 * 60;
@@ -53,7 +62,7 @@ export type SeenFlight = {
 };
 
 export type RouteFares = {
-  currency: 'USD';
+  currency: Currency;
   fetchedAt: string;
   months: MonthFare[];
   flights: SeenFlight[];
@@ -90,10 +99,10 @@ function localTime(iso: string): string {
   return m ? m[1] : '';
 }
 
-async function fetchRouteFares(origin: string, destination: string): Promise<RouteFares | null> {
+async function fetchRouteFares(origin: string, destination: string, currency: Currency): Promise<RouteFares | null> {
   const token = process.env.TRAVELPAYOUTS_API_TOKEN;
   if (!token) return null;
-  const base = { origin, destination, currency: 'usd', direct: 'true' };
+  const base = { origin, destination, currency: currency.toLowerCase(), direct: 'true' };
   const [grouped, dated] = await Promise.all([
     tpGet(token, 'grouped_prices', { ...base, group_by: 'month' }),
     tpGet(token, 'prices_for_dates', { ...base, one_way: 'true', sorting: 'price', limit: '1000' }),
@@ -136,7 +145,7 @@ async function fetchRouteFares(origin: string, destination: string): Promise<Rou
 
   const airlines = [...new Set([...flights.map((f) => f.airline), ...months.map((m) => m.airline)])].sort();
   return {
-    currency: 'USD',
+    currency,
     fetchedAt: new Date().toISOString(),
     months,
     flights,
@@ -146,14 +155,34 @@ async function fetchRouteFares(origin: string, destination: string): Promise<Rou
   };
 }
 
-export async function getRouteFares(origin: string, destination: string): Promise<RouteFares | null> {
+/** The flight key used by the tables and the price map: airline code + flight number. */
+export const flightKey = (f: { airline: string; flightNumber: string }) => `${f.airline}${f.flightNumber}`;
+
+/** Just the prices, keyed the way the tables key their rows — what the client needs to print them. */
+export type RouteFarePrices = {
+  currency: Currency;
+  fetchedAt: string;
+  months: Record<string, number>;
+  flights: Record<string, number>;
+};
+
+export function farePrices(f: RouteFares): RouteFarePrices {
+  return {
+    currency: f.currency,
+    fetchedAt: f.fetchedAt,
+    months: Object.fromEntries(f.months.map((m) => [m.month, m.price])),
+    flights: Object.fromEntries(f.flights.map((x) => [flightKey(x), x.lowestPrice])),
+  };
+}
+
+export async function getRouteFares(origin: string, destination: string, currency: Currency = DEFAULT_CURRENCY): Promise<RouteFares | null> {
   const o = origin.toUpperCase();
   const d = destination.toUpperCase();
   try {
-    return await unstable_cache(() => fetchRouteFares(o, d), ['route-fares-v2', o, d], { revalidate: REVALIDATE_SECONDS })();
+    return await unstable_cache(() => fetchRouteFares(o, d, currency), ['route-fares-v3', o, d, currency], { revalidate: REVALIDATE_SECONDS })();
   } catch (err) {
     if (err instanceof FareFetchError) {
-      console.warn(`[route-fares] ${o}-${d} unavailable: ${err.message}`);
+      console.warn(`[route-fares] ${o}-${d} ${currency} unavailable: ${err.message}`);
       return null;
     }
     throw err;

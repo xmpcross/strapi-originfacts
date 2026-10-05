@@ -1,6 +1,7 @@
 import { getAirlineRef } from '@/lib/airline-refs';
 import type { GuideParagraph, GuideSection, GuideSource } from '@/lib/route-guide';
-import type { MonthFare, RouteFares, SeenFlight } from '@/lib/route-fares';
+import { flightKey, type MonthFare, type RouteFares, type SeenFlight } from '@/lib/route-fares';
+import { FareCurrencyNote, FarePrice } from '@/components/route-v2/FarePrices';
 
 // Server components for the sourced route template (routes with a
 // content/route-guides file). Live figures always say where they come from and
@@ -25,8 +26,6 @@ export function formatFlightRange(min: number, max: number): string {
   if (max < 90) return `${min}–${max} min`;
   return `${formatFlightMinutes(min)}–${formatFlightMinutes(max)}`;
 }
-
-const usd = (n: number) => `US$${Math.round(n).toLocaleString('en-US')}`;
 
 function formatMonth(ym: string): string {
   const [y, m] = ym.split('-').map(Number);
@@ -69,8 +68,9 @@ export function CitedParagraph({ p, order, className = '' }: { p: GuideParagraph
 function FareNote({ fares }: { fares: RouteFares }) {
   return (
     <p className="mt-3 text-xs leading-relaxed text-forest-900/60">
-      Lowest one-way nonstop fares found in recent searches on Aviasales, our flight-search partner, in US dollars per person.
-      They are cached search results, not quotes: the fare on the day you book may differ. Months with no fare found are left out. Data fetched {formatFetched(fares.fetchedAt)}.
+      Lowest one-way nonstop fares per person found in recent searches on Aviasales, our flight-search partner. They are cached
+      search results, not quotes: the fare on the day you book may differ. Months with no fare found are left out. Flights and
+      dates fetched {formatFetched(fares.fetchedAt)}. <FareCurrencyNote />
     </p>
   );
 }
@@ -91,14 +91,14 @@ export function SeenFlightsTable({ flights, fares, originIata, destinationIata, 
           </thead>
           <tbody className="divide-y divide-forest-900/10">
             {flights.map((f) => (
-              <tr key={`${f.airline}${f.flightNumber}`}>
+              <tr key={flightKey(f)}>
                 <td className="px-4 py-3 font-mono font-semibold text-forest-900">
                   {f.airline} {f.flightNumber}
                 </td>
                 <td className="px-4 py-3 text-forest-900">{airlineName(f.airline, names)}</td>
                 <td className="px-4 py-3 tabular-nums text-forest-900">{f.departs}</td>
                 <td className="px-4 py-3 tabular-nums text-forest-900">{f.durationMinutes ? formatFlightMinutes(f.durationMinutes) : '—'}</td>
-                <td className="px-4 py-3 tabular-nums text-forest-900">{usd(f.lowestPrice)}</td>
+                <td className="px-4 py-3 tabular-nums text-forest-900"><FarePrice kind="flight" k={flightKey(f)} /></td>
               </tr>
             ))}
           </tbody>
@@ -107,7 +107,7 @@ export function SeenFlightsTable({ flights, fares, originIata, destinationIata, 
       <p className="mt-3 text-xs leading-relaxed text-forest-900/60">
         Nonstop {originIata}→{destinationIata} flights that appeared in {fares.fareCount} fares found in recent Aviasales searches. This shows
         which flights are being sold, not a full timetable: a flight can run on more days than it appears here, and schedules change.
-        Check times with the airline before you travel. Data fetched {formatFetched(fares.fetchedAt)}.
+        Check times with the airline before you travel. Data fetched {formatFetched(fares.fetchedAt)}. <FareCurrencyNote />
       </p>
     </div>
   );
@@ -138,7 +138,7 @@ export function MonthFaresTable({ months, fares, names }: { months: MonthFare[];
                     </span>
                   )}
                 </td>
-                <td className="px-4 py-3 tabular-nums text-forest-900">{usd(m.price)}</td>
+                <td className="px-4 py-3 tabular-nums text-forest-900"><FarePrice kind="month" k={m.month} /></td>
                 <td className="px-4 py-3 text-forest-900">
                   {airlineName(m.airline, names)} <span className="font-mono text-forest-900/70">{m.airline} {m.flightNumber}</span>
                 </td>

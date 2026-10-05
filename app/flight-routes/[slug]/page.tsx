@@ -19,7 +19,8 @@ import type { TocItem } from '@/lib/toc';
 import { breadcrumbJsonLd } from '@/lib/jsonld';
 import type { Metadata } from 'next';
 import { getRouteGuide, citationOrder } from '@/lib/route-guide';
-import { getRouteFares } from '@/lib/route-fares';
+import { getRouteFares, farePrices } from '@/lib/route-fares';
+import { FarePriceProvider } from '@/components/route-v2/FarePrices';
 import { formatUtcOffset, utcOffsetMinutes } from '@/lib/route-geo';
 import {
   airlineName,
@@ -34,7 +35,18 @@ import {
 } from '@/components/route-guide/RouteGuideBlocks';
 import { routeUsesTemplateV2 } from '@/lib/route-template-v2';
 import RouteGuideV2, { type RouteV2Airport, type RouteV2Link } from '@/components/route-v2/RouteGuideV2';
-import { airlineHighlights, distanceCheck, formatMinutes, routeV2CitationOrder, routeV2Faqs, timeDifference, zoneInfo } from '@/lib/route-v2';
+import {
+  airlineHighlights,
+  cheapestMonthAnswer,
+  distanceCheck,
+  formatMinutes,
+  routeAirportFacts,
+  routeClimate,
+  routeV2CitationOrder,
+  routeV2Faqs,
+  timeDifference,
+  zoneInfo,
+} from '@/lib/route-v2';
 import topAirportSources from '@/data/airport-sources/top-100-official-links.json';
 
 export const revalidate = 60;
@@ -149,6 +161,11 @@ export default async function RoutePage({ params }: Props) {
     (route.carriers ?? []).filter((c) => c.iataCode).map((c) => [c.iataCode as string, c.name]),
   );
   const cheapestMonth = fares && fares.months.length > 0 ? fares.months.reduce((a, b) => (b.price < a.price ? b : a)) : null;
+  const cheapestMonthLabel = cheapestMonth
+    ? new Date(`${cheapestMonth.month}-01T12:00:00Z`).toLocaleDateString('en-GB', { month: 'long', year: 'numeric', timeZone: 'UTC' })
+    : '';
+  // Fares are fetched in USD for the tables' structure; prices print client-side in the header currency.
+  const usdPrices = fares ? farePrices(fares) : null;
   const title = `Flights from ${origin.city || origin.name} to ${destination.city || destination.name} (${origin.iata} → ${destination.iata})`;
   const description = guideForMeta?.intro.text.slice(0, 200) || route.about?.slice(0, 200) || `Direct and connecting flights from ${origin.city || origin.name} (${origin.iata}) to ${destination.city || destination.name} (${destination.iata}). Carrier comparison, duration, and cheap fare calendar.`;
   const url = `${SITE_URL}/flight-routes/${slug}`;
@@ -166,7 +183,7 @@ export default async function RoutePage({ params }: Props) {
     {
       q: `How do I find cheap flights from ${origin.city || origin.name} to ${destination.city || destination.name}?`,
       a: cheapestMonth
-        ? `In fares found in recent Aviasales searches (fetched ${fetchedLabel}), the lowest one-way nonstop fare was US$${cheapestMonth.price} in ${new Date(`${cheapestMonth.month}-01T12:00:00Z`).toLocaleDateString('en-GB', { month: 'long', year: 'numeric', timeZone: 'UTC' })}. The table of lowest fares by month and the live fare calendar on this page show current prices for other dates.`
+        ? `In fares found in recent Aviasales searches (fetched ${fetchedLabel}), the lowest one-way nonstop fare was in ${cheapestMonthLabel}. The table of lowest fares by month shows it in the currency chosen in the site header, and the live fare calendar on this page shows prices for other dates.`
         : `Use our live fare calendar above to compare prices across different departure dates. Being flexible by 24–48 hours and comparing one-stop versus nonstop flights often yields the lowest rates.`,
     },
     {
@@ -210,7 +227,11 @@ export default async function RoutePage({ params }: Props) {
         ...(cheapestMonth
           ? [{
               q: `What is the cheapest month to fly from ${fromName} to ${toName}?`,
-              a: `In fares found in recent Aviasales searches (fetched ${fetchedLabel}), the lowest one-way nonstop fare was US$${cheapestMonth.price} in ${new Date(`${cheapestMonth.month}-01T12:00:00Z`).toLocaleDateString('en-GB', { month: 'long', year: 'numeric', timeZone: 'UTC' })}, on ${airlineName(cheapestMonth.airline, carrierNames)} ${cheapestMonth.airline} ${cheapestMonth.flightNumber}. Cached search fares change often; check the live price before booking.`,
+              a: cheapestMonthAnswer({
+                monthLabel: cheapestMonthLabel,
+                fetched: fetchedLabel,
+                flight: `${airlineName(cheapestMonth.airline, carrierNames)} ${cheapestMonth.airline} ${cheapestMonth.flightNumber}`,
+              }),
             }]
           : []),
         ...guide.faqs.map((f) => ({ q: f.q, a: f.a })),
@@ -294,6 +315,7 @@ export default async function RoutePage({ params }: Props) {
         typeof a.latitude === 'number' && typeof a.longitude === 'number' ? `${a.latitude.toFixed(3)}°, ${a.longitude.toFixed(3)}°` : null,
       officialSite: sources[a.iata.toUpperCase()]?.officialWebsiteUrl || null,
       recordDate: formatRecordDate((a as StrapiAirport & { updatedAt?: string }).updatedAt),
+      facts: routeAirportFacts(a.iata),
     });
 
     return (
@@ -348,6 +370,8 @@ export default async function RoutePage({ params }: Props) {
           }
           timeDiff={timeDifference(fromZone, toZone)}
           fares={fares}
+          usdPrices={usdPrices}
+          climate={routeClimate(destination.iata)}
           carrierNames={carrierNames}
           cheapestMonth={cheapestMonth}
           routeRecordDate={formatRecordDate((route as StrapiRoute & { updatedAt?: string }).updatedAt)}
@@ -363,6 +387,7 @@ export default async function RoutePage({ params }: Props) {
   }
 
   return (
+    <FarePriceProvider slug={slug} usd={usdPrices}>
     <article data-testid={`route-page-${slug}`}>
       <JsonLd data={articleSchema} />
       <JsonLd data={faqJsonLd(faqs)} />
@@ -647,6 +672,7 @@ export default async function RoutePage({ params }: Props) {
       <div className="mx-auto max-w-7xl px-6">
       </div>
     </article>
+    </FarePriceProvider>
   );
 }
 

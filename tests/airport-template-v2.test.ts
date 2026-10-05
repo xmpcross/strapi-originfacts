@@ -25,8 +25,6 @@ test('airport v2 faq: answers restate only the facts passed in', () => {
     country: 'Australia',
     timezone: 'Australia/Perth',
     coordinates: '-31.930°, 115.960°',
-    address: 'Perth Airport, Western Australia, 6105, Australia',
-    phone: '+61 8 9478 8888',
     officialSite: 'https://www.perthairport.com.au/',
     airlines: ['Qantas', 'Singapore Airlines'],
     destinations: ['Singapore'],

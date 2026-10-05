@@ -111,7 +111,7 @@ test('v2 meta description: built from codes and location, never from CMS prose',
   });
   assert.equal(
     d,
-    'Perth Airport (PER/YPPH) in Perth, Australia: codes, location, contact details, airlines and routes we track, and where to check terminals.',
+    'Perth Airport (PER/YPPH) in Perth, Australia: codes, location, airlines and routes we track, and where to check terminals.',
   );
   assert.ok(d.length <= DESCRIPTION_MAX, `${d.length} chars`);
 
@@ -123,7 +123,7 @@ test('v2 meta description: built from codes and location, never from CMS prose',
   assert.match(long, /\.$/);
 
   const thin = airportV2MetaDescription({ name: 'Monkey Mia Airport', iata: 'MJK', hasRoutes: false });
-  assert.equal(thin, 'Monkey Mia Airport (MJK): codes, location, contact details, and where to check terminals and transport.');
+  assert.equal(thin, 'Monkey Mia Airport (MJK): codes, location, and where to check terminals and transport.');
   assert.doesNotMatch(thin, /airlines|routes|ground-transfer/);
 });
 

@@ -1,7 +1,7 @@
 /**
  * FAQ for the v2 airport page. Every answer restates a value the page itself
- * shows — the airport record, the airport-info contact fields, the official
- * link and the route records — and names where it came from. No rule-of-thumb
+ * shows — the airport record, the official link, the route records and the
+ * enrichment datasets (enrichment-faqs.ts) — and names where it came from. No rule-of-thumb
  * fillers (arrival times, "refreshed regularly", a flight search the page does
  * not have): if a field is missing its question is skipped.
  *
@@ -17,8 +17,8 @@ export type AirportV2FaqInput = {
   country?: string | null;
   timezone?: string | null;
   coordinates?: string | null;
-  address?: string | null;
-  phone?: string | null;
+  /** Where the coordinates come from (default: the airport record). */
+  coordinatesSource?: 'record' | 'ourairports';
   officialSite?: string | null;
   /** Carrier names on the routes shown, in display order — ceased carriers already removed. */
   airlines: string[];
@@ -35,7 +35,7 @@ export type AirportV2FaqInput = {
 
 export type Faq = { q: string; a: string };
 
-export function airportGuideV2Faqs(x: AirportV2FaqInput): Faq[] {
+export function airportGuideV2Faqs(x: AirportV2FaqInput, extra: Faq[] = []): Faq[] {
   const faqs: Faq[] = [];
   const place = [x.city, x.country].filter(Boolean).join(', ');
   const routesFrom = `Originfacts’ route records${x.routeVintage ? ` (last updated ${x.routeVintage})` : ''}`;
@@ -43,7 +43,7 @@ export function airportGuideV2Faqs(x: AirportV2FaqInput): Faq[] {
   if (place) {
     faqs.push({
       q: `Where is ${x.name}?`,
-      a: `${x.name} serves ${place}.${x.coordinates ? ` Its coordinates in the Originfacts airport record are ${x.coordinates}.` : ''}`,
+      a: `${x.name} serves ${place}.${x.coordinates ? ` Its coordinates ${x.coordinatesSource === 'ourairports' ? 'in OurAirports' : 'in the Originfacts airport record'} are ${x.coordinates}.` : ''}`,
     });
   }
 
@@ -56,19 +56,10 @@ export function airportGuideV2Faqs(x: AirportV2FaqInput): Faq[] {
     faqs.push({ q: `What time zone is ${x.iata} in?`, a: `${x.name} is in the ${x.timezone} time zone.` });
   }
 
-  const contact: string[] = [];
-  if (x.address) contact.push(`the address as ${x.address}`);
-  if (x.phone) contact.push(`the phone number as ${x.phone}`);
-  if (contact.length || x.officialSite) {
+  if (x.officialSite) {
     faqs.push({
-      q: `How do I contact ${x.name}?`,
-      a: [
-        contact.length ? `The airport-info dataset lists ${contact.join(' and ')}.` : '',
-        x.officialSite ? `The airport’s official website is ${displayUrl(x.officialSite)}.` : '',
-        'For questions about a booking, contact the operating airline.',
-      ]
-        .filter(Boolean)
-        .join(' '),
+      q: `What is the official website of ${x.name}?`,
+      a: `The airport’s official website is ${displayUrl(x.officialSite)}. For questions about a booking, contact the operating airline.`,
     });
   }
 
@@ -101,6 +92,10 @@ export function airportGuideV2Faqs(x: AirportV2FaqInput): Faq[] {
       a: `${lead} For the full list of destinations, check ${officialRef} or the airlines.`,
     });
   }
+
+  // Dataset questions (runways, climate, fares…) after the core ones, never
+  // repeating a question already asked.
+  for (const f of extra) if (!faqs.some((q) => q.q === f.q)) faqs.push(f);
 
   return faqs;
 }

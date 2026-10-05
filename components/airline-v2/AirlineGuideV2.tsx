@@ -161,15 +161,8 @@ export default function AirlineGuideV2({ airline, routeFacts: rf, facts, allianc
   return (
     <div className={`${s.root} bg-[#ffffff]`} data-testid={`airline-page-${airline.slug}`} data-template="v2">
       {/* ---------------------------------------------------------- header */}
-      <header className="relative overflow-hidden border-b border-forest-900/10 bg-gradient-to-br from-white via-forest-50 to-sand-100">
-        {/* decorative flight-path arcs */}
-        <svg aria-hidden className="pointer-events-none absolute inset-0 h-full w-full text-forest-900/10" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice" fill="none" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 8">
-          <path d="M-50 360 C 250 40, 650 20, 1250 300" />
-          <path d="M-50 260 C 300 -40, 800 60, 1250 120" />
-          <path d="M200 420 C 500 160, 900 140, 1250 220" />
-        </svg>
-        <div aria-hidden className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-sand-300/30 blur-3xl" />
-        <div className={`${WRAP} relative pb-10 pt-6 lg:pb-12`}>
+      <header>
+        <div className={`${WRAP} pb-12 pt-8 sm:pt-10 lg:pb-14`}>
           <nav aria-label="Breadcrumb" className="text-sm text-forest-900/75">
             <ol className="flex flex-wrap items-center gap-1.5">
               <li>
@@ -184,31 +177,25 @@ export default function AirlineGuideV2({ airline, routeFacts: rf, facts, allianc
             </ol>
           </nav>
 
-          <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-            <div className="flex min-w-0 items-center gap-5 sm:gap-7">
-              <div className="flex h-20 w-28 flex-none items-center justify-center rounded-[0.5rem] border border-forest-900/10 border-b-4 border-b-sand-300 bg-white p-3 shadow-[0_8px_24px_-12px_rgba(15,39,102,0.25)] sm:h-28 sm:w-40 sm:p-4">
-                {logo ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={logo} alt={`${name} logo`} className="max-h-full max-w-full object-contain" />
-                ) : (
-                  <span className="text-xl font-bold text-forest-900/70">{(airline.iataCode || name).slice(0, 3)}</span>
+          <div className="mt-8 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
+            <div className="min-w-0">
+              {/* Logo at its own size: no frame, padding, background or shadow. */}
+              {logo ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={logo} alt={`${name} logo`} className="block h-auto w-auto max-w-full" />
+              ) : (
+                <span className="block text-4xl font-bold text-forest-900/70">{(airline.iataCode || name).slice(0, 3)}</span>
+              )}
+              <p className="eyebrow-tag mt-8">Airline guide</p>
+              <h1 className="mt-5 flex flex-wrap items-baseline gap-x-4 gap-y-2 text-[2.1rem] font-bold leading-[1.08] tracking-tight text-forest-950 sm:text-5xl lg:text-[3.4rem]">
+                {name}
+                {airline.iataCode && (
+                  <span className="font-mono text-xl font-bold tracking-wider text-primary-emphasis sm:text-2xl">
+                    <span className="sr-only">IATA code </span>
+                    {airline.iataCode}
+                  </span>
                 )}
-              </div>
-              <div className="min-w-0">
-                <p className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-primary-emphasis">
-                  <Plane aria-hidden className="h-3.5 w-3.5" />
-                  Airline guide
-                </p>
-                <h1 className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-3xl font-bold leading-tight sm:text-5xl">
-                  {name}
-                  {airline.iataCode && (
-                    <span className="rounded-lg bg-forest-950 px-2.5 py-1 font-mono text-sm font-bold tracking-wider text-white sm:text-base">
-                      <span className="sr-only">IATA code </span>
-                      {airline.iataCode}
-                    </span>
-                  )}
-                </h1>
-              </div>
+              </h1>
             </div>
 
             {officialSite && (
@@ -216,7 +203,7 @@ export default function AirlineGuideV2({ airline, routeFacts: rf, facts, allianc
                 href={officialSite}
                 target="_blank"
                 rel="noopener noreferrer nofollow"
-                className="inline-flex flex-none items-center justify-center gap-2 self-start rounded-[0.3rem] border border-forest-900/15 bg-white px-5 py-2.5 text-sm font-semibold text-forest-950 shadow-sm transition hover:border-primary-emphasis hover:text-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-emphasis lg:self-center"
+                className="inline-flex flex-none items-center justify-center gap-2 self-start rounded-[0.3rem] bg-forest-950 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-emphasis lg:self-auto"
               >
                 {sourceHost(officialSite)}
                 <ArrowUpRight aria-hidden className="h-4 w-4" />
@@ -225,13 +212,13 @@ export default function AirlineGuideV2({ airline, routeFacts: rf, facts, allianc
             )}
           </div>
 
-          <p className="mt-6 max-w-3xl text-base leading-7 text-forest-900/80 sm:text-lg sm:leading-8">
+          <p className="mt-8 max-w-3xl text-base leading-7 text-forest-900/80 sm:text-lg sm:leading-8">
             {verifiedSections.length > 0
               ? `Baggage allowances, fare rules, check-in cut-offs and contact details for ${name}. Policy figures are read from ${name}’s own published pages and each one shows where it came from and when we checked it.`
               : `Baggage, fare, check-in and contact rules for ${name} have not been verified yet. Each section below says what is still to check and links to ${name}’s own site.`}
           </p>
 
-          <dl className={`mt-8 grid grid-cols-2 gap-3 max-sm:[&>div:last-child:nth-child(odd)]:col-span-2 ${FACT_COLS[headerFactCount] ?? 'sm:grid-cols-4'}`}>
+          <dl className={`mt-10 grid grid-cols-2 gap-x-6 gap-y-8 max-sm:[&>div:last-child:nth-child(odd)]:col-span-2 ${FACT_COLS[headerFactCount] ?? 'sm:grid-cols-4'}`}>
             <HeaderFact icon={Flag} label="Home country" value={airline.country} />
             <HeaderFact icon={Handshake} label="Alliance" value={alliance} />
             <HeaderFact
@@ -262,20 +249,20 @@ export default function AirlineGuideV2({ airline, routeFacts: rf, facts, allianc
           {/* Verification summary — the page's differentiator, stated once, up front. */}
           <div className="mt-5 flex flex-wrap items-center gap-2 text-sm" data-testid="v2-ledger">
             {verifiedSections.length > 0 && (
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1 font-medium text-emerald-800 ring-1 ring-emerald-200">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1 font-medium text-emerald-800">
                 <CheckIcon className="h-4 w-4" />
                 {verifiedSections.length} of {sections.length} sections verified
                 {verifiedRange && <span className="font-normal text-emerald-900/80">· checked {verifiedRange}</span>}
               </span>
             )}
             {derivedCount > 0 && (
-              <span className="rounded-full bg-white px-3 py-1 text-forest-900/75 ring-1 ring-forest-900/10">{derivedCount} from route data</span>
+              <span className="rounded-full bg-paper px-3 py-1 text-forest-900/75">{derivedCount} from route data</span>
             )}
             {disputedCount > 0 && (
-              <span className="rounded-full bg-amber-50 px-3 py-1 text-amber-800 ring-1 ring-amber-200">{disputedCount} with conflicting sources</span>
+              <span className="rounded-full bg-amber-50 px-3 py-1 text-amber-800">{disputedCount} with conflicting sources</span>
             )}
             {pendingCount > 0 && (
-              <span className="rounded-full bg-white px-3 py-1 text-forest-900/75 ring-1 ring-forest-900/10">{pendingCount} not yet verified</span>
+              <span className="rounded-full bg-paper px-3 py-1 text-forest-900/75">{pendingCount} not yet verified</span>
             )}
             <a href="#sources" className="px-1 text-primary-emphasis underline-offset-2 hover:underline">
               How we check
@@ -289,8 +276,8 @@ export default function AirlineGuideV2({ airline, routeFacts: rf, facts, allianc
           tiles would only repeat what the section cards below already say. */}
       {showGlance && (
         <section aria-labelledby="glance-title" className={`${WRAP} pt-10`} data-testid="v2-glance">
-          <h2 id="glance-title" className="flex items-center gap-2.5 text-xl font-bold sm:text-2xl">
-            <Gauge aria-hidden className="h-6 w-6 text-primary-emphasis" />
+          <h2 id="glance-title" className="flex items-center gap-3 text-2xl font-bold sm:text-3xl">
+            <Gauge aria-hidden className="h-7 w-7 text-primary-emphasis" />
             {name} at a glance
           </h2>
           <ul className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -315,7 +302,7 @@ export default function AirlineGuideV2({ airline, routeFacts: rf, facts, allianc
                 <li key={item.id}>
                   <a
                     href={`#${item.id}`}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-forest-900/15 bg-white px-3 py-1.5 text-sm text-forest-950 hover:border-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-emphasis"
+                    className="inline-flex items-center gap-1.5 rounded-full bg-paper px-3 py-1.5 text-sm text-forest-950 hover:text-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-emphasis"
                   >
                     <NavIcon id={item.id} className="h-3.5 w-3.5 text-primary-emphasis" />
                     {item.label}
@@ -346,8 +333,8 @@ export default function AirlineGuideV2({ airline, routeFacts: rf, facts, allianc
               <Shell id="faq" title={`Common questions about flying ${name}`}>
                 <div className="space-y-2">
                   {faqs.map((f, i) => (
-                    <details key={i} open={i === 0} className="group rounded-[0.5rem] border border-forest-900/10 bg-white open:bg-forest-50/40">
-                      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-xl px-4 py-3.5 font-semibold text-forest-950 hover:bg-forest-50/60 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-primary-emphasis [&::-webkit-details-marker]:hidden">
+                    <details key={i} open={i === 0} className="group rounded-[0.5rem] bg-white">
+                      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-xl px-4 py-3.5 font-semibold text-forest-950 hover:bg-paper focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-primary-emphasis [&::-webkit-details-marker]:hidden">
                         <span>{f.q}</span>
                         <ChevronDown aria-hidden className="h-4 w-4 flex-none text-forest-900/60 transition group-open:rotate-180" />
                       </summary>
@@ -360,8 +347,8 @@ export default function AirlineGuideV2({ airline, routeFacts: rf, facts, allianc
 
             <SourcesSection airline={airline} sections={sections} network={network} />
 
-            <aside aria-labelledby="related-title" className="rounded-[0.5rem] border border-forest-900/10 border-l-4 border-l-sand-400 bg-white p-6 sm:p-7">
-              <h2 id="related-title" className="text-lg font-bold">
+            <aside aria-labelledby="related-title" className="rounded-[0.5rem] bg-paper p-6 sm:p-8">
+              <h2 id="related-title" className="text-2xl font-bold">
                 Keep planning
               </h2>
               <ul className="mt-4 grid gap-3 sm:grid-cols-3">
@@ -373,10 +360,10 @@ export default function AirlineGuideV2({ airline, routeFacts: rf, facts, allianc
                   <li key={href}>
                     <Link
                       href={href}
-                      className="flex items-center justify-between gap-2 rounded-[0.5rem] border border-forest-900/10 bg-forest-50 px-4 py-3 text-sm font-semibold text-forest-950 transition hover:-translate-y-0.5 hover:border-primary-emphasis hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-emphasis"
+                      className="flex items-center justify-between gap-2 rounded-[0.5rem] bg-white px-4 py-3 text-sm font-semibold text-forest-950 transition hover:text-primary-emphasis focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-emphasis"
                     >
                       <span className="inline-flex items-center gap-2">
-                        <Icon aria-hidden className="h-4 w-4 text-primary-emphasis" />
+                        <Icon aria-hidden className="h-5 w-5 text-primary-emphasis" />
                         {label}
                       </span>
                       <ArrowUpRight aria-hidden className="h-4 w-4 opacity-70" />
@@ -402,13 +389,11 @@ export default function AirlineGuideV2({ airline, routeFacts: rf, facts, allianc
 function HeaderFact({ icon: Icon, label, value, hint }: { icon: LucideIcon; label: string; value: ReactNode; hint?: string }) {
   if (value === null || value === undefined || value === '') return null;
   return (
-    <div className="flex items-start gap-3 rounded-[0.5rem] border border-forest-900/10 bg-white px-4 py-3.5 shadow-[0_1px_2px_rgba(15,39,102,0.04)]">
-      <span aria-hidden className="mt-0.5 flex h-9 w-9 flex-none items-center justify-center rounded-full bg-forest-950 text-sand-300">
-        <Icon className="h-[18px] w-[18px]" />
-      </span>
+    <div className="flex items-start gap-3">
+      <Icon aria-hidden className="mt-0.5 h-6 w-6 flex-none text-primary-emphasis" />
       <div className="min-w-0">
-        <dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-forest-900/70">{label}</dt>
-        <dd className="mt-0.5 text-[15px] font-semibold text-forest-950">{value}</dd>
+        <dt className="text-[11px] font-bold uppercase tracking-widest text-forest-900/70">{label}</dt>
+        <dd className="mt-1 text-base font-semibold text-forest-950">{value}</dd>
         {hint && <dd className="mt-0.5 text-xs text-forest-900/70">{hint}</dd>}
       </div>
     </div>
@@ -449,11 +434,7 @@ function GlanceTileView({ tile, modules }: { tile: (typeof GLANCE_TILES)[number]
       pending: { text: 'Not yet verified.', link: 'What’s missing' },
     }[gap];
     return (
-      <li
-        className={`flex flex-col rounded-[0.5rem] border border-dashed p-4 ${
-          gap === 'disputed' ? 'border-amber-300 bg-amber-50/60' : 'border-forest-900/20 bg-white/60'
-        }`}
-      >
+      <li className={`flex flex-col rounded-[0.5rem] p-4 ${gap === 'disputed' ? 'bg-amber-50' : 'bg-paper/60'}`}>
         <h3 className={`${s.h3} flex items-center gap-2 text-forest-950`}>
           <TileIcon id={tile.id} muted />
           {tile.title}
@@ -470,7 +451,7 @@ function GlanceTileView({ tile, modules }: { tile: (typeof GLANCE_TILES)[number]
   }
 
   return (
-    <li className="group/tile flex flex-col rounded-[0.5rem] border border-forest-900/10 bg-white p-5 shadow-[0_1px_2px_rgba(15,39,102,0.04)] transition hover:-translate-y-0.5 hover:border-primary-emphasis/40 hover:shadow-[0_10px_24px_-14px_rgba(15,39,102,0.35)]">
+    <li className="group/tile flex flex-col rounded-[0.5rem] bg-paper p-5">
       <h3 className={`${s.h3} flex items-center gap-2.5 text-forest-900/80`}>
         <TileIcon id={tile.id} />
         {tile.title}
@@ -505,16 +486,7 @@ function GlanceTileView({ tile, modules }: { tile: (typeof GLANCE_TILES)[number]
 
 function TileIcon({ id, muted = false }: { id: string; muted?: boolean }) {
   const Icon = GLANCE_ICONS[id] ?? FALLBACK_ICON;
-  return (
-    <span
-      aria-hidden
-      className={`flex h-8 w-8 flex-none items-center justify-center rounded-full ${
-        muted ? 'bg-forest-900/5 text-forest-900/60' : 'bg-forest-950 text-sand-300'
-      }`}
-    >
-      <Icon className="h-4 w-4" />
-    </span>
-  );
+  return <Icon aria-hidden className={`h-5 w-5 flex-none ${muted ? 'text-forest-900/50' : 'text-primary-emphasis'}`} />;
 }
 
 /* ================================================================== *
@@ -541,27 +513,18 @@ function Shell({
       id={id}
       aria-labelledby={`${id}-title`}
       data-testid={`v2-section-${id}`}
-      className={`${s.section} rounded-[0.5rem] border p-5 sm:p-8 ${
-        tone === 'muted' ? 'border-dashed border-forest-900/20 bg-white/60' : 'border-forest-900/10 border-t-4 border-t-forest-950 bg-white shadow-[0_1px_2px_rgba(15,39,102,0.04)]'
-      }`}
+      className={`${s.section} rounded-[0.5rem] p-5 sm:p-8 ${tone === 'muted' ? 'bg-paper/60' : 'bg-paper'}`}
     >
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
         <div className="flex min-w-0 items-center gap-3.5">
-          <span
-            aria-hidden
-            className={`flex h-11 w-11 flex-none items-center justify-center rounded-full ${
-              tone === 'muted' ? 'bg-forest-900/5 text-forest-900/55' : 'bg-forest-950 text-sand-300'
-            }`}
-          >
-            <NavIcon id={id} className="h-5 w-5" />
-          </span>
-          <h2 id={`${id}-title`} className="text-xl font-bold leading-snug sm:text-2xl">
+          <NavIcon id={id} className={`h-7 w-7 flex-none ${tone === 'muted' ? 'text-forest-900/50' : 'text-primary-emphasis'}`} />
+          <h2 id={`${id}-title`} className="text-2xl font-bold leading-snug sm:text-3xl">
             {title}
           </h2>
         </div>
         {badge && <div className="flex-none">{badge}</div>}
       </div>
-      {source && <div className="mt-3 sm:pl-[3.625rem]">{source}</div>}
+      {source && <div className="mt-3 sm:pl-[2.625rem]">{source}</div>}
       <div className="mt-6 space-y-5">{children}</div>
     </section>
   );
@@ -643,9 +606,9 @@ function SourcedSection({ id, title, module: m }: { id: string; title: string; m
       ))}
 
       {tables.map((t) => (
-        <div key={t.caption} className="relative overflow-x-auto rounded-[0.5rem] border border-forest-900/10">
+        <div key={t.caption} className="relative overflow-x-auto rounded-[0.5rem] bg-white">
           <table className="w-full min-w-[18rem] border-collapse text-left text-[15px]">
-            <caption className="border-b border-forest-900/10 bg-forest-50/70 px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-forest-900/75">
+            <caption className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-forest-900/75">
               {t.caption}
             </caption>
             <thead className="sr-only">
@@ -656,7 +619,7 @@ function SourcedSection({ id, title, module: m }: { id: string; title: string; m
             </thead>
             <tbody>
               {t.rows.map((r) => (
-                <tr key={r.key} className="border-t border-forest-900/10 first:border-t-0">
+                <tr key={r.key} className="even:bg-paper/70">
                   <th scope="row" className="w-[38%] px-4 py-3 align-top font-medium text-forest-900/80">
                     {r.cabin}
                   </th>
@@ -686,7 +649,7 @@ function SourcedSection({ id, title, module: m }: { id: string; title: string; m
       )}
 
       {m.rule && (
-        <div className="rounded-xl border-l-4 border-primary-emphasis bg-forest-50/60 px-4 py-3">
+        <div className="rounded-[0.5rem] bg-white px-4 py-3">
           <p className="text-xs font-semibold uppercase tracking-wider text-forest-900/75">{m.rule.key}</p>
           <p className="mt-1 text-[15px] leading-7 text-forest-950">{m.rule.text}</p>
         </div>
@@ -707,13 +670,13 @@ function FactFileTable({
   perCell: boolean;
 }) {
   return (
-    <div className="relative overflow-x-auto rounded-[0.5rem] border border-forest-900/10">
+    <div className="relative overflow-x-auto rounded-[0.5rem] bg-white">
       <table className="w-full min-w-[28rem] border-collapse text-left text-sm">
-        <caption className="border-b border-forest-900/10 bg-forest-50/70 px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-forest-900/75">
+        <caption className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-forest-900/75">
           {table.caption}
         </caption>
         <thead>
-          <tr className="border-b border-forest-900/10">
+          <tr className="bg-paper/70">
             {table.columns.map((c, i) => (
               <th key={i} scope="col" className="px-4 py-2.5 font-semibold text-forest-900/80">
                 {c}
@@ -723,7 +686,7 @@ function FactFileTable({
         </thead>
         <tbody>
           {table.rows.map((row, i) => (
-            <tr key={i} className="border-t border-forest-900/10">
+            <tr key={i} className="even:bg-paper/70">
               <th scope="row" className="px-4 py-3 align-top font-medium text-forest-900/80">
                 {row.label}
               </th>
@@ -753,7 +716,7 @@ function FactFileTable({
 
 function FactCard({ f, showSource }: { f: ResolvedField; showSource: boolean }) {
   return (
-    <div className="rounded-[0.5rem] border border-forest-900/10 bg-forest-50 p-4 transition hover:border-primary-emphasis/30">
+    <div className="rounded-[0.5rem] bg-white p-4">
       <dt className="text-xs font-semibold uppercase tracking-wider text-forest-900/75">{fieldLabel(f.key)}</dt>
       <dd className="mt-1.5 text-[15px] font-semibold leading-6 text-forest-950 [overflow-wrap:anywhere]">
         <FactValue value={f.field.value!} />
@@ -770,7 +733,7 @@ function FactCard({ f, showSource }: { f: ResolvedField; showSource: boolean }) 
 function DisputeCard({ dispute: d }: { dispute: ResolvedField }) {
   const values = d.field.conflicting_values ?? [];
   return (
-    <div className="rounded-[0.5rem] border border-amber-300 bg-amber-50 p-4" data-testid={`v2-dispute-${d.key}`}>
+    <div className="rounded-[0.5rem] bg-amber-50 p-4" data-testid={`v2-dispute-${d.key}`}>
       <h3 className={`${s.h3} flex items-center gap-2 text-amber-900`}>
         <WarnIcon />
         Sources disagree: {fieldLabel(d.key).toLowerCase()}
@@ -859,14 +822,14 @@ function CabinsDerivedSection({
       </p>
       <ul className="flex flex-wrap gap-2" aria-label="Aircraft types recorded on tracked routes">
         {fleet.map((ac) => (
-          <li key={ac} className="rounded-full border border-forest-900/15 bg-forest-50 px-3 py-1 text-sm text-forest-950">
+          <li key={ac} className="rounded-full bg-white px-3 py-1 text-sm text-forest-950">
             {ac}
           </li>
         ))}
       </ul>
       {m.body?.[1] && <p className="text-sm leading-6 text-forest-900/80">{m.body[1]}</p>}
       {m.conflicts?.map((c) => (
-        <div key={c.title} className="rounded-xl border-l-4 border-forest-900/25 bg-forest-50/60 px-4 py-3">
+        <div key={c.title} className="rounded-[0.5rem] bg-white px-4 py-3">
           <h3 className={`${s.h3} text-forest-950`}>{c.title}</h3>
           <p className="mt-1 text-sm leading-6 text-forest-900/85">{c.text}</p>
         </div>
@@ -900,7 +863,7 @@ function NetworkSection({ airline, rf, module: m }: { airline: StrapiAirline; rf
           <h3 className={`${s.h3} text-forest-950`}>Busiest markets by route count</h3>
           <ol className="mt-2 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
             {rf.topHubs.map((h) => (
-              <li key={h.city} className="relative overflow-hidden rounded-[0.5rem] border border-forest-900/10 bg-forest-50 px-3.5 py-2.5 text-[15px]">
+              <li key={h.city} className="relative overflow-hidden rounded-[0.5rem] bg-white px-3.5 py-2.5 text-[15px]">
                 <span
                   aria-hidden
                   className="absolute inset-y-0 left-0 bg-primary-emphasis/10"
@@ -920,7 +883,7 @@ function NetworkSection({ airline, rf, module: m }: { airline: StrapiAirline; rf
       )}
 
       {rf.longestRoute && (
-        <div className="rounded-[0.5rem] border border-forest-900/10 bg-forest-50 p-4">
+        <div className="rounded-[0.5rem] bg-white p-4">
           <h3 className={`${s.h3} text-forest-950`}>Longest route in the dataset</h3>
           <p className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-[15px] font-semibold text-forest-950">
             <AirportCode code={rf.longestRoute.fromIata} city={rf.longestRoute.from} />
@@ -949,12 +912,12 @@ function NetworkSection({ airline, rf, module: m }: { airline: StrapiAirline; rf
                   {iata ? (
                     <Link
                       href={`/airports/${iata}`}
-                      className="inline-block rounded-full border border-forest-900/15 bg-white px-3 py-1 text-sm text-forest-950 hover:border-primary-emphasis hover:text-primary-emphasis"
+                      className="inline-block rounded-full bg-white px-3 py-1 text-sm text-forest-950 hover:text-primary-emphasis"
                     >
                       {city}
                     </Link>
                   ) : (
-                    <span className="inline-block rounded-full border border-forest-900/10 bg-forest-50 px-3 py-1 text-sm text-forest-900/85">
+                    <span className="inline-block rounded-full bg-white px-3 py-1 text-sm text-forest-900/85">
                       {city}
                     </span>
                   )}
@@ -979,9 +942,9 @@ function AirportCode({ code, city }: { code: string; city: string }) {
 
 function Stat({ icon: Icon, label, value }: { icon: LucideIcon; label: string; value: string }) {
   return (
-    <div className="rounded-[0.5rem] border border-forest-900/10 bg-forest-50 px-4 py-3.5">
-      <dt className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-forest-900/70">
-        <Icon aria-hidden className="h-3.5 w-3.5 text-primary-emphasis" />
+    <div className="rounded-[0.5rem] bg-white px-4 py-3.5">
+      <dt className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-forest-900/70">
+        <Icon aria-hidden className="h-4 w-4 text-primary-emphasis" />
         {label}
       </dt>
       <dd className="mt-1.5 text-2xl font-bold text-forest-950">{value}</dd>
@@ -1016,14 +979,14 @@ function SourcesSection({
         route dataset and show its date instead; they are not verified by hand.
       </p>
       {/* A list rather than a table, so it reflows on a phone instead of scrolling sideways. */}
-      <ul className="divide-y divide-forest-900/10 rounded-[0.5rem] border border-forest-900/10" aria-label="Where each section of this page comes from">
-        <li aria-hidden className="hidden bg-forest-50/60 px-4 py-2.5 text-xs font-semibold uppercase tracking-wider text-forest-900/75 sm:grid sm:grid-cols-[10rem_14rem_minmax(0,1fr)] sm:gap-4">
+      <ul className="overflow-hidden rounded-[0.5rem] bg-white" aria-label="Where each section of this page comes from">
+        <li aria-hidden className="hidden bg-paper/70 px-4 py-2.5 text-xs font-semibold uppercase tracking-wider text-forest-900/75 sm:grid sm:grid-cols-[10rem_14rem_minmax(0,1fr)] sm:gap-4">
           <span>Section</span>
           <span>Status</span>
           <span>Source</span>
         </li>
         {rows.map((r) => (
-          <li key={r.id} className="grid gap-1 px-4 py-3 text-sm sm:grid-cols-[10rem_14rem_minmax(0,1fr)] sm:gap-4">
+          <li key={r.id} className="grid gap-1 px-4 py-3 even:bg-paper/50 text-sm sm:grid-cols-[10rem_14rem_minmax(0,1fr)] sm:gap-4">
             <a href={`#${r.id}`} className="font-medium text-forest-950 hover:text-primary-emphasis hover:underline">
               {r.nav}
             </a>
@@ -1081,16 +1044,16 @@ type BadgeTone = 'verified' | 'data' | 'pending' | 'disputed';
 
 function Badge({ tone, children }: { tone: BadgeTone; children: ReactNode }) {
   const cls: Record<BadgeTone, string> = {
-    verified: 'border-emerald-200 bg-emerald-50 text-emerald-800',
-    data: 'border-forest-200 bg-forest-50 text-forest-800',
-    pending: 'border-slate-300 bg-white text-slate-700',
-    disputed: 'border-amber-300 bg-amber-50 text-amber-900',
+    verified: 'bg-emerald-50 text-emerald-800',
+    data: 'bg-white text-forest-800',
+    pending: 'bg-white text-slate-700',
+    disputed: 'bg-amber-50 text-amber-900',
   };
   return (
-    <span className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border px-2.5 py-1 text-xs font-semibold ${cls[tone]}`}>
+    <span className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-full px-2.5 py-1 text-xs font-semibold ${cls[tone]}`}>
       {tone === 'verified' && <CheckIcon className="h-3.5 w-3.5" />}
       {tone === 'disputed' && <WarnIcon />}
-      {tone === 'pending' && <span aria-hidden className="h-2 w-2 rounded-full border border-slate-500" />}
+      {tone === 'pending' && <span aria-hidden className="h-2 w-2 rounded-full bg-slate-400" />}
       {tone === 'data' && <span aria-hidden className="h-2 w-2 rounded-full bg-primary-emphasis" />}
       {children}
     </span>

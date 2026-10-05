@@ -1,8 +1,15 @@
 # Route research: Gemini + Google Search grounding → verified route guides
 
 Writes `content/route-guides/<slug>.json` (the schema in `lib/route-guide.ts`,
-same as `bah-to-doh.json`) for flight routes. **Status: piloted on akl-to-syd (5 Oct 2026).** Earlier 429
-`RESOURCE_EXHAUSTED` replies were billing not yet linked to the key's project.
+same as `bah-to-doh.json`) for flight routes.
+
+**Status (5 Oct 2026): research stopped after the pilot.** One guide shipped
+(akl-to-syd, #174, from the first design). The improved design below found
+plenty of sources but no route kept a verified operator, because most
+citable pages either refuse this server (403) or can't be checked; see
+**Pilot findings** before spending more. Earlier 429 `RESOURCE_EXHAUSTED`
+replies were billing not yet linked to the key's project (and later a stale
+copy of `.env.local` in a worktree).
 
 ## One command
 
@@ -30,15 +37,25 @@ only in the `x-goog-api-key` header, never in a URL, log or saved file.
 
 | Step | Script | Calls |
 | --- | --- | --- |
-| 1. Research | `gemini-research.mjs` | 3 grounded requests a route (operators today, dated history, airport access), `tools: [{ google_search: {} }]` |
-| 2. Verify | `verify-sources.mjs` | fetches each source page; with `--judge`, makes 1 **non-grounded** call a route, only for claims whose quote was found on the page by the verifier rather than taken from the model |
+| 1a. Research | `gemini-research.mjs` | 6 grounded **plain-prose** requests a route (operators, route history, origin airport, destination airport, transport at each end, one practical question), `tools: [{ google_search: {} }]`, `thinkingConfig.thinkingLevel: "low"`, no JSON asked for |
+| 1b. Structure | `gemini-research.mjs` | 1 call **without search**: the six answers + numbered grounded sources + their `groundingSupports` → JSON claims that cite source numbers only |
+| 2. Verify | `verify-sources.mjs` | fetches each source page; with `--judge`, 1 non-grounded call a route for claims whose quote the verifier located on the page |
 | 3. Build | `build-guides.ts` (tsx) | none; writes the guide and the claims ledger |
 
-**Sources come from grounding, not from the model's text.** Each claim is
-mapped to the `groundingChunks` whose `groundingSupports` cover its text.
-Their `vertexaisearch` redirect URLs are resolved to the real URL; that is
-one request to Google, and the target page is not fetched at this point.
-The URL the model wrote itself is tried last.
+**Sources come only from `groundingMetadata`.** Each `groundingChunks[].web.uri`
+(a `vertexaisearch` redirect) is resolved to its final URL with one request
+to Google (both are recorded; the target page is not fetched then). Hosts in
+`REJECTED_HOSTS` (booking/fare aggregators, flight-route sites, UGC, social,
+Wikipedia) are discarded before numbering. URLs the model writes in its
+prose are never used. Why: on gemini-3.6-flash, asking a grounded call for
+JSON-only output suppressed `groundingMetadata` and the model invented
+plausible URLs (11 of 21 were 404 or lacked the quote); `thinkingLevel:
+"minimal"` skipped the search entirely.
+
+The structuring call cannot add URLs, and claims carry no model-written
+quote: the verifier locates the supporting sentence on the fetched page
+(1–2 consecutive sentences containing every key token), and every located
+quote must pass the semantic check.
 
 ### The verification bar (`match.mjs`, unit-tested in `tests/route-research-match.test.ts`)
 
@@ -56,8 +73,9 @@ A claim is published only if all of these hold:
    folds whitespace, quote marks, dashes, case and invisible characters
    only. Ellipses are not allowed.
 3. **Every checkable token is in the quote.** That means every number
-   (digits or words: "three" = 3), month, airline name and strong word
-   (daily, weekly, seasonal, first, only, busiest…) in the claim.
+   (digits or words: "three" = 3), month, airline name (or its core name:
+   "LATAM Airlines" ~ "LATAM"), strong word (daily, weekly, seasonal, first,
+   only, busiest…) and proper name (AirportLink, Puhinui…) in the claim.
 4. **Route claims name both ends.** For operator, seasonal and history
    claims, the quote or the page title must name both ends of the route, by
    IATA code, city or a distinctive airport-name word. For airport and ground
@@ -159,11 +177,70 @@ searches billed is therefore only visible in Google's console, not here.
 `verify-sources.mjs` resolves those redirect URLs itself. Thinking tokens
 are ~90 % of the token cost.
 
-**Pilot routes** (once billing is on):
-- Busy international: lhr-to-jfk, syd-to-sin, lax-to-nrt.
-- Domestic: syd-to-mel, jfk-to-lax, del-to-bom.
-- Regional: kul-to-sin, akl-to-syd.
-- Low popularity: lfw-to-oua, urc-to-htn.
+| 5 Oct 2026 | gemini-3.6-flash, JSON-only, thinking low | 11 (akl-to-syd, syd-to-mel, kul-to-sin; 1 at minimal) | n/a | ~12,800 / 6,050 / 17,600 | $0.10; 29 claims → 5 verified, URLs largely invented |
+| 5 Oct 2026 | gemini-3.6-flash, prose + structure (current design) | 18 | 64 | 70,027 / 55,645 / 14,884 | $0.32; 222 claims → 14 verified, 0 guides |
+
+**Total Gemini spend for the pilot: about $0.62 in tokens** (103,375 prompt,
+66,361 output, 77,488 thinking over 52 calls) plus 65 logged searches, all
+inside the free 5,000/month.
+
+## Pilot findings (5 Oct 2026)
+
+Current design, one run each, no retries:
+
+| Route | Grounded req. | Searches | Tokens (prompt / output / thinking) | Cost | Usable sources | Claims → verified | Guide |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| akl-to-syd | 6 | 22 | 20,863 / 20,522 / 2,784 | $0.103 | 56 (18 rejected) | 74 → 9 | no: only operator (China Eastern) is a possible fifth-freedom leg |
+| syd-to-mel | 6 | 20 | 22,536 / 15,458 / 6,298 | $0.099 | 54 (15 rejected) | 66 → 1 | no operator |
+| kul-to-sin | 6 | 22 | 26,628 / 19,665 / 5,802 | $0.116 | 63 (13 rejected) | 82 → 4 | no operator |
+
+For comparison, the first design on akl-to-syd: 4 grounded + 2 checks,
+$0.163, 16 claims → 6 verified → 5 published (#174).
+
+**The wall is fetchability, not Gemini.** Drop reasons across the three routes:
+- 56 claims cited only pages that answered **403** to our identified
+  crawler. Among them: executivetraveller.com, routesonline.com, the Auckland
+  and Melbourne airport sites, jetstar.com, transport.vic.gov.au,
+  immi.homeaffairs.gov.au and nzhistory.govt.nz.
+- 11 cited pages whose **robots.txt could not be read**, so they were
+  skipped (fail closed, as in ops/fetch). Among them: qantas.com,
+  virginaustralia.com, simpleflying.com and qantasnewsroom.com.au.
+  qantas.com resets the HTTP/2 stream for robots.txt.
+- 87 had **no sentence on the page carrying the claim's names and numbers**.
+  The model merged facts from several sources, or added dates and details;
+  the structuring prompt now forbids this, and it helped (5 → 14 verified),
+  but not enough.
+- 31 **failed the semantic check**.
+- The airline sites that would confirm "X flies A–B" are exactly the ones
+  that block or can't be checked, so operator claims are what fails most.
+
+**Not used: browser capture of 403 pages.** Fetching those pages through a
+headless browser (ops/fetch's Playwright) would get past bot protection
+that the site deliberately put in front of non-browser clients. That is
+circumventing a block, not polite crawling, so it is out of policy here even
+with an honest User-Agent. Pages that refuse us stay unverified. A human can
+still add a source by hand (`ops/fetch` manual ingest) after reading it.
+
+**Projections** (current design: ~6 grounded requests, ~21 searches and
+~$0.11 in tokens per route at 3.6-flash's 2026 rates; token prices double on
+1 Jan 2027):
+
+| Scope | Grounded requests | Searches | Search cost | Token cost | Expected yield |
+| --- | --- | --- | --- | --- | --- |
+| Top 100 by popularity | ~600 | ~2,100 | $0 (within 5,000/month free) | ~$11 | few guides with an operator list, at this verification rate |
+| All 491 | ~2,950 | ~10,500 | ~$77 if run in one month; $0 if spread over 3 months | ~$52 | same |
+
+Fewer, broader requests (3 a route) would cut searches by about a third (not
+measured) but return fewer sources per topic. The verification yield, not
+the request count, is the limiting factor.
+
+**Before running again:**
+- Decide where operator facts come from. Likely candidates are fetchable
+  airline newsrooms, national news sites and government air-services pages.
+  Or accept fare data as the operator list (the page's existing fallback)
+  and use research only for history, airports and transport.
+- Consider an allowlist of hosts known to answer our crawler, pre-checked
+  with `ops/fetch` preflight, in the research prompt.
 
 ## Known limits
 

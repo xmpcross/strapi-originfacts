@@ -332,7 +332,7 @@ export default async function RoutePage({ params }: Props) {
         <ExpandableDescription
           wordLimit={25}
           className="mt-4 text-base"
-          text={`Quick links into the airport profiles at both ends of the route. Each guide covers terminal layout, the airlines that base hubs at ${origin.iata} and ${destination.iata}, the other routes those airports serve, and the ground-transit options most travellers wish they'd read about before landing — the practical context you only really need to know once you've booked, but want to skim before you do.`}
+          text={`Quick links to the airport profiles at both ends of the route. Each one lists the airport's codes, location and time zone, any other routes and airlines Originfacts tracks from ${origin.iata} or ${destination.iata}, current weather and nearby airports, and where to check terminal and transport details.`}
         />
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           <AirportLink airport={origin} />

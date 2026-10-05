@@ -34,6 +34,9 @@ import { breadcrumbJsonLd } from '@/lib/jsonld';
 import type { Metadata } from 'next';
 import topAirportSources from '@/data/airport-sources/top-100-official-links.json';
 import { buildMetaDescription, compactTitle } from '@/lib/seo';
+import { airportUsesTemplateV2 } from '@/lib/airport-template-v2';
+import AirportGuideV2, { formatCoordinates, routeVintage } from '@/components/airport-v2/AirportGuideV2';
+import { airportGuideV2Faqs } from '@/components/airport-v2/faqs';
 
 export const revalidate = 60;
 
@@ -269,19 +272,96 @@ export default async function AirportPage({ params }: Props) {
     mainEntity: { '@id': `${url}#airport` },
   });
 
+  const breadcrumbTrail = [
+    { name: 'Airports', url: '/airports' },
+    ...(countryDestination ? [{ name: countryDestination.name, url: `/destinations/${countryDestination.slug}` }] : []),
+    ...(cityDestination ? [{ name: cityDestination.name, url: `/destinations/${cityDestination.slug}` }] : []),
+  ];
+
+  // v2 template, allowlisted slugs only (lib/airport-template-v2.ts). Same data,
+  // metadata, robots and JSON-LD blocks as below; only the layout and the FAQ
+  // (built from the facts the v2 page shows) differ.
+  if (airportUsesTemplateV2(airportSlug(airport, allAirports))) {
+    const v2Lat = airport.latitude ?? airportInfo?.latitude;
+    const v2Lon = airport.longitude ?? airportInfo?.longitude;
+    const v2Coordinates =
+      typeof v2Lat === 'number' && typeof v2Lon === 'number'
+        ? { lat: v2Lat, lon: v2Lon, source: typeof airport.latitude === 'number' ? ('record' as const) : ('airport-info' as const) }
+        : null;
+    const v2OfficialSite = discoveredSourceLinks?.officialWebsiteUrl
+      ? { url: discoveredSourceLinks.officialWebsiteUrl, source: 'wikidata' as const }
+      : airportInfo?.website
+        ? { url: normaliseUrl(airportInfo.website), source: 'airport-info' as const }
+        : null;
+    const v2Info = {
+      icao: airportInfo?.icao,
+      city: airportInfo?.city,
+      country: airportInfo?.country,
+      address: airportInfoAddress(airportInfo),
+      phone: airportInfo?.phone,
+    };
+    const v2Faqs = airportGuideV2Faqs({
+      name: airport.name,
+      iata: airport.iata,
+      icao: airport.icao || v2Info.icao,
+      city: airport.city || v2Info.city,
+      country: airport.country || v2Info.country,
+      timezone: airport.timezone,
+      coordinates: v2Coordinates ? formatCoordinates(v2Coordinates.lat, v2Coordinates.lon) : null,
+      address: v2Info.address,
+      phone: v2Info.phone,
+      officialSite: v2OfficialSite?.url,
+      airlines: airlineCards.map((a) => a.name),
+      destinations: summary.destinationNames,
+      countryCount: summary.countryCount,
+      routeVintage: routeVintage(routes),
+    });
+    return (
+      <>
+        <JsonLd data={articleSchema} />
+        <JsonLd data={airportJsonLd(airport, url)} />
+        <JsonLd data={faqJsonLd(v2Faqs)} />
+        <JsonLd data={breadcrumbJsonLd([...breadcrumbTrail, { name: `${airport.name} (${airport.iata})`, url: canonicalPath }])} />
+        <AirportGuideV2
+          airport={airport}
+          breadcrumb={breadcrumbTrail.map((b) => ({ name: b.name, href: b.url }))}
+          routes={routes}
+          airlines={airlineCards}
+          countryCount={summary.countryCount}
+          info={v2Info}
+          officialSite={v2OfficialSite}
+          wikipediaUrl={discoveredSourceLinks?.wikipediaUrl}
+          wikidataUrl={discoveredSourceLinks?.wikidataUrl}
+          coordinates={v2Coordinates}
+          mapHref={mapHref}
+          weather={airportWeather}
+          nearby={nearby.map((a) => ({
+            iata: a.iata,
+            name: a.name,
+            city: a.city,
+            country: a.country,
+            href: airportPath(a, allAirports),
+            distanceKm: a.distanceKm,
+          }))}
+          faqs={v2Faqs}
+          related={[
+            ...(cityDestination ? [{ label: `${cityDestination.name} travel guide`, href: `/destinations/${cityDestination.slug}` }] : []),
+            ...(countryDestination ? [{ label: `${countryDestination.name} travel guide`, href: `/destinations/${countryDestination.slug}` }] : []),
+            { label: 'Airport directory', href: '/airports' },
+            { label: 'Hub airports', href: '/airports/hubs' },
+            { label: 'Flight routes', href: '/flight-routes' },
+          ]}
+        />
+      </>
+    );
+  }
+
   return (
     <article data-testid={`airport-page-${airport.iata}`}>
       <JsonLd data={articleSchema} />
       <JsonLd data={airportJsonLd(airport, url)} />
       <JsonLd data={faqJsonLd(faqs)} />
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: 'Airports', url: '/airports' },
-          ...(countryDestination ? [{ name: countryDestination.name, url: `/destinations/${countryDestination.slug}` }] : []),
-          ...(cityDestination ? [{ name: cityDestination.name, url: `/destinations/${cityDestination.slug}` }] : []),
-          { name: `${airport.name} (${airport.iata})`, url: canonicalPath },
-        ])}
-      />
+      <JsonLd data={breadcrumbJsonLd([...breadcrumbTrail, { name: `${airport.name} (${airport.iata})`, url: canonicalPath }])} />
 
       <div className="mx-auto max-w-7xl px-6 pt-10">
         <nav className="text-xs uppercase tracking-widest text-forest-900/60">

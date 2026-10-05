@@ -1,0 +1,18 @@
+/*
+ * Only what Tailwind utilities cannot do here.
+ *
+ * globals.css forces `[data-testid^="airline-page-"] h3 { font-size: 1.5rem
+ * !important }` for the older templates. This page uses h3 for small
+ * sub-headings (tile titles, dispute cards), so it needs a selector that out-
+ * specifies that rule: two classes (0,2,0) beat an attribute plus an element
+ * (0,1,1), and both sides are !important.
+ */
+.root .h3 {
+  font-size: 1rem !important;
+  line-height: 1.4;
+}
+
+/* Clear the fixed site header when jumping to a section from the nav. */
+.root .section {
+  scroll-margin-top: 6.5rem;
+}

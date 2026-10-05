@@ -12,12 +12,12 @@ const guided = new Set(
   fs.readdirSync(path.join(process.cwd(), 'content', 'airport-guides')).map((f) => f.replace('.json', '').toUpperCase()),
 );
 
-test('removed pages: unique', () => {
-  assert.equal(removed.airports.length, 0);
-  assert.equal(new Set(removed.airports.map((a) => a.iata)).size, 0);
-  assert.equal(new Set(removed.airports.map((a) => a.slug)).size, 0);
-  assert.equal(removed.routes.length, 0);
-  assert.equal(new Set(removed.routes).size, 0);
+test('removed pages: 35 airports and 76 routes, unique', () => {
+  assert.equal(removed.airports.length, 35);
+  assert.equal(new Set(removed.airports.map((a) => a.iata)).size, 35);
+  assert.equal(new Set(removed.airports.map((a) => a.slug)).size, 35);
+  assert.equal(removed.routes.length, 76);
+  assert.equal(new Set(removed.routes).size, 76);
 });
 
 test('removed pages: same airports as the noindex list, none with a sourced guide', () => {

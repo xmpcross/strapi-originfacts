@@ -178,11 +178,11 @@
   [data-testid="article-page"] h2 {
     font-size: clamp(1.1rem, 0.8vw + 0.85rem, 1.4rem) !important;
   }
-  /* Single post page sidebar — Popular/Recent post row titles render
-     at 600 / 18px (overrides the article-page 700
-     heading rule above). Specificity 0,2,1 beats the heading rule's
-     0,1,1, so this wins even though both are !important. */
+  /* Single post page sidebar — Popular/Recent post row titles at weight 400
+     (overrides the global 700 heading rule). Specificity 0,2,1 beats the
+     heading rule's 0,0,1, so this wins even though both are !important. */
   [data-testid="article-page"] [data-testid="blog-sidebar"] h4 {
+    font-weight: 400 !important;
     font-size: clamp(0.875rem, 0.3vw + 0.8rem, 1rem) !important;
     line-height: 1.25 !important;
     letter-spacing: 0.3px !important;

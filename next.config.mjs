@@ -48,6 +48,9 @@ const nextConfig = {
       { source: '/hotels', destination: '/category/hotels', permanent: true },
       // Travel Resources merged into Travel Tips on 2026-05-02.
       { source: '/category/travel-resources', destination: '/category/travel-tips', permanent: true },
+      // /airports/hubs renamed to /airports/top-100-airports (5 Oct 2026). Next.js
+      // carries the query string across on its own.
+      { source: '/airports/hubs', destination: '/airports/top-100-airports', permanent: true },
       // Car Rental → Car Rentals (category renamed in Strapi, 2026-05-20).
       { source: '/category/car-rental', destination: '/category/car-rentals', permanent: true },
       // Two articles covered airport-vs-city car rentals (2026-09 AdSense

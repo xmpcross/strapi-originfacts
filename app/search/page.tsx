@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import SharedPagination from '@/components/Pagination';
 import { formatDistanceToNowStrict } from 'date-fns';
 import { listArticles, mediaUrl, type StrapiArticle } from '@/lib/strapi';
 import SearchInputForm from '@/components/SearchInputForm';
@@ -213,45 +214,21 @@ function SearchResultRow({ article }: { article: StrapiArticle }) {
   );
 }
 
-function Pagination({
-  current,
-  total,
-  q,
-  type,
-}: {
-  current: number;
-  total: number;
-  q: string;
-  type: string;
-}) {
-  const pages = Array.from({ length: total }, (_, i) => i + 1);
+function Pagination({ current, total, q, type }: { current: number; total: number; q: string; type: string }) {
+  const hrefFor = (p: number) => {
+    const params = new URLSearchParams({ q });
+    if (type && type !== 'all-content') params.set('type', type);
+    if (p > 1) params.set('page', String(p));
+    return `/search?${params.toString()}`;
+  };
   return (
-    <nav
-      aria-label="Search pagination"
-      className="mt-12 flex items-center gap-2"
-      data-testid="search-pagination"
-    >
-      {pages.map((p) => {
-        const active = p === current;
-        const params = new URLSearchParams({ q });
-        if (type && type !== 'all-content') params.set('type', type);
-        if (p > 1) params.set('page', String(p));
-        const href = `/search?${params.toString()}`;
-        return (
-          <Link
-            key={p}
-            href={href}
-            aria-current={active ? 'page' : undefined}
-            className={`inline-flex h-10 min-w-[2.5rem] items-center justify-center rounded-[0.3rem] border px-3 text-sm font-bold transition ${
-              active
-                ? 'border-primary-emphasis bg-primary-emphasis text-white'
-                : 'border-forest-900/15 bg-white text-forest-900 hover:border-primary-emphasis hover:text-primary-emphasis'
-            }`}
-          >
-            {p}
-          </Link>
-        );
-      })}
-    </nav>
+    <SharedPagination
+      current={current}
+      total={total}
+      hrefFor={hrefFor}
+      label="Search pagination"
+      testId="search-pagination"
+      align="start"
+    />
   );
 }

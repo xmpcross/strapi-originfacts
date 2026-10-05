@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import SharedPagination from '@/components/Pagination';
 import { format } from 'date-fns';
 import {
   listHotArticles,
@@ -176,31 +177,13 @@ function HotPostCard({
 }
 
 function Pagination({ current, total }: { current: number; total: number }) {
-  const pages = Array.from({ length: total }, (_, i) => i + 1);
   return (
-    <nav
-      aria-label="Hot Posts pagination"
-      className="mt-12 flex items-center justify-center gap-2"
-      data-testid="hot-posts-pagination"
-    >
-      {pages.map((p) => {
-        const active = p === current;
-        const href = p === 1 ? '/hot-posts' : `/hot-posts?page=${p}`;
-        return (
-          <Link
-            key={p}
-            href={href}
-            aria-current={active ? 'page' : undefined}
-            className={`inline-flex h-10 min-w-[2.5rem] items-center justify-center rounded-[0.3rem] border px-3 text-sm font-bold transition ${
-              active
-                ? 'border-primary-emphasis bg-primary-emphasis text-white'
-                : 'border-forest-900/15 bg-white text-forest-900 hover:border-primary-emphasis hover:text-primary-emphasis'
-            }`}
-          >
-            {p}
-          </Link>
-        );
-      })}
-    </nav>
+    <SharedPagination
+      current={current}
+      total={total}
+      hrefFor={(p) => (p === 1 ? '/hot-posts' : `/hot-posts?page=${p}`)}
+      label="Hot Posts pagination"
+      testId="hot-posts-pagination"
+    />
   );
 }

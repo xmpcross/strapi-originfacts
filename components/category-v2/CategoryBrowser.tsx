@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import SharedPagination from '@/components/Pagination';
 import { useId, useMemo, useState } from 'react';
 import { GridCard } from './Cards';
 import { matchesQuery, type CategoryCard, type DestinationChip } from './search';
@@ -186,37 +186,16 @@ function Chip({ active, onClick, label, count }: { active: boolean; onClick: () 
 
 /** Same URLs as the original template: page 1 is the bare path, then ?page=N. */
 function Pagination({ current, total, slug }: { current: number; total: number; slug: string }) {
-  const pages = Array.from({ length: total }, (_, i) => i + 1);
-  const href = (p: number) => (p === 1 ? `/category/${slug}` : `/category/${slug}?page=${p}`);
   return (
-    <nav aria-label="Category pagination" className="mt-14 flex flex-wrap items-center justify-center gap-2" data-testid="category-pagination">
-      {current > 1 && (
-        <Link href={href(current - 1)} rel="prev" className="inline-flex h-10 items-center rounded-[0.3rem] px-3 text-sm font-bold text-forest-900 hover:text-primary-emphasis">
-          ← Newer
-        </Link>
-      )}
-      {pages.map((p) => {
-        const active = p === current;
-        return (
-          <Link
-            key={p}
-            href={href(p)}
-            aria-current={active ? 'page' : undefined}
-            className={`inline-flex h-10 min-w-[2.5rem] items-center justify-center rounded-[0.3rem] border px-3 text-sm font-bold transition ${
-              active
-                ? 'border-forest-950 bg-forest-950 text-white'
-                : 'border-forest-900/15 bg-white text-forest-900 hover:border-primary-emphasis hover:text-primary-emphasis'
-            }`}
-          >
-            {p}
-          </Link>
-        );
-      })}
-      {current < total && (
-        <Link href={href(current + 1)} rel="next" className="inline-flex h-10 items-center rounded-[0.3rem] px-3 text-sm font-bold text-forest-900 hover:text-primary-emphasis">
-          Older →
-        </Link>
-      )}
-    </nav>
+    <SharedPagination
+      current={current}
+      total={total}
+      hrefFor={(p) => (p === 1 ? `/category/${slug}` : `/category/${slug}?page=${p}`)}
+      label="Category pagination"
+      testId="category-pagination"
+      prevNext={{ prev: '← Newer', next: 'Older →' }}
+      activeTone="forest"
+      className="mt-14"
+    />
   );
 }

@@ -12,10 +12,10 @@
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "Carry-on bag up to 55 × 40 × 25 cm (22 x 16 x 10 in), included with the Plus fare; can be added for a fee to Zero or Basic.",
+          "value": "55 x 40 x 25 cm",
           "status": "official",
-          "source_url": "https://cms.volaris.com/en/useful-information/baggage/checked-baggage/checked-baggage",
-          "verified_at": "2026-09-04",
+          "source_url": "https://www.volaris.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "personal_item": {
@@ -23,6 +23,20 @@
           "status": "official",
           "source_url": "https://cms.volaris.com/en/useful-information/baggage/checked-baggage/checked-baggage",
           "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "weight_economy": {
+          "value": "Personal item only (45 x 35 x 20 cm) on Zero; 1 personal item + 1 cabin bag total up to 15 kg (33 lbs) on Basic / Plus",
+          "status": "official",
+          "source_url": "https://www.volaris.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "weight_business_first": {
+          "value": "1 personal item + 1 cabin bag total up to 15 kg (33 lbs) (Plus fare)",
+          "status": "official",
+          "source_url": "https://www.volaris.com/baggage/hand-baggage",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -55,6 +69,27 @@
           "source_url": "https://cms.volaris.com/en/useful-information/baggage/checked-baggage/checked-baggage",
           "verified_at": "2026-09-04",
           "verified_by": "manual_official_source"
+        },
+        "piece_weight_economy": {
+          "value": "Checked baggage available for purchase (up to 25 kg / 55 lbs) on Zero / Basic; 1 checked bag included on Plus",
+          "status": "official",
+          "source_url": "https://www.volaris.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "piece_weight_business": {
+          "value": "1 checked bag up to 25 kg (55 lbs) included (Plus fare)",
+          "status": "official",
+          "source_url": "https://www.volaris.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "piece_weight_first": {
+          "value": "1 checked bag up to 25 kg (55 lbs) included (Plus fare)",
+          "status": "official",
+          "source_url": "https://www.volaris.com/baggage/checked-baggage",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -71,6 +106,27 @@
           "status": "official",
           "source_url": "https://cms.volaris.com/en/useful-information/baggage/checked-baggage/checked-baggage",
           "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "fare_name": {
+          "value": "Zero, Basic, Plus",
+          "status": "official",
+          "source_url": "https://www.volaris.com/fares",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "seat_selection_included": {
+          "value": "Included on Plus fare; fee applies on Zero and Basic until check-in.",
+          "status": "official",
+          "source_url": "https://www.volaris.com/fares",
+          "verified_at": "2026-10-06",
+          "verified_by": "manual_official_source"
+        },
+        "change_cancellation_policy": {
+          "value": "Zero/Basic non-refundable; Plus allows reusable credit and changes with minimal fee.",
+          "status": "official",
+          "source_url": "https://www.volaris.com/fares",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -102,31 +158,31 @@
       ],
       "fields": {
         "online_checkin_opens": {
-          "value": "24 hours before scheduled departure",
-          "status": "pending",
-          "source_url": "https://www.volaris.com",
-          "verified_at": "2026-10-05",
+          "value": "72 hours before departure (24 hours for US flights)",
+          "status": "official",
+          "source_url": "https://www.volaris.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "domestic_cutoff": {
           "value": "45 minutes before departure",
-          "status": "pending",
-          "source_url": "https://www.volaris.com",
-          "verified_at": "2026-10-05",
+          "status": "official",
+          "source_url": "https://www.volaris.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "international_cutoff": {
           "value": "60 minutes before departure",
-          "status": "pending",
-          "source_url": "https://www.volaris.com",
-          "verified_at": "2026-10-05",
+          "status": "official",
+          "source_url": "https://www.volaris.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "boarding_close": {
-          "value": "15 to 20 minutes before departure",
-          "status": "pending",
-          "source_url": "https://www.volaris.com",
-          "verified_at": "2026-10-05",
+          "value": "15–20 minutes before departure",
+          "status": "official",
+          "source_url": "https://www.volaris.com/check-in",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -142,24 +198,24 @@
       ],
       "fields": {
         "care": {
-          "value": "When a flight is delayed or cancelled within carrier control, passengers are entitled to meals, refreshments, communication access, and hotel accommodation with transport for overnight delays.",
-          "status": "pending",
-          "source_url": "https://www.volaris.com",
-          "verified_at": "2026-10-05",
+          "value": "Food, drinks, phone/email access, and hotel accommodation for delays >4 hours attributable to airline under AFAC rules.",
+          "status": "official",
+          "source_url": "https://www.volaris.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "rebooking_refund": {
-          "value": "For disruptions within carrier control, the airline rebooks passengers on the next available flight or provides a full refund for unused flight segments if delayed by 3 hours or more.",
-          "status": "pending",
-          "source_url": "https://www.volaris.com",
-          "verified_at": "2026-10-05",
+          "value": "Choice of full refund or rebooking to destination free of charge if cancelled or delayed >4 hours.",
+          "status": "official",
+          "source_url": "https://www.volaris.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "compensation": {
-          "value": "Statutory or policy compensation applies for cancellations or long delays within carrier control according to applicable aviation passenger rights regulations.",
-          "status": "pending",
-          "source_url": "https://www.volaris.com",
-          "verified_at": "2026-10-05",
+          "value": "Statutory compensation (up to 25% of ticket price) for airline-caused cancellations/delays under AFAC rules.",
+          "status": "official",
+          "source_url": "https://www.volaris.com/passenger-rights",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }
@@ -175,24 +231,24 @@
       ],
       "fields": {
         "seat_options": {
-          "value": "Standard seats, preferred location seats, and extra legroom seating options are available depending on aircraft and cabin class",
-          "status": "pending",
-          "source_url": "https://www.volaris.com",
-          "verified_at": "2026-10-05",
+          "value": "Standard Economy, Extra Legroom seats (First Row / Premium Rows).",
+          "status": "official",
+          "source_url": "https://www.volaris.com/cabins",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "reserved_or_random": {
-          "value": "Reserve a specific seat in advance for a fee or free depending on fare class, or receive a free seat assignment during online check-in",
-          "status": "pending",
-          "source_url": "https://www.volaris.com",
-          "verified_at": "2026-10-05",
+          "value": "Fee-based advance seat selection on Zero/Basic; included on Plus; assigned free at check-in.",
+          "status": "official",
+          "source_url": "https://www.volaris.com/seat-selection",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         },
         "family_seating": {
-          "value": "Children traveling with an accompanying adult are seated together during advance seat reservation or at check-in",
-          "status": "pending",
-          "source_url": "https://www.volaris.com",
-          "verified_at": "2026-10-05",
+          "value": "Volaris automatically seats adults travelling with children under 12 together free of charge.",
+          "status": "official",
+          "source_url": "https://www.volaris.com/family-travel",
+          "verified_at": "2026-10-06",
           "verified_by": "manual_official_source"
         }
       }

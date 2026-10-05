@@ -134,6 +134,17 @@ export const PUBLISHED_AIRLINE_GUIDES = new Set([
   'hawaiian-airlines',
   'icelandair',
   'lot-polish',
+  // Batch 6 (6 Oct 2026)
+  'aerolineas-argentinas',
+  'air-astana',
+  'air-mauritius',
+  'breeze-airways',
+  'fiji-airways',
+  'flydubai',
+  'hainan-airlines',
+  'kuwait-airways',
+  'royal-air-maroc',
+  'volaris',
 ]);
 
 export function airlineGuideIsPublished(slug: string): boolean {

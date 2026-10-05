@@ -1,0 +1,130 @@
+{
+  "slug": "bah-to-doh",
+  "note": "Offline fixture for verify-sources.mjs, built from sources already cited in content/route-guides/bah-to-doh.json. No Gemini call made it. Each claim's `expect` is what the verifier should decide; `why` says what the case tests.",
+  "claims": [
+    {
+      "expect": "verified",
+      "why": "verbatim quote; airline, 'daily', '1' and 'May' all in the quote; Doha and Bahrain both named",
+      "category": "operator",
+      "text": "Qatar Airways announced the resumption of daily flights to Bahrain from 1 May.",
+      "date": "2026-05-01",
+      "airlines": [
+        "Qatar Airways"
+      ],
+      "airport": null,
+      "quote": "DOHA: Qatar Airways has announced the resumption of daily flights to Bahrain and Kozhikode, India, beginning May 1, as the airline continues the phased restoration of its global network.",
+      "grounding_urls": [
+        "https://www.qatar-tribune.com/article/231143/latest-news/qatar-airways-restores-more-routes-with-daily-flights-to-bahrain-and-indias-kozhikode-from-may-1"
+      ],
+      "source_url": null
+    },
+    {
+      "expect": "dropped",
+      "why": "quote and numbers check out ('three' → 3, 'daily', the airline), but a history claim must carry its year in the text, and this page's sentence has none",
+      "category": "history",
+      "text": "Gulf Air was scheduled to resume its flights to Doha, with three daily flights.",
+      "date": "2023-05-25",
+      "airlines": [
+        "Gulf Air"
+      ],
+      "airport": null,
+      "quote": "Meanwhile, Gulf Air, Bahrain's official carrier, was also scheduled to resume its flights to Doha, Qatar from today. The airline plans to operate three daily flights to Doha.",
+      "grounding_urls": [
+        "https://www.gdnonline.com/Details/1242650/Qatar-Airways-resumes-flights-to-Bahrain-"
+      ],
+      "source_url": null
+    },
+    {
+      "expect": "dropped",
+      "why": "claim adds 'May 2023' — the year is not in the quote (the page says 'today (May 25)'), so the date cannot be checked against the quote",
+      "category": "history",
+      "text": "Qatar Airways resumed daily flights to Bahrain on 25 May 2023.",
+      "date": "2023-05-25",
+      "airlines": [
+        "Qatar Airways"
+      ],
+      "airport": null,
+      "quote": "Qatar Airways has announced resumption of its services to Bahrain starting today (May 25) with a daily flight.",
+      "grounding_urls": [
+        "https://www.gdnonline.com/Details/1242650/Qatar-Airways-resumes-flights-to-Bahrain-"
+      ],
+      "source_url": null
+    },
+    {
+      "expect": "dropped",
+      "why": "ALTERED QUOTE: 'May 1' changed to 'May 2' — not on the page, and no sentence on the page carries '2' + 'May' + the airline",
+      "category": "operator",
+      "text": "Qatar Airways announced the resumption of daily flights to Bahrain from 2 May.",
+      "date": "2026-05-02",
+      "airlines": [
+        "Qatar Airways"
+      ],
+      "airport": null,
+      "quote": "DOHA: Qatar Airways has announced the resumption of daily flights to Bahrain and Kozhikode, India, beginning May 2, as the airline continues the phased restoration of its global network.",
+      "grounding_urls": [
+        "https://www.qatar-tribune.com/article/231143/latest-news/qatar-airways-restores-more-routes-with-daily-flights-to-bahrain-and-indias-kozhikode-from-may-1"
+      ],
+      "source_url": null
+    },
+    {
+      "expect": "dropped",
+      "why": "real quote, but the claim says 'four' daily flights; the quote says three",
+      "category": "history",
+      "text": "Gulf Air planned four daily flights to Doha.",
+      "date": "2023-05-25",
+      "airlines": [
+        "Gulf Air"
+      ],
+      "airport": null,
+      "quote": "Meanwhile, Gulf Air, Bahrain's official carrier, was also scheduled to resume its flights to Doha, Qatar from today. The airline plans to operate three daily flights to Doha.",
+      "grounding_urls": [
+        "https://www.gdnonline.com/Details/1242650/Qatar-Airways-resumes-flights-to-Bahrain-"
+      ],
+      "source_url": null
+    },
+    {
+      "expect": "needs-judge",
+      "why": "model quote is on the page but lacks 'Qatar Airways'; the verifier locates the two-sentence passage that carries it, which then needs the semantic check",
+      "category": "airport",
+      "text": "Hamad International Airport opened in 2014 and is home to Qatar Airways.",
+      "date": "2014",
+      "airlines": [
+        "Qatar Airways"
+      ],
+      "airport": "DOH",
+      "quote": "Hamad International Airport, Qatar's state-of-the-art gateway, opened in 2014 alongside the vibrant city of Doha and sparkling Arabian Gulf.",
+      "grounding_urls": [
+        "https://www.dohahamadairport.com/about-us"
+      ],
+      "source_url": null
+    },
+    {
+      "expect": "verified",
+      "why": "the page has an invisible left-to-right mark inside the sentence; normalisation must still match",
+      "category": "ground",
+      "text": "At Bahrain International Airport, buses leave from zone 4A, reached from exit 4 on the Arrival level.",
+      "date": null,
+      "airlines": [],
+      "airport": "BAH",
+      "quote": "Arriving passengers can make their way to exit 4 on the Arrival level, where buses are currently departing from zone 4A on the road closest to the terminal building.",
+      "grounding_urls": [
+        "https://www.bahrainairport.bh/passenger/bus"
+      ],
+      "source_url": null
+    },
+    {
+      "expect": "dropped",
+      "why": "only source is Wikipedia, a rejected host: never fetched",
+      "category": "operator",
+      "text": "Gulf Air flies between Bahrain and Doha.",
+      "date": null,
+      "airlines": [
+        "Gulf Air"
+      ],
+      "airport": null,
+      "quote": "Gulf Air flies between Bahrain and Doha.",
+      "grounding_urls": [],
+      "source_url": "https://en.wikipedia.org/wiki/Gulf_Air"
+    }
+  ]
+}

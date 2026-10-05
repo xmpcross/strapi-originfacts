@@ -21,7 +21,7 @@ export const SECTIONS: Section[] = [
     title: 'Destinations',
     tagline: 'Places that change you',
     description:
-      'Field-tested guides to cities, regions, and out-of-the-way corners worth the flight — the kind of places that earn a second visit. Expect honest takes on when to go, where to stay, what to eat, and which experiences are worth your time versus the ones that exist purely for the photo. Every guide is built on first-hand reporting, paired with the practical logistics you actually need: airport transfers, neighborhood breakdowns, daily budgets, and the small-print quirks of each country that catch first-timers off guard.',
+      'Guides to cities, regions, and out-of-the-way corners worth the flight. Each covers when to go, where to stay, what to eat, and which experiences are worth your time, alongside the practical logistics you need: airport transfers, neighborhood breakdowns, daily budgets, and the entry rules and local quirks that catch first-timers off guard. Guides are compiled from official tourism, transport and government sources and reviewed by a named editor — see how we research and write in our methodology.',
     layout: 'atlas',
   },
   {
@@ -29,7 +29,7 @@ export const SECTIONS: Section[] = [
     title: 'Flights',
     tagline: 'Pay less, fly more',
     description:
-      'Everything we know about paying less for a seat in the air — from the search habits that surface the cheapest fares to the routing tricks (mixed cabins, hidden-city, error fares, positioning flights) that move the price needle. We track booking windows by route, compare metasearch tools head-to-head, and break down loyalty programs in plain English so you know which points are worth chasing and which are a distraction. Whether you fly twice a year or twenty times, the playbooks here pay back the time you spend reading them.',
+      'How to pay less for a seat in the air — from the search habits that surface cheaper fares to the routing options (mixed cabins, positioning flights, flexible dates) that can move the price. We explain how fares, baggage rules and loyalty programs work in plain English, drawing on published fare and route data and the airlines\' own policies, so you know which points are worth chasing and which are a distraction. Prices change constantly: always confirm the final fare and its conditions with the airline or booking site before you pay.',
     layout: 'departure',
   },
   {
@@ -37,7 +37,7 @@ export const SECTIONS: Section[] = [
     title: 'Hotels',
     tagline: 'Beds worth booking twice',
     description:
-      'Honest, walked-the-halls reviews of hotels we actually slept in — boutique finds, design-led independents, the dependable city standbys, and the rare resort worth the splurge. Beyond the reviews we dig into the booking craft: how to stack OTA rebates with hotel loyalty status, when status matching is worth the email, which credit-card free-night certs deliver the best per-dollar value, and how to spot resort-fee inflation before it shows up at check-out. Boring fluff promised nowhere here.',
+      'Where-to-stay guides and hotel round-ups by destination — boutique finds, design-led independents, dependable city standbys and family-friendly picks — compiled from hotels\' own published information, booking-site listings and official sources, then reviewed by a named editor. They are editorial selections, not the result of paid or mystery stays. Beyond the lists we cover the booking craft: how OTA rebates and hotel loyalty status interact, when status matching is worth the email, and how to spot resort fees before they show up at check-out.',
     layout: 'wirecutter',
   },
   {
@@ -45,7 +45,7 @@ export const SECTIONS: Section[] = [
     title: 'Car Rentals',
     tagline: 'Wheels without the markup',
     description:
-      'Renting a car has more landmines than booking a flight: airport surcharges, fuel policies that punish honesty, "free upgrades" that aren\'t, and damage claims that can outlive the trip itself. This section pulls apart the daily-rate game on the routes most travelers actually take — Mediterranean coastlines, US road trips, New Zealand loops — and explains exactly which insurance you need, which agencies still respect a reservation, and the off-airport pickup pattern that quietly knocks 30%+ off the bill. Everything written from a driver\'s seat, not a press release.',
+      'Renting a car has more pitfalls than booking a flight: airport surcharges, fuel policies, "free upgrades" that aren\'t, and damage claims that can outlive the trip itself. This section explains how daily rates are built on popular road-trip routes — Mediterranean coastlines, US road trips, New Zealand loops — what each type of rental insurance covers, and when an off-airport pickup can cost less, drawing on rental companies\' published terms. Always check the final price, insurance and fuel policy on the rental company\'s own booking page before you pay.',
     layout: 'wirecutter',
   },
   {
@@ -53,7 +53,7 @@ export const SECTIONS: Section[] = [
     title: 'Travel Tips',
     tagline: 'Shortcuts from the road',
     description:
-      'The small moves that make travel dramatically easier — packing systems that actually compress, gear that justifies the carry-on space, the airport routines that save hours, and the practical habits that head off the kind of trouble a Google search can\'t fix once it\'s started. Less Instagram-grid advice, more "here\'s what to do when your phone dies in a foreign taxi" — written for people who already travel and want to do it with less friction. New tips dropped weekly, the evergreen ones reviewed twice a year so nothing here is silently out of date.',
+      'The small moves that make travel easier — packing systems, what earns its carry-on space, airport routines that save time, and practical habits that head off trouble before it starts. Less Instagram-grid advice, more "here\'s what to do when your phone dies in a foreign taxi" — written for people who already travel and want to do it with less friction.',
     layout: 'masonry',
   },
 ];

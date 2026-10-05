@@ -3,6 +3,34 @@
 @tailwind components;
 @tailwind utilities;
 
+/* shadcn/ui theme tokens (components/ui), mapped onto the brand palette in
+   tailwind.config.ts. shadcn's global `* { @apply border-border }` is left out
+   on purpose: Tailwind's default border colour is already gray-200 (= --border),
+   and the rule would touch every existing border on the site. */
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* #ffffff */
+    --foreground: 222 47% 11%; /* #0f172a ink */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 213 98% 40%; /* #025ccc primary-emphasis */
+    --primary-foreground: 0 0% 100%;
+    --secondary-foreground: 223 74% 23%; /* #0f2766 forest-900 */
+    --muted: 210 40% 96%; /* #f1f5f9 */
+    --muted-foreground: 215 16% 47%; /* #64748b */
+    --accent: 211 100% 95%; /* #e6f2ff primary-hover */
+    --accent-foreground: 223 74% 23%;
+    --destructive: 0 72% 51%; /* #dc2626 danger-emphasis */
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 91%; /* #e5e7eb */
+    --input: 220 13% 91%;
+    --ring: 213 98% 40%;
+    --radius: 0.3rem;
+  }
+}
+
 @layer base {
   html {
     background: #ffffff;

@@ -1,12 +1,28 @@
 import type { Config } from 'tailwindcss';
 import typography from '@tailwindcss/typography';
+import animate from 'tailwindcss-animate';
 
 export default {
   content: ['./app/**/*.{ts,tsx}', './components/**/*.{ts,tsx}'],
   theme: {
     extend: {
       colors: {
+        // shadcn/ui semantic tokens (CSS variables in app/globals.css), merged
+        // into the existing brand palette. `secondary.DEFAULT` keeps its literal
+        // #fff8d6 because the site already uses bg-secondary for callouts.
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        card: { DEFAULT: 'hsl(var(--card))', foreground: 'hsl(var(--card-foreground))' },
+        popover: { DEFAULT: 'hsl(var(--popover))', foreground: 'hsl(var(--popover-foreground))' },
+        muted: { DEFAULT: 'hsl(var(--muted))', foreground: 'hsl(var(--muted-foreground))' },
+        accent: { DEFAULT: 'hsl(var(--accent))', foreground: 'hsl(var(--accent-foreground))' },
+        destructive: { DEFAULT: 'hsl(var(--destructive))', foreground: 'hsl(var(--destructive-foreground))' },
         primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
           emphasis: '#025ccc',
           emphasisHover: '#014fd3',
           emphasisPressed: '#003eab',
@@ -18,6 +34,7 @@ export default {
         },
         secondary: {
           DEFAULT: '#fff8d6',
+          foreground: 'hsl(var(--secondary-foreground))',
           emphasis: '#f59e0b',
           hover: '#fbbf24',
           pressed: '#d97706',
@@ -51,7 +68,15 @@ export default {
       borderRadius: {
         '3xl': '0.3rem',
       },
+      keyframes: {
+        'accordion-down': { from: { height: '0' }, to: { height: 'var(--radix-accordion-content-height)' } },
+        'accordion-up': { from: { height: 'var(--radix-accordion-content-height)' }, to: { height: '0' } },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+      },
     },
   },
-  plugins: [typography],
+  plugins: [typography, animate],
 } satisfies Config;

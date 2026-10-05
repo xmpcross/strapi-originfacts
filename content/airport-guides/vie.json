@@ -1,0 +1,317 @@
+{
+  "iata": "VIE",
+  "verified_at": "2026-10-05",
+  "sections": [
+    {
+      "id": "terminals",
+      "heading": "Terminals",
+      "paragraphs": [
+        {
+          "text": "Vienna Airport has three terminals: Terminal 1, Terminal 1A and Terminal 3, and your airline decides which one you check in at. Gates B, C and D are reached from Terminal 1, and gates F and G from Terminal 3.",
+          "sources": [
+            "checkin"
+          ]
+        },
+        {
+          "text": "The airport’s airline list, last updated on 5 October 2026, shows Austrian, Lufthansa and SWISS at Terminal 3, Ryanair at Terminal 1 and easyJet at Terminal 1A. The airport asks passengers to check the flight display monitors for changes.",
+          "sources": [
+            "airlines"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city-transport",
+      "heading": "Getting into Vienna while the S-Bahn main line is closed",
+      "paragraphs": [
+        {
+          "text": "From 7 September 2026 until the end of October 2027, ÖBB has closed the central section of Vienna’s main S-Bahn line between Wien Praterstern and Wien Hauptbahnhof, including Wien Mitte (Landstraße) station. Neither the S7 airport train nor the City Airport Train runs to the airport by its usual route during the closure.",
+          "sources": [
+            "oebb-closure",
+            "wien-closure",
+            "cat-closure"
+          ]
+        },
+        {
+          "text": "Railjet and Intercity trains still run between Wien Hauptbahnhof and the airport. ÖBB gives the journey as 15 minutes non-stop, with trains every half hour; some of them also stop at Wien Meidling.",
+          "sources": [
+            "oebb-anreise",
+            "oebb-closure"
+          ]
+        },
+        {
+          "text": "During the closure the S7 runs only between the airport and St. Marx, where you change to tram line 18 or 71 to continue towards the city centre. REX7 runs from Wien Hauptbahnhof towards the airport, stopping at Kaiserebersdorf and Schwechat. The airport’s own rail page still lists the S7 to Wien Mitte (25 minutes), so check ÖBB’s journey planner before you rely on it.",
+          "sources": [
+            "cat-closure",
+            "wien-closure",
+            "oebb-closure",
+            "rail"
+          ]
+        },
+        {
+          "text": "The City Airport Train (CAT) is currently running as a coach service, expected to continue until 31 October 2027. The coaches run non-stop between the airport and Wien Mitte in 21 minutes, every 12 minutes between 7 am and 7 pm and every 15 minutes at other times. At the airport they leave from Terminal 3, bus terminal, bus station 0; the first coach leaves at 6:10 am and the last at 11:37 pm. Full-price tickets cost €14.90 single and €24.90 return.",
+          "sources": [
+            "cat-home",
+            "cat-tickets"
+          ]
+        },
+        {
+          "text": "Vienna Airport Bus (Postbus) has five lines: VAB1 to Wien Westbahnhof via Hauptbahnhof (40 minutes), VAB2 to Morzinplatz/Schwedenplatz (20 minutes), VAB3 to Donauzentrum (40 minutes), VAB4 to Karlsplatz (25 minutes) and VAB5 to Praterstern (30 minutes). The airport says there are half-hourly connections from Westbahnhof and Hauptbahnhof, and that Schwedenplatz can be reached daily around the clock. A full-price ticket costs €11 one-way or €20 return. The buses stop at Bus Terminal 3, a few steps from the baggage carousel.",
+          "sources": [
+            "bus-conn",
+            "bus-tickets",
+            "bus-airport"
+          ]
+        },
+        {
+          "text": "Buses to Bratislava are listed on the airport’s bus page, operated by Slovak Lines, FlixBus and RegioJet.",
+          "sources": [
+            "bus-conn"
+          ]
+        },
+        {
+          "text": "The airport asks passengers to use only the taxi rank directly in front of the arrivals hall or the “City Transfer” counters in the arrivals hall, and not to accept a ride from anyone who approaches them in the arrivals hall.",
+          "sources": [
+            "taxi"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parking",
+      "heading": "Parking",
+      "paragraphs": [
+        {
+          "text": "Car Park 3 (recommended for departures from Terminal 1 and 1A) and Car Park 4 (recommended for Terminal 3) cost a maximum of €5.70 per hour and have direct, weather-protected access to the terminals. Parking space A, a 5-minute walk from the terminals, and parking space C, a 7–10 minute walk, cost a maximum of €4.80 per hour; the airport describes C as the cheapest outdoor lot near the terminal and recommends booking online.",
+          "sources": [
+            "parking"
+          ]
+        },
+        {
+          "text": "Short-term parking K3 costs €6.00 per hour and cannot be booked in advance. At the terminal approach for departures, parking costs €2.90 per 15 minutes, with the first 10 minutes free once per vehicle per day. These are the prices on the airport’s page on 5 October 2026, which shows no date they are valid from; check the page before you travel.",
+          "sources": [
+            "parking"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assistance",
+      "heading": "Assistance for passengers with reduced mobility",
+      "paragraphs": [
+        {
+          "text": "The airport asks you to tell your airline or travel company at least 48 hours before departure that you need assistance. The services are free and available around the clock. On arrival, report to the mobility service in the arrivals hall or in Terminal 3, or to your airline’s check-in counter.",
+          "sources": [
+            "prm"
+          ]
+        },
+        {
+          "text": "Vienna Airport supports the Hidden Disabilities Sunflower, which you can wear to show you may need extra help or time. Sunflower products are available at the Airport Service Counters in Terminal 1, Terminal 3 level 0 and Terminal 3 level 1, from 5:30 am to 10:15 pm.",
+          "sources": [
+            "sunflower"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lounges",
+      "heading": "Lounges",
+      "paragraphs": [
+        {
+          "text": "The VIENNA Lounge is in Terminal 1 and the SKY Lounge in Terminal 3, both on level 2 after the security check and before passport control. Opening hours are 04:30–22:00 for the VIENNA Lounge and 04:30–23:00 for the SKY Lounge. Economy passengers on any airline can use them for up to 3 hours at €59 (VIENNA Lounge) or €49 (SKY Lounge).",
+          "sources": [
+            "lounges"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Which terminal does my airline use at Vienna Airport?",
+      "a": "Your airline decides. Vienna Airport has Terminal 1, Terminal 1A and Terminal 3. In the airport’s list updated on 5 October 2026, Austrian, Lufthansa and SWISS use Terminal 3, Ryanair uses Terminal 1 and easyJet uses Terminal 1A. Check the flight display monitors, as terminals can change.",
+      "sources": [
+        "checkin",
+        "airlines"
+      ]
+    },
+    {
+      "q": "Is there a train from Vienna Airport to Wien Mitte right now?",
+      "a": "No. From 7 September 2026 until the end of October 2027 the central S-Bahn section including Wien Mitte is closed. The City Airport Train is running as a coach (21 minutes to Wien Mitte), the S7 runs only to St. Marx, and Railjet and Intercity trains still run to Wien Hauptbahnhof in about 15 minutes.",
+      "sources": [
+        "oebb-closure",
+        "wien-closure",
+        "cat-closure",
+        "cat-home",
+        "oebb-anreise"
+      ]
+    },
+    {
+      "q": "How much is the bus from Vienna Airport to the city centre?",
+      "a": "A full-price Vienna Airport Bus ticket costs €11 one-way or €20 return. VAB2 reaches Morzinplatz/Schwedenplatz in 20 minutes, according to the airport.",
+      "sources": [
+        "bus-tickets",
+        "bus-conn"
+      ]
+    },
+    {
+      "q": "How much does parking at Vienna Airport cost?",
+      "a": "On the airport’s page on 5 October 2026: up to €5.70 per hour in Car Parks 3 and 4, €4.80 per hour at parking spaces A and C, and €6.00 per hour in short-term parking K3. Dropping off at the terminal costs €2.90 per 15 minutes after 10 free minutes.",
+      "sources": [
+        "parking"
+      ]
+    },
+    {
+      "q": "How do I get assistance at Vienna Airport?",
+      "a": "Tell your airline or travel company at least 48 hours before departure. The airport’s assistance is free and around the clock; on arrival, go to the mobility service in the arrivals hall or in Terminal 3.",
+      "sources": [
+        "prm"
+      ]
+    },
+    {
+      "q": "Are there lounges at Vienna Airport?",
+      "a": "Yes: the VIENNA Lounge in Terminal 1 and the SKY Lounge in Terminal 3, both open to economy passengers on any airline for up to 3 hours at €59 and €49 respectively.",
+      "sources": [
+        "lounges"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "checkin",
+      "title": "Check-in",
+      "publisher": "Flughafen Wien AG (Vienna Airport)",
+      "url": "https://www.viennaairport.com/en/passengers/airport/check-in",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "airlines",
+      "title": "Airlines by terminal",
+      "publisher": "Flughafen Wien AG (Vienna Airport)",
+      "url": "https://www.viennaairport.com/en/passengers/airport/airlines",
+      "published": "5 October 2026",
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "rail",
+      "title": "Rail connections",
+      "publisher": "Flughafen Wien AG (Vienna Airport)",
+      "url": "https://www.viennaairport.com/en/passengers/arrival__parking/s-bahn__suburban_railway",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "oebb-anreise",
+      "title": "Getting there from Vienna",
+      "publisher": "ÖBB-Personenverkehr AG",
+      "url": "https://www.oebb.at/en/regionale-angebote/ueberregionale-angebote/anreise-zum-flughafen/anreise-wien",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "oebb-closure",
+      "title": "Bauarbeiten Stammstrecke",
+      "publisher": "ÖBB",
+      "url": "https://www.oebb.at/de/fahrplan/baustelleninformation/bauarbeiten-stammstrecke",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "wien-closure",
+      "title": "Zentraler Abschnitt der S-Bahn-Stammstrecke bis Ende Oktober 2027 gesperrt",
+      "publisher": "Stadt Wien",
+      "url": "https://www.wien.gv.at/verkehr/sperre-stammstrecke",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "cat-closure",
+      "title": "Main Line Closure",
+      "publisher": "City Airport Train",
+      "url": "https://www.cityairporttrain.com/en/info-service/main-line-closure/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "cat-home",
+      "title": "The fastest connection between the airport and the city center of Vienna",
+      "publisher": "City Airport Train",
+      "url": "https://www.cityairporttrain.com/en",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "cat-tickets",
+      "title": "Prices, tickets & discounts",
+      "publisher": "City Airport Train",
+      "url": "https://www.cityairporttrain.com/en/tickets-offers/information-about-cat-tickets/",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "bus-conn",
+      "title": "Bus",
+      "publisher": "Flughafen Wien AG (Vienna Airport)",
+      "url": "https://www.viennaairport.com/en/passengers/arrival__parking/bus_connections",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "bus-tickets",
+      "title": "Tickets & prices",
+      "publisher": "Vienna Airport Bus (Postbus)",
+      "url": "https://www.viennaairportbus.com/en/informationen/tickets-und-preise",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "bus-airport",
+      "title": "Airport Vienna",
+      "publisher": "Vienna Airport Bus (Postbus)",
+      "url": "https://www.viennaairportbus.com/en/informationen/flughafen-wien",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "taxi",
+      "title": "Taxis & Limousines",
+      "publisher": "Flughafen Wien AG (Vienna Airport)",
+      "url": "https://www.viennaairport.com/en/passengers/arrival__parking/taxis__limousines",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "parking",
+      "title": "Parking areas & price overview",
+      "publisher": "Flughafen Wien AG (Vienna Airport)",
+      "url": "https://www.viennaairport.com/en/passengers/arrival__parking/best_parking_possibilities",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "prm",
+      "title": "Accessible travel",
+      "publisher": "Flughafen Wien AG (Vienna Airport)",
+      "url": "https://www.viennaairport.com/en/prm",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "sunflower",
+      "title": "Accessible travel (Sunflower)",
+      "publisher": "Flughafen Wien AG (Vienna Airport)",
+      "url": "https://www.viennaairport.com/en/passengers/airport/disabled-accessible_travel",
+      "published": null,
+      "verified_at": "2026-10-05"
+    },
+    {
+      "id": "lounges",
+      "title": "Lounges",
+      "publisher": "Flughafen Wien AG (Vienna Airport)",
+      "url": "https://www.viennaairport.com/en/lounges",
+      "published": null,
+      "verified_at": "2026-10-05"
+    }
+  ]
+}

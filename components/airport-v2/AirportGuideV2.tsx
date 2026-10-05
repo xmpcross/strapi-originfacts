@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
+import { airportCitationOrder, type AirportGuide } from '@/lib/airport-guide';
+import { CitedParagraph } from '@/components/route-guide/RouteGuideBlocks';
 import type { StrapiAirport, StrapiRoute } from '@/lib/strapi';
 import type { AirportWeather } from '@/lib/met-weather';
 import { formatLocalTime, MET_ATTRIBUTION, weatherLabel } from '@/lib/met-symbols';
@@ -92,6 +94,8 @@ export type AirportGuideV2Props = {
   /** Same list the page marks up as FAQPage — built by airportGuideV2Faqs(). */
   faqs: Faq[];
   related: { label: string; href: string }[];
+  /** Sourced terminals/transport/parking content (content/airport-guides), if this airport has one. */
+  guide?: AirportGuide | null;
 };
 
 /** The site's default content width (matches the airline v2 page). */
@@ -142,6 +146,9 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
   const officialHost = officialSite ? displayUrl(officialSite.url) : null;
   const coverage = routeCoverage({ name, code, tracked: p.routeCount.tracked, shown: routes.length });
   const photo = p.cityPhoto;
+  const guide = p.guide ?? null;
+  const citeOrder = guide ? airportCitationOrder(guide) : new Map<string, number>();
+  const guideDate = guide ? formatDate(guide.verified_at) : null;
 
   const navItems: NavItem[] = [
     { id: 'details', label: 'Airport details', status: 'data' },
@@ -152,7 +159,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
     { id: 'routes', label: 'Routes', status: hasRoutes ? ('data' as const) : ('pending' as const) },
     ...(e.hubs.length ? [{ id: 'hubs', label: 'Hub airlines', status: 'data' as const }] : []),
     ...(e.cityCentre ? [{ id: 'getting-there', label: 'Getting there', status: 'data' as const }] : []),
-    { id: 'planning', label: 'Terminals & transport', status: 'pending' },
+    { id: 'planning', label: 'Terminals & transport', status: guide ? ('data' as const) : ('pending' as const) },
     ...(e.climate ? [{ id: 'climate', label: 'Climate', status: 'data' as const }] : []),
     ...(nearby.length ? [{ id: 'nearby', label: 'Nearby airports', status: 'data' as const }] : []),
     ...(faqs.length ? [{ id: 'faq', label: 'FAQ', status: 'none' as const }] : []),
@@ -212,8 +219,17 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                     </span>
                   </h1>
                   <p className="mt-3 max-w-2xl text-base leading-7 text-forest-900/80">
-                    {introTopics(e, hasRoutes, Boolean(officialSite))} for {name}, and where to check terminal and transport
-                    details. Each figure shows where it came from.
+                    {guide ? (
+                      <>
+                        {introTopics(e, hasRoutes, Boolean(officialSite))} for {name}, plus its terminals, ground transport and
+                        parking checked against official sources. Each figure shows where it came from.
+                      </>
+                    ) : (
+                      <>
+                        {introTopics(e, hasRoutes, Boolean(officialSite))} for {name}, and where to check terminal and transport
+                        details. Each figure shows where it came from.
+                      </>
+                    )}
                   </p>
                 </div>
               </div>
@@ -293,7 +309,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
             {e.qid && wdDate && <span>Wikidata, {wdDate}</span>}
             {hasFares && faresDate && <span>Travelpayouts fares, {faresDate}</span>}
             {e.climate && <span>NASA POWER climate, {e.climate.period}</span>}
-            <span>Terminals and transport not yet verified</span>
+            <span>{guide ? `Terminals and transport checked${guideDate ? ` ${guideDate}` : ''}` : 'Terminals and transport not yet verified'}</span>
             <a href="#sources" className="text-primary-emphasis underline-offset-2 hover:underline">
               Where this comes from
             </a>
@@ -605,7 +621,29 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
 
             {e.cityCentre && <GettingThereSection name={name} code={code} city={e.cityCentre} coordSource={coordinates?.source ?? 'record'} />}
 
-            {/* ------------------------------------------------ planning (pending) */}
+            {/* ------------------------------------------------ planning (sourced guide, else pending) */}
+            {guide ? (
+              <Shell
+                id="planning"
+                title={`Terminals, transport and parking at ${code}`}
+                badge={<Badge tone="data">Checked {guideDate}</Badge>}
+              >
+                {guide.sections.map((sec) => (
+                  <div key={sec.id} data-testid={`airport-v2-guide-${sec.id}`}>
+                    <h3 className="text-lg leading-snug text-forest-950">{sec.heading}</h3>
+                    <div className="mt-2 space-y-3 text-[15px] leading-7 text-forest-900/85">
+                      {sec.paragraphs.map((para, i) => (
+                        <CitedParagraph key={i} p={para} order={citeOrder} />
+                      ))}
+                    </div>
+                  </div>
+                ))}
+                <p className="text-sm leading-6 text-forest-900/70">
+                  Checked against {name}’s and the transport operators’ own pages on {guideDate}. Fares, timetables and
+                  facilities change; confirm on the linked source before you travel.
+                </p>
+              </Shell>
+            ) : (
             <Shell
               id="planning"
               title={`Terminals, transport and parking at ${code}`}
@@ -637,6 +675,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                 </ul>
               </div>
             </Shell>
+            )}
 
             {e.climate && <ClimateSection code={code} climate={e.climate} />}
 
@@ -699,11 +738,18 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
 
             {/* ------------------------------------------------ sources */}
             <Shell id="sources" title="Sources">
-              <p className="text-[15px] leading-7 text-forest-900/85">
-                Nothing on this page is verified by hand yet. Each section comes from the dataset below, with its date
-                where the dataset has one. Terminal, transport and parking details are left out until they can be read
-                from {name}’s own pages.
-              </p>
+              {guide ? (
+                <p className="text-[15px] leading-7 text-forest-900/85">
+                  Terminals, transport and parking were checked by hand against the numbered sources below on {guideDate}.
+                  Every other section comes from the dataset listed, with its date where the dataset has one.
+                </p>
+              ) : (
+                <p className="text-[15px] leading-7 text-forest-900/85">
+                  Nothing on this page is verified by hand yet. Each section comes from the dataset below, with its date
+                  where the dataset has one. Terminal, transport and parking details are left out until they can be read
+                  from {name}’s own pages.
+                </p>
+              )}
               <ul className="divide-y divide-forest-900/10 rounded-[0.3rem] border border-forest-900/10" aria-label="Where each part of this page comes from">
                 <li aria-hidden className="hidden bg-forest-50/60 px-4 py-2.5 text-xs font-semibold uppercase tracking-wider text-forest-900/75 sm:grid sm:grid-cols-[11rem_minmax(0,1fr)_9rem] sm:gap-4">
                   <span>What</span>
@@ -776,10 +822,30 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                     converted from m/s to km/h; the 24-hour range is the low and high of MET&apos;s hourly forecast.
                   </SourceRow>
                 )}
-                <SourceRow what="Terminals and transport" date={null}>
-                  Not yet verified
+                <SourceRow what="Terminals and transport" date={guideDate}>
+                  {guide ? 'Checked by hand: numbered sources below' : 'Not yet verified'}
                 </SourceRow>
               </ul>
+              {guide && (
+                <ol className="space-y-2 text-sm text-forest-900/85" data-testid="airport-v2-guide-sources">
+                  {[...guide.sources]
+                    .filter((src) => citeOrder.has(src.id))
+                    .sort((a, b) => citeOrder.get(a.id)! - citeOrder.get(b.id)!)
+                    .map((src) => (
+                      <li key={src.id} id={`source-${src.id}`} className="flex scroll-mt-28 gap-2">
+                        <span className="w-7 shrink-0 font-semibold text-forest-900/60">[{citeOrder.get(src.id)}]</span>
+                        <span>
+                          <a href={src.url} target="_blank" rel="noopener" className="font-semibold text-primary-emphasis hover:underline">
+                            {src.title}
+                          </a>
+                          {' — '}
+                          {src.publisher}
+                          {src.published && <>, {src.published}</>}
+                        </span>
+                      </li>
+                    ))}
+                </ol>
+              )}
               {(p.wikipediaUrl || p.wikidataUrl) && (
                 <p className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
                   <span className="font-semibold text-forest-950">Background reading:</span>

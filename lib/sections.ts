@@ -21,7 +21,7 @@ export const SECTIONS: Section[] = [
     title: 'Destinations',
     tagline: 'Places that change you',
     description:
-      'Guides to cities, regions, and out-of-the-way corners worth the flight. Each covers when to go, where to stay, what to eat, and which experiences are worth your time, alongside the practical logistics you need: airport transfers, neighborhood breakdowns, daily budgets, and the entry rules and local quirks that catch first-timers off guard. Guides are compiled from official tourism, transport and government sources and reviewed by a named editor — see how we research and write in our methodology.',
+      'Guides to cities, regions, and out-of-the-way corners worth the flight. Each covers when to go, where to stay, what to eat, and which experiences are worth your time, alongside the practical logistics you need: airport transfers, neighborhood breakdowns, daily budgets, and the entry rules and local quirks that catch first-timers off guard. Guides are compiled from official tourism, transport and government sources and reviewed by an editor before publishing — see how we research and write in our methodology.',
     layout: 'atlas',
   },
   {
@@ -37,7 +37,7 @@ export const SECTIONS: Section[] = [
     title: 'Hotels',
     tagline: 'Beds worth booking twice',
     description:
-      'Where-to-stay guides and hotel round-ups by destination — boutique finds, design-led independents, dependable city standbys and family-friendly picks — compiled from hotels\' own published information, booking-site listings and official sources, then reviewed by a named editor. They are editorial selections, not the result of paid or mystery stays. Beyond the lists we cover the booking craft: how OTA rebates and hotel loyalty status interact, when status matching is worth the email, and how to spot resort fees before they show up at check-out.',
+      'Where-to-stay guides and hotel round-ups by destination — boutique finds, design-led independents, dependable city standbys and family-friendly picks — compiled from hotels\' own published information, booking-site listings and official sources, then reviewed by an editor before publishing. They are editorial selections, not the result of paid or mystery stays. Beyond the lists we cover the booking craft: how OTA rebates and hotel loyalty status interact, when status matching is worth the email, and how to spot resort fees before they show up at check-out.',
     layout: 'wirecutter',
   },
   {

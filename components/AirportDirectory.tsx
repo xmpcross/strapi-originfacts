@@ -8,6 +8,7 @@ import { HUB_AIRPORT_SET } from '@/lib/hub-airports';
 import { airportPath } from '@/lib/airport-slugs';
 
 const REGION_ORDER: AirlineRegion[] = ['Africa', 'Asia', 'Europe', 'North America', 'Oceania', 'South America'];
+const TOP_HUBS_PREVIEW = 12;
 const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 const PER_REGION_LIMIT = 12;
 
@@ -38,9 +39,7 @@ export default function AirportDirectory({ airports }: { airports: StrapiAirport
   const [query, setQuery] = useState(initialCountry);
   const [activeRegion, setActiveRegion] = useState<AirlineRegion | null>(null);
   const [activeLetter, setActiveLetter] = useState<string | null>(null);
-  // The list shows only the major airports (the top international hubs) until the
-  // visitor asks for all of them, or searches — a search covers every airport.
-  const [showAll, setShowAll] = useState(false);
+  const [onlyHubs, setOnlyHubs] = useState(false);
   const [expandedRegions, setExpandedRegions] = useState<Set<AirlineRegion>>(new Set());
 
   const toggleRegion = (r: AirlineRegion) =>
@@ -55,7 +54,7 @@ export default function AirportDirectory({ airports }: { airports: StrapiAirport
     const q = query.trim().toLowerCase();
     return airports.filter((a) => {
       if (activeRegion && a.region !== activeRegion) return false;
-      if (!showAll && !q && (!a.iata || !HUB_AIRPORT_SET.has(a.iata.toUpperCase()))) return false;
+      if (onlyHubs && (!a.iata || !HUB_AIRPORT_SET.has(a.iata.toUpperCase()))) return false;
       if (activeLetter && firstLetterBucket(a.city || a.name) !== activeLetter) return false;
       if (!q) return true;
       const hay = [a.name, a.iata, a.icao, a.city, a.country]
@@ -64,7 +63,7 @@ export default function AirportDirectory({ airports }: { airports: StrapiAirport
         .toLowerCase();
       return hay.includes(q);
     });
-  }, [airports, query, activeRegion, activeLetter, showAll]);
+  }, [airports, query, activeRegion, activeLetter, onlyHubs]);
 
   const availableLetters = useMemo(() => {
     const set = new Set<string>();
@@ -82,39 +81,73 @@ export default function AirportDirectory({ airports }: { airports: StrapiAirport
     return map;
   }, [filtered]);
 
+  const countryCount = useMemo(
+    () => new Set(airports.map((a) => a.country).filter(Boolean)).size,
+    [airports],
+  );
+  const regionCount = useMemo(
+    () => new Set(airports.map((a) => a.region).filter(Boolean)).size,
+    [airports],
+  );
+
+  const orderedRegions = REGION_ORDER.filter((r) => byRegion.has(r));
+
   const hubs = useMemo(
     () => airports.filter((a) => a.iata && HUB_AIRPORT_SET.has(a.iata.toUpperCase())),
     [airports],
   );
-  const countryCount = useMemo(() => new Set(hubs.map((a) => a.country).filter(Boolean)).size, [hubs]);
-  const regionCount = useMemo(() => new Set(hubs.map((a) => a.region).filter(Boolean)).size, [hubs]);
-
-  const orderedRegions = REGION_ORDER.filter((r) => byRegion.has(r));
-
+  const hubsPreview = useMemo(() => hubs.slice(0, TOP_HUBS_PREVIEW), [hubs]);
 
   return (
     <div className="mt-12">
       <div className="grid gap-5 sm:grid-cols-3">
         <SummaryCard
-          label="Major Airports"
-          value={hubs.length.toLocaleString()}
-          blurb="The busiest international gateways by ACI World passenger traffic, plus regional anchors so every continent is covered."
+          label="Airports Indexed"
+          value={airports.length.toLocaleString()}
+          blurb="Major hubs, alternate city gateways, island airports and regional fields in one searchable directory."
           icon={<RunwayIcon />}
         />
         <SummaryCard
-          label="Countries"
+          label="Countries Covered"
           value={countryCount.toLocaleString()}
-          blurb="Countries with at least one major airport in the list, so travellers can compare the main gateways."
+          blurb="Airport markets grouped by country, city and region so travellers can compare nearby gateways."
           icon={<GlobeIcon />}
         />
         <SummaryCard
           label="Global Regions"
           value={regionCount.toString()}
-          blurb="Continental groupings with different hub patterns, transfer styles and access trade-offs."
+          blurb="Six continental groupings with different hub patterns, transfer styles and access trade-offs."
           icon={<CompassIcon />}
         />
       </div>
 
+      {hubs.length > 0 && (
+        <section className="mt-12" data-testid="airport-hubs-callout">
+          <header className="flex items-end justify-between border-b border-forest-900/10 pb-3">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-forest-900/50">Featured hub guides</p>
+              <h2 className="editorial-h mt-2 text-2xl font-bold text-forest-900">Which top international airports can you explore?</h2>
+              <p className="mt-2 max-w-3xl text-sm leading-relaxed text-forest-900/65">
+                Start with high-traffic airports where terminal layout, ground transport and connection planning can make
+                the biggest difference to the trip.
+              </p>
+            </div>
+            <Link
+              href="/airports/hubs"
+              className="hidden text-sm font-medium text-forest-700 hover:underline sm:inline"
+            >
+              View all {hubs.length} hubs →
+            </Link>
+          </header>
+          <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {hubsPreview.map((a) => (
+              <li key={a.id}>
+                <HubChip airport={a} allAirports={airports} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <div className="mt-10 rounded-2xl border border-forest-900/10 bg-forest-900/[0.02] p-5 sm:p-6">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
@@ -146,22 +179,14 @@ export default function AirportDirectory({ airports }: { airports: StrapiAirport
 
           <div className="flex items-center gap-2 text-xs font-semibold text-forest-900/70">
             <span className="rounded-lg border border-forest-900/10 bg-white px-3 py-2 shadow-2xs">
-              {showAll || query.trim() ? (
-                <>
-                  Showing <strong className="text-forest-900">{filtered.length}</strong> of {airports.length.toLocaleString()} airports
-                </>
-              ) : (
-                <>
-                  Showing <strong className="text-forest-900">{filtered.length}</strong> major airports
-                </>
-              )}
+              Showing <strong className="text-forest-900">{filtered.length}</strong> of {airports.length} airports
             </span>
           </div>
         </div>
 
         <div className="mt-5 flex flex-wrap items-center gap-2 border-t border-forest-900/10 pt-4">
           <span className="mr-1 text-xs font-bold uppercase tracking-widest text-forest-900/50">Filter:</span>
-          <FilterChip label="Show all airports" active={showAll} onClick={() => setShowAll(!showAll)} />
+          <FilterChip label="Top hubs only" active={onlyHubs} onClick={() => setOnlyHubs(!onlyHubs)} />
           <FilterChip label="All regions" active={activeRegion === null} onClick={() => setActiveRegion(null)} />
           {REGION_ORDER.map((r) => (
             <FilterChip
@@ -427,6 +452,41 @@ function AirportCard({ airport }: { airport: StrapiAirport }) {
               Hub guide
             </span>
           )}
+        </div>
+      </div>
+    </Link>
+  );
+}
+
+function HubChip({ airport, allAirports }: { airport: StrapiAirport; allAirports?: StrapiAirport[] }) {
+  const img = mediaUrl(airport.heroImage ?? null);
+  return (
+    <Link
+      href={airportPath(airport, allAirports)}
+      className="group flex h-full overflow-hidden rounded-lg border border-forest-900/10 bg-[#f7f8fa] transition hover:-translate-y-0.5 hover:border-forest-900/30 hover:shadow-sm"
+      data-testid={`hub-chip-${airport.iata}`}
+    >
+      {img ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={img}
+          alt={airport.name}
+          loading="lazy"
+          decoding="async"
+          className="h-20 w-24 shrink-0 object-cover transition duration-500 group-hover:scale-[1.02]"
+        />
+      ) : (
+        <div className="flex h-20 w-24 shrink-0 items-center justify-center bg-forest-900 text-sm font-bold text-sand-100">
+          {airport.iata}
+        </div>
+      )}
+      <div className="flex flex-1 flex-col justify-center p-3">
+        <div className="text-sm font-bold leading-tight text-forest-900 transition group-hover:text-forest-700">
+          {airport.city || airport.name}
+        </div>
+        <div className="mt-1 flex items-center gap-1.5 text-xs text-forest-900/60">
+          <span aria-hidden>{flagEmoji(airport.countryCode)}</span>
+          <span className="truncate">{airport.country ?? '?'}</span>
         </div>
       </div>
     </Link>

@@ -198,6 +198,8 @@ export async function fetchSerpapiExplore(opts: {
   tripLength?: number;
   /** Max price ceiling in USD. SerpAPI accepts `max_price`. */
   maxPrice?: number;
+  /** Currency for the returned prices (SerpAPI converts). Defaults to USD. */
+  currency?: string;
   /** 0 = non-stop, 1 = up to 1 stop, etc. */
   maxStops?: number;
   limit?: number;
@@ -237,7 +239,7 @@ export async function fetchSerpapiExplore(opts: {
     departure_id: opts.originIata,
     outbound_date: outboundISO,
     return_date: returnISO,
-    currency: 'USD',
+    currency: (opts.currency || 'USD').toUpperCase(),
     api_key: key,
   });
   if (opts.countryName) params.set('q', opts.countryName);
@@ -284,7 +286,7 @@ export async function fetchSerpapiExplore(opts: {
           destinationIata: d.destination_airport?.code,
           destinationName: d.country ? `${d.name}, ${d.country}` : d.name,
           priceMinor: Math.round(priceNum),
-          currency: 'USD',
+          currency: (opts.currency || 'USD').toUpperCase(),
           airline: d.airline,
           departureDate: d.start_date,
           returnDate: d.end_date,

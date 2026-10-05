@@ -2,9 +2,9 @@
 
 Last updated: 24 April 2026
 
-This Cookie Policy explains how FXN HOLDINGS LIMITED ("FXN", "we", "us", or "our") uses cookies and similar technologies on Originfacts at www.originfacts.com.
+This Cookie Policy explains how FXN Holdings ("FXN", "we", "us", or "our") uses cookies and similar technologies on Originfacts at www.originfacts.com.
 
-This Website is operated by FXN HOLDINGS LIMITED, a private limited company registered in England and Wales under company number 16134139, with registered office at 61 Bridge Street, Kington, HR5 3DJ, United Kingdom.
+This Website is operated by FXN Holdings (ABN 53 274 423 748), an Australian business with its mailing address at PO Box 500, West Perth WA 6872, Australia.
 
 This Cookie Policy should be read with our Privacy Policy and Terms of Use.
 
@@ -123,10 +123,10 @@ We may update this Cookie Policy from time to time. The updated version will be 
 
 For questions about cookies, contact:
 
-FXN HOLDINGS LIMITED
-61 Bridge Street
-Kington, HR5 3DJ
-United Kingdom
+FXN Holdings
+PO Box 500
+WEST PERTH WA 6872
+Australia
 
 Email: support@fxnholdings.com
 Phone: +44 7413 408585

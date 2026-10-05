@@ -4,20 +4,15 @@ Last updated: 24 April 2026
 
 ## Website operator
 
-This website is operated by FXN HOLDINGS LIMITED.
+This website is operated by FXN Holdings.
 
 Originfacts is available at www.originfacts.com.
 
-## Company details
+## Business details
 
-Legal name: FXN HOLDINGS LIMITED
-Company number: 16134139
-Company type: Private limited company
-Place of registration: England and Wales
-Registered office: 61 Bridge Street, Kington, HR5 3DJ, United Kingdom
-VAT number: GB500441452
-EORI number: GB043219836000
-ICO registration reference: ZB940664
+Business name: FXN Holdings
+ABN: 53 274 423 748
+Mailing address: PO Box 500, WEST PERTH WA 6872, Australia
 
 ## Contact details
 
@@ -27,11 +22,10 @@ Website: www.originfacts.com
 
 Postal address:
 
-FXN HOLDINGS LIMITED
-61 Bridge Street
-Kington
-HR5 3DJ
-United Kingdom
+FXN Holdings
+PO Box 500
+WEST PERTH WA 6872
+Australia
 
 ## About Originfacts
 

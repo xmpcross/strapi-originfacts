@@ -68,7 +68,7 @@ export function buildFaqGroups(c: FaqCounts): FaqGroup[] {
           id: 'who-operates-originfacts',
           q: 'Who operates Originfacts?',
           a: [
-            'Originfacts is operated by FXN HOLDINGS LIMITED, a private limited company registered in England and Wales under company number 16134139, with its registered office at 61 Bridge Street, Kington, HR5 3DJ, United Kingdom. Full company details are in our ',
+            'Originfacts is operated by FXN Holdings (ABN 53 274 423 748), an Australian business with its mailing address at PO Box 500, West Perth WA 6872, Australia. Full business details are in our ',
             { text: 'Legal Notice', href: '/legal/contact' },
             '.',
           ],
@@ -420,7 +420,7 @@ export function buildFaqGroups(c: FaqCounts): FaqGroup[] {
             { text: 'contact form', href: '/contact' },
             ' — pick a subject such as general support, website issue, affiliate enquiry, privacy request or accessibility feedback — or email ',
             mail(CONTACT_EMAIL),
-            '. Our postal address is FXN HOLDINGS LIMITED, 61 Bridge Street, Kington, HR5 3DJ, United Kingdom.',
+            '. Our postal address is FXN Holdings, PO Box 500, WEST PERTH WA 6872, Australia.',
           ],
         },
         {

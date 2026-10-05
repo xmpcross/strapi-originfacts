@@ -557,13 +557,13 @@ export default async function ContactPage() {
             <div className="min-w-0 border-t-2 border-forest-950 pt-4">
               <h3 className="font-mono text-xs font-bold uppercase text-forest-900/50">Post</h3>
               <address className="mt-3 text-base not-italic leading-relaxed text-forest-950">
-                FXN HOLDINGS LIMITED
+                FXN Holdings
                 <br />
-                61 Bridge Street
+                PO Box 500
                 <br />
-                Kington, HR5 3DJ
+                WEST PERTH WA 6872
                 <br />
-                United Kingdom
+                Australia
               </address>
             </div>
 
@@ -632,13 +632,11 @@ export default async function ContactPage() {
           <div className="min-w-0 rounded-[0.3rem] bg-forest-950 p-6 text-white sm:p-8" data-testid="contact-operator">
             <h2 className="text-2xl font-bold leading-tight !text-white">Who operates Originfacts?</h2>
             <dl className="mt-5 grid gap-x-6 gap-y-1 text-sm sm:grid-cols-[auto_minmax(0,1fr)] sm:gap-y-3">
-              <OperatorRow label="Company">
-                <span className="font-semibold">FXN HOLDINGS LIMITED</span>
+              <OperatorRow label="Business">
+                <span className="font-semibold">FXN Holdings</span>
               </OperatorRow>
-              <OperatorRow label="Company number">16134139</OperatorRow>
-              <OperatorRow label="Registered in">England and Wales</OperatorRow>
-              <OperatorRow label="Registered office">61 Bridge Street, Kington, HR5 3DJ, United Kingdom</OperatorRow>
-              <OperatorRow label="ICO registration">ZB940664</OperatorRow>
+              <OperatorRow label="ABN">53 274 423 748</OperatorRow>
+              <OperatorRow label="Mailing address">PO Box 500, WEST PERTH WA 6872, Australia</OperatorRow>
               <OperatorRow label="Website">www.originfacts.com</OperatorRow>
             </dl>
             <nav aria-label="Policies" className="mt-6 border-t border-white/15 pt-5">

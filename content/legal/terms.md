@@ -4,7 +4,7 @@ Last updated: 24 April 2026
 
 These Terms of Use ("Terms") apply to your access to and use of Originfacts, available at www.originfacts.com, and any related pages, features, tools, newsletters, travel comparison content, reviews, comments, photos, forum posts, travel tips, and other services we provide through the website (together, the "Website").
 
-This Website is operated by FXN HOLDINGS LIMITED ("FXN", "we", "us", or "our"), a private limited company registered in England and Wales under company number 16134139, with registered office at 61 Bridge Street, Kington, HR5 3DJ, United Kingdom.
+This Website is operated by FXN Holdings ("FXN", "we", "us", or "our") (ABN 53 274 423 748), an Australian business with its mailing address at PO Box 500, West Perth WA 6872, Australia.
 
 By using the Website, you agree to these Terms. If you do not agree, do not use the Website.
 
@@ -209,10 +209,10 @@ If you are a consumer living outside England and Wales, you may also have rights
 
 ## 20. Contact
 
-This Website is operated by FXN HOLDINGS LIMITED.
+This Website is operated by FXN Holdings.
 
-Company number: 16134139
-Registered office: 61 Bridge Street, Kington, HR5 3DJ, United Kingdom
+ABN: 53 274 423 748
+Mailing address: PO Box 500, WEST PERTH WA 6872, Australia
 Email: support@fxnholdings.com
 Phone: +44 7413 408585
 Website: www.originfacts.com

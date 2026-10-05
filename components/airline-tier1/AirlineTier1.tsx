@@ -1832,3 +1832,9 @@ function formatDate(iso: string): string {
 }
 
 export { derivedFaqs };
+
+// Shared with the v2 template (components/airline-v2), so the redesign reuses
+// this file's data logic rather than forking it. Exporting changes nothing
+// about how AirlineTier1 itself renders.
+export { cabinsModule, networkModule, collectSources, getAirportIata, formatDate, listSentence, PENDING_COPY };
+export type { DerivedModule };

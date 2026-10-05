@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { getRoute, mediaUrl, type StrapiAirline } from '@/lib/strapi';
+import { getRoute, listRoutesFromAirport, listRoutesToAirport, mediaUrl, type StrapiAirline, type StrapiAirport, type StrapiRoute } from '@/lib/strapi';
 import { flightSearchUrl } from '@/lib/affiliate';
 import { absoluteUrl } from '@/lib/jsonld';
 import PriceCalendar from '@/components/PriceCalendar';
@@ -31,6 +31,10 @@ import {
   SeenFlightsTable,
   SourcesList,
 } from '@/components/route-guide/RouteGuideBlocks';
+import { routeUsesTemplateV2 } from '@/lib/route-template-v2';
+import RouteGuideV2, { type RouteV2Airport, type RouteV2Link } from '@/components/route-v2/RouteGuideV2';
+import { airlineHighlights, distanceCheck, formatMinutes, routeV2CitationOrder, routeV2Faqs, timeDifference, zoneInfo } from '@/lib/route-v2';
+import topAirportSources from '@/data/airport-sources/top-100-official-links.json';
 
 export const revalidate = 60;
 
@@ -219,6 +223,137 @@ export default async function RoutePage({ params }: Props) {
     destination: destination.iata,
     subId: `route:${slug}`,
   });
+
+  // v2 template (lib/route-template-v2.ts). Same metadata, robots, canonical
+  // and WebPage/Breadcrumb JSON-LD as below; the FAQ and its FAQPage JSON-LD
+  // are built from what the v2 page shows.
+  if (routeUsesTemplateV2(slug)) {
+    const v2Order = guide ? routeV2CitationOrder(guide) : new Map<string, number>();
+    const fromZone = zoneInfo(origin.timezone);
+    const toZone = zoneInfo(destination.timezone);
+    const distance = route.distanceKm && route.distanceKm > 0 ? { km: Math.round(route.distanceKm), ...distanceCheck(route.distanceKm, origin, destination) } : null;
+    const airlinesBasis = guide ? (guide.operating_airlines.length > 0 ? 'sourced' as const : 'fares' as const) : 'records' as const;
+    const v2Carriers = guide ? shownCarriers : carriers;
+    const v2Faqs = guide
+      ? guideFaqs
+      : routeV2Faqs({
+          fromName,
+          toName,
+          originIata: origin.iata,
+          destinationIata: destination.iata,
+          originAirport: origin.name,
+          destinationAirport: destination.name,
+          carriers: v2Carriers.map((c) => c.name),
+          distanceKm: distance?.km ?? null,
+          distanceIsGreatCircle: !!distance?.agrees,
+          estimateMinutes: route.durationMinutes && route.durationMinutes > 0 ? route.durationMinutes : null,
+          from: fromZone,
+          to: toZone,
+        });
+    const reverseSlug = `${destination.iata}-to-${origin.iata}`.toLowerCase();
+    const [returnRecord, fromOriginRecords, toDestinationRecords] = await Promise.all([
+      getRoute(reverseSlug).catch(() => null),
+      listRoutesFromAirport(origin.iata, 13).catch(() => [] as StrapiRoute[]),
+      listRoutesToAirport(destination.iata, 13).catch(() => [] as StrapiRoute[]),
+    ]);
+    const toLink = (r: StrapiRoute): RouteV2Link | null =>
+      r.origin && r.destination
+        ? {
+            slug: r.slug,
+            originIata: r.origin.iata,
+            destinationIata: r.destination.iata,
+            fromName: r.origin.city || r.origin.name,
+            toName: r.destination.city || r.destination.name,
+            distanceKm: r.distanceKm ?? null,
+            durationMinutes: r.durationMinutes ?? null,
+          }
+        : null;
+    const related = (rs: StrapiRoute[]) =>
+      rs
+        .filter((r) => r.slug !== slug && r.slug !== reverseSlug)
+        .map(toLink)
+        .filter((r): r is RouteV2Link => r !== null)
+        .slice(0, 12);
+    const sources = topAirportSources as Record<string, { officialWebsiteUrl?: string | null }>;
+    const v2Airport = (a: StrapiAirport): RouteV2Airport => ({
+      iata: a.iata,
+      icao: a.icao ?? null,
+      name: a.name,
+      city: a.city ?? null,
+      country: a.country ?? null,
+      href: airportPath(a),
+      zone: a === origin ? fromZone : toZone,
+      coordinates:
+        typeof a.latitude === 'number' && typeof a.longitude === 'number' ? `${a.latitude.toFixed(3)}°, ${a.longitude.toFixed(3)}°` : null,
+      officialSite: sources[a.iata.toUpperCase()]?.officialWebsiteUrl || null,
+      recordDate: formatRecordDate((a as StrapiAirport & { updatedAt?: string }).updatedAt),
+    });
+
+    return (
+      <article data-testid={`route-page-${slug}`}>
+        <JsonLd data={articleSchema} />
+        <JsonLd data={faqJsonLd(v2Faqs)} />
+        <JsonLd
+          data={breadcrumbJsonLd([
+            { name: 'Flight Routes', url: '/flight-routes' },
+            { name: `${origin.iata} → ${destination.iata}`, url: `/flight-routes/${slug}` },
+          ])}
+        />
+        <RouteGuideV2
+          slug={slug}
+          origin={v2Airport(origin)}
+          destination={v2Airport(destination)}
+          fromName={fromName}
+          toName={toName}
+          guide={
+            guide
+              ? {
+                  intro: guide.intro,
+                  sections: guide.sections,
+                  sources: guide.sources,
+                  verifiedAt: guide.verified_at,
+                  operatorSources: [...new Set(guide.operating_airlines.flatMap((a) => a.sources))],
+                }
+              : null
+          }
+          order={v2Order}
+          airlines={v2Carriers.map((c) => ({
+            slug: c.slug,
+            name: c.name,
+            iataCode: c.iataCode ?? null,
+            logoUrl: mediaUrl(c.logo ?? null),
+            searchUrl: flightSearchUrl({
+              origin: origin.iata,
+              destination: destination.iata,
+              subId: `route:${slug}:${c.iataCode || c.slug}`,
+              airline: c.iataCode,
+            }),
+            highlights: airlineHighlights(c.slug, { usRoute: [origin.countryCode, destination.countryCode].some((cc) => cc?.toUpperCase() === 'US') }),
+          }))}
+          airlinesBasis={airlinesBasis}
+          distance={distance}
+          flightTime={
+            fares?.duration
+              ? { text: fares.duration.min === fares.duration.max ? `${fares.duration.min} min` : `${fares.duration.min}–${fares.duration.max} min`, basis: 'fares' }
+              : route.durationMinutes && route.durationMinutes > 0
+                ? { text: formatMinutes(route.durationMinutes), basis: 'estimate' }
+                : null
+          }
+          timeDiff={timeDifference(fromZone, toZone)}
+          fares={fares}
+          carrierNames={carrierNames}
+          cheapestMonth={cheapestMonth}
+          routeRecordDate={formatRecordDate((route as StrapiRoute & { updatedAt?: string }).updatedAt)}
+          returnRoute={returnRecord ? toLink(returnRecord) : null}
+          fromOrigin={related(fromOriginRecords)}
+          toDestination={related(toDestinationRecords)}
+          searchUrl={searchUrl}
+          partnerHref={tpwlPartnerUrl(tpwlSegment(origin.iata, destination.iata))}
+          faqs={v2Faqs}
+        />
+      </article>
+    );
+  }
 
   return (
     <article data-testid={`route-page-${slug}`}>
@@ -612,4 +747,11 @@ function formatDuration(minutes: number): string {
   const h = Math.floor(minutes / 60);
   const m = minutes % 60;
   return m === 0 ? `${h}h` : `${h}h ${m}m`;
+}
+
+function formatRecordDate(value?: string | null): string | null {
+  if (!value) return null;
+  const d = new Date(value);
+  if (Number.isNaN(d.getTime())) return null;
+  return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
 }

@@ -8,6 +8,7 @@ import { HUB_INTROS, HUB_PATHS } from '@/lib/hub-intros';
 import { airportPath } from '@/lib/airport-slugs';
 import { AIRPORTS_INDEXABLE, airportIsPublished, airportIsSubstantive } from '@/lib/entity-seo';
 import { SECTIONS } from '@/lib/sections';
+import { HUB_AIRPORT_SET } from '@/lib/hub-airports';
 import Link from 'next/link';
 import { Suspense } from 'react';
 
@@ -28,6 +29,10 @@ export default async function AirportsPage() {
     fetchRouteCoverage().catch(() => ({ originIatas: new Set<string>(), carrierSlugs: new Set<string>() })),
   ]);
 
+  // The major airports: the curated top international hubs (lib/hub-airports.ts).
+  // The directory lists only these by default; its search still covers every airport.
+  const majorAirports = airports.filter((a) => a.iata && HUB_AIRPORT_SET.has(a.iata.toUpperCase()));
+
   const compactAirports = airports.map((a) => ({
     id: a.id,
     iata: a.iata,
@@ -44,8 +49,8 @@ export default async function AirportsPage() {
     name: HUB.name,
     description: HUB.description,
     url: PATH,
-    itemListName: 'Airports',
-    items: airports.slice(0, 50).map((a) => ({
+    itemListName: 'Major airports',
+    items: majorAirports.map((a) => ({
       name: a.city ? `${a.name} (${a.iata}) — ${a.city}` : `${a.name} (${a.iata})`,
       url: airportPath(a, airports),
       image: mediaUrl(a.heroImage ?? null),
@@ -69,9 +74,9 @@ export default async function AirportsPage() {
             className="flex h-32 w-32 flex-col items-center justify-center rounded-[0.3rem] bg-[#f1f5f9] text-forest-950"
             data-testid="airports-count"
           >
-            <span className="text-4xl font-bold leading-none">{airports.length.toLocaleString()}</span>
+            <span className="text-4xl font-bold leading-none">{majorAirports.length.toLocaleString()}</span>
             <span className="mt-2 text-[11px] font-bold uppercase tracking-widest text-forest-900/70">
-              Airports
+              Major airports
             </span>
           </div>
         </div>
@@ -107,12 +112,13 @@ export default async function AirportsPage() {
       <Suspense
         fallback={
           <DirectoryLinkList
-            label="All airports"
+            label="Major airports"
             groups={[
               {
-                title: 'Airport guides',
-                // Same gate as the sitemap: only indexable airport guides.
-                links: airports
+                title: 'Major airport guides',
+                // Major airports only, behind the same gate as the sitemap
+                // (indexable airport guides).
+                links: majorAirports
                   .filter(
                     (a) =>
                       (AIRPORTS_INDEXABLE || airportIsPublished(a.iata)) &&

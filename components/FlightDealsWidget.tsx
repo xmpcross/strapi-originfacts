@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import { flightSearchUrl } from '@/lib/affiliate';
+import { formatPrice } from '@/lib/currency';
+import { useCurrency } from './useCurrency';
 
 // If IP geo fails (adblocker / rate limit), use this airport as the seed so
 // the widget still shows real deals instead of disappearing.
@@ -37,10 +39,10 @@ function writeOriginCache(o: Origin) {
   try { window.sessionStorage.setItem(ORIGIN_CACHE_KEY, JSON.stringify(o)); } catch { /* off */ }
 }
 
-function readDealsCache(originIata: string): Deal[] | null {
+function readDealsCache(originIata: string, currency: string): Deal[] | null {
   if (typeof window === 'undefined') return null;
   try {
-    const raw = window.sessionStorage.getItem(`${DEALS_CACHE_KEY}.${originIata}`);
+    const raw = window.sessionStorage.getItem(`${DEALS_CACHE_KEY}.${originIata}.${currency}`);
     if (!raw) return null;
     const parsed = JSON.parse(raw) as { fetchedAt: number; deals: Deal[] };
     if (Date.now() - parsed.fetchedAt > CACHE_TTL_MS) return null;
@@ -50,10 +52,10 @@ function readDealsCache(originIata: string): Deal[] | null {
   }
 }
 
-function writeDealsCache(originIata: string, deals: Deal[]) {
+function writeDealsCache(originIata: string, currency: string, deals: Deal[]) {
   try {
     window.sessionStorage.setItem(
-      `${DEALS_CACHE_KEY}.${originIata}`,
+      `${DEALS_CACHE_KEY}.${originIata}.${currency}`,
       JSON.stringify({ fetchedAt: Date.now(), deals }),
     );
   } catch { /* off */ }
@@ -96,14 +98,14 @@ async function resolveOrigin(): Promise<Origin> {
   }
 }
 
-async function fetchDeals(originIata: string): Promise<Deal[]> {
-  const cached = readDealsCache(originIata);
+async function fetchDeals(originIata: string, currency: string): Promise<Deal[]> {
+  const cached = readDealsCache(originIata, currency);
   if (cached) return cached;
-  const res = await fetch(`/api/flight-deals?origin=${originIata}&limit=4`);
+  const res = await fetch(`/api/flight-deals?origin=${originIata}&limit=4&currency=${currency.toLowerCase()}`);
   if (!res.ok) return [];
   const json = (await res.json()) as { deals?: Deal[] };
   const deals = json.deals ?? [];
-  writeDealsCache(originIata, deals);
+  writeDealsCache(originIata, currency, deals);
   return deals;
 }
 
@@ -115,29 +117,22 @@ function formatDate(iso: string): string {
   }
 }
 
-function formatPrice(price: number, currency: string): string {
-  try {
-    return new Intl.NumberFormat('en-GB', {
-      style: 'currency', currency: currency.toUpperCase(), maximumFractionDigits: 0,
-    }).format(price);
-  } catch {
-    return `${currency.toUpperCase()} ${price}`;
-  }
-}
-
 export default function FlightDealsWidget() {
   const [origin, setOrigin] = useState<Origin | null>(null);
   const [deals, setDeals] = useState<Deal[]>([]);
   const [loading, setLoading] = useState(true);
+  const { currency, ready } = useCurrency();
 
   useEffect(() => {
+    if (!ready) return;
     let cancelled = false;
+    setLoading(true);
     (async () => {
       const o = await resolveOrigin();
       if (cancelled) return;
       setOrigin(o);
       try {
-        const d = await fetchDeals(o.iata);
+        const d = await fetchDeals(o.iata, currency);
         if (cancelled) return;
         setDeals(d);
       } catch (err) {
@@ -147,7 +142,7 @@ export default function FlightDealsWidget() {
       }
     })();
     return () => { cancelled = true; };
-  }, []);
+  }, [currency, ready]);
 
   if (loading) {
     return (

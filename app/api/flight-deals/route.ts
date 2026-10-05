@@ -52,10 +52,22 @@ export async function GET(req: Request) {
     try {
       const serpResult = await fetchSerpapiExplore({
         originIata: origin,
-        limit,
+        currency,
+        // Ask for extra: several nearby places can share one airport code and
+        // are merged below.
+        limit: limit * 3,
       });
       if (serpResult.ok && serpResult.fares.length > 0) {
-        const deals: FlightDeal[] = serpResult.fares.slice(0, limit).map((f) => ({
+        // Google's explore grid lists nearby places separately (Adelaide and the
+        // Barossa Valley, both ADL), which showed as duplicate rows. Keep the
+        // cheapest fare per destination airport.
+        const byAirport = new Map<string, (typeof serpResult.fares)[number]>();
+        for (const f of serpResult.fares) {
+          const key = (f.destinationIata || f.destinationName).toUpperCase();
+          const seen = byAirport.get(key);
+          if (!seen || f.priceMinor < seen.priceMinor) byAirport.set(key, f);
+        }
+        const deals: FlightDeal[] = [...byAirport.values()].slice(0, limit).map((f) => ({
           origin,
           destination: f.destinationIata || f.destinationName,
           destinationName: f.destinationName,

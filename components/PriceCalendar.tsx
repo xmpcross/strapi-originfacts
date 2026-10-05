@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { useCurrency } from './useCurrency';
 
 /**
  * TravelPayouts "Price Calendar" widget (tpscr.com).
@@ -21,13 +22,15 @@ export default function PriceCalendar({
   destination?: string;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const { currency, ready } = useCurrency();
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    // Wait for the display currency so the widget loads once, in that currency.
+    if (!ready || !containerRef.current) return;
     const container = containerRef.current;
 
     const params = new URLSearchParams({
-      currency: 'usd',
+      currency: currency.toLowerCase(),
       trs: '401311',
       shmarker: '314807',
       // Travelpayouts white-label host (registered WL domain for marker
@@ -125,7 +128,7 @@ export default function PriceCalendar({
       observer.disconnect();
       container.innerHTML = '';
     };
-  }, [origin, destination]);
+  }, [origin, destination, currency, ready]);
 
   return <div ref={containerRef} className="tp-price-calendar" data-testid="price-calendar" />;
 }

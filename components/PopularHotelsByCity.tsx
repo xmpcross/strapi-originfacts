@@ -1,6 +1,8 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { formatPrice } from '@/lib/currency';
+import { useCurrency } from './useCurrency';
 
 type HotelScope = (typeof HOTEL_SCOPES)[number]['value'];
 
@@ -48,23 +50,25 @@ const HOTEL_SCOPES = [
 
 // v4: results are now anchored by coordinates; v3 entries could hold hotels
 // from the wrong country and are no longer read.
-const HOTEL_BROWSER_CACHE_PREFIX = 'originfacts:hotels-near-you:v5';
+const HOTEL_BROWSER_CACHE_PREFIX = 'originfacts:hotels-near-you:v6';
 const HOTEL_BROWSER_CACHE_TTL_MS = 1000 * 60 * 60 * 24 * 7;
 
 function hotelBrowserCacheKey({
   city,
   country,
   scope,
+  currency,
   lat,
   lng,
 }: {
   city: string;
   country: string;
   scope: HotelScope;
+  currency: string;
   lat: number;
   lng: number;
 }) {
-  return [HOTEL_BROWSER_CACHE_PREFIX, city, country, scope, lat.toFixed(2), lng.toFixed(2)]
+  return [HOTEL_BROWSER_CACHE_PREFIX, city, country, scope, currency, lat.toFixed(2), lng.toFixed(2)]
     .map((part) => part.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''))
     .join(':');
 }
@@ -109,15 +113,7 @@ function writeHotelBrowserCache(key: string, data: HotelResponse) {
 
 function formatMoney(value: number | null, currency: string | null) {
   if (value == null || value <= 0) return null;
-  try {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: currency || 'USD',
-      maximumFractionDigits: 0,
-    }).format(value);
-  } catch {
-    return `${currency || 'USD'} ${Math.round(value)}`;
-  }
+  return formatPrice(value, currency || 'USD');
 }
 
 export default function PopularHotelsByCity({
@@ -146,8 +142,10 @@ export default function PopularHotelsByCity({
   // Bumped when the already-selected tab is clicked, so an empty tab can be retried.
   const [retry, setRetry] = useState(0);
   const [cityContext, setCityContext] = useState<GeoResponse | null>(null);
-  const responsesByScopeRef = useRef<Partial<Record<HotelScope, HotelResponse>>>({});
-  const inflightRef = useRef<Partial<Record<HotelScope, Promise<HotelResponse | null>>>>({});
+  const { currency, ready } = useCurrency();
+  // Keyed by "<currency>|<tab>", so switching currency never shows another currency's prices.
+  const responsesByScopeRef = useRef<Partial<Record<string, HotelResponse>>>({});
+  const inflightRef = useRef<Partial<Record<string, Promise<HotelResponse | null>>>>({});
   const sectionRef = useRef<HTMLElement>(null);
   const hasFixedCity = Boolean(city?.trim());
   const hasCoordinates = typeof lat === 'number' && typeof lng === 'number';
@@ -184,19 +182,20 @@ export default function PopularHotelsByCity({
    */
   const fetchScope = useCallback(
     (target: HotelScope): Promise<HotelResponse | null> => {
-      if (!cityContext?.name || !hasCoordinates) return Promise.resolve(null);
-      const remembered = responsesByScopeRef.current[target];
+      if (!cityContext?.name || !hasCoordinates || !ready) return Promise.resolve(null);
+      const slot = `${currency}|${target}`;
+      const remembered = responsesByScopeRef.current[slot];
       if (remembered?.hotels?.length) return Promise.resolve(remembered);
-      const pending = inflightRef.current[target];
+      const pending = inflightRef.current[slot];
       if (pending) return pending;
 
       const cityName = cityContext.name || 'New York';
       const countryName = cityContext.country || 'United States';
-      const browserCacheKey = hotelBrowserCacheKey({ city: cityName, country: countryName, scope: target, lat: lat!, lng: lng! });
+      const browserCacheKey = hotelBrowserCacheKey({ city: cityName, country: countryName, scope: target, currency, lat: lat!, lng: lng! });
       const stored = readHotelBrowserCache(browserCacheKey);
       if (stored) {
         const value = { city: cityName, country: countryName, ...stored };
-        responsesByScopeRef.current[target] = value;
+        responsesByScopeRef.current[slot] = value;
         return Promise.resolve(value);
       }
 
@@ -205,7 +204,7 @@ export default function PopularHotelsByCity({
         country: countryName,
         scope: target,
         limit: '6',
-        currency: 'USD',
+        currency,
         lat: String(lat),
         lng: String(lng),
       });
@@ -214,26 +213,26 @@ export default function PopularHotelsByCity({
         .then((hotelData) => {
           const value = { city: cityName, country: countryName, ...hotelData };
           if (value.hotels?.length) {
-            responsesByScopeRef.current[target] = value;
+            responsesByScopeRef.current[slot] = value;
             writeHotelBrowserCache(browserCacheKey, value);
           }
           return value;
         })
         .catch((): HotelResponse => ({ city: 'your city', hotels: [] }))
         .finally(() => {
-          delete inflightRef.current[target];
+          delete inflightRef.current[slot];
         });
-      inflightRef.current[target] = request;
+      inflightRef.current[slot] = request;
       return request;
     },
-    [cityContext, hasCoordinates, lat, lng],
+    [cityContext, hasCoordinates, lat, lng, currency, ready],
   );
 
   // The selected tab.
   useEffect(() => {
-    if (!cityContext?.name || !hasCoordinates) return;
+    if (!cityContext?.name || !hasCoordinates || !ready) return;
     let active = true;
-    const remembered = responsesByScopeRef.current[scope];
+    const remembered = responsesByScopeRef.current[`${currency}|${scope}`];
     if (remembered?.hotels?.length) {
       setData(remembered);
       setLoading(false);
@@ -248,7 +247,7 @@ export default function PopularHotelsByCity({
     return () => {
       active = false;
     };
-  }, [cityContext, scope, retry, hasCoordinates, fetchScope]);
+  }, [cityContext, scope, retry, hasCoordinates, fetchScope, currency, ready]);
 
   // Preload the other tabs once the section is near the screen, three at a time.
   // A tab that is not stored on the server takes several seconds (a live
@@ -260,7 +259,7 @@ export default function PopularHotelsByCity({
     let cancelled = false;
     const preload = () => {
       const queue = HOTEL_SCOPES.map((item) => item.value).filter(
-        (value) => !responsesByScopeRef.current[value]?.hotels?.length,
+        (value) => !responsesByScopeRef.current[`${currency}|${value}`]?.hotels?.length,
       );
       const worker = async () => {
         while (!cancelled && queue.length) await fetchScope(queue.shift()!);
@@ -281,7 +280,7 @@ export default function PopularHotelsByCity({
       cancelled = true;
       observer.disconnect();
     };
-  }, [cityContext, hasCoordinates, fetchScope]);
+  }, [cityContext, hasCoordinates, fetchScope, currency]);
 
   // No coordinates means the search can't be pinned to this city: show nothing
   // rather than hotels from somewhere else.

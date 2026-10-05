@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import MobileNav from './MobileNav';
+import CurrencyPicker from './CurrencyPicker';
 
 const STICKY_THRESHOLD = 80;
 
@@ -45,6 +46,8 @@ export default function Header() {
           />
         </Link>
 
+        {/* Below lg the desktop nav (and its picker) is hidden. */}
+        <CurrencyPicker className="ml-auto lg:hidden" />
         <MobileNav />
 
         <div className="ml-auto hidden items-center justify-end gap-2 lg:flex">
@@ -188,7 +191,7 @@ export default function Header() {
               </li>
             </ul>
           </nav>
-
+          <CurrencyPicker className="ml-2" />
         </div>
       </div>
     </header>

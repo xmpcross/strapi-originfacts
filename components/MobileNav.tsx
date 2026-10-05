@@ -62,7 +62,7 @@ export default function MobileNav() {
         aria-label="Open menu"
         aria-expanded={open}
         data-testid="mobile-nav-trigger"
-        className="ml-auto inline-flex h-10 w-10 items-center justify-center text-forest-950 lg:hidden"
+        className="ml-2 inline-flex h-10 w-10 items-center justify-center text-forest-950 lg:hidden"
       >
         <svg
           viewBox="0 0 24 24"

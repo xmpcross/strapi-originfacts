@@ -10,6 +10,8 @@ import {
 import { TPWL_HOST, tpwlSearchUrl } from '@/lib/tpwl-link';
 import { useVisitorOrigin } from '@/lib/visitor-origin';
 import type { PopularRoute, PopularRoutes } from '@/lib/popular-routes';
+import { formatPrice } from '@/lib/currency';
+import { useCurrency } from './useCurrency';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -27,20 +29,22 @@ const MIN_ROUTES = 3;
 
 export default function PopularDestinationsBlock() {
   const origin = useVisitorOrigin();
+  const { currency, ready } = useCurrency();
   // undefined = still loading, null = unavailable (show the static list below).
   const [live, setLive] = useState<PopularRoutes | null | undefined>(undefined);
 
   useEffect(() => {
+    if (!ready) return;
     const controller = new AbortController();
     setLive(undefined);
-    fetch(`/api/popular-routes?origin=${encodeURIComponent(origin.iata)}`, { signal: controller.signal })
+    fetch(`/api/popular-routes?origin=${encodeURIComponent(origin.iata)}&currency=${currency}`, { signal: controller.signal })
       .then((res) => (res.ok ? (res.json() as Promise<PopularRoutes>) : null))
       .then((data) => setLive(data && data.routes.length >= MIN_ROUTES ? data : null))
       .catch((error) => {
         if (error?.name !== 'AbortError') setLive(null);
       });
     return () => controller.abort();
-  }, [origin.iata]);
+  }, [origin.iata, currency, ready]);
 
   const destinations: Destination[] = POPULAR_DESTINATIONS.filter((d) => d.iata !== origin.iata).slice(0, 6);
   const cityName = live?.originCity ?? origin.name;
@@ -180,7 +184,7 @@ export default function PopularDestinationsBlock() {
       </div>
       {live && (
         <p className="mt-3 text-xs text-ink/55" data-testid="popular-routes-note">
-          Fares are the lowest recently found by our search partner for the dates shown, in US dollars, and can change. The final price is shown when you book.
+          Fares are the lowest recently found by our search partner for the dates shown, in the currency shown, and can change. The final price is shown when you book.
         </p>
       )}
     </section>
@@ -220,7 +224,7 @@ function RouteCard({ route, originIata }: { route: PopularRoute; originIata: str
           </div>
           <div className="shrink-0 text-right">
             <div className="text-[10px] font-semibold uppercase tracking-wider text-white/70">from</div>
-            <div className="text-xl font-bold leading-none">US${route.price.toLocaleString('en-US')}</div>
+            <div className="text-xl font-bold leading-none">{formatPrice(route.price, route.currency)}</div>
           </div>
         </div>
         <div className="mt-2 text-xs text-white/80">

@@ -219,7 +219,7 @@ export default function AirportGuideV2(p: AirportGuideV2Props) {
                       {code}
                     </span>
                   </h1>
-                  <p className="mt-3 max-w-2xl text-base leading-7 text-forest-900/80">
+                  <p className="mt-3 w-full max-w-none text-base leading-7 text-forest-900/80">
                     {heroSummary || (guide ? (
                       <>
                         {introTopics(e, hasRoutes, Boolean(officialSite))} for {name}, plus its terminals, ground transport and

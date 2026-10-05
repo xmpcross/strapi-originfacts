@@ -47,6 +47,7 @@ import { buildMetaDescription, compactTitle } from '@/lib/seo';
 import { airportUsesTemplateV2 } from '@/lib/airport-template-v2';
 import AirportGuideV2, { formatCoordinates, formatDate, routeVintage } from '@/components/airport-v2/AirportGuideV2';
 import { airportGuideV2Faqs } from '@/components/airport-v2/faqs';
+import { getAirportGuide } from '@/lib/airport-guide';
 import { airportCityPhoto, airportV2MetaDescription, splitCeasedAirlines } from '@/lib/airport-v2';
 
 export const revalidate = 60;
@@ -367,6 +368,8 @@ export default async function AirportPage({ params }: Props) {
       author: await resolveAuthor(),
       mainEntity: { '@id': `${url}#airport` },
     });
+    // Sourced terminals/transport content, where content/airport-guides has a file.
+    const airportGuide = getAirportGuide(airport.iata);
     const v2Faqs = airportGuideV2Faqs({
       name: airport.name,
       iata: airport.iata,
@@ -383,7 +386,10 @@ export default async function AirportPage({ params }: Props) {
       destinations: summary.destinationNames,
       countryCount: summary.countryCount,
       routeVintage: routeVintage(routes),
-    }, enrichmentFaqs(enrichmentFaqInput(airport, enrichment, v2Enrichment)));
+    }, [
+      ...enrichmentFaqs(enrichmentFaqInput(airport, enrichment, v2Enrichment)),
+      ...(airportGuide?.faqs ?? []).map((f) => ({ q: f.q, a: f.a })),
+    ]);
     return (
       <>
         <JsonLd data={v2WebPageSchema} />
@@ -416,6 +422,7 @@ export default async function AirportPage({ params }: Props) {
             distanceKm: a.distanceKm,
           }))}
           faqs={v2Faqs}
+          guide={airportGuide}
           related={[
             ...(cityDestination ? [{ label: `${cityDestination.name} travel guide`, href: `/destinations/${cityDestination.slug}` }] : []),
             ...(countryDestination ? [{ label: `${countryDestination.name} travel guide`, href: `/destinations/${countryDestination.slug}` }] : []),

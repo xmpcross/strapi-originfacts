@@ -64,3 +64,6 @@ data/captures/*
 data/captures/manual/**/candidates.json
 ops/fetch/node_modules
 run/
+
+# route-research audit trail: raw Gemini responses, fetched source text
+ops/route-research/data/

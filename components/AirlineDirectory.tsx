@@ -439,7 +439,7 @@ function AirlineCard({
           <img
             src={logo}
             alt=""
-            className={isTrimmedLogo(logo) ? 'h-full w-full object-fill' : 'absolute left-1/2 top-1/2 h-24 w-48 max-w-none -translate-x-1/2 -translate-y-1/2'}
+            className={isTrimmedLogo(logo) ? 'h-full w-full object-contain' : 'absolute left-1/2 top-1/2 h-24 w-48 max-w-none -translate-x-1/2 -translate-y-1/2'}
             loading="lazy"
             decoding="async"
           />

@@ -26,6 +26,7 @@ import {
   Cite,
   CitedParagraph,
   formatFetched,
+  formatFlightRange,
   GuideSectionBlock,
   MonthFaresTable,
   SeenFlightsTable,
@@ -120,10 +121,12 @@ export default async function RoutePage({ params }: Props) {
   const carriers = operableCarriers(route);
   const guideForMeta = getRouteGuide(slug);
 
-  // Sourced template: only routes with a content/route-guides/<slug>.json file.
-  // Live fares are fetched for those routes only.
+  // Sourced template: routes with a content/route-guides/<slug>.json file.
+  // Live fares (lib/route-fares.ts) are fetched for every route; the fare
+  // sections render wherever Travelpayouts has recent nonstop fares.
   const guide = getRouteGuide(slug);
-  const fares = guide ? await getRouteFares(origin.iata, destination.iata) : null;
+  const fares = await getRouteFares(origin.iata, destination.iata);
+  const fareDuration = fares?.duration ? formatFlightRange(fares.duration.min, fares.duration.max) : null;
   const order = guide ? citationOrder(guide) : new Map<string, number>();
   const fromName = origin.city || origin.name;
   const toName = destination.city || destination.name;
@@ -158,7 +161,9 @@ export default async function RoutePage({ params }: Props) {
   const routeFaqs: Faq[] = [
     {
       q: `How do I find cheap flights from ${origin.city || origin.name} to ${destination.city || destination.name}?`,
-      a: `Use our live fare calendar above to compare prices across different departure dates. Being flexible by 24–48 hours and comparing one-stop versus nonstop flights often yields the lowest rates.`,
+      a: cheapestMonth
+        ? `In fares found in recent Aviasales searches (fetched ${fetchedLabel}), the lowest one-way nonstop fare was US$${cheapestMonth.price} in ${new Date(`${cheapestMonth.month}-01T12:00:00Z`).toLocaleDateString('en-GB', { month: 'long', year: 'numeric', timeZone: 'UTC' })}. The table of lowest fares by month and the live fare calendar on this page show current prices for other dates.`
+        : `Use our live fare calendar above to compare prices across different departure dates. Being flexible by 24–48 hours and comparing one-stop versus nonstop flights often yields the lowest rates.`,
     },
     {
       q: `Which airlines fly from ${origin.city || origin.name} to ${destination.city || destination.name}?`,
@@ -168,7 +173,9 @@ export default async function RoutePage({ params }: Props) {
     },
     {
       q: `How long is the flight from ${origin.city || origin.name} (${origin.iata}) to ${destination.city || destination.name} (${destination.iata})?`,
-      a: route.durationMinutes
+      a: fareDuration
+        ? `Nonstop flights in recent fare data are listed at ${fareDuration} gate to gate (Aviasales search data, fetched ${fetchedLabel}). Connecting flights take longer, depending on the stopover.`
+        : route.durationMinutes
         ? `Nonstop flight time is approximately ${formatDuration(route.durationMinutes)}. Connecting flights will vary based on layover locations.`
         : `Flight durations vary based on carrier routing, winds, and layovers between ${origin.iata} and ${destination.iata}.`,
     },
@@ -185,7 +192,7 @@ export default async function RoutePage({ params }: Props) {
         ...(fares?.duration
           ? [{
               q: `How long is the flight from ${fromName} (${origin.iata}) to ${toName} (${destination.iata})?`,
-              a: `Nonstop flights in recent fare data are listed at ${fares.duration.min === fares.duration.max ? `${fares.duration.min}` : `${fares.duration.min}–${fares.duration.max}`} minutes gate to gate (Aviasales search data, fetched ${fetchedLabel}).`,
+              a: `Nonstop flights in recent fare data are listed at ${fareDuration} gate to gate (Aviasales search data, fetched ${fetchedLabel}).`,
             }]
           : []),
         ...(timeDiff !== null && offsetFrom !== null && offsetTo !== null
@@ -288,7 +295,7 @@ export default async function RoutePage({ params }: Props) {
             <Stat label="Distance" value={route.distanceKm ? `${route.distanceKm.toLocaleString()} km` : '—'} />
             <Stat
               label="Flight time (fare data)"
-              value={fares?.duration ? (fares.duration.min === fares.duration.max ? `${fares.duration.min} min` : `${fares.duration.min}–${fares.duration.max} min`) : route.durationMinutes ? formatDuration(route.durationMinutes) : '—'}
+              value={fareDuration ?? (route.durationMinutes ? formatDuration(route.durationMinutes) : '—')}
             />
             <Stat label="Time difference" value={timeDiff === null ? '—' : timeDiff === 0 ? 'None' : `${timeDiff > 0 ? '+' : '−'}${Math.abs(timeDiff) / 60}h`} />
             <Stat label="Nonstop airlines" value={nonstopIatas.length.toString()} />
@@ -296,7 +303,11 @@ export default async function RoutePage({ params }: Props) {
         ) : (
         <div className="grid gap-6 rounded-[0.3rem] border border-forest-900/10 bg-forest-900/[0.02] p-6 sm:grid-cols-4">
           <Stat label="Distance" value={route.distanceKm ? `${route.distanceKm.toLocaleString()} km` : '—'} />
-          <Stat label="Flight time" value={route.durationMinutes ? formatDuration(route.durationMinutes) : '—'} />
+          {fareDuration ? (
+            <Stat label="Flight time (fare data)" value={fareDuration} />
+          ) : (
+            <Stat label="Flight time" value={route.durationMinutes ? formatDuration(route.durationMinutes) : '—'} />
+          )}
           <Stat label="Carriers tracked" value={carriers.length.toString()} />
           <Stat label="Route" value={`${origin.iata} → ${destination.iata}`} mono />
         </div>
@@ -317,9 +328,10 @@ export default async function RoutePage({ params }: Props) {
             { id: 'faq', text: 'Frequently Asked Questions' },
             { id: 'sources', text: 'Sources' },
           ] : [
+            ...(fares && fares.flights.length > 0 ? [{ id: 'nonstop-flights', text: 'Nonstop Flights on This Route' }] : []),
+            ...(fares && fares.months.length > 0 ? [{ id: 'fares-by-month', text: 'Lowest Fares by Month' }] : []),
             { id: 'cheapest-dates', text: `Cheapest Fares & Live Calendar` },
             { id: 'airlines', text: `Operating Airlines (${carriers.length})` },
-            { id: 'direct-vs-connecting', text: `Direct vs Connecting Comparison` },
             { id: 'schedule', text: `Flight Schedule & Timetable` },
             { id: 'airport-guides', text: `Airport Guides (${origin.iata} & ${destination.iata})` },
             { id: 'faq', text: `Frequently Asked Questions` },
@@ -327,21 +339,21 @@ export default async function RoutePage({ params }: Props) {
         />
       </div>
 
-      {guide && fares && fares.flights.length > 0 && (
+      {fares && fares.flights.length > 0 && (
         <section id="nonstop-flights" className="mx-auto mt-14 max-w-7xl scroll-mt-28 px-6">
           <h2 className="editorial-h border-b border-forest-900/10 pb-3 text-[1.5rem] font-bold text-forest-900">
             Which nonstop flights go from {fromName} to {toName}?
           </h2>
           <p className="mb-5 mt-4 max-w-4xl text-base leading-relaxed text-forest-900/85">
             {fares.flights.length} nonstop flight{fares.flights.length === 1 ? '' : 's'} from {origin.iata} to {destination.iata} appeared in recent fare
-            searches, sold under {fares.airlines.map((a) => airlineName(a, carrierNames)).join(' and ')} flight numbers
-            {fares.duration ? `, with flight times of ${fares.duration.min === fares.duration.max ? fares.duration.min : `${fares.duration.min}–${fares.duration.max}`} minutes` : ''}.
+            searches, sold under {new Intl.ListFormat('en-GB', { type: 'conjunction' }).format(fares.airlines.map((a) => airlineName(a, carrierNames)))} flight numbers
+            {fareDuration ? `, with flight times of ${fareDuration}` : ''}.
           </p>
           <SeenFlightsTable flights={fares.flights} fares={fares} originIata={origin.iata} destinationIata={destination.iata} names={carrierNames} />
         </section>
       )}
 
-      {guide && fares && fares.months.length > 0 && (
+      {fares && fares.months.length > 0 && (
         <section id="fares-by-month" className="mx-auto mt-14 max-w-7xl scroll-mt-28 px-6">
           <h2 className="editorial-h border-b border-forest-900/10 pb-3 text-[1.5rem] font-bold text-forest-900">
             What are the lowest {origin.iata}–{destination.iata} fares by month?

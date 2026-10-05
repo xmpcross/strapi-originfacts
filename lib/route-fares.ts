@@ -8,8 +8,14 @@
  * The result (including fetchedAt) is cached for 6 hours with unstable_cache,
  * so the printed fetch time is the real age of the data.
  *
- * Server-only: uses TRAVELPAYOUTS_API_TOKEN. A missing token or a failed
- * request returns null, and the sections that need it do not render.
+ * Caching: a successful answer is cached for 6 hours even when it holds no
+ * fares, so quiet routes do not call the API on every regeneration. A failed
+ * request (network, HTTP error, success:false) throws inside the cached
+ * function, so it is NOT cached and the next regeneration retries; the page
+ * itself regenerates at most once a minute (revalidate = 60), which bounds it.
+ *
+ * Server-only: uses TRAVELPAYOUTS_API_TOKEN. No token, no data or a failed
+ * request all return null, and the sections that need fares do not render.
  */
 
 import { unstable_cache } from 'next/cache';
@@ -56,21 +62,21 @@ export type RouteFares = {
   fareCount: number;
 };
 
-async function tpGet(path: string, params: Record<string, string>): Promise<unknown> {
-  const token = process.env.TRAVELPAYOUTS_API_TOKEN;
-  if (!token) return null;
+class FareFetchError extends Error {}
+
+/** The API's data on success (possibly empty); throws FareFetchError on any failure. */
+async function tpGet(token: string, path: string, params: Record<string, string>): Promise<unknown> {
   const qs = new URLSearchParams(params).toString();
+  let res: Response;
   try {
-    const res = await fetch(`${TP_BASE}/${path}?${qs}`, {
-      headers: { 'X-Access-Token': token },
-      cache: 'no-store',
-    });
-    if (!res.ok) return null;
-    const json = (await res.json()) as { success?: boolean; data?: unknown };
-    return json.success ? json.data ?? null : null;
-  } catch {
-    return null;
+    res = await fetch(`${TP_BASE}/${path}?${qs}`, { headers: { 'X-Access-Token': token }, cache: 'no-store' });
+  } catch (err) {
+    throw new FareFetchError(`${path}: ${(err as Error).message}`);
   }
+  if (!res.ok) throw new FareFetchError(`${path}: HTTP ${res.status}`);
+  const json = (await res.json().catch(() => null)) as { success?: boolean; data?: unknown; error?: string } | null;
+  if (!json?.success) throw new FareFetchError(`${path}: ${json?.error ?? 'unsuccessful response'}`);
+  return json.data ?? null;
 }
 
 function isFare(x: unknown): x is TpFare {
@@ -85,10 +91,12 @@ function localTime(iso: string): string {
 }
 
 async function fetchRouteFares(origin: string, destination: string): Promise<RouteFares | null> {
+  const token = process.env.TRAVELPAYOUTS_API_TOKEN;
+  if (!token) return null;
   const base = { origin, destination, currency: 'usd', direct: 'true' };
   const [grouped, dated] = await Promise.all([
-    tpGet('grouped_prices', { ...base, group_by: 'month' }),
-    tpGet('prices_for_dates', { ...base, one_way: 'true', sorting: 'price', limit: '1000' }),
+    tpGet(token, 'grouped_prices', { ...base, group_by: 'month' }),
+    tpGet(token, 'prices_for_dates', { ...base, one_way: 'true', sorting: 'price', limit: '1000' }),
   ]);
 
   const months: MonthFare[] = [];
@@ -138,8 +146,16 @@ async function fetchRouteFares(origin: string, destination: string): Promise<Rou
   };
 }
 
-export function getRouteFares(origin: string, destination: string): Promise<RouteFares | null> {
+export async function getRouteFares(origin: string, destination: string): Promise<RouteFares | null> {
   const o = origin.toUpperCase();
   const d = destination.toUpperCase();
-  return unstable_cache(() => fetchRouteFares(o, d), ['route-fares-v1', o, d], { revalidate: REVALIDATE_SECONDS })();
+  try {
+    return await unstable_cache(() => fetchRouteFares(o, d), ['route-fares-v2', o, d], { revalidate: REVALIDATE_SECONDS })();
+  } catch (err) {
+    if (err instanceof FareFetchError) {
+      console.warn(`[route-fares] ${o}-${d} unavailable: ${err.message}`);
+      return null;
+    }
+    throw err;
+  }
 }

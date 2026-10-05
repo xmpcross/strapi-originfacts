@@ -11,6 +11,21 @@ export function airlineName(iata: string, names?: Record<string, string>): strin
   return names?.[iata] || getAirlineRef(iata)?.name || iata;
 }
 
+/** "55 min" for short hops; "11h 25m" from 90 minutes up, where minutes stop being readable. */
+export function formatFlightMinutes(minutes: number): string {
+  if (minutes < 90) return `${minutes} min`;
+  const h = Math.floor(minutes / 60);
+  const m = minutes % 60;
+  return m === 0 ? `${h}h` : `${h}h ${m}m`;
+}
+
+/** "55–60 min", "2h 40m–3h 10m", or a single value when min = max. */
+export function formatFlightRange(min: number, max: number): string {
+  if (min === max) return formatFlightMinutes(min);
+  if (max < 90) return `${min}–${max} min`;
+  return `${formatFlightMinutes(min)}–${formatFlightMinutes(max)}`;
+}
+
 const usd = (n: number) => `US$${Math.round(n).toLocaleString('en-US')}`;
 
 function formatMonth(ym: string): string {
@@ -82,7 +97,7 @@ export function SeenFlightsTable({ flights, fares, originIata, destinationIata, 
                 </td>
                 <td className="px-4 py-3 text-forest-900">{airlineName(f.airline, names)}</td>
                 <td className="px-4 py-3 tabular-nums text-forest-900">{f.departs}</td>
-                <td className="px-4 py-3 tabular-nums text-forest-900">{f.durationMinutes ? `${f.durationMinutes} min` : '—'}</td>
+                <td className="px-4 py-3 tabular-nums text-forest-900">{f.durationMinutes ? formatFlightMinutes(f.durationMinutes) : '—'}</td>
                 <td className="px-4 py-3 tabular-nums text-forest-900">{usd(f.lowestPrice)}</td>
               </tr>
             ))}

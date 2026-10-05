@@ -217,14 +217,17 @@
     font-size: clamp(1.1rem, 0.8vw + 0.85rem, 1.4rem) !important;
   }
 
-  /* Footer headings sit on the light footer (logo navy). */
+  /* Footer headings sit on the navy footer (logo sun yellow). The global
+     heading rule is !important, so the colour and tracking are restated here. */
   [data-testid="site-footer"] h1,
   [data-testid="site-footer"] h2,
   [data-testid="site-footer"] h3,
   [data-testid="site-footer"] h4,
   [data-testid="site-footer"] h5,
   [data-testid="site-footer"] h6 {
-    color: #061b46 !important;
+    color: #ffde59 !important;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em !important;
   }
 
   /* Hero overlay tiles (homepage top section) — titles sit on top of an

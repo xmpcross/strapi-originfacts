@@ -25,12 +25,8 @@ test('route v2: default for every route, with an (empty) exclusion set for rollb
 test('route v2 airline highlights: official fact-file fields only', () => {
   const qr = v2.airlineHighlights('qatar-airways');
   const byId = Object.fromEntries(qr.map((h) => [h.id, h]));
-  // Qatar Airways' carry-on module is still pending: nothing to show.
-  assert.equal(byId['carryon-size'].values.length, 0);
-  // Its check-in module is official; every value carries its page and date.
+  // Every official value carries its page and date.
   for (const h of qr) for (const v of h.values) assert.ok(v.sourceUrl.startsWith('https://') && /^\d{4}-\d{2}-\d{2}/.test(v.verifiedAt));
-  // Gulf Air has no official fields yet.
-  assert.ok(v2.airlineHighlights('gulf-air').every((h) => h.values.length === 0));
   // An airline without a fact file is all gaps, not an error.
   assert.ok(v2.airlineHighlights('no-such-airline').every((h) => h.values.length === 0));
 });

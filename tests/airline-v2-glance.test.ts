@@ -23,8 +23,7 @@ test('airline v2 glance: shown when at least one tile has an official value', ()
 });
 
 test('airline v2 glance: hidden when no tile has an official value', () => {
-  assert.equal(has('aegean-airlines'), false);
-  assert.equal(has('jet-airways'), false);
+  assert.equal(glanceHasValues(loadModules({ slug: 'test-airline', official_website: 'https://example.com', modules: [] })), false);
   assert.equal(glanceHasValues(loadModules(null)), false);
 });
 

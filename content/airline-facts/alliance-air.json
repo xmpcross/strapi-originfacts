@@ -31,6 +31,70 @@
           "verified_by": "manual_official_source"
         }
       }
+    },
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "required": [
+        "carryon_bag_dimensions",
+        "weight_economy",
+        "weight_business_first"
+      ],
+      "fields": {
+        "carryon_bag_dimensions": {
+          "value": "55 x 35 x 25 cm",
+          "status": "official",
+          "source_url": "https://allianceair.in/conditions-of-carriage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "weight_economy": {
+          "value": "5 kg (11 lbs)",
+          "status": "official",
+          "source_url": "https://allianceair.in/conditions-of-carriage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "weight_business_first": {
+          "value": "5 kg (11 lbs)",
+          "status": "official",
+          "source_url": "https://allianceair.in/conditions-of-carriage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "required": [
+        "piece_weight_economy",
+        "piece_weight_business",
+        "piece_weight_first"
+      ],
+      "fields": {
+        "piece_weight_economy": {
+          "value": "1 piece up to 15 kg (33 lbs)",
+          "status": "official",
+          "source_url": "https://allianceair.in/conditions-of-carriage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "piece_weight_business": {
+          "value": "1 piece up to 15 kg (33 lbs)",
+          "status": "official",
+          "source_url": "https://allianceair.in/conditions-of-carriage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        },
+        "piece_weight_first": {
+          "value": "1 piece up to 15 kg (33 lbs)",
+          "status": "official",
+          "source_url": "https://allianceair.in/conditions-of-carriage",
+          "verified_at": "2026-10-05",
+          "verified_by": "manual_official_source"
+        }
+      }
     }
   ]
 }

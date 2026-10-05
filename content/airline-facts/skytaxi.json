@@ -1,0 +1,54 @@
+{
+  "slug": "skytaxi",
+  "official_website": "https://www.skytaxi.aero",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "required": [
+        "carryon_weight"
+      ],
+      "fields": {
+        "carryon_weight": {
+          "value": "On SAAB 340 aircraft, cabin baggage should be limited to 5kg.",
+          "status": "official",
+          "source_url": "https://skytaxi.aero/en/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "required": [
+        "standard_weight"
+      ],
+      "fields": {
+        "standard_weight": {
+          "value": "The standard weight of checked baggage accepted by SkyTaxi is 12kg; more may be possible subject to your needs and technical and weight limitations.",
+          "status": "official",
+          "source_url": "https://skytaxi.aero/en/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "phone_home_market"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "+48 71 349 04 43",
+          "status": "official",
+          "source_url": "https://skytaxi.aero/en/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

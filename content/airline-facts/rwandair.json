@@ -1,82 +1,69 @@
 {
   "slug": "rwandair",
-  "official_website": "http://www.rwandair.com",
+  "official_website": "https://www.rwandair.com",
   "modules": [
     {
       "id": "carryon",
       "title": "Carry-on",
       "required": [
-        "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_allowance",
+        "carryon_weight"
       ],
       "fields": {
-        "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "http://www.rwandair.com/baggage",
-          "notes": "RwandAir cabin baggage size limit: 55 x 40 x 20 cm.",
+        "carryon_allowance": {
+          "value": "One carry-on bag and one personal item (a purse, laptop bag or small backpack) per passenger; the carry-on bag must fit in the overhead bin or under the seat in front of you.",
+          "status": "official",
+          "source_url": "https://www.rwandair.com/cn/cabin-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "http://www.rwandair.com/baggage",
-          "notes": "RwandAir Economy Class carry-on weight limit.",
+        "carryon_weight": {
+          "value": "Carry-on bag and personal item together must not exceed a combined weight of 10kg/22 lbs, except for Johannesburg, where the authority restricts this to 15 lbs [7kgs].",
+          "status": "official",
+          "source_url": "https://www.rwandair.com/cn/cabin-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
-        },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "http://www.rwandair.com/baggage",
-          "notes": "RwandAir Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
-      }
+      },
+      "lede": "Limits are checked with RwandAir baggage sizers at check-in; anything over the carry-on limits must be checked in and excess baggage fees apply."
     },
     {
       "id": "baggage",
       "title": "Checked baggage",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "size",
+        "extra_bag_east_africa"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "http://www.rwandair.com/baggage",
-          "notes": "RwandAir Economy Class checked baggage allowance.",
+        "size": {
+          "value": "Standard dimensions accepted for checked baggage total 158cm.",
+          "status": "official",
+          "source_url": "https://www.rwandair.com/cn/checked-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.rwandair.com/baggage",
-          "notes": "RwandAir Business Class checked baggage allowance.",
+        "extra_bag_east_africa": {
+          "value": "Additional bag rates from East Africa (Kigali, Entebbe, Bujumbura, Juba, Nairobi, Mombasa, Dar es Salaam and Arusha), per 23Kg piece: $100.00 within East Africa; $130.00 to West, Central and Southern Africa; $200.00 to Europe and London; $230.00 to the Middle East; $200.00 to Asia; $253.00 to the United States and rest of the world. A heavy single bag between 24-32kg, sold at check-in only, costs $50.00 to $99.00 depending on destination.",
+          "status": "official",
+          "source_url": "https://www.rwandair.com/cn/checked-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.rwandair.com/baggage",
-          "notes": "RwandAir First Class checked baggage allowance.",
+        "oversize": {
+          "value": "Approved bags over 32kgs and/or more than 203 CM, up to 50 kgs, need prior consent and cost USD 140 within East Africa up to USD 300 between Africa and Europe.",
+          "status": "official",
+          "source_url": "https://www.rwandair.com/cn/checked-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
-      }
+      },
+      "lede": "Fees vary by the region you fly from; RwandAir publishes separate tables for East, Southern, Central and West Africa, the Middle East, Europe and Asia."
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
-        "phone_home_market"
+        "conditions_of_carriage_url"
       ],
       "fields": {
         "phone_home_market": {
@@ -86,6 +73,13 @@
           "notes": "RwandAir official customer support line.",
           "verified_at": "2026-09-04",
           "verified_by": "automated_provenance"
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://www.rwandair.com/our-policies/terms-conditions-of-carriage/",
+          "status": "official",
+          "source_url": "https://www.rwandair.com/our-policies/terms-conditions-of-carriage/",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     }

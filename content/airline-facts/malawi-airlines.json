@@ -1,0 +1,22 @@
+{
+  "slug": "malawi-airlines",
+  "official_website": "https://www.malawian-airlines.com",
+  "modules": [
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "conditions_of_carriage_url"
+      ],
+      "fields": {
+        "conditions_of_carriage_url": {
+          "value": "https://www.malawian-airlines.com/aa/information/essential-information/conditions-of-carriage",
+          "status": "official",
+          "source_url": "https://www.malawian-airlines.com/aa/information/essential-information/conditions-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

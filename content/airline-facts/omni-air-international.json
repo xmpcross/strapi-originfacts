@@ -1,0 +1,47 @@
+{
+  "slug": "omni-air-international",
+  "official_website": "https://www.oai.aero",
+  "modules": [
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "Omni Air International publishes its delayed-baggage policy and liability limits; it does not list a free allowance on this page.",
+      "required": [
+        "delayed_baggage",
+        "liability_limits"
+      ],
+      "fields": {
+        "delayed_baggage": {
+          "value": "If your bag is delayed on an OAI flight, report it to an OAI representative before leaving the airport. Up to $25.00 per day is ordinarily considered sufficient for reasonable interim expenses; larger amounts need proof. No cash advances; claims are settled after you return (allow 4-6 weeks) with receipts.",
+          "status": "official",
+          "source_url": "https://www.oai.aero/passenger-info/baggage-service",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "liability_limits": {
+          "value": "International travel: liability for loss, damage or delay of baggage is limited to 1,288 Special Drawing Rights (about $1,725.00) per passenger. Travel wholly between U.S. points: limited to $3,800 per passenger.",
+          "status": "official",
+          "source_url": "https://www.oai.aero/passenger-info/baggage-service",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "phone_home_market"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "Phone 918-836-5393 (TTY 877-479-2547); Baggage Services 800-441-5393 ext-3057.",
+          "status": "official",
+          "source_url": "https://www.oai.aero/passenger-info/baggage-service",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

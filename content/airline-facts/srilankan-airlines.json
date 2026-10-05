@@ -1,82 +1,115 @@
 {
   "slug": "srilankan-airlines",
-  "official_website": "http://www.srilankan.com",
+  "official_website": "https://www.srilankan.com",
   "modules": [
     {
       "id": "carryon",
       "title": "Carry-on",
       "required": [
-        "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_allowance",
+        "carryon_weight",
+        "carryon_bag_dimensions"
       ],
       "fields": {
+        "carryon_allowance": {
+          "value": "Economy Class: one piece of hand baggage. Business Class: 2 pieces.",
+          "status": "official",
+          "source_url": "https://www.srilankan.com/en_uk/plan-and-book/luggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "carryon_weight": {
+          "value": "Each piece of hand baggage must weigh no more than 7 kg.",
+          "status": "official",
+          "source_url": "https://www.srilankan.com/en_uk/plan-and-book/luggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "http://www.srilankan.com/baggage",
-          "notes": "SriLankan Airlines cabin baggage size limit: 55 x 40 x 20 cm.",
+          "value": "Each piece must measure no more than a total of 115cm (l+h+w).",
+          "status": "official",
+          "source_url": "https://www.srilankan.com/en_uk/plan-and-book/luggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "http://www.srilankan.com/baggage",
-          "notes": "SriLankan Airlines Economy Class carry-on weight limit.",
+        "personal_item": {
+          "value": "In addition, in all cabin classes: one lady's hand bag, purse or pocket book, and a duty free item small enough to stow in the overhead bin.",
+          "status": "official",
+          "source_url": "https://www.srilankan.com/en_uk/plan-and-book/luggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "http://www.srilankan.com/baggage",
-          "notes": "SriLankan Airlines Premium / Business Class carry-on weight limit.",
+        "infant": {
+          "value": "Passengers travelling with infants: one cabin bag of 56cm x 36cm x 23cm (115cm), up to 5 kgs, for the infant's food, toiletries and nappies.",
+          "status": "official",
+          "source_url": "https://www.srilankan.com/en_uk/plan-and-book/luggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
-      }
+      },
+      "lede": "An overweight cabin bag is taken at the boarding gate and charged an excess baggage fee."
     },
     {
       "id": "baggage",
       "title": "Checked baggage",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "weight_policy",
+        "piece_policy",
+        "max_piece"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "http://www.srilankan.com/baggage",
-          "notes": "SriLankan Airlines Economy Class checked baggage allowance.",
+        "weight_policy": {
+          "value": "Routes not to or from North, Central and South America (weight policy): Business Class 40kg, Economy Class 30kg, infants 10kg; bags up to 158cm/ 62 inch (length + height + width), infants 115 cm/ 45 inch.",
+          "status": "official",
+          "source_url": "https://www.srilankan.com/en_uk/plan-and-book/luggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.srilankan.com/baggage",
-          "notes": "SriLankan Airlines Business Class checked baggage allowance.",
+        "piece_policy": {
+          "value": "Routes to or from North, Central and South America (piece policy): Business Class 2 pieces of 32 kg each; Economy Class 2 pieces of 23 kg each; infants 1 piece of 23Kg; each up to 158cm/ 62 inch.",
+          "status": "official",
+          "source_url": "https://www.srilankan.com/en_uk/plan-and-book/luggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.srilankan.com/baggage",
-          "notes": "SriLankan Airlines First Class checked baggage allowance.",
+        "max_piece": {
+          "value": "Regardless of allowance, no single piece may exceed 32kgs.",
+          "status": "official",
+          "source_url": "https://www.srilankan.com/en_uk/plan-and-book/luggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "oversize": {
+          "value": "A bag over a total of 158cm (height + length + width) costs USD 50 per oversized bag, subject to aircraft type; sporting equipment is handled separately.",
+          "status": "official",
+          "source_url": "https://www.srilankan.com/en_uk/plan-and-book/luggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      },
+      "lede": "Your allowance is shown on your e-ticket; SriLankan notes there can be exceptions based on specific periods, routings and fare types."
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "gate_close"
+      ],
+      "fields": {
+        "gate_close": {
+          "value": "Flights will not be held if you do not report to the boarding gate at least 30 minutes before the departure time.",
+          "status": "official",
+          "source_url": "https://www.srilankan.com/Zh_cn/Corporate/conditions-of-carriage-for-passengers-and-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
-        "phone_home_market"
+        "conditions_of_carriage_url"
       ],
       "fields": {
         "phone_home_market": {
@@ -86,6 +119,13 @@
           "notes": "SriLankan Airlines official customer support line.",
           "verified_at": "2026-09-04",
           "verified_by": "automated_provenance"
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://www.srilankan.com/Zh_cn/Corporate/conditions-of-carriage-for-passengers-and-baggage",
+          "status": "official",
+          "source_url": "https://www.srilankan.com/Zh_cn/Corporate/conditions-of-carriage-for-passengers-and-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     }

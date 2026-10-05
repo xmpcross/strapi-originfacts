@@ -1,39 +1,43 @@
 {
   "slug": "air-corsica",
-  "official_website": "http://www.aircorsica.com",
+  "official_website": "https://www.aircorsica.com",
   "modules": [
     {
       "id": "carryon",
       "title": "Carry-on",
       "required": [
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_weight",
+        "personal_item"
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "http://www.aircorsica.com/baggage",
-          "notes": "Air Corsica cabin baggage size limit: 55 x 40 x 20 cm.",
+          "value": "One item of hand baggage, maximum 55 cm in length x 35 cm in width x 25 cm in depth (wheels and handles included).",
+          "status": "official",
+          "source_url": "https://www.aircorsica.com/flights/cabin-hold-baggage.html",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "http://www.aircorsica.com/baggage",
-          "notes": "Air Corsica Economy Class carry-on weight limit.",
+        "carryon_weight": {
+          "value": "Maximum 8 kg on ATR72 aircraft and 12 kg on Airbus A320s.",
+          "status": "official",
+          "source_url": "https://www.aircorsica.com/flights/cabin-hold-baggage.html",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "http://www.aircorsica.com/baggage",
-          "notes": "Air Corsica Premium / Business Class carry-on weight limit.",
+        "personal_item": {
+          "value": "Plus possibly one or two accessories such as a handbag or briefcase, a camera or a small portable computer, which must fit under the seat in front of you. A suit bag counts as standard cabin baggage, not an accessory.",
+          "status": "official",
+          "source_url": "https://www.aircorsica.com/flights/cabin-hold-baggage.html",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "atr_restriction": {
+          "value": "ATR72 flights have limited cabin stowage; you may be asked to hand your bag over at the foot of the aircraft and collect it after landing.",
+          "status": "official",
+          "source_url": "https://www.aircorsica.com/flights/cabin-hold-baggage.html",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -73,19 +77,43 @@
       }
     },
     {
-      "id": "contact",
-      "title": "Contact and customer support",
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
       "required": [
-        "phone_home_market"
+        "airport_cutoff"
+      ],
+      "fields": {
+        "airport_cutoff": {
+          "value": "Be at the check-in desk or departure gate by the deadline: 30 minutes before departure of a domestic flight and 40 minutes before an international flight. Otherwise your reservation may be cancelled and your seat given to another passenger.",
+          "status": "official",
+          "source_url": "https://www.aircorsica.com/flights/conditions-carriage-passengers.html",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      },
+      "lede": "Check-in deadlines vary from one airport to another; Air Corsica gives the deadline for your first flight in writing."
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "phone_home_market",
+        "conditions_of_carriage_url"
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+33 825 35 35 35",
-          "status": "pending",
-          "source_url": "http://www.aircorsica.com/baggage",
-          "notes": "Air Corsica official customer support line.",
+          "value": "0825 35 35 35 (0,20€/mn); from outside the country 00 33 4 95 20 95 20",
+          "status": "official",
+          "source_url": "https://www.aircorsica.com/flights/cabin-hold-baggage.html",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://www.aircorsica.com/flights/conditions-carriage-passengers.html",
+          "status": "official",
+          "source_url": "https://www.aircorsica.com/flights/conditions-carriage-passengers.html",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     }

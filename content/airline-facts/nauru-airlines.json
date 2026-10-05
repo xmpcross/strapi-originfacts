@@ -5,6 +5,7 @@
     {
       "id": "carryon",
       "title": "Carry-on",
+      "lede": "These carry-on allowances apply on all Nauru Airlines international travel.",
       "required": [
         "carryon_bag_dimensions",
         "weight_economy",
@@ -12,80 +13,128 @@
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "https://www.nauruair.com/baggage",
-          "notes": "Nauru Airlines cabin baggage size limit: 55 x 40 x 20 cm.",
+          "value": "Maximum dimensions 48(l) x 34(h) x 23(d) cm in both cabins; non-rigid bags such as garment bags up to 60(l) x 114(h) x 11(d) cm.",
+          "status": "official",
+          "source_url": "https://www.nauruair.com/travel-info/baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
         "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "https://www.nauruair.com/baggage",
-          "notes": "Nauru Airlines Economy Class carry-on weight limit.",
+          "value": "Economy: 7kg total combined weight.",
+          "status": "official",
+          "source_url": "https://www.nauruair.com/travel-info/baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
         "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "https://www.nauruair.com/baggage",
-          "notes": "Nauru Airlines Premium / Business Class carry-on weight limit.",
+          "value": "Business: 10kg total combined weight.",
+          "status": "official",
+          "source_url": "https://www.nauruair.com/travel-info/baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "extra_items": {
+          "value": "At Nauru Airlines' absolute discretion, extras may include a handbag or purse, an overcoat, an umbrella or walking stick, a small camera or binoculars, reading matter, infant food and a small amount of duty-free goods.",
+          "status": "official",
+          "source_url": "https://www.nauruair.com/travel-info/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "baggage",
       "title": "Checked baggage",
+      "lede": "For international travel on Nauru Airlines, the checked allowance is set by fare type.",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "allowance_by_fare",
+        "size_weight"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "https://www.nauruair.com/baggage",
-          "notes": "Nauru Airlines Economy Class checked baggage allowance.",
+        "allowance_by_fare": {
+          "value": "Premium Business 45kg; Full flexible 45kg; Flexi Saver 30kg; Pacific Saver 23kg; Sale/other 23kg.",
+          "status": "official",
+          "source_url": "https://www.nauruair.com/travel-info/baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.nauruair.com/baggage",
-          "notes": "Nauru Airlines Business Class checked baggage allowance.",
+        "size_weight": {
+          "value": "No piece may exceed 32 kilograms or 158cm (length + width + height); total dimensions must not exceed 270cm, beyond which it must go as freight.",
+          "status": "official",
+          "source_url": "https://www.nauruair.com/travel-info/baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.nauruair.com/baggage",
-          "notes": "Nauru Airlines First Class checked baggage allowance.",
+        "pooling": {
+          "value": "Baggage pooling is only allowed for a family group booked on the same booking reference (PNR).",
+          "status": "official",
+          "source_url": "https://www.nauruair.com/travel-info/baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "prepaid_extra": {
+          "value": "Additional baggage of 5kg, 10kg, 15kg, 20kg or 25kg can be bought online up to twenty-four (24) hours before departure, space permitting.",
+          "status": "official",
+          "source_url": "https://www.nauruair.com/travel-info/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "lede": "What Nauru Airlines does depends on whether the disruption was due to events beyond its control.",
+      "required": [
+        "within_control",
+        "beyond_control"
+      ],
+      "fields": {
+        "within_control": {
+          "value": "If a Nauru Airlines flight is cancelled, misses your destination or stopover, or makes you miss a confirmed connection on your ticket for reasons not beyond its control, it carries you on its next service with space, or re-routes you on other carriers or other transport, or, if neither is available or suitable, refunds you.",
+          "status": "official",
+          "source_url": "https://www.nauruair.com/travel-info/conditions-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "beyond_control": {
+          "value": "For changes due to events beyond its control, Nauru Airlines uses reasonable endeavours to rebook you on its next available flight at no extra cost; if it cannot rebook you acceptably, it gives a refund or flight credit where the purpose of your trip is void, subject to the fare rules. It does not cover your costs unless conventions, tariffs or laws require it.",
+          "status": "official",
+          "source_url": "https://www.nauruair.com/travel-info/conditions-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "counter_times"
+      ],
+      "fields": {
+        "counter_times": {
+          "value": "As a general rule, check-in opens three hours before departure and closes one hour before scheduled departure; your itinerary gives the deadline for each flight.",
+          "status": "official",
+          "source_url": "https://www.nauruair.com/travel-info/conditions-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
-        "phone_home_market"
+        "conditions_of_carriage_url"
       ],
       "fields": {
-        "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "https://www.nauruair.com/baggage",
-          "notes": "Nauru Airlines official customer support line.",
+        "conditions_of_carriage_url": {
+          "value": "https://www.nauruair.com/travel-info/conditions-of-carriage",
+          "status": "official",
+          "source_url": "https://www.nauruair.com/travel-info/conditions-of-carriage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
       }
     }

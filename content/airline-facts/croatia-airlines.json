@@ -5,70 +5,81 @@
     {
       "id": "carryon",
       "title": "Carry-on",
+      "lede": "Every passenger may carry one cabin bag and one personal item, including Star Alliance Gold members.",
       "required": [
         "carryon_bag_dimensions",
         "weight_economy",
-        "weight_business_first"
+        "weight_business",
+        "personal_item"
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "https://www.croatiaairlines.com/baggage",
-          "notes": "Croatia Airlines cabin baggage size limit: 55 x 40 x 20 cm.",
+          "value": "Cabin bag max 118 cm (55x40x23 cm). Business Class may also bring a foldable garment bag of 57x54x15 cm as its second piece.",
+          "status": "official",
+          "source_url": "https://www.croatiaairlines.com/Baggage/Hand-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
         "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "https://www.croatiaairlines.com/baggage",
-          "notes": "Croatia Airlines Economy Class carry-on weight limit.",
+          "value": "Economy Class: 1 cabin bag, max 8 kg.",
+          "status": "official",
+          "source_url": "https://www.croatiaairlines.com/Baggage/Hand-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "https://www.croatiaairlines.com/baggage",
-          "notes": "Croatia Airlines Premium / Business Class carry-on weight limit.",
+        "weight_business": {
+          "value": "Business Class: 2 cabin bags, max 8 kg per piece; in exceptional cases, depending on the aircraft, Business Class may be limited to 1 item.",
+          "status": "official",
+          "source_url": "https://www.croatiaairlines.com/Baggage/Hand-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "personal_item": {
+          "value": "One additional handbag (e.g. a handbag, laptop bag or briefcase), max 4 kg and 40x30x10 cm, in both Economy and Business.",
+          "status": "official",
+          "source_url": "https://www.croatiaairlines.com/Baggage/Hand-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "baggage",
       "title": "Checked baggage",
+      "lede": "The free checked allowance on Croatia Airlines flights depends on the fare family.",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "allowance_by_fare",
+        "size_limit",
+        "flyeasy_bag_fee"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "https://www.croatiaairlines.com/baggage",
-          "notes": "Croatia Airlines Economy Class checked baggage allowance.",
+        "allowance_by_fare": {
+          "value": "Adults and children: FlyEasy no checked bag; FlyOpti and FlyFlexi 1 x 23 kg; FlyBWise and FlyBizz 2 x 32 kg. Miles & More Frequent Traveller (silver), HON Circle, Senator and Star Gold members get more.",
+          "status": "official",
+          "source_url": "https://www.croatiaairlines.com/Baggage/Checked-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.croatiaairlines.com/baggage",
-          "notes": "Croatia Airlines Business Class checked baggage allowance.",
+        "size_limit": {
+          "value": "Maximum size per piece, regardless of class: a + b + c = max. 158 cm.",
+          "status": "official",
+          "source_url": "https://www.croatiaairlines.com/Baggage/Checked-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.croatiaairlines.com/baggage",
-          "notes": "Croatia Airlines First Class checked baggage allowance.",
+        "flyeasy_bag_fee": {
+          "value": "A first bag on a FlyEasy ticket costs, per direction, 16 € + 25 % VAT within Croatia or 30 € on international flights if bought up to 24 hours before the flight; 24 € + 25 % VAT or 40 € within 24 hours of departure. The fee is non refundable.",
+          "status": "official",
+          "source_url": "https://www.croatiaairlines.com/Baggage/Checked-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "infant_buggy": {
+          "value": "Children under 4 may also carry one collapsible buggy.",
+          "status": "official",
+          "source_url": "https://www.croatiaairlines.com/Baggage/Checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     },

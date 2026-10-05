@@ -1,41 +1,46 @@
 {
   "slug": "kenya-airways",
-  "official_website": "http://www.kenya-airways.com",
+  "official_website": "https://www.kenya-airways.com",
   "modules": [
     {
       "id": "carryon",
       "title": "Carry-on",
       "required": [
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_weight",
+        "personal_item"
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "http://www.kenya-airways.com/baggage",
-          "notes": "Kenya Airways cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "Each cabin piece max L55xW25xH35cm. Business Class: 2 pieces + 1 accessory; Economy Class: 1 piece + 1 accessory.",
+          "status": "official",
+          "source_url": "https://www.kenya-airways.com/en/plan/baggage-information/hand-baggage",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "http://www.kenya-airways.com/baggage",
-          "notes": "Kenya Airways Economy Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "carryon_weight": {
+          "value": "Total weight including the accessory: Business Class max 18kgs/39lbs; Economy Class max 12kgs/26lbs on flights to/from the EU, US and UK, and max 10kgs/22lbs on all other routes.",
+          "status": "official",
+          "source_url": "https://www.kenya-airways.com/en/plan/baggage-information/hand-baggage",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "http://www.kenya-airways.com/baggage",
-          "notes": "Kenya Airways Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "personal_item": {
+          "value": "One accessory (handbag, backpack, briefcase, camera or laptop), maximum dimensions L40xW15xH30cms, plus 1 duty free shopping bag per passenger.",
+          "status": "official",
+          "source_url": "https://www.kenya-airways.com/en/plan/baggage-information/hand-baggage",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        },
+        "infant": {
+          "value": "Infants under 2 years not occupying a seat: 1 piece of cabin baggage, MAX 12kgs and MAX L55 x W25 x H35.",
+          "status": "official",
+          "source_url": "https://www.kenya-airways.com/en/plan/baggage-information/hand-baggage",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         }
-      }
+      },
+      "lede": "All cabin baggage must carry an \"approved KQ cabin luggage\" label."
     },
     {
       "id": "baggage",
@@ -74,18 +79,17 @@
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
         "phone_home_market"
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "http://www.kenya-airways.com/baggage",
-          "notes": "Kenya Airways official customer support line.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "+254 734 104 747 (Global Tel, Customer Excellence Center, open 24 hours)",
+          "status": "official",
+          "source_url": "https://www.kenya-airways.com/en/plan/baggage-information/hand-baggage",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         }
       }
     }

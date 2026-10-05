@@ -1,0 +1,22 @@
+{
+  "slug": "sky-express-greece",
+  "official_website": "https://www.skyexpress.gr",
+  "modules": [
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "phone_home_market"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "+30 801 112 8288 and +30 215 215 6510, daily 6:00 AM - 12:00 AM (GMT+2); provider charges and a call-centre service fee apply.",
+          "status": "official",
+          "source_url": "https://www.skyexpress.gr/en/care-plane/luggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "slug": "precision-air",
+  "official_website": "https://www.precisionairtz.com",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "required": [
+        "carryon_weight"
+      ],
+      "fields": {
+        "carryon_weight": {
+          "value": "1 piece of hand baggage up to 7kg, plus a reasonable amount of reading material. No cabin-bag dimensions are given on the policy page.",
+          "status": "official",
+          "source_url": "https://www.precisionairtz.com/helpdesk/ExcessBaggagePolicy",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "Precision Air's excess baggage policy charges per kilo for bags over 23KGS, up to 32KGS.",
+      "required": [
+        "size_weight"
+      ],
+      "fields": {
+        "size_weight": {
+          "value": "Bags over 23KGS but under 32KGS pay an extra charge per kilo. Bags over 32kgs and/or more than 158 cm need prior approval, and no bag may exceed 50KGS.",
+          "status": "official",
+          "source_url": "https://www.precisionairtz.com/helpdesk/ExcessBaggagePolicy",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source",
+          "notes": "The policy's allowance tables did not survive capture cleanly, so per-route allowances are left unpublished."
+        }
+      }
+    }
+  ]
+}

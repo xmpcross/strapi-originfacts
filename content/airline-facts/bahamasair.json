@@ -1,0 +1,102 @@
+{
+  "slug": "bahamasair",
+  "official_website": "https://www.bahamasair.com",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "required": [
+        "carryon_bag_dimensions",
+        "carryon_weight",
+        "personal_item"
+      ],
+      "fields": {
+        "carryon_bag_dimensions": {
+          "value": "One free carry-on piece that fits the under-seat size: a maximum of 22″ x 14″ x 9″.",
+          "status": "official",
+          "source_url": "https://www.bahamasair.com/baggage-information/carry-on-allowance",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "carryon_weight": {
+          "value": "Carry-on weight up to 20 lbs.",
+          "status": "official",
+          "source_url": "https://www.bahamasair.com/baggage-information/carry-on-allowance",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "personal_item": {
+          "value": "Over and above this, you may carry items such as a handbag or purse, a laptop briefcase, an overcoat or blanket, an umbrella or walking stick, a small camera or binoculars, reading matter and infant food or a carrying basket.",
+          "status": "official",
+          "source_url": "https://www.bahamasair.com/baggage-information/carry-on-allowance",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "Each checked piece is limited to 50lbs (23kgs) and 62 inches; bags over 70lbs (32kgs) are not accepted.",
+      "required": [
+        "fees_domestic",
+        "fees_international",
+        "overweight"
+      ],
+      "fields": {
+        "fees_domestic": {
+          "value": "Domestic flights: first bag FREE; second bag $55.00 + VAT; third bag $95.00 + VAT; fourth and further bags $125.00 + VAT.",
+          "status": "official",
+          "source_url": "https://www.bahamasair.com/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "fees_international": {
+          "value": "International flights (including Cuba): first bag $35.00; second bag $55.00; third bag $95.00; fourth and further bags $125.00.",
+          "status": "official",
+          "source_url": "https://www.bahamasair.com/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "overweight": {
+          "value": "Bags over 50lbs (23kgs) up to 70lbs (32kgs) cost the piece price + $50 (+ VAT on domestic flights). Internationally, bags over 62” cost piece price + $150.00, or + $175.00 if also over 50lbs. Bags over 70lbs (32kgs) are not accepted.",
+          "status": "official",
+          "source_url": "https://www.bahamasair.com/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "fee_refund": {
+          "value": "Bahamasair refunds optional-service fees a passenger could not use because of irregular operations such as a flight cancellation.",
+          "status": "official",
+          "source_url": "https://www.bahamasair.com/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "phone_home_market",
+        "conditions_of_carriage_url"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "Reservations 1-242-702-4140; toll free (Out Islands) 1-242-300-8359; toll free (U.S) 1-800-222-4262.",
+          "status": "official",
+          "source_url": "https://www.bahamasair.com/other-policies-forms/conditions-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://www.bahamasair.com/other-policies-forms/conditions-of-carriage",
+          "status": "official",
+          "source_url": "https://www.bahamasair.com/other-policies-forms/conditions-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

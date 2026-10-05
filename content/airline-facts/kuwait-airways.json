@@ -1,39 +1,45 @@
 {
   "slug": "kuwait-airways",
-  "official_website": "http://www.kuwaitairways.com",
+  "official_website": "https://www.kuwaitairways.com",
   "modules": [
     {
       "id": "carryon",
       "title": "Carry-on",
+      "lede": "Kuwait Airways allows one piece of cabin luggage on all routes, with a weight limit set by class.",
       "required": [
         "carryon_bag_dimensions",
         "weight_economy",
-        "weight_business_first"
+        "weight_business_first",
+        "personal_item"
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "http://www.kuwaitairways.com/baggage",
-          "notes": "Kuwait Airways cabin baggage size limit: 55 x 40 x 20 cm.",
+          "value": "Maximum size 56 X 46 X 25 cm (22 X 18 X 10 inch).",
+          "status": "official",
+          "source_url": "https://kuwaitairways.com/en/is/free-carry-on-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
         "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "http://www.kuwaitairways.com/baggage",
-          "notes": "Kuwait Airways Economy Class carry-on weight limit.",
+          "value": "Economy Class: one piece not exceeding 7 Kgs.",
+          "status": "official",
+          "source_url": "https://kuwaitairways.com/en/is/free-carry-on-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
         "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "http://www.kuwaitairways.com/baggage",
-          "notes": "Kuwait Airways Premium / Business Class carry-on weight limit.",
+          "value": "Royal, First and Business Class: one piece not exceeding 11 Kgs.",
+          "status": "official",
+          "source_url": "https://kuwaitairways.com/en/is/free-carry-on-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "personal_item": {
+          "value": "In addition, ONE item from: a ladies handbag, a briefcase, a coat, cape or blanket, an umbrella, binoculars or a small camera, crutches or a walking stick, or one duty free item bought on the day of flight.",
+          "status": "official",
+          "source_url": "https://kuwaitairways.com/en/is/free-carry-on-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     },

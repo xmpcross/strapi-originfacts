@@ -1,0 +1,135 @@
+{
+  "slug": "link-airways",
+  "official_website": "https://www.linkairways.com",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "These allowances apply on Link's Saab 340B Plus and Metro 23 aircraft, on all fares.",
+      "required": [
+        "carryon_bag_dimensions",
+        "carryon_weight"
+      ],
+      "fields": {
+        "carryon_bag_dimensions": {
+          "value": "1 piece of cabin baggage for adults and children, max 48(L) x 34 (H) x 23 (D) cm. Infants have no cabin baggage allowance.",
+          "status": "official",
+          "source_url": "https://www.linkairways.com/Plan-Your-Travel/Cabin-Baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "carryon_weight": {
+          "value": "Maximum cabin baggage weight 7kg for adults and children.",
+          "status": "official",
+          "source_url": "https://www.linkairways.com/Plan-Your-Travel/Cabin-Baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "extra_items": {
+          "value": "In addition you may carry a handbag or purse, an overcoat or blanket, an umbrella or walking stick, a small camera or binoculars, reading matter, or crutches or a prosthetic device you depend on.",
+          "status": "official",
+          "source_url": "https://www.linkairways.com/Plan-Your-Travel/Cabin-Baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "The free checked allowance on Link's Saab 340B Plus and Metro 23 aircraft depends on the fare.",
+      "required": [
+        "allowance_by_fare",
+        "size_weight",
+        "excess_fees"
+      ],
+      "fields": {
+        "allowance_by_fare": {
+          "value": "Flexible and Freedom fares: 1 piece (maximum 23kg). Standard and Deal fares: 1 piece (maximum 15kg). Same for adults and children; infants have no allowance but may check 3 infant items (maximum 23kg total) free.",
+          "status": "official",
+          "source_url": "https://www.linkairways.com/Plan-Your-Travel/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "size_weight": {
+          "value": "Each piece must not exceed 140cm total (length + width + height); no single item may exceed 32kg.",
+          "status": "official",
+          "source_url": "https://www.linkairways.com/Plan-Your-Travel/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "excess_fees": {
+          "value": "Excess baggage: $ 33.00 for each extra piece. Overweight: $5.50 per kilogram over the allowance per piece. Amounts are Australian dollars including GST.",
+          "status": "official",
+          "source_url": "https://www.linkairways.com/Plan-Your-Travel/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "required": [
+        "within_control",
+        "beyond_control"
+      ],
+      "fields": {
+        "within_control": {
+          "value": "If a Link flight is cancelled, misses your destination or makes you miss a confirmed connection on your ticket for reasons within its control, Link will, at its discretion, carry you on its next service with space or re-route you; if neither is suitable, it gives a credit for a replacement flight within 12 months of ticket issue, or a refund on request if no acceptable replacement can be offered in that period.",
+          "status": "official",
+          "source_url": "https://www.linkairways.com/about-us/conditions-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "beyond_control": {
+          "value": "For delays or cancellations caused by events beyond its control, Link uses reasonable endeavours to rebook you on its next available flight at no extra cost, or gives a flight credit to the value of your ticket, valid for 12 months from the original ticket's issue date. Other costs are not covered unless required by law.",
+          "status": "official",
+          "source_url": "https://www.linkairways.com/about-us/conditions-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "online_checkin",
+        "counter_times"
+      ],
+      "fields": {
+        "online_checkin": {
+          "value": "Online check-in opens 24 hours before scheduled departure for bookings made with Link or an Authorised Agent; codeshare passengers, unaccompanied minors and passengers with special needs must check in at the airport. Passengers with checked bags must still visit the counter.",
+          "status": "official",
+          "source_url": "https://www.linkairways.com/about-us/conditions-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "counter_times": {
+          "value": "As a general rule, check-in opens 1 hour before departure and closes 30 minutes before scheduled departure; your itinerary gives the deadline for each flight.",
+          "status": "official",
+          "source_url": "https://www.linkairways.com/about-us/conditions-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "conditions_of_carriage_url"
+      ],
+      "fields": {
+        "conditions_of_carriage_url": {
+          "value": "https://www.linkairways.com/about-us/conditions-of-carriage",
+          "status": "official",
+          "source_url": "https://www.linkairways.com/about-us/conditions-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

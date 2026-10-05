@@ -1,0 +1,87 @@
+{
+  "slug": "tropic-air",
+  "official_website": "https://www.tropicair.com",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "required": [
+        "personal_item"
+      ],
+      "fields": {
+        "personal_item": {
+          "value": "A personal item is limited to one small handbag or backpack, which must be held on your lap throughout the flight.",
+          "status": "official",
+          "source_url": "https://www.tropicair.com/travel-info/conditions-of-carriage/",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "required": [
+        "rebooking_refund",
+        "care"
+      ],
+      "fields": {
+        "rebooking_refund": {
+          "value": "For delays or cancellations caused by disruptions within Tropic Air's control, it offers rebooking at no additional cost; if no suitable option exists and you no longer need to travel, you may be eligible for a refund of the unused portion of the ticket.",
+          "status": "official",
+          "source_url": "https://www.tropicair.com/travel-info/conditions-of-carriage/",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "care": {
+          "value": "For overnight delays caused by Tropic Air's direct operational fault when you are away from your home city, it may arrange or cover basic hotel accommodation, subject to availability and prior approval. For causes beyond its control (weather, air traffic restrictions, force majeure) it helps with rebooking but does not pay for hotels, meals or alternative transport.",
+          "status": "official",
+          "source_url": "https://www.tropicair.com/travel-info/conditions-of-carriage/",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "domestic_cutoff",
+        "international_cutoff"
+      ],
+      "fields": {
+        "domestic_cutoff": {
+          "value": "Domestic flights within Belize: check in at least 30 minutes before departure.",
+          "status": "official",
+          "source_url": "https://www.tropicair.com/travel-info/conditions-of-carriage/",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "international_cutoff": {
+          "value": "International flights: Tropic Air recommends checking in no later than 2 hours before departure.",
+          "status": "official",
+          "source_url": "https://www.tropicair.com/travel-info/conditions-of-carriage/",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      },
+      "lede": "Check-in counters may close before departure time, and passengers who arrive after check-in has closed may be denied boarding."
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "conditions_of_carriage_url"
+      ],
+      "fields": {
+        "conditions_of_carriage_url": {
+          "value": "https://www.tropicair.com/travel-info/conditions-of-carriage/",
+          "status": "official",
+          "source_url": "https://www.tropicair.com/travel-info/conditions-of-carriage/",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

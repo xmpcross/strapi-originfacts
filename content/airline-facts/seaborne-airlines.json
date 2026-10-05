@@ -1,0 +1,62 @@
+{
+  "slug": "seaborne-airlines",
+  "official_website": "https://www.seaborneairlines.com",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "required": [
+        "personal_item"
+      ],
+      "fields": {
+        "personal_item": {
+          "value": "A personal item is a purse, briefcase, laptop bag or similar item such as a tote that does not exceed 37 inches. A carry-on bag that does not meet the size or weight restrictions is treated as a checked bag and charged.",
+          "status": "official",
+          "source_url": "https://www.seaborneairlines.com/contract-of-carriage/",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "flight_close",
+        "bag_cutoff"
+      ],
+      "fields": {
+        "flight_close": {
+          "value": "Flights close 30 minutes prior to departure.",
+          "status": "official",
+          "source_url": "https://www.seaborneairlines.com/contract-of-carriage/",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "bag_cutoff": {
+          "value": "Items presented to be checked as baggage less than forty-five (45) minutes before scheduled departure may be refused.",
+          "status": "official",
+          "source_url": "https://www.seaborneairlines.com/contract-of-carriage/",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "conditions_of_carriage_url"
+      ],
+      "fields": {
+        "conditions_of_carriage_url": {
+          "value": "https://www.seaborneairlines.com/contract-of-carriage/",
+          "status": "official",
+          "source_url": "https://www.seaborneairlines.com/contract-of-carriage/",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

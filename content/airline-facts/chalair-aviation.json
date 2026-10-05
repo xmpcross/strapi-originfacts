@@ -1,0 +1,80 @@
+{
+  "slug": "chalair-aviation",
+  "official_website": "https://www.chalair.fr",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "Whatever fare you choose, one piece of cabin baggage is included.",
+      "required": [
+        "carryon_bag_dimensions",
+        "carryon_weight",
+        "personal_item"
+      ],
+      "fields": {
+        "carryon_bag_dimensions": {
+          "value": "One bag per person, up to 55 cm X 35 cm X 25 cm including pockets, wheels and handles.",
+          "status": "official",
+          "source_url": "https://en.chalair.fr/bagages",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "carryon_weight": {
+          "value": "Up to 10kg; on flights operated by Beech 1900, cabin baggage is limited to 6 kg.",
+          "status": "official",
+          "source_url": "https://en.chalair.fr/bagages",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "personal_item": {
+          "value": "A handbag or computer bag up to 30 cm X 40 cm X 15 cm and 2kg.",
+          "status": "official",
+          "source_url": "https://en.chalair.fr/bagages",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "How many bags travel free in the hold depends on your ticket type, shown at booking and on your ticket.",
+      "required": [
+        "first_bag_fee",
+        "overweight_oversize"
+      ],
+      "fields": {
+        "first_bag_fee": {
+          "value": "If your fare has no checked bag, one can be added up to 3 hours before departure for €30, or for €40 at the airport. A second bag of 23 kg costs €50 booked in advance or €60 at the airport.",
+          "status": "official",
+          "source_url": "https://en.chalair.fr/bagages",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "overweight_oversize": {
+          "value": "Bags over 23 kg (maximum 32 kg): €70 supplement. Bags between 159 cm and 300 cm in length + width + height: €40 supplement, with no single length over 160cm. Both are paid at the airport.",
+          "status": "official",
+          "source_url": "https://en.chalair.fr/bagages",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "online_checkin"
+      ],
+      "fields": {
+        "online_checkin": {
+          "value": "Online check-in opens 48 hours before departure.",
+          "status": "official",
+          "source_url": "https://en.chalair.fr/bagages",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "slug": "skyup-mt",
+  "official_website": "https://skyup.aero",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "On SkyUp flights, the carry-on allowance depends on the fare.",
+      "required": [
+        "just_fly",
+        "fly_and_smile",
+        "fly_and_celebrate"
+      ],
+      "fields": {
+        "just_fly": {
+          "value": "Regular flights, JUST FLY fare: one free piece of carry-on up to 9 kg, 40x30x20 cm.",
+          "status": "official",
+          "source_url": "https://skyup.aero/en/faq/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source",
+          "notes": "From the SkyUp group's shared baggage page (skyup.aero), which lists SkyUp MT Limited alongside SkyUp Airlines LLC and Sky Up Nistru as operating entities."
+        },
+        "fly_and_smile": {
+          "value": "Regular flights, FLY & SMILE fare: one free piece of carry-on up to 9 kg, 55x40x20 cm.",
+          "status": "official",
+          "source_url": "https://skyup.aero/en/faq/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source",
+          "notes": "From the SkyUp group's shared baggage page (skyup.aero), which lists SkyUp MT Limited alongside SkyUp Airlines LLC and Sky Up Nistru as operating entities."
+        },
+        "fly_and_celebrate": {
+          "value": "Regular flights, FLY & CELEBRATE fare: 2 free pieces of carry-on, each up to 9 kg, 55x40x20 cm and 40x30x20 cm.",
+          "status": "official",
+          "source_url": "https://skyup.aero/en/faq/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source",
+          "notes": "From the SkyUp group's shared baggage page (skyup.aero), which lists SkyUp MT Limited alongside SkyUp Airlines LLC and Sky Up Nistru as operating entities."
+        },
+        "charter_standard": {
+          "value": "Charter flights, STANDARD fare: one free carry-on up to 9 kg (55х40х20 cm) and one free checked bag up to 23 kg (158 cm total).",
+          "status": "official",
+          "source_url": "https://skyup.aero/en/faq/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source",
+          "notes": "From the SkyUp group's shared baggage page (skyup.aero), which lists SkyUp MT Limited alongside SkyUp Airlines LLC and Sky Up Nistru as operating entities."
+        },
+        "extra_piece": {
+          "value": "An extra carry-on piece (up to 5 kg at 40x30x20 cm, or up to 9 kg at 55x40x20 cm) costs from 4/8€ online or via customer support, or 25/40€ at the airport.",
+          "status": "official",
+          "source_url": "https://skyup.aero/en/faq/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source",
+          "notes": "From the SkyUp group's shared baggage page (skyup.aero), which lists SkyUp MT Limited alongside SkyUp Airlines LLC and Sky Up Nistru as operating entities."
+        }
+      }
+    }
+  ]
+}

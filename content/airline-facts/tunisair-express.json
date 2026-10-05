@@ -6,34 +6,16 @@
       "id": "carryon",
       "title": "Carry-on",
       "required": [
-        "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_allowance"
       ],
       "fields": {
-        "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "https://www.tunisairexpress.net/baggage",
-          "notes": "Tunisair Express cabin baggage size limit: 55 x 40 x 20 cm.",
+        "carryon_allowance": {
+          "value": "One hand baggage per passenger, free of charge, weighing up to 6 Kg.",
+          "status": "official",
+          "source_url": "https://www.tunisairexpress.net/en/checked-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
-        },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "https://www.tunisairexpress.net/baggage",
-          "notes": "Tunisair Express Economy Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
-        },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "https://www.tunisairexpress.net/baggage",
-          "notes": "Tunisair Express Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source",
+          "notes": "The page's size limit gives only two dimensions ('55 cm for 35 cm'), so it is not shown."
         }
       }
     },
@@ -73,19 +55,42 @@
       }
     },
     {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "arrival_time",
+        "counter_close"
+      ],
+      "fields": {
+        "arrival_time": {
+          "value": "Arrive at the airport 180 minutes before departure for international flights and 150 minutes before for domestic flights in Tunisia.",
+          "status": "official",
+          "source_url": "https://www.tunisairexpress.net/en/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "counter_close": {
+          "value": "Check-in desks close 60 minutes before departure for international flights and 45 minutes before take-off for domestic flights.",
+          "status": "official",
+          "source_url": "https://www.tunisairexpress.net/en/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
         "phone_home_market"
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "https://www.tunisairexpress.net/baggage",
-          "notes": "Tunisair Express official customer support line.",
+          "value": "Call center +216 70 101 300 (support@tunisairexpress.com.tn)",
+          "status": "official",
+          "source_url": "https://www.tunisairexpress.net/en/checked-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
       }
     }

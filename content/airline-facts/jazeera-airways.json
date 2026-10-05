@@ -1,91 +1,140 @@
 {
   "slug": "jazeera-airways",
-  "official_website": "http://www.jazeeraairways.com",
+  "official_website": "https://www.jazeeraairways.com",
   "modules": [
     {
       "id": "carryon",
       "title": "Carry-on",
+      "lede": "All carry-on baggage must be declared at the check-in counter and carry a Jazeera Airways carry-on tag.",
       "required": [
         "carryon_bag_dimensions",
         "weight_economy",
-        "weight_business_first"
+        "weight_business"
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "http://www.jazeeraairways.com/baggage",
-          "notes": "Jazeera Airways cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "Maximum carry-on dimensions: 55 cm x 40 cm x 20 cm.",
+          "status": "official",
+          "source_url": "https://www.jazeeraairways.com/en/plan/baggage-allowance/cabin-baggage",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         },
         "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "http://www.jazeeraairways.com/baggage",
-          "notes": "Jazeera Airways Economy Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "Economy class: 1 piece, 7 kg.",
+          "status": "official",
+          "source_url": "https://www.jazeeraairways.com/en/plan/baggage-allowance/cabin-baggage",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "http://www.jazeeraairways.com/baggage",
-          "notes": "Jazeera Airways Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "weight_business": {
+          "value": "Business class: 2 pieces, 15 kg combined.",
+          "status": "official",
+          "source_url": "https://www.jazeeraairways.com/en/plan/baggage-allowance/cabin-baggage",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        },
+        "infant": {
+          "value": "Passengers travelling with an infant in Economy may carry 1 additional piece of hand baggage up to 10 kg, within the standard size limits.",
+          "status": "official",
+          "source_url": "https://www.jazeeraairways.com/en/plan/baggage-allowance/cabin-baggage",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "baggage",
       "title": "Checked baggage",
+      "lede": "Jazeera's checked allowance depends on the fare you buy.",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "allowance_by_fare",
+        "economy_limits",
+        "business_allowance"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "http://www.jazeeraairways.com/baggage",
-          "notes": "Jazeera Airways Economy Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "allowance_by_fare": {
+          "value": "Basic: no checked baggage. Comfort: 20kg, 1 piece. Flex: 30kg, 2 pieces. Flex Plus: 40kg, 2 pieces.",
+          "status": "official",
+          "source_url": "https://www.jazeeraairways.com/en-ae/plan/baggage-allowance/checked-baggage",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.jazeeraairways.com/baggage",
-          "notes": "Jazeera Airways Business Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "economy_limits": {
+          "value": "Economy: max 2 pieces, total up to 40 kg depending on fare; max 32 kg and 158 cm (height + width + depth) per piece.",
+          "status": "official",
+          "source_url": "https://www.jazeeraairways.com/en-ae/plan/baggage-allowance/checked-baggage",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.jazeeraairways.com/baggage",
-          "notes": "Jazeera Airways First Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "business_allowance": {
+          "value": "Business class: max 3 pieces, total up to 60 kg; max 32 kg and 158 cm (height + width + depth) per piece.",
+          "status": "official",
+          "source_url": "https://www.jazeeraairways.com/en-ae/plan/baggage-allowance/checked-baggage",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        },
+        "infants": {
+          "value": "Infants have no checked baggage allowance.",
+          "status": "official",
+          "source_url": "https://www.jazeeraairways.com/en-ae/plan/baggage-allowance/checked-baggage",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "lede": "Jazeera's conditions of carriage set out the options when it cancels a flight or fails to operate it reasonably according to schedule through its own fault.",
+      "required": [
+        "rebooking_refund"
+      ],
+      "fields": {
+        "rebooking_refund": {
+          "value": "If Jazeera cancels a flight, or fails to operate it reasonably according to schedule because of its fault, you can choose to be carried on its next available flight at no additional charge, take a credit for the fare usable within 1 year, or get a refund. Refunds are given within 7 working days for cash and 15 working days for credit after your request.",
+          "status": "official",
+          "source_url": "https://www.jazeeraairways.com/en-kw/terms-and-conditions",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        },
+        "eu261": {
+          "value": "Where Regulation (EC) 261/2004 applies, passengers are offered assistance and may be entitled to compensation for cancellation, except where it is caused by extraordinary circumstances.",
+          "status": "official",
+          "source_url": "https://www.jazeeraairways.com/en-kw/terms-and-conditions",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "counter_times"
+      ],
+      "fields": {
+        "counter_times": {
+          "value": "Check-in desks open three hours before and close promptly 60 minutes before the scheduled departure time; missing the deadline can mean your reservation is cancelled without refund or credit.",
+          "status": "official",
+          "source_url": "https://www.jazeeraairways.com/en-kw/terms-and-conditions",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
-        "phone_home_market"
+        "conditions_of_carriage_url"
       ],
       "fields": {
-        "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "http://www.jazeeraairways.com/baggage",
-          "notes": "Jazeera Airways official customer support line.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "conditions_of_carriage_url": {
+          "value": "https://www.jazeeraairways.com/en-kw/terms-and-conditions",
+          "status": "official",
+          "source_url": "https://www.jazeeraairways.com/en-kw/terms-and-conditions",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         }
       }
     }

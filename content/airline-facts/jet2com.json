@@ -5,70 +5,71 @@
     {
       "id": "carryon",
       "title": "Carry-on",
+      "lede": "On all Jet2.com flights each passenger (excluding infants) has a 10kg hand luggage allowance included as standard.",
       "required": [
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_weight",
+        "personal_item"
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "https://www.jet2.com/en/faqs/baggage-and-sports-equipment",
-          "notes": "Jet2.com cabin baggage size limit: 55 x 40 x 20 cm.",
+          "value": "1 piece of hand luggage no larger than 56cm x 45cm x 25cm, including wheels and handles.",
+          "status": "official",
+          "source_url": "https://app.jet2.com/en/baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "https://www.jet2.com/en/faqs/baggage-and-sports-equipment",
-          "notes": "Jet2.com Economy Class carry-on weight limit.",
+        "carryon_weight": {
+          "value": "Up to 10kg, included on all Jet2.com flights (excluding infants).",
+          "status": "official",
+          "source_url": "https://app.jet2.com/en/baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "https://www.jet2.com/en/faqs/baggage-and-sports-equipment",
-          "notes": "Jet2.com Premium / Business Class carry-on weight limit.",
+        "personal_item": {
+          "value": "1 small under-seat bag, such as a handbag or laptop bag, up to 40 x 30 x 20cm that fits under the seat in front.",
+          "status": "official",
+          "source_url": "https://app.jet2.com/en/baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "busy_flights": {
+          "value": "On busy flights Jet2 may ask you to put your 10kg hand luggage in the hold, unless you have added Guaranteed Cabin Luggage.",
+          "status": "official",
+          "source_url": "https://app.jet2.com/en/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "baggage",
       "title": "Checked baggage",
+      "lede": "Hold baggage is an add-on: you can add up to three 22kg bags per person per flight (excluding infants).",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "hold_bags"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "https://www.jet2.com/en/faqs/baggage-and-sports-equipment",
-          "notes": "Jet2.com Economy Class checked baggage allowance.",
+        "hold_bags": {
+          "value": "Up to three 22kg hold bags can be added per person per flight (excluding infants).",
+          "status": "official",
+          "source_url": "https://app.jet2.com/en/baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.jet2.com/en/faqs/baggage-and-sports-equipment",
-          "notes": "Jet2.com Business Class checked baggage allowance.",
+        "children_items": {
+          "value": "Infants get an extra 10kg allowance, and up to two items per child or infant (such as a pushchair, car seat, baby carrier or travel cot) travel free; each item must weigh no more than 32kg.",
+          "status": "official",
+          "source_url": "https://app.jet2.com/en/baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.jet2.com/en/faqs/baggage-and-sports-equipment",
-          "notes": "Jet2.com First Class checked baggage allowance.",
+        "sports_equipment": {
+          "value": "Bikes and golf bags can be added for an extra charge; maximum 32kg for bikes and 22kg for golf bags.",
+          "status": "official",
+          "source_url": "https://app.jet2.com/en/baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
       }
     },

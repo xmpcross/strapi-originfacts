@@ -1,0 +1,63 @@
+{
+  "slug": "paranair",
+  "official_website": "https://www.paranair.com",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "An oversize or overweight cabin bag can go in the hold for an extra charge if you have already checked a bag; otherwise it cannot be boarded.",
+      "required": [
+        "carryon_bag_dimensions",
+        "carryon_weight",
+        "personal_item"
+      ],
+      "fields": {
+        "carryon_bag_dimensions": {
+          "value": "One cabin bag free of charge, up to 45 cm x 35 cm x 20 cm (height x length x width), including accessories, wheels and handle.",
+          "status": "official",
+          "source_url": "https://www.paranair.com/equipaje",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "carryon_weight": {
+          "value": "The cabin bag can weigh up to 5 kilos.",
+          "status": "official",
+          "source_url": "https://www.paranair.com/equipaje",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "personal_item": {
+          "value": "One personal item that fits under the seat in front, such as a purse, laptop bag or baby bag.",
+          "status": "official",
+          "source_url": "https://www.paranair.com/equipaje",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "infant": {
+          "value": "Children aged 0 to 23 months on an infant fare may carry only the equivalent of one cabin bag.",
+          "status": "official",
+          "source_url": "https://www.paranair.com/equipaje",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "A bag over the limits is charged as additional baggage.",
+      "required": [
+        "allowance"
+      ],
+      "fields": {
+        "allowance": {
+          "value": "One checked bag at no extra cost, up to 23 Kg and 158 cm in total outside dimensions (height x length x width).",
+          "status": "official",
+          "source_url": "https://www.paranair.com/equipaje",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

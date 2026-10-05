@@ -1,91 +1,117 @@
 {
   "slug": "maya-island-air",
-  "official_website": "http://www.mayaislandair.com",
+  "official_website": "https://www.mayaislandair.com",
   "modules": [
     {
       "id": "carryon",
       "title": "Carry-on",
+      "lede": "Because of the size of Maya Island Air's aircraft, cabin space is limited.",
       "required": [
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_weight"
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "http://www.mayaislandair.com/baggage",
-          "notes": "Maya Island Air cabin baggage size limit: 55 x 40 x 20 cm.",
+          "value": "No set dimensions are given: carry-ons (purses, small backpacks, briefcases and the like) must fit snugly under the seat.",
+          "status": "official",
+          "source_url": "https://www.mayaislandair.com/belize-flights-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "http://www.mayaislandair.com/baggage",
-          "notes": "Maya Island Air Economy Class carry-on weight limit.",
+        "carryon_weight": {
+          "value": "Carry-on up to 15 lbs.",
+          "status": "official",
+          "source_url": "https://www.mayaislandair.com/belize-flights-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "http://www.mayaislandair.com/baggage",
-          "notes": "Maya Island Air Premium / Business Class carry-on weight limit.",
+        "personal_item": {
+          "value": "A small personal item is included alongside the carry-on.",
+          "status": "official",
+          "source_url": "https://www.mayaislandair.com/belize-flights-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "baggage",
       "title": "Checked baggage",
+      "lede": "All bags must be checked in at the Maya Island Air front desk; excess and oversized bags travel on a space-available basis.",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "allowance",
+        "excess_fees"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "http://www.mayaislandair.com/baggage",
-          "notes": "Maya Island Air Economy Class checked baggage allowance.",
+        "allowance": {
+          "value": "One checked bag per passenger, up to 50 lbs and 62 linear inches (27″ x 21″ x 14″). Anything larger, heavier or oddly shaped may incur additional fees.",
+          "status": "official",
+          "source_url": "https://www.mayaislandair.com/belize-flights-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.mayaislandair.com/baggage",
-          "notes": "Maya Island Air Business Class checked baggage allowance.",
+        "excess_fees": {
+          "value": "Excess baggage from Belize International Airport, per pound: BZE – SPR and BZE – CUK BZ $0.41; BZE – DGA BZ $0.46; BZE – PLJ BZ $0.88; BZE – PND BZ $1.13.",
+          "status": "official",
+          "source_url": "https://www.mayaislandair.com/belize-flights-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "lede": "Maya Island Air is not liable to passengers who arrive after their assigned departure time.",
+      "required": [
+        "domestic_cutoff"
+      ],
+      "fields": {
+        "domestic_cutoff": {
+          "value": "Domestic flights: check in 30 minutes before flight time.",
+          "status": "official",
+          "source_url": "https://www.mayaislandair.com/Information/Terms-and-Conditions",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.mayaislandair.com/baggage",
-          "notes": "Maya Island Air First Class checked baggage allowance.",
+        "connections": {
+          "value": "Allow at least 1 hour between domestic connections and at least 3 hours for international connections.",
+          "status": "official",
+          "source_url": "https://www.mayaislandair.com/Information/Terms-and-Conditions",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
-        "phone_home_market"
+        "phone_home_market",
+        "conditions_of_carriage_url"
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "http://www.mayaislandair.com/baggage",
-          "notes": "Maya Island Air official customer support line.",
+          "value": "(011-501) 223-1403",
+          "status": "official",
+          "source_url": "https://www.mayaislandair.com/belize-flights-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source",
+          "notes": "Listed in the footer of Maya Island Air's own pages."
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://www.mayaislandair.com/Information/Terms-and-Conditions",
+          "status": "official",
+          "source_url": "https://www.mayaislandair.com/Information/Terms-and-Conditions",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "ticket_refunds": {
+          "value": "Tickets are non-refundable and non-transferable. Cancel outside 24 hours of flight time and the ticket credit is valid for up to 6 months from the original travel date; no refund or credit for cancellations within 24 hours or for no-shows.",
+          "status": "official",
+          "source_url": "https://www.mayaislandair.com/Information/Terms-and-Conditions",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     }

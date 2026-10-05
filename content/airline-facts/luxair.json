@@ -1,39 +1,44 @@
 {
   "slug": "luxair",
-  "official_website": "http://www.luxair.lu",
+  "official_website": "https://www.luxair.lu",
   "modules": [
     {
       "id": "carryon",
       "title": "Carry-on",
+      "lede": "You can bring one piece of cabin baggage in Economy Class and two pieces in Business Class.",
       "required": [
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_weight",
+        "personal_item"
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "http://www.luxair.lu/baggage",
-          "notes": "Luxair cabin baggage size limit: 55 x 40 x 20 cm.",
+          "value": "Economy Class: 1 piece; Business Class: 2 pieces. Each up to 55x40x23 cm.",
+          "status": "official",
+          "source_url": "https://www.luxair.lu/en/information/cabin-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "http://www.luxair.lu/baggage",
-          "notes": "Luxair Economy Class carry-on weight limit.",
+        "carryon_weight": {
+          "value": "Cabin baggage must not exceed 8 kg.",
+          "status": "official",
+          "source_url": "https://www.luxair.lu/en/information/cabin-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "http://www.luxair.lu/baggage",
-          "notes": "Luxair Premium / Business Class carry-on weight limit.",
+        "personal_item": {
+          "value": "1 smaller personal item, such as a handbag, camera bag, laptop bag or briefcase, no larger than 40x30x20 cm, to fit under the seat in front.",
+          "status": "official",
+          "source_url": "https://www.luxair.lu/en/information/cabin-baggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "oversize_fee": {
+          "value": "Cabin baggage over the piece, weight or size limit must be checked into the hold, which may cost 89€ per piece.",
+          "status": "official",
+          "source_url": "https://www.luxair.lu/en/information/cabin-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     },
@@ -73,19 +78,42 @@
       }
     },
     {
-      "id": "contact",
-      "title": "Contact and customer support",
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "lede": "Luxair's General Conditions of Carriage say it applies the applicable passenger-rights regulations in a cancellation or delay.",
       "required": [
-        "phone_home_market"
+        "refund"
       ],
       "fields": {
-        "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "http://www.luxair.lu/baggage",
-          "notes": "Luxair official customer support line.",
+        "refund": {
+          "value": "If Luxair cancels a flight or fails to operate it reasonably according to schedule, it refunds the full fare paid if no portion of the ticket has been used; if part has been used, at least the difference between the fare paid and the fare for the portion flown.",
+          "status": "official",
+          "source_url": "https://www.luxair.lu/en/information/general-conditions-carriage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "regulations": {
+          "value": "In a cancellation or delay Luxair implements the provisions of the applicable regulations; its conditions refer to Regulation (EC) No 261/2004 on compensation and assistance.",
+          "status": "official",
+          "source_url": "https://www.luxair.lu/en/information/general-conditions-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "conditions_of_carriage_url"
+      ],
+      "fields": {
+        "conditions_of_carriage_url": {
+          "value": "https://www.luxair.lu/en/information/general-conditions-carriage",
+          "status": "official",
+          "source_url": "https://www.luxair.lu/en/information/general-conditions-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     }

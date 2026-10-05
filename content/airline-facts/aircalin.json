@@ -6,71 +6,73 @@
       "id": "carryon",
       "title": "Carry-on",
       "required": [
-        "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_bag_dimensions"
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "https://www.aircalin.com/baggage",
-          "notes": "Aircalin cabin baggage size limit: 55 x 40 x 20 cm.",
+          "value": "On Aircalin-operated flights and Air France codeshares on international routes: 55 x 35 x 25 cm for a total of 115 cm (pockets, wheels and handles included). Between Noumea and Île des Pins, Lifou, Maré and Ouvea: 45 x 35 x 20 cm.",
+          "status": "official",
+          "source_url": "https://us.aircalin.com/en/baggages/cabin-baggages",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "https://www.aircalin.com/baggage",
-          "notes": "Aircalin Economy Class carry-on weight limit.",
+        "infant": {
+          "value": "Infants under 2 on Aircalin-operated flights: one piece of cabin baggage of 7 kg and a stroller accepted in the cabin.",
+          "status": "official",
+          "source_url": "https://us.aircalin.com/en/baggages/cabin-baggages",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
-        },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "https://www.aircalin.com/baggage",
-          "notes": "Aircalin Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
-      }
+      },
+      "lede": "Carry-on dimensions and weight are checked at check-in; anything over the limits must be checked in and fees apply. The number of pieces and weight depend on route and cabin."
     },
     {
       "id": "baggage",
       "title": "Checked baggage",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "economy",
+        "premium_economy",
+        "business",
+        "size"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "https://www.aircalin.com/baggage",
-          "notes": "Aircalin Economy Class checked baggage allowance.",
+        "economy": {
+          "value": "Economy on an Aircalin ticket: between Noumea, Port Vila and Wallis, a total of 23kg; between Noumea and Brisbane, Nadi, Sydney, Papeete, Singapore, Bangkok and Auckland, and between Bangkok and Paris, 1 baggage item of 23kg maximum; between Noumea and France, 1 or 2 items of 23 kg each according to the fare; between Noumea and Isle of Pines, Lifou, Mare and Ouvea, 1 item of 12kg or 20kg according to travel class.",
+          "status": "official",
+          "source_url": "https://us.aircalin.com/en/baggages/checked-baggages",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.aircalin.com/baggage",
-          "notes": "Aircalin Business Class checked baggage allowance.",
+        "premium_economy": {
+          "value": "Premium Economy: between Noumea and Wallis, a total of 30kg; between Noumea and Brisbane, Nadi, Sydney, Papeete, Singapore, Bangkok and Auckland, and between Bangkok and Paris, 2 items of 23 kg each; between Noumea and France, 1 or 2 items of 23 kg each according to the fare.",
+          "status": "official",
+          "source_url": "https://us.aircalin.com/en/baggages/checked-baggages",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.aircalin.com/baggage",
-          "notes": "Aircalin First Class checked baggage allowance.",
+        "business": {
+          "value": "Business Hibiscus: 2 items of 23 kg each between Noumea and Sydney, Papeete, Singapore and Bangkok, and between Bangkok and Paris; 2 items of 32 kg each between Noumea and France.",
+          "status": "official",
+          "source_url": "https://us.aircalin.com/en/baggages/checked-baggages",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "size": {
+          "value": "Each checked bag: height + width + depth = 158 cm (30 x 70 x 50 cm on domestic flights to Isle of Pines, Lifou, Mare and Ouvea).",
+          "status": "official",
+          "source_url": "https://us.aircalin.com/en/baggages/checked-baggages",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "infant": {
+          "value": "Babies under 2, all booking classes: one bag up to 10 kg plus a crib, stroller or baby seat (5 kg on Air Calédonie-operated Port Vila flights SB3240 and SB3241).",
+          "status": "official",
+          "source_url": "https://us.aircalin.com/en/baggages/checked-baggages",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
-      }
+      },
+      "lede": "Your allowance is shown on your e-ticket (for example 1PC, 2PC, or a total weight such as 23); other routes and partner flights follow the e-ticket."
     },
     {
       "id": "contact",

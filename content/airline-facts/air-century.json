@@ -1,0 +1,62 @@
+{
+  "slug": "air-century",
+  "official_website": "https://www.aircentury.com",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "All Air Century fares include one carry-on and one personal item on board.",
+      "required": [
+        "carryon_bag_dimensions",
+        "carryon_weight"
+      ],
+      "fields": {
+        "carryon_bag_dimensions": {
+          "value": "1 carry-on bag, 22′′ x 14′′ x 9′′ (56 x 36 x 23 cm), plus one personal item.",
+          "status": "official",
+          "source_url": "https://aircentury.com/en/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "carryon_weight": {
+          "value": "Maximum carry-on weight 17 lbs / 8 kgs; 28 lbs / 13 kgs on flights to Haití.",
+          "status": "official",
+          "source_url": "https://aircentury.com/en/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "required": [
+        "included_bag",
+        "size_weight"
+      ],
+      "fields": {
+        "included_bag": {
+          "value": "All fares include one checked bag up to 23 kg free of charge; the cost of additional bags depends on the fare class.",
+          "status": "official",
+          "source_url": "https://aircentury.com/en/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "size_weight": {
+          "value": "Checked bags exceeding 62 inches or 50 pounds incur an additional charge.",
+          "status": "official",
+          "source_url": "https://aircentury.com/en/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "cuba": {
+          "value": "On flights to Cuba, all additional baggage is charged at $4.00 USD per kg.",
+          "status": "official",
+          "source_url": "https://aircentury.com/en/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

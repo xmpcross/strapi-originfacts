@@ -1,6 +1,6 @@
 {
   "slug": "grand-canyon-scenic-airlines",
-  "official_website": "http://www.grandcanyonairlines.com",
+  "official_website": "https://www.grandcanyonairlines.com",
   "modules": [
     {
       "id": "carryon",
@@ -69,6 +69,54 @@
           "notes": "Grand Canyon Scenic Airlines First Class checked baggage allowance.",
           "verified_at": "2026-09-04",
           "verified_by": "automated_provenance"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "lede": "From the Grand Canyon Airlines / Scenic Airlines Contract of Carriage.",
+      "required": [
+        "rebooking_refund"
+      ],
+      "fields": {
+        "rebooking_refund": {
+          "value": "If the carrier cancels or fails to operate a flight, or denies boarding to a passenger with a valid reservation, you can choose either transportation at no extra charge on another of its flights to the same destination (subject to space), or a full refund of the fare paid. If part of the trip has been completed, the refund is the applicable one-way fare for the portion not operated.",
+          "status": "official",
+          "source_url": "https://www.grandcanyonairlines.com/contract-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "oversold": {
+          "value": "On an oversold flight, passengers involuntarily denied boarding are entitled to a full refund of the fare paid.",
+          "status": "official",
+          "source_url": "https://www.grandcanyonairlines.com/contract-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "boarding_pass_cutoff",
+        "bag_cutoff"
+      ],
+      "fields": {
+        "boarding_pass_cutoff": {
+          "value": "All passengers must obtain a boarding pass from the carrier at least 60 minutes before scheduled departure, or the reservation may be cancelled and payment forfeited.",
+          "status": "official",
+          "source_url": "https://www.grandcanyonairlines.com/contract-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "bag_cutoff": {
+          "value": "Bags must be checked in at the airport at least sixty (60) minutes before scheduled departure; they can be checked up to 4 hours before if you stay at the airport until departure.",
+          "status": "official",
+          "source_url": "https://www.grandcanyonairlines.com/contract-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     },

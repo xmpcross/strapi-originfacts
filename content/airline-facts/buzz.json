@@ -1,0 +1,23 @@
+{
+  "slug": "buzz",
+  "official_website": "https://www.buzzair.com",
+  "modules": [
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "lede": "Buzz is the trading name of Ryanair Sun S.A., part of the Ryanair Group.",
+      "required": [
+        "conditions_of_carriage_url"
+      ],
+      "fields": {
+        "conditions_of_carriage_url": {
+          "value": "https://www.buzzair.com/en/terms-conditions-of-carriage/",
+          "status": "official",
+          "source_url": "https://www.buzzair.com/en/terms-conditions-of-carriage/",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

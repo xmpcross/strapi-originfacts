@@ -1,0 +1,105 @@
+{
+  "slug": "twin-jet",
+  "official_website": "https://www.twinjet.fr",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "Your cabin bag may be taken at the gate and carried in the hold, then returned when you leave the aircraft.",
+      "required": [
+        "carryon_bag_dimensions",
+        "carryon_weight",
+        "personal_item"
+      ],
+      "fields": {
+        "carryon_bag_dimensions": {
+          "value": "1 cabin bag up to 55 cm x 40 cm x 20 cm, including handles and wheels.",
+          "status": "official",
+          "source_url": "https://www.twinjet.fr/en/article/55/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "carryon_weight": {
+          "value": "The cabin bag and accessory together may not exceed 10 kg; anything heavier is tagged and checked.",
+          "status": "official",
+          "source_url": "https://www.twinjet.fr/en/article/55/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "personal_item": {
+          "value": "1 accessory (laptop in its sleeve, handbag, small backpack or schoolbag) that fits under the seat in front.",
+          "status": "official",
+          "source_url": "https://www.twinjet.fr/en/article/55/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "required": [
+        "allowance"
+      ],
+      "fields": {
+        "allowance": {
+          "value": "Checked baggage travels free in the hold, within the weight shown on your ticket (20 kg).",
+          "status": "official",
+          "source_url": "https://www.twinjet.fr/en/article/55/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "lede": "These are Twin Jet's own general conditions of carriage.",
+      "required": [
+        "rebooking",
+        "refund"
+      ],
+      "fields": {
+        "rebooking": {
+          "value": "If Twin Jet cancels a flight, operates it with excessive delay, misses your stop or makes you miss a connection on the same contract, it must, in agreement with you, carry you on another of its flights with space at no extra charge (extending the ticket if needed) or reroute you on its own or another carrier's services, or by surface transport.",
+          "status": "official",
+          "source_url": "https://www.twinjet.fr/en/article/95/general-conditions-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "refund": {
+          "value": "In those cases the refund is the fare paid if no part of the ticket has been used, or at least the difference between the fare paid and the fare for the unused part.",
+          "status": "official",
+          "source_url": "https://www.twinjet.fr/en/article/95/general-conditions-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "phone_home_market",
+        "conditions_of_carriage_url"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "+33 (0)4 42 90 12 14",
+          "status": "official",
+          "source_url": "https://www.twinjet.fr/en/article/55/checked-baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source",
+          "notes": "Listed with Twin Jet's flight-operations address in the footer of its own baggage page."
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://www.twinjet.fr/en/article/95/general-conditions-of-carriage",
+          "status": "official",
+          "source_url": "https://www.twinjet.fr/en/article/95/general-conditions-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

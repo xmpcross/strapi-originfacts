@@ -1,0 +1,113 @@
+{
+  "slug": "alliance-airlines",
+  "official_website": "https://www.allianceairlines.com.au",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "Some routes have weight restrictions, and Alliance staff may direct cabin bags to be stowed in the hold.",
+      "required": [
+        "carryon_bag_dimensions",
+        "carryon_weight"
+      ],
+      "fields": {
+        "carryon_bag_dimensions": {
+          "value": "One piece of cabin baggage up to 23 cm width x 34 cm height x 48 cm length (Fokker 70/100, Embraer 190).",
+          "status": "official",
+          "source_url": "https://www.allianceairlines.com.au/when-we-fly/before-you-fly/baggage-information",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "carryon_weight": {
+          "value": "The cabin bag must not exceed 7kg.",
+          "status": "official",
+          "source_url": "https://www.allianceairlines.com.au/when-we-fly/before-you-fly/baggage-information",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "On charter and fly-in, fly-out flights the allowance is set with the client, so ask your organiser.",
+      "required": [
+        "allowance",
+        "size_weight",
+        "excess_fees"
+      ],
+      "fields": {
+        "allowance": {
+          "value": "Scheduled (RPT) domestic and international services, Economy Class on the Fokker 100, Fokker 70 and Embraer 190: 20kg free for each passenger occupying a paid seat.",
+          "status": "official",
+          "source_url": "https://www.allianceairlines.com.au/when-we-fly/before-you-fly/baggage-information",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "size_weight": {
+          "value": "Each bag must not exceed 158cm in total linear dimensions (width plus height plus length); some ports impose reduced weight limits, and bags over the size or weight limit are not accepted at check-in.",
+          "status": "official",
+          "source_url": "https://www.allianceairlines.com.au/when-we-fly/before-you-fly/baggage-information",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "excess_fees": {
+          "value": "$35 per additional piece, up to 20kg, per one-way flight, subject to space; excess bags may not travel on the same service as you.",
+          "status": "official",
+          "source_url": "https://www.allianceairlines.com.au/when-we-fly/before-you-fly/baggage-information",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "rights",
+      "title": "If your flight is delayed or cancelled",
+      "lede": "These are Alliance's own conditions of carriage; rights under the Australian Consumer Law also apply.",
+      "required": [
+        "rebooking_refund"
+      ],
+      "fields": {
+        "rebooking_refund": {
+          "value": "If Alliance cancels or delays a flight due to circumstances beyond its control, it will either carry you on another of its scheduled services with space available or refund the applicable sector fare. Other costs from the delay or cancellation are not paid unless the conditions, a Convention or applicable law provide for them.",
+          "status": "official",
+          "source_url": "https://www.allianceairlines.com.au/terms-conditions",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "domestic_cutoff"
+      ],
+      "fields": {
+        "domestic_cutoff": {
+          "value": "Domestic travel: check in at least 30 minutes before scheduled departure unless your itinerary says otherwise, with photo identification.",
+          "status": "official",
+          "source_url": "https://www.allianceairlines.com.au/terms-conditions",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "conditions_of_carriage_url"
+      ],
+      "fields": {
+        "conditions_of_carriage_url": {
+          "value": "https://www.allianceairlines.com.au/terms-conditions",
+          "status": "official",
+          "source_url": "https://www.allianceairlines.com.au/terms-conditions",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

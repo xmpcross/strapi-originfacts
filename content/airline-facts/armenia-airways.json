@@ -1,0 +1,93 @@
+{
+  "slug": "armenia-airways",
+  "official_website": "https://www.armeniaairways.am",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "required": [
+        "carryon_weight",
+        "personal_item"
+      ],
+      "fields": {
+        "carryon_weight": {
+          "value": "Each piece of hand baggage must not weigh more than 7 kg and must fit in the overhead locker.",
+          "status": "official",
+          "source_url": "https://www.armeniaairways.am/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "personal_item": {
+          "value": "Within the hand baggage allowance, one laptop bag, ladies' handbag or gentleman's satchel of up to 55 x 40 x 20 cm, stored under the seat in front of you.",
+          "status": "official",
+          "source_url": "https://www.armeniaairways.am/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "gate_check": {
+          "value": "All hand baggage, including duty-free items, is checked for size and weight at the boarding gate; bags over the limits are not allowed on board. Smart bags are not accepted.",
+          "status": "official",
+          "source_url": "https://www.armeniaairways.am/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "required": [
+        "size",
+        "yerevan_tehran",
+        "yerevan_moscow"
+      ],
+      "fields": {
+        "size": {
+          "value": "The total height + width + depth must not exceed 158 cm; larger bags are not accepted as checked baggage.",
+          "status": "official",
+          "source_url": "https://www.armeniaairways.am/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "yerevan_tehran": {
+          "value": "Flights to/from Yerevan and Tehran: total allowance 30 kg per passenger, each item under 30 kg.",
+          "status": "official",
+          "source_url": "https://www.armeniaairways.am/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "yerevan_moscow": {
+          "value": "Flights to/from Yerevan and Moscow (VKO): Standard Economy 1 piece up to 23 kg (an overweight charge applies up to 30 kg); Economy Comfort 1 piece up to 30 kg. Extra pieces are charged.",
+          "status": "official",
+          "source_url": "https://www.armeniaairways.am/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "infant": {
+          "value": "Travelling with an infant on a fare that includes baggage: 10 kg of checked baggage.",
+          "status": "official",
+          "source_url": "https://www.armeniaairways.am/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      },
+      "lede": "Excess baggage fees are paid at the Armenia Airways office at the airport."
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "phone_home_market"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "+374 60 432300 or +374 15 432316 (Monday to Friday, 10:00 AM – 6:00 PM)",
+          "status": "official",
+          "source_url": "https://www.armeniaairways.am/baggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

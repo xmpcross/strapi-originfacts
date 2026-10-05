@@ -1,6 +1,6 @@
 {
   "slug": "skyward-airlines",
-  "official_website": "https://skywardairlines.co.ke",
+  "official_website": "https://www.skywardairlines.co.ke",
   "modules": [
     {
       "id": "carryon",
@@ -74,18 +74,25 @@
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
         "phone_home_market"
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "https://skywardairlines.co.ke/baggage",
-          "notes": "Skyward Airlines official customer support line.",
+          "value": "Call Centre: +254 709 786 000",
+          "status": "official",
+          "source_url": "https://www.skywardairlines.co.ke/baggage-policy",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source",
+          "notes": "Listed in the contact block of Skyward's own baggage-policy page, which also gives +254 740 410 700."
+        },
+        "phone_alternate": {
+          "value": "+254 740 410 700",
+          "status": "official",
+          "source_url": "https://www.skywardairlines.co.ke/baggage-policy",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     }

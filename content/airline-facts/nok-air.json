@@ -1,91 +1,92 @@
 {
   "slug": "nok-air",
-  "official_website": "http://www.nokair.com",
+  "official_website": "https://www.nokair.com",
   "modules": [
     {
       "id": "carryon",
       "title": "Carry-on",
+      "lede": "Passengers may bring 2 pieces of hand baggage into the cabin: 1 carry-on bag and 1 small item.",
       "required": [
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_weight",
+        "personal_item"
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "http://www.nokair.com/baggage",
-          "notes": "Nok Air cabin baggage size limit: 55 x 40 x 20 cm.",
+          "value": "1 carry-on bag not exceeding 36 cm x 56 cm x 23 cm.",
+          "status": "official",
+          "source_url": "https://content.nokair.com/en/Journey-Planning/Baggage/Hand-Baggage-allowance.aspx",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "http://www.nokair.com/baggage",
-          "notes": "Nok Air Economy Class carry-on weight limit.",
+        "carryon_weight": {
+          "value": "The carry-on bag and small item together must not exceed 7 kilograms.",
+          "status": "official",
+          "source_url": "https://content.nokair.com/en/Journey-Planning/Baggage/Hand-Baggage-allowance.aspx",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "http://www.nokair.com/baggage",
-          "notes": "Nok Air Premium / Business Class carry-on weight limit.",
+        "personal_item": {
+          "value": "1 small item, such as a handbag or laptop bag, counted within the 7 kilogram combined limit.",
+          "status": "official",
+          "source_url": "https://content.nokair.com/en/Journey-Planning/Baggage/Hand-Baggage-allowance.aspx",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "baggage",
       "title": "Checked baggage",
+      "lede": "Checked bags are included with Nok X-Tra and Nok MAX fares; Nok Lite includes none for a normal passenger.",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "allowance_by_fare",
+        "size_weight"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "http://www.nokair.com/baggage",
-          "notes": "Nok Air Economy Class checked baggage allowance.",
+        "allowance_by_fare": {
+          "value": "Per flight, normal passenger: Nok Lite 0 kg; Nok X-Tra 15 kg domestic / 20 kg international; Nok MAX 25 kg domestic / 30 kg international. Nok Smile Plus members get more (Nok Lite 10, Nok X-Tra 25 / 30, Nok MAX 35 / 40).",
+          "status": "official",
+          "source_url": "https://content.nokair.com/en/Journey-Planning/Baggage.aspx",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.nokair.com/baggage",
-          "notes": "Nok Air Business Class checked baggage allowance.",
+        "size_weight": {
+          "value": "Each piece of normal checked baggage must not exceed 30 kilograms.",
+          "status": "official",
+          "source_url": "https://content.nokair.com/en/Journey-Planning/Baggage.aspx",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.nokair.com/baggage",
-          "notes": "Nok Air First Class checked baggage allowance.",
+        "prepaid_fees": {
+          "value": "Extra allowance (Nok Baggage), domestic, bought with the ticket: +5 kg THB 350, +10 kg THB 450, +15 kg THB 600, +20 kg THB 750. International, bought with the ticket: +10 kg THB 2,000, +15 kg THB 2,500, +20 kg THB 2,700. Per person, per flight sector, inclusive of VAT; must be bought at least 24 hours before departure.",
+          "status": "official",
+          "source_url": "https://content.nokair.com/en/Journey-Planning/Baggage.aspx",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "airport_flat_rate": {
+          "value": "Nok Lite passengers without a bag allowance can buy the first 20 kilograms at the airport counter for THB 1,200 (domestic) or THB 2,500 (international), or THB 1,500 / 2,800 on Fridays, Saturdays, Sundays and public holidays.",
+          "status": "official",
+          "source_url": "https://content.nokair.com/en/Journey-Planning/Baggage.aspx",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
         "phone_home_market"
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "http://www.nokair.com/baggage",
-          "notes": "Nok Air official customer support line.",
+          "value": "Call Center 1318 (in Thailand) or +662-439-3344 for overseas calls",
+          "status": "official",
+          "source_url": "https://content.nokair.com/en/Journey-Planning/Baggage.aspx",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
       }
     }

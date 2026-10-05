@@ -1,0 +1,77 @@
+{
+  "slug": "harbour-air-seaplanes",
+  "official_website": "https://www.harbourair.com",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "required": [
+        "cabin_items",
+        "counted_weight"
+      ],
+      "fields": {
+        "cabin_items": {
+          "value": "At the aircraft, all bags including carry-on items are stowed in the cargo area. Only very small items that fit in the seat-back pocket may be carried into the cabin.",
+          "status": "official",
+          "source_url": "https://harbourair.com/luggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "counted_weight": {
+          "value": "Small bags like purses and briefcases count towards your fare's weight allowance.",
+          "status": "official",
+          "source_url": "https://harbourair.com/luggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "required": [
+        "float_allowance",
+        "wheeled_allowance",
+        "piece_weight"
+      ],
+      "fields": {
+        "float_allowance": {
+          "value": "Scheduled float operations, allowance by fare: Light 10 lbs, Value 15 lbs, Comfort 25 lbs, Flex 50 lbs.",
+          "status": "official",
+          "source_url": "https://harbourair.com/luggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "wheeled_allowance": {
+          "value": "Wheeled flights (YVR South Terminal/YYJ and YVR South Terminal/YAZ): Light 15 lbs, Value 30 lbs, Comfort 45 lbs, Flex 60 lbs.",
+          "status": "official",
+          "source_url": "https://harbourair.com/luggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "piece_weight": {
+          "value": "Individual bags may not weigh more than 50lbs each; there is no restriction on the number of items.",
+          "status": "official",
+          "source_url": "https://harbourair.com/luggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "additional": {
+          "value": "Additional baggage is $3/lb, subject to availability (standby on wheeled flights). On international flights all baggage must travel with the passenger.",
+          "status": "official",
+          "source_url": "https://harbourair.com/luggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "max_dimensions": {
+          "value": "Maximum piece size by aircraft (width x length x height): Twin Otter 25\" x 36\" x 36\"; Single Otter 18\" x 42\" x 54\"; Caravan 19\" x 12\" x 30\"; Beaver 23\" x 34\" x 14\".",
+          "status": "official",
+          "source_url": "https://harbourair.com/luggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      },
+      "lede": "Your bags are weighed at check-in against your fare's maximum weight allowance."
+    }
+  ]
+}

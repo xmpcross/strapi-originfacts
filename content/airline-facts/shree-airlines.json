@@ -1,0 +1,63 @@
+{
+  "slug": "shree-airlines",
+  "official_website": "https://www.shreeairlines.com",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "required": [
+        "hand_carry"
+      ],
+      "fields": {
+        "hand_carry": {
+          "value": "5 kg hand carry per passenger in every booking class on all routes Shree lists.",
+          "status": "official",
+          "source_url": "https://shreeairlines.com/baggage-cargo-fare",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "Shree's free checked allowance is set per route and booking class.",
+      "required": [
+        "allowance_examples",
+        "mountain_flights"
+      ],
+      "fields": {
+        "allowance_examples": {
+          "value": "Surkhet–Kathmandu and Paro–Kathmandu (both directions): Class H 30 kg, Class I 25 kg, Class B 20 kg, Classes E, S and T 15 kg. Kathmandu–Bhadrapur (both directions): Classes H and I 25 kg, other classes 20 kg. Biratnagar–Kathmandu: Classes H and I 25 kg.",
+          "status": "official",
+          "source_url": "https://shreeairlines.com/baggage-cargo-fare",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "mountain_flights": {
+          "value": "Mountain flights from Kathmandu or Nepalgunj: 0 kg checked bag in every class (5 kg hand carry only).",
+          "status": "official",
+          "source_url": "https://shreeairlines.com/baggage-cargo-fare",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "phone_home_market"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "+977-1-4598200 / +977-1-4596700 (contact@shreeairlines.com); extra baggage inquiries +977-01-4113101.",
+          "status": "official",
+          "source_url": "https://shreeairlines.com/baggage-cargo-fare",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

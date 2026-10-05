@@ -1,0 +1,56 @@
+{
+  "slug": "juneyao-airlines",
+  "official_website": "https://www.juneyaoair.com",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "lede": "Business and first class passengers may carry two pieces; economy passengers one.",
+      "required": [
+        "carryon_bag_dimensions",
+        "carryon_weight"
+      ],
+      "fields": {
+        "carryon_bag_dimensions": {
+          "value": "Each piece up to 55CM (22 inches) x 40CM (16 inches) x 20CM (8 inches), with the three sides adding up to no more than 115CM (46 inches).",
+          "status": "official",
+          "source_url": "https://global.juneyaoair.com/carryOnBaggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "carryon_weight": {
+          "value": "Business class: 2 pieces, each up to 8KG (or 17LB). Economy class: 1 piece up to 5KG (or 11LB). The same limits apply on domestic and on international, Hong Kong, Macao and Taiwan routes.",
+          "status": "official",
+          "source_url": "https://global.juneyaoair.com/carryOnBaggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "lede": "Juneyao uses a weight concept on international and Hong Kong, Macao and Taiwan routes; these rules apply to tickets sold and flights from August 7, 2025.",
+      "required": [
+        "allowance_by_cabin",
+        "size_weight"
+      ],
+      "fields": {
+        "allowance_by_cabin": {
+          "value": "International and Hong Kong, Macao and Taiwan routes: business class 30 KG total; regular economy class 20 KG total; infants without a seat 0 KG (plus a free foldable stroller).",
+          "status": "official",
+          "source_url": "https://global.juneyaoair.com/checkedBaggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "size_weight": {
+          "value": "Each checked piece up to 100 × 60 × 40CM (length x width x height).",
+          "status": "official",
+          "source_url": "https://global.juneyaoair.com/checkedBaggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

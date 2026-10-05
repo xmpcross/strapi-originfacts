@@ -5,87 +5,102 @@
     {
       "id": "carryon",
       "title": "Carry-on",
+      "lede": "A carry-on that does not fit the template is checked in as regular luggage.",
       "required": [
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_weight",
+        "personal_item"
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "https://www.airsaintpierre.com/baggage",
-          "notes": "Air Saint Pierre cabin baggage size limit: 55 x 40 x 20 cm.",
+          "value": "One small carry-on bag that fits the 56cm x 40cm x 25cm template.",
+          "status": "official",
+          "source_url": "https://airsaintpierre.com/travel-informations/luggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "https://www.airsaintpierre.com/baggage",
-          "notes": "Air Saint Pierre Economy Class carry-on weight limit.",
+        "carryon_weight": {
+          "value": "The carry-on must not exceed 5 kilos.",
+          "status": "official",
+          "source_url": "https://airsaintpierre.com/travel-informations/luggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "https://www.airsaintpierre.com/baggage",
-          "notes": "Air Saint Pierre Premium / Business Class carry-on weight limit.",
+        "personal_item": {
+          "value": "One personal item (for example a purse or computer bag) is allowed in addition to the carry-on.",
+          "status": "official",
+          "source_url": "https://airsaintpierre.com/travel-informations/luggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "baggage",
       "title": "Checked baggage",
+      "lede": "Luggage over the allowance is accepted subject to space, with a charge per kilo and per additional bag that depends on the route.",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "allowance"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "https://www.airsaintpierre.com/baggage",
-          "notes": "Air Saint Pierre Economy Class checked baggage allowance.",
+        "allowance": {
+          "value": "One checked bag of 23 kg per person on all international flights to and from Canada and on direct flights to and from Paris, including connections onto Air France in Montreal (30 kilos for Air France Business or Premium passengers).",
+          "status": "official",
+          "source_url": "https://airsaintpierre.com/travel-informations/luggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.airsaintpierre.com/baggage",
-          "notes": "Air Saint Pierre Business Class checked baggage allowance.",
+        "magdalen_islands": {
+          "value": "To and from the Magdalen Islands (Cessna F406): the 23kg allowance must be split into two smaller bags; 50€ per additional bag.",
+          "status": "official",
+          "source_url": "https://airsaintpierre.com/travel-informations/luggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.airsaintpierre.com/baggage",
-          "notes": "Air Saint Pierre First Class checked baggage allowance.",
+        "infant": {
+          "value": "Infants under 2 travelling on a parent's lap: 10 Kg allowance (and/or a small additional bag).",
+          "status": "official",
+          "source_url": "https://airsaintpierre.com/travel-informations/luggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "excess_fees": {
+          "value": "Excess charges, 32kg per bag maximum: St. John's (YYT) 1.63€ per kilo and 50€ per additional bag; Halifax (YHZ) 2.84€ per kilo and 50€ per additional bag; Montreal (YUL) 4.08€ per kilo and 100€ per additional bag; Paris 6.05€ per kilo and 200€ per additional bag.",
+          "status": "official",
+          "source_url": "https://airsaintpierre.com/travel-informations/luggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
         "phone_home_market"
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "https://www.airsaintpierre.com/baggage",
-          "notes": "Air Saint Pierre official customer support line.",
+          "value": "Saint-Pierre and Miquelon: 05-08-41-00-00",
+          "status": "official",
+          "source_url": "https://airsaintpierre.com/travel-informations/luggage",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source",
+          "notes": "Listed in the contact footer of Air Saint-Pierre's luggage page."
+        },
+        "phone_north_america": {
+          "value": "Canada/US: 1-877-277-7765",
+          "status": "official",
+          "source_url": "https://airsaintpierre.com/travel-informations/luggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "phone_international": {
+          "value": "International: +508-41-00-00",
+          "status": "official",
+          "source_url": "https://airsaintpierre.com/travel-informations/luggage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     }

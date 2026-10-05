@@ -1,39 +1,21 @@
 {
   "slug": "air-niugini",
-  "official_website": "http://www.airniugini.com.pg",
+  "official_website": "https://www.airniugini.com.pg",
   "modules": [
     {
       "id": "carryon",
       "title": "Carry-on",
       "required": [
-        "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_allowance"
       ],
       "fields": {
-        "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "http://www.airniugini.com.pg/baggage",
-          "notes": "Air Niugini cabin baggage size limit: 55 x 40 x 20 cm.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
-        },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "http://www.airniugini.com.pg/baggage",
-          "notes": "Air Niugini Economy Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
-        },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "http://www.airniugini.com.pg/baggage",
-          "notes": "Air Niugini Premium / Business Class carry-on weight limit.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "carryon_allowance": {
+          "value": "One piece of carry-on luggage and one personal item (e.g. handbag, laptop bag); it must fit in the overhead bin or under the seat.",
+          "status": "official",
+          "source_url": "https://www.airniugini.com.pg/en-sg/travel-information/baggage/excess-baggage",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source",
+          "notes": "The same page says carry-on weight is 'generally limited to 7kg'; the hedged figure is not published."
         }
       }
     },
@@ -41,51 +23,80 @@
       "id": "baggage",
       "title": "Checked baggage",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "max_bag_weight"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "http://www.airniugini.com.pg/baggage",
-          "notes": "Air Niugini Economy Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "max_bag_weight": {
+          "value": "The maximum weight for a single checked bag is 32kg; bags over this limit may not be accepted.",
+          "status": "official",
+          "source_url": "https://www.airniugini.com.pg/en-sg/travel-information/baggage/excess-baggage",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source",
+          "notes": "The page describes the standard allowance only in hedged terms ('usually 23kg per bag'), so no allowance is published."
+        }
+      }
+    },
+    {
+      "id": "checkin",
+      "title": "Check-in and airport cutoffs",
+      "required": [
+        "online_checkin",
+        "counter_open",
+        "checkin_close"
+      ],
+      "fields": {
+        "online_checkin": {
+          "value": "Online check-in is available from 24 hours up until 3 hours before scheduled departure; it is not available on Air Niugini flights originating from Australia and Japan. After checking in online, report 90 minutes before departure with baggage, or 60 minutes without, for document checks.",
+          "status": "official",
+          "source_url": "https://www.airniugini.com.pg/conditions-of-carriage/",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.airniugini.com.pg/baggage",
-          "notes": "Air Niugini Business Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "counter_open": {
+          "value": "Check-in counters open 2 hours before departure for domestic flights and 3 hours before for international flights.",
+          "status": "official",
+          "source_url": "https://www.airniugini.com.pg/conditions-of-carriage/",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://www.airniugini.com.pg/baggage",
-          "notes": "Air Niugini First Class checked baggage allowance.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+        "checkin_close": {
+          "value": "Check-in closes 45 minutes before departure; boarding time is 30 minutes before departure.",
+          "status": "official",
+          "source_url": "https://www.airniugini.com.pg/conditions-of-carriage/",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
+        },
+        "fail_to_board": {
+          "value": "A passenger who has checked in (online or at the counter) and then fails to board has the ticket forfeited; this applies to Economy and Business class tickets.",
+          "status": "official",
+          "source_url": "https://www.airniugini.com.pg/conditions-of-carriage/",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
-        "phone_home_market"
+        "phone_home_market",
+        "conditions_of_carriage_url"
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "http://www.airniugini.com.pg/baggage",
-          "notes": "Air Niugini official customer support line.",
-          "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "value": "Toll-free within PNG 180 3444; PNG (675) 327 3444.",
+          "status": "official",
+          "source_url": "https://www.airniugini.com.pg/conditions-of-carriage/",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source",
+          "notes": "Listed in Air Niugini's conditions of carriage page, with other office numbers."
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://www.airniugini.com.pg/conditions-of-carriage/",
+          "status": "official",
+          "source_url": "https://www.airniugini.com.pg/conditions-of-carriage/",
+          "verified_at": "2026-09-03",
+          "verified_by": "manual_official_source"
         }
       }
     }

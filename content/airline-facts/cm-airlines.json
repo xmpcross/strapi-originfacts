@@ -1,0 +1,67 @@
+{
+  "slug": "cm-airlines",
+  "official_website": "https://www.cmairlines.com",
+  "modules": [
+    {
+      "id": "carryon",
+      "title": "Carry-on",
+      "required": [
+        "personal_item"
+      ],
+      "fields": {
+        "personal_item": {
+          "value": "All fares include one personal item, such as a purse, small briefcase or small backpack, weighing no more than 10 pounds, stored in the overhead compartment or under the seat in front of you. Only one personal item is allowed in the cabin.",
+          "status": "official",
+          "source_url": "https://www.cmairlines.com/equipaje-en",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    },
+    {
+      "id": "baggage",
+      "title": "Checked baggage",
+      "required": [
+        "international",
+        "excess"
+      ],
+      "fields": {
+        "international": {
+          "value": "International flights: Opti Fare 2 suitcases of 35 lb each; Classic Fare 1 suitcase of 35 lb; Light Fare no checked bag.",
+          "status": "official",
+          "source_url": "https://www.cmairlines.com/equipaje-en",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "domestic": {
+          "value": "Domestic flights in Honduras: the allowance depends on the fare purchased and may vary by sales channel or promotion.",
+          "status": "official",
+          "source_url": "https://www.cmairlines.com/equipaje-en",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "excess": {
+          "value": "Excess baggage: $3 per lb on international flights and $1 per lb on domestic flights within Honduras, accommodated based on available space. If your fare includes no checked bag, you pay for the full weight of your suitcase at check-in.",
+          "status": "official",
+          "source_url": "https://www.cmairlines.com/equipaje-en",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "prepaid": {
+          "value": "Through the Call Center at least 24 hours before the trip: first 35-pound suitcase $30.00 (if your ticket includes no checked bags), second piece $35. Within 24 hours or at the airport: $35.00 per 35-pound suitcase.",
+          "status": "official",
+          "source_url": "https://www.cmairlines.com/equipaje-en",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "max_weight": {
+          "value": "No suitcase weighing more than one hundred pounds is accepted.",
+          "status": "official",
+          "source_url": "https://www.cmairlines.com/equipaje-en",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "alliance-air",
+  "official_website": "https://www.allianceair.in",
+  "modules": [
+    {
+      "id": "contact",
+      "title": "Contact and the small print",
+      "required": [
+        "phone_home_market"
+      ],
+      "fields": {
+        "phone_home_market": {
+          "value": "Alliance Air Customer Care: +91 44 4255 4255 / +91 44 3511 3511 (India)",
+          "status": "official",
+          "source_url": "https://allianceair.in/conditions-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "general_queries": {
+          "value": "General queries and bookings: 08796776880, 10AM-06PM on working days",
+          "status": "official",
+          "source_url": "https://allianceair.in/conditions-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://allianceair.in/conditions-of-carriage",
+          "status": "official",
+          "source_url": "https://allianceair.in/conditions-of-carriage",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
+        }
+      }
+    }
+  ]
+}

@@ -5,87 +5,105 @@
     {
       "id": "carryon",
       "title": "Carry-on",
+      "lede": "Hand baggage over the 7 kg limit is charged at prevailing rates; up to 5 kg more can be bought, for a cabin total of no more than 12 kg.",
       "required": [
         "carryon_bag_dimensions",
-        "weight_economy",
-        "weight_business_first"
+        "carryon_weight",
+        "personal_item"
       ],
       "fields": {
         "carryon_bag_dimensions": {
-          "value": "55 x 40 x 20 cm",
-          "status": "pending",
-          "source_url": "https://www.spicejet.com/baggage",
-          "notes": "SpiceJet cabin baggage size limit: 55 x 40 x 20 cm.",
+          "value": "One piece of hand baggage: 55 cm + 35 cm + 25 cm (L+W+H; total 115 cm) on Boeing flights, 50 cm + 35 cm + 23 cm (L+W+H; total 108 cm or 42.5 inches) on Q400 flights.",
+          "status": "official",
+          "source_url": "https://corporate.spicejet.com/ExcessBaggage.aspx",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_economy": {
-          "value": "7 kg (15 lbs)",
-          "status": "pending",
-          "source_url": "https://www.spicejet.com/baggage",
-          "notes": "SpiceJet Economy Class carry-on weight limit.",
+        "carryon_weight": {
+          "value": "Up to 7 kg, free of charge.",
+          "status": "official",
+          "source_url": "https://corporate.spicejet.com/ExcessBaggage.aspx",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "weight_business_first": {
-          "value": "14 kg (30 lbs) total across 2 pieces",
-          "status": "pending",
-          "source_url": "https://www.spicejet.com/baggage",
-          "notes": "SpiceJet Premium / Business Class carry-on weight limit.",
+        "personal_item": {
+          "value": "A laptop bag, ladies' purse or duty-free shopping bag is allowed as long as the total cabin baggage stays within 7 kg.",
+          "status": "official",
+          "source_url": "https://corporate.spicejet.com/ExcessBaggage.aspx",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "infant": {
+          "value": "Passengers with infants can carry an extra piece of hand baggage up to 7 kg, within the same size limits.",
+          "status": "official",
+          "source_url": "https://corporate.spicejet.com/ExcessBaggage.aspx",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "baggage",
       "title": "Checked baggage",
+      "lede": "Extra kilos can be pre-booked up to 03 hours before domestic departures and 06 hours before international departures, cheaper than airport rates.",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "allowance_domestic",
+        "allowance_international"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "https://www.spicejet.com/baggage",
-          "notes": "SpiceJet Economy Class checked baggage allowance.",
+        "allowance_domestic": {
+          "value": "Domestic flights: one free checked piece up to 15 kg, overall dimensions 158 cm (L+W+H).",
+          "status": "official",
+          "source_url": "https://corporate.spicejet.com/ExcessBaggage.aspx",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.spicejet.com/baggage",
-          "notes": "SpiceJet Business Class checked baggage allowance.",
+        "allowance_international": {
+          "value": "International flights: two free checked pieces, with a weight allowance that depends on the sector.",
+          "status": "official",
+          "source_url": "https://corporate.spicejet.com/ExcessBaggage.aspx",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "https://www.spicejet.com/baggage",
-          "notes": "SpiceJet First Class checked baggage allowance.",
+        "max_piece": {
+          "value": "Passengers on the same PNR can pool checked baggage, but no single bag may exceed 32 kg.",
+          "status": "official",
+          "source_url": "https://corporate.spicejet.com/ExcessBaggage.aspx",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "prebook_domestic": {
+          "value": "Pre-booked extra baggage on domestic flights: 3 kg INR 1935 (USD 24), 5 kg INR 3225 (USD 39), 10 kg INR 6450 (USD 77), 15 kg INR 9675 (USD 115), 20 kg INR 12900 (USD 153), 30 kg INR 19350 (USD 228). Non-cancellable and non-refundable once bought.",
+          "status": "official",
+          "source_url": "https://corporate.spicejet.com/ExcessBaggage.aspx",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
-        "phone_home_market"
+        "phone_home_market",
+        "conditions_of_carriage_url"
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "https://www.spicejet.com/baggage",
-          "notes": "SpiceJet official customer support line.",
+          "value": "Sales & Reservations (24/7): +91 (0)124 4983410 or +91 (0)124 7101600",
+          "status": "official",
+          "source_url": "https://corporate.spicejet.com/ExcessBaggage.aspx",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source",
+          "notes": "Listed in the header of SpiceJet's own excess-baggage page."
+        },
+        "conditions_of_carriage_url": {
+          "value": "https://corporate.spicejet.com/Tnc.aspx",
+          "status": "official",
+          "source_url": "https://corporate.spicejet.com/ExcessBaggage.aspx",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source",
+          "notes": "The excess-baggage page names this URL as SpiceJet's terms of carriage."
         }
       }
     }

@@ -1,6 +1,6 @@
 {
   "slug": "vieques-air-link",
-  "official_website": "http://viequesairlink.com",
+  "official_website": "https://viequesairlink.com",
   "modules": [
     {
       "id": "carryon",
@@ -40,52 +40,56 @@
     {
       "id": "baggage",
       "title": "Checked baggage",
+      "lede": "Vieques Air Link sets one weight allowance that covers checked, carry-on and personal items together.",
       "required": [
-        "piece_weight_economy",
-        "piece_weight_business",
-        "piece_weight_first"
+        "allowance",
+        "excess_fee",
+        "dimensions"
       ],
       "fields": {
-        "piece_weight_economy": {
-          "value": "1 piece up to 23 kg (50 lbs)",
-          "status": "pending",
-          "source_url": "http://viequesairlink.com/baggage",
-          "notes": "Vieques Air Link Economy Class checked baggage allowance.",
+        "allowance": {
+          "value": "All fares include 25 lbs of free baggage, which includes carry-on and personal items. There is no limit on the number of pieces if the total weight does not exceed 50 lbs.",
+          "status": "official",
+          "source_url": "https://viequesairlink.com/baggage-policy",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_business": {
-          "value": "2 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://viequesairlink.com/baggage",
-          "notes": "Vieques Air Link Business Class checked baggage allowance.",
+        "excess_fee": {
+          "value": "Weight over the 25 lbs allowance costs $2.00 per pound. Excess baggage that cannot be accommodated travels on a later flight.",
+          "status": "official",
+          "source_url": "https://viequesairlink.com/baggage-policy",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         },
-        "piece_weight_first": {
-          "value": "3 pieces up to 32 kg (70 lbs) each",
-          "status": "pending",
-          "source_url": "http://viequesairlink.com/baggage",
-          "notes": "Vieques Air Link First Class checked baggage allowance.",
+        "dimensions": {
+          "value": "Baggage dimensions: maximum 22″ x 15″ x 9″, wheels and handles included.",
+          "status": "official",
+          "source_url": "https://viequesairlink.com/baggage-policy",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
+        },
+        "connections": {
+          "value": "Vieques Air Link does not transfer baggage to other airlines; claim your bags and recheck them with your connecting carrier.",
+          "status": "official",
+          "source_url": "https://viequesairlink.com/baggage-policy",
+          "verified_at": "2026-09-04",
+          "verified_by": "manual_official_source"
         }
       }
     },
     {
       "id": "contact",
-      "title": "Contact and customer support",
+      "title": "Contact and the small print",
       "required": [
         "phone_home_market"
       ],
       "fields": {
         "phone_home_market": {
-          "value": "+1 800 555 0199",
-          "status": "pending",
-          "source_url": "http://viequesairlink.com/baggage",
-          "notes": "Vieques Air Link official customer support line.",
+          "value": "Reservations: 787-741-8331 or 1-888-901-9247 (contact@valairlines.com)",
+          "status": "official",
+          "source_url": "https://viequesairlink.com/baggage-policy",
           "verified_at": "2026-09-04",
-          "verified_by": "automated_provenance"
+          "verified_by": "manual_official_source"
         }
       }
     }

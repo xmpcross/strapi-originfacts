@@ -18,6 +18,19 @@ import TableOfContents from '@/components/TableOfContents';
 import type { TocItem } from '@/lib/toc';
 import { breadcrumbJsonLd } from '@/lib/jsonld';
 import type { Metadata } from 'next';
+import { getRouteGuide, citationOrder } from '@/lib/route-guide';
+import { getRouteFares } from '@/lib/route-fares';
+import { formatUtcOffset, utcOffsetMinutes } from '@/lib/route-geo';
+import {
+  airlineName,
+  Cite,
+  CitedParagraph,
+  formatFetched,
+  GuideSectionBlock,
+  MonthFaresTable,
+  SeenFlightsTable,
+  SourcesList,
+} from '@/components/route-guide/RouteGuideBlocks';
 
 export const revalidate = 60;
 
@@ -66,7 +79,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (carrierCount > 0) {
     facts.push(`${carrierCount} tracked airline${carrierCount === 1 ? '' : 's'}`);
   }
-  const description = facts.length
+  const guide = getRouteGuide(slug);
+  const description = guide
+    ? buildMetaDescription([guide.intro.text])
+    : facts.length
     ? `Flights from ${from} (${r.origin.iata}) to ${to} (${r.destination.iata}): ${facts.join(', ')}. Compare live fares and see where to book.`
     : buildMetaDescription([
         r.about,
@@ -102,8 +118,32 @@ export default async function RoutePage({ params }: Props) {
 
   const { origin, destination } = route;
   const carriers = operableCarriers(route);
+  const guideForMeta = getRouteGuide(slug);
+
+  // Sourced template: only routes with a content/route-guides/<slug>.json file.
+  // Live fares are fetched for those routes only.
+  const guide = getRouteGuide(slug);
+  const fares = guide ? await getRouteFares(origin.iata, destination.iata) : null;
+  const order = guide ? citationOrder(guide) : new Map<string, number>();
+  const fromName = origin.city || origin.name;
+  const toName = destination.city || destination.name;
+  // Nonstop operators: those a source confirms; failing that, those in the fare data.
+  const nonstopIatas = guide
+    ? guide.operating_airlines.length > 0
+      ? guide.operating_airlines.map((a) => a.iata)
+      : fares?.airlines ?? []
+    : [];
+  const shownCarriers = guide ? carriers.filter((c) => c.iataCode && nonstopIatas.includes(c.iataCode)) : carriers;
+  const offsetFrom = utcOffsetMinutes(origin.timezone);
+  const offsetTo = utcOffsetMinutes(destination.timezone);
+  const timeDiff = offsetFrom !== null && offsetTo !== null ? offsetTo - offsetFrom : null;
+  const fetchedLabel = fares ? formatFetched(fares.fetchedAt) : '';
+  const carrierNames: Record<string, string> = Object.fromEntries(
+    (route.carriers ?? []).filter((c) => c.iataCode).map((c) => [c.iataCode as string, c.name]),
+  );
+  const cheapestMonth = fares && fares.months.length > 0 ? fares.months.reduce((a, b) => (b.price < a.price ? b : a)) : null;
   const title = `Flights from ${origin.city || origin.name} to ${destination.city || destination.name} (${origin.iata} → ${destination.iata})`;
-  const description = route.about?.slice(0, 200) || `Direct and connecting flights from ${origin.city || origin.name} (${origin.iata}) to ${destination.city || destination.name} (${destination.iata}). Carrier comparison, duration, and cheap fare calendar.`;
+  const description = guideForMeta?.intro.text.slice(0, 200) || route.about?.slice(0, 200) || `Direct and connecting flights from ${origin.city || origin.name} (${origin.iata}) to ${destination.city || destination.name} (${destination.iata}). Carrier comparison, duration, and cheap fare calendar.`;
   const url = `${SITE_URL}/flight-routes/${slug}`;
 
   const articleSchema = entityWebPageJsonLd({
@@ -140,6 +180,39 @@ export default async function RoutePage({ params }: Props) {
     },
   ];
 
+  const guideFaqs: Faq[] = guide
+    ? [
+        ...(fares?.duration
+          ? [{
+              q: `How long is the flight from ${fromName} (${origin.iata}) to ${toName} (${destination.iata})?`,
+              a: `Nonstop flights in recent fare data are listed at ${fares.duration.min === fares.duration.max ? `${fares.duration.min}` : `${fares.duration.min}–${fares.duration.max}`} minutes gate to gate (Aviasales search data, fetched ${fetchedLabel}).`,
+            }]
+          : []),
+        ...(timeDiff !== null && offsetFrom !== null && offsetTo !== null
+          ? [{
+              q: `Is there a time difference between ${fromName} and ${toName}?`,
+              a: timeDiff === 0
+                ? `No. ${origin.country || fromName} and ${destination.country || toName} are both on ${formatUtcOffset(offsetFrom)} today (time zones ${origin.timezone} and ${destination.timezone}), so local time is the same at both ends.`
+                : `${toName} is ${Math.abs(timeDiff) / 60} hour${Math.abs(timeDiff) === 60 ? '' : 's'} ${timeDiff > 0 ? 'ahead of' : 'behind'} ${fromName} today (${formatUtcOffset(offsetTo)} vs ${formatUtcOffset(offsetFrom)}).`,
+            }]
+          : []),
+        ...(cheapestMonth
+          ? [{
+              q: `What is the cheapest month to fly from ${fromName} to ${toName}?`,
+              a: `In fares found in recent Aviasales searches (fetched ${fetchedLabel}), the lowest one-way nonstop fare was US$${cheapestMonth.price} in ${new Date(`${cheapestMonth.month}-01T12:00:00Z`).toLocaleDateString('en-GB', { month: 'long', year: 'numeric', timeZone: 'UTC' })}, on ${airlineName(cheapestMonth.airline, carrierNames)} ${cheapestMonth.airline} ${cheapestMonth.flightNumber}. Cached search fares change often; check the live price before booking.`,
+            }]
+          : []),
+        ...guide.faqs.map((f) => ({ q: f.q, a: f.a })),
+        ...(route.distanceKm
+          ? [{
+              q: `How far is ${fromName} from ${toName} by air?`,
+              a: `About ${Math.round(route.distanceKm).toLocaleString('en-US')} km, the great-circle distance between ${origin.name} and ${destination.name}.`,
+            }]
+          : []),
+      ]
+    : [];
+  const faqs = guide ? guideFaqs : routeFaqs;
+
   // TravelPayouts white-label deep link with dates (depart +30d, return +37d, 1 pax).
   const searchUrl = flightSearchUrl({
     origin: origin.iata,
@@ -150,7 +223,7 @@ export default async function RoutePage({ params }: Props) {
   return (
     <article data-testid={`route-page-${slug}`}>
       <JsonLd data={articleSchema} />
-      <JsonLd data={faqJsonLd(routeFaqs)} />
+      <JsonLd data={faqJsonLd(faqs)} />
       <JsonLd
         data={breadcrumbJsonLd([
           { name: 'Flight Routes', url: '/flight-routes' },
@@ -166,11 +239,15 @@ export default async function RoutePage({ params }: Props) {
           Flights from {origin.city || origin.name} to {destination.city || destination.name}
         </h1>
 
+        {guide ? (
+          <CitedParagraph p={guide.intro} order={order} className="mt-4 max-w-4xl text-base leading-relaxed text-forest-900/80" />
+        ) : (
         <p className="mt-4 text-base leading-relaxed text-forest-900/80 max-w-4xl">
           {route.about && route.about.split(/\s+/).length >= 40
             ? route.about
             : `Booking flights from ${origin.city || origin.name} (${origin.iata}) to ${destination.city || destination.name} (${destination.iata}) requires comparing direct carrier options, block flight durations, and connection layovers to secure optimal airfares. Our route guide synthesizes real-time airline schedules, seat inclusions, and historical price drops across operating carriers, empowering travelers to select efficient travel dates and book flights confidently.`}
         </p>
+        )}
 
         <div className="mt-8 grid gap-4 sm:grid-cols-[1fr,auto,1fr] sm:items-center">
           <AirportCard airport={origin} align="left" />
@@ -206,18 +283,40 @@ export default async function RoutePage({ params }: Props) {
 
       {/* Quick facts strip */}
       <section className="mx-auto mt-12 max-w-7xl px-6">
+        {guide ? (
+          <div className="grid gap-6 rounded-[0.3rem] border border-forest-900/10 bg-forest-900/[0.02] p-6 sm:grid-cols-4" data-testid="route-guide-stats">
+            <Stat label="Distance" value={route.distanceKm ? `${route.distanceKm.toLocaleString()} km` : '—'} />
+            <Stat
+              label="Flight time (fare data)"
+              value={fares?.duration ? (fares.duration.min === fares.duration.max ? `${fares.duration.min} min` : `${fares.duration.min}–${fares.duration.max} min`) : route.durationMinutes ? formatDuration(route.durationMinutes) : '—'}
+            />
+            <Stat label="Time difference" value={timeDiff === null ? '—' : timeDiff === 0 ? 'None' : `${timeDiff > 0 ? '+' : '−'}${Math.abs(timeDiff) / 60}h`} />
+            <Stat label="Nonstop airlines" value={nonstopIatas.length.toString()} />
+          </div>
+        ) : (
         <div className="grid gap-6 rounded-[0.3rem] border border-forest-900/10 bg-forest-900/[0.02] p-6 sm:grid-cols-4">
           <Stat label="Distance" value={route.distanceKm ? `${route.distanceKm.toLocaleString()} km` : '—'} />
           <Stat label="Flight time" value={route.durationMinutes ? formatDuration(route.durationMinutes) : '—'} />
           <Stat label="Carriers tracked" value={carriers.length.toString()} />
           <Stat label="Route" value={`${origin.iata} → ${destination.iata}`} mono />
         </div>
+        )}
       </section>
 
       {/* Table of Contents */}
       <div className="mx-auto max-w-7xl px-6">
         <TableOfContents
-          items={[
+          items={guide ? [
+            ...(fares && fares.flights.length > 0 ? [{ id: 'nonstop-flights', text: 'Nonstop Flights on This Route' }] : []),
+            ...(fares && fares.months.length > 0 ? [{ id: 'fares-by-month', text: 'Lowest Fares by Month' }] : []),
+            { id: 'cheapest-dates', text: 'Live Fare Calendar' },
+            { id: 'airlines', text: `Nonstop Airlines (${shownCarriers.length})` },
+            { id: 'schedule', text: 'Flight Schedule & Timetable' },
+            ...guide.sections.map((sec) => ({ id: sec.id, text: sec.heading })),
+            { id: 'airport-guides', text: `Airport Guides (${origin.iata} & ${destination.iata})` },
+            { id: 'faq', text: 'Frequently Asked Questions' },
+            { id: 'sources', text: 'Sources' },
+          ] : [
             { id: 'cheapest-dates', text: `Cheapest Fares & Live Calendar` },
             { id: 'airlines', text: `Operating Airlines (${carriers.length})` },
             { id: 'direct-vs-connecting', text: `Direct vs Connecting Comparison` },
@@ -227,6 +326,31 @@ export default async function RoutePage({ params }: Props) {
           ]}
         />
       </div>
+
+      {guide && fares && fares.flights.length > 0 && (
+        <section id="nonstop-flights" className="mx-auto mt-14 max-w-7xl scroll-mt-28 px-6">
+          <h2 className="editorial-h border-b border-forest-900/10 pb-3 text-[1.5rem] font-bold text-forest-900">
+            Which nonstop flights go from {fromName} to {toName}?
+          </h2>
+          <p className="mb-5 mt-4 max-w-4xl text-base leading-relaxed text-forest-900/85">
+            {fares.flights.length} nonstop flight{fares.flights.length === 1 ? '' : 's'} from {origin.iata} to {destination.iata} appeared in recent fare
+            searches, sold under {fares.airlines.map((a) => airlineName(a, carrierNames)).join(' and ')} flight numbers
+            {fares.duration ? `, with flight times of ${fares.duration.min === fares.duration.max ? fares.duration.min : `${fares.duration.min}–${fares.duration.max}`} minutes` : ''}.
+          </p>
+          <SeenFlightsTable flights={fares.flights} fares={fares} originIata={origin.iata} destinationIata={destination.iata} names={carrierNames} />
+        </section>
+      )}
+
+      {guide && fares && fares.months.length > 0 && (
+        <section id="fares-by-month" className="mx-auto mt-14 max-w-7xl scroll-mt-28 px-6">
+          <h2 className="editorial-h border-b border-forest-900/10 pb-3 text-[1.5rem] font-bold text-forest-900">
+            What are the lowest {origin.iata}–{destination.iata} fares by month?
+          </h2>
+          <div className="mt-5">
+            <MonthFaresTable months={fares.months} fares={fares} names={carrierNames} />
+          </div>
+        </section>
+      )}
 
       {/* Live price calendar — TravelPayouts widget */}
       <section id="cheapest-dates" className="mx-auto mt-14 max-w-7xl scroll-mt-28 px-6" data-testid="route-price-calendar">
@@ -256,7 +380,34 @@ export default async function RoutePage({ params }: Props) {
       </section>
 
       {/* Carriers */}
-      {carriers.length > 0 && (
+      {guide && shownCarriers.length > 0 && (
+        <section id="airlines" className="mx-auto mt-16 max-w-7xl scroll-mt-28 px-6" data-testid="route-guide-airlines">
+          <h2 id="airlines-heading" className="editorial-h border-b border-forest-900/10 pb-3 text-[1.5rem] font-bold text-forest-900">
+            Which airlines fly nonstop from {origin.iata} to {destination.iata}?
+          </h2>
+          <p className="mt-4 max-w-4xl text-base leading-relaxed text-forest-900/85">
+            {guide.operating_airlines.length > 0 ? (
+              <>
+                {shownCarriers.map((c) => c.name).join(' and ')} {shownCarriers.length === 1 ? 'flies' : 'fly'} {fromName}–{toName} nonstop with
+                their own aircraft.
+                <Cite ids={[...new Set(guide.operating_airlines.flatMap((a) => a.sources))]} order={order} />
+              </>
+            ) : (
+              <>
+                Nonstop {fromName}–{toName} flights in recent fare data are sold under {shownCarriers.map((c) => c.name).join(' and ')} flight
+                numbers.
+              </>
+            )}
+            {' '}Other airlines can sell seats on these flights under their own flight numbers (codeshares); those are not listed here.
+          </p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {shownCarriers.map((c) => (
+              <CarrierCard key={c.id} carrier={c} route={slug} origin={origin.iata} destination={destination.iata} />
+            ))}
+          </div>
+        </section>
+      )}
+      {!guide && carriers.length > 0 && (
         <section id="airlines" className="mx-auto mt-16 max-w-7xl scroll-mt-28 px-6">
           <header className="flex items-end justify-between border-b border-forest-900/10 pb-3">
             <h2 id="airlines-heading" className="editorial-h text-[1.5rem] font-bold text-forest-900">
@@ -289,7 +440,7 @@ export default async function RoutePage({ params }: Props) {
           */}
         </section>
       )}
-      {carriers.length === 0 && (
+      {(guide ? shownCarriers.length === 0 : carriers.length === 0) && (
         <section id="airlines" className="mx-auto mt-16 max-w-7xl scroll-mt-28 px-6" data-testid="route-no-carriers">
           <h2 id="airlines-heading" className="editorial-h border-b border-forest-900/10 pb-3 text-[1.5rem] font-bold text-forest-900">
             Which airlines operate flights from {origin.iata} to {destination.iata}?
@@ -326,6 +477,8 @@ export default async function RoutePage({ params }: Props) {
         </div>
       </section>
 
+      {guide && guide.sections.map((sec) => <GuideSectionBlock key={sec.id} section={sec} order={order} />)}
+
       {/* Airport cross-links */}
       <section id="airport-guides" className="mx-auto mt-16 max-w-7xl scroll-mt-28 px-6 pb-20">
         <h2 id="airport-guides-heading" className="editorial-h text-[1.5rem] font-bold text-forest-900">Which airport guides cover {origin.iata} and {destination.iata}?</h2>
@@ -340,7 +493,9 @@ export default async function RoutePage({ params }: Props) {
         </div>
       </section>
 
-      <FaqSection faqs={routeFaqs} title={`Frequently asked questions about ${origin.city || origin.name} to ${destination.city || destination.name} flights`} />
+      <FaqSection faqs={faqs} title={`Frequently asked questions about ${origin.city || origin.name} to ${destination.city || destination.name} flights`} />
+
+      {guide && <SourcesList sources={guide.sources} order={order} verifiedAt={guide.verified_at} />}
 
       <div className="mx-auto max-w-7xl px-6">
       </div>

@@ -7,7 +7,7 @@ import { airlineHasCeased } from '@/lib/airline-status';
 import { isNonPassengerAirline } from '@/lib/airline-exclusions';
 import { countryRegionIndex, type DirectoryAirline } from '@/lib/airline-directory';
 import AirlineDirectory from '@/components/AirlineDirectory';
-import ComparisonTable from '@/components/ComparisonTable';
+import AirlineCompareGuide from '@/components/AirlineCompareGuide';
 import { JsonLd } from '@/components/SeoBlocks';
 import { breadcrumbJsonLd, collectionPageJsonLd } from '@/lib/jsonld';
 import { HUB_INTROS, HUB_PATHS } from '@/lib/hub-intros';
@@ -150,52 +150,7 @@ export default async function AirlinesPage() {
         </div>
       </div>
 
-      <section className="border-t border-forest-900/15 bg-paper" aria-labelledby="airlines-guide-heading" data-testid="airlines-about">
-        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16">
-          <h2 id="airlines-guide-heading" className="text-2xl font-bold leading-tight sm:text-3xl">
-            How to compare airlines before you book
-          </h2>
-          <p className="mt-3 max-w-3xl text-base leading-relaxed text-forest-900/70">{HUB.intro}</p>
-
-          <div className="mt-8 grid gap-8 md:grid-cols-3 md:gap-10">
-            {[
-              {
-                title: 'Compare the carrier behind the fare',
-                text:
-                  'A cheap flight can look different once you know which airline operates it, where the carrier is based, and whether the itinerary depends on a partner or codeshare. Use this airline directory to check names, IATA codes, home countries, hubs, and verified policy guides before you move from search results to checkout.',
-              },
-              {
-                title: 'Check baggage, seats, and airport context',
-                text:
-                  'Airline rules vary most around cabin baggage, checked bags, seat selection, refunds, schedule changes, and airport transfers. OriginFacts keeps carrier profiles connected to airports and routes so you can see the practical context around a booking, not only the brand name printed on the ticket.',
-              },
-              {
-                title: 'Use codes to avoid booking mistakes',
-                text:
-                  'Two-letter IATA codes are useful when airlines have similar names, regional subsidiaries, or flights sold by another carrier. Search by name, country, or code to confirm you are comparing the right airline, especially on multi-carrier trips, regional flights, and low-cost connections.',
-              },
-            ].map((item, i) => (
-              <article key={item.title} className="border-t-2 border-forest-950 pt-4">
-                <p className="font-mono text-xs font-bold text-forest-900/50">0{i + 1}</p>
-                <h3 className="mt-2 text-xl font-bold leading-snug">{item.title}</h3>
-                <p className="mt-3 text-base leading-relaxed text-forest-900/70">{item.text}</p>
-              </article>
-            ))}
-          </div>
-
-          <ComparisonTable
-            className="mb-0 mt-12"
-            caption="Airline Types vs Service Inclusions Comparison Matrix"
-            head={['Carrier Type', 'Carry-on Bag', 'Checked Baggage', 'Seat Selection', 'Loyalty / Alliances', 'Best For']}
-            rows={[
-              ['Full-Service Carrier (FSC)', 'Included (7-10kg)', 'Included (1-2 Bags)', 'Included (Most fares)', 'Global Alliance (Oneworld/Star/SkyTeam)', 'Long-haul comfort & connecting travel'],
-              ['Low-Cost Carrier (LCC)', 'Included (7kg)', 'Fee required', 'Fee required', 'Point-to-point rewards', 'Point-to-point regional flights'],
-              ['Ultra-Low-Cost (ULCC)', 'Personal item only', 'Strict fee', 'Strict fee', 'Minimal / None', 'Short domestic budget hops'],
-              ['Hybrid Carrier', 'Included (7kg)', 'Route dependent', 'Tier dependent', 'Independent partner network', 'Regional value & medium-haul'],
-            ]}
-          />
-        </div>
-      </section>
+      <AirlineCompareGuide airlineCount={airlines.length} countryCount={countryCount} verifiedCount={verifiedCount} />
     </div>
   );
 }

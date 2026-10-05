@@ -212,46 +212,47 @@ export default async function AirlinePage({ params }: Props) {
     mainEntity: { '@id': `${url}#airline` },
   });
 
-  // Published Tier 1 guides & Tier 2 carriers. Render modern policy layout
-  // for all substantive carriers (Tier 1 & Tier 2).
+  const tier1AirlineLd: Record<string, unknown> = { ...airlineJsonLd(airline, url), '@id': `${url}#airline` };
+  if (airline.founded) tier1AirlineLd.foundingDate = String(airline.founded);
+  if (ceased) tier1AirlineLd.dissolutionDate = ceased.ceasedOn;
+  if (alliance) tier1AirlineLd.memberOf = { '@type': 'Organization', name: alliance };
+
+  // v2 reference template — the default for every airline page, all tiers
+  // (lib/airline-template-v2.ts). Metadata is untouched: robots, canonical and
+  // sitemap eligibility still follow the tier rules in generateMetadata. The
+  // FAQPage block is built from the exact list the page renders. Carriers
+  // excluded in lib/airline-template-v2.ts fall through to the templates below.
+  if (airlineUsesTemplateV2(airline.slug)) {
+    const facts = getAirlineFacts(airline.slug);
+    const v2Faqs = guideFaqs(airline, routeFacts, alliance, facts);
+    return (
+      <>
+        <JsonLd data={articleSchema} />
+        <JsonLd data={tier1AirlineLd} />
+        {v2Faqs.length > 0 && <JsonLd data={faqJsonLd(v2Faqs)} />}
+        <JsonLd
+          data={breadcrumbJsonLd([
+            { name: 'Airlines', url: '/airlines' },
+            { name: airline.name, url: `/airlines/${airline.slug}` },
+          ])}
+        />
+        {ceased && <AirlineStatusNotice name={airline.name} ceased={ceased} />}
+        <AirlineGuideV2
+          airline={airline}
+          routeFacts={routeFacts}
+          facts={facts}
+          alliance={alliance}
+          airlineRef={getAirlineRef(airline.iataCode)}
+          faqs={v2Faqs}
+        />
+      </>
+    );
+  }
+
+  // Previous templates, kept for rollback (see lib/airline-template-v2.ts).
+  // Published Tier 1 guides & Tier 2 carriers: the AirlineTier1 layout.
   if (airlineGuideIsPublished(slug) || airlineTier(airline, routes.length > 0) <= 2) {
     const tier1Faqs = derivedFaqs(airline, routeFacts, alliance);
-    const tier1AirlineLd: Record<string, unknown> = { ...airlineJsonLd(airline, url), '@id': `${url}#airline` };
-    if (airline.founded) tier1AirlineLd.foundingDate = String(airline.founded);
-    if (ceased) tier1AirlineLd.dissolutionDate = ceased.ceasedOn;
-    if (alliance) tier1AirlineLd.memberOf = { '@type': 'Organization', name: alliance };
-
-    // v2 reference template, rolled out one carrier at a time via
-    // lib/airline-template-v2.ts. Same metadata (generateMetadata is untouched)
-    // and the same four JSON-LD blocks; the FAQPage block is built from the
-    // exact list the page renders. Every other carrier falls through to the
-    // AirlineTier1 render below, unchanged.
-    if (airlineUsesTemplateV2(airline.slug)) {
-      const facts = getAirlineFacts(airline.slug);
-      const v2Faqs = guideFaqs(airline, routeFacts, alliance, facts);
-      return (
-        <>
-          <JsonLd data={articleSchema} />
-          <JsonLd data={tier1AirlineLd} />
-          {v2Faqs.length > 0 && <JsonLd data={faqJsonLd(v2Faqs)} />}
-          <JsonLd
-            data={breadcrumbJsonLd([
-              { name: 'Airlines', url: '/airlines' },
-              { name: airline.name, url: `/airlines/${airline.slug}` },
-            ])}
-          />
-          {ceased && <AirlineStatusNotice name={airline.name} ceased={ceased} />}
-          <AirlineGuideV2
-            airline={airline}
-            routeFacts={routeFacts}
-            facts={facts}
-            alliance={alliance}
-            airlineRef={getAirlineRef(airline.iataCode)}
-            faqs={v2Faqs}
-          />
-        </>
-      );
-    }
 
     return (
       <>

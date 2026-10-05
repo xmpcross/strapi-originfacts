@@ -91,7 +91,11 @@
   /* Pages where the floating side widgets should be hidden — flight
      search, airlines (index + detail), airports (index + detail + hubs).
      Gives directory / search layouts the full canvas without the
-     left popular-posts widget or right icon bar competing for space. */
+     left popular-posts widget or right icon bar competing for space.
+     The rails themselves only render from 1728px (min-[1728px] in the
+     Fixed* components), where they sit in the gutter beside the 1420px
+     content column; these rules additionally keep them off these pages
+     on wide screens. */
   body:has([data-testid="flight-deals-preview"]) [data-testid="fixed-popular-now"],
   body:has([data-testid="flight-deals-preview"]) [data-testid="fixed-right-bar"],
   body:has([data-testid="fly-page"]) [data-testid="fixed-popular-now"],

@@ -1149,48 +1149,53 @@ function buildAirportNarrativeSections(
   transportSection?: AboutSection,
 ): AboutSection[] {
   const code = airport.iata.toUpperCase();
-  const city = airport.city || airport.name;
-  const country = airport.country || 'the surrounding region';
-  const routeList = summary.destinationNames.slice(0, 5).join(', ');
-  const carrierList = summary.carriers.slice(0, 5).map((carrier) => carrier.name).join(', ');
-  const existingOverview = proseSections.find((section) => /overview/i.test(section.heading || ''))?.paragraphs?.[0];
-  const existingAirlines = proseSections.find((section) => /airlines/i.test(section.heading || ''))?.paragraphs?.[0];
-  const existingTransport = transportSection?.paragraphs?.[0];
+  const codeStr = airport.icao ? `${code}/${airport.icao.toUpperCase()}` : code;
+  const city = airport.city ? airport.city.trim() : airport.name;
+  const country = airport.country ? airport.country.trim() : 'its surrounding region';
+  const region = airport.region ? airport.region.trim() : null;
+  const destCount = summary.destinationCount ?? 0;
+  const countryCount = summary.countryCount ?? 0;
+  const carrierCount = summary.carrierCount ?? 0;
+  const topCarriers = summary.carriers?.map((c) => c.name).slice(0, 5) ?? [];
+  const topDests = summary.destinationNames?.slice(0, 5) ?? [];
+
+  const locationStr = [city, country].filter(Boolean).join(', ');
+  const carrierText = topCarriers.length > 0 ? `top operating carriers including ${topCarriers.join(', ')}` : 'scheduled commercial carriers';
+  const destText = topDests.length > 0 ? `direct destinations such as ${topDests.join(', ')}` : 'key regional and international destinations';
 
   return [
     {
       heading: 'Overview',
       paragraphs: [
-        existingOverview ||
-          `${airport.name} (${code}) serves ${city}${airport.country ? `, ${airport.country}` : ''} and is an important airport for travellers planning flights in and out of ${country}. Use this page to compare the airport code, location, route coverage, airlines, nearby airports and practical planning details in one place.`,
-        `${airport.name} is most useful when its route network, ground transport and terminal setup match the trip you are taking. Before booking, compare the scheduled departure time with the airport location, connection window and any baggage or check-in requirements attached to your airline.`,
+        `${airport.name} (${codeStr}) serves as the primary commercial aviation gateway for ${locationStr}${region ? ` in ${region}` : ''}. ${airport.timezone ? `Operating in the ${airport.timezone} time zone` : 'Operating continuously for scheduled commercial flights'}${typeof airport.latitude === 'number' && typeof airport.longitude === 'number' ? ` at coordinates ${airport.latitude.toFixed(3)}°, ${airport.longitude.toFixed(3)}°` : ''}, the airfield provides essential passenger connectivity for business, leisure, and regional air transit.`,
+        destCount > 0
+          ? `Originfacts currently tracks ${destCount} direct flight route${destCount === 1 ? '' : 's'}${countryCount > 1 ? ` across ${countryCount} countries` : ''} originating from ${code}. The airport's network features ${carrierText}, connecting passengers with ${destText}. Before departing or booking a connection through ${airport.name}, travelers are advised to verify terminal facilities, local ground transport links, and carrier check-in windows.`
+          : `${airport.name} connects air travelers with regional flight routes and destination options. Passengers navigating ${code} should verify terminal layouts, ground transfer options into ${city}, and flight schedules directly with their operating airline prior to travel.`,
       ],
     },
     {
-      heading: 'Airlines',
+      heading: 'Airlines & Route Network',
       paragraphs: [
-        existingAirlines ||
-          (carrierList
-            ? `Airlines tracked on routes from ${code} include ${carrierList}${summary.carrierCount > 5 ? ' and others' : ''}. Carrier availability can vary by season, so use the airline list and route cards as a starting point before checking live schedules.`
-            : `Originfacts is still expanding airline coverage for ${code}. When comparing flights, check the operating airline, baggage rules, terminal information and connection terms before choosing an itinerary.`),
-        `For any airport, the operating airline matters as much as the marketing airline shown in a search result. Codeshares, partner flights and regional affiliates can affect check-in desks, terminal use, baggage handling and support if a flight is delayed or changed.`,
+        carrierCount > 0
+          ? `${airport.name} (${code}) hosts ${carrierCount} active airline${carrierCount === 1 ? '' : 's'} offering scheduled passenger service. Major carriers operating out of ${code} include ${topCarriers.join(', ')}${carrierCount > 5 ? ' among other regional and international partners' : ''}. Service frequencies and route availability vary by season, so checking carrier flight tables and baggage policies in advance is recommended.`
+          : `Airlines operating at ${airport.name} (${code}) connect the airfield with key regional and commercial destinations. When booking flights through ${code}, ensure you review operating carrier guidelines, check-in requirements, and terminal assignments.`,
+        `When comparing flight options at ${code}, note that codeshare agreements, regional subsidiaries, and partner alliances may affect the operating carrier. Confirming the actual operating airline ensures proper terminal location, check-in counter selection, and baggage allowance handling.`,
       ],
     },
     {
-      heading: 'Terminals and Transfers',
+      heading: 'Terminals & Transfer Planning',
       paragraphs: [
-        existingTransport ||
-          `${airport.name} may handle domestic, international, regional or mixed operations depending on the airlines and routes available at ${code}. Always confirm the terminal or check-in area with the operating airline before travel.`,
-        `Connections through ${code} need more planning when flights are on separate tickets, when checked baggage is involved, or when the itinerary changes between domestic and international processing. Build a wider buffer if you need to collect bags, move between terminals or pass through security again.`,
+        `${airport.name} accommodates domestic, regional, and international flight operations. Passengers connecting through ${code} should confirm whether their itinerary involves terminal transfers, customs clearance, or security re-screening before departure.`,
+        `Connecting travelers at ${code} flying on separate tickets or with checked baggage should allow additional buffer time. Transferring between terminals, retrieving and re-checking luggage, or clearing immigration controls during peak travel periods can require extended transit windows.`,
       ],
     },
     {
-      heading: 'Ground Transport and Trip Planning',
+      heading: 'Ground Transport & Onward Travel',
       paragraphs: [
-        `${airport.name} ground transport should be planned around your arrival time, luggage and final destination. Public transport can be efficient where available, while taxis, rideshare and private transfers may be easier for late arrivals, families or travellers with multiple bags.`,
-        routeList
-          ? `If you are choosing between airports or routes, compare ${code} against the destinations currently tracked from this airport, including ${routeList}. The best itinerary is not always the cheapest one if it creates a difficult transfer, a tight connection or a long onward journey.`
-          : `If you are choosing between airports, compare ${code} against nearby alternatives, total ground-transport cost and the reliability of the connection. A slightly higher fare can be worthwhile when it reduces transfer risk or shortens the total journey.`,
+        `Onward travel from ${airport.name} into ${city} and surrounding areas is supported by local transport networks. Depending on your arrival time and destination, options include airport express trains, public bus lines, taxis, rideshare services, and car rentals.`,
+        destCount > 0
+          ? `When choosing routes through ${code}, evaluate total journey time, connection buffers, and ground transfer logistics alongside ticket prices to ensure a seamless trip to ${city}.`
+          : `Comparing ${code} with nearby regional airports can help travelers optimize connection times, ground transport convenience, and total travel cost.`,
       ],
     },
   ];

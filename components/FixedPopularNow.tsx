@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { mediaUrl, type StrapiArticle } from '@/lib/strapi';
+import { sideRailsHidden } from '@/lib/side-rails';
 
 const COLLAPSED_COUNT = 4;
 
@@ -14,10 +15,7 @@ const COLLAPSED_COUNT = 4;
 // clearance even with a 15px scrollbar. Keep `min-[1728px]` in sync across the
 // Fixed* components.
 
-// Pages where the fixed left/right rails should be hidden. Currently destination
-// detail pages (e.g. /destinations/united-kingdom) hide them to give the hero
-// + facts panel + airports/airlines filters more horizontal room.
-const HIDE_PATTERNS = [/^\/destinations\/[^/]+$/];
+// Pages where the rails are hidden: lib/side-rails.ts.
 
 export default function FixedPopularNow({ articles }: { articles: StrapiArticle[] }) {
   const pathname = usePathname();
@@ -25,7 +23,7 @@ export default function FixedPopularNow({ articles }: { articles: StrapiArticle[
   const items = expanded ? articles : articles.slice(0, COLLAPSED_COUNT);
 
   if (articles.length === 0) return null;
-  if (pathname && HIDE_PATTERNS.some((re) => re.test(pathname))) return null;
+  if (sideRailsHidden(pathname)) return null;
 
   return (
     <aside

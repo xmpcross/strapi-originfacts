@@ -5,10 +5,9 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { format } from 'date-fns';
 import { mediaUrl, type StrapiArticle } from '@/lib/strapi';
+import { sideRailsHidden } from '@/lib/side-rails';
 
-// Matches FixedPopularNow: hide on destination detail pages so the country
-// hero + facts panel get full width.
-const HIDE_PATTERNS = [/^\/destinations\/[^/]+$/];
+// Hidden on the same pages as FixedPopularNow: lib/side-rails.ts.
 
 // Shown only from 1728px, where it sits in the gutter beside the 1420px content
 // column (see FixedPopularNow). Below that every item is reachable elsewhere:
@@ -68,7 +67,7 @@ export default function FixedRightBar({
 }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const hidden = pathname ? HIDE_PATTERNS.some((re) => re.test(pathname)) : false;
+  const hidden = sideRailsHidden(pathname);
 
   // Close on Esc + lock body scroll while open
   useEffect(() => {
